@@ -1,0 +1,159 @@
+sequenceDiagram
+    participant User
+    participant UI as Frontend UI
+    participant DA as DocumentAPI
+    participant DM as DocumentManager
+    participant AA as AnalysisAPI
+    participant AM as AnalysisManager
+    participant SM as StringMatchingModule
+    participant SeM as SemanticAnalysisModule
+    participant SyM as SyntacticAnalysisModule
+    participant StM as StructuralAnalysisModule
+    participant PM as PlotAnalysisModule
+    participant TM as ThemeAnalysisModule
+    participant LLM as LLMAgent
+    participant VM as VisualizationManager
+    participant VA as VisualizationAPI
+    participant DB as Database
+    
+    %% Document Import Flow
+    User->>UI: Upload document
+    UI->>DA: uploadDocument(file)
+    DA->>DM: processDocument(file)
+    DM->>DM: validateDocument(file)
+    DM->>DB: createDocumentEntry(metadata)
+    DB-->>DM: documentId
+    DM->>DM: extractText(file)
+    DM->>DM: preprocessText(plainText)
+    DM->>DB: storeDocumentContent(documentId, processedText)
+    DM->>DM: createSearchIndex(processedText)
+    DM->>DB: storeSearchIndex(documentId, searchIndex)
+    DM->>DB: updateDocumentStatus(documentId, "processed")
+    DM-->>DA: documentInfo
+    DA-->>UI: documentInfo
+    UI-->>User: Display document added confirmation
+    
+    %% Project Creation Flow
+    User->>UI: Create new project
+    UI->>DA: createProject(name)
+    DA->>DB: storeProjectMetadata(name, userId)
+    DB-->>DA: projectId
+    DA-->>UI: projectInfo
+    UI-->>User: Display project created confirmation
+    
+    %% Adding Documents to Project
+    User->>UI: Add document to project
+    UI->>DA: addDocumentToProject(projectId, documentId)
+    DA->>DB: updateProjectDocuments(projectId, documentId)
+    DB-->>DA: success
+    DA-->>UI: success
+    UI-->>User: Display document added to project
+    
+    %% Analysis Selection and Execution
+    User->>UI: Select analysis type & documents
+    UI->>AA: getAvailableAnalyses()
+    AA->>AM: getRegisteredModules()
+    AM-->>AA: analysisModules
+    AA-->>UI: availableAnalyses
+    UI-->>User: Display analysis options
+    
+    User->>UI: Configure and run analysis
+    UI->>AA: runAnalysis(analysisType, documentIds, parameters)
+    AA->>DB: createAnalysisJob(analysisType, documentIds, parameters)
+    DB-->>AA: jobId
+    AA-->>UI: jobInfo
+    UI-->>User: Display job started status
+    
+    AA->>AM: executeAnalysis(jobId)
+    AM->>DB: getAnalysisJob(jobId)
+    DB-->>AM: jobDetails
+    AM->>DB: getDocuments(documentIds)
+    DB-->>AM: documents
+    
+    %% Analysis Type Branch
+    alt analysisType == "stringMatching"
+        AM->>SM: analyze(documents, parameters)
+        SM->>SM: findMatches(doc1, doc2, threshold)
+        SM-->>AM: analysisResult
+    else analysisType == "semanticAnalysis"
+        AM->>SeM: analyze(documents, parameters)
+        SeM->>SeM: buildSemanticModel(document)
+        SeM->>SeM: compareModels(model1, model2)
+        SeM-->>AM: analysisResult
+    else analysisType == "syntacticAnalysis"
+        AM->>SyM: analyze(documents, parameters)
+        SyM->>SyM: extractSyntacticStructures(document)
+        SyM->>SyM: compareSyntacticStructures(struct1, struct2)
+        SyM-->>AM: analysisResult
+    else analysisType == "structuralAnalysis"
+        AM->>StM: analyze(documents, parameters)
+        StM->>StM: extractStructuralElements(document)
+        StM->>StM: compareStructures(struct1, struct2)
+        StM-->>AM: analysisResult
+    else analysisType == "plotAnalysis"
+        AM->>PM: analyze(documents, parameters)
+        PM->>LLM: analyzePlot(document)
+        LLM-->>PM: plotPoints
+        PM->>PM: comparePlotPoints(plots)
+        PM-->>AM: analysisResult
+    else analysisType == "themeAnalysis"
+        AM->>TM: analyze(documents, parameters)
+        TM->>TM: extractThemes(document)
+        TM->>TM: compareThemes(themes1, themes2)
+        TM-->>AM: analysisResult
+    end
+    
+    AM->>DB: storeAnalysisResult(jobId, analysisResult)
+    AM->>DB: updateJobStatus(jobId, "completed")
+    
+    %% Results Retrieval and Visualization
+    User->>UI: Check analysis status
+    UI->>AA: getAnalysisStatus(jobId)
+    AA->>DB: queryJobStatus(jobId)
+    DB-->>AA: jobStatus
+    AA-->>UI: jobStatus
+    UI-->>User: Display job completed status
+    
+    User->>UI: View analysis results
+    UI->>AA: getAnalysisResult(resultId)
+    AA->>DB: queryAnalysisResult(resultId)
+    DB-->>AA: analysisResult
+    AA-->>UI: analysisResult
+    
+    UI->>VA: getAvailableVisualizations(analysisType)
+    VA->>VM: getSupportedVisualizations(analysisType)
+    VM-->>VA: visualizationOptions
+    VA-->>UI: visualizationOptions
+    UI-->>User: Display visualization options
+    
+    User->>UI: Select visualization type
+    UI->>VA: renderVisualization(visualizationType, resultId, options)
+    VA->>DB: getAnalysisResult(resultId)
+    DB-->>VA: analysisResult
+    VA->>VM: render(visualizationType, analysisResult, options)
+    VM-->>VA: visualizationOutput
+    VA-->>UI: visualizationOutput
+    UI-->>User: Display interactive visualization
+    
+    %% LLM Research Plan Generation
+    User->>UI: Request research plan for documents
+    UI->>AA: generateResearchPlan(documentIds)
+    AA->>DB: getDocuments(documentIds)
+    DB-->>AA: documents
+    AA->>LLM: generateResearchPlan(documents)
+    LLM->>LLM: analyzeSummaries(documents)
+    LLM->>LLM: identifyResearchQuestions(summaries)
+    LLM->>LLM: proposeAnalysisMethods(questions)
+    LLM->>LLM: createResearchPlan(methods)
+    LLM-->>AA: researchPlan
+    AA-->>UI: researchPlan
+    UI-->>User: Display research plan
+    
+    %% Export Results
+    User->>UI: Export analysis results
+    UI->>AA: exportAnalysisResults(resultId, format)
+    AA->>DB: getAnalysisResult(resultId)
+    DB-->>AA: analysisResult
+    AA->>AA: formatResultsForExport(analysisResult, format)
+    AA-->>UI: exportedData
+    UI-->>User: Download exported results

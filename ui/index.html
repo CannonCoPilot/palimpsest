@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palimpsest P0 Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Palimpsest - Text Analysis</h1>
+    </header>
+
+    <main class="container">
+        <section id="document-manager" class="panel">
+            <h2>Document Manager</h2>
+            <div id="text-sources">
+                <div class="source-input">
+                    <label for="gutenberg-id">Fetch from Project Gutenberg (ID):</label>
+                    <input type="number" id="gutenberg-id" placeholder="e.g., 8040">
+                    <button id="fetch-gutenberg-btn">Fetch</button>
+                </div>
+                <div class="source-input">
+                    <label for="file-upload">Upload Text File (.txt):</label>
+                    <input type="file" id="file-upload" accept=".txt">
+                </div>
+            </div>
+            <div id="loaded-documents">
+                <h3>Loaded Documents</h3>
+                <ul id="document-list">
+                    <!-- Loaded documents will be listed here -->
+                    <!-- Example: <li>Matthew (ID: 8040) <button class="select-doc" data-doc-id="matthew_8040">Select</button></li> -->
+                </ul>
+            </div>
+            <div id="selected-documents">
+                <h3>Selected for Analysis (Max 4)</h3>
+                <ul id="selected-list">
+                    <!-- Selected documents will appear here -->
+                </ul>
+                 <button id="clear-selection-btn" disabled>Clear Selection</button>
+            </div>
+        </section>
+
+        <section id="analysis-config" class="panel">
+            <h2>Analysis Configuration</h2>
+            <fieldset>
+                <legend>Select Analysis Modules:</legend>
+                <div>
+                    <input type="checkbox" id="analyze-string" name="analysis-module" value="string" checked>
+                    <label for="analyze-string">String Matching</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="analyze-semantic" name="analysis-module" value="semantic" checked>
+                    <label for="analyze-semantic">Semantic Analysis</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="analyze-syntactic" name="analysis-module" value="syntactic">
+                    <label for="analyze-syntactic">Syntactic Analysis</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="analyze-structural" name="analysis-module" value="structural">
+                    <label for="analyze-structural">Structural Analysis</label>
+                </div>
+                 <div>
+                    <input type="checkbox" id="analyze-narrative" name="analysis-module" value="narrative">
+                    <label for="analyze-narrative">Narrative Flow</label>
+                </div>
+            </fieldset>
+            <!-- Add parameter settings here later if needed -->
+            <button id="run-analysis-btn" disabled>Run Analysis</button>
+             <div id="analysis-status">Status: Idle</div>
+        </section>
+
+        <section id="results-display" class="panel">
+            <h2>Analysis Results</h2>
+            <div id="analysis-progress" class="progress-panel" style="display: none;">
+                <h4>Analysis Progress</h4>
+                <ul id="progress-log">
+                    <!-- Progress steps will be logged here -->
+                </ul>
+            </div>
+
+            <div id="visualization-area">
+                <p>Select documents and run analysis to see results.</p>
+                <!-- Visualizations will be rendered here -->
+            </div>
+             <div id="summary-statistics">
+                 <h3>Summary Statistics</h3>
+                 <pre id="stats-output">No analysis run yet.</pre>
+             </div>
+                <div id="text-comparison-view" class="visualization-panel" style="display: none;">
+                    <h4>Text Comparison</h4>
+                    <div class="comparison-container">
+                        <div class="text-pane" id="text-pane-1">
+                            <h5>Document 1</h5>
+                            <pre></pre>
+                        </div>
+                        <div class="text-pane" id="text-pane-2">
+                            <h5>Document 2</h5>
+                            <pre></pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="heatmap-view" class="visualization-panel" style="display: none;">
+                     <h4>Similarity Heatmap</h4>
+                     <!-- Heatmap will be rendered here (e.g., using a library or SVG) -->
+                     <div id="heatmap-placeholder">Heatmap Placeholder</div>
+                </div>
+                 <div id="structure-graph-view" class="visualization-panel" style="display: none;">
+                     <h4>Structure Graph</h4>
+                     <!-- Structure graph will be rendered here -->
+                     <div id="structure-graph-placeholder">Structure Graph Placeholder</div>
+                 </div>
+
+             <div id="export-options">
+                 <button id="export-results-btn" disabled>Export Results (JSON)</button>
+             </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Palimpsest P0 Prototype</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

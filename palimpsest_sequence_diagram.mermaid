@@ -1,0 +1,58 @@
+sequenceDiagram
+    participant User
+    participant API as APIController
+    participant Doc as Document
+    participant TE as TextAnalysisEngine
+    participant SM as StringMatchingModule
+    participant SE as SemanticAnalysisModule
+    participant SY as SyntacticAnalysisModule
+    participant ST as StructuralAnalysisModule
+    participant VE as VisualizationEngine
+
+    User->>API: upload_document(file)
+    API->>Doc: load_document(file_path)
+    activate Doc
+    Doc-->>API: document_loaded
+    deactivate Doc
+
+    API->>TE: analyze_document(doc)
+    activate TE
+
+    par Analysis Phase
+        TE->>SM: find_matches(text)
+        activate SM
+        SM-->>TE: matching_results
+        deactivate SM
+
+        TE->>SE: compute_similarity(text)
+        activate SE
+        SE-->>TE: semantic_results
+        deactivate SE
+
+        TE->>SY: analyze_syntax(text)
+        activate SY
+        SY-->>TE: syntax_results
+        deactivate SY
+
+        TE->>ST: analyze_structure(doc)
+        activate ST
+        ST-->>TE: structure_results
+        deactivate ST
+    end
+
+    TE->>VE: create_visualizations(results)
+    activate VE
+    VE-->>TE: visualization_data
+    deactivate VE
+
+    TE-->>API: analysis_complete
+    deactivate TE
+
+    API-->>User: results_ready
+
+    User->>API: get_analysis_results(doc_id)
+    API->>TE: get_results(doc_id)
+    activate TE
+    TE-->>API: complete_results
+    deactivate TE
+    API-->>User: return_results

@@ -1,0 +1,59 @@
+classDiagram
+    class SyntacticAnalysisModule {
+        -nlp: SpacyModel
+        -pattern_matcher: PatternMatcher
+        -grammar_analyzer: GrammarAnalyzer
+        +__init__()
+        +analyze_syntax(text: str) Dict
+        -extract_dependencies(doc: Doc) List
+        -match_patterns(doc: Doc) List
+        -analyze_grammar(doc: Doc) Dict
+    }
+
+    class StructuralAnalysisModule {
+        -section_identifier: SectionIdentifier
+        -relationship_mapper: RelationshipMapper
+        -hierarchy_analyzer: HierarchyAnalyzer
+        +__init__()
+        +analyze_structure(document: Document) Dict
+        -identify_sections() List
+        -map_relationships() Dict
+        -analyze_hierarchy() Dict
+    }
+
+    class VisualizationEngine {
+        -d3_generator: D3Generator
+        -plotly_creator: PlotlyCreator
+        -dashboard: Dashboard
+        +__init__()
+        +create_visualization(data: Dict, type: str) Dict
+        -generate_graph() Dict
+        -create_chart() Dict
+        -update_dashboard() void
+    }
+
+    class Document {
+        -content: str
+        -metadata: Dict
+        -sections: List
+        +__init__(content: str)
+        +get_content() str
+        +get_sections() List
+        +add_section(section: Section)
+    }
+
+    class Section {
+        -content: str
+        -type: str
+        -level: int
+        +__init__(content: str, type: str)
+        +get_content() str
+        +get_type() str
+        +get_level() int
+    }
+
+    SyntacticAnalysisModule ..> Document
+    StructuralAnalysisModule ..> Document
+    Document *-- Section
+    VisualizationEngine ..> SyntacticAnalysisModule
+    VisualizationEngine ..> StructuralAnalysisModule

@@ -1,0 +1,307 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.panel {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#document-manager h3,
+#analysis-config h3,
+#results-display h3 {
+    margin-top: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+#text-sources .source-input {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="file"] {
+    width: calc(100% - 22px); /* Adjust for padding/border */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#clear-selection-btn {
+    background-color: #d9534f;
+    margin-top: 10px;
+}
+#clear-selection-btn:hover {
+    background-color: #c9302c;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-height: 150px; /* Limit height */
+    overflow-y: auto; /* Add scroll */
+    border: 1px solid #eee;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+#document-list li,
+#selected-list li {
+    padding: 5px;
+    border-bottom: 1px dotted #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#document-list li:last-child,
+#selected-list li:last-child {
+    border-bottom: none;
+}
+
+#document-list button.select-doc,
+#selected-list button.remove-doc {
+    padding: 3px 8px;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+#selected-list button.remove-doc {
+     background-color: #f0ad4e;
+}
+#selected-list button.remove-doc:hover {
+     background-color: #ec971f;
+}
+
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+
+/* Progress Panel Styles */
+.progress-panel {
+    margin-top: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+}
+
+.progress-panel h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #555;
+}
+
+#progress-log {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px; /* Limit height */
+    overflow-y: auto; /* Add scroll */
+    font-size: 0.9em;
+    color: #444;
+}
+
+#progress-log li {
+    padding: 3px 0;
+    border-bottom: 1px dotted #eee;
+}
+
+#progress-log li:last-child {
+    border-bottom: none;
+}
+
+#progress-log li.error {
+    color: red;
+    font-weight: bold;
+}
+
+#progress-log li.success {
+    color: green;
+    font-weight: bold;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+fieldset div {
+    margin-bottom: 5px;
+}
+
+#analysis-status {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+}
+
+#visualization-area {
+    min-height: 200px;
+    border: 1px dashed #ccc;
+    padding: 15px;
+
+.visualization-panel {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.visualization-panel h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* Text Comparison Specific Styles */
+.comparison-container {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.text-pane {
+    flex: 1; /* Each pane takes half the space */
+    border: 1px solid #ddd;
+    background-color: #fdfdfd;
+    border-radius: 3px;
+    overflow: hidden; /* Prevent content spill */
+}
+
+.text-pane h5 {
+    background-color: #eee;
+    padding: 8px;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.text-pane pre {
+    padding: 10px;
+    white-space: pre-wrap; /* Wrap text */
+    word-wrap: break-word;
+    max-height: 300px; /* Limit height */
+    overflow-y: auto; /* Add scroll */
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Placeholder styles for other visualizations */
+#heatmap-placeholder,
+#structure-graph-placeholder {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    color: #999;
+    margin-top: 10px;
+}
+
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #888;
+}
+
+#summary-statistics {
+    margin-top: 20px;
+}
+
+#stats-output {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 3px;
+    font-family: monospace;
+    white-space: pre-wrap; /* Wrap long lines */
+    word-wrap: break-word;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#export-options {
+    margin-top: 15px;
+}
+
+/* Danger button style */
+.danger {
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #bd2130;
+}
+
+.danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #ddd;
+    color: #555;
+    font-size: 0.9em;
+}

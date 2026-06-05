@@ -1,0 +1,211 @@
+classDiagram
+    class TextDocument {
+        +string documentId
+        +string title
+        +string author
+        +string source
+        +string content
+        +string filePath
+        +int wordCount
+        +Dictionary~string, any~ metadata
+        +DateTime importDate
+        +__init__(title, content, source)
+        +loadFromFile(filePath)
+        +loadFromURL(url)
+        +split(strategy) List~TextSegment~
+        +getMetadata() Dictionary
+    }
+    
+    class TextSegment {
+        +string segmentId
+        +string documentId
+        +string content
+        +int startPosition
+        +int endPosition
+        +SegmentType type
+        +__init__(documentId, content, startPos, endPos, type)
+        +getTokens() List~Token~
+        +getSentences() List~Sentence~
+    }
+    
+    class TextCorpus {
+        +string corpusId
+        +string name
+        +List~TextDocument~ documents
+        +Dictionary~string, any~ metadata
+        +__init__(name)
+        +addDocument(document)
+        +removeDocument(documentId)
+        +getDocument(documentId) TextDocument
+        +getDocuments() List~TextDocument~
+    }
+    
+    class AnalysisResult {
+        +string resultId
+        +string analysisType
+        +DateTime analysisDate
+        +List~string~ documentIds
+        +Dictionary~string, any~ parameters
+        +Dictionary~string, any~ results
+        +__init__(analysisType, documentIds, parameters)
+        +addResult(key, value)
+        +getResult(key) any
+        +serialize() string
+    }
+    
+    class AnalysisManager {
+        +Dictionary~string, AnalysisModule~ modules
+        +__init__()
+        +registerModule(name, module)
+        +runAnalysis(analysisType, documents, parameters) AnalysisResult
+        +getAvailableAnalyses() List~string~
+    }
+    
+    class AnalysisModule {
+        <<interface>>
+        +string moduleName
+        +string moduleDescription
+        +analyze(documents, parameters) AnalysisResult
+        +getDefaultParameters() Dictionary
+    }
+    
+    class StringMatchingModule {
+        +analyze(documents, parameters) AnalysisResult
+        +getDefaultParameters() Dictionary
+        +findMatches(doc1, doc2, threshold) List~Match~
+    }
+    
+    class SemanticAnalysisModule {
+        +analyze(documents, parameters) AnalysisResult
+        +getDefaultParameters() Dictionary
+        +buildSemanticModel(document) Model
+        +compareModels(model1, model2) List~SemanticSimilarity~
+    }
+    
+    class SyntacticAnalysisModule {
+        +analyze(documents, parameters) AnalysisResult
+        +getDefaultParameters() Dictionary
+        +extractSyntacticStructures(document) List~SyntacticStructure~
+        +compareSyntacticStructures(struct1, struct2) float
+    }
+    
+    class StructuralAnalysisModule {
+        +analyze(documents, parameters) AnalysisResult
+        +getDefaultParameters() Dictionary
+        +extractStructuralElements(document) StructuralMap
+        +compareStructures(struct1, struct2) List~StructuralSimilarity~
+    }
+    
+    class PlotAnalysisModule {
+        +analyze(documents, parameters) AnalysisResult
+        +getDefaultParameters() Dictionary
+        +identifyPlotPoints(document) List~PlotPoint~
+        +comparePlotFlow(plot1, plot2) float
+    }
+    
+    class ThemeAnalysisModule {
+        +analyze(documents, parameters) AnalysisResult
+        +getDefaultParameters() Dictionary
+        +extractThemes(document) List~Theme~
+        +compareThemes(themes1, themes2) List~ThemeSimilarity~
+    }
+    
+    class SynopticTextGenerator {
+        +analyze(documents, parameters) AnalysisResult
+        +getDefaultParameters() Dictionary
+        +generateUnifiedText(documents) string
+        +generateAnnotations(documents, unifiedText) List~Annotation~
+    }
+    
+    class LLMAgent {
+        +string modelName
+        +string modelProvider
+        +__init__(modelName, provider)
+        +researchDocument(document) ResearchResult
+        +generateResearchPlan(documents) ResearchPlan
+        +analyzePlot(document) List~PlotPoint~
+        +identifyTextualPatterns(document) List~Pattern~
+        +summarizeAnalysisResults(results) Summary
+    }
+    
+    class VisualizationManager {
+        +Dictionary~string, VisualizationRenderer~ renderers
+        +__init__()
+        +registerRenderer(name, renderer)
+        +render(visualizationType, data, options) VisualizationOutput
+        +getAvailableVisualizations() List~string~
+    }
+    
+    class VisualizationRenderer {
+        <<interface>>
+        +string rendererName
+        +string rendererDescription
+        +render(data, options) VisualizationOutput
+        +getDefaultOptions() Dictionary
+    }
+    
+    class ProjectManager {
+        +List~Project~ projects
+        +__init__()
+        +createProject(name) Project
+        +loadProject(projectId) Project
+        +saveProject(project)
+        +deleteProject(projectId)
+        +listProjects() List~Project~
+    }
+    
+    class Project {
+        +string projectId
+        +string name
+        +TextCorpus corpus
+        +List~AnalysisResult~ analysisResults
+        +DateTime creationDate
+        +DateTime lastModified
+        +__init__(name)
+        +addDocument(document)
+        +addAnalysisResult(result)
+        +getAnalysisResults() List~AnalysisResult~
+    }
+    
+    class DocumentAPI {
+        +uploadDocument(file) DocumentInfo
+        +importFromURL(url) DocumentInfo
+        +getDocument(documentId) Document
+        +listDocuments() List~DocumentInfo~
+        +deleteDocument(documentId)
+        +updateDocumentMetadata(documentId, metadata)
+    }
+    
+    class AnalysisAPI {
+        +getAvailableAnalyses() List~AnalysisInfo~
+        +runAnalysis(analysisType, documentIds, parameters) JobInfo
+        +getAnalysisStatus(jobId) JobStatus
+        +getAnalysisResult(resultId) AnalysisResult
+        +listAnalysisResults(documentId) List~AnalysisResultInfo~
+        +deleteAnalysisResult(resultId)
+    }
+    
+    class VisualizationAPI {
+        +getAvailableVisualizations() List~VisualizationInfo~
+        +renderVisualization(visualizationType, resultId, options) VisualizationOutput
+        +getVisualizationData(resultId, format) VisualizationData
+    }
+    
+    TextDocument "1" --> "many" TextSegment
+    TextCorpus "1" --> "many" TextDocument
+    AnalysisManager "1" --> "many" AnalysisModule
+    AnalysisModule <|.. StringMatchingModule
+    AnalysisModule <|.. SemanticAnalysisModule
+    AnalysisModule <|.. SyntacticAnalysisModule
+    AnalysisModule <|.. StructuralAnalysisModule
+    AnalysisModule <|.. PlotAnalysisModule
+    AnalysisModule <|.. ThemeAnalysisModule
+    AnalysisModule <|.. SynopticTextGenerator
+    VisualizationManager "1" --> "many" VisualizationRenderer
+    ProjectManager "1" --> "many" Project
+    Project "1" --> "1" TextCorpus
+    Project "1" --> "many" AnalysisResult
+    DocumentAPI -- TextDocument: manages
+    AnalysisAPI -- AnalysisResult: manages
+    AnalysisAPI -- AnalysisManager: uses
+    VisualizationAPI -- VisualizationManager: uses

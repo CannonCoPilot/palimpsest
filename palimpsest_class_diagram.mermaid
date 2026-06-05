@@ -1,0 +1,66 @@
+classDiagram
+    class Document {
+        +str id
+        +str title
+        +str content
+        +dict metadata
+        +datetime created_at
+        +datetime updated_at
+        +load_document(file_path: str)
+        +export_document(format: str)
+    }
+
+    class TextAnalysisEngine {
+        +analyze_document(doc: Document)
+        +get_analysis_results(doc_id: str)
+        +update_analysis(doc_id: str)
+    }
+
+    class StringMatchingModule {
+        -dict patterns
+        +find_exact_matches(text: str, pattern: str)
+        +find_fuzzy_matches(text: str, pattern: str, threshold: float)
+        +batch_process(text: str, patterns: list)
+    }
+
+    class SemanticAnalysisModule {
+        -model: SentenceTransformer
+        +generate_embeddings(text: str)
+        +compute_similarity(text1: str, text2: str)
+        +find_similar_passages(text: str, corpus: list)
+    }
+
+    class SyntacticAnalysisModule {
+        -nlp: SpacyModel
+        +analyze_syntax(text: str)
+        +extract_patterns(text: str)
+        +get_dependencies(text: str)
+    }
+
+    class StructuralAnalysisModule {
+        +analyze_structure(doc: Document)
+        +identify_sections(text: str)
+        +map_relationships(sections: list)
+    }
+
+    class VisualizationEngine {
+        +create_network_graph(data: dict)
+        +create_similarity_matrix(data: dict)
+        +generate_timeline(events: list)
+    }
+
+    class APIController {
+        +handle_document_upload(file: File)
+        +get_analysis_results(doc_id: str)
+        +trigger_analysis(doc_id: str)
+        +export_results(doc_id: str, format: str)
+    }
+
+    Document <|-- TextAnalysisEngine
+    TextAnalysisEngine <|-- StringMatchingModule
+    TextAnalysisEngine <|-- SemanticAnalysisModule
+    TextAnalysisEngine <|-- SyntacticAnalysisModule
+    TextAnalysisEngine <|-- StructuralAnalysisModule
+    TextAnalysisEngine -- VisualizationEngine
+    APIController -- TextAnalysisEngine
+    APIController -- Document
