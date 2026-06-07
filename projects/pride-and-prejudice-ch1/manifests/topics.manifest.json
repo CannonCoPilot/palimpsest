@@ -1,0 +1,14 @@
+{
+  "trackName": "topics",
+  "bodyType": "palimpsest:TopicAnnotation",
+  "colorScheme": {
+    "primary": "#e74c3c",
+    "secondary": "#f1948a"
+  },
+  "textViewRendering": "margin-marker",
+  "overviewBarRendering": {
+    "type": "density-barcode",
+    "color": "#e74c3c"
+  },
+  "dedicatedView": "topics-stacked-bar"
+}

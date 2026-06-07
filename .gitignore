@@ -1,11 +1,51 @@
-.env
-*.env
+# Python
 __pycache__/
 *.pyc
-.ipynb_checkpoints/
-.DS_Store
-*.log
-venv/
+*.pyo
+*.egg-info/
+dist/
+build/
 .venv/
+venv/
+*.pkl
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+coverage/
+htmlcov/
+
+# Node / Browser
+node_modules/
+browser/dist/
+
+# Environment
+.env
+*.env
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Signal binaries (recomputable)
+*.bin
+
+# Copyrighted test fixtures (local only)
+fixtures/swinehart/
+fixtures/ij/
+
+# Project caches (recomputable)
+projects/*/cache/
+
+# Legacy
 data/
 .roo/
+*.log
+
+# Scratch
+.scratch/
+.coverage

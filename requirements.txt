@@ -16,4 +16,10 @@ PyYAML>=6.0
 sentence-transformers>=2.1.0
 textacy>=0.12.0
 joblib>=1.1.0
-# difflib3>=0.1.1 # Removed - Likely a typo or unavailable package; standard 'difflib' is built-in.
+
+# Pipeline (text extraction + signal analysis)
+PyMuPDF>=1.24.0
+ebooklib>=0.18
+beautifulsoup4>=4.12.0
+chardet>=5.0.0
+regex>=2023.0

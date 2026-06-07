@@ -1,0 +1,42 @@
+{
+  "run_id": "fb2c398c3c0c47a091be324be5d43043",
+  "timestamp": "2026-06-07T23:02:22.087538+00:00",
+  "palimpsest_version": "0.1.0",
+  "python_version": "3.12.12",
+  "spacy_model": "en_core_web_lg",
+  "booknlp_available": false,
+  "annotation_format": "W3C Web Annotation JSON-LD (JSONL)",
+  "tracks_computed": [
+    "dialogue",
+    "entities",
+    "lexical",
+    "sentiment",
+    "topics"
+  ],
+  "signals_computed": [
+    "narrative_arc",
+    "rqa",
+    "topics_dist",
+    "alphabet"
+  ],
+  "parameters": {
+    "dialogue.max_attribution_window": 100,
+    "entities.spacy_model": "en_core_web_lg",
+    "lexical.min_tokens": 5,
+    "narrative_arc.model": "boyd_function_words",
+    "narrative_arc.segments": 5,
+    "narrative_arc.dimensions": 3,
+    "rqa.threshold": 0.3,
+    "rqa.min_line": 2,
+    "rqa.window_words": 100,
+    "rqa.window_overlap": 50,
+    "sentiment.model": "vader",
+    "topics.n_topics": 10,
+    "topics.random_state": 42,
+    "topics.max_iter": 20,
+    "topics.min_df": 2,
+    "alphabet.n_clusters": 16,
+    "alphabet.random_state": 42
+  },
+  "elapsed_seconds": 32.4
+}

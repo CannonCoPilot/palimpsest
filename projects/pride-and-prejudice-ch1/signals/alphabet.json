@@ -1,0 +1,25 @@
+{
+  "type": "sequence",
+  "name": "alphabet",
+  "source": "kmeans_narrative_state/0.1",
+  "reference_sha256": "65f64ee30e719c84b33914c07b987e37ab54d1234b62853ab02a3be2fc4befc1",
+  "dimensions": [
+    34
+  ],
+  "dtype": "float32",
+  "byte_order": "little-endian",
+  "data_file": "",
+  "segment_offsets": [],
+  "metadata": {
+    "n_clusters": 16,
+    "random_state": 42,
+    "features": [
+      "sentiment_valence",
+      "lexical_ttr",
+      "dialogue_presence",
+      "topic_weight"
+    ],
+    "sequence": "AADMIBHOKACLIGFDOJAJENOAGGHBJPJNBG",
+    "note": "Phase 1 placeholder for ModeHMM (Phase 2)"
+  }
+}

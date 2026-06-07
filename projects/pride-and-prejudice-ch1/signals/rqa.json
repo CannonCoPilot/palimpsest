@@ -1,0 +1,27 @@
+{
+  "type": "vector",
+  "name": "rqa",
+  "source": "rqa_embeddings/0.1",
+  "reference_sha256": "65f64ee30e719c84b33914c07b987e37ab54d1234b62853ab02a3be2fc4befc1",
+  "dimensions": [
+    17,
+    3
+  ],
+  "dtype": "float32",
+  "byte_order": "little-endian",
+  "data_file": "rqa.bin",
+  "segment_offsets": [],
+  "metadata": {
+    "metrics": [
+      "RR",
+      "DET",
+      "LAM"
+    ],
+    "threshold": 0.3,
+    "min_line": 2,
+    "window_words": 100,
+    "window_overlap": 50,
+    "state_vector_source": "embeddings",
+    "n_windows": 17
+  }
+}

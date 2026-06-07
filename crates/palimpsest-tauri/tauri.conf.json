@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicehash/tauri/dev/packages/schema-generator/schemas/desktop-schema.json",
+  "productName": "Palimpsest",
+  "version": "0.1.0",
+  "identifier": "com.palimpsest.app",
+  "build": {
+    "devUrl": "http://localhost:5174",
+    "frontendDist": "../../../ui/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Palimpsest — Computational Literary Analysis",
+        "width": 1600,
+        "height": 1000,
+        "minWidth": 1200,
+        "minHeight": 700
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": false,
+    "targets": "all",
+    "icon": []
+  }
+}

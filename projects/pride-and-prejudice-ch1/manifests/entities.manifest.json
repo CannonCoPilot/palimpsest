@@ -1,0 +1,19 @@
+{
+  "trackName": "entities",
+  "bodyType": "palimpsest:EntityAnnotation",
+  "colorScheme": {
+    "primary": "#3498db",
+    "secondary": "#85c1e9",
+    "scale": {
+      "PER": "#3498db",
+      "LOC": "#2ecc71",
+      "ORG": "#e74c3c",
+      "WORK": "#9b59b6"
+    }
+  },
+  "textViewRendering": "highlight",
+  "overviewBarRendering": {
+    "type": "density-barcode",
+    "color": "#3498db"
+  }
+}

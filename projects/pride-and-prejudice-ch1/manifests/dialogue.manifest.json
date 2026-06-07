@@ -1,0 +1,13 @@
+{
+  "trackName": "dialogue",
+  "bodyType": "palimpsest:DialogueAnnotation",
+  "colorScheme": {
+    "primary": "#e67e22",
+    "secondary": "#f5cba7"
+  },
+  "textViewRendering": "underline",
+  "overviewBarRendering": {
+    "type": "density-barcode",
+    "color": "#e67e22"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "trackName": "lexical",
+  "bodyType": "palimpsest:LexicalAnnotation",
+  "colorScheme": {
+    "primary": "#9b59b6",
+    "secondary": "#d2b4de"
+  },
+  "textViewRendering": "margin-marker",
+  "overviewBarRendering": {
+    "type": "density-barcode",
+    "color": "#9b59b6"
+  }
+}

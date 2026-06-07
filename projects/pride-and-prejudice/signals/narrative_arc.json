@@ -1,0 +1,23 @@
+{
+  "type": "vector",
+  "name": "narrative_arc",
+  "source": "boyd_function_words/0.1",
+  "reference_sha256": "366df05c5b288380f0ade88342894f573d1aa163691cc147b8b529a14265905d",
+  "dimensions": [
+    5,
+    3
+  ],
+  "dtype": "float32",
+  "byte_order": "little-endian",
+  "data_file": "narrative_arc.bin",
+  "segment_offsets": [],
+  "metadata": {
+    "dimensions_label": [
+      "staging",
+      "progression",
+      "tension"
+    ],
+    "segments": 5,
+    "word_count": 130948
+  }
+}

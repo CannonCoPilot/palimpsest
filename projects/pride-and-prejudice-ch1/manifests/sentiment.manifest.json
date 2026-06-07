@@ -1,0 +1,13 @@
+{
+  "trackName": "sentiment",
+  "bodyType": "palimpsest:SentimentAnnotation",
+  "colorScheme": {
+    "primary": "#2ecc71",
+    "secondary": "#e74c3c"
+  },
+  "textViewRendering": "highlight",
+  "overviewBarRendering": {
+    "type": "density-barcode",
+    "color": "#2ecc71"
+  }
+}
