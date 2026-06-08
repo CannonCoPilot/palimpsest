@@ -37,6 +37,10 @@ export default function DotplotView(): JSX.Element | null {
   const projectId = useProjectStore((s) => s.metadata?.id);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cachedImageRef = useRef<ImageData | null>(null);
+  const cachedSizeRef = useRef(0);
+
   const [signal, setSignal] = useState<LoadedSignal | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -50,6 +54,7 @@ export default function DotplotView(): JSX.Element | null {
     loadSignal(`/data/${projectId}/signals/self_similarity.json`)
       .then((s) => {
         setSignal(s);
+        cachedImageRef.current = null;
         setLoading(false);
       })
       .catch(() => {
@@ -59,14 +64,18 @@ export default function DotplotView(): JSX.Element | null {
   }, [dotplotOpen, projectId]);
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  const renderMatrix = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas || !signal || n === 0) return;
-
+  // Build the heatmap ImageData once when signal or container size changes
+  const buildHeatmap = useCallback(() => {
+    if (!signal || n === 0) return;
     const container = containerRef.current;
-    const size = container ? Math.min(container.clientWidth, container.clientHeight) - 40 : 400;
+    if (!container) return;
+
+    const size = Math.max(1, Math.min(container.clientWidth, container.clientHeight) - 40);
+    if (size === cachedSizeRef.current && cachedImageRef.current) return;
+
+    const canvas = canvasRef.current;
+    if (!canvas) return;
     canvas.width = size;
     canvas.height = size;
 
@@ -91,10 +100,29 @@ export default function DotplotView(): JSX.Element | null {
       }
     }
 
+    cachedImageRef.current = imageData;
+    cachedSizeRef.current = size;
     ctx.putImageData(imageData, 0, 0);
+  }, [signal, n]);
 
-    // Highlight hovered cell
+  // Render heatmap when signal loads
+  useEffect(() => {
+    buildHeatmap();
+  }, [buildHeatmap]);
+
+  // Draw crosshair overlay on hover — no pixel recomputation
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !cachedImageRef.current || n === 0) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const size = cachedSizeRef.current;
+    ctx.putImageData(cachedImageRef.current, 0, 0);
+
     if (hoveredCell) {
+      const cellSize = size / n;
       ctx.strokeStyle = 'rgba(255, 255, 0, 0.8)';
       ctx.lineWidth = 2;
       ctx.strokeRect(
@@ -103,7 +131,6 @@ export default function DotplotView(): JSX.Element | null {
         cellSize,
         cellSize,
       );
-      // Draw crosshair lines
       ctx.strokeStyle = 'rgba(255, 255, 0, 0.3)';
       ctx.lineWidth = 1;
       ctx.beginPath();
@@ -113,11 +140,7 @@ export default function DotplotView(): JSX.Element | null {
       ctx.lineTo(hoveredCell.j * cellSize + cellSize / 2, size);
       ctx.stroke();
     }
-  }, [signal, n, hoveredCell]);
-
-  useEffect(() => {
-    renderMatrix();
-  }, [renderMatrix]);
+  }, [hoveredCell, n]);
 
   const handleCanvasMouseMove = useCallback(
     (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -147,7 +170,6 @@ export default function DotplotView(): JSX.Element | null {
       const i = Math.min(Math.floor(y / cellSize), n - 1);
       const j = Math.min(Math.floor(x / cellSize), n - 1);
 
-      // Click navigates to the row paragraph; shift-click navigates to column
       const targetParagraph = e.shiftKey ? j : i;
       setSelectedParagraphIndex(targetParagraph);
       requestScrollToParagraph(targetParagraph);
@@ -156,6 +178,10 @@ export default function DotplotView(): JSX.Element | null {
   );
 
   if (!dotplotOpen) return null;
+
+  const hoverValue = hoveredCell && signal
+    ? signal.data[hoveredCell.i * n + hoveredCell.j]
+    : null;
 
   return (
     <div
@@ -181,8 +207,8 @@ export default function DotplotView(): JSX.Element | null {
       >
         <span style={{ fontWeight: 'bold' }}>
           Self-Similarity Matrix
-          {hoveredCell && signal
-            ? ` — [${hoveredCell.i}, ${hoveredCell.j}]: ${signal.data[hoveredCell.i * n + hoveredCell.j].toFixed(3)}`
+          {hoveredCell && hoverValue != null
+            ? ` — [${hoveredCell.i}, ${hoveredCell.j}]: ${hoverValue.toFixed(3)}`
             : ''}
         </span>
         <span style={{ color: '#999' }}>
