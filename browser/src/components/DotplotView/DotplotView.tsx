@@ -35,7 +35,6 @@ export default function DotplotView(): JSX.Element | null {
   const requestScrollToParagraph = useViewStore((s) => s.requestScrollToParagraph);
   const setSelectedParagraphIndex = useViewStore((s) => s.setSelectedParagraphIndex);
   const projectId = useProjectStore((s) => s.metadata?.id);
-  const serverBase = useProjectStore((s) => s.serverBase);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [signal, setSignal] = useState<LoadedSignal | null>(null);
@@ -44,11 +43,11 @@ export default function DotplotView(): JSX.Element | null {
   const [hoveredCell, setHoveredCell] = useState<{ i: number; j: number } | null>(null);
 
   useEffect(() => {
-    if (!dotplotOpen || !projectId || !serverBase) return;
+    if (!dotplotOpen || !projectId) return;
 
     setLoading(true);
     setError(null);
-    loadSignal(`${serverBase}/data/${projectId}/signals/self_similarity.json`)
+    loadSignal(`/data/${projectId}/signals/self_similarity.json`)
       .then((s) => {
         setSignal(s);
         setLoading(false);
@@ -57,7 +56,7 @@ export default function DotplotView(): JSX.Element | null {
         setError('Self-similarity matrix not available. Run analysis with Ollama first.');
         setLoading(false);
       });
-  }, [dotplotOpen, projectId, serverBase]);
+  }, [dotplotOpen, projectId]);
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
   const containerRef = useRef<HTMLDivElement>(null);

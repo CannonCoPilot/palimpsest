@@ -20,6 +20,8 @@ import ProjectPicker from '../common/ProjectPicker';
 
 export default function AppLayout(): JSX.Element {
   const { loadingState, error, metadata, paragraphs, tracks } = useProjectStore();
+  const dotplotOpen = useViewStore((s) => s.dotplotOpen);
+  const toggleDotplot = useViewStore((s) => s.toggleDotplot);
 
   useEffect(() => {
     const cleanup = setupKeyboardHandlers();
@@ -49,8 +51,6 @@ export default function AppLayout(): JSX.Element {
   }
 
   const trackCount = Object.keys(tracks).filter((k) => k !== 'segments').length;
-  const dotplotOpen = useViewStore((s) => s.dotplotOpen);
-  const toggleDotplot = useViewStore((s) => s.toggleDotplot);
 
   return (
     <div
