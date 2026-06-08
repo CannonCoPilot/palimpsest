@@ -7,22 +7,17 @@
 
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { useViewStore } from '../../stores/viewStore';
+import { TRACK_COLORS } from '../../utils/trackColors';
 
-const TRACK_COLORS: Record<string, string> = {
-  'palimpsest:EntityAnnotation': '#3498db',
-  'palimpsest:SentimentAnnotation': '#e67e22',
-  'palimpsest:LexicalAnnotation': '#27ae60',
-  'palimpsest:DialogueAnnotation': '#9b59b6',
-  'palimpsest:TopicAnnotation': '#e74c3c',
-  'palimpsest:CoreferenceAnnotation': '#1abc9c',
-  'palimpsest:SegmentAnnotation': '#95a5a6',
-};
-
-const ENTITY_COLORS: Record<string, string> = {
-  PER: '#3498db',
-  LOC: '#2ecc71',
-  ORG: '#e74c3c',
-  WORK: '#9b59b6',
+// Map body type → track name so overlay uses the same colors as TrackPanel/OverviewBar
+const BODY_TYPE_TO_TRACK: Record<string, string> = {
+  'palimpsest:EntityAnnotation': 'entities',
+  'palimpsest:SentimentAnnotation': 'sentiment',
+  'palimpsest:LexicalAnnotation': 'lexical',
+  'palimpsest:DialogueAnnotation': 'dialogue',
+  'palimpsest:TopicAnnotation': 'topics',
+  'palimpsest:CoreferenceAnnotation': 'coreference',
+  'palimpsest:SegmentAnnotation': 'segments',
 };
 
 interface AnnotationSpan {
@@ -32,11 +27,8 @@ interface AnnotationSpan {
 }
 
 function getColor(ann: W3CAnnotation): string {
-  if (ann.body.type === 'palimpsest:EntityAnnotation') {
-    const entityType = (ann.body as Record<string, unknown>)['palimpsest:entityType'] as string;
-    return ENTITY_COLORS[entityType] || TRACK_COLORS[ann.body.type] || '#888';
-  }
-  return TRACK_COLORS[ann.body.type] || '#888';
+  const trackName = BODY_TYPE_TO_TRACK[ann.body.type] ?? '';
+  return TRACK_COLORS[trackName] ?? '#888';
 }
 
 function buildSpans(text: string, annotations: W3CAnnotation[], paraStart: number, paraEnd: number): AnnotationSpan[] {

@@ -40,7 +40,7 @@ export const useTrackStore = create<TrackStoreState>((set) => ({
 
   toggleTrackByIndex: (index): void =>
     set((state) => {
-      const names = Object.keys(state.tracks).sort();
+      const names = Object.keys(state.tracks).filter((n) => n !== 'segments').sort();
       const name = names[index - 1];
       if (!name) return state;
       const track = state.tracks[name];

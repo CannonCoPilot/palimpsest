@@ -6,6 +6,7 @@
 
 import { useEffect } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
+import { useViewStore } from '../../stores/viewStore';
 import { setupKeyboardHandlers } from '../../utils/keyboard';
 import TextLinearView from '../TextLinearView/TextLinearView';
 import TextSearch from '../TextLinearView/TextSearch';
@@ -48,6 +49,8 @@ export default function AppLayout(): JSX.Element {
   }
 
   const trackCount = Object.keys(tracks).filter((k) => k !== 'segments').length;
+  const dotplotOpen = useViewStore((s) => s.dotplotOpen);
+  const toggleDotplot = useViewStore((s) => s.toggleDotplot);
 
   return (
     <div
@@ -79,6 +82,22 @@ export default function AppLayout(): JSX.Element {
             {metadata.word_count.toLocaleString()} words &middot; {paragraphs.length} paragraphs
             &middot; {trackCount} tracks
           </span>
+          <button
+            onClick={toggleDotplot}
+            title="Toggle self-similarity dotplot (d)"
+            style={{
+              marginLeft: 'auto',
+              padding: '4px 10px',
+              fontSize: '0.8em',
+              border: '1px solid #ccc',
+              borderRadius: '4px',
+              backgroundColor: dotplotOpen ? '#3498db' : 'transparent',
+              color: dotplotOpen ? '#fff' : '#555',
+              cursor: 'pointer',
+            }}
+          >
+            Dotplot
+          </button>
         </div>
       )}
 

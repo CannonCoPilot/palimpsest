@@ -4,5 +4,6 @@ export const TRACK_COLORS: Record<string, string> = {
   lexical: '#9b59b6',
   dialogue: '#e67e22',
   topics: '#e74c3c',
+  coreference: '#14B8A6',
   segments: '#95a5a6',
 };

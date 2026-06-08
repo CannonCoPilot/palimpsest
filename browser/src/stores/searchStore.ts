@@ -3,6 +3,7 @@
  */
 
 import { create } from 'zustand';
+import { useViewStore } from './viewStore';
 
 export interface SearchMatch {
   start: number;
@@ -66,21 +67,28 @@ export const useSearchStore = create<SearchState>((set, get) => ({
   setQuery: (query, referenceText, paragraphs): void => {
     const { caseSensitive } = get();
     const matches = findMatches(query, referenceText, caseSensitive, paragraphs);
-    set({ query, matches, currentMatchIndex: matches.length > 0 ? 0 : -1 });
+    const idx = matches.length > 0 ? 0 : -1;
+    set({ query, matches, currentMatchIndex: idx });
+    if (idx >= 0) {
+      useViewStore.getState().requestScrollToParagraph(matches[idx].paragraphIndex);
+    }
   },
 
-  nextMatch: (): void =>
-    set((s) => ({
-      currentMatchIndex: s.matches.length > 0 ? (s.currentMatchIndex + 1) % s.matches.length : -1,
-    })),
+  nextMatch: (): void => {
+    const s = get();
+    if (s.matches.length === 0) return;
+    const idx = (s.currentMatchIndex + 1) % s.matches.length;
+    set({ currentMatchIndex: idx });
+    useViewStore.getState().requestScrollToParagraph(s.matches[idx].paragraphIndex);
+  },
 
-  prevMatch: (): void =>
-    set((s) => ({
-      currentMatchIndex:
-        s.matches.length > 0
-          ? (s.currentMatchIndex - 1 + s.matches.length) % s.matches.length
-          : -1,
-    })),
+  prevMatch: (): void => {
+    const s = get();
+    if (s.matches.length === 0) return;
+    const idx = (s.currentMatchIndex - 1 + s.matches.length) % s.matches.length;
+    set({ currentMatchIndex: idx });
+    useViewStore.getState().requestScrollToParagraph(s.matches[idx].paragraphIndex);
+  },
 
   toggleCaseSensitive: (referenceText?: string, paragraphs?: Array<{ start: number; end: number }>): void => {
     const s = get();
