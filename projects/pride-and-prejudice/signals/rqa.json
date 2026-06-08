@@ -1,7 +1,7 @@
 {
   "type": "vector",
   "name": "rqa",
-  "source": "rqa_tfidf/0.1",
+  "source": "rqa_embeddings/0.1",
   "reference_sha256": "366df05c5b288380f0ade88342894f573d1aa163691cc147b8b529a14265905d",
   "dimensions": [
     2609,
@@ -21,7 +21,7 @@
     "min_line": 2,
     "window_words": 100,
     "window_overlap": 50,
-    "state_vector_source": "tfidf",
+    "state_vector_source": "embeddings",
     "n_windows": 2609
   }
 }

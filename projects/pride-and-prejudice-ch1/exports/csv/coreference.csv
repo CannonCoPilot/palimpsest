@@ -1,0 +1,169 @@
+id,track,type,start,end,confidence,evidence_level,creator,value,chainId,mentionType,referentId
+urn:palimpsest:pride-and-prejudice-ch1:coreference:9ceae541,coreference,CoreferenceAnnotation,164,174,0.75,E4,booknlp/2.0,,15,nom,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a991ada5,coreference,CoreferenceAnnotation,185,188,0.75,E4,booknlp/2.0,,15,pron,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a0c1c37b,coreference,CoreferenceAnnotation,265,289,0.75,E4,booknlp/2.0,,17,nom,the surrounding families
+urn:palimpsest:pride-and-prejudice-ch1:coreference:7d9076af,coreference,CoreferenceAnnotation,296,298,0.75,E4,booknlp/2.0,,15,pron,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:cad3aeac,coreference,CoreferenceAnnotation,362,367,0.75,E4,booknlp/2.0,,17,pron,the surrounding families
+urn:palimpsest:pride-and-prejudice-ch1:coreference:3fceb027,coreference,CoreferenceAnnotation,381,383,0.75,E4,booknlp/2.0,,20,pron,My
+urn:palimpsest:pride-and-prejudice-ch1:coreference:e8746605,coreference,CoreferenceAnnotation,381,388,0.75,E4,booknlp/2.0,,28,nom,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:8848be38,coreference,CoreferenceAnnotation,389,399,0.75,E4,booknlp/2.0,,3,prop,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:aab0c36f,coreference,CoreferenceAnnotation,407,410,0.75,E4,booknlp/2.0,,15,pron,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:bdddf855,coreference,CoreferenceAnnotation,407,415,0.75,E4,booknlp/2.0,,20,nom,My
+urn:palimpsest:pride-and-prejudice-ch1:coreference:2ebe37a9,coreference,CoreferenceAnnotation,419,422,0.75,E4,booknlp/2.0,,15,pron,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:e75b2436,coreference,CoreferenceAnnotation,438,441,0.75,E4,booknlp/2.0,,15,pron,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:d758aca1,coreference,CoreferenceAnnotation,488,498,0.75,E4,booknlp/2.0,,3,prop,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:1881976d,coreference,CoreferenceAnnotation,512,514,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:b3286453,coreference,CoreferenceAnnotation,547,550,0.75,E4,booknlp/2.0,,20,pron,My
+urn:palimpsest:pride-and-prejudice-ch1:coreference:3c26b696,coreference,CoreferenceAnnotation,557,566,0.75,E4,booknlp/2.0,,4,prop,Mrs. Long
+urn:palimpsest:pride-and-prejudice-ch1:coreference:d292ca55,coreference,CoreferenceAnnotation,581,585,0.75,E4,booknlp/2.0,,29,nom,here
+urn:palimpsest:pride-and-prejudice-ch1:coreference:00ab085d,coreference,CoreferenceAnnotation,591,594,0.75,E4,booknlp/2.0,,4,pron,Mrs. Long
+urn:palimpsest:pride-and-prejudice-ch1:coreference:ba1cfbc7,coreference,CoreferenceAnnotation,600,602,0.75,E4,booknlp/2.0,,20,pron,My
+urn:palimpsest:pride-and-prejudice-ch1:coreference:34661504,coreference,CoreferenceAnnotation,619,629,0.75,E4,booknlp/2.0,,3,prop,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:07e7006a,coreference,CoreferenceAnnotation,655,658,0.75,E4,booknlp/2.0,,15,pron,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:90e9dc9a,coreference,CoreferenceAnnotation,697,700,0.75,E4,booknlp/2.0,,15,pron,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:7ad39827,coreference,CoreferenceAnnotation,697,705,0.75,E4,booknlp/2.0,,21,nom,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:e9611740,coreference,CoreferenceAnnotation,723,726,0.75,E4,booknlp/2.0,,15,pron,such a man
+urn:palimpsest:pride-and-prejudice-ch1:coreference:6da6768f,coreference,CoreferenceAnnotation,741,743,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a7b6e846,coreference,CoreferenceAnnotation,749,750,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:2d76086e,coreference,CoreferenceAnnotation,821,828,0.75,E4,booknlp/2.0,,28,nom,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:5c5f051b,coreference,CoreferenceAnnotation,821,823,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:501fa99f,coreference,CoreferenceAnnotation,830,833,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:1dc5005f,coreference,CoreferenceAnnotation,845,854,0.75,E4,booknlp/2.0,,4,prop,Mrs. Long
+urn:palimpsest:pride-and-prejudice-ch1:coreference:061dc14d,coreference,CoreferenceAnnotation,889,917,0.75,E4,booknlp/2.0,,31,nom,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:787e7614,coreference,CoreferenceAnnotation,950,952,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:bdacd1d8,coreference,CoreferenceAnnotation,1051,1053,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:65a65e06,coreference,CoreferenceAnnotation,1095,1097,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:021d684f,coreference,CoreferenceAnnotation,1151,1154,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:c19c2fff,coreference,CoreferenceAnnotation,1223,1226,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:27f16e7b,coreference,CoreferenceAnnotation,1236,1243,0.75,E4,booknlp/2.0,,7,prop,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:5433df41,coreference,CoreferenceAnnotation,1251,1253,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:85d762f6,coreference,CoreferenceAnnotation,1288,1295,0.75,E4,booknlp/2.0,,28,nom,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:c8ba3523,coreference,CoreferenceAnnotation,1288,1290,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:84939286,coreference,CoreferenceAnnotation,1392,1401,0.75,E4,booknlp/2.0,,40,nom,our girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:9b42c0ee,coreference,CoreferenceAnnotation,1432,1436,0.75,E4,booknlp/2.0,,40,pron,our girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:5a7266b1,coreference,CoreferenceAnnotation,1441,1448,0.75,E4,booknlp/2.0,,28,nom,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:630373d3,coreference,CoreferenceAnnotation,1441,1443,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:d749d11a,coreference,CoreferenceAnnotation,1449,1459,0.75,E4,booknlp/2.0,,3,prop,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:811bd2d7,coreference,CoreferenceAnnotation,1470,1478,0.75,E4,booknlp/2.0,,21,nom,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:af5e08f0,coreference,CoreferenceAnnotation,1489,1492,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:3541d4fe,coreference,CoreferenceAnnotation,1509,1512,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:594091e2,coreference,CoreferenceAnnotation,1528,1529,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:db56e0db,coreference,CoreferenceAnnotation,1545,1548,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:4287d605,coreference,CoreferenceAnnotation,1565,1569,0.75,E4,booknlp/2.0,,40,pron,our girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:56ab0203,coreference,CoreferenceAnnotation,1582,1585,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:499bba00,coreference,CoreferenceAnnotation,1605,1609,0.75,E4,booknlp/2.0,,29,nom,here
+urn:palimpsest:pride-and-prejudice-ch1:coreference:bc719c6b,coreference,CoreferenceAnnotation,1640,1643,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:eee6efa5,coreference,CoreferenceAnnotation,1680,1682,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:9f89ef2a,coreference,CoreferenceAnnotation,1707,1718,0.75,E4,booknlp/2.0,,43,nom,one of them
+urn:palimpsest:pride-and-prejudice-ch1:coreference:12e729c5,coreference,CoreferenceAnnotation,1714,1718,0.75,E4,booknlp/2.0,,40,pron,our girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:10bce3a4,coreference,CoreferenceAnnotation,1734,1737,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:7cccaefe,coreference,CoreferenceAnnotation,1749,1752,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:fa5d2990,coreference,CoreferenceAnnotation,1764,1766,0.75,E4,booknlp/2.0,,31,pron,a young man of large fortune
+urn:palimpsest:pride-and-prejudice-ch1:coreference:5440e45f,coreference,CoreferenceAnnotation,1777,1778,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a1276fed,coreference,CoreferenceAnnotation,1805,1808,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:f9d8ef2b,coreference,CoreferenceAnnotation,1813,1822,0.75,E4,booknlp/2.0,,44,nom,the girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:64415ce4,coreference,CoreferenceAnnotation,1834,1837,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:260153ba,coreference,CoreferenceAnnotation,1847,1851,0.75,E4,booknlp/2.0,,40,pron,our girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:692f0476,coreference,CoreferenceAnnotation,1855,1865,0.75,E4,booknlp/2.0,,40,pron,our girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:00ac2e99,coreference,CoreferenceAnnotation,1910,1913,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:dcc6fbf2,coreference,CoreferenceAnnotation,1940,1944,0.75,E4,booknlp/2.0,,40,pron,our girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:5546ef19,coreference,CoreferenceAnnotation,1946,1957,0.75,E4,booknlp/2.0,,7,prop,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:27a6ab71,coreference,CoreferenceAnnotation,1969,1972,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:306f40a6,coreference,CoreferenceAnnotation,1999,2006,0.75,E4,booknlp/2.0,,28,nom,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:7bd9fec8,coreference,CoreferenceAnnotation,1999,2001,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:8c9e4ea9,coreference,CoreferenceAnnotation,2008,2011,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:9c4c064a,coreference,CoreferenceAnnotation,2020,2022,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:764cb7dd,coreference,CoreferenceAnnotation,2024,2025,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:906efa4e,coreference,CoreferenceAnnotation,2047,2049,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:075b2172,coreference,CoreferenceAnnotation,2071,2072,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:fd6ed1bc,coreference,CoreferenceAnnotation,2127,2134,0.75,E4,booknlp/2.0,,46,nom,a woman
+urn:palimpsest:pride-and-prejudice-ch1:coreference:2827d68d,coreference,CoreferenceAnnotation,2164,2167,0.75,E4,booknlp/2.0,,46,pron,a woman
+urn:palimpsest:pride-and-prejudice-ch1:coreference:7ee5cedb,coreference,CoreferenceAnnotation,2199,2202,0.75,E4,booknlp/2.0,,46,pron,a woman
+urn:palimpsest:pride-and-prejudice-ch1:coreference:46b4f7d8,coreference,CoreferenceAnnotation,2233,2240,0.75,E4,booknlp/2.0,,46,nom,a woman
+urn:palimpsest:pride-and-prejudice-ch1:coreference:821fcdaa,coreference,CoreferenceAnnotation,2288,2295,0.75,E4,booknlp/2.0,,28,nom,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:2faadaf0,coreference,CoreferenceAnnotation,2288,2290,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:146047f4,coreference,CoreferenceAnnotation,2297,2300,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:ded81a5f,coreference,CoreferenceAnnotation,2324,2335,0.75,E4,booknlp/2.0,,7,prop,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:2e9963e7,coreference,CoreferenceAnnotation,2341,2343,0.75,E4,booknlp/2.0,,7,pron,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:fdb3cf2f,coreference,CoreferenceAnnotation,2355,2372,0.75,E4,booknlp/2.0,,50,nom,the neighbourhood
+urn:palimpsest:pride-and-prejudice-ch1:coreference:c67d8cd6,coreference,CoreferenceAnnotation,2393,2394,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:cbca5be9,coreference,CoreferenceAnnotation,2407,2408,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:fd346342,coreference,CoreferenceAnnotation,2416,2419,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a6af96e4,coreference,CoreferenceAnnotation,2437,2441,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:29edb810,coreference,CoreferenceAnnotation,2437,2451,0.75,E4,booknlp/2.0,,51,nom,your daughters
+urn:palimpsest:pride-and-prejudice-ch1:coreference:d249c276,coreference,CoreferenceAnnotation,2502,2513,0.75,E4,booknlp/2.0,,43,nom,one of them
+urn:palimpsest:pride-and-prejudice-ch1:coreference:87ca724a,coreference,CoreferenceAnnotation,2509,2513,0.75,E4,booknlp/2.0,,51,pron,your daughters
+urn:palimpsest:pride-and-prejudice-ch1:coreference:280deca3,coreference,CoreferenceAnnotation,2604,2607,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:50b316f5,coreference,CoreferenceAnnotation,2614,2618,0.75,E4,booknlp/2.0,,51,pron,your daughters
+urn:palimpsest:pride-and-prejudice-ch1:coreference:44ba48b7,coreference,CoreferenceAnnotation,2647,2650,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:9508cad8,coreference,CoreferenceAnnotation,2704,2707,0.75,E4,booknlp/2.0,,7,pron,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:6bc3b957,coreference,CoreferenceAnnotation,2712,2715,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:6370b4c1,coreference,CoreferenceAnnotation,2727,2730,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:e83e862c,coreference,CoreferenceAnnotation,2760,2761,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:cc7d1a9f,coreference,CoreferenceAnnotation,2771,2782,0.75,E4,booknlp/2.0,,7,prop,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:6d94248d,coreference,CoreferenceAnnotation,2808,2811,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:39681fd4,coreference,CoreferenceAnnotation,2817,2818,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:0c737ad3,coreference,CoreferenceAnnotation,2844,2847,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:8278a142,coreference,CoreferenceAnnotation,2858,2861,0.75,E4,booknlp/2.0,,7,pron,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:023bd6b5,coreference,CoreferenceAnnotation,2865,2867,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:faa6bbe4,coreference,CoreferenceAnnotation,2886,2889,0.75,E4,booknlp/2.0,,7,pron,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:9895f080,coreference,CoreferenceAnnotation,2909,2911,0.75,E4,booknlp/2.0,,7,pron,Bingley
+urn:palimpsest:pride-and-prejudice-ch1:coreference:63c55ecf,coreference,CoreferenceAnnotation,2923,2932,0.75,E4,booknlp/2.0,,44,nom,the girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:254ce2d9,coreference,CoreferenceAnnotation,2941,2942,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:d87fa7ae,coreference,CoreferenceAnnotation,2973,2975,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:cb1f86e7,coreference,CoreferenceAnnotation,2993,2994,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:22bab8aa,coreference,CoreferenceAnnotation,3002,3005,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:2a6df1c5,coreference,CoreferenceAnnotation,3029,3034,0.75,E4,booknlp/2.0,,10,prop,Lizzy
+urn:palimpsest:pride-and-prejudice-ch1:coreference:3385f4c6,coreference,CoreferenceAnnotation,3076,3077,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:bf76e8ff,coreference,CoreferenceAnnotation,3086,3089,0.75,E4,booknlp/2.0,,10,pron,Lizzy
+urn:palimpsest:pride-and-prejudice-ch1:coreference:b8555caa,coreference,CoreferenceAnnotation,3163,3166,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a2e5c316,coreference,CoreferenceAnnotation,3186,3189,0.75,E4,booknlp/2.0,,10,pron,Lizzy
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a6270fae,coreference,CoreferenceAnnotation,3210,3214,0.75,E4,booknlp/2.0,,44,pron,the girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:fc3cd8e3,coreference,CoreferenceAnnotation,3228,3232,0.75,E4,booknlp/2.0,,44,pron,the girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:581508b2,coreference,CoreferenceAnnotation,3251,3255,0.75,E4,booknlp/2.0,,44,pron,the girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:e7046505,coreference,CoreferenceAnnotation,3266,3268,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:fa7f2e38,coreference,CoreferenceAnnotation,3271,3275,0.75,E4,booknlp/2.0,,44,pron,the girls
+urn:palimpsest:pride-and-prejudice-ch1:coreference:4f4a722e,coreference,CoreferenceAnnotation,3325,3330,0.75,E4,booknlp/2.0,,10,prop,Lizzy
+urn:palimpsest:pride-and-prejudice-ch1:coreference:15a9f953,coreference,CoreferenceAnnotation,3368,3371,0.75,E4,booknlp/2.0,,10,pron,Lizzy
+urn:palimpsest:pride-and-prejudice-ch1:coreference:7983c6db,coreference,CoreferenceAnnotation,3384,3394,0.75,E4,booknlp/2.0,,3,prop,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:de087b3d,coreference,CoreferenceAnnotation,3404,3407,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:9e40a6a2,coreference,CoreferenceAnnotation,3414,3418,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:7ad5a391,coreference,CoreferenceAnnotation,3414,3431,0.75,E4,booknlp/2.0,,59,nom,your own children
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a22a950b,coreference,CoreferenceAnnotation,3447,3450,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:b84670b6,coreference,CoreferenceAnnotation,3474,3476,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:6d818b59,coreference,CoreferenceAnnotation,3478,3481,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:bd3bef7a,coreference,CoreferenceAnnotation,3504,3506,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:b9be4029,coreference,CoreferenceAnnotation,3523,3526,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:7a67b026,coreference,CoreferenceAnnotation,3535,3537,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:1a0cd250,coreference,CoreferenceAnnotation,3539,3546,0.75,E4,booknlp/2.0,,28,nom,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:116c5b0e,coreference,CoreferenceAnnotation,3539,3541,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:6ef35d88,coreference,CoreferenceAnnotation,3548,3549,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:b564c2f8,coreference,CoreferenceAnnotation,3574,3578,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:c28100d8,coreference,CoreferenceAnnotation,3587,3591,0.75,E4,booknlp/2.0,,59,pron,your own children
+urn:palimpsest:pride-and-prejudice-ch1:coreference:cac81950,coreference,CoreferenceAnnotation,3596,3598,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:cacdb9b3,coreference,CoreferenceAnnotation,3612,3613,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:b54021e9,coreference,CoreferenceAnnotation,3625,3628,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:b8ec7b86,coreference,CoreferenceAnnotation,3637,3641,0.75,E4,booknlp/2.0,,59,pron,your own children
+urn:palimpsest:pride-and-prejudice-ch1:coreference:6d230bc8,coreference,CoreferenceAnnotation,3697,3700,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:cd305b66,coreference,CoreferenceAnnotation,3718,3719,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:81ade043,coreference,CoreferenceAnnotation,3735,3736,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:f219b1b3,coreference,CoreferenceAnnotation,3742,3745,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:47ec4c19,coreference,CoreferenceAnnotation,3780,3818,0.75,E4,booknlp/2.0,,62,nom,many young men of four thousand a year
+urn:palimpsest:pride-and-prejudice-ch1:coreference:a4ea877e,coreference,CoreferenceAnnotation,3829,3846,0.75,E4,booknlp/2.0,,50,nom,the neighbourhood
+urn:palimpsest:pride-and-prejudice-ch1:coreference:abb58620,coreference,CoreferenceAnnotation,3910,3913,0.75,E4,booknlp/2.0,,28,pron,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:603a161b,coreference,CoreferenceAnnotation,3929,3933,0.75,E4,booknlp/2.0,,62,pron,many young men of four thousand a year
+urn:palimpsest:pride-and-prejudice-ch1:coreference:453154fc,coreference,CoreferenceAnnotation,3954,3961,0.75,E4,booknlp/2.0,,28,nom,My dear
+urn:palimpsest:pride-and-prejudice-ch1:coreference:bd0e0043,coreference,CoreferenceAnnotation,3954,3956,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:d0946e51,coreference,CoreferenceAnnotation,3991,3992,0.75,E4,booknlp/2.0,,24,pron,he
+urn:palimpsest:pride-and-prejudice-ch1:coreference:136ef779,coreference,CoreferenceAnnotation,4004,4008,0.75,E4,booknlp/2.0,,62,pron,many young men of four thousand a year
+urn:palimpsest:pride-and-prejudice-ch1:coreference:c0fa343d,coreference,CoreferenceAnnotation,4016,4026,0.75,E4,booknlp/2.0,,3,prop,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:ab9e966a,coreference,CoreferenceAnnotation,4180,4183,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:13c4a351,coreference,CoreferenceAnnotation,4180,4188,0.75,E4,booknlp/2.0,,21,nom,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:72886d36,coreference,CoreferenceAnnotation,4200,4203,0.75,E4,booknlp/2.0,,3,pron,Mr. Bennet
+urn:palimpsest:pride-and-prejudice-ch1:coreference:88c355ae,coreference,CoreferenceAnnotation,4216,4219,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:88b7f28a,coreference,CoreferenceAnnotation,4258,4261,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:fc2f2fa5,coreference,CoreferenceAnnotation,4344,4347,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:ecdd19db,coreference,CoreferenceAnnotation,4366,4369,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:4f224782,coreference,CoreferenceAnnotation,4378,4385,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:59e22095,coreference,CoreferenceAnnotation,4411,4414,0.75,E4,booknlp/2.0,,21,pron,his wife
+urn:palimpsest:pride-and-prejudice-ch1:coreference:ce118d65,coreference,CoreferenceAnnotation,4431,4434,0.75,E4,booknlp/2.0,,21,pron,his wife

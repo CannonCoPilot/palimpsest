@@ -1,6 +1,6 @@
 {
-  "run_id": "06a5ca09a0d54584a806a944f38b399b",
-  "timestamp": "2026-06-08T00:01:14.331117+00:00",
+  "run_id": "42ea230fb84b46bfb346ef4eb8552ed5",
+  "timestamp": "2026-06-08T00:07:33.550114+00:00",
   "palimpsest_version": "0.1.0",
   "python_version": "3.12.12",
   "spacy_model": "en_core_web_lg",
@@ -44,5 +44,5 @@
     "alphabet.n_clusters": 16,
     "alphabet.random_state": 42
   },
-  "elapsed_seconds": 5.6
+  "elapsed_seconds": 5.4
 }
