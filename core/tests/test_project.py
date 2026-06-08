@@ -70,6 +70,15 @@ class TestIngestFile:
         assert len(para_anns) >= 5
         assert all(a.evidence_level == "E1" for a in para_anns)
 
+    def test_segments_manifest_created(self, pp_ch1_txt: Path, tmp_path: Path):
+        project = ingest_file(pp_ch1_txt, tmp_path)
+        manifest_path = project.path / "manifests" / "segments.manifest.json"
+        assert manifest_path.exists(), "segments.manifest.json not created during ingest"
+        import json
+        manifest = json.loads(manifest_path.read_text())
+        assert manifest["trackName"] == "segments"
+        assert "colorScheme" in manifest
+
     def test_paragraphs_method(self, pp_ch1_txt: Path, tmp_path: Path):
         project = ingest_file(pp_ch1_txt, tmp_path)
         paras = project.paragraphs()

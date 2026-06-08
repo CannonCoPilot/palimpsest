@@ -220,5 +220,19 @@ def ingest_file(
 
     write_track(project_dir / "tracks" / "segments.jsonl", seg_annotations)
 
+    manifest_dir = project_dir / "manifests"
+    manifest_dir.mkdir(exist_ok=True)
+    (manifest_dir / "segments.manifest.json").write_text(
+        json.dumps({
+            "trackName": "segments",
+            "bodyType": "palimpsest:SegmentAnnotation",
+            "colorScheme": {"primary": "#95a5a6", "secondary": "#bdc3c7"},
+            "textViewRendering": "none",
+            "overviewBarRendering": {"type": "none"},
+            "evidenceLevel": "E1",
+        }, indent=2),
+        encoding="utf-8",
+    )
+
     project = Project(path=project_dir, metadata=metadata)
     return project
