@@ -1,0 +1,13 @@
+{
+  "trackName": "coreference",
+  "bodyType": "palimpsest:CoreferenceAnnotation",
+  "colorScheme": {
+    "primary": "#14B8A6",
+    "secondary": "#0D9488"
+  },
+  "textViewRendering": "underline",
+  "overviewBarRendering": {
+    "type": "density-barcode",
+    "color": "#14B8A6"
+  }
+}

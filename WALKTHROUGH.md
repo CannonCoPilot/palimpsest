@@ -342,13 +342,50 @@ core/.venv/bin/python -c "import booknlp; print('BookNLP available')"
 core/.venv/bin/python -c "import spacy; spacy.load('en_core_web_sm'); print('en_core_web_sm OK')"
 ```
 
-**Step 3: Re-analyze with BookNLP**
+**Step 3: Patch BookNLP for Python 3.12 + modern transformers**
+
+BookNLP's saved model checkpoints include a key (`bert.embeddings.position_ids`) that newer
+versions of the transformers library removed. Fix this by adding `strict=False` to three files:
+
+```bash
+# Patch load_state_dict calls to tolerate the extra key
+for f in entity_tagger.py bert_qa.py litbank_coref.py; do
+  sed -i '' 's/load_state_dict(torch.load(/load_state_dict(torch.load(/; s/map_location=device))/map_location=device), strict=False)/' \
+    "core/.venv/lib/python3.12/site-packages/booknlp/english/$f"
+done
+```
+
+Or manually edit these three files and change `load_state_dict(torch.load(...))` to
+`load_state_dict(torch.load(...), strict=False)`:
+- `core/.venv/lib/python3.12/site-packages/booknlp/english/entity_tagger.py` (line 22)
+- `core/.venv/lib/python3.12/site-packages/booknlp/english/bert_qa.py` (line 20)
+- `core/.venv/lib/python3.12/site-packages/booknlp/english/litbank_coref.py` (line 19)
+
+**Step 4: Pre-cache HuggingFace models (one-time download)**
+
+BookNLP uses BERT base models from HuggingFace. Pre-cache them so subsequent runs don't
+need network access:
+
+```bash
+core/.venv/bin/python -c "
+import warnings; warnings.filterwarnings('ignore')
+from transformers import BertModel, BertTokenizer
+for m in ['google/bert_uncased_L-6_H-768_A-12', 'google/bert_uncased_L-12_H-768_A-12']:
+    print(f'Caching {m}...')
+    BertTokenizer.from_pretrained(m, do_lower_case=False, do_basic_tokenize=False)
+    BertModel.from_pretrained(m)
+print('Done — models cached in ~/.cache/huggingface/')
+"
+```
+
+**Step 5: Re-analyze with BookNLP**
 
 ```bash
 core/.venv/bin/palimpsest analyze projects/pride-and-prejudice-ch1 --force
 ```
 
-On first run, BookNLP downloads its transformer models (~1.5 GB). Subsequent runs use the cached models. When BookNLP is available, you get:
+On first run, BookNLP downloads its fine-tuned model weights (~1.5 GB to `~/booknlp_models/`).
+Subsequent runs use cached models with no network access. When BookNLP is available, you get:
 - **Coreference track** (`tracks/coreference.jsonl`) — links character mentions across the text
 - **Enhanced entity resolution** — canonical character names
 - **Speaker attribution** — who said each line of dialogue

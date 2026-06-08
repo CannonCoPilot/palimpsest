@@ -59,7 +59,12 @@ class CoreferenceExtractor:
                 "Also requires Java 11+. Coreference track will be skipped."
             )
 
+        import os
         import warnings
+
+        # Use cached HF models — don't hit the network on every run
+        os.environ.setdefault("HF_HUB_OFFLINE", "1")
+        os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
 
         with warnings.catch_warnings():
             warnings.filterwarnings("ignore", category=SyntaxWarning)
@@ -88,52 +93,66 @@ class CoreferenceExtractor:
                 project.metadata.id,
             )
 
+        entities_file = cache_dir / f"{project.metadata.id}.entities"
         tokens_file = cache_dir / f"{project.metadata.id}.tokens"
-        if not tokens_file.exists():
+        if not entities_file.exists() or not tokens_file.exists():
             raise FileNotFoundError(
-                f"BookNLP output not found at {tokens_file}"
+                f"BookNLP output not found at {cache_dir}"
             )
+
+        # Build token_id → byte offset mapping from .tokens file
+        token_offsets: dict[int, tuple[int, int]] = {}
+        with tokens_file.open() as f:
+            header = f.readline().strip().split("\t")
+            tid_idx = header.index("token_ID_within_document")
+            onset_idx = header.index("byte_onset")
+            offset_idx = header.index("byte_offset")
+            for line in f:
+                fields = line.strip().split("\t")
+                tid = int(fields[tid_idx])
+                token_offsets[tid] = (int(fields[onset_idx]), int(fields[offset_idx]))
+
+        # Read coreference chains from .entities file
+        chains: dict[int, list[dict[str, Any]]] = {}
+        with entities_file.open() as f:
+            f.readline()  # skip header: COREF start_token end_token prop cat text
+            for line in f:
+                fields = line.strip().split("\t")
+                if len(fields) < 6:
+                    continue
+                chain_id = int(fields[0])
+                start_tok = int(fields[1])
+                end_tok = int(fields[2])
+                mention_type = fields[3].lower()  # PROP/NOM/PRON
+                text = fields[5]
+
+                if start_tok not in token_offsets or end_tok not in token_offsets:
+                    continue
+                byte_start = token_offsets[start_tok][0]
+                byte_end = token_offsets[end_tok][1]
+
+                if chain_id not in chains:
+                    chains[chain_id] = []
+                chains[chain_id].append({
+                    "start": byte_start,
+                    "end": byte_end,
+                    "text": text,
+                    "mention_type": mention_type,
+                })
 
         annotations: list[Annotation] = []
         source_urn = f"urn:palimpsest:{project.metadata.id}"
 
-        chains: dict[int, list[dict[str, Any]]] = {}
-        with tokens_file.open() as f:
-            header = f.readline().strip().split("\t")
-            coref_idx = header.index("coref") if "coref" in header else -1
-            start_idx = header.index("byte_onset") if "byte_onset" in header else -1
-            end_idx = header.index("byte_offset") if "byte_offset" in header else -1
-            word_idx = header.index("word") if "word" in header else -1
-
-            if coref_idx < 0 or start_idx < 0 or end_idx < 0:
-                return []
-
-            for line in f:
-                fields = line.strip().split("\t")
-                if len(fields) <= max(coref_idx, start_idx, end_idx):
-                    continue
-                chain_id_str = fields[coref_idx]
-                if chain_id_str == "-1" or chain_id_str == "":
-                    continue
-                chain_id = int(chain_id_str)
-                if chain_id not in chains:
-                    chains[chain_id] = []
-                chains[chain_id].append({
-                    "start": int(fields[start_idx]),
-                    "end": int(fields[end_idx]),
-                    "word": fields[word_idx] if word_idx >= 0 else "",
-                })
-
         for chain_id, mentions in chains.items():
             if len(mentions) < 2:
                 continue
-            referent = mentions[0]["word"]
+            referent = mentions[0]["text"]
             for mention in mentions:
                 ann = Annotation(
                     body=coreference_body(
                         chain_id=str(chain_id),
                         referent_id=referent,
-                        mention_type="name",
+                        mention_type=mention["mention_type"],
                     ),
                     target=Target(
                         source=source_urn,

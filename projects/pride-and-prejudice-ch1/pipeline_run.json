@@ -1,6 +1,6 @@
 {
-  "run_id": "48cfc39165cc4996bd838731d23c2317",
-  "timestamp": "2026-06-07T23:35:42.463417+00:00",
+  "run_id": "06a5ca09a0d54584a806a944f38b399b",
+  "timestamp": "2026-06-08T00:01:14.331117+00:00",
   "palimpsest_version": "0.1.0",
   "python_version": "3.12.12",
   "spacy_model": "en_core_web_lg",
@@ -11,17 +11,15 @@
     "entities",
     "lexical",
     "sentiment",
-    "topics"
+    "topics",
+    "coreference"
   ],
   "signals_computed": [
     "narrative_arc",
     "rqa",
-    "alphabet",
-    "topics_dist",
-    "narrative_arc",
-    "rqa",
     "self_similarity",
-    "alphabet"
+    "alphabet",
+    "topics_dist"
   ],
   "parameters": {
     "dialogue.max_attribution_window": 100,
@@ -41,8 +39,10 @@
     "topics.random_state": 42,
     "topics.max_iter": 20,
     "topics.min_df": 2,
+    "coreference.model": "booknlp/big",
+    "coreference.available": true,
     "alphabet.n_clusters": 16,
     "alphabet.random_state": 42
   },
-  "elapsed_seconds": 5.4
+  "elapsed_seconds": 5.6
 }

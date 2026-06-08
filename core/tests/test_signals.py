@@ -224,9 +224,13 @@ class TestCoreference:
             with pytest.raises(FileNotFoundError, match="BookNLP not installed"):
                 track.extract(small_project)
         else:
-            # BookNLP installed but may fail at runtime (model/version issues)
-            with pytest.raises((FileNotFoundError, RuntimeError)):
-                track.extract(small_project)
+            # BookNLP installed — may succeed (returning annotations list)
+            # or fail at runtime (model/version issues)
+            try:
+                result = track.extract(small_project)
+                assert isinstance(result, list)
+            except (FileNotFoundError, RuntimeError):
+                pass
 
     def test_manifest(self):
         from palimpsest.tracks.coreference import CoreferenceExtractor
