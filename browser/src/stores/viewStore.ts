@@ -7,6 +7,7 @@ import type { W3CAnnotation } from '../adapters/AnnotationAdapter';
 
 export type ZoomLevel = 'work' | 'chapter' | 'paragraph' | 'sentence';
 export type TabId = 'reading' | 'texthic' | 'characters' | 'analysis';
+export type CoordinateSystem = 'paragraph' | 'character' | 'section';
 
 const ZOOM_ORDER: ZoomLevel[] = ['work', 'chapter', 'paragraph', 'sentence'];
 
@@ -19,8 +20,10 @@ interface ViewState {
   helpOpen: boolean;
   zoomLevel: ZoomLevel;
   visibleParagraphRange: [number, number] | null;
+  coordinateSystem: CoordinateSystem;
 
   setActiveTab: (tab: TabId) => void;
+  setCoordinateSystem: (cs: CoordinateSystem) => void;
   setSelectedParagraphIndex: (index: number | null) => void;
   selectAnnotation: (ann: W3CAnnotation | null) => void;
   requestScrollToParagraph: (index: number) => void;
@@ -42,7 +45,9 @@ export const useViewStore = create<ViewState>((set, get) => ({
   helpOpen: false,
   zoomLevel: 'paragraph',
   visibleParagraphRange: null,
+  coordinateSystem: 'paragraph',
 
+  setCoordinateSystem: (cs): void => set({ coordinateSystem: cs }),
   setActiveTab: (tab): void => {
     set({ activeTab: tab });
     if (tab === 'texthic') set({ textHicOpen: true });

@@ -24,12 +24,12 @@ function collectVisibleAnnotations(
     if (name === 'segments') continue;
     const state = trackStates[name];
     if (state && !state.visible) continue;
+    if (state?.displayMode === 'dense') continue;
     const threshold = state?.confidenceThreshold ?? 0;
-    if (threshold > 0) {
-      all.push(...anns.filter((a) => (a['palimpsest:confidence'] ?? 1) >= threshold));
-    } else {
-      all.push(...anns);
-    }
+    const filtered = threshold > 0
+      ? anns.filter((a) => (a['palimpsest:confidence'] ?? 1) >= threshold)
+      : anns;
+    all.push(...filtered);
   }
   return all;
 }

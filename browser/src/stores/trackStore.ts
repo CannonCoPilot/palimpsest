@@ -18,7 +18,9 @@ export interface TrackState {
 
 interface TrackStoreState {
   tracks: Record<string, TrackState>;
+  trackOrder: string[];
   setTracks: (tracks: Record<string, TrackState>) => void;
+  setTrackOrder: (order: string[]) => void;
   toggleTrack: (name: string) => void;
   toggleTrackByIndex: (index: number) => void;
   setConfidenceThreshold: (name: string, threshold: number) => void;
@@ -27,8 +29,16 @@ interface TrackStoreState {
 
 export const useTrackStore = create<TrackStoreState>((set) => ({
   tracks: {},
+  trackOrder: [],
 
-  setTracks: (tracks): void => set({ tracks }),
+  setTracks: (tracks): void => set((state) => ({
+    tracks,
+    trackOrder: state.trackOrder.length > 0
+      ? state.trackOrder.filter((n) => n in tracks)
+      : Object.keys(tracks).filter((n) => n !== 'segments').sort(),
+  })),
+
+  setTrackOrder: (order): void => set({ trackOrder: order }),
 
   toggleTrack: (name): void =>
     set((state) => {

@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
+import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import { useProjectStore } from '../../stores/projectStore';
 import { useTrackStore, type DisplayMode } from '../../stores/trackStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
@@ -19,6 +22,7 @@ const MODE_LABELS: { mode: DisplayMode; label: string; tip: string }[] = [
 ];
 
 interface TrackRowProps {
+  id: string;
   name: string;
   count: number;
   color: string;
@@ -32,12 +36,23 @@ interface TrackRowProps {
   onThresholdChange: (value: number) => void;
 }
 
-function TrackRow({ name, count, color, visible, shortcut, evidenceLevel, displayMode, confidenceThreshold, onToggle, onModeChange, onThresholdChange }: TrackRowProps) {
+function SortableTrackRow(props: TrackRowProps) {
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: props.id });
   const [expanded, setExpanded] = useState(false);
+  const { name, count, color, visible, shortcut, evidenceLevel, displayMode, confidenceThreshold, onToggle, onModeChange, onThresholdChange } = props;
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: visible ? 1 : 0.4,
+  };
 
   return (
-    <div className="border-b border-[var(--color-border-subtle)]" style={{ opacity: visible ? 1 : 0.4 }}>
+    <div ref={setNodeRef} style={style} className="border-b border-[var(--color-border-subtle)]">
       <div className="flex items-center gap-1.5 py-1">
+        <Tooltip content="Drag to reorder" side="left">
+          <span {...attributes} {...listeners} className="cursor-grab text-[0.7em] text-[var(--color-text-muted)] select-none">⠿</span>
+        </Tooltip>
         <div
           className="w-2.5 h-2.5 rounded-sm shrink-0 cursor-pointer"
           style={{ backgroundColor: color }}
@@ -49,10 +64,7 @@ function TrackRow({ name, count, color, visible, shortcut, evidenceLevel, displa
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } }}
         />
         <Tooltip content="Click to expand settings" side="right">
-          <span
-            className="flex-1 text-[0.9em] cursor-pointer truncate"
-            onClick={() => setExpanded(!expanded)}
-          >
+          <span className="flex-1 text-[0.9em] cursor-pointer truncate" onClick={() => setExpanded(!expanded)}>
             {name}
           </span>
         </Tooltip>
@@ -83,7 +95,7 @@ function TrackRow({ name, count, color, visible, shortcut, evidenceLevel, displa
         </kbd>
       </div>
       {expanded && visible && (
-        <div className="flex items-center gap-1.5 pb-1.5 pl-4 pr-1">
+        <div className="flex items-center gap-1.5 pb-1.5 pl-6 pr-1">
           <Tooltip content={`Min confidence: ${Math.round(confidenceThreshold * 100)}%`} side="bottom">
             <span className="text-[0.65em] text-[var(--color-text-muted)] w-5 text-right">
               {Math.round(confidenceThreshold * 100)}%
@@ -107,10 +119,24 @@ function TrackRow({ name, count, color, visible, shortcut, evidenceLevel, displa
 export default function TrackPanel() {
   const projectTracks = useProjectStore((s) => s.tracks);
   const trackStates = useTrackStore((s) => s.tracks);
+  const trackOrder = useTrackStore((s) => s.trackOrder);
+  const setTrackOrder = useTrackStore((s) => s.setTrackOrder);
   const toggleTrack = useTrackStore((s) => s.toggleTrack);
   const setDisplayMode = useTrackStore((s) => s.setDisplayMode);
   const setConfidenceThreshold = useTrackStore((s) => s.setConfidenceThreshold);
-  const trackNames = Object.keys(projectTracks).filter((n) => n !== 'segments').sort();
+
+  const trackNames = trackOrder.length > 0
+    ? trackOrder.filter((n) => n in projectTracks && n !== 'segments')
+    : Object.keys(projectTracks).filter((n) => n !== 'segments').sort();
+
+  function handleDragEnd(event: DragEndEvent) {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+    const oldIndex = trackNames.indexOf(active.id as string);
+    const newIndex = trackNames.indexOf(over.id as string);
+    if (oldIndex === -1 || newIndex === -1) return;
+    setTrackOrder(arrayMove(trackNames, oldIndex, newIndex));
+  }
 
   return (
     <aside
@@ -118,22 +144,27 @@ export default function TrackPanel() {
       className="w-[var(--width-track-panel)] border-r border-[var(--color-border)] overflow-y-auto p-2 text-[0.85em]"
     >
       <div className="font-bold mb-2">Tracks</div>
-      {trackNames.map((name, idx) => (
-        <TrackRow
-          key={name}
-          name={name}
-          count={projectTracks[name]?.length ?? 0}
-          color={TRACK_COLORS[name] ?? '#888'}
-          visible={trackStates[name]?.visible ?? true}
-          shortcut={idx + 1}
-          evidenceLevel={trackStates[name]?.manifest?.evidenceLevel ?? EVIDENCE_LEVEL_FALLBACK[name] ?? 'E5'}
-          displayMode={trackStates[name]?.displayMode ?? 'inline'}
-          confidenceThreshold={trackStates[name]?.confidenceThreshold ?? 0}
-          onToggle={() => toggleTrack(name)}
-          onModeChange={(mode) => setDisplayMode(name, mode)}
-          onThresholdChange={(val) => setConfidenceThreshold(name, val)}
-        />
-      ))}
+      <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+        <SortableContext items={trackNames} strategy={verticalListSortingStrategy}>
+          {trackNames.map((name, idx) => (
+            <SortableTrackRow
+              key={name}
+              id={name}
+              name={name}
+              count={projectTracks[name]?.length ?? 0}
+              color={TRACK_COLORS[name] ?? '#888'}
+              visible={trackStates[name]?.visible ?? true}
+              shortcut={idx + 1}
+              evidenceLevel={trackStates[name]?.manifest?.evidenceLevel ?? EVIDENCE_LEVEL_FALLBACK[name] ?? 'E5'}
+              displayMode={trackStates[name]?.displayMode ?? 'inline'}
+              confidenceThreshold={trackStates[name]?.confidenceThreshold ?? 0}
+              onToggle={() => toggleTrack(name)}
+              onModeChange={(mode) => setDisplayMode(name, mode)}
+              onThresholdChange={(val) => setConfidenceThreshold(name, val)}
+            />
+          ))}
+        </SortableContext>
+      </DndContext>
       {trackNames.length === 0 && (
         <div className="text-[var(--color-text-muted)] italic">No tracks loaded</div>
       )}

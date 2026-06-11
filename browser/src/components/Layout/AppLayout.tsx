@@ -17,6 +17,7 @@ import SectionNav from '../common/SectionNav';
 import ErrorBoundary from '../common/ErrorBoundary';
 import TabBar from './TabBar';
 import NavigationToolbar from './NavigationToolbar';
+import CoordinateRuler from './CoordinateRuler';
 
 export default function AppLayout() {
   const { loadingState, error, metadata, paragraphs, tracks } = useProjectStore();
@@ -73,6 +74,7 @@ export default function AppLayout() {
 
       <TabBar />
 
+      {activeTab === 'reading' && <CoordinateRuler />}
       {activeTab === 'reading' && <TextSearch />}
 
       <div className="flex-1 flex overflow-hidden">

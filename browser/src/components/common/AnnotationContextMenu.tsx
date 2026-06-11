@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { useViewStore } from '../../stores/viewStore';
 import { useProjectStore } from '../../stores/projectStore';
+import { useSearchStore } from '../../stores/searchStore';
 
 interface Props {
   annotation: W3CAnnotation;
@@ -34,6 +35,18 @@ export default function AnnotationContextMenu({ annotation, children }: Props) {
     useViewStore.getState().selectAnnotation(annotation);
   };
 
+  const handleShowAllMentions = () => {
+    const value = annotation.body.value;
+    const canonicalName = (annotation.body as Record<string, unknown>)['palimpsest:canonicalName'] as string | undefined;
+    const searchTerm = canonicalName || value || '';
+    if (searchTerm) {
+      const { referenceText, paragraphs } = useProjectStore.getState();
+      const search = useSearchStore.getState();
+      search.open();
+      search.setQuery(searchTerm, referenceText, paragraphs);
+    }
+  };
+
   return (
     <ContextMenu.Root>
       <ContextMenu.Trigger className="inline">{children}</ContextMenu.Trigger>
@@ -62,6 +75,13 @@ export default function AnnotationContextMenu({ annotation, children }: Props) {
             onSelect={handleNavigate}
           >
             Navigate to position
+          </ContextMenu.Item>
+          <ContextMenu.Separator className="h-px bg-[var(--color-border-subtle)] my-0.5" />
+          <ContextMenu.Item
+            className="px-3 py-1.5 text-[var(--color-text)] cursor-pointer hover:bg-[var(--color-bg-muted)] outline-none data-[highlighted]:bg-[var(--color-bg-muted)]"
+            onSelect={handleShowAllMentions}
+          >
+            Show all mentions
           </ContextMenu.Item>
         </ContextMenu.Content>
       </ContextMenu.Portal>

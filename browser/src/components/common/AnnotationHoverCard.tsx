@@ -2,9 +2,10 @@ import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 
 interface Props {
   annotation: W3CAnnotation;
+  excerpt?: string;
 }
 
-export default function AnnotationHoverCard({ annotation }: Props) {
+export default function AnnotationHoverCard({ annotation, excerpt }: Props) {
   const body = annotation.body as Record<string, unknown>;
   const typeName = annotation.body.type.replace('palimpsest:', '');
   const confidence = (annotation['palimpsest:confidence'] as number) ?? 0;
@@ -30,6 +31,8 @@ export default function AnnotationHoverCard({ annotation }: Props) {
   else if (headingText) subtitle = headingText;
   else if (topicLabel) subtitle = String(topicLabel);
 
+  const displayExcerpt = excerpt && excerpt.length > 60 ? excerpt.slice(0, 60) + '...' : excerpt;
+
   return (
     <div className="min-w-[180px] max-w-[280px]">
       <div className="flex items-center gap-1.5 mb-1">
@@ -37,7 +40,10 @@ export default function AnnotationHoverCard({ annotation }: Props) {
         <span className="px-1 text-[0.6em] rounded-sm bg-white/20 text-white/80 font-bold">{evidenceLevel}</span>
       </div>
       {subtitle && (
-        <div className="text-white/80 text-[0.75em] mb-1.5 leading-snug line-clamp-2">{subtitle}</div>
+        <div className="text-white/80 text-[0.75em] mb-1 leading-snug line-clamp-2">{subtitle}</div>
+      )}
+      {displayExcerpt && (
+        <div className="text-white/60 text-[0.7em] italic mb-1.5 leading-snug line-clamp-1">"{displayExcerpt}"</div>
       )}
       <div className="flex items-center gap-1.5">
         <div className="flex-1 h-1 rounded-full bg-white/20 overflow-hidden">

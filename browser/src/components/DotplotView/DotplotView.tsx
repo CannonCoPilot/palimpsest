@@ -1,9 +1,3 @@
-/**
- * TextHiCView — Canvas-rendered self-similarity matrix heatmap (TextHiC).
- * Loads the self_similarity signal and renders it as an interactive heatmap.
- * Click a cell to navigate to the corresponding paragraphs.
- */
-
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useViewStore } from '../../stores/viewStore';
 import { useProjectStore } from '../../stores/projectStore';
@@ -45,6 +39,9 @@ export default function DotplotView(): JSX.Element | null {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [hoveredCell, setHoveredCell] = useState<{ i: number; j: number } | null>(null);
+  const [brushStart, setBrushStart] = useState<{ i: number; j: number } | null>(null);
+  const [brushEnd, setBrushEnd] = useState<{ i: number; j: number } | null>(null);
+  const brushing = useRef(false);
 
   useEffect(() => {
     if (!textHicOpen || !projectId) return;
@@ -140,41 +137,82 @@ export default function DotplotView(): JSX.Element | null {
       ctx.lineTo(hoveredCell.j * cellSize + cellSize / 2, size);
       ctx.stroke();
     }
-  }, [hoveredCell, n]);
 
-  const handleCanvasMouseMove = useCallback(
+    if (brushStart && brushEnd) {
+      const cellSize = size / n;
+      const bx = Math.min(brushStart.j, brushEnd.j) * cellSize;
+      const by = Math.min(brushStart.i, brushEnd.i) * cellSize;
+      const bw = (Math.abs(brushEnd.j - brushStart.j) + 1) * cellSize;
+      const bh = (Math.abs(brushEnd.i - brushStart.i) + 1) * cellSize;
+      ctx.strokeStyle = 'rgba(52, 152, 219, 0.9)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(bx, by, bw, bh);
+      ctx.fillStyle = 'rgba(52, 152, 219, 0.1)';
+      ctx.fillRect(bx, by, bw, bh);
+    }
+  }, [hoveredCell, brushStart, brushEnd, n]);
+
+  const getCellFromEvent = useCallback(
     (e: React.MouseEvent<HTMLCanvasElement>) => {
-      if (!signal || n === 0) return;
+      if (!signal || n === 0) return null;
       const canvas = canvasRef.current;
-      if (!canvas) return;
+      if (!canvas) return null;
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       const cellSize = canvas.width / n;
-      const i = Math.min(Math.floor(y / cellSize), n - 1);
-      const j = Math.min(Math.floor(x / cellSize), n - 1);
-      setHoveredCell({ i, j });
+      return {
+        i: Math.min(Math.max(Math.floor(y / cellSize), 0), n - 1),
+        j: Math.min(Math.max(Math.floor(x / cellSize), 0), n - 1),
+      };
     },
     [signal, n],
   );
 
-  const handleCanvasClick = useCallback(
+  const handleCanvasMouseMove = useCallback(
     (e: React.MouseEvent<HTMLCanvasElement>) => {
-      if (!signal || n === 0) return;
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cellSize = canvas.width / n;
-      const i = Math.min(Math.floor(y / cellSize), n - 1);
-      const j = Math.min(Math.floor(x / cellSize), n - 1);
-
-      const targetParagraph = e.shiftKey ? j : i;
-      setSelectedParagraphIndex(targetParagraph);
-      requestScrollToParagraph(targetParagraph);
+      const cell = getCellFromEvent(e);
+      if (!cell) return;
+      setHoveredCell(cell);
+      if (brushing.current) {
+        setBrushEnd(cell);
+      }
     },
-    [signal, n, setSelectedParagraphIndex, requestScrollToParagraph],
+    [getCellFromEvent],
+  );
+
+  const handleCanvasMouseDown = useCallback(
+    (e: React.MouseEvent<HTMLCanvasElement>) => {
+      const cell = getCellFromEvent(e);
+      if (!cell) return;
+      brushing.current = true;
+      setBrushStart(cell);
+      setBrushEnd(cell);
+    },
+    [getCellFromEvent],
+  );
+
+  const handleCanvasMouseUp = useCallback(
+    () => {
+      if (!brushing.current || !brushStart || !brushEnd) {
+        brushing.current = false;
+        return;
+      }
+      brushing.current = false;
+      const rowMin = Math.min(brushStart.i, brushEnd.i);
+      const rowMax = Math.max(brushStart.i, brushEnd.i);
+      if (rowMax - rowMin < 1) {
+        setSelectedParagraphIndex(rowMin);
+        requestScrollToParagraph(rowMin);
+      } else {
+        setSelectedParagraphIndex(rowMin);
+        requestScrollToParagraph(rowMin);
+        useViewStore.getState().setActiveTab('reading');
+      }
+      setBrushStart(null);
+      setBrushEnd(null);
+    },
+    [brushStart, brushEnd, setSelectedParagraphIndex, requestScrollToParagraph],
   );
 
   const activeTab = useViewStore((s) => s.activeTab);
@@ -189,44 +227,32 @@ export default function DotplotView(): JSX.Element | null {
   return (
     <div
       ref={containerRef}
+      className="p-2 min-h-[200px] flex flex-col bg-[var(--color-bg-subtle)]"
       style={{
         borderTop: isTabMode ? undefined : '1px solid #ddd',
-        padding: '8px',
         height: isTabMode ? '100%' : '35vh',
-        minHeight: '200px',
-        display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: '#fafafa',
         flex: isTabMode ? 1 : undefined,
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '4px',
-          fontSize: '0.85em',
-        }}
-      >
-        <span style={{ fontWeight: 'bold' }}>
+      <div className="flex justify-between items-center mb-[4px] text-[0.85em]">
+        <span className="font-bold">
           Self-Similarity Matrix
           {hoveredCell && hoverValue != null
             ? ` — [${hoveredCell.i}, ${hoveredCell.j}]: ${hoverValue.toFixed(3)}`
             : ''}
         </span>
-        <span style={{ color: '#999' }}>
+        <span className="text-[var(--color-text-muted)]">
           {n > 0 ? `${n}×${n} paragraphs` : ''}
           {' · Click to navigate · Shift+click for column'}
         </span>
       </div>
       {loading && (
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>
+        <div className="flex-1 flex items-center justify-center text-[var(--color-text-muted)]">
           Loading self-similarity matrix...
         </div>
       )}
       {error && (
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#b91c1c' }}>
+        <div className="flex-1 flex items-center justify-center text-[#b91c1c]">
           {error}
         </div>
       )}
@@ -234,13 +260,12 @@ export default function DotplotView(): JSX.Element | null {
         <canvas
           ref={canvasRef}
           onMouseMove={handleCanvasMouseMove}
-          onMouseLeave={() => setHoveredCell(null)}
-          onClick={handleCanvasClick}
+          onMouseDown={handleCanvasMouseDown}
+          onMouseUp={handleCanvasMouseUp}
+          onMouseLeave={() => { setHoveredCell(null); if (brushing.current) handleCanvasMouseUp(); }}
+          className="flex-1 cursor-crosshair object-contain"
           style={{
-            flex: 1,
-            cursor: 'crosshair',
-            maxHeight: 'calc(35vh - 40px)',
-            objectFit: 'contain',
+            maxHeight: isTabMode ? undefined : 'calc(35vh - 40px)',
           }}
         />
       )}

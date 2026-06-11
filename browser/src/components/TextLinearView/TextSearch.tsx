@@ -1,8 +1,3 @@
-/**
- * TextSearch — type-ahead search bar with match navigation.
- * Opens via Ctrl+F or /; closes on Escape.
- */
-
 import { useCallback, useEffect, useRef } from 'react';
 import { useSearchStore } from '../../stores/searchStore';
 import { useProjectStore } from '../../stores/projectStore';
@@ -61,17 +56,7 @@ export default function TextSearch(): JSX.Element | null {
         : '';
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '8px',
-        padding: '6px 12px',
-        backgroundColor: '#f8f9fa',
-        borderBottom: '1px solid #ddd',
-        fontSize: '0.85em',
-      }}
-    >
+    <div className="flex items-center gap-2 px-3 py-[6px] bg-[var(--color-bg-overlay)] border-b border-[var(--color-border)] text-[0.85em]">
       <input
         ref={inputRef}
         type="text"
@@ -79,33 +64,23 @@ export default function TextSearch(): JSX.Element | null {
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder="Search..."
-        style={{
-          flex: 1,
-          padding: '4px 8px',
-          border: '1px solid #ccc',
-          borderRadius: '3px',
-          fontSize: '1em',
-        }}
+        className="flex-1 px-2 py-[4px] border border-[#ccc] rounded-[3px] text-[1em]"
       />
 
       <Tooltip content="Toggle case sensitivity" side="bottom">
         <button
           onClick={handleToggleCase}
+          className="px-[6px] py-[2px] border border-[#ccc] rounded-[3px] font-bold cursor-pointer"
           style={{
-            padding: '2px 6px',
-            border: '1px solid #ccc',
-            borderRadius: '3px',
             backgroundColor: caseSensitive ? '#3498db' : 'transparent',
             color: caseSensitive ? '#fff' : '#666',
-            cursor: 'pointer',
-            fontWeight: 'bold',
           }}
         >
           Aa
         </button>
       </Tooltip>
 
-      <span style={{ color: '#888', minWidth: '70px', textAlign: 'center' }} aria-live="polite">
+      <span className="text-[#888] min-w-[70px] text-center" aria-live="polite">
         {matchText}
       </span>
 
@@ -113,7 +88,8 @@ export default function TextSearch(): JSX.Element | null {
         <button
           onClick={() => useSearchStore.getState().prevMatch()}
           disabled={matches.length === 0}
-          style={{ padding: '2px 6px', cursor: matches.length ? 'pointer' : 'default' }}
+          className="px-[6px] py-[2px]"
+          style={{ cursor: matches.length ? 'pointer' : 'default' }}
         >
           ↑
         </button>
@@ -122,7 +98,8 @@ export default function TextSearch(): JSX.Element | null {
         <button
           onClick={() => useSearchStore.getState().nextMatch()}
           disabled={matches.length === 0}
-          style={{ padding: '2px 6px', cursor: matches.length ? 'pointer' : 'default' }}
+          className="px-[6px] py-[2px]"
+          style={{ cursor: matches.length ? 'pointer' : 'default' }}
         >
           ↓
         </button>
@@ -131,7 +108,7 @@ export default function TextSearch(): JSX.Element | null {
       <Tooltip content="Close search (Escape)" side="bottom">
         <button
           onClick={() => useSearchStore.getState().close()}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', fontSize: '1.2em' }}
+          className="bg-none border-none cursor-pointer text-[var(--color-text-muted)] text-[1.2em]"
         >
           ✕
         </button>

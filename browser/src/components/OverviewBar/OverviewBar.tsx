@@ -4,6 +4,7 @@ import { useTrackStore } from '../../stores/trackStore';
 import { useSearchStore } from '../../stores/searchStore';
 import { useViewStore } from '../../stores/viewStore';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
+import type { TrackManifest } from '../../adapters/TrackManifest';
 import { TRACK_COLORS } from '../../utils/trackColors';
 import { Tooltip } from '../common/Tooltip';
 
@@ -11,6 +12,7 @@ interface BarcodeProps {
   label: string;
   annotations: W3CAnnotation[];
   color: string;
+  manifest: TrackManifest | null;
   documentLength: number;
   width: number;
   height: number;
@@ -21,15 +23,70 @@ interface BarcodeProps {
   onClickPosition: (fraction: number) => void;
 }
 
-function DensityBarcode({ label, annotations, color, documentLength, width, height, visible, viewportStart, viewportEnd, dragRange, onClickPosition }: BarcodeProps) {
+function renderStateBand(annotations: W3CAnnotation[], manifest: TrackManifest | null, documentLength: number, width: number, height: number) {
+  const scale = manifest?.colorScheme?.scale;
+  return annotations.map((ann, i) => {
+    const sel = ann.target.selector;
+    if (sel.type !== 'TextPositionSelector' || sel.start == null || sel.end == null) return null;
+    const x = (sel.start / documentLength) * width;
+    const w = Math.max(1, ((sel.end - sel.start) / documentLength) * width);
+    const stateId = (ann.body as Record<string, unknown>)['palimpsest:stateId'];
+    let fill = manifest?.colorScheme?.primary ?? '#888';
+    if (scale && typeof stateId === 'number') {
+      const val = scale[String(stateId)];
+      if (val) fill = val;
+    }
+    return <rect key={i} x={x} y={0} width={w} height={height} fill={fill} fillOpacity={0.7} />;
+  });
+}
+
+function renderABBand(annotations: W3CAnnotation[], manifest: TrackManifest | null, documentLength: number, width: number, height: number) {
+  const primary = manifest?.colorScheme?.primary ?? '#c0392b';
+  const secondary = manifest?.colorScheme?.secondary ?? '#2980b9';
+  return annotations.map((ann, i) => {
+    const sel = ann.target.selector;
+    if (sel.type !== 'TextPositionSelector' || sel.start == null || sel.end == null) return null;
+    const x = (sel.start / documentLength) * width;
+    const w = Math.max(1, ((sel.end - sel.start) / documentLength) * width);
+    const compartment = (ann.body as Record<string, unknown>)['palimpsest:compartment'];
+    const fill = compartment === 'A' ? primary : secondary;
+    return <rect key={i} x={x} y={0} width={w} height={height} fill={fill} fillOpacity={0.6} />;
+  });
+}
+
+function renderDensityTicks(annotations: W3CAnnotation[], color: string, documentLength: number, width: number, height: number) {
+  return annotations.map((ann, i) => {
+    const sel = ann.target.selector;
+    if (sel.type !== 'TextPositionSelector' || sel.start == null) return null;
+    const x = (sel.start / documentLength) * width;
+    return <line key={i} x1={x} y1={0} x2={x} y2={height} stroke={color} strokeOpacity={0.6} />;
+  });
+}
+
+function findNearestAnnotation(annotations: W3CAnnotation[], charOffset: number): W3CAnnotation | null {
+  let best: W3CAnnotation | null = null;
+  let bestDist = Infinity;
+  for (const ann of annotations) {
+    const s = ann.target.selector;
+    if (s.type !== 'TextPositionSelector' || s.start == null) continue;
+    const dist = Math.abs(s.start - charOffset);
+    if (dist < bestDist) { bestDist = dist; best = ann; }
+  }
+  return bestDist < 500 ? best : null;
+}
+
+function TrackBarcode({ label, annotations, color, manifest, documentLength, width, height, visible, viewportStart, viewportEnd, dragRange, onClickPosition }: BarcodeProps) {
+  const [hoverInfo, setHoverInfo] = useState<string | null>(null);
+  const [hoverX, setHoverX] = useState(0);
+
   const vpX = (viewportStart / documentLength) * width;
   const vpW = Math.max(2, ((viewportEnd - viewportStart) / documentLength) * width);
-
   const dragX = dragRange ? (dragRange[0] / documentLength) * width : 0;
   const dragW = dragRange ? ((dragRange[1] - dragRange[0]) / documentLength) * width : 0;
+  const renderType = manifest?.overviewBarRendering?.type ?? 'density-barcode';
 
   return (
-    <div className="flex items-center gap-1" style={{ opacity: visible ? 1 : 0.3 }}>
+    <div className="flex items-center gap-1 relative" style={{ opacity: visible ? 1 : 0.3 }}>
       <Tooltip content={`${label} — ${annotations.length} annotations`} side="top">
         <span className="w-[60px] text-[0.7em] text-[var(--color-text-muted)] text-right truncate">{label}</span>
       </Tooltip>
@@ -37,7 +94,7 @@ function DensityBarcode({ label, annotations, color, documentLength, width, heig
         width={width}
         height={height}
         role="img"
-        aria-label={`${label} density`}
+        aria-label={`${label} ${renderType}`}
         className="cursor-crosshair select-none"
         onClick={(e) => {
           if (!dragRange) {
@@ -45,20 +102,40 @@ function DensityBarcode({ label, annotations, color, documentLength, width, heig
             onClickPosition((e.clientX - rect.left) / rect.width);
           }
         }}
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          const frac = (e.clientX - rect.left) / rect.width;
+          const charOffset = Math.round(frac * documentLength);
+          setHoverX(e.clientX - rect.left);
+          const nearest = findNearestAnnotation(annotations, charOffset);
+          if (nearest) {
+            const t = nearest.body.type.replace('palimpsest:', '');
+            const v = nearest.body.value || '';
+            setHoverInfo(`${t}${v ? ': ' + v.slice(0, 40) : ''}`);
+          } else {
+            setHoverInfo(null);
+          }
+        }}
+        onMouseLeave={() => setHoverInfo(null)}
       >
         <rect width={width} height={height} fill="#f8f8f8" />
         <rect x={vpX} y={0} width={vpW} height={height} fill={color} fillOpacity={0.08} />
-        {annotations.map((ann, i) => {
-          const sel = ann.target.selector;
-          if (sel.type !== 'TextPositionSelector' || sel.start == null) return null;
-          const x = (sel.start / documentLength) * width;
-          return <line key={i} x1={x} y1={0} x2={x} y2={height} stroke={color} strokeOpacity={0.6} />;
-        })}
+        {renderType === 'state-band' && renderStateBand(annotations, manifest, documentLength, width, height)}
+        {renderType === 'ab-band' && renderABBand(annotations, manifest, documentLength, width, height)}
+        {renderType === 'density-barcode' && renderDensityTicks(annotations, color, documentLength, width, height)}
         <rect x={vpX} y={0} width={vpW} height={height} fill="none" stroke={color} strokeWidth={1} strokeOpacity={0.4} rx={1} />
         {dragRange && (
           <rect x={dragX} y={0} width={Math.max(1, dragW)} height={height} fill={color} fillOpacity={0.25} stroke={color} strokeWidth={1} rx={1} />
         )}
       </svg>
+      {hoverInfo && (
+        <div
+          className="absolute -mt-6 px-1.5 py-0.5 text-[0.6em] bg-[#1a1a1a] text-white rounded-sm whitespace-nowrap pointer-events-none z-[var(--z-tooltip)]"
+          style={{ left: `${hoverX + 64}px` }}
+        >
+          {hoverInfo}
+        </div>
+      )}
     </div>
   );
 }
@@ -161,11 +238,12 @@ export default function OverviewBar() {
       onMouseLeave={() => { if (dragging.current) handleMouseUp(); }}
     >
       {trackNames.map((name) => (
-        <DensityBarcode
+        <TrackBarcode
           key={name}
           label={name}
           annotations={tracks[name] ?? []}
           color={TRACK_COLORS[name] ?? '#888'}
+          manifest={trackStates[name]?.manifest ?? null}
           documentLength={docLen}
           width={barWidth}
           height={12}

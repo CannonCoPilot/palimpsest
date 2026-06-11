@@ -308,7 +308,7 @@ export default function AnnotationOverlay({
     elements.push(
       topAnn ? (
         <AnnotationContextMenu key={`c-${i}`} annotation={topAnn}>
-          <Tooltip content={<AnnotationHoverCard annotation={topAnn} />} side="bottom" delayDuration={400}>
+          <Tooltip content={<AnnotationHoverCard annotation={topAnn} excerpt={text.slice(seg.start, seg.end)} />} side="bottom" delayDuration={400}>
             {span}
           </Tooltip>
         </AnnotationContextMenu>

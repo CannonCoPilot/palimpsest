@@ -1,7 +1,3 @@
-/**
- * HelpOverlay — keyboard shortcut reference, toggled by '?'.
- */
-
 import { useViewStore } from '../../stores/viewStore';
 
 const SHORTCUTS = [
@@ -28,65 +24,34 @@ export default function HelpOverlay(): JSX.Element | null {
 
   return (
     <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 1000,
-      }}
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-[var(--z-overlay)]"
       onClick={toggleHelp}
     >
       <div
-        style={{
-          backgroundColor: 'white',
-          borderRadius: '8px',
-          padding: '24px',
-          maxWidth: '420px',
-          width: '90%',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
-        }}
+        className="bg-[var(--color-bg)] rounded-[var(--radius-lg)] p-6 max-w-[420px] w-[90%] shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ fontWeight: 'bold', fontSize: '1.1em', marginBottom: '16px' }}>
+        <div className="font-bold text-[1.1em] mb-4">
           Keyboard Shortcuts
         </div>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <table className="w-full border-collapse">
           <tbody>
             {SHORTCUTS.map((s) => (
-              <tr key={s.key} style={{ borderBottom: '1px solid #f0f0f0' }}>
-                <td style={{ padding: '6px 8px', width: '120px' }}>
-                  <kbd
-                    style={{
-                      padding: '2px 6px',
-                      backgroundColor: '#f5f5f5',
-                      border: '1px solid #ddd',
-                      borderRadius: '3px',
-                      fontSize: '0.85em',
-                      fontFamily: 'monospace',
-                    }}
-                  >
+              <tr key={s.key} className="border-b border-[var(--color-border-subtle)]">
+                <td className="px-2 py-[6px] w-[120px]">
+                  <kbd className="px-[6px] py-[2px] bg-[#f5f5f5] border border-[var(--color-border)] rounded-[3px] text-[0.85em] font-mono">
                     {s.key}
                   </kbd>
                 </td>
-                <td style={{ padding: '6px 8px', fontSize: '0.9em', color: '#333' }}>{s.action}</td>
+                <td className="px-2 py-[6px] text-[0.9em] text-[#333]">{s.action}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        <div style={{ marginTop: '16px', textAlign: 'right' }}>
+        <div className="mt-4 text-right">
           <button
             onClick={toggleHelp}
-            style={{
-              padding: '6px 16px',
-              backgroundColor: '#3498db',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-            }}
+            className="px-4 py-[6px] bg-[var(--color-primary)] text-[var(--color-text-inverted)] border-none rounded-[var(--radius-md)] cursor-pointer"
           >
             Close
           </button>
