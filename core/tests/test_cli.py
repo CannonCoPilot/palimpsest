@@ -192,7 +192,7 @@ class TestCliExport:
                 rows = list(reader)
                 assert len(rows) > 0
 
-    def test_export_paf_deferred(self, runner, pp_ch1_txt, tmp_path):
+    def test_export_paf(self, runner, pp_ch1_txt, tmp_path):
         runner.invoke(main, [
             "ingest", str(pp_ch1_txt),
             "--workspace", str(tmp_path),
@@ -201,4 +201,8 @@ class TestCliExport:
         project_dir = tmp_path / "paf-test"
         result = runner.invoke(main, ["export", str(project_dir), "--format", "paf"])
         assert result.exit_code == 0
-        assert "not yet implemented" in result.output
+        assert "segments.paf" in result.output
+        paf_file = project_dir / "exports" / "paf" / "segments.paf"
+        assert paf_file.exists()
+        lines = paf_file.read_text().strip().split("\n")
+        assert lines[0].startswith("#")

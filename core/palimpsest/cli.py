@@ -278,7 +278,10 @@ def export(project_dir: Path, fmt: str, output: Path | None) -> None:
             anns = read_track(track_file)
             project_id = project_dir.name
             collection = {
-                "@context": "http://www.w3.org/ns/anno.jsonld",
+                "@context": [
+                    "http://www.w3.org/ns/anno.jsonld",
+                    {"palimpsest": "https://palimpsest.dev/ns/"},
+                ],
                 "id": f"urn:palimpsest:{project_id}:collection:{track_file.stem}",
                 "type": "AnnotationCollection",
                 "label": track_file.stem,
@@ -289,7 +292,33 @@ def export(project_dir: Path, fmt: str, output: Path | None) -> None:
             out_path.write_text(json.dumps(collection, indent=2, ensure_ascii=False))
             console.print(f"  {out_path.name}: {len(anns)} annotations")
     elif fmt == "paf":
-        console.print("[yellow]PAF export not yet implemented (Phase 1 M1.2+).[/yellow]")
+        from palimpsest.annotation.serializer import read_track as read_track_paf
+
+        for track_file in sorted(tracks_dir.glob("*.jsonl")):
+            anns = read_track_paf(track_file)
+            if not anns:
+                continue
+            out_path = export_dir / f"{track_file.stem}.paf"
+            with out_path.open("w") as f:
+                f.write(
+                    "#annotation_id\ttrack\tlfo_type\tstart\tend\t"
+                    "confidence\tevidence_level\tcreator\tvalue\tattributes\n"
+                )
+                for a in anns:
+                    sel = a.target.selector
+                    start = getattr(sel, "start", 0)
+                    end = getattr(sel, "end", 0)
+                    attrs = ";".join(
+                        f"{k.replace('palimpsest:', '')}={v}"
+                        for k, v in sorted(a.body.extra.items())
+                    ) or "."
+                    value = (a.body.value or ".")[:200]
+                    f.write(
+                        f"{a.id}\t{a.track_name}\t{a.body.lfo_type}\t"
+                        f"{start}\t{end}\t{a.confidence}\t{a.evidence_level}\t"
+                        f"{a.creator.name}\t{value}\t{attrs}\n"
+                    )
+            console.print(f"  {out_path.name}: {len(anns)} annotations")
     elif fmt == "csv":
         import csv
 
@@ -343,3 +372,161 @@ def serve(workspace: Path, port: int) -> None:
     console.print(f"[green]Serving[/green] {workspace} on http://127.0.0.1:{port}")
     console.print("Press Ctrl+C to stop.")
     run_server(workspace, port=port)
+
+
+@main.command()
+def doctor() -> None:
+    """Check system dependencies and report status."""
+    checks: list[tuple[str, str, str]] = []
+
+    # Python version
+    checks.append(("Python", sys.version.split()[0], "ok"))
+
+    # spaCy
+    try:
+        import spacy
+        checks.append(("spaCy", spacy.__version__, "ok"))
+        try:
+            spacy.load("en_core_web_sm")
+            checks.append(("  en_core_web_sm", "installed", "ok"))
+        except OSError:
+            checks.append(("  en_core_web_sm", "missing", "warn"))
+        try:
+            spacy.load("en_core_web_lg")
+            checks.append(("  en_core_web_lg", "installed", "ok"))
+        except OSError:
+            checks.append(("  en_core_web_lg", "missing", "warn"))
+    except ImportError:
+        checks.append(("spaCy", "not installed", "error"))
+
+    # ebooklib
+    try:
+        import ebooklib  # noqa: F401
+        checks.append(("ebooklib", "installed", "ok"))
+    except ImportError:
+        checks.append(("ebooklib", "not installed", "warn"))
+
+    # hmmlearn
+    try:
+        import hmmlearn  # noqa: F401
+        checks.append(("hmmlearn", "installed", "ok"))
+    except ImportError:
+        checks.append(("hmmlearn", "not installed", "warn"))
+
+    # BookNLP
+    try:
+        import booknlp  # noqa: F401
+        checks.append(("BookNLP", "installed", "ok"))
+    except ImportError:
+        checks.append(("BookNLP", "not installed", "info"))
+
+    # Ollama
+    try:
+        import httpx
+        resp = httpx.get("http://localhost:11434/api/tags", timeout=3.0)
+        if resp.status_code == 200:
+            models = [m["name"] for m in resp.json().get("models", [])]
+            checks.append(("Ollama", f"running ({len(models)} models)", "ok"))
+        else:
+            checks.append(("Ollama", "not responding", "warn"))
+    except Exception:
+        checks.append(("Ollama", "not running", "warn"))
+
+    # MLX embeddings
+    try:
+        import httpx as httpx2
+        resp = httpx2.post("http://localhost:8000/embed", json={"text": "probe"}, timeout=3.0)
+        if resp.status_code == 200:
+            dim = len(resp.json().get("embedding", []))
+            checks.append(("MLX Embeddings", f"running (dim={dim})", "ok"))
+        else:
+            checks.append(("MLX Embeddings", "not responding", "warn"))
+    except Exception:
+        checks.append(("MLX Embeddings", "not running", "info"))
+
+    # Browser dist
+    browser_dist = Path(__file__).parent.parent.parent / "browser" / "dist"
+    if browser_dist.is_dir() and (browser_dist / "index.html").exists():
+        checks.append(("Browser dist", "built", "ok"))
+    else:
+        checks.append(("Browser dist", "not built (run: cd browser && npm run build)", "warn"))
+
+    icons = {"ok": "[green]OK[/green]", "warn": "[yellow]WARN[/yellow]", "error": "[red]MISSING[/red]", "info": "[dim]optional[/dim]"}
+    console.print("\n[bold]Palimpsest Doctor[/bold]\n")
+    for name, status, level in checks:
+        icon = icons.get(level, "")
+        console.print(f"  {icon:>20s}  {name}: {status}")
+
+    errors = [c for c in checks if c[2] == "error"]
+    warns = [c for c in checks if c[2] == "warn"]
+    if errors:
+        console.print(f"\n[red]{len(errors)} critical issues.[/red] Fix these before using Palimpsest.")
+    elif warns:
+        console.print(f"\n[yellow]{len(warns)} warnings.[/yellow] Some features may be limited.")
+    else:
+        console.print("\n[green]All checks passed.[/green]")
+
+    if any(c[0] == "  en_core_web_sm" and c[2] == "warn" for c in checks):
+        console.print("\n  Fix: python -m spacy download en_core_web_sm")
+    if any(c[0] == "Ollama" and c[2] == "warn" for c in checks):
+        console.print("  Fix: ollama serve")
+
+
+@main.command()
+@click.argument("file", type=click.Path(exists=True, path_type=Path))
+def validate(file: Path) -> None:
+    """Validate a PAF file against the v0.1 spec."""
+    valid_evidence = {"E1", "E2", "E3", "E4", "E5"}
+    lfo_path = Path(__file__).parent.parent.parent / "specs" / "lfo-v0.1.json"
+    valid_lfo: set[str] = set()
+    if lfo_path.exists():
+        lfo_data = json.loads(lfo_path.read_text())
+        valid_lfo = set(lfo_data.get("terms", {}).keys())
+
+    errors: list[str] = []
+    line_count = 0
+
+    with file.open() as f:
+        for lineno, line in enumerate(f, 1):
+            line = line.rstrip("\n")
+            if line.startswith("#") or not line.strip():
+                continue
+            line_count += 1
+            cols = line.split("\t")
+            if len(cols) != 10:
+                errors.append(f"  Line {lineno}: expected 10 columns, got {len(cols)}")
+                continue
+
+            _, _, lfo_type, start_s, end_s, conf_s, evidence, _, _, _ = cols
+
+            if valid_lfo and lfo_type not in valid_lfo:
+                errors.append(f"  Line {lineno}: unknown LFO type '{lfo_type}'")
+
+            try:
+                start_i, end_i = int(start_s), int(end_s)
+                if start_i < 0 or end_i < 0:
+                    errors.append(f"  Line {lineno}: negative offset")
+                elif start_i >= end_i:
+                    errors.append(f"  Line {lineno}: start >= end ({start_i} >= {end_i})")
+            except ValueError:
+                errors.append(f"  Line {lineno}: non-integer offsets")
+
+            try:
+                conf = float(conf_s)
+                if not 0.0 <= conf <= 1.0:
+                    errors.append(f"  Line {lineno}: confidence {conf} out of [0,1]")
+            except ValueError:
+                errors.append(f"  Line {lineno}: non-float confidence")
+
+            if evidence not in valid_evidence:
+                errors.append(f"  Line {lineno}: invalid evidence level '{evidence}'")
+
+    if errors:
+        console.print(f"[red]INVALID[/red] — {len(errors)} errors in {line_count} records:")
+        for e in errors[:20]:
+            console.print(e)
+        if len(errors) > 20:
+            console.print(f"  ... and {len(errors) - 20} more")
+        raise SystemExit(1)
+    else:
+        console.print(f"[green]VALID[/green] — {line_count} records, no errors")

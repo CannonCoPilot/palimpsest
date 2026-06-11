@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "neutral-1",
+          "color": "#000000",
+          "name": "Neutral 1"
+        }
+      ],
+      "gradients": []
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Helvetica",
+          "slug": "helvetica",
+          "name": "Helvetica"
+        },
+        {
+          "fontFamily": "Times",
+          "slug": "times",
+          "name": "Times"
+        },
+        {
+          "fontFamily": "Arial",
+          "slug": "arial",
+          "name": "Arial"
+        }
+      ],
+      "fontSizes": [
+        {
+          "size": "16px",
+          "slug": "size-16",
+          "name": "16px"
+        },
+        {
+          "size": "13.3333px",
+          "slug": "size-13.3333",
+          "name": "13.3333px"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingSizes": [
+        {
+          "size": "8px",
+          "slug": "spacing-8",
+          "name": "8px"
+        },
+        {
+          "size": "21px",
+          "slug": "spacing-21",
+          "name": "21px"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "1400px"
+    }
+  },
+  "styles": {
+    "color": {
+      "text": "#000000"
+    },
+    "typography": {
+      "fontFamily": "Helvetica"
+    },
+    "spacing": {}
+  }
+}

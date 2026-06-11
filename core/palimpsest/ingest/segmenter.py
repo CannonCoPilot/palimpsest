@@ -53,7 +53,7 @@ def segment_sections(text: str) -> list[Segment]:
     - Lines starting with a Roman numeral followed by a period
     """
     section_pattern = re.compile(
-        r"^(?:(?i:chapter)\s+[\divxlc]+\.?|[A-Z][A-Z\s]{5,}|[IVXLC]+\.\s)",
+        r"^(?:(?i:chapter)\s+[\divxlc]+\.?|[A-Z][A-Z ]{5,}|[IVXLC]+\.\s)",
         re.MULTILINE,
     )
     segments: list[Segment] = []

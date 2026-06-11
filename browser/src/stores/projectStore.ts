@@ -113,12 +113,18 @@ export const useProjectStore = create<ProjectState>((set) => ({
       const trackNames = await discoverTracks(baseUrl, projectId);
       const tracks: Record<string, W3CAnnotation[]> = {};
 
-      for (const name of trackNames) {
-        try {
-          tracks[name] = await loadTrack(`${dataBase}/tracks/${name}.jsonl`);
-        } catch {
-          // Track may not exist yet — skip silently
-        }
+      const trackEntries = await Promise.all(
+        trackNames.map(async (name) => {
+          try {
+            const anns = await loadTrack(`${dataBase}/tracks/${name}.jsonl`);
+            return [name, anns] as [string, W3CAnnotation[]];
+          } catch {
+            return null;
+          }
+        })
+      );
+      for (const entry of trackEntries) {
+        if (entry) tracks[entry[0]] = entry[1];
       }
 
       const trackStates: Record<string, TrackState> = {};

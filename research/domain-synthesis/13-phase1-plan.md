@@ -1,5 +1,6 @@
 # Palimpsest Phase 1: Walking Skeleton — Detailed Implementation Plan
 
+**Superseded by**: doc 14 (Phase 1 Plan Revised v4.1)
 **Date**: 2026-06-06
 **Duration**: 10 weeks
 **Predecessor**: None (Phase 1 is the starting point)

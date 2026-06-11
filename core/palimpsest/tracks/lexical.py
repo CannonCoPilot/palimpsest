@@ -21,8 +21,6 @@ def _yules_k(tokens: list[str]) -> float:
     freq = Counter(tokens)
     freq_spectrum = Counter(freq.values())
     m2_sum = sum(m * m * vm for m, vm in freq_spectrum.items())
-    if n * n == m2_sum:
-        return 0.0
     return 10_000 * (m2_sum - n) / (n * n)
 
 

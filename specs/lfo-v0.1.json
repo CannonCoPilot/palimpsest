@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Literary Feature Ontology (LFO) v0.1",
+  "description": "Controlled vocabulary for Palimpsest annotation body types.",
+  "version": "0.1.0",
+  "namespace": "https://palimpsest.dev/ns/lfo/",
+  "terms": {
+    "structural.sentence": {
+      "label": "Sentence",
+      "description": "A single sentence boundary unit.",
+      "category": "structural"
+    },
+    "structural.paragraph": {
+      "label": "Paragraph",
+      "description": "A paragraph boundary unit.",
+      "category": "structural"
+    },
+    "structural.section": {
+      "label": "Section",
+      "description": "A section or chapter boundary.",
+      "category": "structural"
+    },
+    "structural.boundary": {
+      "label": "Boundary",
+      "description": "A generic structural boundary marker.",
+      "category": "structural"
+    },
+    "structural.dialogue.quote": {
+      "label": "Dialogue Quote",
+      "description": "A quoted speech span with optional speaker attribution.",
+      "category": "structural"
+    },
+    "entity.character": {
+      "label": "Character (Person)",
+      "description": "A named character or person entity.",
+      "category": "entity"
+    },
+    "entity.place": {
+      "label": "Place (Location)",
+      "description": "A geographic location or setting.",
+      "category": "entity"
+    },
+    "entity.organization": {
+      "label": "Organization",
+      "description": "A named organization or institution.",
+      "category": "entity"
+    },
+    "entity.work": {
+      "label": "Literary Work",
+      "description": "A referenced literary or artistic work.",
+      "category": "entity"
+    },
+    "entity.coreference_link": {
+      "label": "Coreference Link",
+      "description": "A mention linked to an entity coreference chain.",
+      "category": "entity"
+    },
+    "signal.sentiment": {
+      "label": "Sentiment",
+      "description": "Valence and arousal scores for a text span.",
+      "category": "signal"
+    },
+    "signal.lexical_density": {
+      "label": "Lexical Features",
+      "description": "TTR, hapax count, Yule's K, mean word length.",
+      "category": "signal"
+    },
+    "signal.syntactic_complexity": {
+      "label": "Syntactic Complexity",
+      "description": "Dependency tree depth, subordination ratio, sentence length.",
+      "category": "signal"
+    },
+    "signal.topic_assignment": {
+      "label": "Topic Assignment",
+      "description": "LDA topic distribution for a text segment.",
+      "category": "signal"
+    },
+    "signal.narrative_arc": {
+      "label": "Narrative Arc",
+      "description": "Function-word arc dimensions: staging, progression, tension.",
+      "category": "signal"
+    },
+    "signal.self_similarity": {
+      "label": "Self-Similarity",
+      "description": "Passage-pair cosine similarity from paragraph embeddings.",
+      "category": "signal"
+    },
+    "signal.rqa": {
+      "label": "RQA Metrics",
+      "description": "Recurrence quantification analysis: RR, DET, LAM.",
+      "category": "signal"
+    },
+    "signal.narrative_alphabet": {
+      "label": "Narrative Alphabet",
+      "description": "Discrete state label from K-means clustering of feature vectors.",
+      "category": "signal"
+    },
+    "signal.lithmm_state": {
+      "label": "LitHMM State",
+      "description": "Passage state from multivariate Hidden Markov Model.",
+      "category": "signal"
+    },
+    "signal.compartment": {
+      "label": "Thematic Compartment",
+      "description": "A/B compartment from eigenvector decomposition of similarity matrix.",
+      "category": "signal"
+    },
+    "signal.domain_boundary": {
+      "label": "Domain Boundary",
+      "description": "TAD-like domain from directionality index analysis.",
+      "category": "signal"
+    },
+    "structure.section_boundary": {
+      "label": "Section Boundary",
+      "description": "A section or chapter boundary extracted from document structure (EPUB headings, HTML headings).",
+      "category": "structure",
+      "is_a": "structural.section"
+    },
+    "structure.endnote": {
+      "label": "Endnote",
+      "description": "An endnote or footnote with bidirectional link between call-site in body text and note content.",
+      "category": "structure"
+    },
+    "structure.heading": {
+      "label": "Heading",
+      "description": "A heading element extracted from document structure, with level (h1-h6) and text.",
+      "category": "structure",
+      "is_a": "structure.section_boundary"
+    }
+  }
+}

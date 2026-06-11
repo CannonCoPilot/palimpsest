@@ -1,4 +1,4 @@
-"""Alphabet track — K-means narrative state encoding (Phase 1 placeholder for ModeHMM)."""
+"""Alphabet track — K-means narrative state encoding, complementary to LitHMM."""
 
 from __future__ import annotations
 
@@ -51,52 +51,43 @@ class AlphabetTrack:
 
         features = np.zeros((n_paras, 4), dtype=np.float32)
 
-        # Sentiment: mean valence per paragraph
         sent_path = project.path / "tracks" / "sentiment.jsonl"
         if sent_path.exists():
             sent_anns = read_track(sent_path)
+            sent_accum: dict[int, list[float]] = {}
             for ann in sent_anns:
-                start = ann.target.selector.start
-                for i, (ps, pe, _) in enumerate(paras):
-                    if ps <= start < pe:
-                        val = ann.body.extra.get("palimpsest:valence", 0)
-                        features[i, 0] = float(val) if val else 0.0
-                        break
+                i = project.find_paragraph(ann.target.selector.start)
+                if 0 <= i < n_paras:
+                    val = ann.body.extra.get("palimpsest:valence", 0)
+                    sent_accum.setdefault(i, []).append(float(val) if val else 0.0)
+            for i, vals in sent_accum.items():
+                features[i, 0] = sum(vals) / len(vals)
 
-        # Lexical: TTR per paragraph
         lex_path = project.path / "tracks" / "lexical.jsonl"
         if lex_path.exists():
             lex_anns = read_track(lex_path)
             for ann in lex_anns:
-                start = ann.target.selector.start
-                for i, (ps, pe, _) in enumerate(paras):
-                    if ps <= start < pe:
-                        ttr = ann.body.extra.get("palimpsest:ttr", 0)
-                        features[i, 1] = float(ttr) if ttr else 0.0
-                        break
+                i = project.find_paragraph(ann.target.selector.start)
+                if 0 <= i < n_paras:
+                    ttr = ann.body.extra.get("palimpsest:ttr", 0)
+                    features[i, 1] = float(ttr) if ttr else 0.0
 
-        # Dialogue: presence (binary) per paragraph
         dial_path = project.path / "tracks" / "dialogue.jsonl"
         if dial_path.exists():
             dial_anns = read_track(dial_path)
             for ann in dial_anns:
-                start = ann.target.selector.start
-                for i, (ps, pe, _) in enumerate(paras):
-                    if ps <= start < pe:
-                        features[i, 2] = 1.0
-                        break
+                i = project.find_paragraph(ann.target.selector.start)
+                if 0 <= i < n_paras:
+                    features[i, 2] = 1.0
 
-        # Topics: dominant topic weight per paragraph
         topics_path = project.path / "tracks" / "topics.jsonl"
         if topics_path.exists():
             topics_anns = read_track(topics_path)
             for ann in topics_anns:
-                start = ann.target.selector.start
-                for i, (ps, pe, _) in enumerate(paras):
-                    if ps <= start < pe:
-                        weight = ann.body.extra.get("palimpsest:topicWeight", 0)
-                        features[i, 3] = float(weight) if weight else 0.0
-                        break
+                i = project.find_paragraph(ann.target.selector.start)
+                if 0 <= i < n_paras:
+                    weight = ann.body.extra.get("palimpsest:topicWeight", 0)
+                    features[i, 3] = float(weight) if weight else 0.0
 
         # Standardize and cluster
         scaler = StandardScaler()
@@ -135,7 +126,7 @@ class AlphabetTrack:
                     "dialogue_presence", "topic_weight",
                 ],
                 "sequence": sequence,
-                "note": "Phase 1 placeholder for ModeHMM (Phase 2)",
+                "note": "K-means structural encoding, complementary to LitHMM passage states",
             },
         )
 

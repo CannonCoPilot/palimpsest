@@ -125,6 +125,23 @@ def coreference_body(
     )
 
 
+def syntax_body(
+    mean_tree_depth: float,
+    subordination_ratio: float,
+    mean_sentence_length: float,
+) -> Body:
+    return Body(
+        type="palimpsest:SyntaxAnnotation",
+        purpose="describing",
+        lfo_type="signal.syntactic_complexity",
+        extra={
+            "palimpsest:meanTreeDepth": round(mean_tree_depth, 4),
+            "palimpsest:subordinationRatio": round(subordination_ratio, 4),
+            "palimpsest:meanSentenceLength": round(mean_sentence_length, 4),
+        },
+    )
+
+
 def segment_body(
     segment_type: str,
     segment_index: int,
@@ -137,4 +154,45 @@ def segment_body(
             "palimpsest:segmentType": segment_type,
             "palimpsest:segmentIndex": segment_index,
         },
+    )
+
+
+def section_body(
+    heading_text: str,
+    heading_level: int,
+    section_index: int,
+) -> Body:
+    return Body(
+        type="palimpsest:SectionAnnotation",
+        purpose="classifying",
+        value=heading_text,
+        lfo_type="structure.section_boundary",
+        extra={
+            "palimpsest:headingText": heading_text,
+            "palimpsest:headingLevel": heading_level,
+            "palimpsest:sectionIndex": section_index,
+        },
+    )
+
+
+def endnote_body(
+    note_number: int,
+    note_text: str,
+    call_site_start: int = -1,
+    call_site_end: int = -1,
+) -> Body:
+    extra: dict[str, Any] = {
+        "palimpsest:noteNumber": note_number,
+        "palimpsest:noteText": note_text[:2000],
+    }
+    if call_site_start >= 0:
+        extra["palimpsest:callSiteStart"] = call_site_start
+    if call_site_end >= 0:
+        extra["palimpsest:callSiteEnd"] = call_site_end
+    return Body(
+        type="palimpsest:EndnoteAnnotation",
+        purpose="linking",
+        value=f"Endnote {note_number}",
+        lfo_type="structure.endnote",
+        extra=extra,
     )

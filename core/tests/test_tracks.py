@@ -1,4 +1,4 @@
-"""Tests for track extractors — entities, sentiment, lexical, dialogue, topics."""
+"""Tests for track extractors — entities, sentiment, lexical, dialogue, topics, syntax, lithmm, compartments."""
 
 from pathlib import Path
 
@@ -12,6 +12,7 @@ from palimpsest.tracks.dialogue import DialogueExtractor
 from palimpsest.tracks.entities import EntityExtractor
 from palimpsest.tracks.lexical import LexicalExtractor
 from palimpsest.tracks.sentiment import SentimentExtractor
+from palimpsest.tracks.syntax import SyntaxExtractor
 from palimpsest.tracks.topics import TopicsExtractor
 
 
@@ -26,6 +27,7 @@ ALL_EXTRACTORS = [
     LexicalExtractor,
     DialogueExtractor,
     TopicsExtractor,
+    SyntaxExtractor,
 ]
 
 
@@ -338,3 +340,112 @@ class TestSignalIO:
         )
         write_signal(tmp_path / "signals", data, manifest)
         assert (tmp_path / "signals" / "size_test.bin").stat().st_size == 400
+
+
+class TestSyntaxExtractor:
+    def test_satisfies_protocol(self):
+        assert isinstance(SyntaxExtractor(), TrackExtractor)
+
+    def test_produces_annotations(self, pp_project):
+        anns = SyntaxExtractor().extract(pp_project)
+        assert len(anns) > 0
+
+    def test_annotations_have_syntax_fields(self, pp_project):
+        anns = SyntaxExtractor().extract(pp_project)
+        for ann in anns[:5]:
+            assert "palimpsest:meanTreeDepth" in ann.body.extra
+            assert "palimpsest:subordinationRatio" in ann.body.extra
+            assert "palimpsest:meanSentenceLength" in ann.body.extra
+
+    def test_tree_depth_is_positive(self, pp_project):
+        anns = SyntaxExtractor().extract(pp_project)
+        depths = [a.body.extra["palimpsest:meanTreeDepth"] for a in anns]
+        assert all(d >= 0 for d in depths)
+        assert any(d > 0 for d in depths)
+
+    def test_evidence_level(self):
+        assert SyntaxExtractor().evidence_level == "E5"
+
+    def test_lfo_type(self):
+        assert "signal.syntactic_complexity" in SyntaxExtractor().lfo_types
+
+
+class TestLitHMMExtractor:
+    def test_satisfies_protocol(self):
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+        assert isinstance(LitHMMExtractor(), TrackExtractor)
+
+    def test_produces_annotations_with_upstream_tracks(self, pp_project):
+        from palimpsest.annotation.serializer import write_track
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+
+        SentimentExtractor().extract(pp_project)
+        lex_anns = LexicalExtractor().extract(pp_project)
+        write_track(pp_project.path / "tracks" / "lexical.jsonl", lex_anns)
+        sent_anns = SentimentExtractor().extract(pp_project)
+        write_track(pp_project.path / "tracks" / "sentiment.jsonl", sent_anns)
+        ent_anns = EntityExtractor().extract(pp_project)
+        write_track(pp_project.path / "tracks" / "entities.jsonl", ent_anns)
+        dial_anns = DialogueExtractor().extract(pp_project)
+        write_track(pp_project.path / "tracks" / "dialogue.jsonl", dial_anns)
+        topic_anns = TopicsExtractor().extract(pp_project)
+        write_track(pp_project.path / "tracks" / "topics.jsonl", topic_anns)
+        syn_anns = SyntaxExtractor().extract(pp_project)
+        write_track(pp_project.path / "tracks" / "syntax.jsonl", syn_anns)
+
+        lithmm = LitHMMExtractor(n_states=3)
+        anns = lithmm.extract(pp_project)
+        assert len(anns) > 0
+
+    def test_state_descriptions_are_strings(self, pp_project):
+        import json
+        from palimpsest.annotation.serializer import write_track
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+
+        for ext_cls in [SentimentExtractor, LexicalExtractor, EntityExtractor,
+                        DialogueExtractor, TopicsExtractor, SyntaxExtractor]:
+            ext = ext_cls()
+            result = ext.extract(pp_project)
+            if isinstance(result, list):
+                write_track(pp_project.path / "tracks" / f"{ext.name}.jsonl", result)
+
+        lithmm = LitHMMExtractor(n_states=3)
+        lithmm.extract(pp_project)
+
+        meta_path = pp_project.path / "signals" / "lithmm_meta.json"
+        assert meta_path.exists()
+        meta = json.loads(meta_path.read_text())
+        assert "state_descriptions" in meta
+        for key in meta["state_descriptions"]:
+            assert isinstance(key, str)
+
+    def test_evidence_level(self):
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+        assert LitHMMExtractor().evidence_level == "E5"
+
+    def test_kmeans_fallback(self):
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+        ext = LitHMMExtractor()
+        assert ext.name == "lithmm"
+        params = ext.parameters()
+        assert "lithmm.n_states" in params
+
+
+class TestCompartmentsExtractor:
+    def test_satisfies_protocol(self):
+        from palimpsest.tracks.compartments import CompartmentsExtractor
+        assert isinstance(CompartmentsExtractor(), TrackExtractor)
+
+    def test_raises_without_self_similarity(self, pp_project):
+        from palimpsest.tracks.compartments import CompartmentsExtractor
+        with pytest.raises(FileNotFoundError):
+            CompartmentsExtractor().extract(pp_project)
+
+    def test_evidence_level(self):
+        from palimpsest.tracks.compartments import CompartmentsExtractor
+        assert CompartmentsExtractor().evidence_level == "E5"
+
+    def test_manifest_has_track_name(self):
+        from palimpsest.tracks.compartments import CompartmentsExtractor
+        m = CompartmentsExtractor().manifest()
+        assert m["trackName"] == "compartments"

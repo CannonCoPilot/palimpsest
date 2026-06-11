@@ -1,0 +1,30 @@
+:root {
+  /* Colors — Primary */
+
+  /* Colors — Neutrals */
+  --color-neutral-50: #000000;
+
+  /* Colors — Text */
+  --color-text: #000000;
+
+  /* Typography — Families */
+  --font-sans: 'Helvetica', sans-serif;
+  --font-body: 'Times', sans-serif;
+  --font-font-2: 'Arial', sans-serif;
+
+  /* Typography — Scale */
+  --font-size-16: 16px;
+  --font-size-13.3333: 13.3333px;
+
+  /* Spacing */
+  --spacing-8: 8px;
+  --spacing-21: 21px;
+
+  /* Original Site Variables */
+  /* — semantic — */
+  success: [object Object];
+  warning: [object Object];
+  error: [object Object];
+  info: [object Object];
+
+}

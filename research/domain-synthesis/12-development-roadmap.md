@@ -1,8 +1,11 @@
 # Palimpsest Development Roadmap v2.0
 
 **Date**: 2026-06-06
-**Status**: Post-review rewrite — incorporates all 15 critical review findings
+**Status**: SUPERSEDED — see Roadmap v4.0 (doc 28). Retained for historical reference only.
+**Superseded by**: Roadmap v3.0 (doc 23), then Roadmap v4.0 (doc 28, 2026-06-10)
 **Source**: Vision document (11), research corpus (00-10), critical review (12a)
+
+> **WARNING**: This document's milestone structure (Phase 1-8), technology decisions (MobX-state-tree, D3+Canvas, FastAPI), and timeline are obsolete under Roadmap v4.0. Do not use for planning.
 
 ---
 
@@ -326,7 +329,7 @@ Polish the browser into a professional, fluid tool. Add linked views and semanti
 
 ---
 
-## Phase 5: Corpus-Scale + ModeHMM (6-8 weeks)
+## Phase 5: Corpus-Scale + LitHMM (6-8 weeks)
 
 ### Milestone 5.1: Corpus Manager + Batch Pipeline (Week 35-37)
 
@@ -335,7 +338,7 @@ Polish the browser into a professional, fluid tool. Add linked views and semanti
 - Corpus-level SQLite index
 - Corpus search by metadata and annotation type
 
-### Milestone 5.2: ModeHMM Joint Training (Week 37-41)
+### Milestone 5.2: LitHMM Joint Training (Week 37-41)
 
 - Training corpus: 60 Project Gutenberg novels (English, 1800-1950, diverse genres)
   - Selection criteria: genre diversity (10 each: romance, adventure, mystery, literary, horror, comedy)
@@ -464,7 +467,7 @@ Phase 1 is English-only, but the data model is language-agnostic:
 | Phase 2: Annotation + X Scaffold | 6-8 weeks | Week 18 | Core |
 | Phase 3: Full Alignment Engine | 6-8 weeks | Week 26 | Core |
 | Phase 4: First X Instance (IJ) | 4-6 weeks | Week 32 | Core |
-| Phase 5: Corpus + ModeHMM | 6-8 weeks | Week 40 | Core |
+| Phase 5: Corpus + LitHMM | 6-8 weeks | Week 40 | Core |
 | Phase 6: Second X Instance (Correspondent) | 4-6 weeks | Week 46 | Core |
 | Phase 7: Collaboration | 4-6 weeks | Week 52 | Stretch |
 | Phase 8: Advanced Visualization | 4-6 weeks | Week 58 | Stretch |
@@ -481,7 +484,7 @@ Phase 1 is English-only, but the data model is language-agnostic:
 | BookNLP unmaintained / incompatible | Medium | High | Fallback to spaCy NER + LLM-based character extraction; evaluate Gemini Flash for structured extraction |
 | JBrowse 2 patterns too complex to adapt | Medium | High | Study architecture; build lighter custom equivalent inspired by it, not forking it |
 | Local LLM quality insufficient | Low | High | Cloud API fallback for reasoning service; prompt engineering iteration |
-| ModeHMM states not meaningful | Medium | Medium | Start with known-labeled passages; iterate on features; accept that some states may be "noise" |
+| LitHMM states not meaningful | Medium | Medium | Start with known-labeled passages; iterate on features; accept that some states may be "noise" |
 | Single-developer motivation decay | High | Critical | Phase 1 alone delivers a usable tool; each phase has standalone value; recruit collaborators after Phase 2 demo |
 | React ecosystem churn | Low | Medium | Pin major dependency versions; minimize number of UI libraries |
 

@@ -82,7 +82,7 @@ class NarrativeArcTrack:
         manifest = SignalManifest(
             type="vector",
             name="narrative_arc",
-            source="boyd_function_words/0.1",
+            source="function_word_arc/0.1",
             reference_sha256=sha,
             dimensions=[5, 3],
             data_file="narrative_arc.bin",
@@ -111,7 +111,7 @@ class NarrativeArcTrack:
 
     def parameters(self) -> dict[str, Any]:
         return {
-            "narrative_arc.model": "boyd_function_words",
+            "narrative_arc.model": "function_word_arc",
             "narrative_arc.segments": 5,
             "narrative_arc.dimensions": 3,
         }

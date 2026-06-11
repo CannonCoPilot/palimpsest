@@ -34,7 +34,7 @@ Every text, regardless of genre, period, language, or form, can be analyzed thro
 | **Dialogue** | Quotation detection, speaker attribution | BookNLP quote attribution |
 | **Narrative arc** | Staging / plot progression / cognitive tension | Boyd 15-dimensional function-word arc |
 | **Self-similarity** | Recurrence plot, recurrence quantification (RR, DET, LAM) | Church-Helfman dotplot + RQA |
-| **Structural mode** | Passage functional state (expository, dramatic, reflective...) | ModeHMM (ChromHMM-analogue, jointly trained) |
+| **Structural mode** | Passage functional state (expository, dramatic, reflective...) | LitHMM (ChromHMM-analogue, jointly trained) |
 | **Narrative alphabet** | 16-64 letter structural encoding per segment | K-means on feature vectors |
 | **Coreference** | Pronoun → character resolution | BookNLP coreference |
 | **Topics** | Topic distributions per segment | LDA / embedding-based clustering |
@@ -103,7 +103,7 @@ Palimpsest should run its AI services locally, not via cloud APIs. The reasons a
 | **Annotation assistant** | 7-14B instruction-tuned LLM | Qwen3:8B, Llama 3.1:8B, Mistral 7B | Schema proposal, bootstrap annotation, draft summaries |
 | **Deep analysis** | 30-70B LLM | Qwen3:30B, Llama 3.1:70B, or cloud fallback | Complex reasoning: irony detection, thematic analysis, intertextual interpretation |
 | **Structured extraction** | Any LLM with JSON mode | Ollama + structured output | Character relationship extraction, event chain identification, plot function classification |
-| **HMM / statistical** | Custom trained models | hmmlearn, pomegranate | ModeHMM (rhetorical state), PassageStateHMM (functional annotation) |
+| **HMM / statistical** | Custom trained models | hmmlearn, pomegranate | LitHMM (rhetorical state), PassageStateHMM (functional annotation) |
 
 ### 2.3 The Agentic Workflow
 
@@ -263,7 +263,7 @@ From the genome annotation research (document 09), Palimpsest has 18 proposed an
 
 | Tool | Function | Base or X? |
 |---|---|---|
-| **ModeHMM** | Jointly-trained rhetorical mode state classifier | Base (universal mode vocabulary) |
+| **LitHMM** | Jointly-trained rhetorical mode state classifier | Base (universal mode vocabulary) |
 | **FormInfernal** | Structural pattern search via literary covariance models | X (requires genre-specific models) |
 | **VerseFormScan** | Dedicated verse form detection with isotype classification | X (poetry only) |
 | **AllusionMasker** | Borrowed language detection and masking via AllusioDB | X (requires reference corpus) |
@@ -414,7 +414,7 @@ The original PRD (document 02) listed 8 open questions. The research corpus now 
 | # | Question | Resolution |
 |---|---|---|
 | 1 | What should the default scoring matrix look like for narrative alignment? | Configurable per comparison type. SBERT cosine similarity as default S(x,y); Gumbel-calibrated significance testing (GNAT approach). Domain-specific matrices proposed by LLM, validated against known parallel passages. |
-| 2 | Is the 16-letter alphabet granular enough? | ModeHMM with 15-25 jointly-trained states (ChromHMM-inspired) replaces fixed-K alphabet. State count learned from data, not pre-specified. |
+| 2 | Is the 16-letter alphabet granular enough? | LitHMM with 15-25 jointly-trained states (ChromHMM-inspired) replaces fixed-K alphabet. State count learned from data, not pre-specified. |
 | 3 | What's the right embedding model? | Local model: Qwen3-Embedding-4B via MLX (2560-dim). Fast enough for interactive use; high enough quality for literary semantic similarity. |
 | 4 | JBrowse or VS Code as text browser model? | JBrowse 2 architecture, definitively. Its Adapter→Track→Display→Renderer hierarchy is purpose-built for multi-layer overlapping annotations. VS Code's editor model is wrong for this use case. |
 | 5 | How to handle non-linear structure? | Multiple coordinate systems per text (narrative order, chronological order, custom). All annotations specify which coordinate system they reference. Dual coordinate view with mapping function visualization. |
@@ -433,7 +433,7 @@ The original PRD (document 02) listed 8 open questions. The research corpus now 
 | **Phase 2** | LLM integration + annotation UI | Local model stack; schema builder; annotation workflow; active learning | Base + X scaffold |
 | **Phase 3** | Pairwise alignment + variant comparison | SW alignment; alignment view; TextLiftoff; edition comparison | Base |
 | **Phase 4** | First X instance: Infinite Jest | Full IJ analysis with custom tracks, chronology handler, endnote network | X (proof of concept) |
-| **Phase 5** | Corpus-scale operations | Batch pipeline; ModeHMM joint training; corpus index; motif search | Base |
+| **Phase 5** | Corpus-scale operations | Batch pipeline; LitHMM joint training; corpus index; motif search | Base |
 | **Phase 6** | Second X instance: The Correspondent | Book reference pipeline; chord diagram; letter segmenter; voice classifier | X (generalization test) |
 | **Phase 7** | Collaborative annotation + sharing | Apollo-style collaboration; Hypothes.is integration; shareable X configurations | Base |
 | **Phase 8** | Advanced visualization + scrollytelling | Swinehart-style scroll-driven narratives; Circos; storyline | Base |
@@ -444,7 +444,7 @@ The original PRD (document 02) listed 8 open questions. The research corpus now 
 
 ### Technical
 - Base pipeline processes a 300-page novel in <30 seconds
-- ModeHMM state assignments achieve >0.7 agreement with expert-labeled passages across 10 diverse texts
+- LitHMM state assignments achieve >0.7 agreement with expert-labeled passages across 10 diverse texts
 - Self-similarity matrix correctly identifies >90% of known chapter boundaries
 - Alignment between known parallel texts (Gospel accounts, variant editions) produces meaningful correspondence (AUC > 0.85)
 - Custom annotation track from schema proposal to first pass takes <10 minutes with LLM assistance

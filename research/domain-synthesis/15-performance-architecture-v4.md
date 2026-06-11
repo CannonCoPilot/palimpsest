@@ -4,6 +4,7 @@
 **Supersedes**: Phase 1 plan v3.0 (doc 14) browser/rendering/server architecture sections
 **Motivation**: M1.2 browser is unresponsive with 18,760 annotations on full novel (130K words). Current React+Python stack has fundamental performance ceilings that prevent the platform's multi-document comparative analysis goals.
 **Hardware target**: M4 Max Mac Studio, 128GB unified RAM, 16 cores (12P+4E), 40 GPU cores, 273 GB/s memory bandwidth
+**Status**: DEFERRED — Tauri/Rust/WebGPU architecture deferred to M6.1 (Roadmap v4.0, doc 28). Current production stack is Python+React with virtual scrolling and canvas rendering. The performance optimizations described here (Rust pipeline, WebGPU rendering, data tiling) remain valid targets for M6.1. The Rust crate scaffolding from M1.3b has been retained but is not actively used.
 
 ---
 

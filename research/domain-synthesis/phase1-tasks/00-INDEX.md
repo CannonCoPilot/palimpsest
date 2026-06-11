@@ -1,8 +1,11 @@
 # Phase 1 Task Index
 
-**Total tasks**: 37
+**Total tasks**: 37 (T01-T37 for M1.1-M1.4; see doc 24 v1.2 for M1.5 tasks)
+**Status**: M1.1-M1.4 tasks COMPLETE as of 2026-06-09 (13 tracks, 213 tests, browser functional)
 **Total estimated effort**: ~200 hours (~10 weeks at 4h/day productive coding)
-**Reference plan**: `14-phase1-plan-revised.md` (v3.0)
+**Reference plan**: `14-phase1-plan-revised.md` (v3.0) — SUPERSEDED by Roadmap v4.0 (doc 28)
+
+> **NOTE**: Tasks T01-T37 cover M1.1-M1.4 which are complete. M1.5 (Browser Foundation Sprint) tasks are defined in doc 24 v1.2, not in this index. The Tauri/Rust/WebGPU rewrite mentioned in some v4.0-era task files was abandoned; current implementation uses Python+React.
 
 ---
 

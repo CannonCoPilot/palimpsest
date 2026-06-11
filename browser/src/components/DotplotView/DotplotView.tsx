@@ -1,5 +1,5 @@
 /**
- * DotplotView — Canvas-rendered self-similarity matrix heatmap.
+ * TextHiCView — Canvas-rendered self-similarity matrix heatmap (TextHiC).
  * Loads the self_similarity signal and renders it as an interactive heatmap.
  * Click a cell to navigate to the corresponding paragraphs.
  */
@@ -31,7 +31,7 @@ function interpolateColor(value: number): [number, number, number] {
 }
 
 export default function DotplotView(): JSX.Element | null {
-  const dotplotOpen = useViewStore((s) => s.dotplotOpen);
+  const textHicOpen = useViewStore((s) => s.textHicOpen);
   const requestScrollToParagraph = useViewStore((s) => s.requestScrollToParagraph);
   const setSelectedParagraphIndex = useViewStore((s) => s.setSelectedParagraphIndex);
   const projectId = useProjectStore((s) => s.metadata?.id);
@@ -47,7 +47,7 @@ export default function DotplotView(): JSX.Element | null {
   const [hoveredCell, setHoveredCell] = useState<{ i: number; j: number } | null>(null);
 
   useEffect(() => {
-    if (!dotplotOpen || !projectId) return;
+    if (!textHicOpen || !projectId) return;
 
     setLoading(true);
     setError(null);
@@ -61,7 +61,7 @@ export default function DotplotView(): JSX.Element | null {
         setError('Self-similarity matrix not available. Run analysis with Ollama first.');
         setLoading(false);
       });
-  }, [dotplotOpen, projectId]);
+  }, [textHicOpen, projectId]);
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
 
@@ -177,7 +177,7 @@ export default function DotplotView(): JSX.Element | null {
     [signal, n, setSelectedParagraphIndex, requestScrollToParagraph],
   );
 
-  if (!dotplotOpen) return null;
+  if (!textHicOpen) return null;
 
   const hoverValue = hoveredCell && signal
     ? signal.data[hoveredCell.i * n + hoveredCell.j]

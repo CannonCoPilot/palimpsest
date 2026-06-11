@@ -1,8 +1,9 @@
 # Palimpsest Phase 1: Walking Skeleton — Revised Implementation Plan (v4.0)
 
-**Date**: 2026-06-07
+**Date**: 2026-06-07 (v4.0); updated 2026-06-07 (v4.1 checkpoint review)
+**Status**: SUPERSEDED — Tauri/Rust/WebGPU architecture was abandoned. Current implementation uses Python+React. See Roadmap v4.0 (doc 28) and M1 Roadmap-PRD (doc 24) for current plan.
 **Supersedes**: v3.0 (2026-06-06), v2.0, v1.0 (doc 13)
-**Incorporates**: All 20 findings from document 13a; format/architecture alignment with research corpus (docs 07-11); **v4.0 performance architecture redesign (doc 15)**
+**Incorporates**: All 20 findings from document 13a; format/architecture alignment with research corpus (docs 07-11); **v4.0 performance architecture redesign (doc 15)**; **v4.1 M1.3b checkpoint review (doc 16, 54 findings)**
 
 > **v4.0 CRITICAL CHANGE**: The entire rendering and data layer has been redesigned. Python+React+Browser is replaced by **Tauri 2.0 + Rust core engine + WebGPU frontend**. See `15-performance-architecture-v4.md` for full rationale. All 37 atomized tasks (T01-T37) have been rewritten with v4.0 Critical Review + v4.0 Rewrite sections. The original v3.0 content is preserved in each task file for reference.
 >
@@ -49,7 +50,9 @@ M4 Max Mac Studio: 128GB unified RAM, 16 cores (12P+4E), 40 GPU cores, 273 GB/s 
 |---|---|---|
 | v1.0 (doc 13) | Original Phase 1 plan | Roadmap doc 12 |
 | v2.0 (doc 14) | Incorporated 20 findings from critical review (doc 13a) | Critical review doc 13a |
-| v3.0 (this) | Corrected annotation format to W3C Web Annotation JSON-LD per research (docs 07-11); added JBrowse 2 architectural alignment; added evidence hierarchy; defined Palimpsest body types | Full research corpus review |
+| v3.0 | Corrected annotation format to W3C Web Annotation JSON-LD per research (docs 07-11); added JBrowse 2 architectural alignment; added evidence hierarchy; defined Palimpsest body types | Full research corpus review |
+| v4.0 | Performance architecture redesign (Tauri 2.0 + Rust core + WebGPU) | Doc 15 |
+| v4.1 | **M1.3b checkpoint review**: 54 findings (7 critical, 14 error, 26 warning, 7 note) integrated from 4-agent adversarial audit (doc 16). Added §15 (Checkpoint Review findings) and §16 (Remediation Plan). Updated DoD checklist §13 with actual status. | Doc 16 adversarial review |
 
 ### v3.0 Key Corrections
 
@@ -57,7 +60,7 @@ M4 Max Mac Studio: 128GB unified RAM, 16 cores (12P+4E), 40 GPU cores, 273 GB/s 
 2. **Browser architecture**: Adopts JBrowse 2's adapter/track/display/renderer pattern as reference architecture, per research documents 09 §4.3, 10, and 11 §7.
 3. **Evidence hierarchy**: Annotations carry evidence levels (E1-E5) per research document 07 §4.1, not just raw confidence scores.
 4. **Custom body types**: Palimpsest-specific W3C body types defined for Phase 1 tracks, per doc 07 §7.1.
-5. **ModeHMM**: K-means alphabet explicitly documented as Phase 1 placeholder for ModeHMM (Phase 2+), per doc 11.
+5. **LitHMM**: K-means alphabet explicitly documented as Phase 1 placeholder for LitHMM (Phase 2+), per doc 11.
 
 ---
 
@@ -137,7 +140,7 @@ palimpsest/
 │   │   │   ├── narrative_arc.py # Boyd 15-dim → signal
 │   │   │   ├── self_similarity.py # Embedding cosine → signal
 │   │   │   ├── rqa.py           # Recurrence quantification → signal
-│   │   │   ├── alphabet.py      # K-means encoding → signal (ModeHMM placeholder)
+│   │   │   ├── alphabet.py      # K-means encoding → signal (LitHMM placeholder)
 │   │   │   ├── coreference.py   # BookNLP coref → W3C annotations
 │   │   │   └── booknlp_enrichment.py
 │   │   ├── annotation/          # W3C Web Annotation model
@@ -714,7 +717,7 @@ Signals are not W3C annotations — they are continuous numerical data.
 | 9 | `rqa.json` | vector (RR, DET, LAM per window) | RQA computation | Float32 binary | Tokenization |
 | 10 | `alphabet.json` | sequence (string of N letters) | K-means (`random_state=42`) | Inline JSON | Tracks 2-5 |
 
-**Note on Track 10 (Alphabet)**: The K-means narrative alphabet is a **Phase 1 placeholder** for the ModeHMM (ChromHMM-analogue) described in doc 11. ModeHMM jointly trains 15-25 passage-function states on a corpus of 60+ texts. Since Phase 1 operates on individual texts without a training corpus, K-means clustering provides a reasonable single-text approximation. Phase 2 will introduce ModeHMM trained on 60 Project Gutenberg novels across 6 genres.
+**Note on Track 10 (Alphabet)**: The K-means narrative alphabet is a **Phase 1 placeholder** for the LitHMM (ChromHMM-analogue) described in doc 11. LitHMM jointly trains 15-25 passage-function states on a corpus of 60+ texts. Since Phase 1 operates on individual texts without a training corpus, K-means clustering provides a reasonable single-text approximation. Phase 2 will introduce LitHMM trained on 60 Project Gutenberg novels across 6 genres.
 
 ### 5.3 Dependency DAG
 
@@ -732,7 +735,7 @@ reference.txt
   → embeddings (cached in cache/embeddings.db via VectorStore)
     → self_similarity signal [Track 8]
   → tracks 2-5 features
-    → alphabet signal [Track 10]  (Phase 1 placeholder for ModeHMM)
+    → alphabet signal [Track 10]  (Phase 1 placeholder for LitHMM)
   → BookNLP (optional, cached in cache/booknlp/)
     → entities.jsonl enrichment [Track 1 update]
     → dialogue.jsonl enrichment [Track 4 update]
@@ -1025,7 +1028,7 @@ $ palimpsest serve projects/pride-and-prejudice/
 - `narrative_arc.py`: Boyd 15-dim → signal binary
 - `rqa.py`: RR/DET/LAM per window → signal binary
 - `alphabet.py`: K-means `random_state=42`, 16 letters → inline JSON sequence
-  - **Phase 1 placeholder**: This single-text K-means encoding will be replaced by ModeHMM (a ChromHMM-analogue jointly trained on 60+ texts) in Phase 2. The alphabet track's registry interface remains identical; only the implementation changes.
+  - **Phase 1 placeholder**: This single-text K-means encoding will be replaced by LitHMM (a ChromHMM-analogue jointly trained on 60+ texts) in Phase 2. The alphabet track's registry interface remains identical; only the implementation changes.
 
 ### Milestone 1.3b: BookNLP + DotplotView (Week 7-8)
 
@@ -1267,50 +1270,57 @@ dev = [
 
 ## 13. Definition of Done (Phase 1)
 
+> **v4.1 Status Key**: ✅ DONE | ⚠️ PARTIAL (defects noted) | ❌ NOT DONE | 🔧 NEEDS FIX (done but has review findings)
+>
+> Status assessed by 4-agent adversarial review, 2026-06-07. See §15 for full findings, §16 for remediation plan.
+
 ### Core Pipeline
-- [ ] `palimpsest ingest` produces valid project directory with `metadata.json` and `pipeline_run.json`
-- [ ] `palimpsest analyze` computes 10 tracks/signals in <30 seconds for P&P
-- [ ] All annotation tracks produce W3C Web Annotation JSONL (not PAF)
-- [ ] All annotations carry Palimpsest body types and evidence levels (E1-E5)
-- [ ] All tracks register via `TrackRegistry` — no hardcoded lists
-- [ ] Stochastic algorithms deterministic with fixed seeds
-- [ ] Signal data as raw Float32 binary, loadable in Python and browser
-- [ ] `VectorStore` protocol abstracts sqlite-vec
+- ✅ `palimpsest ingest` produces valid project directory with `metadata.json` and `pipeline_run.json`
+- ✅ `palimpsest analyze` computes 10 tracks/signals in <30 seconds for P&P
+- ✅ All annotation tracks produce W3C Web Annotation JSONL (not PAF)
+- ✅ All annotations carry Palimpsest body types and evidence levels (E1-E5)
+- ✅ All tracks register via `TrackRegistry` — no hardcoded lists
+- 🔧 Stochastic algorithms deterministic with fixed seeds — **BUT annotation IDs are non-deterministic** (`uuid.uuid4`, finding C4). Determinism test skips checking IDs.
+- ✅ Signal data as raw Float32 binary, loadable in Python and browser
+- ✅ `VectorStore` protocol abstracts sqlite-vec
+- 🔧 **Silent error swallowing** in `/api/search` (C1), embedding pipeline (C2), and spaCy model fallback (C3) — violates project policy
 
 ### Browser
-- [ ] Layout matches §7.1; keyboard navigation per §7.2
-- [ ] TrackPanel driven by rendering manifests (JBrowse 2 pattern)
-- [ ] DetailPanel shows W3C body type, evidence level, confidence for selected annotations
-- [ ] OverviewBar with density barcodes and search ticks
-- [ ] DotplotView + cross-text dotplot with project selector
-- [ ] Text search (Ctrl+F) with type-ahead
-- [ ] LLM summarizer with graceful degradation
-- [ ] Linked views; semantic zoom; virtualized scrolling
-- [ ] Loading overlay with track-by-track progress
+- ⚠️ Layout matches §7.1 — **BUT no ResizablePanel** (fixed-width divs), no responsive OverviewBar (W14)
+- ⚠️ Keyboard navigation per §7.2 — **BUT interactive elements (TrackPanel, ProjectPicker, ParagraphView) lack keyboard access** (W4-W6)
+- ✅ TrackPanel driven by rendering manifests (JBrowse 2 pattern)
+- ✅ DetailPanel shows W3C body type, evidence level, confidence for selected annotations
+- ✅ OverviewBar with density barcodes and search ticks
+- ⚠️ DotplotView — **no cross-text dotplot** (empty directory), **no zoom/pan** (click-to-navigate only)
+- ✅ Text search (Ctrl+F) with type-ahead
+- ✅ LLM summarizer with graceful degradation
+- ⚠️ Linked views ✅; **semantic zoom ❌** (dead state, no rendering); **virtualized scrolling ❌** (all paragraphs in DOM)
+- ✅ Loading overlay with track-by-track progress
+- ❌ **Zero browser tests** — Vitest and Playwright installed but no test files exist (C7)
 
 ### Export
-- [ ] W3C AnnotationCollection JSON-LD (standards-compliant)
-- [ ] PAF GFF3-analogue TSV (computational export)
-- [ ] CSV (flat tabular)
+- ✅ W3C AnnotationCollection JSON-LD (standards-compliant)
+- ❌ PAF GFF3-analogue TSV — **stub prints "not yet implemented"** (E1)
+- ✅ CSV (flat tabular)
 
 ### Quality
-- [ ] All unit tests pass (>80% coverage on core/)
-- [ ] All integration tests pass (including determinism and W3C validation)
-- [ ] All benchmarks meet targets
-- [ ] Test fixtures are public domain only (P&P, Moby-Dick)
-- [ ] Code quality enforced via pre-commit (ruff + mypy + eslint + prettier)
-- [ ] Git: conventional commits, milestone tags
+- ✅ All unit tests pass — 194 Python tests, 24 Rust tests
+- 🔧 Integration tests pass — **BUT pipeline fixture exception catch is too broad** (E4), **determinism test skips IDs** (C4)
+- ⚠️ Benchmarks — no formal benchmark harness; informal timing OK on ch1, **untested on full novel in browser** (E9)
+- ✅ Test fixtures are public domain only (P&P, Moby-Dick)
+- ⚠️ Code quality enforced via pre-commit — **BUT mypy pre-commit hook passes `--ignore-missing-imports` instead of `--strict`** (W22)
+- ⚠️ Git: conventional commits ✅, **milestone tags ❌** — zero tags applied (W23)
 
 ### Documentation
-- [ ] `specs/annotation-model.md`: W3C body types + evidence hierarchy
-- [ ] `specs/LFO.md` with ~60 terms
-- [ ] `specs/signals.md`: binary format
-- [ ] `specs/PAF-export.md`: export format
-- [ ] README.md with keyboard shortcuts
-- [ ] ADRs for key decisions
+- ❌ `specs/annotation-model.md`: 3-line stub (C6)
+- ❌ `specs/LFO.md`: 3-line stub (C6)
+- ❌ `specs/signals.md`: 3-line stub (C6)
+- ❌ `specs/PAF-export.md`: 3-line stub (C6)
+- ✅ WALKTHROUGH.md with full setup and testing guide
+- ⚠️ ADRs: ADR-001 and ADR-005 exist; **ADR-002, ADR-003, ADR-004 absent** (W25)
 
 ### User Validation
-- [ ] A literary scholar produces a structural analysis in <30 minutes
+- ⚠️ A literary scholar can produce a structural analysis — **BUT only on short texts (ch1)**. Full novel browser performance is untested/unlikely adequate without virtualization (E9)
 
 ---
 
@@ -1349,8 +1359,159 @@ dev = [
 | 22 | No JBrowse 2 architectural reference | Docs 09 §4.3, 10, 11 §7 | Adapter/track/display/renderer pattern adopted | §3.1 |
 | 23 | No evidence hierarchy | Doc 07 §4.1 | E1-E5 on every annotation | §2.4 |
 | 24 | No custom W3C body types | Doc 07 §7.1 | 6 body types defined | §2.3 |
-| 25 | ModeHMM not mentioned | Doc 11 | Alphabet as Phase 1 placeholder, explicit | §5.2 note |
+| 25 | LitHMM not mentioned | Doc 11 | Alphabet as Phase 1 placeholder, explicit | §5.2 note |
 
 ---
 
-*This plan supersedes documents 13 and 14 v2.0. It aligns Phase 1 implementation with the full research corpus (documents 00-11) while incorporating all 20 findings from the critical review (document 13a) and 5 additional research-alignment corrections.*
+---
+
+## 15. M1.3b Checkpoint Review Findings (v4.1)
+
+Full adversarial audit conducted 2026-06-07 by 4-agent independent review panel. Complete report in `16-checkpoint-review-m13b.md`.
+
+### 15.1 Critical Findings (C1–C7)
+
+| ID | Area | Finding | File:Line |
+|---|---|---|---|
+| C1 | Backend | `/api/search` catches all exceptions → returns empty results silently | `server.py:156` |
+| C2 | Backend | Embedding errors caught as bare `Exception`, continues silently | `cli.py:158-159` |
+| C3 | Backend | Silent fallback `en_core_web_lg` → `en_core_web_sm`, reports wrong model | `segmenter.py:83-101`, `entities.py:37-39` |
+| C4 | Backend | Non-deterministic annotation IDs (`uuid.uuid4`), test skips ID check | `model.py:179-184`, `test_tracks.py:287-295` |
+| C5 | Rust | `tauri.conf.json` `frontendDist` points at legacy `ui/dist`, wrong port | `tauri.conf.json` |
+| C6 | Specs | All 4 spec files are 3-line stubs | `specs/*.md` |
+| C7 | Browser | Zero test files — Vitest/Playwright installed, no tests | `browser/src/` |
+
+### 15.2 Error Findings (E1–E14)
+
+| ID | Area | Finding | File:Line |
+|---|---|---|---|
+| E1 | Backend | PAF export CLI option exists but prints "not yet implemented" | `cli.py:291` |
+| E2 | Backend | Placeholder comment in persistent signal output data | `alphabet.py:139` |
+| E3 | Backend | `/api/search` GET has no query length validation | `server.py:106-108` |
+| E4 | Backend | Pipeline fixture `RuntimeError` catch too broad, masks bugs | `test_pipeline.py:27-28` |
+| E5 | Backend | `validate_annotation` doesn't check `end <= text_length` | `serializer.py:96-103` |
+| E6 | Backend | `except (specific, Exception)` — trailing Exception makes specific catches dead | `manager.py:47` |
+| E7 | Backend | Silent latin-1 fallback on UTF-8 decode failure, no warning | `extractor.py:22-24` |
+| E8 | Backend | O(n²) Python loops in RQA/alphabet signal computation | `rqa.py`, `alphabet.py` |
+| E9 | Browser | No virtualized scrolling — all paragraphs in DOM | `TextLinearView.tsx` |
+| E10 | Browser | SVG OverviewBar renders one `<line>` per annotation (6000+ DOM nodes) | `OverviewBar.tsx:43-47` |
+| E11 | Browser | Sequential track loading (7 serial HTTP round-trips) | `projectStore.ts:116-120` |
+| E12 | Browser | Synchronous full-text search scan on every keystroke, no debounce | `searchStore.ts:29-55` |
+| E13 | Legacy | `src/` directory — 527-line legacy prototype still tracked | `src/` |
+| E14 | Legacy | `ui/` directory — old frontend with node_modules, Tauri references it | `ui/` |
+
+### 15.3 Warning Findings (W1–W26)
+
+| ID | Area | Finding | File:Line |
+|---|---|---|---|
+| W1 | Browser | `collectVisibleAnnotations` unmemoized, O(N) on every render | `TextLinearView.tsx:74` |
+| W2 | Browser | Full annotations array passed to every ParagraphView | `TextLinearView.tsx:101-109` |
+| W3 | Browser | Multi-annotation overlap shows only first annotation's color | `AnnotationOverlay.tsx:106-107` |
+| W4 | Browser | TrackRow `div` with `onClick`, no keyboard access | `TrackPanel.tsx:27-77` |
+| W5 | Browser | ProjectPicker cards, no keyboard access | `ProjectPicker.tsx:69-94` |
+| W6 | Browser | ParagraphView `div` with `onClick`, no keyboard access | `TextLinearView.tsx:39-62` |
+| W7 | Browser | Color-only annotation encoding, no screen reader support | `AnnotationOverlay.tsx:102-122` |
+| W8 | Browser | HelpOverlay modal: no `role="dialog"`, no focus trap | `HelpOverlay.tsx` |
+| W9 | Browser | DetailPanel close button `×` — no `aria-label` | `DetailPanel.tsx:161-173` |
+| W10 | Browser | Dead state: `zoomLevel`, `zoomManualOverride` never consumed | `viewStore.ts:13-14` |
+| W11 | Browser | Dead assets: `react.svg`, `vite.svg`, `hero.png` | `src/assets/` |
+| W12 | Browser | `textViewRendering` declares 3 modes, only `highlight` implemented | `TrackManifest.ts:15` |
+| W13 | Browser | `confidenceThreshold` wired in store/filter but no UI control | `TrackPanel.tsx`, `trackStore.ts` |
+| W14 | Browser | OverviewBar fixed 600px width, not responsive | `OverviewBar.tsx` |
+| W15 | Browser | `dedicatedView` field declared, loaded, never consumed | `TrackManifest.ts:19` |
+| W16 | Browser | `as TrackManifest` cast — no runtime validation of fetched JSON | `TrackManifest.ts:37` |
+| W17 | Browser | `ParagraphView`/`AnnotationOverlay` not memoized, inline prop arrows bust memo | `TextLinearView.tsx` |
+| W18 | Rust | `palimpsest-tauri` has zero tests | `crates/palimpsest-tauri/` |
+| W19 | Rust | `RangeIndex` raw pointer with manual `unsafe Send/Sync` | `crates/palimpsest-core/` |
+| W20 | Rust | `get_signal_data` returns flat f32, no shape metadata | Tauri commands |
+| W21 | Backend | Narrative arc uses custom word lists, not Boyd's published categories | `narrative_arc.py` |
+| W22 | Backend | Pre-commit mypy passes `--ignore-missing-imports` not `--strict` | `.pre-commit-config.yaml` |
+| W23 | Git | Zero milestone tags applied (plan requires v0.1.0–v0.5.0) | Repository |
+| W24 | Browser | `EVIDENCE_LEVEL_FALLBACK` hardcoded instead of reading manifest | `TrackPanel.tsx` |
+| W25 | Docs | Only ADR-001, ADR-005 exist; ADR-002–004 absent | `docs/architecture/` |
+| W26 | Tests | `fixtures/expected/` directory for regression snapshots absent | `core/tests/` |
+
+### 15.4 M1.4 Deliverables Not Started
+
+| Deliverable | Plan Reference | Status |
+|---|---|---|
+| `VirtualScroller.tsx` | M1.4 Day 38-40 | NOT STARTED |
+| `SemanticZoom.tsx` | M1.4 Day 41-42 | NOT STARTED (dead state only) |
+| Signal visualizations (arc sparkline, RQA chart, alphabet barcode) | M1.4 Day 43-44 | NOT STARTED |
+| OverviewBar enhancements (brush, stacked bars, responsive) | M1.4 Day 45 | PARTIAL (density + search ticks only) |
+| `CrossTextDotplot.tsx` | M1.4 Day 46-47 | NOT STARTED (empty directory) |
+| PAF export (`paf_export.py`) | M1.4 Day 48 | NOT STARTED (CLI stub only) |
+| Spec documents (4 files) | M1.4 Day 49-50 | STUB (3-line placeholders) |
+| Playwright E2E tests | §11.3 | NOT STARTED |
+| Regression snapshots | §11.4 | NOT STARTED |
+| Git milestone tags | §0.6 | NOT STARTED |
+| `ResizablePanel.tsx` | §7.1 | NOT STARTED |
+| DotplotView zoom/pan | M1.3b Day 34-36 | PARTIAL (click-to-navigate only) |
+| ADR-002 through ADR-004 | §1 | NOT STARTED |
+| Confidence slider UI | M1.2 | NOT STARTED (state wired, no control) |
+
+---
+
+## 16. Remediation Plan (v4.1)
+
+### Phase A: Policy Violations (pre-M1.4, blocking)
+
+These are violations of stated project policy, not missing features. They must be fixed before M1.4 work begins.
+
+| Priority | Finding | Fix |
+|---|---|---|
+| 1 | C1, C2 | Replace bare `except Exception` in `/api/search` and embedding pipeline with specific exception types + logging |
+| 2 | C3 | Remove silent spaCy model fallback; raise error if `en_core_web_lg` is not installed; log actual model used |
+| 3 | C4 | Make annotation IDs deterministic (hash of project_id + track_name + selector.start + selector.end); update determinism test to check IDs |
+| 4 | E4 | Narrow pipeline fixture exception catch to `FileNotFoundError` only |
+| 5 | E6 | Remove redundant trailing `Exception` from manager.py except clause |
+| 6 | E7 | Replace silent latin-1 fallback with explicit error + warning log |
+| 7 | W22 | Fix pre-commit mypy hook to use `--strict` matching pyproject.toml |
+
+### Phase B: Legacy Cleanup (pre-M1.4, non-blocking)
+
+| Priority | Finding | Fix |
+|---|---|---|
+| 8 | E13 | Delete `src/` directory |
+| 9 | E14, C5 | Delete `ui/` directory; update `tauri.conf.json` to point at `browser/dist` port 5173 |
+| 10 | W11 | Delete unused `react.svg`, `vite.svg`, `hero.png` from `browser/src/assets/` |
+| 11 | E2 | Remove placeholder comment from `alphabet.py` signal metadata |
+| 12 | E1 | Remove PAF from CLI `click.Choice` until implemented; delete stub test |
+
+### Phase C: M1.4 Implementation (ordered by impact)
+
+| Priority | Deliverable | Estimated Effort |
+|---|---|---|
+| 13 | VirtualScroller (E9) — most impactful, plan's stated v4.0 motivation | 2-3 days |
+| 14 | Browser tests — Vitest unit + Playwright E2E (C7) | 2 days |
+| 15 | Parallel track loading (E11) + search debounce (E12) | 0.5 day |
+| 16 | Signal visualizations (narrative arc, RQA, alphabet) | 1-2 days |
+| 17 | SemanticZoom or remove dead state (W10) | 1-2 days |
+| 18 | PAF export implementation | 1 day |
+| 19 | Spec documents (4 files) | 1-2 days |
+| 20 | CrossTextDotplot | 1-2 days |
+| 21 | OverviewBar responsive width + canvas (W14, E10) | 1 day |
+| 22 | Accessibility: keyboard access (W4-W6), ARIA (W7-W9) | 1 day |
+| 23 | Confidence slider UI (W13) | 0.5 day |
+| 24 | ResizablePanel | 0.5 day |
+| 25 | DotplotView zoom/pan | 1 day |
+| 26 | Regression snapshots + `fixtures/expected/` (W26) | 0.5 day |
+| 27 | Missing ADRs (W25), milestone tags (W23) | 0.5 day |
+| 28 | React.memo + annotation pre-slicing (W1, W2, W17) | 0.5 day |
+
+**Estimated total**: 15-20 working days for full M1.4 completion including remediation.
+
+---
+
+### v4.1 Traceability (doc 16 → this plan)
+
+| Doc 16 Finding | This Plan Section | Resolution |
+|---|---|---|
+| C1-C7 (critical) | §15.1, §16 Phase A | Remediation prioritized pre-M1.4 |
+| E1-E14 (error) | §15.2, §16 Phase B/C | Ordered by impact |
+| W1-W26 (warning) | §15.3, §16 Phase C | Integrated into M1.4 deliverables |
+| M1.4 deliverables | §15.4 | Carried forward with effort estimates |
+
+---
+
+*This plan supersedes documents 13 and 14 v2.0. It aligns Phase 1 implementation with the full research corpus (documents 00-11) while incorporating all 20 findings from the critical review (document 13a), 5 research-alignment corrections, and 54 findings from the M1.3b checkpoint review (document 16).*

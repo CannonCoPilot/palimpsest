@@ -1,7 +1,8 @@
 # Palimpsest: Back to the Drawing Board — Process Document
 
-**Created**: 2026-06-07
-**Purpose**: Master process reference for the comprehensive research, planning, and documentation overhaul. All work across multiple sessions refers back to this document for scope, sequence, and completion criteria.
+**Created**: 2026-06-07 | **Updated**: 2026-06-10
+**Purpose**: Master process reference for the comprehensive research, planning, and documentation overhaul.
+**Status**: Stages 1-4 COMPLETE (2026-06-08). Stage 5 (2026-06-10): Roadmap v4.0 enrichment with genome browser research and UI redesign plan (doc 28). All completion criteria met for Stages 1-4. Stage 5 is a v4.0 extension, not part of original scope.
 
 ---
 
@@ -270,3 +271,36 @@ This overhaul is complete when:
 ---
 
 *This document is the master reference for the Palimpsest documentation overhaul. All sessions refer back to it for scope, sequence, and completion criteria.*
+
+---
+
+## Appendix A: Stage 1 Research Agent Results Summary (2026-06-07)
+
+Four parallel research agents completed. Combined findings: ~80 papers identified across 4 domains.
+
+### Computational Linguistics (30 papers)
+Key gaps filled: Harris 1954 (distributional hypothesis), Firth 1957, Deerwester LSA 1990, Mikolov Word2Vec 2013, Pennington GloVe 2014, Vaswani Transformers 2017, Devlin BERT 2018, Blei LDA 2003, Genette Palimpsests 1982, Kristeva intertextuality 1966, Burrows Delta 2002, Eder/stylo 2016, Pustejovsky annotation methodology 2012, Artstein inter-annotator agreement 2008, INCEpTION 2018, PDTB 2008, Hearst TextTiling 1997, CollateX 2015, Büchler text reuse 2014, Gale-Church alignment 1993, Palmer PropBank 2005.
+
+### Genomics Foundations (24 papers)
+Key gaps filled: Needleman-Wunsch 1970, Smith-Waterman 1981, BLAST 1990, PSI-BLAST 1997, MUMmer 2004, ClustalW 1994, T-Coffee 2000, MUSCLE 2004, Fitch orthology/paralogy 1970, Koonin 2005, Hardison comparative genomics 2003, Durbin et al textbook 1998, Sequence Ontology 2005, Gene Ontology 2000, GENCODE 2012, GENSCAN 1997, MEME 1994, Eddy profile HMMs 1998, Ernst/Kellis ChromHMM 2010+2012, Hoffman Segway 2012, RepeatModeler2 2020, Pan-Genomics Consortium 2018.
+
+### Visualization Theory (25 papers)
+Key gaps filled: Bertin Semiology 1967, Cleveland-McGill 1984, Tufte Visual Display 1983, Wilkinson Grammar of Graphics 2005, Wickham layered grammar 2010, Munzner 2014, Kent UCSC Browser 2002, Robinson IGV 2011, Diesh JBrowse 2 2023, Kerpedjiev HiGlass 2018, L'Yi Gosling grammar 2022, Krzywinski Circos 2009, Wattenberg Word Tree 2008, Keim Literature Fingerprinting 2007, Paley TextArc 2002, Furnas fisheye 1986, Buja brushing/linking 1996, Roberts CMV 2007, Holten edge bundling 2006, Shneiderman treemaps 1992, Tanahashi storyline 2012.
+
+### Swinehart + Reports Analysis
+Key findings: Genette "Narrative Discourse" is the absent theoretical foundation for Swinehart's pos↔seq mapping. Drucker "Humanities Approaches to Graphical Display" (2011) is the critical counter-argument Palimpsest must answer. Ben Fry "Visualizing Data" provides the process model. Hi-C maps are the genomic analogue of IJ endnote visualizations. Characters.csv pivot matrix (unreferenced in reports) is the most immediately useful Swinehart dataset.
+
+### Downloads Completed This Session
+- Genette "Narrative Discourse" (1983 Cornell UP) → nlp-narrative/
+- Durbin et al "Biological Sequence Analysis" (1998 Cambridge UP) → alignment/
+- Ben Fry "Visualizing Data" (2008 O'Reilly) → visualization/
+
+### MCP Configuration Updated
+- Added `scholar-gateway` and `annas-archive` to project settings.json
+- Download priority: Scholar Gateway downloadPDF (free) → PubMed full text (free for PMC) → Anna's Archive (limited)
+- Next session should start with loading all research MCP tools via ToolSearch
+
+### Next Steps (Session 2)
+1. Download remaining ~70 papers using Scholar Gateway downloadPDF + PubMed + Anna's Archive
+2. Update master-bibliography.md with all new entries
+3. Begin Stage 1d (Swinehart deep analysis) and Stage 2a (conceptual foundation document)

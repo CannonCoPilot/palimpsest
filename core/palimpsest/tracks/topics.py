@@ -50,11 +50,12 @@ class TopicsExtractor:
             return []
 
         para_texts = [text for _, _, text in paragraphs]
+        n_topics = min(N_TOPICS, len(paragraphs))
 
         vectorizer = CountVectorizer(
             token_pattern=r"[a-zA-Z]{3,}",
             stop_words="english",
-            min_df=MIN_DF,
+            min_df=min(MIN_DF, len(paragraphs)),
             max_features=MAX_FEATURES,
         )
         try:
@@ -62,8 +63,11 @@ class TopicsExtractor:
         except ValueError:
             return []
 
+        if dtm.shape[0] < n_topics:
+            n_topics = max(2, dtm.shape[0])
+
         lda = LatentDirichletAllocation(
-            n_components=N_TOPICS,
+            n_components=n_topics,
             random_state=RANDOM_STATE,
             max_iter=MAX_ITER,
             learning_method="batch",
@@ -72,7 +76,7 @@ class TopicsExtractor:
 
         feature_names = vectorizer.get_feature_names_out()
         topic_terms: list[list[str]] = []
-        for topic_idx in range(N_TOPICS):
+        for topic_idx in range(n_topics):
             top_indices = lda.components_[topic_idx].argsort()[-5:][::-1]
             topic_terms.append([feature_names[i] for i in top_indices])
 

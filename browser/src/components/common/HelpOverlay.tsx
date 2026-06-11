@@ -11,9 +11,11 @@ const SHORTCUTS = [
   { key: 'Enter', action: 'Next search match' },
   { key: 'Shift+Enter', action: 'Previous search match' },
   { key: '[ / ]', action: 'Previous / next search match' },
+  { key: 'Ctrl+=', action: 'Zoom in (work → chapter → paragraph → sentence)' },
+  { key: 'Ctrl+-', action: 'Zoom out' },
   { key: '1–9', action: 'Toggle track by number' },
   { key: '0', action: 'Show / hide all tracks' },
-  { key: 'd', action: 'Toggle dotplot' },
+  { key: 'd', action: 'Toggle TextHiC dotplot' },
   { key: '?', action: 'Toggle this help' },
   { key: 'Escape', action: 'Close search / deselect' },
 ];

@@ -19,6 +19,18 @@ export function setupKeyboardHandlers(): () => void {
       return;
     }
 
+    if ((e.ctrlKey || e.metaKey) && (e.key === '=' || e.key === '+')) {
+      e.preventDefault();
+      useViewStore.getState().zoomIn();
+      return;
+    }
+
+    if ((e.ctrlKey || e.metaKey) && e.key === '-') {
+      e.preventDefault();
+      useViewStore.getState().zoomOut();
+      return;
+    }
+
     if (isInput && e.key !== 'Escape') return;
 
     const paragraphs = useProjectStore.getState().paragraphs;
@@ -66,7 +78,7 @@ export function setupKeyboardHandlers(): () => void {
 
       case 'd':
         if (!isInput) {
-          useViewStore.getState().toggleDotplot();
+          useViewStore.getState().toggleTextHic();
         }
         break;
 

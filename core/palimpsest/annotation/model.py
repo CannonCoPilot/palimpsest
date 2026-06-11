@@ -6,7 +6,7 @@ extensions (evidence levels, custom body types, namespaced properties).
 
 from __future__ import annotations
 
-import uuid
+import hashlib
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -177,11 +177,17 @@ class Annotation:
                 f"Must be one of {sorted(EVIDENCE_LEVELS)}"
             )
         if not self.id:
-            suffix = uuid.uuid4().hex[:8]
-            if self.project_id and self.track_name:
-                self.id = f"urn:palimpsest:{self.project_id}:{self.track_name}:{suffix}"
-            else:
-                self.id = f"urn:palimpsest:{suffix}"
+            self.id = self._generate_id()
+
+    def _generate_id(self) -> str:
+        sel = self.target.selector
+        start = getattr(sel, "start", 0)
+        end = getattr(sel, "end", 0)
+        key = f"{self.project_id}:{self.track_name}:{self.body.type}:{start}:{end}"
+        digest = hashlib.sha256(key.encode()).hexdigest()[:12]
+        if self.project_id and self.track_name:
+            return f"urn:palimpsest:{self.project_id}:{self.track_name}:{digest}"
+        return f"urn:palimpsest:{digest}"
 
     def to_jsonld(self) -> dict[str, Any]:
         return {

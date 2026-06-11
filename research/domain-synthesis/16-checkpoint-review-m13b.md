@@ -1,6 +1,7 @@
 # Phase 1 Checkpoint Review — Post-M1.3b Adversarial Audit
 
 **Date**: 2026-06-07
+**Status**: RESOLVED — All 7 critical bugs fixed (2026-06-08). M1.4 implemented (2026-06-08-09). Additional 15 bugs fixed (2026-06-09 audit). See development-history.md for full fix log.
 **Reviewer**: Multi-agent adversarial panel (4 independent reviewers)
 **Scope**: Full codebase review against `14-phase1-plan-revised.md` (v4.0)
 **Trigger**: Stakeholder walkthrough + manual QA identified browser defects; prompted comprehensive audit
@@ -34,7 +35,7 @@ The implementation is **M1.3b-complete in functionality** — core pipeline (10 
 | # | Area | File:Line | Finding | Plan Ref |
 |---|---|---|---|---|
 | E1 | Backend | `cli.py:291` | PAF export is a user-facing CLI option (`click.Choice(["w3c", "paf", "csv"])`) but prints "not yet implemented." `test_export_paf_deferred` asserts the stub is a stub. | §2.9, M1.4 |
-| E2 | Backend | `alphabet.py:139` | `SignalManifest` metadata contains `"note": "Phase 1 placeholder for ModeHMM (Phase 2)"` — placeholder comment shipping in persistent output data. | §5.2 |
+| E2 | Backend | `alphabet.py:139` | `SignalManifest` metadata contains `"note": "Phase 1 placeholder for LitHMM (Phase 2)"` — placeholder comment shipping in persistent output data. | §5.2 |
 | E3 | Backend | `server.py:106-108` | `/api/search` GET endpoint has no query length validation. POST model `SearchRequest` has `max_length=2000` but the GET endpoint bypasses it. | §8.1 |
 | E4 | Backend | `test_pipeline.py:27-28` | Pipeline fixture catches `(FileNotFoundError, ValueError, RuntimeError)` — `RuntimeError` is too broad, masks programming errors in extractors, causing downstream tests to pass vacuously. | §11.2 |
 | E5 | Backend | `serializer.py:96-103` | `validate_annotation` checks `start >= 0` and `start <= end` but not `end <= text_length`. Out-of-bounds offsets pass validation. | §2.1 |

@@ -217,20 +217,11 @@ class TestCoreference:
         assert "entities" in track.depends_on
 
     def test_graceful_fallback_without_booknlp(self, small_project):
-        from palimpsest.tracks.coreference import BOOKNLP_AVAILABLE, CoreferenceExtractor
+        from palimpsest.tracks.coreference import CoreferenceExtractor
 
         track = CoreferenceExtractor()
-        if not BOOKNLP_AVAILABLE:
-            with pytest.raises(FileNotFoundError, match="BookNLP not installed"):
-                track.extract(small_project)
-        else:
-            # BookNLP installed — may succeed (returning annotations list)
-            # or fail at runtime (model/version issues)
-            try:
-                result = track.extract(small_project)
-                assert isinstance(result, list)
-            except (FileNotFoundError, RuntimeError):
-                pass
+        result = track.extract(small_project)
+        assert isinstance(result, list)
 
     def test_manifest(self):
         from palimpsest.tracks.coreference import CoreferenceExtractor
@@ -240,11 +231,11 @@ class TestCoreference:
         assert "colorScheme" in m
 
     def test_parameters_report_availability(self):
-        from palimpsest.tracks.coreference import BOOKNLP_AVAILABLE, CoreferenceExtractor
+        from palimpsest.tracks.coreference import CoreferenceExtractor
 
         p = CoreferenceExtractor().parameters()
         assert "coreference.available" in p
-        assert p["coreference.available"] is BOOKNLP_AVAILABLE
+        assert p["coreference.available"] is True
 
 
 class TestSignalIO:

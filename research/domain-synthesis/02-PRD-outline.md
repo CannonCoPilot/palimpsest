@@ -3,6 +3,7 @@
 **Status**: DRAFT — awaiting integration of deep-reading results
 **Date**: 2026-06-06
 **Version**: 0.1
+**Note (2026-06-08)**: Format decisions revised — W3C Web Annotation JSON-LD/JSONL is the primary annotation format; PAF is computational export only (see doc 14 v3.0). Status tags below reflect M1.3b state and may be outdated; see doc 16 for current implementation status.
 
 ---
 

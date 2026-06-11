@@ -1,5 +1,6 @@
 # Critical Review: Palimpsest Development Roadmap v1.0
 
+**Note**: This review was conducted against Roadmap v2.0 (doc 12). Findings were incorporated into Roadmap v3.0 (doc 23), then further evolved in Roadmap v4.0 (doc 28). Historical reference only.
 **Date**: 2026-06-06
 **Purpose**: Identify gaps, glosses, over-simplifications, and departures from project aims in the v1.0 roadmap before rewriting.
 

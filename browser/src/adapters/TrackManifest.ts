@@ -11,10 +11,11 @@ export interface TrackManifest {
     secondary: string;
     scale?: Record<string, string>;
   };
-  textViewRendering: 'highlight' | 'underline' | 'margin-marker';
+  textViewRendering: 'highlight' | 'underline' | 'margin-marker' | 'color-band' | 'superscript' | 'none';
   overviewBarRendering: {
-    type: 'density-barcode';
-    color: string;
+    type: 'density-barcode' | 'state-band' | 'ab-band' | 'none';
+    color?: string;
+    n_states?: number;
   };
   dedicatedView?: string;
 }

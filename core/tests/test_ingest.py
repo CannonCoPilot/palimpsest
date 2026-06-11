@@ -21,6 +21,21 @@ class TestExtractor:
         with pytest.raises(ValueError, match="Unsupported"):
             extract_text(bad)
 
+    def test_extract_html(self, tmp_path: Path):
+        html = tmp_path / "test.html"
+        html.write_text("<html><body><h1>Title</h1><p>Hello world.</p><script>var x=1;</script></body></html>")
+        text = extract_text(html)
+        assert "Hello world" in text
+        assert "var x" not in text
+
+    def test_extract_markdown(self, tmp_path: Path):
+        md = tmp_path / "test.md"
+        md.write_text("# Heading\n\nSome **bold** text with a [link](http://example.com).\n\n- item one\n- item two\n")
+        text = extract_text(md)
+        assert "bold" in text
+        assert "**" not in text
+        assert "http://example.com" not in text
+
 
 class TestNormalizer:
     def test_normalize_idempotent(self):

@@ -40,6 +40,76 @@ def _get_nlp(model: str = DEFAULT_SPACY_MODEL) -> Any:
     return _NLP_CACHE[model]
 
 
+def _cluster_entities(
+    annotations: list[Annotation],
+) -> list[Annotation]:
+    """Cluster entity mentions into canonical names.
+
+    Groups PER entities by substring overlap: "Hal", "Hal Incandenza",
+    "Incandenza" all resolve to the longest observed form.
+    """
+    from collections import defaultdict
+
+    per_mentions: dict[str, list[Annotation]] = defaultdict(list)
+    other: list[Annotation] = []
+
+    for ann in annotations:
+        etype = ann.body.extra.get("palimpsest:entityType", "")
+        if etype == "PER" and ann.body.value:
+            per_mentions[ann.body.value.strip()].append(ann)
+        else:
+            other.append(ann)
+
+    if not per_mentions:
+        return annotations
+
+    names = sorted(per_mentions.keys(), key=lambda n: (-len(n), n))
+    canonical_map: dict[str, str] = {}
+    clusters: list[list[str]] = []
+
+    for name in names:
+        name_lower = name.lower()
+        found = False
+        for cluster in clusters:
+            for existing in cluster:
+                existing_lower = existing.lower()
+                if (name_lower in existing_lower
+                        or existing_lower in name_lower
+                        or _shared_surname(name, existing)):
+                    cluster.append(name)
+                    found = True
+                    break
+            if found:
+                break
+        if not found:
+            clusters.append([name])
+
+    for cluster in clusters:
+        canon = max(cluster, key=len)
+        for name in cluster:
+            canonical_map[name] = canon
+
+    result = list(other)
+    for name, anns in per_mentions.items():
+        canon = canonical_map.get(name, name)
+        for ann in anns:
+            ann.body.extra["palimpsest:canonicalName"] = canon
+            result.append(ann)
+
+    return result
+
+
+def _shared_surname(a: str, b: str) -> bool:
+    """Check if two names share a surname (last token, len >= 3)."""
+    parts_a = a.split()
+    parts_b = b.split()
+    if not parts_a or not parts_b:
+        return False
+    last_a = parts_a[-1].lower()
+    last_b = parts_b[-1].lower()
+    return last_a == last_b and len(last_a) >= 3
+
+
 class EntityExtractor:
     """Extract named entities using spaCy NER."""
 
@@ -64,10 +134,7 @@ class EntityExtractor:
         return "E4"
 
     def extract(self, project: Any) -> list[Annotation]:
-        text = project.reference_text()
-        nlp = _get_nlp(DEFAULT_SPACY_MODEL)
-        nlp.max_length = len(text) + 1000
-        doc = nlp(text)
+        doc = project.spacy_doc(DEFAULT_SPACY_MODEL)
 
         source_urn = f"urn:palimpsest:{project.metadata.id}"
         annotations: list[Annotation] = []
@@ -95,7 +162,7 @@ class EntityExtractor:
             )
             annotations.append(ann)
 
-        return annotations
+        return _cluster_entities(annotations)
 
     def manifest(self) -> dict[str, Any]:
         return {

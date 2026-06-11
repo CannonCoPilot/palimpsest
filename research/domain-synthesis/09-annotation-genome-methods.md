@@ -13,6 +13,8 @@ Three architectural lessons dominate. First, the GFF3/Sequence Ontology pattern 
 
 ---
 
+**Format note**: Throughout this document, GFF3-format annotations are used to illustrate the structural analogy between genome and literary annotation. The actual Palimpsest output format is W3C Web Annotation JSONL (see doc 14 v3.0). GFF3/PAF is available as a computational export format.
+
 ## Part I: Gene Prediction Tools
 
 ### 1.1 MAKER — Evidence Integration Pipeline

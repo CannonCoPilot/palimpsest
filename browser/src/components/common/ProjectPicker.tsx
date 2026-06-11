@@ -5,6 +5,7 @@
 
 import { useEffect, useState } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
+import ImportDialog from './ImportDialog';
 
 interface ProjectEntry {
   id: string;
@@ -56,18 +57,18 @@ export default function ProjectPicker(): JSX.Element {
 
   if (projects.length === 0) {
     return (
-      <div style={{ padding: '16px', color: '#666' }}>
-        <p>No projects found. Ingest a text first:</p>
-        <pre style={{ backgroundColor: '#f5f5f5', padding: '8px', borderRadius: '4px' }}>
-          palimpsest ingest my-book.txt --workspace ./data
-        </pre>
+      <div style={{ padding: '16px' }}>
+        <ImportDialog />
       </div>
     );
   }
 
   return (
     <div style={{ padding: '16px' }}>
-      <div style={{ marginBottom: '12px', fontWeight: 'bold' }}>Select a project:</div>
+      <div style={{ marginBottom: '16px' }}>
+        <ImportDialog />
+      </div>
+      <div style={{ marginBottom: '12px', fontWeight: 'bold' }}>Or select an existing project:</div>
       {projects.map((p) => (
         <div
           key={p.id}

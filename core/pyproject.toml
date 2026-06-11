@@ -42,6 +42,7 @@ packages = ["palimpsest"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+norecursedirs = ["../tests"]
 python_files = ["test_*.py"]
 addopts = "--strict-markers -q"
 

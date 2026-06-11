@@ -26,10 +26,10 @@ except ImportError:
 
 
 class CoreferenceExtractor:
-    """Extract coreference chains via BookNLP.
+    """Extract coreference chains via BookNLP with spaCy NER fallback.
 
-    If BookNLP is not installed, extract() raises FileNotFoundError
-    which the pipeline gracefully skips.
+    If BookNLP is not installed, falls back to spaCy-based name repetition
+    chains (lower quality but always available).
     """
 
     @property
@@ -54,10 +54,8 @@ class CoreferenceExtractor:
 
     def extract(self, project: Project) -> list[Annotation]:
         if not BOOKNLP_AVAILABLE:
-            raise FileNotFoundError(
-                "BookNLP not installed. Install with: pip install booknlp\n"
-                "Also requires Java 11+. Coreference track will be skipped."
-            )
+            return self._spacy_fallback(project)
+
 
         import os
         import warnings
@@ -183,8 +181,60 @@ class CoreferenceExtractor:
             "overviewBarRendering": {"type": "density-barcode", "color": "#14B8A6"},
         }
 
+    def _spacy_fallback(self, project: Project) -> list[Annotation]:
+        """Basic coreference via spaCy NER: link repeated entity mentions into chains."""
+        import spacy
+
+        try:
+            nlp = spacy.load("en_core_web_lg")
+        except OSError:
+            nlp = spacy.load("en_core_web_sm")
+
+        text = project.reference_text()
+        nlp.max_length = len(text) + 1000
+        doc = nlp(text)
+
+        name_chains: dict[str, list[tuple[int, int, str]]] = {}
+        for ent in doc.ents:
+            if ent.label_ in ("PERSON", "GPE", "LOC", "ORG"):
+                key = ent.text.strip().lower()
+                if key not in name_chains:
+                    name_chains[key] = []
+                name_chains[key].append((ent.start_char, ent.end_char, ent.text))
+
+        annotations: list[Annotation] = []
+        source_urn = f"urn:palimpsest:{project.metadata.id}"
+        chain_id = 0
+
+        for _key, mentions in name_chains.items():
+            if len(mentions) < 2:
+                continue
+            referent = max(mentions, key=lambda m: len(m[2]))[2]
+            for start, end, mention_text in mentions:
+                ann = Annotation(
+                    body=coreference_body(
+                        chain_id=str(chain_id),
+                        referent_id=referent,
+                        mention_type="name",
+                    ),
+                    target=Target(
+                        source=source_urn,
+                        selector=TextPositionSelector(start=start, end=end),
+                    ),
+                    creator=Creator(name="spacy-coref-fallback/0.1"),
+                    confidence=0.60,
+                    evidence_level="E4",
+                    project_id=project.metadata.id,
+                    track_name="coreference",
+                )
+                annotations.append(ann)
+            chain_id += 1
+
+        return annotations
+
     def parameters(self) -> dict[str, Any]:
         return {
-            "coreference.model": "booknlp/big" if BOOKNLP_AVAILABLE else "unavailable",
-            "coreference.available": BOOKNLP_AVAILABLE,
+            "coreference.model": "booknlp/big" if BOOKNLP_AVAILABLE else "spacy-fallback",
+            "coreference.available": True,
+            "coreference.booknlp_available": BOOKNLP_AVAILABLE,
         }
