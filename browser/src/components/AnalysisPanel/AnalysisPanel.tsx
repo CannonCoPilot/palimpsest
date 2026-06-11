@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 
 interface TrackStatus {
@@ -31,6 +31,65 @@ const TRACK_DESCRIPTIONS: Record<string, string> = {
   lithmm: 'Literary Hidden Markov Model states',
   compartments: 'A/B thematic compartments',
   self_similarity: 'Paragraph embedding similarity matrix',
+};
+
+const TRACK_DETAILS: Record<string, { method: string; explanation: string }> = {
+  entities: {
+    method: 'spaCy en_core_web_lg NER pipeline',
+    explanation: 'Identifies named entities (people, places, organizations) in the text using a pre-trained transformer model. Each entity is classified by type (PERSON, ORG, GPE, LOC) and assigned a confidence score based on the model\'s prediction probability.',
+  },
+  sentiment: {
+    method: 'Sentence-level VADER sentiment + hedonometer valence',
+    explanation: 'Computes sentiment polarity (-1 to +1) and arousal for each sentence using the VADER lexicon. The hedonometer valence score measures word-level happiness. Results are aggregated to paragraph level as mean, min, max, and volatility (standard deviation across sentences).',
+  },
+  dialogue: {
+    method: 'Rule-based quotation detection + BookNLP speaker attribution',
+    explanation: 'Detects quoted speech using quotation mark patterns, then attributes each quote to a speaker using BookNLP\'s coreference-aware attribution model. Non-dialogue paragraphs are classified as narration, description, or exposition.',
+  },
+  coreference: {
+    method: 'BookNLP 2.0 coreference resolution',
+    explanation: 'Groups mentions of the same entity into chains (e.g., "Dr. Jekyll", "the doctor", "he" all refer to the same person). Each mention is typed as proper noun (prop), common noun (nom), or pronoun (pron). Chain IDs link all co-referent mentions.',
+  },
+  sections: {
+    method: 'Heading detection + TextTiling boundary segmentation',
+    explanation: 'Identifies chapter/section boundaries by detecting heading patterns (capitalized lines, Roman numerals) and computing lexical cohesion shifts using the TextTiling algorithm. Each section gets a title extracted from the heading text.',
+  },
+  topics: {
+    method: 'Latent Dirichlet Allocation (LDA) with TF-IDF',
+    explanation: 'Discovers latent topic distributions across paragraphs using LDA. Each paragraph gets a probability distribution over K topics (default 10). Topic labels are derived from the top-weighted words. The dominant topic per paragraph is assigned as the annotation.',
+  },
+  lexical: {
+    method: 'Type-token ratio, hapax ratio, Flesch-Kincaid, word frequency',
+    explanation: 'Measures vocabulary richness per paragraph: type-token ratio (unique/total words), hapax legomena ratio (words appearing once), mean word length, sentence length distribution, and Flesch-Kincaid readability grade. Z-scored across the document.',
+  },
+  syntax: {
+    method: 'Dependency parse tree depth + clause count + POS distribution',
+    explanation: 'Analyzes syntactic complexity using spaCy dependency parsing. Measures: mean parse tree depth, subordinate clause count, noun/verb/adjective ratios, passive voice frequency, and sentence type distribution (simple/compound/complex).',
+  },
+  lithmm: {
+    method: 'Gaussian Hidden Markov Model over 6 literary features',
+    explanation: 'Fits an HMM to the paragraph-level feature vectors (sentiment, lexical richness, dialogue ratio, entity density, topic entropy, syntactic complexity). Each paragraph is assigned to a hidden state representing a distinct "writing mode" (e.g., action, reflection, dialogue). State descriptions are auto-generated from feature z-scores.',
+  },
+  compartments: {
+    method: 'Eigenvector decomposition of self-similarity matrix',
+    explanation: 'Analogous to A/B compartments in Hi-C genomics. Computes the first eigenvector of the self-similarity correlation matrix. Positive values = compartment A (one thematic mode), negative = compartment B (the other). Reveals large-scale thematic bipartition of the text.',
+  },
+  self_similarity: {
+    method: 'Cosine similarity of paragraph embeddings (Qwen3-Embedding-4B)',
+    explanation: 'Each paragraph is embedded into a 2560-dimensional vector using the Qwen3-Embedding model. The NxN similarity matrix is computed as the dot product of L2-normalized vectors (cosine similarity). Values range 0-1 where 1 = semantically identical. The diagonal is always 1. Off-diagonal bright spots reveal parallel passages, echoes, and thematic recurrences.',
+  },
+  narrative_arc: {
+    method: 'Sliding window smoothing of sentiment + tension features',
+    explanation: 'Computes a smoothed narrative arc signal by applying a Gaussian window to sentence-level sentiment and tension scores. Reveals the story\'s emotional trajectory — rising action, climax, resolution — as a continuous curve.',
+  },
+  rqa: {
+    method: 'Recurrence Quantification Analysis of embedding sequences',
+    explanation: 'Constructs a recurrence plot from paragraph embeddings and computes RQA metrics: recurrence rate (how often the text returns to similar themes), determinism (predictability of transitions), entropy (complexity of recurrence patterns), and laminarity (tendency to stay in the same state).',
+  },
+  alphabet: {
+    method: 'Foldseek-inspired narrative alphabet encoding',
+    explanation: 'Encodes each paragraph as a letter from a structural alphabet based on its feature profile (like Foldseek encodes protein structure). The resulting "narrative sequence" can be aligned between texts to find structural homology — texts with similar dramatic arcs share similar alphabet strings.',
+  },
 };
 
 export default function AnalysisPanel() {
@@ -81,6 +140,26 @@ export default function AnalysisPanel() {
     fetchStatus();
   }, [projectId, tracks, fetchStatus]);
 
+  const [expandedTrack, setExpandedTrack] = useState<string | null>(null);
+  const [trackStats, setTrackStats] = useState<Record<string, { count: number }>>({});
+
+  useEffect(() => {
+    if (!projectId) return;
+    fetch(`/api/projects/${projectId}/tracks`)
+      .then((r) => r.json())
+      .then((trackNames: string[]) => {
+        const stats: Record<string, { count: number }> = {};
+        const promises = trackNames.map((name) =>
+          fetch(`/data/${projectId}/tracks/${name}.jsonl`)
+            .then((r) => r.text())
+            .then((text) => { stats[name] = { count: text.trim().split('\n').filter(Boolean).length }; })
+            .catch(() => {})
+        );
+        Promise.all(promises).then(() => setTrackStats(stats));
+      })
+      .catch(() => {});
+  }, [projectId]);
+
   const pendingCount = tracks.filter((t) => t.status === 'pending').length;
   const computedCount = tracks.filter((t) => t.status === 'computed').length;
   const runningCount = tracks.filter((t) => t.status === 'running').length;
@@ -129,8 +208,8 @@ export default function AnalysisPanel() {
                 return !depTrack || depTrack.status !== 'computed';
               });
 
-              return (
-                <tr key={track.name} className="border-b border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-muted)]">
+              return (<React.Fragment key={track.name}>
+                <tr className="border-b border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-muted)]">
                   <td className="px-4 py-2.5 text-center">
                     <span
                       style={{ color: si.color }}
@@ -205,9 +284,47 @@ export default function AnalysisPanel() {
                         Retry
                       </button>
                     )}
+                    <button
+                      onClick={() => setExpandedTrack(expandedTrack === track.name ? null : track.name)}
+                      className="ml-1 px-2 py-1 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.8em]"
+                    >
+                      {expandedTrack === track.name ? 'Hide' : 'Details'}
+                    </button>
                   </td>
                 </tr>
-              );
+                {expandedTrack === track.name && (
+                  <tr className="bg-[var(--color-bg)]">
+                    <td colSpan={6} className="px-4 py-3">
+                      <div className="border border-[var(--color-border-subtle)] rounded p-3 bg-[var(--color-bg-subtle)]">
+                        <div className="grid grid-cols-[120px_1fr] gap-y-2 text-[0.85em]">
+                          <span className="text-[var(--color-text-muted)] font-semibold">Method</span>
+                          <span>{TRACK_DETAILS[track.name]?.method ?? 'N/A'}</span>
+                          <span className="text-[var(--color-text-muted)] font-semibold">How it works</span>
+                          <span>{TRACK_DETAILS[track.name]?.explanation ?? 'No detailed description available.'}</span>
+                          <span className="text-[var(--color-text-muted)] font-semibold">Output type</span>
+                          <span>{track.outputType === 'annotation' ? 'JSONL annotations (W3C Web Annotation)' : 'Binary signal matrix + JSON manifest'}</span>
+                          <span className="text-[var(--color-text-muted)] font-semibold">Evidence level</span>
+                          <span>{track.evidenceLevel} — {track.evidenceLevel === 'E5' ? 'Deterministic algorithm' : track.evidenceLevel === 'E4' ? 'Statistical/ML model' : 'Other'}</span>
+                          {trackStats[track.name] && (
+                            <>
+                              <span className="text-[var(--color-text-muted)] font-semibold">Annotations</span>
+                              <span>{trackStats[track.name].count.toLocaleString()} annotations in this project</span>
+                            </>
+                          )}
+                          {track.dependsOn.filter((d) => !d.startsWith('_')).length > 0 && (
+                            <>
+                              <span className="text-[var(--color-text-muted)] font-semibold">Requires</span>
+                              <span>{track.dependsOn.filter((d) => !d.startsWith('_')).join(', ')}</span>
+                            </>
+                          )}
+                          <span className="text-[var(--color-text-muted)] font-semibold">LFO types</span>
+                          <span className="font-[var(--font-mono)] text-[0.9em]">{track.lfoTypes.join(', ')}</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                )}
+              </React.Fragment>);
             })}
           </tbody>
         </table>

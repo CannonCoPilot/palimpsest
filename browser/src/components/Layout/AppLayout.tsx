@@ -115,7 +115,7 @@ export default function AppLayout() {
         )}
       </div>
 
-      <OverviewBar />
+      {activeTab !== 'texthic' && <OverviewBar />}
     </div>
   );
 }
