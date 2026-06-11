@@ -271,6 +271,63 @@ def create_app(workspace: Path) -> FastAPI:
             logger.error("Search failed: %s", exc)
             raise HTTPException(status_code=500, detail=f"Search error: {exc}")
 
+    @app.get("/api/projects/{project_id}/characters")
+    async def get_characters(project_id: str) -> JSONResponse:
+        """Get character index for a project (built from coreference + entity tracks)."""
+        import asyncio
+
+        if ".." in project_id:
+            raise HTTPException(status_code=400, detail="Invalid project ID")
+
+        project_dir = workspace / project_id
+        if not project_dir.is_dir():
+            raise HTTPException(status_code=404, detail="Project not found")
+
+        cache_path = project_dir / "cache" / "characters.json"
+        if cache_path.exists():
+            return JSONResponse(content=json.loads(cache_path.read_text()))
+
+        from palimpsest.characters import build_character_index
+        from palimpsest.project import Project
+
+        proj = Project.load(project_dir)
+        paras = [{"start": p[0], "end": p[1]} for p in proj.paragraphs()]
+        characters = await asyncio.to_thread(build_character_index, project_dir, paras)
+
+        cache_path.parent.mkdir(exist_ok=True)
+        cache_path.write_text(json.dumps(characters, indent=2), encoding="utf-8")
+
+        return JSONResponse(content=characters)
+
+    @app.get("/api/projects/{project_id}/characters/cooccurrence")
+    async def get_cooccurrence(project_id: str, top_n: int = 20) -> JSONResponse:
+        """Get character co-occurrence matrix."""
+        import asyncio
+
+        if ".." in project_id:
+            raise HTTPException(status_code=400, detail="Invalid project ID")
+
+        project_dir = workspace / project_id
+        cache_path = project_dir / "cache" / "characters.json"
+
+        if cache_path.exists():
+            characters = json.loads(cache_path.read_text())
+        else:
+            from palimpsest.characters import build_character_index
+            from palimpsest.project import Project
+
+            proj = Project.load(project_dir)
+            paras = [{"start": p[0], "end": p[1]} for p in proj.paragraphs()]
+            characters = await asyncio.to_thread(build_character_index, project_dir, paras)
+
+            cache_path.parent.mkdir(exist_ok=True)
+            cache_path.write_text(json.dumps(characters, indent=2), encoding="utf-8")
+
+        from palimpsest.characters import compute_cooccurrence
+
+        matrix = compute_cooccurrence(characters, top_n=top_n)
+        return JSONResponse(content=matrix)
+
     @app.post("/api/import")
     async def import_epub(
         file: UploadFile,
