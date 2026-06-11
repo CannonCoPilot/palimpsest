@@ -328,6 +328,116 @@ def create_app(workspace: Path) -> FastAPI:
         matrix = compute_cooccurrence(characters, top_n=top_n)
         return JSONResponse(content=matrix)
 
+    _running_jobs: dict[str, dict] = {}
+
+    @app.get("/api/projects/{project_id}/analysis/status")
+    async def analysis_status(project_id: str) -> JSONResponse:
+        """Get status of all track extractors for a project."""
+        if ".." in project_id:
+            raise HTTPException(status_code=400, detail="Invalid project ID")
+
+        project_dir = workspace / project_id
+        if not project_dir.is_dir():
+            raise HTTPException(status_code=404, detail="Project not found")
+
+        from palimpsest.tracks.registry import TrackRegistry
+
+        registry = TrackRegistry.discover()
+        tracks_dir = project_dir / "tracks"
+        manifests_dir = project_dir / "manifests"
+
+        result = []
+        for extractor_cls in registry.dependency_order():
+            ext = extractor_cls()
+            name = ext.name
+            output_exists = False
+            if ext.output_type == "annotation":
+                output_exists = (tracks_dir / f"{name}.jsonl").exists()
+            elif ext.output_type == "signal":
+                output_exists = (project_dir / "signals" / f"{name}.json").exists()
+
+            manifest_path = manifests_dir / f"{name}.manifest.json"
+            manifest_data = None
+            if manifest_path.exists():
+                manifest_data = json.loads(manifest_path.read_text())
+
+            job = _running_jobs.get(f"{project_id}:{name}")
+            status = "running" if job else ("computed" if output_exists else "pending")
+
+            result.append({
+                "name": name,
+                "status": status,
+                "outputType": ext.output_type,
+                "dependsOn": ext.depends_on,
+                "evidenceLevel": ext.evidence_level,
+                "hasManifest": manifest_data is not None,
+                "lfoTypes": ext.lfo_types,
+            })
+
+        return JSONResponse(content=result)
+
+    @app.post("/api/projects/{project_id}/analyze/{track_name}")
+    async def run_analysis(project_id: str, track_name: str, force: bool = False) -> JSONResponse:
+        """Run a single track extractor."""
+        import asyncio
+
+        if ".." in project_id:
+            raise HTTPException(status_code=400, detail="Invalid project ID")
+
+        project_dir = workspace / project_id
+        if not project_dir.is_dir():
+            raise HTTPException(status_code=404, detail="Project not found")
+
+        from palimpsest.tracks.registry import TrackRegistry
+
+        registry = TrackRegistry.discover()
+        all_extractors = {type(e)().name: type(e) for e in [cls() for cls in registry.dependency_order()]}
+        if track_name not in all_extractors:
+            raise HTTPException(status_code=404, detail=f"Unknown track: {track_name}")
+
+        job_key = f"{project_id}:{track_name}"
+        if job_key in _running_jobs:
+            return JSONResponse(content={"status": "already_running"})
+
+        from palimpsest.project import Project
+
+        project = Project.load(project_dir)
+        extractor = all_extractors[track_name]()
+
+        _running_jobs[job_key] = {"status": "running", "track": track_name}
+
+        async def run() -> None:
+            try:
+                result = await asyncio.to_thread(extractor.extract, project)
+                if extractor.output_type == "annotation" and isinstance(result, list):
+                    from palimpsest.annotation.serializer import write_track
+                    track_path = project_dir / "tracks" / f"{track_name}.jsonl"
+                    write_track(track_path, result)
+
+                manifest_dir = project_dir / "manifests"
+                manifest_dir.mkdir(exist_ok=True)
+                (manifest_dir / f"{track_name}.manifest.json").write_text(
+                    json.dumps(extractor.manifest(), indent=2), encoding="utf-8",
+                )
+                _running_jobs[job_key] = {"status": "completed", "track": track_name}
+            except Exception as exc:
+                _running_jobs[job_key] = {"status": "failed", "track": track_name, "error": str(exc)}
+            finally:
+                import threading
+                threading.Timer(30.0, lambda: _running_jobs.pop(job_key, None)).start()
+
+        asyncio.create_task(run())
+        return JSONResponse(content={"status": "started", "track": track_name})
+
+    @app.get("/api/projects/{project_id}/analyze/{track_name}/status")
+    async def job_status(project_id: str, track_name: str) -> JSONResponse:
+        """Check status of a running analysis job."""
+        job_key = f"{project_id}:{track_name}"
+        job = _running_jobs.get(job_key)
+        if not job:
+            return JSONResponse(content={"status": "idle"})
+        return JSONResponse(content=job)
+
     @app.post("/api/import")
     async def import_epub(
         file: UploadFile,
