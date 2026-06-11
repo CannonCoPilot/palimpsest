@@ -49,3 +49,6 @@ data/
 # Scratch
 .scratch/
 .coverage
+
+# Large research PDFs (keep local, don't push to GitHub)
+research/papers/**/*.pdf
