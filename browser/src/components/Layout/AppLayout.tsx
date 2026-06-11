@@ -7,6 +7,7 @@ import TextSearch from '../TextLinearView/TextSearch';
 import DetailPanel from '../DetailPanel/DetailPanel';
 import TrackPanel from '../TrackPanel/TrackPanel';
 import OverviewBar from '../OverviewBar/OverviewBar';
+import BrowserView from '../BrowserView/BrowserView';
 import DotplotView from '../DotplotView/DotplotView';
 import CharactersPanel from '../CharactersPanel/CharactersPanel';
 import AnalysisPanel from '../AnalysisPanel/AnalysisPanel';
@@ -98,6 +99,7 @@ export default function AppLayout() {
         >
           <ErrorBoundary fallbackLabel={activeTab}>
             {activeTab === 'reading' && <TextLinearView />}
+            {activeTab === 'browser' && <BrowserView />}
             {activeTab === 'texthic' && <DotplotView />}
             {activeTab === 'characters' && <CharactersPanel />}
             {activeTab === 'analysis' && <AnalysisPanel />}

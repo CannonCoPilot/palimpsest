@@ -40,6 +40,7 @@ export default function AnnotationContextMenu({ annotation, children }: Props) {
     const canonicalName = (annotation.body as Record<string, unknown>)['palimpsest:canonicalName'] as string | undefined;
     const searchTerm = canonicalName || value || '';
     if (searchTerm) {
+      useViewStore.getState().setActiveTab('reading');
       const { referenceText, paragraphs } = useProjectStore.getState();
       const search = useSearchStore.getState();
       search.open();

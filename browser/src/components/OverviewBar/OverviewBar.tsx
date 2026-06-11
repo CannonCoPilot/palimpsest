@@ -3,6 +3,7 @@ import { useProjectStore } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
 import { useSearchStore } from '../../stores/searchStore';
 import { useViewStore } from '../../stores/viewStore';
+import { useBrowserStore } from '../../stores/browserStore';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import type { TrackManifest } from '../../adapters/TrackManifest';
 import { TRACK_COLORS } from '../../utils/trackColors';
@@ -147,6 +148,7 @@ export default function OverviewBar() {
   const trackStates = useTrackStore((s) => s.tracks);
   const searchMatches = useSearchStore((s) => s.matches);
   const visibleRange = useViewStore((s) => s.visibleParagraphRange);
+  const overviewBarHidden = useBrowserStore((s) => s.overviewBarHidden);
   const docLen = referenceText.length || 1;
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -217,10 +219,14 @@ export default function OverviewBar() {
       setDragEnd(null);
       return;
     }
-    const targetPara = paragraphs.findIndex((p) => p.end >= start);
-    if (targetPara >= 0) {
-      useViewStore.getState().setSelectedParagraphIndex(targetPara);
-      useViewStore.getState().requestScrollToParagraph(targetPara);
+    const startPara = paragraphs.findIndex((p) => p.end >= start);
+    const endPara = paragraphs.findIndex((p) => p.end >= end);
+    const resolvedEnd = endPara >= 0 ? endPara : paragraphs.length - 1;
+    if (startPara >= 0) {
+      useViewStore.getState().setSelectedParagraphIndex(startPara);
+      useViewStore.getState().requestScrollToParagraph(startPara);
+      useViewStore.getState().setVisibleParagraphRange([startPara, resolvedEnd]);
+      useViewStore.getState().setZoomLevel('paragraph');
     }
   }, [dragStart, dragEnd, docLen, paragraphs]);
 
@@ -237,7 +243,7 @@ export default function OverviewBar() {
       onMouseUp={handleMouseUp}
       onMouseLeave={() => { if (dragging.current) handleMouseUp(); }}
     >
-      {trackNames.map((name) => (
+      {trackNames.filter((name) => !overviewBarHidden.has(name)).map((name) => (
         <TrackBarcode
           key={name}
           label={name}
@@ -247,7 +253,7 @@ export default function OverviewBar() {
           documentLength={docLen}
           width={barWidth}
           height={12}
-          visible={trackStates[name]?.visible ?? true}
+          visible={true}
           viewportStart={vpStart}
           viewportEnd={vpEnd}
           dragRange={dragRange}

@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 import json
+import os
+import signal
+import subprocess
 import sys
+import time
 import uuid
 from datetime import UTC, datetime
 from pathlib import Path
@@ -362,16 +366,102 @@ def export(project_dir: Path, fmt: str, output: Path | None) -> None:
     console.print(f"[green]Exported to:[/green] {export_dir}")
 
 
+def _pidfile(port: int) -> Path:
+    """Return the PID file path for a given port."""
+    return Path.home() / ".palimpsest" / f"serve-{port}.pid"
+
+
+def _kill_port(port: int) -> bool:
+    """Kill any process on the given port. Returns True if something was killed."""
+    result = subprocess.run(
+        ["lsof", "-ti", f":{port}"],
+        capture_output=True, text=True,
+    )
+    pids = [int(p) for p in result.stdout.strip().split("\n") if p.strip()]
+    killed = False
+    for pid in pids:
+        try:
+            os.kill(pid, signal.SIGTERM)
+            killed = True
+        except ProcessLookupError:
+            pass
+    if killed:
+        time.sleep(0.5)
+    return killed
+
+
 @main.command()
 @click.argument("workspace", type=click.Path(exists=True, path_type=Path))
 @click.option("--port", default=8080, help="Server port")
 def serve(workspace: Path, port: int) -> None:
-    """Start the browser server."""
+    """Start the browser server (auto-kills previous instance on same port)."""
     from palimpsest.server import run_server
+
+    pidfile = _pidfile(port)
+
+    # Kill any previous palimpsest server on this port
+    if pidfile.exists():
+        try:
+            old_pid = int(pidfile.read_text().strip())
+            os.kill(old_pid, signal.SIGTERM)
+            console.print(f"[yellow]Stopped previous server[/yellow] (PID {old_pid})")
+            import time
+            time.sleep(0.5)
+        except (ProcessLookupError, ValueError, OSError):
+            pass
+        pidfile.unlink(missing_ok=True)
+
+    # If port is still occupied (non-palimpsest process), kill it
+    if _kill_port(port):
+        console.print(f"[yellow]Killed stale process on port {port}[/yellow]")
+
+    # Write PID file
+    pidfile.parent.mkdir(parents=True, exist_ok=True)
+    pidfile.write_text(str(os.getpid()))
 
     console.print(f"[green]Serving[/green] {workspace} on http://127.0.0.1:{port}")
     console.print("Press Ctrl+C to stop.")
-    run_server(workspace, port=port)
+    try:
+        run_server(workspace, port=port)
+    finally:
+        pidfile.unlink(missing_ok=True)
+
+
+@main.command()
+@click.option("--port", default=8080, help="Server port to stop")
+@click.option("--all", "stop_all", is_flag=True, help="Stop all palimpsest servers")
+def stop(port: int, stop_all: bool) -> None:
+    """Stop a running palimpsest server."""
+    piddir = Path.home() / ".palimpsest"
+    if not piddir.exists():
+        console.print("[yellow]No servers running.[/yellow]")
+        return
+
+    targets = []
+    if stop_all:
+        targets = list(piddir.glob("serve-*.pid"))
+    else:
+        pf = _pidfile(port)
+        if pf.exists():
+            targets = [pf]
+
+    if not targets:
+        # Fall back to killing by port
+        if _kill_port(port):
+            console.print(f"[green]Killed process on port {port}[/green]")
+        else:
+            console.print(f"[yellow]No server found on port {port}.[/yellow]")
+        return
+
+    for pf in targets:
+        try:
+            pid = int(pf.read_text().strip())
+            srv_port = pf.stem.replace("serve-", "")
+            os.kill(pid, signal.SIGTERM)
+            console.print(f"[green]Stopped server on port {srv_port}[/green] (PID {pid})")
+        except (ProcessLookupError, ValueError, OSError):
+            console.print(f"[dim]Stale PID file removed: {pf.name}[/dim]")
+        pf.unlink(missing_ok=True)
 
 
 @main.command()
