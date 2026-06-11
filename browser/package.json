@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-context-menu": "^2.3.0",
+    "@radix-ui/react-slider": "^1.4.0",
     "@radix-ui/react-tooltip": "^1.2.9",
     "@tailwindcss/vite": "^4.3.0",
     "@tanstack/react-virtual": "^3.14.2",

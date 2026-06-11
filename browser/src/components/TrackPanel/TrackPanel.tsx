@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 import { useTrackStore, type DisplayMode } from '../../stores/trackStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
@@ -25,49 +26,80 @@ interface TrackRowProps {
   shortcut: number;
   evidenceLevel: string;
   displayMode: DisplayMode;
+  confidenceThreshold: number;
   onToggle: () => void;
   onModeChange: (mode: DisplayMode) => void;
+  onThresholdChange: (value: number) => void;
 }
 
-function TrackRow({ name, count, color, visible, shortcut, evidenceLevel, displayMode, onToggle, onModeChange }: TrackRowProps) {
+function TrackRow({ name, count, color, visible, shortcut, evidenceLevel, displayMode, confidenceThreshold, onToggle, onModeChange, onThresholdChange }: TrackRowProps) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <div className="flex items-center gap-1.5 py-1 border-b border-[var(--color-border-subtle)]" style={{ opacity: visible ? 1 : 0.4 }}>
-      <div
-        className="w-2.5 h-2.5 rounded-sm shrink-0 cursor-pointer"
-        style={{ backgroundColor: color }}
-        onClick={onToggle}
-        role="switch"
-        aria-checked={visible}
-        aria-label={`Toggle ${name} track`}
-        tabIndex={0}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } }}
-      />
-      <span className="flex-1 text-[0.9em] cursor-pointer truncate" onClick={onToggle}>{name}</span>
-      <div className="flex gap-px" onClick={(e) => e.stopPropagation()}>
-        {MODE_LABELS.map(({ mode, label, tip }) => (
-          <Tooltip key={mode} content={tip} side="right">
-            <button
-              onClick={() => onModeChange(mode)}
-              className={`w-4 h-4 text-[0.55em] leading-none border rounded-sm cursor-pointer ${
-                displayMode === mode
-                  ? 'bg-[var(--color-primary-subtle)] text-[var(--color-primary)] border-[var(--color-primary)] font-bold'
-                  : 'bg-transparent text-[var(--color-text-muted)] border-[var(--color-border-subtle)] hover:border-[var(--color-border)]'
-              }`}
-            >
-              {label}
-            </button>
-          </Tooltip>
-        ))}
+    <div className="border-b border-[var(--color-border-subtle)]" style={{ opacity: visible ? 1 : 0.4 }}>
+      <div className="flex items-center gap-1.5 py-1">
+        <div
+          className="w-2.5 h-2.5 rounded-sm shrink-0 cursor-pointer"
+          style={{ backgroundColor: color }}
+          onClick={onToggle}
+          role="switch"
+          aria-checked={visible}
+          aria-label={`Toggle ${name} track`}
+          tabIndex={0}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } }}
+        />
+        <Tooltip content="Click to expand settings" side="right">
+          <span
+            className="flex-1 text-[0.9em] cursor-pointer truncate"
+            onClick={() => setExpanded(!expanded)}
+          >
+            {name}
+          </span>
+        </Tooltip>
+        <div className="flex gap-px" onClick={(e) => e.stopPropagation()}>
+          {MODE_LABELS.map(({ mode, label, tip }) => (
+            <Tooltip key={mode} content={tip} side="right">
+              <button
+                onClick={() => onModeChange(mode)}
+                className={`w-4 h-4 text-[0.55em] leading-none border rounded-sm cursor-pointer focus-visible:outline-2 focus-visible:outline-[var(--color-border-focus)] focus-visible:outline-offset-1 ${
+                  displayMode === mode
+                    ? 'bg-[var(--color-primary-subtle)] text-[var(--color-primary)] border-[var(--color-primary)] font-bold'
+                    : 'bg-transparent text-[var(--color-text-muted)] border-[var(--color-border-subtle)] hover:border-[var(--color-border)]'
+                }`}
+              >
+                {label}
+              </button>
+            </Tooltip>
+          ))}
+        </div>
+        <Tooltip content={evidenceLevel === 'E4' ? 'ML prediction' : 'Rule-based/statistical'} side="right">
+          <span className="px-1 text-[0.65em] text-[var(--color-primary-hover)] bg-[var(--color-primary-subtle)] rounded-sm font-bold">
+            {evidenceLevel}
+          </span>
+        </Tooltip>
+        <span className="text-[var(--color-text-muted)] text-[0.8em]">{count}</span>
+        <kbd className="px-0.5 text-[0.7em] text-[#aaa] border border-[var(--color-border)] rounded-sm">
+          {shortcut}
+        </kbd>
       </div>
-      <Tooltip content={evidenceLevel === 'E4' ? 'ML prediction' : 'Rule-based/statistical'} side="right">
-        <span className="px-1 text-[0.65em] text-[var(--color-primary-hover)] bg-[var(--color-primary-subtle)] rounded-sm font-bold">
-          {evidenceLevel}
-        </span>
-      </Tooltip>
-      <span className="text-[var(--color-text-muted)] text-[0.8em]">{count}</span>
-      <kbd className="px-0.5 text-[0.7em] text-[#aaa] border border-[var(--color-border)] rounded-sm">
-        {shortcut}
-      </kbd>
+      {expanded && visible && (
+        <div className="flex items-center gap-1.5 pb-1.5 pl-4 pr-1">
+          <Tooltip content={`Min confidence: ${Math.round(confidenceThreshold * 100)}%`} side="bottom">
+            <span className="text-[0.65em] text-[var(--color-text-muted)] w-5 text-right">
+              {Math.round(confidenceThreshold * 100)}%
+            </span>
+          </Tooltip>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value={Math.round(confidenceThreshold * 100)}
+            onChange={(e) => onThresholdChange(parseInt(e.target.value, 10) / 100)}
+            className="flex-1 h-1 accent-[var(--color-primary)] cursor-pointer"
+            aria-label={`Confidence threshold for ${name}`}
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -77,6 +109,7 @@ export default function TrackPanel() {
   const trackStates = useTrackStore((s) => s.tracks);
   const toggleTrack = useTrackStore((s) => s.toggleTrack);
   const setDisplayMode = useTrackStore((s) => s.setDisplayMode);
+  const setConfidenceThreshold = useTrackStore((s) => s.setConfidenceThreshold);
   const trackNames = Object.keys(projectTracks).filter((n) => n !== 'segments').sort();
 
   return (
@@ -95,8 +128,10 @@ export default function TrackPanel() {
           shortcut={idx + 1}
           evidenceLevel={trackStates[name]?.manifest?.evidenceLevel ?? EVIDENCE_LEVEL_FALLBACK[name] ?? 'E5'}
           displayMode={trackStates[name]?.displayMode ?? 'inline'}
+          confidenceThreshold={trackStates[name]?.confidenceThreshold ?? 0}
           onToggle={() => toggleTrack(name)}
           onModeChange={(mode) => setDisplayMode(name, mode)}
+          onThresholdChange={(val) => setConfidenceThreshold(name, val)}
         />
       ))}
       {trackNames.length === 0 && (

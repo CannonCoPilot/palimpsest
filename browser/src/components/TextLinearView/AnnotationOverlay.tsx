@@ -12,6 +12,8 @@ import { useTrackStore } from '../../stores/trackStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
 import type { SearchMatch } from '../../stores/searchStore';
 import { Tooltip } from '../common/Tooltip';
+import AnnotationHoverCard from '../common/AnnotationHoverCard';
+import AnnotationContextMenu from '../common/AnnotationContextMenu';
 
 const BODY_TYPE_TO_TRACK: Record<string, string> = {
   'palimpsest:EntityAnnotation': 'entities',
@@ -305,9 +307,11 @@ export default function AnnotationOverlay({
     );
     elements.push(
       topAnn ? (
-        <Tooltip key={`t-${i}`} content={buildAnnotationTitle(topAnn)} side="bottom" delayDuration={400}>
-          {span}
-        </Tooltip>
+        <AnnotationContextMenu key={`c-${i}`} annotation={topAnn}>
+          <Tooltip content={<AnnotationHoverCard annotation={topAnn} />} side="bottom" delayDuration={400}>
+            {span}
+          </Tooltip>
+        </AnnotationContextMenu>
       ) : span
     );
     cursor = seg.end;

@@ -92,6 +92,19 @@ body {
   background-color: var(--color-bg);
 }
 
+/* Global focus-visible ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+button:focus-visible, [role="switch"]:focus-visible, [role="tab"]:focus-visible,
+input:focus-visible, a:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 1px;
+  border-radius: var(--radius-sm);
+}
+
 /* Tooltip animation keyframes */
 @keyframes tooltip-fade-in {
   from { opacity: 0; transform: scale(0.96); }
