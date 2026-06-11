@@ -177,7 +177,10 @@ export default function DotplotView(): JSX.Element | null {
     [signal, n, setSelectedParagraphIndex, requestScrollToParagraph],
   );
 
-  if (!textHicOpen) return null;
+  const activeTab = useViewStore((s) => s.activeTab);
+  const isTabMode = activeTab === 'texthic';
+
+  if (!textHicOpen && !isTabMode) return null;
 
   const hoverValue = hoveredCell && signal
     ? signal.data[hoveredCell.i * n + hoveredCell.j]
@@ -187,13 +190,14 @@ export default function DotplotView(): JSX.Element | null {
     <div
       ref={containerRef}
       style={{
-        borderTop: '1px solid #ddd',
+        borderTop: isTabMode ? undefined : '1px solid #ddd',
         padding: '8px',
-        height: '35vh',
+        height: isTabMode ? '100%' : '35vh',
         minHeight: '200px',
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: '#fafafa',
+        flex: isTabMode ? 1 : undefined,
       }}
     >
       <div

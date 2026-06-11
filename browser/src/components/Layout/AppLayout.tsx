@@ -8,20 +8,19 @@ import DetailPanel from '../DetailPanel/DetailPanel';
 import TrackPanel from '../TrackPanel/TrackPanel';
 import OverviewBar from '../OverviewBar/OverviewBar';
 import DotplotView from '../DotplotView/DotplotView';
+import CharactersPanel from '../CharactersPanel/CharactersPanel';
+import AnalysisPanel from '../AnalysisPanel/AnalysisPanel';
 import LoadingOverlay from '../common/LoadingOverlay';
 import HelpOverlay from '../common/HelpOverlay';
 import ProjectPicker from '../common/ProjectPicker';
 import SectionNav from '../common/SectionNav';
 import ErrorBoundary from '../common/ErrorBoundary';
-import { Tooltip } from '../common/Tooltip';
+import TabBar from './TabBar';
+import NavigationToolbar from './NavigationToolbar';
 
 export default function AppLayout() {
   const { loadingState, error, metadata, paragraphs, tracks } = useProjectStore();
-  const textHicOpen = useViewStore((s) => s.textHicOpen);
-  const toggleTextHic = useViewStore((s) => s.toggleTextHic);
-  const zoomLevel = useViewStore((s) => s.zoomLevel);
-  const zoomIn = useViewStore((s) => s.zoomIn);
-  const zoomOut = useViewStore((s) => s.zoomOut);
+  const activeTab = useViewStore((s) => s.activeTab);
 
   useEffect(() => {
     const cleanup = setupKeyboardHandlers();
@@ -51,6 +50,7 @@ export default function AppLayout() {
   }
 
   const trackCount = Object.keys(tracks).filter((k) => k !== 'segments').length;
+  const showSidePanels = activeTab === 'reading';
 
   return (
     <div className="flex flex-col h-screen font-[var(--font-serif)]">
@@ -65,70 +65,53 @@ export default function AppLayout() {
             {metadata.word_count.toLocaleString()} words &middot; {paragraphs.length} paragraphs
             &middot; {trackCount} tracks
           </span>
-          <div className="ml-auto flex items-center gap-2">
-            <div className="flex items-center gap-1 border border-[#ccc] rounded-[var(--radius-md)] p-0.5">
-              <Tooltip content="Zoom out (Ctrl+-)" side="bottom">
-                <button
-                  onClick={zoomOut}
-                  disabled={zoomLevel === 'work'}
-                  className="px-2 py-0.5 border-none bg-transparent text-[0.9em] disabled:text-[#ccc] disabled:cursor-default text-[#555] cursor-pointer"
-                >
-                  -
-                </button>
-              </Tooltip>
-              <span className="text-[0.75em] text-[var(--color-text-secondary)] min-w-[65px] text-center">
-                {zoomLevel}
-              </span>
-              <Tooltip content="Zoom in (Ctrl+=)" side="bottom">
-                <button
-                  onClick={zoomIn}
-                  disabled={zoomLevel === 'sentence'}
-                  className="px-2 py-0.5 border-none bg-transparent text-[0.9em] disabled:text-[#ccc] disabled:cursor-default text-[#555] cursor-pointer"
-                >
-                  +
-                </button>
-              </Tooltip>
-            </div>
-            <Tooltip content="Toggle self-similarity TextHiC (d)" side="bottom">
-              <button
-                onClick={toggleTextHic}
-                className={`px-2.5 py-1 text-[0.8em] border rounded-[var(--radius-md)] cursor-pointer ${
-                  textHicOpen
-                    ? 'bg-[var(--color-primary)] text-[var(--color-text-inverted)] border-[var(--color-primary)]'
-                    : 'bg-transparent text-[#555] border-[#ccc]'
-                }`}
-              >
-                TextHiC
-              </button>
-            </Tooltip>
+          <div className="ml-auto">
+            <NavigationToolbar />
           </div>
         </div>
       )}
 
-      <TextSearch />
+      <TabBar />
+
+      {activeTab === 'reading' && <TextSearch />}
 
       <div className="flex-1 flex overflow-hidden">
-        <nav aria-label="Track and section navigation" className="flex flex-col border-r border-[var(--color-border)]">
-          <SectionNav />
-          <TrackPanel />
-        </nav>
-        <main role="main" aria-label="Reading area" className="flex-1 flex flex-col overflow-hidden">
-          <ErrorBoundary fallbackLabel="Reading View">
-            <TextLinearView />
+        {showSidePanels && (
+          <nav aria-label="Track and section navigation" className="flex flex-col border-r border-[var(--color-border)]">
+            <SectionNav />
+            <TrackPanel />
+          </nav>
+        )}
+
+        <main
+          role="tabpanel"
+          id={`panel-${activeTab}`}
+          aria-label={`${activeTab} view`}
+          className="flex-1 flex flex-col overflow-hidden"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              useViewStore.getState().selectAnnotation(null);
+            }
+          }}
+        >
+          <ErrorBoundary fallbackLabel={activeTab}>
+            {activeTab === 'reading' && <TextLinearView />}
+            {activeTab === 'texthic' && <DotplotView />}
+            {activeTab === 'characters' && <CharactersPanel />}
+            {activeTab === 'analysis' && <AnalysisPanel />}
           </ErrorBoundary>
         </main>
-        <aside role="complementary" aria-label="Annotation details" className="contents">
-          <ErrorBoundary fallbackLabel="Detail Panel">
-            <DetailPanel />
-          </ErrorBoundary>
-        </aside>
+
+        {showSidePanels && (
+          <aside role="complementary" aria-label="Annotation details" className="contents">
+            <ErrorBoundary fallbackLabel="Detail Panel">
+              <DetailPanel />
+            </ErrorBoundary>
+          </aside>
+        )}
       </div>
 
       <OverviewBar />
-
-      <ErrorBoundary fallbackLabel="TextHiC Dotplot">
-        <DotplotView />
-      </ErrorBoundary>
     </div>
   );
 }

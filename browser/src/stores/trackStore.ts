@@ -5,12 +5,15 @@
 import { create } from 'zustand';
 import type { TrackManifest } from '../adapters/TrackManifest';
 
+export type DisplayMode = 'dense' | 'pack' | 'inline';
+
 export interface TrackState {
   name: string;
   visible: boolean;
   manifest: TrackManifest;
   annotationCount: number;
   confidenceThreshold: number;
+  displayMode: DisplayMode;
 }
 
 interface TrackStoreState {
@@ -19,6 +22,7 @@ interface TrackStoreState {
   toggleTrack: (name: string) => void;
   toggleTrackByIndex: (index: number) => void;
   setConfidenceThreshold: (name: string, threshold: number) => void;
+  setDisplayMode: (name: string, mode: DisplayMode) => void;
 }
 
 export const useTrackStore = create<TrackStoreState>((set) => ({
@@ -60,6 +64,18 @@ export const useTrackStore = create<TrackStoreState>((set) => ({
         tracks: {
           ...state.tracks,
           [name]: { ...track, confidenceThreshold: threshold },
+        },
+      };
+    }),
+
+  setDisplayMode: (name, mode): void =>
+    set((state) => {
+      const track = state.tracks[name];
+      if (!track) return state;
+      return {
+        tracks: {
+          ...state.tracks,
+          [name]: { ...track, displayMode: mode },
         },
       };
     }),

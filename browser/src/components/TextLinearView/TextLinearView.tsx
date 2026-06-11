@@ -290,7 +290,12 @@ function ParagraphView({ paragraph, annotations, searchMatches, currentMatchInde
   return (
     <div
       data-para-index={paragraph.index}
-      onClick={onSelect}
+      onClick={(e) => {
+        onSelect();
+        if (e.target === e.currentTarget) {
+          useViewStore.getState().selectAnnotation(null);
+        }
+      }}
       style={{
         marginBottom: '1em',
         padding: '4px 8px',
@@ -323,11 +328,18 @@ function VirtualizedParagraphView({
   scrollRequest: number | null; clearScrollRequest: () => void;
 }): JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
+  const setVisibleRange = useViewStore((s) => s.setVisibleParagraphRange);
   const virtualizer = useVirtualizer({
     count: paragraphs.length,
     getScrollElement: () => containerRef.current,
     estimateSize: (i) => estimateRowHeight(paragraphs[i].text),
     overscan: 10,
+    onChange: (v) => {
+      const items = v.getVirtualItems();
+      if (items.length > 0) {
+        setVisibleRange([items[0].index, items[items.length - 1].index]);
+      }
+    },
   });
 
   useEffect(() => {
@@ -349,7 +361,7 @@ function VirtualizedParagraphView({
                 paragraph={p} annotations={allAnnotations} searchMatches={searchMatches}
                 currentMatchIndex={currentMatchIndex}
                 isSelected={selectedParagraphIndex === p.index}
-                onSelect={() => setSelectedParagraphIndex(p.index)}
+                onSelect={() => setSelectedParagraphIndex(selectedParagraphIndex === p.index ? null : p.index)}
               />
             </div>
           );
@@ -385,7 +397,7 @@ function SimpleParagraphView({
         <ParagraphView key={p.index} paragraph={p} annotations={allAnnotations}
           searchMatches={searchMatches} currentMatchIndex={currentMatchIndex}
           isSelected={selectedParagraphIndex === p.index}
-          onSelect={() => setSelectedParagraphIndex(p.index)} />
+          onSelect={() => setSelectedParagraphIndex(selectedParagraphIndex === p.index ? null : p.index)} />
       ))}
     </div>
   );
@@ -432,7 +444,7 @@ function SentenceLevelView({
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', transform: `translateY(${vRow.start}px)` }}>
               <div
                 data-para-index={p.index}
-                onClick={() => setSelectedParagraphIndex(p.index)}
+                onClick={() => setSelectedParagraphIndex(selectedParagraphIndex === p.index ? null : p.index)}
                 style={{
                   marginBottom: '1.2em', padding: '8px 12px',
                   borderLeft: isSelected ? '3px solid #3498db' : '3px solid transparent',

@@ -149,6 +149,7 @@ export const useProjectStore = create<ProjectState>((set) => ({
           },
           annotationCount: (tracks[name] ?? []).length,
           confidenceThreshold: 0,
+          displayMode: 'inline',
         };
       }
       useTrackStore.getState().setTracks(trackStates);
