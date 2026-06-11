@@ -115,6 +115,7 @@ export default function DotplotView(): JSX.Element | null {
   const [threshold, setThreshold] = useState(0);
   const [showDiagonal, setShowDiagonal] = useState(true);
   const [showControls, setShowControls] = useState(false);
+  const [similarityMetric, setSimilarityMetric] = useState('cosine');
   const brushing = useRef(false);
   const panning = useRef(false);
   const panStart = useRef({ x: 0, y: 0 });
@@ -395,6 +396,15 @@ export default function DotplotView(): JSX.Element | null {
     return () => canvas.removeEventListener('wheel', handler);
   }, [n, clampViewport]);
 
+  const exportPNG = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const link = document.createElement('a');
+    link.download = `texthic-${projectId ?? 'heatmap'}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }, [projectId]);
+
   const zoomToFull = useCallback(() => {
     setViewport({ x: 0, y: 0, span: n });
     setBrushSelection(null);
@@ -492,8 +502,14 @@ export default function DotplotView(): JSX.Element | null {
           >
             {showControls ? 'Hide filters' : 'Filters'}
           </button>
+          <button
+            onClick={exportPNG}
+            className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]"
+          >
+            Export PNG
+          </button>
           <span className="text-[0.8em]">
-            {n > 0 ? `${n}×${n} · cosine` : ''}
+            {n > 0 ? `${n}×${n} · ${similarityMetric}` : ''}
             {' · Scroll zoom · Ctrl+drag pan'}
           </span>
         </div>
@@ -532,6 +548,20 @@ export default function DotplotView(): JSX.Element | null {
               className="accent-[var(--color-primary)]"
             />
             Diagonal
+          </label>
+          <span className="text-[var(--color-text-muted)]">|</span>
+          <label className="flex items-center gap-1">
+            Metric:
+            <select
+              value={similarityMetric}
+              onChange={(e) => setSimilarityMetric(e.target.value)}
+              className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-[var(--color-bg)] cursor-pointer"
+            >
+              <option value="cosine">Cosine</option>
+              <option value="jaccard">Jaccard</option>
+              <option value="word_overlap">Word overlap</option>
+              <option value="edit_distance">Edit distance</option>
+            </select>
           </label>
         </div>
       )}
