@@ -6,6 +6,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useSearchStore } from '../../stores/searchStore';
 import { useProjectStore } from '../../stores/projectStore';
+import { Tooltip } from '../common/Tooltip';
 
 export default function TextSearch(): JSX.Element | null {
   const isOpen = useSearchStore((s) => s.isOpen);
@@ -87,50 +88,54 @@ export default function TextSearch(): JSX.Element | null {
         }}
       />
 
-      <button
-        onClick={handleToggleCase}
-        title="Toggle case sensitivity"
-        style={{
-          padding: '2px 6px',
-          border: '1px solid #ccc',
-          borderRadius: '3px',
-          backgroundColor: caseSensitive ? '#3498db' : 'transparent',
-          color: caseSensitive ? '#fff' : '#666',
-          cursor: 'pointer',
-          fontWeight: 'bold',
-        }}
-      >
-        Aa
-      </button>
+      <Tooltip content="Toggle case sensitivity" side="bottom">
+        <button
+          onClick={handleToggleCase}
+          style={{
+            padding: '2px 6px',
+            border: '1px solid #ccc',
+            borderRadius: '3px',
+            backgroundColor: caseSensitive ? '#3498db' : 'transparent',
+            color: caseSensitive ? '#fff' : '#666',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+          }}
+        >
+          Aa
+        </button>
+      </Tooltip>
 
       <span style={{ color: '#888', minWidth: '70px', textAlign: 'center' }} aria-live="polite">
         {matchText}
       </span>
 
-      <button
-        onClick={() => useSearchStore.getState().prevMatch()}
-        disabled={matches.length === 0}
-        style={{ padding: '2px 6px', cursor: matches.length ? 'pointer' : 'default' }}
-        title="Previous match (Shift+Enter)"
-      >
-        ↑
-      </button>
-      <button
-        onClick={() => useSearchStore.getState().nextMatch()}
-        disabled={matches.length === 0}
-        style={{ padding: '2px 6px', cursor: matches.length ? 'pointer' : 'default' }}
-        title="Next match (Enter)"
-      >
-        ↓
-      </button>
+      <Tooltip content="Previous match (Shift+Enter)" side="bottom">
+        <button
+          onClick={() => useSearchStore.getState().prevMatch()}
+          disabled={matches.length === 0}
+          style={{ padding: '2px 6px', cursor: matches.length ? 'pointer' : 'default' }}
+        >
+          ↑
+        </button>
+      </Tooltip>
+      <Tooltip content="Next match (Enter)" side="bottom">
+        <button
+          onClick={() => useSearchStore.getState().nextMatch()}
+          disabled={matches.length === 0}
+          style={{ padding: '2px 6px', cursor: matches.length ? 'pointer' : 'default' }}
+        >
+          ↓
+        </button>
+      </Tooltip>
 
-      <button
-        onClick={() => useSearchStore.getState().close()}
-        style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', fontSize: '1.2em' }}
-        title="Close search (Escape)"
-      >
-        ✕
-      </button>
+      <Tooltip content="Close search (Escape)" side="bottom">
+        <button
+          onClick={() => useSearchStore.getState().close()}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', fontSize: '1.2em' }}
+        >
+          ✕
+        </button>
+      </Tooltip>
     </div>
   );
 }

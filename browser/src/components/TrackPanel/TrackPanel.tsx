@@ -5,6 +5,7 @@
 import { useProjectStore } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
+import { Tooltip } from '../common/Tooltip';
 
 interface TrackRowProps {
   name: string;
@@ -37,6 +38,11 @@ function TrackRow({ name, count, color, visible, shortcut, evidenceLevel, onTogg
         cursor: 'pointer',
       }}
       onClick={onToggle}
+      role="switch"
+      aria-checked={visible}
+      aria-label={`Toggle ${name} track`}
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(); } }}
     >
       <div
         style={{
@@ -48,19 +54,20 @@ function TrackRow({ name, count, color, visible, shortcut, evidenceLevel, onTogg
         }}
       />
       <span style={{ flex: 1, fontSize: '0.9em' }}>{name}</span>
-      <span
-        style={{
-          padding: '1px 4px',
-          fontSize: '0.65em',
-          color: '#2980b9',
-          backgroundColor: '#3498db22',
-          borderRadius: '2px',
-          fontWeight: 'bold',
-        }}
-        title={evidenceLevel === 'E4' ? 'ML prediction' : 'Rule-based/statistical'}
-      >
-        {evidenceLevel}
-      </span>
+      <Tooltip content={evidenceLevel === 'E4' ? 'ML prediction' : 'Rule-based/statistical'} side="right">
+        <span
+          style={{
+            padding: '1px 4px',
+            fontSize: '0.65em',
+            color: '#2980b9',
+            backgroundColor: '#3498db22',
+            borderRadius: '2px',
+            fontWeight: 'bold',
+          }}
+        >
+          {evidenceLevel}
+        </span>
+      </Tooltip>
       <span style={{ color: '#999', fontSize: '0.8em' }}>{count}</span>
       <kbd
         style={{

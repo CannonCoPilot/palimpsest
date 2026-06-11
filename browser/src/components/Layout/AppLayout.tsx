@@ -1,9 +1,3 @@
-/**
- * Main application layout — M1.2 complete.
- * Three-panel design: TrackPanel | TextLinearView+Search | DetailPanel
- * Plus OverviewBar below.
- */
-
 import { useEffect } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 import { useViewStore } from '../../stores/viewStore';
@@ -17,11 +11,17 @@ import DotplotView from '../DotplotView/DotplotView';
 import LoadingOverlay from '../common/LoadingOverlay';
 import HelpOverlay from '../common/HelpOverlay';
 import ProjectPicker from '../common/ProjectPicker';
+import SectionNav from '../common/SectionNav';
+import ErrorBoundary from '../common/ErrorBoundary';
+import { Tooltip } from '../common/Tooltip';
 
-export default function AppLayout(): JSX.Element {
+export default function AppLayout() {
   const { loadingState, error, metadata, paragraphs, tracks } = useProjectStore();
-  const dotplotOpen = useViewStore((s) => s.dotplotOpen);
-  const toggleDotplot = useViewStore((s) => s.toggleDotplot);
+  const textHicOpen = useViewStore((s) => s.textHicOpen);
+  const toggleTextHic = useViewStore((s) => s.toggleTextHic);
+  const zoomLevel = useViewStore((s) => s.zoomLevel);
+  const zoomIn = useViewStore((s) => s.zoomIn);
+  const zoomOut = useViewStore((s) => s.zoomOut);
 
   useEffect(() => {
     const cleanup = setupKeyboardHandlers();
@@ -37,14 +37,14 @@ export default function AppLayout(): JSX.Element {
   }, []);
 
   if (error) {
-    return <div className="error-screen">Error: {error}</div>;
+    return <div className="p-8 text-[var(--color-danger)] text-center">Error: {error}</div>;
   }
 
   if (!metadata && loadingState !== 'loading') {
     return (
-      <div className="welcome-screen" style={{ maxWidth: '600px', margin: '40px auto', fontFamily: "'Georgia', serif" }}>
+      <div className="max-w-[600px] mx-auto mt-10 font-[var(--font-serif)]">
         <h1>Palimpsest</h1>
-        <p style={{ color: '#666' }}>Computational literary analysis platform</p>
+        <p className="text-[var(--color-text-secondary)]">Computational literary analysis platform</p>
         <ProjectPicker />
       </div>
     );
@@ -53,69 +53,82 @@ export default function AppLayout(): JSX.Element {
   const trackCount = Object.keys(tracks).filter((k) => k !== 'segments').length;
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100vh',
-        fontFamily: "'Georgia', serif",
-      }}
-    >
+    <div className="flex flex-col h-screen font-[var(--font-serif)]">
       <LoadingOverlay />
       <HelpOverlay />
 
-      {/* Toolbar */}
       {metadata && (
-        <div
-          style={{
-            padding: '8px 16px',
-            borderBottom: '1px solid #ddd',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-            backgroundColor: '#fafafa',
-          }}
-        >
+        <div className="flex items-center gap-4 px-4 py-2 border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
           <strong>{metadata.title}</strong>
-          {metadata.author && <span style={{ color: '#666' }}>by {metadata.author}</span>}
-          <span style={{ color: '#999', fontSize: '0.85em' }}>
+          {metadata.author && <span className="text-[var(--color-text-secondary)]">by {metadata.author}</span>}
+          <span className="text-[var(--color-text-muted)] text-[0.85em]">
             {metadata.word_count.toLocaleString()} words &middot; {paragraphs.length} paragraphs
             &middot; {trackCount} tracks
           </span>
-          <button
-            onClick={toggleDotplot}
-            title="Toggle self-similarity dotplot (d)"
-            style={{
-              marginLeft: 'auto',
-              padding: '4px 10px',
-              fontSize: '0.8em',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              backgroundColor: dotplotOpen ? '#3498db' : 'transparent',
-              color: dotplotOpen ? '#fff' : '#555',
-              cursor: 'pointer',
-            }}
-          >
-            Dotplot
-          </button>
+          <div className="ml-auto flex items-center gap-2">
+            <div className="flex items-center gap-1 border border-[#ccc] rounded-[var(--radius-md)] p-0.5">
+              <Tooltip content="Zoom out (Ctrl+-)" side="bottom">
+                <button
+                  onClick={zoomOut}
+                  disabled={zoomLevel === 'work'}
+                  className="px-2 py-0.5 border-none bg-transparent text-[0.9em] disabled:text-[#ccc] disabled:cursor-default text-[#555] cursor-pointer"
+                >
+                  -
+                </button>
+              </Tooltip>
+              <span className="text-[0.75em] text-[var(--color-text-secondary)] min-w-[65px] text-center">
+                {zoomLevel}
+              </span>
+              <Tooltip content="Zoom in (Ctrl+=)" side="bottom">
+                <button
+                  onClick={zoomIn}
+                  disabled={zoomLevel === 'sentence'}
+                  className="px-2 py-0.5 border-none bg-transparent text-[0.9em] disabled:text-[#ccc] disabled:cursor-default text-[#555] cursor-pointer"
+                >
+                  +
+                </button>
+              </Tooltip>
+            </div>
+            <Tooltip content="Toggle self-similarity TextHiC (d)" side="bottom">
+              <button
+                onClick={toggleTextHic}
+                className={`px-2.5 py-1 text-[0.8em] border rounded-[var(--radius-md)] cursor-pointer ${
+                  textHicOpen
+                    ? 'bg-[var(--color-primary)] text-[var(--color-text-inverted)] border-[var(--color-primary)]'
+                    : 'bg-transparent text-[#555] border-[#ccc]'
+                }`}
+              >
+                TextHiC
+              </button>
+            </Tooltip>
+          </div>
         </div>
       )}
 
-      {/* Search bar */}
       <TextSearch />
 
-      {/* Main content area */}
-      <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
-        <TrackPanel />
-        <TextLinearView />
-        <DetailPanel />
+      <div className="flex-1 flex overflow-hidden">
+        <nav aria-label="Track and section navigation" className="flex flex-col border-r border-[var(--color-border)]">
+          <SectionNav />
+          <TrackPanel />
+        </nav>
+        <main role="main" aria-label="Reading area" className="flex-1 flex flex-col overflow-hidden">
+          <ErrorBoundary fallbackLabel="Reading View">
+            <TextLinearView />
+          </ErrorBoundary>
+        </main>
+        <aside role="complementary" aria-label="Annotation details" className="contents">
+          <ErrorBoundary fallbackLabel="Detail Panel">
+            <DetailPanel />
+          </ErrorBoundary>
+        </aside>
       </div>
 
-      {/* Overview Bar */}
       <OverviewBar />
 
-      {/* DotplotView — collapsible bottom panel (d key toggles) */}
-      <DotplotView />
+      <ErrorBoundary fallbackLabel="TextHiC Dotplot">
+        <DotplotView />
+      </ErrorBoundary>
     </div>
   );
 }

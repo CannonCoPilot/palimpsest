@@ -7,6 +7,8 @@ import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { useViewStore } from '../../stores/viewStore';
 import { useProjectStore } from '../../stores/projectStore';
 import LLMSummary from './LLMSummary';
+import StateExplainer from './StateExplainer';
+import { Tooltip } from '../common/Tooltip';
 
 function ConfidenceBadge({ value }: { value: number }): JSX.Element {
   const pct = Math.round(value * 100);
@@ -37,20 +39,21 @@ function EvidenceBadge({ level }: { level: string }): JSX.Element {
     E5: 'Rule-based/statistical',
   };
   return (
-    <span
-      style={{
-        display: 'inline-block',
-        padding: '2px 6px',
-        borderRadius: '3px',
-        backgroundColor: '#3498db22',
-        color: '#2980b9',
-        fontWeight: 'bold',
-        fontSize: '0.85em',
-      }}
-      title={descriptions[level] || level}
-    >
-      {level}
-    </span>
+    <Tooltip content={descriptions[level] || level} side="bottom">
+      <span
+        style={{
+          display: 'inline-block',
+          padding: '2px 6px',
+          borderRadius: '3px',
+          backgroundColor: '#3498db22',
+          color: '#2980b9',
+          fontWeight: 'bold',
+          fontSize: '0.85em',
+        }}
+      >
+        {level}
+      </span>
+    </Tooltip>
   );
 }
 
@@ -75,8 +78,14 @@ function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
   const confidence = ann['palimpsest:confidence'] ?? 0;
   const evidenceLevel = ann['palimpsest:evidenceLevel'] ?? 'E4';
 
+  const bodyObj = ann.body as Record<string, unknown>;
+  const isEndnote = ann.body.type === 'palimpsest:EndnoteAnnotation';
+  const noteText = bodyObj['palimpsest:noteText'] as string | undefined;
+  const noteNumber = bodyObj['palimpsest:noteNumber'] as number | undefined;
+
   const extraProps = Object.entries(ann.body)
-    .filter(([k]) => k.startsWith('palimpsest:') && k !== 'palimpsest:lfoType')
+    .filter(([k]) => k.startsWith('palimpsest:') && k !== 'palimpsest:lfoType'
+      && k !== 'palimpsest:noteText')
     .map(([k, v]) => [k.replace('palimpsest:', ''), v] as [string, unknown]);
 
   return (
@@ -90,7 +99,7 @@ function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
             marginBottom: '4px',
           }}
         >
-          {bodyType}
+          {isEndnote ? `Endnote ${noteNumber ?? ''}` : bodyType}
         </div>
         <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           <EvidenceBadge level={evidenceLevel} />
@@ -98,7 +107,23 @@ function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
         </div>
       </div>
 
-      {excerpt && (
+      {isEndnote && noteText ? (
+        <div
+          style={{
+            padding: '10px',
+            backgroundColor: '#fdf6f0',
+            borderLeft: '3px solid #e74c3c',
+            marginBottom: '12px',
+            fontSize: '0.9em',
+            lineHeight: 1.5,
+            maxHeight: '250px',
+            overflowY: 'auto',
+            whiteSpace: 'pre-wrap',
+          }}
+        >
+          {noteText}
+        </div>
+      ) : excerpt ? (
         <div
           style={{
             padding: '8px',
@@ -113,7 +138,7 @@ function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
         >
           {excerpt.length > 200 ? `${excerpt.slice(0, 200)}...` : excerpt}
         </div>
-      )}
+      ) : null}
 
       <PropertyRow label="ID">{ann.id}</PropertyRow>
       <PropertyRow label="Creator">{ann.creator.name}</PropertyRow>
@@ -122,10 +147,10 @@ function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
           {sel.start}–{sel.end}
         </PropertyRow>
       )}
-      {ann.body.value && <PropertyRow label="Value">{ann.body.value}</PropertyRow>}
+      {!isEndnote && ann.body.value && <PropertyRow label="Value">{ann.body.value}</PropertyRow>}
       {extraProps.map(([k, v]) => (
         <PropertyRow key={k} label={k}>
-          {String(v)}
+          {typeof v === 'string' && v.length > 100 ? `${v.slice(0, 100)}...` : String(v)}
         </PropertyRow>
       ))}
     </div>
@@ -136,6 +161,7 @@ export default function DetailPanel(): JSX.Element {
   const selectedAnnotation = useViewStore((s) => s.selectedAnnotation);
   const selectAnnotation = useViewStore((s) => s.selectAnnotation);
   const referenceText = useProjectStore((s) => s.referenceText);
+  const projectId = useProjectStore((s) => s.projectId);
 
   return (
     <div
@@ -176,6 +202,16 @@ export default function DetailPanel(): JSX.Element {
       {selectedAnnotation ? (
         <>
           <AnnotationDetail ann={selectedAnnotation} />
+          {selectedAnnotation.body.type === 'palimpsest:LitHMMAnnotation' && projectId && (
+            <div style={{ marginTop: '16px', borderTop: '1px solid #eee', paddingTop: '12px' }}>
+              <div style={{ fontWeight: 'bold', marginBottom: '6px' }}>State Explanation</div>
+              <StateExplainer
+                projectId={projectId}
+                stateId={(selectedAnnotation.body as Record<string, unknown>)['palimpsest:stateId'] as number ?? 0}
+                stateDescription={(selectedAnnotation.body as Record<string, unknown>)['palimpsest:stateDescription'] as string | undefined}
+              />
+            </div>
+          )}
           {selectedAnnotation.target.selector.start != null && (
             <div style={{ marginTop: '16px', borderTop: '1px solid #eee', paddingTop: '12px' }}>
               <div style={{ fontWeight: 'bold', marginBottom: '6px' }}>AI Summary</div>
