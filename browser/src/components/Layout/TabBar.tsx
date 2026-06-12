@@ -7,6 +7,7 @@ const TABS: { id: TabId; label: string; shortcut: string; tip: string }[] = [
   { id: 'texthic', label: 'TextHiC', shortcut: 'Alt+3', tip: 'Self-similarity heatmap (Alt+3)' },
   { id: 'characters', label: 'Characters', shortcut: 'Alt+4', tip: 'Entity index and co-occurrence (Alt+4)' },
   { id: 'analysis', label: 'Analysis', shortcut: 'Alt+5', tip: 'Track computation and parameters (Alt+5)' },
+  { id: 'compare', label: 'Compare', shortcut: 'Alt+6', tip: 'Two-text alignment and comparison (Alt+6)' },
 ];
 
 export default function TabBar() {

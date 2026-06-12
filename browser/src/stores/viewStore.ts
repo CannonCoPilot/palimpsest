@@ -6,7 +6,7 @@ import { create } from 'zustand';
 import type { W3CAnnotation } from '../adapters/AnnotationAdapter';
 
 export type ZoomLevel = 'work' | 'chapter' | 'paragraph' | 'sentence';
-export type TabId = 'reading' | 'browser' | 'texthic' | 'characters' | 'analysis';
+export type TabId = 'reading' | 'browser' | 'texthic' | 'characters' | 'analysis' | 'compare';
 export type CoordinateSystem = 'paragraph' | 'character' | 'section';
 
 const ZOOM_ORDER: ZoomLevel[] = ['work', 'chapter', 'paragraph', 'sentence'];

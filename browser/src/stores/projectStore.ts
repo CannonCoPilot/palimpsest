@@ -1,6 +1,7 @@
 /**
- * Project data store — loaded project metadata, reference text, and annotations.
- * Discovers available tracks from the API rather than using a hardcoded list.
+ * Project data store — supports loading multiple projects for comparison.
+ * Backward-compatible: top-level selectors (metadata, paragraphs, tracks, referenceText)
+ * always reflect the active project.
  */
 
 import { create } from 'zustand';
@@ -30,16 +31,41 @@ export interface Paragraph {
 
 type LoadingState = 'idle' | 'loading' | 'ready' | 'error';
 
-interface ProjectState {
-  projectId: string | null;
+export interface SingleProjectState {
   metadata: ProjectMetadata | null;
   referenceText: string;
   paragraphs: Paragraph[];
   tracks: Record<string, W3CAnnotation[]>;
+}
+
+const EMPTY_PROJECT: SingleProjectState = {
+  metadata: null,
+  referenceText: '',
+  paragraphs: [],
+  tracks: {},
+};
+
+interface ProjectStoreState {
+  // Multi-project map
+  projects: Record<string, SingleProjectState>;
+  activeProjectId: string | null;
+  secondaryProjectId: string | null;
+
+  // Loading state (for the most recent load operation)
   loadingState: LoadingState;
   loadingStep: string;
   error: string | null;
+
+  // Backward-compatible top-level selectors (always reflect active project)
+  get projectId(): string | null;
+  get metadata(): ProjectMetadata | null;
+  get referenceText(): string;
+  get paragraphs(): Paragraph[];
+  get tracks(): Record<string, W3CAnnotation[]>;
+
+  // Actions
   loadProject: (baseUrl: string, projectId: string) => Promise<void>;
+  setSecondaryProject: (id: string | null) => void;
 }
 
 function splitParagraphs(text: string): Paragraph[] {
@@ -80,89 +106,109 @@ async function discoverTracks(baseUrl: string, projectId: string): Promise<strin
   return ['segments', 'entities'];
 }
 
-export const useProjectStore = create<ProjectState>((set) => ({
-  projectId: null,
-  metadata: null,
-  referenceText: '',
-  paragraphs: [],
-  tracks: {},
+async function loadProjectData(baseUrl: string, projectId: string): Promise<SingleProjectState> {
+  const dataBase = `${baseUrl}/data/${projectId}`;
+
+  const [metaRes, textRes] = await Promise.all([
+    fetch(`${dataBase}/metadata.json`),
+    fetch(`${dataBase}/reference.txt`),
+  ]);
+
+  if (!metaRes.ok || !textRes.ok) {
+    throw new Error('Failed to load project data');
+  }
+
+  const metadata: ProjectMetadata = await metaRes.json();
+  const referenceText = await textRes.text();
+  const paragraphs = splitParagraphs(referenceText);
+
+  const trackNames = await discoverTracks(baseUrl, projectId);
+  const tracks: Record<string, W3CAnnotation[]> = {};
+
+  const trackEntries = await Promise.all(
+    trackNames.map(async (name) => {
+      try {
+        const anns = await loadTrack(`${dataBase}/tracks/${name}.jsonl`);
+        return [name, anns] as [string, W3CAnnotation[]];
+      } catch {
+        return null;
+      }
+    })
+  );
+  for (const entry of trackEntries) {
+    if (entry) tracks[entry[0]] = entry[1];
+  }
+
+  return { metadata, referenceText, paragraphs, tracks };
+}
+
+async function setupTrackStates(baseUrl: string, projectId: string, tracks: Record<string, W3CAnnotation[]>): Promise<void> {
+  const dataBase = `${baseUrl}/data/${projectId}`;
+  const trackStates: Record<string, TrackState> = {};
+  const manifestPromises: Promise<[string, TrackManifest]>[] = [];
+  for (const name of Object.keys(tracks)) {
+    manifestPromises.push(
+      loadTrackManifest(`${dataBase}/manifests/${name}.manifest.json`)
+        .then((m) => [name, m] as [string, TrackManifest])
+    );
+  }
+  const manifests = await Promise.all(manifestPromises);
+  for (const [name, manifest] of manifests) {
+    const fallbackColor = TRACK_COLORS[name] ?? '#888';
+    trackStates[name] = {
+      name,
+      visible: true,
+      manifest: {
+        ...manifest,
+        colorScheme: manifest.colorScheme.primary !== '#888888'
+          ? manifest.colorScheme
+          : { primary: fallbackColor, secondary: '#ccc' },
+      },
+      annotationCount: (tracks[name] ?? []).length,
+      confidenceThreshold: 0,
+      displayMode: 'inline',
+    };
+  }
+  useTrackStore.getState().setTracks(trackStates);
+}
+
+export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
+  projects: {},
+  activeProjectId: null,
+  secondaryProjectId: null,
   loadingState: 'idle',
   loadingStep: '',
   error: null,
 
+  // Backward-compatible computed getters
+  get projectId() { return get().activeProjectId; },
+  get metadata() { return get().projects[get().activeProjectId ?? '']?.metadata ?? null; },
+  get referenceText() { return get().projects[get().activeProjectId ?? '']?.referenceText ?? ''; },
+  get paragraphs() { return get().projects[get().activeProjectId ?? '']?.paragraphs ?? []; },
+  get tracks() { return get().projects[get().activeProjectId ?? '']?.tracks ?? {}; },
+
   loadProject: async (baseUrl: string, projectId: string): Promise<void> => {
+    // If already loaded, just switch active
+    if (get().projects[projectId]?.metadata) {
+      set({ activeProjectId: projectId, loadingState: 'ready', error: null });
+      // Re-setup track states for the active project
+      await setupTrackStates(baseUrl, projectId, get().projects[projectId].tracks);
+      return;
+    }
+
     set({ loadingState: 'loading', loadingStep: 'Loading metadata...', error: null });
     try {
-      const dataBase = `${baseUrl}/data/${projectId}`;
-
-      const [metaRes, textRes] = await Promise.all([
-        fetch(`${dataBase}/metadata.json`),
-        fetch(`${dataBase}/reference.txt`),
-      ]);
-
-      if (!metaRes.ok || !textRes.ok) {
-        throw new Error('Failed to load project data');
-      }
-
-      const metadata: ProjectMetadata = await metaRes.json();
-      const referenceText = await textRes.text();
-      const paragraphs = splitParagraphs(referenceText);
-
       set({ loadingStep: 'Loading tracks...' });
+      const projectData = await loadProjectData(baseUrl, projectId);
 
-      const trackNames = await discoverTracks(baseUrl, projectId);
-      const tracks: Record<string, W3CAnnotation[]> = {};
-
-      const trackEntries = await Promise.all(
-        trackNames.map(async (name) => {
-          try {
-            const anns = await loadTrack(`${dataBase}/tracks/${name}.jsonl`);
-            return [name, anns] as [string, W3CAnnotation[]];
-          } catch {
-            return null;
-          }
-        })
-      );
-      for (const entry of trackEntries) {
-        if (entry) tracks[entry[0]] = entry[1];
-      }
-
-      const trackStates: Record<string, TrackState> = {};
-      const manifestPromises: Promise<[string, TrackManifest]>[] = [];
-      for (const name of Object.keys(tracks)) {
-        manifestPromises.push(
-          loadTrackManifest(`${dataBase}/manifests/${name}.manifest.json`)
-            .then((m) => [name, m] as [string, TrackManifest])
-        );
-      }
-      const manifests = await Promise.all(manifestPromises);
-      for (const [name, manifest] of manifests) {
-        const fallbackColor = TRACK_COLORS[name] ?? '#888';
-        trackStates[name] = {
-          name,
-          visible: true,
-          manifest: {
-            ...manifest,
-            colorScheme: manifest.colorScheme.primary !== '#888888'
-              ? manifest.colorScheme
-              : { primary: fallbackColor, secondary: '#ccc' },
-          },
-          annotationCount: (tracks[name] ?? []).length,
-          confidenceThreshold: 0,
-          displayMode: 'inline',
-        };
-      }
-      useTrackStore.getState().setTracks(trackStates);
-
-      set({
-        projectId,
-        metadata,
-        referenceText,
-        paragraphs,
-        tracks,
+      set((state) => ({
+        projects: { ...state.projects, [projectId]: projectData },
+        activeProjectId: projectId,
         loadingState: 'ready',
         loadingStep: '',
-      });
+      }));
+
+      await setupTrackStates(baseUrl, projectId, projectData.tracks);
     } catch (err) {
       set({
         error: err instanceof Error ? err.message : 'Unknown error',
@@ -171,4 +217,18 @@ export const useProjectStore = create<ProjectState>((set) => ({
       });
     }
   },
+
+  setSecondaryProject: (id: string | null): void => {
+    set({ secondaryProjectId: id });
+  },
 }));
+
+/** Get the active project's state. Use in components that only care about one project. */
+export function getActiveProject(state: ProjectStoreState): SingleProjectState {
+  return state.projects[state.activeProjectId ?? ''] ?? EMPTY_PROJECT;
+}
+
+/** Get the secondary project's state (for comparison views). */
+export function getSecondaryProject(state: ProjectStoreState): SingleProjectState {
+  return state.projects[state.secondaryProjectId ?? ''] ?? EMPTY_PROJECT;
+}
