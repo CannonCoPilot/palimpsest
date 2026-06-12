@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { useViewStore } from '../../stores/viewStore';
 import { useProjectStore } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
@@ -48,6 +48,73 @@ interface FloatingWindow {
   paraRange: [number, number];
   x: number;
   y: number;
+}
+
+function VirtualScrollbar({ orientation, viewportOffset, viewportSpan, total, onScroll }: {
+  orientation: 'horizontal' | 'vertical';
+  viewportOffset: number;
+  viewportSpan: number;
+  total: number;
+  onScroll: (offset: number) => void;
+}) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const cleanupRef = useRef<(() => void) | null>(null);
+
+  useEffect(() => { return () => { cleanupRef.current?.(); }; }, []);
+
+  if (total <= 0 || viewportSpan >= total) return null;
+
+  const ratio = viewportSpan / total;
+  const thumbPct = Math.max(8, ratio * 100);
+  const offsetPct = (viewportOffset / total) * 100;
+  const isH = orientation === 'horizontal';
+
+  const handleThumbDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const startOffset = viewportOffset;
+    const startMouse = isH ? e.clientX : e.clientY;
+
+    const onMove = (ev: MouseEvent) => {
+      if (!trackRef.current) return;
+      const trackSize = isH ? trackRef.current.clientWidth : trackRef.current.clientHeight;
+      const delta = ((isH ? ev.clientX : ev.clientY) - startMouse) / trackSize * total;
+      onScroll(Math.max(0, Math.min(total - viewportSpan, startOffset + delta)));
+    };
+    const onUp = () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+      cleanupRef.current = null;
+    };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    cleanupRef.current = onUp;
+  };
+
+  const handleTrackClick = (e: React.MouseEvent) => {
+    if (!trackRef.current) return;
+    const rect = trackRef.current.getBoundingClientRect();
+    const clickPos = isH ? (e.clientX - rect.left) / rect.width : (e.clientY - rect.top) / rect.height;
+    const targetCenter = clickPos * total;
+    onScroll(Math.max(0, Math.min(total - viewportSpan, targetCenter - viewportSpan / 2)));
+  };
+
+  return (
+    <div
+      ref={trackRef}
+      onClick={handleTrackClick}
+      className={`${isH ? 'h-3 w-full' : 'w-3 h-full'} bg-[var(--color-bg-muted)] rounded-sm relative cursor-pointer shrink-0`}
+    >
+      <div
+        onMouseDown={handleThumbDown}
+        className={`absolute ${isH ? 'h-full' : 'w-full'} bg-[var(--color-text-muted)] rounded-sm opacity-40 hover:opacity-60 active:opacity-80 cursor-grab active:cursor-grabbing`}
+        style={isH
+          ? { left: `${offsetPct}%`, width: `${thumbPct}%` }
+          : { top: `${offsetPct}%`, height: `${thumbPct}%` }
+        }
+      />
+    </div>
+  );
 }
 
 function DraggableWindow({ win, onClose, onDragStart }: { win: FloatingWindow; onClose: () => void; onDragStart: (id: string, e: React.MouseEvent) => void }) {
@@ -175,7 +242,7 @@ export default function DotplotView(): JSX.Element | null {
     const container = containerRef.current;
     if (!canvas || !container) return;
 
-    const size = Math.max(1, Math.min(container.clientWidth - 60, container.clientHeight - 60));
+    const size = Math.max(1, Math.min(container.clientWidth - 60, container.clientHeight - 120));
     canvas.width = size;
     canvas.height = size;
     const ctx = canvas.getContext('2d');
@@ -329,8 +396,7 @@ export default function DotplotView(): JSX.Element | null {
   }, [getCellFromEvent, viewport, clampViewport]);
 
   const handleMouseDown = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (e.button === 2 || e.ctrlKey || e.metaKey) {
-      // Right-click or Ctrl+click = pan
+    if (e.button === 2 || e.button === 1 || e.ctrlKey || e.metaKey) {
       panning.current = true;
       panStart.current = { x: e.clientX, y: e.clientY };
       vpAtPanStart.current = { x: viewport.x, y: viewport.y };
@@ -421,6 +487,15 @@ export default function DotplotView(): JSX.Element | null {
     setFloatingWindows([]);
   }, [n]);
 
+  const zoomBy = useCallback((factor: number) => {
+    setViewport((prev) => {
+      const cx = prev.x + prev.span / 2;
+      const cy = prev.y + prev.span / 2;
+      const newSpan = prev.span * factor;
+      return clampViewport({ x: cx - newSpan / 2, y: cy - newSpan / 2, span: newSpan });
+    });
+  }, [clampViewport]);
+
   const handleWindowDragStart = useCallback((id: string, e: React.MouseEvent) => {
     draggingWindowId.current = id;
     const win = floatingWindows.find((w) => w.id === id);
@@ -440,7 +515,7 @@ export default function DotplotView(): JSX.Element | null {
     return state?.visible && name !== 'segments' && name !== 'sections';
   }).slice(0, 5);
 
-  const canvasSize = containerRef.current ? Math.max(1, Math.min(containerRef.current.clientWidth - 60, containerRef.current.clientHeight - 60)) : 400;
+  const canvasSize = containerRef.current ? Math.max(1, Math.min(containerRef.current.clientWidth - 60, containerRef.current.clientHeight - 120)) : 400;
 
   return (
     <div
@@ -465,10 +540,10 @@ export default function DotplotView(): JSX.Element | null {
             <option value="plasma">Plasma</option>
             <option value="diverging">Diverging</option>
           </select>
-          <span className="text-[0.85em]">{zoomPct}%</span>
-          {viewport.span < n && (
-            <button onClick={zoomToFull} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">Reset</button>
-          )}
+          <button onClick={() => zoomBy(0.5)} title="Zoom in" className="text-[0.8em] px-1 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)] leading-none font-bold">+</button>
+          <span className="text-[0.85em] min-w-[3em] text-center">{zoomPct}%</span>
+          <button onClick={() => zoomBy(2)} title="Zoom out" className="text-[0.8em] px-1 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)] leading-none font-bold">−</button>
+          <button onClick={zoomToFull} title="Fit full matrix" className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">Fit</button>
           {corner1 && (
             <button onClick={() => setCorner1(null)} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[#ef4444] text-[#ef4444] cursor-pointer hover:bg-[#fef2f2]">Cancel selection</button>
           )}
@@ -476,7 +551,7 @@ export default function DotplotView(): JSX.Element | null {
             {showControls ? 'Hide filters' : 'Filters'}
           </button>
           <button onClick={exportPNG} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">Export PNG</button>
-          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} · ${similarityMetric}` : ''} · Scroll zoom · Right-drag pan</span>
+          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} · ${similarityMetric}` : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
         </div>
       </div>
 
@@ -502,9 +577,20 @@ export default function DotplotView(): JSX.Element | null {
           <label className="flex items-center gap-1">Threshold: <input type="range" min="0" max="100" value={Math.round(threshold * 100)} onChange={(e) => setThreshold(parseInt(e.target.value, 10) / 100)} className="w-[80px]" /> <span className="w-8 text-right">{(threshold * 100).toFixed(0)}%</span></label>
           <label className="flex items-center gap-1 cursor-pointer"><input type="checkbox" checked={showDiagonal} onChange={(e) => setShowDiagonal(e.target.checked)} className="accent-[var(--color-primary)]" /> Diagonal</label>
           <span className="text-[var(--color-text-muted)]">|</span>
-          <label className="flex items-center gap-1">Metric: <select value={similarityMetric} onChange={(e) => setSimilarityMetric(e.target.value)} className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-[var(--color-bg)] cursor-pointer">
+          <label className="flex items-center gap-1">Metric: <select value={similarityMetric} onChange={(e) => {
+            setSimilarityMetric(e.target.value);
+          }} className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-[var(--color-bg)] cursor-pointer" title="Similarity metric — change requires re-computation via Analysis tab">
             <option value="cosine">Cosine</option><option value="jaccard">Jaccard</option><option value="word_overlap">Word overlap</option><option value="edit_distance">Edit distance</option>
           </select></label>
+          {similarityMetric !== 'cosine' && (
+            <button
+              onClick={() => useViewStore.getState().setActiveTab('analysis')}
+              className="text-[0.7em] text-[var(--color-primary)] hover:underline cursor-pointer"
+              title="Go to Analysis tab to recompute with this metric"
+            >
+              Recompute
+            </button>
+          )}
         </div>
       )}
 
@@ -512,26 +598,43 @@ export default function DotplotView(): JSX.Element | null {
       {error && <div className="flex-1 flex items-center justify-center text-[#b91c1c]">{error}</div>}
 
       {!loading && !error && signal && (
-        <div className="flex-1 overflow-auto flex">
-          <div className="flex flex-col">
+        <div className="flex-1 overflow-hidden flex flex-col">
+          <div className="flex-1 flex flex-col min-h-0">
             {visibleTrackNames.map((name) => (
               <AxisAnnotationStrip key={`top-${name}`} orientation="horizontal" annotations={allTracks[name] ?? []} color={TRACK_COLORS[name] ?? '#888'} paragraphs={paragraphs} viewport={viewport} size={canvasSize} />
             ))}
-            <div className="flex">
+            <div className="flex flex-1 min-h-0">
               <div className="flex shrink-0">
                 {visibleTrackNames.map((name) => (
                   <AxisAnnotationStrip key={`left-${name}`} orientation="vertical" annotations={allTracks[name] ?? []} color={TRACK_COLORS[name] ?? '#888'} paragraphs={paragraphs} viewport={viewport} size={canvasSize} />
                 ))}
               </div>
-              <canvas
-                ref={canvasRef}
-                onMouseMove={handleMouseMove}
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-                onContextMenu={(e) => e.preventDefault()}
-                onMouseLeave={() => { setHoveredCell(null); if (panning.current) panning.current = false; }}
-                className="cursor-crosshair"
-                style={{ aspectRatio: '1', maxWidth: '100%' }}
+              <div className="flex flex-col flex-1 min-w-0 min-h-0">
+                <div className="flex-1 min-h-0 flex items-start">
+                  <canvas
+                    ref={canvasRef}
+                    onMouseMove={handleMouseMove}
+                    onMouseDown={handleMouseDown}
+                    onMouseUp={handleMouseUp}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onMouseLeave={() => { setHoveredCell(null); if (panning.current) panning.current = false; }}
+                    className="cursor-crosshair"
+                  />
+                </div>
+                <VirtualScrollbar
+                  orientation="horizontal"
+                  viewportOffset={viewport.x}
+                  viewportSpan={viewport.span}
+                  total={n}
+                  onScroll={(x) => setViewport((prev) => clampViewport({ ...prev, x }))}
+                />
+              </div>
+              <VirtualScrollbar
+                orientation="vertical"
+                viewportOffset={viewport.y}
+                viewportSpan={viewport.span}
+                total={n}
+                onScroll={(y) => setViewport((prev) => clampViewport({ ...prev, y }))}
               />
             </div>
           </div>

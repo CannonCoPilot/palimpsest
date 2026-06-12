@@ -92,24 +92,105 @@ const TRACK_DETAILS: Record<string, { method: string; explanation: string }> = {
   },
 };
 
+interface TrackParam {
+  key: string;
+  label: string;
+  type: 'number' | 'select';
+  default: number | string;
+  options?: { label: string; value: string }[];
+  min?: number;
+  max?: number;
+}
+
+const TRACK_PARAMS: Record<string, TrackParam[]> = {
+  lithmm: [
+    { key: 'n_states', label: 'Number of states', type: 'number', default: 5, min: 2, max: 20 },
+  ],
+  topics: [
+    { key: 'n_topics', label: 'Number of topics', type: 'number', default: 10, min: 2, max: 50 },
+    { key: 'method', label: 'Method', type: 'select', default: 'lda', options: [
+      { label: 'LDA', value: 'lda' }, { label: 'NMF', value: 'nmf' },
+    ]},
+  ],
+  self_similarity: [
+    { key: 'metric', label: 'Similarity metric', type: 'select', default: 'cosine', options: [
+      { label: 'Cosine', value: 'cosine' }, { label: 'Jaccard', value: 'jaccard' },
+      { label: 'Word overlap', value: 'word_overlap' }, { label: 'Edit distance', value: 'edit_distance' },
+    ]},
+  ],
+  sentiment: [
+    { key: 'method', label: 'Method', type: 'select', default: 'vader', options: [
+      { label: 'VADER', value: 'vader' }, { label: 'Hedonometer', value: 'hedonometer' },
+    ]},
+    { key: 'granularity', label: 'Granularity', type: 'select', default: 'sentence', options: [
+      { label: 'Sentence', value: 'sentence' }, { label: 'Paragraph', value: 'paragraph' },
+    ]},
+  ],
+};
+
+function ParamDialog({ trackName, onRun, onCancel }: { trackName: string; onRun: (params: Record<string, string | number>) => void; onCancel: () => void }) {
+  const params = TRACK_PARAMS[trackName] ?? [];
+  const [values, setValues] = useState<Record<string, string | number>>(() => {
+    const init: Record<string, string | number> = {};
+    for (const p of params) init[p.key] = p.default;
+    return init;
+  });
+
+  return (
+    <div className="border border-[var(--color-border)] rounded p-3 bg-[var(--color-bg)] mt-1 text-[0.85em]">
+      <div className="font-semibold mb-2">Re-run {trackName} with parameters</div>
+      <div className="flex flex-col gap-2 mb-3">
+        {params.map((p) => (
+          <label key={p.key} className="flex items-center gap-2">
+            <span className="w-[140px] text-[var(--color-text-muted)]">{p.label}</span>
+            {p.type === 'number' ? (
+              <input
+                type="number"
+                value={values[p.key]}
+                min={p.min}
+                max={p.max}
+                onChange={(e) => setValues({ ...values, [p.key]: parseInt(e.target.value, 10) || p.default })}
+                className="w-16 px-1 py-0.5 border border-[var(--color-border)] rounded text-center"
+              />
+            ) : (
+              <select
+                value={values[p.key]}
+                onChange={(e) => setValues({ ...values, [p.key]: e.target.value })}
+                className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] cursor-pointer"
+              >
+                {p.options?.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+              </select>
+            )}
+          </label>
+        ))}
+      </div>
+      <div className="flex gap-2">
+        <button onClick={() => onRun(values)} className="px-2 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.8em]">Run</button>
+        <button onClick={onCancel} className="px-2 py-1 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.8em]">Cancel</button>
+      </div>
+    </div>
+  );
+}
+
 export default function AnalysisPanel() {
   const projectId = useProjectStore((s) => s.metadata?.id);
   const [tracks, setTracks] = useState<TrackStatus[]>([]);
   const [loading, setLoading] = useState(false);
   const [pollingTracks, setPollingTracks] = useState<Set<string>>(new Set());
+  const [paramDialogTrack, setParamDialogTrack] = useState<string | null>(null);
 
-  const fetchStatus = useCallback(() => {
+  const fetchStatus = useCallback(async () => {
     if (!projectId) return;
-    fetch(`/api/projects/${projectId}/analysis/status`)
-      .then((r) => r.json())
-      .then(setTracks)
-      .catch(() => {});
+    try {
+      const r = await fetch(`/api/projects/${projectId}/analysis/status`);
+      const data = await r.json();
+      setTracks(data);
+    } catch { /* swallow */ }
   }, [projectId]);
 
   useEffect(() => {
     setLoading(true);
-    fetchStatus();
-    setLoading(false);
+    fetchStatus().finally(() => setLoading(false));
   }, [fetchStatus]);
 
   // Poll running tracks
@@ -125,9 +206,13 @@ export default function AnalysisPanel() {
     setPollingTracks(running);
   }, [tracks]);
 
-  const handleRun = useCallback(async (trackName: string) => {
+  const handleRun = useCallback(async (trackName: string, params?: Record<string, string | number>) => {
     if (!projectId) return;
-    await fetch(`/api/projects/${projectId}/analyze/${trackName}`, { method: 'POST' });
+    const qs = params ? '?' + new URLSearchParams(
+      Object.entries(params).map(([k, v]) => [k, String(v)])
+    ).toString() : '';
+    await fetch(`/api/projects/${projectId}/analyze/${trackName}${qs}`, { method: 'POST' });
+    setParamDialogTrack(null);
     fetchStatus();
   }, [projectId, fetchStatus]);
 
@@ -266,15 +351,29 @@ export default function AnalysisPanel() {
                       </button>
                     )}
                     {track.status === 'computed' && (
-                      <button
-                        onClick={() => handleRun(track.name)}
-                        className="px-2 py-1 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.8em]"
-                      >
-                        Re-run
-                      </button>
+                      TRACK_PARAMS[track.name] ? (
+                        <button
+                          onClick={() => setParamDialogTrack(paramDialogTrack === track.name ? null : track.name)}
+                          className="px-2 py-1 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.8em]"
+                        >
+                          Re-run...
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleRun(track.name)}
+                          className="px-2 py-1 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.8em]"
+                        >
+                          Re-run
+                        </button>
+                      )
                     )}
                     {track.status === 'running' && (
-                      <span className="text-[var(--color-primary)] text-[0.8em]">Running...</span>
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-16 h-1.5 bg-[var(--color-bg-muted)] rounded-full overflow-hidden">
+                          <div className="h-full bg-[var(--color-primary)] rounded-full animate-pulse" style={{ width: '60%' }} />
+                        </div>
+                        <span className="text-[var(--color-primary)] text-[0.75em]">Running</span>
+                      </div>
                     )}
                     {track.status === 'failed' && (
                       <button
@@ -292,6 +391,17 @@ export default function AnalysisPanel() {
                     </button>
                   </td>
                 </tr>
+                {paramDialogTrack === track.name && (
+                  <tr className="bg-[var(--color-bg)]">
+                    <td colSpan={6} className="px-4 py-2">
+                      <ParamDialog
+                        trackName={track.name}
+                        onRun={(params) => handleRun(track.name, params)}
+                        onCancel={() => setParamDialogTrack(null)}
+                      />
+                    </td>
+                  </tr>
+                )}
                 {expandedTrack === track.name && (
                   <tr className="bg-[var(--color-bg)]">
                     <td colSpan={6} className="px-4 py-3">

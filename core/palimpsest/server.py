@@ -377,8 +377,17 @@ def create_app(workspace: Path) -> FastAPI:
         return JSONResponse(content=result)
 
     @app.post("/api/projects/{project_id}/analyze/{track_name}")
-    async def run_analysis(project_id: str, track_name: str, force: bool = False) -> JSONResponse:
-        """Run a single track extractor."""
+    async def run_analysis(
+        project_id: str,
+        track_name: str,
+        force: bool = False,
+        n_states: int | None = None,
+        n_topics: int | None = None,
+        method: str | None = None,
+        metric: str | None = None,
+        granularity: str | None = None,
+    ) -> JSONResponse:
+        """Run a single track extractor with optional parameters."""
         import asyncio
 
         if ".." in project_id:
@@ -404,7 +413,23 @@ def create_app(workspace: Path) -> FastAPI:
         project = Project.load(project_dir)
         extractor = all_extractors[track_name]()
 
-        _running_jobs[job_key] = {"status": "running", "track": track_name}
+        params: dict[str, Any] = {}
+        if n_states is not None:
+            params["n_states"] = max(2, min(20, n_states))
+        if n_topics is not None:
+            params["n_topics"] = max(2, min(50, n_topics))
+        if method is not None:
+            params["method"] = method
+        if metric is not None:
+            params["metric"] = metric
+        if granularity is not None:
+            params["granularity"] = granularity
+        if params and hasattr(extractor, "set_params"):
+            extractor.set_params(params)
+        if force:
+            params["force"] = True
+
+        _running_jobs[job_key] = {"status": "running", "track": track_name, "params": params}
 
         async def run() -> None:
             try:
