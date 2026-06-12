@@ -53,3 +53,7 @@ data/
 # Large research PDFs (keep local, don't push to GitHub)
 research/papers/**/*.pdf
 target/
+
+# Test artifacts
+browser/screenshots/
+browser/test-screenshots/

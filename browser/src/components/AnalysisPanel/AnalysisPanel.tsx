@@ -200,10 +200,15 @@ export default function AnalysisPanel() {
     return () => clearInterval(interval);
   }, [pollingTracks.size, fetchStatus]);
 
-  // Update polling set when status changes
+  // Update polling set when status changes (avoid loop by comparing)
   useEffect(() => {
-    const running = new Set(tracks.filter((t) => t.status === 'running').map((t) => t.name));
-    setPollingTracks(running);
+    const runningNames = tracks.filter((t) => t.status === 'running').map((t) => t.name);
+    setPollingTracks((prev) => {
+      const prevArr = Array.from(prev).sort();
+      const nextArr = [...runningNames].sort();
+      if (prevArr.length === nextArr.length && prevArr.every((v, i) => v === nextArr[i])) return prev;
+      return new Set(runningNames);
+    });
   }, [tracks]);
 
   const handleRun = useCallback(async (trackName: string, params?: Record<string, string | number>) => {

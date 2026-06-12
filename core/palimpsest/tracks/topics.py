@@ -110,7 +110,7 @@ class TopicsExtractor:
                     source=source_urn,
                     selector=TextPositionSelector(start=start, end=end),
                 ),
-                creator=Creator(name=f"sklearn-lda/{N_TOPICS}topics"),
+                creator=Creator(name=f"sklearn-{self._method}/{n_topics}topics"),
                 confidence=weight,
                 evidence_level="E4",
                 project_id=project.metadata.id,

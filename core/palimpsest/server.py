@@ -62,6 +62,18 @@ class ExplainResponse(BaseModel):
     ollama_available: bool
 
 
+def _safe_project_dir(workspace: Path, project_id: str) -> Path:
+    """Resolve project directory with path traversal protection."""
+    if ".." in project_id or "/" in project_id or "\\" in project_id:
+        raise HTTPException(status_code=400, detail="Invalid project ID")
+    project_dir = (workspace / project_id).resolve()
+    if not project_dir.is_relative_to(workspace.resolve()):
+        raise HTTPException(status_code=400, detail="Invalid project ID")
+    if not project_dir.is_dir():
+        raise HTTPException(status_code=404, detail="Project not found")
+    return project_dir
+
+
 def create_app(workspace: Path) -> FastAPI:
     """Create the FastAPI application for a workspace directory."""
     app = FastAPI(title="Palimpsest", version="0.1.0")
@@ -93,9 +105,8 @@ def create_app(workspace: Path) -> FastAPI:
     @app.get("/api/projects/{project_id}/tracks")
     async def list_tracks(project_id: str) -> JSONResponse:
         """List available tracks for a project."""
-        if ".." in project_id:
-            raise HTTPException(status_code=400, detail="Invalid project ID")
-        tracks_dir = workspace / project_id / "tracks"
+        project_dir = _safe_project_dir(workspace, project_id)
+        tracks_dir = project_dir / "tracks"
         if not tracks_dir.is_dir():
             return JSONResponse(content=[])
         track_names = sorted(
@@ -276,12 +287,7 @@ def create_app(workspace: Path) -> FastAPI:
         """Get character index for a project (built from coreference + entity tracks)."""
         import asyncio
 
-        if ".." in project_id:
-            raise HTTPException(status_code=400, detail="Invalid project ID")
-
-        project_dir = workspace / project_id
-        if not project_dir.is_dir():
-            raise HTTPException(status_code=404, detail="Project not found")
+        project_dir = _safe_project_dir(workspace, project_id)
 
         cache_path = project_dir / "cache" / "characters.json"
         if cache_path.exists():
@@ -304,10 +310,7 @@ def create_app(workspace: Path) -> FastAPI:
         """Get character co-occurrence matrix."""
         import asyncio
 
-        if ".." in project_id:
-            raise HTTPException(status_code=400, detail="Invalid project ID")
-
-        project_dir = workspace / project_id
+        project_dir = _safe_project_dir(workspace, project_id)
         cache_path = project_dir / "cache" / "characters.json"
 
         if cache_path.exists():
@@ -333,12 +336,7 @@ def create_app(workspace: Path) -> FastAPI:
     @app.get("/api/projects/{project_id}/analysis/status")
     async def analysis_status(project_id: str) -> JSONResponse:
         """Get status of all track extractors for a project."""
-        if ".." in project_id:
-            raise HTTPException(status_code=400, detail="Invalid project ID")
-
-        project_dir = workspace / project_id
-        if not project_dir.is_dir():
-            raise HTTPException(status_code=404, detail="Project not found")
+        project_dir = _safe_project_dir(workspace, project_id)
 
         from palimpsest.tracks.registry import TrackRegistry
 
@@ -390,12 +388,7 @@ def create_app(workspace: Path) -> FastAPI:
         """Run a single track extractor with optional parameters."""
         import asyncio
 
-        if ".." in project_id:
-            raise HTTPException(status_code=400, detail="Invalid project ID")
-
-        project_dir = workspace / project_id
-        if not project_dir.is_dir():
-            raise HTTPException(status_code=404, detail="Project not found")
+        project_dir = _safe_project_dir(workspace, project_id)
 
         from palimpsest.tracks.registry import TrackRegistry
 

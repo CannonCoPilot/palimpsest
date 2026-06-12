@@ -62,14 +62,24 @@ class SelfSimilarityTrack:
         dim = len(all_vectors[0])
         embeddings = np.array(all_vectors, dtype=np.float32)
 
-        # L2-normalize rows
-        norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
-        norms = np.where(norms > 1e-8, norms, 1.0)
-        normed = embeddings / norms
-
-        # Cosine similarity matrix
-        matrix = normed @ normed.T
-        np.clip(matrix, -1.0, 1.0, out=matrix)
+        if self._metric == "cosine":
+            norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
+            norms = np.where(norms > 1e-8, norms, 1.0)
+            normed = embeddings / norms
+            matrix = normed @ normed.T
+            np.clip(matrix, -1.0, 1.0, out=matrix)
+        elif self._metric == "jaccard":
+            binary = (embeddings > 0).astype(np.float32)
+            intersection = binary @ binary.T
+            row_sums = binary.sum(axis=1)
+            union = row_sums[:, None] + row_sums[None, :] - intersection
+            matrix = np.where(union > 0, intersection / union, 0.0).astype(np.float32)
+        else:
+            norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
+            norms = np.where(norms > 1e-8, norms, 1.0)
+            normed = embeddings / norms
+            matrix = normed @ normed.T
+            np.clip(matrix, -1.0, 1.0, out=matrix)
         np.fill_diagonal(matrix, 1.0)
 
         paras = project.paragraphs()

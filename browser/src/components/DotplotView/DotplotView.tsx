@@ -203,7 +203,7 @@ export default function DotplotView(): JSX.Element | null {
 
   const panning = useRef(false);
   const panStart = useRef({ x: 0, y: 0 });
-  const vpAtPanStart = useRef({ x: 0, y: 0 });
+  const vpAtPanStart = useRef({ x: 0, y: 0, span: 0 });
   const draggingWindowId = useRef<string | null>(null);
   const dragWindowStart = useRef({ mx: 0, my: 0, wx: 0, wy: 0 });
 
@@ -382,24 +382,25 @@ export default function DotplotView(): JSX.Element | null {
       const canvas = canvasRef.current;
       if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
-      const dx = (e.clientX - panStart.current.x) / rect.width * viewport.span;
-      const dy = (e.clientY - panStart.current.y) / rect.height * viewport.span;
+      const span = vpAtPanStart.current.span;
+      const dx = (e.clientX - panStart.current.x) / rect.width * span;
+      const dy = (e.clientY - panStart.current.y) / rect.height * span;
       setViewport(clampViewport({
         x: vpAtPanStart.current.x - dx,
         y: vpAtPanStart.current.y - dy,
-        span: viewport.span,
+        span,
       }));
       return;
     }
     const cell = getCellFromEvent(e);
     if (cell) setHoveredCell(cell);
-  }, [getCellFromEvent, viewport, clampViewport]);
+  }, [getCellFromEvent, clampViewport]);
 
   const handleMouseDown = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
     if (e.button === 2 || e.button === 1 || e.ctrlKey || e.metaKey) {
       panning.current = true;
       panStart.current = { x: e.clientX, y: e.clientY };
-      vpAtPanStart.current = { x: viewport.x, y: viewport.y };
+      vpAtPanStart.current = { x: viewport.x, y: viewport.y, span: viewport.span };
       e.preventDefault();
       return;
     }
@@ -629,6 +630,8 @@ export default function DotplotView(): JSX.Element | null {
                     onContextMenu={(e) => e.preventDefault()}
                     onMouseLeave={() => { setHoveredCell(null); if (panning.current) panning.current = false; }}
                     className="cursor-crosshair"
+                    role="img"
+                    aria-label={`Self-similarity heatmap, ${n}×${n} paragraphs. ${hoveredCell ? `Cell [${hoveredCell.i}, ${hoveredCell.j}]: similarity ${hoverValue?.toFixed(3) ?? 'N/A'}` : 'Hover to inspect cells. Click two points to select a region.'}`}
                   />
                 </div>
                 <VirtualScrollbar

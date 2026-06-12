@@ -127,7 +127,7 @@ function WorkLevelView({ sectionBlocks, annotations }: {
   const requestScroll = useViewStore((s) => s.requestScrollToParagraph);
 
   return (
-    <div style={{ flex: 1, overflowY: 'auto', padding: '16px 24px', fontFamily: "'Georgia', serif" }}>
+    <div className="flex-1 overflow-y-auto px-6 py-4 font-[var(--font-serif)]">
       {sectionBlocks.map((block) => {
         const counts = countAnnotationsInRange(annotations, block.charStart, block.charEnd);
         const trackNames = Object.keys(counts).sort();
@@ -138,45 +138,18 @@ function WorkLevelView({ sectionBlocks, annotations }: {
               requestScroll(block.startPara);
               setZoom('chapter');
             }}
-            style={{
-              padding: '12px 16px',
-              marginBottom: '8px',
-              border: '1px solid #e0e0e0',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              transition: 'background-color 0.15s, box-shadow 0.15s',
-              backgroundColor: '#fafafa',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#f0f7ff';
-              e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#fafafa';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
+            className="px-4 py-3 mb-2 border border-[var(--color-border-subtle)] rounded-md cursor-pointer transition-colors bg-[var(--color-bg-subtle)] hover:bg-[#f0f7ff] hover:shadow-sm"
           >
-            <div style={{ fontWeight: 'bold', fontSize: '1em', marginBottom: '4px' }}>
-              {block.heading}
-            </div>
-            <div style={{ color: '#888', fontSize: '0.8em', marginBottom: '6px' }}>
-              {block.paraCount} paragraphs
-            </div>
-            <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+            <div className="font-bold text-[1em] mb-1">{block.heading}</div>
+            <div className="text-[var(--color-text-muted)] text-[0.8em] mb-1.5">{block.paraCount} paragraphs</div>
+            <div className="flex gap-1 flex-wrap">
               {trackNames.map((track) => {
                 const color = TRACK_COLORS[track] ?? '#888';
                 return (
                   <span
                     key={track}
-                    style={{
-                      display: 'inline-block',
-                      padding: '1px 6px',
-                      borderRadius: '3px',
-                      backgroundColor: `${color}22`,
-                      color,
-                      fontSize: '0.7em',
-                      fontWeight: 'bold',
-                    }}
+                    className="inline-block px-1.5 py-px rounded text-[0.7em] font-bold"
+                    style={{ backgroundColor: `${color}22`, color }}
                   >
                     {track}: {counts[track]}
                   </span>
@@ -220,7 +193,7 @@ function ChapterLevelView({ paragraphs, annotations }: {
   return (
     <div
       ref={containerRef}
-      style={{ flex: 1, overflowY: 'auto', padding: '8px 16px', fontFamily: "'Georgia', serif", fontSize: '0.85rem' }}
+      className="flex-1 overflow-y-auto px-4 py-2 font-[var(--font-serif)] text-[0.85rem]"
     >
       <div style={{ height: `${virtualizer.getTotalSize()}px`, width: '100%', position: 'relative' }}>
         {virtualizer.getVirtualItems().map((vRow) => {
@@ -255,16 +228,16 @@ function ChapterLevelView({ paragraphs, annotations }: {
               onMouseEnter={(e) => { if (!isSelected) e.currentTarget.style.backgroundColor = '#fafafa'; }}
               onMouseLeave={(e) => { if (!isSelected) e.currentTarget.style.backgroundColor = 'transparent'; }}
             >
-              <span style={{ color: '#ccc', fontSize: '0.75em', width: '30px', textAlign: 'right', flexShrink: 0 }}>
+              <span className="text-[var(--color-text-muted)] text-[0.75em] w-[30px] text-right shrink-0">
                 {p.index + 1}
               </span>
-              <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: '#444' }}>
+              <span className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-[var(--color-text)]">
                 {preview}
               </span>
-              <span style={{ display: 'flex', gap: '2px', flexShrink: 0 }}>
+              <span className="flex gap-0.5 shrink-0">
                 {trackNames.slice(0, 5).map((t) => {
                   const color = TRACK_COLORS[t] ?? '#888';
-                  return <span key={t} style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: color }} />;
+                  return <span key={t} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: color }} />;
                 })}
               </span>
             </div>
@@ -296,15 +269,7 @@ function ParagraphView({ paragraph, annotations, searchMatches, currentMatchInde
           useViewStore.getState().selectAnnotation(null);
         }
       }}
-      style={{
-        marginBottom: '1em',
-        padding: '4px 8px',
-        borderLeft: isSelected ? '3px solid #3498db' : '3px solid transparent',
-        backgroundColor: isSelected ? '#f0f7ff' : 'transparent',
-        cursor: 'pointer',
-        lineHeight: 1.7,
-        transition: 'background-color 0.15s, border-color 0.15s',
-      }}
+      className={`mb-4 px-2 py-1 border-l-[3px] cursor-pointer leading-[1.7] transition-colors ${isSelected ? 'border-l-[var(--color-primary)] bg-[#f0f7ff]' : 'border-l-transparent bg-transparent'}`}
     >
       <AnnotationOverlay
         text={paragraph.text}
@@ -392,7 +357,7 @@ function SimpleParagraphView({
   useEffect(() => { handleScroll(); }, [handleScroll]);
 
   return (
-    <div ref={containerRef} style={{ flex: 1, overflowY: 'auto', padding: '16px 24px', fontFamily: "'Georgia', serif", fontSize: '1rem' }}>
+    <div ref={containerRef} className="flex-1 overflow-y-auto px-6 py-4 font-[var(--font-serif)] text-[1rem]">
       {paragraphs.map((p) => (
         <ParagraphView key={p.index} paragraph={p} annotations={allAnnotations}
           searchMatches={searchMatches} currentMatchIndex={currentMatchIndex}
@@ -430,7 +395,7 @@ function SentenceLevelView({
   }, [scrollRequest, clearScrollRequest, virtualizer]);
 
   return (
-    <div ref={containerRef} style={{ flex: 1, overflowY: 'auto', padding: '16px 24px', fontFamily: "'Georgia', serif", fontSize: '1.05rem' }}>
+    <div ref={containerRef} className="flex-1 overflow-y-auto px-6 py-4 font-[var(--font-serif)] text-[1.05rem]">
       <div style={{ height: `${virtualizer.getTotalSize()}px`, width: '100%', position: 'relative' }}>
         {virtualizer.getVirtualItems().map((vRow) => {
           const p = paragraphs[vRow.index];
@@ -452,7 +417,7 @@ function SentenceLevelView({
                   cursor: 'pointer', lineHeight: 1.8,
                 }}
               >
-                <div style={{ fontSize: '0.7em', color: '#bbb', marginBottom: '2px' }}>
+                <div className="text-[0.7em] text-[var(--color-text-muted)] mb-0.5">
                   P{p.index + 1} &middot; {p.text.split(/\s+/).length} words &middot; {paraAnns.length} annotations
                 </div>
                 <AnnotationOverlay
