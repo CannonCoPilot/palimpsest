@@ -142,8 +142,10 @@ export default function CharactersPanel() {
                 {filtered.map((char) => (
                   <tr
                     key={char.canonicalName}
-                    className={`border-b border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-muted)] cursor-pointer ${selectedChar?.canonicalName === char.canonicalName ? 'bg-[var(--color-bg-muted)]' : ''}`}
+                    tabIndex={0}
+                    className={`border-b border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-muted)] cursor-pointer focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--color-primary)] ${selectedChar?.canonicalName === char.canonicalName ? 'bg-[var(--color-bg-muted)]' : ''}`}
                     onClick={() => setSelectedChar(selectedChar?.canonicalName === char.canonicalName ? null : char)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedChar(selectedChar?.canonicalName === char.canonicalName ? null : char); } }}
                   >
                     <td className="px-3 py-1.5 font-medium">{char.canonicalName}</td>
                     <td className="px-3 py-1.5 text-right font-[var(--font-mono)] text-[0.9em]">{char.mentionCount}</td>

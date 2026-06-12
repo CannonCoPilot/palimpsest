@@ -42,8 +42,8 @@ export default function CooccurrenceHeatmap({ projectId }: { projectId: string }
     : '';
 
   return (
-    <div className="flex-1 overflow-auto p-3">
-      <div className="text-[0.8em] text-[var(--color-text-muted)] mb-2 h-4">{hoverInfo || 'Hover to see shared paragraph count'}</div>
+    <div className="flex-1 overflow-auto p-3" role="img" aria-label={`Character co-occurrence matrix showing ${n} characters. ${hoverInfo || 'Hover cells to see shared paragraph counts between character pairs.'}`}>
+      <div className="text-[0.8em] text-[var(--color-text-muted)] mb-2 h-4" aria-live="polite">{hoverInfo || 'Hover to see shared paragraph count'}</div>
       <div className="inline-block">
         {/* Column headers */}
         <div className="flex" style={{ marginLeft: labelWidth }}>

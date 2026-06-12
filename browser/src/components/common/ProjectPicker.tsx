@@ -69,28 +69,24 @@ export default function ProjectPicker(): JSX.Element {
         <ImportDialog />
       </div>
       <div style={{ marginBottom: '12px', fontWeight: 'bold' }}>Or select an existing project:</div>
-      {projects.map((p) => (
-        <div
-          key={p.id}
-          onClick={() => handleSelect(p.id)}
-          style={{
-            padding: '12px',
-            border: '1px solid #ddd',
-            borderRadius: '4px',
-            marginBottom: '8px',
-            cursor: 'pointer',
-            transition: 'background-color 0.15s',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f0f7ff')}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-        >
-          <div style={{ fontWeight: 'bold' }}>{p.title}</div>
-          {p.author && <div style={{ color: '#666', fontSize: '0.9em' }}>by {p.author}</div>}
-          <div style={{ color: '#999', fontSize: '0.8em' }}>
-            {p.word_count.toLocaleString()} words
+      <div role="listbox" aria-label="Available projects">
+        {projects.map((p) => (
+          <div
+            key={p.id}
+            role="option"
+            tabIndex={0}
+            onClick={() => handleSelect(p.id)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelect(p.id); } }}
+            className="p-3 border border-[var(--color-border)] rounded mb-2 cursor-pointer transition-colors hover:bg-[#f0f7ff] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+          >
+            <div className="font-bold">{p.title}</div>
+            {p.author && <div className="text-[var(--color-text-secondary)] text-[0.9em]">by {p.author}</div>}
+            <div className="text-[var(--color-text-muted)] text-[0.8em]">
+              {p.word_count.toLocaleString()} words
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

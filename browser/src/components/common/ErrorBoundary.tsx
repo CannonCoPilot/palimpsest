@@ -30,29 +30,18 @@ export default class ErrorBoundary extends Component<Props, State> {
       const label = this.props.fallbackLabel || 'Component';
       return (
         <div
-          style={{
-            padding: '16px',
-            backgroundColor: '#fdf0f0',
-            border: '1px solid #e74c3c',
-            borderRadius: '4px',
-            margin: '8px',
-          }}
+          role="alert"
+          className="p-4 bg-[var(--color-danger-subtle)] border border-[var(--color-danger)] rounded m-2"
         >
-          <div style={{ fontWeight: 'bold', color: '#e74c3c', marginBottom: '4px' }}>
+          <div className="font-bold text-[var(--color-danger)] mb-1">
             {label} encountered an error
           </div>
-          <div style={{ fontSize: '0.85em', color: '#666', marginBottom: '8px' }}>
+          <div className="text-[0.85em] text-[var(--color-text-secondary)] mb-2">
             {this.state.error?.message ?? 'Unknown error'}
           </div>
           <button
             onClick={() => this.setState({ hasError: false, error: null })}
-            style={{
-              padding: '4px 12px',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              backgroundColor: '#fff',
-            }}
+            className="px-3 py-1 border border-[var(--color-border)] rounded cursor-pointer bg-[var(--color-bg)] hover:bg-[var(--color-bg-muted)]"
           >
             Retry
           </button>

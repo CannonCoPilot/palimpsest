@@ -17,8 +17,8 @@
   --color-border-focus: #3498db;
 
   --color-text: #1a1a1a;
-  --color-text-secondary: #666;
-  --color-text-muted: #999;
+  --color-text-secondary: #595959;
+  --color-text-muted: #767676;
   --color-text-inverted: #fff;
 
   /* Semantic colors */
@@ -96,6 +96,16 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-border-focus);
   outline-offset: 2px;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 button:focus-visible, [role="switch"]:focus-visible, [role="tab"]:focus-visible,

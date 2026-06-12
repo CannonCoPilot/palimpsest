@@ -103,6 +103,11 @@ function VirtualScrollbar({ orientation, viewportOffset, viewportSpan, total, on
     <div
       ref={trackRef}
       onClick={handleTrackClick}
+      role="scrollbar"
+      aria-orientation={orientation}
+      aria-valuenow={Math.round(viewportOffset)}
+      aria-valuemin={0}
+      aria-valuemax={Math.round(total - viewportSpan)}
       className={`${isH ? 'h-3 w-full' : 'w-3 h-full'} bg-[var(--color-bg-muted)] rounded-sm relative cursor-pointer shrink-0`}
     >
       <div
