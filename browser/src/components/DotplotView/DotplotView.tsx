@@ -472,12 +472,21 @@ export default function DotplotView(): JSX.Element | null {
     return () => canvas.removeEventListener('wheel', handler);
   }, [n, clampViewport]);
 
-  const exportPNG = useCallback(() => {
+  const exportImage = useCallback((format: 'png' | 'svg') => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const link = document.createElement('a');
-    link.download = `texthic-${projectId ?? 'heatmap'}.png`;
-    link.href = canvas.toDataURL('image/png');
+    if (format === 'svg') {
+      const dataUrl = canvas.toDataURL('image/png');
+      const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}">
+<image href="${dataUrl}" width="${canvas.width}" height="${canvas.height}"/>
+</svg>`;
+      link.download = `texthic-${projectId ?? 'heatmap'}.svg`;
+      link.href = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgContent);
+    } else {
+      link.download = `texthic-${projectId ?? 'heatmap'}.png`;
+      link.href = canvas.toDataURL('image/png');
+    }
     link.click();
   }, [projectId]);
 
@@ -550,7 +559,8 @@ export default function DotplotView(): JSX.Element | null {
           <button onClick={() => setShowControls(!showControls)} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">
             {showControls ? 'Hide filters' : 'Filters'}
           </button>
-          <button onClick={exportPNG} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">Export PNG</button>
+          <button onClick={() => exportImage('png')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">PNG</button>
+          <button onClick={() => exportImage('svg')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">SVG</button>
           <span className="text-[0.8em]">{n > 0 ? `${n}×${n} · ${similarityMetric}` : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
         </div>
       </div>

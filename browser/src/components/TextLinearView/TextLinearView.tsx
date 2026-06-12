@@ -483,6 +483,8 @@ export default function TextLinearView(): JSX.Element {
   const currentMatchIndex = useSearchStore((s) => s.currentMatchIndex);
   const zoomLevel = useViewStore((s) => s.zoomLevel);
 
+  const characterFilter = useViewStore((s) => s.characterFilter);
+
   const allAnnotations = useMemo(
     () => collectVisibleAnnotations(tracks, trackStates),
     [tracks, trackStates],
@@ -493,26 +495,57 @@ export default function TextLinearView(): JSX.Element {
     [paragraphs, tracks],
   );
 
+  const filteredParagraphs = useMemo(() => {
+    if (!characterFilter) return paragraphs;
+    const entityAnns = tracks['entities'] ?? [];
+    const corefAnns = tracks['coreference'] ?? [];
+    const matchAnns = [...entityAnns, ...corefAnns];
+    const paraIndices = new Set<number>();
+    const filterLower = characterFilter.toLowerCase();
+    for (const ann of matchAnns) {
+      const body = ann.body as Record<string, unknown>;
+      const name = ((body.value as string) || (body['palimpsest:canonicalName'] as string) || '').toLowerCase();
+      if (!name.includes(filterLower)) continue;
+      const sel = ann.target.selector;
+      if (sel.start == null) continue;
+      const idx = paragraphs.findIndex((p) => p.start <= sel.start! && p.end >= sel.start!);
+      if (idx >= 0) paraIndices.add(idx);
+    }
+    return paragraphs.filter((p) => paraIndices.has(p.index));
+  }, [paragraphs, tracks, characterFilter]);
+
+  const clearCharFilter = useViewStore((s) => s.setCharacterFilter);
+
   const commonProps = {
-    paragraphs, allAnnotations: allAnnotations, searchMatches, currentMatchIndex,
+    paragraphs: filteredParagraphs, allAnnotations: allAnnotations, searchMatches, currentMatchIndex,
     selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
   };
 
+  const filterBanner = characterFilter ? (
+    <div className="flex items-center gap-2 px-4 py-1.5 bg-[#eff6ff] border-b border-[var(--color-border)] text-[0.85em] font-[var(--font-sans)]">
+      <span>Showing {filteredParagraphs.length} of {paragraphs.length} paragraphs mentioning</span>
+      <span className="font-semibold text-[var(--color-primary)]">{characterFilter}</span>
+      <button onClick={() => clearCharFilter(null)} className="ml-auto px-2 py-0.5 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.85em]">
+        Clear filter
+      </button>
+    </div>
+  ) : null;
+
   if (zoomLevel === 'work') {
-    return <WorkLevelView sectionBlocks={sectionBlocks} annotations={allAnnotations} />;
+    return <>{filterBanner}<WorkLevelView sectionBlocks={sectionBlocks} annotations={allAnnotations} /></>;
   }
 
   if (zoomLevel === 'chapter') {
-    return <ChapterLevelView paragraphs={paragraphs} annotations={allAnnotations} />;
+    return <>{filterBanner}<ChapterLevelView paragraphs={filteredParagraphs} annotations={allAnnotations} /></>;
   }
 
   if (zoomLevel === 'sentence') {
-    return <SentenceLevelView {...commonProps} />;
+    return <>{filterBanner}<SentenceLevelView {...commonProps} /></>;
   }
 
   // Default: paragraph level
-  const useVirtual = paragraphs.length >= VIRTUALIZE_THRESHOLD;
-  return useVirtual
+  const useVirtual = filteredParagraphs.length >= VIRTUALIZE_THRESHOLD;
+  return <>{filterBanner}{useVirtual
     ? <VirtualizedParagraphView {...commonProps} />
-    : <SimpleParagraphView {...commonProps} />;
+    : <SimpleParagraphView {...commonProps} />}</>;
 }

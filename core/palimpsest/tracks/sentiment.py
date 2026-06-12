@@ -30,6 +30,16 @@ def _sentences_from_spacy(text: str) -> list[Segment]:
 class SentimentExtractor:
     """Per-sentence sentiment via VADER."""
 
+    def __init__(self) -> None:
+        self._method = "vader"
+        self._granularity = "sentence"
+
+    def set_params(self, params: dict[str, Any]) -> None:
+        if "method" in params and params["method"] in ("vader", "hedonometer"):
+            self._method = params["method"]
+        if "granularity" in params and params["granularity"] in ("sentence", "paragraph"):
+            self._granularity = params["granularity"]
+
     @property
     def name(self) -> str:
         return "sentiment"

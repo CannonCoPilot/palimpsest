@@ -87,6 +87,7 @@ export default function CharactersPanel() {
   }, [characters, filter, sortKey, sortAsc]);
 
   const handleChainFollow = useCallback((char: CharacterRecord) => {
+    useViewStore.getState().setCharacterFilter(char.canonicalName);
     useViewStore.getState().setActiveTab('reading');
     const search = useSearchStore.getState();
     search.open();

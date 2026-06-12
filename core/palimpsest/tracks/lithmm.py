@@ -135,6 +135,10 @@ class LitHMMExtractor:
     def __init__(self, n_states: int = DEFAULT_N_STATES) -> None:
         self._n_states = n_states
 
+    def set_params(self, params: dict[str, Any]) -> None:
+        if "n_states" in params:
+            self._n_states = max(2, min(20, int(params["n_states"])))
+
     @property
     def name(self) -> str:
         return "lithmm"

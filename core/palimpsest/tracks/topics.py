@@ -22,6 +22,16 @@ MAX_FEATURES = 10_000
 class TopicsExtractor:
     """Per-paragraph topic modeling via LDA."""
 
+    def __init__(self) -> None:
+        self._n_topics = N_TOPICS
+        self._method = "lda"
+
+    def set_params(self, params: dict[str, Any]) -> None:
+        if "n_topics" in params:
+            self._n_topics = max(2, min(50, int(params["n_topics"])))
+        if "method" in params and params["method"] in ("lda", "nmf"):
+            self._method = params["method"]
+
     @property
     def name(self) -> str:
         return "topics"
@@ -50,7 +60,7 @@ class TopicsExtractor:
             return []
 
         para_texts = [text for _, _, text in paragraphs]
-        n_topics = min(N_TOPICS, len(paragraphs))
+        n_topics = min(self._n_topics, len(paragraphs))
 
         vectorizer = CountVectorizer(
             token_pattern=r"[a-zA-Z]{3,}",
@@ -66,18 +76,22 @@ class TopicsExtractor:
         if dtm.shape[0] < n_topics:
             n_topics = max(2, dtm.shape[0])
 
-        lda = LatentDirichletAllocation(
-            n_components=n_topics,
-            random_state=RANDOM_STATE,
-            max_iter=MAX_ITER,
-            learning_method="batch",
-        )
-        doc_topic_dist = lda.fit_transform(dtm)
+        if self._method == "nmf":
+            from sklearn.decomposition import NMF
+            model = NMF(n_components=n_topics, random_state=RANDOM_STATE, max_iter=MAX_ITER)
+        else:
+            model = LatentDirichletAllocation(
+                n_components=n_topics,
+                random_state=RANDOM_STATE,
+                max_iter=MAX_ITER,
+                learning_method="batch",
+            )
+        doc_topic_dist = model.fit_transform(dtm)
 
         feature_names = vectorizer.get_feature_names_out()
         topic_terms: list[list[str]] = []
         for topic_idx in range(n_topics):
-            top_indices = lda.components_[topic_idx].argsort()[-5:][::-1]
+            top_indices = model.components_[topic_idx].argsort()[-5:][::-1]
             topic_terms.append([feature_names[i] for i in top_indices])
 
         annotations: list[Annotation] = []

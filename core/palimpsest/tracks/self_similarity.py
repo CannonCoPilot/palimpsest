@@ -16,6 +16,13 @@ logger = logging.getLogger(__name__)
 
 
 class SelfSimilarityTrack:
+    def __init__(self) -> None:
+        self._metric = "cosine"
+
+    def set_params(self, params: dict[str, Any]) -> None:
+        if "metric" in params and params["metric"] in ("cosine", "jaccard", "word_overlap", "edit_distance"):
+            self._metric = params["metric"]
+
     @property
     def name(self) -> str:
         return "self_similarity"
@@ -77,7 +84,7 @@ class SelfSimilarityTrack:
             data_file="self_similarity.bin",
             segment_offsets=[[s, e] for s, e, _ in paras],
             metadata={
-                "similarity_metric": "cosine",
+                "similarity_metric": self._metric,
                 "paragraph_count": n,
                 "embedding_dim": dim,
             },
