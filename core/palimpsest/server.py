@@ -643,6 +643,43 @@ def create_app(workspace: Path) -> FastAPI:
             raise HTTPException(status_code=404, detail="No cross-similarity matrix found")
         return JSONResponse(content=json.loads(manifest_path.read_text()))
 
+    @app.post("/api/alignment/diff")
+    async def run_diff(request: AlignmentRequest) -> JSONResponse:
+        """Compute edition-level diff between two projects."""
+        import asyncio
+
+        query_dir = _safe_project_dir(workspace, request.query_id)
+        target_dir = _safe_project_dir(workspace, request.target_id)
+
+        from palimpsest.alignment.edition_diff import compute_edition_diff, write_diff_results
+        from palimpsest.project import Project as Proj
+
+        proj_a = Proj.load(query_dir)
+        proj_b = Proj.load(target_dir)
+
+        records, summary = await asyncio.to_thread(compute_edition_diff, proj_a, proj_b)
+
+        comp_dir = workspace / ".comparisons" / f"{request.query_id}_vs_{request.target_id}"
+        await asyncio.to_thread(write_diff_results, comp_dir / "diff.json", records, summary)
+
+        return JSONResponse(content={
+            "summary": summary.to_dict(),
+            "records": [r.to_dict() for r in records[:500]],
+        })
+
+    @app.get("/api/alignment/{query_id}/{target_id}/diff")
+    async def get_diff(query_id: str, target_id: str) -> JSONResponse:
+        comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+        diff_path = comp_dir / "diff.json"
+        if not diff_path.exists():
+            raise HTTPException(status_code=404, detail="No diff results found")
+        from palimpsest.alignment.edition_diff import read_diff_results
+        records, summary = read_diff_results(diff_path)
+        return JSONResponse(content={
+            "summary": summary.to_dict(),
+            "records": [r.to_dict() for r in records[:500]],
+        })
+
     @app.get("/api/alignment/{query_id}/{target_id}/matrix.bin")
     async def alignment_matrix_bin(query_id: str, target_id: str) -> FileResponse:
         comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"

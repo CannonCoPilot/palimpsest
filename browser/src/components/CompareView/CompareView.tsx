@@ -3,9 +3,14 @@
  * Sub-nav selects: Alignment | Dotplot | Synteny | Circos | Diff
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 import { useComparisonStore, type CompareSubView } from '../../stores/comparisonStore';
+import AlignmentView from './AlignmentView';
+import ComparativeDotplot from './ComparativeDotplot';
+import SyntenyView from './SyntenyView';
+import CircosView from './CircosView';
+import DiffView from './DiffView';
 
 const SUB_VIEWS: { id: CompareSubView; label: string }[] = [
   { id: 'alignment', label: 'Alignment' },
@@ -191,51 +196,23 @@ export default function CompareView() {
         )}
 
         {!loading && alignmentRecords.length > 0 && activeSubView === 'alignment' && (
-          <AlignmentPlaceholder records={alignmentRecords} />
+          <AlignmentView />
         )}
 
-        {!loading && activeSubView !== 'alignment' && secondaryProjectId && (
-          <div className="flex-1 flex items-center justify-center text-[var(--color-text-muted)] text-[0.85em]">
-            {activeSubView.charAt(0).toUpperCase() + activeSubView.slice(1)} view — coming in Phase {
-              activeSubView === 'dotplot' ? '4' : activeSubView === 'synteny' ? '5' : activeSubView === 'circos' ? '6' : '3'
-            }
-          </div>
+        {!loading && activeSubView === 'dotplot' && secondaryProjectId && (
+          <ComparativeDotplot />
+        )}
+        {!loading && activeSubView === 'synteny' && secondaryProjectId && (
+          <SyntenyView />
+        )}
+        {!loading && activeSubView === 'circos' && secondaryProjectId && (
+          <CircosView />
+        )}
+        {!loading && activeSubView === 'diff' && secondaryProjectId && (
+          <DiffView />
         )}
       </div>
     </div>
   );
 }
 
-function AlignmentPlaceholder({ records }: { records: readonly { queryStart: number; queryEnd: number; targetStart: number; targetEnd: number; score: number; pValue: number; method: string }[] }) {
-  return (
-    <div className="flex-1 overflow-auto p-4">
-      <div className="text-[0.85em] font-semibold mb-2">
-        {records.length} aligned region{records.length !== 1 ? 's' : ''} found
-      </div>
-      <table className="w-full border-collapse text-[0.8em]">
-        <thead className="sticky top-0 bg-[var(--color-bg-subtle)]">
-          <tr className="text-left text-[var(--color-text-muted)]">
-            <th className="px-3 py-1.5">#</th>
-            <th className="px-3 py-1.5">Query Range</th>
-            <th className="px-3 py-1.5">Target Range</th>
-            <th className="px-3 py-1.5">Score</th>
-            <th className="px-3 py-1.5">p-value</th>
-            <th className="px-3 py-1.5">Method</th>
-          </tr>
-        </thead>
-        <tbody>
-          {records.slice(0, 100).map((r, i) => (
-            <tr key={i} className="border-b border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-muted)]">
-              <td className="px-3 py-1.5 text-[var(--color-text-muted)]">{i + 1}</td>
-              <td className="px-3 py-1.5 font-[var(--font-mono)]">¶{r.queryStart}–¶{r.queryEnd}</td>
-              <td className="px-3 py-1.5 font-[var(--font-mono)]">¶{r.targetStart}–¶{r.targetEnd}</td>
-              <td className="px-3 py-1.5 font-[var(--font-mono)]">{r.score.toFixed(3)}</td>
-              <td className="px-3 py-1.5 font-[var(--font-mono)]">{r.pValue.toExponential(2)}</td>
-              <td className="px-3 py-1.5">{r.method}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
