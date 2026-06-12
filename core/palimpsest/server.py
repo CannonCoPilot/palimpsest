@@ -534,6 +534,123 @@ def create_app(workspace: Path) -> FastAPI:
         finally:
             tmp_path.unlink(missing_ok=True)
 
+    # ── Alignment API ──
+
+    _alignment_jobs: dict[str, dict] = {}
+
+    class AlignmentRequest(BaseModel):
+        query_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
+        target_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
+        method: str = Field(default="semantic", pattern=r"^(semantic|alphabet|word)$")
+
+    @app.post("/api/alignment/run")
+    async def run_alignment(request: AlignmentRequest) -> JSONResponse:
+        """Run pairwise alignment between two projects."""
+        import asyncio
+
+        query_dir = _safe_project_dir(workspace, request.query_id)
+        target_dir = _safe_project_dir(workspace, request.target_id)
+
+        job_key = f"{request.query_id}:{request.target_id}"
+        if job_key in _alignment_jobs and _alignment_jobs[job_key].get("status") == "running":
+            return JSONResponse(content={"status": "already_running"})
+
+        _alignment_jobs[job_key] = {"status": "running", "method": request.method}
+
+        async def run() -> None:
+            try:
+                from palimpsest.alignment.cross_similarity import compute_cross_similarity
+                from palimpsest.alignment.smith_waterman import smith_waterman as sw_align
+                from palimpsest.alignment.alphabet_align import align_alphabets
+                from palimpsest.alignment.gumbel import calibrate_gumbel, p_value
+                from palimpsest.alignment.records import write_alignment_records
+                from palimpsest.formats.signals import write_signal
+                from palimpsest.project import Project
+
+                proj_a = Project.load(query_dir)
+                proj_b = Project.load(target_dir)
+
+                comp_dir = workspace / ".comparisons" / f"{request.query_id}_vs_{request.target_id}"
+                comp_dir.mkdir(parents=True, exist_ok=True)
+
+                if request.method == "alphabet":
+                    records = await asyncio.to_thread(align_alphabets, proj_a, proj_b)
+                else:
+                    matrix, manifest = await asyncio.to_thread(
+                        compute_cross_similarity, proj_a, proj_b, "cosine"
+                    )
+                    await asyncio.to_thread(write_signal, comp_dir, matrix, manifest)
+
+                    records = await asyncio.to_thread(
+                        sw_align, matrix, request.query_id, request.target_id, request.method
+                    )
+
+                    mu, beta = await asyncio.to_thread(calibrate_gumbel, matrix)
+                    for rec in records:
+                        rec.p_value = p_value(rec.score, mu, beta)
+
+                await asyncio.to_thread(
+                    write_alignment_records, comp_dir / "alignment.jsonl", records
+                )
+
+                (comp_dir / "metadata.json").write_text(
+                    json.dumps({
+                        "query_id": request.query_id,
+                        "target_id": request.target_id,
+                        "method": request.method,
+                        "record_count": len(records),
+                    }, indent=2),
+                    encoding="utf-8",
+                )
+
+                _alignment_jobs[job_key] = {"status": "completed", "record_count": len(records)}
+            except Exception as exc:
+                logger.exception("Alignment failed: %s", exc)
+                _alignment_jobs[job_key] = {"status": "failed", "error": str(exc)}
+            finally:
+                import threading
+                threading.Timer(60.0, lambda: _alignment_jobs.pop(job_key, None)).start()
+
+        asyncio.create_task(run())
+        return JSONResponse(content={"status": "started"})
+
+    @app.get("/api/alignment/{query_id}/{target_id}/status")
+    async def alignment_status(query_id: str, target_id: str) -> JSONResponse:
+        job_key = f"{query_id}:{target_id}"
+        job = _alignment_jobs.get(job_key)
+        if not job:
+            comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+            if (comp_dir / "alignment.jsonl").exists():
+                return JSONResponse(content={"status": "completed"})
+            return JSONResponse(content={"status": "idle"})
+        return JSONResponse(content=job)
+
+    @app.get("/api/alignment/{query_id}/{target_id}/records")
+    async def alignment_records(query_id: str, target_id: str) -> JSONResponse:
+        comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+        records_path = comp_dir / "alignment.jsonl"
+        if not records_path.exists():
+            raise HTTPException(status_code=404, detail="No alignment results found")
+        from palimpsest.alignment.records import read_alignment_records
+        records = read_alignment_records(records_path)
+        return JSONResponse(content=[r.to_dict() for r in records])
+
+    @app.get("/api/alignment/{query_id}/{target_id}/matrix")
+    async def alignment_matrix(query_id: str, target_id: str) -> JSONResponse:
+        comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+        manifest_path = comp_dir / "cross_similarity.json"
+        if not manifest_path.exists():
+            raise HTTPException(status_code=404, detail="No cross-similarity matrix found")
+        return JSONResponse(content=json.loads(manifest_path.read_text()))
+
+    @app.get("/api/alignment/{query_id}/{target_id}/matrix.bin")
+    async def alignment_matrix_bin(query_id: str, target_id: str) -> FileResponse:
+        comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+        bin_path = comp_dir / "cross_similarity.bin"
+        if not bin_path.exists():
+            raise HTTPException(status_code=404, detail="No cross-similarity binary found")
+        return FileResponse(bin_path, media_type="application/octet-stream")
+
     @app.get("/data/{project_id}/{path:path}")
     async def serve_project_file(project_id: str, path: str) -> FileResponse:
         """Serve static project files (read-only)."""
