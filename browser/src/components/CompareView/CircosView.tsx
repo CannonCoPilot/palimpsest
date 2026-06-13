@@ -4,15 +4,13 @@
  * Comparative mode: two concentric arcs with ribbons between aligned regions.
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef, useEffect, useCallback } from 'react';
 import { useProjectStore, getActiveProject, getSecondaryProject } from '../../stores/projectStore';
 import { useComparisonStore } from '../../stores/comparisonStore';
+import type { AlignmentRecord } from '../../stores/comparisonStore';
 
-const OUTER_RADIUS = 300;
-const INNER_RADIUS = 250;
-const COMPARISON_INNER_RADIUS = 200;
-const CENTER = OUTER_RADIUS + 40;
-const SVG_SIZE = CENTER * 2;
+// Design token candidate — secondary ring color
+const COLOR_SECONDARY_RING = '#e67e22';
 
 function polarToCartesian(cx: number, cy: number, r: number, angleDeg: number): [number, number] {
   const rad = (angleDeg - 90) * Math.PI / 180;
@@ -25,6 +23,9 @@ function arcPath(cx: number, cy: number, r: number, startAngle: number, endAngle
   const largeArc = endAngle - startAngle > 180 ? 1 : 0;
   return `M ${sx} ${sy} A ${r} ${r} 0 ${largeArc} 1 ${ex} ${ey}`;
 }
+
+// arcPath is exported for future use — keep it
+void arcPath;
 
 function ribbonPath(
   cx: number, cy: number,
@@ -50,7 +51,29 @@ export default function CircosView() {
   const secondaryProject = useProjectStore(getSecondaryProject);
   const records = useComparisonStore((s) => s.alignmentRecords);
   const secondaryId = useProjectStore((s) => s.secondaryProjectId);
+  const selectRecord = useComparisonStore((s) => s.selectRecord);
+  const setActiveSubView = useComparisonStore((s) => s.setActiveSubView);
   const [hoveredRibbon, setHoveredRibbon] = useState<number | null>(null);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerSize, setContainerSize] = useState(680);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const obs = new ResizeObserver((entries) => {
+      const rect = entries[0]?.contentRect;
+      if (rect) setContainerSize(Math.floor(Math.min(rect.width, rect.height) - 16));
+    });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const outerRadius = Math.max(100, containerSize / 2 - 40);
+  const innerRadius = outerRadius - 50;
+  const comparisonInnerRadius = outerRadius - 100;
+  const center = outerRadius + 40;
+  const svgSize = center * 2;
 
   const parasA = activeProject.paragraphs.length;
   const parasB = secondaryProject.paragraphs.length;
@@ -78,6 +101,11 @@ export default function CircosView() {
       });
   }, [activeProject.tracks, isComparative, parasA]);
 
+  const handleRibbonClick = useCallback((record: AlignmentRecord) => {
+    selectRecord(record);
+    setActiveSubView('alignment');
+  }, [selectRecord, setActiveSubView]);
+
   if (parasA === 0) {
     return (
       <div className="flex-1 flex items-center justify-center text-[var(--color-text-muted)] text-[0.85em]">
@@ -95,7 +123,7 @@ export default function CircosView() {
   const paraToAngleB = (idx: number) => (idx / parasB) * 360;
 
   return (
-    <div className="flex-1 flex flex-col items-center overflow-auto p-4">
+    <div ref={containerRef} className="flex-1 flex flex-col items-center overflow-auto p-4">
       <div className="text-[0.85em] font-[var(--font-sans)] mb-2">
         <span className="font-semibold">{activeProject.metadata?.title}</span>
         {isComparative && (
@@ -109,16 +137,16 @@ export default function CircosView() {
         )}
       </div>
 
-      <svg width={SVG_SIZE} height={SVG_SIZE} viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`} role="img" aria-label="Circos diagram showing text relationships as arcs">
+      <svg width={svgSize} height={svgSize} viewBox={`0 0 ${svgSize} ${svgSize}`} role="img" aria-label="Circos diagram showing text relationships as arcs">
         {/* Outer arc — project A */}
-        <circle cx={CENTER} cy={CENTER} r={OUTER_RADIUS} fill="none" stroke="var(--color-border)" strokeWidth={12} opacity={0.3} />
-        <circle cx={CENTER} cy={CENTER} r={OUTER_RADIUS} fill="none" stroke="var(--color-primary)" strokeWidth={2} />
+        <circle cx={center} cy={center} r={outerRadius} fill="none" stroke="var(--color-border)" strokeWidth={12} opacity={0.3} />
+        <circle cx={center} cy={center} r={outerRadius} fill="none" stroke="var(--color-primary)" strokeWidth={2} />
 
         {/* Section tick marks for project A */}
         {Array.from({ length: Math.min(20, parasA) }, (_, k) => {
           const angle = (k / Math.min(20, parasA)) * 360;
-          const [x1, y1] = polarToCartesian(CENTER, CENTER, OUTER_RADIUS - 6, angle);
-          const [x2, y2] = polarToCartesian(CENTER, CENTER, OUTER_RADIUS + 6, angle);
+          const [x1, y1] = polarToCartesian(center, center, outerRadius - 6, angle);
+          const [x2, y2] = polarToCartesian(center, center, outerRadius + 6, angle);
           const paraIdx = Math.floor(k * parasA / Math.min(20, parasA));
           return (
             <g key={`tickA-${k}`}>
@@ -135,8 +163,8 @@ export default function CircosView() {
         {/* Inner arc — project B (comparative mode only) */}
         {isComparative && (
           <>
-            <circle cx={CENTER} cy={CENTER} r={COMPARISON_INNER_RADIUS} fill="none" stroke="var(--color-border)" strokeWidth={10} opacity={0.2} />
-            <circle cx={CENTER} cy={CENTER} r={COMPARISON_INNER_RADIUS} fill="none" stroke="#e67e22" strokeWidth={2} />
+            <circle cx={center} cy={center} r={comparisonInnerRadius} fill="none" stroke="var(--color-border)" strokeWidth={10} opacity={0.2} />
+            <circle cx={center} cy={center} r={comparisonInnerRadius} fill="none" stroke={COLOR_SECONDARY_RING} strokeWidth={2} />
           </>
         )}
 
@@ -144,17 +172,19 @@ export default function CircosView() {
         {!isComparative && endnoteArcs.map((arc, i) => {
           const a1 = charToAngleA(arc.from);
           const a2 = charToAngleA(arc.to);
-          const [x1, y1] = polarToCartesian(CENTER, CENTER, INNER_RADIUS, a1);
-          const [x2, y2] = polarToCartesian(CENTER, CENTER, INNER_RADIUS, a2);
+          const [x1, y1] = polarToCartesian(center, center, innerRadius, a1);
+          const [x2, y2] = polarToCartesian(center, center, innerRadius, a2);
           return (
             <path
               key={`endnote-${i}`}
-              d={`M ${x1} ${y1} Q ${CENTER} ${CENTER} ${x2} ${y2}`}
+              d={`M ${x1} ${y1} Q ${center} ${center} ${x2} ${y2}`}
               fill="none"
               stroke="var(--color-danger)"
               strokeWidth={1}
               strokeOpacity={0.3}
-              className="hover:stroke-opacity-80 cursor-pointer"
+              className="cursor-pointer"
+              onMouseEnter={(e) => (e.currentTarget.style.strokeOpacity = '0.8')}
+              onMouseLeave={(e) => (e.currentTarget.style.strokeOpacity = '0.3')}
             >
               <title>Endnote cross-reference</title>
             </path>
@@ -174,7 +204,7 @@ export default function CircosView() {
           return (
             <path
               key={`ribbon-${i}`}
-              d={ribbonPath(CENTER, CENTER, OUTER_RADIUS - 6, startA, endA, COMPARISON_INNER_RADIUS + 5, startB, endB)}
+              d={ribbonPath(center, center, outerRadius - 6, startA, endA, comparisonInnerRadius + 5, startB, endB)}
               fill={color}
               fillOpacity={isHovered ? 0.5 : 0.15}
               stroke={color}
@@ -183,6 +213,7 @@ export default function CircosView() {
               className="cursor-pointer"
               onMouseEnter={() => setHoveredRibbon(i)}
               onMouseLeave={() => setHoveredRibbon(null)}
+              onClick={() => handleRibbonClick(rec)}
             >
               <title>¶{rec.queryStart}–{rec.queryEnd} ↔ ¶{rec.targetStart}–{rec.targetEnd} (score: {rec.score.toFixed(3)}, p={rec.pValue.toExponential(2)})</title>
             </path>
@@ -190,11 +221,11 @@ export default function CircosView() {
         })}
 
         {/* Center labels */}
-        <text x={CENTER} y={CENTER - 10} textAnchor="middle" fontSize={11} fill="var(--color-text)" fontFamily="var(--font-sans)">
+        <text x={center} y={center - 10} textAnchor="middle" fontSize={11} fill="var(--color-text)" fontFamily="var(--font-sans)">
           {activeProject.metadata?.title?.slice(0, 25)}
         </text>
         {isComparative && (
-          <text x={CENTER} y={CENTER + 12} textAnchor="middle" fontSize={9} fill="#e67e22" fontFamily="var(--font-sans)">
+          <text x={center} y={center + 12} textAnchor="middle" fontSize={9} fill={COLOR_SECONDARY_RING} fontFamily="var(--font-sans)">
             {secondaryProject.metadata?.title?.slice(0, 25)}
           </text>
         )}

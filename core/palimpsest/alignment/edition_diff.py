@@ -9,7 +9,7 @@ from __future__ import annotations
 import difflib
 import json
 import logging
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -29,11 +29,23 @@ class DiffRecord:
     text_b: str
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        return {
+            "paraIndexA": self.para_index_a,
+            "paraIndexB": self.para_index_b,
+            "changeType": self.change_type,
+            "textA": self.text_a,
+            "textB": self.text_b,
+        }
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> DiffRecord:
-        return cls(**{k: v for k, v in d.items() if k in cls.__dataclass_fields__})
+        return cls(
+            para_index_a=d.get("para_index_a", d.get("paraIndexA", 0)),
+            para_index_b=d.get("para_index_b", d.get("paraIndexB", 0)),
+            change_type=d.get("change_type", d.get("changeType", "")),
+            text_a=d.get("text_a", d.get("textA", "")),
+            text_b=d.get("text_b", d.get("textB", "")),
+        )
 
 
 @dataclass
@@ -49,7 +61,15 @@ class DiffSummary:
     unchanged: int
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        return {
+            "totalParagraphsA": self.total_paragraphs_a,
+            "totalParagraphsB": self.total_paragraphs_b,
+            "alignedPairs": self.aligned_pairs,
+            "insertions": self.insertions,
+            "deletions": self.deletions,
+            "replacements": self.replacements,
+            "unchanged": self.unchanged,
+        }
 
 
 def compute_edition_diff(
@@ -169,5 +189,14 @@ def read_diff_results(path: Path) -> tuple[list[DiffRecord], DiffSummary]:
     """Read diff results from a JSON file."""
     data = json.loads(path.read_text())
     records = [DiffRecord.from_dict(r) for r in data["records"]]
-    summary = DiffSummary(**data["summary"])
+    s = data["summary"]
+    summary = DiffSummary(
+        total_paragraphs_a=s.get("total_paragraphs_a", s.get("totalParagraphsA", 0)),
+        total_paragraphs_b=s.get("total_paragraphs_b", s.get("totalParagraphsB", 0)),
+        aligned_pairs=s.get("aligned_pairs", s.get("alignedPairs", 0)),
+        insertions=s.get("insertions", 0),
+        deletions=s.get("deletions", 0),
+        replacements=s.get("replacements", 0),
+        unchanged=s.get("unchanged", 0),
+    )
     return records, summary

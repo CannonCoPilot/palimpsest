@@ -65,6 +65,7 @@ interface ProjectStoreState {
 
   // Actions
   loadProject: (baseUrl: string, projectId: string) => Promise<void>;
+  loadSecondaryProject: (baseUrl: string, projectId: string) => Promise<void>;
   setSecondaryProject: (id: string | null) => void;
 }
 
@@ -215,6 +216,23 @@ export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
         loadingState: 'error',
         loadingStep: '',
       });
+    }
+  },
+
+  loadSecondaryProject: async (baseUrl: string, projectId: string): Promise<void> => {
+    if (get().projects[projectId]?.metadata) {
+      set({ secondaryProjectId: projectId });
+      return;
+    }
+
+    try {
+      const projectData = await loadProjectData(baseUrl, projectId);
+      set((state) => ({
+        projects: { ...state.projects, [projectId]: projectData },
+        secondaryProjectId: projectId,
+      }));
+    } catch {
+      // Don't set global error — secondary load failure should not white-screen the app
     }
   },
 

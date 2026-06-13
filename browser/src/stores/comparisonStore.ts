@@ -22,21 +22,19 @@ export interface AlignmentRecord {
 export interface DiffRecord {
   paraIndexA: number;
   paraIndexB: number;
-  changeType: 'insert' | 'delete' | 'substitute' | 'equal';
-  offsetAStart: number;
-  offsetAEnd: number;
-  offsetBStart: number;
-  offsetBEnd: number;
+  changeType: 'insert' | 'delete' | 'replace' | 'equal';
   textA: string;
   textB: string;
 }
 
 export interface DiffSummary {
-  totalChanges: number;
+  totalParagraphsA: number;
+  totalParagraphsB: number;
+  alignedPairs: number;
   insertions: number;
   deletions: number;
-  substitutions: number;
-  changeDensityPerSection: number[];
+  replacements: number;
+  unchanged: number;
 }
 
 export type AlignmentMethod = 'semantic' | 'alphabet' | 'word';
@@ -58,7 +56,9 @@ interface ComparisonState {
   selectedRecord: AlignmentRecord | null;
   loading: boolean;
   error: string | null;
+  diffError: string | null;
   jobStatus: 'idle' | 'running' | 'completed' | 'failed';
+  pollIntervalId: ReturnType<typeof setInterval> | null;
 
   // Actions
   setActiveSubView: (view: CompareSubView) => void;
@@ -82,14 +82,20 @@ export const useComparisonStore = create<ComparisonState>((set, get) => ({
   selectedRecord: null,
   loading: false,
   error: null,
+  diffError: null,
   jobStatus: 'idle',
+  pollIntervalId: null,
 
   setActiveSubView: (view) => set({ activeSubView: view }),
   setActiveMethod: (method) => set({ activeMethod: method }),
   selectRecord: (record) => set({ selectedRecord: record }),
 
   runAlignment: async (queryId, targetId, method) => {
-    set({ loading: true, error: null, jobStatus: 'running' });
+    // Clear any existing poll
+    const existing = get().pollIntervalId;
+    if (existing) clearInterval(existing);
+
+    set({ loading: true, error: null, jobStatus: 'running', pollIntervalId: null });
     try {
       const res = await fetch('/api/alignment/run', {
         method: 'POST',
@@ -98,7 +104,6 @@ export const useComparisonStore = create<ComparisonState>((set, get) => ({
       });
       if (!res.ok) throw new Error('Failed to start alignment');
 
-      // Poll for completion
       const pollInterval = setInterval(async () => {
         try {
           const statusRes = await fetch(`/api/alignment/${queryId}/${targetId}/status`);
@@ -106,23 +111,24 @@ export const useComparisonStore = create<ComparisonState>((set, get) => ({
           if (status.status === 'completed') {
             clearInterval(pollInterval);
             await get().loadAlignmentResults(queryId, targetId);
-            set({ jobStatus: 'completed', loading: false });
+            set({ jobStatus: 'completed', loading: false, pollIntervalId: null });
           } else if (status.status === 'failed') {
             clearInterval(pollInterval);
-            set({ error: status.error ?? 'Alignment failed', jobStatus: 'failed', loading: false });
+            set({ error: status.error ?? 'Alignment failed', jobStatus: 'failed', loading: false, pollIntervalId: null });
           }
         } catch {
           clearInterval(pollInterval);
-          set({ error: 'Lost connection to server', jobStatus: 'failed', loading: false });
+          set({ error: 'Lost connection to server', jobStatus: 'failed', loading: false, pollIntervalId: null });
         }
       }, 2000);
+      set({ pollIntervalId: pollInterval });
     } catch (err) {
       set({ error: err instanceof Error ? err.message : 'Unknown error', jobStatus: 'failed', loading: false });
     }
   },
 
   runDiff: async (queryId, targetId) => {
-    set({ loading: true, error: null });
+    set({ loading: true, diffError: null });
     try {
       const res = await fetch('/api/alignment/diff', {
         method: 'POST',
@@ -137,7 +143,7 @@ export const useComparisonStore = create<ComparisonState>((set, get) => ({
         loading: false,
       });
     } catch (err) {
-      set({ error: err instanceof Error ? err.message : 'Unknown error', loading: false });
+      set({ diffError: err instanceof Error ? err.message : 'Unknown error', loading: false });
     }
   },
 
@@ -168,15 +174,21 @@ export const useComparisonStore = create<ComparisonState>((set, get) => ({
     } catch { /* matrix is optional — views degrade gracefully */ }
   },
 
-  reset: () => set({
-    alignmentRecords: [],
-    crossSimilarityMatrix: null,
-    crossSimilarityDims: null,
-    diffRecords: [],
-    diffSummary: null,
-    selectedRecord: null,
-    loading: false,
-    error: null,
-    jobStatus: 'idle',
-  }),
+  reset: () => {
+    const interval = get().pollIntervalId;
+    if (interval) clearInterval(interval);
+    set({
+      alignmentRecords: [],
+      crossSimilarityMatrix: null,
+      crossSimilarityDims: null,
+      diffRecords: [],
+      diffSummary: null,
+      selectedRecord: null,
+      loading: false,
+      error: null,
+      diffError: null,
+      jobStatus: 'idle',
+      pollIntervalId: null,
+    });
+  },
 }));

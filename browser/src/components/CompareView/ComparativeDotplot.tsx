@@ -75,19 +75,32 @@ export default function ComparativeDotplot() {
     const container = containerRef.current;
     if (!canvas || !container) return;
 
-    const size = Math.max(1, Math.min(container.clientWidth - 40, container.clientHeight - 40));
-    canvas.width = size;
-    canvas.height = size;
+    const maxW = container.clientWidth - 40;
+    const maxH = container.clientHeight - 40;
+    const aspect = m / n;  // width:height ratio
+    let canvasW: number, canvasH: number;
+    if (aspect >= 1) {
+      canvasW = Math.max(1, Math.min(maxW, maxH * aspect));
+      canvasH = Math.max(1, canvasW / aspect);
+    } else {
+      canvasH = Math.max(1, Math.min(maxH, maxW / aspect));
+      canvasW = Math.max(1, canvasH * aspect);
+    }
+    // Clamp to container
+    if (canvasW > maxW) { canvasW = maxW; canvasH = canvasW / aspect; }
+    if (canvasH > maxH) { canvasH = maxH; canvasW = canvasH * aspect; }
+    canvas.width = Math.round(canvasW);
+    canvas.height = Math.round(canvasH);
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const { x: vpX, y: vpY, spanX, spanY } = viewport;
-    const cellW = size / spanX;
-    const cellH = size / spanY;
+    const cellW = canvasW / spanX;
+    const cellH = canvasH / spanY;
     const colors = PALETTES.blues;
 
     ctx.fillStyle = '#f8f8f8';
-    ctx.fillRect(0, 0, size, size);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const startI = Math.max(0, Math.floor(vpY));
     const endI = Math.min(n, Math.ceil(vpY + spanY));
@@ -121,7 +134,7 @@ export default function ComparativeDotplot() {
     const labelIntX = spanX < 20 ? 1 : spanX < 50 ? 5 : spanX < 200 ? 10 : 50;
     for (let j = Math.ceil(vpX / labelIntX) * labelIntX; j <= vpX + spanX && j < m; j += labelIntX) {
       ctx.save();
-      ctx.translate((j - vpX) * cellW + cellW / 2, size + 2);
+      ctx.translate((j - vpX) * cellW + cellW / 2, canvas.height + 2);
       ctx.rotate(-Math.PI / 4);
       ctx.textAlign = 'right';
       ctx.fillText(`¶${j}`, 0, 0);

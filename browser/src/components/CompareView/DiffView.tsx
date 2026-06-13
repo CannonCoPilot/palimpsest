@@ -20,17 +20,36 @@ export default function DiffView() {
   const diffSummary = useComparisonStore((s) => s.diffSummary);
   const runDiff = useComparisonStore((s) => s.runDiff);
   const loading = useComparisonStore((s) => s.loading);
+  const diffError = useComparisonStore((s) => s.diffError);
 
   useEffect(() => {
-    if (activeProjectId && secondaryProjectId && diffRecords.length === 0 && !loading) {
+    if (activeProjectId && secondaryProjectId && diffRecords.length === 0 && !loading && !diffError) {
       runDiff(activeProjectId, secondaryProjectId);
     }
-  }, [activeProjectId, secondaryProjectId, diffRecords.length, loading, runDiff]);
+  }, [activeProjectId, secondaryProjectId, diffRecords.length, loading, diffError, runDiff]);
 
   if (loading) {
     return (
       <div className="flex-1 flex items-center justify-center text-[var(--color-text-muted)] text-[0.85em]">
         Computing diff...
+      </div>
+    );
+  }
+
+  if (diffError && diffRecords.length === 0) {
+    return (
+      <div className="flex-1 flex flex-col items-center justify-center gap-2 text-[0.85em]">
+        <div className="text-[var(--color-danger)]">Diff failed: {diffError}</div>
+        <button
+          onClick={() => {
+            if (activeProjectId && secondaryProjectId) {
+              runDiff(activeProjectId, secondaryProjectId);
+            }
+          }}
+          className="px-3 py-1 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-subtle)] text-[var(--color-text-muted)]"
+        >
+          Retry
+        </button>
       </div>
     );
   }

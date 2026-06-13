@@ -111,16 +111,18 @@ def smith_waterman(
         if len(aligned_pairs) < min_length:
             continue
 
-        query_start = min(p[0] for p in aligned_pairs)
-        target_start = min(p[1] for p in aligned_pairs)
+        aligned_pairs.reverse()  # traceback produces end-to-start; reverse for start-to-end
+
+        query_start = aligned_pairs[0][0]
+        target_start = aligned_pairs[0][1]
 
         # Compute average identity within aligned block
         sims = [float(similarity_matrix[qi, tj]) for qi, tj in aligned_pairs]
         avg_identity = sum(sims) / len(sims) if sims else 0.0
 
-        # Detect strand (inversion) by checking if alignment order is consistent
+        # Detect strand: forward if target indices increase with query indices
         is_forward = all(
-            aligned_pairs[k][0] >= aligned_pairs[k + 1][0]
+            aligned_pairs[k + 1][1] >= aligned_pairs[k][1]
             for k in range(len(aligned_pairs) - 1)
         )
 

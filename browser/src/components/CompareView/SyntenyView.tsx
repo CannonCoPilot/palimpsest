@@ -3,7 +3,7 @@
  * Two stacked linear views with SVG ribbons connecting aligned regions.
  */
 
-import { useMemo } from 'react';
+import { useMemo, useRef, useEffect, useState } from 'react';
 import { useProjectStore, getActiveProject, getSecondaryProject } from '../../stores/projectStore';
 import { useComparisonStore } from '../../stores/comparisonStore';
 
@@ -70,9 +70,23 @@ export default function SyntenyView() {
   const secondaryProject = useProjectStore(getSecondaryProject);
   const records = useComparisonStore((s) => s.alignmentRecords);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(900);
+  const [hoveredRibbon, setHoveredRibbon] = useState<number | null>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const obs = new ResizeObserver((entries) => {
+      const w = entries[0]?.contentRect.width;
+      if (w && w > 100) setWidth(Math.floor(w - 32));
+    });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   const parasA = activeProject.paragraphs.length;
   const parasB = secondaryProject.paragraphs.length;
-  const width = 900;
 
   const maxScore = useMemo(() =>
     records.length > 0 ? Math.max(...records.map((r) => r.score)) : 1,
@@ -109,7 +123,7 @@ export default function SyntenyView() {
   const cellWB = width / parasB;
 
   return (
-    <div className="flex-1 flex flex-col items-center overflow-auto p-4">
+    <div ref={containerRef} className="flex-1 flex flex-col items-center overflow-auto p-4">
       <LinearTrack
         title={activeProject.metadata?.title ?? 'Query'}
         paraCount={parasA}
@@ -132,11 +146,13 @@ export default function SyntenyView() {
               key={i}
               d={`M ${topLeft} 0 L ${topRight} 0 C ${topRight} ${RIBBON_AREA_HEIGHT * 0.5}, ${botRight} ${RIBBON_AREA_HEIGHT * 0.5}, ${botRight} ${RIBBON_AREA_HEIGHT} L ${botLeft} ${RIBBON_AREA_HEIGHT} C ${botLeft} ${RIBBON_AREA_HEIGHT * 0.5}, ${topLeft} ${RIBBON_AREA_HEIGHT * 0.5}, ${topLeft} 0 Z`}
               fill={color}
-              fillOpacity={0.3}
+              fillOpacity={hoveredRibbon === i ? 0.5 : 0.3}
               stroke={color}
               strokeWidth={1}
               strokeOpacity={0.6}
-              className="cursor-pointer hover:fill-opacity-50"
+              className="cursor-pointer"
+              onMouseEnter={() => setHoveredRibbon(i)}
+              onMouseLeave={() => setHoveredRibbon(null)}
             >
               <title>¶{rec.queryStart}–{rec.queryEnd} ↔ ¶{rec.targetStart}–{rec.targetEnd} (score: {rec.score.toFixed(3)})</title>
             </path>

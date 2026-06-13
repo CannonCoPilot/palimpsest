@@ -4,12 +4,12 @@
  * Center: SVG ribbons connecting aligned paragraph ranges.
  */
 
-import { useRef, useCallback, useMemo } from 'react';
+import { useRef, useCallback, useMemo, useState } from 'react';
 import { useProjectStore, getActiveProject, getSecondaryProject } from '../../stores/projectStore';
 import { useComparisonStore, type AlignmentRecord } from '../../stores/comparisonStore';
 
-const PARA_HEIGHT = 24;
 const RIBBON_WIDTH = 80;
+const MAX_PARA_TEXT = 300;
 
 function interpolateRibbonColor(score: number, maxScore: number): string {
   const t = maxScore > 0 ? Math.min(score / maxScore, 1) : 0;
@@ -44,7 +44,7 @@ function TextPane({ paragraphs, title, highlightRanges, scrollRef, onScroll }: T
               style={hl ? { backgroundColor: `${hl.color}15`, borderLeft: `3px solid ${hl.color}` } : undefined}
             >
               <span className="text-[var(--color-text-muted)] text-[0.75em] mr-1.5 select-none">¶{p.index}</span>
-              {p.text.length > 200 ? p.text.slice(0, 200) + '...' : p.text}
+              {p.text.length > MAX_PARA_TEXT ? p.text.slice(0, MAX_PARA_TEXT) + '...' : p.text}
             </div>
           );
         })}
@@ -62,7 +62,8 @@ export default function AlignmentView() {
 
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
-  const svgRef = useRef<SVGSVGElement>(null);
+
+  const [scrollToken, setScrollToken] = useState(0);
 
   const parasA = useMemo(() =>
     activeProject.paragraphs.map((p) => ({ index: p.index, text: p.text })),
@@ -116,9 +117,20 @@ export default function AlignmentView() {
   }, [selectRecord]);
 
   const handleScroll = useCallback(() => {
-    // Force SVG re-render by triggering a state update
-    svgRef.current?.setAttribute('data-scroll', Date.now().toString());
+    setScrollToken((t) => t + 1);
   }, []);
+
+  // Ribbon positions derived from DOM; recalculate on scroll
+  const ribbonPaths = useMemo(() => {
+    // scrollToken is a dependency so ribbons recompute after scroll
+    void scrollToken;
+    return records.map((r, i) => {
+      const leftY = getParaY(leftRef, Math.floor((r.queryStart + r.queryEnd) / 2));
+      const rightY = getParaY(rightRef, Math.floor((r.targetStart + r.targetEnd) / 2));
+      return { r, i, leftY, rightY };
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [records, scrollToken, getParaY]);
 
   if (records.length === 0) {
     return (
@@ -141,15 +153,11 @@ export default function AlignmentView() {
       {/* Ribbon SVG */}
       <div className="shrink-0 relative" style={{ width: RIBBON_WIDTH }}>
         <svg
-          ref={svgRef}
           width={RIBBON_WIDTH}
           height="100%"
           className="absolute inset-0"
-          style={{ pointerEvents: 'none' }}
         >
-          {records.map((r, i) => {
-            const leftY = getParaY(leftRef, Math.floor((r.queryStart + r.queryEnd) / 2));
-            const rightY = getParaY(rightRef, Math.floor((r.targetStart + r.targetEnd) / 2));
+          {ribbonPaths.map(({ r, i, leftY, rightY }) => {
             if (leftY == null || rightY == null) return null;
 
             const color = interpolateRibbonColor(r.score, maxScore);
@@ -165,8 +173,12 @@ export default function AlignmentView() {
                 strokeWidth={strokeWidth}
                 fill="none"
                 opacity={opacity}
-                style={{ pointerEvents: 'stroke', cursor: 'pointer' }}
+                style={{ pointerEvents: 'all', cursor: 'pointer' }}
                 onClick={() => handleRibbonClick(r)}
+                tabIndex={0}
+                role="button"
+                aria-label={`Aligned passage ¶${r.queryStart}–${r.queryEnd} ↔ ¶${r.targetStart}–${r.targetEnd}, score ${r.score.toFixed(3)}`}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleRibbonClick(r); } }}
               >
                 <title>¶{r.queryStart}–{r.queryEnd} ↔ ¶{r.targetStart}–{r.targetEnd} (score: {r.score.toFixed(3)})</title>
               </path>

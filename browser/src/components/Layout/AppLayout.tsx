@@ -22,7 +22,14 @@ import NavigationToolbar from './NavigationToolbar';
 import CoordinateRuler from './CoordinateRuler';
 
 export default function AppLayout() {
-  const { loadingState, error, metadata, paragraphs, tracks } = useProjectStore();
+  const loadingState = useProjectStore((s) => s.loadingState);
+  const error = useProjectStore((s) => s.error);
+  const metadata = useProjectStore((s) => s.projects[s.activeProjectId ?? '']?.metadata ?? null);
+  const paragraphCount = useProjectStore((s) => (s.projects[s.activeProjectId ?? '']?.paragraphs ?? []).length);
+  const trackCount = useProjectStore((s) => {
+    const tracks = s.projects[s.activeProjectId ?? '']?.tracks ?? {};
+    return Object.keys(tracks).filter((k) => k !== 'segments').length;
+  });
   const activeTab = useViewStore((s) => s.activeTab);
 
   useEffect(() => {
@@ -52,7 +59,6 @@ export default function AppLayout() {
     );
   }
 
-  const trackCount = Object.keys(tracks).filter((k) => k !== 'segments').length;
   const showSidePanels = activeTab === 'reading';
 
   return (
@@ -65,7 +71,7 @@ export default function AppLayout() {
           <strong>{metadata.title}</strong>
           {metadata.author && <span className="text-[var(--color-text-secondary)]">by {metadata.author}</span>}
           <span className="text-[var(--color-text-muted)] text-[0.85em]">
-            {metadata.word_count.toLocaleString()} words &middot; {paragraphs.length} paragraphs
+            {metadata.word_count.toLocaleString()} words &middot; {paragraphCount} paragraphs
             &middot; {trackCount} tracks
           </span>
           <div className="ml-auto">

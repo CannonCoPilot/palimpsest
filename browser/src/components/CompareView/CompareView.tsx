@@ -28,14 +28,20 @@ interface ProjectOption {
 
 function CompareProjectPicker({ onSelect }: { onSelect: (id: string) => void }) {
   const [projects, setProjects] = useState<ProjectOption[]>([]);
+  const [fetchError, setFetchError] = useState(false);
   const activeProjectId = useProjectStore((s) => s.activeProjectId);
 
   useEffect(() => {
+    setFetchError(false);
     fetch('/api/projects')
       .then((r) => r.json())
       .then((data: ProjectOption[]) => setProjects(data.filter((p) => p.id !== activeProjectId)))
-      .catch(() => {});
+      .catch(() => setFetchError(true));
   }, [activeProjectId]);
+
+  if (fetchError) {
+    return <span className="text-[var(--color-danger)] text-[0.85em]">Failed to load projects</span>;
+  }
 
   if (projects.length === 0) {
     return <span className="text-[var(--color-text-muted)] text-[0.85em]">No other projects available for comparison</span>;
@@ -63,7 +69,7 @@ export default function CompareView() {
   const secondaryMeta = useProjectStore((s) => s.projects[s.secondaryProjectId ?? '']?.metadata);
   const activeMeta = useProjectStore((s) => s.projects[s.activeProjectId ?? '']?.metadata);
   const setSecondary = useProjectStore((s) => s.setSecondaryProject);
-  const loadProject = useProjectStore((s) => s.loadProject);
+  const loadSecondary = useProjectStore((s) => s.loadSecondaryProject);
   const loading = useComparisonStore((s) => s.loading);
   const error = useComparisonStore((s) => s.error);
   const alignmentRecords = useComparisonStore((s) => s.alignmentRecords);
@@ -72,16 +78,15 @@ export default function CompareView() {
   const runAlignment = useComparisonStore((s) => s.runAlignment);
   const jobStatus = useComparisonStore((s) => s.jobStatus);
 
-  const handleSelectSecondary = async (id: string) => {
-    await loadProject('', id);
-    setSecondary(id);
-  };
+  const handleSelectSecondary = useCallback(async (id: string) => {
+    await loadSecondary('', id);
+  }, [loadSecondary]);
 
-  const handleRunAlignment = () => {
+  const handleRunAlignment = useCallback(() => {
     if (activeProjectId && secondaryProjectId) {
       runAlignment(activeProjectId, secondaryProjectId, activeMethod);
     }
-  };
+  }, [activeProjectId, secondaryProjectId, activeMethod, runAlignment]);
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden font-[var(--font-sans)]">
@@ -138,10 +143,13 @@ export default function CompareView() {
 
       {/* Sub-view tabs */}
       {secondaryProjectId && (
-        <div className="flex gap-0 border-b border-[var(--color-border)] bg-[var(--color-bg)] text-[0.8em]">
+        <div role="tablist" aria-label="Comparison sub-views" className="flex gap-0 border-b border-[var(--color-border)] bg-[var(--color-bg)] text-[0.8em]">
           {SUB_VIEWS.map((sv) => (
             <button
               key={sv.id}
+              role="tab"
+              aria-selected={activeSubView === sv.id}
+              aria-controls={`compare-panel-${sv.id}`}
               onClick={() => setActiveSubView(sv.id)}
               className={`px-3 py-1.5 border-b-2 cursor-pointer transition-colors ${
                 activeSubView === sv.id
@@ -156,7 +164,11 @@ export default function CompareView() {
       )}
 
       {/* Content */}
-      <div className="flex-1 overflow-hidden flex flex-col">
+      <div
+        id={`compare-panel-${activeSubView}`}
+        role="tabpanel"
+        className="flex-1 overflow-hidden flex flex-col"
+      >
         {error && (
           <div className="px-4 py-2 bg-[var(--color-danger-subtle)] text-[var(--color-danger)] text-[0.85em]">
             {error}
@@ -189,7 +201,14 @@ export default function CompareView() {
         {loading && (
           <div className="flex-1 flex flex-col items-center justify-center gap-2 text-[var(--color-text-muted)]">
             <div className="w-32 h-2 bg-[var(--color-bg-muted)] rounded-full overflow-hidden">
-              <div className="h-full bg-[var(--color-primary)] rounded-full animate-pulse" style={{ width: '60%' }} />
+              <div
+                className="h-full rounded-full animate-[shimmer_1.5s_ease-in-out_infinite]"
+                style={{
+                  width: '100%',
+                  background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light, #93c5fd) 50%, var(--color-primary) 100%)',
+                  backgroundSize: '200% 100%',
+                }}
+              />
             </div>
             <div className="text-[0.85em]">Computing {activeMethod} alignment...</div>
           </div>
@@ -215,4 +234,3 @@ export default function CompareView() {
     </div>
   );
 }
-

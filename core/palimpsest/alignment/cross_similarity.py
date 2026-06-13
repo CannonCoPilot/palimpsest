@@ -3,12 +3,10 @@
 from __future__ import annotations
 
 import logging
-from pathlib import Path
-from typing import Any
 
 import numpy as np
 
-from palimpsest.formats.signals import SignalManifest, write_signal
+from palimpsest.formats.signals import SignalManifest
 from palimpsest.project import Project
 from palimpsest.vectorstore.sqlite_vec import SqliteVecStore
 
@@ -44,6 +42,7 @@ def compute_cross_similarity(
     elif metric == "jaccard":
         matrix = _jaccard_similarity(emb_a, emb_b)
     else:
+        logger.warning("Unknown similarity metric '%s', falling back to cosine", metric)
         matrix = _cosine_similarity(emb_a, emb_b)
 
     paras_a = project_a.paragraphs()
@@ -102,6 +101,62 @@ def _cosine_similarity(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     matrix = normed_a @ normed_b.T
     np.clip(matrix, -1.0, 1.0, out=matrix)
     return matrix.astype(np.float32)
+
+
+def _word_overlap_similarity(project_a: Project, project_b: Project) -> np.ndarray:
+    """Word-overlap (Jaccard on token sets) between all paragraph pairs."""
+    paras_a = [text for _, _, text in project_a.paragraphs()]
+    paras_b = [text for _, _, text in project_b.paragraphs()]
+
+    sets_a = [set(t.lower().split()) for t in paras_a]
+    sets_b = [set(t.lower().split()) for t in paras_b]
+
+    n = len(sets_a)
+    m = len(sets_b)
+    matrix = np.zeros((n, m), dtype=np.float32)
+
+    for i in range(n):
+        if not sets_a[i]:
+            continue
+        for j in range(m):
+            if not sets_b[j]:
+                continue
+            intersection = len(sets_a[i] & sets_b[j])
+            union = len(sets_a[i] | sets_b[j])
+            matrix[i, j] = intersection / union if union > 0 else 0.0
+
+    return matrix
+
+
+def compute_word_overlap(
+    project_a: Project,
+    project_b: Project,
+) -> tuple[np.ndarray, SignalManifest]:
+    """Compute word-overlap (Jaccard) similarity matrix between two projects."""
+    matrix = _word_overlap_similarity(project_a, project_b)
+    n, m = matrix.shape
+
+    paras_a = project_a.paragraphs()
+    paras_b = project_b.paragraphs()
+
+    manifest = SignalManifest(
+        type="matrix",
+        name="cross_similarity",
+        source="word_overlap/0.1",
+        reference_sha256=f"{project_a.metadata.reference_sha256}:{project_b.metadata.reference_sha256}",
+        dimensions=[n, m],
+        data_file="cross_similarity.bin",
+        segment_offsets=[[s, e] for s, e, _ in paras_a],
+        metadata={
+            "similarity_metric": "word_overlap",
+            "query_id": project_a.metadata.id,
+            "target_id": project_b.metadata.id,
+            "query_paragraphs": n,
+            "target_paragraphs": m,
+            "target_segment_offsets": [[s, e] for s, e, _ in paras_b],
+        },
+    )
+    return matrix, manifest
 
 
 def _jaccard_similarity(a: np.ndarray, b: np.ndarray) -> np.ndarray:

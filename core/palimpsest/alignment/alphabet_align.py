@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import json
 import logging
-from pathlib import Path
 
 import numpy as np
 
@@ -37,8 +36,6 @@ def load_alphabet_sequence(project: Project) -> str:
 def align_alphabets(
     project_a: Project,
     project_b: Project,
-    match_score: float = 2.0,
-    mismatch_score: float = -1.0,
     gap_open: float = -2.0,
     gap_extend: float = -0.5,
     min_length: int = 3,
@@ -56,11 +53,10 @@ def align_alphabets(
     m = len(seq_b)
     logger.info("Aligning alphabets: %d x %d characters", n, m)
 
-    # Build similarity matrix from character match/mismatch
-    sim_matrix = np.zeros((n, m), dtype=np.float32)
-    for i in range(n):
-        for j in range(m):
-            sim_matrix[i, j] = 1.0 if seq_a[i] == seq_b[j] else 0.0
+    # Build similarity matrix — vectorized character match/mismatch
+    arr_a = np.frombuffer(seq_a.encode('ascii'), dtype=np.uint8)
+    arr_b = np.frombuffer(seq_b.encode('ascii'), dtype=np.uint8)
+    sim_matrix = np.equal.outer(arr_a, arr_b).astype(np.float32)
 
     # Reuse Smith-Waterman with alphabet-specific scoring
     from palimpsest.alignment.smith_waterman import smith_waterman

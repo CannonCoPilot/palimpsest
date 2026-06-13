@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 def calibrate_gumbel(
     similarity_matrix: np.ndarray,
-    n_shuffles: int = 100,
+    n_shuffles: int = 30,
     gap_open: float = -2.0,
     gap_extend: float = -0.5,
 ) -> tuple[float, float]:
@@ -27,7 +27,11 @@ def calibrate_gumbel(
     and fits Gumbel(mu, beta) to the resulting score distribution.
 
     Returns (mu, beta) — the location and scale parameters.
+    Pass n_shuffles=0 to skip calibration (returns (0.0, 1.0) immediately).
     """
+    if n_shuffles <= 0:
+        return (0.0, 1.0)
+
     n, m = similarity_matrix.shape
     if n < 3 or m < 3:
         return (0.0, 1.0)

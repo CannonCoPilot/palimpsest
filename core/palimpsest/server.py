@@ -538,6 +538,13 @@ def create_app(workspace: Path) -> FastAPI:
 
     _alignment_jobs: dict[str, dict] = {}
 
+    import re as _re
+    _ID_PATTERN = _re.compile(r"^[a-zA-Z0-9_\-]+$")
+
+    def _validate_ids(query_id: str, target_id: str) -> None:
+        if not _ID_PATTERN.match(query_id) or not _ID_PATTERN.match(target_id):
+            raise HTTPException(status_code=400, detail="Invalid project ID format")
+
     class AlignmentRequest(BaseModel):
         query_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
         target_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
@@ -575,6 +582,16 @@ def create_app(workspace: Path) -> FastAPI:
 
                 if request.method == "alphabet":
                     records = await asyncio.to_thread(align_alphabets, proj_a, proj_b)
+                elif request.method == "word":
+                    from palimpsest.alignment.cross_similarity import compute_word_overlap
+                    matrix, manifest = await asyncio.to_thread(
+                        compute_word_overlap, proj_a, proj_b
+                    )
+                    await asyncio.to_thread(write_signal, comp_dir, matrix, manifest)
+
+                    records = await asyncio.to_thread(
+                        sw_align, matrix, request.query_id, request.target_id, "word"
+                    )
                 else:
                     matrix, manifest = await asyncio.to_thread(
                         compute_cross_similarity, proj_a, proj_b, "cosine"
@@ -608,14 +625,14 @@ def create_app(workspace: Path) -> FastAPI:
                 logger.exception("Alignment failed: %s", exc)
                 _alignment_jobs[job_key] = {"status": "failed", "error": str(exc)}
             finally:
-                import threading
-                threading.Timer(60.0, lambda: _alignment_jobs.pop(job_key, None)).start()
+                asyncio.get_running_loop().call_later(60.0, lambda: _alignment_jobs.pop(job_key, None))
 
         asyncio.create_task(run())
         return JSONResponse(content={"status": "started"})
 
     @app.get("/api/alignment/{query_id}/{target_id}/status")
     async def alignment_status(query_id: str, target_id: str) -> JSONResponse:
+        _validate_ids(query_id, target_id)
         job_key = f"{query_id}:{target_id}"
         job = _alignment_jobs.get(job_key)
         if not job:
@@ -627,6 +644,7 @@ def create_app(workspace: Path) -> FastAPI:
 
     @app.get("/api/alignment/{query_id}/{target_id}/records")
     async def alignment_records(query_id: str, target_id: str) -> JSONResponse:
+        _validate_ids(query_id, target_id)
         comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
         records_path = comp_dir / "alignment.jsonl"
         if not records_path.exists():
@@ -637,6 +655,7 @@ def create_app(workspace: Path) -> FastAPI:
 
     @app.get("/api/alignment/{query_id}/{target_id}/matrix")
     async def alignment_matrix(query_id: str, target_id: str) -> JSONResponse:
+        _validate_ids(query_id, target_id)
         comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
         manifest_path = comp_dir / "cross_similarity.json"
         if not manifest_path.exists():
@@ -669,6 +688,7 @@ def create_app(workspace: Path) -> FastAPI:
 
     @app.get("/api/alignment/{query_id}/{target_id}/diff")
     async def get_diff(query_id: str, target_id: str) -> JSONResponse:
+        _validate_ids(query_id, target_id)
         comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
         diff_path = comp_dir / "diff.json"
         if not diff_path.exists():
@@ -682,6 +702,7 @@ def create_app(workspace: Path) -> FastAPI:
 
     @app.get("/api/alignment/{query_id}/{target_id}/matrix.bin")
     async def alignment_matrix_bin(query_id: str, target_id: str) -> FileResponse:
+        _validate_ids(query_id, target_id)
         comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
         bin_path = comp_dir / "cross_similarity.bin"
         if not bin_path.exists():

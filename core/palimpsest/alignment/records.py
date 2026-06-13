@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -26,11 +26,37 @@ class AlignmentRecord:
     cigar: str = ""
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        return {
+            "queryId": self.query_id,
+            "queryStart": self.query_start,
+            "queryEnd": self.query_end,
+            "targetId": self.target_id,
+            "targetStart": self.target_start,
+            "targetEnd": self.target_end,
+            "score": self.score,
+            "pValue": self.p_value,
+            "method": self.method,
+            "strand": self.strand,
+            "identity": self.identity,
+            "cigar": self.cigar,
+        }
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> AlignmentRecord:
-        return cls(**{k: v for k, v in d.items() if k in cls.__dataclass_fields__})
+        return cls(
+            query_id=d.get("query_id", d.get("queryId", "")),
+            query_start=d.get("query_start", d.get("queryStart", 0)),
+            query_end=d.get("query_end", d.get("queryEnd", 0)),
+            target_id=d.get("target_id", d.get("targetId", "")),
+            target_start=d.get("target_start", d.get("targetStart", 0)),
+            target_end=d.get("target_end", d.get("targetEnd", 0)),
+            score=d.get("score", 0.0),
+            p_value=d.get("p_value", d.get("pValue", 1.0)),
+            method=d.get("method", "semantic"),
+            strand=d.get("strand", "+"),
+            identity=d.get("identity", 0.0),
+            cigar=d.get("cigar", ""),
+        )
 
 
 def write_alignment_records(path: Path, records: list[AlignmentRecord]) -> None:
