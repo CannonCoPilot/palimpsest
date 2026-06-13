@@ -68,6 +68,16 @@ export default function AppLayout() {
 
       {metadata && (
         <div className="flex items-center gap-4 px-4 py-2 border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
+          <button
+            onClick={() => {
+              useProjectStore.getState().closeProject();
+              window.history.pushState({}, '', window.location.pathname);
+            }}
+            className="px-1.5 py-0.5 rounded text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-muted)] cursor-pointer text-[0.85em] transition-colors"
+            title="Back to project list"
+          >
+            ← Projects
+          </button>
           <strong>{metadata.title}</strong>
           {metadata.author && <span className="text-[var(--color-text-secondary)]">by {metadata.author}</span>}
           <span className="text-[var(--color-text-muted)] text-[0.85em]">

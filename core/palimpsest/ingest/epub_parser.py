@@ -52,15 +52,20 @@ class EpubParseResult:
     endnote_separator_offset: int = -1
 
 
-def parse_epub(path: Path) -> EpubParseResult:
+def parse_epub(path: Path, content_profile: Any = None) -> EpubParseResult:
     """Parse an EPUB file, extracting text with structural metadata."""
     import ebooklib
     from ebooklib import epub
+    from palimpsest.ingest.content_filters import ContentProfile, detect_content_profile
 
     book = epub.read_epub(str(path), options={"ignore_ncx": False})
 
+    # Auto-detect profile if not provided
+    if content_profile is None:
+        content_profile = detect_content_profile(book)
+
     metadata = _extract_metadata(book)
-    text, sections, endnote_anchors, endnote_defs = _assemble_text(book)
+    text, sections, endnote_anchors, endnote_defs = _assemble_text(book, content_profile)
 
     if not sections:
         sections = _sections_from_toc(book, text)
@@ -186,7 +191,7 @@ def _sections_from_toc(book: Any, assembled_text: str) -> list[SectionBoundary]:
     return sections
 
 
-def _assemble_text(book: Any) -> tuple[
+def _assemble_text(book: Any, profile: Any = None) -> tuple[
     str,
     list[SectionBoundary],
     dict[int, tuple[int, int]],
@@ -195,6 +200,7 @@ def _assemble_text(book: Any) -> tuple[
     """Walk spine items in order, assembling clean text with structural markers."""
     import ebooklib
     from bs4 import BeautifulSoup, NavigableString, Tag
+    from palimpsest.ingest.content_filters import apply_content_filters, should_skip_spine_item
 
     parts: list[str] = []
     sections: list[SectionBoundary] = []
@@ -211,11 +217,18 @@ def _assemble_text(book: Any) -> tuple[
             spine_items.append(item)
 
     for item in spine_items:
+        if profile and should_skip_spine_item(item, profile):
+            continue
+
         html_content = item.get_content()
         soup = BeautifulSoup(html_content, "html.parser")
 
         for tag in soup.find_all(["script", "style"]):
             tag.decompose()
+
+        # Apply content-type-specific filters (e.g., strip verse numbers from Bible text)
+        if profile and profile.name != "literary":
+            apply_content_filters(soup, profile)
 
         body = soup.find("body") or soup
 
@@ -258,6 +271,10 @@ def _assemble_text(book: Any) -> tuple[
     raw = "".join(parts)
 
     raw = _clean_assembled_text(raw)
+
+    if profile and profile.text_cleaners:
+        for cleaner in profile.text_cleaners:
+            raw = cleaner(raw)
 
     endnote_anchors, endnote_defs = _extract_endnote_data(book, spine_items, raw)
 

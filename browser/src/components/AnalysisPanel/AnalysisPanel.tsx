@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 
 interface TrackStatus {
@@ -200,9 +200,18 @@ export default function AnalysisPanel() {
     return () => clearInterval(interval);
   }, [pollingTracks.size, fetchStatus]);
 
-  // Update polling set when status changes (avoid loop by comparing)
+  const prevRunningRef = useRef<Set<string>>(new Set());
+
   useEffect(() => {
-    const runningNames = tracks.filter((t) => t.status === 'running').map((t) => t.name);
+    const runningNames = new Set(tracks.filter((t) => t.status === 'running').map((t) => t.name));
+
+    // Detect tracks that just finished (were running, now aren't)
+    const justFinished = [...prevRunningRef.current].filter((name) => !runningNames.has(name));
+    if (justFinished.length > 0) {
+      useProjectStore.getState().reloadActiveProject();
+    }
+
+    prevRunningRef.current = runningNames;
     setPollingTracks((prev) => {
       const prevArr = Array.from(prev).sort();
       const nextArr = [...runningNames].sort();
@@ -278,6 +287,22 @@ export default function AnalysisPanel() {
       </div>
 
       <div className="flex-1 overflow-auto">
+        {pendingCount > 0 && computedCount === 0 && runningCount === 0 && (
+          <div className="mx-4 mt-3 mb-2 p-4 rounded border border-[var(--color-primary)] bg-[var(--color-primary-subtle,#eff6ff)] text-center">
+            <div className="text-[1em] font-semibold mb-1">No tracks computed yet</div>
+            <div className="text-[0.85em] text-[var(--color-text-muted)] mb-3">
+              Run analysis to compute NLP tracks (sentiment, entities, topics, etc.) for this text.
+              Results will appear across all views automatically.
+            </div>
+            <button
+              onClick={handleRunAll}
+              className="px-4 py-2 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 font-semibold"
+            >
+              Compute All Tracks ({pendingCount})
+            </button>
+          </div>
+        )}
+
         <table className="w-full border-collapse">
           <thead className="sticky top-0 bg-[var(--color-bg-subtle)] z-10">
             <tr className="text-left text-[0.8em] text-[var(--color-text-muted)]">

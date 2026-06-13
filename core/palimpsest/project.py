@@ -172,6 +172,7 @@ def ingest_file(
     author: str = "",
     year: int = 0,
     language: str = "en",
+    content_profile: Any = None,  # ContentProfile or None
 ) -> Project:
     """Ingest a text file into a new project directory."""
     is_epub = source_path.suffix.lower() == ".epub"
@@ -179,7 +180,7 @@ def ingest_file(
 
     if is_epub:
         from palimpsest.ingest.epub_parser import parse_epub
-        epub_result = parse_epub(source_path)
+        epub_result = parse_epub(source_path, content_profile=content_profile)
         raw_text = epub_result.text
         if not title and epub_result.metadata.title:
             title = epub_result.metadata.title

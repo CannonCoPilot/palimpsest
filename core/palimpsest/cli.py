@@ -67,11 +67,16 @@ def main() -> None:
 @click.option("--author", default="", help="Author name")
 @click.option("--year", default=0, type=int, help="Year of publication")
 @click.option("--workspace", default="projects", type=click.Path(path_type=Path))
-def ingest(file: Path, title: str, author: str, year: int, workspace: Path) -> None:
+@click.option("--content-profile", "profile_name", default=None, help="Content filter profile (e.g., bible-kjv, bible-tyndale)")
+def ingest(file: Path, title: str, author: str, year: int, workspace: Path, profile_name: str | None) -> None:
     """Ingest a text file into a new project."""
     workspace.mkdir(parents=True, exist_ok=True)
+    profile = None
+    if profile_name:
+        from palimpsest.ingest.content_filters import get_profile
+        profile = get_profile(profile_name)
     try:
-        project = ingest_file(file, workspace, title=title, author=author, year=year)
+        project = ingest_file(file, workspace, title=title, author=author, year=year, content_profile=profile)
         console.print(f"[green]Project created:[/green] {project.path}")
         console.print(f"  ID: {project.metadata.id}")
         console.print(f"  Words: {project.metadata.word_count:,}")

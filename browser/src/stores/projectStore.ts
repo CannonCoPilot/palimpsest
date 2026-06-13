@@ -67,6 +67,8 @@ interface ProjectStoreState {
   loadProject: (baseUrl: string, projectId: string) => Promise<void>;
   loadSecondaryProject: (baseUrl: string, projectId: string) => Promise<void>;
   setSecondaryProject: (id: string | null) => void;
+  closeProject: () => void;
+  reloadActiveProject: () => Promise<void>;
 }
 
 function splitParagraphs(text: string): Paragraph[] {
@@ -238,6 +240,31 @@ export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
 
   setSecondaryProject: (id: string | null): void => {
     set({ secondaryProjectId: id });
+  },
+
+  closeProject: (): void => {
+    set({
+      activeProjectId: null,
+      secondaryProjectId: null,
+      loadingState: 'idle',
+      loadingStep: '',
+      error: null,
+    });
+  },
+
+  reloadActiveProject: async (): Promise<void> => {
+    const projectId = get().activeProjectId;
+    if (!projectId) return;
+
+    try {
+      const projectData = await loadProjectData('', projectId);
+      set((state) => ({
+        projects: { ...state.projects, [projectId]: projectData },
+      }));
+      await setupTrackStates('', projectId, projectData.tracks);
+    } catch {
+      // Reload is best-effort — don't disrupt current state on failure
+    }
   },
 }));
 
