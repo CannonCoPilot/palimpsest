@@ -52,8 +52,10 @@ class SelfSimilarityTrack:
             )
 
         store = SqliteVecStore.open_existing(embeddings_db)
-        all_vectors = store.get_all_vectors()
-        store.close()
+        try:
+            all_vectors = store.get_all_vectors()
+        finally:
+            store.close()
 
         if not all_vectors:
             raise ValueError("No embeddings found in database")

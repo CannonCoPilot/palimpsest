@@ -1,4 +1,4 @@
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
 
 const EXPECTED_TRACKS = [
@@ -27,7 +27,7 @@ function TrackSkeletonRow({ name, loaded }: { name: string; loaded: boolean }) {
 export default function LoadingOverlay() {
   const loadingState = useProjectStore((s) => s.loadingState);
   const loadingStep = useProjectStore((s) => s.loadingStep);
-  const loadedTracks = useProjectStore((s) => Object.keys(s.tracks));
+  const loadedTracks = useProjectStore((s) => Object.keys(getActiveProject(s).tracks));
 
   if (loadingState !== 'loading') return null;
 

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useViewStore } from '../../stores/viewStore';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
 import { loadSignal, type LoadedSignal } from '../../adapters/SignalAdapter';
 import { TRACK_COLORS } from '../../utils/trackColors';
@@ -182,9 +182,9 @@ function AxisAnnotationStrip({ orientation, annotations, color, paragraphs, view
 
 export default function DotplotView(): JSX.Element | null {
   const textHicOpen = useViewStore((s) => s.textHicOpen);
-  const projectId = useProjectStore((s) => s.metadata?.id);
-  const paragraphs = useProjectStore((s) => s.paragraphs);
-  const allTracks = useProjectStore((s) => s.tracks);
+  const projectId = useProjectStore((s) => getActiveProject(s).metadata?.id);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
+  const allTracks = useProjectStore((s) => getActiveProject(s).tracks);
   const trackStates = useTrackStore((s) => s.tracks);
   const trackOrder = useTrackStore((s) => s.trackOrder);
 

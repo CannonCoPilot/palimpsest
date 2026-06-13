@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useViewStore, type CoordinateSystem } from '../../stores/viewStore';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { Tooltip } from '../common/Tooltip';
 
 const COORD_LABELS: Record<CoordinateSystem, string> = {
@@ -10,9 +10,9 @@ const COORD_LABELS: Record<CoordinateSystem, string> = {
 };
 
 export default function NavigationToolbar() {
-  const paragraphs = useProjectStore((s) => s.paragraphs);
-  const referenceText = useProjectStore((s) => s.referenceText);
-  const tracks = useProjectStore((s) => s.tracks);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
+  const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
+  const tracks = useProjectStore((s) => getActiveProject(s).tracks);
   const selectedParagraphIndex = useViewStore((s) => s.selectedParagraphIndex);
   const setSelectedParagraphIndex = useViewStore((s) => s.setSelectedParagraphIndex);
   const requestScrollToParagraph = useViewStore((s) => s.requestScrollToParagraph);

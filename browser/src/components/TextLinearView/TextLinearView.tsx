@@ -5,7 +5,7 @@
 
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { useProjectStore, type Paragraph } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject, type Paragraph } from '../../stores/projectStore';
 import { useTrackStore, type TrackState } from '../../stores/trackStore';
 import { useViewStore, type ZoomLevel } from '../../stores/viewStore';
 import { useSearchStore, type SearchMatch } from '../../stores/searchStore';
@@ -437,8 +437,8 @@ function SentenceLevelView({
 // ── Main component with zoom dispatch ──
 
 export default function TextLinearView(): JSX.Element {
-  const paragraphs = useProjectStore((s) => s.paragraphs);
-  const tracks = useProjectStore((s) => s.tracks);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
+  const tracks = useProjectStore((s) => getActiveProject(s).tracks);
   const trackStates = useTrackStore((s) => s.tracks);
   const selectedParagraphIndex = useViewStore((s) => s.selectedParagraphIndex);
   const setSelectedParagraphIndex = useViewStore((s) => s.setSelectedParagraphIndex);

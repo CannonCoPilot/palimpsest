@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useViewStore } from '../../stores/viewStore';
 
 export default function CoordinateRuler() {
-  const paragraphs = useProjectStore((s) => s.paragraphs);
-  const referenceText = useProjectStore((s) => s.referenceText);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
+  const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
   const visibleRange = useViewStore((s) => s.visibleParagraphRange);
   const requestScroll = useViewStore((s) => s.requestScrollToParagraph);
   const setSelected = useViewStore((s) => s.setSelectedParagraphIndex);

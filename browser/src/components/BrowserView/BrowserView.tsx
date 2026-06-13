@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
 import { useViewStore } from '../../stores/viewStore';
@@ -257,8 +257,8 @@ function TrackLane({ name, annotations, color, viewStart, viewEnd, width, displa
 }
 
 export default function BrowserView() {
-  const referenceText = useProjectStore((s) => s.referenceText);
-  const tracks = useProjectStore((s) => s.tracks);
+  const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
+  const tracks = useProjectStore((s) => getActiveProject(s).tracks);
   const trackStates = useTrackStore((s) => s.tracks);
   const trackOrder = useTrackStore((s) => s.trackOrder);
 

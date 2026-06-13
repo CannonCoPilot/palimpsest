@@ -56,12 +56,9 @@ interface ProjectStoreState {
   loadingStep: string;
   error: string | null;
 
-  // Backward-compatible top-level selectors (always reflect active project)
-  get projectId(): string | null;
-  get metadata(): ProjectMetadata | null;
-  get referenceText(): string;
-  get paragraphs(): Paragraph[];
-  get tracks(): Record<string, W3CAnnotation[]>;
+  // NOTE: backward-compat getters were removed — ES6 getters break after
+  // Zustand's set() merges state via Object.assign (getter evaluated once,
+  // value frozen). Use getActiveProject(s) in selectors instead.
 
   // Actions
   loadProject: (baseUrl: string, projectId: string) => Promise<void>;
@@ -183,12 +180,7 @@ export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
   loadingStep: '',
   error: null,
 
-  // Backward-compatible computed getters
-  get projectId() { return get().activeProjectId; },
-  get metadata() { return get().projects[get().activeProjectId ?? '']?.metadata ?? null; },
-  get referenceText() { return get().projects[get().activeProjectId ?? '']?.referenceText ?? ''; },
-  get paragraphs() { return get().projects[get().activeProjectId ?? '']?.paragraphs ?? []; },
-  get tracks() { return get().projects[get().activeProjectId ?? '']?.tracks ?? {}; },
+  // Backward-compat getters removed — use getActiveProject(s) in selectors
 
   loadProject: async (baseUrl: string, projectId: string): Promise<void> => {
     // If already loaded, just switch active

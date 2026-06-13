@@ -67,8 +67,8 @@ def p_value(score: float, mu: float, beta: float) -> float:
     if beta <= 0:
         return 1.0
     z = (score - mu) / beta
-    # Clamp to avoid overflow
-    z = min(z, 700)
+    # Clamp to avoid exp(-z) overflow for scores far below mu
+    z = max(z, -700)
     return float(1.0 - np.exp(-np.exp(-z)))
 
 
@@ -83,27 +83,27 @@ def _quick_sw_max_score(
     """
     n, m = matrix.shape
     H_prev = np.zeros(m + 1, dtype=np.float64)
-    E_prev = np.full(m + 1, -np.inf, dtype=np.float64)
+    F_col = np.full(m + 1, -np.inf, dtype=np.float64)
     max_score = 0.0
 
     for i in range(1, n + 1):
         H_curr = np.zeros(m + 1, dtype=np.float64)
         E_curr = np.full(m + 1, -np.inf, dtype=np.float64)
-        F_val = -np.inf
+        F_next = np.full(m + 1, -np.inf, dtype=np.float64)
 
         for j in range(1, m + 1):
             sim = float(matrix[i - 1, j - 1])
             score = sim * 2.0 - 1.0
 
             E_curr[j] = max(H_curr[j - 1] + gap_open, E_curr[j - 1] + gap_extend)
-            F_val = max(H_prev[j] + gap_open, F_val + gap_extend)
+            F_next[j] = max(H_prev[j] + gap_open, F_col[j] + gap_extend)
 
-            best = max(0.0, H_prev[j - 1] + score, E_curr[j], F_val)
+            best = max(0.0, H_prev[j - 1] + score, E_curr[j], F_next[j])
             H_curr[j] = best
             if best > max_score:
                 max_score = best
 
         H_prev = H_curr
-        E_prev = E_curr
+        F_col = F_next
 
     return max_score

@@ -1,6 +1,6 @@
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { useViewStore } from '../../stores/viewStore';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import LLMSummary from './LLMSummary';
 import StateExplainer from './StateExplainer';
 import { Tooltip } from '../common/Tooltip';
@@ -47,7 +47,7 @@ function PropertyRow({ label, children }: { label: string; children: React.React
 }
 
 function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
-  const referenceText = useProjectStore((s) => s.referenceText);
+  const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
   const sel = ann.target.selector;
   const excerpt =
     sel.type === 'TextPositionSelector' && sel.start != null && sel.end != null
@@ -110,8 +110,8 @@ function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
 export default function DetailPanel(): JSX.Element {
   const selectedAnnotation = useViewStore((s) => s.selectedAnnotation);
   const selectAnnotation = useViewStore((s) => s.selectAnnotation);
-  const referenceText = useProjectStore((s) => s.referenceText);
-  const projectId = useProjectStore((s) => s.projectId);
+  const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
+  const projectId = useProjectStore((s) => s.activeProjectId);
 
   return (
     <div className="w-[var(--width-detail-panel)] border-l border-[var(--color-border)] overflow-y-auto p-[var(--spacing-panel)] text-[0.85em]">

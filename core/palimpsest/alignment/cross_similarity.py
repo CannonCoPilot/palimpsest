@@ -79,8 +79,10 @@ def _load_embeddings(project: Project) -> np.ndarray:
             "Run `palimpsest analyze` with Ollama available first."
         )
     store = SqliteVecStore.open_existing(emb_db)
-    vectors = store.get_all_vectors()
-    store.close()
+    try:
+        vectors = store.get_all_vectors()
+    finally:
+        store.close()
 
     if not vectors:
         raise ValueError(f"No embeddings found for {project.metadata.id}")

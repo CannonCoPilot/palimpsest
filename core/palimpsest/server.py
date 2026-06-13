@@ -236,10 +236,15 @@ def create_app(workspace: Path) -> FastAPI:
         """Similarity search over paragraph embeddings."""
         import asyncio
 
-        if ".." in project:
+        if ".." in project or "/" in project or "\\" in project:
             raise HTTPException(status_code=400, detail="Invalid project ID")
+        project_dir = (workspace / project).resolve()
+        if not project_dir.is_relative_to(workspace.resolve()):
+            raise HTTPException(status_code=400, detail="Invalid project ID")
+        if not project_dir.is_dir():
+            return SearchResponse(results=[], embedding_available=False)
 
-        embeddings_db = workspace / project / "cache" / "embeddings.db"
+        embeddings_db = project_dir / "cache" / "embeddings.db"
         if not embeddings_db.exists():
             return SearchResponse(results=[], embedding_available=False)
 
@@ -255,10 +260,12 @@ def create_app(workspace: Path) -> FastAPI:
                 return SearchResponse(results=[], embedding_available=False)
 
             store = SqliteVecStore.open_existing(embeddings_db)
-            hits = store.search(query_vec, k=k)
-            store.close()
+            try:
+                hits = store.search(query_vec, k=k)
+            finally:
+                store.close()
 
-            proj = Project.load(workspace / project)
+            proj = Project.load(project_dir)
             paras = proj.paragraphs()
             results = []
             for hit_id, score in hits:
@@ -398,7 +405,7 @@ def create_app(workspace: Path) -> FastAPI:
             raise HTTPException(status_code=404, detail=f"Unknown track: {track_name}")
 
         job_key = f"{project_id}:{track_name}"
-        if job_key in _running_jobs:
+        if _running_jobs.get(job_key, {}).get("status") == "running":
             return JSONResponse(content={"status": "already_running"})
 
         from palimpsest.project import Project

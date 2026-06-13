@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 
 interface TrackStatus {
   name: string;
@@ -173,7 +173,7 @@ function ParamDialog({ trackName, onRun, onCancel }: { trackName: string; onRun:
 }
 
 export default function AnalysisPanel() {
-  const projectId = useProjectStore((s) => s.metadata?.id);
+  const projectId = useProjectStore((s) => getActiveProject(s).metadata?.id);
   const [tracks, setTracks] = useState<TrackStatus[]>([]);
   const [loading, setLoading] = useState(false);
   const [pollingTracks, setPollingTracks] = useState<Set<string>>(new Set());

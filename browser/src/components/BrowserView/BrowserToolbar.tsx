@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react';
 import { useBrowserStore } from '../../stores/browserStore';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { Tooltip } from '../common/Tooltip';
 
 export default function BrowserToolbar() {
   const { viewStart, viewEnd, totalChars, zoomAroundCenter, zoomToFull, pan, setViewport, toggleDrawer } = useBrowserStore();
-  const paragraphs = useProjectStore((s) => s.paragraphs);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
   const [jumpInput, setJumpInput] = useState('');
 
   const viewWidth = viewEnd - viewStart;

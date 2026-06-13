@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useTrackStore, type DisplayMode } from '../../stores/trackStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
 import { Tooltip } from '../common/Tooltip';
@@ -117,7 +117,7 @@ function SortableTrackRow(props: TrackRowProps) {
 }
 
 export default function TrackPanel() {
-  const projectTracks = useProjectStore((s) => s.tracks);
+  const projectTracks = useProjectStore((s) => getActiveProject(s).tracks);
   const trackStates = useTrackStore((s) => s.tracks);
   const trackOrder = useTrackStore((s) => s.trackOrder);
   const setTrackOrder = useTrackStore((s) => s.setTrackOrder);

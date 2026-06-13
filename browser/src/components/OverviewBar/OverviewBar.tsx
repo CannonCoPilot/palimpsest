@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
 import { useSearchStore } from '../../stores/searchStore';
 import { useViewStore } from '../../stores/viewStore';
@@ -142,9 +142,9 @@ function TrackBarcode({ label, annotations, color, manifest, documentLength, wid
 }
 
 export default function OverviewBar() {
-  const tracks = useProjectStore((s) => s.tracks);
-  const referenceText = useProjectStore((s) => s.referenceText);
-  const paragraphs = useProjectStore((s) => s.paragraphs);
+  const tracks = useProjectStore((s) => getActiveProject(s).tracks);
+  const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
   const trackStates = useTrackStore((s) => s.tracks);
   const searchMatches = useSearchStore((s) => s.matches);
   const visibleRange = useViewStore((s) => s.visibleParagraphRange);

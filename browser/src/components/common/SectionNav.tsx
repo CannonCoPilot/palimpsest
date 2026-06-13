@@ -4,7 +4,7 @@
  */
 
 import { useMemo, useState } from 'react';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useViewStore } from '../../stores/viewStore';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { Tooltip } from './Tooltip';
@@ -17,8 +17,8 @@ interface SectionEntry {
 }
 
 export default function SectionNav(): JSX.Element | null {
-  const tracks = useProjectStore((s) => s.tracks);
-  const paragraphs = useProjectStore((s) => s.paragraphs);
+  const tracks = useProjectStore((s) => getActiveProject(s).tracks);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
   const requestScroll = useViewStore((s) => s.requestScrollToParagraph);
   const [collapsed, setCollapsed] = useState(true);
 

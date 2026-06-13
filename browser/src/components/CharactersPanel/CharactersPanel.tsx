@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useViewStore } from '../../stores/viewStore';
 import { useSearchStore } from '../../stores/searchStore';
 import CharacterDetail from './CharacterDetail';
@@ -37,9 +37,9 @@ function Sparkline({ density, width = 120, height = 16 }: { density: number[]; w
 }
 
 export default function CharactersPanel() {
-  const projectId = useProjectStore((s) => s.metadata?.id);
-  const paragraphs = useProjectStore((s) => s.paragraphs);
-  const referenceText = useProjectStore((s) => s.referenceText);
+  const projectId = useProjectStore((s) => getActiveProject(s).metadata?.id);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
+  const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
   const [characters, setCharacters] = useState<CharacterRecord[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
