@@ -212,22 +212,39 @@ export default function DotplotView(): JSX.Element | null {
   const draggingWindowId = useRef<string | null>(null);
   const dragWindowStart = useRef({ mx: 0, my: 0, wx: 0, wy: 0 });
 
+  const [availableMetrics, setAvailableMetrics] = useState<string[]>([]);
+
   useEffect(() => {
     if (!textHicOpen || !projectId) return;
     setLoading(true);
     setError(null);
-    loadSignal(`/data/${projectId}/signals/self_similarity.json`)
-      .then((s) => {
-        setSignal(s);
-        const dim = s.manifest.dimensions[0];
-        setViewport({ x: 0, y: 0, span: dim });
-        setLoading(false);
+
+    // Load master manifest to discover available metrics
+    fetch(`/data/${projectId}/signals/self_similarity.json`)
+      .then((r) => { if (!r.ok) throw new Error('not found'); return r.json(); })
+      .then((manifest) => {
+        const metrics: string[] = manifest.metadata?.available_metrics ?? [];
+        setAvailableMetrics(metrics);
+
+        // Load the binary for current metric
+        const dataFile = metrics.length > 0
+          ? `self_similarity_${similarityMetric}.bin`
+          : manifest.data_file;
+
+        return fetch(`/data/${projectId}/signals/${dataFile}`)
+          .then((r) => { if (!r.ok) throw new Error('metric not available'); return r.arrayBuffer(); })
+          .then((buf) => {
+            setSignal({ manifest: { ...manifest, data_file: dataFile }, data: new Float32Array(buf) });
+            const dim = manifest.dimensions[0];
+            setViewport((prev) => prev.span === 0 ? { x: 0, y: 0, span: dim } : prev);
+            setLoading(false);
+          });
       })
       .catch(() => {
         setError('Self-similarity matrix not available. Run analysis with Ollama first.');
         setLoading(false);
       });
-  }, [textHicOpen, projectId]);
+  }, [textHicOpen, projectId, similarityMetric]);
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
   const colors = PALETTES[palette];
@@ -567,7 +584,7 @@ export default function DotplotView(): JSX.Element | null {
           </button>
           <button onClick={() => exportImage('png')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">PNG</button>
           <button onClick={() => exportImage('svg')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">SVG</button>
-          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} · ${similarityMetric}` : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
+          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} · ${similarityMetric}` : ''}{loading ? ' · Loading…' : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
         </div>
       </div>
 
@@ -595,18 +612,11 @@ export default function DotplotView(): JSX.Element | null {
           <span className="text-[var(--color-text-muted)]">|</span>
           <label className="flex items-center gap-1">Metric: <select value={similarityMetric} onChange={(e) => {
             setSimilarityMetric(e.target.value);
-          }} className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-[var(--color-bg)] cursor-pointer" title="Similarity metric — change requires re-computation via Analysis tab">
-            <option value="cosine">Cosine</option><option value="jaccard">Jaccard</option><option value="word_overlap">Word overlap</option><option value="edit_distance">Edit distance</option>
+          }} className="border border-[var(--color-border)] rounded px-1 py-0.5 bg-[var(--color-bg)] cursor-pointer" title="Switch similarity metric — all metrics are pre-computed">
+            {(availableMetrics.length > 0 ? availableMetrics : ['cosine', 'jaccard', 'word_overlap', 'edit_distance']).map((m) => (
+              <option key={m} value={m}>{m === 'word_overlap' ? 'Word overlap' : m === 'edit_distance' ? 'Edit distance' : m.charAt(0).toUpperCase() + m.slice(1)}</option>
+            ))}
           </select></label>
-          {similarityMetric !== 'cosine' && (
-            <button
-              onClick={() => useViewStore.getState().setActiveTab('analysis')}
-              className="text-[0.7em] text-[var(--color-primary)] hover:underline cursor-pointer"
-              title="Go to Analysis tab to recompute with this metric"
-            >
-              Recompute
-            </button>
-          )}
         </div>
       )}
 
