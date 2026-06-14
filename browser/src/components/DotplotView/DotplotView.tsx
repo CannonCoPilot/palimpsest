@@ -201,6 +201,10 @@ export default function DotplotView(): JSX.Element | null {
   const [showDiagonal, setShowDiagonal] = useState(true);
   const [showControls, setShowControls] = useState(false);
   const [similarityMetric, setSimilarityMetric] = useState('cosine');
+  const [chunkSize, setChunkSize] = useState(17);
+  const [loadedChunkSize, setLoadedChunkSize] = useState(17);
+  const [recomputing, setRecomputing] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
   const [showAlignments, setShowAlignments] = useState(true);
   const [alignments, setAlignments] = useState<Array<{
     chunk_start_a: number; chunk_end_a: number;
@@ -231,8 +235,12 @@ export default function DotplotView(): JSX.Element | null {
       .then((manifest) => {
         const metrics: string[] = manifest.metadata?.available_metrics ?? [];
         const info = manifest.metadata?.metric_info ?? {};
+        const manifestChunkSize: number = manifest.metadata?.chunk_size ?? 17;
         setAvailableMetrics(metrics);
         setMetricInfo(info);
+        setLoadedChunkSize(manifestChunkSize);
+        setChunkSize(manifestChunkSize);
+        setRecomputing(false);
 
         const dataFile = metrics.length > 0
           ? `self_similarity_${similarityMetric}.bin`
@@ -261,7 +269,7 @@ export default function DotplotView(): JSX.Element | null {
       .then((r) => r.ok ? r.json() : [])
       .then((data) => setAlignments(Array.isArray(data) ? data : []))
       .catch(() => setAlignments([]));
-  }, [textHicOpen, projectId, similarityMetric]);
+  }, [textHicOpen, projectId, similarityMetric, reloadKey]);
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
   const colors = PALETTES[palette];
@@ -680,6 +688,34 @@ export default function DotplotView(): JSX.Element | null {
             <span className="text-[var(--color-text-muted)]">|</span>
             <label className="flex items-center gap-1 cursor-pointer"><input type="checkbox" checked={showAlignments} onChange={(e) => setShowAlignments(e.target.checked)} className="accent-[var(--color-primary)]" /> Alignments ({alignments.length})</label>
           </>)}
+          <span className="text-[var(--color-text-muted)]">|</span>
+          <label className="flex items-center gap-1">
+            Chunk:
+            <input type="range" min="5" max="25" value={chunkSize} onChange={(e) => setChunkSize(parseInt(e.target.value, 10))} className="w-[80px]" title="Words per chunk (5-25)" />
+            <span className="w-8 text-right font-[var(--font-mono)]">{chunkSize}w</span>
+          </label>
+          {chunkSize !== loadedChunkSize && (
+            <button
+              onClick={async () => {
+                if (!projectId || recomputing) return;
+                setRecomputing(true);
+                await fetch(`/api/projects/${projectId}/analyze/self_similarity?chunk_size=${chunkSize}`, { method: 'POST' });
+                const poll = setInterval(async () => {
+                  const r = await fetch(`/api/projects/${projectId}/analyze/self_similarity/status`);
+                  const d = await r.json();
+                  if (d.status !== 'running') {
+                    clearInterval(poll);
+                    setRecomputing(false);
+                    setReloadKey((k) => k + 1);
+                  }
+                }, 3000);
+              }}
+              disabled={recomputing}
+              className="px-2 py-0.5 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 disabled:opacity-50 disabled:cursor-wait"
+            >
+              {recomputing ? 'Computing…' : 'Recompute'}
+            </button>
+          )}
         </div>
       )}
 
