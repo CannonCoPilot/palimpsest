@@ -213,30 +213,35 @@ export default function DotplotView(): JSX.Element | null {
   const dragWindowStart = useRef({ mx: 0, my: 0, wx: 0, wy: 0 });
 
   const [availableMetrics, setAvailableMetrics] = useState<string[]>([]);
+  const [metricInfo, setMetricInfo] = useState<Record<string, { unit_type: string; n_units: number; dimensions: number[] }>>({});
 
   useEffect(() => {
     if (!textHicOpen || !projectId) return;
     setLoading(true);
     setError(null);
 
-    // Load master manifest to discover available metrics
     fetch(`/data/${projectId}/signals/self_similarity.json`)
       .then((r) => { if (!r.ok) throw new Error('not found'); return r.json(); })
       .then((manifest) => {
         const metrics: string[] = manifest.metadata?.available_metrics ?? [];
+        const info = manifest.metadata?.metric_info ?? {};
         setAvailableMetrics(metrics);
+        setMetricInfo(info);
 
-        // Load the binary for current metric
         const dataFile = metrics.length > 0
           ? `self_similarity_${similarityMetric}.bin`
           : manifest.data_file;
 
+        // Use per-metric dimensions if available
+        const metricDims = info[similarityMetric]?.dimensions ?? manifest.dimensions;
+
         return fetch(`/data/${projectId}/signals/${dataFile}`)
           .then((r) => { if (!r.ok) throw new Error('metric not available'); return r.arrayBuffer(); })
           .then((buf) => {
-            setSignal({ manifest: { ...manifest, data_file: dataFile }, data: new Float32Array(buf) });
-            const dim = manifest.dimensions[0];
-            setViewport((prev) => prev.span === 0 ? { x: 0, y: 0, span: dim } : prev);
+            const updatedManifest = { ...manifest, data_file: dataFile, dimensions: metricDims };
+            setSignal({ manifest: updatedManifest, data: new Float32Array(buf) });
+            const dim = metricDims[0];
+            setViewport({ x: 0, y: 0, span: dim });
             setLoading(false);
           });
       })
@@ -584,7 +589,7 @@ export default function DotplotView(): JSX.Element | null {
           </button>
           <button onClick={() => exportImage('png')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">PNG</button>
           <button onClick={() => exportImage('svg')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">SVG</button>
-          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} · ${similarityMetric}` : ''}{loading ? ' · Loading…' : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
+          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} ${metricInfo[similarityMetric]?.unit_type === 'sentence' ? 'sentences' : 'paragraphs'} · ${similarityMetric}` : ''}{loading ? ' · Loading…' : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
         </div>
       </div>
 

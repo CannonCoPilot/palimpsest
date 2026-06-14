@@ -75,8 +75,12 @@ const TRACK_DETAILS: Record<string, { method: string; explanation: string }> = {
     explanation: 'Analogous to A/B compartments in Hi-C genomics. Computes the first eigenvector of the self-similarity correlation matrix. Positive values = compartment A (one thematic mode), negative = compartment B (the other). Reveals large-scale thematic bipartition of the text.',
   },
   self_similarity: {
-    method: 'Cosine similarity of paragraph embeddings (Qwen3-Embedding-4B)',
-    explanation: 'Each paragraph is embedded into a 2560-dimensional vector using the Qwen3-Embedding model. The NxN similarity matrix is computed as the dot product of L2-normalized vectors (cosine similarity). Values range 0-1 where 1 = semantically identical. The diagonal is always 1. Off-diagonal bright spots reveal parallel passages, echoes, and thematic recurrences.',
+    method: 'Multi-metric self-similarity (4 metrics computed simultaneously)',
+    explanation: 'Computes four complementary similarity matrices:\n\n' +
+      '• Cosine (paragraph-level): Each paragraph is embedded into a 2560-dim vector via Qwen3-Embedding. Matrix = dot product of L2-normalized vectors. Captures semantic similarity — passages about the same topic score high even with different wording.\n\n' +
+      '• Jaccard (paragraph-level): Binarizes embedding dimensions (positive = 1, else 0), computes set intersection/union. A coarser semantic signal that emphasizes shared feature activation patterns.\n\n' +
+      '• Word overlap (sentence-level): Jaccard similarity on content-word token sets with stopword removal. Finds sentences sharing actual vocabulary — formulaic phrases, repeated instructions, parallel constructions. Operates at sentence granularity for precision.\n\n' +
+      '• Edit distance (sentence-level): Normalized token-level Levenshtein distance on content words. Finds near-duplicate sentences and textual variants — passages that differ by only a few words. Also sentence-level with stopword removal.',
   },
   narrative_arc: {
     method: 'Sliding window smoothing of sentiment + tension features',
