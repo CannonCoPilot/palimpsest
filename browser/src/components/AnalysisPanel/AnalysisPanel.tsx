@@ -172,12 +172,45 @@ function ParamDialog({ trackName, onRun, onCancel }: { trackName: string; onRun:
   );
 }
 
+const EMBEDDING_DEPENDENT_TRACKS = new Set(['self_similarity', 'compartments', 'rqa', 'alphabet']);
+
+function EmbeddingDialog({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+      <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-5 shadow-lg max-w-[420px]">
+        <div className="font-semibold text-[1em] mb-2">Embeddings Required</div>
+        <div className="text-[0.85em] text-[var(--color-text-muted)] mb-4">
+          This track requires paragraph embeddings, which have not been computed yet for this text.
+          Embeddings will be generated using the available embedding service (MLX or Ollama).
+          This typically takes 10–30 seconds.
+        </div>
+        <div className="flex gap-2 justify-end">
+          <button
+            onClick={onCancel}
+            className="px-3 py-1.5 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.85em]"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={onConfirm}
+            className="px-3 py-1.5 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.85em]"
+          >
+            Compute Embeddings
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function AnalysisPanel() {
   const projectId = useProjectStore((s) => getActiveProject(s).metadata?.id);
   const [tracks, setTracks] = useState<TrackStatus[]>([]);
   const [loading, setLoading] = useState(false);
   const [pollingTracks, setPollingTracks] = useState<Set<string>>(new Set());
   const [paramDialogTrack, setParamDialogTrack] = useState<string | null>(null);
+  const [embeddingDialog, setEmbeddingDialog] = useState<{ trackName: string; params?: Record<string, string | number> } | null>(null);
+  const [embeddingStatus, setEmbeddingStatus] = useState<'unknown' | 'available' | 'missing' | 'computing'>('unknown');
 
   const fetchStatus = useCallback(async () => {
     if (!projectId) return;
@@ -188,17 +221,32 @@ export default function AnalysisPanel() {
     } catch { /* swallow */ }
   }, [projectId]);
 
+  const checkEmbeddings = useCallback(async (): Promise<boolean> => {
+    if (!projectId) return false;
+    try {
+      const r = await fetch(`/api/projects/${projectId}/embeddings/status`);
+      const data = await r.json();
+      setEmbeddingStatus(data.available ? 'available' : 'missing');
+      return data.available;
+    } catch {
+      return false;
+    }
+  }, [projectId]);
+
   useEffect(() => {
     setLoading(true);
-    fetchStatus().finally(() => setLoading(false));
-  }, [fetchStatus]);
+    Promise.all([fetchStatus(), checkEmbeddings()]).finally(() => setLoading(false));
+  }, [fetchStatus, checkEmbeddings]);
 
-  // Poll running tracks
+  // Poll running tracks + embedding jobs
   useEffect(() => {
-    if (pollingTracks.size === 0) return;
-    const interval = setInterval(fetchStatus, 2000);
+    if (pollingTracks.size === 0 && embeddingStatus !== 'computing') return;
+    const interval = setInterval(() => {
+      fetchStatus();
+      if (embeddingStatus === 'computing') checkEmbeddings();
+    }, 2000);
     return () => clearInterval(interval);
-  }, [pollingTracks.size, fetchStatus]);
+  }, [pollingTracks.size, embeddingStatus, fetchStatus, checkEmbeddings]);
 
   const prevRunningRef = useRef<Set<string>>(new Set());
 
@@ -220,24 +268,108 @@ export default function AnalysisPanel() {
     });
   }, [tracks]);
 
+  const computeEmbeddingsThenRun = useCallback(async (trackName: string, params?: Record<string, string | number>) => {
+    if (!projectId) return;
+    setEmbeddingStatus('computing');
+    setEmbeddingDialog(null);
+
+    const resp = await fetch(`/api/projects/${projectId}/embeddings/compute`, { method: 'POST' });
+    const data = await resp.json();
+    if (data.status === 'error') {
+      setEmbeddingStatus('missing');
+      return;
+    }
+
+    // Poll until embeddings are ready
+    const poll = async (): Promise<void> => {
+      for (let i = 0; i < 120; i++) {
+        await new Promise((r) => setTimeout(r, 2000));
+        const available = await checkEmbeddings();
+        if (available) {
+          // Now run the actual track
+          const qs = params ? '?' + new URLSearchParams(
+            Object.entries(params).map(([k, v]) => [k, String(v)])
+          ).toString() : '';
+          await fetch(`/api/projects/${projectId}/analyze/${trackName}${qs}`, { method: 'POST' });
+          fetchStatus();
+          return;
+        }
+      }
+    };
+    poll();
+  }, [projectId, fetchStatus, checkEmbeddings]);
+
   const handleRun = useCallback(async (trackName: string, params?: Record<string, string | number>) => {
     if (!projectId) return;
+
+    // Check if this track needs embeddings
+    if (EMBEDDING_DEPENDENT_TRACKS.has(trackName) && embeddingStatus !== 'available') {
+      const available = await checkEmbeddings();
+      if (!available) {
+        setEmbeddingDialog({ trackName, params });
+        return;
+      }
+    }
+
     const qs = params ? '?' + new URLSearchParams(
       Object.entries(params).map(([k, v]) => [k, String(v)])
     ).toString() : '';
     await fetch(`/api/projects/${projectId}/analyze/${trackName}${qs}`, { method: 'POST' });
     setParamDialogTrack(null);
     fetchStatus();
-  }, [projectId, fetchStatus]);
+  }, [projectId, fetchStatus, embeddingStatus, checkEmbeddings]);
 
   const handleRunAll = useCallback(async () => {
     if (!projectId) return;
     const pending = tracks.filter((t) => t.status === 'pending');
+
+    // Check if any pending track needs embeddings
+    const needsEmbeddings = pending.some((t) => EMBEDDING_DEPENDENT_TRACKS.has(t.name));
+    if (needsEmbeddings && embeddingStatus !== 'available') {
+      const available = await checkEmbeddings();
+      if (!available) {
+        // Compute embeddings first, then run all
+        setEmbeddingStatus('computing');
+        const resp = await fetch(`/api/projects/${projectId}/embeddings/compute`, { method: 'POST' });
+        const data = await resp.json();
+        if (data.status === 'error') {
+          setEmbeddingStatus('missing');
+          // Run non-embedding tracks anyway
+          for (const t of pending.filter((t) => !EMBEDDING_DEPENDENT_TRACKS.has(t.name))) {
+            await fetch(`/api/projects/${projectId}/analyze/${t.name}`, { method: 'POST' });
+          }
+          fetchStatus();
+          return;
+        }
+        // Poll for embeddings, then run all pending
+        const poll = async (): Promise<void> => {
+          for (let i = 0; i < 120; i++) {
+            await new Promise((r) => setTimeout(r, 2000));
+            const ready = await checkEmbeddings();
+            if (ready) {
+              for (const t of pending) {
+                await fetch(`/api/projects/${projectId}/analyze/${t.name}`, { method: 'POST' });
+              }
+              fetchStatus();
+              return;
+            }
+          }
+        };
+        // Run non-embedding tracks immediately
+        for (const t of pending.filter((t) => !EMBEDDING_DEPENDENT_TRACKS.has(t.name))) {
+          await fetch(`/api/projects/${projectId}/analyze/${t.name}`, { method: 'POST' });
+        }
+        fetchStatus();
+        poll();
+        return;
+      }
+    }
+
     for (const t of pending) {
       await fetch(`/api/projects/${projectId}/analyze/${t.name}`, { method: 'POST' });
     }
     fetchStatus();
-  }, [projectId, tracks, fetchStatus]);
+  }, [projectId, tracks, fetchStatus, embeddingStatus, checkEmbeddings]);
 
   const [expandedTrack, setExpandedTrack] = useState<string | null>(null);
   const [trackStats, setTrackStats] = useState<Record<string, { count: number }>>({});
@@ -269,6 +401,13 @@ export default function AnalysisPanel() {
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden font-[var(--font-sans)] text-[0.85em]">
+      {embeddingDialog && (
+        <EmbeddingDialog
+          onConfirm={() => computeEmbeddingsThenRun(embeddingDialog.trackName, embeddingDialog.params)}
+          onCancel={() => setEmbeddingDialog(null)}
+        />
+      )}
+
       <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
         <div className="flex items-center gap-3">
           <span className="font-semibold">Track Analysis</span>
@@ -285,6 +424,13 @@ export default function AnalysisPanel() {
           </button>
         )}
       </div>
+
+      {embeddingStatus === 'computing' && (
+        <div className="mx-4 mt-2 mb-1 px-3 py-2 rounded border border-[var(--color-primary)] bg-[var(--color-primary-subtle,#eff6ff)] text-[0.85em] flex items-center gap-2">
+          <span className="animate-spin inline-block">⟳</span>
+          <span>Computing paragraph embeddings… Embedding-dependent tracks will run automatically when ready.</span>
+        </div>
+      )}
 
       <div className="flex-1 overflow-auto">
         {pendingCount > 0 && computedCount === 0 && runningCount === 0 && (

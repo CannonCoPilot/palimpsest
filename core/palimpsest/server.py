@@ -463,6 +463,101 @@ def create_app(workspace: Path) -> FastAPI:
             return JSONResponse(content={"status": "idle"})
         return JSONResponse(content=job)
 
+    @app.get("/api/projects/{project_id}/embeddings/status")
+    async def embeddings_status(project_id: str) -> JSONResponse:
+        """Check if paragraph embeddings exist for a project."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        embeddings_db = project_dir / "cache" / "embeddings.db"
+        if not embeddings_db.exists():
+            return JSONResponse(content={"available": False, "count": 0})
+
+        from palimpsest.vectorstore.sqlite_vec import SqliteVecStore
+
+        store = SqliteVecStore.open_existing(embeddings_db)
+        try:
+            count = len(store.stored_indices())
+        finally:
+            store.close()
+        return JSONResponse(content={"available": True, "count": count})
+
+    @app.post("/api/projects/{project_id}/embeddings/compute")
+    async def compute_embeddings(project_id: str) -> JSONResponse:
+        """Compute paragraph embeddings via MLX or Ollama."""
+        import asyncio
+
+        project_dir = _safe_project_dir(workspace, project_id)
+
+        job_key = f"{project_id}:_embeddings"
+        if _running_jobs.get(job_key, {}).get("status") == "running":
+            return JSONResponse(content={"status": "already_running"})
+
+        from palimpsest.project import Project
+        from palimpsest.services.embedding import embed_paragraphs_async
+        from palimpsest.vectorstore.sqlite_vec import SqliteVecStore
+
+        project = Project.load(project_dir)
+        embeddings_db = project_dir / "cache" / "embeddings.db"
+
+        # Probe for embedding dimension
+        import httpx as httpx_sync
+
+        dim: int | None = None
+        try:
+            resp = httpx_sync.post(
+                "http://localhost:8000/embed",
+                json={"text": "probe"},
+                timeout=3.0,
+            )
+            if resp.status_code == 200 and "embedding" in resp.json():
+                dim = len(resp.json()["embedding"])
+        except (httpx_sync.ConnectError, httpx_sync.TimeoutException):
+            pass
+
+        if dim is None:
+            try:
+                from palimpsest.services.manager import OllamaManager
+
+                mgr = OllamaManager()
+                client = mgr.embedding_client()
+                probe = client.embed_one("probe")
+                if probe is not None:
+                    dim = len(probe)
+            except Exception:
+                pass
+
+        if dim is None:
+            return JSONResponse(
+                status_code=503,
+                content={"status": "error", "error": "No embedding service available (need MLX on :8000 or Ollama on :11434)"},
+            )
+
+        _running_jobs[job_key] = {"status": "running", "track": "_embeddings"}
+
+        async def run() -> None:
+            try:
+                embeddings_db.parent.mkdir(parents=True, exist_ok=True)
+                store = SqliteVecStore(embeddings_db, dim=dim)
+                try:
+                    count, backend = await embed_paragraphs_async(
+                        project, store, batch_size=32, max_concurrent=4,
+                    )
+                finally:
+                    store.close()
+                _running_jobs[job_key] = {
+                    "status": "completed",
+                    "track": "_embeddings",
+                    "count": count,
+                    "backend": backend,
+                }
+            except Exception as exc:
+                _running_jobs[job_key] = {"status": "failed", "track": "_embeddings", "error": str(exc)}
+            finally:
+                import threading
+                threading.Timer(30.0, lambda: _running_jobs.pop(job_key, None)).start()
+
+        asyncio.create_task(run())
+        return JSONResponse(content={"status": "started", "dim": dim})
+
     @app.post("/api/import")
     async def import_epub(
         file: UploadFile,
