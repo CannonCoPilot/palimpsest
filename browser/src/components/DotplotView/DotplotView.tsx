@@ -201,6 +201,12 @@ export default function DotplotView(): JSX.Element | null {
   const [showDiagonal, setShowDiagonal] = useState(true);
   const [showControls, setShowControls] = useState(false);
   const [similarityMetric, setSimilarityMetric] = useState('cosine');
+  const [showAlignments, setShowAlignments] = useState(true);
+  const [alignments, setAlignments] = useState<Array<{
+    chunk_start_a: number; chunk_end_a: number;
+    chunk_start_b: number; chunk_end_b: number;
+    identity: number; length_chunks: number;
+  }>>([]);
 
   // Click-click selection: first click sets corner1, second click sets corner2 and auto-zooms
   const [corner1, setCorner1] = useState<{ i: number; j: number } | null>(null);
@@ -213,7 +219,7 @@ export default function DotplotView(): JSX.Element | null {
   const dragWindowStart = useRef({ mx: 0, my: 0, wx: 0, wy: 0 });
 
   const [availableMetrics, setAvailableMetrics] = useState<string[]>([]);
-  const [metricInfo, setMetricInfo] = useState<Record<string, { unit_type: string; n_units: number; dimensions: number[] }>>({});
+  const [metricInfo, setMetricInfo] = useState<Record<string, { unit_type: string; n_units: number; dimensions: number[]; chunk_size?: number }>>({});
 
   useEffect(() => {
     if (!textHicOpen || !projectId) return;
@@ -249,6 +255,12 @@ export default function DotplotView(): JSX.Element | null {
         setError('Self-similarity matrix not available. Run analysis with Ollama first.');
         setLoading(false);
       });
+
+    // Load alignment records if available
+    fetch(`/data/${projectId}/signals/self_similarity_alignments.json`)
+      .then((r) => r.ok ? r.json() : [])
+      .then((data) => setAlignments(Array.isArray(data) ? data : []))
+      .catch(() => setAlignments([]));
   }, [textHicOpen, projectId, similarityMetric]);
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
@@ -331,6 +343,48 @@ export default function DotplotView(): JSX.Element | null {
       ctx.fillText(`¶${i}`, -4, (i - vpY) * cellPx + cellPx / 2 + 3);
     }
 
+    // LASTZ alignment lines — draw in complementary color
+    if (showAlignments && alignments.length > 0) {
+      // Compute complementary color from palette
+      const palMid = colors[Math.floor(colors.length / 2)];
+      const compR = 255 - palMid[0], compG = 255 - palMid[1], compB = 255 - palMid[2];
+
+      for (const aln of alignments) {
+        const startA = aln.chunk_start_a;
+        const endA = aln.chunk_end_a;
+        const startB = aln.chunk_start_b;
+        const endB = aln.chunk_end_b;
+
+        // Check if alignment is in viewport
+        if (endA < vpX || startA > vpX + span || endB < vpY || startB > vpY + span) continue;
+        if (endB < vpX || startB > vpX + span || endA < vpY || startA > vpY + span) continue;
+
+        const alpha = Math.min(1.0, 0.4 + aln.identity * 0.6);
+        ctx.strokeStyle = `rgba(${compR},${compG},${compB},${alpha})`;
+        ctx.lineWidth = Math.max(2, cellPx * 0.6);
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+
+        // Draw line from (startB, startA) to (endB, endA) — both triangle halves
+        const x1 = (startB - vpX) * cellPx + cellPx / 2;
+        const y1 = (startA - vpY) * cellPx + cellPx / 2;
+        const x2 = (endB - vpX) * cellPx + cellPx / 2;
+        const y2 = (endA - vpY) * cellPx + cellPx / 2;
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+
+        // Mirror: (startA, startB) to (endA, endB)
+        const mx1 = (startA - vpX) * cellPx + cellPx / 2;
+        const my1 = (startB - vpY) * cellPx + cellPx / 2;
+        const mx2 = (endA - vpX) * cellPx + cellPx / 2;
+        const my2 = (endB - vpY) * cellPx + cellPx / 2;
+        ctx.moveTo(mx1, my1);
+        ctx.lineTo(mx2, my2);
+
+        ctx.stroke();
+      }
+    }
+
     // Corner1 marker
     if (corner1) {
       const cx = (corner1.j - vpX) * cellPx;
@@ -378,7 +432,7 @@ export default function DotplotView(): JSX.Element | null {
         ctx.fillRect((rx - vpX) * cellPx, (ry - vpY) * cellPx, rw * cellPx, rh * cellPx);
       }
     }
-  }, [signal, n, viewport, colors, threshold, showDiagonal, hoveredCell, corner1]);
+  }, [signal, n, viewport, colors, threshold, showDiagonal, hoveredCell, corner1, showAlignments, alignments]);
 
   useEffect(() => { renderHeatmap(); }, [renderHeatmap]);
 
@@ -589,7 +643,7 @@ export default function DotplotView(): JSX.Element | null {
           </button>
           <button onClick={() => exportImage('png')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">PNG</button>
           <button onClick={() => exportImage('svg')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">SVG</button>
-          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} ${metricInfo[similarityMetric]?.unit_type === 'sentence' ? 'sentences' : 'paragraphs'} · ${similarityMetric}` : ''}{loading ? ' · Loading…' : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
+          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} chunks · ${similarityMetric}${metricInfo[similarityMetric]?.chunk_size ? ` (${metricInfo[similarityMetric].chunk_size}w)` : ''}` : ''}{alignments.length > 0 ? ` · ${alignments.length} alignments` : ''}{loading ? ' · Loading…' : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
         </div>
       </div>
 
@@ -622,6 +676,10 @@ export default function DotplotView(): JSX.Element | null {
               <option key={m} value={m}>{m === 'word_overlap' ? 'Word overlap' : m === 'edit_distance' ? 'Edit distance' : m.charAt(0).toUpperCase() + m.slice(1)}</option>
             ))}
           </select></label>
+          {alignments.length > 0 && (<>
+            <span className="text-[var(--color-text-muted)]">|</span>
+            <label className="flex items-center gap-1 cursor-pointer"><input type="checkbox" checked={showAlignments} onChange={(e) => setShowAlignments(e.target.checked)} className="accent-[var(--color-primary)]" /> Alignments ({alignments.length})</label>
+          </>)}
         </div>
       )}
 

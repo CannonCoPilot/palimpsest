@@ -391,6 +391,7 @@ def create_app(workspace: Path) -> FastAPI:
         method: str | None = None,
         metric: str | None = None,
         granularity: str | None = None,
+        chunk_size: int | None = None,
     ) -> JSONResponse:
         """Run a single track extractor with optional parameters."""
         import asyncio
@@ -424,6 +425,8 @@ def create_app(workspace: Path) -> FastAPI:
             params["metric"] = metric
         if granularity is not None:
             params["granularity"] = granularity
+        if chunk_size is not None:
+            params["chunk_size"] = max(5, min(25, chunk_size))
         if params and hasattr(extractor, "set_params"):
             extractor.set_params(params)
         if force:
