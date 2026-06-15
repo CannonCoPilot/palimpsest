@@ -9,8 +9,8 @@ import { useComparisonStore } from '../../stores/comparisonStore';
 
 const CHANGE_COLORS: Record<string, { bg: string; border: string; label: string }> = {
   replace: { bg: '#fef3c7', border: '#f59e0b', label: 'Changed' },
-  insert: { bg: '#d1fae5', border: '#10b981', label: 'Added' },
-  delete: { bg: '#fee2e2', border: '#ef4444', label: 'Removed' },
+  insert: { bg: '#dbeafe', border: '#3b82f6', label: 'Added' },
+  delete: { bg: '#ffedd5', border: '#f97316', label: 'Removed' },
 };
 
 export default function DiffView() {
@@ -79,7 +79,7 @@ export default function DiffView() {
               {diffSummary.insertions} added
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#fee2e2', border: '1px solid #ef4444' }} />
+              <span className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#ffedd5', border: '1px solid #f97316' }} />
               {diffSummary.deletions} removed
             </span>
             <span className="flex items-center gap-1">

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState } from 'react';
+import { useEffect, useRef, useCallback, useState, useMemo, memo } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
@@ -151,7 +151,7 @@ interface TrackLaneProps {
   onAnnotationClick: (ann: W3CAnnotation, trackName: string) => void;
 }
 
-function TrackLane({ name, annotations, color, viewStart, viewEnd, width, displayMode, textHighlightActive, selectedAnnRange, onAnnotationClick }: TrackLaneProps) {
+const TrackLane = memo(function TrackLane({ name, annotations, color, viewStart, viewEnd, width, displayMode, textHighlightActive, selectedAnnRange, onAnnotationClick }: TrackLaneProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const range = viewEnd - viewStart;
@@ -254,7 +254,7 @@ function TrackLane({ name, annotations, color, viewStart, viewEnd, width, displa
       </svg>
     </div>
   );
-}
+});
 
 export default function BrowserView() {
   const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
@@ -334,11 +334,14 @@ export default function BrowserView() {
     useViewStore.getState().selectAnnotation(ann);
   }, []);
 
-  const visibleTracks = trackOrder.filter((name) => {
-    const state = trackStates[name];
-    const mode = laneDisplayModes[name] ?? 'ribbon';
-    return state?.visible && name !== 'segments' && mode !== 'hidden';
-  });
+  const visibleTracks = useMemo(
+    () => trackOrder.filter((name) => {
+      const state = trackStates[name];
+      const mode = laneDisplayModes[name] ?? 'ribbon';
+      return state?.visible && name !== 'segments' && mode !== 'hidden';
+    }),
+    [trackOrder, trackStates, laneDisplayModes],
+  );
 
   // Build text highlight annotations from enabled tracks
   const textHighlightAnns: Array<{ start: number; end: number; color: string }> = [];

@@ -22,7 +22,7 @@ const PALETTES: Record<string, number[][]> = {
 
 type PaletteKey = keyof typeof PALETTES;
 
-function interpolateColor(value: number, palette: number[][]): [number, number, number] {
+export function interpolateColor(value: number, palette: number[][]): [number, number, number] {
   const clamped = Math.max(0, Math.min(1, value));
   const idx = clamped * (palette.length - 1);
   const lo = Math.floor(idx);
@@ -46,8 +46,7 @@ interface FloatingWindow {
   title: string;
   text: string;
   paraRange: [number, number];
-  x: number;
-  y: number;
+  similarity: number;
 }
 
 function VirtualScrollbar({ orientation, viewportOffset, viewportSpan, total, onScroll }: {
@@ -122,20 +121,26 @@ function VirtualScrollbar({ orientation, viewportOffset, viewportSpan, total, on
   );
 }
 
-function DraggableWindow({ win, onClose, onDragStart }: { win: FloatingWindow; onClose: () => void; onDragStart: (id: string, e: React.MouseEvent) => void }) {
+function FixedTextPanel({ win, onClose, palette, colors }: {
+  win: FloatingWindow;
+  onClose: () => void;
+  palette: PaletteKey;
+  colors: number[][];
+}) {
+  const [r, g, b] = interpolateColor(win.similarity, colors);
+  const textColor = `rgb(${r},${g},${b})`;
+  const borderColor = textColor;
+
   return (
     <div
-      className="absolute bg-[var(--color-bg)] border border-[var(--color-border)] rounded shadow-lg z-[var(--z-popover)] flex flex-col"
-      style={{ left: win.x, top: win.y, width: 350, maxHeight: 300 }}
+      className="bg-[var(--color-bg)] border-l-4 rounded shadow-sm flex flex-col mb-2"
+      style={{ borderLeftColor: borderColor, maxHeight: 260 }}
     >
-      <div
-        className="flex items-center justify-between px-2 py-1 bg-[var(--color-bg-subtle)] border-b border-[var(--color-border)] cursor-move text-[0.75em] font-[var(--font-sans)]"
-        onMouseDown={(e) => onDragStart(win.id, e)}
-      >
-        <span className="font-semibold">{win.title}</span>
-        <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] cursor-pointer">✕</button>
+      <div className="flex items-center justify-between px-2 py-1 text-[0.75em] font-[var(--font-sans)]" style={{ backgroundColor: `rgba(${r},${g},${b},0.08)` }}>
+        <span className="font-semibold" style={{ color: textColor }}>{win.title}</span>
+        <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] cursor-pointer ml-2">✕</button>
       </div>
-      <div className="flex-1 overflow-auto p-2 text-[0.8em] font-[var(--font-serif)] leading-relaxed whitespace-pre-wrap">
+      <div className="flex-1 overflow-auto p-2 text-[0.8em] font-[var(--font-serif)] leading-relaxed whitespace-pre-wrap" style={{ color: textColor }}>
         {win.text}
       </div>
     </div>
@@ -162,7 +167,7 @@ function AxisAnnotationStrip({ orientation, annotations, color, paragraphs, view
     for (let i = Math.max(0, sp); i < (ep < 0 ? n : ep); i++) density[i]++;
   }
   const maxD = Math.max(1, ...Array.from(density));
-  const stripH = 6;
+  const stripH = 3;
   const cellPx = size / viewport.span;
   const vpStart = orientation === 'horizontal' ? viewport.x : viewport.y;
   const bars: JSX.Element[] = [];
@@ -188,7 +193,9 @@ export default function DotplotView(): JSX.Element | null {
   const trackStates = useTrackStore((s) => s.tracks);
   const trackOrder = useTrackStore((s) => s.trackOrder);
 
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  // Double-buffer: static matrix canvas + dynamic overlay canvas
+  const matrixCanvasRef = useRef<HTMLCanvasElement>(null);
+  const overlayCanvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [signal, setSignal] = useState<LoadedSignal | null>(null);
@@ -212,19 +219,22 @@ export default function DotplotView(): JSX.Element | null {
     identity: number; length_chunks: number;
   }>>([]);
 
-  // Click-click selection: first click sets corner1, second click sets corner2 and auto-zooms
   const [corner1, setCorner1] = useState<{ i: number; j: number } | null>(null);
   const [floatingWindows, setFloatingWindows] = useState<FloatingWindow[]>([]);
+  const [showTrackPanel, setShowTrackPanel] = useState(false);
+  const [hiddenTracks, setHiddenTracks] = useState<Set<string>>(new Set());
+  const [showChapterGrid, setShowChapterGrid] = useState(false);
+  const [showAlignmentsList, setShowAlignmentsList] = useState(false);
 
   const panning = useRef(false);
   const panStart = useRef({ x: 0, y: 0 });
   const vpAtPanStart = useRef({ x: 0, y: 0, span: 0 });
-  const draggingWindowId = useRef<string | null>(null);
-  const dragWindowStart = useRef({ mx: 0, my: 0, wx: 0, wy: 0 });
 
   const [availableMetrics, setAvailableMetrics] = useState<string[]>([]);
+  const [availableChunkSizes, setAvailableChunkSizes] = useState<number[]>([]);
   const [metricInfo, setMetricInfo] = useState<Record<string, { unit_type: string; n_units: number; dimensions: number[]; chunk_size?: number }>>({});
 
+  // Load self-similarity data — responds to metric changes and chunk size changes
   useEffect(() => {
     if (!textHicOpen || !projectId) return;
     setLoading(true);
@@ -232,44 +242,66 @@ export default function DotplotView(): JSX.Element | null {
 
     fetch(`/data/${projectId}/signals/self_similarity.json`)
       .then((r) => { if (!r.ok) throw new Error('not found'); return r.json(); })
-      .then((manifest) => {
+      .then(async (manifest) => {
         const metrics: string[] = manifest.metadata?.available_metrics ?? [];
         const info = manifest.metadata?.metric_info ?? {};
         const manifestChunkSize: number = manifest.metadata?.chunk_size ?? 17;
+        const chunkSizes: number[] = manifest.metadata?.available_chunk_sizes ?? [manifestChunkSize];
         setAvailableMetrics(metrics);
         setMetricInfo(info);
+        setAvailableChunkSizes(chunkSizes);
         setLoadedChunkSize(manifestChunkSize);
-        setChunkSize(manifestChunkSize);
+
+        // Determine which chunk size to load
+        const targetCS = chunkSizes.includes(chunkSize) ? chunkSize : manifestChunkSize;
+        if (targetCS !== chunkSize) setChunkSize(targetCS);
         setRecomputing(false);
 
-        const dataFile = metrics.length > 0
-          ? `self_similarity_${similarityMetric}.bin`
-          : manifest.data_file;
+        // Load from per-chunk-size endpoint if available, else fallback to flat files
+        let dataUrl: string;
+        let alnUrl: string;
+        if (chunkSizes.includes(targetCS)) {
+          dataUrl = `/api/projects/${projectId}/self_similarity/cs/${targetCS}/${similarityMetric}`;
+          alnUrl = `/api/projects/${projectId}/self_similarity/cs/${targetCS}/alignments`;
+        } else {
+          dataUrl = `/data/${projectId}/signals/self_similarity_${similarityMetric}.bin`;
+          alnUrl = `/data/${projectId}/signals/self_similarity_alignments.json`;
+        }
 
-        // Use per-metric dimensions if available
+        // Try per-CS endpoint first, fallback to flat
+        let buf: ArrayBuffer;
+        try {
+          const r = await fetch(dataUrl);
+          if (!r.ok) throw new Error('not found at cs endpoint');
+          buf = await r.arrayBuffer();
+        } catch {
+          const r2 = await fetch(`/data/${projectId}/signals/self_similarity_${similarityMetric}.bin`);
+          if (!r2.ok) throw new Error('metric not available');
+          buf = await r2.arrayBuffer();
+        }
+
         const metricDims = info[similarityMetric]?.dimensions ?? manifest.dimensions;
+        // Compute actual dimensions from buffer size
+        const floatCount = buf.byteLength / 4;
+        const actualDim = Math.round(Math.sqrt(floatCount));
+        const dims = floatCount === metricDims[0] * metricDims[1] ? metricDims : [actualDim, actualDim];
 
-        return fetch(`/data/${projectId}/signals/${dataFile}`)
-          .then((r) => { if (!r.ok) throw new Error('metric not available'); return r.arrayBuffer(); })
-          .then((buf) => {
-            const updatedManifest = { ...manifest, data_file: dataFile, dimensions: metricDims };
-            setSignal({ manifest: updatedManifest, data: new Float32Array(buf) });
-            const dim = metricDims[0];
-            setViewport({ x: 0, y: 0, span: dim });
-            setLoading(false);
-          });
+        const updatedManifest = { ...manifest, data_file: `self_similarity_${similarityMetric}.bin`, dimensions: dims };
+        setSignal({ manifest: updatedManifest, data: new Float32Array(buf) });
+        setViewport({ x: 0, y: 0, span: dims[0] });
+        setLoading(false);
+
+        // Load alignments
+        fetch(alnUrl)
+          .then((r) => r.ok ? r.json() : [])
+          .then((data) => setAlignments(Array.isArray(data) ? data : []))
+          .catch(() => setAlignments([]));
       })
       .catch(() => {
-        setError('Self-similarity matrix not available. Run analysis with Ollama first.');
+        setError('Self-similarity matrix not available. Run analysis first.');
         setLoading(false);
       });
-
-    // Load alignment records if available
-    fetch(`/data/${projectId}/signals/self_similarity_alignments.json`)
-      .then((r) => r.ok ? r.json() : [])
-      .then((data) => setAlignments(Array.isArray(data) ? data : []))
-      .catch(() => setAlignments([]));
-  }, [textHicOpen, projectId, similarityMetric, reloadKey]);
+  }, [textHicOpen, projectId, similarityMetric, chunkSize, reloadKey]);
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
   const colors = PALETTES[palette];
@@ -283,13 +315,15 @@ export default function DotplotView(): JSX.Element | null {
     return { x, y, span: s };
   }, [n]);
 
-  const renderHeatmap = useCallback(() => {
+  // Render static matrix (only redraws on data/viewport/palette/threshold change)
+  const renderMatrix = useCallback(() => {
     if (!signal || n === 0) return;
-    const canvas = canvasRef.current;
+    const canvas = matrixCanvasRef.current;
     const container = containerRef.current;
     if (!canvas || !container) return;
 
-    const size = Math.max(1, Math.min(container.clientWidth - 60, container.clientHeight - 120));
+    const rightPanelWidth = floatingWindows.length > 0 ? 360 : 0;
+    const size = Math.max(1, Math.min(container.clientWidth - rightPanelWidth - 8, container.clientHeight - 120));
     canvas.width = size;
     canvas.height = size;
     const ctx = canvas.getContext('2d');
@@ -334,7 +368,7 @@ export default function DotplotView(): JSX.Element | null {
       ctx.putImageData(imageData, 0, 0);
     }
 
-    // Axis labels
+    // Axis labels — chunk indices, not paragraph indices
     const labelInterval = span < 20 ? 1 : span < 50 ? 5 : span < 100 ? 10 : span < 300 ? 50 : 100;
     ctx.font = '9px monospace';
     ctx.fillStyle = '#999';
@@ -343,17 +377,54 @@ export default function DotplotView(): JSX.Element | null {
       ctx.translate((j - vpX) * cellPx + cellPx / 2, size + 2);
       ctx.rotate(-Math.PI / 4);
       ctx.textAlign = 'right';
-      ctx.fillText(`¶${j}`, 0, 0);
+      ctx.fillText(`${j}`, 0, 0);
       ctx.restore();
     }
     for (let i = Math.ceil(vpY / labelInterval) * labelInterval; i <= vpY + span && i < n; i += labelInterval) {
       ctx.textAlign = 'right';
-      ctx.fillText(`¶${i}`, -4, (i - vpY) * cellPx + cellPx / 2 + 3);
+      ctx.fillText(`${i}`, -4, (i - vpY) * cellPx + cellPx / 2 + 3);
     }
 
-    // LASTZ alignment lines — draw in complementary color
+    // Chapter boundary gridlines
+    if (showChapterGrid && paragraphs.length > 0) {
+      const chapterPattern = /^(chapter\s|CHAPTER\s|Part\s|PART\s|[IVXLCDM]{1,5}[\.\s]|[A-Z]{2,}[\s:])/;
+      const offsets = signal?.manifest?.segment_offsets;
+      const chapterChunks = new Set<number>();
+      paragraphs.forEach((p, paraIdx) => {
+        if (chapterPattern.test(p.text.trimStart())) {
+          // find which chunk this paragraph index maps to via segment_offsets
+          if (offsets) {
+            for (let ci = 0; ci < offsets.length; ci++) {
+              const [s, e] = offsets[ci];
+              if (p.start >= s && p.start < e) { chapterChunks.add(ci); break; }
+            }
+          } else {
+            // no offsets: approximate by paragraph index ratio
+            const ci = Math.round((paraIdx / paragraphs.length) * n);
+            chapterChunks.add(ci);
+          }
+        }
+      });
+      ctx.save();
+      ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 3]);
+      for (const ci of chapterChunks) {
+        if (ci < vpX || ci > vpX + span) continue;
+        const px2 = (ci - vpX) * cellPx;
+        ctx.beginPath();
+        ctx.moveTo(px2, 0);
+        ctx.lineTo(px2, size);
+        ctx.moveTo(0, px2);
+        ctx.lineTo(size, px2);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+      ctx.restore();
+    }
+
+    // LASTZ alignment lines — complementary color, FIXED axis mapping
     if (showAlignments && alignments.length > 0) {
-      // Compute complementary color from palette
       const palMid = colors[Math.floor(colors.length / 2)];
       const compR = 255 - palMid[0], compG = 255 - palMid[1], compB = 255 - palMid[2];
 
@@ -363,9 +434,8 @@ export default function DotplotView(): JSX.Element | null {
         const startB = aln.chunk_start_b;
         const endB = aln.chunk_end_b;
 
-        // Check if alignment is in viewport
-        if (endA < vpX || startA > vpX + span || endB < vpY || startB > vpY + span) continue;
-        if (endB < vpX || startB > vpX + span || endA < vpY || startA > vpY + span) continue;
+        // FIXED: A maps to Y-axis (rows), B maps to X-axis (columns)
+        if (endA < vpY || startA > vpY + span || endB < vpX || startB > vpX + span) continue;
 
         const alpha = Math.min(1.0, 0.4 + aln.identity * 0.6);
         ctx.strokeStyle = `rgba(${compR},${compG},${compB},${alpha})`;
@@ -373,7 +443,7 @@ export default function DotplotView(): JSX.Element | null {
         ctx.lineCap = 'round';
         ctx.beginPath();
 
-        // Draw line from (startB, startA) to (endB, endA) — both triangle halves
+        // Direct line: (B→X, A→Y)
         const x1 = (startB - vpX) * cellPx + cellPx / 2;
         const y1 = (startA - vpY) * cellPx + cellPx / 2;
         const x2 = (endB - vpX) * cellPx + cellPx / 2;
@@ -381,7 +451,11 @@ export default function DotplotView(): JSX.Element | null {
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
 
-        // Mirror: (startA, startB) to (endA, endB)
+        // Mirror: (A→X, B→Y)
+        if (endB < vpY || startB > vpY + span || endA < vpX || startA > vpX + span) {
+          ctx.stroke();
+          continue;
+        }
         const mx1 = (startA - vpX) * cellPx + cellPx / 2;
         const my1 = (startB - vpY) * cellPx + cellPx / 2;
         const mx2 = (endA - vpX) * cellPx + cellPx / 2;
@@ -392,6 +466,23 @@ export default function DotplotView(): JSX.Element | null {
         ctx.stroke();
       }
     }
+  }, [signal, n, viewport, colors, threshold, showDiagonal, showAlignments, alignments, showChapterGrid, paragraphs, floatingWindows]);
+
+  // Render dynamic overlay (hover crosshair, selection) — lightweight, no matrix repaint
+  const renderOverlay = useCallback(() => {
+    const canvas = overlayCanvasRef.current;
+    const matrixCanvas = matrixCanvasRef.current;
+    if (!canvas || !matrixCanvas || !signal || n === 0) return;
+
+    canvas.width = matrixCanvas.width;
+    canvas.height = matrixCanvas.height;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const size = canvas.width;
+    const cellPx = size / viewport.span;
+    const { x: vpX, y: vpY } = viewport;
 
     // Corner1 marker
     if (corner1) {
@@ -402,7 +493,6 @@ export default function DotplotView(): JSX.Element | null {
       ctx.beginPath();
       ctx.arc(cx + cellPx / 2, cy + cellPx / 2, Math.max(4, cellPx / 2), 0, Math.PI * 2);
       ctx.stroke();
-      // Crosshair lines from corner1
       ctx.strokeStyle = 'rgba(255, 100, 0, 0.3)';
       ctx.lineWidth = 1;
       ctx.setLineDash([4, 4]);
@@ -427,7 +517,6 @@ export default function DotplotView(): JSX.Element | null {
       ctx.moveTo(hx + cellPx / 2, 0); ctx.lineTo(hx + cellPx / 2, size);
       ctx.stroke();
 
-      // If corner1 set, draw preview rectangle
       if (corner1) {
         const rx = Math.min(corner1.j, hoveredCell.j);
         const ry = Math.min(corner1.i, hoveredCell.i);
@@ -440,13 +529,31 @@ export default function DotplotView(): JSX.Element | null {
         ctx.fillRect((rx - vpX) * cellPx, (ry - vpY) * cellPx, rw * cellPx, rh * cellPx);
       }
     }
-  }, [signal, n, viewport, colors, threshold, showDiagonal, hoveredCell, corner1, showAlignments, alignments]);
+  }, [signal, n, viewport, hoveredCell, corner1]);
 
-  useEffect(() => { renderHeatmap(); }, [renderHeatmap]);
+  // Matrix redraws on data/viewport/palette changes
+  useEffect(() => { renderMatrix(); }, [renderMatrix]);
+  // Overlay redraws on hover/selection changes (lightweight)
+  useEffect(() => { renderOverlay(); }, [renderOverlay]);
+
+  // The render effects above only fire on data/viewport/palette changes, so a
+  // container resize (window resize, side-panel toggle) would otherwise leave
+  // the canvas at its stale dimensions and truncate the plot. Observe the
+  // container and redraw via a ref-to-latest so the observer is created once
+  // rather than churning on every hover/viewport change.
+  const resizeRenderRef = useRef<() => void>(() => {});
+  resizeRenderRef.current = () => { renderMatrix(); renderOverlay(); };
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const observer = new ResizeObserver(() => resizeRenderRef.current());
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   const getCellFromEvent = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
     if (!signal || n === 0) return null;
-    const canvas = canvasRef.current;
+    const canvas = overlayCanvasRef.current;
     if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
     const cellPx = rect.width / viewport.span;
@@ -457,18 +564,8 @@ export default function DotplotView(): JSX.Element | null {
   }, [signal, n, viewport]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
-    // Window dragging
-    if (draggingWindowId.current) {
-      const dx = e.clientX - dragWindowStart.current.mx;
-      const dy = e.clientY - dragWindowStart.current.my;
-      setFloatingWindows((ws) => ws.map((w) =>
-        w.id === draggingWindowId.current ? { ...w, x: dragWindowStart.current.wx + dx, y: dragWindowStart.current.wy + dy } : w
-      ));
-      return;
-    }
-    // Panning
     if (panning.current) {
-      const canvas = canvasRef.current;
+      const canvas = overlayCanvasRef.current;
       if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
       const span = vpAtPanStart.current.span;
@@ -496,15 +593,10 @@ export default function DotplotView(): JSX.Element | null {
   }, [viewport]);
 
   const handleMouseUp = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (draggingWindowId.current) {
-      draggingWindowId.current = null;
-      return;
-    }
     if (panning.current) {
       panning.current = false;
       return;
     }
-    // Click-click selection
     const cell = getCellFromEvent(e);
     if (!cell) return;
 
@@ -521,19 +613,32 @@ export default function DotplotView(): JSX.Element | null {
         return;
       }
 
-      // Auto-zoom to selection
       const span = Math.max(rowMax - rowMin + 1, colMax - colMin + 1);
       setViewport(clampViewport({ x: colMin, y: rowMin, span: Math.max(2, span) }));
 
-      // Open floating text comparison windows
-      const rowText = paragraphs.slice(rowMin, rowMax + 1).map((p) => p.text).join('\n').slice(0, 3000);
-      const colText = paragraphs.slice(colMin, colMax + 1).map((p) => p.text).join('\n').slice(0, 3000);
-
       const avgSim = signal ? computeAvgSimilarity(signal.data, n, rowMin, rowMax, colMin, colMax) : 0;
 
+      // Use segment_offsets from manifest for text extraction
+      const offsets = signal?.manifest?.segment_offsets;
+      let rowText = '';
+      let colText = '';
+      if (offsets && paragraphs.length > 0) {
+        const fullText = paragraphs.map((p) => p.text).join('\n');
+        const rowStart = offsets[rowMin]?.[0] ?? 0;
+        const rowEnd = offsets[Math.min(rowMax, offsets.length - 1)]?.[1] ?? 0;
+        const colStart = offsets[colMin]?.[0] ?? 0;
+        const colEnd = offsets[Math.min(colMax, offsets.length - 1)]?.[1] ?? 0;
+        rowText = fullText.slice(rowStart, Math.min(rowEnd, rowStart + 3000));
+        colText = fullText.slice(colStart, Math.min(colEnd, colStart + 3000));
+      }
+      if (!rowText) {
+        rowText = paragraphs.slice(rowMin, Math.min(rowMax + 1, paragraphs.length)).map((p) => p.text).join('\n').slice(0, 3000);
+        colText = paragraphs.slice(colMin, Math.min(colMax + 1, paragraphs.length)).map((p) => p.text).join('\n').slice(0, 3000);
+      }
+
       setFloatingWindows([
-        { id: 'row', title: `Y-axis ¶${rowMin}–¶${rowMax} (avg sim: ${avgSim.toFixed(3)})`, text: rowText, paraRange: [rowMin, rowMax], x: 20, y: 40 },
-        { id: 'col', title: `X-axis ¶${colMin}–¶${colMax}`, text: colText, paraRange: [colMin, colMax], x: 390, y: 40 },
+        { id: 'row', title: `Y [${rowMin}–${rowMax}] sim=${avgSim.toFixed(3)}`, text: rowText, paraRange: [rowMin, rowMax], similarity: avgSim },
+        { id: 'col', title: `X [${colMin}–${colMax}]`, text: colText, paraRange: [colMin, colMax], similarity: avgSim },
       ]);
       setCorner1(null);
     }
@@ -541,7 +646,7 @@ export default function DotplotView(): JSX.Element | null {
 
   // Wheel zoom
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas = overlayCanvasRef.current;
     if (!canvas || n === 0) return;
     const handler = (e: WheelEvent) => {
       e.preventDefault();
@@ -563,7 +668,7 @@ export default function DotplotView(): JSX.Element | null {
   }, [n, clampViewport]);
 
   const exportImage = useCallback((format: 'png' | 'svg') => {
-    const canvas = canvasRef.current;
+    const canvas = matrixCanvasRef.current;
     if (!canvas) return;
     const link = document.createElement('a');
     if (format === 'svg') {
@@ -595,13 +700,6 @@ export default function DotplotView(): JSX.Element | null {
     });
   }, [clampViewport]);
 
-  const handleWindowDragStart = useCallback((id: string, e: React.MouseEvent) => {
-    draggingWindowId.current = id;
-    const win = floatingWindows.find((w) => w.id === id);
-    if (win) dragWindowStart.current = { mx: e.clientX, my: e.clientY, wx: win.x, wy: win.y };
-    e.preventDefault();
-  }, [floatingWindows]);
-
   const activeTab = useViewStore((s) => s.activeTab);
   const isTabMode = activeTab === 'texthic';
   if (!textHicOpen && !isTabMode) return null;
@@ -609,27 +707,31 @@ export default function DotplotView(): JSX.Element | null {
   const hoverValue = hoveredCell && signal ? signal.data[hoveredCell.i * n + hoveredCell.j] : null;
   const zoomPct = n > 0 ? Math.round((viewport.span / n) * 100) : 100;
 
-  const visibleTrackNames = trackOrder.filter((name) => {
+  const allVisibleTrackNames = trackOrder.filter((name) => {
     const state = trackStates[name];
     return state?.visible && name !== 'segments' && name !== 'sections';
-  }).slice(0, 5);
+  });
 
-  const canvasSize = containerRef.current ? Math.max(1, Math.min(containerRef.current.clientWidth - 60, containerRef.current.clientHeight - 120)) : 400;
+  const visibleTrackNames = allVisibleTrackNames.filter((name) => !hiddenTracks.has(name));
+
+  const rightPanelWidth = floatingWindows.length > 0 ? 360 : 0;
+  const canvasSize = containerRef.current ? Math.max(1, Math.min(containerRef.current.clientWidth - rightPanelWidth - 8, containerRef.current.clientHeight - 120)) : 400;
+
+  const chunkSizeHasData = availableChunkSizes.includes(chunkSize);
+  const needsRecompute = !chunkSizeHasData;
 
   return (
     <div
       ref={containerRef}
       className="p-2 flex flex-col bg-[var(--color-bg-subtle)] relative"
       style={{ height: isTabMode ? '100%' : '35vh', flex: isTabMode ? 1 : undefined }}
-      onMouseMove={(e) => { if (draggingWindowId.current) handleMouseMove(e as unknown as React.MouseEvent<HTMLCanvasElement>); }}
-      onMouseUp={() => { if (draggingWindowId.current) draggingWindowId.current = null; }}
     >
       {/* Toolbar */}
       <div className="flex justify-between items-center mb-[4px] text-[0.85em] gap-2 flex-wrap shrink-0">
         <span className="font-bold">
           Self-Similarity Matrix
-          {hoveredCell && hoverValue != null ? ` — [¶${hoveredCell.i}, ¶${hoveredCell.j}]: ${hoverValue.toFixed(3)}` : ''}
-          {corner1 ? ` — Click second corner (first: ¶${corner1.i},¶${corner1.j})` : ''}
+          {hoveredCell && hoverValue != null ? ` — [${hoveredCell.i}, ${hoveredCell.j}]: ${hoverValue.toFixed(3)}` : ''}
+          {corner1 ? ` — Click second corner (first: ${corner1.i},${corner1.j})` : ''}
         </span>
         <div className="flex items-center gap-2 text-[var(--color-text-muted)]">
           <select value={palette} onChange={(e) => setPalette(e.target.value as PaletteKey)}
@@ -641,7 +743,7 @@ export default function DotplotView(): JSX.Element | null {
           </select>
           <button onClick={() => zoomBy(0.5)} title="Zoom in" className="text-[0.8em] px-1 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)] leading-none font-bold">+</button>
           <span className="text-[0.85em] min-w-[3em] text-center">{zoomPct}%</span>
-          <button onClick={() => zoomBy(2)} title="Zoom out" className="text-[0.8em] px-1 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)] leading-none font-bold">−</button>
+          <button onClick={() => zoomBy(2)} title="Zoom out" className="text-[0.8em] px-1 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)] leading-none font-bold">-</button>
           <button onClick={zoomToFull} title="Fit full matrix" className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">Fit</button>
           {corner1 && (
             <button onClick={() => setCorner1(null)} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[#ef4444] text-[#ef4444] cursor-pointer hover:bg-[#fef2f2]">Cancel selection</button>
@@ -649,9 +751,14 @@ export default function DotplotView(): JSX.Element | null {
           <button onClick={() => setShowControls(!showControls)} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">
             {showControls ? 'Hide filters' : 'Filters'}
           </button>
+          {allVisibleTrackNames.length > 0 && (
+            <button onClick={() => setShowTrackPanel(!showTrackPanel)} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">
+              {showTrackPanel ? 'Hide tracks' : 'Tracks'}
+            </button>
+          )}
           <button onClick={() => exportImage('png')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">PNG</button>
           <button onClick={() => exportImage('svg')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">SVG</button>
-          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} chunks · ${similarityMetric}${metricInfo[similarityMetric]?.chunk_size ? ` (${metricInfo[similarityMetric].chunk_size}w)` : ''}` : ''}{alignments.length > 0 ? ` · ${alignments.length} alignments` : ''}{loading ? ' · Loading…' : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
+          <span className="text-[0.8em]">{n > 0 ? `${n}×${n} chunks (${chunkSize}w) · ${similarityMetric}` : ''}{alignments.length > 0 ? ` · ${alignments.length} alns` : ''}{loading ? ' · Loading…' : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
         </div>
       </div>
 
@@ -667,13 +774,16 @@ export default function DotplotView(): JSX.Element | null {
           </div>
           <span>1</span>
           <span className="ml-1">similarity</span>
+          {availableChunkSizes.length > 1 && (
+            <span className="ml-2">Cached: {availableChunkSizes.map(cs => `${cs}w`).join(', ')}</span>
+          )}
           <span className="ml-2 text-[var(--color-text-muted)]">Click two points to select region</span>
         </div>
       )}
 
       {/* Filters */}
       {showControls && (
-        <div className="flex items-center gap-3 mb-1 text-[0.75em] font-[var(--font-sans)] py-1 px-2 border border-[var(--color-border-subtle)] rounded bg-[var(--color-bg)] shrink-0">
+        <div className="flex items-center gap-3 mb-1 text-[0.75em] font-[var(--font-sans)] py-1 px-2 border border-[var(--color-border-subtle)] rounded bg-[var(--color-bg)] shrink-0 flex-wrap">
           <label className="flex items-center gap-1">Threshold: <input type="range" min="0" max="100" value={Math.round(threshold * 100)} onChange={(e) => setThreshold(parseInt(e.target.value, 10) / 100)} className="w-[80px]" /> <span className="w-8 text-right">{(threshold * 100).toFixed(0)}%</span></label>
           <label className="flex items-center gap-1 cursor-pointer"><input type="checkbox" checked={showDiagonal} onChange={(e) => setShowDiagonal(e.target.checked)} className="accent-[var(--color-primary)]" /> Diagonal</label>
           <span className="text-[var(--color-text-muted)]">|</span>
@@ -689,12 +799,17 @@ export default function DotplotView(): JSX.Element | null {
             <label className="flex items-center gap-1 cursor-pointer"><input type="checkbox" checked={showAlignments} onChange={(e) => setShowAlignments(e.target.checked)} className="accent-[var(--color-primary)]" /> Alignments ({alignments.length})</label>
           </>)}
           <span className="text-[var(--color-text-muted)]">|</span>
+          <label className="flex items-center gap-1 cursor-pointer"><input type="checkbox" checked={showChapterGrid} onChange={(e) => setShowChapterGrid(e.target.checked)} className="accent-[var(--color-primary)]" /> Chapters</label>
+          <span className="text-[var(--color-text-muted)]">|</span>
           <label className="flex items-center gap-1">
             Chunk:
             <input type="range" min="5" max="25" value={chunkSize} onChange={(e) => setChunkSize(parseInt(e.target.value, 10))} className="w-[80px]" title="Words per chunk (5-25)" />
             <span className="w-8 text-right font-[var(--font-mono)]">{chunkSize}w</span>
+            {chunkSizeHasData && chunkSize !== loadedChunkSize && (
+              <span className="text-green-600 text-[0.85em]">cached</span>
+            )}
           </label>
-          {chunkSize !== loadedChunkSize && (
+          {needsRecompute && (
             <button
               onClick={async () => {
                 if (!projectId || recomputing) return;
@@ -719,12 +834,89 @@ export default function DotplotView(): JSX.Element | null {
         </div>
       )}
 
+      {/* Track visibility panel */}
+      {showTrackPanel && allVisibleTrackNames.length > 0 && (
+        <div className="flex items-center gap-3 mb-1 text-[0.75em] font-[var(--font-sans)] py-1 px-2 border border-[var(--color-border-subtle)] rounded bg-[var(--color-bg)] shrink-0 flex-wrap">
+          <span className="font-semibold text-[var(--color-text-muted)]">Tracks:</span>
+          {allVisibleTrackNames.map((name) => (
+            <label key={name} className="flex items-center gap-1 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={!hiddenTracks.has(name)}
+                onChange={(e) => {
+                  setHiddenTracks((prev) => {
+                    const next = new Set(prev);
+                    if (e.target.checked) next.delete(name);
+                    else next.add(name);
+                    return next;
+                  });
+                }}
+                className="accent-[var(--color-primary)]"
+              />
+              <span style={{ color: TRACK_COLORS[name] ?? '#888' }}>{name}</span>
+            </label>
+          ))}
+        </div>
+      )}
+
+      {/* Alignments list panel */}
+      {alignments.length > 0 && (
+        <div className="mb-1 shrink-0">
+          <button
+            onClick={() => setShowAlignmentsList(!showAlignmentsList)}
+            className="text-[0.75em] px-2 py-0.5 rounded border border-[var(--color-border-subtle)] bg-[var(--color-bg)] cursor-pointer hover:bg-[var(--color-bg-muted)] w-full text-left font-[var(--font-sans)]"
+          >
+            {showAlignmentsList ? '▾' : '▸'} Alignments ({alignments.length})
+          </button>
+          {showAlignmentsList && (
+            <div className="border border-[var(--color-border-subtle)] border-t-0 rounded-b bg-[var(--color-bg)] max-h-[120px] overflow-y-auto">
+              {alignments.map((aln, idx) => {
+                const [r, g, b] = interpolateColor(aln.identity, colors);
+                const identColor = `rgb(${r},${g},${b})`;
+                return (
+                  <div key={idx} className="flex items-center gap-2 px-2 py-0.5 text-[0.72em] font-[var(--font-mono)] border-b border-[var(--color-border-subtle)] last:border-b-0 hover:bg-[var(--color-bg-muted)]">
+                    <span className="text-[var(--color-text-muted)]">A:{aln.chunk_start_a}–{aln.chunk_end_a}</span>
+                    <span className="text-[var(--color-text-muted)]">B:{aln.chunk_start_b}–{aln.chunk_end_b}</span>
+                    <span style={{ color: identColor }} className="font-semibold">{(aln.identity * 100).toFixed(1)}%</span>
+                    <span className="text-[var(--color-text-muted)]">{aln.length_chunks}c</span>
+                    <button
+                      className="ml-auto px-1.5 py-0 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[var(--color-text-muted)]"
+                      onClick={() => {
+                        if (!signal || !paragraphs.length) return;
+                        const offsets = signal.manifest?.segment_offsets;
+                        const rowMin = aln.chunk_start_a, rowMax = aln.chunk_end_a;
+                        const colMin = aln.chunk_start_b, colMax = aln.chunk_end_b;
+                        let rowText = '', colText = '';
+                        if (offsets) {
+                          const fullText = paragraphs.map((p) => p.text).join('\n');
+                          rowText = fullText.slice(offsets[rowMin]?.[0] ?? 0, Math.min((offsets[Math.min(rowMax, offsets.length - 1)]?.[1] ?? 0), (offsets[rowMin]?.[0] ?? 0) + 3000));
+                          colText = fullText.slice(offsets[colMin]?.[0] ?? 0, Math.min((offsets[Math.min(colMax, offsets.length - 1)]?.[1] ?? 0), (offsets[colMin]?.[0] ?? 0) + 3000));
+                        }
+                        if (!rowText) rowText = paragraphs.slice(rowMin, Math.min(rowMax + 1, paragraphs.length)).map((p) => p.text).join('\n').slice(0, 3000);
+                        if (!colText) colText = paragraphs.slice(colMin, Math.min(colMax + 1, paragraphs.length)).map((p) => p.text).join('\n').slice(0, 3000);
+                        setFloatingWindows([
+                          { id: `aln-row-${idx}`, title: `A [${rowMin}–${rowMax}] id=${(aln.identity * 100).toFixed(1)}%`, text: rowText, paraRange: [rowMin, rowMax], similarity: aln.identity },
+                          { id: `aln-col-${idx}`, title: `B [${colMin}–${colMax}]`, text: colText, paraRange: [colMin, colMax], similarity: aln.identity },
+                        ]);
+                      }}
+                    >
+                      View
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      )}
+
       {loading && <div className="flex-1 flex items-center justify-center text-[var(--color-text-muted)]">Loading self-similarity matrix...</div>}
       {error && <div className="flex-1 flex items-center justify-center text-[#b91c1c]">{error}</div>}
 
       {!loading && !error && signal && (
-        <div className="flex-1 overflow-hidden flex flex-col">
-          <div className="flex-1 flex flex-col min-h-0">
+        <div className="flex-1 overflow-hidden flex">
+          {/* Left: matrix area */}
+          <div className="flex-1 flex flex-col min-h-0 min-w-0">
             {visibleTrackNames.map((name) => (
               <AxisAnnotationStrip key={`top-${name}`} orientation="horizontal" annotations={allTracks[name] ?? []} color={TRACK_COLORS[name] ?? '#888'} paragraphs={paragraphs} viewport={viewport} size={canvasSize} />
             ))}
@@ -736,17 +928,20 @@ export default function DotplotView(): JSX.Element | null {
               </div>
               <div className="flex flex-col flex-1 min-w-0 min-h-0">
                 <div className="flex-1 min-h-0 flex items-start">
-                  <canvas
-                    ref={canvasRef}
-                    onMouseMove={handleMouseMove}
-                    onMouseDown={handleMouseDown}
-                    onMouseUp={handleMouseUp}
-                    onContextMenu={(e) => e.preventDefault()}
-                    onMouseLeave={() => { setHoveredCell(null); if (panning.current) panning.current = false; }}
-                    className="cursor-crosshair"
-                    role="img"
-                    aria-label={`Self-similarity heatmap, ${n}×${n} paragraphs. ${hoveredCell ? `Cell [${hoveredCell.i}, ${hoveredCell.j}]: similarity ${hoverValue?.toFixed(3) ?? 'N/A'}` : 'Hover to inspect cells. Click two points to select a region.'}`}
-                  />
+                  <div className="relative">
+                    <canvas ref={matrixCanvasRef} className="absolute top-0 left-0" />
+                    <canvas
+                      ref={overlayCanvasRef}
+                      onMouseMove={handleMouseMove}
+                      onMouseDown={handleMouseDown}
+                      onMouseUp={handleMouseUp}
+                      onContextMenu={(e) => e.preventDefault()}
+                      onMouseLeave={() => { setHoveredCell(null); if (panning.current) panning.current = false; }}
+                      className="relative cursor-crosshair"
+                      role="img"
+                      aria-label={`Self-similarity heatmap, ${n}×${n} chunks (${chunkSize} words each). ${hoveredCell ? `Chunk [${hoveredCell.i}, ${hoveredCell.j}]: similarity ${hoverValue?.toFixed(3) ?? 'N/A'}` : 'Hover to inspect. Click two points to select.'}`}
+                    />
+                  </div>
                 </div>
                 <VirtualScrollbar
                   orientation="horizontal"
@@ -765,18 +960,23 @@ export default function DotplotView(): JSX.Element | null {
               />
             </div>
           </div>
+
+          {/* Right: fixed text panels */}
+          {floatingWindows.length > 0 && (
+            <div className="w-[320px] shrink-0 ml-2 overflow-y-auto flex flex-col gap-0">
+              {floatingWindows.map((win) => (
+                <FixedTextPanel
+                  key={win.id}
+                  win={win}
+                  onClose={() => setFloatingWindows((ws) => ws.filter((w) => w.id !== win.id))}
+                  palette={palette}
+                  colors={colors}
+                />
+              ))}
+            </div>
+          )}
         </div>
       )}
-
-      {/* Floating text windows */}
-      {floatingWindows.map((win) => (
-        <DraggableWindow
-          key={win.id}
-          win={win}
-          onClose={() => setFloatingWindows((ws) => ws.filter((w) => w.id !== win.id))}
-          onDragStart={handleWindowDragStart}
-        />
-      ))}
     </div>
   );
 }

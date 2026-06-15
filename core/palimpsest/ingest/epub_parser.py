@@ -242,6 +242,11 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
                 if not text_content.strip():
                     continue
 
+                # Prevent word concatenation when inline elements are stripped:
+                # if previous part ends with a letter and this starts with one, insert space
+                if parts and parts[-1] and not parts[-1][-1].isspace() and text_content[0].isalpha():
+                    parts.append(" ")
+
                 parts.append(text_content)
 
             elif isinstance(elem, Tag):

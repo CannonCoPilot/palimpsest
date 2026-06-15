@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 from pathlib import Path
@@ -14,6 +15,9 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 logger = logging.getLogger(__name__)
+
+# Limit concurrent CPU-heavy analysis jobs to prevent saturation on O(n²) workloads.
+_job_semaphore = asyncio.Semaphore(3)
 
 
 class SearchRequest(BaseModel):
@@ -390,8 +394,13 @@ def create_app(workspace: Path) -> FastAPI:
         n_topics: int | None = None,
         method: str | None = None,
         metric: str | None = None,
+        metrics: str | None = None,
         granularity: str | None = None,
         chunk_size: int | None = None,
+        chunk_size_cosine: int | None = None,
+        chunk_size_jaccard: int | None = None,
+        chunk_size_word_overlap: int | None = None,
+        chunk_size_edit_distance: int | None = None,
     ) -> JSONResponse:
         """Run a single track extractor with optional parameters."""
         import asyncio
@@ -423,20 +432,41 @@ def create_app(workspace: Path) -> FastAPI:
             params["method"] = method
         if metric is not None:
             params["metric"] = metric
+        if metrics is not None:
+            selected = [m.strip() for m in metrics.split(",") if m.strip()]
+            if selected:
+                params["metrics"] = selected
         if granularity is not None:
             params["granularity"] = granularity
         if chunk_size is not None:
             params["chunk_size"] = max(5, min(25, chunk_size))
-        if params and hasattr(extractor, "set_params"):
-            extractor.set_params(params)
+        for _mkey, _mval in (
+            ("cosine", chunk_size_cosine),
+            ("jaccard", chunk_size_jaccard),
+            ("word_overlap", chunk_size_word_overlap),
+            ("edit_distance", chunk_size_edit_distance),
+        ):
+            if _mval is not None:
+                params[f"chunk_size_{_mkey}"] = max(5, min(25, _mval))
         if force:
             params["force"] = True
+        if params and hasattr(extractor, "set_params"):
+            extractor.set_params(params)
 
         _running_jobs[job_key] = {"status": "running", "track": track_name, "params": params}
 
         async def run() -> None:
             try:
-                result = await asyncio.to_thread(extractor.extract, project)
+                async with _job_semaphore:
+                    try:
+                        result = await asyncio.to_thread(extractor.extract, project)
+                    except ValueError as exc:
+                        _running_jobs[job_key] = {
+                            "status": "failed",
+                            "track": track_name,
+                            "error": f"Matrix too large: {exc}",
+                        }
+                        return
                 if extractor.output_type == "annotation" and isinstance(result, list):
                     from palimpsest.annotation.serializer import write_track
                     track_path = project_dir / "tracks" / f"{track_name}.jsonl"
@@ -451,8 +481,7 @@ def create_app(workspace: Path) -> FastAPI:
             except Exception as exc:
                 _running_jobs[job_key] = {"status": "failed", "track": track_name, "error": str(exc)}
             finally:
-                import threading
-                threading.Timer(30.0, lambda: _running_jobs.pop(job_key, None)).start()
+                asyncio.get_running_loop().call_later(30.0, lambda: _running_jobs.pop(job_key, None))
 
         asyncio.create_task(run())
         return JSONResponse(content={"status": "started", "track": track_name})
@@ -465,6 +494,167 @@ def create_app(workspace: Path) -> FastAPI:
         if not job:
             return JSONResponse(content={"status": "idle"})
         return JSONResponse(content=job)
+
+    @app.get("/api/projects/{project_id}/self_similarity/chunk_sizes")
+    async def self_similarity_chunk_sizes(project_id: str) -> JSONResponse:
+        """List all computed chunk sizes for self-similarity."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        signals_dir = project_dir / "signals"
+        sizes: list[int] = []
+        if signals_dir.is_dir():
+            for entry in signals_dir.iterdir():
+                if entry.is_dir() and entry.name.startswith("self_similarity_cs"):
+                    try:
+                        cs = int(entry.name.replace("self_similarity_cs", ""))
+                        sizes.append(cs)
+                    except ValueError:
+                        pass
+        return JSONResponse(content={"chunk_sizes": sorted(sizes)})
+
+    @app.get("/api/projects/{project_id}/self_similarity/cs/{chunk_size}/{metric}")
+    async def self_similarity_chunk_data(project_id: str, chunk_size: int, metric: str) -> FileResponse:
+        """Serve per-chunk-size similarity matrix binary."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        bin_path = project_dir / "signals" / f"self_similarity_cs{chunk_size}" / f"{metric}.bin"
+        if not bin_path.exists():
+            raise HTTPException(status_code=404, detail=f"No data for chunk_size={chunk_size}, metric={metric}")
+        return FileResponse(bin_path, media_type="application/octet-stream")
+
+    @app.get("/api/projects/{project_id}/self_similarity/cs/{chunk_size}/alignments")
+    async def self_similarity_chunk_alignments(project_id: str, chunk_size: int) -> JSONResponse:
+        """Serve per-chunk-size alignment records."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        aln_path = project_dir / "signals" / f"self_similarity_cs{chunk_size}" / "alignments.json"
+        if not aln_path.exists():
+            return JSONResponse(content=[])
+        return JSONResponse(content=json.loads(aln_path.read_text(encoding="utf-8")))
+
+    @app.get("/api/projects/{project_id}/self_similarity/cs/{chunk_size}/alignments/{metric}")
+    async def self_similarity_chunk_alignments_metric(
+        project_id: str, chunk_size: int, metric: str
+    ) -> JSONResponse:
+        """Serve per-metric alignment records for a specific chunk size."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        aln_path = (
+            project_dir / "signals" / f"self_similarity_cs{chunk_size}" / f"alignments_{metric}.json"
+        )
+        if not aln_path.exists():
+            return JSONResponse(content=[])
+        return JSONResponse(content=json.loads(aln_path.read_text(encoding="utf-8")))
+
+    # Default chunk sizes queued by auto_run
+    _AUTO_RUN_CHUNK_SIZES = (7, 11, 15)
+
+    @app.post("/api/projects/{project_id}/analyze/self_similarity/auto_run")
+    async def auto_run_self_similarity(project_id: str) -> JSONResponse:
+        """Auto-queue self-similarity computation at chunk sizes 7, 11, and 15.
+
+        Only queues if self-similarity has not been computed yet and paragraph
+        embeddings are available. If self-similarity already exists, returns its
+        current status without re-queuing.
+        """
+        import asyncio
+
+        project_dir = _safe_project_dir(workspace, project_id)
+        signals_dir = project_dir / "signals"
+
+        # Check if already computed
+        manifest_path = signals_dir / "self_similarity.json"
+        if manifest_path.exists():
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            return JSONResponse(content={
+                "status": "already_computed",
+                "available_chunk_sizes": manifest.get("metadata", {}).get("available_chunk_sizes", []),
+                "available_metrics": manifest.get("metadata", {}).get("available_metrics", []),
+            })
+
+        # Check for paragraph embeddings
+        embeddings_db = project_dir / "cache" / "embeddings.db"
+        if not embeddings_db.exists():
+            return JSONResponse(content={
+                "status": "no_embeddings",
+                "message": "Paragraph embeddings must be computed before auto-running self-similarity.",
+            })
+
+        from palimpsest.project import Project
+        from palimpsest.tracks.registry import TrackRegistry
+
+        registry = TrackRegistry.discover()
+        all_extractors = {
+            type(e)().name: type(e)
+            for e in [cls() for cls in registry.dependency_order()]
+        }
+        if "self_similarity" not in all_extractors:
+            raise HTTPException(status_code=500, detail="self_similarity track not registered")
+
+        project = Project.load(project_dir)
+        queued_sizes: list[int] = []
+        job_keys: list[str] = []
+
+        # Identify chunk sizes that still need to be run
+        pending_sizes: list[tuple[str, Any, int]] = []
+        for cs in _AUTO_RUN_CHUNK_SIZES:
+            job_key = f"{project_id}:self_similarity:cs{cs}"
+            if _running_jobs.get(job_key, {}).get("status") == "running":
+                job_keys.append(job_key)
+                continue
+            extractor = all_extractors["self_similarity"]()
+            extractor.set_params({"chunk_size": cs})
+            _running_jobs[job_key] = {
+                "status": "running",
+                "track": "self_similarity",
+                "chunk_size": cs,
+            }
+            queued_sizes.append(cs)
+            job_keys.append(job_key)
+            pending_sizes.append((job_key, extractor, cs))
+
+        async def run_sequential(
+            _project: Any = project,
+            _pending: list[tuple[str, Any, int]] = pending_sizes,
+        ) -> None:
+            """Run each chunk-size job one at a time under the semaphore.
+
+            Each self-similarity computation is already CPU-heavy, so they are
+            run sequentially rather than concurrently.  External concurrency
+            (e.g. from other projects) is still bounded by _job_semaphore.
+            """
+            for _key, _extractor, _cs in _pending:
+                try:
+                    async with _job_semaphore:
+                        try:
+                            await asyncio.to_thread(_extractor.extract, _project)
+                        except ValueError as exc:
+                            _running_jobs[_key] = {
+                                "status": "failed",
+                                "track": "self_similarity",
+                                "chunk_size": _cs,
+                                "error": f"Matrix too large: {exc}",
+                            }
+                            continue
+                    _running_jobs[_key] = {
+                        "status": "completed",
+                        "track": "self_similarity",
+                        "chunk_size": _cs,
+                    }
+                except Exception as exc:
+                    _running_jobs[_key] = {
+                        "status": "failed",
+                        "track": "self_similarity",
+                        "chunk_size": _cs,
+                        "error": str(exc),
+                    }
+                finally:
+                    asyncio.get_running_loop().call_later(30.0, lambda k=_key: _running_jobs.pop(k, None))
+
+        if pending_sizes:
+            asyncio.create_task(run_sequential())
+
+        return JSONResponse(content={
+            "status": "queued",
+            "queued_chunk_sizes": queued_sizes,
+            "job_keys": job_keys,
+        })
 
     @app.get("/api/projects/{project_id}/embeddings/status")
     async def embeddings_status(project_id: str) -> JSONResponse:
@@ -555,8 +745,7 @@ def create_app(workspace: Path) -> FastAPI:
             except Exception as exc:
                 _running_jobs[job_key] = {"status": "failed", "track": "_embeddings", "error": str(exc)}
             finally:
-                import threading
-                threading.Timer(30.0, lambda: _running_jobs.pop(job_key, None)).start()
+                asyncio.get_running_loop().call_later(30.0, lambda: _running_jobs.pop(job_key, None))
 
         asyncio.create_task(run())
         return JSONResponse(content={"status": "started", "dim": dim})
@@ -817,17 +1006,17 @@ def create_app(workspace: Path) -> FastAPI:
     @app.get("/data/{project_id}/{path:path}")
     async def serve_project_file(project_id: str, path: str) -> FileResponse:
         """Serve static project files (read-only)."""
-        if ".." in project_id or ".." in path:
-            raise HTTPException(status_code=400, detail="Invalid path")
+        if ".." in project_id or "/" in project_id or "\\" in project_id:
+            raise HTTPException(status_code=400, detail="Invalid project ID")
 
-        file_path = workspace / project_id / path
-        if not file_path.exists() or not file_path.is_file():
-            raise HTTPException(status_code=404, detail="File not found")
-
-        if not file_path.resolve().is_relative_to(workspace.resolve()):
+        resolved = (workspace / project_id / path).resolve()
+        if not resolved.is_relative_to(workspace.resolve()):
             raise HTTPException(status_code=403, detail="Access denied")
 
-        return FileResponse(file_path)
+        if not resolved.exists() or not resolved.is_file():
+            raise HTTPException(status_code=404, detail="File not found")
+
+        return FileResponse(resolved)
 
     # Mount browser dist if available (dev mode only)
     browser_dist = Path(__file__).parent.parent.parent / "browser" / "dist"

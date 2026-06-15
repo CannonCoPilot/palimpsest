@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -36,7 +36,7 @@ interface TrackRowProps {
   onThresholdChange: (value: number) => void;
 }
 
-function SortableTrackRow(props: TrackRowProps) {
+const SortableTrackRow = memo(function SortableTrackRow(props: TrackRowProps) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: props.id });
   const [expanded, setExpanded] = useState(false);
   const { name, count, color, visible, shortcut, evidenceLevel, displayMode, confidenceThreshold, onToggle, onModeChange, onThresholdChange } = props;
@@ -114,7 +114,7 @@ function SortableTrackRow(props: TrackRowProps) {
       )}
     </div>
   );
-}
+});
 
 export default function TrackPanel() {
   const projectTracks = useProjectStore((s) => getActiveProject(s).tracks);

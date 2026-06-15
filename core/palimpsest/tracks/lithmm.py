@@ -216,6 +216,7 @@ class LitHMMExtractor:
         lithmm_meta = {
             "n_states": n_states,
             "state_descriptions": state_descriptions,
+            "state_means": {str(s): state_means[s].tolist() for s in range(n_states)},
             "feature_names": FEATURE_NAMES,
             "method": "GaussianHMM" if used_hmm else "KMeans-fallback",
         }

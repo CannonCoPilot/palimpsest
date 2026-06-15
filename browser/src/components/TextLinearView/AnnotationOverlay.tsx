@@ -5,6 +5,7 @@
  * search match highlighting, and click-to-select.
  */
 
+import { memo, useMemo } from 'react';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import type { TrackManifest } from '../../adapters/TrackManifest';
 import { useViewStore } from '../../stores/viewStore';
@@ -241,7 +242,7 @@ interface Props {
   currentMatchIndex?: number;
 }
 
-export default function AnnotationOverlay({
+function AnnotationOverlayInner({
   text,
   paraStart,
   paraEnd,
@@ -252,7 +253,13 @@ export default function AnnotationOverlay({
   const selectAnnotation = useViewStore((s) => s.selectAnnotation);
   const selectedAnnotation = useViewStore((s) => s.selectedAnnotation);
   const trackStates = useTrackStore((s) => s.tracks);
-  const segments = buildSegments(text, annotations, paraStart, paraEnd, searchMatches, currentMatchIndex);
+
+  // Memoize the expensive segment-building step.  It only needs to rerun when
+  // the annotation list, paragraph bounds, or search state changes.
+  const segments = useMemo(
+    () => buildSegments(text, annotations, paraStart, paraEnd, searchMatches, currentMatchIndex),
+    [text, annotations, paraStart, paraEnd, searchMatches, currentMatchIndex],
+  );
 
   if (segments.length === 0 && searchMatches.length === 0) {
     return <span>{text}</span>;
@@ -323,3 +330,9 @@ export default function AnnotationOverlay({
 
   return <>{elements}</>;
 }
+
+// Wrap in React.memo so the component only re-renders when its own props change.
+// Since paragraphs are virtualized and annotations are filtered upstream, the vast
+// majority of paragraph overlays can skip re-rendering on unrelated track toggles.
+const AnnotationOverlay = memo(AnnotationOverlayInner);
+export default AnnotationOverlay;

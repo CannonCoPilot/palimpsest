@@ -31,6 +31,7 @@ const TRACK_DESCRIPTIONS: Record<string, string> = {
   lithmm: 'Literary Hidden Markov Model states',
   compartments: 'A/B thematic compartments',
   self_similarity: 'Paragraph embedding similarity matrix',
+  boundary_detection: 'HMM Viterbi domain boundary detection (multi-metric)',
 };
 
 const TRACK_DETAILS: Record<string, { method: string; explanation: string }> = {
@@ -90,6 +91,10 @@ const TRACK_DETAILS: Record<string, { method: string; explanation: string }> = {
     method: 'Recurrence Quantification Analysis of embedding sequences',
     explanation: 'Constructs a recurrence plot from paragraph embeddings and computes RQA metrics: recurrence rate (how often the text returns to similar themes), determinism (predictability of transitions), entropy (complexity of recurrence patterns), and laminarity (tendency to stay in the same state).',
   },
+  boundary_detection: {
+    method: 'HMM Viterbi over aggregated directionality index + insulation score',
+    explanation: 'Aggregates self-similarity evidence from all computed metrics (cosine, jaccard, word overlap, edit distance) across all computed window sizes. For each metric/size combination, computes a directionality index (upstream vs downstream similarity bias) and an insulation score (local diagonal block density). These signals are fed into a 3-state Hidden Markov Model (inside-domain, boundary, transition) solved via the Viterbi algorithm. Domains are contiguous "boxes" of internally similar text; boundaries are the "stripes" of low similarity between them. More metrics and window sizes = more robust boundaries.',
+  },
   alphabet: {
     method: 'Foldseek-inspired narrative alphabet encoding',
     explanation: 'Encodes each paragraph as a letter from a structural alphabet based on its feature profile (like Foldseek encodes protein structure). The resulting "narrative sequence" can be aligned between texts to find structural homology — texts with similar dramatic arcs share similar alphabet strings.',
@@ -121,6 +126,7 @@ const TRACK_PARAMS: Record<string, TrackParam[]> = {
       { label: 'Cosine', value: 'cosine' }, { label: 'Jaccard', value: 'jaccard' },
       { label: 'Word overlap', value: 'word_overlap' }, { label: 'Edit distance', value: 'edit_distance' },
     ]},
+    { key: 'chunk_size', label: 'Chunk size (words)', type: 'number', default: 17, min: 5, max: 25 },
   ],
   sentiment: [
     { key: 'method', label: 'Method', type: 'select', default: 'vader', options: [
@@ -131,6 +137,103 @@ const TRACK_PARAMS: Record<string, TrackParam[]> = {
     ]},
   ],
 };
+
+const SIMILARITY_METRICS = [
+  { key: 'cosine', label: 'Cosine', description: 'Semantic similarity via embeddings' },
+  { key: 'jaccard', label: 'Jaccard', description: 'Binarized embedding overlap' },
+  { key: 'word_overlap', label: 'Word overlap', description: 'Content-word set Jaccard' },
+  { key: 'edit_distance', label: 'Edit distance', description: 'Token-level Levenshtein + LASTZ alignment' },
+];
+
+function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
+  onRun: (params: Record<string, string | number>) => void;
+  onCancel: () => void;
+  projectId: string | undefined;
+}) {
+  const [metricEnabled, setMetricEnabled] = useState<Record<string, boolean>>({
+    cosine: true, jaccard: true, word_overlap: true, edit_distance: true,
+  });
+  const [chunkSizes, setChunkSizes] = useState<Record<string, number>>({
+    cosine: 17, jaccard: 17, word_overlap: 17, edit_distance: 17,
+  });
+  const [useSharedSize, setUseSharedSize] = useState(true);
+  const [sharedSize, setSharedSize] = useState(17);
+  const [availableSizes, setAvailableSizes] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (!projectId) return;
+    fetch(`/api/projects/${projectId}/self_similarity/chunk_sizes`)
+      .then(r => r.json())
+      .then(d => setAvailableSizes(d.chunk_sizes ?? []))
+      .catch(() => {});
+  }, [projectId]);
+
+  const handleRun = () => {
+    const params: Record<string, string | number> = {};
+    const enabled = Object.entries(metricEnabled).filter(([, v]) => v).map(([k]) => k);
+    if (enabled.length === 0) return;
+    params.metrics = enabled.join(',');
+    if (useSharedSize) {
+      params.chunk_size = sharedSize;
+    } else {
+      params.chunk_size = chunkSizes[enabled[0]];
+      for (const m of enabled) {
+        params[`chunk_size_${m}`] = chunkSizes[m];
+      }
+    }
+    onRun(params);
+  };
+
+  const anyEnabled = Object.values(metricEnabled).some(v => v);
+
+  return (
+    <div className="border border-[var(--color-border)] rounded p-3 bg-[var(--color-bg)] mt-1 text-[0.85em]">
+      <div className="font-semibold mb-2">Self-Similarity Configuration</div>
+
+      {availableSizes.length > 0 && (
+        <div className="text-[0.8em] text-[var(--color-text-muted)] mb-2">
+          Cached sizes: {availableSizes.map(s => `${s}w`).join(', ')}
+        </div>
+      )}
+
+      <div className="mb-3">
+        <label className="flex items-center gap-2 mb-2 cursor-pointer">
+          <input type="checkbox" checked={useSharedSize} onChange={(e) => setUseSharedSize(e.target.checked)} className="accent-[var(--color-primary)]" />
+          <span className="text-[var(--color-text-muted)]">Shared chunk size for all metrics</span>
+          {useSharedSize && (
+            <input type="number" value={sharedSize} min={5} max={25}
+              onChange={(e) => setSharedSize(Math.max(5, Math.min(25, parseInt(e.target.value, 10) || 17)))}
+              className="w-14 px-1 py-0.5 border border-[var(--color-border)] rounded text-center ml-1" />
+          )}
+        </label>
+      </div>
+
+      <div className="grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1.5 items-center mb-3">
+        {SIMILARITY_METRICS.map(m => (
+          <React.Fragment key={m.key}>
+            <label className="flex items-center gap-1.5 cursor-pointer">
+              <input type="checkbox" checked={metricEnabled[m.key]} onChange={(e) => setMetricEnabled({ ...metricEnabled, [m.key]: e.target.checked })} className="accent-[var(--color-primary)]" />
+              <span className={metricEnabled[m.key] ? 'font-medium' : 'text-[var(--color-text-muted)]'}>{m.label}</span>
+            </label>
+            <span className="text-[0.8em] text-[var(--color-text-muted)]">{m.description}</span>
+            {!useSharedSize && metricEnabled[m.key] ? (
+              <input type="number" value={chunkSizes[m.key]} min={5} max={25}
+                onChange={(e) => setChunkSizes({ ...chunkSizes, [m.key]: Math.max(5, Math.min(25, parseInt(e.target.value, 10) || 17)) })}
+                className="w-14 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
+            ) : (
+              <span className="text-[0.8em] text-[var(--color-text-muted)] text-center">{useSharedSize ? `${sharedSize}w` : '—'}</span>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+
+      <div className="flex gap-2">
+        <button onClick={handleRun} disabled={!anyEnabled} className="px-2 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.8em] disabled:opacity-40">Run Selected</button>
+        <button onClick={onCancel} className="px-2 py-1 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.8em]">Cancel</button>
+      </div>
+    </div>
+  );
+}
 
 function ParamDialog({ trackName, onRun, onCancel }: { trackName: string; onRun: (params: Record<string, string | number>) => void; onCancel: () => void }) {
   const params = TRACK_PARAMS[trackName] ?? [];
@@ -574,11 +677,19 @@ export default function AnalysisPanel() {
                 {paramDialogTrack === track.name && (
                   <tr className="bg-[var(--color-bg)]">
                     <td colSpan={6} className="px-4 py-2">
-                      <ParamDialog
-                        trackName={track.name}
-                        onRun={(params) => handleRun(track.name, params)}
-                        onCancel={() => setParamDialogTrack(null)}
-                      />
+                      {track.name === 'self_similarity' ? (
+                        <SelfSimilarityParamDialog
+                          projectId={projectId}
+                          onRun={(params) => handleRun(track.name, params)}
+                          onCancel={() => setParamDialogTrack(null)}
+                        />
+                      ) : (
+                        <ParamDialog
+                          trackName={track.name}
+                          onRun={(params) => handleRun(track.name, params)}
+                          onCancel={() => setParamDialogTrack(null)}
+                        />
+                      )}
                     </td>
                   </tr>
                 )}

@@ -27,6 +27,15 @@ interface TrackStoreState {
   setDisplayMode: (name: string, mode: DisplayMode) => void;
 }
 
+/**
+ * Derived selector: subscribe to just one track's visibility.
+ * Components that only care about one track's visible flag use this
+ * to avoid re-rendering on unrelated track updates.
+ */
+export function useTrackVisibility(name: string): boolean {
+  return useTrackStore((s) => s.tracks[name]?.visible ?? true);
+}
+
 export const useTrackStore = create<TrackStoreState>((set) => ({
   tracks: {},
   trackOrder: [],

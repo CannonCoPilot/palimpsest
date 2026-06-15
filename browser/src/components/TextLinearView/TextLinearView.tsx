@@ -13,6 +13,21 @@ import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { TRACK_COLORS } from '../../utils/trackColors';
 import AnnotationOverlay from './AnnotationOverlay';
 
+/**
+ * Build a stable string key representing per-track visibility/threshold/displayMode.
+ * This lets useMemo only invalidate when something annotation-relevant actually changes,
+ * rather than on every object-reference change to the tracks map.
+ */
+function buildTrackVisibilityKey(trackStates: Record<string, TrackState>): string {
+  return Object.keys(trackStates)
+    .sort()
+    .map((n) => {
+      const s = trackStates[n];
+      return `${n}:${s.visible ? 1 : 0}:${s.confidenceThreshold}:${s.displayMode}`;
+    })
+    .join(',');
+}
+
 const VIRTUALIZE_THRESHOLD = 200;
 
 function collectVisibleAnnotations(
@@ -450,9 +465,19 @@ export default function TextLinearView(): JSX.Element {
 
   const characterFilter = useViewStore((s) => s.characterFilter);
 
+  // Derive a stable primitive key so the memo only fires when visibility/threshold/mode
+  // actually changes — not on every object-reference churn from the track store.
+  const trackVisibilityKey = useMemo(
+    () => buildTrackVisibilityKey(trackStates),
+    [trackStates],
+  );
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const allAnnotations = useMemo(
     () => collectVisibleAnnotations(tracks, trackStates),
-    [tracks, trackStates],
+    // tracks (annotation data) changes only on project load; trackVisibilityKey changes on toggle.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [tracks, trackVisibilityKey],
   );
 
   const sectionBlocks = useMemo(
