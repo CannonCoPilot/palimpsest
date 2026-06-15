@@ -78,6 +78,25 @@ class TestNormalizer:
         assert "Mr. Bennet" in normalized
         assert len(normalized) > 100
 
+    def test_se_colophon_stripped(self):
+        text = (
+            "The story ends here.\n\n"
+            "This particular edition is based on a transcription produced for Project Gutenberg."
+        )
+        result = normalize(text)
+        assert "The story ends here." in result
+        assert "This particular edition is based on" not in result
+
+    def test_particular_edition_prose_not_stripped(self):
+        # W8: "This particular edition" in narrative prose must survive — only the
+        # colophon's "is based on" phrasing should trigger stripping.
+        text = (
+            "He examined the rare book.\n"
+            "This particular edition fascinated the collector beyond measure."
+        )
+        result = normalize(text)
+        assert "This particular edition fascinated the collector" in result
+
 
 class TestSegmenter:
     def test_paragraph_offsets_accurate(self):

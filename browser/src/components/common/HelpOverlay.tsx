@@ -47,13 +47,13 @@ export default function HelpOverlay(): JSX.Element | null {
     <div
       className="fixed inset-0 bg-black/50 flex items-center justify-center z-[var(--z-overlay)]"
       onClick={toggleHelp}
-      role="dialog"
-      aria-modal="true"
-      aria-label="Keyboard shortcuts"
     >
       <div
         ref={dialogRef}
         tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Keyboard shortcuts"
         className="bg-[var(--color-bg)] rounded-[var(--radius-lg)] p-6 max-w-[420px] w-[90%] shadow-[0_4px_24px_rgba(0,0,0,0.2)] outline-none"
         onClick={(e) => e.stopPropagation()}
       >

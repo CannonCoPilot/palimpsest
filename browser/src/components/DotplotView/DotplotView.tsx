@@ -35,6 +35,19 @@ export function interpolateColor(value: number, palette: number[][]): [number, n
   ];
 }
 
+/**
+ * Palette colors at low similarity (Blues low-end, Diverging center) are
+ * near-white and unreadable as text on a light panel. Darken toward the same
+ * hue until luminance is comfortably readable, preserving the color coding.
+ */
+export function readableTextColor([r, g, b]: [number, number, number]): string {
+  const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+  const MAX_LUM = 140;
+  if (lum <= MAX_LUM) return `rgb(${r},${g},${b})`;
+  const f = MAX_LUM / lum;
+  return `rgb(${Math.round(r * f)},${Math.round(g * f)},${Math.round(b * f)})`;
+}
+
 interface Viewport {
   x: number;
   y: number;
@@ -128,8 +141,8 @@ function FixedTextPanel({ win, onClose, palette, colors }: {
   colors: number[][];
 }) {
   const [r, g, b] = interpolateColor(win.similarity, colors);
-  const textColor = `rgb(${r},${g},${b})`;
-  const borderColor = textColor;
+  const textColor = readableTextColor([r, g, b]);
+  const borderColor = `rgb(${r},${g},${b})`;
 
   return (
     <div
@@ -322,7 +335,7 @@ export default function DotplotView(): JSX.Element | null {
     const container = containerRef.current;
     if (!canvas || !container) return;
 
-    const rightPanelWidth = floatingWindows.length > 0 ? 360 : 0;
+    const rightPanelWidth = floatingWindows.length > 0 ? 320 : 0;
     const size = Math.max(1, Math.min(container.clientWidth - rightPanelWidth - 8, container.clientHeight - 120));
     canvas.width = size;
     canvas.height = size;
@@ -714,7 +727,7 @@ export default function DotplotView(): JSX.Element | null {
 
   const visibleTrackNames = allVisibleTrackNames.filter((name) => !hiddenTracks.has(name));
 
-  const rightPanelWidth = floatingWindows.length > 0 ? 360 : 0;
+  const rightPanelWidth = floatingWindows.length > 0 ? 320 : 0;
   const canvasSize = containerRef.current ? Math.max(1, Math.min(containerRef.current.clientWidth - rightPanelWidth - 8, containerRef.current.clientHeight - 120)) : 400;
 
   const chunkSizeHasData = availableChunkSizes.includes(chunkSize);

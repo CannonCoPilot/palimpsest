@@ -514,6 +514,9 @@ def create_app(workspace: Path) -> FastAPI:
     @app.get("/api/projects/{project_id}/self_similarity/cs/{chunk_size}/{metric}")
     async def self_similarity_chunk_data(project_id: str, chunk_size: int, metric: str) -> FileResponse:
         """Serve per-chunk-size similarity matrix binary."""
+        from palimpsest.tracks.self_similarity import METRICS
+        if metric not in METRICS:
+            raise HTTPException(status_code=400, detail=f"Invalid metric: {metric}")
         project_dir = _safe_project_dir(workspace, project_id)
         bin_path = project_dir / "signals" / f"self_similarity_cs{chunk_size}" / f"{metric}.bin"
         if not bin_path.exists():
@@ -534,6 +537,9 @@ def create_app(workspace: Path) -> FastAPI:
         project_id: str, chunk_size: int, metric: str
     ) -> JSONResponse:
         """Serve per-metric alignment records for a specific chunk size."""
+        from palimpsest.tracks.self_similarity import METRICS
+        if metric not in METRICS:
+            raise HTTPException(status_code=400, detail=f"Invalid metric: {metric}")
         project_dir = _safe_project_dir(workspace, project_id)
         aln_path = (
             project_dir / "signals" / f"self_similarity_cs{chunk_size}" / f"alignments_{metric}.json"

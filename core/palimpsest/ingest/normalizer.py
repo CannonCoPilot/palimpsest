@@ -27,7 +27,7 @@ _GUTENBERG_END = re.compile(
 )
 _SE_COLOPHON = re.compile(
     r"(?:^|\n)(?:This ebook is the product of|Uncopyright|Standard Ebooks|"
-    r"This particular edition|The cover page is adapted).*",
+    r"This particular edition is based on|The cover page is adapted).*",
     re.IGNORECASE | re.DOTALL,
 )
 

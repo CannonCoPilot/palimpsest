@@ -663,6 +663,7 @@ def _derive_formulaic_patterns(
     repeats: set[str],
     min_support: int = 3,
     max_wildcards: int = 2,
+    max_pairwise_phrases: int = 300,
 ) -> list[dict[str, Any]]:
     """Derive formulaic patterns from exact repeats by generalizing with wildcards.
 
@@ -688,6 +689,17 @@ def _derive_formulaic_patterns(
     for length, phrases in by_length.items():
         if length < 3 or len(phrases) < 2:
             continue
+
+        # The pairwise generalization below is O(phrases²). Highly formulaic
+        # texts (e.g. scripture) can yield thousands of same-length repeats, so
+        # cap the group deterministically to keep this bounded.
+        if len(phrases) > max_pairwise_phrases:
+            logger.warning(
+                "Formulaic patterns: %d length-%d phrases exceed cap %d; "
+                "truncating to bound O(n²) pairwise generalization",
+                len(phrases), length, max_pairwise_phrases,
+            )
+            phrases = sorted(phrases)[:max_pairwise_phrases]
 
         for i in range(len(phrases)):
             for j in range(i + 1, len(phrases)):
@@ -1113,6 +1125,14 @@ class SelfSimilarityTrack:
 
         paras = project.paragraphs()
         n_primary = len(primary_chunks)
+        # Primary metric drives both data_file and similarity_metric; derive once
+        # so the two can't drift. data_file stays a flat-path filename because the
+        # frontend loader (SignalAdapter + DotplotView) resolves it relative to
+        # the signals dir and overrides it per-metric with the same flat scheme.
+        primary_metric = (
+            "cosine" if "cosine" in available_metrics
+            else (available_metrics[0] if available_metrics else "cosine")
+        )
         master = {
             "type": "matrix",
             "name": "self_similarity",
@@ -1121,16 +1141,10 @@ class SelfSimilarityTrack:
             "dimensions": [n_primary, n_primary],
             "dtype": "float32",
             "byte_order": "little-endian",
-            "data_file": (
-                "self_similarity_cosine.bin" if "cosine" in available_metrics
-                else f"self_similarity_{available_metrics[0]}.bin"
-            ) if available_metrics else "self_similarity_cosine.bin",
+            "data_file": f"self_similarity_{primary_metric}.bin",
             "segment_offsets": [[c["start"], c["end"]] for c in primary_chunks],
             "metadata": {
-                "similarity_metric": (
-                    "cosine" if "cosine" in available_metrics
-                    else (available_metrics[0] if available_metrics else "cosine")
-                ),
+                "similarity_metric": primary_metric,
                 "paragraph_count": len(paras),
                 "chunk_count": n_primary,
                 "chunk_size": primary_chunk_size,
