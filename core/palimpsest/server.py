@@ -511,18 +511,9 @@ def create_app(workspace: Path) -> FastAPI:
                         pass
         return JSONResponse(content={"chunk_sizes": sorted(sizes)})
 
-    @app.get("/api/projects/{project_id}/self_similarity/cs/{chunk_size}/{metric}")
-    async def self_similarity_chunk_data(project_id: str, chunk_size: int, metric: str) -> FileResponse:
-        """Serve per-chunk-size similarity matrix binary."""
-        from palimpsest.tracks.self_similarity import METRICS
-        if metric not in METRICS:
-            raise HTTPException(status_code=400, detail=f"Invalid metric: {metric}")
-        project_dir = _safe_project_dir(workspace, project_id)
-        bin_path = project_dir / "signals" / f"self_similarity_cs{chunk_size}" / f"{metric}.bin"
-        if not bin_path.exists():
-            raise HTTPException(status_code=404, detail=f"No data for chunk_size={chunk_size}, metric={metric}")
-        return FileResponse(bin_path, media_type="application/octet-stream")
-
+    # NOTE: the literal "/alignments" routes MUST be declared before the generic
+    # "/{metric}" route below — Starlette matches in declaration order, so a
+    # generic-first ordering would shadow "/cs/{cs}/alignments" (metric="alignments").
     @app.get("/api/projects/{project_id}/self_similarity/cs/{chunk_size}/alignments")
     async def self_similarity_chunk_alignments(project_id: str, chunk_size: int) -> JSONResponse:
         """Serve per-chunk-size alignment records."""
@@ -547,6 +538,18 @@ def create_app(workspace: Path) -> FastAPI:
         if not aln_path.exists():
             return JSONResponse(content=[])
         return JSONResponse(content=json.loads(aln_path.read_text(encoding="utf-8")))
+
+    @app.get("/api/projects/{project_id}/self_similarity/cs/{chunk_size}/{metric}")
+    async def self_similarity_chunk_data(project_id: str, chunk_size: int, metric: str) -> FileResponse:
+        """Serve per-chunk-size similarity matrix binary."""
+        from palimpsest.tracks.self_similarity import METRICS
+        if metric not in METRICS:
+            raise HTTPException(status_code=400, detail=f"Invalid metric: {metric}")
+        project_dir = _safe_project_dir(workspace, project_id)
+        bin_path = project_dir / "signals" / f"self_similarity_cs{chunk_size}" / f"{metric}.bin"
+        if not bin_path.exists():
+            raise HTTPException(status_code=404, detail=f"No data for chunk_size={chunk_size}, metric={metric}")
+        return FileResponse(bin_path, media_type="application/octet-stream")
 
     # Default chunk sizes queued by auto_run
     _AUTO_RUN_CHUNK_SIZES = (7, 11, 15)

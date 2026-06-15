@@ -139,3 +139,62 @@ class TestStaticServing:
         project_id = projects[0]["id"]
         response = client.get(f"/data/{project_id}/nonexistent.txt")
         assert response.status_code == 404
+
+
+class TestSelfSimilarityEndpoints:
+    """Coverage for the self-similarity cs/* endpoints (audit E-NEW4) including
+    the route-ordering regression and W7 metric-allowlist validation."""
+
+    def _pid(self, client):
+        return client.get("/api/projects").json()[0]["id"]
+
+    def test_alignments_route_not_shadowed_by_metric_route(self, client):
+        # Regression: the generic /cs/{cs}/{metric} route must be declared AFTER
+        # the literal /cs/{cs}/alignments route, else "alignments" is treated as a
+        # metric and rejected by W7 validation (400) instead of returning records.
+        pid = self._pid(client)
+        r = client.get(f"/api/projects/{pid}/self_similarity/cs/17/alignments")
+        assert r.status_code == 200
+        assert r.json() == []
+
+    def test_per_metric_alignments_valid_metric(self, client):
+        pid = self._pid(client)
+        r = client.get(f"/api/projects/{pid}/self_similarity/cs/17/alignments/cosine")
+        assert r.status_code == 200
+        assert r.json() == []
+
+    def test_per_metric_alignments_invalid_metric_rejected(self, client):
+        pid = self._pid(client)
+        r = client.get(f"/api/projects/{pid}/self_similarity/cs/17/alignments/bogus")
+        assert r.status_code == 400
+
+    def test_chunk_data_invalid_metric_rejected(self, client):
+        # W7: unknown metric must be rejected, not used to build a file path.
+        pid = self._pid(client)
+        r = client.get(f"/api/projects/{pid}/self_similarity/cs/17/bogus")
+        assert r.status_code == 400
+
+    def test_chunk_data_valid_metric_missing_file_404(self, client):
+        # A valid metric passes W7 validation but 404s when no data exists.
+        pid = self._pid(client)
+        r = client.get(f"/api/projects/{pid}/self_similarity/cs/17/cosine")
+        assert r.status_code == 404
+
+    def test_chunk_sizes_empty_for_fresh_project(self, client):
+        pid = self._pid(client)
+        r = client.get(f"/api/projects/{pid}/self_similarity/chunk_sizes")
+        assert r.status_code == 200
+        assert r.json()["chunk_sizes"] == []
+
+    def test_auto_run_without_embeddings(self, client):
+        pid = self._pid(client)
+        r = client.post(f"/api/projects/{pid}/analyze/self_similarity/auto_run")
+        assert r.status_code == 200
+        assert r.json()["status"] == "no_embeddings"
+
+    def test_run_analysis_declares_per_metric_chunk_size(self, client):
+        # E-NEW1: chunk_size_cosine must be a *declared* int query param. A non-int
+        # value triggers FastAPI 422; an undeclared param would be silently ignored.
+        pid = self._pid(client)
+        r = client.post(f"/api/projects/{pid}/analyze/self_similarity?chunk_size_cosine=notanint")
+        assert r.status_code == 422
