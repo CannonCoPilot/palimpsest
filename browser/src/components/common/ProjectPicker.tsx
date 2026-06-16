@@ -11,14 +11,14 @@
  *   - Book Store: a launchpad of external sources (screenshot-thumbnail tiles that
  *     open sites for finding/searching more texts in a new tab).
  *
- * Import is preserved behind an accessible modal (ImportDialog unchanged).
+ * Import opens the 5-step ImportWizard behind an accessible modal.
  * Only consumer is AppLayout's no-project branch (CompareView has its own picker).
  */
 
 import { useEffect, useMemo, useRef, useState, type ReactElement, type ReactNode } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 import { useViewStore, type TabId } from '../../stores/viewStore';
-import ImportDialog from './ImportDialog';
+import ImportWizard from '../import/ImportWizard';
 
 interface ProjectEntry {
   id: string;
@@ -220,18 +220,18 @@ function ImportModal({ onClose }: { onClose: () => void }): ReactElement {
         aria-modal="true"
         aria-label="Import a text"
         tabIndex={-1}
-        className="relative w-[min(520px,92vw)] rounded-xl bg-white shadow-[0_24px_60px_rgba(0,0,0,0.55)] focus:outline-none"
+        className="relative w-[min(760px,94vw)] rounded-xl bg-[#242426] ring-1 ring-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.55)] focus:outline-none"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close import dialog"
-          className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#3a3a3d] text-white text-sm flex items-center justify-center shadow-lg hover:bg-[#4a4a4d]"
+          className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full text-[#8e8e93] hover:text-white hover:bg-white/10 text-base flex items-center justify-center"
         >
           ✕
         </button>
-        <ImportDialog />
+        <ImportWizard />
       </div>
     </div>
   );

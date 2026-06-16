@@ -9,6 +9,7 @@ import type { W3CAnnotation } from '../adapters/AnnotationAdapter';
 import { loadTrack } from '../adapters/AnnotationAdapter';
 import { loadTrackManifest, type TrackManifest } from '../adapters/TrackManifest';
 import { useTrackStore, type TrackState } from './trackStore';
+import { useSectionStore } from './sectionStore';
 import { TRACK_COLORS } from '../utils/trackColors';
 
 export interface ProjectMetadata {
@@ -62,6 +63,7 @@ interface ProjectStoreState {
 
   // Actions
   loadProject: (baseUrl: string, projectId: string) => Promise<void>;
+  loadProjectIntoStore: (projectId: string) => Promise<void>;
   loadSecondaryProject: (baseUrl: string, projectId: string) => Promise<void>;
   setSecondaryProject: (id: string | null) => void;
   closeProject: () => void;
@@ -183,6 +185,8 @@ export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
   // Backward-compat getters removed — use getActiveProject(s) in selectors
 
   loadProject: async (baseUrl: string, projectId: string): Promise<void> => {
+    // Load any configured layout sections so masked ranges render (fire-and-forget).
+    void useSectionStore.getState().load(projectId);
     // If already loaded, just switch active
     if (get().projects[projectId]?.metadata) {
       set({ activeProjectId: projectId, loadingState: 'ready', error: null });
@@ -218,6 +222,21 @@ export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
         loadingState: 'error',
         loadingStep: '',
       });
+    }
+  },
+
+  loadProjectIntoStore: async (projectId: string): Promise<void> => {
+    // Load a project's data into projects[] WITHOUT activating it or touching
+    // loadingState. The import wizard lives inside ProjectPicker, which AppLayout
+    // unmounts the moment an active project gains metadata or loadingState flips
+    // to 'loading' — so the wizard must hydrate its project this way to stay
+    // mounted while previewing text and feeding the section minimap.
+    if (get().projects[projectId]?.metadata) return;
+    try {
+      const projectData = await loadProjectData('', projectId);
+      set((state) => ({ projects: { ...state.projects, [projectId]: projectData } }));
+    } catch {
+      // Best-effort: the wizard's step-2 preview falls back to "Loading…".
     }
   },
 

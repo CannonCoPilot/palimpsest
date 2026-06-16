@@ -1,5 +1,7 @@
 import { useEffect, useRef, useCallback, useState, useMemo, memo, type ReactElement } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
+import { useSectionStore } from '../../stores/sectionStore';
+import { computeMaskedIntervals } from '../../utils/sectionMasking';
 import { useTrackStore } from '../../stores/trackStore';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
 import { useViewStore } from '../../stores/viewStore';
@@ -15,9 +17,10 @@ interface TickerTapeProps {
   containerWidth: number;
   highlight: { start: number; end: number; color: string } | null;
   textHighlightAnns: Array<{ start: number; end: number; color: string }>;
+  maskedIntervals: Array<[number, number]>;
 }
 
-function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlight, textHighlightAnns }: TickerTapeProps) {
+function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlight, textHighlightAnns, maskedIntervals }: TickerTapeProps) {
   const width = viewEnd - viewStart;
   const charsPerPixel = width / Math.max(1, containerWidth);
   const tooZoomedOut = charsPerPixel > 2;
@@ -33,7 +36,7 @@ function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlig
   const text = referenceText.slice(viewStart, viewEnd);
 
   // Build highlight spans for the visible range
-  type Span = { start: number; end: number; color: string; isSelected: boolean };
+  type Span = { start: number; end: number; color: string; isSelected: boolean; masked?: boolean };
   const spans: Span[] = [];
 
   for (const ann of textHighlightAnns) {
@@ -45,6 +48,12 @@ function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlig
     const s = Math.max(highlight.start, viewStart);
     const e = Math.min(highlight.end, viewEnd);
     if (s < e) spans.push({ start: s - viewStart, end: e - viewStart, color: highlight.color, isSelected: true });
+  }
+  // Masked (analysis-excluded) ranges: near-white text on dark-gray.
+  for (const [a, b] of maskedIntervals) {
+    const s = Math.max(a, viewStart);
+    const e = Math.min(b, viewEnd);
+    if (s < e) spans.push({ start: s - viewStart, end: e - viewStart, color: '#3a3a3d', isSelected: false, masked: true });
   }
 
   if (spans.length === 0) {
@@ -69,12 +78,16 @@ function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlig
     fragments.push(
       <span
         key={`h${i}`}
-        style={{
-          backgroundColor: span.color,
-          opacity: span.isSelected ? 0.4 : 0.2,
-          borderBottom: span.isSelected ? `2px solid ${span.color}` : undefined,
-          borderRadius: 2,
-        }}
+        style={
+          span.masked
+            ? { backgroundColor: '#3a3a3d', color: '#f5f5f5', borderRadius: 2 }
+            : {
+                backgroundColor: span.color,
+                opacity: span.isSelected ? 0.4 : 0.2,
+                borderBottom: span.isSelected ? `2px solid ${span.color}` : undefined,
+                borderRadius: 2,
+              }
+        }
       >
         {text.slice(span.start, span.end)}
       </span>
@@ -264,6 +277,20 @@ export default function BrowserView() {
   const { viewStart, viewEnd, totalChars, laneDisplayModes, textHighlightTracks, highlightedAnnotation, drawerOpen } = useBrowserStore();
   const { setTotalChars, pan } = useBrowserStore();
 
+  // Masked (analysis-excluded) ranges for this project, if its layout has been configured.
+  const activeProjectId = useProjectStore((s) => s.activeProjectId);
+  const secProjectId = useSectionStore((s) => s.projectId);
+  const secSections = useSectionStore((s) => s.sections);
+  const secMask = useSectionStore((s) => s.maskByType);
+  const secTextLen = useSectionStore((s) => s.textLen);
+  const maskedIntervals = useMemo(
+    () =>
+      secProjectId && secProjectId === activeProjectId
+        ? computeMaskedIntervals(secSections, secMask, secTextLen)
+        : [],
+    [secProjectId, activeProjectId, secSections, secMask, secTextLen],
+  );
+
   const viewportRef = useRef<HTMLDivElement>(null);
   const [viewportWidth, setViewportWidth] = useState(800);
   const isDragging = useRef(false);
@@ -378,6 +405,7 @@ export default function BrowserView() {
           containerWidth={viewportWidth}
           highlight={highlightForTape}
           textHighlightAnns={textHighlightAnns}
+          maskedIntervals={maskedIntervals}
         />
         <div className="flex-1 overflow-y-auto">
           {visibleTracks.map((name) => {
