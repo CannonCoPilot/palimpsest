@@ -38,6 +38,13 @@ browser/dist/
 fixtures/swinehart/
 fixtures/ij/
 
+# Import drop folder — local EPUB corpus, large + copyrighted, not for the repo
+imports/
+
+# Local agent/scratch state (machine-local, not project source)
+.claude/
+browser/.claude/
+
 # Project caches (recomputable)
 projects/*/cache/
 
