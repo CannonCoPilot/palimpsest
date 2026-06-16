@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, type ReactElement } from 'react';
 import { useViewStore } from '../../stores/viewStore';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
-import { loadSignal, type LoadedSignal } from '../../adapters/SignalAdapter';
+import { type LoadedSignal } from '../../adapters/SignalAdapter';
 import { TRACK_COLORS } from '../../utils/trackColors';
 
 const PALETTES: Record<string, number[][]> = {
@@ -134,10 +134,9 @@ function VirtualScrollbar({ orientation, viewportOffset, viewportSpan, total, on
   );
 }
 
-function FixedTextPanel({ win, onClose, palette, colors }: {
+function FixedTextPanel({ win, onClose, colors }: {
   win: FloatingWindow;
   onClose: () => void;
-  palette: PaletteKey;
   colors: number[][];
 }) {
   const [r, g, b] = interpolateColor(win.similarity, colors);
@@ -183,7 +182,7 @@ function AxisAnnotationStrip({ orientation, annotations, color, paragraphs, view
   const stripH = 3;
   const cellPx = size / viewport.span;
   const vpStart = orientation === 'horizontal' ? viewport.x : viewport.y;
-  const bars: JSX.Element[] = [];
+  const bars: ReactElement[] = [];
   const s = Math.max(0, Math.floor(vpStart));
   const e = Math.min(n, Math.ceil(vpStart + viewport.span));
   for (let i = s; i < e; i++) {
@@ -198,7 +197,7 @@ function AxisAnnotationStrip({ orientation, annotations, color, paragraphs, view
     : <svg width={stripH} height={size} className="shrink-0">{bars}</svg>;
 }
 
-export default function DotplotView(): JSX.Element | null {
+export default function DotplotView(): ReactElement | null {
   const textHicOpen = useViewStore((s) => s.textHicOpen);
   const projectId = useProjectStore((s) => getActiveProject(s).metadata?.id);
   const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
@@ -245,7 +244,7 @@ export default function DotplotView(): JSX.Element | null {
 
   const [availableMetrics, setAvailableMetrics] = useState<string[]>([]);
   const [availableChunkSizes, setAvailableChunkSizes] = useState<number[]>([]);
-  const [metricInfo, setMetricInfo] = useState<Record<string, { unit_type: string; n_units: number; dimensions: number[]; chunk_size?: number }>>({});
+  const [, setMetricInfo] = useState<Record<string, { unit_type: string; n_units: number; dimensions: number[]; chunk_size?: number }>>({});
 
   // Load self-similarity data — responds to metric changes and chunk size changes
   useEffect(() => {
@@ -982,7 +981,6 @@ export default function DotplotView(): JSX.Element | null {
                   key={win.id}
                   win={win}
                   onClose={() => setFloatingWindows((ws) => ws.filter((w) => w.id !== win.id))}
-                  palette={palette}
                   colors={colors}
                 />
               ))}

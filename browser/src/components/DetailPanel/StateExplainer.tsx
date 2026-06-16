@@ -3,7 +3,7 @@
  * Shows statistical description, sample passages, and optional LLM narrative explanation.
  */
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type ReactElement } from 'react';
 
 type ExplainState =
   | { status: 'idle' }
@@ -18,7 +18,7 @@ interface Props {
   stateDescription?: string;
 }
 
-export default function StateExplainer({ projectId, stateId, stateDescription }: Props): JSX.Element {
+export default function StateExplainer({ projectId, stateId, stateDescription }: Props): ReactElement {
   const [state, setState] = useState<ExplainState>({ status: 'idle' });
 
   useEffect(() => {

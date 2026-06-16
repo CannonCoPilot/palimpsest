@@ -3,7 +3,7 @@
  * Lists section headings from the sections track; click to scroll.
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ReactElement } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useViewStore } from '../../stores/viewStore';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
@@ -16,7 +16,7 @@ interface SectionEntry {
   paragraphIndex: number;
 }
 
-export default function SectionNav(): JSX.Element | null {
+export default function SectionNav(): ReactElement | null {
   const tracks = useProjectStore((s) => getActiveProject(s).tracks);
   const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
   const requestScroll = useViewStore((s) => s.requestScrollToParagraph);

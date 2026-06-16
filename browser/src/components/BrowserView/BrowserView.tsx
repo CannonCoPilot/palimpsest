@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState, useMemo, memo } from 'react';
+import { useEffect, useRef, useCallback, useState, useMemo, memo, type ReactElement } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useTrackStore } from '../../stores/trackStore';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
@@ -31,7 +31,6 @@ function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlig
   }
 
   const text = referenceText.slice(viewStart, viewEnd);
-  const charWidth = containerWidth / width;
 
   // Build highlight spans for the visible range
   type Span = { start: number; end: number; color: string; isSelected: boolean };
@@ -60,7 +59,7 @@ function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlig
   spans.sort((a, b) => a.start - b.start);
 
   // Build text fragments with highlight backgrounds
-  const fragments: JSX.Element[] = [];
+  const fragments: ReactElement[] = [];
   let cursor = 0;
   for (let i = 0; i < spans.length; i++) {
     const span = spans[i];

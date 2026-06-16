@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, type ReactElement } from 'react';
 import { useSearchStore } from '../../stores/searchStore';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { Tooltip } from '../common/Tooltip';
 
-export default function TextSearch(): JSX.Element | null {
+export default function TextSearch(): ReactElement | null {
   const isOpen = useSearchStore((s) => s.isOpen);
   const query = useSearchStore((s) => s.query);
   const matches = useSearchStore((s) => s.matches);
@@ -19,7 +19,7 @@ export default function TextSearch(): JSX.Element | null {
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { referenceText, paragraphs } = useProjectStore.getState();
+      const { referenceText, paragraphs } = getActiveProject(useProjectStore.getState());
       useSearchStore.getState().setQuery(e.target.value, referenceText, paragraphs);
     },
     [],
@@ -42,7 +42,7 @@ export default function TextSearch(): JSX.Element | null {
   );
 
   const handleToggleCase = useCallback(() => {
-    const { referenceText, paragraphs } = useProjectStore.getState();
+    const { referenceText, paragraphs } = getActiveProject(useProjectStore.getState());
     useSearchStore.getState().toggleCaseSensitive(referenceText, paragraphs);
   }, []);
 

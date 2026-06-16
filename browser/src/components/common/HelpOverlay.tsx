@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ReactElement } from 'react';
 import { useViewStore } from '../../stores/viewStore';
 
 const SHORTCUTS = [
@@ -17,7 +17,7 @@ const SHORTCUTS = [
   { key: 'Escape', action: 'Close search / deselect' },
 ];
 
-export default function HelpOverlay(): JSX.Element | null {
+export default function HelpOverlay(): ReactElement | null {
   const helpOpen = useViewStore((s) => s.helpOpen);
   const toggleHelp = useViewStore((s) => s.toggleHelp);
   const dialogRef = useRef<HTMLDivElement>(null);

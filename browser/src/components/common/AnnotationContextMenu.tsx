@@ -2,7 +2,7 @@ import * as ContextMenu from '@radix-ui/react-context-menu';
 import type { ReactNode } from 'react';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { useViewStore } from '../../stores/viewStore';
-import { useProjectStore } from '../../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useSearchStore } from '../../stores/searchStore';
 
 interface Props {
@@ -15,7 +15,7 @@ export default function AnnotationContextMenu({ annotation, children }: Props) {
   const typeName = annotation.body.type.replace('palimpsest:', '');
 
   const handleCopyText = () => {
-    const text = useProjectStore.getState().referenceText;
+    const text = getActiveProject(useProjectStore.getState()).referenceText;
     if (sel.start != null && sel.end != null) {
       navigator.clipboard.writeText(text.slice(sel.start, sel.end));
     }
@@ -23,7 +23,7 @@ export default function AnnotationContextMenu({ annotation, children }: Props) {
 
   const handleNavigate = () => {
     if (sel.start == null) return;
-    const paragraphs = useProjectStore.getState().paragraphs;
+    const paragraphs = getActiveProject(useProjectStore.getState()).paragraphs;
     const paraIdx = paragraphs.findIndex((p) => p.start <= sel.start! && p.end > sel.start!);
     if (paraIdx >= 0) {
       useViewStore.getState().setSelectedParagraphIndex(paraIdx);
@@ -41,7 +41,7 @@ export default function AnnotationContextMenu({ annotation, children }: Props) {
     const searchTerm = canonicalName || value || '';
     if (searchTerm) {
       useViewStore.getState().setActiveTab('reading');
-      const { referenceText, paragraphs } = useProjectStore.getState();
+      const { referenceText, paragraphs } = getActiveProject(useProjectStore.getState());
       const search = useSearchStore.getState();
       search.open();
       search.setQuery(searchTerm, referenceText, paragraphs);

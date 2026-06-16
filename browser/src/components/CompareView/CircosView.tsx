@@ -115,10 +115,8 @@ export default function CircosView() {
   }
 
   const totalCharsA = activeProject.referenceText.length || 1;
-  const totalCharsB = secondaryProject.referenceText.length || 1;
 
   const charToAngleA = (offset: number) => (offset / totalCharsA) * 360;
-  const charToAngleB = (offset: number) => (offset / totalCharsB) * 360;
   const paraToAngleA = (idx: number) => (idx / parasA) * 360;
   const paraToAngleB = (idx: number) => (idx / parasB) * 360;
 

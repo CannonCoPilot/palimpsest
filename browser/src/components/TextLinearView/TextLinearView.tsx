@@ -3,11 +3,11 @@
  * Work → Chapter → Paragraph → Sentence
  */
 
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, type ReactElement } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { useProjectStore, getActiveProject, type Paragraph } from '../../stores/projectStore';
 import { useTrackStore, type TrackState } from '../../stores/trackStore';
-import { useViewStore, type ZoomLevel } from '../../stores/viewStore';
+import { useViewStore } from '../../stores/viewStore';
 import { useSearchStore, type SearchMatch } from '../../stores/searchStore';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { TRACK_COLORS } from '../../utils/trackColors';
@@ -47,6 +47,45 @@ function collectVisibleAnnotations(
     all.push(...filtered);
   }
   return all;
+}
+
+const EMPTY_ANNS: W3CAnnotation[] = [];
+
+/**
+ * Bucket annotations into per-paragraph slices keyed by paragraph index.
+ *
+ * Previously every paragraph overlay received the full annotation array and
+ * re-filtered it (O(paragraphs × annotations) on every track toggle). Bucketing
+ * once — O(annotations · log paragraphs) via binary search on paragraph starts —
+ * lets each overlay build segments over only its own (small) slice. `paragraphs`
+ * is ordered by `start`, so a binary search finds the first overlapping paragraph
+ * and a forward scan collects the rest.
+ */
+export function bucketAnnotationsByParagraph(
+  paragraphs: Paragraph[],
+  annotations: W3CAnnotation[],
+): Map<number, W3CAnnotation[]> {
+  const buckets = new Map<number, W3CAnnotation[]>();
+  if (paragraphs.length === 0) return buckets;
+  for (const ann of annotations) {
+    const sel = ann.target.selector;
+    if (sel.start == null || sel.end == null) continue;
+    let lo = 0;
+    let hi = paragraphs.length - 1;
+    let first = paragraphs.length;
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      if (paragraphs[mid].end > sel.start) { first = mid; hi = mid - 1; }
+      else lo = mid + 1;
+    }
+    for (let i = first; i < paragraphs.length && paragraphs[i].start < sel.end; i++) {
+      const key = paragraphs[i].index;
+      let arr = buckets.get(key);
+      if (!arr) { arr = []; buckets.set(key, arr); }
+      arr.push(ann);
+    }
+  }
+  return buckets;
 }
 
 function estimateRowHeight(text: string): number {
@@ -137,7 +176,7 @@ function countAnnotationsInRange(
 function WorkLevelView({ sectionBlocks, annotations }: {
   sectionBlocks: SectionBlock[];
   annotations: W3CAnnotation[];
-}): JSX.Element {
+}): ReactElement {
   const setZoom = useViewStore((s) => s.setZoomLevel);
   const requestScroll = useViewStore((s) => s.requestScrollToParagraph);
 
@@ -183,7 +222,7 @@ function WorkLevelView({ sectionBlocks, annotations }: {
 function ChapterLevelView({ paragraphs, annotations }: {
   paragraphs: Paragraph[];
   annotations: W3CAnnotation[];
-}): JSX.Element {
+}): ReactElement {
   const setZoom = useViewStore((s) => s.setZoomLevel);
   const requestScroll = useViewStore((s) => s.requestScrollToParagraph);
   const selectedParagraphIndex = useViewStore((s) => s.selectedParagraphIndex);
@@ -274,7 +313,7 @@ interface ParagraphViewProps {
   onSelect: () => void;
 }
 
-function ParagraphView({ paragraph, annotations, searchMatches, currentMatchIndex, isSelected, onSelect }: ParagraphViewProps): JSX.Element {
+function ParagraphView({ paragraph, annotations, searchMatches, currentMatchIndex, isSelected, onSelect }: ParagraphViewProps): ReactElement {
   return (
     <div
       data-para-index={paragraph.index}
@@ -299,14 +338,14 @@ function ParagraphView({ paragraph, annotations, searchMatches, currentMatchInde
 }
 
 function VirtualizedParagraphView({
-  paragraphs, allAnnotations, searchMatches, currentMatchIndex,
+  paragraphs, annotationsByPara, searchMatches, currentMatchIndex,
   selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
 }: {
-  paragraphs: Paragraph[]; allAnnotations: W3CAnnotation[];
+  paragraphs: Paragraph[]; annotationsByPara: Map<number, W3CAnnotation[]>;
   searchMatches: SearchMatch[]; currentMatchIndex: number;
   selectedParagraphIndex: number | null; setSelectedParagraphIndex: (i: number | null) => void;
   scrollRequest: number | null; clearScrollRequest: () => void;
-}): JSX.Element {
+}): ReactElement {
   const containerRef = useRef<HTMLDivElement>(null);
   const setVisibleRange = useViewStore((s) => s.setVisibleParagraphRange);
   const virtualizer = useVirtualizer({
@@ -338,7 +377,7 @@ function VirtualizedParagraphView({
             <div key={p.index} ref={virtualizer.measureElement} data-index={vRow.index}
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', transform: `translateY(${vRow.start}px)` }}>
               <ParagraphView
-                paragraph={p} annotations={allAnnotations} searchMatches={searchMatches}
+                paragraph={p} annotations={annotationsByPara.get(p.index) ?? EMPTY_ANNS} searchMatches={searchMatches}
                 currentMatchIndex={currentMatchIndex}
                 isSelected={selectedParagraphIndex === p.index}
                 onSelect={() => setSelectedParagraphIndex(selectedParagraphIndex === p.index ? null : p.index)}
@@ -352,14 +391,14 @@ function VirtualizedParagraphView({
 }
 
 function SimpleParagraphView({
-  paragraphs, allAnnotations, searchMatches, currentMatchIndex,
+  paragraphs, annotationsByPara, searchMatches, currentMatchIndex,
   selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
 }: {
-  paragraphs: Paragraph[]; allAnnotations: W3CAnnotation[];
+  paragraphs: Paragraph[]; annotationsByPara: Map<number, W3CAnnotation[]>;
   searchMatches: SearchMatch[]; currentMatchIndex: number;
   selectedParagraphIndex: number | null; setSelectedParagraphIndex: (i: number | null) => void;
   scrollRequest: number | null; clearScrollRequest: () => void;
-}): JSX.Element {
+}): ReactElement {
   const containerRef = useRef<HTMLDivElement>(null);
   const handleScroll = useCallback(() => {
     if (scrollRequest !== null && containerRef.current) {
@@ -374,7 +413,7 @@ function SimpleParagraphView({
   return (
     <div ref={containerRef} className="flex-1 overflow-y-auto px-6 py-4 font-[var(--font-serif)] text-[1rem]">
       {paragraphs.map((p) => (
-        <ParagraphView key={p.index} paragraph={p} annotations={allAnnotations}
+        <ParagraphView key={p.index} paragraph={p} annotations={annotationsByPara.get(p.index) ?? EMPTY_ANNS}
           searchMatches={searchMatches} currentMatchIndex={currentMatchIndex}
           isSelected={selectedParagraphIndex === p.index}
           onSelect={() => setSelectedParagraphIndex(selectedParagraphIndex === p.index ? null : p.index)} />
@@ -386,14 +425,14 @@ function SimpleParagraphView({
 // ── Sentence-level zoom ──
 
 function SentenceLevelView({
-  paragraphs, allAnnotations, searchMatches, currentMatchIndex,
+  paragraphs, annotationsByPara, searchMatches, currentMatchIndex,
   selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
 }: {
-  paragraphs: Paragraph[]; allAnnotations: W3CAnnotation[];
+  paragraphs: Paragraph[]; annotationsByPara: Map<number, W3CAnnotation[]>;
   searchMatches: SearchMatch[]; currentMatchIndex: number;
   selectedParagraphIndex: number | null; setSelectedParagraphIndex: (i: number | null) => void;
   scrollRequest: number | null; clearScrollRequest: () => void;
-}): JSX.Element {
+}): ReactElement {
   const containerRef = useRef<HTMLDivElement>(null);
   const virtualizer = useVirtualizer({
     count: paragraphs.length,
@@ -415,10 +454,7 @@ function SentenceLevelView({
         {virtualizer.getVirtualItems().map((vRow) => {
           const p = paragraphs[vRow.index];
           const isSelected = selectedParagraphIndex === p.index;
-          const paraAnns = allAnnotations.filter((a) => {
-            const s = a.target.selector;
-            return s.start != null && s.end != null && s.start < p.end && s.end > p.start;
-          });
+          const paraAnns = annotationsByPara.get(p.index) ?? EMPTY_ANNS;
           return (
             <div key={p.index} ref={virtualizer.measureElement} data-index={vRow.index}
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', transform: `translateY(${vRow.start}px)` }}>
@@ -437,7 +473,7 @@ function SentenceLevelView({
                 </div>
                 <AnnotationOverlay
                   text={p.text} paraStart={p.start} paraEnd={p.end}
-                  annotations={allAnnotations} searchMatches={searchMatches}
+                  annotations={paraAnns} searchMatches={searchMatches}
                   currentMatchIndex={currentMatchIndex}
                 />
               </div>
@@ -451,7 +487,7 @@ function SentenceLevelView({
 
 // ── Main component with zoom dispatch ──
 
-export default function TextLinearView(): JSX.Element {
+export default function TextLinearView(): ReactElement {
   const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
   const tracks = useProjectStore((s) => getActiveProject(s).tracks);
   const trackStates = useTrackStore((s) => s.tracks);
@@ -506,8 +542,13 @@ export default function TextLinearView(): JSX.Element {
 
   const clearCharFilter = useViewStore((s) => s.setCharacterFilter);
 
+  const annotationsByPara = useMemo(
+    () => bucketAnnotationsByParagraph(filteredParagraphs, allAnnotations),
+    [filteredParagraphs, allAnnotations],
+  );
+
   const commonProps = {
-    paragraphs: filteredParagraphs, allAnnotations: allAnnotations, searchMatches, currentMatchIndex,
+    paragraphs: filteredParagraphs, annotationsByPara, searchMatches, currentMatchIndex,
     selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
   };
 

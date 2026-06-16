@@ -33,7 +33,7 @@ export default function CooccurrenceHeatmap({ projectId }: { projectId: string }
 
   const { names, matrix } = data;
   const n = names.length;
-  const maxVal = Math.max(1, ...matrix.flat().filter((v, i) => Math.floor(i / n) !== i % n));
+  const maxVal = Math.max(1, ...matrix.flat().filter((_v, i) => Math.floor(i / n) !== i % n));
   const cellSize = Math.min(40, Math.floor(600 / n));
   const labelWidth = 120;
 

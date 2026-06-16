@@ -2,7 +2,7 @@
  * ImportDialog — upload an EPUB/TXT/PDF file, ingest and compute all tracks.
  */
 
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, type ReactElement } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 
 type ImportState =
@@ -14,7 +14,7 @@ type ImportState =
 
 const ACCEPTED_FORMATS = '.epub,.txt,.pdf,.html,.htm,.md,.markdown';
 
-export default function ImportDialog(): JSX.Element {
+export default function ImportDialog(): ReactElement {
   const [state, setState] = useState<ImportState>({ status: 'idle' });
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');

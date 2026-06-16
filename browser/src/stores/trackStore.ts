@@ -3,6 +3,7 @@
  */
 
 import { create } from 'zustand';
+import { useShallow } from 'zustand/react/shallow';
 import type { TrackManifest } from '../adapters/TrackManifest';
 
 export type DisplayMode = 'dense' | 'pack' | 'inline';
@@ -90,3 +91,28 @@ export const useTrackStore = create<TrackStoreState>((set) => ({
       };
     }),
 }));
+
+/**
+ * Subscribe to a single track's visibility. Re-renders the caller only when
+ * THAT track's visible flag flips — not on every churn of the tracks map.
+ */
+export function useTrackVisibility(name: string): boolean {
+  return useTrackStore((s) => s.tracks[name]?.visible ?? false);
+}
+
+/**
+ * Subscribe to the track→manifest map. Manifests are assigned once at load and
+ * never change on toggle; toggleTrack rebuilds the wrapper object but preserves
+ * each `manifest` reference. With useShallow the returned map stays shallow-equal
+ * across visibility changes, so consumers that only need manifests (e.g. for
+ * styling) don't re-render when tracks are toggled.
+ */
+export function useTrackManifests(): Record<string, TrackManifest> {
+  return useTrackStore(
+    useShallow((s) => {
+      const manifests: Record<string, TrackManifest> = {};
+      for (const name in s.tracks) manifests[name] = s.tracks[name].manifest;
+      return manifests;
+    }),
+  );
+}

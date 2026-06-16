@@ -4,7 +4,7 @@
  */
 
 import { useViewStore } from '../stores/viewStore';
-import { useProjectStore } from '../stores/projectStore';
+import { useProjectStore, getActiveProject } from '../stores/projectStore';
 import { useSearchStore } from '../stores/searchStore';
 import { useTrackStore } from '../stores/trackStore';
 
@@ -33,7 +33,7 @@ export function setupKeyboardHandlers(): () => void {
 
     if (isInput && e.key !== 'Escape') return;
 
-    const paragraphs = useProjectStore.getState().paragraphs;
+    const paragraphs = getActiveProject(useProjectStore.getState()).paragraphs;
     const maxIndex = paragraphs.length - 1;
     const search = useSearchStore.getState();
 

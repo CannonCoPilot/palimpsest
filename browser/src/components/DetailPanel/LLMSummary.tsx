@@ -3,7 +3,7 @@
  * Gracefully handles Ollama unavailability with friendly messaging.
  */
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type ReactElement } from 'react';
 
 type SummaryState =
   | { status: 'idle' }
@@ -17,7 +17,7 @@ interface Props {
   passageId: string;
 }
 
-export default function LLMSummary({ passage, passageId }: Props): JSX.Element {
+export default function LLMSummary({ passage, passageId }: Props): ReactElement {
   const [state, setState] = useState<SummaryState>({ status: 'idle' });
 
   useEffect(() => {

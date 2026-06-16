@@ -5,11 +5,11 @@
  * search match highlighting, and click-to-select.
  */
 
-import { memo, useMemo } from 'react';
+import { memo, useMemo, type ReactElement } from 'react';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import type { TrackManifest } from '../../adapters/TrackManifest';
 import { useViewStore } from '../../stores/viewStore';
-import { useTrackStore } from '../../stores/trackStore';
+import { useTrackManifests } from '../../stores/trackStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
 import type { SearchMatch } from '../../stores/searchStore';
 import { Tooltip } from '../common/Tooltip';
@@ -47,9 +47,9 @@ function getColor(ann: W3CAnnotation): string {
   return TRACK_COLORS[getTrackName(ann)] ?? '#888';
 }
 
-function getManifest(ann: W3CAnnotation, trackStates: Record<string, { manifest: TrackManifest }>): TrackManifest | null {
+function getManifest(ann: W3CAnnotation, manifests: Record<string, TrackManifest>): TrackManifest | null {
   const name = getTrackName(ann);
-  return trackStates[name]?.manifest ?? null;
+  return manifests[name] ?? null;
 }
 
 function getAnnotationStyle(
@@ -147,7 +147,6 @@ function getAnnotationStyle(
 }
 
 function buildSegments(
-  text: string,
   annotations: W3CAnnotation[],
   paraStart: number,
   paraEnd: number,
@@ -207,32 +206,6 @@ function buildSegments(
   return segments;
 }
 
-function buildAnnotationTitle(ann: W3CAnnotation): string {
-  const typeName = ann.body.type.replace('palimpsest:', '');
-  const body = ann.body as Record<string, unknown>;
-
-  const stateId = body['palimpsest:stateId'];
-  const stateDesc = body['palimpsest:stateDescription'];
-  if (typeof stateId === 'number' && stateDesc) {
-    return `${typeName} — State ${stateId}: ${stateDesc}`;
-  }
-
-  const noteNum = body['palimpsest:noteNumber'];
-  const noteText = body['palimpsest:noteText'];
-  if (typeof noteNum === 'number' && typeof noteText === 'string') {
-    return `Endnote ${noteNum}: ${noteText.slice(0, 100)}${noteText.length > 100 ? '...' : ''}`;
-  }
-
-  const headingText = body['palimpsest:headingText'];
-  if (typeof headingText === 'string') {
-    return `Section: ${headingText}`;
-  }
-
-  const topic = body['palimpsest:topicLabel'];
-  if (topic) return `${typeName} — ${topic}`;
-  return `${typeName} — ${ann.body.value || ''}`;
-}
-
 interface Props {
   text: string;
   paraStart: number;
@@ -249,23 +222,23 @@ function AnnotationOverlayInner({
   annotations,
   searchMatches = [],
   currentMatchIndex = -1,
-}: Props): JSX.Element {
+}: Props): ReactElement {
   const selectAnnotation = useViewStore((s) => s.selectAnnotation);
   const selectedAnnotation = useViewStore((s) => s.selectedAnnotation);
-  const trackStates = useTrackStore((s) => s.tracks);
+  const trackManifests = useTrackManifests();
 
   // Memoize the expensive segment-building step.  It only needs to rerun when
   // the annotation list, paragraph bounds, or search state changes.
   const segments = useMemo(
-    () => buildSegments(text, annotations, paraStart, paraEnd, searchMatches, currentMatchIndex),
-    [text, annotations, paraStart, paraEnd, searchMatches, currentMatchIndex],
+    () => buildSegments(annotations, paraStart, paraEnd, searchMatches, currentMatchIndex),
+    [annotations, paraStart, paraEnd, searchMatches, currentMatchIndex],
   );
 
   if (segments.length === 0 && searchMatches.length === 0) {
     return <span>{text}</span>;
   }
 
-  const elements: JSX.Element[] = [];
+  const elements: ReactElement[] = [];
   let cursor = 0;
 
   for (let i = 0; i < segments.length; i++) {
@@ -281,7 +254,7 @@ function AnnotationOverlayInner({
     let style: React.CSSProperties;
 
     if (hasAnnotation && topAnn) {
-      const manifest = getManifest(topAnn, trackStates);
+      const manifest = getManifest(topAnn, trackManifests);
       style = getAnnotationStyle(topAnn, isSelected, manifest);
     } else {
       style = {};

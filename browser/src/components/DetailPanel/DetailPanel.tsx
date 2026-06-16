@@ -5,7 +5,7 @@ import LLMSummary from './LLMSummary';
 import StateExplainer from './StateExplainer';
 import { Tooltip } from '../common/Tooltip';
 
-function ConfidenceBadge({ value }: { value: number }): JSX.Element {
+function ConfidenceBadge({ value }: { value: number }): React.JSX.Element {
   const pct = Math.round(value * 100);
   const color = value >= 0.8 ? '#27ae60' : value >= 0.5 ? '#e67e22' : '#e74c3c';
   return (
@@ -18,7 +18,7 @@ function ConfidenceBadge({ value }: { value: number }): JSX.Element {
   );
 }
 
-function EvidenceBadge({ level }: { level: string }): JSX.Element {
+function EvidenceBadge({ level }: { level: string }): React.JSX.Element {
   const descriptions: Record<string, string> = {
     E1: 'Explicit in text',
     E2: 'Human annotator',
@@ -37,7 +37,7 @@ function EvidenceBadge({ level }: { level: string }): JSX.Element {
   );
 }
 
-function PropertyRow({ label, children }: { label: string; children: React.ReactNode }): JSX.Element {
+function PropertyRow({ label, children }: { label: string; children: React.ReactNode }): React.JSX.Element {
   return (
     <div className="flex py-[4px] border-b border-[var(--color-border-subtle)]">
       <span className="w-[90px] text-[#888] text-[0.8em] shrink-0">{label}</span>
@@ -46,7 +46,7 @@ function PropertyRow({ label, children }: { label: string; children: React.React
   );
 }
 
-function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
+function AnnotationDetail({ ann }: { ann: W3CAnnotation }): React.JSX.Element {
   const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
   const sel = ann.target.selector;
   const excerpt =
@@ -107,7 +107,7 @@ function AnnotationDetail({ ann }: { ann: W3CAnnotation }): JSX.Element {
   );
 }
 
-export default function DetailPanel(): JSX.Element {
+export default function DetailPanel(): React.JSX.Element {
   const selectedAnnotation = useViewStore((s) => s.selectedAnnotation);
   const selectAnnotation = useViewStore((s) => s.selectAnnotation);
   const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
