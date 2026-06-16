@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -72,6 +73,7 @@ class LocalImportRequest(BaseModel):
     author: str = ""
     year: int = 0
     process: bool = True  # False = staged (Step 1 ingest only, defer analysis)
+    overwrite: bool = False  # True = replace an existing project at the same slug (re-import)
 
 
 class SectionsUpdateRequest(BaseModel):
@@ -213,7 +215,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5173", "http://127.0.0.1:5174"],
-        allow_methods=["GET", "POST"],
+        allow_methods=["GET", "POST", "DELETE"],
         allow_headers=["*"],
     )
 
@@ -232,8 +234,16 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                         "author": meta.get("author", ""),
                         "word_count": meta.get("word_count", 0),
                         "cover": _find_cover_url(p, meta),
+                        "source_file": meta.get("source_file", ""),
                     })
         return JSONResponse(content=projects)
+
+    @app.delete("/api/projects/{project_id}")
+    async def delete_project(project_id: str) -> JSONResponse:
+        """Delete a project and all its artifacts (irreversible)."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        shutil.rmtree(project_dir)
+        return JSONResponse(content={"status": "ok", "deleted": project_id})
 
     @app.get("/api/projects/{project_id}/tracks")
     async def list_tracks(project_id: str) -> JSONResponse:
@@ -889,14 +899,16 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         return JSONResponse(content={"status": "started", "dim": dim})
 
     async def _ingest_and_compute(
-        src_path: Path, title: str, author: str, year: int
+        src_path: Path, title: str, author: str, year: int, overwrite: bool = False
     ) -> dict[str, Any]:
         """Ingest a source file and compute all tracks (legacy one-shot path)."""
-        project = await _ingest_only(src_path, title, author, year)
+        project = await _ingest_only(src_path, title, author, year, overwrite)
         failed = await _compute_tracks(project)
         return _ingest_summary(project, staged=False, failed_tracks=failed)
 
-    async def _ingest_only(src_path: Path, title: str, author: str, year: int) -> Any:
+    async def _ingest_only(
+        src_path: Path, title: str, author: str, year: int, overwrite: bool = False
+    ) -> Any:
         """Step 1: structural ingest only (text/segments/sections/endnotes). No analysis."""
         import asyncio
 
@@ -904,7 +916,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         return await asyncio.to_thread(
             ingest_file, src_path, workspace,
-            title=title or src_path.stem, author=author, year=year,
+            title=title or src_path.stem, author=author, year=year, overwrite=overwrite,
         )
 
     def _ingest_summary(
@@ -1032,9 +1044,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         try:
             if req.process:
                 return JSONResponse(
-                    content=await _ingest_and_compute(src, req.title, req.author, req.year)
+                    content=await _ingest_and_compute(
+                        src, req.title, req.author, req.year, req.overwrite
+                    )
                 )
-            project = await _ingest_only(src, req.title, req.author, req.year)
+            project = await _ingest_only(src, req.title, req.author, req.year, req.overwrite)
             return JSONResponse(content=_ingest_summary(project, staged=True))
         except FileExistsError:
             raise HTTPException(status_code=409, detail="Project already exists")

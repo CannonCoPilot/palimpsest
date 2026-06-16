@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
@@ -184,8 +185,13 @@ def ingest_file(
     year: int = 0,
     language: str = "en",
     content_profile: Any = None,  # ContentProfile or None
+    overwrite: bool = False,
 ) -> Project:
-    """Ingest a text file into a new project directory."""
+    """Ingest a text file into a new project directory.
+
+    With ``overwrite=True``, an existing project directory at the same slug is
+    replaced (used by re-import); otherwise a collision raises FileExistsError.
+    """
     is_epub = source_path.suffix.lower() == ".epub"
     epub_result = None
 
@@ -208,7 +214,10 @@ def ingest_file(
     project_dir = workspace / slug
 
     if project_dir.exists():
-        raise FileExistsError(f"Project already exists: {project_dir}")
+        if overwrite:
+            shutil.rmtree(project_dir)
+        else:
+            raise FileExistsError(f"Project already exists: {project_dir}")
 
     for subdir in _SUBDIRS:
         (project_dir / subdir).mkdir(parents=True, exist_ok=True)

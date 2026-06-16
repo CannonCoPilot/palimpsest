@@ -26,6 +26,7 @@ interface ProjectEntry {
   author: string;
   word_count: number;
   cover?: string | null;
+  source_file?: string;
 }
 
 // Curated rich/muted [from, to] gradient pairs — Books-like, not random HSL.
@@ -106,59 +107,117 @@ function SectionLabel({ children }: { children: ReactNode }): ReactElement {
   );
 }
 
-function BookCover({ project, onOpen }: { project: ProjectEntry; onOpen: () => void }): ReactElement {
+function BookCover({ project, onOpen, onReimport, onDelete }: {
+  project: ProjectEntry;
+  onOpen: () => void;
+  onReimport: () => void;
+  onDelete: () => void;
+}): ReactElement {
   const [from, to] = COVER_PALETTE[stableIndex(project.id, COVER_PALETTE.length)];
   const [imgFailed, setImgFailed] = useState(false);
+  const [menu, setMenu] = useState<null | 'main' | 'confirm-delete' | 'confirm-reimport'>(null);
   const showImage = Boolean(project.cover) && !imgFailed;
+
+  useEffect(() => {
+    if (!menu) return;
+    const close = (): void => setMenu(null);
+    window.addEventListener('click', close);
+    return () => window.removeEventListener('click', close);
+  }, [menu]);
+
   return (
-    <button type="button" onClick={onOpen} className="group flex flex-col text-left focus:outline-none">
-      <div
-        className="relative w-full aspect-[2/3] rounded-[3px] overflow-hidden ring-1 ring-black/40
-          shadow-[0_12px_22px_-8px_rgba(0,0,0,0.75)] transition-all duration-200
-          group-hover:-translate-y-1 group-hover:shadow-[0_20px_34px_-8px_rgba(0,0,0,0.85)]
-          group-focus-visible:ring-2 group-focus-visible:ring-[#0a84ff]"
-        style={{ backgroundImage: `linear-gradient(155deg, ${from} 0%, ${to} 100%)` }}
+    <div className="group relative flex flex-col">
+      <button type="button" onClick={onOpen} className="flex flex-col text-left focus:outline-none">
+        <div
+          className="relative w-full aspect-[2/3] rounded-[3px] overflow-hidden ring-1 ring-black/40
+            shadow-[0_12px_22px_-8px_rgba(0,0,0,0.75)] transition-all duration-200
+            group-hover:-translate-y-1 group-hover:shadow-[0_20px_34px_-8px_rgba(0,0,0,0.85)]
+            group-focus-visible:ring-2 group-focus-visible:ring-[#0a84ff]"
+          style={{ backgroundImage: `linear-gradient(155deg, ${from} 0%, ${to} 100%)` }}
+        >
+          {showImage ? (
+            <img
+              src={project.cover ?? ''}
+              alt={`Cover of ${project.title}`}
+              loading="lazy"
+              onError={() => setImgFailed(true)}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ) : (
+            <>
+              {/* spine highlight + page-edge shading for a printed-book feel */}
+              <div className="absolute inset-y-0 left-0 w-[3px] bg-white/20" />
+              <div className="absolute inset-y-0 left-[3px] w-[6px] bg-gradient-to-r from-white/10 to-transparent" />
+              <div className="absolute inset-y-0 right-0 w-[5px] bg-gradient-to-l from-black/25 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-between px-3 pt-6 pb-4 text-center">
+                <h3 className="font-[var(--font-serif)] text-white leading-tight text-[15px] [text-wrap:balance] break-words drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+                  {project.title}
+                </h3>
+                {project.author && (
+                  <p className="text-white/80 text-[11px] uppercase tracking-wide break-words">
+                    {project.author}
+                  </p>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+        <div className="mt-2">
+          <span className="text-[12px] text-[#8e8e93] truncate">
+            {project.word_count.toLocaleString()} words
+          </span>
+        </div>
+      </button>
+
+      {/* Overflow menu — sibling of the open-button (avoids nested buttons). */}
+      <button
+        type="button"
+        aria-label={`More options for ${project.title}`}
+        onClick={(e) => { e.stopPropagation(); setMenu((m) => (m ? null : 'main')); }}
+        className="absolute top-1.5 right-1.5 z-10 w-7 h-7 rounded-full flex items-center justify-center
+          bg-black/45 text-white/90 ring-1 ring-white/10 backdrop-blur-sm transition-opacity
+          opacity-0 group-hover:opacity-100 focus:opacity-100 hover:bg-black/70"
       >
-        {showImage ? (
-          <img
-            src={project.cover ?? ''}
-            alt={`Cover of ${project.title}`}
-            loading="lazy"
-            onError={() => setImgFailed(true)}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        ) : (
-          <>
-            {/* spine highlight + page-edge shading for a printed-book feel */}
-            <div className="absolute inset-y-0 left-0 w-[3px] bg-white/20" />
-            <div className="absolute inset-y-0 left-[3px] w-[6px] bg-gradient-to-r from-white/10 to-transparent" />
-            <div className="absolute inset-y-0 right-0 w-[5px] bg-gradient-to-l from-black/25 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-between px-3 pt-6 pb-4 text-center">
-              <h3 className="font-[var(--font-serif)] text-white leading-tight text-[15px] [text-wrap:balance] break-words drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
-                {project.title}
-              </h3>
-              {project.author && (
-                <p className="text-white/80 text-[11px] uppercase tracking-wide break-words">
-                  {project.author}
-                </p>
-              )}
+        <Icon name="more" className="w-4 h-4" />
+      </button>
+
+      {menu && (
+        <div
+          className="absolute top-9 right-1.5 z-20 min-w-[170px] rounded-lg bg-[#2a2a2c] ring-1 ring-white/15 shadow-xl py-1 text-[13px] text-[#e8e8ea]"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {menu === 'main' && (
+            <>
+              <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => { setMenu(null); onOpen(); }}>Open</button>
+              <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => setMenu('confirm-reimport')}>Re-import…</button>
+              <button className="w-full text-left px-3 py-1.5 hover:bg-white/10 text-[#ff453a]" onClick={() => setMenu('confirm-delete')}>Delete…</button>
+            </>
+          )}
+          {menu === 'confirm-reimport' && (
+            <div className="px-3 py-2 space-y-2">
+              <p className="text-[12px] text-[#b0b0b6] leading-snug">Re-open the import wizard for this book? Finishing it replaces the current analysis.</p>
+              <div className="flex gap-2">
+                <button className="flex-1 px-2 py-1 rounded bg-[#0a84ff] hover:bg-[#0a78e6] text-white" onClick={() => { setMenu(null); onReimport(); }}>Re-import</button>
+                <button className="flex-1 px-2 py-1 rounded bg-white/10 hover:bg-white/15" onClick={() => setMenu('main')}>Cancel</button>
+              </div>
             </div>
-          </>
-        )}
-      </div>
-      <div className="mt-2 flex items-center justify-between gap-1">
-        <span className="text-[12px] text-[#8e8e93] truncate">
-          {project.word_count.toLocaleString()} words
-        </span>
-        <span className="text-[#6d6d72] opacity-0 group-hover:opacity-100 transition-opacity">
-          <Icon name="more" className="w-4 h-4" />
-        </span>
-      </div>
-    </button>
+          )}
+          {menu === 'confirm-delete' && (
+            <div className="px-3 py-2 space-y-2">
+              <p className="text-[12px] text-[#b0b0b6] leading-snug">Delete this book and all of its analysis? This cannot be undone.</p>
+              <div className="flex gap-2">
+                <button className="flex-1 px-2 py-1 rounded bg-[#ff453a] hover:bg-[#e03e34] text-white" onClick={() => { setMenu(null); onDelete(); }}>Delete</button>
+                <button className="flex-1 px-2 py-1 rounded bg-white/10 hover:bg-white/15" onClick={() => setMenu('main')}>Cancel</button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 
-function ImportModal({ onClose }: { onClose: () => void }): ReactElement {
+function ImportModal({ onClose, initialSourceFile }: { onClose: () => void; initialSourceFile?: string }): ReactElement {
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -231,7 +290,7 @@ function ImportModal({ onClose }: { onClose: () => void }): ReactElement {
         >
           ✕
         </button>
-        <ImportWizard />
+        <ImportWizard initialSourceFile={initialSourceFile} />
       </div>
     </div>
   );
@@ -247,12 +306,14 @@ const TOOLS: ReadonlyArray<{ tab: TabId; label: string; icon: string; desc: stri
   { tab: 'compare', label: 'Compare', icon: 'compare', desc: 'Two-text alignment & diff' },
 ];
 
-function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTool }: {
+function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTool, onReimport, onDelete }: {
   projects: ProjectEntry[];
   onOpenLibrary: () => void;
   onImport: () => void;
   onOpenProject: (id: string) => void;
   onLaunchTool: (tab: TabId) => void;
+  onReimport: (p: ProjectEntry) => void;
+  onDelete: (p: ProjectEntry) => void;
 }): ReactElement {
   const hasProjects = projects.length > 0;
   return (
@@ -299,7 +360,13 @@ function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTo
         {hasProjects ? (
           <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-x-6 gap-y-7">
             {projects.slice(0, 12).map((p) => (
-              <BookCover key={p.id} project={p} onOpen={() => onOpenProject(p.id)} />
+              <BookCover
+                key={p.id}
+                project={p}
+                onOpen={() => onOpenProject(p.id)}
+                onReimport={() => onReimport(p)}
+                onDelete={() => onDelete(p)}
+              />
             ))}
           </div>
         ) : (
@@ -455,6 +522,7 @@ export default function ProjectPicker(): ReactElement {
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [showImport, setShowImport] = useState(false);
+  const [reimportFile, setReimportFile] = useState<string | null>(null);
   const [page, setPage] = useState<'home' | 'library' | 'store'>('home');
   const [pendingTab, setPendingTab] = useState<TabId | null>(null);
   const loadProject = useProjectStore((s) => s.loadProject);
@@ -510,6 +578,33 @@ export default function ProjectPicker(): ReactElement {
     }
     setPendingTab(tab);
     setPage('library');
+  }
+
+  // Delete a project (BookCover already confirmed in its menu).
+  async function handleDelete(p: ProjectEntry): Promise<void> {
+    try {
+      const res = await fetch(`/api/projects/${encodeURIComponent(p.id)}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setProjects((prev) => prev.filter((x) => x.id !== p.id));
+    } catch (err) {
+      window.alert(`Could not delete “${p.title}”: ${err instanceof Error ? err.message : 'unknown error'}`);
+    }
+  }
+
+  // Re-import: re-open the wizard pre-loaded with this book's source file
+  // (BookCover already confirmed). Replaces the analysis only on completion.
+  function handleReimport(p: ProjectEntry): void {
+    if (!p.source_file) {
+      window.alert(`“${p.title}” has no recorded source file to re-import.`);
+      return;
+    }
+    setReimportFile(p.source_file);
+    setShowImport(true);
+  }
+
+  function closeImport(): void {
+    setShowImport(false);
+    setReimportFile(null);
   }
 
   const pendingToolLabel = pendingTab ? TOOLS.find((t) => t.tab === pendingTab)?.label : null;
@@ -590,6 +685,8 @@ export default function ProjectPicker(): ReactElement {
             onImport={() => setShowImport(true)}
             onOpenProject={(id) => handleSelect(id, null)}
             onLaunchTool={launchTool}
+            onReimport={handleReimport}
+            onDelete={handleDelete}
           />
         ) : page === 'store' ? (
           <StoreView />
@@ -637,7 +734,13 @@ export default function ProjectPicker(): ReactElement {
               ) : (
                 <div className="grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] gap-x-7 gap-y-8">
                   {filtered.map((p) => (
-                    <BookCover key={p.id} project={p} onOpen={() => handleSelect(p.id)} />
+                    <BookCover
+                      key={p.id}
+                      project={p}
+                      onOpen={() => handleSelect(p.id)}
+                      onReimport={() => handleReimport(p)}
+                      onDelete={() => handleDelete(p)}
+                    />
                   ))}
                 </div>
               )
@@ -646,7 +749,7 @@ export default function ProjectPicker(): ReactElement {
         )}
       </main>
 
-      {showImport && <ImportModal onClose={() => setShowImport(false)} />}
+      {showImport && <ImportModal onClose={closeImport} initialSourceFile={reimportFile ?? undefined} />}
     </div>
   );
 }

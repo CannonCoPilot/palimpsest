@@ -22,7 +22,7 @@ function formatBytes(n: number): string {
   return `${(n / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-export default function ImportWizard(): ReactElement {
+export default function ImportWizard({ initialSourceFile }: { initialSourceFile?: string } = {}): ReactElement {
   const [step, setStep] = useState(1);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -64,6 +64,7 @@ export default function ImportWizard(): ReactElement {
 
       {step === 1 && (
         <ScanStep
+          initialSourceFile={initialSourceFile}
           onImported={(pid) => {
             setProjectId(pid);
             void useProjectStore.getState().loadProjectIntoStore(pid);
@@ -160,9 +161,11 @@ function StepBar({ step }: { step: number }): ReactElement {
 function ScanStep({
   onImported,
   setError,
+  initialSourceFile,
 }: {
   onImported: (projectId: string) => void;
   setError: (e: string | null) => void;
+  initialSourceFile?: string;
 }): ReactElement {
   const [files, setFiles] = useState<ImportFile[] | null>(null);
   const [available, setAvailable] = useState(true);
@@ -179,13 +182,19 @@ function ScanStep({
       .then((r) => r.json())
       .then((d) => {
         if (!active) return;
-        setFiles(d.files ?? []);
+        const list: ImportFile[] = d.files ?? [];
+        setFiles(list);
         setAvailable(Boolean(d.available));
         setRoot(d.root ?? '');
+        // Re-import: pre-select the book's original source file by name.
+        if (initialSourceFile) {
+          const match = list.find((f) => f.name === initialSourceFile);
+          if (match) setSelected(match.path);
+        }
       })
       .catch(() => active && (setFiles([]), setAvailable(false)));
     return () => { active = false; };
-  }, []);
+  }, [initialSourceFile]);
 
   const grouped = useMemo(() => {
     const m = new Map<string, ImportFile[]>();
@@ -219,14 +228,14 @@ function ScanStep({
       const res = await fetch('/api/import/local', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ path: selected, title, author, process: false }),
+        body: JSON.stringify({ path: selected, title, author, process: false, overwrite: Boolean(initialSourceFile) }),
       });
       await finishImport(res);
     } catch {
       setError('Failed to connect to server');
       setBusy(false);
     }
-  }, [selected, title, author, finishImport, setError]);
+  }, [selected, title, author, finishImport, setError, initialSourceFile]);
 
   const importUpload = useCallback(async () => {
     const file = fileRef.current?.files?.[0];
@@ -254,6 +263,11 @@ function ScanStep({
 
   return (
     <div className="space-y-3">
+      {initialSourceFile && (
+        <div className="rounded-lg ring-1 ring-[#0a84ff]/40 bg-[#0a84ff]/15 px-3 py-2 text-[12px] text-[#d6e7ff]">
+          Re-importing <strong className="text-white">{initialSourceFile}</strong>. Completing the wizard replaces the existing analysis.
+        </div>
+      )}
       <div className="flex flex-col gap-2">
         <input className={inputCls} placeholder="Title (optional)" value={title} onChange={(e) => setTitle(e.target.value)} />
         <input className={inputCls} placeholder="Author (optional)" value={author} onChange={(e) => setAuthor(e.target.value)} />

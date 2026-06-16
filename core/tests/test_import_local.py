@@ -54,3 +54,43 @@ def test_import_local_missing_file_404(tmp_path):
     client = TestClient(_make_app(tmp_path))
     res = client.post("/api/import/local", json={"path": "Nope/missing.txt"})
     assert res.status_code == 404
+
+
+def test_list_projects_includes_source_file(tmp_path):
+    client = TestClient(_make_app(tmp_path))
+    client.post(
+        "/api/import/local",
+        json={"path": "Jane Austen/Emma/emma.txt", "process": False},
+    )
+    proj = client.get("/api/projects").json()[0]
+    assert proj["source_file"] == "emma.txt"
+
+
+def test_delete_project_removes_it(tmp_path):
+    client = TestClient(_make_app(tmp_path))
+    res = client.post(
+        "/api/import/local",
+        json={"path": "Jane Austen/Emma/emma.txt", "process": False},
+    )
+    assert res.status_code == 200
+    pid = res.json()["project_id"]
+    assert any(p["id"] == pid for p in client.get("/api/projects").json())
+
+    deleted = client.delete(f"/api/projects/{pid}")
+    assert deleted.status_code == 200
+    assert deleted.json()["status"] == "ok"
+    assert all(p["id"] != pid for p in client.get("/api/projects").json())
+    # already gone → 404 on a second delete
+    assert client.delete(f"/api/projects/{pid}").status_code == 404
+
+
+def test_reimport_requires_overwrite(tmp_path):
+    client = TestClient(_make_app(tmp_path))
+    body = {"path": "Jane Austen/Emma/emma.txt", "process": False}
+    assert client.post("/api/import/local", json=body).status_code == 200
+    # same source again without overwrite collides
+    assert client.post("/api/import/local", json=body).status_code == 409
+    # overwrite replaces in place — still exactly one project
+    ov = client.post("/api/import/local", json={**body, "overwrite": True})
+    assert ov.status_code == 200
+    assert len(client.get("/api/projects").json()) == 1
