@@ -30,6 +30,7 @@ const BODY_TYPE_TO_TRACK: Record<string, string> = {
   'palimpsest:SegmentAnnotation': 'segments',
   'palimpsest:SectionAnnotation': 'sections',
   'palimpsest:EndnoteAnnotation': 'endnotes',
+  'palimpsest:ElementAnnotation': 'elements',
 };
 
 interface SegmentItem {
@@ -44,6 +45,9 @@ function getTrackName(ann: W3CAnnotation): string {
 }
 
 function getColor(ann: W3CAnnotation): string {
+  // Per-annotation color (e.g. each Elements subtype carries its own) wins.
+  const custom = (ann.body as Record<string, unknown>)['palimpsest:color'];
+  if (typeof custom === 'string' && custom) return custom;
   return TRACK_COLORS[getTrackName(ann)] ?? '#888';
 }
 

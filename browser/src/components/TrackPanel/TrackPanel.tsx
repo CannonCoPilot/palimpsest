@@ -1,9 +1,11 @@
-import { useState, memo } from 'react';
+import { useMemo, useState, memo, type ReactElement } from 'react';
 import { DndContext, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { SortableContext, useSortable, verticalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useTrackStore, type DisplayMode } from '../../stores/trackStore';
+import { useElementVisibilityStore } from '../../stores/elementVisibilityStore';
+import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { TRACK_COLORS } from '../../utils/trackColors';
 import { Tooltip } from '../common/Tooltip';
 
@@ -116,6 +118,62 @@ const SortableTrackRow = memo(function SortableTrackRow(props: TrackRowProps) {
   );
 });
 
+// #27 — per-element-type show/hide for the unified "elements" track. The subtypes
+// (chapter, header, front_matter, custom layers…) are derived from the track's
+// annotations; each carries its own color via palimpsest:color.
+function ElementTypeToggles({ annotations }: { annotations: W3CAnnotation[] }): ReactElement | null {
+  const hidden = useElementVisibilityStore((s) => s.hidden);
+  const toggle = useElementVisibilityStore((s) => s.toggle);
+  const showAll = useElementVisibilityStore((s) => s.showAll);
+
+  const types = useMemo(() => {
+    const m = new Map<string, { label: string; color: string; count: number }>();
+    for (const a of annotations) {
+      const b = a.body as Record<string, unknown>;
+      const et = b['palimpsest:elementType'];
+      if (typeof et !== 'string') continue;
+      const color = typeof b['palimpsest:color'] === 'string' ? (b['palimpsest:color'] as string) : '#5ac8fa';
+      const cur = m.get(et);
+      if (cur) cur.count += 1;
+      else m.set(et, { label: et.replace(/_/g, ' '), color, count: 1 });
+    }
+    return Array.from(m.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+  }, [annotations]);
+
+  if (types.length === 0) return null;
+  const anyHidden = types.some(([k]) => hidden[k]);
+
+  return (
+    <div className="mt-3 pt-2 border-t border-[var(--color-border-subtle)]">
+      <div className="flex items-center justify-between mb-1">
+        <span className="font-bold">Element types</span>
+        {anyHidden && (
+          <button onClick={showAll} className="text-[0.75em] text-[var(--color-primary)] hover:underline">show all</button>
+        )}
+      </div>
+      {types.map(([key, t]) => {
+        const isHidden = hidden[key] === true;
+        return (
+          <div key={key} className="flex items-center gap-1.5 py-0.5" style={{ opacity: isHidden ? 0.4 : 1 }}>
+            <div
+              className="w-2.5 h-2.5 rounded-sm shrink-0 cursor-pointer"
+              style={{ backgroundColor: t.color }}
+              onClick={() => toggle(key)}
+              role="switch"
+              aria-checked={!isHidden}
+              aria-label={`Toggle ${t.label} elements`}
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(key); } }}
+            />
+            <span className="flex-1 text-[0.9em] capitalize cursor-pointer truncate" onClick={() => toggle(key)}>{t.label}</span>
+            <span className="text-[var(--color-text-muted)] text-[0.8em]">{t.count}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function TrackPanel() {
   const projectTracks = useProjectStore((s) => getActiveProject(s).tracks);
   const trackStates = useTrackStore((s) => s.tracks);
@@ -167,6 +225,9 @@ export default function TrackPanel() {
       </DndContext>
       {trackNames.length === 0 && (
         <div className="text-[var(--color-text-muted)] italic">No tracks loaded</div>
+      )}
+      {projectTracks['elements'] && (trackStates['elements']?.visible ?? true) && (
+        <ElementTypeToggles annotations={projectTracks['elements']} />
       )}
     </aside>
   );

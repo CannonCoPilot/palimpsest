@@ -15,4 +15,5 @@ export const TRACK_COLORS: Record<string, string> = {
   segments: '#95a5a6',
   sections: '#8e44ad',
   endnotes: '#e74c3c',
+  elements: '#5ac8fa',
 };

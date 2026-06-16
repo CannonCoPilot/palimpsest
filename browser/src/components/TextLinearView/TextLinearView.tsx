@@ -7,6 +7,7 @@ import { useCallback, useEffect, useMemo, useRef, type ReactElement } from 'reac
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { useProjectStore, getActiveProject, type Paragraph } from '../../stores/projectStore';
 import { useTrackStore, type TrackState } from '../../stores/trackStore';
+import { useElementVisibilityStore } from '../../stores/elementVisibilityStore';
 import { useViewStore } from '../../stores/viewStore';
 import { useSearchStore, type SearchMatch } from '../../stores/searchStore';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
@@ -33,6 +34,7 @@ const VIRTUALIZE_THRESHOLD = 200;
 function collectVisibleAnnotations(
   tracks: Record<string, W3CAnnotation[]>,
   trackStates: Record<string, TrackState>,
+  hiddenElementTypes: Record<string, boolean>,
 ): W3CAnnotation[] {
   const all: W3CAnnotation[] = [];
   for (const [name, anns] of Object.entries(tracks)) {
@@ -41,9 +43,16 @@ function collectVisibleAnnotations(
     if (state && !state.visible) continue;
     if (state?.displayMode === 'dense') continue;
     const threshold = state?.confidenceThreshold ?? 0;
-    const filtered = threshold > 0
+    let filtered = threshold > 0
       ? anns.filter((a) => (a['palimpsest:confidence'] ?? 1) >= threshold)
       : anns;
+    // #27 — within the unified elements track, hide individually-toggled subtypes.
+    if (name === 'elements') {
+      filtered = filtered.filter((a) => {
+        const et = (a.body as Record<string, unknown>)['palimpsest:elementType'];
+        return !(typeof et === 'string' && hiddenElementTypes[et]);
+      });
+    }
     all.push(...filtered);
   }
   return all;
@@ -508,12 +517,18 @@ export default function TextLinearView(): ReactElement {
     [trackStates],
   );
 
+  const hiddenElementTypes = useElementVisibilityStore((s) => s.hidden);
+  const hiddenElementKey = useMemo(
+    () => Object.keys(hiddenElementTypes).filter((k) => hiddenElementTypes[k]).sort().join(','),
+    [hiddenElementTypes],
+  );
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const allAnnotations = useMemo(
-    () => collectVisibleAnnotations(tracks, trackStates),
+    () => collectVisibleAnnotations(tracks, trackStates, hiddenElementTypes),
     // tracks (annotation data) changes only on project load; trackVisibilityKey changes on toggle.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [tracks, trackVisibilityKey],
+    [tracks, trackVisibilityKey, hiddenElementKey],
   );
 
   const sectionBlocks = useMemo(

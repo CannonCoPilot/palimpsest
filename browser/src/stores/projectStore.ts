@@ -10,6 +10,7 @@ import { loadTrack } from '../adapters/AnnotationAdapter';
 import { loadTrackManifest, type TrackManifest } from '../adapters/TrackManifest';
 import { useTrackStore, type TrackState } from './trackStore';
 import { useSectionStore } from './sectionStore';
+import { useElementVisibilityStore } from './elementVisibilityStore';
 import { TRACK_COLORS } from '../utils/trackColors';
 
 export interface ProjectMetadata {
@@ -185,6 +186,11 @@ export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
   // Backward-compat getters removed — use getActiveProject(s) in selectors
 
   loadProject: async (baseUrl: string, projectId: string): Promise<void> => {
+    // Switching projects: clear per-element-type toggles so hidden subtypes from a
+    // previous project don't silently hide this one's elements.
+    if (get().activeProjectId !== projectId) {
+      useElementVisibilityStore.getState().showAll();
+    }
     // Load any configured layout sections so masked ranges render (fire-and-forget).
     void useSectionStore.getState().load(projectId);
     // If already loaded, just switch active
