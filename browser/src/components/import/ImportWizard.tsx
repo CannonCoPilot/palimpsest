@@ -10,8 +10,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactElement } from 'react';
 import { useProjectStore, type ProjectMetadata, type Paragraph } from '../../stores/projectStore';
 import { useSectionStore } from '../../stores/sectionStore';
-import { computeMaskedIntervals, type LayoutSection, type SectionType } from '../../utils/sectionMasking';
+import { computeMaskedIntervals } from '../../utils/sectionMasking';
 import SectionMinimap from './SectionMinimap';
+import { MaskContextMenu } from './maskMenu';
+import { offsetFromPoint, deepestSectionAt } from './textOffset';
 
 type ImportStatus = 'new' | 'imported' | 'version';
 type ImportFile = {
@@ -320,65 +322,6 @@ function paragraphSegments(
   return segs;
 }
 
-// Resolve a click/right-click to an absolute character offset. Each rendered run
-// carries data-off (its start); the caret API refines to the exact character.
-function offsetFromPoint(clientX: number, clientY: number, target: EventTarget | null): number | null {
-  const el = target as HTMLElement | null;
-  let span = el?.closest?.('[data-off]') as HTMLElement | null;
-  if (!span && el) {
-    // Click landed in a paragraph-margin gap — snap to the vertically nearest run
-    // so point operations still work between paragraphs (#28).
-    const container = el.closest('[data-reader]');
-    if (container) {
-      let bestDist = Infinity;
-      for (const cand of Array.from(container.querySelectorAll<HTMLElement>('[data-off]'))) {
-        const r = cand.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > window.innerHeight) continue;
-        const dy = clientY < r.top ? r.top - clientY : clientY > r.bottom ? clientY - r.bottom : 0;
-        if (dy < bestDist) { bestDist = dy; span = cand; }
-      }
-    }
-  }
-  if (!span) return null;
-  const base = Number(span.getAttribute('data-off'));
-  if (Number.isNaN(base)) return null;
-  const doc = document as Document & {
-    caretRangeFromPoint?: (x: number, y: number) => Range | null;
-    caretPositionFromPoint?: (x: number, y: number) => { offsetNode: Node; offset: number } | null;
-  };
-  try {
-    if (doc.caretRangeFromPoint) {
-      const r = doc.caretRangeFromPoint(clientX, clientY);
-      if (r && span.contains(r.startContainer)) {
-        const pre = document.createRange();
-        pre.selectNodeContents(span);
-        pre.setEnd(r.startContainer, r.startOffset);
-        return base + pre.toString().length;
-      }
-    } else if (doc.caretPositionFromPoint) {
-      const p = doc.caretPositionFromPoint(clientX, clientY);
-      if (p && span.contains(p.offsetNode)) {
-        const pre = document.createRange();
-        pre.selectNodeContents(span);
-        pre.setEnd(p.offsetNode, p.offset);
-        return base + pre.toString().length;
-      }
-    }
-  } catch {
-    /* fall back to the run's start offset */
-  }
-  return base;
-}
-
-// Smallest section covering an offset (the most specific layer at that point).
-function deepestSectionAt(sections: LayoutSection[], off: number): LayoutSection | null {
-  let best: LayoutSection | null = null;
-  for (const s of sections) {
-    if (off >= s.start && off < s.end && (!best || s.end - s.start < best.end - best.start)) best = s;
-  }
-  return best;
-}
-
 const MASKED_SPAN_STYLE = { backgroundColor: '#3a3a3d', color: '#f5f5f5', borderRadius: 2 } as const;
 const SELECTED_SPAN_STYLE = { outline: '1.5px solid #0a84ff', outlineOffset: '-1px', borderRadius: 2 } as CSSProperties;
 // content-visibility lets the browser skip layout of offscreen paragraphs cheaply;
@@ -427,7 +370,13 @@ function FullTextReader({
       data-reader
       className="rounded-lg ring-1 ring-white/10 bg-[#1c1c1e] overflow-y-auto px-6 py-4 max-h-[64vh] leading-relaxed font-[var(--font-serif)] text-[#cfcfd2] select-none"
       style={{ fontSize: `${fontScale}rem` }}
-      onClick={(e) => { const off = offsetFromPoint(e.clientX, e.clientY, e.target); if (off != null) onSelect(off); }}
+      onClick={(e) => {
+        // On macOS a Control-click is a secondary (right) click: it also fires this
+        // click with ctrlKey set. Let onContextMenu handle it instead of selecting.
+        if (e.ctrlKey) return;
+        const off = offsetFromPoint(e.clientX, e.clientY, e.target);
+        if (off != null) onSelect(off);
+      }}
       onContextMenu={(e) => {
         e.preventDefault(); // always suppress the native menu inside the reader
         const off = offsetFromPoint(e.clientX, e.clientY, e.target);
@@ -460,104 +409,6 @@ function FullTextReader({
           Loading more… ({limit.toLocaleString()} / {paragraphs.length.toLocaleString()} paragraphs)
         </div>
       )}
-    </div>
-  );
-}
-
-// #28 — right-click mask editor for the Step 2 reader. Precise per-point ops that
-// work across arbitrarily large intervals without dragging: set the selected
-// element's start/end at this point, change its type, split the element under the
-// cursor, or add a new element here. Drag in Step 3 stays available too.
-function MaskContextMenu({
-  x,
-  y,
-  off,
-  sections,
-  types,
-  selectedId,
-  onClose,
-}: {
-  x: number;
-  y: number;
-  off: number;
-  sections: LayoutSection[];
-  types: SectionType[];
-  selectedId: string | null;
-  onClose: () => void;
-}): ReactElement {
-  const [sub, setSub] = useState<'change' | 'add' | null>(null);
-  const selected = sections.find((s) => s.id === selectedId) ?? null;
-  const hit = useMemo(() => deepestSectionAt(sections, off), [sections, off]);
-  const typeLabel = (key: string): string => types.find((t) => t.key === key)?.label ?? key;
-  const store = useSectionStore.getState;
-
-  useEffect(() => {
-    const close = (): void => onClose();
-    // Capture-phase + stopImmediatePropagation so Esc closes the menu only, not the
-    // surrounding full-screen import view (whose own Esc handler is registered first).
-    const esc = (e: KeyboardEvent): void => { if (e.key === 'Escape') { e.stopImmediatePropagation(); onClose(); } };
-    window.addEventListener('click', close);
-    window.addEventListener('keydown', esc, true);
-    return () => { window.removeEventListener('click', close); window.removeEventListener('keydown', esc, true); };
-  }, [onClose]);
-
-  const run = (fn: () => void) => () => { fn(); onClose(); };
-  const item = 'w-full text-left px-3 py-1.5 text-[13px] flex items-center gap-2 enabled:hover:bg-white/10 disabled:opacity-35';
-  const left = Math.min(x, window.innerWidth - 244);
-  const top = Math.min(y, window.innerHeight - 360);
-
-  const TypeList = ({ onPick }: { onPick: (key: string) => void }): ReactElement => (
-    <div className="max-h-[200px] overflow-y-auto bg-black/20">
-      {types.map((t) => (
-        <button key={t.key} type="button" className={`${item} pl-6`} onClick={run(() => onPick(t.key))}>
-          <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: t.color }} />
-          <span className="truncate">{t.label}</span>
-        </button>
-      ))}
-    </div>
-  );
-
-  return (
-    <div
-      className="fixed z-[var(--z-overlay)] min-w-[214px] max-h-[80vh] overflow-y-auto rounded-lg bg-[#2a2a2c] ring-1 ring-white/15 shadow-[0_16px_40px_rgba(0,0,0,0.5)] py-1 text-[#e8e8ea]"
-      style={{ left, top }}
-      onClick={(e) => e.stopPropagation()}
-      onContextMenu={(e) => { e.preventDefault(); e.stopPropagation(); }}
-    >
-      {selected ? (
-        <>
-          <div className="px-3 py-1 text-[10px] uppercase tracking-wide text-[#8a8a90] truncate">
-            Selected: {selected.label || typeLabel(selected.type)}
-          </div>
-          <button type="button" className={item} disabled={off >= selected.end} onClick={run(() => store().updateSection(selected.id, { start: off }))}>Set start here</button>
-          <button type="button" className={item} disabled={off <= selected.start} onClick={run(() => store().updateSection(selected.id, { end: off }))}>Set end here</button>
-          <button type="button" className={item} onClick={() => setSub(sub === 'change' ? null : 'change')}>
-            Change type<span className="ml-auto text-[#8a8a90]">{sub === 'change' ? '▾' : '▸'}</span>
-          </button>
-          {sub === 'change' && <TypeList onPick={(key) => store().updateSection(selected.id, { type: key })} />}
-          <div className="my-1 border-t border-white/10" />
-        </>
-      ) : (
-        <div className="px-3 py-1 text-[11px] text-[#8a8a90]">Left-click text to select an element.</div>
-      )}
-
-      {hit && (
-        <>
-          {hit.id !== selectedId && (
-            <button type="button" className={item} onClick={run(() => store().setSelected(hit.id))}>
-              Select “{(hit.label || typeLabel(hit.type)).slice(0, 24)}”
-            </button>
-          )}
-          <button type="button" className={item} disabled={off <= hit.start || off >= hit.end} onClick={run(() => store().splitSection(hit.id, off))}>Split element here</button>
-          <button type="button" className={`${item} text-[#ff453a]`} onClick={run(() => store().removeSection(hit.id))}>Delete this element</button>
-          <div className="my-1 border-t border-white/10" />
-        </>
-      )}
-
-      <button type="button" className={item} onClick={() => setSub(sub === 'add' ? null : 'add')}>
-        Add mask element here<span className="ml-auto text-[#8a8a90]">{sub === 'add' ? '▾' : '▸'}</span>
-      </button>
-      {sub === 'add' && <TypeList onPick={(key) => store().addSection(key, off, Math.min(store().textLen, off + 400))} />}
     </div>
   );
 }

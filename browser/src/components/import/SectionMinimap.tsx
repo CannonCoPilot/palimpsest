@@ -12,6 +12,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactElement } from 'react';
 import { useSectionStore } from '../../stores/sectionStore';
 import { computeMaskedIntervals, type LayoutSection } from '../../utils/sectionMasking';
+import { MaskContextMenu } from './maskMenu';
+import { offsetFromPoint } from './textOffset';
 
 const SNAP_PX = 6;
 
@@ -48,6 +50,9 @@ export default function SectionMinimap({
 
   const ref = useRef<HTMLDivElement>(null);
   const [menu, setMenu] = useState<Menu | null>(null);
+  // Separate from `menu` (the strip's add/change/delete menu): the rich mask-edit
+  // menu opened by right-clicking the selected section's text in the right panel.
+  const [textMenu, setTextMenu] = useState<{ x: number; y: number; off: number } | null>(null);
   const [zoom, setZoom] = useState(1);
   const [hidden, setHidden] = useState<Set<string>>(() => new Set());
   const dragRef = useRef<{ id: string; edge: 'start' | 'end' } | null>(null);
@@ -339,6 +344,7 @@ export default function SectionMinimap({
                   text={text}
                   section={selected}
                   onChange={(patch) => updateSection(selected.id, patch)}
+                  onContext={(off, x, y) => setTextMenu({ off, x, y })}
                 />
               ) : (
                 <div className="flex-1 rounded-lg ring-1 ring-white/10 bg-[#161618] p-3 text-[#6e6e73] text-xs">
@@ -375,6 +381,18 @@ export default function SectionMinimap({
           onClose={() => setMenu(null)}
         />
       )}
+
+      {textMenu && (
+        <MaskContextMenu
+          x={textMenu.x}
+          y={textMenu.y}
+          off={textMenu.off}
+          sections={sections}
+          types={types}
+          selectedId={selectedId}
+          onClose={() => setTextMenu(null)}
+        />
+      )}
     </div>
   );
 }
@@ -389,10 +407,12 @@ function BoundaryTextEditor({
   text,
   section,
   onChange,
+  onContext,
 }: {
   text: string;
   section: LayoutSection;
   onChange: (patch: Partial<LayoutSection>) => void;
+  onContext: (off: number, x: number, y: number) => void;
 }): ReactElement {
   const dragRef = useRef<'start' | 'end' | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -523,6 +543,14 @@ function BoundaryTextEditor({
   return (
     <div
       ref={containerRef}
+      data-reader
+      onContextMenu={(e) => {
+        // Two-finger tap / Control-click on the trackpad both arrive here as a
+        // contextmenu event — suppress Chrome's native menu and open the mask editor.
+        e.preventDefault();
+        const off = offsetFromPoint(e.clientX, e.clientY, e.target);
+        if (off != null) onContext(off, e.clientX, e.clientY);
+      }}
       className="flex-1 min-h-0 overflow-y-auto rounded-lg ring-1 ring-white/10 bg-[#161618] p-3 text-[13px] leading-[1.9] font-[var(--font-serif)] whitespace-pre-wrap break-words select-none"
     >
       {regions.map((r, i) => renderRegion(r, i))}
