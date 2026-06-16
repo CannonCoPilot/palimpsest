@@ -11,11 +11,11 @@
  *   - Book Store: a launchpad of external sources (screenshot-thumbnail tiles that
  *     open sites for finding/searching more texts in a new tab).
  *
- * Import opens the 5-step ImportWizard behind an accessible modal.
+ * Import opens the 5-step ImportWizard as a full-screen Import view (not a modal).
  * Only consumer is AppLayout's no-project branch (CompareView has its own picker).
  */
 
-import { useEffect, useMemo, useRef, useState, type ReactElement, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type ReactElement, type ReactNode } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 import { useViewStore, type TabId } from '../../stores/viewStore';
 import ImportWizard from '../import/ImportWizard';
@@ -107,10 +107,11 @@ function SectionLabel({ children }: { children: ReactNode }): ReactElement {
   );
 }
 
-function BookCover({ project, onOpen, onReimport, onDelete }: {
+function BookCover({ project, onOpen, onReimport, onRefine, onDelete }: {
   project: ProjectEntry;
   onOpen: () => void;
   onReimport: () => void;
+  onRefine: () => void;
   onDelete: () => void;
 }): ReactElement {
   const [from, to] = COVER_PALETTE[stableIndex(project.id, COVER_PALETTE.length)];
@@ -189,6 +190,7 @@ function BookCover({ project, onOpen, onReimport, onDelete }: {
           {menu === 'main' && (
             <>
               <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => { setMenu(null); onOpen(); }}>Open</button>
+              <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => { setMenu(null); onRefine(); }}>Refine sections…</button>
               <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => setMenu('confirm-reimport')}>Re-import…</button>
               <button className="w-full text-left px-3 py-1.5 hover:bg-white/10 text-[#ff453a]" onClick={() => setMenu('confirm-delete')}>Delete…</button>
             </>
@@ -217,80 +219,49 @@ function BookCover({ project, onOpen, onReimport, onDelete }: {
   );
 }
 
-function ImportModal({ onClose, initialSourceFile }: { onClose: () => void; initialSourceFile?: string }): ReactElement {
-  const panelRef = useRef<HTMLDivElement>(null);
-
+// Full-screen Import view (not a modal): a top-takeover that covers the picker
+// so the wizard's steps have the whole viewport to work in. Esc returns to the
+// library. No focus trap — this is a page, so native tab order is correct.
+function ImportView({ onClose, initialSourceFile, resumeProjectId }: {
+  onClose: () => void;
+  initialSourceFile?: string;
+  resumeProjectId?: string;
+}): ReactElement {
   useEffect(() => {
-    // Mount == open, cleanup == close (modal is conditionally rendered).
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    const panel = panelRef.current;
-    panel?.focus();
-
-    function focusables(): HTMLElement[] {
-      if (!panel) return [];
-      // Recompute each keypress: ImportDialog swaps its controls between states.
-      // offsetParent !== null drops display:none nodes (e.g. the hidden file input).
-      return Array.from(
-        panel.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
-        ),
-      ).filter((el) => el.offsetParent !== null);
-    }
-
     function handleKeyDown(e: KeyboardEvent): void {
       if (e.key === 'Escape') {
         e.preventDefault();
         onClose();
-        return;
-      }
-      if (e.key !== 'Tab') return;
-      const items = focusables();
-      if (items.length === 0) {
-        e.preventDefault();
-        return;
-      }
-      const first = items[0];
-      const last = items[items.length - 1];
-      const active = document.activeElement;
-      if (e.shiftKey && (active === first || active === panel)) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && active === last) {
-        e.preventDefault();
-        first.focus();
       }
     }
-
-    document.addEventListener('keydown', handleKeyDown, true);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown, true);
-      previouslyFocused?.focus?.();
-    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
+  const heading = resumeProjectId ? 'Refine Sections & Masking' : 'Import a Text';
+
   return (
-    <div
-      className="fixed inset-0 z-[var(--z-overlay)] flex items-center justify-center bg-black/55 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        ref={panelRef}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Import a text"
-        tabIndex={-1}
-        className="relative w-[min(760px,94vw)] rounded-xl bg-[#242426] ring-1 ring-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.55)] focus:outline-none"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="fixed inset-0 z-[var(--z-overlay)] flex flex-col bg-[#1c1c1e] text-[#e8e8ea] font-[var(--font-sans)]">
+      <header className="shrink-0 flex items-center gap-3 h-14 px-5 border-b border-black/40 bg-[#242426]">
         <button
           type="button"
           onClick={onClose}
-          aria-label="Close import dialog"
-          className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full text-[#8e8e93] hover:text-white hover:bg-white/10 text-base flex items-center justify-center"
+          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-[13px] text-[#d6d6d8] hover:bg-white/[0.08] transition-colors"
+        >
+          <Icon name="arrowRight" className="w-4 h-4 rotate-180" /> Library
+        </button>
+        <h1 className="text-[15px] font-semibold text-white">{heading}</h1>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close import"
+          className="ml-auto w-8 h-8 rounded-full text-[#8e8e93] hover:text-white hover:bg-white/10 text-base flex items-center justify-center"
         >
           ✕
         </button>
-        <ImportWizard initialSourceFile={initialSourceFile} />
+      </header>
+      <div className="flex-1 min-h-0 overflow-y-auto">
+        <ImportWizard initialSourceFile={initialSourceFile} resumeProjectId={resumeProjectId} />
       </div>
     </div>
   );
@@ -306,13 +277,14 @@ const TOOLS: ReadonlyArray<{ tab: TabId; label: string; icon: string; desc: stri
   { tab: 'compare', label: 'Compare', icon: 'compare', desc: 'Two-text alignment & diff' },
 ];
 
-function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTool, onReimport, onDelete }: {
+function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTool, onReimport, onRefine, onDelete }: {
   projects: ProjectEntry[];
   onOpenLibrary: () => void;
   onImport: () => void;
   onOpenProject: (id: string) => void;
   onLaunchTool: (tab: TabId) => void;
   onReimport: (p: ProjectEntry) => void;
+  onRefine: (p: ProjectEntry) => void;
   onDelete: (p: ProjectEntry) => void;
 }): ReactElement {
   const hasProjects = projects.length > 0;
@@ -365,6 +337,7 @@ function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTo
                 project={p}
                 onOpen={() => onOpenProject(p.id)}
                 onReimport={() => onReimport(p)}
+                onRefine={() => onRefine(p)}
                 onDelete={() => onDelete(p)}
               />
             ))}
@@ -523,6 +496,7 @@ export default function ProjectPicker(): ReactElement {
   const [query, setQuery] = useState('');
   const [showImport, setShowImport] = useState(false);
   const [reimportFile, setReimportFile] = useState<string | null>(null);
+  const [resumeProject, setResumeProject] = useState<string | null>(null);
   const [page, setPage] = useState<'home' | 'library' | 'store'>('home');
   const [pendingTab, setPendingTab] = useState<TabId | null>(null);
   const loadProject = useProjectStore((s) => s.loadProject);
@@ -602,9 +576,17 @@ export default function ProjectPicker(): ReactElement {
     setShowImport(true);
   }
 
+  // Refine (#11/#26): re-open the wizard on an existing project at the Detect
+  // step to re-run sections/masking without re-ingesting the source file.
+  function handleRefine(p: ProjectEntry): void {
+    setResumeProject(p.id);
+    setShowImport(true);
+  }
+
   function closeImport(): void {
     setShowImport(false);
     setReimportFile(null);
+    setResumeProject(null);
   }
 
   const pendingToolLabel = pendingTab ? TOOLS.find((t) => t.tab === pendingTab)?.label : null;
@@ -686,6 +668,7 @@ export default function ProjectPicker(): ReactElement {
             onOpenProject={(id) => handleSelect(id, null)}
             onLaunchTool={launchTool}
             onReimport={handleReimport}
+            onRefine={handleRefine}
             onDelete={handleDelete}
           />
         ) : page === 'store' ? (
@@ -739,6 +722,7 @@ export default function ProjectPicker(): ReactElement {
                       project={p}
                       onOpen={() => handleSelect(p.id)}
                       onReimport={() => handleReimport(p)}
+                      onRefine={() => handleRefine(p)}
                       onDelete={() => handleDelete(p)}
                     />
                   ))}
@@ -749,7 +733,13 @@ export default function ProjectPicker(): ReactElement {
         )}
       </main>
 
-      {showImport && <ImportModal onClose={closeImport} initialSourceFile={reimportFile ?? undefined} />}
+      {showImport && (
+        <ImportView
+          onClose={closeImport}
+          initialSourceFile={reimportFile ?? undefined}
+          resumeProjectId={resumeProject ?? undefined}
+        />
+      )}
     </div>
   );
 }

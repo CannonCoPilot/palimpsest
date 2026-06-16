@@ -20,6 +20,14 @@ export interface SectionType {
   label: string;
   color: string;
   default_mask: boolean;
+  builtin?: boolean;
+}
+
+export interface ExtraType {
+  key: string;
+  label: string;
+  color: string;
+  default_mask: boolean;
 }
 
 export function effectiveMask(s: LayoutSection, maskByType: Record<string, boolean>): boolean {

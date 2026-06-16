@@ -1,9 +1,12 @@
 /**
  * Bird's-eye section map (Step 3).
- *  - mode="vertical": the editable workbench — colored blocks down a strip, draggable
- *    top/bottom boundary handles (snap to paragraph starts), click to select,
- *    right-click to add a section. A right-hand gutter previews masked ranges.
- *  - mode="horizontal": a view-only overview with one lane per nesting depth.
+ *  - mode="vertical": the editable workbench — colored blocks down a (zoomable, scrolling)
+ *    strip, draggable top/bottom boundary handles (snap to paragraph starts), click to
+ *    select, right-click to add a section. A right-hand panel shows the selected section's
+ *    raw text with iOS-style start/end handles you drag to adjust the boundary precisely.
+ *  - mode="horizontal": a zoomable overview, one lane per nesting depth, with sections
+ *    staggered into sub-rows (UCSC-genome-browser style) so labels stay readable.
+ * A row of per-type toggles shows/hides each masking layer in both views.
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactElement } from 'react';
@@ -27,9 +30,11 @@ type Menu = { x: number; y: number; offset: number; sectionId: string | null };
 export default function SectionMinimap({
   mode,
   paragraphStarts,
+  text,
 }: {
   mode: 'vertical' | 'horizontal';
   paragraphStarts?: number[];
+  text?: string;
 }): ReactElement {
   const sections = useSectionStore((s) => s.sections);
   const types = useSectionStore((s) => s.types);
@@ -43,6 +48,8 @@ export default function SectionMinimap({
 
   const ref = useRef<HTMLDivElement>(null);
   const [menu, setMenu] = useState<Menu | null>(null);
+  const [zoom, setZoom] = useState(1);
+  const [hidden, setHidden] = useState<Set<string>>(() => new Set());
   const dragRef = useRef<{ id: string; edge: 'start' | 'end' } | null>(null);
 
   const colorOf = useMemo(() => {
@@ -59,6 +66,27 @@ export default function SectionMinimap({
     () => Math.max(0, ...sections.map((s) => depthOf(s, byId))),
     [sections, byId],
   );
+
+  // Types actually present, in vocabulary order — drives the show/hide legend.
+  const usedTypes = useMemo(() => {
+    const present = new Set(sections.map((s) => s.type));
+    return types.filter((t) => present.has(t.key));
+  }, [types, sections]);
+
+  const visibleSections = useMemo(
+    () => sections.filter((s) => !hidden.has(s.type)),
+    [sections, hidden],
+  );
+  const selected = useMemo(() => sections.find((s) => s.id === selectedId) ?? null, [sections, selectedId]);
+
+  const toggleType = useCallback((key: string) => {
+    setHidden((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  }, []);
 
   const offsetFromClientY = useCallback(
     (clientY: number): number => {
@@ -85,135 +113,247 @@ export default function SectionMinimap({
     [textLen, paragraphStarts],
   );
 
+  const offsetRef = useRef(offsetFromClientY);
+  offsetRef.current = offsetFromClientY;
+
   useEffect(() => {
-    if (!dragRef.current) return;
-    function onMove(e: PointerEvent): void {
+    let raf = 0;
+    let pendingY: number | null = null;
+    // rAF-coalesced minimap boundary drag — one update per frame (#20).
+    function flush(): void {
+      raf = 0;
       const drag = dragRef.current;
-      if (!drag) return;
-      const off = offsetFromClientY(e.clientY);
+      if (!drag || pendingY == null) return;
+      const off = offsetRef.current(pendingY);
+      pendingY = null;
       const sec = useSectionStore.getState().sections.find((s) => s.id === drag.id);
       if (!sec) return;
       if (drag.edge === 'start' && off < sec.end) updateSection(drag.id, { start: off });
       else if (drag.edge === 'end' && off > sec.start) updateSection(drag.id, { end: off });
     }
+    function onMove(e: PointerEvent): void {
+      if (!dragRef.current) return;
+      pendingY = e.clientY;
+      if (!raf) raf = requestAnimationFrame(flush);
+    }
     function onUp(): void {
       dragRef.current = null;
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
     }
     window.addEventListener('pointermove', onMove);
     window.addEventListener('pointerup', onUp);
     return () => {
       window.removeEventListener('pointermove', onMove);
       window.removeEventListener('pointerup', onUp);
+      if (raf) cancelAnimationFrame(raf);
     };
-  });
+  }, [updateSection]);
 
   const startDrag = (id: string, edge: 'start' | 'end') => (e: React.PointerEvent) => {
     e.stopPropagation();
     e.preventDefault();
     dragRef.current = { id, edge };
-    // Re-render to attach the move/up listeners via the effect.
     setSelected(id);
   };
 
-  // ── Horizontal view-only overview ──
+  const LayerToggles = (
+    <div className="flex flex-wrap gap-1.5">
+      {usedTypes.map((t) => {
+        const off = hidden.has(t.key);
+        return (
+          <button
+            key={t.key}
+            type="button"
+            onClick={() => toggleType(t.key)}
+            title={off ? `Show ${t.label}` : `Hide ${t.label}`}
+            className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] ring-1 transition-colors ${
+              off ? 'ring-white/10 text-[#6e6e73]' : 'ring-white/25 text-[#e8e8ea] bg-white/5'
+            }`}
+          >
+            <span className="w-2.5 h-2.5 rounded-sm" style={{ background: t.color, opacity: off ? 0.3 : 1 }} />
+            {t.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+
+  const ZoomControl = (
+    <div className="flex items-center gap-1.5 shrink-0">
+      <span className="text-[10px] text-[#8a8a90]">Zoom</span>
+      <input
+        type="range"
+        min={1}
+        max={10}
+        step={0.5}
+        value={zoom}
+        onChange={(e) => setZoom(Number(e.target.value))}
+        className="w-28 accent-[#0a84ff]"
+        aria-label="Zoom"
+      />
+      <span className="text-[10px] text-[#8a8a90] tabular-nums w-9">{zoom.toFixed(1)}×</span>
+    </div>
+  );
+
+  // ── Horizontal staggered overview ──
   if (mode === 'horizontal') {
-    const laneH = 26;
+    const ROW_H = 24;
+    const STAGGER = 2;
+    const GAP = 6;
+    const byDepth = new Map<number, LayoutSection[]>();
+    for (const s of visibleSections) {
+      const d = depthOf(s, byId);
+      (byDepth.get(d) ?? byDepth.set(d, []).get(d)!).push(s);
+    }
+    const items: { s: LayoutSection; top: number; leftPct: number; widthPct: number }[] = [];
+    let laneTop = 0;
+    for (let d = 0; d <= maxDepth; d++) {
+      const lane = (byDepth.get(d) ?? []).slice().sort((a, b) => a.start - b.start);
+      lane.forEach((s, i) => {
+        items.push({
+          s,
+          top: laneTop + (i % STAGGER) * ROW_H,
+          leftPct: (s.start / textLen) * 100,
+          widthPct: ((s.end - s.start) / textLen) * 100,
+        });
+      });
+      laneTop += STAGGER * ROW_H + GAP;
+    }
     return (
-      <div className="w-full">
-        <div className="relative w-full" style={{ height: (maxDepth + 1) * laneH + 4 }}>
-          {sections.map((s) => {
-            const d = depthOf(s, byId);
-            const left = `${(s.start / textLen) * 100}%`;
-            const width = `${((s.end - s.start) / textLen) * 100}%`;
-            return (
-              <div
-                key={s.id}
-                title={`${s.type} · ${s.label}`}
-                className="absolute rounded-sm text-[9px] text-black/70 overflow-hidden whitespace-nowrap px-1"
-                style={{
-                  left, width, top: d * laneH, height: laneH - 4,
-                  background: colorOf(s.type), opacity: 0.85,
-                }}
-              >
-                {s.label || s.type}
-              </div>
-            );
-          })}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between gap-3">{LayerToggles}{ZoomControl}</div>
+        <div className="overflow-auto rounded-lg ring-1 ring-white/10 bg-[#1c1c1e]" style={{ height: '56vh' }}>
+          <div className="relative" style={{ width: `${100 * zoom}%`, minWidth: '100%', height: laneTop + 4 }}>
+            {items.map(({ s, top, leftPct, widthPct }) => {
+              const isSel = s.id === selectedId;
+              return (
+                <div
+                  key={s.id}
+                  onClick={() => setSelected(s.id)}
+                  title={`${s.type} · ${s.label}`}
+                  className="absolute rounded-sm text-[10px] text-black/80 overflow-hidden whitespace-nowrap px-1 cursor-pointer leading-[20px]"
+                  style={{
+                    left: `${leftPct}%`,
+                    width: `max(3px, ${widthPct}%)`,
+                    top,
+                    height: ROW_H - 3,
+                    background: colorOf(s.type),
+                    opacity: isSel ? 1 : 0.85,
+                    outline: isSel ? '2px solid #fff' : 'none',
+                  }}
+                >
+                  {s.label || s.type}
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className="mt-1 text-[10px] text-[#6e6e73]">View only — switch to the vertical map to edit.</div>
+        <div className="text-[10px] text-[#6e6e73]">
+          Overview — click a block to select it (edit in the vertical map). Zoom to spread crowded sections.
+        </div>
       </div>
     );
   }
 
   // ── Vertical editable workbench ──
   return (
-    <div className="flex gap-2 select-none" style={{ height: '52vh' }}>
-      <div
-        ref={ref}
-        className="relative w-[170px] rounded-lg ring-1 ring-white/10 bg-[#1c1c1e] overflow-hidden"
-        onContextMenu={(e) => {
-          e.preventDefault();
-          setMenu({ x: e.clientX, y: e.clientY, offset: offsetFromClientY(e.clientY), sectionId: null });
-        }}
-        onClick={() => setMenu(null)}
-      >
-        {sections.map((s) => {
-          const d = depthOf(s, byId);
-          const top = `${(s.start / textLen) * 100}%`;
-          const height = `${((s.end - s.start) / textLen) * 100}%`;
-          const isSel = s.id === selectedId;
-          return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between gap-3">{LayerToggles}{ZoomControl}</div>
+      <div className="flex gap-3 select-none" style={{ height: '60vh' }}>
+        {/* Zoomable, scrolling strip + mask gutter */}
+        <div className="overflow-y-auto rounded-lg ring-1 ring-white/10 bg-[#1c1c1e] shrink-0" style={{ width: 200 }}>
+          <div className="flex gap-1" style={{ height: `${100 * zoom}%`, minHeight: '100%' }}>
             <div
-              key={s.id}
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelected(s.id);
-                setMenu(null);
-              }}
+              ref={ref}
+              className="relative flex-1"
               onContextMenu={(e) => {
                 e.preventDefault();
-                e.stopPropagation();
-                setMenu({ x: e.clientX, y: e.clientY, offset: offsetFromClientY(e.clientY), sectionId: s.id });
+                setMenu({ x: e.clientX, y: e.clientY, offset: offsetFromClientY(e.clientY), sectionId: null });
               }}
-              title={`${s.type} · ${s.label}`}
-              className="absolute cursor-pointer overflow-hidden text-[9px] text-black/75 px-1"
-              style={{
-                top, height,
-                left: 6 + d * 10,
-                right: 4,
-                background: colorOf(s.type),
-                opacity: isSel ? 1 : 0.8,
-                outline: isSel ? '2px solid #fff' : 'none',
-                borderRadius: 3,
-              }}
+              onClick={() => setMenu(null)}
             >
-              <span className="truncate block leading-tight">{s.label || s.type}</span>
-              <div
-                onPointerDown={startDrag(s.id, 'start')}
-                className="absolute top-0 left-0 right-0 h-1.5 cursor-ns-resize bg-white/0 hover:bg-white/40"
-              />
-              <div
-                onPointerDown={startDrag(s.id, 'end')}
-                className="absolute bottom-0 left-0 right-0 h-1.5 cursor-ns-resize bg-white/0 hover:bg-white/40"
-              />
+              {visibleSections.map((s) => {
+                const d = depthOf(s, byId);
+                const top = `${(s.start / textLen) * 100}%`;
+                const height = `${((s.end - s.start) / textLen) * 100}%`;
+                const isSel = s.id === selectedId;
+                return (
+                  <div
+                    key={s.id}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelected(s.id);
+                      setMenu(null);
+                    }}
+                    onContextMenu={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setMenu({ x: e.clientX, y: e.clientY, offset: offsetFromClientY(e.clientY), sectionId: s.id });
+                    }}
+                    title={`${s.type} · ${s.label}`}
+                    className="absolute cursor-pointer overflow-hidden text-[9px] text-black/75 px-1"
+                    style={{
+                      top,
+                      height,
+                      left: 6 + d * 10,
+                      right: 4,
+                      background: colorOf(s.type),
+                      opacity: isSel ? 1 : 0.8,
+                      outline: isSel ? '2px solid #fff' : 'none',
+                      borderRadius: 3,
+                    }}
+                  >
+                    <span className="truncate block leading-tight">{s.label || s.type}</span>
+                    <div
+                      onPointerDown={startDrag(s.id, 'start')}
+                      className="absolute top-0 left-0 right-0 h-1.5 cursor-ns-resize bg-white/0 hover:bg-white/40"
+                    />
+                    <div
+                      onPointerDown={startDrag(s.id, 'end')}
+                      className="absolute bottom-0 left-0 right-0 h-1.5 cursor-ns-resize bg-white/0 hover:bg-white/40"
+                    />
+                  </div>
+                );
+              })}
             </div>
-          );
-        })}
-      </div>
+            {/* Mask gutter — dark where text will be excluded from analysis. */}
+            <div className="relative w-3 bg-[#101012]" title="Masked (excluded) ranges">
+              {masked.map(([a, b], i) => (
+                <div
+                  key={i}
+                  className="absolute left-0 right-0 bg-[#3a3a3d]"
+                  style={{ top: `${(a / textLen) * 100}%`, height: `${((b - a) / textLen) * 100}%` }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
 
-      {/* Mask gutter — dark where text will be excluded from analysis. */}
-      <div className="relative w-3 rounded ring-1 ring-white/10 bg-[#101012] overflow-hidden" title="Masked (excluded) ranges">
-        {masked.map(([a, b], i) => (
-          <div
-            key={i}
-            className="absolute left-0 right-0 bg-[#3a3a3d]"
-            style={{ top: `${(a / textLen) * 100}%`, height: `${((b - a) / textLen) * 100}%` }}
-          />
-        ))}
+        {/* Right panel: inspector controls + raw-text boundary editor */}
+        <div className="flex-1 min-w-0 flex flex-col gap-2">
+          {selected ? (
+            <>
+              <SectionInspector />
+              {text ? (
+                <BoundaryTextEditor
+                  text={text}
+                  section={selected}
+                  onChange={(patch) => updateSection(selected.id, patch)}
+                />
+              ) : (
+                <div className="flex-1 rounded-lg ring-1 ring-white/10 bg-[#161618] p-3 text-[#6e6e73] text-xs">
+                  Text preview unavailable.
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="flex-1 flex items-center justify-center text-center text-[#6e6e73] text-xs px-6 rounded-lg ring-1 ring-white/10 bg-[#161618]">
+              Select a section (click a block) to view its text and drag the start/end handles to
+              adjust its boundary. Right-click the strip to add a section.
+            </div>
+          )}
+        </div>
       </div>
-
-      {/* Selected-section inspector. */}
-      <SectionInspector />
 
       {menu && (
         <ContextMenu
@@ -239,6 +379,177 @@ export default function SectionMinimap({
   );
 }
 
+/**
+ * Raw-text boundary editor. Shows the selected section's text (with context) and
+ * places iOS-selection-style circular handles at the start and end. Dragging a
+ * handle over a word sets that boundary to the word's edge (word-granular). For
+ * long sections only the two boundary neighborhoods are rendered, with a gap marker.
+ */
+function BoundaryTextEditor({
+  text,
+  section,
+  onChange,
+}: {
+  text: string;
+  section: LayoutSection;
+  onChange: (patch: Partial<LayoutSection>) => void;
+}): ReactElement {
+  const dragRef = useRef<'start' | 'end' | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const onChangeRef = useRef(onChange);
+  onChangeRef.current = onChange;
+  const len = text.length;
+  const CTX = 600;
+
+  // When a different section is selected, scroll its start boundary into view so
+  // the handle is immediately visible (not buried at the top of the context).
+  useEffect(() => {
+    const c = containerRef.current;
+    if (!c) return;
+    const h = c.querySelector('[data-handle="start"]') as HTMLElement | null;
+    if (h) {
+      const cr = c.getBoundingClientRect();
+      const hr = h.getBoundingClientRect();
+      c.scrollTop += hr.top - cr.top - c.clientHeight / 3;
+    }
+  }, [section.id]);
+  const longSpan = section.end - section.start > 2 * CTX + 400;
+  const regions: Array<[number, number]> = longSpan
+    ? [
+        [Math.max(0, section.start - CTX), Math.min(len, section.start + CTX)],
+        [Math.max(0, section.end - CTX), Math.min(len, section.end + CTX)],
+      ]
+    : [[Math.max(0, section.start - CTX), Math.min(len, section.end + CTX)]];
+
+  useEffect(() => {
+    let raf = 0;
+    let pending: { x: number; y: number } | null = null;
+
+    function hit(x: number, y: number): { off: number; end: number } | null {
+      const el = document.elementFromPoint(x, y);
+      const tok = el && (el as HTMLElement).closest('[data-off]');
+      if (!tok) return null;
+      const t = tok as HTMLElement;
+      return { off: Number(t.dataset.off), end: Number(t.dataset.end) };
+    }
+    // Coalesce pointer moves to one boundary update per animation frame, and read
+    // the live section so the listeners stay attached for the whole drag (#20).
+    function flush(): void {
+      raf = 0;
+      const edge = dragRef.current;
+      if (!edge || !pending) return;
+      const h = hit(pending.x, pending.y);
+      pending = null;
+      if (!h) return;
+      const sec = useSectionStore.getState().sections.find((s) => s.id === section.id);
+      if (!sec) return;
+      if (edge === 'start' && h.off < sec.end) onChangeRef.current({ start: h.off });
+      else if (edge === 'end' && h.end > sec.start) onChangeRef.current({ end: h.end });
+    }
+    function onMove(e: PointerEvent): void {
+      if (!dragRef.current) return;
+      pending = { x: e.clientX, y: e.clientY };
+      if (!raf) raf = requestAnimationFrame(flush);
+    }
+    function onUp(): void {
+      dragRef.current = null;
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+    }
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    return () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [section.id]);
+
+  const startDrag = (edge: 'start' | 'end') => (e: React.PointerEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragRef.current = edge;
+  };
+
+  function renderRegion([from, to]: [number, number], key: number): ReactElement {
+    const slice = text.slice(from, to);
+    const re = /(\s+|\S+)/g;
+    const nodes: ReactElement[] = [];
+    let m: RegExpExecArray | null;
+    let i = 0;
+    let startPlaced = false;
+    let endPlaced = false;
+    const startHere = section.start >= from && section.start <= to;
+    const endHere = section.end >= from && section.end <= to;
+    while ((m = re.exec(slice)) !== null) {
+      const off = from + m.index;
+      const end = off + m[0].length;
+      if (startHere && !startPlaced && off >= section.start) {
+        nodes.push(<Handle key={`sh${key}`} edge="start" onDown={startDrag('start')} />);
+        startPlaced = true;
+      }
+      const inSec = off >= section.start && off < section.end;
+      nodes.push(
+        <span
+          key={`t${key}-${i}`}
+          data-off={off}
+          data-end={end}
+          className={inSec ? 'bg-[#0a84ff]/30 text-[#f0f4ff]' : 'text-[#76767c]'}
+        >
+          {m[0]}
+        </span>,
+      );
+      if (endHere && !endPlaced && end >= section.end) {
+        nodes.push(<Handle key={`eh${key}`} edge="end" onDown={startDrag('end')} />);
+        endPlaced = true;
+      }
+      i += 1;
+    }
+    // Section ends at/after the last token (e.g. end of text) → place the handle now.
+    if (endHere && !endPlaced) {
+      nodes.push(<Handle key={`eh${key}`} edge="end" onDown={startDrag('end')} />);
+    }
+    return (
+      <div key={`r${key}`}>
+        {key > 0 && (
+          <div className="my-2 text-center text-[10px] text-[#6e6e73]">
+            ··· {(section.end - section.start).toLocaleString()} chars in section ···
+          </div>
+        )}
+        {nodes}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      ref={containerRef}
+      className="flex-1 min-h-0 overflow-y-auto rounded-lg ring-1 ring-white/10 bg-[#161618] p-3 text-[13px] leading-[1.9] font-[var(--font-serif)] whitespace-pre-wrap break-words select-none"
+    >
+      {regions.map((r, i) => renderRegion(r, i))}
+    </div>
+  );
+}
+
+function Handle({ edge, onDown }: { edge: 'start' | 'end'; onDown: (e: React.PointerEvent) => void }): ReactElement {
+  return (
+    <span
+      onPointerDown={onDown}
+      data-handle={edge}
+      role="slider"
+      aria-label={`Drag ${edge} boundary`}
+      title={`Drag to move the ${edge} of this section`}
+      className="relative inline-flex align-middle cursor-grab active:cursor-grabbing"
+      style={{ width: 12, height: '1em' }}
+    >
+      <span className="absolute left-1/2 -translate-x-1/2 top-[-0.25em] bottom-[-0.25em] w-[2px] bg-[#0a84ff]" />
+      <span
+        className="absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#0a84ff] ring-2 ring-[#161618]"
+        style={edge === 'start' ? { top: '-0.95em' } : { bottom: '-0.95em' }}
+      />
+    </span>
+  );
+}
+
 function SectionInspector(): ReactElement {
   const selectedId = useSectionStore((s) => s.selectedId);
   const sections = useSectionStore((s) => s.sections);
@@ -250,7 +561,7 @@ function SectionInspector(): ReactElement {
   const sec = sections.find((s) => s.id === selectedId);
   if (!sec) {
     return (
-      <div className="flex-1 text-[#6e6e73] text-xs p-2">
+      <div className="shrink-0 text-[#6e6e73] text-xs p-2">
         Select a block to edit its type and mask. Right-click the strip to add a section.
       </div>
     );
@@ -259,7 +570,7 @@ function SectionInspector(): ReactElement {
   const effMask = sec.masked ?? (maskByType[sec.type] ?? true);
 
   return (
-    <div className="flex-1 text-xs text-[#d6d6d8] p-2 space-y-2 overflow-y-auto">
+    <div className="shrink-0 rounded-lg ring-1 ring-white/10 bg-[#1c1c1e] text-xs text-[#d6d6d8] p-2 space-y-2">
       <div className="text-[#8e8e93]">{sec.label || '(no heading)'}</div>
       <div className="flex flex-wrap gap-1">
         {types.map((t) => (
@@ -275,8 +586,13 @@ function SectionInspector(): ReactElement {
           </button>
         ))}
       </div>
-      <div className="text-[#8e8e93]">
-        {sec.start.toLocaleString()}–{sec.end.toLocaleString()} · {(sec.end - sec.start).toLocaleString()} chars
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-[#8e8e93]">
+          {sec.start.toLocaleString()}–{sec.end.toLocaleString()} · {(sec.end - sec.start).toLocaleString()} chars
+        </span>
+        <button onClick={() => removeSection(sec.id)} className="text-[#ff453a] hover:underline">
+          Delete
+        </button>
       </div>
       <label className="flex items-center gap-2">
         <input
@@ -284,14 +600,10 @@ function SectionInspector(): ReactElement {
           checked={effMask}
           onChange={(e) => updateSection(sec.id, { masked: e.target.checked })}
         />
-        <span>Masked (excluded from analysis){typeMeta ? ` — ${typeMeta.label} default: ${typeMeta.default_mask ? 'masked' : 'analyzed'}` : ''}</span>
+        <span>
+          Masked (excluded from analysis){typeMeta ? ` — ${typeMeta.label} default: ${typeMeta.default_mask ? 'masked' : 'analyzed'}` : ''}
+        </span>
       </label>
-      <button
-        onClick={() => removeSection(sec.id)}
-        className="text-[#ff453a] hover:underline"
-      >
-        Delete section
-      </button>
     </div>
   );
 }
