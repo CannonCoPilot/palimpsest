@@ -23,6 +23,7 @@ from palimpsest.tracks.self_similarity import (
     _word_overlap_matrix,
     _lastz_align,
     _sliding_window_refine,
+    _zero_layout_masked_chunks,
 )
 
 
@@ -313,3 +314,48 @@ class TestPerMetricChunkSize:
         track = SelfSimilarityTrack()
         track.set_params({"chunk_size_cosine": 999})
         assert 5 <= track._chunk_size_for("cosine") <= 25
+
+
+class TestLayoutMasking:
+    """Step-4 layout masks (front matter, endnotes …) must drop out of the
+    self-similarity matrix and alignments — separate from repeat masking, which
+    only touches two metrics and is cleared before LASTZ scores final identity."""
+
+    def test_zero_layout_masked_chunks_clears_row_and_col(self):
+        matrix = np.ones((3, 3), dtype=np.float32)
+        chunks = [
+            {"layout_masked": False},
+            {"layout_masked": True},
+            {"layout_masked": False},
+        ]
+        _zero_layout_masked_chunks(matrix, chunks)
+        # Masked chunk's entire row and column (incl. diagonal) are zeroed.
+        assert np.all(matrix[1, :] == 0.0)
+        assert np.all(matrix[:, 1] == 0.0)
+        # Unmasked pair is untouched.
+        assert matrix[0, 2] == pytest.approx(1.0)
+        assert matrix[2, 0] == pytest.approx(1.0)
+        assert matrix[0, 0] == pytest.approx(1.0)
+
+    def test_zero_layout_masked_chunks_noop_when_none_masked(self):
+        matrix = np.ones((2, 2), dtype=np.float32)
+        _zero_layout_masked_chunks(matrix, [{}, {}])
+        assert np.all(matrix == 1.0)
+
+    def test_extend_alignment_halts_at_layout_masked_chunk(self):
+        # Six identical chunks — char identity is 1.0 everywhere, so the only
+        # thing that can stop forward extension is the layout mask.
+        text = " ".join(["rep"] * 30)
+        chunks = _chunk_text(text, 5)
+        assert len(chunks) == 6
+
+        # Baseline: extension reaches chunk index 2 along the (1,1) diagonal.
+        baseline = _extend_alignment(text, chunks, 0, 3, threshold=0.3, chunk_size=5)
+        assert baseline is not None
+        assert baseline["chunk_end_a"] == 2
+
+        # Mask chunk 2 → forward extension must stop one chunk earlier.
+        chunks[2]["layout_masked"] = True
+        masked = _extend_alignment(text, chunks, 0, 3, threshold=0.3, chunk_size=5)
+        assert masked is not None
+        assert masked["chunk_end_a"] == 1

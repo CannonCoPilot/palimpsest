@@ -66,6 +66,85 @@ class ExplainResponse(BaseModel):
     ollama_available: bool
 
 
+class LocalImportRequest(BaseModel):
+    path: str = Field(min_length=1, max_length=1024)
+    title: str = ""
+    author: str = ""
+    year: int = 0
+    process: bool = True  # False = staged (Step 1 ingest only, defer analysis)
+
+
+class SectionsUpdateRequest(BaseModel):
+    sections: list[dict[str, Any]]
+    mask_by_type: dict[str, bool] | None = None
+    applied: bool | None = None
+
+
+def _layout_boundaries(project: Any) -> list[tuple[int, int, str]]:
+    """Section boundaries (start, end, heading) from the sections track, else segmenter."""
+    out: list[tuple[int, int, str]] = []
+    sec_path = project.path / "tracks" / "sections.jsonl"
+    if sec_path.exists():
+        for line in sec_path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            d = json.loads(line)
+            sel = d.get("target", {}).get("selector", {})
+            start = sel.get("start")
+            end = sel.get("end")
+            body = d.get("body", {})
+            heading = body.get("palimpsest:headingText") or body.get("value") or ""
+            if start is not None:
+                out.append((int(start), int(end if end is not None else start), str(heading)))
+    if not out:
+        out = [(s, e, h) for s, e, h in project.sections()]
+    out.sort(key=lambda b: b[0])
+    return out
+
+
+def _endnote_separator(project_dir: Path) -> int:
+    """Char offset where the endnote region begins, or -1."""
+    coord = project_dir / "coordinates.json"
+    if coord.exists():
+        c = json.loads(coord.read_text())
+        er = c.get("endnote_region")
+        if er and int(er.get("separator_offset", -1)) > 0:
+            return int(er["separator_offset"])
+    return -1
+
+
+def _sections_payload(cfg: Any, text_len: int) -> dict[str, Any]:
+    """Package a LayoutConfig + the fixed type vocabulary + computed masks for the UI."""
+    from palimpsest.layout import (
+        DEFAULT_MASK_BY_TYPE,
+        MASKED_BG_COLOR,
+        MASKED_TEXT_COLOR,
+        SECTION_COLORS,
+        SECTION_LABELS,
+        SECTION_TYPES,
+        masked_intervals,
+    )
+
+    intervals = masked_intervals(cfg.sections, cfg.mask_by_type, text_len)
+    return {
+        "sections": [s.to_dict() for s in cfg.sections],
+        "mask_by_type": cfg.mask_by_type,
+        "applied": cfg.applied,
+        "text_len": text_len,
+        "masked_intervals": [[a, b] for a, b in intervals],
+        "types": [
+            {
+                "key": t,
+                "label": SECTION_LABELS[t],
+                "color": SECTION_COLORS[t],
+                "default_mask": DEFAULT_MASK_BY_TYPE[t],
+            }
+            for t in SECTION_TYPES
+        ],
+        "masked_style": {"color": MASKED_TEXT_COLOR, "background": MASKED_BG_COLOR},
+    }
+
+
 _COVER_SUFFIXES = (".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg")
 
 
@@ -97,9 +176,39 @@ def _safe_project_dir(workspace: Path, project_id: str) -> Path:
     return project_dir
 
 
-def create_app(workspace: Path) -> FastAPI:
+_IMPORT_SUFFIXES = (".epub", ".txt", ".pdf", ".html", ".htm", ".md", ".markdown")
+
+
+def _default_imports_dir() -> Path:
+    """Directory the import browser lists: env override, else the repo's imports/.
+
+    server.py lives at ``<repo>/core/palimpsest/server.py``, so the drop folder the
+    user fills with book files resolves to ``<repo>/imports``.
+    """
+    import os
+
+    env = os.environ.get("PALIMPSEST_IMPORTS_DIR")
+    if env:
+        return Path(env).expanduser()
+    return Path(__file__).resolve().parents[2] / "imports"
+
+
+def _safe_import_path(imports_dir: Path, rel_path: str) -> Path:
+    """Resolve a relative path under imports_dir with traversal protection."""
+    if not rel_path or rel_path.startswith("/") or ".." in Path(rel_path).parts:
+        raise HTTPException(status_code=400, detail="Invalid import path")
+    resolved = (imports_dir / rel_path).resolve()
+    if not resolved.is_relative_to(imports_dir.resolve()):
+        raise HTTPException(status_code=400, detail="Invalid import path")
+    if not resolved.is_file():
+        raise HTTPException(status_code=404, detail="File not found")
+    return resolved
+
+
+def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     """Create the FastAPI application for a workspace directory."""
     app = FastAPI(title="Palimpsest", version="0.1.0")
+    imports_dir = imports_dir or _default_imports_dir()
 
     app.add_middleware(
         CORSMiddleware,
@@ -779,22 +888,117 @@ def create_app(workspace: Path) -> FastAPI:
         asyncio.create_task(run())
         return JSONResponse(content={"status": "started", "dim": dim})
 
+    async def _ingest_and_compute(
+        src_path: Path, title: str, author: str, year: int
+    ) -> dict[str, Any]:
+        """Ingest a source file and compute all tracks (legacy one-shot path)."""
+        project = await _ingest_only(src_path, title, author, year)
+        failed = await _compute_tracks(project)
+        return _ingest_summary(project, staged=False, failed_tracks=failed)
+
+    async def _ingest_only(src_path: Path, title: str, author: str, year: int) -> Any:
+        """Step 1: structural ingest only (text/segments/sections/endnotes). No analysis."""
+        import asyncio
+
+        from palimpsest.project import ingest_file
+
+        return await asyncio.to_thread(
+            ingest_file, src_path, workspace,
+            title=title or src_path.stem, author=author, year=year,
+        )
+
+    def _ingest_summary(
+        project: Any, *, staged: bool, failed_tracks: list[dict[str, str]] | None = None
+    ) -> dict[str, Any]:
+        meta = json.loads((project.path / "metadata.json").read_text())
+        track_count = len(list((project.path / "tracks").glob("*.jsonl")))
+        out: dict[str, Any] = {
+            "status": "ok",
+            "project_id": project.metadata.id,
+            "title": project.metadata.title,
+            "word_count": project.metadata.word_count,
+            "track_count": track_count,
+            "staged": staged,
+            "metadata": meta,
+        }
+        if failed_tracks:
+            out["failed_tracks"] = failed_tracks
+        return out
+
+    async def _compute_tracks(project: Any) -> list[dict[str, str]]:
+        """Step 5: run analysis extractors, dropping annotations inside masked ranges."""
+        import asyncio
+
+        from palimpsest.annotation.serializer import write_track
+        from palimpsest.layout import range_is_masked
+        from palimpsest.tracks.registry import TrackRegistry
+
+        masked = await asyncio.to_thread(project.masked_intervals)
+
+        def _keep(ann: Any) -> bool:
+            sel = getattr(ann.target, "selector", None)
+            start = getattr(sel, "start", None)
+            end = getattr(sel, "end", None)
+            if start is None or end is None:
+                return True  # no position → can't mask → keep
+            return not range_is_masked(masked, start, end)
+
+        failed_tracks: list[dict[str, str]] = []
+        registry = TrackRegistry.discover()
+        for extractor_cls in registry.dependency_order():
+            extractor = extractor_cls()
+            try:
+                result = await asyncio.to_thread(extractor.extract, project)
+                if extractor.output_type == "annotation" and isinstance(result, list):
+                    if masked:
+                        result = [a for a in result if _keep(a)]
+                    track_path = project.path / "tracks" / f"{extractor.name}.jsonl"
+                    write_track(track_path, result)
+                manifest_dir = project.path / "manifests"
+                manifest_dir.mkdir(exist_ok=True)
+                (manifest_dir / f"{extractor.name}.manifest.json").write_text(
+                    json.dumps(extractor.manifest(), indent=2), encoding="utf-8",
+                )
+            except Exception as exc:
+                logger.warning("Track %s failed: %s", extractor.name, exc)
+                failed_tracks.append({"track": extractor.name, "error": str(exc)})
+        return failed_tracks
+
+    @app.get("/api/imports")
+    async def list_imports() -> JSONResponse:
+        """List importable book files under the configured imports/ drop folder."""
+        files: list[dict[str, Any]] = []
+        if imports_dir.is_dir():
+            for p in sorted(imports_dir.rglob("*")):
+                if not p.is_file() or p.suffix.lower() not in _IMPORT_SUFFIXES:
+                    continue
+                rel = p.relative_to(imports_dir)
+                folder = "" if rel.parent == Path(".") else str(rel.parent)
+                files.append({
+                    "path": str(rel),
+                    "name": p.name,
+                    "folder": folder,
+                    "format": p.suffix.lower().lstrip("."),
+                    "size": p.stat().st_size,
+                })
+        return JSONResponse(content={
+            "root": str(imports_dir),
+            "available": imports_dir.is_dir(),
+            "files": files,
+        })
+
     @app.post("/api/import")
     async def import_epub(
         file: UploadFile,
         title: str = "",
         author: str = "",
         year: int = 0,
+        process: bool = True,
     ) -> JSONResponse:
-        """Import an EPUB file: ingest + compute all tracks."""
-        import asyncio
+        """Import an uploaded file. process=False stages it (ingest only, defer analysis)."""
         import tempfile
 
-        failed_tracks: list[dict[str, str]] = []
-
-        if not file.filename or not file.filename.lower().endswith(
-            (".epub", ".txt", ".pdf", ".html", ".htm", ".md")
-        ):
+        if not file.filename or not file.filename.lower().endswith(_IMPORT_SUFFIXES):
             raise HTTPException(
                 status_code=400,
                 detail="Unsupported file format. Accepted: EPUB, TXT, PDF, HTML, Markdown",
@@ -808,54 +1012,102 @@ def create_app(workspace: Path) -> FastAPI:
             tmp_path = Path(tmp.name)
 
         try:
-            from palimpsest.project import ingest_file
-
-            project = await asyncio.to_thread(
-                ingest_file, tmp_path, workspace,
-                title=title or Path(file.filename).stem,
-                author=author, year=year,
-            )
-
-            from palimpsest.tracks.registry import TrackRegistry
-
-            registry = TrackRegistry.discover()
-            for extractor_cls in registry.dependency_order():
-                extractor = extractor_cls()
-                try:
-                    result = await asyncio.to_thread(extractor.extract, project)
-                    if extractor.output_type == "annotation" and isinstance(result, list):
-                        from palimpsest.annotation.serializer import write_track
-                        track_path = project.path / "tracks" / f"{extractor.name}.jsonl"
-                        write_track(track_path, result)
-                    manifest_dir = project.path / "manifests"
-                    manifest_dir.mkdir(exist_ok=True)
-                    (manifest_dir / f"{extractor.name}.manifest.json").write_text(
-                        json.dumps(extractor.manifest(), indent=2), encoding="utf-8",
-                    )
-                except Exception as exc:
-                    logger.warning("Track %s failed: %s", extractor.name, exc)
-                    failed_tracks.append({"track": extractor.name, "error": str(exc)})
-
-            meta = json.loads((project.path / "metadata.json").read_text())
-            track_count = len(list((project.path / "tracks").glob("*.jsonl")))
-
-            response: dict[str, Any] = {
-                "status": "ok",
-                "project_id": project.metadata.id,
-                "title": project.metadata.title,
-                "word_count": project.metadata.word_count,
-                "track_count": track_count,
-                "metadata": meta,
-            }
-            if failed_tracks:
-                response["failed_tracks"] = failed_tracks
-            return JSONResponse(content=response)
+            if process:
+                return JSONResponse(content=await _ingest_and_compute(tmp_path, title, author, year))
+            project = await _ingest_only(tmp_path, title, author, year)
+            return JSONResponse(content=_ingest_summary(project, staged=True))
         except FileExistsError:
             raise HTTPException(status_code=409, detail="Project already exists")
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
         finally:
             tmp_path.unlink(missing_ok=True)
+
+    @app.post("/api/import/local")
+    async def import_local(req: LocalImportRequest) -> JSONResponse:
+        """Import a file from the imports/ folder. process=False stages it (ingest only)."""
+        src = _safe_import_path(imports_dir, req.path)
+        if src.suffix.lower() not in _IMPORT_SUFFIXES:
+            raise HTTPException(status_code=400, detail="Unsupported file format")
+        try:
+            if req.process:
+                return JSONResponse(
+                    content=await _ingest_and_compute(src, req.title, req.author, req.year)
+                )
+            project = await _ingest_only(src, req.title, req.author, req.year)
+            return JSONResponse(content=_ingest_summary(project, staged=True))
+        except FileExistsError:
+            raise HTTPException(status_code=409, detail="Project already exists")
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+
+    @app.post("/api/projects/{project_id}/sections/detect")
+    async def detect_sections(project_id: str) -> JSONResponse:
+        """Step 2: classify the text into typed layout sections and persist them."""
+        from palimpsest.layout import LayoutConfig, detect_layout_sections, load_layout, save_layout
+        from palimpsest.project import Project
+
+        project_dir = _safe_project_dir(workspace, project_id)
+        project = Project.load(project_dir)
+        text_len = len(project.reference_text())
+        sections = detect_layout_sections(
+            _layout_boundaries(project), text_len, _endnote_separator(project_dir),
+        )
+        cfg = load_layout(project_dir) or LayoutConfig()
+        cfg.sections = sections
+        cfg.applied = False
+        save_layout(project_dir, cfg)
+        return JSONResponse(content=_sections_payload(cfg, text_len))
+
+    @app.get("/api/projects/{project_id}/sections")
+    async def get_sections(project_id: str) -> JSONResponse:
+        """Load the persisted layout config (empty default if none yet)."""
+        from palimpsest.layout import LayoutConfig, load_layout
+        from palimpsest.project import Project
+
+        project_dir = _safe_project_dir(workspace, project_id)
+        text_len = len(Project.load(project_dir).reference_text())
+        cfg = load_layout(project_dir) or LayoutConfig()
+        return JSONResponse(content=_sections_payload(cfg, text_len))
+
+    @app.put("/api/projects/{project_id}/sections")
+    async def put_sections(project_id: str, req: SectionsUpdateRequest) -> JSONResponse:
+        """Steps 3+4: persist user-edited section ranges, types, and mask flags."""
+        from palimpsest.layout import (
+            DEFAULT_MASK_BY_TYPE,
+            LayoutConfig,
+            LayoutSection,
+            load_layout,
+            save_layout,
+        )
+        from palimpsest.project import Project
+
+        project_dir = _safe_project_dir(workspace, project_id)
+        text_len = len(Project.load(project_dir).reference_text())
+        cfg = load_layout(project_dir) or LayoutConfig()
+        cfg.sections = [LayoutSection.from_dict(s) for s in req.sections]
+        if req.mask_by_type is not None:
+            merged = dict(DEFAULT_MASK_BY_TYPE)
+            merged.update(req.mask_by_type)
+            cfg.mask_by_type = merged
+        if req.applied is not None:
+            cfg.applied = req.applied
+        save_layout(project_dir, cfg)
+        return JSONResponse(content=_sections_payload(cfg, text_len))
+
+    @app.post("/api/projects/{project_id}/sections/apply")
+    async def apply_sections(project_id: str) -> JSONResponse:
+        """Step 5: confirm masking, then run the deferred analysis honoring masks."""
+        from palimpsest.layout import LayoutConfig, load_layout, save_layout
+        from palimpsest.project import Project
+
+        project_dir = _safe_project_dir(workspace, project_id)
+        cfg = load_layout(project_dir) or LayoutConfig()
+        cfg.applied = True
+        save_layout(project_dir, cfg)
+        project = Project.load(project_dir)
+        failed = await _compute_tracks(project)
+        return JSONResponse(content=_ingest_summary(project, staged=False, failed_tracks=failed))
 
     # ── Alignment API ──
 
@@ -1055,9 +1307,9 @@ def create_app(workspace: Path) -> FastAPI:
     return app
 
 
-def run_server(workspace: Path, port: int = 8080) -> None:
+def run_server(workspace: Path, port: int = 8080, imports_dir: Path | None = None) -> None:
     """Start the server with uvicorn."""
     import uvicorn
 
-    app = create_app(workspace)
+    app = create_app(workspace, imports_dir=imports_dir)
     uvicorn.run(app, host="127.0.0.1", port=port)

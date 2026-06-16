@@ -224,6 +224,22 @@ def _edit_distance_matrix(chunks: list[dict[str, Any]]) -> np.ndarray:
     return matrix
 
 
+def _zero_layout_masked_chunks(matrix: np.ndarray, chunks: list[dict[str, Any]]) -> None:
+    """Zero every row/col (incl. diagonal) of layout-masked chunks, in-place.
+
+    Layout-masked chunks cover non-work text (front matter, contents, endnotes …)
+    that must contribute no self-similarity structure. Applied uniformly to every
+    metric's matrix, so cosine/jaccard honor layout masks too — the masked-chunk
+    skip inside the word_overlap/edit_distance builders only covers those two
+    metrics, and embedding-based metrics never see the flag otherwise."""
+    masked_idx = [i for i, c in enumerate(chunks) if c.get("layout_masked")]
+    if not masked_idx:
+        return
+    idx = np.array(masked_idx, dtype=np.intp)
+    matrix[idx, :] = 0.0
+    matrix[:, idx] = 0.0
+
+
 # ---------------------------------------------------------------------------
 # LASTZ-style seed-and-extend alignment
 # ---------------------------------------------------------------------------
@@ -477,9 +493,14 @@ def _extend_alignment(
         """True when both pointers land on the same chunk (self-comparison)."""
         return ci == cj
 
+    def _is_masked(ci: int, cj: int) -> bool:
+        """True when either chunk is layout-masked — alignments must not span
+        non-work text (front matter, endnotes …), so extension halts here."""
+        return bool(chunks[ci].get("layout_masked") or chunks[cj].get("layout_masked"))
+
     # Extend in the forward direction
     ci, cj = seed_i, seed_j
-    while _in_bounds(ci, cj) and not _is_self(ci, cj):
+    while _in_bounds(ci, cj) and not _is_self(ci, cj) and not _is_masked(ci, cj):
         text_a = chunks[ci]["text"]
         text_b = chunks[cj]["text"]
         identity = _char_identity(text_a, text_b)
@@ -492,7 +513,7 @@ def _extend_alignment(
 
     # Extend in the backward direction (negate the step)
     ci, cj = seed_i - di, seed_j - dj
-    while _in_bounds(ci, cj) and not _is_self(ci, cj):
+    while _in_bounds(ci, cj) and not _is_self(ci, cj) and not _is_masked(ci, cj):
         text_a = chunks[ci]["text"]
         text_b = chunks[cj]["text"]
         identity = _char_identity(text_a, text_b)
@@ -978,7 +999,13 @@ class SelfSimilarityTrack:
         return "E4"
 
     def extract(self, project: Project) -> Path:
+        from palimpsest.layout import range_is_masked
+
         ref_text = (project.path / "reference.txt").read_text(encoding="utf-8")
+
+        # Step-4 layout masks (front matter, contents, endnotes …). Empty when no
+        # layout is configured, making the whole masking path a no-op.
+        layout_masked_intervals = project.masked_intervals()
 
         MAX_MATRIX_DIM = 4000
         signals_dir = project.path / "signals"
@@ -999,6 +1026,10 @@ class SelfSimilarityTrack:
                 raw = _chunk_text(ref_text, cs)
                 repeats = _find_exact_repeats(ref_text, raw)
                 _mask_repeats(raw, repeats)
+                for chunk in raw:
+                    chunk["layout_masked"] = bool(layout_masked_intervals) and range_is_masked(
+                        layout_masked_intervals, chunk["start"], chunk["end"]
+                    )
                 _chunks_cache[cs] = raw
             return _chunks_cache[cs]
 
@@ -1053,6 +1084,9 @@ class SelfSimilarityTrack:
                 continue
 
             np.fill_diagonal(matrix, 1.0)
+
+            # Exclude layout-masked (non-work) chunks from every metric's matrix.
+            _zero_layout_masked_chunks(matrix, chunks)
 
             # Per-chunk-size subdirectory
             cs_dir = signals_dir / f"self_similarity_cs{cs}"
@@ -1150,6 +1184,9 @@ class SelfSimilarityTrack:
                 "chunk_size": primary_chunk_size,
                 "available_metrics": available_metrics,
                 "metric_info": metric_info,
+                "layout_masked_chunks": sum(
+                    1 for c in primary_chunks if c.get("layout_masked")
+                ),
                 "alignment_count": len(all_alignments),
                 "has_alignments": len(all_alignments) > 0,
                 "available_chunk_sizes": available_chunk_sizes,

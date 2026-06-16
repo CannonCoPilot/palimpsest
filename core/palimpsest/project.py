@@ -156,6 +156,17 @@ class Project:
         segs = segment_sections(text)
         return [(s.start, s.end, s.text) for s in segs]
 
+    def masked_intervals(self) -> list[tuple[int, int]]:
+        """Masked [start,end) ranges from the layout config, or [] if none configured.
+
+        Downstream analyses skip text intersecting these ranges (Step 4 masking).
+        """
+        from palimpsest.layout import load_layout, masked_intervals
+        cfg = load_layout(self.path)
+        if cfg is None:
+            return []
+        return masked_intervals(cfg.sections, cfg.mask_by_type, len(self.reference_text()))
+
     @classmethod
     def load(cls, path: Path) -> Project:
         meta_path = path / "metadata.json"
