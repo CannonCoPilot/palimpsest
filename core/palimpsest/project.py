@@ -105,6 +105,29 @@ def _make_slug(name: str) -> str:
     return slug.strip("-")
 
 
+def _projects_for_source_file(workspace: Path, source_file: str) -> list[Path]:
+    """Existing project dirs whose metadata records this exact source_file.
+
+    Used to enforce one-project-per-source on import: a source file may have been
+    ingested previously under a different (legacy/title-based) slug, so matching on
+    the directory name alone would miss it and create a duplicate.
+    """
+    matches: list[Path] = []
+    if not workspace.is_dir():
+        return matches
+    for p in workspace.iterdir():
+        meta_path = p / "metadata.json"
+        if not meta_path.exists():
+            continue
+        try:
+            m = json.loads(meta_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if m.get("source_file") == source_file:
+            matches.append(p)
+    return matches
+
+
 class Project:
     """Represents a Palimpsest project directory."""
 
@@ -188,15 +211,24 @@ def ingest_file(
     content_profile: Any = None,  # ContentProfile or None
     overwrite: bool = False,
     progress: Callable[[str, str, float], None] | None = None,
+    source_name: str | None = None,
 ) -> Project:
     """Ingest a text file into a new project directory.
 
-    With ``overwrite=True``, an existing project directory at the same slug is
-    replaced (used by re-import); otherwise a collision raises FileExistsError.
+    The project ID (slug) is derived deterministically from the source file's
+    name so the same file always maps to the same project — re-importing replaces
+    it rather than spawning a duplicate. Any existing project for this source file
+    is removed first, even if it was created under a different (legacy/title-based)
+    slug. ``overwrite`` is retained for API compatibility but no longer gates this.
+
+    ``source_name`` overrides the identity used for the slug and recorded
+    ``source_file`` when ``source_path`` is a temporary copy (e.g. an upload),
+    so identity tracks the original filename rather than the temp path.
 
     ``progress(phase, message, fraction)`` is called at each structural phase
     boundary so callers can stream import progress (see the SSE import endpoint).
     """
+    src_name = source_name or source_path.name
 
     def _emit(phase: str, message: str, fraction: float) -> None:
         if progress is not None:
@@ -224,14 +256,20 @@ def ingest_file(
     _emit("normalize", "Normalizing text…", 0.45)
     normalized = normalize(raw_text)
     sha = compute_sha256(normalized)
-    slug = _make_slug(title or source_path.name)
+    slug = _make_slug(src_name)
     project_dir = workspace / slug
 
+    # One project per source file: remove any prior ingest of this file — including
+    # a copy stored under a different (legacy/title-based) slug — then recreate at
+    # the deterministic slug. This makes re-import a clean replace, never a dupe.
+    for existing in _projects_for_source_file(workspace, src_name):
+        shutil.rmtree(existing)
     if project_dir.exists():
-        if overwrite:
-            shutil.rmtree(project_dir)
-        else:
-            raise FileExistsError(f"Project already exists: {project_dir}")
+        # Reaching here means a *different* source file already slugs to this name
+        # (a rare filename collision, since same-source copies were just removed).
+        if not overwrite:
+            raise FileExistsError(f"Project slug already in use: {project_dir.name}")
+        shutil.rmtree(project_dir)
 
     for subdir in _SUBDIRS:
         (project_dir / subdir).mkdir(parents=True, exist_ok=True)
@@ -260,10 +298,10 @@ def ingest_file(
 
     metadata = ProjectMetadata(
         id=slug,
-        title=title or source_path.stem.replace("-", " ").replace("_", " ").title(),
+        title=title or Path(src_name).stem.replace("-", " ").replace("_", " ").title(),
         language=language,
         source_format=source_path.suffix.lstrip(".").lower(),
-        source_file=source_path.name,
+        source_file=src_name,
         ingest_date=datetime.now(UTC).strftime("%Y-%m-%d"),
         palimpsest_version=__version__,
         reference_sha256=sha,

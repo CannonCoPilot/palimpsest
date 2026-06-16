@@ -84,13 +84,15 @@ def test_delete_project_removes_it(tmp_path):
     assert client.delete(f"/api/projects/{pid}").status_code == 404
 
 
-def test_reimport_requires_overwrite(tmp_path):
+def test_reimport_same_source_replaces(tmp_path):
     client = TestClient(_make_app(tmp_path))
     body = {"path": "Jane Austen/Emma/emma.txt", "process": False}
     assert client.post("/api/import/local", json=body).status_code == 200
-    # same source again without overwrite collides
-    assert client.post("/api/import/local", json=body).status_code == 409
-    # overwrite replaces in place — still exactly one project
+    # Re-importing the same source file replaces it in place (dedup by source_file):
+    # no collision error, still exactly one project.
+    assert client.post("/api/import/local", json=body).status_code == 200
+    assert len(client.get("/api/projects").json()) == 1
+    # An explicit overwrite behaves identically.
     ov = client.post("/api/import/local", json={**body, "overwrite": True})
     assert ov.status_code == 200
     assert len(client.get("/api/projects").json()) == 1

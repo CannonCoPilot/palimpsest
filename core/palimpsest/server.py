@@ -1052,24 +1052,31 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         return JSONResponse(content={"status": "started", "dim": dim})
 
     async def _ingest_and_compute(
-        src_path: Path, title: str, author: str, year: int, overwrite: bool = False
+        src_path: Path, title: str, author: str, year: int, overwrite: bool = False,
+        source_name: str | None = None,
     ) -> dict[str, Any]:
         """Ingest a source file and compute all tracks (legacy one-shot path)."""
-        project = await _ingest_only(src_path, title, author, year, overwrite)
+        project = await _ingest_only(src_path, title, author, year, overwrite, source_name)
         failed = await _compute_tracks(project)
         return _ingest_summary(project, staged=False, failed_tracks=failed)
 
     async def _ingest_only(
-        src_path: Path, title: str, author: str, year: int, overwrite: bool = False
+        src_path: Path, title: str, author: str, year: int, overwrite: bool = False,
+        source_name: str | None = None,
     ) -> Any:
-        """Step 1: structural ingest only (text/segments/sections/endnotes). No analysis."""
+        """Step 1: structural ingest only (text/segments/sections/endnotes). No analysis.
+
+        ``source_name`` carries the original filename when ``src_path`` is a temp
+        upload, so the project's identity (slug + source_file) tracks the real file.
+        """
         import asyncio
 
         from palimpsest.project import ingest_file
 
         return await asyncio.to_thread(
             ingest_file, src_path, workspace,
-            title=title or src_path.stem, author=author, year=year, overwrite=overwrite,
+            title=title, author=author, year=year, overwrite=overwrite,
+            source_name=source_name,
         )
 
     def _ingest_summary(
@@ -1185,8 +1192,9 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         try:
             if process:
-                return JSONResponse(content=await _ingest_and_compute(tmp_path, title, author, year))
-            project = await _ingest_only(tmp_path, title, author, year)
+                return JSONResponse(content=await _ingest_and_compute(
+                    tmp_path, title, author, year, source_name=file.filename))
+            project = await _ingest_only(tmp_path, title, author, year, source_name=file.filename)
             return JSONResponse(content=_ingest_summary(project, staged=True))
         except FileExistsError:
             raise HTTPException(status_code=409, detail="Project already exists")

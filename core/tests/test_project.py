@@ -57,10 +57,45 @@ class TestIngestFile:
         assert "“" not in text  # left double curly
         assert "”" not in text  # right double curly
 
-    def test_duplicate_ingest_raises(self, pp_ch1_txt: Path, tmp_path: Path):
-        ingest_file(pp_ch1_txt, tmp_path, title="test")
+    def test_reimport_same_file_replaces(self, pp_ch1_txt: Path, tmp_path: Path):
+        # Re-importing the same source file replaces it in place — one project, no error.
+        p1 = ingest_file(pp_ch1_txt, tmp_path, title="test")
+        p2 = ingest_file(pp_ch1_txt, tmp_path, title="test")
+        assert p1.metadata.id == p2.metadata.id
+        dirs = [d for d in tmp_path.iterdir() if (d / "metadata.json").exists()]
+        assert len(dirs) == 1
+
+    def test_slug_is_deterministic_from_filename_not_title(self, pp_ch1_txt: Path, tmp_path: Path):
+        # The same file under different titles maps to one project (slug from filename),
+        # so a title-only difference can never create a duplicate.
+        p1 = ingest_file(pp_ch1_txt, tmp_path, title="First Title")
+        p2 = ingest_file(pp_ch1_txt, tmp_path, title="A Completely Different Title")
+        assert p1.metadata.id == p2.metadata.id == _make_slug(pp_ch1_txt.name)
+        dirs = [d for d in tmp_path.iterdir() if (d / "metadata.json").exists()]
+        assert len(dirs) == 1
+
+    def test_legacy_slug_duplicate_is_replaced(self, pp_ch1_txt: Path, tmp_path: Path):
+        # A pre-existing project for the same source file under a *different* (legacy)
+        # slug is removed on re-import, not left behind as a duplicate.
+        first = ingest_file(pp_ch1_txt, tmp_path, title="test")
+        legacy = tmp_path / "legacy-title-slug"
+        first.path.rename(legacy)  # simulate a project saved under an old title-based id
+        again = ingest_file(pp_ch1_txt, tmp_path, title="test")
+        assert not legacy.exists()
+        dirs = [d for d in tmp_path.iterdir() if (d / "metadata.json").exists()]
+        assert [d.name for d in dirs] == [again.metadata.id]
+
+    def test_source_name_overrides_identity(self, pp_ch1_txt: Path, tmp_path: Path):
+        # Uploads pass the original filename via source_name; the temp path name is ignored.
+        proj = ingest_file(pp_ch1_txt, tmp_path, source_name="My Real Book.txt")
+        assert proj.metadata.id == _make_slug("My Real Book.txt")
+        assert proj.metadata.source_file == "My Real Book.txt"
+
+    def test_slug_collision_different_source_raises_without_overwrite(self, pp_ch1_txt: Path, tmp_path: Path):
+        # Two *different* source files that slug to the same id must not clobber silently.
+        ingest_file(pp_ch1_txt, tmp_path, source_name="Clash.txt")
         with pytest.raises(FileExistsError):
-            ingest_file(pp_ch1_txt, tmp_path, title="test")
+            ingest_file(pp_ch1_txt, tmp_path, source_name="clash.txt", overwrite=False)
 
     def test_segments_jsonl_has_paragraphs(self, pp_ch1_txt: Path, tmp_path: Path):
         project = ingest_file(pp_ch1_txt, tmp_path)

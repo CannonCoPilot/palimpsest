@@ -625,3 +625,84 @@ def validate(file: Path) -> None:
         raise SystemExit(1)
     else:
         console.print(f"[green]VALID[/green] — {line_count} records, no errors")
+
+
+@main.command(name="dedup-ids")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.option("--apply", "apply_changes", is_flag=True, help="Apply the renames (default: dry-run)")
+def dedup_ids(workspace: Path, apply_changes: bool) -> None:
+    """Migrate legacy project IDs to deterministic source-file slugs.
+
+    Earlier imports derived a project's ID from its title, so the same source file
+    could land under two different IDs (a duplicate). This renames each project
+    directory to the canonical slug derived from its source file and rewrites the
+    baked ``urn:palimpsest:<id>`` references inside. Same-source duplicates (two
+    projects whose source files slug to one ID) are reported, not deleted — resolve
+    those by hand. Dry-run by default; pass --apply to make changes.
+    """
+    from palimpsest.project import _make_slug
+
+    renames: list[tuple[Path, str]] = []
+    conflicts: list[tuple[str, str]] = []
+    claimed: set[str] = set()
+    for p in sorted(workspace.iterdir()):
+        meta_path = p / "metadata.json"
+        if not meta_path.exists():
+            continue
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        src = meta.get("source_file") or ""
+        if not src:
+            console.print(f"[yellow]skip[/yellow] {p.name}: no source_file recorded")
+            continue
+        new_slug = _make_slug(src)
+        if p.name == new_slug:
+            claimed.add(new_slug)
+            continue
+        if (workspace / new_slug).exists() or new_slug in claimed:
+            conflicts.append((p.name, new_slug))
+            continue
+        claimed.add(new_slug)
+        renames.append((p, new_slug))
+
+    for old_dir, new_slug in renames:
+        console.print(f"[cyan]rename[/cyan] {old_dir.name}\n        -> {new_slug}")
+    for old_name, new_slug in conflicts:
+        console.print(
+            f"[red]conflict[/red] {old_name}: canonical slug already exists "
+            f"(duplicate source) -> {new_slug} — resolve by hand"
+        )
+
+    if not apply_changes:
+        console.print(
+            f"\n[bold]Dry run[/bold]: {len(renames)} rename(s), {len(conflicts)} conflict(s). "
+            f"Re-run with --apply to make changes."
+        )
+        return
+
+    rewrite_suffixes = {".json", ".jsonl", ".csv"}
+    for old_dir, new_slug in renames:
+        old_slug = old_dir.name
+        old_urn = f"urn:palimpsest:{old_slug}"
+        new_urn = f"urn:palimpsest:{new_slug}"
+        for f in old_dir.rglob("*"):
+            if not f.is_file() or f.suffix.lower() not in rewrite_suffixes:
+                continue
+            try:
+                content = f.read_text(encoding="utf-8")
+            except (UnicodeDecodeError, OSError):
+                continue
+            if old_urn in content:
+                f.write_text(content.replace(old_urn, new_urn), encoding="utf-8")
+        meta_path = old_dir / "metadata.json"
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        meta["id"] = new_slug
+        meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
+        old_dir.rename(workspace / new_slug)
+        console.print(f"[green]renamed[/green] {old_slug} -> {new_slug}")
+
+    console.print(
+        f"\n[green]Done[/green]: {len(renames)} renamed, {len(conflicts)} conflict(s) left for manual review."
+    )
