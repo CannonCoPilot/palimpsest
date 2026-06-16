@@ -5,13 +5,14 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import re
 import shutil
 from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -80,6 +81,7 @@ class SectionsUpdateRequest(BaseModel):
     sections: list[dict[str, Any]]
     mask_by_type: dict[str, bool] | None = None
     applied: bool | None = None
+    extra_types: list[dict[str, Any]] | None = None  # custom user mask layers
 
 
 def _layout_boundaries(project: Any) -> list[tuple[int, int, str]]:
@@ -116,35 +118,89 @@ def _endnote_separator(project_dir: Path) -> int:
 
 
 def _sections_payload(cfg: Any, text_len: int) -> dict[str, Any]:
-    """Package a LayoutConfig + the fixed type vocabulary + computed masks for the UI."""
+    """Package a LayoutConfig + the type vocabulary (builtin + custom) + masks for the UI."""
     from palimpsest.layout import (
-        DEFAULT_MASK_BY_TYPE,
         MASKED_BG_COLOR,
         MASKED_TEXT_COLOR,
-        SECTION_COLORS,
-        SECTION_LABELS,
-        SECTION_TYPES,
         masked_intervals,
+        type_vocabulary,
     )
 
+    extra_types = getattr(cfg, "extra_types", [])
     intervals = masked_intervals(cfg.sections, cfg.mask_by_type, text_len)
     return {
         "sections": [s.to_dict() for s in cfg.sections],
         "mask_by_type": cfg.mask_by_type,
         "applied": cfg.applied,
+        "extra_types": extra_types,
         "text_len": text_len,
         "masked_intervals": [[a, b] for a, b in intervals],
-        "types": [
-            {
-                "key": t,
-                "label": SECTION_LABELS[t],
-                "color": SECTION_COLORS[t],
-                "default_mask": DEFAULT_MASK_BY_TYPE[t],
-            }
-            for t in SECTION_TYPES
-        ],
+        "types": type_vocabulary(extra_types),
         "masked_style": {"color": MASKED_TEXT_COLOR, "background": MASKED_BG_COLOR},
     }
+
+
+def _write_elements_track(project_dir: Path, project_id: str, cfg: Any, text_len: int) -> int:
+    """Emit mask elements as a unified 'elements' annotation track + manifest.
+
+    Every layout element (except the full-span body canvas) becomes one annotation, so
+    the Reader/Browser can render a single 'Elements' track whose subtypes the user can
+    toggle. Masked elements (headers, front matter) are included by design — the track
+    is a structural guide, not an analysis result.
+    """
+    from palimpsest.annotation.model import Annotation, Body, Creator, Target, TextPositionSelector
+    from palimpsest.annotation.serializer import write_track
+    from palimpsest.layout import SECTION_COLORS, SECTION_LABELS, effective_mask
+
+    source = f"urn:palimpsest:{project_id}"
+    anns: list[Annotation] = []
+    for s in cfg.sections:
+        if s.type == "body":
+            continue  # the body is the analyzable canvas, not a guide element
+        if not (0 <= s.start < s.end <= text_len):
+            continue
+        body = Body(
+            type="palimpsest:ElementAnnotation",
+            purpose="classifying",
+            value=s.label or SECTION_LABELS.get(s.type, s.type),
+            extra={
+                "palimpsest:elementType": s.type,
+                "palimpsest:elementName": s.name,
+                "palimpsest:masked": effective_mask(s, cfg.mask_by_type),
+                "palimpsest:parentId": s.parent_id or "",
+                "palimpsest:color": SECTION_COLORS.get(s.type, "#8e8e93"),
+            },
+        )
+        anns.append(Annotation(
+            body=body,
+            target=Target(source=source, selector=TextPositionSelector(s.start, s.end)),
+            creator=Creator(name="palimpsest/layout"),
+            confidence=1.0,
+            evidence_level="E1",
+            id=f"urn:palimpsest:{project_id}:elements:{s.name or s.id}",
+            project_id=project_id,
+            track_name="elements",
+        ))
+
+    track_path = project_dir / "tracks" / "elements.jsonl"
+    if anns:
+        write_track(track_path, anns)
+    else:
+        track_path.unlink(missing_ok=True)  # drop a stale track if nothing remains
+    manifests_dir = project_dir / "manifests"
+    manifests_dir.mkdir(exist_ok=True)
+    (manifests_dir / "elements.manifest.json").write_text(
+        json.dumps({
+            "trackName": "elements",
+            "bodyType": "palimpsest:ElementAnnotation",
+            "colorScheme": {"primary": "#5ac8fa", "secondary": "#98989d"},
+            "textViewRendering": "margin-marker",
+            "overviewBarRendering": {"type": "state-band"},
+            "evidenceLevel": "E1",
+        }, indent=2),
+        encoding="utf-8",
+    )
+    return len(anns)
 
 
 _COVER_SUFFIXES = (".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg")
@@ -205,6 +261,103 @@ def _safe_import_path(imports_dir: Path, rel_path: str) -> Path:
     if not resolved.is_file():
         raise HTTPException(status_code=404, detail="File not found")
     return resolved
+
+
+_ROMAN = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
+_TITLE_NOISE = frozenset({"the", "a", "an", "enhanced", "novel", "edition", "unabridged", "of"})
+
+
+def _roman_to_int(s: str) -> int | None:
+    total = prev = 0
+    for ch in reversed(s.lower()):
+        v = _ROMAN.get(ch, 0)
+        if v == 0:
+            return None
+        total += -v if v < prev else v
+        prev = max(prev, v)
+    return total or None
+
+
+_STRUCTURAL_WORDS = frozenset({"vol", "part", "book", "no", "chapter"})
+
+
+def _title_signature(title: str) -> str:
+    """Normalize a title for cross-edition matching: unify volume wording, convert
+    roman numerals that follow a structural word to arabic, drop noise words. So
+    'Ante-Nicene Fathers, Vol_ I', 'Vol. I', and 'The Ante-Nicene Fathers: Volume 1'
+    collapse to one signature, while Vol 1 vs Vol 2 stay distinct.
+
+    Tokenizing first (rather than regex over raw text) makes this robust to the odd
+    separators Anna's-Archive filenames use ('Vol_ I', 'Vol., I')."""
+    t = re.sub(r"\bvolumes?\b", "vol", title.lower())
+    out: list[str] = []
+    for tok in re.findall(r"[a-z0-9]+", t):
+        if tok in _TITLE_NOISE:
+            continue
+        if out and out[-1] in _STRUCTURAL_WORDS:
+            n = _roman_to_int(tok)
+            if n is not None:
+                out.append(str(n))
+                continue
+        out.append(tok)
+    return " ".join(out)
+
+
+def _parse_import_filename(name: str) -> tuple[str, str, str]:
+    """Parse (title, author, isbn) from an Anna's-Archive-style filename
+    ('Title -- Author -- ... -- isbn13 NNN -- ... .ext'); degrade gracefully."""
+    stem = name.rsplit(".", 1)[0]
+    parts = [p.strip() for p in stem.split(" -- ")]
+    title = parts[0] if parts and parts[0] else stem
+    author = parts[1] if len(parts) > 1 else ""
+    m = re.search(r"isbn(?:13|10)?\s*([0-9Xx]{10,13})", stem, re.IGNORECASE)
+    return title, author, (m.group(1).upper() if m else "")
+
+
+def _imported_index(workspace: Path) -> tuple[dict[str, str], dict[str, str], dict[str, str]]:
+    """Index existing projects by source filename, title signature, and ISBN."""
+    by_file: dict[str, str] = {}
+    by_sig: dict[str, str] = {}
+    by_isbn: dict[str, str] = {}
+    if workspace.is_dir():
+        for p in workspace.iterdir():
+            mp = p / "metadata.json"
+            if not mp.exists():
+                continue
+            try:
+                m = json.loads(mp.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                continue
+            pid = m.get("id", p.name)
+            if m.get("source_file"):
+                by_file[m["source_file"]] = pid
+            sig = _title_signature(m.get("title", ""))
+            if sig:
+                by_sig.setdefault(sig, pid)
+            isbn = re.sub(r"[^0-9X]", "", str(m.get("isbn", "")).upper())
+            if isbn:
+                by_isbn.setdefault(isbn, pid)
+    return by_file, by_sig, by_isbn
+
+
+def _import_status(
+    name: str, indexes: tuple[dict[str, str], dict[str, str], dict[str, str]]
+) -> tuple[str, str | None, str, str, str]:
+    """Classify an importable file as new / imported / version of an imported title.
+
+    Returns (status, matched_project_id, parsed_title, parsed_author, parsed_isbn).
+    """
+    by_file, by_sig, by_isbn = indexes
+    title, author, isbn = _parse_import_filename(name)
+    if name in by_file:
+        return "imported", by_file[name], title, author, isbn
+    isbn_norm = re.sub(r"[^0-9X]", "", isbn)
+    if isbn_norm and isbn_norm in by_isbn:
+        return "version", by_isbn[isbn_norm], title, author, isbn
+    sig = _title_signature(title)
+    if sig and sig in by_sig:
+        return "version", by_sig[sig], title, author, isbn
+    return "new", None, title, author, isbn
 
 
 def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
@@ -980,18 +1133,25 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     async def list_imports() -> JSONResponse:
         """List importable book files under the configured imports/ drop folder."""
         files: list[dict[str, Any]] = []
+        indexes = _imported_index(workspace)
         if imports_dir.is_dir():
             for p in sorted(imports_dir.rglob("*")):
                 if not p.is_file() or p.suffix.lower() not in _IMPORT_SUFFIXES:
                     continue
                 rel = p.relative_to(imports_dir)
                 folder = "" if rel.parent == Path(".") else str(rel.parent)
+                status, matched, title, author, isbn = _import_status(p.name, indexes)
                 files.append({
                     "path": str(rel),
                     "name": p.name,
                     "folder": folder,
                     "format": p.suffix.lower().lstrip("."),
                     "size": p.stat().st_size,
+                    "title": title,
+                    "author": author,
+                    "isbn": isbn,
+                    "status": status,                 # "new" | "imported" | "version"
+                    "matched_project_id": matched,     # set when imported/version
                 })
         return JSONResponse(content={
             "root": str(imports_dir),
@@ -1055,6 +1215,61 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
+    @app.post("/api/import/local/stream")
+    async def import_local_stream(req: LocalImportRequest) -> StreamingResponse:
+        """Staged import with live progress as Server-Sent Events.
+
+        Emits ``progress`` events ({phase, message, pct}) at each ingest phase,
+        then a terminal ``done`` (ingest summary) or ``error`` ({detail, status}).
+        The ingest runs in a worker thread; its progress callback hands events
+        back to the event loop through a thread-safe queue.
+        """
+        from palimpsest.project import ingest_file
+
+        src = _safe_import_path(imports_dir, req.path)
+        if src.suffix.lower() not in _IMPORT_SUFFIXES:
+            raise HTTPException(status_code=400, detail="Unsupported file format")
+
+        queue: asyncio.Queue[dict[str, Any]] = asyncio.Queue()
+        loop = asyncio.get_running_loop()
+
+        def _on_progress(phase: str, message: str, fraction: float) -> None:
+            loop.call_soon_threadsafe(
+                queue.put_nowait,
+                {"type": "progress", "phase": phase, "message": message, "pct": round(fraction * 100)},
+            )
+
+        async def _run() -> None:
+            try:
+                project = await asyncio.to_thread(
+                    ingest_file, src, workspace,
+                    title=req.title or src.stem, author=req.author, year=req.year,
+                    overwrite=req.overwrite, progress=_on_progress,
+                )
+                await queue.put({"type": "done", **_ingest_summary(project, staged=True)})
+            except FileExistsError:
+                await queue.put({"type": "error", "detail": "Project already exists", "status": 409})
+            except Exception as exc:  # noqa: BLE001
+                logger.exception("Streamed import failed")
+                await queue.put({"type": "error", "detail": str(exc), "status": 500})
+
+        async def _events():
+            task = asyncio.create_task(_run())
+            try:
+                while True:
+                    evt = await queue.get()
+                    yield f"data: {json.dumps(evt)}\n\n"
+                    if evt.get("type") in ("done", "error"):
+                        break
+            finally:
+                await task
+
+        return StreamingResponse(
+            _events(),
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+        )
+
     @app.post("/api/projects/{project_id}/sections/detect")
     async def detect_sections(project_id: str) -> JSONResponse:
         """Step 2: classify the text into typed layout sections and persist them."""
@@ -1063,9 +1278,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         project_dir = _safe_project_dir(workspace, project_id)
         project = Project.load(project_dir)
-        text_len = len(project.reference_text())
+        reference = project.reference_text()
+        text_len = len(reference)
         sections = detect_layout_sections(
             _layout_boundaries(project), text_len, _endnote_separator(project_dir),
+            text=reference,
         )
         cfg = load_layout(project_dir) or LayoutConfig()
         cfg.sections = sections
@@ -1092,6 +1309,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             LayoutConfig,
             LayoutSection,
             load_layout,
+            sanitize_extra_types,
             save_layout,
         )
         from palimpsest.project import Project
@@ -1100,8 +1318,12 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         text_len = len(Project.load(project_dir).reference_text())
         cfg = load_layout(project_dir) or LayoutConfig()
         cfg.sections = [LayoutSection.from_dict(s) for s in req.sections]
+        if req.extra_types is not None:
+            cfg.extra_types = sanitize_extra_types(req.extra_types)
         if req.mask_by_type is not None:
             merged = dict(DEFAULT_MASK_BY_TYPE)
+            for et in cfg.extra_types:  # seed custom-layer defaults before overrides
+                merged[et["key"]] = bool(et.get("default_mask", True))
             merged.update(req.mask_by_type)
             cfg.mask_by_type = merged
         if req.applied is not None:
@@ -1111,7 +1333,9 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
     @app.post("/api/projects/{project_id}/sections/apply")
     async def apply_sections(project_id: str) -> JSONResponse:
-        """Step 5: confirm masking, then run the deferred analysis honoring masks."""
+        """Step 5: persist the masking decision (applied=true). Analysis is NOT
+        run here — the user reviews and launches analyses from the Analysis panel
+        afterward, so masks are computed lazily by each extractor at run time."""
         from palimpsest.layout import LayoutConfig, load_layout, save_layout
         from palimpsest.project import Project
 
@@ -1119,9 +1343,9 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         cfg = load_layout(project_dir) or LayoutConfig()
         cfg.applied = True
         save_layout(project_dir, cfg)
-        project = Project.load(project_dir)
-        failed = await _compute_tracks(project)
-        return JSONResponse(content=_ingest_summary(project, staged=False, failed_tracks=failed))
+        text_len = len(Project.load(project_dir).reference_text())
+        _write_elements_track(project_dir, project_id, cfg, text_len)
+        return JSONResponse(content=_sections_payload(cfg, text_len))
 
     # ── Alignment API ──
 

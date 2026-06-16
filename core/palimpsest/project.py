@@ -12,6 +12,7 @@ import shutil
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from collections.abc import Callable
 from typing import Any
 
 from palimpsest import __version__
@@ -186,17 +187,28 @@ def ingest_file(
     language: str = "en",
     content_profile: Any = None,  # ContentProfile or None
     overwrite: bool = False,
+    progress: Callable[[str, str, float], None] | None = None,
 ) -> Project:
     """Ingest a text file into a new project directory.
 
     With ``overwrite=True``, an existing project directory at the same slug is
     replaced (used by re-import); otherwise a collision raises FileExistsError.
+
+    ``progress(phase, message, fraction)`` is called at each structural phase
+    boundary so callers can stream import progress (see the SSE import endpoint).
     """
+
+    def _emit(phase: str, message: str, fraction: float) -> None:
+        if progress is not None:
+            progress(phase, message, fraction)
+
     is_epub = source_path.suffix.lower() == ".epub"
     epub_result = None
 
+    _emit("read", "Reading source file…", 0.05)
     if is_epub:
         from palimpsest.ingest.epub_parser import parse_epub
+        _emit("parse", "Parsing EPUB structure…", 0.15)
         epub_result = parse_epub(source_path, content_profile=content_profile)
         raw_text = epub_result.text
         if not title and epub_result.metadata.title:
@@ -206,8 +218,10 @@ def ingest_file(
         if not language and epub_result.metadata.language:
             language = epub_result.metadata.language
     else:
+        _emit("parse", "Extracting text…", 0.15)
         raw_text = extract_text(source_path)
 
+    _emit("normalize", "Normalizing text…", 0.45)
     normalized = normalize(raw_text)
     sha = compute_sha256(normalized)
     slug = _make_slug(title or source_path.name)
@@ -225,6 +239,7 @@ def ingest_file(
     (project_dir / "reference.txt").write_text(normalized, encoding="utf-8")
     (project_dir / "reference.sha256").write_text(sha)
 
+    _emit("segment", "Segmenting paragraphs & sentences…", 0.55)
     paras = segment_paragraphs(normalized)
     sections = segment_sections(normalized)
     sentences = segment_sentences(normalized)
@@ -268,6 +283,7 @@ def ingest_file(
         encoding="utf-8",
     )
 
+    _emit("layers", "Building segment layers…", 0.75)
     source_urn = f"urn:palimpsest:{slug}"
     seg_annotations: list[Annotation] = []
     for seg in paras:
@@ -454,5 +470,6 @@ def ingest_file(
         encoding="utf-8",
     )
 
+    _emit("save", "Finalizing project…", 0.97)
     project = Project(path=project_dir, metadata=metadata)
     return project

@@ -94,3 +94,28 @@ def test_reimport_requires_overwrite(tmp_path):
     ov = client.post("/api/import/local", json={**body, "overwrite": True})
     assert ov.status_code == 200
     assert len(client.get("/api/projects").json()) == 1
+
+
+def test_import_status_flags_imported_and_versions(tmp_path):
+    workspace = tmp_path / "ws"
+    workspace.mkdir()
+    imports = tmp_path / "imports"
+    imports.mkdir()
+    f_main = "Ante-Nicene Fathers Volume 1 - Enhanced -- Philip Schaff -- 2009 -- CCEL -- aaa -- Anna's Archive.txt"
+    f_edition = "Ante-Nicene Fathers, Vol. I -- Roberts, Donaldson -- 2023 -- Global Grey -- bbb -- Anna's Archive.txt"
+    f_other = "Some Unrelated Book -- Nobody -- 2000 -- Pub -- ccc -- Anna's Archive.txt"
+    for fn in (f_main, f_edition, f_other):
+        (imports / fn).write_text("Chapter 1\n\n" + ("words here. " * 50), encoding="utf-8")
+    client = TestClient(create_app(workspace, imports_dir=imports))
+    # Import the main edition; its title drives the cross-edition signature match.
+    client.post("/api/import/local", json={
+        "path": f_main, "title": "Ante-Nicene Fathers Volume 1", "process": False,
+    })
+    files = {f["name"]: f for f in client.get("/api/imports").json()["files"]}
+    assert files[f_main]["status"] == "imported"
+    # "Vol. I" is recognized as another version of "Volume 1".
+    assert files[f_edition]["status"] == "version"
+    assert files[f_edition]["matched_project_id"] == files[f_main]["matched_project_id"]
+    assert files[f_other]["status"] == "new"
+    # parsed metadata is surfaced for the UI's search/filter + grouping.
+    assert files[f_edition]["author"] == "Roberts, Donaldson"
