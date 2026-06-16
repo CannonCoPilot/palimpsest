@@ -98,15 +98,21 @@ def detect_content_profile(book: Any) -> ContentProfile:
     if not is_bible_meta and not _has_bible_markers(sample_html):
         return PROFILE_LITERARY
 
-    # Detect specific Bible format by class/structure patterns
-    if "verses" in sample_html and ("red" in sample_html or "chp_" in sample_html):
-        return PROFILE_KJV
+    # Detect specific Bible format by distinctive class/structure markers.
+    # Order matters: check the most specific markers first so a format whose
+    # markup happens to contain a generic token (e.g. Tyndale also has verse
+    # spans) isn't captured by an earlier, looser rule.
     if "versejump" in sample_html:
         return PROFILE_TYNDALE
     if "chapter-verse" in sample_html or "MIDDLENOTE" in sample_html:
         return PROFILE_GENEVA
     if "wQnqgsgYTu" in sample_html:
         return PROFILE_DOUAY_RHEIMS
+    # KJV last: anchor to the class attribute so the bare substring "verses"
+    # (and the formerly-used "red", a substring of countless words) can't
+    # mis-trigger on unrelated markup.
+    if 'class="verses"' in sample_html:
+        return PROFILE_KJV
 
     # Generic Bible: at minimum strip superscript-only verse numbers
     logger.info("Detected Bible-like content but no specific profile match; using literary")
@@ -123,18 +129,46 @@ def _collect_metadata_text(book: Any) -> str:
     return " ".join(parts)
 
 
-def _get_sample_html(book: Any) -> str:
+def _get_sample_html(book: Any, max_items: int = 12, per_item: int = 6000) -> str:
+    """Sample HTML spread across the whole spine.
+
+    Sampling only the first few spine items misses formats whose distinctive
+    markup lives past the front matter — e.g. the 1599 Geneva Bible keeps all
+    its ``chapter-verse``/``MIDDLENOTE`` markup in content files that come after
+    ~15 front-matter items, so a head-only sample detected it as literary.
+    Evenly-spaced picks across the spine guarantee we look at real content.
+    """
     import ebooklib
-    count = 0
-    parts = []
+
+    docs = []
     for item_id, _ in book.spine:
         item = book.get_item_with_id(item_id)
         if item and item.get_type() == ebooklib.ITEM_DOCUMENT:
-            content = item.get_content().decode("utf-8", errors="replace")
-            parts.append(content[:3000])
-            count += 1
-            if count >= 3:
-                break
+            docs.append(item)
+    if not docs:
+        docs = list(book.get_items_of_type(ebooklib.ITEM_DOCUMENT))
+    if not docs:
+        return ""
+
+    if len(docs) > max_items:
+        # Endpoint-inclusive spread: always sample the first and last document
+        # items plus evenly-spaced picks between, so a marker in the final
+        # content file is never skipped.
+        last = len(docs) - 1
+        seen: set[int] = set()
+        picks = []
+        for i in range(max_items):
+            idx = round(i * last / (max_items - 1))
+            if idx not in seen:
+                seen.add(idx)
+                picks.append(docs[idx])
+    else:
+        picks = docs
+
+    parts = []
+    for item in picks:
+        content = item.get_content().decode("utf-8", errors="replace")
+        parts.append(content[:per_item])
     return " ".join(parts)
 
 

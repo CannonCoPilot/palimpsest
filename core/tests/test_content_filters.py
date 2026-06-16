@@ -3,6 +3,7 @@
 import re
 from unittest.mock import MagicMock
 
+import ebooklib
 import pytest
 from bs4 import BeautifulSoup
 
@@ -225,3 +226,63 @@ class TestCombinedFilters:
         # Prose content must be intact
         for word in ("generation", "Jesus", "Christ", "Abraham", "Isaac"):
             assert word in text
+
+
+# ---------------------------------------------------------------------------
+# Profile auto-detection
+# ---------------------------------------------------------------------------
+
+class TestProfileDetection:
+    """Guards the detection heuristics: distinctive markup buried past the
+    front matter must still be seen, marker order must prefer the most specific
+    format, and KJV detection must key on the class attribute (not the bare
+    word 'verses', which appears in ordinary prose)."""
+
+    def _book(self, spine_html: list[str], title: str = "A Novel") -> MagicMock:
+        book = MagicMock()
+        items: dict[str, MagicMock] = {}
+        spine: list[tuple[str, str]] = []
+        for i, html in enumerate(spine_html):
+            item = MagicMock()
+            item.get_type.return_value = ebooklib.ITEM_DOCUMENT
+            item.get_content.return_value = html.encode("utf-8")
+            iid = f"item{i}"
+            items[iid] = item
+            spine.append((iid, "yes"))
+        book.spine = spine
+        book.get_item_with_id.side_effect = lambda iid: items.get(iid)
+        book.get_metadata.side_effect = (
+            lambda ns, field: [(title, {})] if (ns == "DC" and field == "title") else []
+        )
+        return book
+
+    def test_marker_buried_past_front_matter_is_detected(self):
+        # 15 front-matter items, then the only content item carries the marker —
+        # exactly the 1599 Geneva layout that a head-only sample missed.
+        spine = ["<html><body><p>front matter</p></body></html>"] * 15
+        spine.append('<html><body><p class="chapter-verse">In the beginning</p></body></html>')
+        book = self._book(spine, title="1599 Geneva Bible")
+        assert detect_content_profile(book).name == "bible-geneva"
+
+    def test_specific_marker_wins_over_generic(self):
+        # Tyndale markup also contains verse spans; the versejump marker must
+        # take precedence so it isn't mis-detected as KJV.
+        html = '<html><body><span class="versejump">x</span> these verses are quoted</body></html>'
+        book = self._book([html], title="Tyndale Bible New Testament")
+        assert detect_content_profile(book).name == "bible-tyndale"
+
+    def test_bare_word_verses_does_not_trigger_kjv(self):
+        # The word "verses" in ordinary prose (no class) must NOT classify as KJV.
+        html = "<html><body><p>He read several verses aloud by the red door.</p></body></html>"
+        book = self._book([html], title="The Holy Bible, New King James Version")
+        assert detect_content_profile(book).name == "literary"
+
+    def test_verses_class_triggers_kjv(self):
+        html = '<html><body><p><span class="verses">1</span> In the beginning</p></body></html>'
+        book = self._book([html], title="The Holy Bible King James Version")
+        assert detect_content_profile(book).name == "bible-kjv"
+
+    def test_plain_literary_book_stays_literary(self):
+        html = "<html><body><p>It was the best of times, it was the worst of times.</p></body></html>"
+        book = self._book([html], title="A Tale of Two Cities")
+        assert detect_content_profile(book).name == "literary"

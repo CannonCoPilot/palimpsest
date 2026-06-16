@@ -7,10 +7,13 @@ call-site/note-text links, and OPF publication metadata.
 
 from __future__ import annotations
 
+import logging
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -54,13 +57,50 @@ class EpubParseResult:
     cover_media_type: str = ""
 
 
+def _read_epub(path: Path) -> Any:
+    """Read an EPUB, tolerating producers whose nav/NCX crashes ebooklib.
+
+    Falls back through three levels: (1) honor the NCX, (2) ignore it, and
+    finally (3) defuse ebooklib's nav parser, which raises IndexError on EPUB3
+    nav documents that declare no ``<nav epub:type="toc">`` (e.g. the Penguin
+    Book of Mormon). Levels 1-2 don't help there because the crash is in nav
+    parsing regardless of the NCX option, so without level 3 the book cannot be
+    imported at all.
+    """
+    from ebooklib import epub
+
+    for opts in ({"ignore_ncx": False}, {"ignore_ncx": True}):
+        try:
+            return epub.read_epub(str(path), options=opts)
+        except Exception:
+            continue
+
+    reader_cls = getattr(epub, "EpubReader", None)
+    original = getattr(reader_cls, "_parse_nav", None)
+    if reader_cls is None or original is None:
+        # Internals not as expected — surface the genuine error instead of a
+        # confusing AttributeError from the patch path.
+        return epub.read_epub(str(path), options={"ignore_ncx": True})
+
+    def _safe_parse_nav(self: Any, *args: Any, **kwargs: Any) -> Any:
+        try:
+            return original(self, *args, **kwargs)
+        except Exception:
+            logger.warning("Defused ebooklib nav-parse failure for %s", path.name)
+            return None
+
+    reader_cls._parse_nav = _safe_parse_nav
+    try:
+        return epub.read_epub(str(path), options={"ignore_ncx": True})
+    finally:
+        reader_cls._parse_nav = original
+
+
 def parse_epub(path: Path, content_profile: Any = None) -> EpubParseResult:
     """Parse an EPUB file, extracting text with structural metadata."""
-    import ebooklib
-    from ebooklib import epub
-    from palimpsest.ingest.content_filters import ContentProfile, detect_content_profile
+    from palimpsest.ingest.content_filters import detect_content_profile
 
-    book = epub.read_epub(str(path), options={"ignore_ncx": False})
+    book = _read_epub(path)
 
     # Auto-detect profile if not provided
     if content_profile is None:
@@ -71,6 +111,8 @@ def parse_epub(path: Path, content_profile: Any = None) -> EpubParseResult:
 
     if not sections:
         sections = _sections_from_toc(book, text)
+    if not sections:
+        sections = _sections_from_text_headings(text)
 
     endnotes, sep_offset = _resolve_endnotes(text, endnote_anchors, endnote_defs)
     cover_image, cover_media_type = _extract_cover(book)
@@ -198,6 +240,27 @@ _BLOCK_TAGS = frozenset({
 })
 
 
+def _needs_separating_space(prev: str, nxt: str) -> bool:
+    """Whether to insert a space between two text fragments made adjacent when an
+    inline element was flattened.
+
+    Inserts a space only when ``prev`` ends in a non-space and ``nxt`` begins with
+    a letter (the anti-concatenation rule). Crucially, it does NOT split a drop-cap
+    initial: a lone uppercase letter glued to a lowercase continuation is one word
+    (``<span class="dropcap">T</span>he`` -> ``The``, never ``T he``). A real
+    single-letter word ("I", "A") never reaches this guard because its trailing
+    space lives in the source text node, so ``prev`` already ends in whitespace.
+    """
+    if not prev or not nxt:
+        return False
+    if prev[-1].isspace() or not nxt[0].isalpha():
+        return False
+    prev_token = prev.strip()
+    if len(prev_token) == 1 and prev_token.isupper() and nxt[0].islower():
+        return False
+    return True
+
+
 def _sections_from_toc(book: Any, assembled_text: str) -> list[SectionBoundary]:
     """Extract section boundaries from the NCX/navigation table of contents.
 
@@ -266,6 +329,45 @@ def _sections_from_toc(book: Any, assembled_text: str) -> list[SectionBoundary]:
     return sections
 
 
+# Heading keywords that introduce a structural division when they begin a line
+# and are followed by a roman/arabic numeral. Used only as a last-resort fallback.
+_TEXT_HEADING_RE = re.compile(
+    r"(?im)^[ \t]*"
+    r"(chapter|chap\.|part|book|volume|vol\.|canto|letter|section)"
+    r"\s+([ivxlcdm]+|\d{1,3})"
+    r"\b[ \t]*(.*)$"
+)
+_HEADING_KEYWORD_LEVEL = {
+    "part": 2, "book": 2, "volume": 2, "vol.": 2,
+    "chapter": 3, "chap.": 3, "canto": 3, "letter": 3, "section": 3,
+}
+
+
+def _sections_from_text_headings(text: str) -> list[SectionBoundary]:
+    """Last-resort fallback: detect headings from the assembled text itself.
+
+    Some EPUBs put chapter titles in styled inline spans (no ``<hN>``) and ship
+    a TOC with no chapter entries — leaving zero detectable structure (e.g. Jane
+    Eyre, Frankenstein). Such headings still land on their own line in the
+    assembled text because block breaks surround them, so we match
+    ``CHAPTER I`` / ``Letter 1`` / ``Part II`` at line starts. Only invoked when
+    HTML headings and the TOC both yielded nothing, and the user can still
+    refine the result in the import wizard.
+    """
+    sections: list[SectionBoundary] = []
+    for m in _TEXT_HEADING_RE.finditer(text):
+        keyword = m.group(1).lower()
+        level = _HEADING_KEYWORD_LEVEL.get(keyword, 3)
+        heading = " ".join(m.group(0).split())[:120]
+        sections.append(SectionBoundary(
+            offset=m.start(1),
+            heading_text=heading,
+            heading_level=level,
+            section_index=len(sections),
+        ))
+    return sections
+
+
 def _assemble_text(book: Any, profile: Any = None) -> tuple[
     str,
     list[SectionBoundary],
@@ -274,7 +376,7 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
 ]:
     """Walk spine items in order, assembling clean text with structural markers."""
     import ebooklib
-    from bs4 import BeautifulSoup, NavigableString, Tag
+    from bs4 import BeautifulSoup, Comment, NavigableString, Tag
     from palimpsest.ingest.content_filters import apply_content_filters, should_skip_spine_item
 
     parts: list[str] = []
@@ -309,6 +411,10 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
 
         for elem in body.descendants:
             if isinstance(elem, NavigableString):
+                # bs4 Comment is a NavigableString subclass; commented-out markup
+                # must not leak into the text (e.g. KJV Study Bible <!--<a ...>-->).
+                if isinstance(elem, Comment):
+                    continue
                 parent = elem.parent
                 if parent and parent.name in ("script", "style"):
                     continue
@@ -317,9 +423,9 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
                 if not text_content.strip():
                     continue
 
-                # Prevent word concatenation when inline elements are stripped:
-                # if previous part ends with a letter and this starts with one, insert space
-                if parts and parts[-1] and not parts[-1][-1].isspace() and text_content[0].isalpha():
+                # Prevent word concatenation when inline elements are stripped,
+                # but keep drop-cap initials intact (see _needs_separating_space).
+                if parts and _needs_separating_space(parts[-1], text_content):
                     parts.append(" ")
 
                 parts.append(text_content)
@@ -472,8 +578,15 @@ def _clean_endnote_text(text: str, note_num: int) -> str:
     return text.strip()
 
 
+_WATERMARK_RE = re.compile(r"(?im)^[ \t]*OceanofPDF\.com[ \t]*$")
+
+
 def _clean_assembled_text(text: str) -> str:
     """Normalize assembled text: collapse whitespace, fix paragraph breaks."""
+    # Strip the 'OceanofPDF.com' watermark that pirated EPUBs inject as its own
+    # centered line on nearly every page (≈175× in one sample). Done before the
+    # whitespace collapse so the resulting blank line folds away cleanly.
+    text = _WATERMARK_RE.sub("", text)
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r" *\n *\n *(\n *)*", "\n\n", text)
     text = re.sub(r"^\s+", "", text)
