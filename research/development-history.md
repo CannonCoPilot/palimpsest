@@ -633,3 +633,42 @@ Major design review session combining codebase audit, genome browser research, d
 **Status**: Roadmap v4.0 ready for review. M1.5 (Browser Foundation Sprint) is the immediate next phase. designlang installed and tested.
 
 ---
+
+### 2026-06-12 → 2026-06-16 — Self-Similarity Sprint, Staged Import Pipeline + 5-Step Wizard, Layout Masking & Reader Elements Track
+
+**What happened**:
+
+*Self-similarity & TextHiC (Jun 12–13, committed):*
+- All 4 similarity metrics (cosine, jaccard, word_overlap, edit_distance) computed at once for instant TextHiC metric switching
+- Sentence-level similarity with stopword removal; LASTZ-style seed-and-extend word-chunk alignment; chunk-size slider (5–25 words, default 17)
+
+*Audit remediation + Books-style UI (Jun 15, committed):*
+- Resolved 4 critical audit bugs + warnings W1–W9 (a11y, contrast, validation, perf, wiring); route-ordering regression fix; Vitest frontend harness scaffolded
+- macOS Books-style landing page (launchpad + EPUB cover support) and Book Store external-source view; track-toggle regression fix + tsc cleanup to green build
+
+*Staged import pipeline + masking backend (Jun 15, committed):*
+- Hardened EPUB import against malformed/non-literary ebooks (profile detection, watermark strip, text-heading fallback, EPUB3 nav-crash guard)
+- Staged ingest (`process=False`) + editable layout sections + deepest-section-wins masking; self-similarity honors layout masks
+- 5-step import wizard UI (Scan → Detect → Map → Mask → Apply) with editable section map; book overflow menu (delete / re-import)
+
+*Import-wizard redesign sweep — 28 itemized requirements (Jun 16):*
+- Wizard converted from a modal popup to a full-screen Import view
+- **Step 1**: title/author search filter, accordion folder list, imported/version status badges (incl. multi-edition detection), "Upload from file" rename, and a real SSE import-progress bar + ticker (a progress callback threaded through `ingest_file` → `POST /api/import/local/stream`)
+- **Step 2 (Detect)** rebuilt as a Reader-like full-text view — entire text scrollable (progressive render via `content-visibility` + `IntersectionObserver`), inline masked-range highlighting, font zoom — with a rich right-click mask editor (set selected element's start/end here, change type, split the element under the cursor, add a new element, select/delete) that operates across arbitrarily large intervals via point-click, not just drag
+- **Steps 3–5**: rAF-coalesced boundary drag-select; custom mask-layer types with duplicate-name guard; per-type element counts + live masked-% banner; re-run Steps 2–5 on any already-imported text ("Refine sections…")
+- **Reader**: unified `elements` track rendered over the text with per-element-type show/hide toggles
+- **Backend detection**: inline table-of-contents suppression (ratio-gated cluster heuristic) + headingless copyright/title-page recovery by content scan
+- Adversarial code review (subagent) + live Playwright walkthrough (25/25 checks, 0 console errors). Fixed: `apply()` false-success on server 5xx, TOC ratio-gate (was an absolute char ceiling that let dense TOCs in long novels escape), stale-track cache after apply (reader showed no elements track), per-element-type visibility bleeding across projects
+
+**Decisions**:
+- Title/Author boxes repurposed from metadata override → search filters; the selected file's parsed title/author feeds the import automatically
+- Mask per-type "word count" kept as RAW span coverage (the banner shows effective deepest-wins %); rows verify mapping fidelity rather than effective masking
+- Import drop folder (`imports/`, ~1 GB local EPUB corpus) and local agent scratch (`.claude/`, `browser/.claude/`) added to `.gitignore`
+- Pride-and-Prejudice demo fixtures restored (a stray working-tree deletion, not a deliberate removal)
+
+**Documents produced**:
+- `research/development-history.md` (this entry)
+
+**Status**: Staged import pipeline + 5-step wizard + reader elements track complete and verified — frontend build green (`tsc -b` + vite), 21 Vitest + 377 pytest passing, live walkthrough 25/25. Awaiting stakeholder requirements cross-check.
+
+---
