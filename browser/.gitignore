@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Book Store thumbnails — point-in-time screenshots of external sites, kept local
+public/store/*.png
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

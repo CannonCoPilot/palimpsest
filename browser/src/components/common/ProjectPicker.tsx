@@ -2,12 +2,14 @@
  * ProjectPicker — the app landing page, styled after the macOS Books app.
  *
  * A dark sidebar (search, nav, library sections, collections, user) beside a main
- * area with two views:
+ * area with three views:
  *   - Home: a launchpad (hero, recent texts, and a grid of the suite's analysis
  *     tools). Selecting a tool sets a "pending tab" and routes to the library to
  *     pick a text, which then opens directly in that component.
  *   - Library ("All"): a grid of generated book covers. Texts without cover art get
  *     a deterministic gradient cover (title + author), mirroring Books' fallbacks.
+ *   - Book Store: a launchpad of external sources (screenshot-thumbnail tiles that
+ *     open sites for finding/searching more texts in a new tab).
  *
  * Import is preserved behind an accessible modal (ImportDialog unchanged).
  * Only consumer is AppLayout's no-project branch (CompareView has its own picker).
@@ -67,6 +69,7 @@ function Icon({ name, className = 'w-[18px] h-[18px]' }: { name: string; classNa
     compare: <path d="M4 5h16v14H4zM12 4v16" />,
     arrowRight: <path d="M5 12h14M13 6l6 6-6 6" />,
     globe: (<><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18" /></>),
+    external: <path d="M14 4h6v6M19 5l-9 9M17 13v6H5V7h6" />,
   };
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6}
@@ -346,13 +349,113 @@ function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTo
   );
 }
 
+// External sources for finding more texts to import. The Book Store view is a
+// launchpad of these; each tile previews the site via a header screenshot
+// (browser/public/store/*.png) with a tinted gradient fallback.
+interface StoreSite {
+  name: string;
+  url: string;
+  domain: string;
+  desc: string;
+  thumb: string;
+  tint: readonly [string, string];
+}
+
+const STORES: ReadonlyArray<StoreSite> = [
+  {
+    name: 'Early Christian Writings',
+    url: 'https://www.earlychristianwritings.com/',
+    domain: 'earlychristianwritings.com',
+    desc: 'Gospels, epistles & patristic texts with translations and commentary',
+    thumb: '/store/early-christian-writings.png',
+    tint: ['#8a6d3b', '#4a3a1f'],
+  },
+  {
+    name: 'Internet Sacred Text Archive',
+    url: 'https://sacred-texts.com/cat/index.htm',
+    domain: 'sacred-texts.com',
+    desc: 'Vast archive of religious, mythological & folklore texts',
+    thumb: '/store/sacred-texts.png',
+    tint: ['#1f7a73', '#0d3e3a'],
+  },
+  {
+    name: "Anna's Archive",
+    url: 'https://annas-archive.gl/',
+    domain: 'annas-archive.gl',
+    desc: 'Search engine for books, papers & library collections',
+    thumb: '/store/annas-archive.png',
+    tint: ['#36507a', '#1c2a44'],
+  },
+];
+
+function StoreTile({ site }: { site: StoreSite }): ReactElement {
+  const [imgFailed, setImgFailed] = useState(false);
+  return (
+    <a
+      href={site.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block rounded-xl overflow-hidden bg-[#242426] ring-1 ring-white/10 transition-all duration-200
+        shadow-[0_10px_22px_-10px_rgba(0,0,0,0.7)] hover:ring-white/25 hover:-translate-y-0.5
+        hover:shadow-[0_18px_30px_-10px_rgba(0,0,0,0.85)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a84ff]"
+    >
+      <div
+        className="relative aspect-[16/9] overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(155deg, ${site.tint[0]}, ${site.tint[1]})` }}
+      >
+        {!imgFailed ? (
+          <img
+            src={site.thumb}
+            alt={`${site.name} homepage`}
+            loading="lazy"
+            onError={() => setImgFailed(true)}
+            className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.04]"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center px-4">
+            <span className="font-[var(--font-serif)] text-white/90 text-[18px] text-center [text-wrap:balance]">
+              {site.name}
+            </span>
+          </div>
+        )}
+        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
+      </div>
+      <div className="px-4 py-3">
+        <div className="flex items-center gap-1.5">
+          <span className="text-[14px] font-medium text-white truncate">{site.name}</span>
+          <span className="shrink-0 text-[#8e8e93] opacity-0 group-hover:opacity-100 transition-opacity">
+            <Icon name="external" className="w-3.5 h-3.5" />
+          </span>
+        </div>
+        <p className="text-[12px] text-[#8e8e93] mt-0.5 leading-snug">{site.desc}</p>
+        <p className="text-[11px] text-[#5a8dee] mt-1.5">{site.domain}</p>
+      </div>
+    </a>
+  );
+}
+
+function StoreView(): ReactElement {
+  return (
+    <div className="px-10 pt-4 pb-16">
+      <p className="text-[13px] text-[#8e8e93] mb-5 max-w-[640px]">
+        Browse external libraries and search engines for more texts to import. Links open in a new tab.
+      </p>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-5">
+        {STORES.map((s) => (
+          <StoreTile key={s.url} site={s} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ProjectPicker(): ReactElement {
   const [projects, setProjects] = useState<ProjectEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [showImport, setShowImport] = useState(false);
-  const [page, setPage] = useState<'home' | 'library'>('home');
+  const [page, setPage] = useState<'home' | 'library' | 'store'>('home');
   const [pendingTab, setPendingTab] = useState<TabId | null>(null);
   const loadProject = useProjectStore((s) => s.loadProject);
 
@@ -390,6 +493,12 @@ export default function ProjectPicker(): ReactElement {
 
   function goLibrary(): void {
     setPage('library');
+  }
+
+  function goStore(): void {
+    setPage('store');
+    setPendingTab(null);
+    setQuery('');
   }
 
   // Launch a tool from Home: with texts, route to the library to pick one (the
@@ -435,7 +544,7 @@ export default function ProjectPicker(): ReactElement {
 
         <nav className="flex-1 overflow-y-auto px-3 py-1">
           <NavRow icon="home" label="Home" active={page === 'home'} onClick={goHome} />
-          <NavRow icon="store" label="Book Store" />
+          <NavRow icon="store" label="Book Store" active={page === 'store'} onClick={goStore} />
 
           <SectionLabel>Library</SectionLabel>
           <NavRow icon="library" label="All" active={page === 'library'} onClick={goLibrary} />
@@ -462,7 +571,7 @@ export default function ProjectPicker(): ReactElement {
       <main className="flex-1 overflow-y-auto">
         <div className="flex items-start justify-between px-10 pt-6">
           <h1 className="text-[34px] font-bold tracking-tight text-white">
-            {page === 'home' ? 'Home' : 'All'}
+            {page === 'home' ? 'Home' : page === 'store' ? 'Book Store' : 'All'}
           </h1>
           <button
             type="button"
@@ -482,6 +591,8 @@ export default function ProjectPicker(): ReactElement {
             onOpenProject={(id) => handleSelect(id, null)}
             onLaunchTool={launchTool}
           />
+        ) : page === 'store' ? (
+          <StoreView />
         ) : (
           <div className="px-10 pb-16 pt-4">
             {pendingToolLabel && (
