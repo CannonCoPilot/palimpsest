@@ -217,6 +217,11 @@ def ingest_file(
         meta_dict["epub_uuid"] = epub_result.metadata.uuid
         meta_dict["endnote_count"] = len(epub_result.endnotes)
         meta_dict["epub_section_count"] = len(epub_result.sections)
+        if epub_result.cover_image:
+            from palimpsest.ingest.epub_parser import cover_extension
+            cover_name = f"cover{cover_extension(epub_result.cover_media_type)}"
+            (project_dir / cover_name).write_bytes(epub_result.cover_image)
+            meta_dict["cover"] = cover_name
 
     metadata = ProjectMetadata(
         id=slug,

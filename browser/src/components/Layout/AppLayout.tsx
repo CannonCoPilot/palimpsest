@@ -50,13 +50,7 @@ export default function AppLayout() {
   }
 
   if (!metadata && loadingState !== 'loading') {
-    return (
-      <div className="max-w-[600px] mx-auto mt-10 font-[var(--font-serif)]">
-        <h1>Palimpsest</h1>
-        <p className="text-[var(--color-text-secondary)]">Computational literary analysis platform</p>
-        <ProjectPicker />
-      </div>
-    );
+    return <ProjectPicker />;
   }
 
   const showSidePanels = activeTab === 'reading';

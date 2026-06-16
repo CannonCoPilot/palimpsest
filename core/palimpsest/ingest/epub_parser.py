@@ -50,6 +50,8 @@ class EpubParseResult:
     sections: list[SectionBoundary] = field(default_factory=list)
     endnotes: list[EndnoteRecord] = field(default_factory=list)
     endnote_separator_offset: int = -1
+    cover_image: bytes | None = None
+    cover_media_type: str = ""
 
 
 def parse_epub(path: Path, content_profile: Any = None) -> EpubParseResult:
@@ -71,6 +73,7 @@ def parse_epub(path: Path, content_profile: Any = None) -> EpubParseResult:
         sections = _sections_from_toc(book, text)
 
     endnotes, sep_offset = _resolve_endnotes(text, endnote_anchors, endnote_defs)
+    cover_image, cover_media_type = _extract_cover(book)
 
     return EpubParseResult(
         text=text,
@@ -78,7 +81,79 @@ def parse_epub(path: Path, content_profile: Any = None) -> EpubParseResult:
         sections=sections,
         endnotes=endnotes,
         endnote_separator_offset=sep_offset,
+        cover_image=cover_image,
+        cover_media_type=cover_media_type,
     )
+
+
+_COVER_EXT_BY_MEDIA = {
+    "image/jpeg": ".jpg",
+    "image/jpg": ".jpg",
+    "image/png": ".png",
+    "image/gif": ".gif",
+    "image/webp": ".webp",
+    "image/svg+xml": ".svg",
+}
+
+
+def cover_extension(media_type: str, name: str = "") -> str:
+    """Map an image media type (falling back to a filename) to a file extension."""
+    ext = _COVER_EXT_BY_MEDIA.get(media_type.lower().strip())
+    if ext:
+        return ext
+    suffix = Path(name).suffix.lower()
+    if suffix in (".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg"):
+        return ".jpg" if suffix == ".jpeg" else suffix
+    return ".jpg"
+
+
+def _extract_cover(book: Any) -> tuple[bytes | None, str]:
+    """Return (cover_bytes, media_type) for the book's cover, or (None, "").
+
+    EPUB cover declaration is inconsistent across producers, so try, in order:
+    1. an explicit cover item (EPUB3 properties="cover-image" / guide reference,
+       which ebooklib surfaces as ITEM_COVER),
+    2. the EPUB2 OPF <meta name="cover" content="ITEM_ID"> pointer,
+    3. any manifest image whose name looks like a cover (the only strategy that
+       matches many real-world files — verified empirically).
+    """
+    import ebooklib
+
+    for item in book.get_items_of_type(ebooklib.ITEM_COVER):
+        content = item.get_content()
+        if content:
+            return content, getattr(item, "media_type", "") or ""
+
+    cover_id = None
+    try:
+        meta = book.get_metadata("OPF", "cover")
+        if meta:
+            cover_id = meta[0][1].get("content")
+    except Exception:
+        cover_id = None
+    if cover_id:
+        item = book.get_item_with_id(cover_id)
+        if item is not None:
+            content = item.get_content()
+            if content:
+                return content, getattr(item, "media_type", "") or ""
+
+    candidates = [
+        it for it in book.get_items_of_type(ebooklib.ITEM_IMAGE)
+        if "cover" in it.get_name().lower()
+    ]
+    if candidates:
+        # Prefer the most cover-like basename: 'cover.jpg' over 'frontcover-thumb.png'.
+        candidates.sort(key=lambda it: (
+            not Path(it.get_name()).stem.lower().startswith("cover"),
+            len(it.get_name()),
+        ))
+        item = candidates[0]
+        content = item.get_content()
+        if content:
+            return content, getattr(item, "media_type", "") or ""
+
+    return None, ""
 
 
 def _extract_metadata(book: Any) -> EpubMetadata:

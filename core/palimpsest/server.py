@@ -66,6 +66,25 @@ class ExplainResponse(BaseModel):
     ollama_available: bool
 
 
+_COVER_SUFFIXES = (".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg")
+
+
+def _find_cover_url(project_dir: Path, meta: dict[str, Any]) -> str | None:
+    """Return a /data URL for the project's cover image, or None.
+
+    Prefers the filename recorded by import (metadata "cover"), falling back to
+    any cover.* image present in the directory so hand-dropped covers also work.
+    Served by the read-only /data/{project_id}/{path} route.
+    """
+    cover_name = meta.get("cover")
+    if cover_name and (project_dir / cover_name).is_file():
+        return f"/data/{project_dir.name}/{cover_name}"
+    for cand in sorted(project_dir.glob("cover.*")):
+        if cand.is_file() and cand.suffix.lower() in _COVER_SUFFIXES:
+            return f"/data/{project_dir.name}/{cand.name}"
+    return None
+
+
 def _safe_project_dir(workspace: Path, project_id: str) -> Path:
     """Resolve project directory with path traversal protection."""
     if ".." in project_id or "/" in project_id or "\\" in project_id:
@@ -103,6 +122,7 @@ def create_app(workspace: Path) -> FastAPI:
                         "title": meta.get("title", p.name),
                         "author": meta.get("author", ""),
                         "word_count": meta.get("word_count", 0),
+                        "cover": _find_cover_url(p, meta),
                     })
         return JSONResponse(content=projects)
 
