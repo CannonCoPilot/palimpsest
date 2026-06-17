@@ -64,8 +64,11 @@ def test_detect_front_matter_chapters_endnotes():
     sections = detect_layout_sections(boundaries, text_len=800, endnote_separator=700)
     by_type = [(s.type, s.start, s.end) for s in sections]
     assert ("front_matter", 0, 200) in by_type
-    assert ("chapter", 200, 500) in by_type
-    assert ("chapter", 500, 700) in by_type
+    # The chapter element starts after its heading line; the heading is a header window.
+    assert ("chapter", 210, 500) in by_type
+    assert ("header", 200, 210) in by_type
+    assert ("chapter", 510, 700) in by_type
+    assert ("header", 500, 510) in by_type
     assert ("endnotes", 700, 800) in by_type
 
 
@@ -88,7 +91,8 @@ def test_detect_book_contains_chapters_via_nesting():
     sections = detect_layout_sections(boundaries, text_len=800)
     book1 = next(s for s in sections if s.type == "book" and s.start == 0)
     assert book1.end == 500  # extends to the next equal-level division (Book II)
-    ch1 = next(s for s in sections if s.type == "chapter" and s.start == 100)
+    # Chapter starts after its carved heading ("Chapter 1" → header 100–110).
+    ch1 = next(s for s in sections if s.type == "chapter" and s.start == 110)
     assert ch1.parent_id == book1.id
     # New model: book/chapter prose is analyzable; only the carved heading labels
     # ("Book I", "Chapter 1", ...) are masked windows.
@@ -123,6 +127,29 @@ def test_header_carved_from_chapter_heading():
     mi = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, 4000)
     assert range_is_masked(mi, 0, 22)          # the heading label is masked
     assert not range_is_masked(mi, 500, 600)   # the chapter prose is not
+
+
+def test_chapter_heading_split_into_header_and_metadata():
+    # The heading line is excluded from the chapter span and becomes a header; the
+    # chapter element carries the parsed number/title in metadata.
+    boundaries = [(0, 26, "Chapter IV.—The Reckoning"), (2000, 2010, "Chapter V")]
+    sections = detect_layout_sections(boundaries, text_len=4000)
+    chapter = next(s for s in sections if s.type == "chapter" and s.start == 26)
+    assert chapter.start == 26 and chapter.end == 2000
+    assert chapter.metadata == {"number": "IV", "name": "The Reckoning"}
+    assert chapter.label == "The Reckoning"  # heading line, not in the chapter span
+    header = next(s for s in sections if s.type == "header" and s.start == 0)
+    assert (header.start, header.end) == (0, 26)
+    assert header.label == "Chapter IV.—The Reckoning"
+
+
+def test_parse_chapter_heading_variants():
+    from palimpsest.layout import _parse_chapter_heading
+    assert _parse_chapter_heading("Chapter 5: The Reckoning") == {"number": "5", "name": "The Reckoning"}
+    assert _parse_chapter_heading("Chapter X - The Reckoning") == {"number": "X", "name": "The Reckoning"}
+    assert _parse_chapter_heading("Chapter VI.—Continuation.") == {"number": "VI", "name": "Continuation"}
+    assert _parse_chapter_heading("Chapter 12") == {"number": "12"}
+    assert _parse_chapter_heading("The Untitled") == {"name": "The Untitled"}
 
 
 def test_elements_get_unique_names():

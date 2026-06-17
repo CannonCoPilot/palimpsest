@@ -159,17 +159,22 @@ def _write_elements_track(project_dir: Path, project_id: str, cfg: Any, text_len
             continue  # the body is the analyzable canvas, not a guide element
         if not (0 <= s.start < s.end <= text_len):
             continue
+        extra: dict[str, Any] = {
+            "palimpsest:elementType": s.type,
+            "palimpsest:elementName": s.name,
+            "palimpsest:masked": effective_mask(s, cfg.mask_by_type),
+            "palimpsest:parentId": s.parent_id or "",
+            "palimpsest:color": SECTION_COLORS.get(s.type, "#8e8e93"),
+        }
+        if s.metadata.get("number"):
+            extra["palimpsest:chapterNumber"] = s.metadata["number"]
+        if s.metadata.get("name"):
+            extra["palimpsest:chapterTitle"] = s.metadata["name"]
         body = Body(
             type="palimpsest:ElementAnnotation",
             purpose="classifying",
             value=s.label or SECTION_LABELS.get(s.type, s.type),
-            extra={
-                "palimpsest:elementType": s.type,
-                "palimpsest:elementName": s.name,
-                "palimpsest:masked": effective_mask(s, cfg.mask_by_type),
-                "palimpsest:parentId": s.parent_id or "",
-                "palimpsest:color": SECTION_COLORS.get(s.type, "#8e8e93"),
-            },
+            extra=extra,
         )
         anns.append(Annotation(
             body=body,

@@ -35,6 +35,9 @@ SECTION_TYPES: tuple[str, ...] = (
     "volume", "book", "part", "chapter",
     # Masked windows carved inside the body.
     "header", "footnotes", "endnotes", "epigraph",
+    # Translation of a subject text the work is written about (scripture in a study
+    # bible, a quoted-source rendering, parallel-version columns).
+    "translation",
     # Front-matter region + subtypes.
     "front_matter", "title_page", "copyright", "contents",
     "dedication", "foreword", "preface", "introduction",
@@ -48,7 +51,7 @@ SECTION_LABELS: dict[str, str] = {
     "body": "Body",
     "volume": "Volume", "book": "Book", "part": "Part", "chapter": "Chapter",
     "header": "Header", "footnotes": "Footnotes", "endnotes": "Endnotes",
-    "epigraph": "Epigraph",
+    "epigraph": "Epigraph", "translation": "Translation",
     "front_matter": "Front Matter", "title_page": "Title Page", "copyright": "Copyright",
     "contents": "Contents", "dedication": "Dedication", "foreword": "Foreword",
     "preface": "Preface", "introduction": "Introduction",
@@ -68,6 +71,7 @@ SECTION_COLORS: dict[str, str] = {
     "body": "#98989d",
     "chapter": "#30d158", "part": "#34c759", "volume": "#5e5ce6", "book": "#0a84ff",
     "header": "#636366", "footnotes": "#ffd60a", "endnotes": "#ffd60a", "epigraph": "#ac8e68",
+    "translation": "#bf5af2",
     "front_matter": "#ff453a", "title_page": "#bf5af2", "copyright": "#d6649b",
     "contents": "#ff6482", "dedication": "#ff7ab6", "foreword": "#ff9f0a",
     "preface": "#ff9f0a", "introduction": "#ffb340",
@@ -113,12 +117,14 @@ class LayoutSection:
     parent_id: str | None = None
     source: str = "auto"          # "auto" (detected) or "user" (added/edited)
     masked: bool | None = None     # None = inherit mask_by_type[type]; bool = override
+    # Structured heading data, e.g. a chapter's {"number": "IV", "name": "The Reckoning"}.
+    metadata: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "id": self.id, "type": self.type, "start": self.start, "end": self.end,
             "label": self.label, "name": self.name, "parent_id": self.parent_id,
-            "source": self.source, "masked": self.masked,
+            "source": self.source, "masked": self.masked, "metadata": self.metadata,
         }
 
     @classmethod
@@ -133,6 +139,7 @@ class LayoutSection:
             parent_id=d.get("parent_id"),
             source=d.get("source", "auto"),
             masked=d.get("masked"),
+            metadata=dict(d.get("metadata") or {}),
         )
 
 
@@ -307,6 +314,102 @@ _ADDENDUM_RE = re.compile(r"addend", re.IGNORECASE)
 _INSERT_RE = re.compile(r"^insert\b|illustrations?$|^plates?\b", re.IGNORECASE)
 
 
+# A chapter heading carries a numeral and often a title: "Chapter IV.—The Reckoning",
+# "Chapter 5: The Reckoning", "Chapter X - The Reckoning". Peel off the keyword, then
+# the leading roman/arabic numeral (word-bounded so it can't bite into a title word),
+# then a separator, leaving the title.
+_HEAD_KEYWORD_RE = re.compile(r"^\s*(?:chapter|chap\.?|part|book|volume|vol\.?)\s*", re.IGNORECASE)
+_LEADING_NUM_RE = re.compile(r"^\s*(\d+|[ivxlcdm]+)\b\.?", re.IGNORECASE)
+_HEAD_SEP_RE = re.compile(r"^\s*[.\-—–:)]+\s*")
+# "<Book> Chapter <N>" — scripture-style headings that name the book before the
+# chapter (e.g. "Genesis Chapter 14", "1 Kings Chapter 5", "Psalms Chapter 119").
+# End-anchored + a required trailing numeral so it can't fire on prose or on bare
+# "Chapter N" / "The Final Chapter" literary headings.
+_BOOK_CHAPTER_RE = re.compile(r"^(?P<book>.+?)\s+chapter\s+(?P<num>[ivxlcdm\d]+)\.?\s*$", re.IGNORECASE)
+
+
+# Canonical scripture book names (Protestant 66 + Catholic deuterocanon + KJV/Douay
+# spelling variants). Bare book-name headings ("GENESIS", "1 Corinthians") aren't
+# structural by the generic regexes, so we match them against this lexicon — but only
+# promote to 'book' when many appear together (a canon), never a lone novel chapter.
+_BIBLE_BOOK_NAMES = frozenset({
+    "genesis", "exodus", "leviticus", "numbers", "deuteronomy",
+    "joshua", "josue", "judges", "ruth", "samuel", "kings", "chronicles", "paralipomenon",
+    "ezra", "esdras", "nehemiah", "tobit", "tobias", "judith", "esther", "maccabees", "machabees",
+    "job", "psalms", "psalm", "proverbs", "ecclesiastes", "canticle of canticles",
+    "song of solomon", "song of songs", "wisdom", "sirach", "ecclesiasticus",
+    "isaiah", "isaias", "jeremiah", "jeremias", "lamentations", "baruch", "ezekiel", "ezechiel",
+    "daniel", "hosea", "osee", "joel", "amos", "obadiah", "abdias", "jonah", "jonas",
+    "micah", "micheas", "nahum", "habakkuk", "habacuc", "zephaniah", "sophonias",
+    "haggai", "aggeus", "zechariah", "zacharias", "malachi", "malachias",
+    "matthew", "mark", "luke", "john", "acts", "romans", "corinthians", "galatians",
+    "ephesians", "philippians", "colossians", "thessalonians", "timothy", "titus",
+    "philemon", "hebrews", "james", "peter", "jude", "revelation", "apocalypse",
+})
+_BOOK_PREFIX_RE = re.compile(
+    r"^(?:the\s+)?(?:book\s+of\s+|gospel\s+(?:according\s+to\s+)?(?:st\.?\s+)?|"
+    r"epistle\s+(?:of\s+(?:st\.?\s+)?paul\s+)?to\s+the\s+|acts\s+of\s+the\s+|"
+    r"prophe(?:cy|t)\s+of\s+)",
+    re.IGNORECASE,
+)
+_BOOK_ORDINAL_RE = re.compile(r"^(?:(first|second|third|1st|2nd|3rd|iii|ii|i|[123])\s+)?(.+)$", re.IGNORECASE)
+_ORDINAL_NUM = {"first": "1", "second": "2", "third": "3", "1st": "1", "2nd": "2",
+                "3rd": "3", "i": "1", "ii": "2", "iii": "3", "1": "1", "2": "2", "3": "3"}
+_MIN_BIBLE_BOOKS = 8  # gate: this many book-name matches ⇒ treat them as 'book' divisions
+
+
+def _match_bible_book(heading: str) -> str | None:
+    """Canonical display name if the heading is a scripture book, else None.
+
+    Handles ordinals ("1 Corinthians", "Second Kings") and wrappers ("The Gospel
+    According to St. Matthew", "The Book of Genesis").
+    """
+    core = re.sub(r"[.,:;]+$", "", heading.strip()).strip()
+    core = _BOOK_PREFIX_RE.sub("", core)
+    m = _BOOK_ORDINAL_RE.match(core.lower())
+    if not m:
+        return None
+    ordinal, base = m.group(1), re.sub(r"\s+", " ", m.group(2).strip())
+    if base not in _BIBLE_BOOK_NAMES:
+        return None
+    num = _ORDINAL_NUM.get(ordinal or "", "")
+    name = base.title()
+    return f"{num} {name}" if num else name
+
+
+def _parse_chapter_heading(label: str) -> dict[str, str]:
+    """Split a chapter heading into {book?, number?, name?}; all keys optional."""
+    s = label.strip()
+    bc = _BOOK_CHAPTER_RE.match(s)
+    if bc:
+        meta: dict[str, str] = {"number": bc.group("num")}
+        book = bc.group("book").strip(" .—–-:")
+        if book and book.lower() not in ("chapter", "chap", "chap."):
+            meta["book"] = book
+        return meta
+    rest = _HEAD_KEYWORD_RE.sub("", s, count=1)
+    meta = {}
+    m = _LEADING_NUM_RE.match(rest)
+    if m:
+        meta["number"] = m.group(1)
+        rest = _HEAD_SEP_RE.sub("", rest[m.end():], count=1)
+    name = rest.strip(" .—–-:)")
+    if name:
+        meta["name"] = name
+    return meta
+
+
+def _chapter_label(meta: dict[str, str], fallback: str) -> str:
+    """Display label for a heading-stripped chapter: book+num, title, "Chapter N", raw."""
+    if meta.get("book") and meta.get("number"):
+        return f"{meta['book']} {meta['number']}"
+    if meta.get("name"):
+        return meta["name"]
+    if meta.get("number"):
+        return f"Chapter {meta['number']}"
+    return fallback or "Chapter"
+
+
 def _classify_heading(heading: str) -> str | None:
     """Map a heading to a section type, or None if it isn't a recognizable boundary.
 
@@ -316,6 +419,10 @@ def _classify_heading(heading: str) -> str | None:
     h = heading.strip()
     if not h:
         return None
+    # "<Book> Chapter <N>" is unambiguously a scripture chapter — test first so a book
+    # name can't be mistaken for a matter type.
+    if _BOOK_CHAPTER_RE.match(h):
+        return "chapter"
     # Front matter (specific first).
     if _TITLE_PAGE_RE.search(h):
         return "title_page"
@@ -497,6 +604,16 @@ def detect_layout_sections(
     items.sort(key=lambda x: x[0])
     items = _suppress_toc_entries(items, text_len)  # #6 — drop inlined TOC links
 
+    # Scripture book divisions: bare book-name headings ("GENESIS", "1 Corinthians")
+    # match no structural regex. When a canon's worth of them appears, promote the
+    # unclassified ones to 'book'. The count gate keeps a lone novel chapter named
+    # after a book (e.g. "Genesis") from being misread as a structural division.
+    book_hits = [i for i, it in enumerate(items) if it[2] is None and _match_bible_book(it[3])]
+    if len(book_hits) >= _MIN_BIBLE_BOOKS:
+        for i in book_hits:
+            s, he, _, lbl = items[i]
+            items[i] = (s, he, "book", lbl)
+
     classified = [it for it in items if it[2] is not None]
 
     # Body begins at the first structural division if the work has any; otherwise
@@ -529,7 +646,10 @@ def detect_layout_sections(
     sections: list[LayoutSection] = []
     next_id = 0
 
-    def add(type_: str, start: int, end: int, label: str = "") -> None:
+    def add(
+        type_: str, start: int, end: int, label: str = "",
+        metadata: dict[str, Any] | None = None,
+    ) -> None:
         nonlocal next_id
         if end <= start:
             return
@@ -537,6 +657,7 @@ def detect_layout_sections(
         sections.append(LayoutSection(
             id=f"ls-{next_id}", type=type_, start=start, end=end,
             label=label or SECTION_LABELS.get(type_, type_), source="auto",
+            metadata=dict(metadata or {}),
         ))
 
     # ── Foundation layer: front matter, body, back matter. ──
@@ -593,12 +714,25 @@ def detect_layout_sections(
                 if nt in _STRUCTURAL and nlevel <= level:
                     end = min(nstart, backmatter_start)
                     break
-            add(t, start, end, lbl)
             # Carve the heading label out of the structural body as a masked window.
             # Cap the span so a segmenter fallback (whose boundary end is a section
             # end, not a heading end) can't mask an entire chapter as a "header".
-            if start < head_end <= start + _MAX_HEADER_LEN and head_end <= end:
+            carve = start < head_end <= start + _MAX_HEADER_LEN and head_end <= end
+            meta: dict[str, str] | None = None
+            if t == "chapter":
+                meta = _parse_chapter_heading(lbl)
+            elif t == "book":
+                bk = _match_bible_book(lbl)
+                meta = {"book": bk} if bk else None
+            if t == "chapter" and carve and head_end < end:
+                # The heading line ("Chapter IV.—The Reckoning") becomes its own masked
+                # header; the chapter element starts after it and stores number/title.
+                add("chapter", head_end, end, _chapter_label(meta or {}, lbl), metadata=meta)
                 add("header", start, head_end, lbl)
+            else:
+                add(t, start, end, lbl, metadata=meta)
+                if carve:
+                    add("header", start, head_end, lbl)
         elif t in _EDITORIAL:
             # Mid-body editorial matter (introductory notes, elucidations) → masked
             # window spanning to the next body boundary.
