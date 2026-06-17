@@ -1,10 +1,48 @@
 """Tests for project directory management."""
 
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
-from palimpsest.project import Project, _make_slug, ingest_file
+from palimpsest.project import Project, _make_slug, _relocate_sections, ingest_file
+
+
+class TestRelocateSections:
+    def test_reanchors_headings_to_normalized_text(self):
+        # The raw .offset values are deliberately bogus: relocation must ignore them
+        # and re-find each heading in the normalized text (fixing cumulative drift).
+        normalized = (
+            "Front matter.\n\nGenesis Chapter 1\n\nIn the beginning.\n\n"
+            "Genesis Chapter 2\n\nThus the heavens were finished."
+        )
+        secs = [
+            SimpleNamespace(heading_text="Genesis Chapter 1", offset=9991),
+            SimpleNamespace(heading_text="Genesis Chapter 2", offset=99992),
+        ]
+        out = _relocate_sections(secs, normalized)
+        assert len(out) == 2
+        assert [normalized[a:b] for _, a, b in out] == ["Genesis Chapter 1", "Genesis Chapter 2"]
+
+    def test_drops_unlocatable_heading(self):
+        normalized = "Genesis Chapter 1\n\nIn the beginning."
+        secs = [
+            SimpleNamespace(heading_text="Genesis Chapter 1", offset=0),
+            SimpleNamespace(heading_text="Nonexistent Heading", offset=0),
+        ]
+        out = _relocate_sections(secs, normalized)
+        assert [s.heading_text for s, _, _ in out] == ["Genesis Chapter 1"]
+
+    def test_monotonic_resolves_duplicate_headings_in_order(self):
+        normalized = "Chapter 1\n\naaa\n\nChapter 1\n\nbbb"
+        secs = [
+            SimpleNamespace(heading_text="Chapter 1", offset=0),
+            SimpleNamespace(heading_text="Chapter 1", offset=0),
+        ]
+        out = _relocate_sections(secs, normalized)
+        assert len(out) == 2
+        assert out[0][1] == 0  # first occurrence
+        assert out[1][1] == normalized.index("Chapter 1", 5)  # second, found forward
 
 
 class TestMakeSlug:

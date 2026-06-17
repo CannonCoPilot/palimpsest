@@ -201,6 +201,32 @@ class Project:
         return cls(path=path, metadata=meta)
 
 
+def _relocate_sections(epub_sections: list[Any], normalized: str) -> list[tuple[Any, int, int]]:
+    """Map EPUB heading offsets onto the normalized reference text.
+
+    The parser records section offsets against the assembled *pre-normalization*
+    text; ``normalize()`` collapses whitespace and strips, shifting every offset
+    cumulatively (the drift grows with position). We re-find each heading in the
+    normalized text — monotonically, in spine order — so the stored offset is the
+    heading's true position. The needle is normalized the same way as the text so
+    quote/whitespace differences don't defeat the match. Headings that can't be
+    located are dropped: a missing boundary is safer than a mislocated mask.
+    """
+    out: list[tuple[Any, int, int]] = []
+    cursor = 0
+    for sec in epub_sections:
+        needle = normalize(sec.heading_text, strip_paratextual=False)
+        if not needle:
+            continue
+        idx = normalized.find(needle, cursor)
+        if idx == -1:
+            continue
+        end = idx + len(needle)
+        out.append((sec, idx, end))
+        cursor = end
+    return out
+
+
 def ingest_file(
     source_path: Path,
     workspace: Path,
@@ -256,6 +282,11 @@ def ingest_file(
     _emit("normalize", "Normalizing text…", 0.45)
     normalized = normalize(raw_text)
     sha = compute_sha256(normalized)
+    # Re-anchor EPUB heading offsets onto the normalized text (see _relocate_sections).
+    relocated_sections = (
+        _relocate_sections(epub_result.sections, normalized)
+        if epub_result and epub_result.sections else []
+    )
     slug = _make_slug(src_name)
     project_dir = workspace / slug
 
@@ -307,7 +338,7 @@ def ingest_file(
         reference_sha256=sha,
         word_count=count_words(normalized),
         paragraph_count=len(paras),
-        section_count=len(epub_result.sections) if epub_result and epub_result.sections else len(sections),
+        section_count=len(relocated_sections) if relocated_sections else len(sections),
         sentence_count=len(sentences),
         character_count=count_characters(normalized),
         author=author,
@@ -373,12 +404,9 @@ def ingest_file(
 
     write_track(project_dir / "tracks" / "segments.jsonl", seg_annotations)
 
-    if epub_result and epub_result.sections:
+    if relocated_sections:
         section_anns: list[Annotation] = []
-        for sec in epub_result.sections:
-            end_offset = sec.offset + len(sec.heading_text)
-            if end_offset > len(normalized):
-                end_offset = len(normalized)
+        for sec, start_offset, end_offset in relocated_sections:
             section_anns.append(
                 Annotation(
                     body=section_body(
@@ -388,7 +416,7 @@ def ingest_file(
                     ),
                     target=Target(
                         source=source_urn,
-                        selector=TextPositionSelector(start=sec.offset, end=end_offset),
+                        selector=TextPositionSelector(start=start_offset, end=end_offset),
                     ),
                     creator=Creator(name="palimpsest-epub-parser/0.1"),
                     confidence=1.0,
@@ -466,8 +494,8 @@ def ingest_file(
     )
 
     epub_section_offsets = (
-        [[s.offset, s.offset + len(s.heading_text)] for s in epub_result.sections]
-        if epub_result and epub_result.sections
+        [[start, end] for _, start, end in relocated_sections]
+        if relocated_sections
         else [[s.start, s.end] for s in sections]
     )
 
@@ -486,7 +514,7 @@ def ingest_file(
         "section_index": {
             "type": "discrete",
             "label": "Section",
-            "total": len(epub_result.sections) if epub_result and epub_result.sections else len(sections),
+            "total": len(relocated_sections) if relocated_sections else len(sections),
             "offsets": epub_section_offsets,
         },
         "sentence_index": {
