@@ -8,6 +8,25 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from typing import Any
+
+# Cache loaded spaCy pipelines keyed on (model, excluded components). Loading
+# en_core_web_lg costs ~0.5 GB and several seconds; segment_sentences is called
+# once per ingest, so without this cache a multi-file ingest (or a test suite
+# that ingests per test) reloads the model every time. Mirrors tracks/syntax.py.
+_NLP_CACHE: dict[tuple[str, frozenset[str]], Any] = {}
+
+
+def _get_segmenter_nlp(model: str, exclude: tuple[str, ...]) -> Any:
+    import spacy
+
+    key = (model, frozenset(exclude))
+    if key not in _NLP_CACHE:
+        try:
+            _NLP_CACHE[key] = spacy.load(model, exclude=list(exclude))
+        except OSError:
+            _NLP_CACHE[key] = spacy.load("en_core_web_sm", exclude=list(exclude))
+    return _NLP_CACHE[key]
 
 
 @dataclass
@@ -88,12 +107,7 @@ def segment_sentences(text: str, model: str = "en_core_web_lg") -> list[Segment]
     paragraph rather than the whole work — and shift each sentence's character
     offsets back into the global text.
     """
-    import spacy
-
-    try:
-        nlp = spacy.load(model, exclude=["ner"])
-    except OSError:
-        nlp = spacy.load("en_core_web_sm", exclude=["ner"])
+    nlp = _get_segmenter_nlp(model, ("ner",))
 
     paragraphs = segment_paragraphs(text)
     if not paragraphs:

@@ -53,6 +53,9 @@ class TestProjectsAPI:
 
 
 class TestSummarizeAPI:
+    # Calls Ollama for a real summary when the service is up (cold model load can
+    # take ~30s); returns ollama_available=False and stays fast when it is down.
+    @pytest.mark.external
     def test_summarize_valid_request(self, client):
         passage = (
             "It is a truth universally acknowledged, that a single man "

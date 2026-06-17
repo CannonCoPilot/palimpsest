@@ -29,6 +29,8 @@ booknlp = ["booknlp>=2.0"]
 dev = [
     "pytest>=8.0",
     "pytest-cov",
+    "pytest-xdist>=3.5",
+    "pytest-testmon>=2.1",
     "ruff>=0.4",
     "mypy>=1.10",
     "pre-commit>=3.7",
@@ -44,7 +46,36 @@ packages = ["palimpsest"]
 testpaths = ["tests"]
 norecursedirs = ["../tests"]
 python_files = ["test_*.py"]
-addopts = "--strict-markers -q"
+# -n auto parallelizes across cores by default (biggest speed lever). Override
+# with `-n0` for serial debugging or testmon (see run_tests.sh).
+# --dist=loadscope keeps a module/class's tests on one worker so module-scoped
+# fixtures (e.g. analyzed_project) are built once per worker, not once per test.
+addopts = "--strict-markers -q -n auto --dist=loadscope"
+markers = [
+    "unit: pure-function test, no spaCy/IO/services (fast)",
+    "integration: exercises multiple components end-to-end (ingest + extract)",
+    "nlp: loads a spaCy model or runs language analysis",
+    "api: exercises the FastAPI server via TestClient",
+    "cli: exercises the command-line interface (may shell out)",
+    "slow: long-running outlier, excluded from the `fast` subset",
+    "external: depends on an external service (Ollama, embeddings)",
+    "embeddings: requires the embedding service",
+]
+
+[tool.coverage.run]
+source = ["palimpsest"]
+branch = true
+# parallel + xdist: each worker writes its own data file; pytest-cov combines them.
+parallel = true
+omit = [
+    "*/tests/*",
+    "*/__main__.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+precision = 1
 
 [tool.ruff]
 line-length = 100

@@ -62,6 +62,10 @@ class TestCliInfo:
         assert "Info Test" in result.output
 
 
+# These classes invoke `analyze`/`export`, which run the full extraction pipeline
+# end-to-end (LDA topics, self-similarity, RQA, …) — genuine 7-11s compute the
+# model cache cannot shortcut. Excluded from the `fast` subset; the default runs them.
+@pytest.mark.slow
 class TestCliAnalyze:
     def test_analyze_runs_entity_track(self, runner, pp_ch1_txt, tmp_path):
         runner.invoke(main, [
@@ -117,6 +121,7 @@ class TestCliAnalyze:
         assert pipeline_run["tracks_computed"] == []
 
 
+@pytest.mark.slow
 class TestCliExport:
     def test_export_w3c(self, runner, pp_ch1_txt, tmp_path):
         runner.invoke(main, [

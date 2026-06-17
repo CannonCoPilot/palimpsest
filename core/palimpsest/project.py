@@ -9,10 +9,10 @@ from __future__ import annotations
 import json
 import re
 import shutil
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from collections.abc import Callable
 from typing import Any
 
 from palimpsest import __version__
@@ -37,6 +37,23 @@ _SUBDIRS = [
     "x-config/detectors",
     "exports",
 ]
+
+# The Doc is cached per-Project (see Project.spacy_doc), but the underlying model
+# load (~0.5 GB, several seconds) is process-wide and reused across projects. This
+# is the hot path for the entities/syntax extractors, which call spacy_doc on every
+# run; without this cache each new project reloads the model from scratch.
+_NLP_MODEL_CACHE: dict[str, Any] = {}
+
+
+def _load_spacy_model(model: str) -> Any:
+    import spacy
+
+    if model not in _NLP_MODEL_CACHE:
+        try:
+            _NLP_MODEL_CACHE[model] = spacy.load(model)
+        except OSError:
+            _NLP_MODEL_CACHE[model] = spacy.load("en_core_web_sm")
+    return _NLP_MODEL_CACHE[model]
 
 
 @dataclass
@@ -165,11 +182,7 @@ class Project:
     def spacy_doc(self, model: str = "en_core_web_lg") -> Any:
         """Return a cached spaCy Doc for the reference text."""
         if self._spacy_doc_cache is None:
-            import spacy
-            try:
-                nlp = spacy.load(model)
-            except OSError:
-                nlp = spacy.load("en_core_web_sm")
+            nlp = _load_spacy_model(model)
             text = self.reference_text()
             nlp.max_length = len(text) + 1000
             self._spacy_doc_cache = nlp(text)

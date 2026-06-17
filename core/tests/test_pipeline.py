@@ -9,13 +9,19 @@ from palimpsest.project import ingest_file
 from palimpsest.tracks.registry import TrackRegistry
 
 
-@pytest.fixture
-def analyzed_project(pp_ch1_txt: Path, tmp_path: Path):
+@pytest.fixture(scope="module")
+def analyzed_project(pp_ch1_txt: Path, tmp_path_factory: pytest.TempPathFactory):
     """A project that has been fully ingested and analyzed.
+
+    Module-scoped: all consumers below only read the analyzed project, so the
+    (expensive) full-pipeline build runs once per module instead of once per
+    test. Uses tmp_path_factory because the function-scoped tmp_path cannot be
+    requested from a module-scoped fixture.
 
     Signal tracks that require external services (embeddings, Ollama)
     are skipped gracefully, matching CLI behavior.
     """
+    tmp_path = tmp_path_factory.mktemp("pipeline")
     project = ingest_file(pp_ch1_txt, tmp_path, title="Pipeline Test")
     registry = TrackRegistry.discover()
     ordered = registry.dependency_order()
