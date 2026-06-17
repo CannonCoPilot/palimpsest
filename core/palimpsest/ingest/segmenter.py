@@ -78,24 +78,44 @@ def segment_sections(text: str) -> list[Segment]:
 
 
 def segment_sentences(text: str, model: str = "en_core_web_lg") -> list[Segment]:
-    """Split text into sentences using spaCy."""
+    """Split text into sentences using spaCy, one paragraph at a time.
+
+    Running spaCy on a whole book-length document builds a single Doc holding
+    per-token annotations for the entire text and gets OOM-killed (a ~10M-char
+    study bible was unanalyzable). Sentences never cross a blank-line paragraph
+    boundary, so we parse each paragraph independently via ``nlp.pipe`` — the
+    boundaries are identical, but peak memory is bounded by the largest single
+    paragraph rather than the whole work — and shift each sentence's character
+    offsets back into the global text.
+    """
     import spacy
 
     try:
         nlp = spacy.load(model, exclude=["ner"])
     except OSError:
         nlp = spacy.load("en_core_web_sm", exclude=["ner"])
-    nlp.max_length = len(text) + 1000
-    doc = nlp(text)
+
+    paragraphs = segment_paragraphs(text)
+    if not paragraphs:
+        return []
+
+    # Paragraphs are short, but a degenerate block with no blank lines could be
+    # large; size the guard to the biggest chunk so spaCy never rejects one.
+    chunks = [text[p.start:p.end] for p in paragraphs]
+    nlp.max_length = max(len(c) for c in chunks) + 1000
+
     segments: list[Segment] = []
-    for idx, sent in enumerate(doc.sents):
-        segments.append(
-            Segment(
-                segment_type="sentence",
-                index=idx,
-                start=sent.start_char,
-                end=sent.end_char,
-                text=sent.text.strip(),
+    idx = 0
+    for para, doc in zip(paragraphs, nlp.pipe(chunks, batch_size=64)):
+        for sent in doc.sents:
+            segments.append(
+                Segment(
+                    segment_type="sentence",
+                    index=idx,
+                    start=para.start + sent.start_char,
+                    end=para.start + sent.end_char,
+                    text=sent.text.strip(),
+                )
             )
-        )
+            idx += 1
     return segments
