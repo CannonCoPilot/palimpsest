@@ -62,3 +62,14 @@ strict = true
 python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
+
+# Pyright/Pylance config for when the type checker is launched from this directory
+# (the workspace-root pyrightconfig.json covers the other launch point). Both point
+# at the uv-managed .venv (3.12, the complete environment) and add this dir to the
+# search path so the editable-installed `palimpsest` package resolves — its hatchling
+# editable hook (.pth) is not something Pyright can execute.
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.12"
+extraPaths = ["."]

@@ -1,0 +1,15 @@
+{
+  "venvPath": "core",
+  "venv": ".venv",
+  "pythonVersion": "3.12",
+  "include": ["core"],
+  "extraPaths": ["core"],
+  "exclude": [
+    "**/.venv",
+    "**/node_modules",
+    "**/__pycache__",
+    "**/target",
+    "browser"
+  ],
+  "reportMissingImports": "error"
+}

@@ -480,7 +480,7 @@ def doctor() -> None:
     # spaCy
     try:
         import spacy
-        checks.append(("spaCy", spacy.__version__, "ok"))
+        checks.append(("spaCy", spacy.__version__, "ok"))  # pyright: ignore[reportPrivateImportUsage]
         try:
             spacy.load("en_core_web_sm")
             checks.append(("  en_core_web_sm", "installed", "ok"))
@@ -503,7 +503,7 @@ def doctor() -> None:
 
     # hmmlearn
     try:
-        import hmmlearn  # noqa: F401
+        import hmmlearn  # type: ignore[import-not-found]  # noqa: F401
         checks.append(("hmmlearn", "installed", "ok"))
     except ImportError:
         checks.append(("hmmlearn", "not installed", "warn"))
