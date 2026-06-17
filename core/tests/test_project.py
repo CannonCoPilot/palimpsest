@@ -10,8 +10,9 @@ from palimpsest.project import Project, _make_slug, _relocate_sections, ingest_f
 
 class TestRelocateSections:
     def test_reanchors_headings_to_normalized_text(self):
-        # The raw .offset values are deliberately bogus: relocation must ignore them
-        # and re-find each heading in the normalized text (fixing cumulative drift).
+        # The raw .offset values are deliberately bogus. Each heading is unique, so
+        # its lone occurrence is chosen regardless of the (mis)hint — relocation
+        # tolerates bad offsets when the heading is unambiguous.
         normalized = (
             "Front matter.\n\nGenesis Chapter 1\n\nIn the beginning.\n\n"
             "Genesis Chapter 2\n\nThus the heavens were finished."
@@ -23,6 +24,27 @@ class TestRelocateSections:
         out = _relocate_sections(secs, normalized)
         assert len(out) == 2
         assert [normalized[a:b] for _, a, b in out] == ["Genesis Chapter 1", "Genesis Chapter 2"]
+
+    def test_anchors_to_body_not_inlined_toc(self):
+        # An inlined TOC repeats every heading near the front, then the real
+        # divisions follow. Given the body offsets as hints, relocation must pick
+        # the body occurrence, not the TOC link — the TOC-relocation misfire that
+        # a plain first-match search caused.
+        normalized = (
+            "Contents\nChapter One\nChapter Two\n\n"          # inlined TOC up front
+            "Chapter One\n" + ("aaa " * 30) + "\n\n"
+            "Chapter Two\n" + ("bbb " * 30)
+        )
+        toc_end = normalized.index("\n\n")
+        c1 = normalized.index("Chapter One", toc_end)
+        c2 = normalized.index("Chapter Two", toc_end)
+        secs = [
+            SimpleNamespace(heading_text="Chapter One", offset=c1),
+            SimpleNamespace(heading_text="Chapter Two", offset=c2),
+        ]
+        out = _relocate_sections(secs, normalized, len(normalized))
+        assert [normalized[a:b] for _, a, b in out] == ["Chapter One", "Chapter Two"]
+        assert all(start >= toc_end for _, start, _ in out), "headings anchored inside the TOC"
 
     def test_drops_unlocatable_heading(self):
         normalized = "Genesis Chapter 1\n\nIn the beginning."
@@ -129,7 +151,9 @@ class TestIngestFile:
         assert proj.metadata.id == _make_slug("My Real Book.txt")
         assert proj.metadata.source_file == "My Real Book.txt"
 
-    def test_slug_collision_different_source_raises_without_overwrite(self, pp_ch1_txt: Path, tmp_path: Path):
+    def test_slug_collision_different_source_raises_without_overwrite(
+        self, pp_ch1_txt: Path, tmp_path: Path
+    ):
         # Two *different* source files that slug to the same id must not clobber silently.
         ingest_file(pp_ch1_txt, tmp_path, source_name="Clash.txt")
         with pytest.raises(FileExistsError):

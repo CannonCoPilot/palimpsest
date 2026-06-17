@@ -107,10 +107,12 @@ def parse_epub(path: Path, content_profile: Any = None) -> EpubParseResult:
         content_profile = detect_content_profile(book)
 
     metadata = _extract_metadata(book)
-    text, sections, endnote_anchors, endnote_defs = _assemble_text(book, content_profile)
+    text, sections, endnote_anchors, endnote_defs, spine_fractions = _assemble_text(
+        book, content_profile
+    )
 
     if not sections:
-        sections = _sections_from_toc(book, text)
+        sections = _sections_from_toc(book, text, spine_fractions)
     if not sections:
         sections = _sections_from_text_headings(text)
 
@@ -261,18 +263,58 @@ def _needs_separating_space(prev: str, nxt: str) -> bool:
     return True
 
 
-def _sections_from_toc(book: Any, assembled_text: str) -> list[SectionBoundary]:
+def _sections_from_toc(
+    book: Any, assembled_text: str, spine_fractions: dict[str, float] | None = None
+) -> list[SectionBoundary]:
     """Extract section boundaries from the NCX/navigation table of contents.
 
     Fallback when HTML heading elements aren't present (common in Calibre
     conversions and older EPUB2 files that use CSS-styled chapter titles).
+
+    Each entry is anchored via its spine ``href`` rather than a naive global text
+    search. The href names the reading-order document the entry points at; that
+    document's fractional position (``spine_fractions``) gives an expected offset,
+    and the title is matched at the occurrence nearest it. This sidesteps the
+    TOC-relocation misfire: a global ``find`` would anchor every entry to its own
+    link inside an inlined TOC at the front of the book instead of the real
+    division. Without spine data the search degrades to the legacy first match.
     """
     toc = book.toc
     if not toc:
         return []
 
+    spine_fractions = spine_fractions or {}
+    doc_len = len(assembled_text)
     sections: list[SectionBoundary] = []
     section_index = 0
+
+    def _expected_offset(href: str) -> int | None:
+        """Expected assembled-text offset of the document a TOC href points at."""
+        file = href.split("#", 1)[0]
+        if not file:
+            return None
+        frac = spine_fractions.get(file)
+        if frac is None:  # hrefs may be path-qualified; fall back to basename match
+            base = file.rsplit("/", 1)[-1]
+            frac = next(
+                (f for name, f in spine_fractions.items() if name.rsplit("/", 1)[-1] == base),
+                None,
+            )
+        return int(frac * doc_len) if frac is not None else None
+
+    def _find_near(needle: str, expected: int | None) -> int:
+        """First match if no hint; else the occurrence nearest the expected offset."""
+        if expected is None:
+            return assembled_text.find(needle)
+        best = -1
+        pos = assembled_text.find(needle)
+        while pos != -1:
+            if best == -1 or abs(pos - expected) < abs(best - expected):
+                best = pos
+            if pos >= expected:
+                break
+            pos = assembled_text.find(needle, pos + 1)
+        return best
 
     def _process_toc_item(item: Any, level: int) -> None:
         nonlocal section_index
@@ -281,6 +323,7 @@ def _sections_from_toc(book: Any, assembled_text: str) -> list[SectionBoundary]:
             if not title or len(title) > 500:
                 return
             title_normalized = " ".join(title.split())
+            expected = _expected_offset(str(getattr(item, "href", "") or ""))
             pos = -1
             if len(title_normalized) <= 4 and title_normalized.isdigit():
                 chapter_variants = [
@@ -289,18 +332,18 @@ def _sections_from_toc(book: Any, assembled_text: str) -> list[SectionBoundary]:
                     f"\n{title_normalized}\n",
                 ]
                 for variant in chapter_variants:
-                    idx = assembled_text.find(variant)
+                    idx = _find_near(variant, expected)
                     if idx >= 0:
                         pos = idx + 1 if variant.startswith("\n") else idx
                         title_normalized = variant.strip()
                         break
             else:
-                pos = assembled_text.find(title_normalized)
+                pos = _find_near(title_normalized, expected)
                 if pos < 0:
                     words = title_normalized.split()
                     if len(words) >= 2:
                         search_prefix = " ".join(words[:3]) if len(words) >= 3 else title_normalized
-                        pos = assembled_text.find(search_prefix)
+                        pos = _find_near(search_prefix, expected)
                         if pos >= 0:
                             context = assembled_text[pos:pos + len(title_normalized) + 50]
                             if words[-1] not in context:
@@ -373,15 +416,25 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
     list[SectionBoundary],
     dict[int, tuple[int, int]],
     dict[int, tuple[int, str]],
+    dict[str, float],
 ]:
-    """Walk spine items in order, assembling clean text with structural markers."""
+    """Walk spine items in order, assembling clean text with structural markers.
+
+    Also returns ``spine_fractions``: each included document's start position as a
+    fraction of the assembled length, keyed by item name. TOC entries are anchored
+    via these fractions (see ``_sections_from_toc``) so they land in reading order
+    rather than at a duplicate title inside an inlined TOC. Fractions are taken
+    pre-clean, which is invariant to the small, scattered removals cleaning makes.
+    """
     import ebooklib
     from bs4 import BeautifulSoup, Comment, NavigableString, Tag
+
     from palimpsest.ingest.content_filters import apply_content_filters, should_skip_spine_item
 
     parts: list[str] = []
     sections: list[SectionBoundary] = []
     section_index = 0
+    spine_offsets: dict[str, int] = {}
 
     spine_items = []
     for item_id, _ in book.spine:
@@ -397,6 +450,7 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
         if profile and should_skip_spine_item(item, profile):
             continue
 
+        spine_offsets[item.get_name()] = sum(len(p) for p in parts)
         html_content = item.get_content()
         soup = BeautifulSoup(html_content, "html.parser")
 
@@ -456,6 +510,12 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
 
     raw = "".join(parts)
 
+    pre_clean_len = len(raw)
+    spine_fractions = {
+        name: (off / pre_clean_len if pre_clean_len else 0.0)
+        for name, off in spine_offsets.items()
+    }
+
     raw = _clean_assembled_text(raw)
 
     if profile and profile.text_cleaners:
@@ -485,7 +545,7 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
         else:
             final_sections.append(sec)
 
-    return raw, final_sections, endnote_anchors, endnote_defs
+    return raw, final_sections, endnote_anchors, endnote_defs, spine_fractions
 
 
 def _extract_endnote_data(

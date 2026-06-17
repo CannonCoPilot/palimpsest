@@ -214,28 +214,52 @@ class Project:
         return cls(path=path, metadata=meta)
 
 
-def _relocate_sections(epub_sections: list[Any], normalized: str) -> list[tuple[Any, int, int]]:
+def _relocate_sections(
+    epub_sections: list[Any], normalized: str, raw_len: int | None = None
+) -> list[tuple[Any, int, int]]:
     """Map EPUB heading offsets onto the normalized reference text.
 
     The parser records section offsets against the assembled *pre-normalization*
-    text; ``normalize()`` collapses whitespace and strips, shifting every offset
-    cumulatively (the drift grows with position). We re-find each heading in the
-    normalized text — monotonically, in spine order — so the stored offset is the
-    heading's true position. The needle is normalized the same way as the text so
-    quote/whitespace differences don't defeat the match. Headings that can't be
-    located are dropped: a missing boundary is safer than a mislocated mask.
+    text; ``normalize()`` applies NFC, strips boilerplate, and collapses whitespace,
+    shifting every offset cumulatively (the drift grows with position). We re-find
+    each heading in the normalized text so the stored offset is the heading's true
+    position. The needle is normalized the same way as the text so quote/whitespace
+    differences don't defeat the match.
+
+    A heading's text usually recurs when a book inlines its table of contents: each
+    chapter title appears once as a TOC link near the front and again at the real
+    division. Anchoring to the first match would drag every section into the TOC
+    (the relocation misfire). Instead we anchor to the occurrence nearest the
+    heading's *expected* position — the parser offset scaled by the normalization
+    shrink ratio — which picks the real division over its TOC link. A monotonic
+    cursor preserves reading order and stops two headings claiming the same spot.
+    Headings that can't be located are dropped: a missing boundary is safer than a
+    mislocated mask. When a heading is unique its lone occurrence is chosen
+    regardless of the offset, so a bad hint cannot mislocate an unambiguous heading.
     """
     out: list[tuple[Any, int, int]] = []
     cursor = 0
+    scale = len(normalized) / raw_len if raw_len else 1.0
     for sec in epub_sections:
         needle = normalize(sec.heading_text, strip_paratextual=False)
         if not needle:
             continue
-        idx = normalized.find(needle, cursor)
-        if idx == -1:
+        expected = int(getattr(sec, "offset", 0) * scale)
+        # Occurrences at/after the cursor are ascending, so the nearest to expected is
+        # either the last one below it or the first at/above it — record matches until
+        # we reach expected, then stop.
+        best = -1
+        pos = normalized.find(needle, cursor)
+        while pos != -1:
+            if best == -1 or abs(pos - expected) < abs(best - expected):
+                best = pos
+            if pos >= expected:
+                break
+            pos = normalized.find(needle, pos + 1)
+        if best == -1:
             continue
-        end = idx + len(needle)
-        out.append((sec, idx, end))
+        end = best + len(needle)
+        out.append((sec, best, end))
         cursor = end
     return out
 
@@ -297,7 +321,7 @@ def ingest_file(
     sha = compute_sha256(normalized)
     # Re-anchor EPUB heading offsets onto the normalized text (see _relocate_sections).
     relocated_sections = (
-        _relocate_sections(epub_result.sections, normalized)
+        _relocate_sections(epub_result.sections, normalized, len(raw_text))
         if epub_result and epub_result.sections else []
     )
     slug = _make_slug(src_name)

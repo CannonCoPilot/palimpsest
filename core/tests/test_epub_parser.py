@@ -165,6 +165,62 @@ def test_text_heading_fallback_ignores_inline_mentions():
 
 
 # ---------------------------------------------------------------------------
+# TOC-relocation misfire: inlined TOC + no <hN> headings (#6)
+# ---------------------------------------------------------------------------
+
+def _chap_html(title: str, filler: str) -> str:
+    # A styled <p> "heading" (NOT <hN>) so _assemble_text finds no sections and
+    # parse_epub falls back to the NCX TOC — the path that mislocated headings.
+    return f'<html><body><p class="chap">{title}</p><p>{(filler + " ") * 60}</p></body></html>'
+
+
+def _build_inlined_toc_epub(path: Path) -> Path:
+    from ebooklib import epub
+
+    book = epub.EpubBook()
+    book.set_identifier("inlined-toc-test")
+    book.set_title("Inlined TOC Test")
+    book.set_language("en")
+    book.add_author("Test Author")
+    # A front TOC page that repeats every chapter title as plain text.
+    toc_page = epub.EpubHtml(title="Contents", file_name="toc.xhtml", lang="en")
+    toc_page.content = (
+        '<html><body><p class="chap">Contents</p>'
+        "<p>Introduction</p><p>The Journey</p><p>The Return</p></body></html>"
+    )
+    c1 = epub.EpubHtml(title="Introduction", file_name="c1.xhtml", lang="en")
+    c1.content = _chap_html("Introduction", "alpha")
+    c2 = epub.EpubHtml(title="The Journey", file_name="c2.xhtml", lang="en")
+    c2.content = _chap_html("The Journey", "beta")
+    c3 = epub.EpubHtml(title="The Return", file_name="c3.xhtml", lang="en")
+    c3.content = _chap_html("The Return", "gamma")
+    for it in (toc_page, c1, c2, c3):
+        book.add_item(it)
+    book.add_item(epub.EpubNcx())
+    book.add_item(epub.EpubNav())
+    book.toc = (c1, c2, c3)  # NCX points at the real chapter files
+    book.spine = [toc_page, c1, c2, c3]
+    epub.write_epub(str(path), book)
+    return path
+
+
+def test_toc_sections_anchor_to_body_not_inlined_toc(tmp_path: Path):
+    # Every chapter title also appears in the front TOC page. The parsed sections
+    # must land at the real divisions, not clustered in the inlined TOC.
+    result = parse_epub(_build_inlined_toc_epub(tmp_path / "inlined.epub"))
+    text = result.text
+    headings = [s.heading_text for s in result.sections]
+    assert headings == ["Introduction", "The Journey", "The Return"]
+    # Each section's offset is the body occurrence (the *last* one in the text),
+    # never the TOC link near the front.
+    for s in result.sections:
+        assert s.offset == text.rfind(s.heading_text), f"{s.heading_text!r} hit TOC link"
+    # Sanity: the divisions are spread through the book, not bunched at the front.
+    offsets = [s.offset for s in result.sections]
+    assert max(offsets) > len(text) * 0.5
+
+
+# ---------------------------------------------------------------------------
 # Resilient read against ebooklib nav-doc crashes (C4)
 # ---------------------------------------------------------------------------
 
