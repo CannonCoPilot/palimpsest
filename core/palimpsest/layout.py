@@ -38,6 +38,10 @@ SECTION_TYPES: tuple[str, ...] = (
     # Translation of a subject text the work is written about (scripture in a study
     # bible, a quoted-source rendering, parallel-version columns).
     "translation",
+    # Commentary: a modern scholar's analysis/introduction of a translated source text
+    # in an anthology — distinct from a front-matter introduction, analyzable by default,
+    # independently toggleable against the translation it accompanies.
+    "commentary",
     # Front-matter region + subtypes.
     "front_matter", "title_page", "copyright", "contents",
     "dedication", "foreword", "preface", "introduction",
@@ -51,7 +55,7 @@ SECTION_LABELS: dict[str, str] = {
     "body": "Body",
     "volume": "Volume", "book": "Book", "part": "Part", "chapter": "Chapter",
     "header": "Header", "footnotes": "Footnotes", "endnotes": "Endnotes",
-    "epigraph": "Epigraph", "translation": "Translation",
+    "epigraph": "Epigraph", "translation": "Translation", "commentary": "Commentary",
     "front_matter": "Front Matter", "title_page": "Title Page", "copyright": "Copyright",
     "contents": "Contents", "dedication": "Dedication", "foreword": "Foreword",
     "preface": "Preface", "introduction": "Introduction",
@@ -62,16 +66,17 @@ SECTION_LABELS: dict[str, str] = {
     "insert": "Insert",
 }
 
-# The analyzable work text: body and its structural nav containers are unmasked;
-# everything else (matter, headers, notes) is masked by default.
-_UNMASKED_TYPES = frozenset({"body", "volume", "book", "part", "chapter"})
+# The analyzable work text: body and its structural nav containers are unmasked, as is
+# scholarly commentary (the author's own writing); everything else (matter, headers,
+# notes, the translated source text) is masked by default.
+_UNMASKED_TYPES = frozenset({"body", "volume", "book", "part", "chapter", "commentary"})
 DEFAULT_MASK_BY_TYPE: dict[str, bool] = {t: t not in _UNMASKED_TYPES for t in SECTION_TYPES}
 
 SECTION_COLORS: dict[str, str] = {
     "body": "#98989d",
     "chapter": "#30d158", "part": "#34c759", "volume": "#5e5ce6", "book": "#0a84ff",
     "header": "#636366", "footnotes": "#ffd60a", "endnotes": "#ffd60a", "epigraph": "#ac8e68",
-    "translation": "#bf5af2",
+    "translation": "#bf5af2", "commentary": "#30b0c7",
     "front_matter": "#ff453a", "title_page": "#bf5af2", "copyright": "#d6649b",
     "contents": "#ff6482", "dedication": "#ff7ab6", "foreword": "#ff9f0a",
     "preface": "#ff9f0a", "introduction": "#ffb340",
@@ -97,10 +102,22 @@ _BACKMATTER = frozenset({
 })
 # Mid-body editorial matter that carves a masked window where it appears.
 _EDITORIAL = frozenset({"foreword", "preface", "introduction", "afterword", "epigraph"})
+# Scholarly-anthology layers: a translated source text and the commentary around it. Each
+# marker spans to the next marker (commentary: work header → "Translation"; translation:
+# "Translation" → next work).
+_SCHOLARLY = frozenset({"translation", "commentary"})
 
 # A heading label is short; cap the carved header window so a coarse boundary source
 # can't mask an entire section.
 _MAX_HEADER_LEN = 300
+
+# Back matter is a *contiguous* trailing run (glossary→index→appendix, abutting). A
+# back-matter-typed boundary separated from the trailing cluster by more than this much
+# text sits across a body span — e.g. a "Note on the Text" or "Illustrations" apparatus
+# printed ahead of a heading-less narrative — and must not drag the region forward across
+# the work. The threshold scales with length (floor for short works).
+_BACKMATTER_GAP_FLOOR = 40000
+_BACKMATTER_GAP_FRAC = 0.05
 
 MASKED_TEXT_COLOR = "#f5f5f5"
 MASKED_BG_COLOR = "#3a3a3d"
@@ -307,7 +324,13 @@ _ACK_RE = re.compile(r"acknowledge?ment", re.IGNORECASE)
 _ABOUT_AUTHOR_RE = re.compile(r"about the author|about the translator", re.IGNORECASE)
 _DISCUSSION_RE = re.compile(r"discussion question|reading group|book club", re.IGNORECASE)
 _GLOSSARY_RE = re.compile(r"glossary", re.IGNORECASE)
-_INDEX_RE = re.compile(r"^index\b|^indices\b|^indexes\b", re.IGNORECASE)
+_INDEX_RE = re.compile(
+    r"^index\b|^indices\b|^indexes\b"
+    # A manuscript catalogue/list is an index-type back-matter apparatus (e.g. the Dead
+    # Sea Scrolls' "List of the Manuscripts from Qumran").
+    r"|^(?:list|catalogue|catalog|index) of (?:the )?(?:manuscripts|mss)\b",
+    re.IGNORECASE,
+)
 _BIBLIO_RE = re.compile(r"bibliograph|works cited|references$", re.IGNORECASE)
 _APPENDIX_RE = re.compile(r"appendix|appendices", re.IGNORECASE)
 _ADDENDUM_RE = re.compile(r"addend", re.IGNORECASE)
@@ -326,6 +349,52 @@ _HEAD_SEP_RE = re.compile(r"^\s*[.\-—–:)]+\s*")
 # End-anchored + a required trailing numeral so it can't fire on prose or on bare
 # "Chapter N" / "The Final Chapter" literary headings.
 _BOOK_CHAPTER_RE = re.compile(r"^(?P<book>.+?)\s+chapter\s+(?P<num>[ivxlcdm\d]+)\.?\s*$", re.IGNORECASE)
+
+# Translated-source anthology template (e.g. NT Apocrypha): each ancient work opens with a
+# scholar's work header ("A new translation and introduction") that begins the commentary,
+# then a bare "Translation" heading that begins the rendered subject text, running to the
+# next work. The opener is matched EXACTLY so a pericope title like "The martyrdom and
+# translation of Barnabas" can't be mistaken for one.
+_TRANSLATION_HEAD_RE = re.compile(r"^translations?$", re.IGNORECASE)
+_WORK_HEADER_RE = re.compile(
+    r"^(?:(?:a\s+)?(?:new\s+)?translation\s+and\s+introduction"
+    r"|introduction\s+and\s+translation)$",
+    re.IGNORECASE,
+)
+_MIN_SCHOLARLY_WORKS = 3  # this many "Translation" headings ⇒ a repeating anthology template
+
+# Line-anchored variants for a heading-INDEPENDENT text scan. Some EPUBs flatten the
+# per-work headers into inline body text with no structural heading track (e.g. MNTA
+# Vol. 3), so the structural pass finds zero markers and the whole anthology collapses
+# into one body blob. Recover the same template directly from the text. A standalone
+# "Translation" line and a "(A new) translation and introduction[ by …]" line are
+# template-specific enough not to fire in running prose, and the repetition gate
+# (_MIN_SCHOLARLY_WORKS of each) blocks stray matches.
+_TRANSLATION_HEAD_LINE_RE = re.compile(r"(?m)^[ \t]*translations?[ \t]*$", re.IGNORECASE)
+_WORK_HEADER_LINE_RE = re.compile(
+    r"(?m)^[ \t]*(?:(?:a\s+)?(?:new\s+)?translation\s+and\s+introduction"
+    r"|introduction\s+and\s+translation)(?:\s+by\b[^\n]*)?[ \t]*$",
+    re.IGNORECASE,
+)
+
+# Attribution-delimited translation anthology (e.g. the Nag Hammadi Library): scholarly
+# front matter is followed by many translated ancient works, each opening with a
+# "Translated by <Name>" attribution line and NO per-work commentary. A run of these
+# (>= _MIN_ATTRIB_WORKS) marks a translation anthology; each attribution begins a
+# translation region running to the next. A translated novel's lone title-page credit
+# stays below the gate, so it cannot fire on ordinary prose.
+_TRANSLATED_BY_LINE_RE = re.compile(r"(?im)^[ \t]*translated by\s+\w[^\n]*$")
+_MIN_ATTRIB_WORKS = 8
+
+# Siglum-delimited translation corpus (e.g. the Dead Sea Scrolls): the translated texts
+# carry no verse numbers and no per-work attribution, but each scroll opens with a Qumran
+# siglum header (cave number + Q + designation: 1QS, 4Q521, 11QTa). Dense runs of these
+# mark the translated corpus, distinct from the sparse siglum mentions in the scholarly
+# introduction and from the very dense manuscript catalog/index (excluded by a density cap).
+_QUMRAN_SIGLUM_RE = re.compile(r"(?im)^[ \t]*(?:[1-9]|1[01])Q[A-Za-z0-9]+\b")
+_SIGLUM_RUN_MIN = 5           # clustered sigla ⇒ a scroll corpus, not a stray ref
+_SIGLUM_RUN_GAP = 12000       # a gap larger than this (chars) ends a corpus run
+_SIGLUM_MAX_DENSITY = 1.5     # sigla/1000c above which a run is a catalog, not prose
 
 
 # Canonical scripture book names (Protestant 66 + Catholic deuterocanon + KJV/Douay
@@ -586,6 +655,8 @@ _VERSE_RUN_GAP = 1600     # verse starts farther apart than this belong to separ
 _MIN_VERSE_LINE_LEN = 22  # shorter "<num> Word" lines are book names / chapter nav, not verses
 _VERSE_SEQ_MIN = 0.5      # fraction of steps that must increment (or reset a chapter)
 _VERSE_BODY_MAX_FRACTION = 0.85  # above this share of the body, the work is all scripture
+_VERSE_BODY_MIN_FRACTION = 0.05  # below this share, verse-numbered lines are incidental
+                                 # (editorial endnotes, ordered lists), not scripture
 
 
 def detect_verse_regions(text: str, lo: int = 0, hi: int | None = None) -> list[tuple[int, int]]:
@@ -633,6 +704,73 @@ def detect_verse_regions(text: str, lo: int = 0, hi: int | None = None) -> list[
         run.append(mk)
     flush(run)
     return regions
+
+
+def detect_scholarly_markers(
+    text: str, lo: int, hi: int
+) -> list[tuple[int, int, str, str]]:
+    """Find inline anthology markers in ``text[lo:hi]`` as body-item tuples.
+
+    Content-based counterpart to the structural anthology pass: locates the
+    line-anchored work-header ("A new translation and introduction") and bare
+    "Translation" lines that some EPUBs carry as plain body text rather than as
+    headings. Returns (start, line_end, type, label) tuples — type 'commentary' for
+    a work header, 'translation' for a Translation line — sorted by position, so the
+    body loop can carve the alternating layers exactly as it does for real headings.
+    """
+    marks: list[tuple[int, int, str, str]] = []
+    for m in _WORK_HEADER_LINE_RE.finditer(text):
+        if lo <= m.start() < hi:
+            marks.append((m.start(), m.end(), "commentary", " ".join(m.group().split())[:120]))
+    for m in _TRANSLATION_HEAD_LINE_RE.finditer(text):
+        if lo <= m.start() < hi:
+            marks.append((m.start(), m.end(), "translation", "Translation"))
+    marks.sort(key=lambda x: x[0])
+    return marks
+
+
+def detect_siglum_regions(text: str, lo: int, hi: int) -> list[tuple[int, int]]:
+    """Find runs of Qumran-siglum-headed scrolls in ``text[lo:hi]`` as (start, end) spans.
+
+    Content-based counterpart to ``detect_verse_regions`` for a translated manuscript
+    corpus (the Dead Sea Scrolls) whose works are headed by sigla (1QS, 4Q521, 11QTa)
+    rather than verses or attributions. Sigla are clustered into runs; a run shorter than
+    ``_SIGLUM_RUN_MIN`` is a stray reference (the scholarly introduction mentions a few),
+    and a run denser than ``_SIGLUM_MAX_DENSITY`` is a manuscript catalog/index rather than
+    translated prose — both are rejected, leaving the translated scrolls.
+    """
+    marks = [m.start() for m in _QUMRAN_SIGLUM_RE.finditer(text) if lo <= m.start() < hi]
+    # Cluster sigla into runs; a gap larger than the threshold ends a run.
+    runs: list[list[int]] = []
+    run: list[int] = []
+    for p in marks:
+        if run and p - run[-1] > _SIGLUM_RUN_GAP:
+            runs.append(run)
+            run = []
+        run.append(p)
+    if run:
+        runs.append(run)
+
+    # Keep substantial runs (drop short stray-reference clusters like the few sigla the
+    # scholarly introduction cites).
+    runs_info: list[tuple[int, int, float]] = []  # (start, end, density)
+    for r in runs:
+        if len(r) < _SIGLUM_RUN_MIN:
+            continue
+        end = text.find("\n\n", r[-1])
+        end = hi if end < 0 else min(end, hi)
+        runs_info.append((r[0], end, len(r) / max(1, (end - r[0]) / 1000)))
+    if not runs_info:
+        return []
+    # The translated scrolls run contiguously: inter-run gaps are long single scrolls, and
+    # some genres (parallel liturgical manuscripts) cite sigla densely mid-corpus, so mask
+    # one span from the first corpus siglum onward. A very dense *trailing* run still inside
+    # the range is an un-stripped manuscript catalog — end the span at its start; otherwise
+    # the corpus runs contiguously to the back matter, so extend to the range end (covering
+    # a final scroll like the Copper Scroll that drops its sigla for column markers).
+    last = runs_info[-1]
+    end = last[0] if (len(runs_info) > 1 and last[2] > _SIGLUM_MAX_DENSITY) else hi
+    return [(runs_info[0][0], end)]
 
 
 def detect_layout_sections(
@@ -683,25 +821,44 @@ def detect_layout_sections(
     if structural_starts:
         body_start = min(structural_starts)
     else:
-        body_start = 0
-        for it in items:
-            if it[2] in _FRONTMATTER:
-                continue
-            body_start = it[0]
-            break
-        else:
-            # Every boundary was front matter → body begins after the last one.
-            body_start = items[-1][0] if items else 0
+        # Heading-less work: the body is the large unbroken text span. Apparatus
+        # boundaries (title, contents, intro sub-heads, note-on-text) cluster closely
+        # at the head, so the narrative begins at the first body-scale gap between
+        # boundaries — placing body_start there keeps the leading apparatus masked as
+        # front matter instead of analyzing it as body. When no such gap exists (a
+        # short heading-less work, e.g. an epistolary novel), fall back to the first
+        # non-front-matter boundary so the body stays analyzable end to end.
+        large_gap = max(_BACKMATTER_GAP_FLOOR, int(text_len * _BACKMATTER_GAP_FRAC))
+        gap_starts = [it[0] for it in items] + [body_end]
+        body_start = -1
+        for a, b in zip(gap_starts, gap_starts[1:]):
+            if b - a >= large_gap:
+                body_start = a
+                break
+        if body_start < 0:
+            body_start = 0
+            for it in items:
+                if it[2] in _FRONTMATTER:
+                    continue
+                body_start = it[0]
+                break
+            else:
+                # Every boundary was front matter → body begins after the last one.
+                body_start = items[-1][0] if items else 0
 
-    # Back-matter region: the maximal trailing run of *classified* boundaries that are
-    # all back-matter. Unrecognized boundaries (in-world documents inside the work) are
-    # ignored here so they cannot swallow the body.
+    # Back-matter region: the maximal *contiguous* trailing run of classified
+    # back-matter boundaries. Unrecognized boundaries (in-world documents inside the
+    # work) are ignored here so they cannot swallow the body. Contiguity is enforced —
+    # a back-matter boundary separated from the trailing cluster by a body-scale gap
+    # (apparatus printed ahead of a heading-less narrative) ends the run.
+    bm_max_gap = max(_BACKMATTER_GAP_FLOOR, int(text_len * _BACKMATTER_GAP_FRAC))
     backmatter_start = body_end
     for start, _, t, _ in reversed(classified):
-        if t in _BACKMATTER and start > body_start:
-            backmatter_start = start
-        else:
+        if t not in _BACKMATTER or start <= body_start:
             break
+        if backmatter_start != body_end and backmatter_start - start > bm_max_gap:
+            break
+        backmatter_start = start
 
     sections: list[LayoutSection] = []
     next_id = 0
@@ -761,6 +918,35 @@ def detect_layout_sections(
 
     # ── Inside the body: structural nav (mask=no) + carved windows. ──
     body_items = [it for it in items if body_start <= it[0] < backmatter_start]
+
+    # Translated-source anthology pass: when the "Translation"/work-header template repeats
+    # (a real anthology, not a stray heading), reclassify those markers so the body loop
+    # carves alternating commentary + translation layers. Work headers are otherwise caught
+    # by the generic introduction regex; this overrides them. Gated on repetition so a lone
+    # "Translation" heading can't mask everything after it.
+    scholarly = (
+        sum(_TRANSLATION_HEAD_RE.match(it[3].strip()) is not None for it in body_items)
+        >= _MIN_SCHOLARLY_WORKS
+    )
+    if scholarly:
+        for i, it in enumerate(body_items):
+            lbl = it[3].strip()
+            if _TRANSLATION_HEAD_RE.match(lbl):
+                body_items[i] = (it[0], it[1], "translation", it[3])
+            elif _WORK_HEADER_RE.match(lbl):
+                body_items[i] = (it[0], it[1], "commentary", it[3])
+    elif text is not None:
+        # Heading-independent recovery: the EPUB lost its per-work heading track and
+        # carries the template as inline body text. Require the full repeating template
+        # (both marker kinds ≥ the gate) so a stray inline "Translation" can't trip it.
+        tmarks = detect_scholarly_markers(text, body_start, backmatter_start)
+        n_work = sum(1 for m in tmarks if m[2] == "commentary")
+        n_trans = sum(1 for m in tmarks if m[2] == "translation")
+        if n_work >= _MIN_SCHOLARLY_WORKS and n_trans >= _MIN_SCHOLARLY_WORKS:
+            scholarly = True
+            body_items.extend(tmarks)
+            body_items.sort(key=lambda x: x[0])
+
     for i, (start, head_end, t, lbl) in enumerate(body_items):
         if t is None:
             continue
@@ -802,6 +988,17 @@ def detect_layout_sections(
                     end = min(nstart, backmatter_start)
                     break
             add(t, start, end, lbl)
+        elif t in _SCHOLARLY:
+            # Anthology layer: commentary (work header → next marker) or translation
+            # ("Translation" → next marker). Each spans to the next scholarly marker, so a
+            # work's commentary runs up to its "Translation" heading and the translation
+            # runs up to the next work.
+            end = backmatter_start
+            for nstart, _, nt, _ in body_items[i + 1:]:
+                if nstart > start and nt in _SCHOLARLY:
+                    end = min(nstart, backmatter_start)
+                    break
+            add(t, start, end, "Translation" if t == "translation" else lbl)
 
     # Content-scan overlay: runs of scripture verses inside the body become
     # 'translation' windows (the biblical text of an annotated/study edition, as
@@ -810,12 +1007,42 @@ def detect_layout_sections(
     # is meaningful only as a contrast: a work that is almost entirely verses is
     # mono-scriptural (a plain Bible), so the body itself is the scripture and an
     # overlay would just shadow the whole thing — suppress it there.
-    if text is not None:
+    if text is not None and not scholarly:
         vregions = detect_verse_regions(text, body_start, backmatter_start)
         body_span = max(1, backmatter_start - body_start)
-        if sum(e - s for s, e in vregions) / body_span <= _VERSE_BODY_MAX_FRACTION:
+        vfrac = sum(e - s for s, e in vregions) / body_span
+        # The overlay marks scripture as distinct from surrounding commentary, so it is
+        # meaningful only as a contrast. Suppress it when verse runs are a negligible
+        # share of the work (incidental numbered lines — editorial endnotes, ordered
+        # lists — that aren't scripture) or when they are nearly the whole body (a plain
+        # mono-scriptural Bible, where the body already *is* the scripture).
+        if _VERSE_BODY_MIN_FRACTION <= vfrac <= _VERSE_BODY_MAX_FRACTION:
             for vstart, vend in vregions:
                 add("translation", vstart, vend, "Scripture")
+
+    # Content-scan overlay #2: an attribution-delimited translation anthology whose works
+    # carry no verse density and no per-work heading track (e.g. the Nag Hammadi Library),
+    # only a "Translated by <Name>" line per work. When many appear, each attribution opens
+    # a translation region running to the next (the last to the back matter), masking the
+    # translated ancient texts while the scholarly front matter stays analyzable. Scans the
+    # whole text, not just the body, because such editions misplace body_start (tractates
+    # begin before the first structural division). Suppressed for verse/heading anthologies,
+    # which are already carved above.
+    if text is not None and not scholarly:
+        attribs = [m.start() for m in _TRANSLATED_BY_LINE_RE.finditer(text)
+                   if m.start() < backmatter_start]
+        if len(attribs) >= _MIN_ATTRIB_WORKS:
+            edges = attribs + [backmatter_start]
+            for a, b in zip(edges, edges[1:]):
+                add("translation", a, min(b, backmatter_start), "Translation")
+
+    # Content-scan overlay #3: a Qumran-siglum-delimited translation corpus (the Dead Sea
+    # Scrolls), whose translated scrolls have neither verse numbers nor attribution lines.
+    # Dense runs of scroll sigla become translation regions; the sparse scholarly intro and
+    # the dense manuscript catalog are rejected inside detect_siglum_regions.
+    if text is not None and not scholarly:
+        for sstart, send in detect_siglum_regions(text, body_start, backmatter_start):
+            add("translation", sstart, send, "Translation")
 
     sections.sort(key=lambda s: (s.start, -(s.end - s.start)))
     _compute_parents(sections)

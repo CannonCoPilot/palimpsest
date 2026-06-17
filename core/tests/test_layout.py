@@ -3,7 +3,9 @@
 from palimpsest.layout import (
     DEFAULT_MASK_BY_TYPE,
     LayoutSection,
+    _classify_heading,
     detect_layout_sections,
+    detect_siglum_regions,
     detect_verse_regions,
     effective_mask,
     masked_intervals,
@@ -300,3 +302,163 @@ def test_mono_scripture_work_gets_no_translation_overlay():
     boundaries = [(0, 9, "Chapter 1")]
     sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
     assert not any(s.type == "translation" for s in sections)
+
+
+def test_incidental_numbered_notes_get_no_translation_overlay():
+    # A novel whose only verse-like lines are a short run of editorial endnotes
+    # ("1 When our forefathers...") sequential and length-passing, so they DO cluster
+    # as a verse run — but they are a negligible share of the work, so the min-fraction
+    # gate must suppress the overlay rather than mark the notes as scripture.
+    prose = "The narrative continues in plain prose without any verse numbering here. " * 200
+    notes = "".join(
+        f"{i} When our forefathers first came to the new land they found much there.\n\n"
+        for i in range(1, 9)
+    )
+    text = prose + "\n\n" + notes
+    # The notes really do look like a verse run to the content scanner...
+    assert detect_verse_regions(text) != []
+    # ...but as <5% of the body they are incidental, so no translation mask is emitted.
+    boundaries = [(0, 9, "Chapter 1")]
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    assert not any(s.type == "translation" for s in sections)
+
+
+def test_backmatter_apparatus_before_body_does_not_swallow_it():
+    # A heading-less work with back-matter-typed apparatus ("List of Illustrations")
+    # printed AHEAD of the narrative must not let the back-matter region bleed forward
+    # across the whole body. Only the trailing "Index", contiguous with the end, is
+    # back matter; the narrative between them stays in the analyzable body. (Regression:
+    # this layout masked ~90% of Pilgrim's Progress as back matter.)
+    front = "Title Page\n\nContents\n\nList of Illustrations\n\n"
+    narrative = "Christian walked on through the wilderness toward the light. " * 6000
+    index = "\n\nIndex\n\nApollyon 61 Atheist 138 Beulah 200\n\n"
+    text = front + narrative + index
+    pos = text.index
+    loi = "List of Illustrations"
+    boundaries = [
+        (pos("Title Page"), pos("Title Page") + 10, "Title Page"),
+        (pos("Contents"), pos("Contents") + 8, "Contents"),
+        (pos(loi), pos(loi) + 21, loi),
+        (pos("Index"), pos("Index") + 5, "Index"),
+    ]
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    body = next(s for s in sections if s.type == "body")
+    back = next(s for s in sections if s.type == "back_matter")
+    assert body.end - body.start > len(narrative) * 0.9
+    assert back.start >= pos("Index") - 5
+
+
+def test_scholarly_anthology_carves_commentary_and_translation():
+    # An anthology of translated ancient works: each opens with a scholar's work header
+    # (the commentary) then a bare "Translation" heading (the rendered source text, running
+    # to the next work). The repeating template (>=3 works) carves alternating commentary +
+    # translation layers — commentary analyzable, translation masked.
+    seg = "Scholarly analysis of the ancient source text follows here. " * 800  # > body gap
+    parts = []
+    for _ in range(3):
+        parts.append("A new translation and introduction\n\n" + seg)
+        parts.append("Translation\n\n" + seg)
+    text = "Front matter\n\n" + "\n\n".join(parts) + "\n\n"
+    boundaries = []
+    for marker in ("A new translation and introduction", "Translation"):
+        i = text.find(marker)
+        while i >= 0:
+            boundaries.append((i, i + len(marker), marker))
+            i = text.find(marker, i + len(marker))
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    assert sum(s.type == "commentary" for s in sections) == 3
+    assert sum(s.type == "translation" for s in sections) == 3
+    assert DEFAULT_MASK_BY_TYPE["translation"] is True
+    assert DEFAULT_MASK_BY_TYPE["commentary"] is False
+
+
+def test_single_translation_heading_is_not_treated_as_anthology():
+    # One stray "Translation" heading (below the repetition gate) must NOT carve a
+    # translation/commentary layer that would mask everything after it.
+    seg = "Ordinary narrative prose continues for a while. " * 50
+    text = "Chapter 1\n\n" + seg + "Translation\n\n" + seg
+    i = text.find("Translation")
+    boundaries = [(0, 9, "Chapter 1"), (i, i + 11, "Translation")]
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    assert not any(s.type == "commentary" for s in sections)
+    assert not any(s.type == "translation" for s in sections)
+
+
+def test_inline_anthology_template_recovered_without_headings():
+    # Some EPUBs flatten the per-work headers into inline body text and emit no heading
+    # track, so the structural pass sees zero markers. The repeating template is then
+    # recovered from the text directly, carving the same alternating commentary +
+    # translation layers — even with NO structural boundaries supplied.
+    seg = "Scholarly analysis of the ancient source text follows here. " * 60
+    parts = []
+    for _ in range(3):
+        parts.append("A new translation and introduction\n\n" + seg)
+        parts.append("Translation\n\n" + seg)
+    text = "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert sum(s.type == "commentary" for s in sections) == 3
+    assert sum(s.type == "translation" for s in sections) == 3
+
+
+def test_inline_translation_words_in_prose_do_not_carve():
+    # The line-anchored text scan must ignore the words appearing inside running prose:
+    # a novel that happens to discuss "a new translation and introduction" mid-sentence
+    # has no standalone marker lines, so nothing is carved (no false positive).
+    sentence = (
+        "The editor prepared a new translation and introduction to the work, "
+        "and the translation that resulted was widely praised. "
+    )
+    text = "Chapter 1\n\n" + sentence * 80
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert not any(s.type == "commentary" for s in sections)
+    assert not any(s.type == "translation" for s in sections)
+
+
+def test_attribution_anthology_masks_translated_works():
+    # An attribution-delimited anthology (e.g. the Nag Hammadi Library): many translated
+    # works, each opening with a "Translated by <Name>" line and no per-work commentary.
+    # The run of attributions (>= the gate) opens a translation region per work; the
+    # leading scholarly introduction before the first attribution stays unmasked.
+    seg = "The translated ancient text of this tractate continues at length here. " * 60
+    parts = [f"Translated by Scholar Number {i}\n\n{seg}" for i in range(9)]
+    text = "General Introduction to the collection.\n\n" + "\n\n".join(parts)
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert sum(s.type == "translation" for s in sections) == 9
+    assert DEFAULT_MASK_BY_TYPE["translation"] is True
+    # The introduction before the first attribution is not masked.
+    assert not any(s.type == "translation" and s.start == 0 for s in sections)
+
+
+def test_lone_translator_credit_does_not_mask():
+    # A translated novel with a single title-page "Translated by" credit stays below the
+    # attribution gate, so nothing is masked as translation.
+    seg = "Ordinary narrative prose continues for a while. " * 80
+    text = "Translated by A. Translator\n\n" + seg
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert not any(s.type == "translation" for s in sections)
+
+
+def test_detect_siglum_regions_masks_corpus_excluding_catalog():
+    # A Qumran-siglum corpus (the Dead Sea Scrolls): scrolls headed by sigla cluster into
+    # one translation span, while the trailing dense manuscript catalogue (its own run,
+    # set off by a body-scale gap) is rejected by the density cap so the apparatus is not
+    # masked as translated text.
+    scroll = "1 And the Instructor spoke concerning the way of the community. " * 40
+    body = "\n\n".join(f"4Q{500 + i}\n\n{scroll}" for i in range(8))
+    text = "Introduction to the scrolls.\n\n" + body + "\n\n"
+    text += "A closing editorial discussion with no sigla at all. " * 400  # > run-gap
+    text += "\n"
+    catalog_start = len(text)
+    text += "\n".join(f"4Q{n}" for n in range(200, 400))  # dense manuscript index
+    regions = detect_siglum_regions(text, 0, len(text))
+    assert len(regions) == 1
+    start, end = regions[0]
+    assert start < catalog_start            # the translated scrolls are covered
+    assert end <= catalog_start             # the dense catalogue is excluded
+
+
+def test_manuscript_catalog_classified_as_index():
+    # A manuscript catalogue/list is index-type back matter, not a body division.
+    assert _classify_heading("List of the Manuscripts from Qumran") == "index"
+    assert _classify_heading("Catalogue of Manuscripts") == "index"
+    assert _classify_heading("Chapter 4") != "index"
