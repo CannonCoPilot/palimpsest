@@ -575,6 +575,65 @@ def _sublabel_frontmatter(
             add("title_page", 0, hi, "Title Page")
 
 
+# A scripture verse line looks like "1 In the beginning…": a 1–3 digit verse number
+# (Psalm 119, the longest chapter, has 176 verses) then whitespace then verse prose.
+# A colon ("8:1." study note) or period ("1." outline entry) right after the digits
+# breaks the match, and a book name ("1 Samuel") is too short to anchor a run — so
+# only genuine verse lines qualify.
+_VERSE_LINE_RE = re.compile(r"(?m)^(\d{1,3})[ \t]+[\"'(A-Za-z]")
+_VERSE_RUN_MIN = 4        # verse lines needed before a cluster counts as scripture
+_VERSE_RUN_GAP = 1600     # verse starts farther apart than this belong to separate runs
+_MIN_VERSE_LINE_LEN = 22  # shorter "<num> Word" lines are book names / chapter nav, not verses
+_VERSE_SEQ_MIN = 0.5      # fraction of steps that must increment (or reset a chapter)
+
+
+def detect_verse_regions(text: str, lo: int = 0, hi: int | None = None) -> list[tuple[int, int]]:
+    """Find contiguous runs of scripture verses in ``text[lo:hi]`` as (start, end) spans.
+
+    Locates the verse-dense passages of an annotated scripture work — a study bible's
+    biblical text as distinct from its surrounding commentary — by clustering
+    verse-numbered lines. Detection is purely content-based, so it is independent of
+    the work's heading structure (robust even when headings are mislocated) and finds
+    nothing in ordinary prose, which has no verse-numbered lines. Two guards keep
+    non-scripture out: a length floor drops digit-prefixed book names ("1 Samuel") and
+    chapter-nav entries that cluster inside a table of contents, and a sequence check
+    requires the verse numbers to mostly count up (or reset for a new chapter), which
+    rejects apparatus tables of arbitrary numbers (weights and measures, genealogies).
+    """
+    hi = len(text) if hi is None else hi
+    marks: list[tuple[int, int]] = []  # (line start, verse number)
+    for m in _VERSE_LINE_RE.finditer(text):
+        s = m.start()
+        if not (lo <= s < hi):
+            continue
+        eol = text.find("\n", s)
+        if (hi if eol < 0 else eol) - s >= _MIN_VERSE_LINE_LEN:
+            marks.append((s, int(m.group(1))))
+    regions: list[tuple[int, int]] = []
+
+    def flush(run: list[tuple[int, int]]) -> None:
+        if len(run) < _VERSE_RUN_MIN:
+            return
+        nums = [n for _, n in run]
+        # A scripture-like step counts up by one, or is a genuine chapter reset (a real
+        # verse number dropping back to a chapter's first verse). Arbitrary number
+        # tables (weights, genealogies) satisfy neither and fail the threshold.
+        ok = sum(b == a + 1 or (a >= 5 and b <= 2) for a, b in zip(nums, nums[1:]))
+        if ok / (len(nums) - 1) < _VERSE_SEQ_MIN:
+            return
+        end = text.find("\n\n", run[-1][0])
+        regions.append((run[0][0], hi if end < 0 else min(end, hi)))
+
+    run: list[tuple[int, int]] = []
+    for mk in marks:
+        if run and mk[0] - run[-1][0] > _VERSE_RUN_GAP:
+            flush(run)
+            run = []
+        run.append(mk)
+    flush(run)
+    return regions
+
+
 def detect_layout_sections(
     boundaries: list[tuple[int, int, str]],
     text_len: int,
@@ -742,6 +801,14 @@ def detect_layout_sections(
                     end = min(nstart, backmatter_start)
                     break
             add(t, start, end, lbl)
+
+    # Content-scan overlay: runs of scripture verses inside the body become
+    # 'translation' windows (the biblical text of an annotated/study edition, as
+    # distinct from the surrounding commentary). Heading-independent, so it works
+    # even when the work's structural headings are absent or mislocated.
+    if text is not None:
+        for vstart, vend in detect_verse_regions(text, body_start, backmatter_start):
+            add("translation", vstart, vend, "Scripture")
 
     sections.sort(key=lambda s: (s.start, -(s.end - s.start)))
     _compute_parents(sections)

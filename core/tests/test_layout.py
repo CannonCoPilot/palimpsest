@@ -4,9 +4,20 @@ from palimpsest.layout import (
     DEFAULT_MASK_BY_TYPE,
     LayoutSection,
     detect_layout_sections,
+    detect_verse_regions,
     effective_mask,
     masked_intervals,
     range_is_masked,
+)
+
+
+_SCRIPTURE = (
+    "1 In the beginning God created the heaven and the earth.\n\n"
+    "2 And the earth was without form, and void; and darkness was on the deep.\n\n"
+    "3 And God said, Let there be light: and there was light.\n\n"
+    "4 And God saw the light, that it was good: and divided light from darkness.\n\n"
+    "5 And God called the light Day, and the darkness he called Night.\n\n"
+    "6 And God said, Let there be a firmament in the midst of the waters.\n\n"
 )
 
 
@@ -221,3 +232,52 @@ def test_sublabel_skipped_without_text():
     boundaries = [(500, 510, "Chapter 1")]
     sections = detect_layout_sections(boundaries, text_len=4000)
     assert not any(s.type in {"copyright", "title_page"} for s in sections)
+
+
+def test_detect_verse_regions_finds_scripture_run():
+    regions = detect_verse_regions(_SCRIPTURE)
+    assert len(regions) == 1
+    start, end = regions[0]
+    assert _SCRIPTURE[start:].startswith("1 In the beginning")
+    assert "firmament" in _SCRIPTURE[start:end]
+
+
+def test_detect_verse_regions_ignores_prose():
+    prose = (
+        "It is a truth universally acknowledged, that a single man in possession "
+        "of a good fortune, must be in want of a wife.\n\n"
+        "However little known the feelings of such a man may be on first entering "
+        "a neighbourhood, this truth is well fixed in the minds of families.\n\n"
+    )
+    assert detect_verse_regions(prose) == []
+
+
+def test_detect_verse_regions_rejects_book_name_cluster():
+    # A table of contents lists digit-prefixed book names; each line is too short to
+    # be a verse, so the length floor keeps them from clustering into a false run.
+    toc = "1 Samuel\n\n2 Samuel\n\n1 Kings\n\n2 Kings\n\n1 Chronicles\n\n2 Chronicles\n\n"
+    assert detect_verse_regions(toc) == []
+
+
+def test_detect_verse_regions_rejects_number_table():
+    # An apparatus table has long, numbered, but non-sequential lines: the sequence
+    # check rejects it even though it clears the length floor.
+    table = (
+        "4 days' wages equal two bekas in the table of measures.\n\n"
+        "2 days' wages equal one half of a Jewish silver shekel.\n\n"
+        "60 minas are reckoned as three thousand silver shekels.\n\n"
+        "9 feet, or ten and a half feet as measured in Ezekiel.\n\n"
+    )
+    assert detect_verse_regions(table) == []
+
+
+def test_translation_overlay_added_for_verse_run():
+    # A study-edition body whose verses are detected as a masked 'translation' window.
+    front = "Title Page\n\nby Some Editor\n\n"
+    text = front + _SCRIPTURE
+    boundaries = [(0, 10, "Title Page"), (len(front), len(front) + 9, "Chapter 1")]
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    translations = [s for s in sections if s.type == "translation"]
+    assert len(translations) == 1
+    assert translations[0].start >= len(front)
+    assert DEFAULT_MASK_BY_TYPE["translation"] is True
