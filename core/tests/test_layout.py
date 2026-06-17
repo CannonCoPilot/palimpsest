@@ -271,13 +271,32 @@ def test_detect_verse_regions_rejects_number_table():
     assert detect_verse_regions(table) == []
 
 
+# A block of commentary/apparatus so a study-edition body is not all-scripture.
+_ANNOTATIONS = (
+    "Annotations for Genesis\n\n"
+    + "".join(
+        f"1:{v}. This study note explains verse {v} at some interpretive length.\n\n"
+        for v in range(1, 12)
+    )
+)
+
+
 def test_translation_overlay_added_for_verse_run():
-    # A study-edition body whose verses are detected as a masked 'translation' window.
+    # A study-edition body: scripture set against commentary → masked 'translation'.
     front = "Title Page\n\nby Some Editor\n\n"
-    text = front + _SCRIPTURE
+    text = front + _SCRIPTURE + _ANNOTATIONS
     boundaries = [(0, 10, "Title Page"), (len(front), len(front) + 9, "Chapter 1")]
     sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
     translations = [s for s in sections if s.type == "translation"]
     assert len(translations) == 1
     assert translations[0].start >= len(front)
     assert DEFAULT_MASK_BY_TYPE["translation"] is True
+
+
+def test_mono_scripture_work_gets_no_translation_overlay():
+    # A work that is almost entirely verses (a plain Bible) is mono-scriptural: the
+    # body itself is the scripture, so no 'translation' overlay should be added.
+    text = _SCRIPTURE * 6
+    boundaries = [(0, 9, "Chapter 1")]
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    assert not any(s.type == "translation" for s in sections)

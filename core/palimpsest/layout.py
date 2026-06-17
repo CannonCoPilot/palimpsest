@@ -585,6 +585,7 @@ _VERSE_RUN_MIN = 4        # verse lines needed before a cluster counts as script
 _VERSE_RUN_GAP = 1600     # verse starts farther apart than this belong to separate runs
 _MIN_VERSE_LINE_LEN = 22  # shorter "<num> Word" lines are book names / chapter nav, not verses
 _VERSE_SEQ_MIN = 0.5      # fraction of steps that must increment (or reset a chapter)
+_VERSE_BODY_MAX_FRACTION = 0.85  # above this share of the body, the work is all scripture
 
 
 def detect_verse_regions(text: str, lo: int = 0, hi: int | None = None) -> list[tuple[int, int]]:
@@ -805,10 +806,16 @@ def detect_layout_sections(
     # Content-scan overlay: runs of scripture verses inside the body become
     # 'translation' windows (the biblical text of an annotated/study edition, as
     # distinct from the surrounding commentary). Heading-independent, so it works
-    # even when the work's structural headings are absent or mislocated.
+    # even when the work's structural headings are absent or mislocated. The overlay
+    # is meaningful only as a contrast: a work that is almost entirely verses is
+    # mono-scriptural (a plain Bible), so the body itself is the scripture and an
+    # overlay would just shadow the whole thing — suppress it there.
     if text is not None:
-        for vstart, vend in detect_verse_regions(text, body_start, backmatter_start):
-            add("translation", vstart, vend, "Scripture")
+        vregions = detect_verse_regions(text, body_start, backmatter_start)
+        body_span = max(1, backmatter_start - body_start)
+        if sum(e - s for s, e in vregions) / body_span <= _VERSE_BODY_MAX_FRACTION:
+            for vstart, vend in vregions:
+                add("translation", vstart, vend, "Scripture")
 
     sections.sort(key=lambda s: (s.start, -(s.end - s.start)))
     _compute_parents(sections)
