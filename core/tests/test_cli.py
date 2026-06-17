@@ -8,6 +8,11 @@ from click.testing import CliRunner
 
 from palimpsest.cli import main
 
+# Project slug derives from the source filename stem (one project per source
+# file, commit 1f48084), not from --title. The pp_ch1_txt fixture is
+# pride-prejudice-ch1.txt, so every ingest of it lands here regardless of title.
+PP_CH1_SLUG = "pride-prejudice-ch1"
+
 
 @pytest.fixture
 def runner():
@@ -24,18 +29,24 @@ class TestCliIngest:
         assert result.exit_code == 0, result.output
         assert "Project created" in result.output
 
-    def test_ingest_duplicate_fails(self, runner, pp_ch1_txt, tmp_path):
-        runner.invoke(main, [
+    def test_ingest_same_file_replaces(self, runner, pp_ch1_txt, tmp_path):
+        # One project per source file: re-ingesting the same file is a clean
+        # replace (exit 0), not a duplicate failure (commit 1f48084).
+        first = runner.invoke(main, [
             "ingest", str(pp_ch1_txt),
             "--workspace", str(tmp_path),
-            "--title", "dup-test",
+            "--title", "First Title",
         ])
-        result = runner.invoke(main, [
+        assert first.exit_code == 0, first.output
+        second = runner.invoke(main, [
             "ingest", str(pp_ch1_txt),
             "--workspace", str(tmp_path),
-            "--title", "dup-test",
+            "--title", "Second Title",
         ])
-        assert result.exit_code != 0
+        assert second.exit_code == 0, second.output
+        # Exactly one project dir for this source, named by its slug.
+        project_dirs = [p for p in tmp_path.iterdir() if p.is_dir()]
+        assert project_dirs == [tmp_path / PP_CH1_SLUG]
 
 
 class TestCliInfo:
@@ -45,7 +56,7 @@ class TestCliInfo:
             "--workspace", str(tmp_path),
             "--title", "Info Test",
         ])
-        project_dir = tmp_path / "info-test"
+        project_dir = tmp_path / PP_CH1_SLUG
         result = runner.invoke(main, ["info", str(project_dir)])
         assert result.exit_code == 0, result.output
         assert "Info Test" in result.output
@@ -58,7 +69,7 @@ class TestCliAnalyze:
             "--workspace", str(tmp_path),
             "--title", "Analyze Test",
         ])
-        project_dir = tmp_path / "analyze-test"
+        project_dir = tmp_path / PP_CH1_SLUG
         result = runner.invoke(main, ["analyze", str(project_dir)])
         assert result.exit_code == 0, result.output
         assert "Done" in result.output
@@ -87,7 +98,7 @@ class TestCliAnalyze:
             "--workspace", str(tmp_path),
             "--title", "Output Test",
         ])
-        project_dir = tmp_path / "output-test"
+        project_dir = tmp_path / PP_CH1_SLUG
         runner.invoke(main, ["analyze", str(project_dir)])
         assert (project_dir / "tracks" / "entities.jsonl").exists()
         assert (project_dir / "pipeline_run.json").exists()
@@ -98,7 +109,7 @@ class TestCliAnalyze:
             "--workspace", str(tmp_path),
             "--title", "Skip Test",
         ])
-        project_dir = tmp_path / "skip-test"
+        project_dir = tmp_path / PP_CH1_SLUG
         runner.invoke(main, ["analyze", str(project_dir)])
         result = runner.invoke(main, ["analyze", str(project_dir)])
         assert result.exit_code == 0
@@ -113,7 +124,7 @@ class TestCliExport:
             "--workspace", str(tmp_path),
             "--title", "Export Test",
         ])
-        project_dir = tmp_path / "export-test"
+        project_dir = tmp_path / PP_CH1_SLUG
         runner.invoke(main, ["analyze", str(project_dir)])
         result = runner.invoke(main, ["export", str(project_dir), "--format", "w3c"])
         assert result.exit_code == 0, result.output
@@ -136,7 +147,7 @@ class TestCliExport:
             "--workspace", str(tmp_path),
             "--title", "Custom Export",
         ])
-        project_dir = tmp_path / "custom-export"
+        project_dir = tmp_path / PP_CH1_SLUG
         runner.invoke(main, ["analyze", str(project_dir)])
         custom_dir = tmp_path / "my-exports"
         result = runner.invoke(main, [
@@ -151,7 +162,7 @@ class TestCliExport:
             "--workspace", str(tmp_path),
             "--title", "W3C ID Test",
         ])
-        project_dir = tmp_path / "w3c-id-test"
+        project_dir = tmp_path / PP_CH1_SLUG
         runner.invoke(main, ["analyze", str(project_dir)])
         result = runner.invoke(main, ["export", str(project_dir), "--format", "w3c"])
         assert result.exit_code == 0
@@ -168,7 +179,7 @@ class TestCliExport:
             "--workspace", str(tmp_path),
             "--title", "CSV Test",
         ])
-        project_dir = tmp_path / "csv-test"
+        project_dir = tmp_path / PP_CH1_SLUG
         runner.invoke(main, ["analyze", str(project_dir)])
         result = runner.invoke(main, ["export", str(project_dir), "--format", "csv"])
         assert result.exit_code == 0, result.output
@@ -198,7 +209,7 @@ class TestCliExport:
             "--workspace", str(tmp_path),
             "--title", "PAF Test",
         ])
-        project_dir = tmp_path / "paf-test"
+        project_dir = tmp_path / PP_CH1_SLUG
         result = runner.invoke(main, ["export", str(project_dir), "--format", "paf"])
         assert result.exit_code == 0
         assert "segments.paf" in result.output
