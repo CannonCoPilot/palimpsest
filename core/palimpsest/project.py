@@ -214,6 +214,24 @@ class Project:
         return cls(path=path, metadata=meta)
 
 
+def _nearest_occurrence(haystack: str, needle: str, expected: int, lo: int = 0) -> int:
+    """Index of the occurrence of ``needle`` in ``haystack[lo:]`` nearest ``expected``.
+
+    Occurrences are ascending, so the nearest to ``expected`` is the last one below
+    it or the first at/above it — scan until we reach ``expected``, then stop.
+    Returns -1 if ``needle`` does not occur at/after ``lo``.
+    """
+    best = -1
+    pos = haystack.find(needle, lo)
+    while pos != -1:
+        if best == -1 or abs(pos - expected) < abs(best - expected):
+            best = pos
+        if pos >= expected:
+            break
+        pos = haystack.find(needle, pos + 1)
+    return best
+
+
 def _relocate_sections(
     epub_sections: list[Any], normalized: str, raw_len: int | None = None
 ) -> list[tuple[Any, int, int]]:
@@ -231,11 +249,16 @@ def _relocate_sections(
     division. Anchoring to the first match would drag every section into the TOC
     (the relocation misfire). Instead we anchor to the occurrence nearest the
     heading's *expected* position — the parser offset scaled by the normalization
-    shrink ratio — which picks the real division over its TOC link. A monotonic
-    cursor preserves reading order and stops two headings claiming the same spot.
-    Headings that can't be located are dropped: a missing boundary is safer than a
-    mislocated mask. When a heading is unique its lone occurrence is chosen
-    regardless of the offset, so a bad hint cannot mislocate an unambiguous heading.
+    shrink ratio — which picks the real division over its TOC link.
+
+    A monotonic cursor keeps reading order and stops two headings claiming the same
+    spot. But choosing a later (correct) occurrence advances the cursor further than
+    a first-match scan would, which can leave a following heading with all of its
+    occurrences behind the cursor. Rather than drop it, we retry the search from the
+    start: a unique heading's lone occurrence is its true position, and the
+    expected-position bias still keeps the choice out of the front TOC. Only headings
+    that occur nowhere are dropped — a missing boundary beats a mislocated mask. The
+    result is sorted so recovered (out-of-order) anchors stay in document order.
     """
     out: list[tuple[Any, int, int]] = []
     cursor = 0
@@ -245,22 +268,15 @@ def _relocate_sections(
         if not needle:
             continue
         expected = int(getattr(sec, "offset", 0) * scale)
-        # Occurrences at/after the cursor are ascending, so the nearest to expected is
-        # either the last one below it or the first at/above it — record matches until
-        # we reach expected, then stop.
-        best = -1
-        pos = normalized.find(needle, cursor)
-        while pos != -1:
-            if best == -1 or abs(pos - expected) < abs(best - expected):
-                best = pos
-            if pos >= expected:
-                break
-            pos = normalized.find(needle, pos + 1)
+        best = _nearest_occurrence(normalized, needle, expected, cursor)
+        if best == -1:  # cursor overran every occurrence; recover from the start
+            best = _nearest_occurrence(normalized, needle, expected, 0)
         if best == -1:
             continue
         end = best + len(needle)
         out.append((sec, best, end))
-        cursor = end
+        cursor = max(cursor, end)
+    out.sort(key=lambda t: t[1])
     return out
 
 
