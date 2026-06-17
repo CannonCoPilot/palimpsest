@@ -183,20 +183,25 @@ export default function SectionMinimap({
     </div>
   );
 
+  // Log-scale slider: 1×–1000×. A linear range would crush the useful low end into a
+  // sliver, so the slider carries log10(zoom) and a book with thousands of sections can
+  // still be spread out enough to grab individual boundaries.
   const ZoomControl = (
     <div className="flex items-center gap-1.5 shrink-0">
       <span className="text-[10px] text-[#8a8a90]">Zoom</span>
       <input
         type="range"
-        min={1}
-        max={10}
-        step={0.5}
-        value={zoom}
-        onChange={(e) => setZoom(Number(e.target.value))}
+        min={0}
+        max={3}
+        step={0.01}
+        value={Math.log10(zoom)}
+        onChange={(e) => setZoom(10 ** Number(e.target.value))}
         className="w-28 accent-[#0a84ff]"
         aria-label="Zoom"
       />
-      <span className="text-[10px] text-[#8a8a90] tabular-nums w-9">{zoom.toFixed(1)}×</span>
+      <span className="text-[10px] text-[#8a8a90] tabular-nums w-12">
+        {zoom >= 10 ? Math.round(zoom) : zoom.toFixed(1)}×
+      </span>
     </div>
   );
 
@@ -600,6 +605,16 @@ function SectionInspector(): ReactElement {
   return (
     <div className="shrink-0 rounded-lg ring-1 ring-white/10 bg-[#1c1c1e] text-xs text-[#d6d6d8] p-2 space-y-2">
       <div className="text-[#8e8e93]">{sec.label || '(no heading)'}</div>
+      {(sec.metadata?.number || sec.metadata?.name) && (
+        <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-[10px] text-[#8e8e93]">
+          {sec.metadata?.number && (
+            <span>No. <span className="text-[#d6d6d8]">{sec.metadata.number}</span></span>
+          )}
+          {sec.metadata?.name && (
+            <span>Title: <span className="text-[#d6d6d8]">{sec.metadata.name}</span></span>
+          )}
+        </div>
+      )}
       <div className="flex flex-wrap gap-1">
         {types.map((t) => (
           <button

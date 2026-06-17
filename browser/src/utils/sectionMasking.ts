@@ -13,6 +13,7 @@ export interface LayoutSection {
   parent_id: string | null;
   source: string;
   masked: boolean | null;
+  metadata?: Record<string, string>;
 }
 
 export interface SectionType {
