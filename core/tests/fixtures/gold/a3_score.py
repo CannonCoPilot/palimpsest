@@ -120,6 +120,8 @@ def score_work(idx: int) -> dict:
                              f"`{t}` yet (Phase-B retype gap)")
             if found == 0:
                 notes.append(f"{t}: UNDETECTED (expected {exp}, proxy {proxy or '—'})")
+            elif rec is not None and rec < 1.0:
+                notes.append(f"{t}: partial recall {found}/{exp} = {rec:.2f}")
         elif found == 0:
             notes.append(f"{t} (secondary): 0/{exp} — grouping level not segmented")
         elif rec is not None and rec < OPT_RECALL:

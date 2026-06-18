@@ -1,9 +1,35 @@
 {
-  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text(); resolve=last uses rfind; end_anchor <<EOF>>=end of text. Offsets derived at eval time, never stored.",
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text(); resolve=last uses rfind; end_anchor <<EOF>>=end of text. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
   "idx": 70,
   "source_file": "Charlotte Temple -- Rowson, Susanna Haswell -- 2022 -- Standard Ebooks -- 8491224f92259d041f364596501e9f9a -- Anna’s Archive.epub",
   "work": "Charlotte Temple",
   "annotations": [
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 35,
+      "count_cue": "35 chapters numbered I–XXXV in the EPUB nav (titled, e.g. I 'A Boarding School', XXXV 'Conclusion'); no literal 'Chapter N' text. Detector finds 33 — XXI and XXXI are MISSED because their nav labels are corrupted to 'XXI11'/'XXXI18' (fused endnote-reference digits). recall 33/35 = 0.94.",
+      "exemplars": [
+        {
+          "start_anchor": "said Montraville to his companion",
+          "note": "chapter I ('A Boarding School') opening"
+        },
+        {
+          "start_anchor": "Shortly after the interment of his daughter",
+          "note": "chapter XXXV ('Conclusion') opening"
+        }
+      ],
+      "note": "Primary structure. The two missed chapters (XXI/XXXI) are a source-label corruption, not a detector logic gap — the gold pins the true 35 so the 0.94 recall is visible."
+    },
+    {
+      "type": "endnotes",
+      "mask": true,
+      "start_anchor": "Endnotes\n\nThe above lines, in the original American edition",
+      "end_anchor": "Colophon\n\nCharlotte Temple\nwas published in 1791",
+      "note": "Editorial endnotes (title-page Shakespeare-misattribution notes) before the colophon. Present but UNDETECTED — detector emits no endnotes element here."
+    },
     {
       "type": "colophon",
       "mask": true,

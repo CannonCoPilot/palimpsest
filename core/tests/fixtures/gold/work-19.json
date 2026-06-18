@@ -1,5 +1,5 @@
 {
-  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last uses rfind; <<EOF>>=end). For structure=repeating: expected_count+count_cue carry the cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time.",
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last uses rfind; <<EOF>>=end). For structure=repeating: expected_count+count_cue carry the cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time.",
   "idx": 19,
   "source_file": "The Correspondent_ A Novel -- Virginia Evans -- 2025 -- Crown Publishing Group, The -- isbn13 9780593798430 -- f542b169cc729ca2fdc329d48c3911f5 -- Anna’s Archive.epub",
   "work": "The Correspondent",
@@ -8,8 +8,9 @@
       "type": "letter",
       "mask": false,
       "structure": "repeating",
-      "expected_count": 96,
-      "count_cue": "salutation 'Dear ...,' at line start (~96); corroborated by ~85 date lines and From:/signature blocks",
+      "role": "primary",
+      "expected_count": 102,
+      "count_cue": "102 line-start 'Dear X,' salutations (empirical), corroborated by ~85 date lines and From:/signature blocks. (Prior estimate ~96; a few salutations may be embedded/quoted letters, so distinct top-level letters is 96–102.)",
       "exemplars": [
         {
           "start_anchor": "Dear Ms. Toole,\n\nI'd like to start by saying this letter is a matter of personal contact",
@@ -20,7 +21,7 @@
           "note": "last letter (to Daan)"
         }
       ],
-      "note": "Epistolary novel: ~96 dated letters interleaved with framing (opening obituary column 'by Alex Toole, Columnist' at body start; embedded documents). Entire ~329K body currently one undetected 'body' block."
+      "note": "Epistolary novel: dated letters interleaved with framing (opening obituary column 'by Alex Toole, Columnist' at body start; embedded documents). Entire ~364K body currently one undetected 'body' block → COARSE."
     }
   ]
 }
