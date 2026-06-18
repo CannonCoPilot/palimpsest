@@ -405,6 +405,16 @@ _SIGLUM_MAX_DENSITY = 1.5     # sigla/1000c above which a run is a catalog, not 
 _CHAPTER_LINE_RE = re.compile(r"(?im)^[ \t]*(?:chapter|chap\.)[ \t]+(?:[ivxlcdm]+|\d+)\b[^\n]*$")
 _MIN_CHAPTER_RECOVERY = 5  # this many inline ^Chapter lines ⇒ recover them as the chapter track
 
+# Numbered+named scripture divisions named in English with the original name parenthesised on
+# the FOLLOWING line ("2. The Cow\n\n( Al-Baqarah)") — the Quran's surahs. The next-line paren
+# distinguishes a real division opening from an inline table-of-contents entry (paren on the
+# SAME line) and from a numbered verse or note (no parenthetical at all), so the divisions
+# segment but the TOC and verses do not. Gated on a Quran-scale count.
+_DIVISION_HEAD_RE = re.compile(
+    r"(?m)^[^\w\n]{0,8}\d{1,3}\.[ \t]+[A-Z][^\n(]{1,40}?[ \t]*\n+\([ \t]*[A-Z]"
+)
+_MIN_NAMED_DIVISIONS = 20  # this many numbered+named divisions ⇒ a structured scripture (Quran)
+
 
 # Canonical scripture book names (Protestant 66 + Catholic deuterocanon + KJV/Douay
 # spelling variants). Bare book-name headings ("GENESIS", "1 Corinthians") aren't
@@ -657,7 +667,9 @@ def _sublabel_frontmatter(
 # (Psalm 119, the longest chapter, has 176 verses) then whitespace then verse prose.
 # A colon ("8:1." study note) or period ("1." outline entry) right after the digits
 # breaks the match, and a book name ("1 Samuel") is too short to anchor a run — so
-# only genuine verse lines qualify.
+# only genuine verse lines qualify. (A period form is deliberately NOT matched: it is
+# indistinguishable from numbered editorial notes — "1. His desire…" — which would then
+# false-mask as translation, e.g. Pilgrim's Progress annotations and endnotes.)
 _VERSE_LINE_RE = re.compile(r"(?m)^(\d{1,3})[ \t]+[\"'(A-Za-z]")
 _VERSE_RUN_MIN = 4        # verse lines needed before a cluster counts as scripture
 _VERSE_RUN_GAP = 1600     # verse starts farther apart than this belong to separate runs
@@ -754,6 +766,27 @@ def detect_chapter_markers(
         if lo <= m.start() < hi:
             label = " ".join(m.group().split())[:_MAX_HEADER_LEN]
             marks.append((m.start(), m.end(), "chapter", label))
+    return marks
+
+
+def detect_division_markers(
+    text: str, lo: int, hi: int
+) -> list[tuple[int, int, str, str]]:
+    """Find Quran-style numbered+named scripture divisions as body-item tuples.
+
+    A surah opens with its number and English name, then its transliterated name in
+    parentheses on the next line ("2. The Cow\\n\\n( Al-Baqarah)"). Returns (start,
+    line_end, 'chapter', label) tuples — label is the "N. Name" heading line — so the
+    body loop carves each division into a masked header and a numbered chapter. The
+    next-line parenthetical keeps the inline contents listing and plain verses out.
+    """
+    marks: list[tuple[int, int, str, str]] = []
+    for m in _DIVISION_HEAD_RE.finditer(text):
+        if lo <= m.start() < hi:
+            eol = text.find("\n", m.start())
+            head_end = eol if eol > m.start() else m.end()
+            label = " ".join(text[m.start():head_end].split())[:_MAX_HEADER_LEN]
+            marks.append((m.start(), head_end, "chapter", label))
     return marks
 
 
@@ -877,11 +910,17 @@ def detect_layout_sections(
     if text is not None:
         n_struct = sum(1 for it in items if it[2] in _STRUCTURAL)
         if n_struct < _MIN_CHAPTER_RECOVERY:
+            recovered: list[tuple[int, int, str, str]] = []
             cmarks = _drop_toc_chapter_runs(
                 detect_chapter_markers(text, 0, body_end), text_len
             )
             if len(cmarks) >= _MIN_CHAPTER_RECOVERY:
-                items.extend(cmarks)
+                recovered += cmarks
+            smarks = detect_division_markers(text, 0, body_end)
+            if len(smarks) >= _MIN_NAMED_DIVISIONS:
+                recovered += smarks
+            if recovered:
+                items.extend(recovered)
                 items.sort(key=lambda x: x[0])
 
     classified = [it for it in items if it[2] is not None]

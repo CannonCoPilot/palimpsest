@@ -485,6 +485,34 @@ def test_heading_track_chapters_suppress_inline_recovery():
     assert sum(s.type == "chapter" for s in sections) == 6  # not doubled by recovery
 
 
+def test_numbered_named_divisions_segment_as_chapters():
+    # A scripture whose divisions are numbered and named in English with the original name in
+    # parentheses on the FOLLOWING line ("2. The Cow\n\n( Al-Baqarah)") — the Quran's surahs.
+    # The next-line parenthetical opens each division as a chapter, while an inline contents
+    # entry (paren on the SAME line) is not segmented.
+    names = [("The Opener", "Al-Fatihah"), ("The Cow", "Al-Baqarah"), ("Women", "An-Nisa"),
+             ("The Table", "Al-Maidah"), ("The Cattle", "Al-Anam"), ("The Heights", "Al-Araf")]
+    body = "Scripture prose for this division continues at some length here. " * 8
+    parts = [f"{i + 1}. {names[i % len(names)][0]}\n\n( {names[i % len(names)][1]})\n\n{body}"
+             for i in range(22)]
+    toc = "".join(f"{i + 1}. {names[i % len(names)][0]} ( {names[i % len(names)][1]})\n"
+                  for i in range(22))
+    text = "Front matter introduction.\n\n" + toc + "\n\n" + "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(chapters) == 22  # the 22 body divisions; the inline TOC is not segmented
+
+
+def test_few_named_divisions_below_gate_not_segmented():
+    # A handful of "N. Name\n\n( Other)" lines (below the division gate) is not a structured
+    # scripture, so nothing is segmented — the gate keeps the mechanism scripture-specific.
+    body = "Ordinary prose continues here for a while without any divisions. " * 8
+    parts = [f"{n}. A Heading\n\n( Note)\n\n{body}" for n in range(1, 4)]
+    text = "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert not any(s.type == "chapter" for s in sections)
+
+
 def test_detect_siglum_regions_masks_corpus_excluding_catalog():
     # A Qumran-siglum corpus (the Dead Sea Scrolls): scrolls headed by sigla cluster into
     # one translation span, while the trailing dense manuscript catalogue (its own run,
