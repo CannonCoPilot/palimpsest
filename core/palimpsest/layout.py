@@ -760,6 +760,49 @@ def _suppress_toc_entries(
     return out
 
 
+def _suppress_misanchored_head_toc(
+    items: list[tuple[int, int, str | None, str]],
+    text_len: int,
+) -> list[tuple[int, int, str | None, str]]:
+    """Demote a misanchored front contents cluster that lacks a 'Contents' heading.
+
+    Some EPUBs (Nyland's Complete Books of Enoch) anchor every chapter nav link to one front
+    contents fragment instead of the body, so a compact run of 'chapter' boundaries with
+    JUMBLED numbers (8, 9, 1) sits at the document head and drags the body start into the TOC.
+    A genuine opening run is monotonic (1, 2, 3) and spread far apart, so the gate is narrow: a
+    compact head run (each within _TOC_ENTRY_GAP) of >= _MIN_TOC_RUN chapters whose Arabic
+    numbers are not strictly increasing. The real divisions recur at their body offsets (here
+    recovered by the inline chapter scan), so dropping the duplicated TOC links is safe. This is
+    the no-'Contents'-heading counterpart to _suppress_toc_entries.
+    """
+    out = list(items)
+    first = next((i for i, it in enumerate(out) if it[2] in _STRUCTURAL), None)
+    if first is None or out[first][0] > text_len * 0.05:
+        return out
+    run = [first]
+    j = first + 1
+    while j < len(out):
+        nxt = out[j]
+        if nxt[2] not in _STRUCTURAL or nxt[0] - out[run[-1]][0] > _TOC_ENTRY_GAP:
+            break
+        run.append(j)
+        j += 1
+    if len(run) < _MIN_TOC_RUN or any(out[k][2] != "chapter" for k in run):
+        return out
+    nums: list[int] = []
+    for k in run:
+        num = _parse_chapter_heading(out[k][3]).get("number")
+        if num is None or not num.isdigit():
+            return out
+        nums.append(int(num))
+    if all(a < b for a, b in zip(nums, nums[1:])):  # strictly increasing = a real opening run
+        return out
+    for k in run:
+        s, he, _, lbl = out[k]
+        out[k] = (s, he, None, lbl)
+    return out
+
+
 def _sublabel_frontmatter(
     text: str,
     body_start: int,
@@ -1236,6 +1279,7 @@ def detect_layout_sections(
         items.append((int(start), head_end, t, " ".join(heading.split())[:120]))
     items.sort(key=lambda x: x[0])
     items = _suppress_toc_entries(items, text_len)  # #6 — drop inlined TOC links
+    items = _suppress_misanchored_head_toc(items, text_len)  # drop a misanchored front TOC cluster
 
     # Mis-split Roman headings: some EPUB nav entries land inside a word, so the capital
     # first letter of a token ("Ilustración", "siglo XVIII", "Christ-cross-row") is exposed

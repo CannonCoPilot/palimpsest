@@ -871,6 +871,49 @@ def test_clean_verse_anchor_is_not_snapped():
     assert text[header.start:header.end] == "48"  # unchanged: not grown to "13:48"
 
 
+def test_misanchored_front_toc_cluster_demoted():
+    # Some EPUBs (Nyland's Complete Books of Enoch) anchor every chapter nav link to a single
+    # front contents fragment, so a compact run of chapter boundaries with jumbled numbers
+    # (8, 9, 1) sits at the document head and would drag the body start into the TOC. The
+    # cluster must be demoted; the real, well-spaced body chapters segment normally.
+    body = "The narrative of this section continues at length for a good while here. " * 30
+    intro = "Enoch was the son of Jared and this introduction runs on for a good while here. " * 4
+    text = "Title page and front matter blurb goes here for a moment.\n\n"
+    text += "Chapter 8. Appendix\n\nChapter 9. Endnotes\n\nChapter 1. Introduction\n\n"  # jumbled TOC
+    text += f"{intro}\n\n"  # the real introduction prose separates the TOC from the first chapter
+    real = []
+    for n in (2, 3, 4, 5, 6, 7):
+        real.append((len(text), f"Chapter {n}. Section {n}"))
+        text += f"Chapter {n}. Section {n}\n\n{body}\n\n"
+    boundaries = []
+    for h in ("Chapter 8. Appendix", "Chapter 9. Endnotes", "Chapter 1. Introduction"):
+        o = text.index(h)
+        boundaries.append((o, o + len(h), h))
+    for o, h in real:
+        boundaries.append((o, o + len(h), h))
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    nums = {s.metadata.get("number") for s in sections if s.type == "chapter"}
+    assert nums == {"2", "3", "4", "5", "6", "7"}  # the misanchored 8/9/1 cluster demoted
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.start >= text.index("Chapter 2. Section 2")  # body past the front TOC
+
+
+def test_compact_monotonic_opening_run_is_not_demoted():
+    # A genuine micro-chapter book whose opening chapters are short and tightly packed is
+    # numbered monotonically (1, 2, 3, …), so the head-TOC suppressor must leave it untouched —
+    # only a jumbled (non-monotonic) compact head run is a misanchored contents fragment.
+    short = "A short chapter body sentence here to fill the section. "
+    text = "Front blurb introducing the little book.\n\n"
+    starts = []
+    for n in (1, 2, 3, 4, 5):
+        starts.append((len(text), f"Chapter {n}"))
+        text += f"Chapter {n}\n\n{short}\n\n"
+    boundaries = [(o, o + len(h), h) for o, h in starts]
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    nums = {s.metadata.get("number") for s in sections if s.type == "chapter"}
+    assert nums == {"1", "2", "3", "4", "5"}  # monotonic opening run preserved
+
+
 def test_explicit_chapter_prefix_wins_over_matter_word_title():
     # A chapter whose title contains a matter word ("Chapter XXV — Conclusion", "Chapter 8.
     # Appendix") classifies as a chapter on the strength of its explicit "Chapter <N>" prefix,
