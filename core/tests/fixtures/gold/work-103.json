@@ -1,0 +1,26 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "idx": 103,
+  "source_file": "The Road Not Taken and Other Poems -- Frost, Robert -- 2012 -- Dover Publications -- isbn13 9780486111292 -- 9d94b2c221d6d795f99642712ed2d7d0 -- Anna’s Archive.epub",
+  "work": "The Road Not Taken and Other Poems (Frost)",
+  "annotations": [
+    {
+      "type": "poetry",
+      "mask": false,
+      "structure": "repeating",
+      "expected_count": 30,
+      "count_cue": "~27-30 Title-Case poem headings from 'The Road Not Taken' to 'The Sound of the Trees' (EPUB nav=42 incl. The Hill Wife sub-sections + front/back/alpha-lists/Dover catalog)",
+      "exemplars": [
+        {
+          "start_anchor": "The Road Not Taken\n\nTwo roads diverged in a yellow wood",
+          "note": "first poem"
+        },
+        {
+          "start_anchor": "The Sound of the Trees\n\nI wonder about the trees",
+          "note": "last poem"
+        }
+      ],
+      "note": "DETECTION FOUND 0 — entire collection one undetected body block (cover=0). Line-breaks collapsed by extraction."
+    }
+  ]
+}

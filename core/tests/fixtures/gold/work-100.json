@@ -1,0 +1,16 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text(); resolve=last uses rfind; end_anchor <<EOF>>=end of text. Offsets derived at eval time, never stored.",
+  "idx": 100,
+  "source_file": "Douay–Rheims Bible -- Challoner's Revised Version -- 2024 -- Global Grey ebooks -- d727529260a20949024cead95f4b81cf -- Anna’s Archive.epub",
+  "work": "Douay-Rheims Bible (Challoner, Global Grey)",
+  "annotations": [
+    {
+      "type": "colophon",
+      "mask": true,
+      "resolve": "last",
+      "start_anchor": "***************\n\nI'm Julie, the woman who runs Global Grey",
+      "end_anchor": "<<EOF>>",
+      "note": "Global Grey production/donation note after THE END. Currently swallowed into trailing book (Apocalypse) section."
+    }
+  ]
+}

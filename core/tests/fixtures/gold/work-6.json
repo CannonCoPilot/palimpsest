@@ -1,0 +1,22 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "idx": 6,
+  "source_file": "1599 Geneva Bible -- Tolle Lege Press [Press, Tolle Lege] -- 2013 -- Tolle Lege Press -- 19f28a695686af95cd3f5997c53aa3f2 -- Anna’s Archive.epub",
+  "work": "1599 Geneva Bible",
+  "annotations": [
+    {
+      "type": "chapter_heading",
+      "mask": true,
+      "structure": "repeating",
+      "expected_count": null,
+      "count_cue": "one numbered \"argument\" per chapter, between the chapter heading and verse 1; its numerals are verse refs so it MIMICS verses (~1189 chapters in the Geneva Bible)",
+      "exemplars": [
+        {
+          "start_anchor": "He createth the sun, the moon, and the stars",
+          "note": "Genesis 1 argument (full span: \"God created the heaven and the earth. 3 The light... 29 And provideth nurture for man and beast\") — verse-numbered editorial summary before verse 1"
+        }
+      ],
+      "note": "Geneva numbered chapter arguments — the canonical verse-mimicking chapter_heading."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "idx": 101,
+  "source_file": "LDS_eng.pdf",
+  "work": "LDS Triple Combination (2013 PDF)",
+  "annotations": [
+    {
+      "type": "chapter_heading",
+      "mask": true,
+      "structure": "repeating",
+      "expected_count": null,
+      "count_cue": "BoM: em-dash chapter summary per chapter (PDF-undercounted ~27+); D&C: section header summarizing verse ranges before verse 1 (~138 sections, cue \"Section N\" x139)",
+      "exemplars": [
+        {
+          "start_anchor": "Ephraim and Syria wage war against",
+          "note": "BoM 2 Nephi 17 chapter summary (em-dash clauses + date) — note 2013 ed HAS summaries, unlike 1867 idx99"
+        },
+        {
+          "start_anchor": "Signs, wonders, and",
+          "note": "D&C section 1 header (verse-range summary before \"Hearken, O ye people\")"
+        }
+      ],
+      "note": "Two chapter_heading sub-forms in one PDF work; currently mis-segmented (mirage)."
+    }
+  ]
+}

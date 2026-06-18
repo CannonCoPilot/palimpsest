@@ -1,0 +1,26 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "idx": 5,
+  "source_file": "Douay-Rheims Bible Complete - Original, Unabriged, Full -- Douay-Rheims Version -- 2018 -- 1a24ae78af9f25ce66b9f156d163841a -- Anna’s Archive.epub",
+  "work": "Douay-Rheims Bible (1a24..)",
+  "annotations": [
+    {
+      "type": "chapter_heading",
+      "mask": true,
+      "structure": "repeating",
+      "expected_count": 1334,
+      "count_cue": "\"<Book> Chapter N\" heading (x1334) each followed by a one-line editorial summary before verse 1; plus per-book intros",
+      "exemplars": [
+        {
+          "start_anchor": "God createth Heaven and Earth, and all things therein",
+          "note": "Genesis 1 chapter summary (one-line, before verse 1)"
+        },
+        {
+          "start_anchor": "The Hebrews call it BERESITH",
+          "note": "Genesis book-level intro/argument (book-granularity chapter_heading per the committed type def)"
+        }
+      ],
+      "note": "Douay chapter summaries + book intros; both editorial apparatus → chapter_heading."
+    }
+  ]
+}

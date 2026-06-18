@@ -1,0 +1,26 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "idx": 102,
+  "source_file": "The Collected Poems of Emily Dickinson (Barnes & Noble -- Dickinson, Emily; Wetzsteon, Rachel -- Barnes & Noble classics, New York, New York State, -- isbn13 9781593080501 -- a4d7cce7b4c5749f13a3b3e795969a32 -- Anna’s Archive.epub",
+  "work": "The Collected Poems of Emily Dickinson",
+  "annotations": [
+    {
+      "type": "poetry",
+      "mask": false,
+      "structure": "repeating",
+      "expected_count": 589,
+      "count_cue": "Roman-numbered poems (numbering restarts per thematic section: Life/Nature/Love/Time&Eternity); EPUB nav=608",
+      "exemplars": [
+        {
+          "start_anchor": "SUCCESS is counted sweetest",
+          "note": "first poem (I)"
+        },
+        {
+          "start_anchor": "I did not reach thee, But my feet slip nearer",
+          "note": "last poem (CXLVI)"
+        }
+      ],
+      "note": "589 poems CURRENTLY MIS-TYPED as chapter (mask coincidentally right, type wrong). Line-breaks collapsed to prose+stanza by extraction."
+    }
+  ]
+}
