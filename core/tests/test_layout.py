@@ -513,6 +513,48 @@ def test_few_named_divisions_below_gate_not_segmented():
     assert not any(s.type == "chapter" for s in sections)
 
 
+def _build_chaptered(heads_and_bodies):
+    """Build text + EPUB-style boundaries from (heading, body) pairs."""
+    boundaries, text, cursor = [], "", 0
+    for head, content in heads_and_bodies:
+        s = cursor
+        text += head + "\n\n" + content + "\n\n"
+        boundaries.append((s, s + len(head), head))
+        cursor = len(text)
+    return boundaries, text
+
+
+def test_translation_edition_chapters_mask_as_translation_layer():
+    # In a translation edition (flagged here by a run of "Elucidation" editorial afterwords),
+    # the ancient chapters carry mask_as="translation": they hide when the translation layer is
+    # on and show when it is off, while staying chapters (number/nesting) for navigation.
+    body = "The rendered ancient text of this work continues at length here. " * 30
+    elu = "Editorial discussion of the foregoing text and its sources. " * 20
+    pairs = [("Introduction", "Editorial introduction to the collection. " * 10)]
+    for n in range(1, 6):
+        pairs.append((f"Chapter {n}", body))
+        pairs.append(("Elucidation", elu))
+    boundaries, text = _build_chaptered(pairs)
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert chapters and all(c.mask_as == "translation" for c in chapters)
+    on = masked_intervals(sections, {**DEFAULT_MASK_BY_TYPE, "translation": True}, len(text))
+    off = masked_intervals(sections, {**DEFAULT_MASK_BY_TYPE, "translation": False}, len(text))
+    mid = (chapters[0].start + chapters[0].end) // 2
+    assert any(a <= mid < b for a, b in on)        # masked when the translation layer is on
+    assert not any(a <= mid < b for a, b in off)   # shown when the layer is off
+
+
+def test_plain_chaptered_work_has_no_translation_mask_layer():
+    # Without patristic signposts, a chaptered work is not a translation edition — its chapters
+    # carry no mask_as override and stay analyzable.
+    body = "Ordinary chapter prose continues here for a while. " * 30
+    boundaries, text = _build_chaptered([(f"Chapter {n}", body) for n in range(1, 7)])
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert chapters and all(c.mask_as is None for c in chapters)
+
+
 def test_detect_siglum_regions_masks_corpus_excluding_catalog():
     # A Qumran-siglum corpus (the Dead Sea Scrolls): scrolls headed by sigla cluster into
     # one translation span, while the trailing dense manuscript catalogue (its own run,

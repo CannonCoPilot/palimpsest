@@ -133,7 +133,11 @@ class LayoutSection:
     name: str = ""            # stable per-type element name, e.g. "chapter_1"
     parent_id: str | None = None
     source: str = "auto"          # "auto" (detected) or "user" (added/edited)
-    masked: bool | None = None     # None = inherit mask_by_type[type]; bool = override
+    masked: bool | None = None     # None = inherit; bool = hard override (wins over mask_as)
+    # Mask this section as if it were another type, while keeping its structural `type`. Lets a
+    # `chapter` of translated ancient text follow the `translation` toggle (hide/show as a
+    # layer) without losing its chapter structure (number, name, nesting). None = mask by type.
+    mask_as: str | None = None
     # Structured heading data, e.g. a chapter's {"number": "IV", "name": "The Reckoning"}.
     metadata: dict[str, Any] = field(default_factory=dict)
 
@@ -141,7 +145,8 @@ class LayoutSection:
         return {
             "id": self.id, "type": self.type, "start": self.start, "end": self.end,
             "label": self.label, "name": self.name, "parent_id": self.parent_id,
-            "source": self.source, "masked": self.masked, "metadata": self.metadata,
+            "source": self.source, "masked": self.masked, "mask_as": self.mask_as,
+            "metadata": self.metadata,
         }
 
     @classmethod
@@ -156,6 +161,7 @@ class LayoutSection:
             parent_id=d.get("parent_id"),
             source=d.get("source", "auto"),
             masked=d.get("masked"),
+            mask_as=d.get("mask_as"),
             metadata=dict(d.get("metadata") or {}),
         )
 
@@ -252,7 +258,7 @@ def save_layout(project_dir: Path, config: LayoutConfig) -> None:
 def effective_mask(section: LayoutSection, mask_by_type: dict[str, bool]) -> bool:
     if section.masked is not None:
         return section.masked
-    return mask_by_type.get(section.type, True)
+    return mask_by_type.get(section.mask_as or section.type, True)
 
 
 def masked_intervals(
@@ -1154,6 +1160,27 @@ def detect_layout_sections(
     if text is not None and not scholarly:
         for sstart, send in detect_siglum_regions(text, body_start, backmatter_start):
             add("translation", sstart, send, "Translation")
+
+    # Structural translation edition (Fix B): in a scholarly edition of translated ancient
+    # works, the ancient text — carried by the chapter structure — is masked as `translation`
+    # so an analyst can hide or show it as a layer, while each chapter keeps its structure
+    # (number, name, nesting) and the modern apparatus stays analyzable. Realized via `mask_as`
+    # so it composes with deepest-section-wins: the chapter both nests and masks. Gated on
+    # unambiguous patristic signposts — an existing per-work "Translation" attribution, or a run
+    # of "Elucidation" editorial afterwords — so it never fires on a novel or a study Bible
+    # (whose scripture overlay is labelled "Scripture", not "Translation").
+    if text is not None and not scholarly:
+        has_attribution = any(
+            s.type == "translation" and s.label == "Translation" for s in sections
+        )
+        elucidations = sum(
+            1 for s in sections
+            if s.type == "afterword" and "elucidation" in s.label.lower()
+        )
+        if has_attribution or elucidations >= 3:
+            for sec in sections:
+                if sec.type == "chapter" and body_start <= sec.start < backmatter_start:
+                    sec.mask_as = "translation"
 
     sections.sort(key=lambda s: (s.start, -(s.end - s.start)))
     _compute_parents(sections)
