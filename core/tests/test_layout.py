@@ -512,6 +512,24 @@ def test_inline_chapters_recovered_without_heading_track():
     assert body_sec.start > 0  # the leading intro is masked front matter, not body
 
 
+def test_bracketed_inline_chapters_recovered_and_number_parsed():
+    # Some multi-book scripture volumes head one book's chapters with a bracketed style
+    # ("[Chapter 18]") while leaving the EPUB chapter track empty. The content scan recovers
+    # them alongside the bare form, and the wrapping brackets are stripped from the label so
+    # the chapter number still parses (not a name of "[Chapter 18]").
+    body = "The translated verse text of this chapter runs on for several lines. " * 20
+    intro = "Editorial introduction to the whole collection.\n\n" * 5
+    parts = [f"[Chapter {n}]\n\n{body}" for n in (2, 3, 4, 5, 6, 7)]
+    text = intro + "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(chapters) == 6
+    numbers = {s.metadata.get("number") for s in chapters}
+    assert numbers == {"2", "3", "4", "5", "6", "7"}  # brackets stripped, numbers parsed
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.start > 0  # leading intro stays front matter
+
+
 def test_inline_chapter_contents_listing_not_recovered_as_chapters():
     # A bare "Chapter I. / Chapter II. / …" contents listing (entries a heading apart, with
     # no body between them) must not be recovered as chapters: _drop_toc_chapter_runs strips

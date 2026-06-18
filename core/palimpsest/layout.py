@@ -419,8 +419,10 @@ _SIGLUM_MAX_DENSITY = 1.5     # sigla/1000c above which a run is a catalog, not 
 # Heathen", "CHAPTER XV"). When the structural track is sparse but such lines repeat, recover
 # them as the chapter track so the work segments instead of collapsing into one body blob.
 # The "Chapter"/"Chap." keyword plus a roman/arabic number is required, so a prose mention of
-# the word "chapter" (never line-anchored before a numeral) cannot fire.
-_CHAPTER_LINE_RE = re.compile(r"(?im)^[ \t]*(?:chapter|chap\.)[ \t]+(?:[ivxlcdm]+|\d+)\b[^\n]*$")
+# the word "chapter" (never line-anchored before a numeral) cannot fire. An optional wrapping
+# "[" is allowed so a bracketed heading style ("[Chapter 18]", used by some multi-book scripture
+# volumes for one book's chapters) is recovered alongside the bare form.
+_CHAPTER_LINE_RE = re.compile(r"(?im)^[ \t]*\[?(?:chapter|chap\.)[ \t]+(?:[ivxlcdm]+|\d+)\b[^\n]*$")
 _MIN_CHAPTER_RECOVERY = 5  # this many inline ^Chapter lines ⇒ recover them as the chapter track
 
 # Numbered+named scripture divisions named in English with the original name parenthesised on
@@ -995,6 +997,9 @@ def detect_chapter_markers(
     for m in _CHAPTER_LINE_RE.finditer(text):
         if lo <= m.start() < hi:
             label = " ".join(m.group().split())[:_MAX_HEADER_LEN]
+            if label.startswith("["):
+                # Drop the wrapping brackets ("[Chapter 18]") so the keyword/number parse.
+                label = label[1:].replace("]", "", 1)
             marks.append((m.start(), m.end(), "chapter", label))
     return marks
 
