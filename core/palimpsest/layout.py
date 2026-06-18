@@ -868,6 +868,61 @@ def detect_scholarly_markers(
     return marks
 
 
+def _line_before(text: str, pos: int) -> tuple[int, int, str] | None:
+    """The non-empty line immediately preceding ``pos`` as (start, end, stripped_text)."""
+    end = pos
+    while end > 0 and text[end - 1] in "\r\n":
+        end -= 1
+    if end <= 0:
+        return None
+    start = text.rfind("\n", 0, end) + 1
+    line = text[start:end].strip()
+    return (start, end, line) if line else None
+
+
+def detect_anthology_title_works(
+    text: str, lo: int, hi: int
+) -> list[tuple[int, int, str, str]]:
+    """Commentary/translation layers for an anthology with no "Translation" divider.
+
+    Some scholarly anthologies (the Eerdmans *Old Testament Pseudepigrapha*) lay each
+    work out as ``<Title>`` / "A new translation and introduction by <Name>" / intro /
+    Bibliography / ``<Title>`` (repeated) / the translation — there is no bare
+    "Translation" heading, so :func:`detect_scholarly_markers` finds only the work
+    headers. The work title recurs as a standalone line after the bibliography to open
+    the rendered text, so the commentary runs from the title to that recurrence and the
+    translation from the recurrence to the next work. Returns (start, end, type, label)
+    markers; only emitted when the repeated-title template holds for enough works.
+    """
+    headers = [m.start() for m in _WORK_HEADER_LINE_RE.finditer(text) if lo <= m.start() < hi]
+    if len(headers) < _MIN_SCHOLARLY_WORKS:
+        return []
+    bounds = headers + [hi]
+    marks: list[tuple[int, int, str, str]] = []
+    for k, h in enumerate(headers):
+        nxt = bounds[k + 1]
+        tb = _line_before(text, h)
+        if tb is None:
+            continue
+        tstart, tend, title = tb
+        if not (4 <= len(title) <= 80):
+            continue
+        marks.append((tstart, tend, "commentary", title[:_MAX_HEADER_LEN]))
+        # The translation opens where the title recurs as its own line after the intro.
+        # Search past a small offset so the work's own Contents listing isn't mistaken
+        # for it, and take the last such recurrence (the rendered text follows the
+        # apparatus, which the title never re-heads).
+        pat = re.compile(r"(?m)^[ \t]*" + re.escape(title) + r"[ \t]*$")
+        rec_start = -1
+        rec_end = -1
+        for rm in pat.finditer(text, tend + 200, nxt):
+            rec_start, rec_end = rm.start(), rm.end()
+        if rec_start >= 0:
+            marks.append((rec_start, rec_end, "translation", "Translation"))
+    marks.sort(key=lambda x: x[0])
+    return marks
+
+
 def detect_chapter_markers(
     text: str, lo: int, hi: int
 ) -> list[tuple[int, int, str, str]]:
@@ -1199,6 +1254,7 @@ def detect_layout_sections(
     # Bible's books count toward the gate; gated on a sparse structural track (standard
     # chaptered works and scripture keep their existing structure untouched) and a repeating
     # run; _drop_toc_chapter_runs strips any inlined "Chapter I. / II. …" contents listing.
+    anthology_body_start: int | None = None  # set when a title-template anthology is recovered
     if text is not None:
         n_struct = sum(1 for it in items if it[2] in _STRUCTURAL)
         if n_struct < _MIN_CHAPTER_RECOVERY:
@@ -1243,10 +1299,25 @@ def detect_layout_sections(
             # titles aren't also recovered as a competing chapter track.
             if not recovered:
                 smk = detect_scholarly_markers(text, 0, body_end)
-                is_scholarly = (
-                    sum(1 for m in smk if m[2] == "commentary") >= _MIN_SCHOLARLY_WORKS
-                    and sum(1 for m in smk if m[2] == "translation") >= _MIN_SCHOLARLY_WORKS
-                )
+                n_comm = sum(1 for m in smk if m[2] == "commentary")
+                n_tran = sum(1 for m in smk if m[2] == "translation")
+                is_scholarly = n_comm >= _MIN_SCHOLARLY_WORKS and n_tran >= _MIN_SCHOLARLY_WORKS
+                if not is_scholarly and n_comm >= _MIN_SCHOLARLY_WORKS:
+                    # Work headers but no "Translation" dividers (Eerdmans OT Pseudepigrapha):
+                    # recover the missing translation boundary of each work from the repeated
+                    # work title; the work headers themselves become the commentary layer via
+                    # the body-loop reclassify pass. The first work anchors the body (the
+                    # apparatus is body, not front matter), and a few stray chapter headings
+                    # from one constituent work must neither drag body_start ahead of the
+                    # anthology nor punch unmasked holes in a translation, so demote them.
+                    tmarks = [m for m in detect_anthology_title_works(text, 0, body_end)
+                              if m[2] == "translation"]
+                    if len(tmarks) >= _MIN_SCHOLARLY_WORKS:
+                        recovered += tmarks
+                        items = [(s, he, None, lbl) if t == "chapter" else (s, he, t, lbl)
+                                 for (s, he, t, lbl) in items]
+                        anthology_body_start = min(m[0] for m in smk if m[2] == "commentary")
+                        is_scholarly = True
                 if not is_scholarly:
                     recovered += detect_toc_headings(text, body_end)
             if recovered:
@@ -1271,7 +1342,11 @@ def detect_layout_sections(
     # after the leading run of front-matter boundaries (so a chapterless epistolary
     # work still gets an analyzable body instead of being masked end to end).
     structural_starts = [it[0] for it in items if it[2] in _STRUCTURAL]
-    if structural_starts:
+    if anthology_body_start is not None:
+        # A title-template anthology: the body is the run of constituent works, beginning
+        # at the first work (its scholarly apparatus is the body, not front matter).
+        body_start = anthology_body_start
+    elif structural_starts:
         body_start = min(structural_starts)
     else:
         # Heading-less work: the body is the large unbroken text span. Apparatus

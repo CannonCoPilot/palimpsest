@@ -3,6 +3,7 @@
 from palimpsest.layout import (
     DEFAULT_MASK_BY_TYPE,
     LayoutSection,
+    _MIN_SCHOLARLY_WORKS,
     _classify_heading,
     _parse_chapter_heading,
     detect_layout_sections,
@@ -399,6 +400,61 @@ def test_inline_anthology_template_recovered_without_headings():
     sections = detect_layout_sections([], text_len=len(text), text=text)
     assert sum(s.type == "commentary" for s in sections) == 3
     assert sum(s.type == "translation" for s in sections) == 3
+
+
+def test_title_template_anthology_recovered_without_translation_headings():
+    # An anthology whose works carry NO bare "Translation" divider (the Eerdmans OT
+    # Pseudepigrapha): each work is "<Title> / A new translation and introduction / by X /
+    # intro / Bibliography / <Title> (repeated) / rendered text". The repeated title opens
+    # the translation, so the commentary/translation layers are recovered from it. A few
+    # stray chapter headings inside one constituent work must NOT anchor the body ahead of
+    # the anthology, so they are demoted.
+    intro = "Scholarly analysis of the ancient source text follows here at length. " * 30
+    biblio = "Bibliography\n\nSmith, J. A Study of the Source. 1990.\n\n"
+    rendered = "And the ancient words were rendered thus in this place for the reader. " * 30
+    titles = ["The Book of Alpha", "The Book of Beta", "The Apocryphon of Gamma",
+              "The Vision of Delta"]
+    parts = ["FRONT MATTER\n\nGeneral preface to the whole collection here.\n\n"]
+    for i, t in enumerate(titles):
+        body = rendered
+        if i == 1:  # one constituent work carries internal chapter headings
+            body = "\n\n".join(f"Chapter {n}\n\n{rendered}" for n in (1, 2, 3))
+        parts.append(f"{t}\n\nA new translation and introduction\n\nby Scholar {i}\n\n"
+                     f"{intro}\n\n{biblio}{t}\n\n{body}")
+    text = "\n\n".join(parts) + "\n\n"
+    boundaries = []
+    for t in titles:  # the EPUB exposes the work header (classifier types it 'introduction')
+        h = text.index(f"{t}\n\nA new translation and introduction") + len(f"{t}\n\n")
+        boundaries.append((h, h + 34, "A new translation and introduction"))
+    for n in (1, 2, 3):  # and the stray chapter headings of the one constituent work
+        c = text.index(f"Chapter {n}\n\n")
+        boundaries.append((c, c + 9, f"Chapter {n}"))
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    assert sum(s.type == "commentary" for s in sections) == len(titles)
+    assert sum(s.type == "translation" for s in sections) >= _MIN_SCHOLARLY_WORKS
+    assert not any(s.type == "chapter" for s in sections)  # stray chapters demoted
+    body = next(s for s in sections if s.type == "body")
+    assert body.start < text.index("Chapter 1\n\n")  # body anchored at work 1, not the stray chapters
+    # the rendered text of the first work is masked translation; its intro is analyzable.
+    mi = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, len(text))
+    assert range_is_masked(mi, text.rindex("The Book of Alpha") + 40, text.rindex("The Book of Alpha") + 200)
+
+
+def test_title_template_needs_repeated_titles_not_just_work_headers():
+    # Work headers WITHOUT the repeated-title template (no recurrence to open a translation)
+    # must not be carved into translation layers — the recurrence is the required signal.
+    intro = "Scholarly analysis of the ancient source text continues here plainly. " * 30
+    titles = ["The Book of Alpha", "The Book of Beta", "The Apocryphon of Gamma"]
+    parts = []
+    for i, t in enumerate(titles):  # title appears ONCE; no recurrence after the intro
+        parts.append(f"{t}\n\nA new translation and introduction\n\nby Scholar {i}\n\n{intro}")
+    text = "\n\n".join(parts) + "\n\n"
+    boundaries = []
+    for t in titles:
+        h = text.index(f"{t}\n\nA new translation and introduction") + len(f"{t}\n\n")
+        boundaries.append((h, h + 34, "A new translation and introduction"))
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    assert not any(s.type == "translation" for s in sections)  # no recurrence ⇒ no translation layer
 
 
 def test_inline_translation_words_in_prose_do_not_carve():
