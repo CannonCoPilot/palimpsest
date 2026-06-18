@@ -396,6 +396,15 @@ _SIGLUM_RUN_MIN = 5           # clustered sigla ⇒ a scroll corpus, not a stray
 _SIGLUM_RUN_GAP = 12000       # a gap larger than this (chars) ends a corpus run
 _SIGLUM_MAX_DENSITY = 1.5     # sigla/1000c above which a run is a catalog, not prose
 
+# Inline chapter recovery: some EPUBs expose only work-level headings (or none) and carry
+# their chapter divisions as plain line-anchored body text ("Chapter I.—Exhortation to the
+# Heathen", "CHAPTER XV"). When the structural track is sparse but such lines repeat, recover
+# them as the chapter track so the work segments instead of collapsing into one body blob.
+# The "Chapter"/"Chap." keyword plus a roman/arabic number is required, so a prose mention of
+# the word "chapter" (never line-anchored before a numeral) cannot fire.
+_CHAPTER_LINE_RE = re.compile(r"(?im)^[ \t]*(?:chapter|chap\.)[ \t]+(?:[ivxlcdm]+|\d+)\b[^\n]*$")
+_MIN_CHAPTER_RECOVERY = 5  # this many inline ^Chapter lines ⇒ recover them as the chapter track
+
 
 # Canonical scripture book names (Protestant 66 + Catholic deuterocanon + KJV/Douay
 # spelling variants). Bare book-name headings ("GENESIS", "1 Corinthians") aren't
@@ -729,6 +738,51 @@ def detect_scholarly_markers(
     return marks
 
 
+def detect_chapter_markers(
+    text: str, lo: int, hi: int
+) -> list[tuple[int, int, str, str]]:
+    """Find inline chapter headings in ``text[lo:hi]`` as body-item tuples.
+
+    Content-based counterpart to the structural chapter pass: some EPUBs expose only
+    work-level headings (or none) and carry their chapter divisions as line-anchored
+    body text ("Chapter I.—Exhortation to the Heathen"). Returns (start, line_end,
+    'chapter', label) tuples so the body loop carves each into a masked header window
+    and a numbered chapter exactly as it does for real heading-track chapters.
+    """
+    marks: list[tuple[int, int, str, str]] = []
+    for m in _CHAPTER_LINE_RE.finditer(text):
+        if lo <= m.start() < hi:
+            label = " ".join(m.group().split())[:_MAX_HEADER_LEN]
+            marks.append((m.start(), m.end(), "chapter", label))
+    return marks
+
+
+def _drop_toc_chapter_runs(
+    marks: list[tuple[int, int, str, str]], text_len: int
+) -> list[tuple[int, int, str, str]]:
+    """Drop inlined table-of-contents runs from recovered chapter markers.
+
+    A compact run of >= ``_MIN_TOC_RUN`` markers each within ``_TOC_ENTRY_GAP`` of the
+    previous is a bare "Chapter I. / Chapter II. …" contents listing, not body chapters
+    (which are separated by their body text). The span cap (a TOC is a small fraction of
+    the work) keeps a genuine micro-chapter book, whose short chapters span the whole
+    text, from being mistaken for a TOC. Counterpart to ``_suppress_toc_entries`` for
+    markers recovered by content scan, which carry no adjacent 'contents' boundary.
+    """
+    span_cap = int(text_len * 0.12)
+    keep = [True] * len(marks)
+    i = 0
+    while i < len(marks):
+        j = i
+        while j + 1 < len(marks) and marks[j + 1][0] - marks[j][0] <= _TOC_ENTRY_GAP:
+            j += 1
+        if j - i + 1 >= _MIN_TOC_RUN and marks[j][0] - marks[i][0] <= span_cap:
+            for k in range(i, j + 1):
+                keep[k] = False
+        i = j + 1
+    return [m for m, k in zip(marks, keep) if k]
+
+
 def detect_siglum_regions(text: str, lo: int, hi: int) -> list[tuple[int, int]]:
     """Find runs of Qumran-siglum-headed scrolls in ``text[lo:hi]`` as (start, end) spans.
 
@@ -811,6 +865,24 @@ def detect_layout_sections(
         for i in book_hits:
             s, he, _, lbl = items[i]
             items[i] = (s, he, "book", lbl)
+
+    # Heading-independent chapter recovery: when the EPUB exposes (almost) no chapter-level
+    # structure but the body carries a dense run of line-anchored "Chapter N" headings as
+    # plain text (e.g. the Global Grey / Schaff Ante-Nicene editions), recover them as chapter
+    # items BEFORE body_start is derived, so the body begins at the first recovered chapter
+    # instead of collapsing the early works into front matter. Runs after book promotion so a
+    # Bible's books count toward the gate; gated on a sparse structural track (standard
+    # chaptered works and scripture keep their existing structure untouched) and a repeating
+    # run; _drop_toc_chapter_runs strips any inlined "Chapter I. / II. …" contents listing.
+    if text is not None:
+        n_struct = sum(1 for it in items if it[2] in _STRUCTURAL)
+        if n_struct < _MIN_CHAPTER_RECOVERY:
+            cmarks = _drop_toc_chapter_runs(
+                detect_chapter_markers(text, 0, body_end), text_len
+            )
+            if len(cmarks) >= _MIN_CHAPTER_RECOVERY:
+                items.extend(cmarks)
+                items.sort(key=lambda x: x[0])
 
     classified = [it for it in items if it[2] is not None]
 

@@ -438,6 +438,53 @@ def test_lone_translator_credit_does_not_mask():
     assert not any(s.type == "translation" for s in sections)
 
 
+def test_inline_chapters_recovered_without_heading_track():
+    # An edition whose EPUB exposes no chapter-level heading track but carries its chapters
+    # as line-anchored "Chapter N" body text (e.g. the Global Grey Ante-Nicene volumes): the
+    # content scan recovers them so the work segments instead of collapsing into one body
+    # blob, and the body begins at the first recovered chapter (the leading editorial intro
+    # stays front matter).
+    body = "The translated text of this chapter runs on for several lines here. " * 20
+    intro = "Editorial introduction to the whole collection.\n\n" * 5
+    parts = [f"Chapter {r}.\n\n{body}" for r in ("I", "II", "III", "IV", "V", "VI")]
+    text = intro + "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(chapters) == 6
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.start > 0  # the leading intro is masked front matter, not body
+
+
+def test_inline_chapter_contents_listing_not_recovered_as_chapters():
+    # A bare "Chapter I. / Chapter II. / …" contents listing (entries a heading apart, with
+    # no body between them) must not be recovered as chapters: _drop_toc_chapter_runs strips
+    # the compact run, so only the real chapters that follow (separated by their body) remain.
+    toc = "".join(f"Chapter {r}.\n\n" for r in ("I", "II", "III", "IV", "V", "VI", "VII", "VIII"))
+    sep = "Introductory matter between the contents and the body.\n\n" + ("x " * 200) + "\n\n"
+    body = "The actual chapter text continues for several lines in this work. " * 20
+    real = "\n\n".join(f"Chapter {r}.\n\n{body}" for r in ("I", "II", "III", "IV", "V"))
+    text = toc + sep + real + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(chapters) == 5  # the 8-entry TOC run dropped; 5 real chapters kept
+
+
+def test_heading_track_chapters_suppress_inline_recovery():
+    # When the EPUB already supplies a chapter-level heading track (>= the gate), inline
+    # "Chapter N" recovery does not fire, so a standard chaptered work is neither
+    # re-segmented nor double-counted from its own body text.
+    body = "Chapter narrative prose continues here for a good while. " * 20
+    text = "\n\n".join(f"Chapter {n}\n\n{body}" for n in range(1, 7)) + "\n\n"
+    boundaries, pos = [], 0
+    for n in range(1, 7):
+        h = f"Chapter {n}"
+        s = text.index(h, pos)
+        boundaries.append((s, s + len(h), h))
+        pos = s + len(h)
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    assert sum(s.type == "chapter" for s in sections) == 6  # not doubled by recovery
+
+
 def test_detect_siglum_regions_masks_corpus_excluding_catalog():
     # A Qumran-siglum corpus (the Dead Sea Scrolls): scrolls headed by sigla cluster into
     # one translation span, while the trailing dense manuscript catalogue (its own run,
