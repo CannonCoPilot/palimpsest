@@ -513,6 +513,72 @@ def test_few_named_divisions_below_gate_not_segmented():
     assert not any(s.type == "chapter" for s in sections)
 
 
+def test_ordinal_worded_divisions_segment_as_chapters():
+    # An edition that heads each scripture division with an English ordinal WORD instead of a
+    # digit ("THE FIRST SURAH", "THE SECOND SURAH" …, Asad's Qur'an), the division's name on the
+    # following line. The ordinal carries no numeral, so the divisions are numbered by sequence;
+    # a page-numbered contents listing ("THE FIRST SURAH 1") is excluded by the end-of-line anchor.
+    ordinals = ["FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH",
+                "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH",
+                "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH",
+                "TWENTY-FIRST", "TWENTY-SECOND"]
+    body = "Scripture prose for this surah continues at some length here. " * 8
+    parts = [f"THE {o} SURAH\n\nName{i}(The Meaning)\n\nMecca Period\n\n{body}"
+             for i, o in enumerate(ordinals)]
+    toc = "".join(f"THE {o} SURAH {i + 1}\n" for i, o in enumerate(ordinals))
+    text = "Front matter foreword.\n\n" + toc + "\n\n" + "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(chapters) == 22  # 22 divisions; the page-numbered contents listing is not segmented
+    assert chapters[0].metadata.get("number") == "1"
+    assert chapters[-1].metadata.get("number") == "22"
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.start > 0  # the foreword and contents listing stay front matter
+
+
+def test_versed_chapter_verse_openings_segment_as_chapters():
+    # Versed scripture printed as "<chapter>. <verse>. text" with only the first verse line-
+    # anchored (R.H. Charles' Book of Enoch). Each chapter.verse opening starts a chapter, and
+    # the leading editorial introduction stays masked front matter.
+    verse = "And the word of righteousness continued through these days of old. "
+    intro = "Editorial introduction discussing the whole work at length.\n\n" * 5
+    parts = [f"{n}.   1. {verse * 3}" for n in range(1, 25)]
+    text = intro + "\n".join(parts) + "\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(chapters) == 24
+    assert chapters[0].metadata.get("number") == "1"
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.start > 0
+
+
+def test_editorial_numbered_notes_do_not_segment_as_versed_chapters():
+    # Single-number editorial notes ("1. His desire of a greater benefice…") carry no inner
+    # verse number, so the versed-chapter recovery (which requires the second number) does not
+    # fire — the false positive that would mask a work's annotations as scripture chapters.
+    note = "His desire of a greater benefice is here recorded at some length indeed. "
+    parts = [f"{n}. {note * 2}" for n in range(1, 25)]
+    text = "Body prose introducing these editorial notes.\n\n" + "\n".join(parts) + "\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert not any(s.type == "chapter" for s in sections)
+
+
+def test_versed_chapters_suppress_stray_chapter_mentions():
+    # When a chapter.verse run is present it is the chapter track, and the loose "Chapter N"
+    # scan is skipped — so spread-out prose mentions of chapter numbers in an introduction
+    # (which _drop_toc_chapter_runs would NOT strip, being non-compact) are not recovered.
+    verse = "And the vision was shown to me in that place of the righteous ones. "
+    filler = "Some sentences of editorial discussion go here for a while now. " * 5
+    intro = "".join(f"Chapter {n} is discussed here in the scholarly preface.\n\n{filler}\n\n"
+                    for n in (108, 12, 14, 6, 7))
+    parts = [f"{n}.   1. {verse * 3}" for n in range(1, 25)]
+    text = intro + "\n".join(parts) + "\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(chapters) == 24  # only the versed chapters; the intro's "Chapter N" lines excluded
+    assert all(c.metadata.get("number") in {str(n) for n in range(1, 25)} for c in chapters)
+
+
 def _build_chaptered(heads_and_bodies):
     """Build text + EPUB-style boundaries from (heading, body) pairs."""
     boundaries, text, cursor = [], "", 0

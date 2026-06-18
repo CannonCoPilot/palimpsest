@@ -421,6 +421,24 @@ _DIVISION_HEAD_RE = re.compile(
 )
 _MIN_NAMED_DIVISIONS = 20  # this many numbered+named divisions ⇒ a structured scripture (Quran)
 
+# Ordinal-worded scripture divisions: some editions head each division with an English
+# ordinal WORD instead of a digit ("THE FIRST SŪRAH", "THE SECOND SŪRAH", … — Asad's
+# Qur'an), with the division's name on the following line. The ordinal carries no numeral
+# so the digit-based chapter pass can't see them; the divisions appear in order, so the
+# sequence position is the number. The line must END right after the keyword, which keeps
+# the page-numbered contents listing ("THE FIRST SŪRAH 1") out.
+_ORDINAL_DIVISION_RE = re.compile(
+    r"(?m)^[ \t]*THE[ \t]+[A-Z][A-Z \t\-]{2,40}?[ \t]+S[UŪ]RAH[ \t\r]*$"
+)
+
+# Versed scripture printed as "chapter. verse." on a chapter's opening line ("1.   1. The
+# words…" — R.H. Charles' Book of Enoch). Only the first verse of each chapter is line-
+# anchored (later verses run inline), so each line-anchored chapter.verse pair opens a new
+# chapter; the chapter number is the first group. The REQUIRED inner verse number is what
+# separates a chapter opening from an editorial numbered note ("1. His desire…").
+_VERSED_CHAPTER_RE = re.compile(r"(?m)^[ \t]*(\d{1,3})\.[ \t ]+\d{1,3}\.(?=[ \t ])")
+_MIN_VERSED_CHAPTERS = 20  # this many chapter.verse openings ⇒ versed scripture, not stray lists
+
 
 # Canonical scripture book names (Protestant 66 + Catholic deuterocanon + KJV/Douay
 # spelling variants). Bare book-name headings ("GENESIS", "1 Corinthians") aren't
@@ -796,6 +814,63 @@ def detect_division_markers(
     return marks
 
 
+def detect_ordinal_division_markers(
+    text: str, lo: int, hi: int
+) -> list[tuple[int, int, str, str]]:
+    """Find ordinal-worded scripture divisions (Asad's Qur'an surahs) as body items.
+
+    Each surah is headed by an English ordinal word ("THE FIRST SŪRAH") with its name on
+    the following line ("Al-Fātiḥah(The Opening)"). The ordinal carries no numeral, so the
+    structural chapter pass can't see it; the divisions appear in order, so the sequence
+    position supplies the number and the name line supplies the title. Returns (start,
+    line_end, 'chapter', "N. Name") tuples so the body loop carves a header + numbered
+    chapter exactly as for a digit-headed division.
+    """
+    marks: list[tuple[int, int, str, str]] = []
+    n = 0
+    for m in _ORDINAL_DIVISION_RE.finditer(text):
+        if not (lo <= m.start() < hi):
+            continue
+        n += 1
+        eol = text.find("\n", m.start())
+        head_end = eol if eol > m.start() else m.end()
+        # The surah name is the next non-empty line; the "<...> Period" line that may
+        # follow the name is editorial, not the title, so it is not used as the name.
+        j = head_end
+        while j < len(text) and text[j] in "\r\n":
+            j += 1
+        keol = text.find("\n", j)
+        if keol < 0:
+            keol = len(text)
+        cand = " ".join(text[j:keol].split())
+        name = cand if cand and not cand.lower().endswith("period") else ""
+        label = f"{n}. {name}".strip() if name else f"{n}."
+        marks.append((m.start(), head_end, "chapter", label[:_MAX_HEADER_LEN]))
+    return marks
+
+
+def detect_versed_chapter_markers(
+    text: str, lo: int, hi: int
+) -> list[tuple[int, int, str, str]]:
+    """Find chapter openings in versed scripture printed as "chapter. verse." as body items.
+
+    Content-based counterpart to the chapter pass for an edition (R.H. Charles' Book of
+    Enoch) whose EPUB exposes no chapter headings and prints each chapter's opening as
+    "<chapter>. <verse>. <text>" with only the first verse line-anchored. The chapter
+    number is the first group; the header window is just the "N." chapter-number prefix so
+    the verse text stays in the analyzable chapter body. The required inner verse number
+    keeps an editorial numbered note ("1. His desire…") from being read as a chapter.
+    """
+    marks: list[tuple[int, int, str, str]] = []
+    for m in _VERSED_CHAPTER_RE.finditer(text):
+        if not (lo <= m.start() < hi):
+            continue
+        num = m.group(1)
+        head_end = m.end(1) + 1  # through the chapter number's trailing dot
+        marks.append((m.start(1), head_end, "chapter", f"Chapter {num}"))
+    return marks
+
+
 def _drop_toc_chapter_runs(
     marks: list[tuple[int, int, str, str]], text_len: int
 ) -> list[tuple[int, int, str, str]]:
@@ -917,14 +992,26 @@ def detect_layout_sections(
         n_struct = sum(1 for it in items if it[2] in _STRUCTURAL)
         if n_struct < _MIN_CHAPTER_RECOVERY:
             recovered: list[tuple[int, int, str, str]] = []
-            cmarks = _drop_toc_chapter_runs(
-                detect_chapter_markers(text, 0, body_end), text_len
-            )
-            if len(cmarks) >= _MIN_CHAPTER_RECOVERY:
-                recovered += cmarks
+            # Versed scripture ("<chapter>. <verse>. …") is a stronger, more specific
+            # signal than a loose "Chapter N" scan: when a chapter.verse run is present it
+            # is the chapter track, and the loose scan — which would also catch stray prose
+            # mentions of chapter numbers (an intro discussing "Chapter 108") — is skipped
+            # so those mentions don't become spurious chapters.
+            vcmarks = detect_versed_chapter_markers(text, 0, body_end)
+            if len(vcmarks) >= _MIN_VERSED_CHAPTERS:
+                recovered += vcmarks
+            else:
+                cmarks = _drop_toc_chapter_runs(
+                    detect_chapter_markers(text, 0, body_end), text_len
+                )
+                if len(cmarks) >= _MIN_CHAPTER_RECOVERY:
+                    recovered += cmarks
             smarks = detect_division_markers(text, 0, body_end)
             if len(smarks) >= _MIN_NAMED_DIVISIONS:
                 recovered += smarks
+            omarks = detect_ordinal_division_markers(text, 0, body_end)
+            if len(omarks) >= _MIN_NAMED_DIVISIONS:
+                recovered += omarks
             if recovered:
                 items.extend(recovered)
                 items.sort(key=lambda x: x[0])
