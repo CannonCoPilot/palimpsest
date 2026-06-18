@@ -505,6 +505,14 @@ _BOOK_ORDINAL_RE = re.compile(r"^(?:(first|second|third|1st|2nd|3rd|iii|ii|i|[12
 _ORDINAL_NUM = {"first": "1", "second": "2", "third": "3", "1st": "1", "2nd": "2",
                 "3rd": "3", "i": "1", "ii": "2", "iii": "3", "1": "1", "2": "2", "3": "3"}
 _MIN_BIBLE_BOOKS = 8  # gate: this many book-name matches ⇒ treat them as 'book' divisions
+# A "Scripture Index" / "Index of Ancient Sources" lists each book name followed by a dense
+# run of verse:page citations ("Genesis 1 127, 301, 386 1:1 127, 128 …"). Those book-name
+# headings match the canon lexicon but open an INDEX, not the book itself; their content is
+# dominated by reference digits where real scripture prose is not.
+_INDEX_DIGIT_FRACTION = 0.15  # book-name entry whose content is ≥15% digits ⇒ a citation index
+_MIN_INDEX_SHARE = 0.6        # this share of book-hits index-like ⇒ the run is a scripture index
+_INDEX_TRAILING_START = 0.80  # the index run begins this far into the document (back matter)
+_INDEX_MAX_SPAN_FRAC = 0.15   # and is compact — a real canon's books span the whole work
 
 
 def _match_bible_book(heading: str) -> str | None:
@@ -524,6 +532,41 @@ def _match_bible_book(heading: str) -> str | None:
     num = _ORDINAL_NUM.get(ordinal or "", "")
     name = base.title()
     return f"{num} {name}" if num else name
+
+
+def _book_hits_are_scripture_index(
+    items: list[tuple[int, int, str | None, str]],
+    book_hits: list[int],
+    text: str,
+    body_end: int,
+    text_len: int,
+) -> bool:
+    """True when book-name boundaries open a scripture INDEX, not a canon of books.
+
+    A scripture index ("Index of Ancient Sources") is a compact run of book-name
+    entries in the back matter, each followed by dense verse:page citations
+    ("Genesis 1 127, 301 1:1 128 …"). Three signals together separate it from a real
+    canon (whose books span the whole work) and from a head nav/TOC cluster (whose
+    book names sit at the front, often with chapter-number strips that are also
+    digit-dense): the run begins deep in the document, spans only a small fraction of
+    it, and a majority of its entries are citation-dense.
+    """
+    first = items[book_hits[0]][0]
+    last = items[book_hits[-1]][0]
+    if first < _INDEX_TRAILING_START * text_len:
+        return False
+    if (last - first) > _INDEX_MAX_SPAN_FRAC * text_len:
+        return False
+    starts = sorted(it[0] for it in items)
+    index_like = 0
+    for i in book_hits:
+        s = items[i][0]
+        nxt = [x for x in starts if x > s]
+        end = min(nxt) if nxt else body_end
+        seg = text[s:min(end, s + 2000)]  # judge by the entry head — cheap and stable
+        if seg and sum(c.isdigit() for c in seg) / len(seg) >= _INDEX_DIGIT_FRACTION:
+            index_like += 1
+    return index_like >= _MIN_INDEX_SHARE * len(book_hits)
 
 
 def _parse_chapter_heading(label: str) -> dict[str, str]:
@@ -1131,9 +1174,22 @@ def detect_layout_sections(
     # after a book (e.g. "Genesis") from being misread as a structural division.
     book_hits = [i for i, it in enumerate(items) if it[2] is None and _match_bible_book(it[3])]
     if len(book_hits) >= _MIN_BIBLE_BOOKS:
-        for i in book_hits:
-            s, he, _, lbl = items[i]
-            items[i] = (s, he, "book", lbl)
+        if text is not None and _book_hits_are_scripture_index(
+            items, book_hits, text, body_end, text_len
+        ):
+            # A trailing scripture index (book name + citations), not a canon: type the run's
+            # first entry as a single back-matter `index` spanning the rest, and drop the other
+            # book-name boundaries so the index neither anchors the body nor offers the body_start
+            # fallback a landing spot inside itself.
+            first = book_hits[0]
+            s, he, _, lbl = items[first]
+            items[first] = (s, he, "index", lbl)
+            drop = set(book_hits[1:])
+            items = [it for j, it in enumerate(items) if j not in drop]
+        else:
+            for i in book_hits:
+                s, he, _, lbl = items[i]
+                items[i] = (s, he, "book", lbl)
 
     # Heading-independent chapter recovery: when the EPUB exposes (almost) no chapter-level
     # structure but the body carries a dense run of line-anchored "Chapter N" headings as

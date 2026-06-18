@@ -668,6 +668,44 @@ def test_titlecase_book_mentions_do_not_recover_books():
     assert not any(s.type == "book" for s in sections)
 
 
+def test_trailing_scripture_index_typed_back_matter_not_books():
+    # A scholarly work whose EPUB nav exposes each book name in a trailing "Index of Ancient
+    # Sources" (book + verse:page citations). Those headings match the canon lexicon but open an
+    # index, not the books — typing them structural 'book' would drag body_start to the tail and
+    # mask the whole work as front matter. They must be back-matter 'index' instead.
+    book_names = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy",
+                  "Joshua", "Judges", "Ruth", "Samuel", "Kings"]
+    cites = "\n\n".join(f"{v}:{v}\n\n{100 + v * 7}, {200 + v * 3}, {300 + v}" for v in range(1, 12))
+    body = "Scholarly discussion of the targumic tradition continues at length here. " * 400
+    front = "Title Page\n\nCopyright 2024 Some Publisher\n\n"
+    index_block = "INDEX OF ANCIENT SOURCES\n\n" + "\n\n".join(f"{bk}\n\n{cites}" for bk in book_names)
+    text = front + body + "\n\n" + index_block + "\n\n"
+    boundaries = [(0, 10, "Title Page"), (12, 21, "Copyright")]
+    for bk in book_names:
+        off = text.index(f"\n\n{bk}\n\n") + 2
+        boundaries.append((off, off + len(bk), bk))
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    assert not any(s.type == "book" for s in sections)       # no spurious book divisions
+    assert any(s.type == "index" for s in sections)          # the run is back-matter index
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.end - body_sec.start > len(body)         # body not collapsed to a tail
+    assert body_sec.start < text.index("INDEX OF ANCIENT SOURCES")
+
+
+def test_head_book_nav_cluster_still_promoted_to_books():
+    # A Bible whose EPUB lists every book at the HEAD with a digit-dense chapter-number strip
+    # ("Genesis 1 2 3 …") must still be promoted to structural books: the scripture-index guard is
+    # trailing-and-compact, so a head nav cluster (the Strong's-Bible regression) is unaffected.
+    book_names = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy",
+                  "Joshua", "Judges", "Ruth", "Samuel", "Kings"]
+    nav = "\n\n".join(f"{bk}\n\n" + " ".join(str(i) for i in range(1, 30)) for bk in book_names)
+    text = nav + "\n\n" + ("And it came to pass in those days that the word continued. " * 300)
+    boundaries = [(text.index(f"{bk}\n\n"), text.index(f"{bk}\n\n") + len(bk), bk) for bk in book_names]
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    assert any(s.type == "book" for s in sections)           # head nav cluster → real books
+    assert not any(s.type == "index" for s in sections)
+
+
 def test_explicit_chapter_prefix_wins_over_matter_word_title():
     # A chapter whose title contains a matter word ("Chapter XXV — Conclusion", "Chapter 8.
     # Appendix") classifies as a chapter on the strength of its explicit "Chapter <N>" prefix,
