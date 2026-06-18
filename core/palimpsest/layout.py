@@ -98,7 +98,7 @@ _FRONTMATTER = frozenset({
 })
 _BACKMATTER = frozenset({
     "back_matter", "afterword", "acknowledgments", "about_author", "discussion",
-    "glossary", "index", "bibliography", "appendix", "addendum", "insert",
+    "glossary", "index", "bibliography", "appendix", "addendum", "insert", "endnotes",
 })
 # Mid-body editorial matter that carves a masked window where it appears.
 _EDITORIAL = frozenset({"foreword", "preface", "introduction", "afterword", "epigraph"})
@@ -455,6 +455,16 @@ _BOOK_HEAD_RE = re.compile(
     r"(?m)^[ \t]*(?:THE[ \t]+)?(?:(?:FIRST|SECOND|THIRD|FOURTH)[ \t]+)?BOOK[ \t]+OF[ \t]+[A-Z]"
 )
 _MIN_BOOK_RECOVERY = 8  # this many upper-case "BOOK OF <Name>" lines ⇒ recover a book track
+
+# Trailing numbered endnote/footnote list: an annotated edition prints its notes as a run of
+# bare numerals each alone on a line, incrementing 1, 2, 3, … with the note text between them
+# (Robinson Crusoe's glossary, Infinite Jest's endnotes). A lone such numeral in a sparse
+# heading track is otherwise mis-read as a body "chapter" — and, sitting at the tail, drags the
+# whole work into front matter. The bare-numeral-ALONE line (no following text on the line)
+# distinguishes it from a verse ("1 In the beginning") or a "Chapter 1" heading.
+_ENDNOTE_NUM_LINE_RE = re.compile(r"(?m)^[ \t]*(\d{1,4})[ \t]*$")
+_MIN_ENDNOTE_RUN = 8       # this many incrementing bare numerals ⇒ a notes list
+_ENDNOTE_RUN_GAP = 6000    # chars; a larger gap between consecutive numbers ends the run
 
 
 # Canonical scripture book names (Protestant 66 + Catholic deuterocanon + KJV/Douay
@@ -916,6 +926,34 @@ def detect_book_markers(
     return marks
 
 
+def detect_endnote_list(text: str, lo: int, hi: int) -> int:
+    """Start offset of a trailing numbered endnote/footnote list in ``text[lo:hi]``, else -1.
+
+    A run of bare-numeral lines incrementing 1, 2, 3, … (the note text on the lines between)
+    in the trailing portion of the work is its endnotes/notes glossary. Returned so the caller
+    can bound it as back matter — keeping a lone such numeral in a sparse heading track from
+    being mis-read as a body chapter (and, at the tail, dragging the whole work into front
+    matter). Gated on a low start (the list begins near note 1), a dense incrementing run, and
+    a trailing position, so an in-body numbered list cannot trip it.
+    """
+    span = hi - lo
+    if span <= 0:
+        return -1
+    marks = [(m.start(), int(m.group(1)))
+             for m in _ENDNOTE_NUM_LINE_RE.finditer(text) if lo <= m.start() < hi]
+    i = 0
+    while i < len(marks):
+        j = i
+        while (j + 1 < len(marks) and marks[j + 1][1] == marks[j][1] + 1
+               and marks[j + 1][0] - marks[j][0] <= _ENDNOTE_RUN_GAP):
+            j += 1
+        if (j - i + 1 >= _MIN_ENDNOTE_RUN and marks[i][1] <= 3
+                and marks[i][0] - lo > span * 0.5):
+            return marks[i][0]
+        i = j + 1
+    return -1
+
+
 def _drop_toc_chapter_runs(
     marks: list[tuple[int, int, str, str]], text_len: int
 ) -> list[tuple[int, int, str, str]]:
@@ -1074,6 +1112,18 @@ def detect_layout_sections(
                 items.extend(recovered)
                 items.sort(key=lambda x: x[0])
 
+        # A trailing numbered endnote/notes list is back matter, not body chapters. Retype any
+        # structural boundary inside it (a bare-numeral "chapter" that is really a note number)
+        # so it neither anchors the body nor masks as a chapter, and add a marker bounding the
+        # region when the track exposes none — so the notes stay out of the analyzable body.
+        en_start = detect_endnote_list(text, 0, body_end)
+        if 0 <= en_start < body_end:
+            items = [(s, he, "endnotes" if (s >= en_start and t in _STRUCTURAL) else t, lbl)
+                     for (s, he, t, lbl) in items]
+            if not any(s == en_start for s, _, _, _ in items):
+                items.append((en_start, en_start, "endnotes", "Endnotes"))
+            items.sort(key=lambda x: x[0])
+
     classified = [it for it in items if it[2] is not None]
 
     # Body begins at the first structural division if the work has any; otherwise
@@ -1098,15 +1148,21 @@ def detect_layout_sections(
                 body_start = a
                 break
         if body_start < 0:
+            # The body begins at the first non-matter boundary. Trailing back-matter
+            # boundaries (e.g. a tail endnote list) must be skipped too, so a work whose
+            # only boundary is a trailing notes glossary keeps its narrative in the body
+            # rather than collapsing it into front matter.
             body_start = 0
             for it in items:
-                if it[2] in _FRONTMATTER:
+                if it[2] in _FRONTMATTER or it[2] in _BACKMATTER:
                     continue
                 body_start = it[0]
                 break
             else:
-                # Every boundary was front matter → body begins after the last one.
-                body_start = items[-1][0] if items else 0
+                # Only matter boundaries exist → body is the span after the leading
+                # front-matter run (a trailing back-matter run bounds it on the right).
+                leading_fm = [it for it in items if it[2] in _FRONTMATTER]
+                body_start = leading_fm[-1][1] if leading_fm else 0
 
     # Back-matter region: the maximal *contiguous* trailing run of classified
     # back-matter boundaries. Unrecognized boundaries (in-world documents inside the

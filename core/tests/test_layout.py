@@ -701,6 +701,32 @@ def test_bare_matter_word_without_chapter_prefix_still_typed():
     assert sum(s.type == "chapter" for s in sections) == 2
 
 
+def test_trailing_numbered_endnote_list_is_back_matter_not_chapters():
+    # An annotated edition prints its notes as a run of bare numerals (1, 2, 3, …) each alone on
+    # a line, the note text between. A lone such numeral in a sparse heading track must be back
+    # matter (the notes), not a body chapter — and must not drag the narrative into front matter.
+    novel = "The narrative of this work continues at length for many lines here. " * 200
+    notes = "".join(f"{n}\n\nDefinition of term number {n} goes here.\n\n" for n in range(1, 12))
+    text = novel + "\n\n" + notes
+    en_pos = text.index("1\n\nDefinition")
+    boundaries = [(en_pos, en_pos + 1, "1")]  # the only heading-track item is the notes' "1"
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    body = next(s for s in sections if s.type == "body")
+    assert body.start == 0 and body.end <= en_pos + 5  # the novel is the body, not front matter
+    assert any(s.type == "endnotes" for s in sections)  # the notes list typed back matter
+    assert not any(s.type == "chapter" for s in sections)  # the bare "1" is not a chapter
+
+
+def test_numbered_list_in_first_half_is_not_treated_as_endnotes():
+    # A numbered list in the first half of a work (an in-text enumeration) is not a trailing
+    # notes glossary, so the endnote-list recovery does not fire (the trailing-position gate).
+    lst = "".join(f"{n}\n\nItem {n}.\n\n" for n in range(1, 12))
+    body = "Ordinary prose continues here for a good long while in this work. " * 200
+    text = lst + "\n\n" + body  # the list is at the FRONT, not trailing
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert not any(s.type == "endnotes" for s in sections)
+
+
 def _build_chaptered(heads_and_bodies):
     """Build text + EPUB-style boundaries from (heading, body) pairs."""
     boundaries, text, cursor = [], "", 0
