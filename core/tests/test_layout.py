@@ -667,6 +667,40 @@ def test_titlecase_book_mentions_do_not_recover_books():
     assert not any(s.type == "book" for s in sections)
 
 
+def test_explicit_chapter_prefix_wins_over_matter_word_title():
+    # A chapter whose title contains a matter word ("Chapter XXV — Conclusion", "Chapter 8.
+    # Appendix") classifies as a chapter on the strength of its explicit "Chapter <N>" prefix,
+    # not mis-typed afterword/appendix/introduction from the trailing word.
+    titles = ["Chapter I — The Start", "Chapter II — Introduction to the Town",
+              "Chapter III — The Appendix Affair", "Chapter IV — Conclusion"]
+    body = "The narrative of this chapter continues at length for a while here. " * 20
+    boundaries, text, cursor = [], "", 0
+    for t in titles:
+        s = cursor
+        text += t + "\n\n" + body + "\n\n"
+        boundaries.append((s, s + len(t), t))
+        cursor = len(text)
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    assert sum(s.type == "chapter" for s in sections) == 4
+    assert not any(s.type in ("afterword", "appendix", "introduction") for s in sections)
+
+
+def test_bare_matter_word_without_chapter_prefix_still_typed():
+    # The explicit-chapter override is narrow: it requires the "Chapter <N>" keyword, so a
+    # bare "Conclusion" heading (no chapter prefix) still classifies as its matter type.
+    body = "Closing reflections on the whole matter continue for a while here. " * 20
+    chap = "The narrative of this chapter continues at length for a while here. " * 20
+    boundaries, text, cursor = [], "", 0
+    for head, content in [("Chapter I", chap), ("Chapter II", chap), ("Conclusion", body)]:
+        s = cursor
+        text += head + "\n\n" + content + "\n\n"
+        boundaries.append((s, s + len(head), head))
+        cursor = len(text)
+    sections = detect_layout_sections(boundaries, text_len=len(text), text=text)
+    assert any(s.type == "afterword" for s in sections)  # bare "Conclusion" stays afterword
+    assert sum(s.type == "chapter" for s in sections) == 2
+
+
 def _build_chaptered(heads_and_bodies):
     """Build text + EPUB-style boundaries from (heading, body) pairs."""
     boundaries, text, cursor = [], "", 0

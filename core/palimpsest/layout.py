@@ -312,6 +312,11 @@ def range_is_masked(intervals: list[tuple[int, int]], start: int, end: int) -> b
 # Headings come space-inconsistent across producers: "Chapter1", "Chapter 1",
 # "CHAPTER I", bare "1"/"IV". Match an optional space then a roman/arabic numeral.
 _CHAPTER_RE = re.compile(r"^(chapter\s*[ivxlcdm\d]|chap\.\s*\d|[ivxlcdm]+\.?$|\d+\.?$)", re.IGNORECASE)
+# An explicit "Chapter <N>" / "Chap. <N>" keyword PREFIX (the numbered form, not a bare
+# numeral) is an unambiguous chapter opening even when its title carries a matter word
+# ("Chapter XXV — Conclusion", "Chapter 8. Appendix"): the keyword+number wins over the
+# matter-type regexes, which would otherwise mis-type it from the trailing word.
+_EXPLICIT_CHAPTER_RE = re.compile(r"^\s*(?:chapter|chap\.)\s*[ivxlcdm\d]", re.IGNORECASE)
 _VOLUME_RE = re.compile(r"^(volume|vol\.)\s*[ivxlcdm\d]", re.IGNORECASE)
 _PART_RE = re.compile(r"^part\s*[ivxlcdm\d]", re.IGNORECASE)
 _BOOK_RE = re.compile(r"^book\s*[ivxlcdm\d]", re.IGNORECASE)
@@ -546,6 +551,11 @@ def _classify_heading(heading: str) -> str | None:
     # "<Book> Chapter <N>" is unambiguously a scripture chapter — test first so a book
     # name can't be mistaken for a matter type.
     if _BOOK_CHAPTER_RE.match(h):
+        return "chapter"
+    # An explicit "Chapter <N>" keyword prefix wins over the matter types below, so a
+    # chapter whose title happens to contain a matter word ("Chapter XXV — Conclusion")
+    # stays a chapter rather than being mis-typed afterword/appendix/introduction.
+    if _EXPLICIT_CHAPTER_RE.match(h):
         return "chapter"
     # Front matter (specific first).
     if _TITLE_PAGE_RE.search(h):
