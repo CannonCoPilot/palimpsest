@@ -5,6 +5,38 @@
   "work": "Douay-Rheims Bible (Challoner, Global Grey)",
   "annotations": [
     {
+      "type": "book",
+      "mask": false,
+      "structure": "repeating",
+      "expected_count": 73,
+      "count_cue": "73 canonical Catholic books, each opening \"Book NN – <Name>\" / \"THE BOOK OF <NAME>\". Detector ALREADY finds these (by_type book=73) — presence-OK; the diagnostic gap is the chapter level below.",
+      "exemplars": [
+        {
+          "start_anchor": "THE BOOK OF GENESIS",
+          "note": "first book heading (Genesis); book-level structure the detector segments correctly"
+        }
+      ],
+      "note": "Top-level structure. Encoded to make the coarse-mirage contrast explicit: books detected, chapters not."
+    },
+    {
+      "type": "chapter_heading",
+      "mask": true,
+      "structure": "repeating",
+      "expected_count": 1334,
+      "count_cue": "\"<Book> Chapter N\" heading (x1334) each followed by a one-line editorial summary before verse 1 — the SAME Douay apparatus as idx5 (sister edition); count matches idx5's verified 1334 exactly. NOTE: a bare /\\bChapter \\d+\\b/ regex yields 1335; the +1 is a parenthetical numbering note \"(Psalm Chapter 10 according to the Hebrews.)\" at the Psalms 9/10 boundary (singular \"Psalm\"), NOT a real heading — excluded.",
+      "exemplars": [
+        {
+          "start_anchor": "God createth Heaven and Earth, and all things therein, in six days.",
+          "note": "Genesis 1 chapter summary (one-line, before verse 1) — verbatim idx5's Genesis-1 exemplar (same translation)"
+        },
+        {
+          "start_anchor": "The Hebrews call it BERESITH",
+          "note": "Genesis book-level argument/intro (book-granularity chapter_heading per the committed type def)"
+        }
+      ],
+      "note": "HEADLINE pathology: detector finds 0 chapters over 73 book containers (5.49M chars) vs idx5's 1319 — coarse mirage at composite 100. This annotation makes the same-work-diff-format test (idx5 vs idx100) fire."
+    },
+    {
       "type": "colophon",
       "mask": true,
       "resolve": "last",

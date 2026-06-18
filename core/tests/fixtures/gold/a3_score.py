@@ -65,7 +65,10 @@ MIRAGE_RECALL = 0.50  # below this, with a passing rubric, the score is a mirage
 
 
 def _found(by_type: dict, gold_type: str) -> int:
-    return sum(by_type.get(t, 0) for t in PROXY.get(gold_type, []))
+    # New types route through the stopgap proxy; existing detector types
+    # (book/chapter/...) count themselves (identity) for full-contract gold.
+    targets = PROXY.get(gold_type, [gold_type])
+    return sum(by_type.get(t, 0) for t in targets)
 
 
 def score_work(idx: int) -> dict:
