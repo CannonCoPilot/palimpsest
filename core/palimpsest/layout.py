@@ -451,6 +451,13 @@ _ORDINAL_DIVISION_RE = re.compile(
 _VERSED_CHAPTER_RE = re.compile(r"(?m)^[ \t]*(\d{1,3})\.[ \t ]+\d{1,3}\.(?=[ \t ])")
 _MIN_VERSED_CHAPTERS = 20  # this many chapter.verse openings ⇒ versed scripture, not stray lists
 
+# A scripture verse marker opening a section: a "chapter:verse" reference ("13:51") or the
+# bare verse number that opens the verse body ("54 then the priest…"), as in Friedman's
+# Commentary on the Torah. Some EPUB nav anchors land one digit into such a marker and expose
+# only a 1-char heading window, so the carved boundary splits the number mid-token. Used to
+# find the whole marker straddling a boundary so the header can be snapped to span it.
+_VERSE_NUM_HEAD_RE = re.compile(r"\d{1,3}(?::\d{1,3})?")
+
 # Inline scripture-book recovery: some EPUBs (the Book of Mormon) expose no book-level
 # heading track and carry their books as upper-case line-anchored "THE [ordinal] BOOK OF
 # <NAME>" headings, across which chapter numbering restarts ("CHAPTER I" recurs once per
@@ -1242,6 +1249,28 @@ def detect_layout_sections(
             start_mid = 0 < s < n_text and text[s - 1].isalnum() and text[s].isalnum()
             end_mid = 0 < he < n_text and text[he - 1].isalnum() and text[he].isalnum()
             return start_mid or end_mid
+
+        # Versed-scripture nav anchors: some EPUB section breaks land *inside* a verse marker —
+        # a "chapter:verse" reference ("13:52") or the bare verse number opening the verse body
+        # ("54 then…") — and expose a 1-char heading window, so the carved boundary splits the
+        # number mid-token ("1"|"3:52", "5"|"4"). When a chapter boundary that splits a word sits
+        # within such a marker, snap it to span the whole marker: the header becomes the clean
+        # verse marker and the previous chapter ends — and this one's body begins — on the
+        # marker's word edges. Gated on an actual split, so clean anchors stay put.
+        def _verse_marker_around(s: int) -> tuple[int, int] | None:
+            for m in _VERSE_NUM_HEAD_RE.finditer(text, max(0, s - 6), min(s + 8, body_end)):
+                if m.start() <= s <= m.end():
+                    return (m.start(), m.end())
+            return None
+
+        snapped: list[tuple[int, int, str | None, str]] = []
+        for s, he, t, lbl in items:
+            if t == "chapter" and _splits_word(s, he):
+                ref = _verse_marker_around(s)
+                if ref is not None and not _splits_word(*ref):
+                    s, he = ref
+            snapped.append((s, he, t, lbl))
+        items = snapped
 
         items = [
             (s, he, None, lbl)

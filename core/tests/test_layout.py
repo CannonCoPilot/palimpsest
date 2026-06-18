@@ -812,6 +812,65 @@ def test_bare_roman_fragment_run_not_demoted_when_clean():
     assert len(roman_chapters) == 5  # clean bare-Roman run preserved, not demoted
 
 
+def _splits_a_word(text, lo, hi):
+    n = len(text)
+    start_mid = 0 < lo < n and text[lo - 1].isalnum() and text[lo].isalnum()
+    end_mid = 0 < hi < n and text[hi - 1].isalnum() and text[hi].isalnum()
+    return start_mid or end_mid
+
+
+def test_versed_scripture_split_anchors_snap_to_verse_marker():
+    # Friedman's Commentary on the Torah: each verse opens with a "<chapter>:<verse>" reference
+    # then the verse body, but some EPUB nav anchors land *inside* the marker and expose only a
+    # 1-char heading window — splitting the number mid-token. The boundary must snap to span the
+    # whole verse marker so neither the carved header nor the chapter body cuts a number in half.
+    vb = "And the priest shall look and consider the matter at some length here. "
+    text = (
+        "Commentary front matter introduction prose runs on here for a good while.\n\n"
+        f"Leviticus 13:51\n\n51 {vb * 2}\n\n"
+        f"Leviticus 13:52\n\n52 {vb * 2}\n\n"
+        f"Leviticus 13:53\n\n53 {vb * 2}\n\n"
+        f"Leviticus 13:54\n\n54 {vb * 2}\n\n"
+    )
+    # Reproduce the three broken anchor styles seen in the EPUB nav, all 1-char windows.
+    i51 = text.index("13:51")           # anchor at the reference start ("1" of "13:51")
+    i52 = text.index("13:52")           # anchor at the reference end (final "2" of "13:52")
+    i53 = text.index("13:53")           # anchor one digit in ("3" of "13:53")
+    j54 = text.index("54 And")          # anchor in the bare verse-body number ("5" of "54")
+    boundaries = [
+        (i51, i51 + 1, "1"),
+        (i52 + 4, i52 + 5, "2"),
+        (i53 + 1, i53 + 2, "3"),
+        (j54, j54 + 1, "5"),
+    ]
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    # No carved boundary may split a word after the snap.
+    assert not any(_splits_a_word(text, s.start, s.end) for s in sections)
+    # The first reference-style header spans the whole "13:51" marker, not a single digit.
+    headers = sorted((s for s in sections if s.type == "header"), key=lambda s: s.start)
+    assert text[headers[0].start:headers[0].end] == "13:51"
+    assert sum(s.type == "chapter" for s in sections) == 4
+
+
+def test_clean_verse_anchor_is_not_snapped():
+    # A clean nav anchor — landing exactly on the verse number after the colon ("48" of
+    # "13:48"), splitting no word — must be left untouched: the snap is gated on an actual
+    # mid-word split, so it never grows a well-placed heading window.
+    vb = "And the priest shall look and consider the matter at some length here. "
+    text = (
+        "Commentary front matter introduction prose runs on here for a good while.\n\n"
+        f"Leviticus 13:48\n\n48 {vb * 2}\n\n"
+        f"Leviticus 13:49\n\n49 {vb * 2}\n\n"
+    )
+    i48 = text.index("13:48")
+    i49 = text.index("13:49")
+    boundaries = [(i48 + 3, i48 + 5, "48"), (i49 + 3, i49 + 5, "49")]  # window on the verse part
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    assert not any(_splits_a_word(text, s.start, s.end) for s in sections)
+    header = next(s for s in sections if s.type == "header")
+    assert text[header.start:header.end] == "48"  # unchanged: not grown to "13:48"
+
+
 def test_explicit_chapter_prefix_wins_over_matter_word_title():
     # A chapter whose title contains a matter word ("Chapter XXV — Conclusion", "Chapter 8.
     # Appendix") classifies as a chapter on the strength of its explicit "Chapter <N>" prefix,
