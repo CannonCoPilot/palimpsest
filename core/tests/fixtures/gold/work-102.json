@@ -1,5 +1,5 @@
 {
-  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
   "idx": 102,
   "source_file": "The Collected Poems of Emily Dickinson (Barnes & Noble -- Dickinson, Emily; Wetzsteon, Rachel -- Barnes & Noble classics, New York, New York State, -- isbn13 9781593080501 -- a4d7cce7b4c5749f13a3b3e795969a32 -- Anna’s Archive.epub",
   "work": "The Collected Poems of Emily Dickinson",
@@ -8,8 +8,9 @@
       "type": "poetry",
       "mask": false,
       "structure": "repeating",
+      "role": "primary",
       "expected_count": 589,
-      "count_cue": "Roman-numbered poems (numbering restarts per thematic section: Life/Nature/Love/Time&Eternity); EPUB nav=608",
+      "count_cue": "Roman-numbered poems (numbering restarts per thematic section); EPUB nav=608. A raw /^[IVXLC]+$/ line count over-counts (~1187) because standalone \"I\" pronoun lines match — 589 is the structural poem count the detector also reaches.",
       "exemplars": [
         {
           "start_anchor": "SUCCESS is counted sweetest",
@@ -20,7 +21,16 @@
           "note": "last poem (CXLVI)"
         }
       ],
-      "note": "589 poems CURRENTLY MIS-TYPED as chapter (mask coincidentally right, type wrong). Line-breaks collapsed to prose+stanza by extraction."
+      "note": "589 poems CURRENTLY MIS-TYPED as chapter (mask coincidentally right, type wrong). Detector segments all 589 (recall 1.0) → OPTIMIZED with a Phase-B retype gap."
+    },
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 4,
+      "count_cue": "4 thematic sections (Life / Nature / Love / Time and Eternity) across which the Roman poem-numbering restarts. Detector finds 0 `part` elements — grouping level not segmented.",
+      "note": "Secondary grouping level. Count from the edition's known 4-section arrangement (the per-section numbering restarts); to be confirmed at ratification."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
   "idx": 104,
   "source_file": "is 5 -- E_E_ Cummings -- 1926 -- Boni & Liveright, New York -- fdb61a2b996b8f7a13a83b2ea8e001a2 -- Anna’s Archive.epub",
   "work": "is 5 (E.E. Cummings)",
@@ -8,8 +8,9 @@
       "type": "poetry",
       "mask": false,
       "structure": "repeating",
+      "role": "primary",
       "expected_count": 84,
-      "count_cue": "84 standalone Roman-numeral poem markers across 5 titled sections (ONE..FIVE), numbering restarts per section",
+      "count_cue": "84 standalone Roman-numeral poem markers (/^[IVXLC]+$/ lines) across 5 titled sections (ONE..FIVE), numbering restarts per section. Empirically 84 in THIS 1926 Boni & Liveright edition — resolves the earlier 84-vs-canonical-88 flag (some sources cite 88 for the work; this edition's markers = 84).",
       "exemplars": [
         {
           "start_anchor": "the season 'tis, my lovely lambs",
@@ -20,7 +21,16 @@
           "note": "last poem (XVIII detected; section FIVE)"
         }
       ],
-      "note": "Verse-form line-breaks PRESERVED (avg ~25c) — experimental typography. Detection recovered only 18 of ~84; front_matter over-swallows the rest."
+      "note": "Verse-form line-breaks PRESERVED (avg ~25c) — experimental typography. Detection recovered only 18 of 84 (recall 0.21) → MIRAGE at composite 91.7; front_matter over-swallows the rest."
+    },
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 5,
+      "count_cue": "5 titled sections ONE/TWO/THREE/FOUR/FIVE (each a standalone line, verified once each); the book's title 'is 5' refers to these 5 parts. Detector finds 0 `part` elements.",
+      "note": "Secondary grouping level. Its 0/5 gap accompanies the primary 18/84 under-segmentation."
     }
   ]
 }
