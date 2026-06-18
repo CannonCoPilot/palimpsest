@@ -579,6 +579,94 @@ def test_versed_chapters_suppress_stray_chapter_mentions():
     assert all(c.metadata.get("number") in {str(n) for n in range(1, 25)} for c in chapters)
 
 
+_BOM_BOOKS = [
+    "THE FIRST BOOK OF NEPHI", "THE SECOND BOOK OF NEPHI", "THE BOOK OF JACOB",
+    "THE BOOK OF ENOS", "THE BOOK OF MOSIAH", "THE BOOK OF ALMA", "THE BOOK OF HELAMAN",
+    "BOOK OF MORMON", "BOOK OF ETHER", "THE BOOK OF MORONI",
+]
+
+
+def test_inline_books_recovered_with_per_book_chapter_runs():
+    # An edition whose EPUB exposes no book-level heading track and carries its books as
+    # upper-case "THE [ordinal] BOOK OF <NAME>" lines, across which chapter numbering restarts
+    # (the Book of Mormon). The books are recovered so the repeating per-book "CHAPTER I" runs
+    # nest under a disambiguating book instead of colliding in one flat sequence.
+    body = "The scripture text of this chapter continues at length in this place. " * 12
+    intro = "Editorial introduction to the whole record.\n\n" * 5
+    parts = []
+    for bk in _BOM_BOOKS:
+        chs = "\n\n".join(f"CHAPTER {r}\n\n{body}" for r in ("I", "II", "III"))
+        parts.append(f"{bk}\n\n{chs}")
+    text = intro + "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    books = [s for s in sections if s.type == "book"]
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(books) == len(_BOM_BOOKS)  # every book recovered
+    assert len(chapters) == 3 * len(_BOM_BOOKS)  # 3 chapters per book, numbering restarts
+    by_id = {s.id: s for s in sections}
+
+    def book_ancestor(sec):
+        pid = sec.parent_id
+        while pid and pid in by_id:
+            if by_id[pid].type == "book":
+                return by_id[pid].id
+            pid = by_id[pid].parent_id
+        return None
+
+    # The eight "CHAPTER I" headings are disambiguated by nesting under distinct books.
+    first_chapter_books = {book_ancestor(c) for c in chapters if c.metadata.get("number") == "I"}
+    assert len(first_chapter_books) == len(_BOM_BOOKS)
+    assert all(book_ancestor(c) is not None for c in chapters)  # every chapter parented to a book
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.start > 0  # the leading editorial intro stays masked front matter
+
+
+def test_book_contents_listing_dropped_and_modern_intro_title_excluded():
+    # A front contents listing interleaves each book with its chapter entries; merged with the
+    # chapter markers it is one compact run and drops, so only the real body books survive. A
+    # modern introduction titled "THE MEANING OF THE BOOK OF MORMON TODAY" is not a "BOOK OF"
+    # heading and stays front matter rather than being misread as a book.
+    toc = "".join(f"{bk}\n" + "".join(f"CHAPTER {r}\n" for r in ("I", "II", "III"))
+                  for bk in _BOM_BOOKS)
+    intro = "THE MEANING OF THE BOOK OF MORMON TODAY\n\n" + ("Scholarly framing prose. " * 40)
+    body = "The scripture text of this chapter continues at length in this place. " * 12
+    real = "\n\n".join(
+        f"{bk}\n\n" + "\n\n".join(f"CHAPTER {r}\n\n{body}" for r in ("I", "II", "III"))
+        for bk in _BOM_BOOKS
+    )
+    text = toc + "\n\n" + intro + "\n\n" + real + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    books = [s for s in sections if s.type == "book"]
+    assert len(books) == len(_BOM_BOOKS)  # contents listing dropped; real books kept
+    assert all("MEANING" not in s.label.upper() for s in books)  # intro title is not a book
+    intro_off = text.index("THE MEANING OF THE BOOK OF MORMON TODAY")
+    covering = [s for s in sections
+                if s.type in ("book", "chapter") and s.start <= intro_off < s.end]
+    assert not covering  # the modern intro is not inside any recovered book/chapter
+
+
+def test_few_book_headings_below_gate_not_recovered():
+    # A handful of "BOOK OF <Name>" lines (below the book gate) is not a structured canon, so no
+    # book track is synthesized — the gate keeps the mechanism scripture-scale.
+    body = "Ordinary narrative prose continues here for a good while now. " * 12
+    parts = [f"THE BOOK OF {n}\n\n{body}" for n in ("ALPHA", "BETA", "GAMMA")]
+    text = "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert not any(s.type == "book" for s in sections)
+
+
+def test_titlecase_book_mentions_do_not_recover_books():
+    # The recovery is upper-case (no re.I): a novel's title-case "The Book of <Name>" lines are
+    # ordinary prose, not scripture-book headings, so they are never recovered as books.
+    body = "The chapter narrative continues for a while in this novel here. " * 12
+    parts = [f"The Book of {n}\n\n{body}"
+             for n in ("Dreams", "Shadows", "Names", "Hours", "Rivers", "Stones",
+                       "Ashes", "Roads", "Doors", "Tides")]
+    text = "\n\n".join(parts) + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert not any(s.type == "book" for s in sections)
+
+
 def _build_chaptered(heads_and_bodies):
     """Build text + EPUB-style boundaries from (heading, body) pairs."""
     boundaries, text, cursor = [], "", 0

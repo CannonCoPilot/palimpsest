@@ -439,6 +439,18 @@ _ORDINAL_DIVISION_RE = re.compile(
 _VERSED_CHAPTER_RE = re.compile(r"(?m)^[ \t]*(\d{1,3})\.[ \t ]+\d{1,3}\.(?=[ \t ])")
 _MIN_VERSED_CHAPTERS = 20  # this many chapter.verse openings ⇒ versed scripture, not stray lists
 
+# Inline scripture-book recovery: some EPUBs (the Book of Mormon) expose no book-level
+# heading track and carry their books as upper-case line-anchored "THE [ordinal] BOOK OF
+# <NAME>" headings, across which chapter numbering restarts ("CHAPTER I" recurs once per
+# book). When several repeat, recover them as the book track so each per-book chapter run
+# nests under a disambiguating book. Upper-case (no re.I) plus the "BOOK OF" anchor keeps
+# ordinary prose mentions and a modern intro's title ("The Meaning of the Book of Mormon
+# Today") out; the leading "THE" is optional because some books print bare ("BOOK OF ETHER").
+_BOOK_HEAD_RE = re.compile(
+    r"(?m)^[ \t]*(?:THE[ \t]+)?(?:(?:FIRST|SECOND|THIRD|FOURTH)[ \t]+)?BOOK[ \t]+OF[ \t]+[A-Z]"
+)
+_MIN_BOOK_RECOVERY = 8  # this many upper-case "BOOK OF <Name>" lines ⇒ recover a book track
+
 
 # Canonical scripture book names (Protestant 66 + Catholic deuterocanon + KJV/Douay
 # spelling variants). Bare book-name headings ("GENESIS", "1 Corinthians") aren't
@@ -871,6 +883,29 @@ def detect_versed_chapter_markers(
     return marks
 
 
+def detect_book_markers(
+    text: str, lo: int, hi: int
+) -> list[tuple[int, int, str, str]]:
+    """Find inline scripture-book headings in ``text[lo:hi]`` as body-item 'book' tuples.
+
+    Content-based counterpart to the chapter pass for an edition (the Book of Mormon) whose
+    EPUB exposes no book-level heading track: its 15 books — across which chapter numbering
+    restarts, so "CHAPTER I" recurs once per book — sit inline as upper-case "THE [ordinal]
+    BOOK OF <NAME>" lines. Returns (start, line_end, 'book', label) tuples so the body loop
+    nests each per-book chapter run under a disambiguating book exactly as for a heading-track
+    book. The upper-case, line-anchored ``BOOK OF`` form keeps prose mentions and a modern
+    introduction's title out.
+    """
+    marks: list[tuple[int, int, str, str]] = []
+    for m in _BOOK_HEAD_RE.finditer(text):
+        if lo <= m.start() < hi:
+            eol = text.find("\n", m.start())
+            head_end = eol if eol > m.start() else m.end()
+            label = " ".join(text[m.start():head_end].split())[:_MAX_HEADER_LEN]
+            marks.append((m.start(), head_end, "book", label))
+    return marks
+
+
 def _drop_toc_chapter_runs(
     marks: list[tuple[int, int, str, str]], text_len: int
 ) -> list[tuple[int, int, str, str]]:
@@ -1001,9 +1036,22 @@ def detect_layout_sections(
             if len(vcmarks) >= _MIN_VERSED_CHAPTERS:
                 recovered += vcmarks
             else:
-                cmarks = _drop_toc_chapter_runs(
-                    detect_chapter_markers(text, 0, body_end), text_len
-                )
+                cmarks_raw = detect_chapter_markers(text, 0, body_end)
+                bmarks_raw = detect_book_markers(text, 0, body_end)
+                if len(bmarks_raw) >= _MIN_BOOK_RECOVERY:
+                    # A contents listing interleaves each book with its chapter entries,
+                    # so the book markers alone aren't adjacent; drop inlined-TOC runs over
+                    # the merged book+chapter stream so the whole listing drops as one
+                    # compact run, leaving the real body divisions (separated by their text).
+                    merged = _drop_toc_chapter_runs(
+                        sorted(cmarks_raw + bmarks_raw, key=lambda m: m[0]), text_len
+                    )
+                    bmarks = [m for m in merged if m[2] == "book"]
+                    cmarks = [m for m in merged if m[2] == "chapter"]
+                    if len(bmarks) >= _MIN_BOOK_RECOVERY:
+                        recovered += bmarks
+                else:
+                    cmarks = _drop_toc_chapter_runs(cmarks_raw, text_len)
                 if len(cmarks) >= _MIN_CHAPTER_RECOVERY:
                     recovered += cmarks
             smarks = detect_division_markers(text, 0, body_end)
