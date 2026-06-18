@@ -762,6 +762,56 @@ def test_head_book_nav_cluster_still_promoted_to_books():
     assert not any(s.type == "index" for s in sections)
 
 
+def test_spanish_volume_chapter_headings_recognized_and_midword_roman_demoted():
+    # A Spanish edition: "VOLUMEN <roman>" volumes and "Capítulo <word>" chapters are
+    # recognized (i18n, like the multilingual contents regex), while a bare-Roman heading
+    # whose EPUB boundary split a word (nav label "I" pointing into "Ilustración") is demoted
+    # so it neither becomes a chapter nor anchors the body before the first real volume.
+    body = "El texto de este capitulo continua aqui durante un buen rato mas. " * 20
+    chapters = ["Capítulo uno", "Capítulo dos", "Capítulo tres",
+                "Capítulo cuatro", "Capítulo cinco", "Capítulo seis"]
+    parts = ["Prologo del traductor con notas y creditos editoriales.\n\n",
+             "Ilustración de portada y demas creditos del libro aqui.\n\n"]
+    parts.append("VOLUMEN I\n\n")
+    for c in chapters[:3]:
+        parts.append(f"{c}\n\n{body}\n\n")
+    parts.append("VOLUMEN II\n\n")
+    for c in chapters[3:]:
+        parts.append(f"{c}\n\n{body}\n\n")
+    text = "".join(parts)
+    il = text.index("Ilustración")
+    boundaries = [(il, il + 1, "I")]  # nav label "I" splits "Il…" → demoted
+    for v in ("VOLUMEN I", "VOLUMEN II"):
+        o = text.index(v + "\n\n")
+        boundaries.append((o, o + len(v), v))
+    for c in chapters:
+        o = text.index(c + "\n\n")
+        boundaries.append((o, o + len(c), c))
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    assert sum(s.type == "volume" for s in sections) == 2     # VOLUMEN I/II recognized
+    assert sum(s.type == "chapter" for s in sections) == 6    # 6 Capítulos; the mid-word "I" demoted
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.start == text.index("VOLUMEN I")          # body anchored at the first volume
+
+
+def test_bare_roman_fragment_run_not_demoted_when_clean():
+    # A treatise's numbered fragment run ("I", "II", "III" on their own lines) is real
+    # structure: the mid-word guard must only drop word-splitting Romans, never a clean run.
+    body = "The fragment text of this section continues for a while here in place. " * 12
+    parts = ["Chapter 1\n\n" + body]  # a keyworded chapter coexists with the fragment run
+    for r in ("I", "II", "III", "IV", "V"):
+        parts.append(f"{r}\n\n{body}")
+    text = "\n\n".join(parts) + "\n\n"
+    boundaries = [(text.index("Chapter 1"), text.index("Chapter 1") + 9, "Chapter 1")]
+    for r in ("I", "II", "III", "IV", "V"):
+        o = text.index(f"\n\n{r}\n\n") + 2
+        boundaries.append((o, o + len(r), r))
+    sections = detect_layout_sections(sorted(boundaries), text_len=len(text), text=text)
+    roman_chapters = [s for s in sections if s.type == "chapter"
+                      and s.metadata.get("number") in ("I", "II", "III", "IV", "V")]
+    assert len(roman_chapters) == 5  # clean bare-Roman run preserved, not demoted
+
+
 def test_explicit_chapter_prefix_wins_over_matter_word_title():
     # A chapter whose title contains a matter word ("Chapter XXV — Conclusion", "Chapter 8.
     # Appendix") classifies as a chapter on the strength of its explicit "Chapter <N>" prefix,

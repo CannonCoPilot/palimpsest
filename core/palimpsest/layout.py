@@ -311,13 +311,20 @@ def range_is_masked(intervals: list[tuple[int, int]], start: int, end: int) -> b
 
 # Headings come space-inconsistent across producers: "Chapter1", "Chapter 1",
 # "CHAPTER I", bare "1"/"IV". Match an optional space then a roman/arabic numeral.
-_CHAPTER_RE = re.compile(r"^(chapter\s*[ivxlcdm\d]|chap\.\s*\d|[ivxlcdm]+\.?$|\d+\.?$)", re.IGNORECASE)
+_CHAPTER_RE = re.compile(
+    r"^(chapter\s*[ivxlcdm\d]|chap\.\s*\d|cap[ií]tulo\b|[ivxlcdm]+\.?$|\d+\.?$)", re.IGNORECASE
+)
 # An explicit "Chapter <N>" / "Chap. <N>" keyword PREFIX (the numbered form, not a bare
 # numeral) is an unambiguous chapter opening even when its title carries a matter word
 # ("Chapter XXV — Conclusion", "Chapter 8. Appendix"): the keyword+number wins over the
 # matter-type regexes, which would otherwise mis-type it from the trailing word.
 _EXPLICIT_CHAPTER_RE = re.compile(r"^\s*(?:chapter|chap\.)\s*[ivxlcdm\d]", re.IGNORECASE)
-_VOLUME_RE = re.compile(r"^(volume|vol\.)\s*[ivxlcdm\d]", re.IGNORECASE)
+# A bare Roman-numeral heading ("I", "XIV"). A real one stands alone on its line; when the
+# same letters are really the capital first letter of a word the EPUB nav split mid-token
+# ("I"+"lustración", "XV"+"III tomó"), so a bare-Roman chapter whose boundary cuts a word is
+# a mis-split, not a division.
+_BARE_ROMAN_RE = re.compile(r"^[ivxlcdm]+\.?$", re.IGNORECASE)
+_VOLUME_RE = re.compile(r"^(volume|volumen|vol\.|tomo)\s*[ivxlcdm\d]", re.IGNORECASE)
 _PART_RE = re.compile(r"^part\s*[ivxlcdm\d]", re.IGNORECASE)
 _BOOK_RE = re.compile(r"^book\s*[ivxlcdm\d]", re.IGNORECASE)
 
@@ -1222,6 +1229,26 @@ def detect_layout_sections(
         items.append((int(start), head_end, t, " ".join(heading.split())[:120]))
     items.sort(key=lambda x: x[0])
     items = _suppress_toc_entries(items, text_len)  # #6 — drop inlined TOC links
+
+    # Mis-split Roman headings: some EPUB nav entries land inside a word, so the capital
+    # first letter of a token ("Ilustración", "siglo XVIII", "Christ-cross-row") is exposed
+    # as a bare-Roman "chapter". A real Roman heading (including a treatise's numbered
+    # fragment run "I", "II", "III") abuts whitespace; demote only one whose boundary (start
+    # or label end) falls between two alphanumerics — it split a word, so it is not a heading.
+    if text is not None:
+        n_text = len(text)
+
+        def _splits_word(s: int, he: int) -> bool:
+            start_mid = 0 < s < n_text and text[s - 1].isalnum() and text[s].isalnum()
+            end_mid = 0 < he < n_text and text[he - 1].isalnum() and text[he].isalnum()
+            return start_mid or end_mid
+
+        items = [
+            (s, he, None, lbl)
+            if t == "chapter" and _BARE_ROMAN_RE.match(lbl.strip()) and _splits_word(s, he)
+            else (s, he, t, lbl)
+            for (s, he, t, lbl) in items
+        ]
 
     # Scripture book divisions: bare book-name headings ("GENESIS", "1 Corinthians")
     # match no structural regex. When a canon's worth of them appears, promote the
