@@ -8,6 +8,7 @@
       "type": "book",
       "mask": false,
       "structure": "repeating",
+      "role": "secondary",
       "expected_count": 73,
       "count_cue": "73 canonical Catholic books, each opening \"Book NN – <Name>\" / \"THE BOOK OF <NAME>\". Detector ALREADY finds these (by_type book=73) — presence-OK; the diagnostic gap is the chapter level below.",
       "exemplars": [

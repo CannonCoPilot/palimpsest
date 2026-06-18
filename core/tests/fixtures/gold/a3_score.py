@@ -87,35 +87,45 @@ def score_work(idx: int) -> dict:
     largest_uncovered_frac = round(big[0]["len"] / text_len, 3) if big else 0.0
 
     anns: list[dict] = []
-    repeating_recalls: list[float] = []
+    repeating_recalls: list[float] = []  # PRIMARY level only — drives the rating
     presence_flags: list[bool] = []
     notes: list[str] = []
+    has_primary_repeating = False
     for a in gold["annotations"]:
         t = a["type"]
         structure = a.get("structure")
+        role = a.get("role", "primary")  # secondary = grouping level, reported not rated
         exp = a.get("expected_count")
         found = _found(by_type, t)
         rec = (found / exp) if (isinstance(exp, int) and exp) else None
         present = found > 0
+        proxy = PROXY.get(t, [t])
         type_emitted = t in by_type
         anns.append({
-            "type": t, "structure": structure, "expected": exp,
-            "proxy": PROXY.get(t, []), "found": found,
+            "type": t, "structure": structure, "role": role, "expected": exp,
+            "proxy": proxy, "found": found,
             "recall": round(rec, 3) if rec is not None else None,
             "present": present, "type_emitted": type_emitted,
         })
-        if structure == "repeating":
+        if structure != "repeating":
+            continue
+        if role == "primary":
+            has_primary_repeating = True
             if rec is not None:
                 repeating_recalls.append(rec)
             else:
                 presence_flags.append(present)
             if found > 0 and not type_emitted:
-                notes.append(f"{t}: segmented as {PROXY.get(t)} but detector cannot emit "
+                notes.append(f"{t}: segmented as {proxy} but detector cannot emit "
                              f"`{t}` yet (Phase-B retype gap)")
             if found == 0:
-                notes.append(f"{t}: UNDETECTED (expected {exp}, proxy {PROXY.get(t) or '—'})")
+                notes.append(f"{t}: UNDETECTED (expected {exp}, proxy {proxy or '—'})")
+        elif found == 0:
+            notes.append(f"{t} (secondary): 0/{exp} — grouping level not segmented")
+        elif rec is not None and rec < OPT_RECALL:
+            notes.append(f"{t} (secondary): {found}/{exp} = {rec:.2f} — under-detected")
 
-    has_repeating = any(a.get("structure") == "repeating" for a in gold["annotations"])
+    has_repeating = has_primary_repeating
     rubric_pass = composite >= OPT_COMPOSITE
     recall_min = min(repeating_recalls) if repeating_recalls else None
 

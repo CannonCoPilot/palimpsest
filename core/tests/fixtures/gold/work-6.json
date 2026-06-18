@@ -1,5 +1,5 @@
 {
-  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
   "idx": 6,
   "source_file": "1599 Geneva Bible -- Tolle Lege Press [Press, Tolle Lege] -- 2013 -- Tolle Lege Press -- 19f28a695686af95cd3f5997c53aa3f2 -- Anna’s Archive.epub",
   "work": "1599 Geneva Bible",
@@ -8,15 +8,31 @@
       "type": "chapter_heading",
       "mask": true,
       "structure": "repeating",
+      "role": "primary",
       "expected_count": null,
-      "count_cue": "one numbered \"argument\" per chapter, between the chapter heading and verse 1; its numerals are verse refs so it MIMICS verses (~1189 chapters in the Geneva Bible)",
+      "count_cue": "one numbered \"argument\" per chapter, between the chapter heading and verse 1; its numerals are verse refs so it MIMICS verses (~1189 chapters in the Geneva Bible). Count left null: no clean text cue (\"CHAPTER\" x786 are cross-refs, not heads) — honest, not fabricated. Presence-tested instead.",
       "exemplars": [
         {
           "start_anchor": "He createth the sun, the moon, and the stars",
           "note": "Genesis 1 argument (full span: \"God created the heaven and the earth. 3 The light... 29 And provideth nurture for man and beast\") — verse-numbered editorial summary before verse 1"
         }
       ],
-      "note": "Geneva numbered chapter arguments — the canonical verse-mimicking chapter_heading."
+      "note": "Geneva numbered chapter arguments — the canonical verse-mimicking chapter_heading. Detector finds 0 chapters (only 21 books) → MIRAGE: structure present, detector blind."
+    },
+    {
+      "type": "book",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": null,
+      "count_cue": "~80 books incl. Apocrypha (1599 Geneva, Tolle Lege). Count left null: ALLCAPS headings (x84) conflate book titles with front-matter section heads, so not cleanly countable. Detector finds only 21 `book` elements — under-detected.",
+      "exemplars": [
+        {
+          "start_anchor": "THE FIRST BOOK OF MOSES",
+          "note": "Genesis book heading (\"THE FIRST BOOK OF MOSES, called Genesis\")"
+        }
+      ],
+      "note": "Secondary grouping level, also under-segmented (21 of ~80)."
     }
   ]
 }

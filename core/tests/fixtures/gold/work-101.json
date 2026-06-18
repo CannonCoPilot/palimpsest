@@ -1,5 +1,5 @@
 {
-  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. Offsets derived at eval time, never stored.",
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
   "idx": 101,
   "source_file": "LDS_eng.pdf",
   "work": "LDS Triple Combination (2013 PDF)",
@@ -8,8 +8,9 @@
       "type": "chapter_heading",
       "mask": true,
       "structure": "repeating",
+      "role": "primary",
       "expected_count": null,
-      "count_cue": "BoM: em-dash chapter summary per chapter (PDF-undercounted ~27+); D&C: section header summarizing verse ranges before verse 1 (~138 sections, cue \"Section N\" x139)",
+      "count_cue": "Two sub-forms. BoM: em-dash chapter summary per chapter (PDF-undercounted). D&C: section header summarizing verse ranges before verse 1 — cleanly cued as \"Section N\" x139 (≈138 sections + heading). Overall count left null: PDF degradation (soft-hyphens, footnote letters, wrap) makes the BoM half not cleanly countable. Stress-CASE, not a clean reference.",
       "exemplars": [
         {
           "start_anchor": "Ephraim and Syria wage war against",
@@ -20,7 +21,7 @@
           "note": "D&C section 1 header (verse-range summary before \"Hearken, O ye people\")"
         }
       ],
-      "note": "Two chapter_heading sub-forms in one PDF work; currently mis-segmented (mirage)."
+      "note": "Two chapter_heading sub-forms in one PDF work; currently mis-segmented (mirage). Detector finds chapter=236 (present) → PRESENT-OK, count unverified."
     }
   ]
 }
