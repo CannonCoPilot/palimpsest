@@ -32,9 +32,13 @@ SECTION_TYPES: tuple[str, ...] = (
     # Foundation — these tile the whole work in the fewest elements.
     "body",
     # Structural / navigational containers nested inside the body.
-    "volume", "book", "part", "chapter",
-    # Masked windows carved inside the body.
-    "header", "footnotes", "endnotes", "epigraph",
+    "volume", "book", "part", "chapter", "letter",
+    # Verse-form authorial content (poems, songs) carried inside the body.
+    "poetry",
+    # Masked windows carved inside the body. chapter_heading = an editorial chapter/book
+    # summary or "argument" sitting between a heading and the first verse (often numbered,
+    # so it mimics verses) — distinct from the verse/body text it precedes.
+    "header", "chapter_heading", "footnotes", "endnotes", "epigraph",
     # Translation of a subject text the work is written about (scripture in a study
     # bible, a quoted-source rendering, parallel-version columns).
     "translation",
@@ -49,12 +53,16 @@ SECTION_TYPES: tuple[str, ...] = (
     "back_matter", "afterword", "acknowledgments", "about_author",
     "discussion", "glossary", "index", "bibliography",
     "appendix", "addendum", "insert",
+    # Production note at the very end of a work.
+    "colophon",
 )
 
 SECTION_LABELS: dict[str, str] = {
     "body": "Body",
     "volume": "Volume", "book": "Book", "part": "Part", "chapter": "Chapter",
-    "header": "Header", "footnotes": "Footnotes", "endnotes": "Endnotes",
+    "letter": "Letter", "poetry": "Poetry",
+    "header": "Header", "chapter_heading": "Chapter Heading",
+    "footnotes": "Footnotes", "endnotes": "Endnotes",
     "epigraph": "Epigraph", "translation": "Translation", "commentary": "Commentary",
     "front_matter": "Front Matter", "title_page": "Title Page", "copyright": "Copyright",
     "contents": "Contents", "dedication": "Dedication", "foreword": "Foreword",
@@ -63,19 +71,23 @@ SECTION_LABELS: dict[str, str] = {
     "acknowledgments": "Acknowledgments", "about_author": "About the Author",
     "discussion": "Discussion Questions", "glossary": "Glossary", "index": "Index",
     "bibliography": "Bibliography", "appendix": "Appendix", "addendum": "Addendum",
-    "insert": "Insert",
+    "insert": "Insert", "colophon": "Colophon",
 }
 
 # The analyzable work text: body and its structural nav containers are unmasked, as is
-# scholarly commentary (the author's own writing); everything else (matter, headers,
-# notes, the translated source text) is masked by default.
-_UNMASKED_TYPES = frozenset({"body", "volume", "book", "part", "chapter", "commentary"})
+# scholarly commentary (the author's own writing) and verse-form content; everything else
+# (matter, headers, editorial summaries, notes, the translated source text) is masked by default.
+_UNMASKED_TYPES = frozenset({
+    "body", "volume", "book", "part", "chapter", "letter", "commentary", "poetry",
+})
 DEFAULT_MASK_BY_TYPE: dict[str, bool] = {t: t not in _UNMASKED_TYPES for t in SECTION_TYPES}
 
 SECTION_COLORS: dict[str, str] = {
     "body": "#98989d",
     "chapter": "#30d158", "part": "#34c759", "volume": "#5e5ce6", "book": "#0a84ff",
-    "header": "#636366", "footnotes": "#ffd60a", "endnotes": "#ffd60a", "epigraph": "#ac8e68",
+    "letter": "#40c8a0", "poetry": "#9d8df1",
+    "header": "#636366", "chapter_heading": "#c9a227",
+    "footnotes": "#ffd60a", "endnotes": "#ffd60a", "epigraph": "#ac8e68",
     "translation": "#bf5af2", "commentary": "#30b0c7",
     "front_matter": "#ff453a", "title_page": "#bf5af2", "copyright": "#d6649b",
     "contents": "#ff6482", "dedication": "#ff7ab6", "foreword": "#ff9f0a",
@@ -83,7 +95,7 @@ SECTION_COLORS: dict[str, str] = {
     "back_matter": "#ff453a", "afterword": "#ff9f0a", "acknowledgments": "#ffb340",
     "about_author": "#c0a0ff", "discussion": "#ff6482", "glossary": "#8e8e93",
     "index": "#8e8e93", "bibliography": "#8e8e93", "appendix": "#64d2ff",
-    "addendum": "#64d2ff", "insert": "#5ac8fa",
+    "addendum": "#64d2ff", "insert": "#5ac8fa", "colophon": "#b0779b",
 }
 
 # Structural nesting depth: body(0) > volume > book/part > chapter. A section of
