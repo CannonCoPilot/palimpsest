@@ -4,6 +4,7 @@ from palimpsest.layout import (
     DEFAULT_MASK_BY_TYPE,
     LayoutSection,
     _classify_heading,
+    _parse_chapter_heading,
     detect_layout_sections,
     detect_siglum_regions,
     detect_verse_regions,
@@ -725,6 +726,53 @@ def test_numbered_list_in_first_half_is_not_treated_as_endnotes():
     text = lst + "\n\n" + body  # the list is at the FRONT, not trailing
     sections = detect_layout_sections([], text_len=len(text), text=text)
     assert not any(s.type == "endnotes" for s in sections)
+
+
+_DESCRIPTIVE_TITLES = [
+    "I Go to Sea", "I Build My Fortress", "I Make Myself a Canoe",
+    "I Call Him Friday", "We Quell a Mutiny", "I Revisit My Island",
+]
+
+
+def test_toc_descriptive_titles_recovered_via_contents_match():
+    # An edition whose chapters carry descriptive titles ("I Go to Sea") and that exposes no
+    # heading track: the leading contents block lists the titles and each repeats verbatim as a
+    # body heading, so matching the two recovers them as chapters with the full title as name.
+    para = "The narrative of this chapter continues at length for a while here. " * 30
+    contents = "Table of Contents\n\n" + "\n\n".join(_DESCRIPTIVE_TITLES) + "\n\n"
+    intro = "Introduction\n\n" + ("A long introductory paragraph runs on here. " * 40) + "\n\n"
+    body = "\n\n".join(f"{t}\n\n{para}" for t in _DESCRIPTIVE_TITLES)
+    text = contents + intro + body + "\n\n"
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert len(chapters) == len(_DESCRIPTIVE_TITLES)
+    assert chapters[0].metadata.get("name") == "I Go to Sea"  # full title kept
+    assert not chapters[0].metadata.get("number")  # leading "I" is not a chapter number
+    body_sec = next(s for s in sections if s.type == "body")
+    assert body_sec.start > 0  # the contents block stays masked front matter
+
+
+def test_toc_short_fragment_lines_not_recovered_as_chapters():
+    # A leading run of short narrative fragments ("The", "I", "Now") that happen to recur in
+    # the body is not a contents block — the substantial-multi-word-title gate keeps the
+    # fragments from being recovered as a spurious chapter track.
+    frags = ["The", "I", "Now", "Well", "He", "It"]
+    para = "Narrative prose continues here for a good while in this work now. " * 30
+    lead = "\n\n".join(frags) + "\n\n"
+    body = "\n\n".join(f"{f}\n\n{para}" for f in frags)
+    text = lead + ("A long opening paragraph of the work begins here now. " * 40) + "\n\n" + body
+    sections = detect_layout_sections([], text_len=len(text), text=text)
+    assert not any(s.type == "chapter" for s in sections)
+
+
+def test_descriptive_title_leading_pronoun_is_name_not_number():
+    # "I Go to Sea" — the leading "I" is the narrator pronoun, not roman numeral 1, so the
+    # whole phrase is the name with no number. A genuine "1. Title" or keyworded "Chapter IV"
+    # still yields its number.
+    assert _parse_chapter_heading("I Go to Sea") == {"name": "I Go to Sea"}
+    assert _parse_chapter_heading("1. The Beginning").get("number") == "1"
+    assert _parse_chapter_heading("Chapter IV - The Reckoning").get("number") == "IV"
+    assert _parse_chapter_heading("XIV").get("number") == "XIV"
 
 
 def _build_chaptered(heads_and_bodies):

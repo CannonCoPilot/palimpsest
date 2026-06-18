@@ -466,6 +466,16 @@ _ENDNOTE_NUM_LINE_RE = re.compile(r"(?m)^[ \t]*(\d{1,4})[ \t]*$")
 _MIN_ENDNOTE_RUN = 8       # this many incrementing bare numerals ⇒ a notes list
 _ENDNOTE_RUN_GAP = 6000    # chars; a larger gap between consecutive numbers ends the run
 
+# Table-of-contents cross-reference recovery: an edition whose chapters carry descriptive,
+# non-"Chapter N" titles ("I Go to Sea", "The Journal" — Robinson Crusoe) exposes no chapter
+# heading track and matches no chapter regex. But its leading contents block lists those titles,
+# and each reappears verbatim as a body heading. Matching the two — a title listed in the
+# contents AND repeating as its own line later — recovers the sections that no local rule could.
+_TOC_ENTRY_LINE_RE = re.compile(r"(?m)^[ \t]*(\S[^\n]*?)[ \t]*$")
+_TOC_LINE_MAX = 80      # a contents entry is a short line; longer ⇒ body prose ends the block
+_MIN_TOC_HEADINGS = 5   # matched contents→body headings ⇒ recover them as the section track
+_TOC_SCAN_LIMIT = 20000  # chars; the contents block sits near the head — bound the scan
+
 
 # Canonical scripture book names (Protestant 66 + Catholic deuterocanon + KJV/Douay
 # spelling variants). Bare book-name headings ("GENESIS", "1 Corinthians") aren't
@@ -527,11 +537,20 @@ def _parse_chapter_heading(label: str) -> dict[str, str]:
             meta["book"] = book
         return meta
     rest = _HEAD_KEYWORD_RE.sub("", s, count=1)
+    had_keyword = rest != s
     meta = {}
     m = _LEADING_NUM_RE.match(rest)
     if m:
-        meta["number"] = m.group(1)
-        rest = _HEAD_SEP_RE.sub("", rest[m.end():], count=1)
+        after = rest[m.end():]
+        # Accept the leading numeral as the chapter number only when a keyword introduced it
+        # ("Chapter IV"), a separator delimits it (the match itself ate a trailing dot — "1." —
+        # or a separator follows — "IV—Title", "1)"), or it stands alone ("I"). A bare numeral
+        # running straight into title words ("I Go to Sea" — the narrator pronoun) is part of
+        # the descriptive title, not a number.
+        if (had_keyword or not after.strip() or m.group(0).rstrip().endswith(".")
+                or _HEAD_SEP_RE.match(after)):
+            meta["number"] = m.group(1)
+            rest = _HEAD_SEP_RE.sub("", after, count=1)
     name = rest.strip(" .—–-:)")
     if name:
         meta["name"] = name
@@ -954,6 +973,59 @@ def detect_endnote_list(text: str, lo: int, hi: int) -> int:
     return -1
 
 
+def detect_toc_headings(text: str, body_end: int) -> list[tuple[int, int, str, str]]:
+    """Recover sections by matching a leading contents block to repeated body headings.
+
+    Some editions title their chapters descriptively ("I Go to Sea", "The Journal") rather than
+    "Chapter N", so no regex recognizes them and the EPUB exposes no heading track. Their leading
+    table of contents, however, lists each title, and each reappears verbatim as a standalone
+    body line. This finds the contents block (a leading run of short lines), then for each entry
+    locates its later line-anchored occurrence — typing it via ``_classify_heading`` (so a listed
+    "Introduction"/"Afterword" lands as front/back matter) and defaulting an unrecognized repeated
+    title to ``chapter``. Returns (start, head_end, type, label) markers, or [] below the gate.
+    """
+    head = text[:min(max(1, body_end), _TOC_SCAN_LIMIT)]
+    toc: list[str] = []
+    toc_end = 0
+    for m in _TOC_ENTRY_LINE_RE.finditer(head):
+        line = m.group(1).strip()
+        if not line:
+            continue
+        if len(line) <= _TOC_LINE_MAX:
+            toc.append(line)
+            toc_end = m.end()
+        elif len(toc) >= _MIN_TOC_HEADINGS:
+            break  # the contents block ends where body prose begins
+        else:
+            toc = []  # the short run before this long line wasn't the contents
+            toc_end = m.end()
+    if len(toc) < _MIN_TOC_HEADINGS:
+        return []
+
+    marks: list[tuple[int, int, str, str]] = []
+    seen: set[str] = set()
+    for title in toc:
+        if title in seen:
+            continue
+        seen.add(title)
+        typ = _classify_heading(title)
+        # A listed chapter title is a substantial multi-word phrase; skip tiny fragments
+        # so an opening run of short narrative lines isn't mistaken for a contents block.
+        # Recognized matter headings (Introduction, Afterword) are kept regardless.
+        if typ is None and (len(title) < 8 or " " not in title):
+            continue
+        pos = text.find("\n" + title + "\n", toc_end)
+        if pos < 0 or pos + 1 >= body_end:
+            continue
+        start = pos + 1
+        marks.append((start, start + len(title), typ or "chapter", title))
+    marks.sort(key=lambda x: x[0])
+    # Require enough chapter-typed matches so a couple of stray repeated lines can't trip it.
+    if sum(1 for m in marks if m[2] == "chapter") < _MIN_TOC_HEADINGS:
+        return []
+    return marks
+
+
 def _drop_toc_chapter_runs(
     marks: list[tuple[int, int, str, str]], text_len: int
 ) -> list[tuple[int, int, str, str]]:
@@ -1108,6 +1180,19 @@ def detect_layout_sections(
             omarks = detect_ordinal_division_markers(text, 0, body_end)
             if len(omarks) >= _MIN_NAMED_DIVISIONS:
                 recovered += omarks
+            # Last resort when no numbered/keyworded structure was found: an edition whose
+            # chapters carry descriptive titles, recovered by matching the leading contents
+            # block to the titles' repeated body occurrences. Skipped for a scholarly
+            # translation anthology (handled as commentary/translation layers), so its work
+            # titles aren't also recovered as a competing chapter track.
+            if not recovered:
+                smk = detect_scholarly_markers(text, 0, body_end)
+                is_scholarly = (
+                    sum(1 for m in smk if m[2] == "commentary") >= _MIN_SCHOLARLY_WORKS
+                    and sum(1 for m in smk if m[2] == "translation") >= _MIN_SCHOLARLY_WORKS
+                )
+                if not is_scholarly:
+                    recovered += detect_toc_headings(text, body_end)
             if recovered:
                 items.extend(recovered)
                 items.sort(key=lambda x: x[0])
