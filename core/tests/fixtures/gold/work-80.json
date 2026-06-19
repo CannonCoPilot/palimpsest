@@ -1,0 +1,132 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 80,
+  "source_file": "The Dead Sea scrolls translated _ the Qumran texts in -- [edited by] Florentino García Martínez; Wilfred G_E_ -- 2011 -- William B_ Eerdmans -- isbn13 9780802841933 -- d376ed7413b2c8079b55a16507a08979 -- Anna’s Archive.epub",
+  "work": "The Dead Sea Scrolls Translated (García Martínez)",
+  "annotations": [
+    {
+      "type": "title_page",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "FLORENTINO GARCIA MARTINEZ\n\nThe Dead Sea Scrolls Translated\n\nThe Qumran Texts in English",
+      "end_anchor": "\n\nContents\n\nPREFACE TO THE ENGLISH TRANSLATION",
+      "note": "Title page: author (García Martínez), title, subtitle, and 'Wilfred G. E. Watson Translator' credit. OCR mangles the translator name ('Wi#'red'). Opens the text."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "\n\nContents\n\nPREFACE TO THE ENGLISH TRANSLATION",
+      "end_anchor": "Preface to the English Translation E5 Translator's Note",
+      "note": "Full Table of Contents (~825 lines). GROUND TRUTH for the structure: it enumerates 9 ALL-CAPS thematic chapters (RULES, HALAKHIC TEXTS, LITERATURE WITH ESCHATOLOGICAL CONTENT, EXEGETICAL LITERATURE, PARA-BIBLICAL LITERATURE, POETIC TEXTS, LITURGICAL TEXTS, ASTRONOMICAL TEXTS / CALENDARS AND HOROSCOPES, THE COPPER SCROLL), their numbered compositions, sub-groups (A/B/C copy bands), and the per-manuscript sigla (e.g. '1QRule of the Community (1QS)', '4Q394 [4QMMTa]'). Closed by the back-matter LIST OF MANUSCRIPTS FROM QUMRAN cave index."
+    },
+    {
+      "type": "preface",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Preface to the English Translation E5 Translator's Note",
+      "end_anchor": "Foreword\n\nThis book comprises an English translation",
+      "note": "'Preface to the English Translation' + two dated author notes (Groningen, June 1994 / Sept 1995, signed FLORENTINO GARCIA MARTINEZ) + the Translator's Note (signed WILFRED G. E. WATSON, Newcastle). Editorial front matter on the Spanish→English translation history. The OCR renders the heading '...Translation E5 Translator's Note' (ampersand garbled to 'E5')."
+    },
+    {
+      "type": "foreword",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Foreword\n\nThis book comprises an English translation",
+      "end_anchor": "Introduction\n\nI The Dead Sea Scrolls\n\nOver the course of the last forty years",
+      "note": "Author's Foreword: scope ('translation of the non-biblical manuscripts'), the 270-manuscript selection rationale, the symbols key (square brackets, Blank, {…}, /…/ etc.), acknowledgments, and a one-paragraph synopsis of the 9 thematic chapters. Heading is literally 'Foreword' (vs. the separate scholarly Introduction below)."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Introduction\n\nI The Dead Sea Scrolls\n\nOver the course of the last forty years",
+      "end_anchor": "\n\nRules\n\nThis chapter contains those texts which can be called",
+      "note": "The editor's long scholarly Introduction (front matter), sections I–vii: The Dead Sea Scrolls; History of discovery/publication (5 sub-eras); the authenticity dispute; A sectarian library; Identity & origins; History of the Qumran Community; Further reading. Includes the trailing 'Notes to the Introduction' apparatus (~88 numbered notes). ~88K chars; ends where the body's first thematic chapter ('Rules') begins. Distinct from the per-chapter editorial introductions below (those are the `introduction` repeating set)."
+    },
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 9,
+      "count_cue": "9 thematic chapters = the top-level grouping the editor explicitly enumerates in the Foreword ('The first chapter contains the main Rules… Chapter two… the halakhic texts… The third chapter… eschatological… Chapter four… exegetical… Chapter five… Para-biblical… Chapter six… poetic… Chapter seven… liturgical… chapter eight… astronomical… The ninth chapter contains a single document: the Copper Scroll'). Each renders ONCE in the body as a mixed-case heading line (Rules @~124K, Halakhic Texts, Literature with Eschatological Content, Exegetical Literature, Para-biblical Literature, Poetic Texts, Liturgical Texts, Astronomical Texts/Calendars and Horoscopes, The Copper Scroll @~1.08M) followed immediately by an editorial intro. Typed `part` (not `book`): the editor calls them 'chapters' but they are thematic groupings each containing many numbered compositions/manuscripts. Detector finds 0 parts (emits one undifferentiated body block) — secondary recall 0/9.",
+      "exemplars": [
+        {
+          "start_anchor": "\n\nRules\n\nThis chapter contains those texts which can be called",
+          "note": "Chapter 1 'Rules' — first thematic part (Rule of the Community, Damascus Document, etc.)"
+        },
+        {
+          "start_anchor": "Para-biblical Literature\n\nThis chapter also gathers together",
+          "note": "Chapter 5 'Para-biblical Literature' — body heading renders lowercase 'b' (TOC has ALL-CAPS 'PARA-BIBLICAL')"
+        },
+        {
+          "start_anchor": "The Copper Scroll\n\nPossibly the most mystifying",
+          "note": "Chapter 9 'The Copper Scroll' — single-composition part; last thematic part before the back-matter manuscript list"
+        }
+      ],
+      "note": "Top-level structural container (unmasked). Each part = one thematic chapter; below it sit numbered compositions, copy-bands (A/B/C), and per-manuscript translations. The ALL-CAPS forms in the TOC do NOT repeat in the body (body uses mixed case), so part boundaries are real but unmarked to the nav-driven detector."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 9,
+      "count_cue": "9 per-chapter editorial introductions — one translator's prose introduction opening each of the 9 thematic chapters, immediately after the chapter heading (e.g. Rules: 'This chapter contains those texts which can be called Rules…'; Halakhic Texts: 'A large part of the contents of the Rules comprises halakhic regulations…'; Astronomical: 'This chapter assembles a sample…'; Copper Scroll: 'Possibly the most mystifying…'). 5 open with the formula 'This chapter contains/comprises/also gathers/assembles…'; the other 4 (Eschatological, Exegetical, Poetic, Copper Scroll) open with topic prose. These are the high-value editorial layer the detector misses: by_type introduction=2 over 9 → recall 2/9≈0.22. Distinct from the single front-matter Introduction (which is the separate scholarly Introduction with sections I–vii).",
+      "exemplars": [
+        {
+          "start_anchor": "Halakhic Texts\n\nA large part of the contents",
+          "note": "Chapter 2 introduction — opens 'A large part of the contents of the Rules comprises halakhic regulations…'"
+        },
+        {
+          "start_anchor": "Astronomical Texts, Calendars and Horoscopes\n\nThis chapter assembles",
+          "note": "Chapter 8 introduction — 'This chapter assembles a sample of a whole series of compositions…'"
+        }
+      ],
+      "note": "Per-chapter commentary/introduction by the translator-editor (García Martínez). Could equally be typed `commentary`; chosen `introduction` because each opens (not annotates) its chapter. Detector emits only 2 introduction elements over the whole work (front-matter Intro + one chapter intro), so 7 of these 9 are swallowed into body — a masked editorial layer."
+    },
+    {
+      "type": "translation",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 270,
+      "count_cue": "~270 manuscript translations — the rendered English text of each Qumran manuscript, the core content. Author states verbatim in the Preface: 'this book claims to offer the reader a translation of the 270 most important manuscripts from Qumran' (the count_cue's external anchor). Each translation unit is headed by its manuscript siglum (e.g. '1QRule of the Community (1QS)', '1QWar Scroll (1QM [+1Q33])', '4Q394 [4QMMTa]') and rendered with the translator's diplomatic conventions: square brackets [ ] for restorations, 'Blank' for vacat, {…} for erasures, /…/ for interlinear insertions, ellipses for lacunae, and 'Col. i/ii…' / 'Frag. N' column-and-fragment markers (327 'Col.' + 687 'Frag.' markers across the body). EXACT programmatic count not cleanly extractable from THIS OCR stream: the back-matter List marks translated mss with an asterisk '*', but OCR mangled the markers (* / 0 / o appear inconsistently — a raw scan finds 74 '* ' lines, not 270), so the 270 figure rests on the author's own editorial statement + the TOC enumeration, NOT a clean regex. Detector emits by_type translation=1 (one undifferentiated block) → recall ≈1/270≈0.004.",
+      "exemplars": [
+        {
+          "start_anchor": "1QRule of the Community (iQs)",
+          "note": "First manuscript translation in the body: 1QS, Cave-1 copy of the Rule of the Community. Siglum line precedes 'Col. I' of the translation (OCR renders 1QS as 'iQs')."
+        },
+        {
+          "start_anchor": "For [the Instructor...] ... [book of the Rul]e of the Community",
+          "note": "1QS Col. I line 1 — shows the translation conventions: [restorations], ellipsis lacunae, superscript-line numbers run inline."
+        },
+        {
+          "start_anchor": "1QWar Scroll (1QM [+1Q33])\n\nCol. i i For the Ins[tructor: The Rule] of the War.",
+          "note": "1QM War Scroll translation opening (Cave-1 copy) — body siglum + 'Col. i' incipit. (The bare siglum also appears in the TOC; this longer anchor pins the body instance.)"
+        },
+        {
+          "start_anchor": "The translation follows, in part, the transcription from the official edition by\nJ. T. Milik",
+          "note": "The Copper Scroll (3Q15) translation preamble — the single composition of chapter 9; precedes its Col. i treasure-list translation."
+        }
+      ],
+      "note": "PRIMARY high-value type for this corpus (a full diplomatic TRANSLATION of each non-biblical scroll). HEADLINE pathology: composite 99.0 but the detector emits ONE translation block over ~270 distinct manuscript translations (and 0 parts, 7/9 chapter intros swallowed) — a coarse mirage. recall ≈0.004 ⇒ MIRAGE. The 270 count is the author's editorial figure (Preface) corroborated by the TOC enumeration; an exact regex count is blocked by OCR-mangled asterisk markers in the back-matter List, flagged honestly above rather than guessed."
+    },
+    {
+      "type": "bibliography",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "resolve": "last",
+      "start_anchor": "List of the Manuscripts from Qumran\n\nThis list contains all the manuscripts",
+      "end_anchor": "<<EOF>>",
+      "note": "Back-matter catalog 'List of the Manuscripts from Qumran' (TOC: LIST OF MANUSCRIPTS FROM QUMRAN). One entry per manuscript: series number, official abbreviation (in brackets), the book's title, the editio princeps / partial-edition reference, a short content identification, and [page refs in square brackets]. Arranged by cave (CAVE 1… CAVE 11), split biblical vs non-biblical; '*' marks translated mss, 'o'/'0' the untranslated minute fragments (OCR-mangled). A bibliographical apparatus (editio-princeps references) → typed `bibliography`; runs to EOF. Detector emits this as back_matter+index."
+    }
+  ]
+}

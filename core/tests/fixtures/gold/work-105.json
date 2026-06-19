@@ -1,0 +1,123 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 105,
+  "source_file": "The Dead Sea Scrolls Reader, Vol_ 1_ Texts Concerned With -- edited by Donald W_ Parry & Emanuel Tov with the assistance -- 1, 2004 -- Brill Academic -- isbn13 9781423712275 -- 79bba3ff81b9b5adf8d401cdd0f7d237 -- Anna’s Archive.pdf",
+  "work": "Dead Sea Scrolls Reader Vol. 1 (Parry & Tov, Brill 2004)",
+  "annotations": [
+    {
+      "type": "title_page",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "T h e\nD e a d\nS e a\nS c r o l l s\nR e a d e r\n\nThis page",
+      "end_anchor": "Printed on acid-free paper",
+      "note": "Title-page spread (letter-spaced 'T h e D e a d S e a S c r o l l s R e a d e r', editors Parry & Tov, 'PART 1', Brill/Leiden·Boston 2004). PDF letter-spacing preserved verbatim; the title block prints twice on the spread (recto + verso), so the start anchor pins the FIRST instance by appending the unique '\\n\\nThis page' that follows only the leading copy."
+    },
+    {
+      "type": "copyright",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Printed on acid-free paper",
+      "end_anchor": "CONTENTS\n(For the contents of the complete volume",
+      "note": "Title-verso colophon/copyright block: cover art credit, DJD/OUP reproduction permissions, LC Control Number, ISBN Part 1 / Set, '© Copyright 2004 by Koninklijke Brill NV', all-rights-reserved + Copyright Clearance Center notice, 'Printed in The Netherlands'. type=copyright (previously under-exemplified across gold)."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "CONTENTS\n(For the contents of the complete volume",
+      "end_anchor": "GENERAL TABLE OF CONTENTS\nI\n\nGENERAL INTRODUCTION",
+      "note": "Part-1 table of contents (heading 'CONTENTS' + 'For the contents of the complete volume see the back of this part'). Lists the 6 lettered genre sections A–F and, beneath each, the manuscript-document entries with their DJD source + page number — this listing is the ground truth for the part/book/translation counts below. End anchor is the one-line 'GENERAL TABLE OF CONTENTS' stub (the full general TOC lives in another part, not reproduced here), which immediately precedes the General Introduction."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "The Dead Sea Scrolls Reader (DSSR) presents for the first time",
+      "end_anchor": "ABBREVIATIONS\n\n1. Texts from the Judaean Desert",
+      "note": "Editors' GENERAL INTRODUCTION (pp. vii–xvi): Classification, Coverage, Sources, Nomenclature, transcription conventions, with extensive footnote apparatus interleaved (each page's notes fall just below its body). Typed introduction (editors' scholarly intro to the whole edition) rather than preface — it explains scope/method, not authorial front-matter. Ends at the ABBREVIATIONS heading."
+    },
+    {
+      "type": "glossary",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "ABBREVIATIONS\n\n1. Texts from the Judaean Desert",
+      "end_anchor": "INTRODUCTION TO PART 11\n\nTEXTS CONCERNED WITH RELIGIOUS LAW",
+      "note": "Sigla / abbreviations key (heading 'ABBREVIATIONS' → '1. Texts from the Judaean Desert' [composition sigla: apGen, D, S, Sa, Sb, T, …] + '2. General Abbreviations' [ar, col., DJD, FARMS, frag., gr, …]). type=glossary: a definitional lookup table of the work's editorial sigla/codes. NOTE the bulk of the editorial-symbols key (square brackets, vacat, °/circlet, paragraphos, etc.) is explained INSIDE the General Introduction above (the 'SUMMARY OF THE SYMBOLS EMPLOYED' table at ~34.3K); this glossary annotation covers only the discrete ABBREVIATIONS list. End anchor 'INTRODUCTION TO PART 11' = the 'INTRODUCTION TO PART 1' heading immediately concatenated with the footnote-marker '1' by the linear extractor."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "INTRODUCTION TO PART 11\n\nTEXTS CONCERNED WITH RELIGIOUS LAW",
+      "end_anchor": "2\n\nA. COMMUNITY RULES\n\nSerekh ha-Yaúad\n\n1QS I 1–III 12 ed.",
+      "note": "INTRODUCTION TO PART 1 ('Texts Concerned with Religious Law', pp. xxi–xxii): scope of the 'Rules' genre, Yaúad community, halakhah, with footnotes + 'Recent summaries' + 'Italics in part 1 / ( ) in part 1' editorial notes. A SECOND introduction block (per-part), distinct from the whole-edition General Introduction above; both typed introduction. End anchor is the first body document's heading (page '2' + section A + composition Serekh ha-Yaúad + the 1QS transcription header)."
+    },
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 6,
+      "count_cue": "6 lettered genre/classification sections — A. COMMUNITY RULES, B. ESCHATOLOGICAL RULES, C. PURITY RULE, D. OTHER RULES, E. EPISTOLARY TREATISE CONCERNED WITH RELIGIOUS LAW, F. UNCLASSIFIED TEXTS CONCERNED WITH RELIGIOUS LAW — the top body division, verified against the part-1 CONTENTS (each letter heads a TOC block). The full section titles recur as PER-PAGE RUNNING HEADERS throughout each section (A×98, B×51, C×5, D×16, E×8, F×5 occurrences), so they are NOT uniquely single-anchorable as headings; exemplars below pin the two sections (A, B) whose body-start heading resolves uniquely.",
+      "exemplars": [
+        {
+          "start_anchor": "2\n\nA. COMMUNITY RULES\n\nSerekh ha-Yaúad\n\n1QS I 1–III 12 ed.",
+          "note": "Section A (COMMUNITY RULES) body start — page '2' + section header + first composition Serekh ha-Yaúad + 1QS transcription header"
+        },
+        {
+          "start_anchor": "B. ESCHATOLOGICAL RULES\n\nRule of the Congregation",
+          "note": "Section B (ESCHATOLOGICAL RULES) body start, heading the Rule of the Congregation composition"
+        }
+      ],
+      "note": "Top-level body grouping = the 6 genre classes. Reported (secondary), not rated. Sections C–F have no uniquely-resolving standalone body heading (only running headers + the TOC line), so they are counted from the TOC, not exemplar-anchored."
+    },
+    {
+      "type": "book",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 6,
+      "count_cue": "6 named compositions that group multiple manuscript copies under one title, listed (bold/italic) in the part-1 CONTENTS: Serekh ha-Yaúad, Serekh le<anshey ha-Yaúad, Damascus Document (D), Rule of the Congregation, War Rules, Miq§at Ma>a°e Ha-Torah = MMT (each TOC title resolves exactly 1× in the contents block). PARTIAL grouping: this composition level only exists where several sigla share a work (e.g. the 1QS/4QS copies under Serekh ha-Yaúad, the 4QD/5QD/6QD copies under Damascus Document); the shorter texts in sections C/D/F sit directly at the manuscript-document level with no intervening composition title.",
+      "exemplars": [
+        {
+          "start_anchor": "Serekh le<anshey ha-Yaúad\n\n1QS V 1–XI 22 trans.",
+          "note": "Composition 'Serekh le<anshey ha-Yaúad' heading its first manuscript (1QS V 1–XI 22 translation block)"
+        },
+        {
+          "start_anchor": "Damascus Document (D)\n\n4Q266 (4QDa) trans.",
+          "note": "Composition 'Damascus Document (D)' heading 4Q266 (4QDa), its first copy"
+        }
+      ],
+      "note": "Mid-level body grouping (composition → its manuscript copies). Reported (secondary), not rated. Count is the 6 explicit composition titles; documents NOT under any of these sit one level up at section→document directly."
+    },
+    {
+      "type": "translation",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 63,
+      "count_cue": "63 per-manuscript ENGLISH-TRANSLATION blocks, each introduced by a recurring attribution line '<siglum> (<name>) trans. <translator(s)>' (e.g. '4Q271 (4QDf) trans. J. M. Baumgarten'). PROGRAMMATICALLY VERIFIED: a line-anchored /\\btrans\\.\\s/ count over reference_text() yields exactly 63 (62 of the 63 are siglum-prefixed; the 1 outlier — '…Text]) trans. E. Qimron and J. Strugnell' at ~550K — is the MMT composite header whose siglum wrapped onto the prior line). 60 distinct sigla (1QS and 4Q256 each contribute 2 segment-translations: 1QS I–III + V–XI, 4Q256 in two places), so 63 translation blocks. Each block follows that document's Hebrew/Aramaic transcription (the masked source-language body) and is itself the masked translated layer.",
+      "exemplars": [
+        {
+          "start_anchor": "1QS I 1–III 12 trans. M. Wise, M. Abegg, and E. Cook with",
+          "note": "FIRST translation block (1QS I 1–III 12, Wise/Abegg/Cook with N. Gordon) — opens the body"
+        },
+        {
+          "start_anchor": "4Q271 (4QDf) trans. J. M. Baumgarten",
+          "note": "the spec's named exemplar — 4Q271 (4QDf) Damascus-Document copy, Baumgarten translation"
+        },
+        {
+          "start_anchor": "4Q279 (4QFour Lots) trans. P. S. Alexander and G. Vermes",
+          "note": "LAST translation block (4Q279, 4QFour Lots) — closes the volume"
+        }
+      ],
+      "note": "PRIMARY layer and the high-value under-exemplified type. The work is a parallel edition: for every manuscript, a transcription block (source-language, masked body) is paired with a 'trans.' English-translation block (type=translation, mask=true). The attribution line is the strong recurring anchor. Within each translation block the text is subdivided by 'Frg. N' / 'Col. N' headings and numbered lines carrying editorial conventions ([ ] reconstructions, vacat = blank). I did NOT promote 'Frg.' to a chapter level: 'Frg.' occurs 952× because every fragment heading prints TWICE per document (once in the transcription, once in the translation) and varies in granularity (Frg. / Frg. N Col. i), so it is internal sub-structure of the translation/transcription bodies, not a clean segmentable chapter container."
+    }
+  ]
+}

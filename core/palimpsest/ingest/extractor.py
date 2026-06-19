@@ -2,23 +2,40 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
+
+# Distribution watermarks injected by pirate re-hosts (e.g. OceanofPDF) that are not
+# part of the work. Stripped from every extracted text so they never enter a mask.
+_WATERMARK_RE = re.compile(
+    r"[ \t]*(?:https?://)?(?:www\.)?OceanofPDF\.com[ \t]*\n?",
+    re.IGNORECASE,
+)
+
+
+def _strip_watermarks(text: str) -> str:
+    """Remove known distribution watermarks, collapsing the gap they leave."""
+    text = _WATERMARK_RE.sub("", text)
+    # avoid leaving 3+ blank lines where a standalone watermark line was removed
+    return re.sub(r"\n{3,}", "\n\n", text)
 
 
 def extract_text(path: Path) -> str:
     """Extract raw text from a file based on its extension."""
     suffix = path.suffix.lower()
     if suffix == ".txt":
-        return _extract_txt(path)
-    if suffix == ".pdf":
-        return _extract_pdf(path)
-    if suffix == ".epub":
-        return _extract_epub(path)
-    if suffix in (".html", ".htm"):
-        return _extract_html(path)
-    if suffix in (".md", ".markdown"):
-        return _extract_markdown(path)
-    raise ValueError(f"Unsupported file format: {suffix}")
+        raw = _extract_txt(path)
+    elif suffix == ".pdf":
+        raw = _extract_pdf(path)
+    elif suffix == ".epub":
+        raw = _extract_epub(path)
+    elif suffix in (".html", ".htm"):
+        raw = _extract_html(path)
+    elif suffix in (".md", ".markdown"):
+        raw = _extract_markdown(path)
+    else:
+        raise ValueError(f"Unsupported file format: {suffix}")
+    return _strip_watermarks(raw)
 
 
 def _extract_txt(path: Path) -> str:

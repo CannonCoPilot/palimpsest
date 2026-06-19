@@ -1,0 +1,125 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 64,
+  "source_file": "The Books of Enoch_ A Complete Volume Containing 1 Enoch -- Enoch & Joseph B_ Lumpkin [Enoch & Lumpkin, Joseph B_] -- 2009 -- Fifth Estate, -- isbn13 9781933580807 -- 6d9f4271e0a52f5b84fa059abc2857c0 -- Anna’s Archive.epub",
+  "work": "The Books of Enoch (1/2/3 Enoch, Lumpkin)",
+  "annotations": [
+    {
+      "type": "title_page",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "The Books of Enoch:\n\nA Complete Volume Containing\n\n1 Enoch (The Ethiopic Book of Enoch)",
+      "end_anchor": "Copyright © 2010 Joseph B. Lumpkin.",
+      "note": "Title page (title, subtitle listing the three constituent books, 'By Joseph B. Lumpkin'). The title block is duplicated in the source (it repeats with '1 Enoch' OCR'd as 'I Enoch' the second time); this single anchor pins the first occurrence. Detector emits a title_page here."
+    },
+    {
+      "type": "copyright",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Copyright © 2010 Joseph B. Lumpkin.",
+      "end_anchor": "Table of Contents",
+      "note": "Copyright/imprint block (© 2010, Fifth Estate Publishers, First Printing March 2009, LCCN 2009942338, ISBN 9781933580807, Fifth Estate 2010)."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Table of Contents\n\nIntroduction",
+      "end_anchor": "INTRODUCTION\n\nThe study of scripture is a lifelong venture",
+      "note": "Table of Contents listing the four top-level nav entries with print page numbers: Introduction (3), 1 Enoch (21), 2 Enoch (219), 3 Enoch (293). Confirms the volume's coarse structure."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "single",
+      "role": "primary",
+      "start_anchor": "The study of scripture is a lifelong venture",
+      "end_anchor": "Let us now proceed to the Book of Enoch.",
+      "note": "Translator's (Lumpkin's) general INTRODUCTION/commentary for the whole volume (~24K chars): non-canonical books in the Bible, transmission history of Enoch (Bruce/Laurence/Charles/Qumran), and — critically — the description of 1 Enoch's 'five distinct sections' as CHAPTER RANGES ('(1 Enoch 1-36) - The Book of Watchers', etc.). The EPUB nav has a single 'Introduction' node directly above '1 Enoch'; it doubles as 1 Enoch's introduction (closes with 'Let us now proceed to the Book of Enoch.'). NOT detected as introduction — detector folds it into the body. TYPE JUDGMENT: introduction (translator's editorial apparatus) over commentary; the heading is literally 'INTRODUCTION'."
+    },
+    {
+      "type": "book",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 3,
+      "count_cue": "3 constituent books bound as one volume: 1 Enoch (Ethiopic), 2 Enoch (Slavonic), 3 Enoch (Hebrew). Confirmed by the TOC (4 nav entries: Introduction + the 3 books) and by the trailing Document Outline ('1 Enoch' / '2 Enoch' / '3 Enoch' top-level nodes). Each book carries its own title heading and (for 2 & 3 Enoch) its own introduction. The current detector does NOT segment at the book level — it emits one body + 221 flat chapters with no book containers.",
+      "exemplars": [
+        {
+          "start_anchor": "The Lost Book of Enoch\n\nEthiopic Enoch\n\n1 Enoch",
+          "note": "Book 1 (1 Enoch) title heading, immediately before [Chapter I}"
+        },
+        {
+          "start_anchor": "The Book of the Secrets of Enoch\n\nChapter 1",
+          "note": "Book 2 (2 Enoch / Slavonic) body title heading, immediately before its Chapter 1"
+        },
+        {
+          "start_anchor": "Book of 3 Enoch or the Hebrew",
+          "note": "Book 3 (3 Enoch / Hebrew) — nav/Document-Outline node naming the third book"
+        }
+      ],
+      "note": "Top-level structural container above chapter. mask=false (unmasked container per _UNMASKED_TYPES). Chapter numbering RESTARTS at 1 within each book (1 Enoch 1-108, 2 Enoch 1-68, 3 Enoch 1-48) and each book uses a DIFFERENT chapter-heading format (see chapter annotation)."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 2,
+      "count_cue": "2 per-book introductions: '(2) Introduction to The Second Book of Enoch: Slavonic Enoch' and '(3) Intro duction of 3 Enoch' (the 3 Enoch heading is OCR-split as 'Intro duction'). 1 Enoch has NO separate intro — the volume-level general introduction (annotated separately above) serves it (single nav node). So volume-level intros = 1 general + 2 per-book = 3 total introduction blocks, of which these 2 are the per-book repeating ones.",
+      "exemplars": [
+        {
+          "start_anchor": "Introduction to The Second Book\n\nof Enoch:\n\nSlavonic Enoch",
+          "note": "2 Enoch introduction (transmission history: Sokolov 1886, long vs short version, Melchizedek tradition)"
+        },
+        {
+          "start_anchor": "Intro duction of 3 Enoch",
+          "note": "3 Enoch introduction (Odeberg 1928 reconstruction, Merkabah/Metatron material); heading OCR-split 'Intro duction'"
+        }
+      ],
+      "note": "Per-book editorial introductions by the translator. Both UNDETECTED — swallowed into chapter/body text. TYPE JUDGMENT: introduction over commentary (both literally headed 'Introduction')."
+    },
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 228,
+      "count_cue": "228 chapters across the 3 books = 108 (1 Enoch) + 68 (2 Enoch) + 52 (3 Enoch). 1 ENOCH = 108 (canonical), all present and verified: 106 of 108 headings match /[\\[I]Chapter (N|roman I)[\\]\\}]/ (the bracket form '[Chapter N]'); the 2 'missing' from a strict scan are OCR-corrupted brackets — ch1 '[Chapter I}', ch35 '[Chapter 35J', ch36 '[Chapter 361', ch85/105/106 'IChapter N]' — individually verified present. 2 ENOCH = 68 (canonical): standalone 'Chapter N' headings 1-68; a strict scan returns 70 line matches = 68 headings + 2 inline cross-references to 'Chapter 53' inside the commentary (the missing 'Chapter 5' is a real heading present in body). 3 ENOCH = 52 printed 'CHAPTER N' headings (Odeberg edition): chapters I,2-4,6-7,9-47 (5 & 8 are GENUINELY ABSENT in Odeberg's reconstruction) PLUS the multi-part chapters 15+15B, 22+22B+22C, and 48A/48B/48C/48D — 52 standalone '\\n\\nCHAPTER ...' headings in the body. EDITIONS VARY; counts cross-checked against canon (1En 108, 2En 68, 3En 48-base) and verified programmatically against THIS text. Detector finds 221 flat chapters (no book grouping); 228 is the true book-aware total.",
+      "exemplars": [
+        {
+          "start_anchor": "[Chapter I}\n\n1 The words of the blessing of Enoch",
+          "note": "1 Enoch Chapter 1 (bracket form, OCR'd '[Chapter I}' with roman I + mismatched brace)"
+        },
+        {
+          "start_anchor": "[Chapter 108]",
+          "note": "1 Enoch Chapter 108 — last chapter of book 1 (clean bracket form)"
+        },
+        {
+          "start_anchor": "Chapter 1\n\n1 There was a wise man",
+          "note": "2 Enoch Chapter 1 (no-bracket 'Chapter N' form, distinct from 1 Enoch's bracket form)"
+        },
+        {
+          "start_anchor": "Chapter 68\n\n1 Enoch was born on the sixth day",
+          "note": "2 Enoch Chapter 68 — last chapter of book 2"
+        },
+        {
+          "start_anchor": "CHAPTER 48 D\n\n-\n\nThe names of Metatron.",
+          "note": "3 Enoch Chapter 48 D (uppercase 'CHAPTER N' form; the 48A-D split is Odeberg's; last division of book 3)"
+        }
+      ],
+      "note": "PRIMARY structure. Three distinct chapter-heading formats by book — 1 Enoch '[Chapter N]' (bracketed, several OCR-corrupted), 2 Enoch 'Chapter N' (title-case, no brackets), 3 Enoch 'CHAPTER N' (uppercase, with A/B/C/D sub-parts). Verse-level numbering inside chapters is the masked body. The body also interleaves italic Bible cross-references (GEN/JUD/MAT/HEB ...) and parenthetical '(Author's note: ...)' glosses — not separately segmented here."
+    },
+    {
+      "type": "back_matter",
+      "mask": true,
+      "structure": "single",
+      "resolve": "last",
+      "start_anchor": "Document Outline\n\nFront Cover",
+      "end_anchor": "<<EOF>>",
+      "note": "Trailing EPUB navigation map exported as text ('Document Outline': Front Cover / Title / ISBN / Contents / Introduction / 1 Enoch / 2 Enoch / 3 Enoch / Back Cover). Non-authorial navigational matter at the very end of the stream; this is also the authoritative confirmation of the 3-book + general-introduction top-level structure. Currently swallowed into the trailing chapter."
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text(); resolve=last uses rfind; end_anchor <<EOF>>=end of text. Offsets derived at eval time, never stored.",
+  "idx": 107,
+  "source_file": "The Holy Quran With Arabic Text And English Translation -- Maulawī Sher ʻAlī; Tahir Ahmad -- 2021 -- Islam International Publications Limited -- isbn13 9781848800229 -- 45d547fdc78588e53a0fc7b3166a36b4 -- Anna’s Archive.pdf",
+  "work": "The Holy Quran (Sher Ali / Ahmadiyya, 2021 PDF)",
+  "annotations": [
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 114,
+      "count_cue": "114 Surahs — the canonical Quran chapter count, INDEPENDENTLY VERIFIED for this edition: each surah body opens with its name in ALL-CAPS followed by a '(Revealed before/after Hijrah)' line. A literal scan for '(Revealed' yields 111; the 3 misses are OCR-garbled descenders of the SAME marker (e.g. Al-Fatihah's '(Revealed hefi,r; l fiirah)', Al-A'raf's '(Revealed be/iJre Hijrah)') — walking the ALL-CAPS name line that precedes every such marker recovers all 114, AL-FATIHAH(1) … AN-NAS(114), matching the TOC's Chapter_1 … Chapter_114. NOTE: the CURRENT detector emits 925 'chapter' sections — it segments on the per-PAGE running head 'Chapter N - <arabic>' (≈925 pages), NOT on the 114 surah bodies, so its recall against this gold is >>1 (over-segmentation, not a miss). The surah is the true content chapter.",
+      "exemplars": [
+        {
+          "start_anchor": "AL-FATIHAH\n(Revealed hefi,r; l fiirah)",
+          "note": "Surah 1 (Al-Fatihah) — first surah; '(Revealed before Hijrah)' OCR-garbled to 'hefi,r; l fiirah'"
+        },
+        {
+          "start_anchor": "AL-BAQARAH\n(Revealed after l fiirah)",
+          "note": "Surah 2 (Al-Baqarah) — longest surah; '(Revealed after Hijrah)' garbled to 'after l fiirah'"
+        },
+        {
+          "start_anchor": "AN-NAS\n(Revealed after l fiirah)",
+          "note": "Surah 114 (An-Nas) — last surah; the marker mis-OCR'd 'after' (canonically Revealed before Hijrah)"
+        }
+      ],
+      "note": "PRIMARY content structure. The 114 surahs are the navigational chapters; verses within are the (masked) body. Type=chapter (UNMASKED) per taxonomy. The English verse text + footnote apparatus is interleaved within each surah."
+    },
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 30,
+      "count_cue": "30 Juz' (Parts) — the canonical 30-fold liturgical division of the Quran, cross-checked against the front-matter 'List of Parts with Page Numbers' which enumerates Part 1 (p.1) … Part 30 (p.889). Parts are ORTHOGONAL to surahs (a Juz' boundary falls MID-surah: 'Part 2' begins inside AL-BAQARAH), so this is a secondary overlay grouping, not a container of chapters nor contained by them. In-body Part boundaries are signalled only by per-page running heads 'Part N - <arabic>', whose numerals are OCR-noisy (I/1, II/11, and parts 6,7,19 lost to garble — 29 distinct tokens recovered of 30), so per-instance anchoring of Part STARTS is unreliable; the 30 count is established from the clean TOC list, exemplar-anchored there.",
+      "exemplars": [
+        {
+          "start_anchor": "List of Parts with Page Numbers",
+          "note": "Front-matter Juz' table — the clean, authoritative enumeration of Part 1..30 with page numbers (in-body Part heads are OCR-garbled)"
+        }
+      ],
+      "note": "Secondary grouping level (Juz'). Encoded for structural completeness; count is TOC-verified, not body-segmented. Type=part (UNMASKED) per taxonomy."
+    },
+    {
+      "type": "translation",
+      "mask": true,
+      "structure": "single",
+      "role": "primary",
+      "start_anchor": "AL-FATIHAH\n(Revealed hefi,r; l fiirah)",
+      "end_anchor": "Prayer offered\nat the completion",
+      "note": "HIGH-VALUE LAYER. The entire scripture body is Maulawi Sher Ali's English TRANSLATION of the Quran (numbered verses, e.g. '1. In the name of Allah, the Gracious, the Merciful.'). Span runs from Surah 1 to the back-matter 'Prayer offered at the completion of the recitation'. SCOPING CAVEAT (honest, required): the PDF text layer renders the original ARABIC as garbage glyphs (e.g. 'r ;;.iµ,', '~ J' ~', the recurring 'a i u I / I th .::,' transliteration-key debris on every page) because the embedded font's glyph→Unicode map is broken. ONLY the English translation + Latin structure extract cleanly; Arabic verse text is NOT annotated here and OCR of it is DEFERRED. This single span therefore covers the clean translation layer that is interleaved (per detector) with 925 page-chapter/header segments."
+    },
+    {
+      "type": "commentary",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": null,
+      "count_cue": "Per-verse explanatory commentary apparatus — Sher Ali's translator notes plus Hazrat Mirza Tahir Ahmad's alternative-translation notes (Foreword: bold alternatives + footnotes marked with starlets '*', dagger 't'/'‡' for the translator's own notes, '(publisher)' tag for publisher notes). Discrete prose 'Note:' annotations occur 48× (line-anchored), and per-verse footnote starlets appear ~1700×; daggered footnote bodies (e.g. 't I am Allah, the All-Knowing.') RECUR across pages so most footnote text is NOT uniquely exemplar-anchorable, hence expected_count=null (presence layer). Count is left null deliberately rather than guessing — the apparatus is densely interleaved with the translation and OCR-fragmented.",
+      "exemplars": [
+        {
+          "start_anchor": "Note: The reader should not be misled by the word Thy in italics",
+          "note": "Al-Fatihah v.7 commentary note (on 'maghdub') — a unique, prose 'Note:' annotation in the per-verse apparatus"
+        }
+      ],
+      "note": "Type=commentary (UNMASKED) per taxonomy — Sher Ali / Mirza Tahir Ahmad notes. Distinct from the verse translation; a secondary annotated layer. Many footnote bodies repeat verbatim across pages so are not individually anchorable; the unique 'Note:' exemplar stands in."
+    },
+    {
+      "type": "title_page",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "THE HOLY QUR' AN\nARABIC TEXT AND ENGLISH TRANSLATION",
+      "end_anchor": "Published with alternative translation of,",
+      "note": "Title page: 'THE HOLY QUR'AN / ARABIC TEXT AND ENGLISH TRANSLATION / Translated by Maulawi Sher 'Ali …'. The duplicated 'THE HOLY QUR'AN' lines above are the PDF half-title; this anchor pins the title block proper."
+    },
+    {
+      "type": "copyright",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "© ISLAM INTERNATIONAL PUBLICATIONS LTD.",
+      "end_anchor": "ISBN: 978-1-84880-022-9",
+      "note": "Copyright / imprint block: edition history (first published Holland 1955), publisher (Islam International Publications Ltd., Tilford Surrey), British Library cataloguing data, ISBN 978-1-84880-022-9."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "CONTENTS\nPages",
+      "end_anchor": "List of Parts with Page Numbers",
+      "note": "Table of contents: lists front-matter items then 'Chapter_N ..... <Surah name> <page>' for all 114 surahs. (The 'List of Parts with Page Numbers' Juz' table and the 'Alphabetical List of Chapters' immediately follow this span — also contents matter — but are anchored separately as the part/contents boundary; this span covers the primary chapter TOC.)"
+    },
+    {
+      "type": "preface",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Publisher's Note on the English Translation of the Holy Qur'an",
+      "end_anchor": "Nazir Nashro Isha'at Qadian",
+      "note": "Publisher's Note (by Hafiz Makhdum Sharif, Nazir Nashro Isha'at Qadian, 23 March 2021) on the preparation of this 2021 edition. Typed as preface (publisher's prefatory note); two further 'Foreword' blocks follow it (annotated as foreword)."
+    },
+    {
+      "type": "foreword",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "In 2004 we published, under the auspices",
+      "end_anchor": "Index of Symbols Denoting\nPauses",
+      "note": "Foreword(s) + transliteration-system note. The edition carries TWO 'Foreword' blocks (the short 2004/Royal-Size foreword starting here, and a longer translation-history foreword) followed by the Royal Asiatic Society transliteration system ('In transliterating Arabic words we have followed the following system…'). Span ends where the front-matter 'Index of Symbols Denoting Pauses' key begins (a small pause-symbols table, left unannotated). Each foreword page also carries the recurring '(See details of transliteration on page p)' running-apparatus line and OCR transliteration-key debris."
+    },
+    {
+      "type": "glossary",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "SOME ARABIC WORDS EXPLAINED\nAbii lahab",
+      "end_anchor": "Index\nReference to chapters is given before colon",
+      "note": "Back-matter glossary 'SOME ARABIC WORDS EXPLAINED' (alphabetical Arabic terms with English definitions: Abu Lahab, Al-Judi, Allah, As-Safa wal-Marwah, 'Arafat, Badr …). Ends where the verse Index begins. (The heading string alone recurs 3× — TOC + running head — so the anchor includes the first glossed term 'Abii lahab' for uniqueness.)"
+    },
+    {
+      "type": "index",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Index\nReference to chapters is given before colon",
+      "end_anchor": "List of References\nof Proposed Translations\nby l_la<}rat Mirza Tahir",
+      "note": "Back-matter subject Index ('Reference to chapters is given before colon followed by reference to verse(s)') — topical index AARON, etc., keyed chapter:verse. Spans to the start of the final 'List of References of Proposed Translations'."
+    },
+    {
+      "type": "back_matter",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "resolve": "last",
+      "start_anchor": "List of References\nof Proposed Translations\nby l_la<}rat Mirza Tahir",
+      "end_anchor": "<<EOF>>",
+      "note": "Final back-matter apparatus: 'List of References of Proposed Translations by Hazrat Mirza Tahir Ahmad' — a citation list mapping proposed-translation reference numbers to chapter:verse and page. Runs to EOF. (Also encompasses the 'Explanatory List of Some Quranic Words' that the TOC names but whose body heading is OCR-garbled and not separately anchorable.)"
+    }
+  ]
+}

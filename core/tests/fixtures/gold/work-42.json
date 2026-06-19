@@ -1,0 +1,139 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 42,
+  "source_file": "Old Testament pseudepigrapha_ Volume one _ More noncanonical -- Richard Bauckham; James R Davila; Alexander Panayotov; James -- INscribe Digital, -- isbn13 9780802827395 -- aab44f565a88b493ecb8ef452087ff78 -- Anna’s Archive.epub",
+  "work": "Old Testament Pseudepigrapha, Volume One (Bauckham/Davila/Panayotov)",
+  "annotations": [
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 2,
+      "count_cue": "2 top-level divisions printed as Roman-numeral heads in the running text AND the TOC: 'I. TEXTS ORDERED ACCORDING TO BIBLICAL CHRONOLOGY' (35 texts) and 'II. THEMATIC TEXTS' (4 texts). Each head resolves exactly once in reference_text() outside the TOC because the TOC head text is identical only in the contents block — verified t.count == 1 for both anchors (the TOC and body heads coincide in the linear stream; the single occurrence is the structural divider). Top grouping container above the per-text translation level.",
+      "exemplars": [
+        {
+          "start_anchor": "I. TEXTS ORDERED ACCORDING TO BIBLICAL CHRONOLOGY",
+          "note": "Part I divider (biblical-chronology ordering); 35 pseudepigrapha follow"
+        },
+        {
+          "start_anchor": "II. THEMATIC TEXTS",
+          "note": "Part II divider (thematic ordering); 4 pseudepigrapha follow (Cave of Treasures, Palaea Historica, Quotations from Lost Books, Hebrew Visions of Hell and Paradise)"
+        }
+      ],
+      "note": "Unmasked structural container. Detector finds 0 of these (by_type has no part); it segments the volume as commentary/translation blobs with no part grouping."
+    },
+    {
+      "type": "translation",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 39,
+      "count_cue": "39 included pseudepigrapha = the 39 entries in the TOC (35 under Part I + 4 under Part II), each a fresh English translation of an ancient noncanonical text. PROGRAMMATICALLY corroborated: the per-text opener 'A new translation and introduction' resolves 38× case-insensitively + the 1 variant 'Introduction and a new translation of the Armenian version' (Queen of Sheba) = 39, exactly matching the TOC. Each text contributes exactly one translation body (a few texts present multiple recensions inside it — Adam Octipartite has Latin/Slavonic/Irish under explicit 'Translation: …' subheads, the only 3 'Translation:'-colon headers in the volume — but the translated WORK is one unit). The translation body is the ancient text itself, distinct from the editor's introduction that precedes it and the apparatus that follows.",
+      "exemplars": [
+        {
+          "start_anchor": "Translation: Adam Octipartite (Latin)\n\nNow the first man",
+          "note": "Adam Octipartite (Latin recension) — the only text using an explicit 'Translation:' subhead; first of 39 translated works"
+        },
+        {
+          "start_anchor": "Translation: Adam Octipartite (Slavonic)",
+          "note": "second recension subhead within the SAME (first) text — shows one work can carry multiple translation recensions"
+        }
+      ],
+      "note": "PRIMARY high-value type (translation under-exemplified across the gold set). Most texts do NOT print a 'Translation:' heading — the ancient text simply follows the introduction/apparatus — so the count lives in expected_count (TOC-validated 39), not in a heading regex. Detector by_type translation=26 (recall 26/39 = 0.67): it under-segments, fusing some translations into adjacent commentary/introduction blocks."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 40,
+      "count_cue": "One editor's introduction per included text (39: provenance, date, manuscripts, genre, literary context — opened by '<Title>\\n\\nA new translation and introduction\\n\\nby <editor>') PLUS the one volume-level editors' Introduction ('Introduction\\n\\nby Richard Bauckham and James R. Davila') = 40. The 39 per-text openers are the same set counted for translation (38 'new translation and introduction' CI + 1 Queen-of-Sheba variant). These are scholarly editorial essays — provenance/date/manuscript discussion — hence type=introduction, not commentary or body.",
+      "exemplars": [
+        {
+          "start_anchor": "Introduction\n\nby Richard Bauckham and James R. Davila",
+          "note": "volume-level editors' Introduction (general orientation to the OTP corpus)"
+        },
+        {
+          "start_anchor": "The Syriac History of Joseph\n\nA new translation and introduction\n\nby Kristian S. Heal",
+          "note": "per-text introduction opener (Heal) — leads into Manuscripts/Genre/Date-and-Provenance/Literary-Context subsections before the translation"
+        },
+        {
+          "start_anchor": "Questions of the Queen of Sheba and Answers by King Solomon\n\nIntroduction and a new translation",
+          "note": "variant opener phrasing (Hovhanessian/Brock): 'Introduction and a new translation of the Armenian version' — the 1 text whose opener differs from the standard 'A new translation and introduction'"
+        }
+      ],
+      "note": "Detector by_type introduction=8 — it finds the editors' Introduction and a handful of per-text intros but folds the rest into commentary=37. Each per-text intro is genuine editorial introduction (provenance/date/MSS), distinct from the translated ancient text. Secondary grouping (the translation is the primary structure)."
+    },
+    {
+      "type": "bibliography",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 40,
+      "count_cue": "40 per-text 'Bibliography' reference blocks, counted PROGRAMMATICALLY as t.count('\\n\\nBibliography\\n\\n') == 40. One per included text (39) plus one extra — at least one text carries two reference sections (the volume has 39 texts; the 40th block is a second bibliography within a text, e.g. a split editions/studies list). Each block is an alphabetized scholarly reference list following the introduction (and sometimes preceded by 'EDITIONS AND TRANSLATIONS' / 'TEXT AND TRANSLATION' rubrics).",
+      "exemplars": [
+        {
+          "start_anchor": "Bibliography\n\nAndersen, Francis I. \"2 (Slavonic Apocalypse of) Enoch,\"",
+          "note": "Adam Octipartite bibliography (first reference list, alphabetized by author)"
+        },
+        {
+          "start_anchor": "Bibliography\n\nBrock, Sebastian P. \"Dinah in a Syriac Poem on Joseph.\"",
+          "note": "Syriac History of Joseph bibliography (Heal)"
+        }
+      ],
+      "note": "bibliography is under/unexemplified in the gold set; this work supplies 40 instances. Detector emits NO bibliography type (by_type has none) — these blocks are swallowed into the surrounding commentary/translation. Secondary level."
+    },
+    {
+      "type": "footnotes",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": null,
+      "count_cue": "Two distinct per-text apparatus systems, both present for most of the 39 texts: (1) NUMBERED introduction footnotes (1., 2., 3., … keyed to the scholarly essay) and (2) LETTERED translation notes (a., b., c., … critical/text-variant apparatus keyed to the translated ancient text, e.g. '\"to me\"; Greek omits'). expected_count is null: a single cardinality is not cleanly extractable because the two systems interleave, restart per text, and the lettered notes reuse single-letter labels that recur thousands of times (no per-instance content anchor is unique). Presence + the two-system distinction is the contract.",
+      "exemplars": [
+        {
+          "start_anchor": "1. Most recently, Sebastian Brock affirmed that the text is",
+          "note": "numbered introduction footnote #1 of the Syriac History of Joseph (scholarly essay apparatus)"
+        },
+        {
+          "start_anchor": "Notes on the Translation",
+          "note": "the 'Notes on the Translations' rubric (Adam Octipartite) heading the translator's text-critical apparatus that precedes the lettered a./b./c. notes — resolves once"
+        }
+      ],
+      "note": "Distinct masked apparatus layer the detector does not separately type (by_type has no footnotes). Count left null per the spec honesty standard — the lettered notes (a.,b.,c.) are not uniquely content-anchorable and the two systems are not cleanly separable into one number. The volume literally ENDS in lettered translation notes of the final text (Hebrew Visions)."
+    },
+    {
+      "type": "copyright",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "© 2013 Richard Bauckham, James R. Davila, and Alexander Panayotov",
+      "end_anchor": "Dedicated to\n\nJohann Albert Fabricius",
+      "note": "Title-verso copyright block (© 2013, Eerdmans, ISBN 978-0-8028-2739-5, LC cataloging). reference_text() opens directly with this block (no separate title_page text extracted). Detector folds it into front_matter/copyright (by_type copyright=1)."
+    },
+    {
+      "type": "dedication",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Dedicated to\n\nJohann Albert Fabricius",
+      "end_anchor": "Contents\n\nForeword\n\nJames H. Charlesworth",
+      "note": "Dedication to Fabricius (1713 Codex Pseudepigraphus tercentenary) and R. H. Charles (1913 Apocrypha & Pseudepigrapha centenary). Distinct front-matter element; detector does not emit a dedication type for it."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Contents\n\nForeword\n\nJames H. Charlesworth",
+      "end_anchor": "Foreword: The Fundamental Importance of an Expansive Collection",
+      "note": "Table of contents listing Foreword, Introduction, Abbreviations, then the 39 texts under Parts I and II with their editors. This listing is the ground truth for the 39-text count (35 in Part I + 4 in Part II)."
+    },
+    {
+      "type": "foreword",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Foreword: The Fundamental Importance of an Expansive Collection",
+      "end_anchor": "Introduction\n\nby Richard Bauckham and James R. Davila",
+      "note": "James H. Charlesworth's foreword ('The Fundamental Importance of an Expansive Collection…'). Span runs to the editors' Introduction; its own numbered footnotes fall inside this span in the linear stream. Detector emits no foreword type here."
+    }
+  ]
+}

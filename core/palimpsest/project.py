@@ -291,6 +291,7 @@ def ingest_file(
     overwrite: bool = False,
     progress: Callable[[str, str, float], None] | None = None,
     source_name: str | None = None,
+    text_extractor: Callable[[Path], str] | None = None,
 ) -> Project:
     """Ingest a text file into a new project directory.
 
@@ -330,7 +331,7 @@ def ingest_file(
             language = epub_result.metadata.language
     else:
         _emit("parse", "Extracting text…", 0.15)
-        raw_text = extract_text(source_path)
+        raw_text = (text_extractor or extract_text)(source_path)
 
     _emit("normalize", "Normalizing text…", 0.45)
     normalized = normalize(raw_text)

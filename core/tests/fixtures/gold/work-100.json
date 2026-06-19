@@ -23,8 +23,9 @@
       "type": "chapter_heading",
       "mask": true,
       "structure": "repeating",
+      "role": "primary",
       "expected_count": 1334,
-      "count_cue": "\"<Book> Chapter N\" heading (x1334) each followed by a one-line editorial summary before verse 1 — the SAME Douay apparatus as idx5 (sister edition); count matches idx5's verified 1334 exactly. NOTE: a bare /\\bChapter \\d+\\b/ regex yields 1335; the +1 is a parenthetical numbering note \"(Psalm Chapter 10 according to the Hebrews.)\" at the Psalms 9/10 boundary (singular \"Psalm\"), NOT a real heading — excluded.",
+      "count_cue": "\"<Book> Chapter N\" heading (x1334) each followed by a one-line editorial summary before verse 1 — the SAME Douay apparatus as idx5 (sister edition). INDEPENDENTLY VERIFIED for THIS edition (not assumed by parity with idx5): a line-anchored \"<Book> Chapter N\" regex yields 1332; the 2 misses are real headings my strict line-end anchor skipped — \"Job Chapter 39 <summary inline on same line>\" and \"1 Machabees Chapter 2.\" (trailing period) — giving 1334. Equivalently a bare /\\bChapter \\d+\\b/ yields 1335, minus the 1 parenthetical numbering note \"(Psalm Chapter 10 according to the Hebrews.)\" at the Psalms 9/10 boundary (singular \"Psalm\", NOT a heading) = 1334.",
       "exemplars": [
         {
           "start_anchor": "God createth Heaven and Earth, and all things therein, in six days.",

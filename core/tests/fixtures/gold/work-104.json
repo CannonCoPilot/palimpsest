@@ -10,18 +10,18 @@
       "structure": "repeating",
       "role": "primary",
       "expected_count": 84,
-      "count_cue": "84 standalone Roman-numeral poem markers (/^[IVXLC]+$/ lines) across 5 titled sections (ONE..FIVE), numbering restarts per section. Empirically 84 in THIS 1926 Boni & Liveright edition — resolves the earlier 84-vs-canonical-88 flag (some sources cite 88 for the work; this edition's markers = 84).",
+      "count_cue": "84 poems across 5 titled sections, GROUNDED in the foreword's own contents table: ONE I–XL (40), TWO I–XI (11), THREE I–X (10), FOUR I–XVIII (18), FIVE I–V (5) = 84. Markers are standalone Roman-numeral lines; numbering restarts per section. This edition's 84 resolves the 84-vs-canonical-88 flag (some sources cite 88; THIS 1926 Boni & Liveright edition's foreword TOC = 84).",
       "exemplars": [
         {
-          "start_anchor": "the season 'tis, my lovely lambs",
-          "note": "first poem (section ONE, I)"
+          "start_anchor": "with breathing as (faithfully) her lownecked",
+          "note": "TRUE first poem of the work: section ONE ('FIVE AMERICANS' → 'I. LIZ'), poem I. (Corrected 2026-06-18: prior anchor 'the season 'tis' was section TWO's poem I, mislabeled — it sits after the 'TWO' marker.)"
         },
         {
-          "start_anchor": "i go to this window",
-          "note": "last poem (XVIII detected; section FIVE)"
+          "start_anchor": "if i have made,my lady,intricate",
+          "note": "TRUE last poem of the work: section FIVE, poem V (final poem before the Transcriber's note). (Corrected 2026-06-18: prior anchor 'i go to this window' was section FOUR's XVIII — it sits before the 'FIVE' marker.)"
         }
       ],
-      "note": "Verse-form line-breaks PRESERVED (avg ~25c) — experimental typography. Detection recovered only 18 of 84 (recall 0.21) → MIRAGE at composite 91.7; front_matter over-swallows the rest."
+      "note": "Verse-form line-breaks PRESERVED (avg ~25c) — experimental typography. Detector mis-anchors body_start at the 'TWO' marker, swallowing all of section ONE (40 poems) into front_matter, and recovers only 18 of 84 (recall 0.21) → MIRAGE 91.7. Prior exemplars were mis-anchored to the detector's post-swallow view; corrected to true first/last poems."
     },
     {
       "type": "part",
@@ -31,6 +31,13 @@
       "expected_count": 5,
       "count_cue": "5 titled sections ONE/TWO/THREE/FOUR/FIVE (each a standalone line, verified once each); the book's title 'is 5' refers to these 5 parts. Detector finds 0 `part` elements.",
       "note": "Secondary grouping level. Its 0/5 gap accompanies the primary 18/84 under-segmentation."
+    },
+    {
+      "type": "colophon",
+      "mask": true,
+      "start_anchor": "Transcriber's note\n\nNon-standard spelling retained",
+      "end_anchor": "<<EOF>>",
+      "note": "Non-authorial editorial/production note at EOF (non-standard spelling retained; a missing line on p.46; landscape placement on p.55). Currently swallowed into the final poem's section by the detector. ADDED 2026-06-18 (was an untyped false-negative). TYPE CHOICE (flagged): typed `colophon` as the production note at the very end of the work — consistent with idx70/idx100 EOF production notes; arguable alternatives are `back_matter` or a future `transcriber_note` type."
     }
   ]
 }

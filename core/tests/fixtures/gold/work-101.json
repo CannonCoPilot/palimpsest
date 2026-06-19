@@ -1,27 +1,166 @@
 {
-  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored. NOTE (Phase-2): per-instance character EDGES for idx101 are produced programmatically by the column-aware geometry parser (.scratch/mask-eval/lds_extract.py), NOT hand-stored here — the linear reference_text() interleaves the footnote apparatus before each chapter, so stored offsets against it are meaningless. See ratification-results.md → idx101 for the reference_text() decision this implies.",
   "idx": 101,
   "source_file": "LDS_eng.pdf",
   "work": "LDS Triple Combination (2013 PDF)",
   "annotations": [
     {
+      "type": "volume",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 3,
+      "count_cue": "The 3 standard-works divisions bound as one 'Triple Combination': Book of Mormon, Doctrine and Covenants, Pearl of Great Price. Each opens with its own Introduction. Top-level structural container above books/sections.",
+      "exemplars": [
+        {
+          "start_anchor": "keystone of our religion, and a man would get nearer",
+          "note": "Book of Mormon volume — Joseph Smith keystone quote in the BoM Introduction"
+        },
+        {
+          "start_anchor": "Doctrine and Covenants is a collection of divine revelations and",
+          "note": "Doctrine and Covenants volume — first line of the D&C Introduction (dropcap T extracted separately)"
+        },
+        {
+          "start_anchor": "Pearl of Great Price is a selection of choice materials touching",
+          "note": "Pearl of Great Price volume — first line of the PoGP Introduction (dropcap T extracted separately)"
+        }
+      ],
+      "note": "Composite work: 3 volumes. D&C is section-structured (no sub-books); BoM and PoGP contain books."
+    },
+    {
+      "type": "book",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 20,
+      "count_cue": "15 BoM books (1 Nephi, 2 Nephi, Jacob, Enos, Jarom, Omni, Words of Mormon, Mosiah, Alma, Helaman, 3 Nephi, 4 Nephi, Mormon, Ether, Moroni) + 5 PoGP books (Selections from the Book of Moses, The Book of Abraham, Joseph Smith—Matthew, Joseph Smith—History, The Articles of Faith) = 20. D&C contributes 0 books (its 138 numbered sections sit at the chapter level). Each book opens with a full-width title + an italic book argument/summary. Counts canon-validated by the column-aware geometry parse (lds_extract.py books).",
+      "exemplars": [
+        {
+          "start_anchor": "The First Book of Nephi",
+          "note": "first BoM book; full-width title block followed by the 'An account of Lehi…' argument"
+        },
+        {
+          "start_anchor": "Third Nephi",
+          "note": "3 Nephi — title renders 'Third Nephi / The Book of Nephi'; pattern differs from the 'The …Book of…' form, a parse stress-point"
+        }
+      ],
+      "note": "Irregular hierarchy: BoM/PoGP are volume→book→chapter; D&C is volume→section. book is the mid level for 2 of 3 volumes."
+    },
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 393,
+      "count_cue": "BoM 239 chapters (canon-exact, geometry-validated: 1Ne 22, 2Ne 33, Jacob 7, Enos 1, Jarom 1, Omni 1, W.of M. 1, Mosiah 29, Alma 63, Helaman 16, 3Ne 30, 4Ne 1, Mormon 9, Ether 15, Moroni 10) + D&C 138 sections + PoGP 16 (Moses 8, Abraham 5, JS—Matthew 1, JS—History 1, Articles of Faith 1) = 393. The 5 single-chapter BoM books (Enos, Jarom, Omni, Words of Mormon, 4 Nephi) and 3 single-chapter PoGP books (JS—Matthew, JS—History, Articles of Faith) print NO 'Chapter 1' label — they run straight into verses; their single chapter is implicit. 384 explicit 'Chapter N'/'Section N' labels recovered by geometry parse (385 expected for the labeled chapters; the 1-label shortfall is a degraded/wrapped label, flagged in ratification-results.md).",
+      "exemplars": [
+        {
+          "start_anchor": "Nephi begins the record of his people",
+          "note": "1 Nephi chapter 1 — chapter container start (its em-dash summary heads the chapter body)"
+        }
+      ],
+      "note": "Verse-level granularity below this is the masked body; chapters are the primary navigational container the detector must segment."
+    },
+    {
       "type": "chapter_heading",
       "mask": true,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": null,
-      "count_cue": "Two sub-forms. BoM: em-dash chapter summary per chapter (PDF-undercounted). D&C: section header summarizing verse ranges before verse 1 — cleanly cued as \"Section N\" x139 (≈138 sections + heading). Overall count left null: PDF degradation (soft-hyphens, footnote letters, wrap) makes the BoM half not cleanly countable. Stress-CASE, not a clean reference.",
+      "expected_count": 393,
+      "count_cue": "One heading-summary per chapter, in two sub-forms. BoM/PoGP: an em-dash chapter summary (e.g. 'Nephi begins the record…—…About 600 b.c.') before verse 1. D&C: a section header summarizing the verse ranges before verse 1, cued as 'Section N' ×138. Total ≈ 393 (= chapter count): 384 explicit 'Chapter N'/'Section N' labels recovered by the column-aware geometry parse + 8 single-chapter book-level summaries (the 8 label-less single-chapter books carry a book-argument summary in the heading slot). PRIOR contract left this null ('PDF degradation makes the BoM half not cleanly countable') — the geometry parse (lds_extract.py) RESOLVES the scramble and makes it countable; remaining 1-label shortfall vs 385 documented as a degraded/wrapped heading.",
       "exemplars": [
         {
           "start_anchor": "Ephraim and Syria wage war against",
-          "note": "BoM 2 Nephi 17 chapter summary (em-dash clauses + date) — note 2013 ed HAS summaries, unlike 1867 idx99"
+          "note": "BoM 2 Nephi 17 chapter summary (em-dash clauses + date) — 2013 ed HAS summaries, unlike 1867 idx99"
         },
         {
           "start_anchor": "Signs, wonders, and",
-          "note": "D&C section 1 header (verse-range summary before \"Hearken, O ye people\")"
+          "note": "D&C section 1 header (verse-range summary before 'Hearken, O ye people')"
         }
       ],
-      "note": "Two chapter_heading sub-forms in one PDF work; currently mis-segmented (mirage). Detector finds chapter=236 (present) → PRESENT-OK, count unverified."
+      "note": "Two chapter_heading sub-forms in one PDF work. Was a mirage (mis-segmented) under linear extraction; the geometry parser separates the body-band heading from the footnote apparatus cleanly."
+    },
+    {
+      "type": "footnotes",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": null,
+      "count_cue": "Per-page cross-reference apparatus: a 3-column footnote band at the bottom of nearly every verse page, keyed to inline superscript letters (a, b, c…) in the verse body. Geometrically isolable — the middle footnote column starts at x0≈159, an x-band the verse body never uses. The naive linear extraction emits this band BEFORE the chapter it annotates (the core scramble). NOT exemplar-anchorable by content: apparatus entries reuse Topical-Guide targets (e.g. 'Record Keeping' recurs 28×, 'tg Birthright.' 3×), so no footnote string resolves uniquely. Presence + clean geometric separation from body is the requirement; per-instance edges come from the geometry parser, not reference_text().",
+      "note": "NEW in Phase-2 ratification. The footnote apparatus is a distinct masked layer the linear pipeline had folded into chapter/body text. Recoverable only via the geometry parse, not from reference_text() ordering."
+    },
+    {
+      "type": "insert",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 3,
+      "count_cue": "The 3 Facsimiles of the Book of Abraham (printed pp. 28/36/41): each is a reproduced Egyptian illustration (image skipped at extraction) followed by header 'A Facsimile from the Book of Abraham / No. N', then 'Explanation', then a numbered 'Fig. N.' list. Distinct from the verse body — an inserted illustrative apparatus WITHIN the Book of Abraham. Facsimile No. 2 sits on the page before Abraham's chapter start (per source), Nos. 1 and 3 interleave the Abraham chapters.",
+      "exemplars": [
+        {
+          "start_anchor": "Abraham fastened upon an altar",
+          "note": "Facsimile No. 1, Fig. 2 — the explanation list of the sacrifice scene (precedes Abraham Chapter 1)"
+        },
+        {
+          "start_anchor": "Kolob, signifying the first creation",
+          "note": "Facsimile No. 2, Fig. 1 — the cosmological diagram (Kolob/Oliblish); the astronomy facsimile"
+        },
+        {
+          "start_anchor": "Abraham is reasoning upon the principles",
+          "note": "Facsimile No. 3 — Abraham reasoning on astronomy in Pharaoh's court"
+        }
+      ],
+      "note": "NEW in Phase-2. type=insert (illustrative apparatus with, not within, the running verse text). Images are non-textual and skipped; only the Explanation/Fig. text is in reference_text()."
+    },
+    {
+      "type": "copyright",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "© 1981, 2013 by Intellectual Reserve, Inc.",
+      "end_anchor": "English approval: 11/12",
+      "note": "Title-page verso copyright block (© Intellectual Reserve, all-rights-reserved, print date 6/2013, English approval 11/12). NEW in Phase-2 — `copyright` was previously unexemplified across all gold works. Phase-3 UPDATE: the pending back matter (Pronunciation Guide=glossary, alphabetical Index, Church History Maps + Photographs=appendix) and the Witnesses testimonies (front_matter) are now de-scrambled by the column-aware geometry extractor (lds_columnar.py) and anchored as their own annotations below."
+    },
+    {
+      "type": "front_matter",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "The Testimony of Three Witnesses\n\nB\ne it known unto all nations, kindreds, tongues, and people, unto whom\nthis work shall come: That we, through the grace of God the Father",
+      "end_anchor": "Hiram Page\nJoseph Smith, Sen.\nHyrum Smith\nSamuel H. Smith",
+      "note": "The combined Testimonies of the Three and Eight Witnesses — the prefatory attestation pages that print between the Book of Mormon Introduction and the body (start ~offset 9.7K in reference_text()). Type=front_matter because these are prefatory matter to the BoM volume (printed before 1 Nephi), not back matter — placed by where the anchor resolves (front), typed by what they are. The block runs from the Three Witnesses testimony ('Be it known unto all nations…That we…have seen the plates') through the Eight Witnesses signature roster ending at 'Samuel H. Smith' (the Testimony of the Prophet Joseph Smith that follows is a separate introductory excerpt, excluded). Distinct, cleanly de-scrambled section."
+    },
+    {
+      "type": "glossary",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Pronunciation Guide\nF\nollowing are suggestions for pronouncing Book of Mormon names and",
+      "end_anchor": "<<EOF>>",
+      "note": "Pronunciation Guide — a glossary of Book of Mormon proper-name pronunciations (alphabetized A→Z headword list with phonetic respellings, e.g. 'Aaron\\u2003ĕr´an'), introduced by 'Following are suggestions for pronouncing Book of Mormon names and terms…'. Sits at ~offset 1.849M, immediately after the Book of Mormon body/footnote apparatus and before the Doctrine and Covenants. Type=glossary (per-term gloss list). NOTE on edges: the heading repeats 6× in reference_text() — 2 are the front-matter contents/TOC ('Pronunciation Guide . . . .'), 1 is this section start, and 3 are running page headers ('Pronunciation Guide 534/535/536'); the start_anchor with its 'Following are suggestions…' continuation resolves uniquely. end_anchor=<<EOF>> is a placeholder edge: this is a single-section presence annotation, the true end is just before the D&C front matter; per the schema NOTE, per-instance EDGES for idx101 are not the rated quantity (A3 scores presence/recall), and a clean unique END token interior to the dense A→Z respelling list is not reliably isolable. Caveat: the geometry constants in lds_columnar.py are tuned to the 2-column verse body; the Pronunciation Guide is a multi-column glossary, so column ordering within entry blocks may be locally imperfect (visible as the Key fragments interleaving the A-entries), though headwords remain readable and alphabetical."
+    },
+    {
+      "type": "index",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "his index of entries from the Book of Mormon, the Doctrine and Covenants, and\nthe Pearl of Great Price can help you",
+      "end_anchor": "Zoramites2—apostate sect of Nephites,",
+      "note": "Index — the scripture-wide alphabetical Index of names/topics with cross-references (e.g. 'Aaron1—brother of Moses … D&C 8:6–9 gift of A.'), introduced by 'This index of entries from the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price…'. It is the single largest back-matter block, running from ~offset 3.040M (right after the 'Appendix' divider page) through the final headword 'Zoramites2' at ~offset 4.848M, immediately before 'Church History Maps'. Now de-scrambled into correct A→Z reading order by lds_columnar.py (PRIOR contract noted index entries appeared at ~926K but the heading at ~3.06M — that scramble is resolved). start_anchor begins 'his index…' (dropcap T extracted separately as 'T\\n'); end_anchor is the last alphabetical headword. Type=index."
+    },
+    {
+      "type": "appendix",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Church History Maps\n\nT\nhe following maps can help you to better understand the early history",
+      "end_anchor": "Church History Maps Index",
+      "note": "Church History Maps — a back-matter appendix of historical maps with an explanatory intro ('The following maps can help you to better understand the early history of The Church…') followed by the alphabetical 'Church History Maps Index' of place names (Connecticut River 1:D1, etc.). Printed under the 'Appendix' divider page that lists Maps/Photographs/Index. Type=appendix (illustrative supplementary apparatus; the printed divider heading is literally 'Appendix'). The map images themselves are non-textual and skipped at extraction — only the intro prose and the map-index place list are in reference_text(). end_anchor 'Church History Maps Index' marks the sub-index header. JUDGMENT CALL: appendix vs back_matter — chose appendix because the section is supplementary illustrative material grouped under the printed 'Appendix' label, matching the spec's preference for specific types. Caveat: the columnar geometry parser is tuned to the 2-column verse body, not the map/photo pages; the map-index place list (multi-column) and the running 'Index 412 Church History Maps' header fragments interleave the entries, so within-page column order here is approximate."
+    },
+    {
+      "type": "appendix",
+      "mask": true,
+      "structure": "single",
+      "resolve": "last",
+      "start_anchor": "Church History Photographs\n\nT\nhese photographs of important Church history sites portray the lands",
+      "end_anchor": "ISBN 978-1-59297-680-5",
+      "note": "Church History Photographs — the final back-matter appendix: numbered photographs of Church history sites, each with a description and 'Significant Events' scripture references (e.g. '18. Salt Lake Temple … Significant Events: …Official Declaration 2'). Runs from ~offset 4.869M to the very end of the stream; the closing 'ISBN 978-1-59297-680-5' (unique, at EOF) is the end_anchor. Type=appendix, paired with Church History Maps under the printed 'Appendix' divider. Photograph images are non-textual/skipped; only captions and event prose are in reference_text(). resolve=last is belt-and-suspenders (the heading+intro start_anchor already resolves uniquely). JUDGMENT CALL: same appendix-vs-back_matter reasoning as Church History Maps. Caveat: photo-page geometry is outside the verse-body column model, but the caption/description prose extracts cleanly in reading order here."
     }
   ]
 }

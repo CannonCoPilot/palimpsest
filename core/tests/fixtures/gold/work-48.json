@@ -1,0 +1,166 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 48,
+  "source_file": "New Testament apocrypha _ more noncanonical scriptures_ -- Tony Burke; Brent Landau -- Grand Rapids, Michigan, 2016 -- Eerdmans Publishing Company, -- isbn13 9780802872890 -- 99bbecbce461db3b220b58e59c569acc -- Anna’s Archive.epub",
+  "work": "New Testament Apocrypha: More Noncanonical Scriptures (MNTA vol. 3, Burke ed.)",
+  "annotations": [
+    {
+      "type": "copyright",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Wm. B. Eerdmans Publishing Co.",
+      "end_anchor": "A catalog record for this book is available from the Library of Congress.",
+      "note": "Publisher/copyright block opening the extracted stream (Wm. B. Eerdmans, Grand Rapids; © 2023 Tony Burke; ISBN 978-0-8028-7793-2; LCCN block). NOTE: filename/metadata say isbn13 9780802872890 / 2016 (that is MNTA vol. 1) but the TEXT is volume 3 (© 2023, ISBN 978-0-8028-7793-2; Preface 'This third volume…'). source_file kept verbatim from harness order. No separate title_page survives in the extracted stream — the work opens directly on this copyright/imprint block. Detector folds this into front_matter/title_page (by_type title_page=1)."
+    },
+    {
+      "type": "dedication",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Dedicated to current students (and future scholars) of Christian apocrypha",
+      "end_anchor": "Contents\n\nPreface\n\nIntroduction\n\nTony Burke",
+      "note": "One-line dedication ('Dedicated to current students (and future scholars) of Christian apocrypha') between the copyright block and the Contents. Masked front matter; detector emits none here."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Contents\n\nPreface\n\nIntroduction\n\nTony Burke",
+      "end_anchor": "Preface\n\nThe second volume of MNTA was published",
+      "note": "Table of Contents listing Preface, Introduction, List of Abbreviations, then the four genre divisions (I. Gospels, II. Apocryphal Acts, III. Epistles, IV. Apocalypses) and the 29 texts with their contributor bylines. This listing is the ground truth for the 29-text count (8 Gospels + 13 Acts + 3 Epistles + 5 Apocalypses)."
+    },
+    {
+      "type": "preface",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Preface\n\nThe second volume of MNTA was published",
+      "end_anchor": "Introduction\n\nby Tony Burke\n\nWhen work began on the More",
+      "note": "Editor's Preface (acknowledgments/back-story: MNTA 2 published 2020, this third volume submitted a year later, Covid context, contributor thanks). Heading literally 'Preface'."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "single",
+      "role": "primary",
+      "start_anchor": "Introduction\n\nby Tony Burke\n\nWhen work began on the More",
+      "end_anchor": "Note on Cyrillic Transliteration by Slavomír Čéplö",
+      "note": "Volume-level editorial Introduction (Tony Burke): MNTA/MOTP mandate, the genre divisions, per-text orientation, 'Future Volumes' coda. Contains the count-of-record sentence: 'Of the twenty-nine texts included here…'. Heading literally 'Introduction'. PRIMARY single block for the front-matter layer. This is distinct from the 29 per-text introductions (separate repeating annotation below). end_anchor is the 'Note on Cyrillic Transliteration' appendix that closes the volume intro front matter."
+    },
+    {
+      "type": "glossary",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Abbreviations\n\nUnless listed below, all abbreviations",
+      "end_anchor": "I. Gospels and Related Traditions of New Testament Figures",
+      "note": "List of Abbreviations (SBL-style sigla → expansions: AG, ANT, BHG, BHL, CANT, MNTA, P. Oxy., editorial brackets/cruces, etc.) plus the 'Note on Cyrillic Transliteration' that precedes it. TYPE JUDGMENT: no 'abbreviations' type exists in the 34 SECTION_TYPES; typed `glossary` as the closest registered type (term/sigla → definition list). Runs from the 'Abbreviations' heading up to the first genre-division body header. Masked navigational/reference matter."
+    },
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 4,
+      "count_cue": "4 genre divisions following the traditional NT writing categories: 'I. Gospels and Related Traditions of New Testament Figures' (8 texts), 'II. Apocryphal Acts and Related Traditions' (13), 'III. Epistles' (3), 'IV. Apocalypses' (5). Each title-case division header resolves exactly once in the body (the UPPER-CASE forms appear once each in the TOC). Top-level structural container above the per-text book groupings.",
+      "exemplars": [
+        {
+          "start_anchor": "I. Gospels and Related Traditions of New Testament Figures\n\nThe Hospitality and Perfume of the Bandit",
+          "note": "Division I header immediately before the first text (Hospitality and Perfume of the Bandit)"
+        },
+        {
+          "start_anchor": "IV. Apocalypses\n\nThe Revelation about the Lord's Prayer\n\nA translation and introduction",
+          "note": "Division IV header immediately before the first Apocalypses text"
+        }
+      ],
+      "note": "Secondary grouping level. Unmasked structural container (part). The 4 divisions partition the 29 texts."
+    },
+    {
+      "type": "book",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 29,
+      "count_cue": "29 included apocrypha, each functioning as a book/section: a Title line + contributor byline ('A [new] translation and introduction by <author>'), then editor's introduction → translation → notes → bibliography. Count of record: the volume Introduction states 'Of the twenty-nine texts included here…', and the TOC lists exactly 29 (8 Gospels + 13 Acts + 3 Epistles + 5 Apocalypses). Cross-checks: 29 'Bibliography' section headers (one per text); 32 '\\n\\nby ' bylines = 1 volume intro + 29 texts + 2 extra (Acts of Christ and Peter; Epistle of James to Quadratus each split their byline into separate 'Introduction by X' + 'Translation(s) by Y' because intro author ≠ translation author). Detector segments these as commentary(26)+translation(30) rather than a book container.",
+      "exemplars": [
+        {
+          "start_anchor": "The Acts of John by Prochorus\n\nA translation and introduction\n\nby Janet E. Spittler",
+          "note": "Acts of John by Prochorus — the longest text (~333K chars; the editor calls it 'the jewel of the crown in volume 3')"
+        },
+        {
+          "start_anchor": "2 Revelation of Matthew about the End Times\n\nA translation and introduction\n\nby Charles D. Wright and Stephen Pelle",
+          "note": "29th and final text (closes Division IV / the volume)"
+        }
+      ],
+      "note": "Secondary grouping container (book = a discrete translated apocryphon within the anthology). Unmasked structural level below part. The translation/introduction/footnotes/bibliography layers below sit one-per-book."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 29,
+      "count_cue": "One editor's introduction per included text (29). Each opens '<Title>\\n\\nA [new] translation and introduction\\n\\nby <author>' (27 texts) OR a split 'Introduction\\n\\nby <author>' for the 2 texts where intro author ≠ translator (Acts of Christ and Peter in Rome → Julia A. Snyder; Epistle of James to Quadratus → J. Edward Walters). The byline-descriptor variants resolve programmatically: 'A translation and introduction\\n\\nby '=14, 'A new translation and introduction\\n\\nby '=12, + 2 split 'Introduction\\n\\nby ' + 1 ('Story of John Meeting Cerinthus') whose byline is the bare 'by <author>' with no descriptor = 29. Each introduction is a scholarly essay (manuscripts, date, contents, significance) with its own numbered footnotes, sitting before the Translation/Bibliography. TYPE JUDGMENT: heading word is literally 'introduction', so typed `introduction` (masked). The detector types these `commentary` (by_type commentary=26) — `commentary` (unmasked) is the alternative typing the hint allows; introduction was chosen as the literal-heading match and because the type is under-exemplified across the gold set.",
+      "exemplars": [
+        {
+          "start_anchor": "The Hospitality and Perfume of the Bandit\n\nA translation and introduction\n\nby Mark Glen Bilby",
+          "note": "first text's introduction byline (combined intro+translation author form)"
+        },
+        {
+          "start_anchor": "The Correspondence of Ignatius with John the Evangelist and the Virgin Mary\n\nA new translation and introduction\n\nby J. Gregory Given",
+          "note": "first Epistles text — 'A new translation and introduction' byline variant"
+        }
+      ],
+      "note": "PRIMARY repeating layer. 29 per-text editorial introductions. Distinct from the single volume-level Introduction above. Masked editorial apparatus the detector folds into a generic commentary band."
+    },
+    {
+      "type": "translation",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 29,
+      "count_cue": "One English translation per included text (29). 30 explicit 'Translation'/'Translations' section headers resolve in the body ('\\n\\nTranslation\\n\\n'=27, '\\n\\nTranslations\\n\\n'=3); the header sequence is mostly 1-per-text but ~3 texts carry dual translations (e.g. parallel Greek + Church Slavic, or a primary text + appended sibling: the Decapitation of John + appended Birth of Holy John the Forerunner; Acts of John in Rome with Junod/Kaestli editions; Acts of Christ and Peter in Rome) yielding the 30th header, while the 2 split-byline texts contribute their translation under the same headers — netting 30 headers over 29 texts. The translation is the rendered apocryphon text (the core deliverable of the volume); it follows the introduction's bibliography in reading order and is followed by lettered textual notes. PRIMARY masked layer; `translation` is under-exemplified across the gold set and this anthology is a strong exemplar.",
+      "exemplars": [
+        {
+          "start_anchor": "\n\nTranslation\n\nTo date, Hosp. Perf. Band. has appeared only",
+          "note": "first text's Translation header (Hospitality and Perfume of the Bandit) — methodology note + Sigla precede the rendered verses"
+        },
+        {
+          "start_anchor": "\n\nTranslation\n\nThe following translation is based on the edition of Theodor Zahn. Zahn does not include paragraph number",
+          "note": "Acts of John by Prochorus Translation header — the longest rendered translation in the volume"
+        }
+      ],
+      "note": "PRIMARY repeating layer — the translated apocrypha. Detector by_type translation=30 (it counts the headers, not the 29 texts); expected_count=29 here pins texts, count_cue documents the 30-header/29-text reconciliation. Masked."
+    },
+    {
+      "type": "bibliography",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 29,
+      "count_cue": "One per-text bibliography (29), each headed exactly 'Bibliography' and internally subdivided 'EDITIONS [AND TRANSLATIONS]' / 'STUDIES'. 'Bibliography\\n\\n' resolves exactly 29× — the cleanest one-per-text cardinality cue in the work (matches the 29-text TOC count). No volume-level/back-matter bibliography exists; the work ends inside the last text's notes. PRIMARY masked layer; `bibliography` is under-exemplified across the gold set.",
+      "exemplars": [
+        {
+          "start_anchor": "Bibliography\n\nEDITIONS AND TRANSLATIONS\n\nGeerard, Maurice. \"Gute Sch",
+          "note": "first text's bibliography (Hospitality and Perfume of the Bandit) — 'EDITIONS AND TRANSLATIONS' then 'STUDIES' subheads"
+        },
+        {
+          "start_anchor": "Bibliography\n\nEDITIONS\n\nColella, Giancarlo. \"Un sermone sul giorno del giudizio",
+          "note": "last text's bibliography (2 Revelation of Matthew) — resolve=last would also reach this; here uniquely anchored"
+        }
+      ],
+      "note": "PRIMARY repeating layer. 29 per-text bibliographies. Masked reference apparatus the detector does not separate from the surrounding commentary/translation bands."
+    },
+    {
+      "type": "footnotes",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": null,
+      "count_cue": "Two distinct note apparatuses per text, both folded into the linear stream and NOT cleanly count-anchorable: (1) numbered endnote-style footnotes to each editor's introduction (1., 2., 3.… citing manuscripts/editions), and (2) lettered textual/critical notes to each translation (a., b., c.… recording variant manuscript readings, e.g. 'b. V: \"ask you.\"', 'a. G again erroneously reads \"brother.\"'). expected_count=null: the lettered notes reset per verse-block and the strings reuse trivially across texts ('a. V: …' recurs), so no per-instance footnote string resolves uniquely and the total is not honestly countable by eye. Presence + per-text recurrence is the requirement, not an exact count.",
+      "note": "Secondary masked apparatus layer (per-text scholarly notes). Not exemplar-anchored: the note strings are short and non-unique. The numbered intro-footnotes and lettered translation-notes are both present in every text; the detector does not emit a footnotes element (folds them into commentary/translation)."
+    }
+  ]
+}

@@ -33,6 +33,13 @@
         }
       ],
       "note": "Secondary grouping level, also under-segmented (21 of ~80)."
+    },
+    {
+      "type": "glossary",
+      "mask": true,
+      "start_anchor": "GLOSSARY\n\nWORD",
+      "end_anchor": "<<EOF>>",
+      "note": "Back-matter 'Glossary of Middle-English Terms' (alphabetical, abalienate→wrought, with WORD/MEANING/SAMPLE LOCATION columns) at the very END of the work. ADDED 2026-06-18 (untyped FN): this e-text is SCRAMBLED — its glossary TITLE line ('Glossary of Middle-English Terms…') is displaced to the front (offset 1283, where the detector mislabels the foreword block as 'glossary'), while the actual A–Z glossary CONTENT sits here at EOF, swallowed into the giant trailing 'book' section. Masked."
     }
   ]
 }

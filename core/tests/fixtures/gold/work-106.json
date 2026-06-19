@@ -1,0 +1,225 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 106,
+  "source_file": "Adam And Eve In The Armenian Tradition, Fifth Through -- Michael E_ Stone -- SBL Early Judaism and Its Literature, 38, 2013 -- Society of Biblical -- isbn13 9781589838987 -- b3740d792550531690234343f398e9b7 -- Anna’s Archive.pdf",
+  "work": "Adam and Eve in the Armenian Tradition (Stone, SBL 2013)",
+  "annotations": [
+    {
+      "type": "translation",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 121,
+      "count_cue": "Part II ('Texts and Translations', body from offset ~539971) is a critical edition: each excerpted Armenian source-text is given as a numbered ORIGINAL passage in Armenian script (U+0530–058F, 19.4% of the whole file) immediately followed by its ENGLISH translation, plus a 'Text:'/'Translation:'/'See also:' citation header per source. The masked-translation layer is keyed at the SOURCE-ENTRY level: 121 author/source entries, matching exactly the 'Alphabetical List of Authors Cited' (front, -xv-) and 'Alphabetical List of Authors Quoted' (back) — both enumerate 121 author headers (regex /\\n<Name> C\\d+/ over each list = 121, cross-validated front vs back). The PASSAGE count is HIGHER and NOT cleanly countable from reference_text(): 169 'Text:' labels (some inline sub-works), 98 '§N' source-section refs, and many entries hold several numbered excerpts; an Armenian-para→English-para transition scan over Part II yields ~782 (noisy — single passages span multiple paragraphs). So expected_count=121 is the verifiable SOURCE-entry cardinality, not the passage cardinality (flagged honestly). DETECTOR EMITS ZERO translations (by_type has no 'translation') → recall 0 → MIRAGE: composite 100 over a 472K-char parallel-text edition the detector sees as undifferentiated body.",
+      "exemplars": [
+        {
+          "start_anchor": "They are life and salvation for those who have become impoverished by sin",
+          "note": "First translation in Part II — English rendering of the Agat'angełos §9 prologue passage (Fifth Century), immediately following its Armenian-script original"
+        },
+        {
+          "start_anchor": "While6 he was hanging he began to speak on the gibbet as follows",
+          "note": "Agat'angełos 'Life of Saint Gregory' §75 translation (the embedded footnote-number 6 is glued to 'While' by the linear extraction — a translation passage, not commentary)"
+        }
+      ],
+      "note": "TYPE JUDGMENT (Armenian original vs English translation vs commentary): the taxonomy has no clean 'original-language' type. The Armenian-script passages are the ORIGINAL; I do NOT give them a separate annotation — they sit inside the same source-entry as their translation and are masked together as the body of the edition. The ENGLISH renderings are typed `translation` (the high-value masked layer this gold exists to surface). Per-source citation headers ('Text:'/'Translation:'/'See also:') and the numbered excerpt apparatus are part of these entries. Distinct from `commentary` (Part I analytic prose) and from `footnotes` (the numbered note apparatus)."
+    },
+    {
+      "type": "commentary",
+      "mask": false,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 6,
+      "count_cue": "Part I ('The Adam and Eve Traditions in Armenian', body PART I @ ~22692) is the scholarly analysis: 5 numbered chapters (Fifth-Century; Sixth–Eleventh; Twelfth–Thirteenth; Fourteenth–Fifteenth; Sixteenth–Seventeenth Armenian Literature) + 1 Appendix ('Satan and the Serpent', -177-) = 6 analytic units, English prose with inline Armenian-script quotations. Count is TOC-exact (printed Contents lists chapters 1–5 + Appendix). `commentary` is mask=False (unmasked content type) per taxonomy. Detector emits no `commentary` → these read as plain body. NOTE: the discussion-vs-commentary call: the taxonomy also has `discussion` (mask=True); I chose `commentary` because the content is sustained authorial scholarly commentary on the source texts, and commentary is the registered unmasked analytic type.",
+      "exemplars": [
+        {
+          "start_anchor": "This first chapter is devoted to presenting references to the Adam and Eve stories",
+          "note": "Chapter 1 (Fifth-Century) opening, section 0.0 General Considerations — first analytic chapter of Part I"
+        },
+        {
+          "start_anchor": "This appendix deals with one subject, the relationship between Satan and the",
+          "note": "Appendix 'Satan and the Serpent' opening (synthetic/diachronic essay) — 6th analytic unit"
+        }
+      ],
+      "note": "Part I analytic layer. mask=False is the committed default for `commentary`. These 6 units are also enumerated below as the `chapter`/`appendix` grouping; this annotation captures their analytic CONTENT type while the secondary annotations capture the navigational containers."
+    },
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 2,
+      "count_cue": "Two top-level Parts (TOC + body): 'PART I — The Adam and Eve Traditions in Armenian' (analytic, pp.1–209) and 'Part II — Texts and Translations' (the parallel-text critical edition, pp.211–682). Body headings render as 'PART I\\nThe Adam and Eve Traditions in Armenian' (@~22692) and 'Part II\\nTexts and Translations' (@~539971); the TOC lists them once each as 'Part I.'/'Part II.'.",
+      "exemplars": [
+        {
+          "start_anchor": "PART I\nThe Adam and Eve Traditions in Armenian",
+          "note": "Part I body heading (all-caps PART I), the analytic half"
+        },
+        {
+          "start_anchor": "Part II\nTexts and Translations",
+          "note": "Part II body heading (mixed-case Part II), the texts-and-translations half"
+        }
+      ],
+      "note": "Top-level structural container above chapters/century-sections. Detector segments exactly one `part` (by_type part=1) — Part II's start; Part I's container is missed."
+    },
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 5,
+      "count_cue": "Part I's 5 numbered chapters (TOC-exact). Body headings: '-NN-\\n<N>. Adam and Eve Traditions [in|\\nin] <Centuries>-Century\\nArmenian Literature' at pp.11/39/83/127/155. The heading line-break alternates 'Traditions in\\n<Century>' (ch1,2,4) vs 'Traditions\\nin <Century>' (ch3,5) — extraction artifact, verified per anchor. Detector by_type chapter=3 (segments 3 of the 5+ heading-bearing units across the whole file).",
+      "exemplars": [
+        {
+          "start_anchor": "-11-\n1. Adam and Eve Traditions in\nFifth-Century",
+          "note": "Chapter 1 body heading (page 11)"
+        },
+        {
+          "start_anchor": "-83-\n3. Adam and Eve Traditions\nin Twelfth- and Thirteenth-Century",
+          "note": "Chapter 3 body heading (page 83) — 'Traditions\\nin' break form"
+        },
+        {
+          "start_anchor": "-155-\n5. Adam and Eve Traditions\nin Sixteenth- and Seventeenth-Century",
+          "note": "Chapter 5 body heading (page 155), last analytic chapter"
+        }
+      ],
+      "note": "Mid-level grouping within Part I. Chapters carry the scholarly `commentary` content typed above; this annotation is the navigational container."
+    },
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 14,
+      "count_cue": "Part II's 14 century-section subdivisions (TOC-exact, Fifth→Eighteenth Century — Eleventh is present though TOC pagination splits it across a page break). Each century heading is preceded by a page marker and immediately followed by its first author/source, e.g. 'Fifth Century\\nAgat'angełos C5'. The bare century names ALSO recur as page running-headers (e.g. 'Fifth Century' appears 39× in Part II), so anchors are the heading+first-author form, each verified unique. These are the chapter-equivalent navigational divisions of the edition. SECOND `chapter` annotation (Part II centuries) distinct from the Part I chapters above — encoded separately because they are a different grouping band; the detector cannot distinguish them.",
+      "exemplars": [
+        {
+          "start_anchor": "Fifth Century\nAgat'angełos C5",
+          "note": "Fifth Century section (first century block of Part II), opens with Agat'angełos"
+        },
+        {
+          "start_anchor": "Twelfth Century\nAbusayid C12",
+          "note": "Twelfth Century section, opens with Abusayid — the largest century block"
+        },
+        {
+          "start_anchor": "Eighteenth Century\nXač'atur J̌ ułayec'i C18",
+          "note": "Eighteenth Century section (last, brief), opens with Xač'atur J̌ ułayec'i"
+        }
+      ],
+      "note": "Part II grouping band. Together with the Part-I 5-chapter band this work has 19 chapter-level divisions across 2 parts; A3 proxies all against detector `chapter` (=3)."
+    },
+    {
+      "type": "footnotes",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": null,
+      "count_cue": "Dense scholarly footnote apparatus throughout: numbered notes 'N.\\u2002<text>' (number + EN-SPACE U+2002) keyed to inline superscript digits in both the analytic prose (Part I) and the translations (Part II). A '\\nN.\\u2002' line-start scan yields 2512 hits across the file, but the per-chapter/per-page numbering RESTARTS, so no single global count is meaningful and notes are NOT uniquely content-anchorable (e.g. cross-references repeat). expected_count=null: presence + masked layer is the contract, not a global cardinality.",
+      "note": "Masked annotation apparatus the linear extraction interleaves into body/commentary/translation. Detector emits no `footnotes`. The inline superscript markers get glued to adjacent words by extraction (e.g. 'While6 he was hanging', 'sin,1') — a known reference_text() artifact, not separate tokens."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "-xix-\nIntroduction\nIn 1992, at the invitation of Professor Marinus de Jonge",
+      "end_anchor": "PART I\nThe Adam and Eve Traditions in Armenian",
+      "note": "Author's Introduction (the project history / method statement, opens 'In 1992...de Jonge...SNTS'). Masked front matter, distinct from the Part I analytic chapters."
+    },
+    {
+      "type": "title_page",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Early Judaism and Its Literature\nAdam and Eve in the Armenian\nTraditions, Fifth through",
+      "end_anchor": "Adam and Eve in the Armenian Tradition\nFifth through Seventeenth Centuries\nCopyright © 2013",
+      "note": "Series half-title + title page block (SBL Early Judaism and Its Literature #38, Werline series ed., editorial board, author, 'Society of Biblical Literature / Atlanta')."
+    },
+    {
+      "type": "copyright",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Copyright © 2013 by the Society of Biblical Literature",
+      "end_anchor": "This work is dedicated to my teachers",
+      "note": "Copyright + LC CIP data (ISBN 978-1-58983-898-7, BS1830.A262S773, 2013022985) + acid-free-paper note."
+    },
+    {
+      "type": "dedication",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "This work is dedicated to my teachers",
+      "end_anchor": "-vii-\nContents",
+      "note": "Dedication to teachers Frank Moore Cross Jr. and Avedis Krikor Sanjian."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "-vii-\nContents\nList of Figures",
+      "end_anchor": "-ix-\nList of Figures",
+      "note": "Table of Contents (the ground truth for the 2-part / 5-chapter / Appendix / 14-century / back-matter structure). Dot-leaders render as runs of U+2588/box-drawing glyphs in the extraction."
+    },
+    {
+      "type": "front_matter",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "-ix-\nList of Figures",
+      "end_anchor": "-xi-\nPreface and Acknowledgments",
+      "note": "List of Figures (4 plates: crowned Adam/Eve, four-footed satan, serpentine Hell, Višap dragon-stone). Generic front-matter list; no dedicated `figures` type in the taxonomy."
+    },
+    {
+      "type": "preface",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "-xi-\nPreface and Acknowledgments",
+      "end_anchor": "-xiii-\nAbbreviations",
+      "note": "'Preface and Acknowledgments' (corpus origin, Israel Research Foundation grant 770/99, collaborators, permissions). Combined preface+acknowledgments → typed `preface` (the dominant function); `acknowledgments` is the alternative."
+    },
+    {
+      "type": "glossary",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "-xiii-\nAbbreviations",
+      "end_anchor": "-xv-\nAlphabetical List of Authors Cited",
+      "note": "Abbreviations list (ANB, CSCO, GT', L.A.E., MES, MH, NBHL, PG, PL...). Typed `glossary` (term→expansion list); no dedicated `abbreviations` type."
+    },
+    {
+      "type": "index",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "-xv-\nAlphabetical List of Authors Cited\nAbusayid, C12",
+      "end_anchor": "-xix-\nIntroduction",
+      "note": "'Alphabetical List of Authors Cited' (121 author headers, the front-matter navigational index of cited authors — same 121 cross-validated against the back-matter 'Authors Quoted' list and used as the translation source-entry count)."
+    },
+    {
+      "type": "back_matter",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "to make sweetness.\n\nAlphabetical List of Authors Quoted",
+      "end_anchor": "-699-\nBibliography",
+      "note": "'Alphabetical List of Authors Quoted' (121 authors with biographical/source details — the back-matter companion to the front 'Authors Cited' list). Typed `back_matter` (descriptive author register, not a pure page-locator index)."
+    },
+    {
+      "type": "bibliography",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "-699-\nBibliography\nThe bibliography includes all works cited",
+      "end_anchor": "-723-\nIndex of Selected Subjects",
+      "note": "Bibliography (-699-). 'Bibliography' also recurs as a per-page running-header inside this section (offsets 1559236+) and as an inline phrase earlier ('A Bibliography of Classical Armenian Literature'), so the heading+sentence anchor is used for uniqueness."
+    },
+    {
+      "type": "index",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "-723-\nIndex of Selected Subjects",
+      "end_anchor": "-731-\nIndex of Ancient Sources",
+      "note": "Index of Selected Subjects and Proper Names (-723-). Second `index` annotation (subjects), distinct from the front authors-cited index and the ancient-sources index below."
+    },
+    {
+      "type": "index",
+      "mask": true,
+      "structure": "single",
+      "resolve": "last",
+      "start_anchor": "-731-\nIndex of Ancient Sources\nThis index does not include references to authors excerpted in Part 2",
+      "end_anchor": "<<EOF>>",
+      "note": "Index of Ancient Sources (-731-, final section to EOF). 'This index does not include references to authors excerpted in Part 2.' Third `index` annotation. The tail extracts as a scramble of source-ref / page-number fragments (dot-leaders as box glyphs) — masked navigational matter, edges scoped to heading→EOF."
+    }
+  ]
+}

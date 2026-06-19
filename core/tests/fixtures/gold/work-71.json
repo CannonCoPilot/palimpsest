@@ -1,0 +1,49 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 71,
+  "source_file": "The Strange Case of Dr_ Jekyll and Mr_ Hyde -- Robert Louis Stevenson -- 2015 -- Standard Ebooks -- 5b35483a9d153cce497b54a0d6b50431 -- Anna’s Archive.epub",
+  "work": "The Strange Case of Dr. Jekyll and Mr. Hyde (Stevenson, Standard Ebooks)",
+  "annotations": [
+    {
+      "type": "copyright",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Imprint\n\nThis ebook is the product",
+      "end_anchor": "Story of the Door\n\nMr. Utterson the lawyer",
+      "note": "Standard Ebooks 'Imprint' front-matter block: production credit + CC0 1.0 Universal Public Domain Dedication / license statement (the only front matter present in reference_text()). TYPE JUDGMENT: heading is literally 'Imprint'; substance is a copyright/public-domain license dedication, so typed copyright (mask=True per default). Reasonable alternatives front_matter/title_page (all mask=True, no A3 effect). CAVEAT: the EPUB's title page and the back-matter 'Uncopyright' public-domain dedication page are NOT present as headed text in this extracted stream (title page is image/nav-only; 'Uncopyright' appears ONLY as a forward-reference inside the Imprint — 'see the Uncopyright at the end of this ebook'). Detector currently swallows this into the single body blob (cover=0)."
+    },
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 10,
+      "count_cue": "10 titled (un-numbered) chapter sections, verified by eye against the text: 1 'Story of the Door', 2 'Search for Mr. Hyde', 3 'Dr. Jekyll Was Quite at Ease', 4 'The Carew Murder Case', 5 'Incident of the Letter', 6 'Incident of Dr. Lanyon', 7 'Incident at the Window', 8 'The Last Night', 9 'Dr. Lanyon's Narrative', 10 'Henry Jekyll's Full Statement of the Case'. Each heading sits on its own line, separated by blank lines (\\n\\n), with no literal 'Chapter N' label — metadata richness is by NAME only, no numbers. Each of the 10 heading strings resolves exactly once in reference_text(). DETECTOR FINDS 0 (whole work is one undetected body run, coverage=0) — full recall gap, 0/10.",
+      "exemplars": [
+        {
+          "start_anchor": "Story of the Door\n\nMr. Utterson the lawyer",
+          "note": "chapter 1 'Story of the Door' opening (note \\xa0 non-breaking space after 'Mr.')"
+        },
+        {
+          "start_anchor": "The Carew Murder Case\n\nNearly a year later",
+          "note": "chapter 4 'The Carew Murder Case' opening (mid-novella, titled chapter)"
+        },
+        {
+          "start_anchor": "Henry Jekyll's Full Statement of the Case\n\nI was born",
+          "note": "chapter 10 'Henry Jekyll's Full Statement of the Case' opening — final section, the embedded confession (see type note)"
+        }
+      ],
+      "note": "Primary structure: 10 named chapters. TYPE JUDGMENT on the final two sections — 'Dr. Lanyon's Narrative' (a transcribed letter/narrative) and 'Henry Jekyll's Full Statement of the Case' (a sealed confession) are embedded first-person documents framed within the third-person novella. They could arguably be typed 'letter' (mask=False, also unmasked) given their epistolary/documentary frame, but they sit at the SAME nav/heading level as the eight third-person chapters, carry identical 'titled heading + \\n\\n + body' structure, and are conventionally numbered as chapters 9-10 of the novella. Kept as chapter to preserve a uniform 10-chapter primary spine; either choice is mask=False so the A3 rating is unaffected. Flagged here as a soft sub-type call."
+    },
+    {
+      "type": "colophon",
+      "mask": true,
+      "structure": "single",
+      "resolve": "last",
+      "start_anchor": "Colophon\n\nThe Strange Case of Dr. Jekyll and Mr. Hyde\nwas published in 1886",
+      "end_anchor": "<<EOF>>",
+      "note": "Standard Ebooks back-matter Colophon: explicit 'Colophon' heading, production/edition/typeface credits + 'standardebooks.org' contribution note, running to EOF. Immediately follows the end of 'Henry Jekyll's Full Statement of the Case' (no intervening Uncopyright text in this stream). Currently swallowed into the trailing body blob; detector emits no colophon element."
+    }
+  ]
+}

@@ -10,18 +10,18 @@
       "structure": "repeating",
       "role": "primary",
       "expected_count": 102,
-      "count_cue": "102 line-start 'Dear X,' salutations (empirical), corroborated by ~85 date lines and From:/signature blocks. (Prior estimate ~96; a few salutations may be embedded/quoted letters, so distinct top-level letters is 96–102.)",
+      "count_cue": "102 = line-start 'Dear X,' salutations — a PROXY and LOWER BOUND, not the true letter total. CORRECTED 2026-06-18: by-eye reading shows many letters open with a NAME form ('Felix, my dear brother,' / 'Felix,') that the 'Dear' regex misses, so the true top-level letter count is HIGHER (rough name-opening scan ≈110–120, fuzzy). Honest uncertainty: an exact count needs mixed-salutation + date-line + signature-block boundary detection, not done here. 102 retained as the measurable 'Dear'-salutation recall basis.",
       "exemplars": [
         {
-          "start_anchor": "Dear Ms. Toole,\n\nI'd like to start by saying this letter is a matter of personal contact",
-          "note": "first letter (Sybil Van Antwerp to columnist Toole); preceded by a From: header"
+          "start_anchor": "Felix, my dear brother,\n\nThank you for the birthday card",
+          "note": "TRUE first letter (Sybil to her brother Felix, signed 'your loving sister, Sybil'). CORRECTED 2026-06-18: prior anchor 'Dear Ms. Toole' (offset ~33872) was NOT first — ~25 letters precede it, mis-typed by the detector as 'preface'. This opens with a name-form salutation, not 'Dear'."
         },
         {
           "start_anchor": "Dear Daan,\n\nDo you remember me sitting long hours at the writing desk",
-          "note": "last letter (to Daan)"
+          "note": "last 'Dear' letter (to Daan), offset ~353841, near body end"
         }
       ],
-      "note": "Epistolary novel: dated letters interleaved with framing (opening obituary column 'by Alex Toole, Columnist' at body start; embedded documents). Entire ~364K body currently one undetected 'body' block → COARSE."
+      "note": "Epistolary novel. Real preface (narrative, 3rd-person 'Sybil Van Antwerp carries the mug of tea…', offset 2454) precedes the letters. DETECTOR mis-types [2107–28955] as one 'preface' block — swallowing the real preface + the dedication ('To Mark, with love') + a Joan Didion epigraph + the first ~25 letters; body then runs as one undetected block → COARSE. Embedded documents (newspaper clippings, ship manifest) are in-narrative content, not masked apparatus."
     }
   ]
 }

@@ -1,0 +1,71 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 56,
+  "source_file": "The Last of the Mohicans -- Cooper, James Fenimore -- The Leatherstocking Tales 2, 1919 -- C_ Scribner's sons -- isbn13 9785551075097 -- 1164165e8537a4b55cd9c0d05ff87858 -- Anna’s Archive.epub",
+  "work": "The Last of the Mohicans (Cooper)",
+  "annotations": [
+    {
+      "type": "title_page",
+      "mask": true,
+      "start_anchor": "The Last of the Mohicans\n\nBY J AMES F ENIMORE C OOPER",
+      "end_anchor": "Introduction\n\nIt is believed that the scene of this tale",
+      "note": "Opening title + byline block ('The Last of the Mohicans' / 'BY JAMES FENIMORE COOPER'; extractor spaced the dropcap caps as 'J AMES F ENIMORE C OOPER'). Masked front matter. Detector folds this into front_matter/title_page already (by_type title_page=1), but it does not separate it from the Introduction that follows."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "start_anchor": "Introduction\n\nIt is believed that the scene of this tale",
+      "end_anchor": "Chapter 1\n\n\"Mine ear is open",
+      "note": "Cooper's authorial introduction (heading literally 'Introduction'), explaining the Indian-name confusion (Mahicanni/Mohicans/Mohegans), the Lenni-Lenape vs Mengwe tribal map, and the coined 'Horican' for Lake George. TYPE JUDGMENT: heading says 'Introduction' so typed introduction, though Cooper himself calls it 'this preface' in its closing paragraph — soft preface/introduction boundary. This single block also serves the spec's 'notice on Indian names' function (no separate notice exists). Currently UNTYPED by the detector (no introduction element emitted)."
+    },
+    {
+      "type": "epigraph",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 33,
+      "count_cue": "Exactly one verse/quotation epigraph opens every chapter — 33 chapters, 33 epigraphs (line-anchored /^Chapter (\\d+)\\n\\n/ yields 33 heads numbered 1–33, and the first paragraph after each opens with a quote or ellipsis in all 33 cases, verified programmatically). 31 carry an em-dash attribution ('— Shakespeare', '— Bryant', '— Gray', '— Childe Harold', '— Pope's Iliad', '— Halleck', etc.); the 2 exceptions (Ch5 'Merchant of Venice', Ch7 'Gray') name the source directly after the closing quote with no em-dash — both are still genuine epigraphs. Sources span Shakespeare (Midsummer Night's Dream, Merchant of Venice, Othello, Lear, Henry V/VI, Julius Caesar, Twelfth Night, Much Ado), Pope's Iliad, Gray, Burns, Bryant, Byron (Childe Harold), Scott (Lady of the Lake), Parnell, Halleck. PRIMARY masked apparatus — the epigraph type is otherwise UNEXEMPLIFIED in the gold set; this work is the canonical exemplar.",
+      "exemplars": [
+        {
+          "start_anchor": "\"Mine ear is open, and my heart prepared",
+          "note": "Chapter 1 epigraph — Shakespeare ('— Say, is my kingdom lost?\" — Shakespeare'); first epigraph, sits between 'Chapter 1' and the chapter body"
+        },
+        {
+          "start_anchor": "\"Sola, sola, wo ha, ho, sola!\" — Shakespeare",
+          "note": "Chapter 2 epigraph — shortest one-line Shakespeare quotation; clean em-dash attribution form"
+        },
+        {
+          "start_anchor": "\"They fought, like brave men, long and well",
+          "note": "Chapter 33 epigraph — Halleck ('Like flowers at set of sun.\" — Halleck'); last epigraph, before the novel's final chapter"
+        }
+      ],
+      "note": "PRIMARY structure for this contract. The detector emits no epigraph elements (by_type has none) and finds only 26 chapters, so the entire 33-instance epigraph layer is undetected/unmasked — it leaks into the running chapter body. Analogous to the chapter_heading apparatus in the scripture gold sets (idx100/idx101): a per-chapter masked masthead the detector folds into body text."
+    },
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 33,
+      "count_cue": "33 numbered chapters, headings 'Chapter 1' … 'Chapter 33' (line-anchored /^Chapter \\d+/ resolves 33×, sequential 1–33; bare /\\bChapter \\d+\\b/ also =33, no spurious matches). Detector finds only 26 (by_type chapter=26 / header=26) — recall 26/33 = 0.79; 7 chapter heads are missed (the EPUB nav/detector segmentation drops them, not a text-content gap). Secondary unmasked grouping container below which the epigraph + masked body sit.",
+      "exemplars": [
+        {
+          "start_anchor": "Chapter 1\n\n",
+          "note": "first chapter container head"
+        },
+        {
+          "start_anchor": "Chapter 33\n\n",
+          "note": "last chapter container head (followed by the Halleck epigraph)"
+        }
+      ],
+      "note": "Secondary grouping level. Unmasked structural container. The 7-chapter shortfall (26 detected vs 33 true) is pinned here so the recall gap is visible alongside the fully-undetected epigraph layer."
+    },
+    {
+      "type": "endnotes",
+      "mask": true,
+      "start_anchor": "Reference Notes\n\n1 As each nation of the Indians",
+      "end_anchor": "<<EOF>>",
+      "note": "Cooper's collected explanatory notes under the heading 'Reference Notes' — 26 numbered notes (1–26, line-anchored /^\\d+ / resolves 26× in this trailing block) on Indian dialects, Washington at the Monongahela, Narragansett pacers, scalping tuft, the long rifle, Glenn's Falls, Tamenund/Tammany, William Penn, etc. Keyed to inline superscript markers in the body (e.g. 'Horican.'1, 'tuft'4, 'yellow'5, 'river'7). Collected at the END of the work, so endnotes (not per-page footnotes). Currently UNTYPED/swallowed into the trailing body — detector emits no endnotes element. (Note 24 'Turtle.' and 25 share a line in the extraction; both are present and counted.)"
+    }
+  ]
+}

@@ -5,6 +5,25 @@
   "work": "Charlotte Temple",
   "annotations": [
     {
+      "type": "volume",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 2,
+      "count_cue": "2 volumes (Volume I = chapters I–XVII; Volume II = chapters XVIII–XXXV), printed as 'Volume I'/'Volume II' division lines in the text. ADDED 2026-06-18 (untyped FN): these volume divisions are NOT in the EPUB nav, so the nav-built gold + the nav-driven detector both miss them.",
+      "exemplars": [
+        {
+          "start_anchor": "Volume I\n\nI\n\nA Boarding School",
+          "note": "Volume I division line, immediately before chapter I"
+        },
+        {
+          "start_anchor": "Volume II\n\nXVIII\n\nReflections",
+          "note": "Volume II division line, immediately before chapter XVIII"
+        }
+      ],
+      "note": "Secondary grouping level above chapter. Unmasked structural container."
+    },
+    {
       "type": "chapter",
       "mask": false,
       "structure": "repeating",

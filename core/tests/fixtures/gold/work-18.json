@@ -1,0 +1,162 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text(); resolve=last uses rfind; end_anchor <<EOF>>=end of text. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 18,
+  "source_file": "Ante-Nicene Fathers Volume 3 - Enhanced Version -- Philip Schaff [Schaff, Philip] -- Ante-Nicene Fathers Volume 3, 2009 -- Christian Classics Ethereal -- eef3b5fa6fe129392d6fb890c5b5ca85 -- Anna’s Archive.epub",
+  "work": "Ante-Nicene Fathers Vol. 3 (Tertullian; Schaff/Menzies, CCEL)",
+  "annotations": [
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Table of Contents\n\nIntroduction\n\nTitle Page.\n\nSecond Title Page.\n\nPreface.\n\nApologetic.\n\nAnti-Marcion.\n\nEthical.",
+      "end_anchor": "Ethical.\n\nIntroduction\n\nOriginally printed in 1885",
+      "note": "Top-level table of contents (8 entries: Introduction / Title Page / Second Title Page / Preface / Apologetic / Anti-Marcion / Ethical). The three part names (Apologetic/Anti-Marcion/Ethical) are the volume's three Tertullian classes. end_anchor stops at the junction with the CCEL Introduction that follows."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "Originally printed in 1885, the ten-volume set, Ante-Nicene Fathers",
+      "end_anchor": "Tim Perrine CCEL Staff Writer",
+      "note": "CCEL (Christian Classics Ethereal Library) publisher's introduction to the whole set/volume, signed 'Tim Perrine CCEL Staff Writer'. type=introduction (general framing of the digital edition), distinct from the editorial Introductory Notes/Notices that precede individual treatises (typed commentary below) and the part-level American-Editor introductions."
+    },
+    {
+      "type": "title_page",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "The Writings of the Fathers Down to A.D. 325\n\nANTE-NICENE FATHERS\n\nVOLUME 3.",
+      "end_anchor": "The Nicene Council\n\nPreface.",
+      "note": "Main title page block: 'ANTE-NICENE FATHERS / VOLUME 3 / Latin Christianity: Its Founder, Tertullian / I. Apologetic; II. Anti-Marcion; III. Ethical / Edited by Allan Menzies / T&T CLARK ... EERDMANS', plus the American-Edition restatement and the Nicene-Council Greek motto. end_anchor stops just before the Preface body."
+    },
+    {
+      "type": "preface",
+      "mask": true,
+      "structure": "single",
+      "role": "secondary",
+      "start_anchor": "We present a volume widely differing, in its contents",
+      "end_anchor": "may be found not less acceptable.",
+      "note": "Editor-in-chief's (A. Cleveland Coxe) general Preface to the volume: explains that this book gives three complete classes of Tertullian's writings and previews the Fourth volume. end_anchor is the closing clause of the preface; the 'Apologetic. / Title Page. / Introductory Note. ...' part contents-list begins immediately after."
+    },
+    {
+      "type": "part",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 3,
+      "count_cue": "Exactly 3 top-level parts = Tertullian's three classes as arranged by the editor-in-chief: I. Apologetic (Part First, treatises I–IX), II. Anti-Marcion (Part Second, treatises I–VII + Appendix), III. Ethical (Part Third, treatises I–V + the Perpetua Appendix + Of Patience). Verified by 3 unique '\\n——…—\\n\\nPart First|Second|Third.' headers (regex count=3) and corroborated by the 3 part names in the table of contents.",
+      "exemplars": [
+        {
+          "start_anchor": "Part First.\n\nIntroductory Note.",
+          "note": "Part First = Apologetic. Opens with the editor's 'Introductory Note' (typed commentary), then the treatises."
+        },
+        {
+          "start_anchor": "Part Second.\n\nIntroduction, by the American Editor.",
+          "note": "Part Second = Anti-Marcion. Opens with 'Introduction, by the American Editor' (typed commentary)."
+        },
+        {
+          "start_anchor": "Part Third.\n\nOn Repentance.\n\nOf Heathen Repentance.",
+          "note": "Part Third = Ethical. (No separate part-intro essay; runs straight into the first treatise's chapter list.)"
+        }
+      ],
+      "note": "Volume → part → treatise → chapter hierarchy. part is the top grouping level (mask=False, _UNMASKED). Treatises sit between part and chapter and are annotated as the 'translation' layer below (each treatise IS a translated work)."
+    },
+    {
+      "type": "translation",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 23,
+      "count_cue": "23 translated treatises, each opening with a bracketed translator credit '[Translated by <name>.]' on its own line just before the treatise body. Regex count of '\\[Translated by' = 23 (verified programmatically). These are the English translations of Tertullian's Latin treatises (plus the appended Latin Acts of Perpetua & Felicitas) — the SUBSTANTIVE translated text that is the volume's reason for existing. Breakdown roughly matches the 3 part contents-lists: Apologetic ≈ 9 treatises (Apology, On Idolatry, De Spectaculis, De Corona, To Scapula, Ad Nationes, An Answer to the Jews, The Soul's Testimony, A Treatise on the Soul), Anti-Marcion ≈ 9 credits (Prescription Against Heretics, the Five Books Against Marcion, Against Hermogenes, Against the Valentinians, On the Flesh of Christ, On the Resurrection of the Flesh, Against Praxeas, Scorpiace, Appendix: Against All Heresies), Ethical/Appendix ≈ 5 (On Repentance, On Baptism, On Prayer, Ad Martyras, Of Patience) plus the 2 Perpetua-Appendix credits (Wallis's English version + the Latin Acts). Slight intra-part redistribution is because a few translators credit a sub-book; the bracketed-credit count, not the part contents-list, is authoritative.",
+      "exemplars": [
+        {
+          "start_anchor": "[Translated by the Rev. S. Thelwall, Late Scholar of Christ's College, Cantab.]",
+          "note": "FIRST translation: The Apology, translated by S. Thelwall (the fullest translator credit in the volume). The treatise body 'The Apology. / Chapter I. / Rulers of the Roman Empire...' follows."
+        },
+        {
+          "start_anchor": "[Translated by Dr. Holmes.]\n\nIntroductory Notes.\n\n————————————\n\nDedication.",
+          "note": "The Five Books Against Marcion (the volume's longest translation), translated by Peter Holmes — opens with the translator's own 'Introductory Notes' and a Dedication to the Bishop of Chester before Book I."
+        },
+        {
+          "start_anchor": "[Translated by the Rev. R. E. Wallis, Ph.D.]\n\n————————————\n\nNobody, wi",
+          "note": "The Latin Acts/Passion of Perpetua & Felicitas (Appendix to the Ethical part), translated by R. E. Wallis — a non-Tertullian martyrdom narrative appended here; confirms 'translation' covers the whole volume's translated apparatus, not just Tertullian proper."
+        }
+      ],
+      "note": "PRIMARY diagnostic layer and the headline purpose of this gold: 'translation' is UNEXEMPLIFIED elsewhere in the corpus, and this critical edition supplies it cleanly. Each treatise is an English rendering of a Latin original, flagged by an explicit translator credit. mask=True per taxonomy (translated text is masked apparatus relative to the original-language body the detector would otherwise expect). Per-instance edges are not stored; presence + count (23) is the contract."
+    },
+    {
+      "type": "commentary",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 13,
+      "count_cue": "13 'Elucidations' appendices — the American Editor's (A. Cleveland Coxe) first-person critical/explanatory essays appended after individual treatises. Counted by the block pattern 'Elucidations.\\n\\n——…—\\n\\n<RomanNumeral>.\\n\\n(' = 13 (verified programmatically; this excludes the ~17 bare 'Elucidations.' mentions inside the per-part chapter contents-lists, which are forward-references, not the essays themselves). Each block contains several numbered elucidations (Eluc. I, II, III…) keyed to page/chapter references. Additionally the three part-level 'Introduction(s), by the American Editor' and 'Introductory Note' essays are commentary in character; they are listed in the part exemplars above and not double-counted here — the 13 figure is the Elucidation-block count only.",
+      "exemplars": [
+        {
+          "start_anchor": "Elucidations.\n\n————————————\n\nI.\n\n(Arrangement, p. 4, supra.)",
+          "note": "FIRST Elucidation block (appended after the Apology). First-person editorial essay: 'The arrangement I have adopted in editing these Edinburgh Translations of Tertullian is a practical one.' — unmistakably editor's commentary, not Tertullian's translated text."
+        },
+        {
+          "start_anchor": "Introduction, by the American Editor.\n\n————————————\n\nThe Second Class of Tertullian",
+          "note": "Part Second's 'Introduction, by the American Editor' — a part-level editorial commentary essay ('The Second Class of Tertullian's works, according to the logical method I have endeavoured to carry out...'). Distinct from the 13-count Elucidation blocks; included as an exemplar to show the commentary layer also lives at part granularity."
+        }
+      ],
+      "note": "type=commentary (mask=False, _UNMASKED — editorial commentary that is content the detector should KEEP, unlike masked apparatus). This is the second under-exemplified type this gold targets. Two sub-forms: (a) per-treatise 'Elucidations' appendices (13 blocks), (b) per-part 'Introduction by the American Editor' / 'Introductory Note' essays. The expected_count tracks (a) only; (b) is exemplified, not counted, to keep the cardinality honest. mask=False is correct here: gold_verify would flag mask=True against DEFAULT_MASK_BY_TYPE['commentary']=False."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 5,
+      "count_cue": "5 'Introductory Notice'-titled editorial notices that head specific treatises/translations (regex count of 'Introductory Notice' = 5, verified programmatically). These are the translator/editor's prefatory NOTICES to individual works (e.g. Holmes's notice to the Anti-Marcion, the notice to the Five Books Against Marcion, the Perpetua & Felicitas notices). type=introduction (work-specific prefatory framing) is kept SEPARATE from the editor's evaluative 'commentary' (Elucidations) above and from the single CCEL set-introduction — the distinction: a 'Notice' introduces/contextualises a forthcoming text, an 'Elucidation' critically expands a finished one. Honest caveat: the introduction↔commentary line is genuinely fuzzy for the long Part-First 'Introductory Note' (which mixes biographical framing with the editor's evaluation); I classed the labelled NOTICES as introduction and the labelled ELUCIDATIONS as commentary, by their own headings, rather than re-judging tone.",
+      "exemplars": [
+        {
+          "start_anchor": "From Dr. Holmes, I append the following Introductory Notice:",
+          "note": "Holmes's 'Introductory Notice' to the Anti-Marcion material, appended within the Part-First framing: '(I.) Quintus Septimius Florens Tertullianus, as our author is called in the mss...' — biographical/textual framing of the author and the Marcion treatise."
+        },
+        {
+          "start_anchor": "Introductory Notice to the Martyrdom of Perpetua and Felicitas.",
+          "note": "Editorial 'Introductory Notice' heading the Perpetua & Felicitas appendix (the non-Tertullian martyr-acts), framing its provenance and the Latin/Greek text question before the translation."
+        }
+      ],
+      "note": "type=introduction, mask=True (apparatus framing the translated text — contrast with commentary's mask=False). Five 'Introductory Notice'-titled blocks. The count is the literal heading count; their character is prefatory rather than evaluative, which is why they are introduction not commentary."
+    },
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 737,
+      "count_cue": "Treatise sub-divisions ('Chapter I.', 'Chapter II.', …, mostly Roman-numeral, frequently with an em-dash title summary). The current detector segments 737 chapters across the 23 treatises (diagnostics by_type chapter=737, all numbered). This is FUZZY by eye: a line-anchored '\\nChapter <roman>.' regex yields 870 occurrences, but that figure double-counts the per-treatise chapter-summary CONTENTS LISTS (each treatise prints its chapter titles as a forward-reference list before the translator credit, then again as in-body headings). The 737 detector figure is the de-duplicated in-body chapter count and is the honest navigational-container number; the 870 raw figure is recorded here as the upper bound including contents-list echoes. Per-canonical-treatise chapter counts vary widely (Apology 50, On Idolatry 24, Five Books Against Marcion run to many chapters per book) and are not independently re-tallied here.",
+      "exemplars": [
+        {
+          "start_anchor": "Chapter I.—Wide Scope of the Word Idolatry.",
+          "note": "In-body chapter heading: On Idolatry, Chapter I (em-dash summary form). Followed directly by the chapter's translated prose ('The principal crime of the human race...')."
+        }
+      ],
+      "note": "chapter is the grouping level BELOW translation (treatise) and ABOVE the masked footnote apparatus. mask=False (_UNMASKED). expected_count uses the detector's de-duplicated 737; the raw 870 line-count is the contents-list-inflated upper bound, documented honestly rather than picking a clean single number."
+    },
+    {
+      "type": "footnotes",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 6280,
+      "count_cue": "Heavy critical-apparatus footnotes, interspersed after each chapter/treatise as numbered note lines of the form '<n>\\xa0\\xa0\\xa0 <note text>' (newline + footnote number + three non-breaking spaces + space + text). Programmatic count of the regex '\\n\\d+\\xa0\\xa0\\xa0 ' = 6280 (verified against reference_text(), not grep — the text uses \\xa0 thin/nbsp glyphs). Numbering is CONTINUOUS across the whole volume (min 1, max 9186; the count 6280 < 9186 because numbering is per-treatise-resetting in places and some referenced numbers have no expanded note line). The notes carry scholarly cross-references, Latin source phrases, and editor remarks keyed to inline superscripts in the translated bodies.",
+      "exemplars": [
+        {
+          "start_anchor": "100    Referring evidently to the Scriptures; and showing w",
+          "note": "Apology footnote 100 (mid-treatise, interleaved after its anchoring chapter) — an editorial gloss. Confirms footnotes are distributed through the body, not pooled at the end."
+        },
+        {
+          "start_anchor": "9186    Œuvres, Tom. vi. pp. 133",
+          "note": "LAST footnote in the volume (Of Patience, citing Massillon's Œuvres) — the highest footnote number (9186); marks the document tail (no back-matter index follows)."
+        }
+      ],
+      "note": "PRIMARY masked layer alongside translation. mask=True per taxonomy. This 'Enhanced Version' interleaves the footnote apparatus inline after each chapter rather than pooling per-page, so the apparatus is content-anchorable (unlike the geometric idx101 case). expected_count is the line-count of expanded note entries (6280); it deliberately does NOT equal the max footnote number (9186) because numbering resets/skips — stated explicitly rather than forcing a clean number."
+    }
+  ]
+}

@@ -21,7 +21,43 @@
           "note": "last poem"
         }
       ],
-      "note": "DETECTION FOUND 0 — entire collection one undetected body block (cover=0). The undetected-blob case; count now TOC-grounded (was fuzzy ~30)."
+      "note": "DETECTION FOUND 0 — entire collection one undetected body block (cover=0). Count VALIDATED by eye against the printed Table of Contents (line lists exactly 28 top-level poems, The Road Not Taken→The Sound of the Trees, Hill Wife as ONE entry); nav corroborates (33 poem entries = 27 standalone + Hill Wife + its 5 sub-parts)."
+    },
+    {
+      "type": "preface",
+      "mask": true,
+      "start_anchor": "Note\n\nMountain Interval, reprinted here",
+      "end_anchor": "TO YOU\n\nWHO LEAST NEED REMINDING",
+      "note": "Editorial Note (Dover editor Stanley Appelbaum) on the volume's history. ADDED 2026-06-18 (untyped FN): detector mis-anchors body_start here, so this + the dedication + the TOC leaked into the body blob. Masked editorial front matter. SUBTYPE soft: 'preface' vs 'foreword'/'introduction' (heading is literally 'Note')."
+    },
+    {
+      "type": "dedication",
+      "mask": true,
+      "start_anchor": "TO YOU\n\nWHO LEAST NEED REMINDING",
+      "end_anchor": "Table of Contents\n\nTitle Page Copyright Page Note",
+      "note": "Original Mountain Interval dedication ('TO YOU / WHO LEAST NEED REMINDING…'), retained by this edition. ADDED 2026-06-18 (untyped FN, leaked into body)."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "start_anchor": "Table of Contents\n\nTitle Page Copyright Page Note",
+      "end_anchor": "The Road Not Taken\n\nTwo roads diverged in a yellow wood",
+      "note": "Table of Contents. ADDED 2026-06-18 (untyped FN, leaked into body). Its listing is the ground truth for the 28-poem count."
+    },
+    {
+      "type": "index",
+      "mask": true,
+      "start_anchor": "Alphabetical List of Titles\n\nBirches15",
+      "end_anchor": "DOVER ◆ THRIFT ◆ EDITIONS\n\nPOETRY\n\nLA VITA NUOVA",
+      "note": "Two alphabetical indexes (Titles, then First Lines). ADDED 2026-06-18 (untyped FN): back matter swallowed into the body blob. Masked navigational matter."
+    },
+    {
+      "type": "back_matter",
+      "mask": true,
+      "resolve": "last",
+      "start_anchor": "DOVER ◆ THRIFT ◆ EDITIONS\n\nPOETRY\n\nLA VITA NUOVA",
+      "end_anchor": "<<EOF>>",
+      "note": "Dover Thrift Editions publisher catalog (POETRY/PLAYS/BOXED SETS advertising). ADDED 2026-06-18 (untyped FN, leaked into body). Non-authorial; masked."
     }
   ]
 }

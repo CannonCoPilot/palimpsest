@@ -1,0 +1,155 @@
+{
+  "schema": "Gold ground-truth annotations. Anchors resolved in reference_text() (resolve=last→rfind; <<EOF>>=EOF). structure=repeating ⇒ expected_count+count_cue carry cardinality (A3 scores recall-of-count, not exact edges); exemplars anchor concrete instances. role=primary drives the rating; role=secondary is a grouping level reported but not rated. Offsets derived at eval time, never stored.",
+  "idx": 29,
+  "source_file": "The Message of the Qur'An -- Muhammad Asad [Asad, Muhammad] -- Place of publication not identified, 1980 -- The Book Foundation -- isbn13 9780317524567 -- f720bfc6c8902fb7c76dbd9aa6f64f30 -- Anna’s Archive.epub",
+  "work": "The Message of the Qur'An (Muhammad Asad)",
+  "annotations": [
+    {
+      "type": "chapter",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 114,
+      "count_cue": "114 surahs (canonical Qur'anic count). VERIFIED in the body (offsets ~39.9K–1.307M): each surah opens with a heading block ('THE Nth SŪRAH' / 'Title (Gloss)') followed by exactly one revelation-period sub-line — counting those gives 81 'Mecca Period' + 21 'Medina Period' + 12 'Period Uncertain' = 114 (no 'Mecca And Medina Period' form present). The TOC corroborates (lists THE FIRST→THE HUNDRED-FOURTEENTH SŪRAH). Detector ALREADY segments these: by_type chapter=114 (with 114 matching headers) — presence-OK at the surah level; the diagnostic gap is the apparatus INSIDE each surah (introduction note + translation + the pooled footnote commentary), which the detector folds into flat body.",
+      "exemplars": [
+        {
+          "start_anchor": "THE FIRST SŪRAH\n\nAl-Fātiḥah(The Opening)\n\nMecca Period",
+          "note": "surah 1 (Al-Fātiḥah) — first surah heading in the body (Mecca Period)"
+        },
+        {
+          "start_anchor": "Al-Baqarah (The Cow)\n\nMedina Period",
+          "note": "surah 2 (Al-Baqarah) heading — the longest surah, Medina Period"
+        },
+        {
+          "start_anchor": "An-Nās (Men)\n\nPeriod Uncertain",
+          "note": "surah 114 (An-Nās) heading — last surah, Period Uncertain"
+        }
+      ],
+      "note": "Top-level structural container (the chapter level of scripture). Unmasked. Detector finds all 114, so this is a grouping level reported, not rated — the rating is driven by the masked apparatus below."
+    },
+    {
+      "type": "introduction",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 114,
+      "count_cue": "114 Asad per-surah introductory notes — exactly one prefaces each surah's verses (between the '…Period' heading line and the first verse / basmala). 1:1 with the 114 surahs (same count cue as the chapter level). Each is editorial prose by the translator (name origin, period of revelation, thematic overview). Detector emits ZERO 'introduction' elements — this layer is swallowed into the flat body the detector reports inside each chapter container.",
+      "exemplars": [
+        {
+          "start_anchor": "T HIS SŪRAH is also called Fātiḥat al-Kitāb",
+          "note": "surah 1 introductory note ('The Opening of the Divine Writ…') — dropcap split 'T HIS'"
+        },
+        {
+          "start_anchor": "T HE TITLE of this sūrah is derived from the story narrated in verses 67-73",
+          "note": "surah 2 introductory note (Al-Baqarah / The Cow) — dropcap split 'T HE'"
+        },
+        {
+          "start_anchor": "S EE introductory note to the preceding sūrah, with which this one is closely connected.",
+          "note": "surah 114 introductory note (An-Nās) — a short cross-reference note; dropcap split 'S EE'"
+        }
+      ],
+      "note": "PRIMARY masked layer (one per surah). Asad's per-surah preamble. Typed 'introduction' (editorial framing prose before the text) rather than 'commentary' (which is unmasked and reserved here for the verse-keyed footnote apparatus would have been mis-fit). UNDETECTED — drives the MIRAGE verdict alongside translation+footnotes."
+    },
+    {
+      "type": "translation",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 114,
+      "count_cue": "114 verse-translation blocks — one per surah, Asad's English rendition of the Qur'anic text with parenthesised verse numbers '(1) (2) …' and inline superscript footnote markers fused into the running text (e.g. 'believers;275'). The block opens with the invocation 'IN THE NAME OF GOD, THE MOST GRACIOUS, THE DISPENSER OF GRACE:' — present in 113 surahs (every surah except 9 At-Tawbah; in surah 1 it is counted as verse 1), corroborating the per-surah translation structure (basmala count = 113). Detector emits ZERO 'translation' elements: the entire rendered text is folded into the body inside each chapter container.",
+      "exemplars": [
+        {
+          "start_anchor": "(1) IN THE NAME OF GOD, THE MOST GRACIOUS, THE DISPENSER OF GRACE:6",
+          "note": "surah 1 verse 1 (the basmala, numbered as v1 here) — first translated verse; trailing '6' is the fused footnote-6 marker"
+        },
+        {
+          "start_anchor": "(2) A LL PRAISE is due to God alone, the Sustainer of all the worlds,",
+          "note": "surah 1 verse 2 ('All praise is due to God alone…') — dropcap split 'A LL'"
+        },
+        {
+          "start_anchor": "(1) S AY: \"I seek refuge with the Sustainer of men,",
+          "note": "surah 114 (An-Nās) verse 1 — last surah's first verse; dropcap split 'S AY'"
+        }
+      ],
+      "note": "PRIMARY high-value masked layer (the rendered scripture itself). UNDETECTED (by_type has no 'translation'). The inline superscript markers are fused into verse text and the footnote BODIES sit in a pooled apparatus at the end (see 'footnotes'), so the verse text is the readable translation layer; the marker→note linkage is broken by extraction order."
+    },
+    {
+      "type": "footnotes",
+      "mask": true,
+      "structure": "repeating",
+      "role": "primary",
+      "expected_count": 5326,
+      "count_cue": "5326 numbered footnotes — Asad's defining commentary apparatus. PROGRAMMATICALLY VERIFIED: the notes are POOLED in one continuous block at the end of the work (offset ~1.344M → EOF), NOT adjacent to the verses they annotate. Splitting the pool on blank lines and reading the leading integer of each paragraph yields exactly 5326 paragraphs numbered 1→5326, strictly monotonic non-decreasing with ZERO resets (no per-surah renumbering). Notes 1–5 are the Foreword's notes; notes 6–5326 are the Qur'anic commentary keyed to the inline superscript markers in the translation. Detector emits ZERO 'footnotes' elements — the whole 1.75M-char apparatus is folded into trailing body/back_matter.",
+      "exemplars": [
+        {
+          "start_anchor": "1 It is to be borne in mind that, in its final compilation",
+          "note": "footnote 1 (first note in the pool; a Foreword note on the non-chronological surah order)"
+        },
+        {
+          "start_anchor": "6 According to most of the authorities, this invocation",
+          "note": "footnote 6 (first Qur'anic commentary note — on the basmala of surah 1; raḥmān/raḥīm distinction)"
+        },
+        {
+          "start_anchor": "5326 The above is perhaps the oldest Qur'anic mention of the term and concept of al-jinnah",
+          "note": "footnote 5326 (the LAST note — on the final verse of surah 114 An-Nās; the work ends here)"
+        }
+      ],
+      "note": "PRIMARY defining apparatus (the work's raison d'être — Asad's exegesis). UNDETECTED. SCRAMBLE pattern: notes are pooled at the very end while their superscript anchors are fused inline in the translation (cf. idx101's footnote band), so the marker→note edges cannot be recovered from the linear reference_text() — only the pooled note bodies (countable 5326) are. Count is exact (last note number = paragraph count = 5326)."
+    },
+    {
+      "type": "appendix",
+      "mask": true,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 4,
+      "count_cue": "4 Asad appendices (the famous essays), in the body immediately after surah 114 and before the footnote pool: I 'Symbolism and Allegory in the Qur'ān', II 'Al-Muqaṭṭa`āt', III 'On the Term and Concept of Jinn', IV 'The Night Journey'. Headings 'APPENDIX I'…'APPENDIX IV' each resolve once in the body; the TOC also lists exactly these four. Detector ALREADY finds these: by_type appendix=4.",
+      "exemplars": [
+        {
+          "start_anchor": "APPENDIX I\n\nSYMBOLISM AND ALLEGORY IN THE QUR'ĀN\n\nW HEN studying",
+          "note": "Appendix I — symbolism/allegory essay (the muḥkamāt/mutashābihāt key-phrase); dropcap split 'W HEN'"
+        },
+        {
+          "start_anchor": "APPENDIX II\n\nAL-MUQAṬṬA`ĀT",
+          "note": "Appendix II — the disjointed letters at surah openings"
+        },
+        {
+          "start_anchor": "APPENDIX IV\n\nTHE NIGHT JOURNEY\n\nT HE PROPHET'S",
+          "note": "Appendix IV — the isrā'/mi`rāj essay; dropcap split 'T HE'"
+        }
+      ],
+      "note": "Secondary back-matter level. Detector segments all 4 (reported, not rated)."
+    },
+    {
+      "type": "title_page",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "The Message of\n\nTHE QUR'ĀN\n\nTRANSLATED AND EXPLAINED",
+      "end_anchor": "For people who think\n\nForeword i",
+      "note": "Title block: 'The Message of THE QUR'ĀN / TRANSLATED AND EXPLAINED / by Muḥammad Asad / For people who think'. No separate copyright/ISBN block survives extraction (searched '©'/'Copyright'/'ISBN'/'All rights reserved' = 0 hits), so no `copyright` annotation. The title page runs straight into the TOC. Detector lumps title+TOC+foreword+bibliography into one front_matter run (0→~39.9K)."
+    },
+    {
+      "type": "contents",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "For people who think\n\nForeword i",
+      "end_anchor": "Foreword\n\nR EAD in the name of thy Sustainer",
+      "note": "Table of contents — lists Foreword, Works of Reference, all 114 surahs (THE FIRST→THE HUNDRED-FOURTEENTH SŪRAH with title+gloss and page numbers), and the 4 Appendices. The TOC listing is the external corroboration for the 114-surah and 4-appendix counts. Masked navigational matter, undetected as a distinct element (folded into front_matter)."
+    },
+    {
+      "type": "foreword",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Foreword\n\nR EAD in the name of thy Sustainer",
+      "end_anchor": "Works of Reference\n\nT HIS WORK is based on the recension",
+      "note": "Asad's translator's Foreword (opens with sūrah 96:1-5 'Read in the name of thy Sustainer…'; explains his idiomatic-explanatory method, ījāz, interpolations in brackets, and his two rules of interpretation). Carries footnote markers 1–5 whose bodies open the pooled apparatus. Detector emits a `foreword` element here but does not separate the Foreword's own notes (those live in the end pool). 'Read…' dropcap split 'R EAD'."
+    },
+    {
+      "type": "bibliography",
+      "mask": true,
+      "structure": "single",
+      "start_anchor": "Works of Reference\n\nT HIS WORK is based on the recension",
+      "end_anchor": "THE MESSAGE OF THE QUR'ĀN\n\nTHE FIRST SŪRAH",
+      "note": "'Works of Reference' — the bibliography of classical sources cited in the notes (Abū Dā'ūd, Bayḍāwī, Bukhārī, Ibn Kathīr, Lane, Rāzī, Zamakhsharī, etc.), each with author, death-year (H.), and title. Front-matter reference apparatus, undetected as a distinct element (folded into front_matter). 'T HIS WORK' dropcap split. End anchor is the body-start banner 'THE MESSAGE OF THE QUR'ĀN' that opens the surahs."
+    }
+  ]
+}
