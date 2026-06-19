@@ -579,9 +579,17 @@ artifact), `appendix` ×2 (Church History Maps; Church History Photographs→EOF
 (Pronunciation Guide, between BoM and D&C), `front_matter` (Testimonies of the Three/Eight Witnesses,
 in BoM front matter). All anchors verified unique (`reference_text().count(anchor)==1`).
 
+**idx101 inline footnote-marker strip (minutiae #8) — DONE (2026-06-19).** `lds_columnar.parse_page`
+now extracts via `get_text("dict")` and drops body spans flagged superscript (`flags & 1`). The LDS
+inline footnote markers are a size-6 GoudySCldsStd-BoldItal letter + U+200A hair space
+(`a born of b goodly c parents`); verse/section numbers are size-10.3 non-superscript and are
+preserved. Verse bodies are now clean (`having been born of goodly parents`); hair-space count
+17,915 → 3,311 (remainder is in the footnote *apparatus*, deliberately kept). The same filter also
+strips the index headword-locator digits (`Aaron1`/`Zoramites2` → `Aaron`/`Zoramites`), which were the
+same superscript class — so the index `end_anchor` was updated accordingly. Re-ingested; gold_verify
+101 GREEN, full set 20 GREEN, A3 unchanged (COARSE 0.60), 138 ingest/extractor/project tests pass.
+
 **Remaining idx101 polish (bounded, not blocking):**
-- Inline footnote-letter markers still lightly pollute verse-body text (minutiae #8) — needs span-level
-  `get_text("dict")` superscript-font filtering, a separate pass.
 - `lds_columnar.py` band constants are tuned to the 2-column verse body; within the multi-column
   map-index / glossary / photo pages, *entry-block* ordering is locally imperfect (headwords/captions
   still extract readably; section boundaries and alphabetical order hold — presence + section-level

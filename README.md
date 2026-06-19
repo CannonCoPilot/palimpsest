@@ -60,12 +60,14 @@ palimpsest/
 │       └── gutenberg_client.py          # Project Gutenberg fetch + cache
 ├── ui/                                  # Flask-served web interface
 ├── tests/                               # Unit tests per module
-├── research/                            # Jupyter notebooks (prototyping)
-└── docs/                                # Mermaid class/sequence diagrams, PRD
+└── docs/development/                    # All design, planning, research, specs, audits, diagrams
 ```
 
 > [!TIP]
-> Mermaid architecture diagrams live in `docs/diagrams/`. The class diagram covers the full module interface hierarchy; the sequence diagram shows the analysis pipeline flow.
+> Development documentation is consolidated under `docs/development/` (see its `README.md` for the map).
+> Mermaid architecture diagrams live in `docs/development/diagrams/`; the research corpus and phase-1
+> task specs are under `docs/development/research/`; the gold-set masking-map audit is at
+> `docs/development/audits/masking-map/`.
 
 ---
 
