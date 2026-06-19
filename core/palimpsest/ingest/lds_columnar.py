@@ -50,18 +50,38 @@ def _clean(t: str) -> str:
 
 def _fn_top(blocks) -> float:
     """y0 of the apparatus band = topmost block in the middle/right fn columns."""
-    ys = [b[1] for b in blocks
-          if FN_MID_LO <= b[0] <= FN_MID_HI or FN_RT_LO <= b[0] <= FN_RT_HI]
+    ys = [b["bbox"][1] for b in blocks
+          if FN_MID_LO <= b["bbox"][0] <= FN_MID_HI or FN_RT_LO <= b["bbox"][0] <= FN_RT_HI]
     return min(ys) if ys else float("inf")
 
 
+def _block_text(blk, *, drop_superscript: bool) -> str:
+    """Reconstruct a dict-block's text from its spans, one line per ``lines`` entry.
+
+    When ``drop_superscript`` is set, spans flagged superscript (``flags & 1``) are
+    omitted. In the verse body those are the LDS inline footnote-reference markers
+    (a size-6 BoldItal letter + U+200A hair space, e.g. ``a born of b goodly``);
+    dropping them yields clean verse text. Verse/section numbers are NOT superscript
+    (size 10.3, no flag bit 0), so they are preserved.
+    """
+    lines = []
+    for ln in blk.get("lines", []):
+        parts = [s["text"] for s in ln["spans"]
+                 if not (drop_superscript and s["flags"] & 1)]
+        lines.append("".join(parts))
+    return "\n".join(lines)
+
+
 def parse_page(pg) -> Page:
-    raw = [b for b in pg.get_text("blocks") if b[6] == 0 and b[4].strip()]
+    blocks = pg.get_text("dict")["blocks"]
+    raw = [b for b in blocks
+           if b.get("type", 0) == 0
+           and any(s["text"].strip() for ln in b.get("lines", []) for s in ln["spans"])]
     fn_top = _fn_top(raw)
 
     head_blocks, body_blocks, app_blocks = [], [], []
     for b in raw:
-        y0 = b[1]
+        y0 = b["bbox"][1]
         if y0 < HEADER_Y:
             head_blocks.append(b)
         elif y0 >= fn_top - 5:
@@ -75,7 +95,7 @@ def parse_page(pg) -> Page:
     printed = ref = None
     book_title = None
     if head_blocks:
-        htxt = _clean(head_blocks[0][4])
+        htxt = _clean(_block_text(head_blocks[0], drop_superscript=False))
         m = re.match(r"^(\d+)\s+(.*)$", htxt, re.S)
         if m:
             printed, ref = m.group(1), m.group(2).replace("\n", " ").strip()
@@ -83,20 +103,23 @@ def parse_page(pg) -> Page:
             book_title = htxt.replace("\n", " ").strip()
 
     def col(b):
-        x0, x1 = b[0], b[2]
+        x0, x1 = b["bbox"][0], b["bbox"][2]
         if x0 < FN_MID_LO and x1 > GUTTER_X:
             return 0          # full-width header (spans the gutter)
         return 1 if x0 < GUTTER_X else 2   # left / right column
 
-    full = sorted([b for b in body_blocks if col(b) == 0], key=lambda b: b[1])
-    left = sorted([b for b in body_blocks if col(b) == 1], key=lambda b: b[1])
-    right = sorted([b for b in body_blocks if col(b) == 2], key=lambda b: b[1])
+    full = sorted([b for b in body_blocks if col(b) == 0], key=lambda b: b["bbox"][1])
+    left = sorted([b for b in body_blocks if col(b) == 1], key=lambda b: b["bbox"][1])
+    right = sorted([b for b in body_blocks if col(b) == 2], key=lambda b: b["bbox"][1])
 
     page = Page(idx=pg.number, printed=printed, ref=ref, book_title=book_title)
-    page.headers = ([book_title] if book_title else []) + [_clean(b[4]) for b in full]
-    page.body = [_clean(b[4]) for b in (left + right)]
-    page.apparatus = [_clean(b[4]) for b in
-                      sorted(app_blocks, key=lambda b: (b[0], b[1]))]
+    # Verse body drops superscript footnote markers; headers/apparatus keep all spans
+    # (the apparatus *is* the footnote text, and headers carry no inline markers).
+    page.headers = ([book_title] if book_title else []) \
+        + [_clean(_block_text(b, drop_superscript=False)) for b in full]
+    page.body = [_clean(_block_text(b, drop_superscript=True)) for b in (left + right)]
+    page.apparatus = [_clean(_block_text(b, drop_superscript=False)) for b in
+                      sorted(app_blocks, key=lambda b: (b["bbox"][0], b["bbox"][1]))]
     return page
 
 

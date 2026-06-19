@@ -142,8 +142,8 @@
       "mask": true,
       "structure": "single",
       "start_anchor": "his index of entries from the Book of Mormon, the Doctrine and Covenants, and\nthe Pearl of Great Price can help you",
-      "end_anchor": "Zoramites2—apostate sect of Nephites,",
-      "note": "Index — the scripture-wide alphabetical Index of names/topics with cross-references (e.g. 'Aaron1—brother of Moses … D&C 8:6–9 gift of A.'), introduced by 'This index of entries from the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price…'. It is the single largest back-matter block, running from ~offset 3.040M (right after the 'Appendix' divider page) through the final headword 'Zoramites2' at ~offset 4.848M, immediately before 'Church History Maps'. Now de-scrambled into correct A→Z reading order by lds_columnar.py (PRIOR contract noted index entries appeared at ~926K but the heading at ~3.06M — that scramble is resolved). start_anchor begins 'his index…' (dropcap T extracted separately as 'T\\n'); end_anchor is the last alphabetical headword. Type=index."
+      "end_anchor": "Zoramites—apostate sect of Nephites,",
+      "note": "Index — the scripture-wide alphabetical Index of names/topics with cross-references (e.g. 'Aaron—brother of Moses … D&C 8:6–9 gift of A.'), introduced by 'This index of entries from the Book of Mormon, the Doctrine and Covenants, and the Pearl of Great Price…'. It is the single largest back-matter block, running from ~offset 3.040M (right after the 'Appendix' divider page) through the final headword 'Zoramites' at ~offset 4.85M, immediately before 'Church History Maps'. (The superscript index-locator digits — 'Aaron1', 'Zoramites2' — are now stripped by lds_columnar.py's span-level superscript filter, the same pass that removes inline footnote markers from verse bodies.) Now de-scrambled into correct A→Z reading order by lds_columnar.py (PRIOR contract noted index entries appeared at ~926K but the heading at ~3.06M — that scramble is resolved). start_anchor begins 'his index…' (dropcap T extracted separately as 'T\\n'); end_anchor is the last alphabetical headword. Type=index."
     },
     {
       "type": "appendix",
