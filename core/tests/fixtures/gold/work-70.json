@@ -21,7 +21,16 @@
           "note": "Volume II division line, immediately before chapter XVIII"
         }
       ],
-      "note": "Secondary grouping level above chapter. Unmasked structural container."
+      "note": "Secondary grouping level above chapter. Unmasked structural container.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^Volume [IVXLC]+\\n\\n",
+        "span_start": "Charlotte Temple\n\nA Tale of Truth\n\nVolume I",
+        "span_end": "Endnotes\n\nThe above lines, in the original American edition",
+        "at": "start",
+        "tile": true,
+        "expected_count": 2
+      }
     },
     {
       "type": "chapter",
@@ -40,7 +49,16 @@
           "note": "chapter XXXV ('Conclusion') opening"
         }
       ],
-      "note": "Primary structure. The two missed chapters (XXI/XXXI) are a source-label corruption, not a detector logic gap — the gold pins the true 35 so the 0.94 recall is visible."
+      "note": "Primary structure. The two missed chapters (XXI/XXXI) are a source-label corruption, not a detector logic gap — the gold pins the true 35 so the 0.94 recall is visible.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^[IVXLC]+\\d*\\n\\n",
+        "span_start": "Volume I\n\nI\n\nA Boarding School",
+        "span_end": "Endnotes\n\nThe above lines, in the original American edition",
+        "at": "start",
+        "tile": true,
+        "expected_count": 35
+      }
     },
     {
       "type": "endnotes",
@@ -57,5 +75,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Standard Ebooks production note; explicit 'Colophon' heading. Currently swallowed into back_matter."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

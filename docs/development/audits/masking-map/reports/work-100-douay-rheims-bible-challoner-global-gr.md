@@ -2,88 +2,86 @@
 
 - **Source file:** `Douay–Rheims Bible -- Challoner's Revised Version -- 2024 -- Global Grey ebooks -- d727529260a20949024cead95f4b81cf -- Anna’s Archive.epub`
 - **Text length:** 5,487,386 chars
-- **Sections in current map:** 150
-- **Distinct mask types present:** 6 (2 generic, 4 specific)
+- **Mask elements (complete map):** 2,744
+- **Distinct mask types:** 6 (2 generic, 4 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 1,336 | 0.02% |
-| ▒ generic-only (container, no specific element) | 5,484,276 | 99.94% |
-| ▓ specific-only (element outside any container) | 1,774 | 0.03% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 5,487,386 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 0.02% of the text.** The remaining 99.98% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 54,874 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Contents          |▏                                                                                                   |
-Front Matter      |▏                                                                                                   |
-Header            |▏   ▏  ▏ ▏   ▏  ▏▏  █  ▏ ▏ ▏  ▏ ▏  ▏▏▏▏█  ▏    ▏ █▏▏  ▏   ▏    █▏   ▏ ▏████  ▏▏  ▏ ▏  ▏ ▏ ▏ ▏██████ |
-Title Page        |▏                                                                                                   |
+hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 ```
+<sub>h=chapter</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w100-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 236 | 0.00% |
-| 2 | 5,485,814 | 99.97% |
-| 3 | 1,336 | 0.02% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Book | generic | 73 | 73 | ✓ present |
-| Chapter Heading | specific | 1334 | 0 | ❌ ABSENT from map |
-| Colophon | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| back_matter | specific | 0  | — | — |
+| bibliography | specific | 0  | — | — |
+| **body** | generic | 1 | 5,487,386 / 5,487,386 / 5,487,386 | 5,487,386 |
+| **book** | generic | 73 | 2,542 / 47,005 / 301,914 | 5,484,465 |
+| **chapter** | specific | 1334 | 277 / 3,855 / 16,199 | 5,484,465 |
+| **chapter_heading** | specific | 1334 | 13 / 18 / 87 | 24,601 |
+| **colophon** | specific | 1 | 756 / 756 / 756 | 756 |
+| commentary | specific | 0  | — | — |
+| contents | specific | 0  | — | — |
+| copyright | specific | 0  | — | — |
+| dedication | specific | 0  | — | — |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| footnotes | specific | 0  | — | — |
+| foreword | specific | 0  | — | — |
+| **front_matter** | specific | 1 | 2,165 / 2,165 / 2,165 | 2,165 |
+| glossary | specific | 0  | — | — |
+| header | specific | 0  | — | — |
+| index | specific | 0  | — | — |
+| insert | specific | 0  | — | — |
+| introduction | specific | 0  | — | — |
+| letter | specific | 0  | — | — |
+| part | generic | 0  | — | — |
+| poetry | specific | 0  | — | — |
+| preface | specific | 0  | — | — |
+| title_page | specific | 0  | — | — |
+| translation | specific | 0  | — | — |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| book | secondary | 73 | `regex_in_span`  |
+| chapter_heading | primary | 1334 | `regex_in_span`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+## Element-width distribution by type
 
-73 region(s), 5,484,276 chars (99.94% of text). Largest 12:
+![type counts & widths](../portfolio/figures/w100-stats.png)
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 2,309,510 | 2,611,374 | 301,864 | body, book | THE BOOK OF PSALMS The psalms are called by the Hebrews TEHILLIM, that is, Hymns |
-| 3,234,754 | 3,485,589 | 250,835 | body, book | THE PROPHECY OF JEREMIAS Jeremias was a priest, a native of Anathoth, a priestly |
-| 3,537,866 | 3,774,892 | 237,026 | body, book | THE PROPHECY OF EZECHIEL EZECHIEL, whose name signifies the STRENGTH OF GOD, was |
-| 1,791 | 227,609 | 225,818 | body, book | THE BOOK OF GENESIS This book is so called from its treating of the GENERATION,  |
-| 3,012,669 | 3,234,736 | 222,067 | body, book | THE PROPHECY OF ISAIAS This inspired writer is called by the Holy Ghost, the gre |
-| 2,826,602 | 3,012,653 | 186,051 | body, book | ECCLESIASTICUS This Book is so called from a Greek word that signifies a preache |
-| 227,625 | 412,000 | 184,375 | body, book | THE BOOK OF EXODUS The Second Book of Moses is called EXODUS, from the Greek wor |
-| 542,290 | 721,701 | 179,411 | body, book | THE BOOK OF NUMBERS This fourth Book of Moses is called NUMBERS, because it begi |
-| 721,722 | 880,252 | 158,530 | body, book | THE BOOK OF DEUTERONOMY This Book is called DEUTERONOMY, which signifies a SECON |
-| 4,331,646 | 4,485,991 | 154,345 | body, book | THE HOLY GOSPEL OF JESUS CHRIST ACCORDING TO SAINT MATTHEW Saint Matthew, one of |
-| 1,118,390 | 1,269,767 | 151,377 | body, book | THE FIRST BOOK OF SAMUEL, OTHERWISE CALLED THE FIRST BOOK OF KINGS This and the  |
-| 4,572,373 | 4,722,518 | 150,145 | body, book | THE HOLY GOSPEL OF JESUS CHRIST ACCORDING TO ST. LUKE St. Luke was a native of A |
+---
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
-
-1 region(s), 236 chars (0.00% of text). Largest 1:
-
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 46 | 282 | 236 | front_matter | First published 1749 - 1777 This ebook edition was published by Global Grey on t |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

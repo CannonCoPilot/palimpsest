@@ -2,96 +2,87 @@
 
 - **Source file:** `The Holy Quran With Arabic Text And English Translation -- Maulawī Sher ʻAlī; Tahir Ahmad -- 2021 -- Islam International Publications Limited -- isbn13 9781848800229 -- 45d547fdc78588e53a0fc7b3166a36b4 -- Anna’s Archive.pdf`
 - **Text length:** 1,491,930 chars
-- **Sections in current map:** 1854
-- **Distinct mask types present:** 6 (2 generic, 4 specific)
+- **Mask elements (complete map):** 126
+- **Distinct mask types:** 12 (1 generic, 11 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 20,436 | 1.37% |
-| ▒ generic-only (container, no specific element) | 1,451,744 | 97.31% |
-| ▓ specific-only (element outside any container) | 19,750 | 1.32% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 1,491,930 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 1.37% of the text.** The remaining 98.63% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 14,919 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Contents          |▏▏                                                                                                  |
-Front Matter      |▏▏                                                                                                  |
-Header            | ████████████████████████████████ █████████████████████████████████████████████████████████         |
-Title Page        |▏                                                                                                   |
+tDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDwwwwwwwwf
 ```
+<sub>D=translation  f=back_matter  t=front_matter  w=index</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w107-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 1,591 | 0.11% |
-| 2 | 1,490,339 | 99.89% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Chapter | generic | 114 | 925 | ✓ present |
-| Part | generic | 30 | 0 | ❌ ABSENT from map |
-| Translation | specific | — | 0 | ❌ ABSENT from map |
-| Commentary | specific | — | 0 | ❌ ABSENT from map |
-| Title Page | specific | — | 1 | ✓ present |
-| Copyright | specific | — | 0 | ❌ ABSENT from map |
-| Contents | specific | — | 1 | ✓ present |
-| Preface | specific | — | 0 | ❌ ABSENT from map |
-| Foreword | specific | — | 0 | ❌ ABSENT from map |
-| Glossary | specific | — | 0 | ❌ ABSENT from map |
-| Index | specific | — | 0 | ❌ ABSENT from map |
-| Back Matter | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| **back_matter** | specific | 1 | 10,964 / 10,964 / 10,964 | 10,964 |
+| bibliography | specific | 0  | — | — |
+| **body** | generic | 1 | 1,491,930 / 1,491,930 / 1,491,930 | 1,491,930 |
+| book | generic | 0  | — | — |
+| **chapter** | specific | 114 | 369 / 5,833 / 93,599 | 1,328,090 |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| commentary | specific | 0  | — | — |
+| **contents** | specific | 1 | 4,923 / 4,923 / 4,923 | 4,923 |
+| **copyright** | specific | 1 | 331 / 331 / 331 | 331 |
+| dedication | specific | 0  | — | — |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| footnotes | specific | 0  | — | — |
+| **foreword** | specific | 1 | 7,707 / 7,707 / 7,707 | 7,707 |
+| **front_matter** | specific | 2 | 915 / 5,763 / 10,611 | 11,526 |
+| **glossary** | specific | 1 | 6,757 / 6,757 / 6,757 | 6,757 |
+| header | specific | 0  | — | — |
+| **index** | specific | 1 | 126,886 / 126,886 / 126,886 | 126,886 |
+| insert | specific | 0  | — | — |
+| introduction | specific | 0  | — | — |
+| letter | specific | 0  | — | — |
+| part | generic | 0  | — | — |
+| poetry | specific | 0  | — | — |
+| **preface** | specific | 1 | 1,659 / 1,659 / 1,659 | 1,659 |
+| **title_page** | specific | 1 | 85 / 85 / 85 | 85 |
+| **translation** | specific | 1 | 1,327,521 / 1,327,521 / 1,327,521 | 1,327,521 |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| chapter | primary | 114 | `regex_in_span`  |
+| part | secondary | 30 | `—`  |
+| commentary | secondary | None | `—`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+## Element-width distribution by type
 
-925 region(s), 1,451,744 chars (97.31% of text). Largest 12:
+![type counts & widths](../portfolio/figures/w107-stats.png)
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 1,346,517 | 1,491,930 | 145,413 | body, chapter | Gui] u ,, 0 ~ \.l.J I ~ ' ,, ,, LI ,,,. I 0 ~\.l.Jl~I ,, ,, ,, F' ,,,, ,,,, ti 0 |
-| 480,072 | 511,475 | 31,403 | body, chapter | ,:, 2. Alif Lam Ra. This is a book whose verses are fortified and made flawless  |
-| 228,610 | 232,939 | 4,329 | body, chapter | As to the first question the orthodox build a fantastic scenario according to wh |
-| 224,798 | 228,592 | 3,794 | body, chapter | one crucified; and those who differ therein are certainly in a state of doubt ab |
-| 96,579 | 99,981 | 3,402 | body, chapter | ~,:,254_ These Messengers have We 1 ii'.:: exalted, some of them above '- others |
-| 371,904 | 375,285 | 3,381 | body, chapter | say, 'God! lighten our burden,' and enter the gate in humility, We shall forgive |
-| 826,786 | 830,130 | 3,344 | body, chapter | 17. And Solomon was heir to David. And he said, 'O ye people, we have been taugh |
-| 555,687 | 558,927 | 3,240 | body, chapter | no harm to God; verily, Allah is 0 ~ Self-Sufficient, Praiseworthy.' - ,, .9 ,,, |
-| 1,207,112 | 1,210,344 | 3,232 | body, chapter | who came to them for refuge, and find not in their breasts any desire for that w |
-| 917,919 | 921,126 | 3,207 | body, chapter | 11 . When they came upon you from above you, and from below you, and when your e |
-| 467,009 | 470,183 | 3,174 | body, chapter | ;J Those who call on others than Allah do not really follow these 'partners'; th |
-| 237,925 | 241,037 | 3,112 | body, chapter | AL-MA'IDAH (Revealed after l lijrah) 1. In the name of Allah, the :L Gracious, t |
+---
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
-
-1 region(s), 1,591 chars (0.11% of text). Largest 1:
-
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 18 | 1,609 | 1,591 | front_matter | THE HOLY QUR' AN ARABIC TEXT AND ENGLISH TRANSLATION Translated by MaulawI Sher  |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

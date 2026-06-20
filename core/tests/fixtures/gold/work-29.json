@@ -25,7 +25,16 @@
           "note": "surah 114 (An-Nās) heading — last surah, Period Uncertain"
         }
       ],
-      "note": "Top-level structural container (the chapter level of scripture). Unmasked. Detector finds all 114, so this is a grouping level reported, not rated — the rating is driven by the masked apparatus below."
+      "note": "Top-level structural container (the chapter level of scripture). Unmasked. Detector finds all 114, so this is a grouping level reported, not rated — the rating is driven by the masked apparatus below.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^THE [A-Z\\-]+(?: [A-Z\\-]+)? SŪRAH$",
+        "span_start": "THE MESSAGE OF THE QUR'ĀN\n\nTHE FIRST SŪRAH",
+        "span_end": "APPENDIX I\n\nSYMBOLISM AND ALLEGORY IN THE QUR'ĀN",
+        "at": "start",
+        "tile": true,
+        "expected_count": 114
+      }
     },
     {
       "type": "introduction",
@@ -48,7 +57,11 @@
           "note": "surah 114 introductory note (An-Nās) — a short cross-reference note; dropcap split 'S EE'"
         }
       ],
-      "note": "PRIMARY masked layer (one per surah). Asad's per-surah preamble. Typed 'introduction' (editorial framing prose before the text) rather than 'commentary' (which is unmasked and reserved here for the verse-keyed footnote apparatus would have been mis-fit). UNDETECTED — drives the MIRAGE verdict alongside translation+footnotes."
+      "note": "PRIMARY masked layer (one per surah). Asad's per-surah preamble. Typed 'introduction' (editorial framing prose before the text) rather than 'commentary' (which is unmasked and reserved here for the verse-keyed footnote apparatus would have been mis-fit). UNDETECTED — drives the MIRAGE verdict alongside translation+footnotes.",
+      "instance_rule": {
+        "kind": "computed_offsets",
+        "note": "materialized via masking_map.CUSTOM_ELEMENTS (interleaved/offset sub-blocks)"
+      }
     },
     {
       "type": "translation",
@@ -71,7 +84,11 @@
           "note": "surah 114 (An-Nās) verse 1 — last surah's first verse; dropcap split 'S AY'"
         }
       ],
-      "note": "PRIMARY high-value masked layer (the rendered scripture itself). UNDETECTED (by_type has no 'translation'). The inline superscript markers are fused into verse text and the footnote BODIES sit in a pooled apparatus at the end (see 'footnotes'), so the verse text is the readable translation layer; the marker→note linkage is broken by extraction order."
+      "note": "PRIMARY high-value masked layer (the rendered scripture itself). UNDETECTED (by_type has no 'translation'). The inline superscript markers are fused into verse text and the footnote BODIES sit in a pooled apparatus at the end (see 'footnotes'), so the verse text is the readable translation layer; the marker→note linkage is broken by extraction order.",
+      "instance_rule": {
+        "kind": "computed_offsets",
+        "note": "materialized via masking_map.CUSTOM_ELEMENTS (interleaved/offset sub-blocks)"
+      }
     },
     {
       "type": "footnotes",
@@ -94,7 +111,11 @@
           "note": "footnote 5326 (the LAST note — on the final verse of surah 114 An-Nās; the work ends here)"
         }
       ],
-      "note": "PRIMARY defining apparatus (the work's raison d'être — Asad's exegesis). UNDETECTED. SCRAMBLE pattern: notes are pooled at the very end while their superscript anchors are fused inline in the translation (cf. idx101's footnote band), so the marker→note edges cannot be recovered from the linear reference_text() — only the pooled note bodies (countable 5326) are. Count is exact (last note number = paragraph count = 5326)."
+      "note": "PRIMARY defining apparatus (the work's raison d'être — Asad's exegesis). UNDETECTED. SCRAMBLE pattern: notes are pooled at the very end while their superscript anchors are fused inline in the translation (cf. idx101's footnote band), so the marker→note edges cannot be recovered from the linear reference_text() — only the pooled note bodies (countable 5326) are. Count is exact (last note number = paragraph count = 5326).",
+      "instance_rule": {
+        "kind": "computed_offsets",
+        "note": "materialized via masking_map.CUSTOM_ELEMENTS (interleaved/offset sub-blocks)"
+      }
     },
     {
       "type": "appendix",
@@ -117,7 +138,16 @@
           "note": "Appendix IV — the isrā'/mi`rāj essay; dropcap split 'T HE'"
         }
       ],
-      "note": "Secondary back-matter level. Detector segments all 4 (reported, not rated)."
+      "note": "Secondary back-matter level. Detector segments all 4 (reported, not rated).",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^APPENDIX [IVX]+$",
+        "span_start": "APPENDIX I\n\nSYMBOLISM AND ALLEGORY IN THE QUR'ĀN",
+        "span_end": "1 It is to be borne in mind that, in its final compilation",
+        "at": "start",
+        "tile": true,
+        "expected_count": 4
+      }
     },
     {
       "type": "title_page",
@@ -151,5 +181,6 @@
       "end_anchor": "THE MESSAGE OF THE QUR'ĀN\n\nTHE FIRST SŪRAH",
       "note": "'Works of Reference' — the bibliography of classical sources cited in the notes (Abū Dā'ūd, Bayḍāwī, Bukhārī, Ibn Kathīr, Lane, Rāzī, Zamakhsharī, etc.), each with author, death-year (H.), and title. Front-matter reference apparatus, undetected as a distinct element (folded into front_matter). 'T HIS WORK' dropcap split. End anchor is the body-start banner 'THE MESSAGE OF THE QUR'ĀN' that opens the surahs."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

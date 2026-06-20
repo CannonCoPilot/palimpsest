@@ -9,8 +9,8 @@
       "mask": false,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": 102,
-      "count_cue": "102 = line-start 'Dear X,' salutations — a PROXY and LOWER BOUND, not the true letter total. CORRECTED 2026-06-18: by-eye reading shows many letters open with a NAME form ('Felix, my dear brother,' / 'Felix,') that the 'Dear' regex misses, so the true top-level letter count is HIGHER (rough name-opening scan ≈110–120, fuzzy). Honest uncertainty: an exact count needs mixed-salutation + date-line + signature-block boundary detection, not done here. 102 retained as the measurable 'Dear'-salutation recall basis.",
+      "expected_count": 124,
+      "count_cue": "102 = line-start 'Dear X,' salutations — a PROXY and LOWER BOUND, not the true letter total. CORRECTED 2026-06-18: by-eye reading shows many letters open with a NAME form ('Felix, my dear brother,' / 'Felix,') that the 'Dear' regex misses, so the true top-level letter count is HIGHER (rough name-opening scan ≈110–120, fuzzy). Honest uncertainty: an exact count needs mixed-salutation + date-line + signature-block boundary detection, not done here. 102 retained as the measurable 'Dear'-salutation recall basis. || RECONCILED 2026-06-19 (102→124): salutation discriminator (115 greeting-prefix + 9 bare-name forms); the prior 102 was a 'Dear'-only proxy lower bound.",
       "exemplars": [
         {
           "start_anchor": "Felix, my dear brother,\n\nThank you for the birthday card",
@@ -21,7 +21,12 @@
           "note": "last 'Dear' letter (to Daan), offset ~353841, near body end"
         }
       ],
-      "note": "Epistolary novel. Real preface (narrative, 3rd-person 'Sybil Van Antwerp carries the mug of tea…', offset 2454) precedes the letters. DETECTOR mis-types [2107–28955] as one 'preface' block — swallowing the real preface + the dedication ('To Mark, with love') + a Joan Didion epigraph + the first ~25 letters; body then runs as one undetected block → COARSE. Embedded documents (newspaper clippings, ship manifest) are in-narrative content, not masked apparatus."
+      "note": "Epistolary novel. Real preface (narrative, 3rd-person 'Sybil Van Antwerp carries the mug of tea…', offset 2454) precedes the letters. DETECTOR mis-types [2107–28955] as one 'preface' block — swallowing the real preface + the dedication ('To Mark, with love') + a Joan Didion epigraph + the first ~25 letters; body then runs as one undetected block → COARSE. Embedded documents (newspaper clippings, ship manifest) are in-narrative content, not masked apparatus.",
+      "instance_rule": {
+        "kind": "salutation",
+        "expected_count": 124
+      }
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

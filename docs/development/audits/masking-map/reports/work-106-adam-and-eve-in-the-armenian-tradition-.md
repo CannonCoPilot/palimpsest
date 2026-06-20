@@ -2,97 +2,94 @@
 
 - **Source file:** `Adam And Eve In The Armenian Tradition, Fifth Through -- Michael E_ Stone -- SBL Early Judaism and Its Literature, 38, 2013 -- Society of Biblical -- isbn13 9781589838987 -- b3740d792550531690234343f398e9b7 -- Anna’s Archive.pdf`
 - **Text length:** 1,588,919 chars
-- **Sections in current map:** 12
-- **Distinct mask types present:** 7 (3 generic, 4 specific)
+- **Mask elements (complete map):** 2,660
+- **Distinct mask types:** 17 (2 generic, 15 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 46 | 0.00% |
-| ▒ generic-only (container, no specific element) | 1,566,181 | 98.57% |
-| ▓ specific-only (element outside any container) | 22,692 | 1.43% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 1,588,919 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 0.00% of the text.** The remaining 100.00% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 15,889 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Copyright         |▏                                                                                                   |
-Front Matter      |▏▏                                                                                                  |
-Header            | ▏                   ▏    ▏                                                  ▏                      |
-Title Page        |▏                                                                                                   |
+llkkkkkkkkkkkkkkkkkkkkkkkkkhkkkkkhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhDhhhhfffggww
 ```
+<sub>D=translation  f=back_matter  g=bibliography  h=chapter  k=commentary  l=contents  w=index</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w106-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 21,399 | 1.35% |
-| 2 | 317,276 | 19.97% |
-| 3 | 1,250,244 | 78.69% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Translation | specific | 121 | 0 | ❌ ABSENT from map |
-| Commentary | specific | 6 | 0 | ❌ ABSENT from map |
-| Part | generic | 2 | 1 | ⚠ under (1/2) |
-| Chapter | generic | 5 | 3 | ⚠ under (3/5) |
-| Chapter | generic | 14 | 3 | ⚠ under (3/14) |
-| Footnotes | specific | — | 0 | ❌ ABSENT from map |
-| Introduction | specific | — | 0 | ❌ ABSENT from map |
-| Title Page | specific | — | 1 | ✓ present |
-| Copyright | specific | — | 1 | ✓ present |
-| Dedication | specific | — | 0 | ❌ ABSENT from map |
-| Contents | specific | — | 0 | ❌ ABSENT from map |
-| Front Matter | specific | — | 1 | ✓ present |
-| Preface | specific | — | 0 | ❌ ABSENT from map |
-| Glossary | specific | — | 0 | ❌ ABSENT from map |
-| Index | specific | — | 0 | ❌ ABSENT from map |
-| Back Matter | specific | — | 0 | ❌ ABSENT from map |
-| Bibliography | specific | — | 0 | ❌ ABSENT from map |
-| Index | specific | — | 0 | ❌ ABSENT from map |
-| Index | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| **back_matter** | specific | 1 | 34,541 / 34,541 / 34,541 | 34,541 |
+| **bibliography** | specific | 1 | 47,470 / 47,470 / 47,470 | 47,470 |
+| **body** | generic | 1 | 1,588,919 / 1,588,919 / 1,588,919 | 1,588,919 |
+| book | generic | 0  | — | — |
+| **chapter** | specific | 20 | 32 / 70,467 / 189,911 | 1,448,958 |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| **commentary** | specific | 6 | 46,999 / 81,836 / 117,914 | 508,961 |
+| **contents** | specific | 2 | 3,624 / 5,974 / 8,324 | 11,948 |
+| **copyright** | specific | 1 | 1,238 / 1,238 / 1,238 | 1,238 |
+| **dedication** | specific | 1 | 147 / 147 / 147 | 147 |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| **footnotes** | specific | 2490 | 12 / 173 / 2,060 | 642,887 |
+| foreword | specific | 0  | — | — |
+| **front_matter** | specific | 1 | 488 / 488 / 488 | 488 |
+| **glossary** | specific | 1 | 1,330 / 1,330 / 1,330 | 1,330 |
+| header | specific | 0  | — | — |
+| **index** | specific | 3 | 3,158 / 11,804 / 15,130 | 30,092 |
+| insert | specific | 0  | — | — |
+| **introduction** | specific | 1 | 9,043 / 9,043 / 9,043 | 9,043 |
+| letter | specific | 0  | — | — |
+| **part** | generic | 2 | 517,285 / 728,641 / 939,997 | 1,457,282 |
+| poetry | specific | 0  | — | — |
+| **preface** | specific | 1 | 2,930 / 2,930 / 2,930 | 2,930 |
+| **title_page** | specific | 2 | 75 / 367 / 659 | 734 |
+| **translation** | specific | 126 | 453 / 2,668 / 148,445 | 939,945 |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| translation | primary | 126 | `regex_in_span` ✏️ corrected |
+| commentary | primary | 6 | `regex_in_span`  |
+| part | secondary | 2 | `regex_in_span`  |
+| chapter | secondary | 5 | `multi`  |
+| chapter | secondary | 14 | `multi`  |
+| footnotes | secondary | None | `regex_in_span`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+**Count corrections this build:**
 
-4 region(s), 1,566,181 chars (98.57% of text). Largest 4:
+- `translation` → **126** — 121→126): 126 body source-entry units (author-header lines) vs 121 distinct authors in the front index.
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 420,500 | 1,228,293 | 807,793 | body, chapter, part | 2.8 Eve, Traditions about According to Azaria J̌ułayec'i C16, Eve deceived Adam; |
-| 1,228,303 | 1,588,919 | 360,616 | body, chapter, part | 36 Եւա յԱդամայ է՝ այլ ի կողէն. եւ Աբէլ յորովայնէ Ադամայ. սակայն մի են բնութիւնք  |
-| 22,698 | 338,681 | 315,983 | body, part | The Adam and Eve Traditions in Armenian -3- Outline 1. Adam and Eve Traditions i |
-| 338,696 | 420,485 | 81,789 | body, chapter, part | 5. Mxit'ar Ayrivanec'i 2. 6. See Stone 2007a. 7. Ibid., 85. FOURTEENTH AND FIFTE |
+## Element-width distribution by type
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
+![type counts & widths](../portfolio/figures/w106-stats.png)
 
-2 region(s), 21,399 chars (1.35% of text). Largest 2:
+---
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 1,826 | 22,692 | 20,866 | front_matter | 2013022985 Printed on acid-free, recycled paper conforming to ANSI /NISO Z39.48– |
-| 126 | 659 | 533 | front_matter | ADAM AND EVE IN THE ARMENIAN TRADITION Fifth through Seventeenth Centuries Socie |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

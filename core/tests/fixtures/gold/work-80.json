@@ -70,7 +70,14 @@
           "note": "Chapter 9 'The Copper Scroll' — single-composition part; last thematic part before the back-matter manuscript list"
         }
       ],
-      "note": "Top-level structural container (unmasked). Each part = one thematic chapter; below it sit numbered compositions, copy-bands (A/B/C), and per-manuscript translations. The ALL-CAPS forms in the TOC do NOT repeat in the body (body uses mixed case), so part boundaries are real but unmarked to the nav-driven detector."
+      "note": "Top-level structural container (unmasked). Each part = one thematic chapter; below it sit numbered compositions, copy-bands (A/B/C), and per-manuscript translations. The ALL-CAPS forms in the TOC do NOT repeat in the body (body uses mixed case), so part boundaries are real but unmarked to the nav-driven detector.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)(?:\\n\\nRules\\n\\nThis chapter contains)|(?:Halakhic Texts\\n\\nA large part)|(?:Literature with Eschatological Content\\n\\nAlthough)|(?:Exegetical Literature\\n\\nThe exegetical)|(?:Para-biblical Literature\\n\\nThis chapter also gathers)|(?:Poetic Texts\\n\\nDue to our ignorance)|(?:Liturgical Texts\\n\\nThis chapter contains a set)|(?:Astronomical Texts, Calendars and Horoscopes\\n\\nThis chapter assembles)|(?:The Copper Scroll\\n\\nPossibly the most mystifying)",
+        "at": "start",
+        "tile": true,
+        "expected_count": 9
+      }
     },
     {
       "type": "introduction",
@@ -96,8 +103,8 @@
       "mask": true,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": 270,
-      "count_cue": "~270 manuscript translations — the rendered English text of each Qumran manuscript, the core content. Author states verbatim in the Preface: 'this book claims to offer the reader a translation of the 270 most important manuscripts from Qumran' (the count_cue's external anchor). Each translation unit is headed by its manuscript siglum (e.g. '1QRule of the Community (1QS)', '1QWar Scroll (1QM [+1Q33])', '4Q394 [4QMMTa]') and rendered with the translator's diplomatic conventions: square brackets [ ] for restorations, 'Blank' for vacat, {…} for erasures, /…/ for interlinear insertions, ellipses for lacunae, and 'Col. i/ii…' / 'Frag. N' column-and-fragment markers (327 'Col.' + 687 'Frag.' markers across the body). EXACT programmatic count not cleanly extractable from THIS OCR stream: the back-matter List marks translated mss with an asterisk '*', but OCR mangled the markers (* / 0 / o appear inconsistently — a raw scan finds 74 '* ' lines, not 270), so the 270 figure rests on the author's own editorial statement + the TOC enumeration, NOT a clean regex. Detector emits by_type translation=1 (one undifferentiated block) → recall ≈1/270≈0.004.",
+      "expected_count": 271,
+      "count_cue": "~270 manuscript translations — the rendered English text of each Qumran manuscript, the core content. Author states verbatim in the Preface: 'this book claims to offer the reader a translation of the 270 most important manuscripts from Qumran' (the count_cue's external anchor). Each translation unit is headed by its manuscript siglum (e.g. '1QRule of the Community (1QS)', '1QWar Scroll (1QM [+1Q33])', '4Q394 [4QMMTa]') and rendered with the translator's diplomatic conventions: square brackets [ ] for restorations, 'Blank' for vacat, {…} for erasures, /…/ for interlinear insertions, ellipses for lacunae, and 'Col. i/ii…' / 'Frag. N' column-and-fragment markers (327 'Col.' + 687 'Frag.' markers across the body). EXACT programmatic count not cleanly extractable from THIS OCR stream: the back-matter List marks translated mss with an asterisk '*', but OCR mangled the markers (* / 0 / o appear inconsistently — a raw scan finds 74 '* ' lines, not 270), so the 270 figure rests on the author's own editorial statement + the TOC enumeration, NOT a clean regex. Detector emits by_type translation=1 (one undifferentiated block) → recall ≈1/270≈0.004. || RECONCILED 2026-06-19 (270→271): Genesis Apocryphon (1Q20) is two distinct units (main scroll + Milik's fragments) per the back-matter MS list; 270 was the editor's round figure.",
       "exemplars": [
         {
           "start_anchor": "1QRule of the Community (iQs)",
@@ -116,7 +123,90 @@
           "note": "The Copper Scroll (3Q15) translation preamble — the single composition of chapter 9; precedes its Col. i treasure-list translation."
         }
       ],
-      "note": "PRIMARY high-value type for this corpus (a full diplomatic TRANSLATION of each non-biblical scroll). HEADLINE pathology: composite 99.0 but the detector emits ONE translation block over ~270 distinct manuscript translations (and 0 parts, 7/9 chapter intros swallowed) — a coarse mirage. recall ≈0.004 ⇒ MIRAGE. The 270 count is the author's editorial figure (Preface) corroborated by the TOC enumeration; an exact regex count is blocked by OCR-mangled asterisk markers in the back-matter List, flagged honestly above rather than guessed."
+      "note": "PRIMARY high-value type for this corpus (a full diplomatic TRANSLATION of each non-biblical scroll). HEADLINE pathology: composite 99.0 but the detector emits ONE translation block over ~270 distinct manuscript translations (and 0 parts, 7/9 chapter intros swallowed) — a coarse mirage. recall ≈0.004 ⇒ MIRAGE. The 270 count is the author's editorial figure (Preface) corroborated by the TOC enumeration; an exact regex count is blocked by OCR-mangled asterisk markers in the back-matter List, flagged honestly above rather than guessed.",
+      "instance_rule": [
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "1QRule of the Community (iQs)",
+          "span_end": "Halakhic Texts\n\nA large part of the contents",
+          "at": "start",
+          "tile": true,
+          "expected_count": 25
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "4QHalakhic Letter' (4Q394 [4QMMT°])",
+          "span_end": "Literature with Eschatological Content\n\nAlthough eschatology",
+          "at": "start",
+          "tile": true,
+          "expected_count": 18
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "1QWar Scroll (1QM [+1Q33])\n\nCol. i i For the Ins[tructor: The Rule] of the War.",
+          "span_end": "Exegetical Literature\n\nThe exegetical activity",
+          "at": "start",
+          "tile": true,
+          "expected_count": 22
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "4QTargum of Leviticus (4Q156 14QtgLev])",
+          "span_end": "Para-biblical Literature\n\nThis chapter also gathers together",
+          "at": "start",
+          "tile": true,
+          "expected_count": 30
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "A 4QReworked Pentateuch' (4Q158 [4QRP'])",
+          "span_end": "Poetic Texts\n\nDue to our ignorance",
+          "at": "start",
+          "tile": true,
+          "expected_count": 91
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "4QPsalmsi (4Q88 [4QPW])",
+          "span_end": "Liturgical Texts\n\nThis chapter contains a set of poetic texts",
+          "at": "start",
+          "tile": true,
+          "expected_count": 41
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "4QDaily Prayers' (4Q5o3 [4QPrQuot])",
+          "span_end": "Astronomical Texts, Calendars and Horoscopes\n\nThis chapter assembles",
+          "at": "start",
+          "tile": true,
+          "expected_count": 33
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "4QAstronomical Enochb (4Q2o9 [4QEnastrb at])",
+          "span_end": "The Copper Scroll\n\nPossibly the most mystifying",
+          "at": "start",
+          "tile": true,
+          "expected_count": 10
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)(?:^(?:[ABC] )?(?:[0-9]{1,2}|[ilI])Q[^\\n]{0,68}\\([^\\n)]{0,45}\\)\\s*$|^Damascus Document\\w? \\(CD-[AB]\\)\\s*$)",
+          "span_start": "3QCopper Scroll (3Q15)",
+          "span_end": "List of the Manuscripts from Qumran",
+          "at": "start",
+          "tile": true,
+          "expected_count": 1
+        }
+      ]
     },
     {
       "type": "bibliography",
@@ -128,5 +218,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Back-matter catalog 'List of the Manuscripts from Qumran' (TOC: LIST OF MANUSCRIPTS FROM QUMRAN). One entry per manuscript: series number, official abbreviation (in brackets), the book's title, the editio princeps / partial-edition reference, a short content identification, and [page refs in square brackets]. Arranged by cave (CAVE 1… CAVE 11), split biblical vs non-biblical; '*' marks translated mss, 'o'/'0' the untranslated minute fragments (OCR-mangled). A bibliographical apparatus (editio-princeps references) → typed `bibliography`; runs to EOF. Detector emits this as back_matter+index."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

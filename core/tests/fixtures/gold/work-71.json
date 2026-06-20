@@ -34,7 +34,23 @@
           "note": "chapter 10 'Henry Jekyll's Full Statement of the Case' opening — final section, the embedded confession (see type note)"
         }
       ],
-      "note": "Primary structure: 10 named chapters. TYPE JUDGMENT on the final two sections — 'Dr. Lanyon's Narrative' (a transcribed letter/narrative) and 'Henry Jekyll's Full Statement of the Case' (a sealed confession) are embedded first-person documents framed within the third-person novella. They could arguably be typed 'letter' (mask=False, also unmasked) given their epistolary/documentary frame, but they sit at the SAME nav/heading level as the eight third-person chapters, carry identical 'titled heading + \\n\\n + body' structure, and are conventionally numbered as chapters 9-10 of the novella. Kept as chapter to preserve a uniform 10-chapter primary spine; either choice is mask=False so the A3 rating is unaffected. Flagged here as a soft sub-type call."
+      "note": "Primary structure: 10 named chapters. TYPE JUDGMENT on the final two sections — 'Dr. Lanyon's Narrative' (a transcribed letter/narrative) and 'Henry Jekyll's Full Statement of the Case' (a sealed confession) are embedded first-person documents framed within the third-person novella. They could arguably be typed 'letter' (mask=False, also unmasked) given their epistolary/documentary frame, but they sit at the SAME nav/heading level as the eight third-person chapters, carry identical 'titled heading + \\n\\n + body' structure, and are conventionally numbered as chapters 9-10 of the novella. Kept as chapter to preserve a uniform 10-chapter primary spine; either choice is mask=False so the A3 rating is unaffected. Flagged here as a soft sub-type call.",
+      "instance_rule": {
+        "kind": "title_list",
+        "titles": [
+          "Story of the Door",
+          "Search for Mr. Hyde",
+          "Dr. Jekyll Was Quite at Ease",
+          "The Carew Murder Case",
+          "Incident of the Letter",
+          "Incident of Dr. Lanyon",
+          "Incident at the Window",
+          "The Last Night",
+          "Dr. Lanyon's Narrative",
+          "Henry Jekyll's Full Statement of the Case"
+        ],
+        "expected_count": 10
+      }
     },
     {
       "type": "colophon",
@@ -45,5 +61,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Standard Ebooks back-matter Colophon: explicit 'Colophon' heading, production/edition/typeface credits + 'standardebooks.org' contribution note, running to EOF. Immediately follows the end of 'Henry Jekyll's Full Statement of the Case' (no intervening Uncopyright text in this stream). Currently swallowed into the trailing body blob; detector emits no colophon element."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

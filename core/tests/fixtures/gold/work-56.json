@@ -39,7 +39,13 @@
           "note": "Chapter 33 epigraph — Halleck ('Like flowers at set of sun.\" — Halleck'); last epigraph, before the novel's final chapter"
         }
       ],
-      "note": "PRIMARY structure for this contract. The detector emits no epigraph elements (by_type has none) and finds only 26 chapters, so the entire 33-instance epigraph layer is undetected/unmasked — it leaks into the running chapter body. Analogous to the chapter_heading apparatus in the scripture gold sets (idx100/idx101): a per-chapter masked masthead the detector folds into body text."
+      "note": "PRIMARY structure for this contract. The detector emits no epigraph elements (by_type has none) and finds only 26 chapters, so the entire 33-instance epigraph layer is undetected/unmasked — it leaks into the running chapter body. Analogous to the chapter_heading apparatus in the scripture gold sets (idx100/idx101): a per-chapter masked masthead the detector folds into body text.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^Chapter \\d+\\n\\n",
+        "at": "end",
+        "expected_count": 33
+      }
     },
     {
       "type": "chapter",
@@ -58,7 +64,14 @@
           "note": "last chapter container head (followed by the Halleck epigraph)"
         }
       ],
-      "note": "Secondary grouping level. Unmasked structural container. The 7-chapter shortfall (26 detected vs 33 true) is pinned here so the recall gap is visible alongside the fully-undetected epigraph layer."
+      "note": "Secondary grouping level. Unmasked structural container. The 7-chapter shortfall (26 detected vs 33 true) is pinned here so the recall gap is visible alongside the fully-undetected epigraph layer.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^Chapter \\d+\\n",
+        "at": "start",
+        "tile": true,
+        "expected_count": 33
+      }
     },
     {
       "type": "endnotes",
@@ -67,5 +80,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Cooper's collected explanatory notes under the heading 'Reference Notes' — 26 numbered notes (1–26, line-anchored /^\\d+ / resolves 26× in this trailing block) on Indian dialects, Washington at the Monongahela, Narragansett pacers, scalping tuft, the long rifle, Glenn's Falls, Tamenund/Tammany, William Penn, etc. Keyed to inline superscript markers in the body (e.g. 'Horican.'1, 'tuft'4, 'yellow'5, 'river'7). Collected at the END of the work, so endnotes (not per-page footnotes). Currently UNTYPED/swallowed into the trailing body — detector emits no endnotes element. (Note 24 'Turtle.' and 25 share a line in the extraction; both are present and counted.)"
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

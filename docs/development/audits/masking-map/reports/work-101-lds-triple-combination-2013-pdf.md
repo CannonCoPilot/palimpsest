@@ -2,99 +2,90 @@
 
 - **Source file:** `LDS_eng.pdf`
 - **Text length:** 4,852,544 chars
-- **Sections in current map:** 533
-- **Distinct mask types present:** 7 (2 generic, 5 specific)
+- **Mask elements (complete map):** 9,227
+- **Distinct mask types:** 15 (3 generic, 12 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 2,988,192 | 61.58% |
-| ▒ generic-only (container, no specific element) | 1,839,058 | 37.90% |
-| ▓ specific-only (element outside any container) | 25,294 | 0.52% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 4,852,544 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 61.58% of the text.** The remaining 38.42% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▒████████▒███████████████████████████▒▒▒███████▒█▒████▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 48,525 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Copyright         |▏                                                                                                   |
-Front Matter      |▏                                                                                                   |
-Header            |██████████████████████████████████████                    ███                                       |
-Title Page        |▏                                                                                                   |
-Translation       |▏▏▏▏▏▏▏▏▏█▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏██▏▏▏▏▏▏▏█▏█▏▏▏▏█▏▏▏████▏   ▏▏ ███▏  ▏▏   ▏▏     ▏  ▏    ▏ █  |
+yhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwf
 ```
+<sub>f=back_matter  h=chapter  w=index  y=introduction</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w101-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 25,268 | 0.52% |
-| 2 | 1,839,201 | 37.90% |
-| 3 | 2,988,075 | 61.58% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Volume | generic | 3 | 0 | ❌ ABSENT from map |
-| Book | generic | 20 | 0 | ❌ ABSENT from map |
-| Chapter | generic | 393 | 248 | ⚠ under (248/393) |
-| Chapter Heading | specific | 393 | 0 | ❌ ABSENT from map |
-| Footnotes | specific | — | 0 | ❌ ABSENT from map |
-| Insert | specific | 3 | 0 | ❌ ABSENT from map |
-| Copyright | specific | — | 1 | ✓ present |
-| Front Matter | specific | — | 1 | ✓ present |
-| Glossary | specific | — | 0 | ❌ ABSENT from map |
-| Index | specific | — | 0 | ❌ ABSENT from map |
-| Appendix | specific | — | 0 | ❌ ABSENT from map |
-| Appendix | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| **appendix** | specific | 2 | 16,156 / 16,275 / 16,395 | 32,551 |
+| **back_matter** | specific | 1 | 38,374 / 38,374 / 38,374 | 38,374 |
+| bibliography | specific | 0  | — | — |
+| **body** | generic | 1 | 4,852,544 / 4,852,544 / 4,852,544 | 4,852,544 |
+| **book** | generic | 20 | 4,716 / 63,188 / 1,028,434 | 2,985,268 |
+| **chapter** | specific | 393 | 117 / 6,696 / 47,542 | 2,984,240 |
+| **chapter_heading** | specific | 393 | 9 / 10 / 687 | 5,230 |
+| colophon | specific | 0  | — | — |
+| commentary | specific | 0  | — | — |
+| **contents** | specific | 1 | 6,107 / 6,107 / 6,107 | 6,107 |
+| **copyright** | specific | 1 | 113 / 113 / 113 | 113 |
+| dedication | specific | 0  | — | — |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| **footnotes** | specific | 8404 | 11 / 35 / 327 | 387,953 |
+| foreword | specific | 0  | — | — |
+| **front_matter** | specific | 1 | 2,508 / 2,508 / 2,508 | 2,508 |
+| glossary | specific | 0  | — | — |
+| header | specific | 0  | — | — |
+| **index** | specific | 1 | 1,803,148 / 1,803,148 / 1,803,148 | 1,803,148 |
+| **insert** | specific | 3 | 660 / 1,115 / 3,911 | 5,686 |
+| **introduction** | specific | 2 | 3,165 / 8,870 / 14,575 | 17,740 |
+| letter | specific | 0  | — | — |
+| part | generic | 0  | — | — |
+| poetry | specific | 0  | — | — |
+| preface | specific | 0  | — | — |
+| **title_page** | specific | 1 | 314 / 314 / 314 | 314 |
+| translation | specific | 0  | — | — |
+| **volume** | generic | 3 | 94,520 / 970,566 / 1,841,847 | 2,906,933 |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| volume | secondary | 3 | `regex_in_span`  |
+| book | secondary | 20 | `regex_in_span`  |
+| chapter | secondary | 393 | `regex_in_span`  |
+| chapter_heading | primary | 393 | `regex_in_span`  |
+| footnotes | secondary | None | `regex_in_span`  |
+| insert | secondary | 3 | `—`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+## Element-width distribution by type
 
-38 region(s), 1,839,058 chars (37.90% of text). Largest 12:
+![type counts & widths](../portfolio/figures/w101-stats.png)
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 3,945,691 | 4,226,249 | 280,558 | body, chapter | D&C 4:5 (12:8) l. qualifies men for God's work; 20:19 (42:29; 59:5) commandment  |
-| 3,010,696 | 3,228,383 | 217,687 | body, chapter | Governments. b tg Kings, Earthly. c tg Obedience. d D&C 58:21 (21–23). 13 a Phil |
-| 4,407,233 | 4,612,464 | 205,231 | body, chapter | are had among all people; 8:22–23 nations that uphold s. c. shall be destroyed;  |
-| 3,698,140 | 3,901,831 | 203,691 | body, chapter | these things in plain h.; Moro. 8:10 par- ents must h. themselves as their littl |
-| 4,232,839 | 4,401,571 | 168,732 | body, chapter | Abr. 2:9–11 p. given to Abraham; JS—H 1:39 (Mal. 4:6) the Lord will plant in hea |
-| 3,526,235 | 3,666,144 | 139,909 | body, chapter | Gadianton—leader of robber bands [c. 50 b.c.]. See also Gadianton Robbers Hel. 2 |
-| 4,729,225 | 4,852,544 | 123,319 | body, chapter | God; 14:12 numbers of Church of the Lamb are small because of w. of abominable c |
-| 4,615,376 | 4,710,522 | 95,146 | body, chapter | among all t.; 31:13–14 (32:2) after receiving the Holy Ghost, ye can speak with  |
-| 3,279,221 | 3,367,994 | 88,773 | body, chapter | Moses 5:25 Cain rejects greater c. from God; 6:28 men have sought their own c. i |
-| 3,459,456 | 3,520,290 | 60,834 | body, chapter | D&C 20:20 by transgression of holy laws man became fallen man; 29:40–41 man was  |
-| 3,232,289 | 3,273,896 | 41,607 | body, chapter | JS—M 1:36 (Matt. 24:30) the Son of Man coming in c. of heaven; JS—H 1:68 John th |
-| 3,903,852 | 3,941,841 | 37,989 | body, chapter | D&C 10:22 Satan l. souls to destruc- tion; 11:12 trust in that Spirit which l. t |
+---
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
-
-2 region(s), 25,268 chars (0.52% of text). Largest 2:
-
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 425 | 25,294 | 24,869 | front_matter | English approval: 11/12 Introduction . . . . . . . . . . . . . . . . . vii Testi |
-| 7 | 406 | 399 | front_matter | MORMON DOCTRINE AND COVENANTS PEARL OF GREAT PRICE The Book of Mormon Another Te |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

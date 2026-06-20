@@ -21,7 +21,14 @@
           "note": "TRUE last poem of the work: section FIVE, poem V (final poem before the Transcriber's note). (Corrected 2026-06-18: prior anchor 'i go to this window' was section FOUR's XVIII — it sits before the 'FIVE' marker.)"
         }
       ],
-      "note": "Verse-form line-breaks PRESERVED (avg ~25c) — experimental typography. Detector mis-anchors body_start at the 'TWO' marker, swallowing all of section ONE (40 poems) into front_matter, and recovers only 18 of 84 (recall 0.21) → MIRAGE 91.7. Prior exemplars were mis-anchored to the detector's post-swallow view; corrected to true first/last poems."
+      "note": "Verse-form line-breaks PRESERVED (avg ~25c) — experimental typography. Detector mis-anchors body_start at the 'TWO' marker, swallowing all of section ONE (40 poems) into front_matter, and recovers only 18 of 84 (recall 0.21) → MIRAGE 91.7. Prior exemplars were mis-anchored to the detector's post-swallow view; corrected to true first/last poems.",
+      "instance_rule": {
+        "kind": "roman_in_span",
+        "span_start": "ONE\n\nFIVE AMERICANS",
+        "span_end": "Transcriber's note\n\nNon-standard spelling retained",
+        "extra_anchors": [],
+        "expected_count": 84
+      }
     },
     {
       "type": "part",
@@ -39,5 +46,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Non-authorial editorial/production note at EOF (non-standard spelling retained; a missing line on p.46; landscape placement on p.55). Currently swallowed into the final poem's section by the detector. ADDED 2026-06-18 (was an untyped false-negative). TYPE CHOICE (flagged): typed `colophon` as the production note at the very end of the work — consistent with idx70/idx100 EOF production notes; arguable alternatives are `back_matter` or a future `transcriber_note` type."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

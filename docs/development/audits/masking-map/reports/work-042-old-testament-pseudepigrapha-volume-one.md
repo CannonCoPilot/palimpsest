@@ -2,90 +2,89 @@
 
 - **Source file:** `Old Testament pseudepigrapha_ Volume one _ More noncanonical -- Richard Bauckham; James R Davila; Alexander Panayotov; James -- INscribe Digital, -- isbn13 9780802827395 -- aab44f565a88b493ecb8ef452087ff78 -- Anna’s Archive.epub`
 - **Text length:** 2,502,115 chars
-- **Sections in current map:** 83
-- **Distinct mask types present:** 10 (1 generic, 9 specific)
+- **Mask elements (complete map):** 165
+- **Distinct mask types:** 11 (2 generic, 9 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 2,392,330 | 95.61% |
-| ▒ generic-only (container, no specific element) | 0 | 0.00% |
-| ▓ specific-only (element outside any container) | 109,785 | 4.39% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 2,502,115 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 95.61% of the text.** The remaining 4.39% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▓▓▓▓███████████████████████████████████████████████████████████████████████████████████████████████
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 25,021 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Afterword         |   ▏▏                                                        ▏▏      ▏▏                             |
-Commentary        |    ▏▏██████▏▏█▏   ▏▏▏▏ ▏ ▏▏▏▏▏▏▏█▏█▏▏▏███▏   ▏▏▏▏█▏  ███▏██▏ ▏▏▏▏▏▏▏▏█▏     ▏▏▏             ▏▏▏▏▏▏▏|
-Contents          |▏                                                                                                   |
-Copyright         |▏                                                                                                   |
-Epigraph          |█▏▏                                                      ▏                                          |
-Front Matter      |▏▏▏▏▏                                                                                               |
-Introduction      |▏                                         ▏ ▏      █▏                                     ▏      █  |
-Title Page        |▏                                                                                                   |
-Translation       |       ▏▏▏▏    ▏▏▏▏▏▏▏▏▏█▏▏▏▏    ▏▏▏▏▏  ▏ ▏▏▏▏▏▏█▏▏▏▏█▏ ▏▏ ▏▏▏▏▏▏▏▏    ▏▏▏▏▏▏▏ ▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏      |
+syyyDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 ```
+<sub>D=translation  s=foreword  y=introduction</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w42-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 64,582 | 2.58% |
-| 2 | 2,360,586 | 94.34% |
-| 3 | 76,947 | 3.08% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Part | generic | 2 | 0 | ❌ ABSENT from map |
-| Translation | specific | 39 | 26 | ⚠ under (26/39) |
-| Introduction | specific | 40 | 8 | ⚠ under (8/40) |
-| Bibliography | specific | 40 | 0 | ❌ ABSENT from map |
-| Footnotes | specific | — | 0 | ❌ ABSENT from map |
-| Copyright | specific | — | 1 | ✓ present |
-| Dedication | specific | — | 0 | ❌ ABSENT from map |
-| Contents | specific | — | 1 | ✓ present |
-| Foreword | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| back_matter | specific | 0  | — | — |
+| **bibliography** | specific | 40 | 444 / 2,014 / 45,503 | 157,025 |
+| **body** | generic | 1 | 2,502,115 / 2,502,115 / 2,502,115 | 2,502,115 |
+| book | generic | 0  | — | — |
+| chapter | specific | 0  | — | — |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| commentary | specific | 0  | — | — |
+| **contents** | specific | 1 | 2,360 / 2,360 / 2,360 | 2,360 |
+| **copyright** | specific | 1 | 823 / 823 / 823 | 823 |
+| **dedication** | specific | 1 | 307 / 307 / 307 | 307 |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| **footnotes** | specific | 38 | 518 / 4,153 / 17,103 | 209,416 |
+| **foreword** | specific | 1 | 19,220 / 19,220 / 19,220 | 19,220 |
+| front_matter | specific | 0  | — | — |
+| **glossary** | specific | 1 | 1,772 / 1,772 / 1,772 | 1,772 |
+| header | specific | 0  | — | — |
+| index | specific | 0  | — | — |
+| insert | specific | 0  | — | — |
+| **introduction** | specific | 40 | 3,333 / 20,511 / 85,221 | 906,070 |
+| letter | specific | 0  | — | — |
+| **part** | generic | 2 | 747,506 / 1,196,206 / 1,644,906 | 2,392,412 |
+| poetry | specific | 0  | — | — |
+| preface | specific | 0  | — | — |
+| title_page | specific | 0  | — | — |
+| **translation** | specific | 39 | 12,656 / 47,083 / 317,244 | 2,392,412 |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| part | secondary | 2 | `computed_offsets`  |
+| translation | primary | 39 | `computed_offsets`  |
+| introduction | secondary | 40 | `computed_offsets`  |
+| bibliography | secondary | 40 | `computed_offsets`  |
+| footnotes | secondary | None | `computed_offsets`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+## Element-width distribution by type
 
-_None — every character carries a specific mask too_
+![type counts & widths](../portfolio/figures/w42-stats.png)
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
+---
 
-7 region(s), 64,582 chars (2.58% of text). Largest 7:
-
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 50,419 | 88,402 | 37,983 | front_matter | This Collection It was in this rich atmosphere of scholarly accomplishment that  |
-| 13,126 | 22,710 | 9,584 | front_matter | Inclusiveness If we placard what should be read to comprehend Early Judaism (300 |
-| 23,882 | 32,266 | 8,384 | front_matter | Terminology For readers to make sense of what follows, a few terms need to be de |
-| 3,940 | 9,671 | 5,731 | front_matter | Historic Collections The lost worlds of the early Scriptures were explored from  |
-| 107,931 | 109,785 | 1,854 | front_matter | Abbreviations Unless listed below, all abbreviations used in this volume are fou |
-| 86 | 1,130 | 1,044 | front_matter | Published 2013 by Wm. B. Eerdmans Publishing Co. 2140 Oak Industrial Drive N.E., |
-| 65 | 67 | 2 | front_matter | All rights reserved Published 2013 by Wm. B. Eerdmans Publishing Co. 2140 Oak In |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

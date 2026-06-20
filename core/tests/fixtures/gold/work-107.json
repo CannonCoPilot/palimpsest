@@ -25,7 +25,14 @@
           "note": "Surah 114 (An-Nas) — last surah; the marker mis-OCR'd 'after' (canonically Revealed before Hijrah)"
         }
       ],
-      "note": "PRIMARY content structure. The 114 surahs are the navigational chapters; verses within are the (masked) body. Type=chapter (UNMASKED) per taxonomy. The English verse text + footnote apparatus is interleaved within each surah."
+      "note": "PRIMARY content structure. The 114 surahs are the navigational chapters; verses within are the (masked) body. Type=chapter (UNMASKED) per taxonomy. The English verse text + footnote apparatus is interleaved within each surah.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^['‘’A-Z][^\\n]{0,30}\\n\\(Rev[^\\n]{0,40}",
+        "at": "start",
+        "tile": true,
+        "expected_count": 114
+      }
     },
     {
       "type": "part",
@@ -139,5 +146,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Final back-matter apparatus: 'List of References of Proposed Translations by Hazrat Mirza Tahir Ahmad' — a citation list mapping proposed-translation reference numbers to chapter:verse and page. Runs to EOF. (Also encompasses the 'Explanatory List of Some Quranic Words' that the TOC names but whose body heading is OCR-garbled and not separately anchorable.)"
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

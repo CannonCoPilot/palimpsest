@@ -2,89 +2,94 @@
 
 - **Source file:** `Ante-Nicene Fathers Volume 3 - Enhanced Version -- Philip Schaff [Schaff, Philip] -- Ante-Nicene Fathers Volume 3, 2009 -- Christian Classics Ethereal -- eef3b5fa6fe129392d6fb890c5b5ca85 -- Anna’s Archive.epub`
 - **Text length:** 3,608,567 chars
-- **Sections in current map:** 1443
-- **Distinct mask types present:** 6 (2 generic, 4 specific)
+- **Mask elements (complete map):** 7,078
+- **Distinct mask types:** 10 (2 generic, 8 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 80,023 | 2.22% |
-| ▒ generic-only (container, no specific element) | 3,464,562 | 96.01% |
-| ▓ specific-only (element outside any container) | 63,982 | 1.77% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 3,608,567 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 2.22% of the text.** The remaining 97.78% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 36,086 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Contents          |▏                                                                                                   |
-Front Matter      |▏▏                                                                                                  |
-Header            | ▏████████████████████████████████████████████████████████▏   ▏   ██████████████████████████████████|
-Introduction      |▏▏                                                                                                  |
+kkDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 ```
+<sub>D=translation  k=commentary</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w18-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 2 | 3,608,567 | 100.00% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Contents | specific | — | 1 | ✓ present |
-| Introduction | specific | — | 1 | ✓ present |
-| Title Page | specific | — | 0 | ❌ ABSENT from map |
-| Preface | specific | — | 0 | ❌ ABSENT from map |
-| Part | generic | 3 | 0 | ❌ ABSENT from map |
-| Translation | specific | 23 | 0 | ❌ ABSENT from map |
-| Commentary | specific | 13 | 0 | ❌ ABSENT from map |
-| Introduction | specific | 5 | 1 | ⚠ under (1/5) |
-| Chapter | generic | 737 | 737 | ✓ present |
-| Footnotes | specific | 6280 | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| back_matter | specific | 0  | — | — |
+| bibliography | specific | 0  | — | — |
+| **body** | generic | 1 | 3,608,567 / 3,608,567 / 3,608,567 | 3,608,567 |
+| book | generic | 0  | — | — |
+| **chapter** | specific | 743 | 10 / 115 / 521 | 93,834 |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| **commentary** | specific | 14 | 13 / 13 / 53,216 | 53,385 |
+| **contents** | specific | 3 | 24 / 104 / 255 | 383 |
+| copyright | specific | 0  | — | — |
+| dedication | specific | 0  | — | — |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| **footnotes** | specific | 6280 | 11 / 28 / 1,999 | 391,363 |
+| foreword | specific | 0  | — | — |
+| front_matter | specific | 0  | — | — |
+| glossary | specific | 0  | — | — |
+| header | specific | 0  | — | — |
+| index | specific | 0  | — | — |
+| insert | specific | 0  | — | — |
+| **introduction** | specific | 7 | 20 / 38 / 977 | 1,206 |
+| letter | specific | 0  | — | — |
+| **part** | generic | 3 | 290,103 / 1,142,704 / 2,171,061 | 3,603,868 |
+| poetry | specific | 0  | — | — |
+| **preface** | specific | 2 | 35 / 1,382 / 2,730 | 2,765 |
+| **title_page** | specific | 2 | 44 / 271 / 499 | 543 |
+| **translation** | specific | 23 | 16,420 / 96,457 / 1,117,768 | 3,550,652 |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| part | secondary | 3 | `regex_in_span`  |
+| translation | primary | 23 | `regex_in_span`  |
+| commentary | secondary | 13 | `regex_in_span`  |
+| introduction | secondary | 5 | `regex_in_span`  |
+| chapter | secondary | 743 | `regex_in_span` ✏️ corrected |
+| footnotes | primary | 6280 | `regex_in_span`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+**Count corrections this build:**
 
-702 region(s), 3,464,562 chars (96.01% of text). Largest 12:
+- `chapter` → **743** — 737→743): in-body 'Chapter <roman>.' headings, negative-lookahead isolated from contents-list echoes, leakage-free (737 was the detector's de-dup count).
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 2,238,378 | 2,397,285 | 158,907 | body, chapter | "The head of every man is Christ."5529 What Christ, if He is not the author of m |
-| 2,093,073 | 2,238,102 | 145,029 | body, chapter | In like manner does He also know the very time it behoved Him to suffer, since t |
-| 2,061,747 | 2,092,820 | 31,073 | body, chapter | "Salvation comes to the house" of Zacchæus even.4962 For what reason? Was it bec |
-| 1,278,294 | 1,307,233 | 28,939 | body, chapter | These evidences, then, of a stricter discipline existing among us, are an additi |
-| 2,022,081 | 2,050,285 | 28,204 | body, chapter | But Christ prohibits divorce, saying, "Whosoever putteth away his wife, and marr |
-| 1,823,235 | 1,850,335 | 27,100 | body, chapter | "In the like manner," says He,3982 "did their fathers unto the prophets." What a |
-| 3,186,983 | 3,212,699 | 25,716 | body, chapter | But, (this doctrine of yours bears a likeness) to the Jewish faith, of which thi |
-| 1,141,009 | 1,165,400 | 24,391 | body, chapter | All souls, therefore, are shut up within Hades: do you admit this? (It is true,  |
-| 1,975,176 | 1,998,506 | 23,330 | body, chapter | Justly, therefore, was the hypocrisy of the Pharisees displeasing to Him, loving |
-| 1,884,109 | 1,907,343 | 23,234 | body, chapter | But "what manner of man is this? for He commandeth even the winds and water!"421 |
-| 1,680,560 | 1,703,347 | 22,787 | body, chapter | Yes, certainly,3435 you say, I do hope from Him that which amounts in itself to  |
-| 251,499 | 272,717 | 21,218 | body, chapter | In that case, you say, why do you complain of our persecutions? You ought rather |
+## Element-width distribution by type
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
+![type counts & widths](../portfolio/figures/w18-stats.png)
 
-_None — every character is covered by ≥2 mask types_
+---
+
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

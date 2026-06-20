@@ -9,8 +9,8 @@
       "mask": false,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": 593,
-      "count_cue": "593 poems = 589 Roman-numbered poems (numbering restarts per thematic part) + 4 unnumbered section-opening PROEMS that lead PART ONE/TWO/THREE/FIVE (PART FOUR opens directly at numbered I). RESOLVED 2026-06-18 (per user): section-opening proems COUNT and are named by first line. Excluded: the 'FROM THE PAGES OF…' front-matter quotation/quick-lookup header and any verses quoted inside the INTRODUCTION. A raw /^[IVXLC]+$/ line count over-counts (~1187) due to standalone 'I' pronoun lines.",
+      "expected_count": 595,
+      "count_cue": "595 poems = 591 distinct Roman-numbered poem-headers (bare /^[IVXLC]+$/ lines inside the poem-body span [proem→back-matter], each followed by a verse body) + 4 unnumbered section-opening PROEMS leading PART ONE/TWO/THREE/FIVE (PART FOUR opens directly at numbered I). RECONCILED 2026-06-19 via the per-instance materializer (.scratch/mask-eval/instance_edges.py, count gate GREEN at 595): the prior 589 was a max-numeral estimate, but this B&N edition merges multiple source collections and numbers NON-MONOTONICALLY (e.g. PART FIVE runs …CXXX, CXXXXI=141, CXXXII=132…), so the count of distinct numbered headers (591) exceeds the highest numeral reached. Excluded: the 'FROM THE PAGES OF…' front-matter header and verses quoted in the INTRODUCTION. NOTE: a raw /^[IVXLC]+$/ count over the WHOLE text yields ~1187 — those are the front CONTENTS + back INDEX OF FIRST LINES re-listing the numerals, NOT body poems; the body-span filter isolates the 591 true headers (the earlier 'standalone I pronoun' explanation was wrong).",
       "exemplars": [
         {
           "start_anchor": "THIS is my letter to the world",
@@ -21,7 +21,19 @@
           "note": "last numbered poem (CXLVI) in PART FIVE; per-instance edges (incl. the final unnumbered poems, if any) pending the per-instance pass"
         }
       ],
-      "note": "593 poems across 5 parts, mis-typed as chapter (Phase-B retype). The 4 named proems: 'This is my letter to the world' (ONE), 'My nosegays are for captives' (TWO), \"It's all I have to bring to-day\" (THREE), 'One sister have I in our house' (FIVE). Detector segments the 589 numbered (recall vs 593 ≈ 0.99); proems undetected. Per-instance edges for all 593 pending the schema pass (task: per-instance-edge gold)."
+      "note": "595 poems across 5 parts. The 4 named proems: 'This is my letter to the world' (ONE), 'My nosegays are for captives' (TWO), \"It's all I have to bring to-day\" (THREE), 'One sister have I in our house' (FIVE) — note the BODY renders the first word small-caps (MY/IT's/ONE), so body anchors differ from the lowercase index forms. Per-instance edges DONE 2026-06-19 (count gate GREEN at 595). A2/A3 vs detector: boundary accuracy 99.0% (589/595 gold edges land exactly on a detector boundary), but assignment 0% correct — the detector types every poem as `header` (589) or `chapter` (5), never `poetry`. The mask-type assignment, not the boundary, is the real defect.",
+      "instance_rule": {
+        "kind": "roman_in_span",
+        "span_start": "THIS is my letter to the world",
+        "span_end": "INSPIRED BY EMILY DICKINSON'S POETRY\n\nDickinson is the American poet",
+        "extra_anchors": [
+          "THIS is my letter to the world",
+          "MY nosegays are for captives",
+          "IT's all I have to bring to-day",
+          "ONE sister have I in our house"
+        ],
+        "expected_count": 595
+      }
     },
     {
       "type": "part",
@@ -49,5 +61,6 @@
       "end_anchor": "INDEX OF FIRST LINES\n\nA\n\nA bird",
       "note": "B&N Classics editorial back matter (Inspired-by essay → Comments & Questions → For Further Reading), AFTER the last poem (CXLVI) and BEFORE the detector's index. ADDED 2026-06-18 (untyped FN): the detector's final poem-section bleeds across this whole ~25K block (0 uncovered runs hides it). Masked. The detector DOES correctly type the subsequent index + endnotes [269170→EOF]."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

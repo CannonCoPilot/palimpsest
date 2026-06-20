@@ -113,7 +113,15 @@
           "note": "first Epistles text — 'A new translation and introduction' byline variant"
         }
       ],
-      "note": "PRIMARY repeating layer. 29 per-text editorial introductions. Distinct from the single volume-level Introduction above. Masked editorial apparatus the detector folds into a generic commentary band."
+      "note": "PRIMARY repeating layer. 29 per-text editorial introductions. Distinct from the single volume-level Introduction above. Masked editorial apparatus the detector folds into a generic commentary band.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^(?:A (?:new )?translation and introduction\\n\\nby |Introduction\\n\\nby |by Lorne R\\. Zelyck\\n\\nIrenaeus)",
+        "span_start": "I. Gospels and Related Traditions of New Testament Figures",
+        "at": "start",
+        "tile": true,
+        "expected_count": 29
+      }
     },
     {
       "type": "translation",
@@ -132,7 +140,15 @@
           "note": "Acts of John by Prochorus Translation header — the longest rendered translation in the volume"
         }
       ],
-      "note": "PRIMARY repeating layer — the translated apocrypha. Detector by_type translation=30 (it counts the headers, not the 29 texts); expected_count=29 here pins texts, count_cue documents the 30-header/29-text reconciliation. Masked."
+      "note": "PRIMARY repeating layer — the translated apocrypha. Detector by_type translation=30 (it counts the headers, not the 29 texts); expected_count=29 here pins texts, count_cue documents the 30-header/29-text reconciliation. Masked.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^Translations?\\n\\n",
+        "span_start": "I. Gospels and Related Traditions of New Testament Figures",
+        "at": "start",
+        "tile": false,
+        "expected_count": 30
+      }
     },
     {
       "type": "bibliography",
@@ -151,7 +167,15 @@
           "note": "last text's bibliography (2 Revelation of Matthew) — resolve=last would also reach this; here uniquely anchored"
         }
       ],
-      "note": "PRIMARY repeating layer. 29 per-text bibliographies. Masked reference apparatus the detector does not separate from the surrounding commentary/translation bands."
+      "note": "PRIMARY repeating layer. 29 per-text bibliographies. Masked reference apparatus the detector does not separate from the surrounding commentary/translation bands.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^Bibliography\\n\\n",
+        "span_start": "I. Gospels and Related Traditions of New Testament Figures",
+        "at": "start",
+        "tile": false,
+        "expected_count": 29
+      }
     },
     {
       "type": "footnotes",
@@ -162,5 +186,6 @@
       "count_cue": "Two distinct note apparatuses per text, both folded into the linear stream and NOT cleanly count-anchorable: (1) numbered endnote-style footnotes to each editor's introduction (1., 2., 3.… citing manuscripts/editions), and (2) lettered textual/critical notes to each translation (a., b., c.… recording variant manuscript readings, e.g. 'b. V: \"ask you.\"', 'a. G again erroneously reads \"brother.\"'). expected_count=null: the lettered notes reset per verse-block and the strings reuse trivially across texts ('a. V: …' recurs), so no per-instance footnote string resolves uniquely and the total is not honestly countable by eye. Presence + per-text recurrence is the requirement, not an exact count.",
       "note": "Secondary masked apparatus layer (per-text scholarly notes). Not exemplar-anchored: the note strings are short and non-unique. The numbered intro-footnotes and lettered translation-notes are both present in every text; the detector does not emit a footnotes element (folds them into commentary/translation)."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

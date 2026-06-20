@@ -86,8 +86,8 @@
       "mask": false,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": 228,
-      "count_cue": "228 chapters across the 3 books = 108 (1 Enoch) + 68 (2 Enoch) + 52 (3 Enoch). 1 ENOCH = 108 (canonical), all present and verified: 106 of 108 headings match /[\\[I]Chapter (N|roman I)[\\]\\}]/ (the bracket form '[Chapter N]'); the 2 'missing' from a strict scan are OCR-corrupted brackets — ch1 '[Chapter I}', ch35 '[Chapter 35J', ch36 '[Chapter 361', ch85/105/106 'IChapter N]' — individually verified present. 2 ENOCH = 68 (canonical): standalone 'Chapter N' headings 1-68; a strict scan returns 70 line matches = 68 headings + 2 inline cross-references to 'Chapter 53' inside the commentary (the missing 'Chapter 5' is a real heading present in body). 3 ENOCH = 52 printed 'CHAPTER N' headings (Odeberg edition): chapters I,2-4,6-7,9-47 (5 & 8 are GENUINELY ABSENT in Odeberg's reconstruction) PLUS the multi-part chapters 15+15B, 22+22B+22C, and 48A/48B/48C/48D — 52 standalone '\\n\\nCHAPTER ...' headings in the body. EDITIONS VARY; counts cross-checked against canon (1En 108, 2En 68, 3En 48-base) and verified programmatically against THIS text. Detector finds 221 flat chapters (no book grouping); 228 is the true book-aware total.",
+      "expected_count": 230,
+      "count_cue": "228 chapters across the 3 books = 108 (1 Enoch) + 68 (2 Enoch) + 52 (3 Enoch). 1 ENOCH = 108 (canonical), all present and verified: 106 of 108 headings match /[\\[I]Chapter (N|roman I)[\\]\\}]/ (the bracket form '[Chapter N]'); the 2 'missing' from a strict scan are OCR-corrupted brackets — ch1 '[Chapter I}', ch35 '[Chapter 35J', ch36 '[Chapter 361', ch85/105/106 'IChapter N]' — individually verified present. 2 ENOCH = 68 (canonical): standalone 'Chapter N' headings 1-68; a strict scan returns 70 line matches = 68 headings + 2 inline cross-references to 'Chapter 53' inside the commentary (the missing 'Chapter 5' is a real heading present in body). 3 ENOCH = 52 printed 'CHAPTER N' headings (Odeberg edition): chapters I,2-4,6-7,9-47 (5 & 8 are GENUINELY ABSENT in Odeberg's reconstruction) PLUS the multi-part chapters 15+15B, 22+22B+22C, and 48A/48B/48C/48D — 52 standalone '\\n\\nCHAPTER ...' headings in the body. EDITIONS VARY; counts cross-checked against canon (1En 108, 2En 68, 3En 48-base) and verified programmatically against THIS text. Detector finds 221 flat chapters (no book grouping); 228 is the true book-aware total. || RECONCILED 2026-06-19 (228→230): 3 Enoch chapters 5 & 8 ARE present in this Lumpkin text, OCR'd 'CHAPTER S'; 108+68+54=230.",
       "exemplars": [
         {
           "start_anchor": "[Chapter I}\n\n1 The words of the blessing of Enoch",
@@ -110,7 +110,35 @@
           "note": "3 Enoch Chapter 48 D (uppercase 'CHAPTER N' form; the 48A-D split is Odeberg's; last division of book 3)"
         }
       ],
-      "note": "PRIMARY structure. Three distinct chapter-heading formats by book — 1 Enoch '[Chapter N]' (bracketed, several OCR-corrupted), 2 Enoch 'Chapter N' (title-case, no brackets), 3 Enoch 'CHAPTER N' (uppercase, with A/B/C/D sub-parts). Verse-level numbering inside chapters is the masked body. The body also interleaves italic Bible cross-references (GEN/JUD/MAT/HEB ...) and parenthetical '(Author's note: ...)' glosses — not separately segmented here."
+      "note": "PRIMARY structure. Three distinct chapter-heading formats by book — 1 Enoch '[Chapter N]' (bracketed, several OCR-corrupted), 2 Enoch 'Chapter N' (title-case, no brackets), 3 Enoch 'CHAPTER N' (uppercase, with A/B/C/D sub-parts). Verse-level numbering inside chapters is the masked body. The body also interleaves italic Bible cross-references (GEN/JUD/MAT/HEB ...) and parenthetical '(Author's note: ...)' glosses — not separately segmented here.",
+      "instance_rule": [
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)^[\\[I]Chapt",
+          "span_start": "[Chapter I}",
+          "span_end": "Introduction to The Second Book\n\nof Enoch:\n\nSlavonic Enoch",
+          "at": "start",
+          "tile": true,
+          "expected_count": 108
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "Chapter (?:\\d+|S)\\b[\\\"”’)]*\\n\\n",
+          "span_start": "Chapter 1\n\n1 There was a wise man",
+          "span_end": "Intro duction of 3 Enoch",
+          "at": "start",
+          "tile": true,
+          "expected_count": 68
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)^CHAPTER\\b",
+          "span_start": "Intro duction of 3 Enoch",
+          "at": "start",
+          "tile": true,
+          "expected_count": 54
+        }
+      ]
     },
     {
       "type": "back_matter",
@@ -121,5 +149,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Trailing EPUB navigation map exported as text ('Document Outline': Front Cover / Title / ISBN / Contents / Introduction / 1 Enoch / 2 Enoch / 3 Enoch / Back Cover). Non-authorial navigational matter at the very end of the stream; this is also the authoritative confirmation of the 3-book + general-introduction top-level structure. Currently swallowed into the trailing chapter."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

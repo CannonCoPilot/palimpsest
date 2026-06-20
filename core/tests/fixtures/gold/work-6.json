@@ -9,23 +9,35 @@
       "mask": true,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": null,
-      "count_cue": "one numbered \"argument\" per chapter, between the chapter heading and verse 1; its numerals are verse refs so it MIMICS verses (~1189 chapters in the Geneva Bible). Count left null: no clean text cue (\"CHAPTER\" x786 are cross-refs, not heads) — honest, not fabricated. Presence-tested instead.",
+      "expected_count": 1133,
+      "count_cue": "one numbered \"argument\" per chapter, between the chapter heading and verse 1; its numerals are verse refs so it MIMICS verses (~1189 chapters in the Geneva Bible). Count left null: no clean text cue (\"CHAPTER\" x786 are cross-refs, not heads) — honest, not fabricated. Presence-tested instead. || RECONCILED 2026-06-19 (None→1133): one numbered 'argument'/superscription block precedes each chapter's verse 1.",
       "exemplars": [
         {
           "start_anchor": "He createth the sun, the moon, and the stars",
           "note": "Genesis 1 argument (full span: \"God created the heaven and the earth. 3 The light... 29 And provideth nurture for man and beast\") — verse-numbered editorial summary before verse 1"
         }
       ],
-      "note": "Geneva numbered chapter arguments — the canonical verse-mimicking chapter_heading. Detector finds 0 chapters (only 21 books) → MIRAGE: structure present, detector blind."
+      "note": "Geneva numbered chapter arguments — the canonical verse-mimicking chapter_heading. Detector finds 0 chapters (only 21 books) → MIRAGE: structure present, detector blind.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "\n\n(?:(?!\n\n)[\\s\\S])*?(?=\n\n1 )",
+        "span_start": "THE FIRST BOOK OF MOSES",
+        "span_end": "A FORM OF PRAYER TO BE USED",
+        "extra_anchors": [
+          "\n\nOBADIAH\n\n1 1 The vision"
+        ],
+        "at": "start",
+        "tile": false,
+        "expected_count": 1133
+      }
     },
     {
       "type": "book",
       "mask": false,
       "structure": "repeating",
       "role": "secondary",
-      "expected_count": null,
-      "count_cue": "~80 books incl. Apocrypha (1599 Geneva, Tolle Lege). Count left null: ALLCAPS headings (x84) conflate book titles with front-matter section heads, so not cleanly countable. Detector finds only 21 `book` elements — under-detected.",
+      "expected_count": 66,
+      "count_cue": "~80 books incl. Apocrypha (1599 Geneva, Tolle Lege). Count left null: ALLCAPS headings (x84) conflate book titles with front-matter section heads, so not cleanly countable. Detector finds only 21 `book` elements — under-detected. || RECONCILED 2026-06-19 (None→66): 39 OT + 27 NT; the Apocrypha (Ecclesiasticus, Maccabees, Esdras, Tobit, Judith, Wisdom, Baruch, Manasses) are entirely ABSENT in this e-text.",
       "exemplars": [
         {
           "start_anchor": "THE FIRST BOOK OF MOSES",
@@ -41,5 +53,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Back-matter 'Glossary of Middle-English Terms' (alphabetical, abalienate→wrought, with WORD/MEANING/SAMPLE LOCATION columns) at the very END of the work. ADDED 2026-06-18 (untyped FN): this e-text is SCRAMBLED — its glossary TITLE line ('Glossary of Middle-English Terms…') is displaced to the front (offset 1283, where the detector mislabels the foreword block as 'glossary'), while the actual A–Z glossary CONTENT sits here at EOF, swallowed into the giant trailing 'book' section. Masked."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

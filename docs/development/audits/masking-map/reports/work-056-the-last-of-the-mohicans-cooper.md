@@ -2,88 +2,86 @@
 
 - **Source file:** `The Last of the Mohicans -- Cooper, James Fenimore -- The Leatherstocking Tales 2, 1919 -- C_ Scribner's sons -- isbn13 9785551075097 -- 1164165e8537a4b55cd9c0d05ff87858 -- Anna’s Archive.epub`
 - **Text length:** 845,214 chars
-- **Sections in current map:** 55
-- **Distinct mask types present:** 5 (2 generic, 3 specific)
+- **Mask elements (complete map):** 70
+- **Distinct mask types:** 6 (1 generic, 5 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 251 | 0.03% |
-| ▒ generic-only (container, no specific element) | 836,997 | 99.03% |
-| ▓ specific-only (element outside any container) | 7,966 | 0.94% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 845,214 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 0.03% of the text.** The remaining 99.97% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 8,452 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Front Matter      |▏                                                                                                   |
-Header            |▏  ▏ ▏ ▏  ▏ ▏  ▏  ▏  ▏ ▏  ▏  ▏   ▏  ▏  ▏  ▏  ▏   ▏  ▏  ▏  ▏  ▏  ▏   ▏  ▏  ▏                         |
-Title Page        |▏                                                                                                   |
+yqqhqqqqqqqqhqqqqqqqhqhqqhqqhqqqhqqqqqhqqhqqqqqqqqhqqqqqqqqhqqhqqqqqqqqqqqqqqhqqqqqqqqqqqqqqqqqp
 ```
+<sub>h=chapter  p=endnotes  q=epigraph  y=introduction</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w56-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 7,942 | 0.94% |
-| 2 | 837,272 | 99.06% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Title Page | specific | — | 1 | ✓ present |
-| Introduction | specific | — | 0 | ❌ ABSENT from map |
-| Epigraph | specific | 33 | 0 | ❌ ABSENT from map |
-| Chapter | generic | 33 | 26 | ⚠ under (26/33) |
-| Endnotes | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| back_matter | specific | 0  | — | — |
+| bibliography | specific | 0  | — | — |
+| **body** | generic | 1 | 845,214 / 845,214 / 845,214 | 845,214 |
+| book | generic | 0  | — | — |
+| **chapter** | specific | 33 | 18,219 / 25,141 / 33,481 | 828,157 |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| commentary | specific | 0  | — | — |
+| contents | specific | 0  | — | — |
+| copyright | specific | 0  | — | — |
+| dedication | specific | 0  | — | — |
+| discussion | specific | 0  | — | — |
+| **endnotes** | specific | 1 | 9,091 / 9,091 / 9,091 | 9,091 |
+| **epigraph** | specific | 33 | 18,219 / 25,141 / 33,481 | 828,146 |
+| footnotes | specific | 0  | — | — |
+| foreword | specific | 0  | — | — |
+| front_matter | specific | 0  | — | — |
+| glossary | specific | 0  | — | — |
+| header | specific | 0  | — | — |
+| index | specific | 0  | — | — |
+| insert | specific | 0  | — | — |
+| **introduction** | specific | 1 | 7,911 / 7,911 / 7,911 | 7,911 |
+| letter | specific | 0  | — | — |
+| part | generic | 0  | — | — |
+| poetry | specific | 0  | — | — |
+| preface | specific | 0  | — | — |
+| **title_page** | specific | 1 | 55 / 55 / 55 | 55 |
+| translation | specific | 0  | — | — |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| epigraph | primary | 33 | `regex_in_span`  |
+| chapter | secondary | 33 | `regex_in_span`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+## Element-width distribution by type
 
-26 region(s), 836,997 chars (99.03% of text). Largest 12:
+![type counts & widths](../portfolio/figures/w56-stats.png)
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 632,538 | 845,214 | 212,676 | body, chapter | "Bot. — Let me play the lion too." — Midsummer Night's Dream Notwithstanding the |
-| 250,659 | 282,606 | 31,947 | body, chapter | "Clo. — I am gone, sire, And anon, sire, I'll be with you again." — Twelfth Nigh |
-| 386,589 | 418,434 | 31,845 | body, chapter | "Weave we the woof. The thread is spun. The web is wove. The work is done." — Gr |
-| 546,818 | 576,780 | 29,962 | body, chapter | "But though the beast of game The privilege of chase may claim; Though space and |
-| 306,812 | 336,596 | 29,784 | body, chapter | "Guard. — Qui est la? Puc. — Paisans, pauvres gens de France." — King Henry VI D |
-| 604,019 | 632,528 | 28,509 | body, chapter | "Snug. — Have you the lion's part written? Pray you, if it be, give it to me, fo |
-| 443,882 | 471,706 | 27,824 | body, chapter | "Salar. — Why, I am sure, if he forfeit, thou wilt not take his flesh; what's th |
-| 223,125 | 250,649 | 27,524 | body, chapter | "Cursed be my tribe If I forgive him." — Shylock The Indian had selected for thi |
-| 576,790 | 604,009 | 27,219 | body, chapter | "Thus spoke the sage: the kings without delay Dissolve the council, and their ch |
-| 471,716 | 497,547 | 25,831 | body, chapter | "Land of Albania! let me bend mine eyes On thee; thou rugged nurse of savage men |
-| 197,426 | 223,115 | 25,689 | body, chapter | "I fear we shall outsleep the coming morn As much as we this night have overwatc |
-| 521,324 | 546,808 | 25,484 | body, chapter | "Bot. — Abibl we all met? Qui. — Pat — pat; and here's a marvelous convenient pl |
+---
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
-
-1 region(s), 7,942 chars (0.94% of text). Largest 1:
-
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 24 | 7,966 | 7,942 | front_matter | BY J AMES F ENIMORE C OOPER Introduction It is believed that the scene of this t |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

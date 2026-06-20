@@ -2,90 +2,86 @@
 
 - **Source file:** `is 5 -- E_E_ Cummings -- 1926 -- Boni & Liveright, New York -- fdb61a2b996b8f7a13a83b2ea8e001a2 -- Anna’s Archive.epub`
 - **Text length:** 62,038 chars
-- **Sections in current map:** 41
-- **Distinct mask types present:** 7 (2 generic, 5 specific)
+- **Mask elements (complete map):** 87
+- **Distinct mask types:** 4 (1 generic, 3 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 47 | 0.08% |
-| ▒ generic-only (container, no specific element) | 29,776 | 48.00% |
-| ▓ specific-only (element outside any container) | 32,215 | 51.93% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 62,038 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 0.08% of the text.** The remaining 99.92% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 620 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Copyright         |▏                                                                                                   |
-Foreword          |▏▏▏▏                                                                                                |
-Front Matter      |▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏                                                |
-Header            |                                                   ▏  ▏▏██▏▏ ▏ ▏                       ▏ █▏▏▏▏      |
-Title Page        |▏                                                                                                   |
+tttAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAj
 ```
+<sub>A=poetry  j=colophon  t=front_matter</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w104-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 30,268 | 48.79% |
-| 2 | 31,770 | 51.21% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Poetry | specific | 84 | 0 | ❌ ABSENT from map |
-| Part | generic | 5 | 0 | ❌ ABSENT from map |
-| Colophon | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| back_matter | specific | 0  | — | — |
+| bibliography | specific | 0  | — | — |
+| **body** | generic | 1 | 62,038 / 62,038 / 62,038 | 62,038 |
+| book | generic | 0  | — | — |
+| chapter | specific | 0  | — | — |
+| chapter_heading | specific | 0  | — | — |
+| **colophon** | specific | 1 | 441 / 441 / 441 | 441 |
+| commentary | specific | 0  | — | — |
+| contents | specific | 0  | — | — |
+| copyright | specific | 0  | — | — |
+| dedication | specific | 0  | — | — |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| footnotes | specific | 0  | — | — |
+| foreword | specific | 0  | — | — |
+| **front_matter** | specific | 1 | 2,152 / 2,152 / 2,152 | 2,152 |
+| glossary | specific | 0  | — | — |
+| header | specific | 0  | — | — |
+| index | specific | 0  | — | — |
+| insert | specific | 0  | — | — |
+| introduction | specific | 0  | — | — |
+| letter | specific | 0  | — | — |
+| part | generic | 0  | — | — |
+| **poetry** | specific | 84 | 118 / 596 / 3,119 | 59,448 |
+| preface | specific | 0  | — | — |
+| title_page | specific | 0  | — | — |
+| translation | specific | 0  | — | — |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| poetry | primary | 84 | `roman_in_span`  |
+| part | secondary | 5 | `—`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+## Element-width distribution by type
 
-16 region(s), 29,778 chars (48.00% of text). Largest 12:
+![type counts & widths](../portfolio/figures/w104-stats.png)
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 39,673 | 54,253 | 14,580 | body, chapter | my sweet old etcetera aunt lucy during the recent war could and what is more did |
-| 58,153 | 62,038 | 3,885 | body, chapter | i go to this window just as day dissolves when it is twilight(and looking up in  |
-| 36,979 | 39,671 | 2,692 | body, chapter | little ladies more than dead exactly dance in my head, precisely dance where dan |
-| 32,216 | 33,544 | 1,328 | body, chapter | the season 'tis, my lovely lambs, of Sumner Volstead Christ and Co. the epoch of |
-| 54,256 | 55,258 | 1,002 | body, chapter | you being in love will tell who softly asks in love, am i separated from your bo |
-| 36,131 | 36,977 | 846 | body, chapter | come, gaze with me upon this dome of many coloured glass, and see his mother's p |
-| 56,215 | 56,889 | 674 | body, chapter | i am a beggar always who begs in your mind (slightly smiling, patient, unspeakin |
-| 33,546 | 34,219 | 673 | body, chapter | opening of the chambers close quotes the microscopic pithicoid President in a ne |
-| 56,892 | 57,519 | 627 | body, chapter | if within tonight's erect everywhere of black muscles feels a weightless slownes |
-| 57,523 | 58,148 | 625 | body, chapter | how this uncouth enchanted person, arising from a restaurant, looks breathes or  |
-| 34,810 | 35,407 | 597 | body, chapter | it's jolly odd what pops into your jolly tete when the jolly shells begin droppi |
-| 34,222 | 34,808 | 586 | body, chapter | "next to of course god america i love you land of the pilgrims' and so forth oh  |
+---
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
-
-3 region(s), 30,268 chars (48.79% of text). Largest 3:
-
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 2,120 | 32,215 | 30,095 | front_matter | ONE FIVE AMERICANS I. LIZ I with breathing as (faithfully) her lownecked dress a |
-| 182 | 353 | 171 | front_matter | IS FIVE FIVE BOOKS by E. E. Cummings The Enormous Room Tulips and Chimneys & Xli |
-| 471 | 473 | 2 | front_matter | FOREWORD On the assumption that my technique is either complicated or original o |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

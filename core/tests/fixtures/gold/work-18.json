@@ -61,7 +61,14 @@
           "note": "Part Third = Ethical. (No separate part-intro essay; runs straight into the first treatise's chapter list.)"
         }
       ],
-      "note": "Volume → part → treatise → chapter hierarchy. part is the top grouping level (mask=False, _UNMASKED). Treatises sit between part and chapter and are annotated as the 'translation' layer below (each treatise IS a translated work)."
+      "note": "Volume → part → treatise → chapter hierarchy. part is the top grouping level (mask=False, _UNMASKED). Treatises sit between part and chapter and are annotated as the 'translation' layer below (each treatise IS a translated work).",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^Part (?:First|Second|Third)\\.",
+        "at": "start",
+        "tile": true,
+        "expected_count": 3
+      }
     },
     {
       "type": "translation",
@@ -84,7 +91,14 @@
           "note": "The Latin Acts/Passion of Perpetua & Felicitas (Appendix to the Ethical part), translated by R. E. Wallis — a non-Tertullian martyrdom narrative appended here; confirms 'translation' covers the whole volume's translated apparatus, not just Tertullian proper."
         }
       ],
-      "note": "PRIMARY diagnostic layer and the headline purpose of this gold: 'translation' is UNEXEMPLIFIED elsewhere in the corpus, and this critical edition supplies it cleanly. Each treatise is an English rendering of a Latin original, flagged by an explicit translator credit. mask=True per taxonomy (translated text is masked apparatus relative to the original-language body the detector would otherwise expect). Per-instance edges are not stored; presence + count (23) is the contract."
+      "note": "PRIMARY diagnostic layer and the headline purpose of this gold: 'translation' is UNEXEMPLIFIED elsewhere in the corpus, and this critical edition supplies it cleanly. Each treatise is an English rendering of a Latin original, flagged by an explicit translator credit. mask=True per taxonomy (translated text is masked apparatus relative to the original-language body the detector would otherwise expect). Per-instance edges are not stored; presence + count (23) is the contract.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "\\[Translated by",
+        "at": "start",
+        "tile": true,
+        "expected_count": 23
+      }
     },
     {
       "type": "commentary",
@@ -103,7 +117,14 @@
           "note": "Part Second's 'Introduction, by the American Editor' — a part-level editorial commentary essay ('The Second Class of Tertullian's works, according to the logical method I have endeavoured to carry out...'). Distinct from the 13-count Elucidation blocks; included as an exemplar to show the commentary layer also lives at part granularity."
         }
       ],
-      "note": "type=commentary (mask=False, _UNMASKED — editorial commentary that is content the detector should KEEP, unlike masked apparatus). This is the second under-exemplified type this gold targets. Two sub-forms: (a) per-treatise 'Elucidations' appendices (13 blocks), (b) per-part 'Introduction by the American Editor' / 'Introductory Note' essays. The expected_count tracks (a) only; (b) is exemplified, not counted, to keep the cardinality honest. mask=False is correct here: gold_verify would flag mask=True against DEFAULT_MASK_BY_TYPE['commentary']=False."
+      "note": "type=commentary (mask=False, _UNMASKED — editorial commentary that is content the detector should KEEP, unlike masked apparatus). This is the second under-exemplified type this gold targets. Two sub-forms: (a) per-treatise 'Elucidations' appendices (13 blocks), (b) per-part 'Introduction by the American Editor' / 'Introductory Note' essays. The expected_count tracks (a) only; (b) is exemplified, not counted, to keep the cardinality honest. mask=False is correct here: gold_verify would flag mask=True against DEFAULT_MASK_BY_TYPE['commentary']=False.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^Elucidations\\.\\n\\n[—–-]{3,}\\n\\n[IVXLC]+\\.\\n\\n\\(",
+        "at": "start",
+        "tile": false,
+        "expected_count": 13
+      }
     },
     {
       "type": "introduction",
@@ -122,22 +143,36 @@
           "note": "Editorial 'Introductory Notice' heading the Perpetua & Felicitas appendix (the non-Tertullian martyr-acts), framing its provenance and the Latin/Greek text question before the translation."
         }
       ],
-      "note": "type=introduction, mask=True (apparatus framing the translated text — contrast with commentary's mask=False). Five 'Introductory Notice'-titled blocks. The count is the literal heading count; their character is prefatory rather than evaluative, which is why they are introduction not commentary."
+      "note": "type=introduction, mask=True (apparatus framing the translated text — contrast with commentary's mask=False). Five 'Introductory Notice'-titled blocks. The count is the literal heading count; their character is prefatory rather than evaluative, which is why they are introduction not commentary.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "Introductory Notice",
+        "at": "start",
+        "tile": false,
+        "expected_count": 5
+      }
     },
     {
       "type": "chapter",
       "mask": false,
       "structure": "repeating",
       "role": "secondary",
-      "expected_count": 737,
-      "count_cue": "Treatise sub-divisions ('Chapter I.', 'Chapter II.', …, mostly Roman-numeral, frequently with an em-dash title summary). The current detector segments 737 chapters across the 23 treatises (diagnostics by_type chapter=737, all numbered). This is FUZZY by eye: a line-anchored '\\nChapter <roman>.' regex yields 870 occurrences, but that figure double-counts the per-treatise chapter-summary CONTENTS LISTS (each treatise prints its chapter titles as a forward-reference list before the translator credit, then again as in-body headings). The 737 detector figure is the de-duplicated in-body chapter count and is the honest navigational-container number; the 870 raw figure is recorded here as the upper bound including contents-list echoes. Per-canonical-treatise chapter counts vary widely (Apology 50, On Idolatry 24, Five Books Against Marcion run to many chapters per book) and are not independently re-tallied here.",
+      "expected_count": 743,
+      "count_cue": "Treatise sub-divisions ('Chapter I.', 'Chapter II.', …, mostly Roman-numeral, frequently with an em-dash title summary). The current detector segments 737 chapters across the 23 treatises (diagnostics by_type chapter=737, all numbered). This is FUZZY by eye: a line-anchored '\\nChapter <roman>.' regex yields 870 occurrences, but that figure double-counts the per-treatise chapter-summary CONTENTS LISTS (each treatise prints its chapter titles as a forward-reference list before the translator credit, then again as in-body headings). The 737 detector figure is the de-duplicated in-body chapter count and is the honest navigational-container number; the 870 raw figure is recorded here as the upper bound including contents-list echoes. Per-canonical-treatise chapter counts vary widely (Apology 50, On Idolatry 24, Five Books Against Marcion run to many chapters per book) and are not independently re-tallied here. || RECONCILED 2026-06-19 (737→743): in-body 'Chapter <roman>.' headings, negative-lookahead isolated from contents-list echoes, leakage-free (737 was the detector's de-dup count).",
       "exemplars": [
         {
           "start_anchor": "Chapter I.—Wide Scope of the Word Idolatry.",
           "note": "In-body chapter heading: On Idolatry, Chapter I (em-dash summary form). Followed directly by the chapter's translated prose ('The principal crime of the human race...')."
         }
       ],
-      "note": "chapter is the grouping level BELOW translation (treatise) and ABOVE the masked footnote apparatus. mask=False (_UNMASKED). expected_count uses the detector's de-duplicated 737; the raw 870 line-count is the contents-list-inflated upper bound, documented honestly rather than picking a clean single number."
+      "note": "chapter is the grouping level BELOW translation (treatise) and ABOVE the masked footnote apparatus. mask=False (_UNMASKED). expected_count uses the detector's de-duplicated 737; the raw 870 line-count is the contents-list-inflated upper bound, documented honestly rather than picking a clean single number.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^Chapter [IVXLC]+\\.(?!\\n\\nChapter [IVXLC]+\\.)(?!\\n\\nElucidations\\.)(?!\\n\\n[IVXLC]+\\.\\n\\n)",
+        "at": "start",
+        "tile": false,
+        "expected_count": 743
+      }
     },
     {
       "type": "footnotes",
@@ -156,7 +191,15 @@
           "note": "LAST footnote in the volume (Of Patience, citing Massillon's Œuvres) — the highest footnote number (9186); marks the document tail (no back-matter index follows)."
         }
       ],
-      "note": "PRIMARY masked layer alongside translation. mask=True per taxonomy. This 'Enhanced Version' interleaves the footnote apparatus inline after each chapter rather than pooling per-page, so the apparatus is content-anchorable (unlike the geometric idx101 case). expected_count is the line-count of expanded note entries (6280); it deliberately does NOT equal the max footnote number (9186) because numbering resets/skips — stated explicitly rather than forcing a clean number."
+      "note": "PRIMARY masked layer alongside translation. mask=True per taxonomy. This 'Enhanced Version' interleaves the footnote apparatus inline after each chapter rather than pooling per-page, so the apparatus is content-anchorable (unlike the geometric idx101 case). expected_count is the line-count of expanded note entries (6280); it deliberately does NOT equal the max footnote number (9186) because numbering resets/skips — stated explicitly rather than forcing a clean number.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^\\d+    ",
+        "at": "start",
+        "tile": false,
+        "expected_count": 6280
+      }
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

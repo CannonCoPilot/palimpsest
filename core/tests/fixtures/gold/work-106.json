@@ -9,8 +9,8 @@
       "mask": true,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": 121,
-      "count_cue": "Part II ('Texts and Translations', body from offset ~539971) is a critical edition: each excerpted Armenian source-text is given as a numbered ORIGINAL passage in Armenian script (U+0530–058F, 19.4% of the whole file) immediately followed by its ENGLISH translation, plus a 'Text:'/'Translation:'/'See also:' citation header per source. The masked-translation layer is keyed at the SOURCE-ENTRY level: 121 author/source entries, matching exactly the 'Alphabetical List of Authors Cited' (front, -xv-) and 'Alphabetical List of Authors Quoted' (back) — both enumerate 121 author headers (regex /\\n<Name> C\\d+/ over each list = 121, cross-validated front vs back). The PASSAGE count is HIGHER and NOT cleanly countable from reference_text(): 169 'Text:' labels (some inline sub-works), 98 '§N' source-section refs, and many entries hold several numbered excerpts; an Armenian-para→English-para transition scan over Part II yields ~782 (noisy — single passages span multiple paragraphs). So expected_count=121 is the verifiable SOURCE-entry cardinality, not the passage cardinality (flagged honestly). DETECTOR EMITS ZERO translations (by_type has no 'translation') → recall 0 → MIRAGE: composite 100 over a 472K-char parallel-text edition the detector sees as undifferentiated body.",
+      "expected_count": 126,
+      "count_cue": "Part II ('Texts and Translations', body from offset ~539971) is a critical edition: each excerpted Armenian source-text is given as a numbered ORIGINAL passage in Armenian script (U+0530–058F, 19.4% of the whole file) immediately followed by its ENGLISH translation, plus a 'Text:'/'Translation:'/'See also:' citation header per source. The masked-translation layer is keyed at the SOURCE-ENTRY level: 121 author/source entries, matching exactly the 'Alphabetical List of Authors Cited' (front, -xv-) and 'Alphabetical List of Authors Quoted' (back) — both enumerate 121 author headers (regex /\\n<Name> C\\d+/ over each list = 121, cross-validated front vs back). The PASSAGE count is HIGHER and NOT cleanly countable from reference_text(): 169 'Text:' labels (some inline sub-works), 98 '§N' source-section refs, and many entries hold several numbered excerpts; an Armenian-para→English-para transition scan over Part II yields ~782 (noisy — single passages span multiple paragraphs). So expected_count=121 is the verifiable SOURCE-entry cardinality, not the passage cardinality (flagged honestly). DETECTOR EMITS ZERO translations (by_type has no 'translation') → recall 0 → MIRAGE: composite 100 over a 472K-char parallel-text edition the detector sees as undifferentiated body. || RECONCILED 2026-06-19 (121→126): 126 body source-entry units (author-header lines) vs 121 distinct authors in the front index.",
       "exemplars": [
         {
           "start_anchor": "They are life and salvation for those who have become impoverished by sin",
@@ -21,7 +21,16 @@
           "note": "Agat'angełos 'Life of Saint Gregory' §75 translation (the embedded footnote-number 6 is glued to 'While' by the linear extraction — a translation passage, not commentary)"
         }
       ],
-      "note": "TYPE JUDGMENT (Armenian original vs English translation vs commentary): the taxonomy has no clean 'original-language' type. The Armenian-script passages are the ORIGINAL; I do NOT give them a separate annotation — they sit inside the same source-entry as their translation and are masked together as the body of the edition. The ENGLISH renderings are typed `translation` (the high-value masked layer this gold exists to surface). Per-source citation headers ('Text:'/'Translation:'/'See also:') and the numbered excerpt apparatus are part of these entries. Distinct from `commentary` (Part I analytic prose) and from `footnotes` (the numbered note apparatus)."
+      "note": "TYPE JUDGMENT (Armenian original vs English translation vs commentary): the taxonomy has no clean 'original-language' type. The Armenian-script passages are the ORIGINAL; I do NOT give them a separate annotation — they sit inside the same source-entry as their translation and are masked together as the body of the edition. The ENGLISH renderings are typed `translation` (the high-value masked layer this gold exists to surface). Per-source citation headers ('Text:'/'Translation:'/'See also:') and the numbered excerpt apparatus are part of these entries. Distinct from `commentary` (Part I analytic prose) and from `footnotes` (the numbered note apparatus).",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^.{1,60}? C\\d+(?:[–\\-]\\d+)?\\n",
+        "span_start": "Part II\nTexts and Translations",
+        "span_end": "to make sweetness.\n\nAlphabetical List of Authors Quoted",
+        "at": "start",
+        "tile": true,
+        "expected_count": 126
+      }
     },
     {
       "type": "commentary",
@@ -40,7 +49,16 @@
           "note": "Appendix 'Satan and the Serpent' opening (synthetic/diachronic essay) — 6th analytic unit"
         }
       ],
-      "note": "Part I analytic layer. mask=False is the committed default for `commentary`. These 6 units are also enumerated below as the `chapter`/`appendix` grouping; this annotation captures their analytic CONTENT type while the secondary annotations capture the navigational containers."
+      "note": "Part I analytic layer. mask=False is the committed default for `commentary`. These 6 units are also enumerated below as the `chapter`/`appendix` grouping; this annotation captures their analytic CONTENT type while the secondary annotations capture the navigational containers.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^(?:-\\d+-\\n[1-5]\\. Adam and Eve Traditions|-177-\\nAppendix: Satan and the Serpent)",
+        "span_start": "-11-\n1. Adam and Eve Traditions in\nFifth-Century",
+        "span_end": "Part II\nTexts and Translations",
+        "at": "start",
+        "tile": true,
+        "expected_count": 6
+      }
     },
     {
       "type": "part",
@@ -59,7 +77,16 @@
           "note": "Part II body heading (mixed-case Part II), the texts-and-translations half"
         }
       ],
-      "note": "Top-level structural container above chapters/century-sections. Detector segments exactly one `part` (by_type part=1) — Part II's start; Part I's container is missed."
+      "note": "Top-level structural container above chapters/century-sections. Detector segments exactly one `part` (by_type part=1) — Part II's start; Part I's container is missed.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^(?:PART I\\nThe Adam and Eve Traditions in Armenian|Part II\\nTexts and Translations)$",
+        "span_start": "PART I\nThe Adam and Eve Traditions in Armenian",
+        "span_end": "to make sweetness.\n\nAlphabetical List of Authors Quoted",
+        "at": "start",
+        "tile": true,
+        "expected_count": 2
+      }
     },
     {
       "type": "chapter",
@@ -82,7 +109,27 @@
           "note": "Chapter 5 body heading (page 155), last analytic chapter"
         }
       ],
-      "note": "Mid-level grouping within Part I. Chapters carry the scholarly `commentary` content typed above; this annotation is the navigational container."
+      "note": "Mid-level grouping within Part I. Chapters carry the scholarly `commentary` content typed above; this annotation is the navigational container.",
+      "instance_rule": [
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)^-\\d+-\\n[1-5]\\. Adam and Eve Traditions",
+          "span_start": "-11-\n1. Adam and Eve Traditions in\nFifth-Century",
+          "span_end": "-177-\nAppendix: Satan and the Serpent",
+          "at": "start",
+          "tile": true,
+          "expected_count": 5
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)^-\\d+-\\n(?:Fifth|Sixth|Seventh|Eighth|Ninth|Tenth|Eleventh|Twelfth|Thirteenth|Fourteenth|Fifteenth|Sixteenth|Seventeenth|Eighteenth) Century\\n",
+          "span_start": "Part II\nTexts and Translations",
+          "span_end": "to make sweetness.\n\nAlphabetical List of Authors Quoted",
+          "at": "start",
+          "tile": true,
+          "expected_count": 14
+        }
+      ]
     },
     {
       "type": "chapter",
@@ -105,7 +152,27 @@
           "note": "Eighteenth Century section (last, brief), opens with Xač'atur J̌ ułayec'i"
         }
       ],
-      "note": "Part II grouping band. Together with the Part-I 5-chapter band this work has 19 chapter-level divisions across 2 parts; A3 proxies all against detector `chapter` (=3)."
+      "note": "Part II grouping band. Together with the Part-I 5-chapter band this work has 19 chapter-level divisions across 2 parts; A3 proxies all against detector `chapter` (=3).",
+      "instance_rule": [
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)^-\\d+-\\n[1-5]\\. Adam and Eve Traditions",
+          "span_start": "-11-\n1. Adam and Eve Traditions in\nFifth-Century",
+          "span_end": "-177-\nAppendix: Satan and the Serpent",
+          "at": "start",
+          "tile": true,
+          "expected_count": 5
+        },
+        {
+          "kind": "regex_in_span",
+          "pattern": "(?m)^-\\d+-\\n(?:Fifth|Sixth|Seventh|Eighth|Ninth|Tenth|Eleventh|Twelfth|Thirteenth|Fourteenth|Fifteenth|Sixteenth|Seventeenth|Eighteenth) Century\\n",
+          "span_start": "Part II\nTexts and Translations",
+          "span_end": "to make sweetness.\n\nAlphabetical List of Authors Quoted",
+          "at": "start",
+          "tile": true,
+          "expected_count": 14
+        }
+      ]
     },
     {
       "type": "footnotes",
@@ -114,7 +181,16 @@
       "role": "secondary",
       "expected_count": null,
       "count_cue": "Dense scholarly footnote apparatus throughout: numbered notes 'N.\\u2002<text>' (number + EN-SPACE U+2002) keyed to inline superscript digits in both the analytic prose (Part I) and the translations (Part II). A '\\nN.\\u2002' line-start scan yields 2512 hits across the file, but the per-chapter/per-page numbering RESTARTS, so no single global count is meaningful and notes are NOT uniquely content-anchorable (e.g. cross-references repeat). expected_count=null: presence + masked layer is the contract, not a global cardinality.",
-      "note": "Masked annotation apparatus the linear extraction interleaves into body/commentary/translation. Detector emits no `footnotes`. The inline superscript markers get glued to adjacent words by extraction (e.g. 'While6 he was hanging', 'sin,1') — a known reference_text() artifact, not separate tokens."
+      "note": "Masked annotation apparatus the linear extraction interleaves into body/commentary/translation. Detector emits no `footnotes`. The inline superscript markers get glued to adjacent words by extraction (e.g. 'While6 he was hanging', 'sin,1') — a known reference_text() artifact, not separate tokens.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^\\d+\\. ",
+        "span_start": "PART I\nThe Adam and Eve Traditions in Armenian",
+        "span_end": "to make sweetness.\n\nAlphabetical List of Authors Quoted",
+        "at": "start",
+        "tile": false,
+        "expected_count": null
+      }
     },
     {
       "type": "introduction",
@@ -221,5 +297,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Index of Ancient Sources (-731-, final section to EOF). 'This index does not include references to authors excerpted in Part 2.' Third `index` annotation. The tail extracts as a scramble of source-ref / page-number fragments (dot-leaders as box glyphs) — masked navigational matter, edges scoped to heading→EOF."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

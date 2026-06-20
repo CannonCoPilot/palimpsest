@@ -21,7 +21,14 @@
           "note": "Genesis book-level intro/argument (book-granularity chapter_heading per the committed type def)"
         }
       ],
-      "note": "Douay chapter summaries + book intros; both editorial apparatus → chapter_heading. Detector segments these well (chapter=1319 ≈ 1334, recall 0.99) — the OPTIMIZED reference."
+      "note": "Douay chapter summaries + book intros; both editorial apparatus → chapter_heading. Detector segments these well (chapter=1319 ≈ 1334, recall 0.99) — the OPTIMIZED reference.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^.{0,40}?\\bChapter \\d+\\b",
+        "at": "start",
+        "tile": false,
+        "expected_count": 1334
+      }
     },
     {
       "type": "book",
@@ -36,7 +43,15 @@
           "note": "first book heading (Genesis); the book-grouping level the detector skips here"
         }
       ],
-      "note": "Secondary grouping level. Its 0/73 gap is the hidden defect the composite (100) and even the chapter-level OPTIMIZED rating mask."
+      "note": "Secondary grouping level. Its 0/73 gap is the hidden defect the composite (100) and even the chapter-level OPTIMIZED rating mask.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^.{0,40}?\\bChapter 1\\b",
+        "at": "start",
+        "tile": true,
+        "expected_count": 73
+      }
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

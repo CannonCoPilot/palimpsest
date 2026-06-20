@@ -2,99 +2,89 @@
 
 - **Source file:** `The Message of the Qur'An -- Muhammad Asad [Asad, Muhammad] -- Place of publication not identified, 1980 -- The Book Foundation -- isbn13 9780317524567 -- f720bfc6c8902fb7c76dbd9aa6f64f30 -- Anna’s Archive.epub`
 - **Text length:** 3,097,354 chars
-- **Sections in current map:** 237
-- **Distinct mask types present:** 8 (2 generic, 6 specific)
+- **Mask elements (complete map):** 353
+- **Distinct mask types:** 11 (1 generic, 10 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 2,446 | 0.08% |
-| ▒ generic-only (container, no specific element) | 1,264,674 | 40.83% |
-| ▓ specific-only (element outside any container) | 1,830,234 | 59.09% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 3,097,354 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 0.08% of the text.** The remaining 99.92% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 30,974 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Appendix          |                                          ██                                                        |
-Back Matter       |                                          ▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏|
-Foreword          |▏▏                                                                                                  |
-Front Matter      |▏▏                                                                                                  |
-Header            | █  ▏▏ ▏▏ ▏▏▏▏▏▏▏█▏▏█▏▏██▏█████████████████                                                         |
-Title Page        |▏                                                                                                   |
+shhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 ```
+<sub>h=chapter  r=footnotes  s=foreword</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w29-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 1,796,944 | 58.02% |
-| 2 | 1,294,731 | 41.80% |
-| 3 | 5,679 | 0.18% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Chapter | generic | 114 | 114 | ✓ present |
-| Introduction | specific | 114 | 0 | ❌ ABSENT from map |
-| Translation | specific | 114 | 0 | ❌ ABSENT from map |
-| Footnotes | specific | 5326 | 0 | ❌ ABSENT from map |
-| Appendix | specific | 4 | 4 | ✓ present |
-| Title Page | specific | — | 1 | ✓ present |
-| Contents | specific | — | 0 | ❌ ABSENT from map |
-| Foreword | specific | — | 1 | ✓ present |
-| Bibliography | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| **appendix** | specific | 4 | 4,770 / 8,958 / 14,417 | 37,104 |
+| back_matter | specific | 0  | — | — |
+| **bibliography** | specific | 1 | 5,506 / 5,506 / 5,506 | 5,506 |
+| **body** | generic | 1 | 3,097,354 / 3,097,354 / 3,097,354 | 3,097,354 |
+| book | generic | 0  | — | — |
+| **chapter** | specific | 114 | 422 / 6,242 / 82,623 | 1,304,224 |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| commentary | specific | 0  | — | — |
+| **contents** | specific | 1 | 6,783 / 6,783 / 6,783 | 6,783 |
+| copyright | specific | 0  | — | — |
+| dedication | specific | 0  | — | — |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| **footnotes** | specific | 1 | 1,753,169 / 1,753,169 / 1,753,169 | 1,753,169 |
+| **foreword** | specific | 1 | 27,572 / 27,572 / 27,572 | 27,572 |
+| front_matter | specific | 0  | — | — |
+| glossary | specific | 0  | — | — |
+| **header** | specific | 1 | 27 / 27 / 27 | 27 |
+| index | specific | 0  | — | — |
+| insert | specific | 0  | — | — |
+| **introduction** | specific | 114 | 168 / 679 / 6,248 | 111,004 |
+| letter | specific | 0  | — | — |
+| part | generic | 0  | — | — |
+| poetry | specific | 0  | — | — |
+| preface | specific | 0  | — | — |
+| **title_page** | specific | 1 | 73 / 73 / 73 | 73 |
+| **translation** | specific | 114 | 211 / 5,535 / 80,064 | 1,156,116 |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| chapter | secondary | 114 | `regex_in_span`  |
+| introduction | primary | 114 | `computed_offsets`  |
+| translation | primary | 114 | `computed_offsets`  |
+| footnotes | primary | 5326 | `computed_offsets`  |
+| appendix | secondary | 4 | `regex_in_span`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+## Element-width distribution by type
 
-114 region(s), 1,264,674 chars (40.83% of text). Largest 12:
+![type counts & widths](../portfolio/figures/w29-stats.png)
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 42,806 | 125,413 | 82,607 | body, chapter | Al-Baqarah (The Cow) Medina Period T HE TITLE of this sūrah is derived from the  |
-| 174,789 | 224,954 | 50,165 | body, chapter | An-Nisā'(Women) Medina Period T HE TITLE An-Nisā' has been given to this sūrah b |
-| 125,428 | 174,773 | 49,345 | body, chapter | Al `Imrān(The House Of `Imrān) Medina Period T HIS SŪRAH is the second or (accor |
-| 310,841 | 360,109 | 49,268 | body, chapter | Al-A`rāf (The Faculty Of Discernment) Mecca Period T HE TITLE of this sūrah is b |
-| 265,224 | 310,824 | 45,600 | body, chapter | Al-An`ām(Cattle) Mecca Period W ITH the possible exception of two or three verse |
-| 383,980 | 424,976 | 40,996 | body, chapter | At-Tawbah(Repentance) Medina Period I N CONTRAST with every other sūrah of the Q |
-| 224,969 | 265,209 | 40,240 | body, chapter | Al-Mā'idah(The Repast) Medina Period A CCORDING to all the available evidence, t |
-| 453,370 | 483,785 | 30,415 | body, chapter | H Ūd Mecca Period R EVEALED very shortly after the tenth sūrah ( Yūnus) – that i |
-| 553,961 | 583,697 | 29,736 | body, chapter | An-Naḥl(The Bee) Mecca Period A CCORDING to almost all the authorities (includin |
-| 483,802 | 512,455 | 28,653 | body, chapter | Yūsuf(Joseph) Mecca Period A CCORDING to all the authoritative sources, this sūr |
-| 424,991 | 453,352 | 28,361 | body, chapter | Yūnus(Jonah) Mecca Period T HIS SŪRAH, which derives its title from the solitary |
-| 608,552 | 633,978 | 25,426 | body, chapter | Al-Kahf(The Cave) Mecca Period T HIS SŪRAH – revealed immediately before An-Naḥl |
+---
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
-
-4 region(s), 1,796,944 chars (58.02% of text). Largest 4:
-
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 1,331,960 | 3,097,354 | 1,765,394 | back_matter | THE NIGHT JOURNEY T HE PROPHET'S "Night Journey" ( isrā') from Mecca to Jerusale |
-| 1,307,093 | 1,326,268 | 19,175 | back_matter | SYMBOLISM AND ALLEGORY IN THE QUR'ĀN W HEN studying the Qur'ān, one frequently e |
-| 14 | 6,856 | 6,842 | front_matter | THE QUR'ĀN TRANSLATED AND EXPLAINED by Muḥammad Asad For people who think Forewo |
-| 34,428 | 39,961 | 5,533 | front_matter | Works of Reference T HIS WORK is based on the recension of ḤafS ibn Sulaymān al- |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

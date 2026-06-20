@@ -2,82 +2,89 @@
 
 - **Source file:** `The Correspondent_ A Novel -- Virginia Evans -- 2025 -- Crown Publishing Group, The -- isbn13 9780593798430 -- f542b169cc729ca2fdc329d48c3911f5 -- Anna’s Archive.epub`
 - **Text length:** 364,494 chars
-- **Sections in current map:** 10
-- **Distinct mask types present:** 10 (1 generic, 9 specific)
+- **Mask elements (complete map):** 133
+- **Distinct mask types:** 10 (1 generic, 9 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 0 | 0.00% |
-| ▒ generic-only (container, no specific element) | 328,513 | 90.13% |
-| ▓ specific-only (element outside any container) | 35,981 | 9.87% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 364,494 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 0.00% of the text.** The remaining 100.00% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 3,645 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-About the Author  |                                                                                                   ▏|
-Acknowledgments   |                                                                                                  ▏▏|
-Back Matter       |                                                                                                  ▏▏|
-Contents          |▏                                                                                                   |
-Copyright         |▏                                                                                                   |
-Discussion Questio|                                                                                                   ▏|
-Front Matter      |▏▏▏▏▏▏▏▏                                                                                            |
-Preface           |▏▏▏▏▏▏▏▏                                                                                            |
-Title Page        |▏                                                                                                   |
+mzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzbo
 ```
+<sub>b=acknowledgments  m=copyright  o=discussion  z=letter</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w19-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 330,423 | 90.65% |
-| 2 | 34,071 | 9.35% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Letter | specific | 102 | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| **about_author** | specific | 1 | 535 / 535 / 535 | 535 |
+| **acknowledgments** | specific | 1 | 3,857 / 3,857 / 3,857 | 3,857 |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| back_matter | specific | 0  | — | — |
+| bibliography | specific | 0  | — | — |
+| **body** | generic | 1 | 364,494 / 364,494 / 364,494 | 364,494 |
+| book | generic | 0  | — | — |
+| chapter | specific | 0  | — | — |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| commentary | specific | 0  | — | — |
+| **contents** | specific | 1 | 119 / 119 / 119 | 119 |
+| **copyright** | specific | 1 | 2,075 / 2,075 / 2,075 | 2,075 |
+| **dedication** | specific | 1 | 33 / 33 / 33 | 33 |
+| **discussion** | specific | 1 | 2,634 / 2,634 / 2,634 | 2,634 |
+| endnotes | specific | 0  | — | — |
+| **epigraph** | specific | 1 | 227 / 227 / 227 | 227 |
+| footnotes | specific | 0  | — | — |
+| foreword | specific | 0  | — | — |
+| front_matter | specific | 0  | — | — |
+| glossary | specific | 0  | — | — |
+| header | specific | 0  | — | — |
+| index | specific | 0  | — | — |
+| insert | specific | 0  | — | — |
+| introduction | specific | 0  | — | — |
+| **letter** | specific | 124 | 206 / 2,126 / 11,274 | 353,701 |
+| part | generic | 0  | — | — |
+| poetry | specific | 0  | — | — |
+| **preface** | specific | 1 | 1,313 / 1,313 / 1,313 | 1,313 |
+| title_page | specific | 0  | — | — |
+| translation | specific | 0  | — | — |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| letter | primary | 124 | `salutation` ✏️ corrected |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+**Count corrections this build:**
 
-1 region(s), 328,513 chars (90.13% of text). Largest 1:
+- `letter` → **124** — 102→124): salutation discriminator (115 greeting-prefix + 9 bare-name forms); the prior 102 was a 'Dear'-only proxy lower bound.
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 28,955 | 357,468 | 328,513 | body | by Alex Toole, Columnist The honorable Judge Guy D. Donnelly of Frederick, Maryl |
+## Element-width distribution by type
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
+![type counts & widths](../portfolio/figures/w19-stats.png)
 
-4 region(s), 330,423 chars (90.65% of text). Largest 4:
+---
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 28,880 | 357,468 | 328,588 | front_matter | What Ever Happened to Sybil Van Antwerp? Baltimore Sun Opinion/Editorial by Alex |
-| 387 | 2,075 | 1,688 | front_matter | Penguin Random House values and supports copyright. Copyright fuels creativity,  |
-| 241 | 353 | 112 | front_matter | Crown An imprint of the Crown Publishing Group A division of Penguin Random Hous |
-| 361,325 | 361,360 | 35 | back_matter | The Correspondent Virginia Evans Discussion Questions In order to provide readin |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

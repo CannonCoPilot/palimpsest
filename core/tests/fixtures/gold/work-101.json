@@ -25,7 +25,14 @@
           "note": "Pearl of Great Price volume — first line of the PoGP Introduction (dropcap T extracted separately)"
         }
       ],
-      "note": "Composite work: 3 volumes. D&C is section-structured (no sub-books); BoM and PoGP contain books."
+      "note": "Composite work: 3 volumes. D&C is section-structured (no sub-books); BoM and PoGP contain books.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^BOOK OF\\n\\nMORMON|T\\nhe Doctrine and Covenants is a co|T\\nhe Pearl of Great Price is a se",
+        "at": "start",
+        "tile": true,
+        "expected_count": 3
+      }
     },
     {
       "type": "book",
@@ -44,7 +51,14 @@
           "note": "3 Nephi — title renders 'Third Nephi / The Book of Nephi'; pattern differs from the 'The …Book of…' form, a parse stress-point"
         }
       ],
-      "note": "Irregular hierarchy: BoM/PoGP are volume→book→chapter; D&C is volume→section. book is the mid level for 2 of 3 volumes."
+      "note": "Irregular hierarchy: BoM/PoGP are volume→book→chapter; D&C is volume→section. book is the mid level for 2 of 3 volumes.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^The First Book of Nephi\\b|^The Second Book of Nephi\\b|^The Book of Jacob\\b|^The Book of Enos\\b|^The Book of Jarom\\b|^The Book of Omni\\b|^The Words of Mormon\\b|^The Book of Mosiah\\b|^The Book of Alma\\b|^The Book of Helaman\\b|^Third Nephi\\b|^Fourth Nephi\\b|^The Book of Mormon\\n\\nChapter 1\\n\\nAmmaron|^The Book of Ether\\b|^The Book of Moroni\\b|^Selections from the\\b|^The Book of Abraham\\b|^Joseph Smith—Matthew\\n\\n|^Joseph Smith—History\\n\\n|^The Articles of Faith\\b",
+        "at": "start",
+        "tile": true,
+        "expected_count": 20
+      }
     },
     {
       "type": "chapter",
@@ -59,7 +73,14 @@
           "note": "1 Nephi chapter 1 — chapter container start (its em-dash summary heads the chapter body)"
         }
       ],
-      "note": "Verse-level granularity below this is the masked body; chapters are the primary navigational container the detector must segment."
+      "note": "Verse-level granularity below this is the masked body; chapters are the primary navigational container the detector must segment.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^(?:Chapter|Section) \\d+\\b|^The Book of Enos\\b|^The Book of Jarom\\b|^The Book of Omni\\b|^The Words of Mormon\\b|^Fourth Nephi\\b|^Joseph Smith—Matthew\\n\\n|^Joseph Smith—History\\n\\n|^The Articles of Faith\\b",
+        "at": "start",
+        "tile": true,
+        "expected_count": 393
+      }
     },
     {
       "type": "chapter_heading",
@@ -78,7 +99,14 @@
           "note": "D&C section 1 header (verse-range summary before 'Hearken, O ye people')"
         }
       ],
-      "note": "Two chapter_heading sub-forms in one PDF work. Was a mirage (mis-segmented) under linear extraction; the geometry parser separates the body-band heading from the footnote apparatus cleanly."
+      "note": "Two chapter_heading sub-forms in one PDF work. Was a mirage (mis-segmented) under linear extraction; the geometry parser separates the body-band heading from the footnote apparatus cleanly.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^(?:Chapter|Section) \\d+\\b|^The Book of Enos\\b|^The Book of Jarom\\b|^The Book of Omni\\b|^The Words of Mormon\\b|^Fourth Nephi\\b|^Joseph Smith—Matthew\\n\\n|^Joseph Smith—History\\n\\n|^The Articles of Faith\\b",
+        "at": "start",
+        "tile": false,
+        "expected_count": 393
+      }
     },
     {
       "type": "footnotes",
@@ -87,7 +115,14 @@
       "role": "secondary",
       "expected_count": null,
       "count_cue": "Per-page cross-reference apparatus: a 3-column footnote band at the bottom of nearly every verse page, keyed to inline superscript letters (a, b, c…) in the verse body. Geometrically isolable — the middle footnote column starts at x0≈159, an x-band the verse body never uses. The naive linear extraction emits this band BEFORE the chapter it annotates (the core scramble). NOT exemplar-anchorable by content: apparatus entries reuse Topical-Guide targets (e.g. 'Record Keeping' recurs 28×, 'tg Birthright.' 3×), so no footnote string resolves uniquely. Presence + clean geometric separation from body is the requirement; per-instance edges come from the geometry parser, not reference_text().",
-      "note": "NEW in Phase-2 ratification. The footnote apparatus is a distinct masked layer the linear pipeline had folded into chapter/body text. Recoverable only via the geometry parse, not from reference_text() ordering."
+      "note": "NEW in Phase-2 ratification. The footnote apparatus is a distinct masked layer the linear pipeline had folded into chapter/body text. Recoverable only via the geometry parse, not from reference_text() ordering.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^\\d+ [a-z] ",
+        "at": "start",
+        "tile": false,
+        "expected_count": 8404
+      }
     },
     {
       "type": "insert",
@@ -162,5 +197,6 @@
       "end_anchor": "ISBN 978-1-59297-680-5",
       "note": "Church History Photographs — the final back-matter appendix: numbered photographs of Church history sites, each with a description and 'Significant Events' scripture references (e.g. '18. Salt Lake Temple … Significant Events: …Official Declaration 2'). Runs from ~offset 4.869M to the very end of the stream; the closing 'ISBN 978-1-59297-680-5' (unique, at EOF) is the end_anchor. Type=appendix, paired with Church History Maps under the printed 'Appendix' divider. Photograph images are non-textual/skipped; only captions and event prose are in reference_text(). resolve=last is belt-and-suspenders (the heading+intro start_anchor already resolves uniquely). JUDGMENT CALL: same appendix-vs-back_matter reasoning as Church History Maps. Caveat: photo-page geometry is outside the verse-body column model, but the caption/description prose extracts cleanly in reading order here."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

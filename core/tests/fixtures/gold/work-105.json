@@ -75,7 +75,19 @@
           "note": "Section B (ESCHATOLOGICAL RULES) body start, heading the Rule of the Congregation composition"
         }
       ],
-      "note": "Top-level body grouping = the 6 genre classes. Reported (secondary), not rated. Sections C–F have no uniquely-resolving standalone body heading (only running headers + the TOC line), so they are counted from the TOC, not exemplar-anchored."
+      "note": "Top-level body grouping = the 6 genre classes. Reported (secondary), not rated. Sections C–F have no uniquely-resolving standalone body heading (only running headers + the TOC line), so they are counted from the TOC, not exemplar-anchored.",
+      "instance_rule": {
+        "kind": "title_list",
+        "titles": [
+          "2\n\nA. COMMUNITY RULES\n\nSerekh ha-Yaúad",
+          "194\n\nB. ESCHATOLOGICAL RULES\n\nRULE OF THE CONGREGATION",
+          "292\n\nC. PURITY RULE\n\n4Q274 (4QTohorot A) ed. J. M. Baumgarten, DJD XXXV",
+          "298\n\nD. OTHER RULES\n\n4Q159 (4QOrdinancesa) ed. J. M. Allegro, DJD V",
+          "326\n\nE. EPISTOLARY TREATISE CONCERNED WITH RELIGIOUS LAW\n\nMiq§at Ma>a°e Ha-Torah = MMT",
+          "338\n\nF. UNCLASSIFIED TEXTS CONCERNED WITH RELIGIOUS LAW\n\n4Q276 (4QTohorot Ba) ed. J. M. Baumgarten, DJD XXXV"
+        ],
+        "expected_count": 6
+      }
     },
     {
       "type": "book",
@@ -117,7 +129,15 @@
           "note": "LAST translation block (4Q279, 4QFour Lots) — closes the volume"
         }
       ],
-      "note": "PRIMARY layer and the high-value under-exemplified type. The work is a parallel edition: for every manuscript, a transcription block (source-language, masked body) is paired with a 'trans.' English-translation block (type=translation, mask=true). The attribution line is the strong recurring anchor. Within each translation block the text is subdivided by 'Frg. N' / 'Col. N' headings and numbered lines carrying editorial conventions ([ ] reconstructions, vacat = blank). I did NOT promote 'Frg.' to a chapter level: 'Frg.' occurs 952× because every fragment heading prints TWICE per document (once in the transcription, once in the translation) and varies in granularity (Frg. / Frg. N Col. i), so it is internal sub-structure of the translation/transcription bodies, not a clean segmentable chapter container."
+      "note": "PRIMARY layer and the high-value under-exemplified type. The work is a parallel edition: for every manuscript, a transcription block (source-language, masked body) is paired with a 'trans.' English-translation block (type=translation, mask=true). The attribution line is the strong recurring anchor. Within each translation block the text is subdivided by 'Frg. N' / 'Col. N' headings and numbered lines carrying editorial conventions ([ ] reconstructions, vacat = blank). I did NOT promote 'Frg.' to a chapter level: 'Frg.' occurs 952× because every fragment heading prints TWICE per document (once in the transcription, once in the translation) and varies in granularity (Frg. / Frg. N Col. i), so it is internal sub-structure of the translation/transcription bodies, not a clean segmentable chapter container.",
+      "instance_rule": {
+        "kind": "regex_in_span",
+        "pattern": "(?m)^.*\\btrans\\.\\s",
+        "at": "start",
+        "tile": true,
+        "expected_count": 63
+      }
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

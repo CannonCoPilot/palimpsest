@@ -21,7 +21,41 @@
           "note": "last poem"
         }
       ],
-      "note": "DETECTION FOUND 0 — entire collection one undetected body block (cover=0). Count VALIDATED by eye against the printed Table of Contents (line lists exactly 28 top-level poems, The Road Not Taken→The Sound of the Trees, Hill Wife as ONE entry); nav corroborates (33 poem entries = 27 standalone + Hill Wife + its 5 sub-parts)."
+      "note": "DETECTION FOUND 0 — entire collection one undetected body block (cover=0). Count VALIDATED by eye against the printed Table of Contents (line lists exactly 28 top-level poems, The Road Not Taken→The Sound of the Trees, Hill Wife as ONE entry); nav corroborates (33 poem entries = 27 standalone + Hill Wife + its 5 sub-parts).",
+      "instance_rule": {
+        "kind": "title_list",
+        "titles": [
+          "The Road Not Taken",
+          "Christmas Trees",
+          "An Old Man's Winter Night",
+          "A Patch of Old Snow",
+          "In the Home Stretch",
+          "The Telephone",
+          "Meeting and Passing",
+          "Hyla Brook",
+          "The Oven Bird",
+          "Bond and Free",
+          "Birches",
+          "Pea Brush",
+          "Putting In the Seed",
+          "A Time to Talk",
+          "The Cow in Apple Time",
+          "An Encounter",
+          "Range-Finding",
+          "The Hill Wife",
+          "The Bonfire",
+          "A Girl's Garden",
+          "The Exposed Nest",
+          "\"Out, Out—\"",
+          "Brown's Descent or The Willy-Nilly Slide",
+          "The Gum-Gatherer",
+          "The Line-Gang",
+          "The Vanishing Red",
+          "Snow",
+          "The Sound of the Trees"
+        ],
+        "expected_count": 28
+      }
     },
     {
       "type": "preface",
@@ -59,5 +93,6 @@
       "end_anchor": "<<EOF>>",
       "note": "Dover Thrift Editions publisher catalog (POETRY/PLAYS/BOXED SETS advertising). ADDED 2026-06-18 (untyped FN, leaked into body). Non-authorial; masked."
     }
-  ]
+  ],
+  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
 }

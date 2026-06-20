@@ -2,88 +2,91 @@
 
 - **Source file:** `The Dead Sea scrolls translated _ the Qumran texts in -- [edited by] Florentino García Martínez; Wilfred G_E_ -- 2011 -- William B_ Eerdmans -- isbn13 9780802841933 -- d376ed7413b2c8079b55a16507a08979 -- Anna’s Archive.epub`
 - **Text length:** 1,237,399 chars
-- **Sections in current map:** 11
-- **Distinct mask types present:** 10 (1 generic, 9 specific)
+- **Mask elements (complete map):** 297
+- **Distinct mask types:** 10 (2 generic, 8 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 1,022,630 | 82.64% |
-| ▒ generic-only (container, no specific element) | 34,599 | 2.80% |
-| ▓ specific-only (element outside any container) | 180,170 | 14.56% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 1,237,399 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 82.64% of the text.** The remaining 17.36% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▓▓███████▒▒▒███████████████████████████████████████████████████████████████████████████▓▓▓▓▓▓▓▓▓▓▓▓
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 12,374 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Back Matter       |                                                                                        ▏▏▏▏▏▏▏▏▏▏▏▏|
-Contents          |▏▏                                                                                                  |
-Foreword          | ▏▏                                                                                                 |
-Front Matter      |▏▏▏                                                                                                 |
-Index             |                                                                                        ▏▏▏▏▏▏▏▏▏▏▏▏|
-Introduction      |  ▏▏▏▏▏▏█▏▏                                                                                         |
-Preface           | ▏                                                                                                  |
-Title Page        |▏                                                                                                   |
-Translation       |            ▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏▏           |
+lBsyyyyyypDDDDDDDDDDDDDDyDDyDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDggggggggggg
 ```
+<sub>B=preface  D=translation  g=bibliography  l=contents  p=endnotes  s=foreword  y=introduction</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w80-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 34,729 | 2.81% |
-| 2 | 1,202,670 | 97.19% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Title Page | specific | — | 1 | ✓ present |
-| Contents | specific | — | 1 | ✓ present |
-| Preface | specific | — | 1 | ✓ present |
-| Foreword | specific | — | 1 | ✓ present |
-| Introduction | specific | — | 2 | ✓ present |
-| Part | generic | 9 | 0 | ❌ ABSENT from map |
-| Introduction | specific | 9 | 2 | ⚠ under (2/9) |
-| Translation | specific | 270 | 1 | ⚠ under (1/270) |
-| Bibliography | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| back_matter | specific | 0  | — | — |
+| **bibliography** | specific | 1 | 144,032 / 144,032 / 144,032 | 144,032 |
+| **body** | generic | 1 | 1,237,399 / 1,237,399 / 1,237,399 | 1,237,399 |
+| book | generic | 0  | — | — |
+| chapter | specific | 0  | — | — |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| commentary | specific | 0  | — | — |
+| **contents** | specific | 1 | 14,965 / 14,965 / 14,965 | 14,965 |
+| copyright | specific | 0  | — | — |
+| dedication | specific | 0  | — | — |
+| discussion | specific | 0  | — | — |
+| **endnotes** | specific | 1 | 21,556 / 21,556 / 21,556 | 21,556 |
+| epigraph | specific | 0  | — | — |
+| footnotes | specific | 0  | — | — |
+| **foreword** | specific | 1 | 15,608 / 15,608 / 15,608 | 15,608 |
+| front_matter | specific | 0  | — | — |
+| glossary | specific | 0  | — | — |
+| header | specific | 0  | — | — |
+| index | specific | 0  | — | — |
+| insert | specific | 0  | — | — |
+| **introduction** | specific | 10 | 2,062 / 2,377 / 88,136 | 118,280 |
+| letter | specific | 0  | — | — |
+| **part** | generic | 9 | 10,631 / 97,985 / 204,277 | 969,093 |
+| poetry | specific | 0  | — | — |
+| **preface** | specific | 1 | 5,411 / 5,411 / 5,411 | 5,411 |
+| **title_page** | specific | 1 | 154 / 154 / 154 | 154 |
+| **translation** | specific | 271 | 37 / 1,406 / 78,494 | 938,949 |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| part | secondary | 9 | `regex_in_span`  |
+| introduction | secondary | 9 | `—`  |
+| translation | primary | 271 | `multi` ✏️ corrected |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+**Count corrections this build:**
 
-1 region(s), 34,599 chars (2.80% of text). Largest 1:
+- `translation` → **271** — 270→271): Genesis Apocryphon (1Q20) is two distinct units (main scroll + Milik's fragments) per the back-matter MS list; 270 was the editor's round figure.
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 125,059 | 159,658 | 34,599 | body | Rules' are unquestionably the most typical of all the documents from the Qumran  |
+## Element-width distribution by type
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
+![type counts & widths](../portfolio/figures/w80-stats.png)
 
-2 region(s), 34,729 chars (2.81% of text). Largest 2:
+---
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 125,059 | 159,658 | 34,599 | body | Rules' are unquestionably the most typical of all the documents from the Qumran  |
-| 26 | 156 | 130 | front_matter | The Dead Sea Scrolls Translated The Qumran Texts in English Wi#'red G. E. Watson |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>

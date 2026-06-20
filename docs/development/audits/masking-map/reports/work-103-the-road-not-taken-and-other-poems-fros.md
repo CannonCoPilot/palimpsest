@@ -2,77 +2,85 @@
 
 - **Source file:** `The Road Not Taken and Other Poems -- Frost, Robert -- 2012 -- Dover Publications -- isbn13 9780486111292 -- 9d94b2c221d6d795f99642712ed2d7d0 -- Anna’s Archive.epub`
 - **Text length:** 71,309 chars
-- **Sections in current map:** 3
-- **Distinct mask types present:** 3 (1 generic, 2 specific)
+- **Mask elements (complete map):** 35
+- **Distinct mask types:** 8 (1 generic, 7 specific)
+- **Status:** ✅ COMPLETE — 100% two-layer, 0 sparse regions
 
-## What this audits (provenance & method)
+## What this audits
 
-- **Map under audit = the *current materialized* masking map**: the typed, bounded sections the production layout pipeline emits for this work (`detect_layout_sections(_layout_boundaries(proj), …)`). This is the only complete coordinate map that exists today.
-- **The gold contract is the *target*, overlaid** in the gap table below. The gold stores mask **types + counts + a few exemplar anchors**, NOT a per-instance edge for every element — so the gold's *intended* coverage cannot itself be verified at character level until per-instance edges exist (Phase-2 directive #1). The current-map audit is the achievable proxy and exposes where the map falls short of the gold target.
-- **Generic** (broad nesting containers — locate text but do not name a specific element): `body, volume, book, part, chapter`. **Specific** = every other type (front/back-matter subtypes, chapter_heading, footnotes, epigraph, translation, commentary, letter, poetry, …). **Ideal:** every character carries ≥1 generic AND ≥1 specific mask.
+The **gold's own intended masking map** — every mask element typed by close reading with exact, materialized per-instance boundaries (NOT the production detector's output). **Generic** = `body, volume, book, part` (broad containers). **Specific** = the other 30 types, including `chapter`. **Gate:** every character carries ≥1 generic AND ≥1 specific mask; `body[0,EOF]` is the universal generic base, so the specific layer must tile 100%.
 
-## Coverage summary (character-level)
+## Coverage summary
 
 | Class | Chars | % of text |
 |---|---:|---:|
-| █ covered (>=1 generic + >=1 specific) | 0 | 0.00% |
-| ▒ generic-only (container, no specific element) | 69,507 | 97.47% |
-| ▓ specific-only (element outside any container) | 1,802 | 2.53% |
-| · uncovered (0 masks) | 0 | 0.00% |
+| ✅ covered (≥1 generic + ≥1 specific) | 71,309 | 100.00% |
+| generic-only | 0 | 0.00% |
+| specific-only | 0 | 0.00% |
+| uncovered | 0 | 0.00% |
 
-**Two-layer coverage (>=1 generic + >=1 specific): 0.00% of the text.** The remaining 100.00% violates the coverage ideal.
+**Two-layer coverage: 100.00%.** Sparse regions (generic-only or specific-only): **0** (0 chars).
 
-## Masking-map layout (linearized, left→right = start→end of text)
-
-```
-0%                                              50%                                             100%
-▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-legend:  █ covered   ▓ specific-only   ▒ generic-only   · uncovered
-         (each column ≈ 713 chars; column shows the LEAST-covered class present)
-```
-
-### Specific-type lanes (where each specific mask appears)
+## Masking-map layout (specific layer, linearized left→right)
 
 ```
-Front Matter      |▏▏▏                                                                                                 |
-Title Page        |▏                                                                                                   |
+mmBBlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwwwfffffffff
 ```
+<sub>A=poetry  B=preface  f=back_matter  l=contents  m=copyright  w=index</sub>
 
-## Mask stacking depth (how many masks cover a character)
+![coverage ribbon](../portfolio/figures/w103-ribbon.png)
 
-| Depth | Chars | % |
-|---:|---:|---:|
-| 1 | 71,174 | 99.81% |
-| 2 | 135 | 0.19% |
+*(Ribbon = innermost specific type per cell; the generic layer + mask-stack-depth profile — showing the ≥2 two-layer floor — are in the figure above.)*
 
-## Gold contract vs. detector map (type-coverage gap)
+## Mask-type breakdown (all 34 types, including 0-counts)
 
-| Mask type | Kind | Gold expected | Detector found | Status |
-|---|---|---:|---:|---|
-| Poetry | specific | 28 | 0 | ❌ ABSENT from map |
-| Preface | specific | — | 0 | ❌ ABSENT from map |
-| Dedication | specific | — | 0 | ❌ ABSENT from map |
-| Contents | specific | — | 0 | ❌ ABSENT from map |
-| Index | specific | — | 0 | ❌ ABSENT from map |
-| Back Matter | specific | — | 0 | ❌ ABSENT from map |
+| type | layer | count | width min / median / max | total chars |
+|---|---|---:|---:|---:|
+| about_author | specific | 0  | — | — |
+| acknowledgments | specific | 0  | — | — |
+| addendum | specific | 0  | — | — |
+| afterword | specific | 0  | — | — |
+| appendix | specific | 0  | — | — |
+| **back_matter** | specific | 1 | 6,976 / 6,976 / 6,976 | 6,976 |
+| bibliography | specific | 0  | — | — |
+| **body** | generic | 1 | 71,309 / 71,309 / 71,309 | 71,309 |
+| book | generic | 0  | — | — |
+| chapter | specific | 0  | — | — |
+| chapter_heading | specific | 0  | — | — |
+| colophon | specific | 0  | — | — |
+| commentary | specific | 0  | — | — |
+| **contents** | specific | 1 | 613 / 613 / 613 | 613 |
+| **copyright** | specific | 1 | 1,802 / 1,802 / 1,802 | 1,802 |
+| **dedication** | specific | 1 | 326 / 326 / 326 | 326 |
+| discussion | specific | 0  | — | — |
+| endnotes | specific | 0  | — | — |
+| epigraph | specific | 0  | — | — |
+| footnotes | specific | 0  | — | — |
+| foreword | specific | 0  | — | — |
+| front_matter | specific | 0  | — | — |
+| glossary | specific | 0  | — | — |
+| header | specific | 0  | — | — |
+| **index** | specific | 1 | 1,803 / 1,803 / 1,803 | 1,803 |
+| insert | specific | 0  | — | — |
+| introduction | specific | 0  | — | — |
+| letter | specific | 0  | — | — |
+| part | generic | 0  | — | — |
+| **poetry** | specific | 28 | 255 / 996 / 15,789 | 58,853 |
+| **preface** | specific | 1 | 936 / 936 / 936 | 936 |
+| title_page | specific | 0  | — | — |
+| translation | specific | 0  | — | — |
+| volume | generic | 0  | — | — |
 
-## ⚠ Uncovered regions (0 masks)
+## Per-instance edges & rules
 
-_None — every character carries at least one mask_
+| structure | role | count | materialization |
+|---|---|---:|---|
+| poetry | primary | 28 | `title_list`  |
 
-## ⚠ Generic-only regions (container mask, but NO specific element)
+## Element-width distribution by type
 
-1 region(s), 69,507 chars (97.47% of text). Largest 1:
+![type counts & widths](../portfolio/figures/w103-stats.png)
 
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 1,802 | 71,309 | 69,507 | body | Note Mountain Interval, reprinted here in the unabridged text of its original 19 |
+---
 
-## ⚠ Mask-sparse regions (≤1 mask type total)
-
-1 region(s), 71,174 chars (99.81% of text). Largest 1:
-
-| start | end | chars | covered by | excerpt |
-|---:|---:|---:|---|---|
-| 135 | 71,309 | 71,174 | front_matter | Manufacturing books in the United States ensures compliance with strict environm |
+<sub>Generated from the gold-intended masking map (`.scratch/mask-eval/masking_map.py`); detector not consulted. Coordinates character-exact from `reference_text()`. Part of the [unified audit portfolio](../portfolio/index.html).</sub>
