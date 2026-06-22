@@ -70,9 +70,10 @@
   --shadow-tooltip: 0 2px 8px rgba(0, 0, 0, 0.15);
   --shadow-popover: 0 4px 16px rgba(0, 0, 0, 0.12);
 
-  /* Z-index layers */
-  --z-tooltip: 50;
+  /* Z-index layers (ascending: popover < tooltip < modal < overlay) */
   --z-popover: 40;
+  --z-tooltip: 50;
+  --z-modal: 100;
   --z-overlay: 1000;
 
   /* Transitions */
