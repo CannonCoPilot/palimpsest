@@ -4,7 +4,7 @@
 
 import { create } from 'zustand';
 
-export type LaneDisplayMode = 'ribbon' | 'detail' | 'condensed' | 'hidden';
+export type LaneDisplayMode = 'ribbon' | 'detail' | 'expanded' | 'condensed' | 'hidden';
 
 interface BrowserState {
   viewStart: number;
@@ -15,6 +15,7 @@ interface BrowserState {
   textHighlightTracks: Set<string>;
   highlightedAnnotation: { start: number; end: number; trackName: string } | null;
   overviewBarHidden: Set<string>;
+  hiddenGroups: Set<string>; // element-group keys hidden from the Browser lanes
 
   setViewport: (start: number, end: number) => void;
   setTotalChars: (total: number) => void;
@@ -27,6 +28,7 @@ interface BrowserState {
   toggleTextHighlight: (name: string) => void;
   setHighlightedAnnotation: (ann: { start: number; end: number; trackName: string } | null) => void;
   toggleOverviewBarTrack: (name: string) => void;
+  toggleGroup: (key: string) => void;
 }
 
 const MIN_VIEWPORT = 50;
@@ -34,6 +36,7 @@ const MIN_VIEWPORT = 50;
 export const LANE_HEIGHTS: Record<LaneDisplayMode, number> = {
   ribbon: 28,
   detail: 56,
+  expanded: 168, // ~3x detail
   condensed: 12,
   hidden: 0,
 };
@@ -47,6 +50,7 @@ export const useBrowserStore = create<BrowserState>((set, get) => ({
   textHighlightTracks: new Set(),
   highlightedAnnotation: null,
   overviewBarHidden: new Set(),
+  hiddenGroups: new Set(),
 
   setViewport: (start, end): void => {
     const { totalChars } = get();
@@ -106,5 +110,12 @@ export const useBrowserStore = create<BrowserState>((set, get) => ({
     if (next.has(name)) next.delete(name);
     else next.add(name);
     return { overviewBarHidden: next };
+  }),
+
+  toggleGroup: (key): void => set((s) => {
+    const next = new Set(s.hiddenGroups);
+    if (next.has(key)) next.delete(key);
+    else next.add(key);
+    return { hiddenGroups: next };
   }),
 }));

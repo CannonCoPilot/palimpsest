@@ -6,18 +6,20 @@ Elements may carry optional ``label`` (display title) and ``metadata`` so a chap
 is indexable by number / book / volume rather than by the first line of its text.
 
 Layers (two-layer guarantee: every char >=1 GENERIC and >=1 SPECIFIC):
-  GENERIC : body[0,EOF]; volume (Old/New Testament); book (canonical + apocryphal)
+  GENERIC : body[0,EOF]; volume (Old/New Testament); book (canonical + apocryphal);
+            section (per-chapter span: heading start -> chapter end, the container the
+            verse-content `chapter` segments sit inside)
   SPECIFIC: front_matter (+ title_page / introduction[HISTORY] / contents[CONTENTS]);
-            header (testament dividers); introduction (per-book header+note);
-            chapter_heading ("<Book> Chapter N" line + the editorial argument);
-            chapter (verse body only; every ". . ." note excluded -> footnotes);
-            footnotes (Challoner annotation notes, inline and trailing);
-            appendix (4 section containers) wrapping introduction / book+chapter
-            structure / preface; glossary (hard words).
+            header (testament dividers + book/chapter NAME lines); heading (the editorial
+            argument / summary / explanation that follows a name line); introduction
+            (front-matter HISTORY + appendix region notes); chapter (verse body only; every
+            ". . ." note excluded -> footnotes); footnotes (Challoner annotation notes,
+            inline and trailing); appendix (4 section containers) wrapping introduction /
+            book+chapter structure / preface; glossary (hard words).
 
 A canonical chapter in the text (verified across all 1334):
-    <Book> Chapter N        P0  heading line       -> chapter_heading
-    <argument / summary>    P1  editorial one-liner -> chapter_heading
+    <Book> Chapter N        P0  name line          -> header
+    <argument / summary>    P1  editorial one-liner -> heading
     <verse 1> ...           P2  body                -> chapter (verses)
 
 The appendices mirror this with "CHAP. <ROMAN>." markers (3/4 Esdras) or a single
@@ -138,6 +140,28 @@ def _carve_body(T: str, v1: int, ch_end: int) -> list[tuple[str, int, int]]:
     return segs
 
 
+def _book_title(text_line: str) -> str:
+    """A book header line sometimes runs the ceremonial ALL-CAPS title and the editorial
+    summary together on one physical line ("THE BOOK OF JOSUE This Book is called ..."). The
+    summary begins either with a mixed-case sentence word ("This", "St. Paul", "Jeremias")
+    or by restating the subject name in caps ("DANIEL DANIEL, whose ..."). Return just the
+    title; a clean line (title alone) is returned unchanged."""
+    toks = list(re.finditer(r"\S+", text_line))
+    for i, m in enumerate(toks):
+        if i == 0:
+            continue
+        w = m.group()
+        core = w.strip(".,;:'\"()[]")
+        # (a) a mixed-case word starting uppercase opens the prose summary
+        if w[:1].isupper() and any(c.isupper() for c in w) and any(c.islower() for c in w):
+            return text_line[:m.start()].rstrip()
+        # (b) the summary restates the subject name in caps, doubling the prior token
+        prev = toks[i - 1].group().strip(".,;:'\"()[]")
+        if core.isalpha() and core.isupper() and core == prev:
+            return text_line[:m.start()].rstrip()
+    return text_line.rstrip()
+
+
 def build_dr_elements(text: str) -> list[dict]:
     T = text
     N = len(T)
@@ -190,10 +214,13 @@ def build_dr_elements(text: str) -> list[dict]:
     add("header", nt_div, matthew_hdr, "dr:divider")
     add("volume", nt_div, appendices, "dr:volume_nt", label="The New Testament")
 
-    # ---- 73 canonical books: container + introduction ----
+    # ---- 73 canonical books: container + name header + summary heading ----
     for i, h in enumerate(headers):
-        add("book", h, next_boundary(h), "dr:book", label=line(h))
-        add("introduction", h, b1_starts[i], "dr:book_intro")
+        btitle = _book_title(line(h))
+        bname_end = h + len(btitle)
+        add("book", h, next_boundary(h), "dr:book", label=btitle)
+        add("header", h, bname_end, "dr:book_name", label=btitle)   # the book name line only
+        add("heading", bname_end, b1_starts[i], "dr:book_summary")  # the editorial summary
 
     # ---- canonical chapters: heading (line+argument) + body (verses, trailing notes carved) ----
     for i, cs in enumerate(ch_starts):
@@ -205,7 +232,11 @@ def build_dr_elements(text: str) -> list[dict]:
         bk, _, num = cline.partition(" Chapter ")
         vol = "Old Testament" if cs < nt_div else "New Testament"
         meta = {"number": num.strip(), "name": cline, "book": bk.strip(), "volume": vol, "title": cline}
-        add("chapter_heading", cs, v1, "dr:heading", label=cline, meta=meta)
+        add("section", cs, ch_end, "dr:section", label=cline, meta=meta)  # whole-chapter structural span
+        hdr_end = T.find("\n\n", cs)
+        arg_start = min(hdr_end + 2, v1) if hdr_end >= 0 else v1
+        add("header", cs, arg_start, "dr:chapter_name", label=cline, meta=meta)  # "<Book> Chapter N" line
+        add("heading", arg_start, v1, "dr:chapter_arg", label=cline, meta=meta)  # editorial argument
         for kind, s, e in _carve_body(T, v1, ch_end):
             if kind == "chapter":
                 add("chapter", s, e, "dr:body", label=cline, meta=meta)
@@ -237,7 +268,16 @@ def build_dr_elements(text: str) -> list[dict]:
             num = str(_roman(rom)) if rom != "A" else "A"
             title = f"{name} Chapter {num}" if rom != "A" else f"{name} (Bensly fragment)"
             meta = {"number": num, "name": title, "book": name, "volume": vol, "title": title}
-            add("chapter_heading", cs, v1, "dr:apx_heading", label=title, meta=meta)
+            add("section", cs, c_end, "dr:apx_section", label=title, meta=meta)  # whole-chapter span
+            a_hdr_end = T.find("\n\n", cs)
+            a_arg_start = min(a_hdr_end + 2, v1) if a_hdr_end >= 0 else v1
+            if rom == "A":
+                # The Bensly fragment opens with an editorial "Note:" on its textual
+                # provenance — that is a footnote, not a chapter name line.
+                add("footnotes", cs, a_arg_start, "dr:apx_note", label="Bensly note")
+            else:
+                add("header", cs, a_arg_start, "dr:apx_chapter_name", label=title, meta=meta)
+                add("heading", a_arg_start, v1, "dr:apx_chapter_arg", label=title, meta=meta)
             for kind, s, e in _carve_body(T, v1, c_end):
                 if kind == "chapter":
                     add("chapter", s, e, "dr:apx_body", label=title, meta=meta)
@@ -250,7 +290,11 @@ def build_dr_elements(text: str) -> list[dict]:
         v1 = min(_second_para(T, b_start) if has_argument else (T.find("\n\n", b_start) + 2), b_end)
         title = f"{name} Chapter 1"
         meta = {"number": "1", "name": title, "book": name, "volume": vol, "title": title}
-        add("chapter_heading", b_start, v1, "dr:apx_heading", label=title, meta=meta)
+        add("section", b_start, b_end, "dr:apx_section", label=title, meta=meta)  # whole-chapter span
+        s_hdr_end = T.find("\n\n", b_start)
+        s_arg_start = min(s_hdr_end + 2, v1) if s_hdr_end >= 0 else v1
+        add("header", b_start, s_arg_start, "dr:apx_chapter_name", label=title, meta=meta)
+        add("heading", s_arg_start, v1, "dr:apx_chapter_arg", label=title, meta=meta)
         for kind, s, e in _carve_body(T, v1, b_end):
             if kind == "chapter":
                 add("chapter", s, e, "dr:apx_body", label=title, meta=meta)

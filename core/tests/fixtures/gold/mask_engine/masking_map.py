@@ -42,14 +42,14 @@ from instance_edges import RULES, materialize  # noqa: E402
 
 GOLD = HERE.parent  # mask_engine/ lives inside core/tests/fixtures/gold/
 
-GENERIC = {"body", "volume", "book", "part"}
+GENERIC = {"body", "volume", "book", "part", "section"}
 ALL_TYPES = [
     "about_author", "acknowledgments", "addendum", "afterword", "appendix",
     "back_matter", "bibliography", "body", "book", "chapter", "chapter_heading",
     "colophon", "commentary", "contents", "copyright", "dedication", "discussion",
     "endnotes", "epigraph", "footnotes", "foreword", "front_matter", "glossary",
-    "header", "index", "insert", "introduction", "letter", "part", "poetry",
-    "preface", "title_page", "translation", "volume",
+    "header", "heading", "index", "insert", "introduction", "letter", "part", "poetry",
+    "preface", "section", "title_page", "translation", "verse", "volume",
 ]
 
 _WS = re.compile(r"\s+")
@@ -361,9 +361,15 @@ def build_elements(idx: int) -> tuple[str, list[dict]]:
 
 
 def coverage_runs(text: str, els: list[dict]) -> list[dict]:
-    """Sweep-line: classify each maximal char-run by generic/specific depth."""
+    """Sweep-line: classify each maximal char-run by generic/specific depth.
+
+    `verse` elements are excluded: they are unmasked content nested inside `chapter`
+    (already SPECIFIC), so they cannot change any run's coverage class — and a scripture
+    carries tens of thousands of them, which would make this O(runs·elements) audit
+    quadratic. Dropping them keeps the two-layer result identical and the audit fast.
+    """
     n = len(text)
-    good = [e for e in els if e["start"] >= 0]
+    good = [e for e in els if e["start"] >= 0 and e["type"] != "verse"]
     pts = sorted({0, n} | {e["start"] for e in good} | {e["end"] for e in good})
     runs = []
     for a, b in zip(pts, pts[1:]):

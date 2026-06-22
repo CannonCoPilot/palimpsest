@@ -46,7 +46,7 @@ function PropertyRow({ label, children }: { label: string; children: React.React
   );
 }
 
-function AnnotationDetail({ ann }: { ann: W3CAnnotation }): React.JSX.Element {
+export function AnnotationDetail({ ann }: { ann: W3CAnnotation }): React.JSX.Element {
   const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
   const sel = ann.target.selector;
   const excerpt =

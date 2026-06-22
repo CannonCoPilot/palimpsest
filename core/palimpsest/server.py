@@ -122,8 +122,14 @@ def _endnote_separator(project_dir: Path) -> int:
     return -1
 
 
-def _sections_payload(cfg: Any, text_len: int) -> dict[str, Any]:
-    """Package a LayoutConfig + the type vocabulary (builtin + custom) + masks for the UI."""
+def _sections_payload(
+    cfg: Any, text_len: int, masked: list[tuple[int, int]] | None = None
+) -> dict[str, Any]:
+    """Package a LayoutConfig + the type vocabulary (builtin + custom) + masks for the UI.
+
+    ``masked`` lets the caller supply a precomputed masked set (e.g. structural ∪ the
+    verse-number layer); when omitted, the pure structural masking is computed.
+    """
     from palimpsest.layout import (
         MASKED_BG_COLOR,
         MASKED_TEXT_COLOR,
@@ -132,7 +138,7 @@ def _sections_payload(cfg: Any, text_len: int) -> dict[str, Any]:
     )
 
     extra_types = getattr(cfg, "extra_types", [])
-    intervals = masked_intervals(cfg.sections, cfg.mask_by_type, text_len)
+    intervals = masked if masked is not None else masked_intervals(cfg.sections, cfg.mask_by_type, text_len)
     return {
         "sections": [s.to_dict() for s in cfg.sections],
         "mask_by_type": cfg.mask_by_type,
@@ -211,6 +217,50 @@ def _write_elements_track(project_dir: Path, project_id: str, cfg: Any, text_len
         encoding="utf-8",
     )
     return len(anns)
+
+
+def _write_verses_track(project_dir: Path, text: str) -> int:
+    """Write the per-project verse coordinate index as a compact ``verses.jsonl`` track.
+
+    One line per verse: ``{b: book, c: chapter, v: verse, ns: num_start, s: text_start,
+    e: text_end}``. The masked number token is ``[ns, s)``; the verse prose is ``[s, e)``.
+    This is BOTH the lazy verse track's source and the verse-number mask layer (the union
+    of ``[ns, s)`` spans). It is far more compact than W3C element annotations — tens of
+    thousands of verses stay a ~1-2MB file the Browser can fetch lazily when zoomed in.
+    """
+    from palimpsest.verses import detect_verses
+
+    records = detect_verses(text)
+    track_path = project_dir / "tracks" / "verses.jsonl"
+    track_path.parent.mkdir(parents=True, exist_ok=True)
+    if records:
+        lines = [
+            json.dumps({"b": r["book"], "c": r["chapter"], "v": r["verse"],
+                        "ns": r["num_start"], "s": r["text_start"], "e": r["text_end"]},
+                       ensure_ascii=False)
+            for r in records
+        ]
+        track_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    else:
+        track_path.unlink(missing_ok=True)
+    return len(records)
+
+
+def _verse_num_intervals(project_dir: Path) -> list[tuple[int, int]]:
+    """Verse-number mask-layer intervals (``[num_start, text_start)`` per verse) from the
+    cached ``verses.jsonl`` track, or ``[]`` if the project has none. Union these into
+    ``masked_intervals`` so verse numbers are excluded from analysis while verse prose stays.
+    """
+    track_path = project_dir / "tracks" / "verses.jsonl"
+    if not track_path.exists():
+        return []
+    out: list[tuple[int, int]] = []
+    for line in track_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line:
+            r = json.loads(line)
+            out.append((r["ns"], r["s"]))
+    return out
 
 
 _COVER_SUFFIXES = (".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg")
@@ -314,14 +364,19 @@ def _apply_gold_map(project: Any, layout_path: str) -> dict[str, Any]:
     cfg = LayoutConfig.from_dict(gmap)
     cfg.applied = True
     save_layout(project.path, cfg)
-    text_len = len(project.reference_text())
+    text = project.reference_text()
+    text_len = len(text)
     track_n = _write_elements_track(project.path, project.metadata.id, cfg, text_len)
-    mi = masked_intervals(cfg.sections, cfg.mask_by_type, text_len)
+    verse_n = _write_verses_track(project.path, text)
+    # Masked set = structural deepest-wins UNION the verse-number layer (the "C:V." tokens).
+    mi = masked_intervals(cfg.sections, cfg.mask_by_type, text_len,
+                          extra_masked=_verse_num_intervals(project.path))
     return {
         "layout_path": layout_path,
         "sha_verified": True,
         "element_count": len(cfg.sections),
         "track_elements": track_n,
+        "verse_count": verse_n,
         "masked_spans": len(mi),
         "masked_chars": sum(b - a for a, b in mi),
     }
@@ -1381,13 +1436,15 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     @app.get("/api/projects/{project_id}/sections")
     async def get_sections(project_id: str) -> JSONResponse:
         """Load the persisted layout config (empty default if none yet)."""
-        from palimpsest.layout import LayoutConfig, load_layout
+        from palimpsest.layout import LayoutConfig, load_layout, masked_intervals
         from palimpsest.project import Project
 
         project_dir = _safe_project_dir(workspace, project_id)
         text_len = len(Project.load(project_dir).reference_text())
         cfg = load_layout(project_dir) or LayoutConfig()
-        return JSONResponse(content=_sections_payload(cfg, text_len))
+        masked = masked_intervals(cfg.sections, cfg.mask_by_type, text_len,
+                                  extra_masked=_verse_num_intervals(project_dir))
+        return JSONResponse(content=_sections_payload(cfg, text_len, masked=masked))
 
     @app.put("/api/projects/{project_id}/sections")
     async def put_sections(project_id: str, req: SectionsUpdateRequest) -> JSONResponse:

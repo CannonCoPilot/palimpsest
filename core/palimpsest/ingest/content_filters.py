@@ -63,9 +63,10 @@ PROFILE_DOUAY_RHEIMS = ContentProfile(
     promote_selectors=[
         ElementSelector(tag="div", classes=frozenset({"wQnqgsgYTu_NfSPYRkhxPg466"})),
     ],
-    text_cleaners=[
-        lambda text: re.sub(r"(?m)^\d+:\d+\.\s*", "", text),
-    ],
+    # Verse-number prefixes ("1:1. ") are intentionally PRESERVED in the text: they carry the
+    # canonical verse reference and delimit verses exactly. The masking layer marks each number
+    # token as masked (so it is excluded from analysis) while the verse text stays analyzable.
+    text_cleaners=[],
 )
 
 _PROFILES: dict[str, ContentProfile] = {

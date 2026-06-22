@@ -1,15 +1,17 @@
-import { useEffect, useRef, useState, memo } from 'react';
+import { useEffect, useMemo, useRef, useState, memo } from 'react';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
 import { useElementVisibilityStore } from '../../stores/elementVisibilityStore';
 import type { ElementGroupData } from '../../utils/maskTypeGroups';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 
-const ROW_H = 18; // per-type sub-row height in 'detail' mode
-const MIN_DETAIL_H = 22; // keep the header (and its dropdown) reachable even if all types hidden
+const EXPANDED_ROW_H = 18; // clean per-type sub-row (no labels/titles) — the former 'detail' height
+const DETAIL_ROW_H = 27;   // 1.5x EXPANDED_ROW_H — thicker rows that print each element's title
+const MIN_DETAIL_H = 22; // keep the dropdown reachable even if all types hidden
 
 const GROUP_MODE_OPTIONS: { mode: LaneDisplayMode; label: string; icon: string }[] = [
   { mode: 'ribbon', label: 'Ribbon', icon: '▬' },
   { mode: 'detail', label: 'Detail', icon: '▤' },
+  { mode: 'expanded', label: 'Expanded', icon: '▥' },
   { mode: 'condensed', label: 'Condensed', icon: '─' },
 ];
 
@@ -22,6 +24,28 @@ function elementColorOf(ann: W3CAnnotation, fallback: string): string {
   return typeof c === 'string' ? c : fallback;
 }
 
+// Exon/intron connectors: `chapter` is carved into verse-run segments split by inline
+// footnotes. Segments sharing a chapter title belong to one logical chapter; link
+// consecutive segments [prevEnd, nextStart] so the lane reads like a gene model.
+const CONNECTOR_TYPE = 'chapter';
+function buildChapterConnectors(annotations: W3CAnnotation[]): Array<[number, number]> {
+  const byTitle = new Map<string, Array<{ start: number; end: number }>>();
+  for (const a of annotations) {
+    if (elementTypeOf(a) !== CONNECTOR_TYPE) continue;
+    const title = String((a.body as Record<string, unknown>)['palimpsest:chapterTitle'] ?? '');
+    const sel = a.target.selector;
+    if (!title || sel.start == null || sel.end == null) continue;
+    const arr = byTitle.get(title) ?? byTitle.set(title, []).get(title)!;
+    arr.push({ start: sel.start, end: sel.end });
+  }
+  const conns: Array<[number, number]> = [];
+  for (const segs of byTitle.values()) {
+    segs.sort((x, y) => x.start - y.start);
+    for (let i = 0; i < segs.length - 1; i++) conns.push([segs[i].end, segs[i + 1].start]);
+  }
+  return conns;
+}
+
 interface ElementGroupLaneProps {
   group: ElementGroupData;
   laneKey: string; // 'elements:<groupKey>' — its own display-mode slot in browserStore
@@ -31,10 +55,12 @@ interface ElementGroupLaneProps {
   displayMode: LaneDisplayMode;
   selectedAnnRange: { start: number; end: number } | null;
   onAnnotationClick: (ann: W3CAnnotation, trackName: string) => void;
+  onAnnotationDoubleClick: (ann: W3CAnnotation) => void;
 }
 
 const ElementGroupLane = memo(function ElementGroupLane({
-  group, laneKey, viewStart, viewEnd, width, displayMode, selectedAnnRange, onAnnotationClick,
+  group, laneKey, viewStart, viewEnd, width, displayMode, selectedAnnRange,
+  onAnnotationClick, onAnnotationDoubleClick,
 }: ElementGroupLaneProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -53,13 +79,32 @@ const ElementGroupLane = memo(function ElementGroupLane({
 
   const mode: LaneDisplayMode = displayMode === 'hidden' ? 'ribbon' : displayMode;
   const groupColor = group.presentTypes[0]?.color ?? '#5ac8fa';
-  const visibleTypes = group.presentTypes.filter((t) => !hidden[t.type]);
-  const typeRow = new Map(visibleTypes.map((t, i) => [t.type, i]));
-  const anyHidden = group.presentTypes.some((t) => hidden[t.type]);
-  const visibleCount = visibleTypes.reduce((n, t) => n + t.count, 0);
 
-  const height = mode === 'detail'
-    ? Math.max(MIN_DETAIL_H, visibleTypes.length * ROW_H)
+  // Types with >=1 element intersecting the current viewport — drives auto-collapse: a
+  // sub-row is allotted only to a type that is both enabled (not hidden) AND in view.
+  const typesInView = useMemo(() => {
+    const s = new Set<string>();
+    for (const ann of group.annotations) {
+      const sel = ann.target.selector;
+      if (sel.start == null || sel.end == null) continue;
+      if (sel.end <= viewStart || sel.start >= viewEnd) continue;
+      s.add(elementTypeOf(ann));
+    }
+    return s;
+  }, [group.annotations, viewStart, viewEnd]);
+
+  const enabledTypes = group.presentTypes.filter((t) => !hidden[t.type]);
+  const rowTypes = enabledTypes.filter((t) => typesInView.has(t.type));
+  const typeRow = new Map(rowTypes.map((t, i) => [t.type, i]));
+  const anyHidden = group.presentTypes.some((t) => hidden[t.type]);
+  const visibleCount = enabledTypes.reduce((n, t) => n + t.count, 0);
+
+  // 'detail' and 'expanded' both split into one sub-row per shown type. 'detail' uses
+  // thicker rows and prints each element's title on its bar; 'expanded' is clean bars only.
+  const rowMode = mode === 'detail' || mode === 'expanded';
+  const rowH = mode === 'detail' ? DETAIL_ROW_H : EXPANDED_ROW_H;
+  const height = rowMode
+    ? Math.max(MIN_DETAIL_H, rowTypes.length * rowH)
     : LANE_HEIGHTS[mode];
 
   const inView = group.annotations.filter((ann) => {
@@ -70,19 +115,54 @@ const ElementGroupLane = memo(function ElementGroupLane({
   });
   const range = viewEnd - viewStart;
 
+  // Connectors only matter for the lane that owns `chapter` (Content); empty elsewhere.
+  const allConnectors = useMemo(() => buildChapterConnectors(group.annotations), [group.annotations]);
+  const chapterType = group.presentTypes.find((t) => t.type === CONNECTOR_TYPE);
+  const showConnectors = chapterType != null && !hidden[CONNECTOR_TYPE];
+  const chapterRow = typeRow.get(CONNECTOR_TYPE);
+  const chapterYCenter = rowMode && chapterRow != null ? chapterRow * rowH + rowH / 2 : height / 2;
+
   const showAllInGroup = (): void => group.presentTypes.forEach((t) => setHidden(t.type, false));
 
   return (
     <div className="flex border-b border-[var(--color-border-subtle)]">
       <div className="w-[100px] relative shrink-0" ref={menuRef}>
         <div
-          className="h-full flex items-center gap-1 px-2 text-[0.7em] font-[var(--font-sans)] border-r border-[var(--color-border-subtle)] bg-[var(--color-bg-muted)] cursor-pointer select-none"
+          className="h-full border-r border-[var(--color-border-subtle)] bg-[var(--color-bg-muted)] cursor-pointer select-none"
           onClick={() => setMenuOpen(!menuOpen)}
           title={`${group.label} — ${visibleCount} elements`}
         >
-          <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: groupColor }} />
-          <span className="truncate flex-1 font-semibold">{group.label}</span>
-          <span className="text-[0.8em] text-[var(--color-text-muted)]">▾</span>
+          {rowMode && rowTypes.length > 0 ? (
+            // Detail/Expanded: the group label is replaced by the per-type track names,
+            // one per sub-row, vertically aligned with the bars in the SVG. Single-clicking
+            // a color dot hides that type's track (re-show via the dropdown menu).
+            <div className="relative h-full">
+              {rowTypes.map((t) => (
+                <div
+                  key={t.type}
+                  className="flex items-center gap-1 px-2 text-[0.65em] font-[var(--font-sans)] overflow-hidden"
+                  style={{ height: rowH }}
+                  title={t.label}
+                >
+                  <button
+                    type="button"
+                    className="w-2.5 h-2.5 rounded-full shrink-0 cursor-pointer border-0 p-0"
+                    style={{ backgroundColor: t.color }}
+                    title={`Hide ${t.label}`}
+                    onClick={(e) => { e.stopPropagation(); toggleType(t.type); }}
+                  />
+                  <span className="truncate flex-1 capitalize text-[var(--color-text)]">{t.label}</span>
+                </div>
+              ))}
+              <span className="absolute top-0.5 right-1 text-[0.7em] text-[var(--color-text-muted)]">▾</span>
+            </div>
+          ) : (
+            <div className="h-full flex items-center gap-1 px-2 text-[0.7em] font-[var(--font-sans)]">
+              <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: groupColor }} />
+              <span className="truncate flex-1 font-semibold">{group.label}</span>
+              <span className="text-[0.8em] text-[var(--color-text-muted)]">▾</span>
+            </div>
+          )}
         </div>
         {menuOpen && (
           <div className="absolute top-full left-0 z-[var(--z-popover)] w-[190px] bg-[var(--color-bg)] border border-[var(--color-border)] rounded shadow-[var(--shadow-popover)] py-1 text-[0.75em] font-[var(--font-sans)]">
@@ -129,23 +209,23 @@ const ElementGroupLane = memo(function ElementGroupLane({
         )}
       </div>
       <svg width={width} height={height} className="shrink-0">
-        {mode === 'detail' && visibleTypes.map((t) => {
-          const row = typeRow.get(t.type)!;
+        {showConnectors && allConnectors.map(([aEnd, bStart], i) => {
+          if (bStart <= viewStart || aEnd >= viewEnd) return null; // intron gap off-screen
+          const x1 = ((aEnd - viewStart) / range) * width;
+          const x2 = ((bStart - viewStart) / range) * width;
+          if (x2 - x1 < 0.5) return null;
           return (
-            <text
-              key={`lbl-${t.type}`}
-              x={4}
-              y={row * ROW_H + ROW_H / 2 + 3}
-              fontSize={9}
-              fill={t.color}
-              stroke="rgba(0,0,0,0.65)"
-              strokeWidth={2}
-              paintOrder="stroke"
-              fontFamily="var(--font-sans)"
-              className="pointer-events-none capitalize"
-            >
-              {t.label}
-            </text>
+            <line
+              key={`conn-${i}`}
+              x1={x1}
+              y1={chapterYCenter}
+              x2={x2}
+              y2={chapterYCenter}
+              stroke={chapterType?.color ?? groupColor}
+              strokeWidth={1.5}
+              opacity={0.55}
+              className="pointer-events-none"
+            />
           );
         })}
         {inView.map((ann, i) => {
@@ -159,10 +239,10 @@ const ElementGroupLane = memo(function ElementGroupLane({
 
           let y: number;
           let h: number;
-          if (mode === 'detail') {
+          if (rowMode) {
             const row = typeRow.get(elementTypeOf(ann)) ?? 0;
-            y = row * ROW_H + 3;
-            h = ROW_H - 6;
+            y = row * rowH + 3;
+            h = rowH - 6;
           } else if (mode === 'condensed') {
             y = 1;
             h = height - 2;
@@ -171,21 +251,44 @@ const ElementGroupLane = memo(function ElementGroupLane({
             h = height - 4;
           }
 
+          const title = (ann.body.value || '').trim();
+          // Detail mode prints the element's title directly on the bar (Expanded stays clean).
+          const showTitle = mode === 'detail' && w > 24 && title.length > 0;
+
           return (
-            <rect
+            <g
               key={i}
-              x={x}
-              y={y}
-              width={w}
-              height={h}
-              fill={fill}
-              fillOpacity={isSelected ? 1 : 0.7}
-              rx={mode === 'condensed' ? 1 : 2}
               className="cursor-pointer"
               onClick={() => onAnnotationClick(ann, 'elements')}
+              onDoubleClick={() => onAnnotationDoubleClick(ann)}
             >
-              <title>{`${elementTypeOf(ann)}: ${ann.body.value || ''}`.trim()}</title>
-            </rect>
+              <rect
+                x={x}
+                y={y}
+                width={w}
+                height={h}
+                fill={fill}
+                fillOpacity={isSelected ? 1 : 0.7}
+                rx={mode === 'condensed' ? 1 : 2}
+              >
+                <title>{`${elementTypeOf(ann)}: ${title}`.trim()}</title>
+              </rect>
+              {showTitle && (
+                <text
+                  x={x + 3}
+                  y={y + h / 2 + 3}
+                  fontSize={10}
+                  fill="#fff"
+                  stroke="rgba(0,0,0,0.55)"
+                  strokeWidth={2}
+                  paintOrder="stroke"
+                  fontFamily="var(--font-sans)"
+                  className="pointer-events-none"
+                >
+                  {title.slice(0, Math.max(0, Math.floor(w / 6)))}
+                </text>
+              )}
+            </g>
           );
         })}
       </svg>

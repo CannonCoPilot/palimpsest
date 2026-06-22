@@ -36,30 +36,50 @@ export function effectiveMask(s: LayoutSection, maskByType: Record<string, boole
   return maskByType[s.type] ?? true;
 }
 
-/** Merged masked [start,end) intervals; the most-specific (smallest) covering section wins. */
+/**
+ * Merged masked [start,end) intervals.
+ *
+ * Structural sections use "deepest (smallest) covering section wins". On top of that,
+ * `extraMasked` carries flat interval mask-layers — disjoint, leaf-level token spans that
+ * never nest or participate in deepest-wins (e.g. verse-number tokens). They are unioned
+ * in AFTER the structural pass, mirroring the backend's
+ * `layout.masked_intervals(..., extra_masked=...)`. Passing `[]` (the default) reproduces
+ * the pure-structural result byte-for-byte.
+ */
 export function computeMaskedIntervals(
   sections: LayoutSection[],
   maskByType: Record<string, boolean>,
   textLen: number,
+  extraMasked: ReadonlyArray<readonly [number, number]> = [],
 ): Array<[number, number]> {
-  const valid = sections.filter((s) => s.start >= 0 && s.start < s.end && s.end <= textLen);
-  if (valid.length === 0) return [];
-
-  const points = Array.from(
-    new Set<number>([0, textLen, ...valid.flatMap((s) => [s.start, s.end])]),
-  ).sort((a, b) => a - b);
-
   const raw: Array<[number, number]> = [];
-  for (let i = 0; i < points.length - 1; i++) {
-    const a = points[i];
-    const b = points[i + 1];
-    if (a >= b) continue;
-    const covering = valid.filter((s) => s.start <= a && s.end >= b);
-    if (covering.length === 0) continue; // uncovered = unmasked
-    const minSpan = Math.min(...covering.map((s) => s.end - s.start));
-    const chosen = covering.filter((s) => s.end - s.start === minSpan).at(-1)!;
-    if (effectiveMask(chosen, maskByType)) raw.push([a, b]);
+
+  const valid = sections.filter((s) => s.start >= 0 && s.start < s.end && s.end <= textLen);
+  if (valid.length > 0) {
+    const points = Array.from(
+      new Set<number>([0, textLen, ...valid.flatMap((s) => [s.start, s.end])]),
+    ).sort((a, b) => a - b);
+
+    for (let i = 0; i < points.length - 1; i++) {
+      const a = points[i];
+      const b = points[i + 1];
+      if (a >= b) continue;
+      const covering = valid.filter((s) => s.start <= a && s.end >= b);
+      if (covering.length === 0) continue; // uncovered = unmasked
+      const minSpan = Math.min(...covering.map((s) => s.end - s.start));
+      const chosen = covering.filter((s) => s.end - s.start === minSpan).at(-1)!;
+      if (effectiveMask(chosen, maskByType)) raw.push([a, b]);
+    }
   }
+
+  for (const [s, e] of extraMasked) {
+    const cs = Math.max(0, s);
+    const ce = Math.min(textLen, e);
+    if (cs < ce) raw.push([cs, ce]);
+  }
+
+  if (raw.length === 0) return [];
+  raw.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
 
   const merged: Array<[number, number]> = [];
   for (const [s, e] of raw) {

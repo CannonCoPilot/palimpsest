@@ -26,9 +26,14 @@ export default function AppLayout() {
   const error = useProjectStore((s) => s.error);
   const metadata = useProjectStore((s) => s.projects[s.activeProjectId ?? '']?.metadata ?? null);
   const paragraphCount = useProjectStore((s) => (s.projects[s.activeProjectId ?? '']?.paragraphs ?? []).length);
-  const trackCount = useProjectStore((s) => {
-    const tracks = s.projects[s.activeProjectId ?? '']?.tracks ?? {};
-    return Object.keys(tracks).filter((k) => k !== 'segments').length;
+  const maskTypeCount = useProjectStore((s) => {
+    const els = s.projects[s.activeProjectId ?? '']?.tracks?.['elements'] ?? [];
+    const types = new Set<string>();
+    for (const a of els) {
+      const t = (a.body as Record<string, unknown>)['palimpsest:elementType'];
+      if (typeof t === 'string') types.add(t);
+    }
+    return types.size;
   });
   const activeTab = useViewStore((s) => s.activeTab);
 
@@ -76,7 +81,7 @@ export default function AppLayout() {
           {metadata.author && <span className="text-[var(--color-text-secondary)]">by {metadata.author}</span>}
           <span className="text-[var(--color-text-muted)] text-[0.85em]">
             {metadata.word_count.toLocaleString()} words &middot; {paragraphCount} paragraphs
-            &middot; {trackCount} tracks
+            &middot; {maskTypeCount} mask types
           </span>
           <div className="ml-auto">
             <NavigationToolbar />

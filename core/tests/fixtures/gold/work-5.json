@@ -9,25 +9,25 @@
       "mask": true,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": 1334,
-      "count_cue": "\"<Book> Chapter N\" heading (x1334) each followed by a one-line editorial summary before verse 1; plus per-book intros. Same count as sister edition idx100.",
+      "expected_count": 1363,
+      "count_cue": "\"<Book> Chapter N\" name line (x1363 in the full materialized map incl. apocrypha; 1334 canonical) each followed by a one-line editorial argument before verse 1. In the gold map these now realize as `header` (the 1363 name lines) + `heading` (the 1363 arguments); this entry stays typed `chapter_heading` as the A3 editorial-apparatus recall proxy (PROXY → chapter), measuring chapter-level segmentation recall.",
       "exemplars": [
         {
           "start_anchor": "God createth Heaven and Earth, and all things therein",
-          "note": "Genesis 1 chapter summary (one-line, before verse 1)"
+          "note": "Genesis 1 chapter argument (one-line, before verse 1) — gold type `heading`"
         },
         {
           "start_anchor": "The Hebrews call it BERESITH",
-          "note": "Genesis book-level intro/argument (book-granularity chapter_heading per the committed type def)"
+          "note": "Genesis book-level intro/argument — gold type `heading` (book name line is `header`)"
         }
       ],
-      "note": "Douay chapter summaries + book intros; both editorial apparatus → chapter_heading. Detector segments these well (chapter=1319 ≈ 1334, recall 0.99) — the OPTIMIZED reference.",
+      "note": "Douay chapter arguments + book intros; both editorial apparatus. Gold map splits name lines (`header`) from arguments/summaries (`heading`); A3 still scores chapter-level segmentation via the chapter proxy (chapter=1319 ≈ 1334, recall 0.97) — the OPTIMIZED reference.",
       "instance_rule": {
         "kind": "regex_in_span",
         "pattern": "(?m)^.{0,40}?\\bChapter \\d+\\b",
         "at": "start",
         "tile": false,
-        "expected_count": 1334
+        "expected_count": 1363
       }
     },
     {
@@ -35,8 +35,8 @@
       "mask": false,
       "structure": "repeating",
       "role": "secondary",
-      "expected_count": 73,
-      "count_cue": "73 canonical Catholic books (headings vary; 16 use \"THE BOOK OF <NAME>\"). Detector FLATTENS this level — finds 0 `book` elements, attaching all 1319 chapters directly under body. Mirror-image of idx100 (books detected, chapters not).",
+      "expected_count": 78,
+      "count_cue": "78 books in the full map: 73 canonical Catholic (headings vary; 16 use \"THE BOOK OF <NAME>\") + 5 apocrypha (Manasses, 3 & 4 Esdras, 1582 Abdias & Jude). Book labels are now the clean ceremonial title only (run-on editorial summaries on the header line are split off into `heading`). Detector FLATTENS this level — finds 0 `book` elements, attaching all 1319 chapters directly under body.",
       "exemplars": [
         {
           "start_anchor": "THE BOOK OF GENESIS",
@@ -49,9 +49,9 @@
         "pattern": "(?m)^.{0,40}?\\bChapter 1\\b",
         "at": "start",
         "tile": true,
-        "expected_count": 73
+        "expected_count": 78
       }
     }
   ],
-  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
+  "map_status": "complete 2026-06-22: full materialized map = 9129 elements. Name lines and editorial apparatus are now split: `header` (1438 = 2 testament dividers + 73 canonical book names + 1363 chapter names) and `heading` (1434 = 73 book summaries + 1361 chapter arguments); legacy `chapter_heading` retired in this work's map. Book labels carry the clean ceremonial title only (run-on summaries split into `heading`). Still includes per-chapter `section` spans (1363) and the inline `footnotes` carve (1758) so `chapter` = verse content only (3039). Every char >=1 generic (body/volume/book/part/section) and >=1 specific mask-type; 100% two-layer. Structural masked set UNCHANGED by the reclassification (3040 spans / 600290 chars); the verse-number mask layer (union of the 35755 per-verse `C:V.` token spans from the lazy verses.jsonl index) is unioned on top at serve/verify time, so the live masked set is 37581 spans / 826357 chars. See docs/development/audits/masking-map/."
 }

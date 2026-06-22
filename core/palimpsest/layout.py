@@ -31,14 +31,18 @@ from typing import Any
 SECTION_TYPES: tuple[str, ...] = (
     # Foundation — these tile the whole work in the fewest elements.
     "body",
-    # Structural / navigational containers nested inside the body.
-    "volume", "book", "part", "chapter", "letter",
+    # Structural / navigational containers nested inside the body. `section` is a
+    # per-chapter container (heading + verse content + notes) — the structural span a
+    # `chapter` (verse content only, post inline-note carve) now sits inside. `verse` is
+    # the finest grain: one element per verse / scripture paragraph, nested in `chapter`.
+    "volume", "book", "part", "section", "chapter", "verse", "letter",
     # Verse-form authorial content (poems, songs) carried inside the body.
     "poetry",
-    # Masked windows carved inside the body. chapter_heading = an editorial chapter/book
-    # summary or "argument" sitting between a heading and the first verse (often numbered,
-    # so it mimics verses) — distinct from the verse/body text it precedes.
-    "header", "chapter_heading", "footnotes", "endnotes", "epigraph",
+    # Masked windows carved inside the body. `header` = a name line (book / chapter / section
+    # title); `heading` = the editorial argument / summary / explanation that follows a header
+    # (often numbered, so it mimics verses) — distinct from the verse/body text it precedes.
+    # `chapter_heading` is the legacy combined name+argument span (kept for other works).
+    "header", "heading", "chapter_heading", "footnotes", "endnotes", "epigraph",
     # Translation of a subject text the work is written about (scripture in a study
     # bible, a quoted-source rendering, parallel-version columns).
     "translation",
@@ -59,9 +63,9 @@ SECTION_TYPES: tuple[str, ...] = (
 
 SECTION_LABELS: dict[str, str] = {
     "body": "Body",
-    "volume": "Volume", "book": "Book", "part": "Part", "chapter": "Chapter",
-    "letter": "Letter", "poetry": "Poetry",
-    "header": "Header", "chapter_heading": "Chapter Heading",
+    "volume": "Volume", "book": "Book", "part": "Part", "section": "Section",
+    "chapter": "Chapter", "verse": "Verse", "letter": "Letter", "poetry": "Poetry",
+    "header": "Header", "heading": "Heading", "chapter_heading": "Chapter Heading",
     "footnotes": "Footnotes", "endnotes": "Endnotes",
     "epigraph": "Epigraph", "translation": "Translation", "commentary": "Commentary",
     "front_matter": "Front Matter", "title_page": "Title Page", "copyright": "Copyright",
@@ -78,29 +82,49 @@ SECTION_LABELS: dict[str, str] = {
 # scholarly commentary (the author's own writing) and verse-form content; everything else
 # (matter, headers, editorial summaries, notes, the translated source text) is masked by default.
 _UNMASKED_TYPES = frozenset({
-    "body", "volume", "book", "part", "chapter", "letter", "commentary", "poetry",
+    "body", "volume", "book", "part", "section", "chapter", "verse", "letter", "commentary", "poetry",
 })
 DEFAULT_MASK_BY_TYPE: dict[str, bool] = {t: t not in _UNMASKED_TYPES for t in SECTION_TYPES}
 
+# Palette by sub-group so hue signals relatedness within a Browser group. No displayed
+# mask-type is grey/black — grey/black is reserved for the `sections` *analysis* track
+# (frontend trackColors), distinct from the `section` mask-type here. The non-rendered
+# `body` root keeps a neutral grey.
+#   Structure: nesting containers + name-marker (volume→book→section, then `header`) = blue
+#              family · front matter = red→pink · appendix/glossary = purple · other back
+#              matter / supplementary = cyan.
+#   Content:   `chapter` main text = green · editorial intros (preface/introduction) = orange ·
+#              `heading` argument = gold · notes (foot/endnotes) = yellow · specialty = own hue.
 SECTION_COLORS: dict[str, str] = {
     "body": "#98989d",
-    "chapter": "#30d158", "part": "#34c759", "volume": "#5e5ce6", "book": "#0a84ff",
-    "letter": "#40c8a0", "poetry": "#9d8df1",
-    "header": "#636366", "chapter_heading": "#c9a227",
-    "footnotes": "#ffd60a", "endnotes": "#ffd60a", "epigraph": "#ac8e68",
-    "translation": "#bf5af2", "commentary": "#30b0c7",
-    "front_matter": "#ff453a", "title_page": "#bf5af2", "copyright": "#d6649b",
-    "contents": "#ff6482", "dedication": "#ff7ab6", "foreword": "#ff9f0a",
-    "preface": "#ff9f0a", "introduction": "#ffb340",
-    "back_matter": "#ff453a", "afterword": "#ff9f0a", "acknowledgments": "#ffb340",
-    "about_author": "#c0a0ff", "discussion": "#ff6482", "glossary": "#8e8e93",
-    "index": "#8e8e93", "bibliography": "#8e8e93", "appendix": "#64d2ff",
-    "addendum": "#64d2ff", "insert": "#5ac8fa", "colophon": "#b0779b",
+    # nesting containers + name-marker — blue family. `section` and `header` get two
+    # distinct blues (azure / sky), sitting just below volume·book·part in the ramp.
+    "volume": "#5e5ce6", "book": "#0a84ff", "part": "#409cff",
+    "section": "#32ade6", "header": "#64d2ff",
+    # front matter — red → pink
+    "front_matter": "#ff453a", "title_page": "#ff6482", "contents": "#ff7ab6",
+    "copyright": "#ff8fab", "dedication": "#ff80c0", "foreword": "#ff9f7a",
+    # appendix & glossary — two purple hues (stand out from the cyan back-matter family)
+    "appendix": "#bf5af2", "glossary": "#af52de",
+    # other back matter / supplementary / reference — cyan
+    "back_matter": "#48b0e0", "index": "#70d7ff", "bibliography": "#48b0e0",
+    "addendum": "#5ac8fa", "insert": "#48b0e0", "afterword": "#48b0e0",
+    "acknowledgments": "#70d7ff", "about_author": "#5ac8fa", "colophon": "#3aa0d0",
+    # content main text — green; `verse` (finest grain) a lighter green tint of `chapter`;
+    # verse-form specialties get their own hue
+    "chapter": "#30d158", "verse": "#6fdc8c", "letter": "#40c8a0", "poetry": "#9d8df1",
+    "translation": "#d68cff", "commentary": "#30b0c7",
+    # editorial argument / summary — gold; epigraph brown
+    "heading": "#c9a227", "chapter_heading": "#c9a227", "epigraph": "#ac8e68",
+    # notes — yellow
+    "footnotes": "#ffd60a", "endnotes": "#ffca28",
+    # editorial intros — orange
+    "preface": "#ff9f0a", "introduction": "#ffb340", "discussion": "#ff7a45",
 }
 
 # Structural nesting depth: body(0) > volume > book/part > chapter. A section of
 # level L extends until the next boundary whose level is <= L, which yields containment.
-_TYPE_LEVEL: dict[str, int] = {"body": 0, "volume": 1, "book": 2, "part": 2, "chapter": 3}
+_TYPE_LEVEL: dict[str, int] = {"body": 0, "volume": 1, "book": 2, "part": 2, "section": 3, "chapter": 4, "verse": 5}
 
 # Type roles for region detection.
 _STRUCTURAL = frozenset({"volume", "book", "part", "chapter"})
@@ -274,32 +298,49 @@ def effective_mask(section: LayoutSection, mask_by_type: dict[str, bool]) -> boo
 
 
 def masked_intervals(
-    sections: list[LayoutSection], mask_by_type: dict[str, bool], text_len: int
+    sections: list[LayoutSection],
+    mask_by_type: dict[str, bool],
+    text_len: int,
+    extra_masked: list[tuple[int, int]] | None = None,
 ) -> list[tuple[int, int]]:
-    """Compute merged masked [start,end) intervals via the deepest-section-wins rule.
+    """Compute merged masked [start,end) intervals via the deepest-section-wins rule,
+    then union in any active *interval mask-layers* (``extra_masked``).
 
     For each elementary segment between section breakpoints, the most-specific
     (smallest-span) covering section decides masking. This is what makes a mask=no
     child *carve a window* through a mask=yes parent and vice versa: a mask=yes
     ``header`` nested in a mask=no ``chapter`` masks only the header's span.
-    """
-    valid = [s for s in sections if 0 <= s.start < s.end <= text_len]
-    if not valid:
-        return []
 
-    points = sorted({0, text_len} | {s.start for s in valid} | {s.end for s in valid})
+    ``extra_masked`` is the union of any enabled interval mask-layers — flat, disjoint
+    spans masked *categorically* rather than structurally (e.g. the verse-number layer:
+    every "C:V." token). They are unioned in directly, so a dense layer (tens of thousands
+    of verse-number tokens) never enters the O(n·breakpoints) deepest-wins sweep and the
+    cost stays bounded. With ``extra_masked=None`` the result is byte-identical to the
+    pure structural masking.
+
+    ``verse`` elements (the verse *text*, if any were ever passed as sections) are skipped:
+    they are unmasked and nested inside the (also unmasked) ``chapter`` content, so they can
+    never change the masked set.
+    """
+    valid = [s for s in sections if s.type != "verse" and 0 <= s.start < s.end <= text_len]
     raw: list[tuple[int, int]] = []
-    for a, b in zip(points, points[1:]):
-        if a >= b:
-            continue
-        covering = [s for s in valid if s.start <= a and s.end >= b]
-        if not covering:
-            continue  # uncovered text is part of the work → unmasked
-        min_span = min(s.end - s.start for s in covering)
-        # Most-specific section wins; ties broken by definition order (last).
-        chosen = [s for s in covering if (s.end - s.start) == min_span][-1]
-        if effective_mask(chosen, mask_by_type):
-            raw.append((a, b))
+    if valid:
+        points = sorted({0, text_len} | {s.start for s in valid} | {s.end for s in valid})
+        for a, b in zip(points, points[1:]):
+            if a >= b:
+                continue
+            covering = [s for s in valid if s.start <= a and s.end >= b]
+            if not covering:
+                continue  # uncovered text is part of the work → unmasked
+            min_span = min(s.end - s.start for s in covering)
+            # Most-specific section wins; ties broken by definition order (last).
+            chosen = [s for s in covering if (s.end - s.start) == min_span][-1]
+            if effective_mask(chosen, mask_by_type):
+                raw.append((a, b))
+
+    if extra_masked:
+        raw.extend((a, b) for (a, b) in extra_masked if 0 <= a < b <= text_len)
+    raw.sort()
 
     merged: list[tuple[int, int]] = []
     for s, e in raw:

@@ -5,12 +5,19 @@ import { computeMaskedIntervals } from '../../utils/sectionMasking';
 import { useTrackStore } from '../../stores/trackStore';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
 import { useViewStore } from '../../stores/viewStore';
+import { useVerseStore } from '../../stores/verseStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
 import { buildElementGroups } from '../../utils/maskTypeGroups';
 import BrowserToolbar from './BrowserToolbar';
 import TrackDrawer from './TrackDrawer';
 import ElementGroupLane from './ElementGroupLane';
+import VersesLane from './VersesLane';
+import { AnnotationDetail } from '../DetailPanel/DetailPanel';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
+
+// The Verses lane is only shown once the viewport is zoomed in below this many characters
+// (verses are too dense to be legible — or cheap to render — at a wider span).
+const VERSE_ZOOM_MAX_CHARS = 30000;
 
 interface TickerTapeProps {
   viewStart: number;
@@ -20,17 +27,25 @@ interface TickerTapeProps {
   highlight: { start: number; end: number; color: string } | null;
   textHighlightAnns: Array<{ start: number; end: number; color: string }>;
   maskedIntervals: Array<[number, number]>;
+  locationLabel: string;
 }
 
-function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlight, textHighlightAnns, maskedIntervals }: TickerTapeProps) {
+function TickerTape({ viewStart, viewEnd, referenceText, containerWidth, highlight, textHighlightAnns, maskedIntervals, locationLabel }: TickerTapeProps) {
   const width = viewEnd - viewStart;
   const charsPerPixel = width / Math.max(1, containerWidth);
   const tooZoomedOut = charsPerPixel > 2;
 
   if (tooZoomedOut) {
+    // Too zoomed out to render glyphs: show the current Book : Chapter for orientation
+    // (updates live as the viewport pans/zooms) instead of a "zoom in" message.
     return (
-      <div className="h-8 flex items-center justify-center text-[0.75em] text-[var(--color-text-muted)] bg-[var(--color-bg)] border-b border-[var(--color-border)]">
-        Zoom in to see text (currently viewing {Math.round(width).toLocaleString()} characters)
+      <div className="h-10 flex items-center gap-2 px-3 text-[0.85em] bg-[var(--color-bg)] border-b border-[var(--color-border)] select-none">
+        <span className="font-[var(--font-sans)] font-semibold text-[var(--color-text)]">
+          {locationLabel || '—'}
+        </span>
+        <span className="text-[0.8em] text-[var(--color-text-muted)]">
+          (zoom in to read text · {Math.round(width).toLocaleString()} chars in view)
+        </span>
       </div>
     );
   }
@@ -148,6 +163,7 @@ function CoordinateAxis({ viewStart, viewEnd, width }: { viewStart: number; view
 const DISPLAY_MODE_OPTIONS: { mode: LaneDisplayMode; label: string; icon: string }[] = [
   { mode: 'ribbon', label: 'Ribbon', icon: '▬' },
   { mode: 'detail', label: 'Detail', icon: '▤' },
+  { mode: 'expanded', label: 'Expanded', icon: '▥' },
   { mode: 'condensed', label: 'Condensed', icon: '─' },
   { mode: 'hidden', label: 'Hide', icon: '✕' },
 ];
@@ -232,7 +248,7 @@ const TrackLane = memo(function TrackLane({ name, annotations, color, viewStart,
 
           const isSelected = selectedAnnRange && sel.start === selectedAnnRange.start && sel.end === selectedAnnRange.end;
 
-          if (displayMode === 'detail') {
+          if (displayMode === 'detail' || displayMode === 'expanded') {
             const label = ann.body.value || ann.body.type.replace('palimpsest:', '');
             return (
               <g key={i} className="cursor-pointer" onClick={() => onAnnotationClick(ann, name)}>
@@ -273,11 +289,23 @@ const TrackLane = memo(function TrackLane({ name, annotations, color, viewStart,
 export default function BrowserView() {
   const referenceText = useProjectStore((s) => getActiveProject(s).referenceText);
   const tracks = useProjectStore((s) => getActiveProject(s).tracks);
+  const paragraphs = useProjectStore((s) => getActiveProject(s).paragraphs);
   const trackStates = useTrackStore((s) => s.tracks);
   const trackOrder = useTrackStore((s) => s.trackOrder);
 
-  const { viewStart, viewEnd, totalChars, laneDisplayModes, textHighlightTracks, highlightedAnnotation, drawerOpen } = useBrowserStore();
+  const { viewStart, viewEnd, totalChars, laneDisplayModes, textHighlightTracks, highlightedAnnotation, drawerOpen, hiddenGroups } = useBrowserStore();
   const { setTotalChars, pan } = useBrowserStore();
+  const selectedAnnotation = useViewStore((s) => s.selectedAnnotation);
+  const [popupAnn, setPopupAnn] = useState<W3CAnnotation | null>(null);
+
+  // The Verses lane (and the verse-number mask layer) only matter once zoomed in close.
+  // Guard on totalChars matching the loaded text: browserStore's default viewEnd (10000)
+  // is itself < the threshold, so without this the lane would fetch eagerly during the
+  // brief window before setTotalChars widens the view to the full document.
+  const versesActive =
+    referenceText.length > 0 &&
+    totalChars === referenceText.length &&
+    viewEnd - viewStart < VERSE_ZOOM_MAX_CHARS;
 
   // Masked (analysis-excluded) ranges for this project, if its layout has been configured.
   const activeProjectId = useProjectStore((s) => s.activeProjectId);
@@ -285,12 +313,29 @@ export default function BrowserView() {
   const secSections = useSectionStore((s) => s.sections);
   const secMask = useSectionStore((s) => s.maskByType);
   const secTextLen = useSectionStore((s) => s.textLen);
+
+  // Lazy verse index: drives both the Verses lane and the verse-number mask layer.
+  const verseProjectId = useVerseStore((s) => s.projectId);
+  const verseRecords = useVerseStore((s) => s.records);
+  const verseNumIntervals = useVerseStore((s) => s.numIntervals);
+  const versesLoaded = verseProjectId === activeProjectId;
+
+  // Fetch the verse index the first time the user zooms in past the threshold; the store
+  // is idempotent, so this fires at most one network request per project.
+  useEffect(() => {
+    if (versesActive && activeProjectId) void useVerseStore.getState().load(activeProjectId);
+  }, [versesActive, activeProjectId]);
+
   const maskedIntervals = useMemo(
-    () =>
-      secProjectId && secProjectId === activeProjectId
-        ? computeMaskedIntervals(secSections, secMask, secTextLen)
-        : [],
-    [secProjectId, activeProjectId, secSections, secMask, secTextLen],
+    () => {
+      if (!secProjectId || secProjectId !== activeProjectId) return [];
+      // Union the verse-number tokens ([ns, s) per verse) on top of structural masking so
+      // the `C:V.` tokens gray out in the readable TickerTape — mirroring the backend's
+      // _verse_num_intervals union. Numbers gray once the lazy index has loaded.
+      const extra = versesLoaded ? verseNumIntervals : [];
+      return computeMaskedIntervals(secSections, secMask, secTextLen, extra);
+    },
+    [secProjectId, activeProjectId, secSections, secMask, secTextLen, versesLoaded, verseNumIntervals],
   );
 
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -319,15 +364,18 @@ export default function BrowserView() {
     const el = viewportRef.current;
     if (!el) return;
     const handler = (e: WheelEvent) => {
-      e.preventDefault();
       const { viewStart: vs, viewEnd: ve, pan: doPan, zoomAroundCenter: doZoom } = useBrowserStore.getState();
       if (e.ctrlKey || e.metaKey) {
-        const factor = e.deltaY > 0 ? 1.3 : 0.7;
-        doZoom(factor);
-      } else {
+        e.preventDefault();
+        doZoom(e.deltaY > 0 ? 1.3 : 0.7);
+        return;
+      }
+      // Note G: horizontal (side) swipe pans the tracks forward/back; vertical swipe is left
+      // to native page scroll (the viewport is overflow-y-auto), so up/down moves the page.
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
         const range = ve - vs;
-        const delta = (e.deltaX || e.deltaY) * (range / 1000);
-        doPan(delta);
+        doPan(e.deltaX * (range / 1000));
       }
     };
     el.addEventListener('wheel', handler, { passive: false });
@@ -354,13 +402,41 @@ export default function BrowserView() {
     isDragging.current = false;
   }, []);
 
+  // Remembers the last annotation selected *from this Browser* so the Reader→Browser
+  // sync effect below doesn't re-zoom the viewport onto a selection it just originated.
+  const lastBrowserSelectId = useRef<string | null>(null);
+
   const handleAnnotationClick = useCallback((ann: W3CAnnotation, trackName: string) => {
     const sel = ann.target.selector;
+    lastBrowserSelectId.current = ann.id;
+    const view = useViewStore.getState();
+    view.selectAnnotation(ann);
     if (sel.start != null && sel.end != null) {
       useBrowserStore.getState().setHighlightedAnnotation({ start: sel.start, end: sel.end, trackName });
+      // Note A: don't steal focus to the Reader. Stage a scroll request to this element's
+      // paragraph; the Reader tab only mounts when activated, so the scroll fires lazily when
+      // the user switches to it — clicking a Browser element never yanks the view away.
+      const para = paragraphs.find((p) => p.start <= sel.start! && sel.start! < p.end);
+      if (para) view.requestScrollToParagraph(para.index);
     }
-    useViewStore.getState().selectAnnotation(ann);
+  }, [paragraphs]);
+
+  const handleAnnotationDoubleClick = useCallback((ann: W3CAnnotation) => {
+    setPopupAnn(ann);
   }, []);
+
+  // Item 5: selecting an element elsewhere (e.g. the Reader) moves the Browser viewport
+  // onto it. Skip selections that originated here to avoid a focus feedback loop.
+  useEffect(() => {
+    if (!selectedAnnotation) return;
+    if (selectedAnnotation.id === lastBrowserSelectId.current) return;
+    const sel = selectedAnnotation.target.selector;
+    if (sel.start == null || sel.end == null) return;
+    const b = useBrowserStore.getState();
+    const pad = Math.max(40, Math.round((sel.end - sel.start) * 2));
+    b.zoomToRange(Math.max(0, sel.start - pad), sel.end + pad);
+    b.setHighlightedAnnotation({ start: sel.start, end: sel.end, trackName: 'elements' });
+  }, [selectedAnnotation]);
 
   const visibleTracks = useMemo(
     () => trackOrder.filter((name) => {
@@ -372,8 +448,36 @@ export default function BrowserView() {
   );
 
   // The unified "elements" track is rendered as one lane per related-type group
-  // (Structure / Content / Headings / Notes / Front / Back Matter); empty groups drop out.
-  const elementGroups = useMemo(() => buildElementGroups(tracks['elements'] ?? []), [tracks]);
+  // (Structure / Content / Headings / Notes); empty or user-hidden groups drop out.
+  const elementGroups = useMemo(
+    () => buildElementGroups(tracks['elements'] ?? []).filter((g) => !hiddenGroups.has(g.key)),
+    [tracks, hiddenGroups],
+  );
+
+  // Item 3: Book : Chapter at the viewport center, from `section` spans (gold-faithful),
+  // updating live as the viewport pans/zooms.
+  const sectionSpans = useMemo(() => {
+    const out: Array<{ start: number; end: number; title: string }> = [];
+    for (const a of tracks['elements'] ?? []) {
+      const b = a.body as Record<string, unknown>;
+      if (b['palimpsest:elementType'] !== 'section') continue;
+      const sel = a.target.selector;
+      if (sel.start == null || sel.end == null) continue;
+      out.push({ start: sel.start, end: sel.end, title: String(b['palimpsest:chapterTitle'] ?? a.body.value ?? '') });
+    }
+    return out.sort((x, y) => x.start - y.start);
+  }, [tracks]);
+
+  const locationLabel = useMemo(() => {
+    const center = (viewStart + viewEnd) / 2;
+    let label = '';
+    for (const s of sectionSpans) {
+      if (s.start > center) break;
+      label = s.title;            // nearest preceding span keeps the book in view across gaps
+      if (center < s.end) break;  // exact containing span
+    }
+    return label.replace(' Chapter ', ' : Chapter ');
+  }, [sectionSpans, viewStart, viewEnd]);
 
   // Build text highlight annotations from enabled tracks
   const textHighlightAnns: Array<{ start: number; end: number; color: string }> = [];
@@ -396,9 +500,16 @@ export default function BrowserView() {
   return (
     <div className="flex-1 flex flex-col overflow-hidden select-none relative">
       <BrowserToolbar />
+      <div className="h-6 flex items-center px-3 gap-2 text-[0.78em] bg-[var(--color-bg-subtle)] border-b border-[var(--color-border-subtle)] select-none">
+        <span className="text-[var(--color-text-muted)]">Location</span>
+        <span className="font-[var(--font-sans)] font-semibold text-[var(--color-text)] truncate">{locationLabel || '—'}</span>
+      </div>
       <div
         ref={viewportRef}
-        className="flex-1 flex flex-col overflow-y-auto cursor-grab active:cursor-grabbing"
+        // overscroll-x-none + overflow-x-hidden stop Chrome/macOS two-finger horizontal swipe
+        // from triggering browser back/forward nav while hovering the track view; the wheel
+        // handler turns that side-swipe into track side-scroll (pan) instead.
+        className="flex-1 flex flex-col overflow-y-auto overflow-x-hidden overscroll-x-none cursor-grab active:cursor-grabbing"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -412,6 +523,7 @@ export default function BrowserView() {
           highlight={highlightForTape}
           textHighlightAnns={textHighlightAnns}
           maskedIntervals={maskedIntervals}
+          locationLabel={locationLabel}
         />
         <div className="flex-1 overflow-y-auto">
           {visibleTracks.map((name) => {
@@ -432,9 +544,21 @@ export default function BrowserView() {
                         displayMode={laneDisplayModes[laneKey] ?? 'ribbon'}
                         selectedAnnRange={elSel}
                         onAnnotationClick={handleAnnotationClick}
+                        onAnnotationDoubleClick={handleAnnotationDoubleClick}
                       />
                     );
                   })}
+                  {/* The Verses lane lazy-loads from verses.jsonl and auto-hides until the
+                      viewport is zoomed in below VERSE_ZOOM_MAX_CHARS — both a legibility
+                      gate and a guard against walking tens of thousands of verses per pan. */}
+                  {versesActive && versesLoaded && verseRecords.length > 0 && (
+                    <VersesLane
+                      records={verseRecords}
+                      viewStart={viewStart}
+                      viewEnd={viewEnd}
+                      width={viewportWidth}
+                    />
+                  )}
                 </Fragment>
               );
             }
@@ -464,6 +588,30 @@ export default function BrowserView() {
         <CoordinateAxis viewStart={viewStart} viewEnd={viewEnd} width={viewportWidth} />
       </div>
       {drawerOpen && <TrackDrawer />}
+      {popupAnn && <ElementDetailPopup ann={popupAnn} onClose={() => setPopupAnn(null)} />}
+    </div>
+  );
+}
+
+// Item 6: floating element-details popup opened by double-clicking a Browser element.
+function ElementDetailPopup({ ann, onClose }: { ann: W3CAnnotation; onClose: () => void }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    const onDown = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onDown);
+    return () => { document.removeEventListener('keydown', onKey); document.removeEventListener('mousedown', onDown); };
+  }, [onClose]);
+  return (
+    <div className="absolute inset-0 z-[var(--z-modal)] flex items-center justify-center bg-black/30">
+      <div ref={ref} className="w-[380px] max-h-[70%] overflow-y-auto bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg shadow-[var(--shadow-popover)] p-3">
+        <div className="flex items-center justify-between mb-1">
+          <span className="text-[0.8em] font-semibold text-[var(--color-text-muted)]">Element details</span>
+          <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] cursor-pointer text-[1.1em] leading-none">×</button>
+        </div>
+        <AnnotationDetail ann={ann} />
+      </div>
     </div>
   );
 }

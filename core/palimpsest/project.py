@@ -197,13 +197,18 @@ class Project:
     def masked_intervals(self) -> list[tuple[int, int]]:
         """Masked [start,end) ranges from the layout config, or [] if none configured.
 
-        Downstream analyses skip text intersecting these ranges (Step 4 masking).
+        Downstream analyses skip text intersecting these ranges (Step 4 masking). The masked
+        set is the structural deepest-wins masking UNION the verse-number layer — the "C:V."
+        marker tokens — so verse numbers are excluded from analysis while verse prose stays.
         """
         from palimpsest.layout import load_layout, masked_intervals
+        from palimpsest.verses import detect_verses, verse_number_intervals
         cfg = load_layout(self.path)
         if cfg is None:
             return []
-        return masked_intervals(cfg.sections, cfg.mask_by_type, len(self.reference_text()))
+        text = self.reference_text()
+        verse_iv = verse_number_intervals(detect_verses(text))
+        return masked_intervals(cfg.sections, cfg.mask_by_type, len(text), extra_masked=verse_iv)
 
     @classmethod
     def load(cls, path: Path) -> Project:

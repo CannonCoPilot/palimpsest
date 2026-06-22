@@ -13,7 +13,9 @@ export const TRACK_COLORS: Record<string, string> = {
   lithmm: '#16a085',
   compartments: '#c0392b',
   segments: '#95a5a6',
-  sections: '#8e44ad',
+  // Grey/black reserved for the structural Sections analysis track (distinct from the
+  // `section` mask-type, which is blue). Reads as the neutral backbone the work nests in.
+  sections: '#636366',
   endnotes: '#e74c3c',
   elements: '#5ac8fa',
 };

@@ -20,6 +20,10 @@ interface BarcodeProps {
   visible: boolean;
   viewportStart: number;
   viewportEnd: number;
+  boxColor: string;
+  boxBorderColor: string;
+  boxFillOpacity: number;
+  viewportGrabbable: boolean;
   dragRange: [number, number] | null;
   onClickPosition: (fraction: number) => void;
 }
@@ -79,7 +83,7 @@ function findNearestAnnotation(annotations: W3CAnnotation[], charOffset: number)
   return bestDist < 500 ? best : null;
 }
 
-function TrackBarcode({ label, annotations, color, manifest, documentLength, width, height, visible, viewportStart, viewportEnd, dragRange, onClickPosition }: BarcodeProps) {
+function TrackBarcode({ label, annotations, color, manifest, documentLength, width, height, visible, viewportStart, viewportEnd, boxColor, boxBorderColor, boxFillOpacity, viewportGrabbable, dragRange, onClickPosition }: BarcodeProps) {
   const [hoverInfo, setHoverInfo] = useState<string | null>(null);
   const [hoverX, setHoverX] = useState(0);
 
@@ -123,13 +127,23 @@ function TrackBarcode({ label, annotations, color, manifest, documentLength, wid
         onMouseLeave={() => setHoverInfo(null)}
       >
         <rect width={width} height={height} fill="#f8f8f8" />
-        <rect x={vpX} y={0} width={vpW} height={height} fill={color} fillOpacity={0.08} />
+        <rect x={vpX} y={0} width={vpW} height={height} fill={boxColor} fillOpacity={boxFillOpacity} />
         {renderType === 'state-band' && renderStateBand(annotations, manifest, documentLength, width, height)}
         {renderType === 'ab-band' && renderABBand(annotations, manifest, documentLength, width, height)}
         {renderType === 'density-barcode' && renderDensityTicks(annotations, color, documentLength, width, height)}
-        <rect x={vpX} y={0} width={vpW} height={height} fill="none" stroke={color} strokeWidth={1} strokeOpacity={0.4} rx={1} />
+        <rect
+          x={vpX} y={0} width={vpW} height={height} fill="none" stroke={boxBorderColor}
+          strokeWidth={viewportGrabbable ? 1.5 : 1} strokeOpacity={viewportGrabbable ? 0.95 : 0.7} rx={1}
+        />
+        {viewportGrabbable && (
+          // Grip walls at the box edges so the persistent viewport box reads as grabbable.
+          <>
+            <line x1={vpX} y1={0} x2={vpX} y2={height} stroke={boxBorderColor} strokeWidth={2} strokeOpacity={0.95} />
+            <line x1={vpX + vpW} y1={0} x2={vpX + vpW} y2={height} stroke={boxBorderColor} strokeWidth={2} strokeOpacity={0.95} />
+          </>
+        )}
         {dragRange && (
-          <rect x={dragX} y={0} width={Math.max(1, dragW)} height={height} fill={color} fillOpacity={0.25} stroke={color} strokeWidth={1} rx={1} />
+          <rect x={dragX} y={0} width={Math.max(1, dragW)} height={height} fill={boxColor} fillOpacity={0.25} stroke={boxBorderColor} strokeWidth={1.5} rx={1} />
         )}
       </svg>
       {hoverInfo && (
@@ -151,14 +165,22 @@ export default function OverviewBar() {
   const trackStates = useTrackStore((s) => s.tracks);
   const searchMatches = useSearchStore((s) => s.matches);
   const visibleRange = useViewStore((s) => s.visibleParagraphRange);
+  const activeTab = useViewStore((s) => s.activeTab);
   const overviewBarHidden = useBrowserStore((s) => s.overviewBarHidden);
+  const bvStart = useBrowserStore((s) => s.viewStart);
+  const bvEnd = useBrowserStore((s) => s.viewEnd);
   const docLen = referenceText.length || 1;
+  // On the Browser tab the ticker tracks the Browser viewport (yellow box) and drag drives
+  // browserStore; elsewhere it keeps driving the Reader's paragraph range.
+  const browserMode = activeTab === 'browser';
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [barWidth, setBarWidth] = useState(600);
   const [dragStart, setDragStart] = useState<number | null>(null);
   const [dragEnd, setDragEnd] = useState<number | null>(null);
   const dragging = useRef(false);
+  const dragMode = useRef<'pan' | 'zoom' | 'reader'>('reader');
+  const panLastChar = useRef(0);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -176,16 +198,21 @@ export default function OverviewBar() {
   const vpEnd = visibleRange && paragraphs.length > 0
     ? paragraphs[Math.min(visibleRange[1], paragraphs.length - 1)]?.end ?? docLen : docLen;
 
-  const trackNames = Object.keys(tracks).filter((n) => n !== 'segments');
+  // Viewport box: Browser viewport on the Browser tab, Reader paragraph range elsewhere.
+  const boxStart = browserMode ? bvStart : vpStart;
+  const boxEnd = browserMode ? bvEnd : vpEnd;
+
+  const trackNames = Object.keys(tracks).filter((n) => n !== 'segments' && n !== 'sections');
 
   const navigateToFraction = useCallback((fraction: number) => {
+    if (browserMode) return; // Browser-tab navigation is handled by drag (zoom / box-pan).
     const charOffset = Math.round(fraction * docLen);
     const targetPara = paragraphs.findIndex((p) => p.end >= charOffset);
     if (targetPara >= 0) {
       useViewStore.getState().setSelectedParagraphIndex(targetPara);
       useViewStore.getState().requestScrollToParagraph(targetPara);
     }
-  }, [docLen, paragraphs]);
+  }, [browserMode, docLen, paragraphs]);
 
   const fractionToCharOffset = useCallback((clientX: number, svgEl: SVGSVGElement) => {
     const rect = svgEl.getBoundingClientRect();
@@ -198,23 +225,59 @@ export default function OverviewBar() {
     if (!svg) return;
     dragging.current = true;
     const offset = fractionToCharOffset(e.clientX, svg as SVGSVGElement);
-    setDragStart(offset);
-    setDragEnd(offset);
-  }, [fractionToCharOffset]);
+    if (browserMode) {
+      // Grab the yellow viewport box to pan; drag anywhere else to rubber-band zoom-select.
+      // When the box spans (nearly) the whole bar there is no pan room and no "outside" to
+      // start a zoom from, so any drag zoom-selects instead — this keeps zoom-select reachable
+      // from the default full-extent view (otherwise dragging the full-width box is a no-op pan).
+      const hasPanRoom = bvEnd - bvStart < docLen * 0.98;
+      const inBox = offset >= bvStart && offset <= bvEnd;
+      const panning = inBox && hasPanRoom;
+      dragMode.current = panning ? 'pan' : 'zoom';
+      panLastChar.current = offset;
+      if (panning) { setDragStart(null); setDragEnd(null); }
+      else { setDragStart(offset); setDragEnd(offset); }
+    } else {
+      dragMode.current = 'reader';
+      setDragStart(offset);
+      setDragEnd(offset);
+    }
+  }, [fractionToCharOffset, browserMode, bvStart, bvEnd, docLen]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!dragging.current) return;
     const svg = (e.target as Element).closest('svg');
     if (!svg) return;
-    setDragEnd(fractionToCharOffset(e.clientX, svg as SVGSVGElement));
-  }, [fractionToCharOffset]);
+    const offset = fractionToCharOffset(e.clientX, svg as SVGSVGElement);
+    if (browserMode && dragMode.current === 'pan') {
+      useBrowserStore.getState().pan(offset - panLastChar.current);
+      panLastChar.current = offset;
+    } else {
+      setDragEnd(offset);
+    }
+  }, [fractionToCharOffset, browserMode]);
 
   const handleMouseUp = useCallback(() => {
-    if (!dragging.current || dragStart == null || dragEnd == null) {
-      dragging.current = false;
+    if (!dragging.current) return;
+    dragging.current = false;
+    if (browserMode) {
+      if (dragMode.current === 'zoom' && dragStart != null && dragEnd != null) {
+        const s = Math.min(dragStart, dragEnd);
+        const en = Math.max(dragStart, dragEnd);
+        if (en - s >= docLen * 0.002) {
+          useBrowserStore.getState().zoomToRange(s, en);
+        } else {
+          // No rubber-band: treat as a click and recenter the viewport on the click point.
+          const b = useBrowserStore.getState();
+          b.pan(s - (b.viewStart + b.viewEnd) / 2);
+        }
+      }
+      dragMode.current = 'reader';
+      setDragStart(null);
+      setDragEnd(null);
       return;
     }
-    dragging.current = false;
+    if (dragStart == null || dragEnd == null) return;
     const start = Math.min(dragStart, dragEnd);
     const end = Math.max(dragStart, dragEnd);
     if (end - start < docLen * 0.005) {
@@ -231,7 +294,9 @@ export default function OverviewBar() {
       useViewStore.getState().setVisibleParagraphRange([startPara, resolvedEnd]);
       useViewStore.getState().setZoomLevel('paragraph');
     }
-  }, [dragStart, dragEnd, docLen, paragraphs]);
+    setDragStart(null);
+    setDragEnd(null);
+  }, [dragStart, dragEnd, docLen, paragraphs, browserMode, bvStart, bvEnd]);
 
   const dragRange: [number, number] | null = dragStart != null && dragEnd != null
     ? [Math.min(dragStart, dragEnd), Math.max(dragStart, dragEnd)]
@@ -257,8 +322,12 @@ export default function OverviewBar() {
           width={barWidth}
           height={12}
           visible={true}
-          viewportStart={vpStart}
-          viewportEnd={vpEnd}
+          viewportStart={boxStart}
+          viewportEnd={boxEnd}
+          boxColor={browserMode ? '#0a84ff' : (TRACK_COLORS[name] ?? '#888')}
+          boxBorderColor={browserMode ? '#ff453a' : (TRACK_COLORS[name] ?? '#888')}
+          boxFillOpacity={browserMode ? 0.15 : 0.08}
+          viewportGrabbable={browserMode}
           dragRange={dragRange}
           onClickPosition={navigateToFraction}
         />
@@ -269,9 +338,10 @@ export default function OverviewBar() {
           <svg width={barWidth} height={12} role="img" aria-label="Search matches" className="cursor-crosshair">
             <rect width={barWidth} height={12} fill="#f8f8f8" />
             <rect
-              x={(vpStart / docLen) * barWidth} y={0}
-              width={Math.max(2, ((vpEnd - vpStart) / docLen) * barWidth)}
-              height={12} fill="#f1c40f" fillOpacity={0.1}
+              x={(boxStart / docLen) * barWidth} y={0}
+              width={Math.max(2, ((boxEnd - boxStart) / docLen) * barWidth)}
+              height={12} fill={browserMode ? '#0a84ff' : '#f1c40f'} fillOpacity={browserMode ? 0.15 : 0.1}
+              stroke={browserMode ? '#ff453a' : 'none'} strokeWidth={browserMode ? 1 : 0}
             />
             {searchMatches.map((m, i) => {
               const x = (m.start / docLen) * barWidth;

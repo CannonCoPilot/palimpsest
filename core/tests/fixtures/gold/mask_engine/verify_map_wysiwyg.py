@@ -18,7 +18,9 @@ import sys
 import urllib.request
 
 from masking_map import GOLD
+from text_source import project_for
 from palimpsest.layout import DEFAULT_MASK_BY_TYPE, LayoutSection, masked_intervals
+from palimpsest.verses import detect_verses, verse_number_intervals
 
 MAPS = GOLD / "maps"
 API = "http://localhost:8080"
@@ -45,7 +47,10 @@ def verify(idx: int, pid: str, quiet: bool = False) -> bool:
     secs = [LayoutSection(id=s["id"], type=s["type"], start=s["start"], end=s["end"],
                           masked=s.get("masked"), mask_as=s.get("mask_as"))
             for s in stored["sections"]]
-    local_mi = sorted(masked_intervals(secs, mbt, stored["text_len"]))
+    # The server's masked set = structural ∪ the verse-number layer; recompute the same here.
+    proj = project_for(idx)
+    verse_iv = verse_number_intervals(detect_verses(proj.reference_text())) if proj else []
+    local_mi = sorted(masked_intervals(secs, mbt, stored["text_len"], extra_masked=verse_iv))
     server_mi = sorted((a, b) for a, b in live["masked_intervals"])
     mi_match = local_mi == server_mi
     ok = sections_match and mi_match

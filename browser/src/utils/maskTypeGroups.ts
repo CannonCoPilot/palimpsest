@@ -6,8 +6,11 @@
  * each type on/off. The partition mirrors the backend's role-grouped vocabulary
  * (core/palimpsest/layout.py SECTION_TYPES) so a type's color family signals its group.
  *
- * Partition ratified with the user (2026-06-21): chapter/letter live with Content,
- * commentary/preface/introduction/discussion live with Notes.
+ * Partition updated 2026-06-22 (user): two lanes — Structure and Content. `header` (name
+ * lines: book / chapter / section titles + testament dividers) joins Structure; `heading`
+ * (the editorial argument/summary that follows a header) joins Content. The old Headings and
+ * Notes groups are dissolved — Notes' types fold into Content. Explicit orders given below;
+ * remaining types (absent from the bible, kept for other works) trail the explicit order.
  */
 import type { W3CAnnotation } from '../adapters/AnnotationAdapter';
 
@@ -18,28 +21,36 @@ export interface MaskTypeGroup {
 }
 
 export const MASK_TYPE_GROUPS: MaskTypeGroup[] = [
-  { key: 'structure', label: 'Structure', types: ['body', 'volume', 'book', 'part'] },
-  { key: 'content', label: 'Content', types: ['chapter', 'letter', 'poetry', 'translation'] },
-  { key: 'headings', label: 'Headings', types: ['header', 'chapter_heading', 'epigraph'] },
   {
-    key: 'notes',
-    label: 'Notes',
-    types: ['footnotes', 'endnotes', 'commentary', 'preface', 'introduction', 'discussion'],
-  },
-  {
-    key: 'front_matter',
-    label: 'Front Matter',
-    types: ['front_matter', 'title_page', 'copyright', 'contents', 'dedication', 'foreword'],
-  },
-  {
-    key: 'back_matter',
-    label: 'Back Matter',
+    key: 'structure',
+    label: 'Structure',
+    // User order: volume, book, section, header (the nesting backbone + name-marker, blue
+    // family) lead, then front_matter, title_page, contents, appendix, glossary — then the
+    // remaining structural/matter types (other works only).
     types: [
-      'back_matter', 'afterword', 'acknowledgments', 'about_author', 'glossary',
-      'index', 'bibliography', 'appendix', 'addendum', 'insert', 'colophon',
+      'volume', 'book', 'section', 'header', 'front_matter', 'title_page', 'contents',
+      'appendix', 'glossary',
+      'body', 'part', 'copyright', 'dedication', 'foreword',
+      'back_matter', 'afterword', 'acknowledgments', 'about_author',
+      'index', 'bibliography', 'addendum', 'insert', 'colophon',
+    ],
+  },
+  {
+    key: 'content',
+    label: 'Content',
+    // User order: preface, introduction, chapter, heading, footnotes — then the remaining
+    // content + former-Notes types (letter/poetry/translation, endnotes/commentary/etc.).
+    types: [
+      'preface', 'introduction', 'chapter', 'heading', 'footnotes',
+      'letter', 'poetry', 'translation',
+      'endnotes', 'commentary', 'discussion', 'epigraph', 'chapter_heading',
     ],
   },
 ];
+
+// NOTE: verses are NOT an elements-track type. They live in a compact, lazy-loaded
+// coordinate index (verses.jsonl → verseStore) and render via BrowserView's VersesLane,
+// gated to viewport < VERSE_ZOOM_MAX_CHARS — so there is no 'verse' group here.
 
 const OTHER_GROUP_KEY = 'other';
 

@@ -125,7 +125,10 @@ async function loadProjectData(baseUrl: string, projectId: string): Promise<Sing
   const referenceText = await textRes.text();
   const paragraphs = splitParagraphs(referenceText);
 
-  const trackNames = await discoverTracks(baseUrl, projectId);
+  // 'verses' is a compact {b,c,v,ns,s,e} coordinate index, not a W3C-annotation track,
+  // and is large (~2-3MB) — it is lazy-loaded by verseStore when the Browser zooms in,
+  // never through this eager W3C path (which would mis-parse it).
+  const trackNames = (await discoverTracks(baseUrl, projectId)).filter((n) => n !== 'verses');
   const tracks: Record<string, W3CAnnotation[]> = {};
 
   const trackEntries = await Promise.all(
