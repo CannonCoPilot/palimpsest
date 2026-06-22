@@ -75,6 +75,11 @@ class LocalImportRequest(BaseModel):
     year: int = 0
     process: bool = True  # False = staged (Step 1 ingest only, defer analysis)
     overwrite: bool = False  # True = replace an existing project at the same slug (re-import)
+    # Filename of a pre-generated gold masking map under core/tests/fixtures/gold/maps/
+    # (e.g. "work-005.map.json"). When set, the server ingests the text then applies the
+    # complete stored map verbatim as the project's layout — after verifying the map's
+    # reference_sha256 matches the ingested text — instead of auto-detecting sections.
+    layout_path: str | None = None
 
 
 class SectionsUpdateRequest(BaseModel):
@@ -266,6 +271,60 @@ def _safe_import_path(imports_dir: Path, rel_path: str) -> Path:
     if not resolved.is_file():
         raise HTTPException(status_code=404, detail="File not found")
     return resolved
+
+
+def _gold_maps_dir() -> Path:
+    """Directory holding the durable Gold Set masking maps."""
+    return Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "gold" / "maps"
+
+
+def _safe_gold_map_path(layout_path: str) -> Path:
+    """Resolve a stored gold map filename under the gold maps dir, with traversal guard."""
+    maps_dir = _gold_maps_dir()
+    if not layout_path or layout_path.startswith("/") or ".." in Path(layout_path).parts:
+        raise HTTPException(status_code=400, detail="Invalid layout path")
+    resolved = (maps_dir / layout_path).resolve()
+    if not resolved.is_relative_to(maps_dir.resolve()):
+        raise HTTPException(status_code=400, detail="Invalid layout path")
+    if not resolved.is_file():
+        raise HTTPException(status_code=404, detail="Gold map not found")
+    return resolved
+
+
+def _apply_gold_map(project: Any, layout_path: str) -> dict[str, Any]:
+    """Apply a pre-generated gold masking map to a freshly-ingested project.
+
+    Verifies the map's reference_sha256 matches the ingested text (offsets must land
+    on the same coordinate space), persists the map verbatim as the project layout,
+    and writes the unified 'elements' track. Returns a summary block.
+    """
+    from palimpsest.layout import LayoutConfig, masked_intervals, save_layout
+
+    gmap = json.loads(_safe_gold_map_path(layout_path).read_text(encoding="utf-8"))
+    expected = gmap.get("reference_sha256")
+    actual = project.metadata.reference_sha256
+    if not expected:
+        raise HTTPException(status_code=400, detail="Gold map missing reference_sha256")
+    if expected != actual:
+        raise HTTPException(
+            status_code=409,
+            detail=(f"reference_sha256 mismatch — map {expected[:12]} vs text {actual[:12]}; "
+                    "offsets would not align, refusing to apply"),
+        )
+    cfg = LayoutConfig.from_dict(gmap)
+    cfg.applied = True
+    save_layout(project.path, cfg)
+    text_len = len(project.reference_text())
+    track_n = _write_elements_track(project.path, project.metadata.id, cfg, text_len)
+    mi = masked_intervals(cfg.sections, cfg.mask_by_type, text_len)
+    return {
+        "layout_path": layout_path,
+        "sha_verified": True,
+        "element_count": len(cfg.sections),
+        "track_elements": track_n,
+        "masked_spans": len(mi),
+        "masked_chars": sum(b - a for a, b in mi),
+    }
 
 
 _ROMAN = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
@@ -1215,6 +1274,12 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         if src.suffix.lower() not in _IMPORT_SUFFIXES:
             raise HTTPException(status_code=400, detail="Unsupported file format")
         try:
+            if req.layout_path:
+                # Ingest the text, then apply the stored gold map verbatim (no auto-detect).
+                project = await _ingest_only(src, req.title, req.author, req.year, req.overwrite)
+                summary = _ingest_summary(project, staged=False)
+                summary["gold_map"] = _apply_gold_map(project, req.layout_path)
+                return JSONResponse(content=summary)
             if req.process:
                 return JSONResponse(
                     content=await _ingest_and_compute(
@@ -1225,6 +1290,8 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             return JSONResponse(content=_ingest_summary(project, staged=True))
         except FileExistsError:
             raise HTTPException(status_code=409, detail="Project already exists")
+        except HTTPException:
+            raise  # preserve 400/404/409 from gold-map validation (don't re-wrap as 500)
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
@@ -1259,9 +1326,17 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                     title=req.title or src.stem, author=req.author, year=req.year,
                     overwrite=req.overwrite, progress=_on_progress,
                 )
-                await queue.put({"type": "done", **_ingest_summary(project, staged=True)})
+                if req.layout_path:
+                    gold = await asyncio.to_thread(_apply_gold_map, project, req.layout_path)
+                    summary = _ingest_summary(project, staged=False)
+                    summary["gold_map"] = gold
+                    await queue.put({"type": "done", **summary})
+                else:
+                    await queue.put({"type": "done", **_ingest_summary(project, staged=True)})
             except FileExistsError:
                 await queue.put({"type": "error", "detail": "Project already exists", "status": 409})
+            except HTTPException as he:
+                await queue.put({"type": "error", "detail": str(he.detail), "status": he.status_code})
             except Exception as exc:  # noqa: BLE001
                 logger.exception("Streamed import failed")
                 await queue.put({"type": "error", "detail": str(exc), "status": 500})

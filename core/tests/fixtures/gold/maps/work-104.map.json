@@ -1,0 +1,1331 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 104,
+  "source_file": "is 5 -- E_E_ Cummings -- 1926 -- Boni & Liveright, New York -- fdb61a2b996b8f7a13a83b2ea8e001a2 -- Anna’s Archive.epub",
+  "import_source": "is 5 -- E_E_ Cummings -- 1926 -- Boni & Liveright, New York -- fdb61a2b996b8f7a13a83b2ea8e001a2 -- Anna’s Archive.epub",
+  "reference_sha256": "b36ee440bf09965f1877434fb2e4049e0fbe9d67ea3fe84789218cdc96905937",
+  "text_len": 62038,
+  "element_count": 87,
+  "type_counts": {
+    "body": 1,
+    "colophon": 1,
+    "front_matter": 1,
+    "poetry": 84
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "body": false,
+    "colophon": true,
+    "front_matter": true,
+    "poetry": false
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 62038,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "colophon-0001",
+      "type": "colophon",
+      "start": 61597,
+      "end": 62038,
+      "label": "Transcriber's note",
+      "name": "colophon_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "front_matter-0001",
+      "type": "front_matter",
+      "start": 0,
+      "end": 2152,
+      "label": "OF THIS BOOK",
+      "name": "front_matter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "poetry-0001",
+      "type": "poetry",
+      "start": 2149,
+      "end": 5236,
+      "label": "I",
+      "name": "poetry_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0002",
+      "type": "poetry",
+      "start": 5236,
+      "end": 6957,
+      "label": "II",
+      "name": "poetry_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0003",
+      "type": "poetry",
+      "start": 6957,
+      "end": 7319,
+      "label": "III",
+      "name": "poetry_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0004",
+      "type": "poetry",
+      "start": 7319,
+      "end": 8173,
+      "label": "IV",
+      "name": "poetry_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0005",
+      "type": "poetry",
+      "start": 8173,
+      "end": 8364,
+      "label": "V",
+      "name": "poetry_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0006",
+      "type": "poetry",
+      "start": 8364,
+      "end": 8738,
+      "label": "VI",
+      "name": "poetry_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0007",
+      "type": "poetry",
+      "start": 8738,
+      "end": 9516,
+      "label": "VII",
+      "name": "poetry_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0008",
+      "type": "poetry",
+      "start": 9516,
+      "end": 9949,
+      "label": "VIII",
+      "name": "poetry_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0009",
+      "type": "poetry",
+      "start": 9949,
+      "end": 10678,
+      "label": "IX",
+      "name": "poetry_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0010",
+      "type": "poetry",
+      "start": 10678,
+      "end": 11176,
+      "label": "X",
+      "name": "poetry_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0011",
+      "type": "poetry",
+      "start": 11176,
+      "end": 12372,
+      "label": "XI",
+      "name": "poetry_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0012",
+      "type": "poetry",
+      "start": 12372,
+      "end": 12585,
+      "label": "XII",
+      "name": "poetry_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0013",
+      "type": "poetry",
+      "start": 12585,
+      "end": 12905,
+      "label": "XIII",
+      "name": "poetry_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0014",
+      "type": "poetry",
+      "start": 12905,
+      "end": 13631,
+      "label": "XIV",
+      "name": "poetry_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0015",
+      "type": "poetry",
+      "start": 13631,
+      "end": 13985,
+      "label": "XV",
+      "name": "poetry_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0016",
+      "type": "poetry",
+      "start": 13985,
+      "end": 14634,
+      "label": "XVI",
+      "name": "poetry_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0017",
+      "type": "poetry",
+      "start": 14634,
+      "end": 14761,
+      "label": "XVII",
+      "name": "poetry_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0018",
+      "type": "poetry",
+      "start": 14761,
+      "end": 15688,
+      "label": "XVIII",
+      "name": "poetry_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0019",
+      "type": "poetry",
+      "start": 15688,
+      "end": 15932,
+      "label": "XIX",
+      "name": "poetry_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0020",
+      "type": "poetry",
+      "start": 15932,
+      "end": 16172,
+      "label": "XX",
+      "name": "poetry_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0021",
+      "type": "poetry",
+      "start": 16172,
+      "end": 18329,
+      "label": "XXI",
+      "name": "poetry_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0022",
+      "type": "poetry",
+      "start": 18329,
+      "end": 19278,
+      "label": "XXII",
+      "name": "poetry_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0023",
+      "type": "poetry",
+      "start": 19278,
+      "end": 19446,
+      "label": "XXIII",
+      "name": "poetry_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0024",
+      "type": "poetry",
+      "start": 19446,
+      "end": 20120,
+      "label": "XXIV",
+      "name": "poetry_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0025",
+      "type": "poetry",
+      "start": 20120,
+      "end": 20491,
+      "label": "XXV",
+      "name": "poetry_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0026",
+      "type": "poetry",
+      "start": 20491,
+      "end": 21085,
+      "label": "XXVI",
+      "name": "poetry_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0027",
+      "type": "poetry",
+      "start": 21085,
+      "end": 21392,
+      "label": "XXVII",
+      "name": "poetry_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0028",
+      "type": "poetry",
+      "start": 21392,
+      "end": 21784,
+      "label": "XXVIII",
+      "name": "poetry_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0029",
+      "type": "poetry",
+      "start": 21784,
+      "end": 22556,
+      "label": "XXIX",
+      "name": "poetry_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0030",
+      "type": "poetry",
+      "start": 22556,
+      "end": 22940,
+      "label": "XXX",
+      "name": "poetry_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0031",
+      "type": "poetry",
+      "start": 22940,
+      "end": 24103,
+      "label": "XXXI",
+      "name": "poetry_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0032",
+      "type": "poetry",
+      "start": 24103,
+      "end": 24901,
+      "label": "XXXII",
+      "name": "poetry_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0033",
+      "type": "poetry",
+      "start": 24901,
+      "end": 25120,
+      "label": "XXXIII",
+      "name": "poetry_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0034",
+      "type": "poetry",
+      "start": 25120,
+      "end": 26023,
+      "label": "XXXIV",
+      "name": "poetry_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0035",
+      "type": "poetry",
+      "start": 26023,
+      "end": 26671,
+      "label": "XXXV",
+      "name": "poetry_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0036",
+      "type": "poetry",
+      "start": 26671,
+      "end": 26789,
+      "label": "XXXVI",
+      "name": "poetry_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0037",
+      "type": "poetry",
+      "start": 26789,
+      "end": 27336,
+      "label": "XXXVII",
+      "name": "poetry_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0038",
+      "type": "poetry",
+      "start": 27336,
+      "end": 30455,
+      "label": "XXXVIII",
+      "name": "poetry_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0039",
+      "type": "poetry",
+      "start": 30455,
+      "end": 31775,
+      "label": "XXXIX",
+      "name": "poetry_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0040",
+      "type": "poetry",
+      "start": 31775,
+      "end": 32215,
+      "label": "XL",
+      "name": "poetry_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0041",
+      "type": "poetry",
+      "start": 32215,
+      "end": 33544,
+      "label": "I",
+      "name": "poetry_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0042",
+      "type": "poetry",
+      "start": 33544,
+      "end": 34219,
+      "label": "II",
+      "name": "poetry_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0043",
+      "type": "poetry",
+      "start": 34219,
+      "end": 34808,
+      "label": "III",
+      "name": "poetry_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0044",
+      "type": "poetry",
+      "start": 34808,
+      "end": 35096,
+      "label": "IV",
+      "name": "poetry_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0045",
+      "type": "poetry",
+      "start": 35096,
+      "end": 35407,
+      "label": "V",
+      "name": "poetry_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0046",
+      "type": "poetry",
+      "start": 35407,
+      "end": 35695,
+      "label": "VI",
+      "name": "poetry_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0047",
+      "type": "poetry",
+      "start": 35695,
+      "end": 36127,
+      "label": "VII",
+      "name": "poetry_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0048",
+      "type": "poetry",
+      "start": 36127,
+      "end": 36977,
+      "label": "VIII",
+      "name": "poetry_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0049",
+      "type": "poetry",
+      "start": 36977,
+      "end": 38394,
+      "label": "IX",
+      "name": "poetry_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0050",
+      "type": "poetry",
+      "start": 38394,
+      "end": 39671,
+      "label": "X",
+      "name": "poetry_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0051",
+      "type": "poetry",
+      "start": 39671,
+      "end": 40248,
+      "label": "XI",
+      "name": "poetry_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0052",
+      "type": "poetry",
+      "start": 40248,
+      "end": 40769,
+      "label": "I",
+      "name": "poetry_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0053",
+      "type": "poetry",
+      "start": 40769,
+      "end": 41133,
+      "label": "II",
+      "name": "poetry_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0054",
+      "type": "poetry",
+      "start": 41133,
+      "end": 42292,
+      "label": "III",
+      "name": "poetry_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0055",
+      "type": "poetry",
+      "start": 42292,
+      "end": 42686,
+      "label": "IV",
+      "name": "poetry_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0056",
+      "type": "poetry",
+      "start": 42686,
+      "end": 43427,
+      "label": "V",
+      "name": "poetry_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0057",
+      "type": "poetry",
+      "start": 43427,
+      "end": 44053,
+      "label": "VI",
+      "name": "poetry_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0058",
+      "type": "poetry",
+      "start": 44053,
+      "end": 44651,
+      "label": "VII",
+      "name": "poetry_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0059",
+      "type": "poetry",
+      "start": 44651,
+      "end": 45709,
+      "label": "VIII",
+      "name": "poetry_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0060",
+      "type": "poetry",
+      "start": 45709,
+      "end": 46694,
+      "label": "IX",
+      "name": "poetry_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0061",
+      "type": "poetry",
+      "start": 46694,
+      "end": 47595,
+      "label": "X",
+      "name": "poetry_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0062",
+      "type": "poetry",
+      "start": 47595,
+      "end": 48163,
+      "label": "I",
+      "name": "poetry_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0063",
+      "type": "poetry",
+      "start": 48163,
+      "end": 48784,
+      "label": "II",
+      "name": "poetry_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0064",
+      "type": "poetry",
+      "start": 48784,
+      "end": 49310,
+      "label": "III",
+      "name": "poetry_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0065",
+      "type": "poetry",
+      "start": 49310,
+      "end": 49809,
+      "label": "IV",
+      "name": "poetry_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0066",
+      "type": "poetry",
+      "start": 49809,
+      "end": 50082,
+      "label": "V",
+      "name": "poetry_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0067",
+      "type": "poetry",
+      "start": 50082,
+      "end": 51098,
+      "label": "VI",
+      "name": "poetry_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0068",
+      "type": "poetry",
+      "start": 51098,
+      "end": 51563,
+      "label": "VII",
+      "name": "poetry_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0069",
+      "type": "poetry",
+      "start": 51563,
+      "end": 52249,
+      "label": "VIII",
+      "name": "poetry_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0070",
+      "type": "poetry",
+      "start": 52249,
+      "end": 52843,
+      "label": "IX",
+      "name": "poetry_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0071",
+      "type": "poetry",
+      "start": 52843,
+      "end": 53729,
+      "label": "X",
+      "name": "poetry_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0072",
+      "type": "poetry",
+      "start": 53729,
+      "end": 54253,
+      "label": "XI",
+      "name": "poetry_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0073",
+      "type": "poetry",
+      "start": 54253,
+      "end": 55258,
+      "label": "XII",
+      "name": "poetry_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0074",
+      "type": "poetry",
+      "start": 55258,
+      "end": 55721,
+      "label": "XIII",
+      "name": "poetry_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0075",
+      "type": "poetry",
+      "start": 55721,
+      "end": 56213,
+      "label": "XIV",
+      "name": "poetry_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0076",
+      "type": "poetry",
+      "start": 56213,
+      "end": 56889,
+      "label": "XV",
+      "name": "poetry_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0077",
+      "type": "poetry",
+      "start": 56889,
+      "end": 57519,
+      "label": "XVI",
+      "name": "poetry_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0078",
+      "type": "poetry",
+      "start": 57519,
+      "end": 58148,
+      "label": "XVII",
+      "name": "poetry_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0079",
+      "type": "poetry",
+      "start": 58148,
+      "end": 58608,
+      "label": "XVIII",
+      "name": "poetry_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0080",
+      "type": "poetry",
+      "start": 58608,
+      "end": 59135,
+      "label": "I",
+      "name": "poetry_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0081",
+      "type": "poetry",
+      "start": 59135,
+      "end": 59771,
+      "label": "II",
+      "name": "poetry_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0082",
+      "type": "poetry",
+      "start": 59771,
+      "end": 60400,
+      "label": "III",
+      "name": "poetry_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0083",
+      "type": "poetry",
+      "start": 60400,
+      "end": 60986,
+      "label": "IV",
+      "name": "poetry_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    },
+    {
+      "id": "poetry-0084",
+      "type": "poetry",
+      "start": 60986,
+      "end": 61597,
+      "label": "V",
+      "name": "poetry_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:roman_in_span"
+      }
+    }
+  ]
+}

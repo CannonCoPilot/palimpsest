@@ -1,0 +1,3632 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 64,
+  "source_file": "The Books of Enoch_ A Complete Volume Containing 1 Enoch -- Enoch & Joseph B_ Lumpkin [Enoch & Lumpkin, Joseph B_] -- 2009 -- Fifth Estate, -- isbn13 9781933580807 -- 6d9f4271e0a52f5b84fa059abc2857c0 -- Anna’s Archive.epub",
+  "import_source": "The Books of Enoch_ A Complete Volume Containing 1 Enoch -- Enoch & Joseph B_ Lumpkin [Enoch & Lumpkin, Joseph B_] -- 2009 -- Fifth Estate, -- isbn13 9781933580807 -- 6d9f4271e0a52f5b84fa059abc2857c0 -- Anna’s Archive.epub",
+  "reference_sha256": "1309aace21fd5dcd0bc0700400f7badf5adb559c26a6e36e4e21c2821868d687",
+  "text_len": 511261,
+  "element_count": 240,
+  "type_counts": {
+    "body": 1,
+    "title_page": 1,
+    "copyright": 1,
+    "contents": 1,
+    "introduction": 5,
+    "back_matter": 1,
+    "chapter": 230
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "back_matter": true,
+    "body": false,
+    "chapter": false,
+    "contents": true,
+    "copyright": true,
+    "introduction": true,
+    "title_page": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 511261,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "title_page-0001",
+      "type": "title_page",
+      "start": 0,
+      "end": 353,
+      "label": "The Books of Enoch:",
+      "name": "title_page_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 353,
+      "end": 937,
+      "label": "Copyright © 2010 Joseph B. Lumpkin.",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 937,
+      "end": 1058,
+      "label": "Table of Contents",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0001",
+      "type": "introduction",
+      "start": 1072,
+      "end": 25365,
+      "label": "The study of scripture is a lifelong venture. Many times our search for deeper u",
+      "name": "introduction_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "back_matter-0001",
+      "type": "back_matter",
+      "start": 510920,
+      "end": 511261,
+      "label": "Document Outline",
+      "name": "back_matter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0002",
+      "type": "introduction",
+      "start": 1058,
+      "end": 1072,
+      "label": "INTRODUCTION",
+      "name": "introduction_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0003",
+      "type": "introduction",
+      "start": 25365,
+      "end": 25499,
+      "label": "Let us now proceed to the Book of Enoch.",
+      "name": "introduction_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0004",
+      "type": "introduction",
+      "start": 241534,
+      "end": 251848,
+      "label": "Introduction to The Second Book",
+      "name": "introduction_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0005",
+      "type": "introduction",
+      "start": 339419,
+      "end": 348678,
+      "label": "Intro duction of 3 Enoch",
+      "name": "introduction_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "chapter-0001",
+      "type": "chapter",
+      "start": 25499,
+      "end": 27560,
+      "label": "[Chapter I}",
+      "name": "chapter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0002",
+      "type": "chapter",
+      "start": 27560,
+      "end": 28160,
+      "label": "[Chapter 2]",
+      "name": "chapter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0003",
+      "type": "chapter",
+      "start": 28160,
+      "end": 28436,
+      "label": "[Chapter 3]",
+      "name": "chapter_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0004",
+      "type": "chapter",
+      "start": 28436,
+      "end": 28700,
+      "label": "[Chapter 4]",
+      "name": "chapter_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0005",
+      "type": "chapter",
+      "start": 28700,
+      "end": 30752,
+      "label": "[Chapter 5]",
+      "name": "chapter_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0006",
+      "type": "chapter",
+      "start": 30752,
+      "end": 32819,
+      "label": "[Chapter 6]",
+      "name": "chapter_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0007",
+      "type": "chapter",
+      "start": 32819,
+      "end": 34513,
+      "label": "[Chapter 7]",
+      "name": "chapter_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0008",
+      "type": "chapter",
+      "start": 34513,
+      "end": 35394,
+      "label": "[Chapter 8]",
+      "name": "chapter_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0009",
+      "type": "chapter",
+      "start": 35394,
+      "end": 38014,
+      "label": "[Chapter 9]",
+      "name": "chapter_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0010",
+      "type": "chapter",
+      "start": 38014,
+      "end": 43936,
+      "label": "[Chapter 10]",
+      "name": "chapter_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0011",
+      "type": "chapter",
+      "start": 43936,
+      "end": 44250,
+      "label": "[Chapter 11]",
+      "name": "chapter_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0012",
+      "type": "chapter",
+      "start": 44250,
+      "end": 45533,
+      "label": "[Chapter 12]",
+      "name": "chapter_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0013",
+      "type": "chapter",
+      "start": 45533,
+      "end": 47137,
+      "label": "[Chapter 13]",
+      "name": "chapter_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0014",
+      "type": "chapter",
+      "start": 47137,
+      "end": 51166,
+      "label": "[Chapter 14]",
+      "name": "chapter_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0015",
+      "type": "chapter",
+      "start": 51166,
+      "end": 53737,
+      "label": "[Chapter 15]",
+      "name": "chapter_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0016",
+      "type": "chapter",
+      "start": 53737,
+      "end": 54872,
+      "label": "[Chapter 16]",
+      "name": "chapter_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0017",
+      "type": "chapter",
+      "start": 54872,
+      "end": 55895,
+      "label": "[Chapter 17]",
+      "name": "chapter_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0018",
+      "type": "chapter",
+      "start": 55895,
+      "end": 58050,
+      "label": "[Chapter 18]",
+      "name": "chapter_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0019",
+      "type": "chapter",
+      "start": 58050,
+      "end": 58785,
+      "label": "[Chapter 19]",
+      "name": "chapter_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0020",
+      "type": "chapter",
+      "start": 58785,
+      "end": 59441,
+      "label": "[Chapter 20]",
+      "name": "chapter_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0021",
+      "type": "chapter",
+      "start": 59441,
+      "end": 60903,
+      "label": "[Chapter 21]",
+      "name": "chapter_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0022",
+      "type": "chapter",
+      "start": 60903,
+      "end": 64005,
+      "label": "[Chapter 22]",
+      "name": "chapter_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0023",
+      "type": "chapter",
+      "start": 64005,
+      "end": 64483,
+      "label": "[Chapter 23]",
+      "name": "chapter_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0024",
+      "type": "chapter",
+      "start": 64483,
+      "end": 65638,
+      "label": "[Chapter 24]",
+      "name": "chapter_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0025",
+      "type": "chapter",
+      "start": 65638,
+      "end": 67431,
+      "label": "[Chapter 25]",
+      "name": "chapter_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0026",
+      "type": "chapter",
+      "start": 67431,
+      "end": 68298,
+      "label": "[Chapter 26]",
+      "name": "chapter_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0027",
+      "type": "chapter",
+      "start": 68298,
+      "end": 69228,
+      "label": "[Chapter 27]",
+      "name": "chapter_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0028",
+      "type": "chapter",
+      "start": 69228,
+      "end": 69545,
+      "label": "[Chapter 28]",
+      "name": "chapter_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0029",
+      "type": "chapter",
+      "start": 69545,
+      "end": 69792,
+      "label": "[Chapter 29]",
+      "name": "chapter_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0030",
+      "type": "chapter",
+      "start": 69792,
+      "end": 70130,
+      "label": "[Chapter 30]",
+      "name": "chapter_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0031",
+      "type": "chapter",
+      "start": 70130,
+      "end": 70546,
+      "label": "[Chapter 31]",
+      "name": "chapter_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0032",
+      "type": "chapter",
+      "start": 70546,
+      "end": 71832,
+      "label": "[Chapter 32]",
+      "name": "chapter_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0033",
+      "type": "chapter",
+      "start": 71832,
+      "end": 72611,
+      "label": "[Chapter 33]",
+      "name": "chapter_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0034",
+      "type": "chapter",
+      "start": 72611,
+      "end": 73104,
+      "label": "[Chapter 34]",
+      "name": "chapter_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0035",
+      "type": "chapter",
+      "start": 73104,
+      "end": 73307,
+      "label": "[Chapter 35J",
+      "name": "chapter_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0036",
+      "type": "chapter",
+      "start": 73307,
+      "end": 74153,
+      "label": "[Chapter 361",
+      "name": "chapter_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0037",
+      "type": "chapter",
+      "start": 74153,
+      "end": 75098,
+      "label": "[Chapter 37]",
+      "name": "chapter_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0038",
+      "type": "chapter",
+      "start": 75098,
+      "end": 76846,
+      "label": "[Chapter 38]",
+      "name": "chapter_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0039",
+      "type": "chapter",
+      "start": 76846,
+      "end": 79403,
+      "label": "[Chapter 39]",
+      "name": "chapter_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0040",
+      "type": "chapter",
+      "start": 79403,
+      "end": 81086,
+      "label": "[Chapter 40]",
+      "name": "chapter_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0041",
+      "type": "chapter",
+      "start": 81086,
+      "end": 83663,
+      "label": "[Chapter 41]",
+      "name": "chapter_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0042",
+      "type": "chapter",
+      "start": 83663,
+      "end": 84151,
+      "label": "[Chapter 42]",
+      "name": "chapter_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0043",
+      "type": "chapter",
+      "start": 84151,
+      "end": 84913,
+      "label": "[Chapter 43]",
+      "name": "chapter_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0044",
+      "type": "chapter",
+      "start": 84913,
+      "end": 85074,
+      "label": "[Chapter 44]",
+      "name": "chapter_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0045",
+      "type": "chapter",
+      "start": 85074,
+      "end": 86231,
+      "label": "[Chapter 45]",
+      "name": "chapter_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0046",
+      "type": "chapter",
+      "start": 86231,
+      "end": 88053,
+      "label": "[Chapter 46]",
+      "name": "chapter_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0047",
+      "type": "chapter",
+      "start": 88053,
+      "end": 89087,
+      "label": "[Chapter 47]",
+      "name": "chapter_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0048",
+      "type": "chapter",
+      "start": 89087,
+      "end": 91318,
+      "label": "[Chapter 48]",
+      "name": "chapter_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0049",
+      "type": "chapter",
+      "start": 91318,
+      "end": 92075,
+      "label": "[Chapter 49]",
+      "name": "chapter_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0050",
+      "type": "chapter",
+      "start": 92075,
+      "end": 92938,
+      "label": "[Chapter 50]",
+      "name": "chapter_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0051",
+      "type": "chapter",
+      "start": 92938,
+      "end": 93802,
+      "label": "[Chapter 51]",
+      "name": "chapter_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0052",
+      "type": "chapter",
+      "start": 93802,
+      "end": 95491,
+      "label": "[Chapter 52]",
+      "name": "chapter_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0053",
+      "type": "chapter",
+      "start": 95491,
+      "end": 96713,
+      "label": "[Chapter 53]",
+      "name": "chapter_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0054",
+      "type": "chapter",
+      "start": 96713,
+      "end": 98415,
+      "label": "[Chapter 54]",
+      "name": "chapter_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0055",
+      "type": "chapter",
+      "start": 98415,
+      "end": 99338,
+      "label": "[Chapter 55]",
+      "name": "chapter_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0056",
+      "type": "chapter",
+      "start": 99338,
+      "end": 101701,
+      "label": "[Chapter 56]",
+      "name": "chapter_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0057",
+      "type": "chapter",
+      "start": 101701,
+      "end": 102234,
+      "label": "[Chapter 57]",
+      "name": "chapter_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0058",
+      "type": "chapter",
+      "start": 102234,
+      "end": 103250,
+      "label": "[Chapter 58]",
+      "name": "chapter_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0059",
+      "type": "chapter",
+      "start": 103250,
+      "end": 103900,
+      "label": "[Chapter 59]",
+      "name": "chapter_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0060",
+      "type": "chapter",
+      "start": 103900,
+      "end": 109400,
+      "label": "[Chapter 60] - Noah's Vision",
+      "name": "chapter_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0061",
+      "type": "chapter",
+      "start": 109400,
+      "end": 112501,
+      "label": "[Chapter 61]",
+      "name": "chapter_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0062",
+      "type": "chapter",
+      "start": 112501,
+      "end": 115824,
+      "label": "[Chapter 62]",
+      "name": "chapter_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0063",
+      "type": "chapter",
+      "start": 115824,
+      "end": 118124,
+      "label": "[Chapter 63]",
+      "name": "chapter_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0064",
+      "type": "chapter",
+      "start": 118124,
+      "end": 118407,
+      "label": "[Chapter 64]",
+      "name": "chapter_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0065",
+      "type": "chapter",
+      "start": 118407,
+      "end": 120825,
+      "label": "[Chapter 65]",
+      "name": "chapter_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0066",
+      "type": "chapter",
+      "start": 120825,
+      "end": 121331,
+      "label": "[Chapter 66]",
+      "name": "chapter_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0067",
+      "type": "chapter",
+      "start": 121331,
+      "end": 124170,
+      "label": "[Chapter 67]",
+      "name": "chapter_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0068",
+      "type": "chapter",
+      "start": 124170,
+      "end": 125363,
+      "label": "[Chapter 68]",
+      "name": "chapter_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0069",
+      "type": "chapter",
+      "start": 125363,
+      "end": 131167,
+      "label": "[Chapter 69]",
+      "name": "chapter_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0070",
+      "type": "chapter",
+      "start": 131167,
+      "end": 131780,
+      "label": "[Chapter 70]",
+      "name": "chapter_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0071",
+      "type": "chapter",
+      "start": 131780,
+      "end": 135463,
+      "label": "[Chapter 71]",
+      "name": "chapter_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0072",
+      "type": "chapter",
+      "start": 135463,
+      "end": 142041,
+      "label": "[Chapter 72]",
+      "name": "chapter_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0073",
+      "type": "chapter",
+      "start": 142041,
+      "end": 143633,
+      "label": "[Chapter 73]",
+      "name": "chapter_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0074",
+      "type": "chapter",
+      "start": 143633,
+      "end": 146376,
+      "label": "[Chapter 74]",
+      "name": "chapter_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0075",
+      "type": "chapter",
+      "start": 146376,
+      "end": 148614,
+      "label": "[Chapter 75]",
+      "name": "chapter_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0076",
+      "type": "chapter",
+      "start": 148614,
+      "end": 150976,
+      "label": "[Chapter 76]",
+      "name": "chapter_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0077",
+      "type": "chapter",
+      "start": 150976,
+      "end": 152337,
+      "label": "[Chapter 77]",
+      "name": "chapter_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0078",
+      "type": "chapter",
+      "start": 152337,
+      "end": 155493,
+      "label": "[Chapter 78]",
+      "name": "chapter_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0079",
+      "type": "chapter",
+      "start": 155493,
+      "end": 156474,
+      "label": "[Chapter 79]",
+      "name": "chapter_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0080",
+      "type": "chapter",
+      "start": 156474,
+      "end": 158014,
+      "label": "[Chapter 80]",
+      "name": "chapter_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0081",
+      "type": "chapter",
+      "start": 158014,
+      "end": 159854,
+      "label": "[Chapter 81]",
+      "name": "chapter_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0082",
+      "type": "chapter",
+      "start": 159854,
+      "end": 164592,
+      "label": "[Chapter 82]",
+      "name": "chapter_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0083",
+      "type": "chapter",
+      "start": 164592,
+      "end": 166860,
+      "label": "[Chapter 83]",
+      "name": "chapter_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0084",
+      "type": "chapter",
+      "start": 166860,
+      "end": 169375,
+      "label": "[Chapter 84]",
+      "name": "chapter_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0085",
+      "type": "chapter",
+      "start": 169375,
+      "end": 170839,
+      "label": "IChapter 85]",
+      "name": "chapter_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0086",
+      "type": "chapter",
+      "start": 170839,
+      "end": 171961,
+      "label": "[Chapter 86]",
+      "name": "chapter_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0087",
+      "type": "chapter",
+      "start": 171961,
+      "end": 172702,
+      "label": "[Chapter 87]",
+      "name": "chapter_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0088",
+      "type": "chapter",
+      "start": 172702,
+      "end": 173565,
+      "label": "[Chapter 88]",
+      "name": "chapter_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0089",
+      "type": "chapter",
+      "start": 173565,
+      "end": 188937,
+      "label": "[Chapter 89]",
+      "name": "chapter_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0090",
+      "type": "chapter",
+      "start": 188937,
+      "end": 199117,
+      "label": "[Chapter 90]",
+      "name": "chapter_90",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0091",
+      "type": "chapter",
+      "start": 199117,
+      "end": 203352,
+      "label": "[Chapter 91]",
+      "name": "chapter_91",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0092",
+      "type": "chapter",
+      "start": 203352,
+      "end": 204258,
+      "label": "[Chapter 92]",
+      "name": "chapter_92",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0093",
+      "type": "chapter",
+      "start": 204258,
+      "end": 207304,
+      "label": "[Chapter 93]",
+      "name": "chapter_93",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0094",
+      "type": "chapter",
+      "start": 207304,
+      "end": 210264,
+      "label": "[Chapter 94]",
+      "name": "chapter_94",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0095",
+      "type": "chapter",
+      "start": 210264,
+      "end": 211244,
+      "label": "[Chapter 95]",
+      "name": "chapter_95",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0096",
+      "type": "chapter",
+      "start": 211244,
+      "end": 212861,
+      "label": "[Chapter 96]",
+      "name": "chapter_96",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0097",
+      "type": "chapter",
+      "start": 212861,
+      "end": 214433,
+      "label": "[Chapter 97]",
+      "name": "chapter_97",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0098",
+      "type": "chapter",
+      "start": 214433,
+      "end": 217996,
+      "label": "[Chapter 98]",
+      "name": "chapter_98",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0099",
+      "type": "chapter",
+      "start": 217996,
+      "end": 221202,
+      "label": "[Chapter 99]",
+      "name": "chapter_99",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0100",
+      "type": "chapter",
+      "start": 221202,
+      "end": 224407,
+      "label": "[Chapter 100]",
+      "name": "chapter_100",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0101",
+      "type": "chapter",
+      "start": 224407,
+      "end": 225813,
+      "label": "[Chapter 101]",
+      "name": "chapter_101",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0102",
+      "type": "chapter",
+      "start": 225813,
+      "end": 227536,
+      "label": "[Chapter 102]",
+      "name": "chapter_102",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0103",
+      "type": "chapter",
+      "start": 227536,
+      "end": 230521,
+      "label": "[Chapter 103]",
+      "name": "chapter_103",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0104",
+      "type": "chapter",
+      "start": 230521,
+      "end": 232966,
+      "label": "[Chapter 104]",
+      "name": "chapter_104",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0105",
+      "type": "chapter",
+      "start": 232966,
+      "end": 233360,
+      "label": "IChapter 105]",
+      "name": "chapter_105",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0106",
+      "type": "chapter",
+      "start": 233360,
+      "end": 237354,
+      "label": "IChapter 106]",
+      "name": "chapter_106",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0107",
+      "type": "chapter",
+      "start": 237354,
+      "end": 237982,
+      "label": "[Chapter 107]",
+      "name": "chapter_107",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0108",
+      "type": "chapter",
+      "start": 237982,
+      "end": 241534,
+      "label": "[Chapter 108]",
+      "name": "chapter_108",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0109",
+      "type": "chapter",
+      "start": 251848,
+      "end": 254230,
+      "label": "Chapter 1",
+      "name": "chapter_109",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0110",
+      "type": "chapter",
+      "start": 254230,
+      "end": 254685,
+      "label": "Chapter 2",
+      "name": "chapter_110",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0111",
+      "type": "chapter",
+      "start": 254685,
+      "end": 255068,
+      "label": "Chapter 3",
+      "name": "chapter_111",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0112",
+      "type": "chapter",
+      "start": 255068,
+      "end": 255334,
+      "label": "Chapter 4",
+      "name": "chapter_112",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0113",
+      "type": "chapter",
+      "start": 255334,
+      "end": 255517,
+      "label": "Chapter S",
+      "name": "chapter_113",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0114",
+      "type": "chapter",
+      "start": 255517,
+      "end": 255774,
+      "label": "Chapter 6",
+      "name": "chapter_114",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0115",
+      "type": "chapter",
+      "start": 255774,
+      "end": 256689,
+      "label": "Chapter 7",
+      "name": "chapter_115",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0116",
+      "type": "chapter",
+      "start": 256689,
+      "end": 258278,
+      "label": "Chapter 8",
+      "name": "chapter_116",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0117",
+      "type": "chapter",
+      "start": 258278,
+      "end": 258739,
+      "label": "Chapter 9",
+      "name": "chapter_117",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0118",
+      "type": "chapter",
+      "start": 258739,
+      "end": 260299,
+      "label": "Chapter 10",
+      "name": "chapter_118",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0119",
+      "type": "chapter",
+      "start": 260299,
+      "end": 261259,
+      "label": "Chapter 11",
+      "name": "chapter_119",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0120",
+      "type": "chapter",
+      "start": 261259,
+      "end": 262123,
+      "label": "Chapter 12",
+      "name": "chapter_120",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0121",
+      "type": "chapter",
+      "start": 262123,
+      "end": 262943,
+      "label": "Chapter 13",
+      "name": "chapter_121",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0122",
+      "type": "chapter",
+      "start": 262943,
+      "end": 263831,
+      "label": "Chapter 14",
+      "name": "chapter_122",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0123",
+      "type": "chapter",
+      "start": 263831,
+      "end": 264789,
+      "label": "Chapter 15",
+      "name": "chapter_123",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0124",
+      "type": "chapter",
+      "start": 264789,
+      "end": 268066,
+      "label": "Chapter 16",
+      "name": "chapter_124",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0125",
+      "type": "chapter",
+      "start": 268066,
+      "end": 268428,
+      "label": "Chapter 17",
+      "name": "chapter_125",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0126",
+      "type": "chapter",
+      "start": 268428,
+      "end": 270638,
+      "label": "Chapter 18",
+      "name": "chapter_126",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0127",
+      "type": "chapter",
+      "start": 270638,
+      "end": 271902,
+      "label": "Chapter 19",
+      "name": "chapter_127",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0128",
+      "type": "chapter",
+      "start": 271902,
+      "end": 273431,
+      "label": "Chapter 20",
+      "name": "chapter_128",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0129",
+      "type": "chapter",
+      "start": 273431,
+      "end": 275157,
+      "label": "Chapter 21",
+      "name": "chapter_129",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0130",
+      "type": "chapter",
+      "start": 275157,
+      "end": 277855,
+      "label": "Chapter 22",
+      "name": "chapter_130",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0131",
+      "type": "chapter",
+      "start": 277855,
+      "end": 279416,
+      "label": "Chapter 23",
+      "name": "chapter_131",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0132",
+      "type": "chapter",
+      "start": 279416,
+      "end": 281884,
+      "label": "Chapter 24",
+      "name": "chapter_132",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0133",
+      "type": "chapter",
+      "start": 281884,
+      "end": 287171,
+      "label": "Chapter 25",
+      "name": "chapter_133",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0134",
+      "type": "chapter",
+      "start": 287171,
+      "end": 287962,
+      "label": "Chapter 26",
+      "name": "chapter_134",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0135",
+      "type": "chapter",
+      "start": 287962,
+      "end": 289131,
+      "label": "Chapter 27",
+      "name": "chapter_135",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0136",
+      "type": "chapter",
+      "start": 289131,
+      "end": 289913,
+      "label": "Chapter 28",
+      "name": "chapter_136",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0137",
+      "type": "chapter",
+      "start": 289913,
+      "end": 291214,
+      "label": "Chapter 29",
+      "name": "chapter_137",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0138",
+      "type": "chapter",
+      "start": 291214,
+      "end": 294987,
+      "label": "Chapter 30",
+      "name": "chapter_138",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0139",
+      "type": "chapter",
+      "start": 294987,
+      "end": 296103,
+      "label": "Chapter 31",
+      "name": "chapter_139",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0140",
+      "type": "chapter",
+      "start": 296103,
+      "end": 296747,
+      "label": "Chapter 32",
+      "name": "chapter_140",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0141",
+      "type": "chapter",
+      "start": 296747,
+      "end": 298925,
+      "label": "Chapter 33",
+      "name": "chapter_141",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0142",
+      "type": "chapter",
+      "start": 298925,
+      "end": 299510,
+      "label": "Chapter 34",
+      "name": "chapter_142",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0143",
+      "type": "chapter",
+      "start": 299510,
+      "end": 300058,
+      "label": "Chapter 35",
+      "name": "chapter_143",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0144",
+      "type": "chapter",
+      "start": 300058,
+      "end": 300576,
+      "label": "Chapter 36",
+      "name": "chapter_144",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0145",
+      "type": "chapter",
+      "start": 300576,
+      "end": 301069,
+      "label": "Chapter 37",
+      "name": "chapter_145",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0146",
+      "type": "chapter",
+      "start": 301069,
+      "end": 301494,
+      "label": "Chapter 38",
+      "name": "chapter_146",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0147",
+      "type": "chapter",
+      "start": 301494,
+      "end": 303031,
+      "label": "Chapter 39",
+      "name": "chapter_147",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0148",
+      "type": "chapter",
+      "start": 303031,
+      "end": 305550,
+      "label": "Chapter 40",
+      "name": "chapter_148",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0149",
+      "type": "chapter",
+      "start": 305550,
+      "end": 306038,
+      "label": "Chapter 41",
+      "name": "chapter_149",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0150",
+      "type": "chapter",
+      "start": 306038,
+      "end": 306431,
+      "label": "Chapter 42",
+      "name": "chapter_150",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0151",
+      "type": "chapter",
+      "start": 306431,
+      "end": 307049,
+      "label": "Chapter 43",
+      "name": "chapter_151",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0152",
+      "type": "chapter",
+      "start": 307049,
+      "end": 308049,
+      "label": "Chapter 44",
+      "name": "chapter_152",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0153",
+      "type": "chapter",
+      "start": 308049,
+      "end": 308706,
+      "label": "Chapter 45",
+      "name": "chapter_153",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0154",
+      "type": "chapter",
+      "start": 308706,
+      "end": 309343,
+      "label": "Chapter 46",
+      "name": "chapter_154",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0155",
+      "type": "chapter",
+      "start": 309343,
+      "end": 310493,
+      "label": "Chapter 47",
+      "name": "chapter_155",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0156",
+      "type": "chapter",
+      "start": 310493,
+      "end": 312291,
+      "label": "Chapter 48",
+      "name": "chapter_156",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0157",
+      "type": "chapter",
+      "start": 312291,
+      "end": 313023,
+      "label": "Chapter 49",
+      "name": "chapter_157",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0158",
+      "type": "chapter",
+      "start": 313023,
+      "end": 313888,
+      "label": "Chapter 50",
+      "name": "chapter_158",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0159",
+      "type": "chapter",
+      "start": 313888,
+      "end": 314507,
+      "label": "Chapter 51",
+      "name": "chapter_159",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0160",
+      "type": "chapter",
+      "start": 314507,
+      "end": 315780,
+      "label": "Chapter 52",
+      "name": "chapter_160",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0161",
+      "type": "chapter",
+      "start": 315780,
+      "end": 316978,
+      "label": "Chapter 53",
+      "name": "chapter_161",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0162",
+      "type": "chapter",
+      "start": 316978,
+      "end": 317233,
+      "label": "Chapter 54",
+      "name": "chapter_162",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0163",
+      "type": "chapter",
+      "start": 317233,
+      "end": 317933,
+      "label": "Chapter 55",
+      "name": "chapter_163",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0164",
+      "type": "chapter",
+      "start": 317933,
+      "end": 318484,
+      "label": "Chapter 56\"",
+      "name": "chapter_164",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0165",
+      "type": "chapter",
+      "start": 318484,
+      "end": 318886,
+      "label": "Chapter 57",
+      "name": "chapter_165",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0166",
+      "type": "chapter",
+      "start": 318886,
+      "end": 319993,
+      "label": "Chapter 58",
+      "name": "chapter_166",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0167",
+      "type": "chapter",
+      "start": 319993,
+      "end": 320632,
+      "label": "Chapter 59",
+      "name": "chapter_167",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0168",
+      "type": "chapter",
+      "start": 320632,
+      "end": 321159,
+      "label": "Chapter 60",
+      "name": "chapter_168",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0169",
+      "type": "chapter",
+      "start": 321159,
+      "end": 322076,
+      "label": "Chapter 61",
+      "name": "chapter_169",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0170",
+      "type": "chapter",
+      "start": 322076,
+      "end": 322588,
+      "label": "Chapter 62",
+      "name": "chapter_170",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0171",
+      "type": "chapter",
+      "start": 322588,
+      "end": 323338,
+      "label": "Chapter 63",
+      "name": "chapter_171",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0172",
+      "type": "chapter",
+      "start": 323338,
+      "end": 324217,
+      "label": "Chapter 64",
+      "name": "chapter_172",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0173",
+      "type": "chapter",
+      "start": 324217,
+      "end": 326467,
+      "label": "Chapter 65",
+      "name": "chapter_173",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0174",
+      "type": "chapter",
+      "start": 326467,
+      "end": 328207,
+      "label": "Chapter 66",
+      "name": "chapter_174",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0175",
+      "type": "chapter",
+      "start": 328207,
+      "end": 328768,
+      "label": "Chapter 67",
+      "name": "chapter_175",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0176",
+      "type": "chapter",
+      "start": 328768,
+      "end": 339419,
+      "label": "Chapter 68",
+      "name": "chapter_176",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0177",
+      "type": "chapter",
+      "start": 348678,
+      "end": 356476,
+      "label": "CHAPTER I",
+      "name": "chapter_177",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0178",
+      "type": "chapter",
+      "start": 356476,
+      "end": 357415,
+      "label": "CHAPTER 2",
+      "name": "chapter_178",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0179",
+      "type": "chapter",
+      "start": 357415,
+      "end": 358138,
+      "label": "CHAPTER 3",
+      "name": "chapter_179",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0180",
+      "type": "chapter",
+      "start": 358138,
+      "end": 363445,
+      "label": "CHAPTER 4",
+      "name": "chapter_180",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0181",
+      "type": "chapter",
+      "start": 363445,
+      "end": 368997,
+      "label": "CHAPTER S",
+      "name": "chapter_181",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0182",
+      "type": "chapter",
+      "start": 368997,
+      "end": 371214,
+      "label": "CHAPTER 6",
+      "name": "chapter_182",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0183",
+      "type": "chapter",
+      "start": 371214,
+      "end": 372562,
+      "label": "CHAPTER 7",
+      "name": "chapter_183",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0184",
+      "type": "chapter",
+      "start": 372562,
+      "end": 374340,
+      "label": "CHAPTER S",
+      "name": "chapter_184",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0185",
+      "type": "chapter",
+      "start": 374340,
+      "end": 375401,
+      "label": "CHAPTER 9",
+      "name": "chapter_185",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0186",
+      "type": "chapter",
+      "start": 375401,
+      "end": 377367,
+      "label": "CHAPTER 10",
+      "name": "chapter_186",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0187",
+      "type": "chapter",
+      "start": 377367,
+      "end": 378240,
+      "label": "CHAPTER 11",
+      "name": "chapter_187",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0188",
+      "type": "chapter",
+      "start": 378240,
+      "end": 379483,
+      "label": "CHAPTER 12",
+      "name": "chapter_188",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0189",
+      "type": "chapter",
+      "start": 379483,
+      "end": 380700,
+      "label": "CHAPTER 13",
+      "name": "chapter_189",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0190",
+      "type": "chapter",
+      "start": 380700,
+      "end": 383076,
+      "label": "CHAPTER 14",
+      "name": "chapter_190",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0191",
+      "type": "chapter",
+      "start": 383076,
+      "end": 384250,
+      "label": "CHAPTER 15",
+      "name": "chapter_191",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0192",
+      "type": "chapter",
+      "start": 384250,
+      "end": 387856,
+      "label": "CHAPTER 15 B",
+      "name": "chapter_192",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0193",
+      "type": "chapter",
+      "start": 387856,
+      "end": 390086,
+      "label": "CHAPTER 16",
+      "name": "chapter_193",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0194",
+      "type": "chapter",
+      "start": 390086,
+      "end": 393682,
+      "label": "CHAPTER 17",
+      "name": "chapter_194",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0195",
+      "type": "chapter",
+      "start": 393682,
+      "end": 407405,
+      "label": "CHAPTER 18",
+      "name": "chapter_195",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0196",
+      "type": "chapter",
+      "start": 407405,
+      "end": 410121,
+      "label": "CHAPTER 19",
+      "name": "chapter_196",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0197",
+      "type": "chapter",
+      "start": 410121,
+      "end": 410891,
+      "label": "CHAPTER 20",
+      "name": "chapter_197",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0198",
+      "type": "chapter",
+      "start": 410891,
+      "end": 411720,
+      "label": "CHAPTER 21",
+      "name": "chapter_198",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0199",
+      "type": "chapter",
+      "start": 411720,
+      "end": 416957,
+      "label": "CHAPTER 22",
+      "name": "chapter_199",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0200",
+      "type": "chapter",
+      "start": 416957,
+      "end": 419984,
+      "label": "CHAPTER 22-B",
+      "name": "chapter_200",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0201",
+      "type": "chapter",
+      "start": 419984,
+      "end": 423320,
+      "label": "CHAPTER 22 -C",
+      "name": "chapter_201",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0202",
+      "type": "chapter",
+      "start": 423320,
+      "end": 428005,
+      "label": "CHAPTER 23",
+      "name": "chapter_202",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0203",
+      "type": "chapter",
+      "start": 428005,
+      "end": 432025,
+      "label": "CHAPTER 24",
+      "name": "chapter_203",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0204",
+      "type": "chapter",
+      "start": 432025,
+      "end": 435681,
+      "label": "CHAPTER 25",
+      "name": "chapter_204",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0205",
+      "type": "chapter",
+      "start": 435681,
+      "end": 441659,
+      "label": "CHAPTER 26",
+      "name": "chapter_205",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0206",
+      "type": "chapter",
+      "start": 441659,
+      "end": 443075,
+      "label": "CHAPTER 27",
+      "name": "chapter_206",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0207",
+      "type": "chapter",
+      "start": 443075,
+      "end": 447488,
+      "label": "CHAPTER 28",
+      "name": "chapter_207",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0208",
+      "type": "chapter",
+      "start": 447488,
+      "end": 448416,
+      "label": "CHAPTER 29",
+      "name": "chapter_208",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0209",
+      "type": "chapter",
+      "start": 448416,
+      "end": 449602,
+      "label": "CHAPTER 30",
+      "name": "chapter_209",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0210",
+      "type": "chapter",
+      "start": 449602,
+      "end": 450705,
+      "label": "CHAPTER 31",
+      "name": "chapter_210",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0211",
+      "type": "chapter",
+      "start": 450705,
+      "end": 451631,
+      "label": "CHAPTER 32",
+      "name": "chapter_211",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0212",
+      "type": "chapter",
+      "start": 451631,
+      "end": 453833,
+      "label": "CHAPTER 33",
+      "name": "chapter_212",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0213",
+      "type": "chapter",
+      "start": 453833,
+      "end": 455384,
+      "label": "CHAPTER 34",
+      "name": "chapter_213",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0214",
+      "type": "chapter",
+      "start": 455384,
+      "end": 458605,
+      "label": "CHAPTER 35",
+      "name": "chapter_214",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0215",
+      "type": "chapter",
+      "start": 458605,
+      "end": 459661,
+      "label": "CHAPTER 36",
+      "name": "chapter_215",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0216",
+      "type": "chapter",
+      "start": 459661,
+      "end": 460858,
+      "label": "CHAPTER 37",
+      "name": "chapter_216",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0217",
+      "type": "chapter",
+      "start": 460858,
+      "end": 462408,
+      "label": "CHAPTER 38",
+      "name": "chapter_217",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0218",
+      "type": "chapter",
+      "start": 462408,
+      "end": 463737,
+      "label": "CHAPTER 39",
+      "name": "chapter_218",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0219",
+      "type": "chapter",
+      "start": 463737,
+      "end": 465651,
+      "label": "CHAPTER 40",
+      "name": "chapter_219",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0220",
+      "type": "chapter",
+      "start": 465651,
+      "end": 467349,
+      "label": "CHAPTER 41",
+      "name": "chapter_220",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0221",
+      "type": "chapter",
+      "start": 467349,
+      "end": 470193,
+      "label": "CHAPTER 42",
+      "name": "chapter_221",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0222",
+      "type": "chapter",
+      "start": 470193,
+      "end": 473015,
+      "label": "CHAPTER 43",
+      "name": "chapter_222",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0223",
+      "type": "chapter",
+      "start": 473015,
+      "end": 477445,
+      "label": "CHAPTER 44",
+      "name": "chapter_223",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0224",
+      "type": "chapter",
+      "start": 477445,
+      "end": 483346,
+      "label": "CHAPTER 45",
+      "name": "chapter_224",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0225",
+      "type": "chapter",
+      "start": 483346,
+      "end": 485380,
+      "label": "CHAPTER 46",
+      "name": "chapter_225",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0226",
+      "type": "chapter",
+      "start": 485380,
+      "end": 487415,
+      "label": "CHAPTER 47",
+      "name": "chapter_226",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0227",
+      "type": "chapter",
+      "start": 487415,
+      "end": 493476,
+      "label": "CHAPTER 48 A",
+      "name": "chapter_227",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0228",
+      "type": "chapter",
+      "start": 493476,
+      "end": 495548,
+      "label": "CHAPTER 48 - B",
+      "name": "chapter_228",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0229",
+      "type": "chapter",
+      "start": 495548,
+      "end": 502222,
+      "label": "CHAPTER 48 C",
+      "name": "chapter_229",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0230",
+      "type": "chapter",
+      "start": 502222,
+      "end": 510920,
+      "label": "CHAPTER 48 D",
+      "name": "chapter_230",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    }
+  ]
+}

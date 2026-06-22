@@ -1,0 +1,221 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 71,
+  "source_file": "The Strange Case of Dr_ Jekyll and Mr_ Hyde -- Robert Louis Stevenson -- 2015 -- Standard Ebooks -- 5b35483a9d153cce497b54a0d6b50431 -- Anna’s Archive.epub",
+  "import_source": "The Strange Case of Dr_ Jekyll and Mr_ Hyde -- Robert Louis Stevenson -- 2015 -- Standard Ebooks -- 5b35483a9d153cce497b54a0d6b50431 -- Anna’s Archive.epub",
+  "reference_sha256": "3acd41af033d0882961e71e945a63e55a668d9a9983677f77448339c7b5fd49c",
+  "text_len": 140461,
+  "element_count": 13,
+  "type_counts": {
+    "body": 1,
+    "copyright": 1,
+    "colophon": 1,
+    "chapter": 10
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "body": false,
+    "chapter": false,
+    "colophon": true,
+    "copyright": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 140461,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 0,
+      "end": 911,
+      "label": "Imprint",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "colophon-0001",
+      "type": "colophon",
+      "start": 139355,
+      "end": 140461,
+      "label": "Colophon",
+      "name": "colophon_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "chapter-0001",
+      "type": "chapter",
+      "start": 911,
+      "end": 13655,
+      "label": "Story of the Door",
+      "name": "chapter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0002",
+      "type": "chapter",
+      "start": 13655,
+      "end": 29671,
+      "label": "Search for Mr. Hyde",
+      "name": "chapter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0003",
+      "type": "chapter",
+      "start": 29671,
+      "end": 33937,
+      "label": "Dr. Jekyll Was Quite at Ease",
+      "name": "chapter_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0004",
+      "type": "chapter",
+      "start": 33937,
+      "end": 43097,
+      "label": "The Carew Murder Case",
+      "name": "chapter_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0005",
+      "type": "chapter",
+      "start": 43097,
+      "end": 52024,
+      "label": "Incident of the Letter",
+      "name": "chapter_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0006",
+      "type": "chapter",
+      "start": 52024,
+      "end": 60052,
+      "label": "Incident of Dr. Lanyon",
+      "name": "chapter_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0007",
+      "type": "chapter",
+      "start": 60052,
+      "end": 63015,
+      "label": "Incident at the Window",
+      "name": "chapter_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0008",
+      "type": "chapter",
+      "start": 63015,
+      "end": 86603,
+      "label": "The Last Night",
+      "name": "chapter_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0009",
+      "type": "chapter",
+      "start": 86603,
+      "end": 101632,
+      "label": "Dr. Lanyon's Narrative",
+      "name": "chapter_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "chapter-0010",
+      "type": "chapter",
+      "start": 101632,
+      "end": 139355,
+      "label": "Henry Jekyll's Full Statement of the Case",
+      "name": "chapter_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    }
+  ]
+}

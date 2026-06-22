@@ -1,0 +1,1418 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 105,
+  "source_file": "The Dead Sea Scrolls Reader, Vol_ 1_ Texts Concerned With -- edited by Donald W_ Parry & Emanuel Tov with the assistance -- 1, 2004 -- Brill Academic -- isbn13 9781423712275 -- 79bba3ff81b9b5adf8d401cdd0f7d237 -- Anna’s Archive.pdf",
+  "import_source": "The Dead Sea Scrolls Reader, Vol_ 1_ Texts Concerned With -- edited by Donald W_ Parry & Emanuel Tov with the assistance -- 1, 2004 -- Brill Academic -- isbn13 9781423712275 -- 79bba3ff81b9b5adf8d401cdd0f7d237 -- Anna’s Archive.pdf",
+  "reference_sha256": "97acfda75f99ef653a0054bbcba643185d10c519c12ef0ca139484afdea75959",
+  "text_len": 574841,
+  "element_count": 92,
+  "type_counts": {
+    "body": 1,
+    "title_page": 1,
+    "copyright": 1,
+    "contents": 2,
+    "introduction": 2,
+    "glossary": 1,
+    "translation": 64,
+    "book": 6,
+    "footnotes": 8,
+    "part": 6
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "body": false,
+    "book": false,
+    "contents": true,
+    "copyright": true,
+    "footnotes": true,
+    "glossary": true,
+    "introduction": true,
+    "part": false,
+    "title_page": true,
+    "translation": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 574841,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "title_page-0001",
+      "type": "title_page",
+      "start": 0,
+      "end": 296,
+      "label": "T h e",
+      "name": "title_page_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 296,
+      "end": 1795,
+      "label": "Printed on acid-free paper",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 1795,
+      "end": 4386,
+      "label": "CONTENTS",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0001",
+      "type": "introduction",
+      "start": 4437,
+      "end": 36177,
+      "label": "The Dead Sea Scrolls Reader (DSSR) presents for the first time all the non-",
+      "name": "introduction_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "glossary-0001",
+      "type": "glossary",
+      "start": 36177,
+      "end": 38309,
+      "label": "ABBREVIATIONS",
+      "name": "glossary_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0002",
+      "type": "introduction",
+      "start": 38309,
+      "end": 42891,
+      "label": "INTRODUCTION TO PART 11",
+      "name": "introduction_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0002",
+      "type": "contents",
+      "start": 4386,
+      "end": 4437,
+      "label": "GENERAL TABLE OF CONTENTS",
+      "name": "contents_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "translation-0001",
+      "type": "translation",
+      "start": 42891,
+      "end": 44002,
+      "label": "2",
+      "name": "translation_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "book-0001",
+      "type": "book",
+      "start": 42914,
+      "end": 73266,
+      "label": "Serekh ha-Yaúad",
+      "name": "book_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "book-0002",
+      "type": "book",
+      "start": 73266,
+      "end": 182504,
+      "label": "Serekh le<anshey ha-Yaúad",
+      "name": "book_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "book-0003",
+      "type": "book",
+      "start": 182504,
+      "end": 354910,
+      "label": "Damascus Document (D)",
+      "name": "book_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "book-0004",
+      "type": "book",
+      "start": 354940,
+      "end": 378476,
+      "label": "RULE OF THE CONGREGATION",
+      "name": "book_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "book-0005",
+      "type": "book",
+      "start": 378476,
+      "end": 510907,
+      "label": "1Q33 (1QM[ilúamah] = 1QWar Scroll [Rule]) ed. M. Abegg",
+      "name": "book_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "book-0006",
+      "type": "book",
+      "start": 548863,
+      "end": 568700,
+      "label": "326",
+      "name": "book_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "footnotes-0001",
+      "type": "footnotes",
+      "start": 5963,
+      "end": 11250,
+      "label": "1 Several persons helped us in this cooperative effort. The bulk of the material",
+      "name": "footnotes_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "footnotes-0002",
+      "type": "footnotes",
+      "start": 11316,
+      "end": 14659,
+      "label": "3 Exceptions to this rule are the addition of 4Q168 to part 2, the addition of 4",
+      "name": "footnotes_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "footnotes-0003",
+      "type": "footnotes",
+      "start": 14705,
+      "end": 17267,
+      "label": "6 Some of the very fragmentary texts which have been named biblical may actually",
+      "name": "footnotes_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "footnotes-0004",
+      "type": "footnotes",
+      "start": 17319,
+      "end": 21699,
+      "label": "10 These transcriptions were prepared for the Qumran module of the Accordance co",
+      "name": "footnotes_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "footnotes-0005",
+      "type": "footnotes",
+      "start": 21745,
+      "end": 24762,
+      "label": "16 The data and difficulties involved are described in detail by E. J. C. Tigche",
+      "name": "footnotes_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "footnotes-0006",
+      "type": "footnotes",
+      "start": 24816,
+      "end": 27903,
+      "label": "18 It would not be amiss to note that vol. V in the DJD series (4Q158–186) was p",
+      "name": "footnotes_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "footnotes-0007",
+      "type": "footnotes",
+      "start": 27951,
+      "end": 31940,
+      "label": "20 Such typographic errors are corrected in the following way: <DJD: .קודשו >קדו",
+      "name": "footnotes_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "footnotes-0008",
+      "type": "footnotes",
+      "start": 40807,
+      "end": 42825,
+      "label": "1 DSSR follows the classification of A. Lange with U. Mittman-Richert, \"Annotate",
+      "name": "footnotes_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "part-0001",
+      "type": "part",
+      "start": 42891,
+      "end": 354910,
+      "label": "2",
+      "name": "part_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "part-0002",
+      "type": "part",
+      "start": 354910,
+      "end": 510907,
+      "label": "194",
+      "name": "part_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "part-0003",
+      "type": "part",
+      "start": 510907,
+      "end": 517974,
+      "label": "292",
+      "name": "part_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "part-0004",
+      "type": "part",
+      "start": 517974,
+      "end": 548863,
+      "label": "298",
+      "name": "part_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "part-0005",
+      "type": "part",
+      "start": 548863,
+      "end": 568700,
+      "label": "326",
+      "name": "part_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "part-0006",
+      "type": "part",
+      "start": 568700,
+      "end": 574841,
+      "label": "338",
+      "name": "part_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "translation-0002",
+      "type": "translation",
+      "start": 44002,
+      "end": 55948,
+      "label": "1QS I 1–III 12 trans. M. Wise, M. Abegg, and E. Cook with",
+      "name": "translation_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0003",
+      "type": "translation",
+      "start": 55948,
+      "end": 58633,
+      "label": "4Q255 (4QpapSa) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0004",
+      "type": "translation",
+      "start": 58633,
+      "end": 62700,
+      "label": "4Q256 (4QSb) trans. P. S. Alexander and G. Vermes; for the other",
+      "name": "translation_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0005",
+      "type": "translation",
+      "start": 62700,
+      "end": 72022,
+      "label": "4Q257 (4QpapSc) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0006",
+      "type": "translation",
+      "start": 72022,
+      "end": 73878,
+      "label": "4Q262 (4QSh) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0007",
+      "type": "translation",
+      "start": 73878,
+      "end": 74213,
+      "label": "5Q11 (5QS) trans. M. Wise, M. Abegg, and E. Cook with",
+      "name": "translation_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0008",
+      "type": "translation",
+      "start": 74213,
+      "end": 120964,
+      "label": "1QS V 1–XI 22 trans. M. Wise, M. Abegg, and E. Cook with",
+      "name": "translation_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0009",
+      "type": "translation",
+      "start": 120964,
+      "end": 131308,
+      "label": "4Q256 (4QSb) trans. P. S. Alexander and G. Vermes; for the other",
+      "name": "translation_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0010",
+      "type": "translation",
+      "start": 131308,
+      "end": 154641,
+      "label": "4Q258 (4QSd) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0011",
+      "type": "translation",
+      "start": 154641,
+      "end": 166428,
+      "label": "4Q259 (4QSe) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0012",
+      "type": "translation",
+      "start": 166428,
+      "end": 172940,
+      "label": "4Q260 (4QSf) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0013",
+      "type": "translation",
+      "start": 172940,
+      "end": 180596,
+      "label": "4Q261 (4QSg) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0014",
+      "type": "translation",
+      "start": 180596,
+      "end": 181429,
+      "label": "4Q263 (4QSi) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0015",
+      "type": "translation",
+      "start": 181429,
+      "end": 184358,
+      "label": "4Q264 (4QSj) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0016",
+      "type": "translation",
+      "start": 184358,
+      "end": 242990,
+      "label": "4Q266 (4QDa) trans. J. M. Baumgarten",
+      "name": "translation_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0017",
+      "type": "translation",
+      "start": 242990,
+      "end": 259737,
+      "label": "4Q267 (4QDb) trans. J. M. Baumgarten",
+      "name": "translation_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0018",
+      "type": "translation",
+      "start": 259737,
+      "end": 262944,
+      "label": "4Q268 (4QDc) trans. J. M. Baumgarten",
+      "name": "translation_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0019",
+      "type": "translation",
+      "start": 262944,
+      "end": 283855,
+      "label": "4Q269 (4QDd) trans. J. M. Baumgarten; H. Stegemann",
+      "name": "translation_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0020",
+      "type": "translation",
+      "start": 283855,
+      "end": 313360,
+      "label": "4Q270 (4QDe) trans. J. M. Baumgarten",
+      "name": "translation_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0021",
+      "type": "translation",
+      "start": 313360,
+      "end": 327852,
+      "label": "4Q271 (4QDf) trans. J. M. Baumgarten",
+      "name": "translation_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0022",
+      "type": "translation",
+      "start": 327852,
+      "end": 332999,
+      "label": "4Q272 (4QDg) trans. J. M. Baumgarten",
+      "name": "translation_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0023",
+      "type": "translation",
+      "start": 332999,
+      "end": 336757,
+      "label": "4Q273 (4QpapDh) trans. J. M. Baumgarten",
+      "name": "translation_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0024",
+      "type": "translation",
+      "start": 336757,
+      "end": 337024,
+      "label": "5Q12 (5QD) trans. M. Wise, M. Abegg, and E. Cook with",
+      "name": "translation_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0025",
+      "type": "translation",
+      "start": 337024,
+      "end": 339928,
+      "label": "6Q15 (6QD) trans. M. Wise, M. Abegg, and E. Cook with",
+      "name": "translation_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0026",
+      "type": "translation",
+      "start": 339928,
+      "end": 341891,
+      "label": "4Q264a (4QHalakha B) trans. J. M. Baumgarten",
+      "name": "translation_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0027",
+      "type": "translation",
+      "start": 341891,
+      "end": 344187,
+      "label": "4Q420 (4QWays of Righteousnessa) trans. T. Elgvin",
+      "name": "translation_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0028",
+      "type": "translation",
+      "start": 344187,
+      "end": 348939,
+      "label": "4Q421 (4QWays of Righteousnessb) trans. T. Elgvin",
+      "name": "translation_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0029",
+      "type": "translation",
+      "start": 348939,
+      "end": 350787,
+      "label": "4Q275 (4QCommunal Ceremony) trans. P. S. Alexander and",
+      "name": "translation_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0030",
+      "type": "translation",
+      "start": 350787,
+      "end": 352464,
+      "label": "4Q284a (4QHarvesting) trans. J. M. Baumgarten",
+      "name": "translation_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0031",
+      "type": "translation",
+      "start": 352464,
+      "end": 352600,
+      "label": "4Q472a (4QHalakha C) trans. T. Elgvin",
+      "name": "translation_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0032",
+      "type": "translation",
+      "start": 352600,
+      "end": 356220,
+      "label": "5Q13 (5QRule) trans. M. Abegg, M. Wise, and E. Cook with",
+      "name": "translation_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0033",
+      "type": "translation",
+      "start": 356220,
+      "end": 365520,
+      "label": "1Q28a (1QSa) trans. M. Wise, M. Abegg, and E. Cook with",
+      "name": "translation_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0034",
+      "type": "translation",
+      "start": 365520,
+      "end": 367306,
+      "label": "4Q249a (4Qpap cryptA Serekh ha->Edaha) trans. S. J. Pfann",
+      "name": "translation_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0035",
+      "type": "translation",
+      "start": 367306,
+      "end": 367567,
+      "label": "4Q249b (4Qpap cryptA Serekh ha->Edahb) trans. S. J. Pfann",
+      "name": "translation_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0036",
+      "type": "translation",
+      "start": 367567,
+      "end": 368140,
+      "label": "4Q249c (4Qpap cryptA Serekh ha->Edahc) trans. S. J. Pfann",
+      "name": "translation_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0037",
+      "type": "translation",
+      "start": 368140,
+      "end": 370172,
+      "label": "4Q249d (4Qpap cryptA Serekh ha->Edahd) trans. S. J. Pfann",
+      "name": "translation_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0038",
+      "type": "translation",
+      "start": 370172,
+      "end": 371508,
+      "label": "4Q249e (4Qpap cryptA Serekh ha->Edahe) trans. S. J. Pfann",
+      "name": "translation_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0039",
+      "type": "translation",
+      "start": 371508,
+      "end": 373772,
+      "label": "4Q249f (4Qpap cryptA Serekh ha->Edahf) trans. S. J. Pfann",
+      "name": "translation_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0040",
+      "type": "translation",
+      "start": 373772,
+      "end": 377212,
+      "label": "4Q249g (4Qpap cryptA Serekh ha->Edahg) trans. S. J. Pfann",
+      "name": "translation_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0041",
+      "type": "translation",
+      "start": 377212,
+      "end": 379729,
+      "label": "4Q249h (4Qpap cryptA Serekh ha->Edahh) trans. S. J. Pfann",
+      "name": "translation_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0042",
+      "type": "translation",
+      "start": 379729,
+      "end": 451427,
+      "label": "1Q33 (1QM[ilúamah] = 1QWar Scroll [Rule]) trans. M. Wise, M.",
+      "name": "translation_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0043",
+      "type": "translation",
+      "start": 451427,
+      "end": 457397,
+      "label": "4Q285 (4QSefer ha-Milúamah) trans. P. S. Alexander and",
+      "name": "translation_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0044",
+      "type": "translation",
+      "start": 457397,
+      "end": 459781,
+      "label": "4Q471 (4QWar Scroll-like Text B) trans. E. Eshel and H. Eshel",
+      "name": "translation_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0045",
+      "type": "translation",
+      "start": 459781,
+      "end": 487792,
+      "label": "4Q491 (4QM[ilúamah]a) trans. M. Wise, M. Abegg, and E. Cook",
+      "name": "translation_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0046",
+      "type": "translation",
+      "start": 487792,
+      "end": 491323,
+      "label": "4Q492 (4QM[ilúamah]b) trans. M. Wise, M. Abegg, and E. Cook",
+      "name": "translation_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0047",
+      "type": "translation",
+      "start": 491323,
+      "end": 493034,
+      "label": "4Q493 (4QM[ilúamah]c) trans. M. Wise, M. Abegg, and E. Cook",
+      "name": "translation_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0048",
+      "type": "translation",
+      "start": 493034,
+      "end": 494818,
+      "label": "4Q494 (4QM[ilúamah]d) trans. M. Wise, M. Abegg, and E. Cook",
+      "name": "translation_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0049",
+      "type": "translation",
+      "start": 494818,
+      "end": 495624,
+      "label": "4Q495 (4QM[ilúamah]e) trans. M. Wise, M. Abegg, and E. Cook",
+      "name": "translation_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0050",
+      "type": "translation",
+      "start": 495624,
+      "end": 505810,
+      "label": "4Q496 (4QpapMf) trans. M. Wise, M. Abegg, and",
+      "name": "translation_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0051",
+      "type": "translation",
+      "start": 505810,
+      "end": 508717,
+      "label": "4Q497 (4QpapWar Scroll-like Text A) trans. M. Wise, M. Abegg,",
+      "name": "translation_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0052",
+      "type": "translation",
+      "start": 508717,
+      "end": 512018,
+      "label": "11Q14 (11QSefer ha-Milúamah) trans. F. García Martínez et al.",
+      "name": "translation_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0053",
+      "type": "translation",
+      "start": 512018,
+      "end": 519145,
+      "label": "4Q274 (4QTohorot A) trans. J. M. Baumgarten",
+      "name": "translation_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0054",
+      "type": "translation",
+      "start": 519145,
+      "end": 522503,
+      "label": "4Q159 (4QOrdinancesa) trans. J. M. Allegro with N. Gordon",
+      "name": "translation_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0055",
+      "type": "translation",
+      "start": 522503,
+      "end": 528892,
+      "label": "4Q513 (4QOrdinancesb) trans. M. Wise, M. Abegg, and E. Cook",
+      "name": "translation_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0056",
+      "type": "translation",
+      "start": 528892,
+      "end": 531322,
+      "label": "4Q514 (4QOrdinancesc) trans. M. Wise, M. Abegg, and E. Cook",
+      "name": "translation_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0057",
+      "type": "translation",
+      "start": 531322,
+      "end": 540861,
+      "label": "4Q251 (4QHalakha A) trans. E. Larson, M. R. Lehmann, and",
+      "name": "translation_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0058",
+      "type": "translation",
+      "start": 540861,
+      "end": 550400,
+      "label": "4Q265 (4QMiscellaneous Rules) trans. J. M. Baumgarten",
+      "name": "translation_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0059",
+      "type": "translation",
+      "start": 550400,
+      "end": 568331,
+      "label": "Text]) trans. E. Qimron and J. Strugnell; for frgs. 1–2",
+      "name": "translation_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0060",
+      "type": "translation",
+      "start": 568331,
+      "end": 569986,
+      "label": "4Q313 (4QcryptA MMTg?) trans. S. J. Pfann",
+      "name": "translation_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0061",
+      "type": "translation",
+      "start": 569986,
+      "end": 570631,
+      "label": "4Q276 (4QTohorot Ba) trans. J. M. Baumgarten",
+      "name": "translation_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0062",
+      "type": "translation",
+      "start": 570631,
+      "end": 573342,
+      "label": "4Q277 (4QTohorot Bb) trans. J. M. Baumgarten",
+      "name": "translation_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0063",
+      "type": "translation",
+      "start": 573342,
+      "end": 573633,
+      "label": "4Q278 (4QTohorot C) trans. J. M. Baumgarten",
+      "name": "translation_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0064",
+      "type": "translation",
+      "start": 573633,
+      "end": 574841,
+      "label": "4Q279 (4QFour Lots) trans. P. S. Alexander and G. Vermes",
+      "name": "translation_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    }
+  ]
+}

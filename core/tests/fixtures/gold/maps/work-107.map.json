@@ -1,0 +1,1932 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 107,
+  "source_file": "The Holy Quran With Arabic Text And English Translation -- Maulawī Sher ʻAlī; Tahir Ahmad -- 2021 -- Islam International Publications Limited -- isbn13 9781848800229 -- 45d547fdc78588e53a0fc7b3166a36b4 -- Anna’s Archive.pdf",
+  "import_source": "The Holy Quran With Arabic Text And English Translation -- Maulawī Sher ʻAlī; Tahir Ahmad -- 2021 -- Islam International Publications Limited -- isbn13 9781848800229 -- 45d547fdc78588e53a0fc7b3166a36b4 -- Anna’s Archive.pdf",
+  "reference_sha256": "6a46b84dcf7277b9c76af53983309d0e53056b8ee22d784d677a0c72a79c2b92",
+  "text_len": 1491930,
+  "element_count": 126,
+  "type_counts": {
+    "body": 1,
+    "translation": 1,
+    "title_page": 1,
+    "copyright": 1,
+    "contents": 1,
+    "preface": 1,
+    "foreword": 1,
+    "glossary": 1,
+    "index": 1,
+    "back_matter": 1,
+    "front_matter": 2,
+    "chapter": 114
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "back_matter": true,
+    "body": false,
+    "chapter": false,
+    "contents": true,
+    "copyright": true,
+    "foreword": true,
+    "front_matter": true,
+    "glossary": true,
+    "index": true,
+    "preface": true,
+    "title_page": true,
+    "translation": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 1491930,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "translation-0001",
+      "type": "translation",
+      "start": 19233,
+      "end": 1346754,
+      "label": "AL-FATIHAH",
+      "name": "translation_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "title_page-0001",
+      "type": "title_page",
+      "start": 20,
+      "end": 105,
+      "label": "THE HOLY QUR' AN",
+      "name": "title_page_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 1253,
+      "end": 1584,
+      "label": "© ISLAM INTERNATIONAL PUBLICATIONS LTD.",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 1609,
+      "end": 6532,
+      "label": "CONTENTS",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "preface-0001",
+      "type": "preface",
+      "start": 8848,
+      "end": 10507,
+      "label": "Publisher's Note on the English Translation of the Holy Qur'an",
+      "name": "preface_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "foreword-0001",
+      "type": "foreword",
+      "start": 10611,
+      "end": 18318,
+      "label": "In 2004 we published, under the auspices of I:-Ja<)rat",
+      "name": "foreword_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "glossary-0001",
+      "type": "glossary",
+      "start": 1347323,
+      "end": 1354080,
+      "label": "SOME ARABIC WORDS EXPLAINED",
+      "name": "glossary_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "index-0001",
+      "type": "index",
+      "start": 1354080,
+      "end": 1480966,
+      "label": "Index",
+      "name": "index_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "back_matter-0001",
+      "type": "back_matter",
+      "start": 1480966,
+      "end": 1491930,
+      "label": "List of References",
+      "name": "back_matter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "front_matter-0001",
+      "type": "front_matter",
+      "start": 0,
+      "end": 10611,
+      "label": "-",
+      "name": "front_matter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "front_matter-0002",
+      "type": "front_matter",
+      "start": 18318,
+      "end": 19233,
+      "label": "Index of Symbols Denoting",
+      "name": "front_matter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "chapter-0001",
+      "type": "chapter",
+      "start": 19233,
+      "end": 20204,
+      "label": "AL-FATIHAH",
+      "name": "chapter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0002",
+      "type": "chapter",
+      "start": 20204,
+      "end": 113803,
+      "label": "AL-BAQARAH",
+      "name": "chapter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0003",
+      "type": "chapter",
+      "start": 113803,
+      "end": 170116,
+      "label": "AL-E-'IMRAN",
+      "name": "chapter_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0004",
+      "type": "chapter",
+      "start": 170116,
+      "end": 237926,
+      "label": "AN-NISA'",
+      "name": "chapter_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0005",
+      "type": "chapter",
+      "start": 237926,
+      "end": 283720,
+      "label": "AL-MA'IDAH",
+      "name": "chapter_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0006",
+      "type": "chapter",
+      "start": 283720,
+      "end": 331083,
+      "label": "AL-AN'AM",
+      "name": "chapter_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0007",
+      "type": "chapter",
+      "start": 331083,
+      "end": 384953,
+      "label": "AL-A'RAF",
+      "name": "chapter_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0008",
+      "type": "chapter",
+      "start": 384953,
+      "end": 404899,
+      "label": "AL-ANFAL",
+      "name": "chapter_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0009",
+      "type": "chapter",
+      "start": 404899,
+      "end": 445697,
+      "label": "AT-TAUBAH",
+      "name": "chapter_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0010",
+      "type": "chapter",
+      "start": 445697,
+      "end": 479073,
+      "label": "YUNUS",
+      "name": "chapter_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0011",
+      "type": "chapter",
+      "start": 479073,
+      "end": 510575,
+      "label": "HUD",
+      "name": "chapter_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0012",
+      "type": "chapter",
+      "start": 510575,
+      "end": 540958,
+      "label": "YUSUF",
+      "name": "chapter_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0013",
+      "type": "chapter",
+      "start": 540958,
+      "end": 553543,
+      "label": "AR-RA'D",
+      "name": "chapter_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0014",
+      "type": "chapter",
+      "start": 553543,
+      "end": 568682,
+      "label": "IBRAHIM",
+      "name": "chapter_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0015",
+      "type": "chapter",
+      "start": 568682,
+      "end": 582492,
+      "label": "AL-HIJR",
+      "name": "chapter_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0016",
+      "type": "chapter",
+      "start": 582492,
+      "end": 614856,
+      "label": "AN-NAHL",
+      "name": "chapter_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0017",
+      "type": "chapter",
+      "start": 614856,
+      "end": 640305,
+      "label": "BANi-ISRA'iL",
+      "name": "chapter_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0018",
+      "type": "chapter",
+      "start": 640305,
+      "end": 666994,
+      "label": "AL-KAHF",
+      "name": "chapter_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0019",
+      "type": "chapter",
+      "start": 666994,
+      "end": 683122,
+      "label": "MARYAM",
+      "name": "chapter_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0020",
+      "type": "chapter",
+      "start": 683122,
+      "end": 706263,
+      "label": "TAHA",
+      "name": "chapter_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0021",
+      "type": "chapter",
+      "start": 706263,
+      "end": 727560,
+      "label": "AL-ANBIYA'",
+      "name": "chapter_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0022",
+      "type": "chapter",
+      "start": 727560,
+      "end": 747488,
+      "label": "AL-HAJJ",
+      "name": "chapter_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0023",
+      "type": "chapter",
+      "start": 747488,
+      "end": 764695,
+      "label": "AL-MU'MINUN",
+      "name": "chapter_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0024",
+      "type": "chapter",
+      "start": 764695,
+      "end": 786299,
+      "label": "AN-NUR",
+      "name": "chapter_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0025",
+      "type": "chapter",
+      "start": 786299,
+      "end": 802082,
+      "label": "AL-FURQAN",
+      "name": "chapter_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0026",
+      "type": "chapter",
+      "start": 802082,
+      "end": 823998,
+      "label": "ASH-SHU'ARA'",
+      "name": "chapter_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0027",
+      "type": "chapter",
+      "start": 823998,
+      "end": 846418,
+      "label": "AN-NAML",
+      "name": "chapter_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0028",
+      "type": "chapter",
+      "start": 846418,
+      "end": 871276,
+      "label": "AL-QAf;!Af;!",
+      "name": "chapter_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0029",
+      "type": "chapter",
+      "start": 871276,
+      "end": 887367,
+      "label": "AL-'ANKABUT",
+      "name": "chapter_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0030",
+      "type": "chapter",
+      "start": 887367,
+      "end": 900596,
+      "label": "AR-RUM",
+      "name": "chapter_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0031",
+      "type": "chapter",
+      "start": 900596,
+      "end": 908216,
+      "label": "LUQMAN",
+      "name": "chapter_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0032",
+      "type": "chapter",
+      "start": 908216,
+      "end": 914060,
+      "label": "AS-SAJDAH",
+      "name": "chapter_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0033",
+      "type": "chapter",
+      "start": 914060,
+      "end": 938433,
+      "label": "AL-AHZAB",
+      "name": "chapter_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0034",
+      "type": "chapter",
+      "start": 938433,
+      "end": 952529,
+      "label": "SABA'",
+      "name": "chapter_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0035",
+      "type": "chapter",
+      "start": 952529,
+      "end": 964957,
+      "label": "FATIR",
+      "name": "chapter_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0036",
+      "type": "chapter",
+      "start": 964957,
+      "end": 976908,
+      "label": "YA SIN",
+      "name": "chapter_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0037",
+      "type": "chapter",
+      "start": 976908,
+      "end": 995552,
+      "label": "AS-SAFFAT",
+      "name": "chapter_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0038",
+      "type": "chapter",
+      "start": 995552,
+      "end": 1009822,
+      "label": "SAD",
+      "name": "chapter_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0039",
+      "type": "chapter",
+      "start": 1009822,
+      "end": 1028602,
+      "label": "AZ-ZUMAR",
+      "name": "chapter_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0040",
+      "type": "chapter",
+      "start": 1028602,
+      "end": 1048070,
+      "label": "AL-MU'MIN",
+      "name": "chapter_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0041",
+      "type": "chapter",
+      "start": 1048070,
+      "end": 1062349,
+      "label": "J:IA MiM AS-SAJDAH",
+      "name": "chapter_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0042",
+      "type": "chapter",
+      "start": 1062349,
+      "end": 1076421,
+      "label": "ASH-SH-ORA",
+      "name": "chapter_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0043",
+      "type": "chapter",
+      "start": 1076421,
+      "end": 1092063,
+      "label": "AZ-ZUKHRUF",
+      "name": "chapter_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0044",
+      "type": "chapter",
+      "start": 1092063,
+      "end": 1097603,
+      "label": "AD-DUKHAN",
+      "name": "chapter_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0045",
+      "type": "chapter",
+      "start": 1097603,
+      "end": 1105392,
+      "label": "AL-JATHIYAH",
+      "name": "chapter_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0046",
+      "type": "chapter",
+      "start": 1105392,
+      "end": 1115190,
+      "label": "AL-AJ:IQAF",
+      "name": "chapter_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0047",
+      "type": "chapter",
+      "start": 1115190,
+      "end": 1124496,
+      "label": "MUl:IAMMAD",
+      "name": "chapter_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0048",
+      "type": "chapter",
+      "start": 1124496,
+      "end": 1133920,
+      "label": "AL-FATH",
+      "name": "chapter_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0049",
+      "type": "chapter",
+      "start": 1133920,
+      "end": 1139762,
+      "label": "AL-J:IUJURAT",
+      "name": "chapter_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0050",
+      "type": "chapter",
+      "start": 1139762,
+      "end": 1146419,
+      "label": "QAF",
+      "name": "chapter_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0051",
+      "type": "chapter",
+      "start": 1146419,
+      "end": 1153903,
+      "label": "ADH-DHARIYAT",
+      "name": "chapter_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0052",
+      "type": "chapter",
+      "start": 1153903,
+      "end": 1159603,
+      "label": "AT-'fUR",
+      "name": "chapter_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0053",
+      "type": "chapter",
+      "start": 1159603,
+      "end": 1166659,
+      "label": "AN-NAJM",
+      "name": "chapter_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0054",
+      "type": "chapter",
+      "start": 1166659,
+      "end": 1173056,
+      "label": "AL-QAMAR",
+      "name": "chapter_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0055",
+      "type": "chapter",
+      "start": 1173056,
+      "end": 1180301,
+      "label": "AR-RAHMAN",
+      "name": "chapter_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0056",
+      "type": "chapter",
+      "start": 1180301,
+      "end": 1188582,
+      "label": "AL-WAQI'AH",
+      "name": "chapter_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0057",
+      "type": "chapter",
+      "start": 1188582,
+      "end": 1197522,
+      "label": "AL-l:IADID",
+      "name": "chapter_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0058",
+      "type": "chapter",
+      "start": 1197522,
+      "end": 1204518,
+      "label": "AL-MUJADALAH",
+      "name": "chapter_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0059",
+      "type": "chapter",
+      "start": 1204518,
+      "end": 1211848,
+      "label": "AL-1:fASHR",
+      "name": "chapter_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0060",
+      "type": "chapter",
+      "start": 1211848,
+      "end": 1217941,
+      "label": "AL-MUMTAHINAH",
+      "name": "chapter_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0061",
+      "type": "chapter",
+      "start": 1217941,
+      "end": 1221479,
+      "label": "A$-$AFF",
+      "name": "chapter_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0062",
+      "type": "chapter",
+      "start": 1221479,
+      "end": 1223783,
+      "label": "AL-JUMU'AH",
+      "name": "chapter_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0063",
+      "type": "chapter",
+      "start": 1223783,
+      "end": 1227155,
+      "label": "AL-MUNAFIQUN",
+      "name": "chapter_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0064",
+      "type": "chapter",
+      "start": 1227155,
+      "end": 1231885,
+      "label": "AT-TAGHABUN",
+      "name": "chapter_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0065",
+      "type": "chapter",
+      "start": 1231885,
+      "end": 1236953,
+      "label": "A'f-'fALAQ",
+      "name": "chapter_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0066",
+      "type": "chapter",
+      "start": 1236953,
+      "end": 1241229,
+      "label": "AT-TAl:IRIM",
+      "name": "chapter_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0067",
+      "type": "chapter",
+      "start": 1241229,
+      "end": 1246228,
+      "label": "AL-MULK",
+      "name": "chapter_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0068",
+      "type": "chapter",
+      "start": 1246228,
+      "end": 1252052,
+      "label": "AL-QALAM",
+      "name": "chapter_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0069",
+      "type": "chapter",
+      "start": 1252052,
+      "end": 1257724,
+      "label": "AL-l:IAQQAH",
+      "name": "chapter_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0070",
+      "type": "chapter",
+      "start": 1257724,
+      "end": 1262380,
+      "label": "AL-MA'ARIJ",
+      "name": "chapter_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0071",
+      "type": "chapter",
+      "start": 1262380,
+      "end": 1266782,
+      "label": "NUH",
+      "name": "chapter_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0072",
+      "type": "chapter",
+      "start": 1266782,
+      "end": 1272110,
+      "label": "AL-JINN",
+      "name": "chapter_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0073",
+      "type": "chapter",
+      "start": 1272110,
+      "end": 1275451,
+      "label": "AL-MUZZAMMIL",
+      "name": "chapter_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0074",
+      "type": "chapter",
+      "start": 1275451,
+      "end": 1280960,
+      "label": "AL-MUDDATHTHIR",
+      "name": "chapter_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0075",
+      "type": "chapter",
+      "start": 1280960,
+      "end": 1284215,
+      "label": "AL-QIYAMAH",
+      "name": "chapter_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0076",
+      "type": "chapter",
+      "start": 1284215,
+      "end": 1288362,
+      "label": "AD-DAHR",
+      "name": "chapter_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0077",
+      "type": "chapter",
+      "start": 1288362,
+      "end": 1292442,
+      "label": "AL-MURSALAT",
+      "name": "chapter_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0078",
+      "type": "chapter",
+      "start": 1292442,
+      "end": 1296193,
+      "label": "AN-NABA'",
+      "name": "chapter_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0079",
+      "type": "chapter",
+      "start": 1296193,
+      "end": 1300253,
+      "label": "AN-NAZI'AT",
+      "name": "chapter_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0080",
+      "type": "chapter",
+      "start": 1300253,
+      "end": 1303169,
+      "label": "'ABASA",
+      "name": "chapter_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0081",
+      "type": "chapter",
+      "start": 1303169,
+      "end": 1305273,
+      "label": "AT-TAKWiR",
+      "name": "chapter_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0082",
+      "type": "chapter",
+      "start": 1305273,
+      "end": 1307003,
+      "label": "AL-INFITAR",
+      "name": "chapter_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0083",
+      "type": "chapter",
+      "start": 1307003,
+      "end": 1309857,
+      "label": "AT-TATFIF",
+      "name": "chapter_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0084",
+      "type": "chapter",
+      "start": 1309857,
+      "end": 1311989,
+      "label": "AL-INSHIQAQ",
+      "name": "chapter_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0085",
+      "type": "chapter",
+      "start": 1311989,
+      "end": 1314354,
+      "label": "AL-BURUJ",
+      "name": "chapter_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0086",
+      "type": "chapter",
+      "start": 1314354,
+      "end": 1315663,
+      "label": "AT-TARIQ",
+      "name": "chapter_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0087",
+      "type": "chapter",
+      "start": 1315663,
+      "end": 1317113,
+      "label": "AL-A'LA",
+      "name": "chapter_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0088",
+      "type": "chapter",
+      "start": 1317113,
+      "end": 1319074,
+      "label": "AL-GHASHIYAH",
+      "name": "chapter_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0089",
+      "type": "chapter",
+      "start": 1319074,
+      "end": 1321625,
+      "label": "AL-FAJR",
+      "name": "chapter_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0090",
+      "type": "chapter",
+      "start": 1321625,
+      "end": 1323404,
+      "label": "AL-BALAD",
+      "name": "chapter_90",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0091",
+      "type": "chapter",
+      "start": 1323404,
+      "end": 1325069,
+      "label": "ASH-SHAMS",
+      "name": "chapter_91",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0092",
+      "type": "chapter",
+      "start": 1325069,
+      "end": 1326724,
+      "label": "AL-LAIL",
+      "name": "chapter_92",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0093",
+      "type": "chapter",
+      "start": 1326724,
+      "end": 1327884,
+      "label": "A:P-:PUl;IA",
+      "name": "chapter_93",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0094",
+      "type": "chapter",
+      "start": 1327884,
+      "end": 1328579,
+      "label": "AL-IN SHIRAH",
+      "name": "chapter_94",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0095",
+      "type": "chapter",
+      "start": 1328579,
+      "end": 1329642,
+      "label": "AT-TIN",
+      "name": "chapter_95",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0096",
+      "type": "chapter",
+      "start": 1329642,
+      "end": 1331913,
+      "label": "AL-'ALAQ",
+      "name": "chapter_96",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0097",
+      "type": "chapter",
+      "start": 1331913,
+      "end": 1332928,
+      "label": "AL-QADR",
+      "name": "chapter_97",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0098",
+      "type": "chapter",
+      "start": 1332928,
+      "end": 1334917,
+      "label": "AL-BAYYINAH",
+      "name": "chapter_98",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0099",
+      "type": "chapter",
+      "start": 1334917,
+      "end": 1335999,
+      "label": "AZ-ZILZAL",
+      "name": "chapter_99",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0100",
+      "type": "chapter",
+      "start": 1335999,
+      "end": 1337229,
+      "label": "AL-'ADIYAT",
+      "name": "chapter_100",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0101",
+      "type": "chapter",
+      "start": 1337229,
+      "end": 1338121,
+      "label": "AL-QARI'AH",
+      "name": "chapter_101",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0102",
+      "type": "chapter",
+      "start": 1338121,
+      "end": 1338973,
+      "label": "AT-TAKATHUR",
+      "name": "chapter_102",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0103",
+      "type": "chapter",
+      "start": 1338973,
+      "end": 1339538,
+      "label": "AL-'ASR",
+      "name": "chapter_103",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0104",
+      "type": "chapter",
+      "start": 1339538,
+      "end": 1340872,
+      "label": "AL-HUMAZAH",
+      "name": "chapter_104",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0105",
+      "type": "chapter",
+      "start": 1340872,
+      "end": 1341401,
+      "label": "AL-FIL",
+      "name": "chapter_105",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0106",
+      "type": "chapter",
+      "start": 1341401,
+      "end": 1342424,
+      "label": "AL-QURAISH",
+      "name": "chapter_106",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0107",
+      "type": "chapter",
+      "start": 1342424,
+      "end": 1342793,
+      "label": "AL-MA'UN",
+      "name": "chapter_107",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0108",
+      "type": "chapter",
+      "start": 1342793,
+      "end": 1343365,
+      "label": "AL-KAUTHAR",
+      "name": "chapter_108",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0109",
+      "type": "chapter",
+      "start": 1343365,
+      "end": 1343856,
+      "label": "AL-KAFIRUN",
+      "name": "chapter_109",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0110",
+      "type": "chapter",
+      "start": 1343856,
+      "end": 1344466,
+      "label": "AN-NASR",
+      "name": "chapter_110",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0111",
+      "type": "chapter",
+      "start": 1344466,
+      "end": 1344855,
+      "label": "AL-LAHAB",
+      "name": "chapter_111",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0112",
+      "type": "chapter",
+      "start": 1344855,
+      "end": 1345655,
+      "label": "AL-IKHLAS",
+      "name": "chapter_112",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0113",
+      "type": "chapter",
+      "start": 1345655,
+      "end": 1346097,
+      "label": "AL-FALAQ",
+      "name": "chapter_113",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0114",
+      "type": "chapter",
+      "start": 1346097,
+      "end": 1347323,
+      "label": "AN-NAS",
+      "name": "chapter_114",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    }
+  ]
+}

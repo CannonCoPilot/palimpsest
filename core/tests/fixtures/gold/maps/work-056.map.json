@@ -1,0 +1,1080 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 56,
+  "source_file": "The Last of the Mohicans -- Cooper, James Fenimore -- The Leatherstocking Tales 2, 1919 -- C_ Scribner's sons -- isbn13 9785551075097 -- 1164165e8537a4b55cd9c0d05ff87858 -- Anna’s Archive.epub",
+  "import_source": "The Last of the Mohicans -- Cooper, James Fenimore -- The Leatherstocking Tales 2, 1919 -- C_ Scribner's sons -- isbn13 9785551075097 -- 1164165e8537a4b55cd9c0d05ff87858 -- Anna’s Archive.epub",
+  "reference_sha256": "6fd16270d7d1b49a0a985223793fd439ba20523ccec1df47c15342f3baa9d8ac",
+  "text_len": 845214,
+  "element_count": 70,
+  "type_counts": {
+    "body": 1,
+    "title_page": 1,
+    "introduction": 1,
+    "endnotes": 1,
+    "epigraph": 33,
+    "chapter": 33
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "body": false,
+    "chapter": false,
+    "endnotes": true,
+    "epigraph": true,
+    "introduction": true,
+    "title_page": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 845214,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "title_page-0001",
+      "type": "title_page",
+      "start": 0,
+      "end": 55,
+      "label": "The Last of the Mohicans",
+      "name": "title_page_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0001",
+      "type": "introduction",
+      "start": 55,
+      "end": 7966,
+      "label": "Introduction",
+      "name": "introduction_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "endnotes-0001",
+      "type": "endnotes",
+      "start": 836123,
+      "end": 845214,
+      "label": "Reference Notes",
+      "name": "endnotes_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "epigraph-0001",
+      "type": "epigraph",
+      "start": 7977,
+      "end": 30555,
+      "label": "\"Mine ear is open, and my heart prepared: The worst is wordly loss thou canst un",
+      "name": "epigraph_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0002",
+      "type": "epigraph",
+      "start": 30555,
+      "end": 48774,
+      "label": "\"Sola, sola, wo ha, ho, sola!\" — Shakespeare",
+      "name": "epigraph_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0003",
+      "type": "epigraph",
+      "start": 48774,
+      "end": 67414,
+      "label": "\"Before these fields were shorn and till'd, Full to the brim our rivers flow'd; ",
+      "name": "epigraph_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0004",
+      "type": "epigraph",
+      "start": 67414,
+      "end": 86126,
+      "label": "\"Well go thy way: thou shalt not from this grove Till I torment thee for this in",
+      "name": "epigraph_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0005",
+      "type": "epigraph",
+      "start": 86126,
+      "end": 106221,
+      "label": "...\"In such a night Did Thisbe fearfully o'ertrip the dew; And saw the lion's sh",
+      "name": "epigraph_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0006",
+      "type": "epigraph",
+      "start": 106221,
+      "end": 130601,
+      "label": "\"Those strains that once did sweet in Zion glide; He wales a portion with judici",
+      "name": "epigraph_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0007",
+      "type": "epigraph",
+      "start": 130601,
+      "end": 155958,
+      "label": "\"They do not sleep, On yonder cliffs, a grizzly band, I see them sit.\" Gray",
+      "name": "epigraph_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0008",
+      "type": "epigraph",
+      "start": 155958,
+      "end": 178027,
+      "label": "\"They linger yet, Avengers of their native land.\" — Gray",
+      "name": "epigraph_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0009",
+      "type": "epigraph",
+      "start": 178027,
+      "end": 197428,
+      "label": "\"Be gay securely; Dispel, my fair, with smiles, the tim'rous clouds, That hang o",
+      "name": "epigraph_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0010",
+      "type": "epigraph",
+      "start": 197428,
+      "end": 223127,
+      "label": "\"I fear we shall outsleep the coming morn As much as we this night have overwatc",
+      "name": "epigraph_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0011",
+      "type": "epigraph",
+      "start": 223127,
+      "end": 250661,
+      "label": "\"Cursed be my tribe If I forgive him.\" — Shylock",
+      "name": "epigraph_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0012",
+      "type": "epigraph",
+      "start": 250661,
+      "end": 282618,
+      "label": "\"Clo. — I am gone, sire, And anon, sire, I'll be with you again.\" — Twelfth Nigh",
+      "name": "epigraph_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0013",
+      "type": "epigraph",
+      "start": 282618,
+      "end": 306814,
+      "label": "\"I'll seek a readier path.\" — Parnell",
+      "name": "epigraph_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0014",
+      "type": "epigraph",
+      "start": 306814,
+      "end": 336608,
+      "label": "\"Guard. — Qui est la? Puc. — Paisans, pauvres gens de France.\" — King Henry VI",
+      "name": "epigraph_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0015",
+      "type": "epigraph",
+      "start": 336608,
+      "end": 361686,
+      "label": "\"Then go we in, to know his embassy; Which I could, with ready guess, declare, B",
+      "name": "epigraph_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0016",
+      "type": "epigraph",
+      "start": 361686,
+      "end": 386591,
+      "label": "\"EDG. — Before you fight the battle ope this letter.\" — Lear",
+      "name": "epigraph_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0017",
+      "type": "epigraph",
+      "start": 386591,
+      "end": 418446,
+      "label": "\"Weave we the woof. The thread is spun. The web is wove. The work is done.\" — Gr",
+      "name": "epigraph_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0018",
+      "type": "epigraph",
+      "start": 418446,
+      "end": 443884,
+      "label": "\"Why, anything; An honorable murderer, if you will; For naught I did in hate, bu",
+      "name": "epigraph_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0019",
+      "type": "epigraph",
+      "start": 443884,
+      "end": 471718,
+      "label": "\"Salar. — Why, I am sure, if he forfeit, thou wilt not take his flesh; what's th",
+      "name": "epigraph_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0020",
+      "type": "epigraph",
+      "start": 471718,
+      "end": 497559,
+      "label": "\"Land of Albania! let me bend mine eyes On thee; thou rugged nurse of savage men",
+      "name": "epigraph_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0021",
+      "type": "epigraph",
+      "start": 497559,
+      "end": 521326,
+      "label": "\"If you find a man there, he shall die a flea's death.\" — Merry Wives of Windsor",
+      "name": "epigraph_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0022",
+      "type": "epigraph",
+      "start": 521326,
+      "end": 546820,
+      "label": "\"Bot. — Abibl we all met? Qui. — Pat — pat; and here's a marvelous convenient pl",
+      "name": "epigraph_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0023",
+      "type": "epigraph",
+      "start": 546820,
+      "end": 576792,
+      "label": "\"But though the beast of game The privilege of chase may claim; Though space and",
+      "name": "epigraph_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0024",
+      "type": "epigraph",
+      "start": 576792,
+      "end": 604021,
+      "label": "\"Thus spoke the sage: the kings without delay Dissolve the council, and their ch",
+      "name": "epigraph_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0025",
+      "type": "epigraph",
+      "start": 604021,
+      "end": 632540,
+      "label": "\"Snug. — Have you the lion's part written? Pray you, if it be, give it to me, fo",
+      "name": "epigraph_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0026",
+      "type": "epigraph",
+      "start": 632540,
+      "end": 655943,
+      "label": "\"Bot. — Let me play the lion too.\" — Midsummer Night's Dream",
+      "name": "epigraph_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0027",
+      "type": "epigraph",
+      "start": 655943,
+      "end": 678722,
+      "label": "\"Ant. I shall remember: When C?sar says Do this, it is performed.\" — Julius Caes",
+      "name": "epigraph_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0028",
+      "type": "epigraph",
+      "start": 678722,
+      "end": 701106,
+      "label": "\"Brief, I pray for you; for you see, 'tis a busy time with me.\" — Much Ado About",
+      "name": "epigraph_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0029",
+      "type": "epigraph",
+      "start": 701106,
+      "end": 729508,
+      "label": "\"The assembly seated, rising o'er the rest, Achilles thus the king of men addres",
+      "name": "epigraph_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0030",
+      "type": "epigraph",
+      "start": 729508,
+      "end": 754649,
+      "label": "\"If you deny me, fie upon your law! There is no force in the decrees of Venice: ",
+      "name": "epigraph_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0031",
+      "type": "epigraph",
+      "start": 754649,
+      "end": 773183,
+      "label": "\"Flue. — Kill the poys and the luggage! 'Tis expressly against the law of arms; ",
+      "name": "epigraph_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0032",
+      "type": "epigraph",
+      "start": 773183,
+      "end": 806664,
+      "label": "\"But plagues shall spread, and funeral fires increase, Till the great king, with",
+      "name": "epigraph_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "epigraph-0033",
+      "type": "epigraph",
+      "start": 806664,
+      "end": 836123,
+      "label": "\"They fought, like brave men, long and well, They piled that ground with Moslem ",
+      "name": "epigraph_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0001",
+      "type": "chapter",
+      "start": 7966,
+      "end": 30544,
+      "label": "Chapter 1",
+      "name": "chapter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0002",
+      "type": "chapter",
+      "start": 30544,
+      "end": 48763,
+      "label": "Chapter 2",
+      "name": "chapter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0003",
+      "type": "chapter",
+      "start": 48763,
+      "end": 67403,
+      "label": "Chapter 3",
+      "name": "chapter_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0004",
+      "type": "chapter",
+      "start": 67403,
+      "end": 86115,
+      "label": "Chapter 4",
+      "name": "chapter_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0005",
+      "type": "chapter",
+      "start": 86115,
+      "end": 106210,
+      "label": "Chapter 5",
+      "name": "chapter_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0006",
+      "type": "chapter",
+      "start": 106210,
+      "end": 130590,
+      "label": "Chapter 6",
+      "name": "chapter_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0007",
+      "type": "chapter",
+      "start": 130590,
+      "end": 155947,
+      "label": "Chapter 7",
+      "name": "chapter_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0008",
+      "type": "chapter",
+      "start": 155947,
+      "end": 178016,
+      "label": "Chapter 8",
+      "name": "chapter_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0009",
+      "type": "chapter",
+      "start": 178016,
+      "end": 197416,
+      "label": "Chapter 9",
+      "name": "chapter_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0010",
+      "type": "chapter",
+      "start": 197416,
+      "end": 223115,
+      "label": "Chapter 10",
+      "name": "chapter_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0011",
+      "type": "chapter",
+      "start": 223115,
+      "end": 250649,
+      "label": "Chapter 11",
+      "name": "chapter_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0012",
+      "type": "chapter",
+      "start": 250649,
+      "end": 282606,
+      "label": "Chapter 12",
+      "name": "chapter_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0013",
+      "type": "chapter",
+      "start": 282606,
+      "end": 306802,
+      "label": "Chapter 13",
+      "name": "chapter_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0014",
+      "type": "chapter",
+      "start": 306802,
+      "end": 336596,
+      "label": "Chapter 14",
+      "name": "chapter_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0015",
+      "type": "chapter",
+      "start": 336596,
+      "end": 361674,
+      "label": "Chapter 15",
+      "name": "chapter_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0016",
+      "type": "chapter",
+      "start": 361674,
+      "end": 386579,
+      "label": "Chapter 16",
+      "name": "chapter_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0017",
+      "type": "chapter",
+      "start": 386579,
+      "end": 418434,
+      "label": "Chapter 17",
+      "name": "chapter_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0018",
+      "type": "chapter",
+      "start": 418434,
+      "end": 443872,
+      "label": "Chapter 18",
+      "name": "chapter_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0019",
+      "type": "chapter",
+      "start": 443872,
+      "end": 471706,
+      "label": "Chapter 19",
+      "name": "chapter_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0020",
+      "type": "chapter",
+      "start": 471706,
+      "end": 497547,
+      "label": "Chapter 20",
+      "name": "chapter_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0021",
+      "type": "chapter",
+      "start": 497547,
+      "end": 521314,
+      "label": "Chapter 21",
+      "name": "chapter_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0022",
+      "type": "chapter",
+      "start": 521314,
+      "end": 546808,
+      "label": "Chapter 22",
+      "name": "chapter_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0023",
+      "type": "chapter",
+      "start": 546808,
+      "end": 576780,
+      "label": "Chapter 23",
+      "name": "chapter_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0024",
+      "type": "chapter",
+      "start": 576780,
+      "end": 604009,
+      "label": "Chapter 24",
+      "name": "chapter_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0025",
+      "type": "chapter",
+      "start": 604009,
+      "end": 632528,
+      "label": "Chapter 25",
+      "name": "chapter_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0026",
+      "type": "chapter",
+      "start": 632528,
+      "end": 655931,
+      "label": "Chapter 26",
+      "name": "chapter_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0027",
+      "type": "chapter",
+      "start": 655931,
+      "end": 678710,
+      "label": "Chapter 27",
+      "name": "chapter_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0028",
+      "type": "chapter",
+      "start": 678710,
+      "end": 701094,
+      "label": "Chapter 28",
+      "name": "chapter_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0029",
+      "type": "chapter",
+      "start": 701094,
+      "end": 729496,
+      "label": "Chapter 29",
+      "name": "chapter_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0030",
+      "type": "chapter",
+      "start": 729496,
+      "end": 754637,
+      "label": "Chapter 30",
+      "name": "chapter_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0031",
+      "type": "chapter",
+      "start": 754637,
+      "end": 773171,
+      "label": "Chapter 31",
+      "name": "chapter_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0032",
+      "type": "chapter",
+      "start": 773171,
+      "end": 806652,
+      "label": "Chapter 32",
+      "name": "chapter_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0033",
+      "type": "chapter",
+      "start": 806652,
+      "end": 836123,
+      "label": "Chapter 33",
+      "name": "chapter_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    }
+  ]
+}

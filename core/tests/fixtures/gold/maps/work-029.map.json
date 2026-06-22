@@ -1,0 +1,5335 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 29,
+  "source_file": "The Message of the Qur'An -- Muhammad Asad [Asad, Muhammad] -- Place of publication not identified, 1980 -- The Book Foundation -- isbn13 9780317524567 -- f720bfc6c8902fb7c76dbd9aa6f64f30 -- Anna’s Archive.epub",
+  "import_source": "The Message of the Qur'An -- Muhammad Asad [Asad, Muhammad] -- Place of publication not identified, 1980 -- The Book Foundation -- isbn13 9780317524567 -- f720bfc6c8902fb7c76dbd9aa6f64f30 -- Anna’s Archive.epub",
+  "reference_sha256": "d76c8e16f30ccb5ce5ed59054741d97fb252d1ba747c50bb9a3075605076217b",
+  "text_len": 3097354,
+  "element_count": 353,
+  "type_counts": {
+    "body": 1,
+    "title_page": 1,
+    "contents": 1,
+    "foreword": 1,
+    "bibliography": 1,
+    "footnotes": 1,
+    "chapter": 114,
+    "appendix": 4,
+    "header": 1,
+    "introduction": 114,
+    "translation": 114
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "appendix": true,
+    "bibliography": true,
+    "body": false,
+    "chapter": false,
+    "contents": true,
+    "footnotes": true,
+    "foreword": true,
+    "header": true,
+    "introduction": true,
+    "title_page": true,
+    "translation": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 3097354,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "title_page-0001",
+      "type": "title_page",
+      "start": 0,
+      "end": 73,
+      "label": "The Message of",
+      "name": "title_page_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 73,
+      "end": 6856,
+      "label": "For people who think",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "foreword-0001",
+      "type": "foreword",
+      "start": 6856,
+      "end": 34428,
+      "label": "Foreword",
+      "name": "foreword_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "bibliography-0001",
+      "type": "bibliography",
+      "start": 34428,
+      "end": 39934,
+      "label": "Works of Reference",
+      "name": "bibliography_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "footnotes-0001",
+      "type": "footnotes",
+      "start": 1344185,
+      "end": 3097354,
+      "label": "1 It is to be borne in mind that, in its final compilation, the Qur'ān is arrang",
+      "name": "footnotes_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "chapter-0001",
+      "type": "chapter",
+      "start": 39961,
+      "end": 42790,
+      "label": "THE FIRST SŪRAH",
+      "name": "chapter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0002",
+      "type": "chapter",
+      "start": 42790,
+      "end": 125413,
+      "label": "THE SECOND SŪRAH",
+      "name": "chapter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0003",
+      "type": "chapter",
+      "start": 125413,
+      "end": 174773,
+      "label": "THE THIRD SŪRAH",
+      "name": "chapter_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0004",
+      "type": "chapter",
+      "start": 174773,
+      "end": 224954,
+      "label": "THE FOURTH SŪRAH",
+      "name": "chapter_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0005",
+      "type": "chapter",
+      "start": 224954,
+      "end": 265209,
+      "label": "THE FIFTH SŪRAH",
+      "name": "chapter_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0006",
+      "type": "chapter",
+      "start": 265209,
+      "end": 310824,
+      "label": "THE SIXTH SŪRAH",
+      "name": "chapter_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0007",
+      "type": "chapter",
+      "start": 310824,
+      "end": 360109,
+      "label": "THE SEVENTH SŪRAH",
+      "name": "chapter_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0008",
+      "type": "chapter",
+      "start": 360109,
+      "end": 383965,
+      "label": "THE EIGHTH SŪRAH",
+      "name": "chapter_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0009",
+      "type": "chapter",
+      "start": 383965,
+      "end": 424976,
+      "label": "THE NINTH SŪRAH",
+      "name": "chapter_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0010",
+      "type": "chapter",
+      "start": 424976,
+      "end": 453352,
+      "label": "THE TENTH SŪRAH",
+      "name": "chapter_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0011",
+      "type": "chapter",
+      "start": 453352,
+      "end": 483785,
+      "label": "THE ELEVENTH SŪRAH",
+      "name": "chapter_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0012",
+      "type": "chapter",
+      "start": 483785,
+      "end": 512455,
+      "label": "THE TWELFTH SŪRAH",
+      "name": "chapter_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0013",
+      "type": "chapter",
+      "start": 512455,
+      "end": 527420,
+      "label": "THE THIRTEENTH SŪRAH",
+      "name": "chapter_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0014",
+      "type": "chapter",
+      "start": 527420,
+      "end": 541259,
+      "label": "THE FOURTEENTH SŪRAH",
+      "name": "chapter_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0015",
+      "type": "chapter",
+      "start": 541259,
+      "end": 553942,
+      "label": "THE FIFTEENTH SŪRAH",
+      "name": "chapter_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0016",
+      "type": "chapter",
+      "start": 553942,
+      "end": 583697,
+      "label": "THE SIXTEENTH SŪRAH",
+      "name": "chapter_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0017",
+      "type": "chapter",
+      "start": 583697,
+      "end": 608532,
+      "label": "THE SEVENTEENTH SŪRAH",
+      "name": "chapter_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0018",
+      "type": "chapter",
+      "start": 608532,
+      "end": 633978,
+      "label": "THE EIGHTEENTH SŪRAH",
+      "name": "chapter_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0019",
+      "type": "chapter",
+      "start": 633978,
+      "end": 649867,
+      "label": "THE NINETEENTH SŪRAH",
+      "name": "chapter_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0020",
+      "type": "chapter",
+      "start": 649867,
+      "end": 671970,
+      "label": "THE TWENTIETH SŪRAH",
+      "name": "chapter_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0021",
+      "type": "chapter",
+      "start": 671970,
+      "end": 692200,
+      "label": "THE TWENTY-FIRST SŪRAH",
+      "name": "chapter_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0022",
+      "type": "chapter",
+      "start": 692200,
+      "end": 712568,
+      "label": "THE TWENTY-SECOND SŪRAH",
+      "name": "chapter_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0023",
+      "type": "chapter",
+      "start": 712568,
+      "end": 730339,
+      "label": "THE TWENTY-THIRD SŪRAH",
+      "name": "chapter_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0024",
+      "type": "chapter",
+      "start": 730339,
+      "end": 749884,
+      "label": "THE TWENTY-FOURTH SŪRAH",
+      "name": "chapter_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0025",
+      "type": "chapter",
+      "start": 749884,
+      "end": 765723,
+      "label": "THE TWENTY-FIFTH SŪRAH",
+      "name": "chapter_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0026",
+      "type": "chapter",
+      "start": 765723,
+      "end": 788469,
+      "label": "THE TWENTY-SIXTH SŪRAH",
+      "name": "chapter_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0027",
+      "type": "chapter",
+      "start": 788469,
+      "end": 807551,
+      "label": "THE TWENTY-SEVENTH SŪRAH",
+      "name": "chapter_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0028",
+      "type": "chapter",
+      "start": 807551,
+      "end": 830192,
+      "label": "THE TWENTY-EIGHTH SŪRAH",
+      "name": "chapter_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0029",
+      "type": "chapter",
+      "start": 830192,
+      "end": 846312,
+      "label": "THE TWENTY-NINTH SŪRAH",
+      "name": "chapter_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0030",
+      "type": "chapter",
+      "start": 846312,
+      "end": 859927,
+      "label": "THE THIRTIETH SŪRAH",
+      "name": "chapter_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0031",
+      "type": "chapter",
+      "start": 859927,
+      "end": 867766,
+      "label": "THE THIRTY-FIRST SŪRAH",
+      "name": "chapter_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0032",
+      "type": "chapter",
+      "start": 867766,
+      "end": 874239,
+      "label": "THE THIRTY-SECOND SŪRAH",
+      "name": "chapter_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0033",
+      "type": "chapter",
+      "start": 874239,
+      "end": 894628,
+      "label": "THE THIRTY-THIRD SŪRAH",
+      "name": "chapter_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0034",
+      "type": "chapter",
+      "start": 894628,
+      "end": 909433,
+      "label": "THE THIRTY-FOURTH SŪRAH",
+      "name": "chapter_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0035",
+      "type": "chapter",
+      "start": 909433,
+      "end": 921629,
+      "label": "THE THIRTY-FIFTH SŪRAH",
+      "name": "chapter_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0036",
+      "type": "chapter",
+      "start": 921629,
+      "end": 933816,
+      "label": "THE THIRTY-SIXTH SŪRAH",
+      "name": "chapter_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0037",
+      "type": "chapter",
+      "start": 933816,
+      "end": 950265,
+      "label": "THE THIRTY-SEVENTH SŪRAH",
+      "name": "chapter_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0038",
+      "type": "chapter",
+      "start": 950265,
+      "end": 962787,
+      "label": "THE THIRTY-EIGHTH SŪRAH",
+      "name": "chapter_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0039",
+      "type": "chapter",
+      "start": 962787,
+      "end": 981612,
+      "label": "THE THIRTY-NINTH SŪRAH",
+      "name": "chapter_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0040",
+      "type": "chapter",
+      "start": 981612,
+      "end": 1001603,
+      "label": "THE FORTIETH SŪRAH",
+      "name": "chapter_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0041",
+      "type": "chapter",
+      "start": 1001603,
+      "end": 1014310,
+      "label": "THE FORTY-FIRST SŪRAH",
+      "name": "chapter_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0042",
+      "type": "chapter",
+      "start": 1014310,
+      "end": 1028285,
+      "label": "THE FORTY-SECOND SŪRAH",
+      "name": "chapter_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0043",
+      "type": "chapter",
+      "start": 1028285,
+      "end": 1042891,
+      "label": "THE FORTY-THIRD SŪRAH",
+      "name": "chapter_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0044",
+      "type": "chapter",
+      "start": 1042891,
+      "end": 1049059,
+      "label": "THE FORTY-FOURTH SŪRAH",
+      "name": "chapter_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0045",
+      "type": "chapter",
+      "start": 1049059,
+      "end": 1056638,
+      "label": "THE FORTY-FIFTH SŪRAH",
+      "name": "chapter_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0046",
+      "type": "chapter",
+      "start": 1056638,
+      "end": 1066649,
+      "label": "THE FORTY-SIXTH SŪRAH",
+      "name": "chapter_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0047",
+      "type": "chapter",
+      "start": 1066649,
+      "end": 1075952,
+      "label": "THE FORTY-SEVENTH SŪRAH",
+      "name": "chapter_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0048",
+      "type": "chapter",
+      "start": 1075952,
+      "end": 1089233,
+      "label": "THE FORTY-EIGHTH SŪRAH",
+      "name": "chapter_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0049",
+      "type": "chapter",
+      "start": 1089233,
+      "end": 1094817,
+      "label": "THE FORTY-NINTH SŪRAH",
+      "name": "chapter_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0050",
+      "type": "chapter",
+      "start": 1094817,
+      "end": 1101116,
+      "label": "THE FIFTIETH SŪRAH",
+      "name": "chapter_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0051",
+      "type": "chapter",
+      "start": 1101116,
+      "end": 1107680,
+      "label": "THE FIFTY-FIRST SŪRAH",
+      "name": "chapter_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0052",
+      "type": "chapter",
+      "start": 1107680,
+      "end": 1113791,
+      "label": "THE FIFTY-SECOND SŪRAH",
+      "name": "chapter_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0053",
+      "type": "chapter",
+      "start": 1113791,
+      "end": 1120082,
+      "label": "THE FIFTY-THIRD SŪRAH",
+      "name": "chapter_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0054",
+      "type": "chapter",
+      "start": 1120082,
+      "end": 1126834,
+      "label": "THE FIFTY-FOURTH SŪRAH",
+      "name": "chapter_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0055",
+      "type": "chapter",
+      "start": 1126834,
+      "end": 1133379,
+      "label": "THE FIFTY-FIFTH SŪRAH",
+      "name": "chapter_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0056",
+      "type": "chapter",
+      "start": 1133379,
+      "end": 1140478,
+      "label": "THE FIFTY-SIXTH SŪRAH",
+      "name": "chapter_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0057",
+      "type": "chapter",
+      "start": 1140478,
+      "end": 1149493,
+      "label": "THE FIFTY-SEVENTH SŪRAH",
+      "name": "chapter_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0058",
+      "type": "chapter",
+      "start": 1149493,
+      "end": 1157321,
+      "label": "THE FIFTY-EIGHTH SŪRAH",
+      "name": "chapter_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0059",
+      "type": "chapter",
+      "start": 1157321,
+      "end": 1167783,
+      "label": "THE FIFTY-NINTH SŪRAH",
+      "name": "chapter_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0060",
+      "type": "chapter",
+      "start": 1167783,
+      "end": 1173976,
+      "label": "THE SIXTIETH SŪRAH",
+      "name": "chapter_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0061",
+      "type": "chapter",
+      "start": 1173976,
+      "end": 1177968,
+      "label": "THE SIXTY-FIRST SŪRAH",
+      "name": "chapter_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0062",
+      "type": "chapter",
+      "start": 1177968,
+      "end": 1180762,
+      "label": "THE SIXTY-SECOND SŪRAH",
+      "name": "chapter_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0063",
+      "type": "chapter",
+      "start": 1180762,
+      "end": 1184027,
+      "label": "THE SIXTY-THIRD SŪRAH",
+      "name": "chapter_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0064",
+      "type": "chapter",
+      "start": 1184027,
+      "end": 1188161,
+      "label": "THE SIXTY-FOURTH SŪRAH",
+      "name": "chapter_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0065",
+      "type": "chapter",
+      "start": 1188161,
+      "end": 1192897,
+      "label": "THE SIXTY-FIFTH SŪRAH",
+      "name": "chapter_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0066",
+      "type": "chapter",
+      "start": 1192897,
+      "end": 1197205,
+      "label": "THE SIXTY-SIXTH SŪRAH",
+      "name": "chapter_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0067",
+      "type": "chapter",
+      "start": 1197205,
+      "end": 1203008,
+      "label": "THE SIXTY-SEVENTH SŪRAH",
+      "name": "chapter_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0068",
+      "type": "chapter",
+      "start": 1203008,
+      "end": 1209007,
+      "label": "THE SIXTY-EIGHTH SŪRAH",
+      "name": "chapter_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0069",
+      "type": "chapter",
+      "start": 1209007,
+      "end": 1213625,
+      "label": "THE SIXTY-NINTH SŪRAH",
+      "name": "chapter_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0070",
+      "type": "chapter",
+      "start": 1213625,
+      "end": 1217783,
+      "label": "THE SEVENTIETH SŪRAH",
+      "name": "chapter_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0071",
+      "type": "chapter",
+      "start": 1217783,
+      "end": 1221586,
+      "label": "THE SEVENTY-FIRST SŪRAH",
+      "name": "chapter_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0072",
+      "type": "chapter",
+      "start": 1221586,
+      "end": 1226578,
+      "label": "THE SEVENTY-SECOND SŪRAH",
+      "name": "chapter_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0073",
+      "type": "chapter",
+      "start": 1226578,
+      "end": 1229942,
+      "label": "THE SEVENTY-THIRD SŪRAH",
+      "name": "chapter_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0074",
+      "type": "chapter",
+      "start": 1229942,
+      "end": 1236415,
+      "label": "THE SEVENTY-FOURTH SŪRAH",
+      "name": "chapter_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0075",
+      "type": "chapter",
+      "start": 1236415,
+      "end": 1239576,
+      "label": "THE SEVENTY-FIFTH SŪRAH",
+      "name": "chapter_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0076",
+      "type": "chapter",
+      "start": 1239576,
+      "end": 1243951,
+      "label": "THE SEVENTY-SIXTH SŪRAH",
+      "name": "chapter_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0077",
+      "type": "chapter",
+      "start": 1243951,
+      "end": 1247721,
+      "label": "THE SEVENTY-SEVENTH SŪRAH",
+      "name": "chapter_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0078",
+      "type": "chapter",
+      "start": 1247721,
+      "end": 1251186,
+      "label": "THE SEVENTY-EIGHTH SŪRAH",
+      "name": "chapter_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0079",
+      "type": "chapter",
+      "start": 1251186,
+      "end": 1254924,
+      "label": "THE SEVENTY-NINTH SŪRAH",
+      "name": "chapter_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0080",
+      "type": "chapter",
+      "start": 1254924,
+      "end": 1257730,
+      "label": "THE EIGHTIETH SŪRAH",
+      "name": "chapter_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0081",
+      "type": "chapter",
+      "start": 1257730,
+      "end": 1259940,
+      "label": "THE EIGHTY-FIRST SŪRAH",
+      "name": "chapter_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0082",
+      "type": "chapter",
+      "start": 1259940,
+      "end": 1261663,
+      "label": "THE EIGHTY-SECOND SŪRAH",
+      "name": "chapter_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0083",
+      "type": "chapter",
+      "start": 1261663,
+      "end": 1265629,
+      "label": "THE EIGHTY-THIRD SŪRAH",
+      "name": "chapter_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0084",
+      "type": "chapter",
+      "start": 1265629,
+      "end": 1267711,
+      "label": "THE EIGHTY-FOURTH SŪRAH",
+      "name": "chapter_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0085",
+      "type": "chapter",
+      "start": 1267711,
+      "end": 1269698,
+      "label": "THE EIGHTY-FIFTH SŪRAH",
+      "name": "chapter_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0086",
+      "type": "chapter",
+      "start": 1269698,
+      "end": 1271146,
+      "label": "THE EIGHTY-SIXTH SŪRAH",
+      "name": "chapter_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0087",
+      "type": "chapter",
+      "start": 1271146,
+      "end": 1272928,
+      "label": "THE EIGHTY-SEVENTH SŪRAH",
+      "name": "chapter_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0088",
+      "type": "chapter",
+      "start": 1272928,
+      "end": 1274627,
+      "label": "THE EIGHTY-EIGHTH SŪRAH",
+      "name": "chapter_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0089",
+      "type": "chapter",
+      "start": 1274627,
+      "end": 1277208,
+      "label": "THE EIGHTY-NINTH SŪRAH",
+      "name": "chapter_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0090",
+      "type": "chapter",
+      "start": 1277208,
+      "end": 1278746,
+      "label": "THE NINETIETH SŪRAH",
+      "name": "chapter_90",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0091",
+      "type": "chapter",
+      "start": 1278746,
+      "end": 1280201,
+      "label": "THE NINETY-FIRST SŪRAH",
+      "name": "chapter_91",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0092",
+      "type": "chapter",
+      "start": 1280201,
+      "end": 1281895,
+      "label": "THE NINETY-SECOND SŪRAH",
+      "name": "chapter_92",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0093",
+      "type": "chapter",
+      "start": 1281895,
+      "end": 1283498,
+      "label": "THE NINETY-THIRD SŪRAH",
+      "name": "chapter_93",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0094",
+      "type": "chapter",
+      "start": 1283498,
+      "end": 1284718,
+      "label": "THE NINETY-FOURTH SŪRAH",
+      "name": "chapter_94",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0095",
+      "type": "chapter",
+      "start": 1284718,
+      "end": 1285600,
+      "label": "THE NINETY-FIFTH SŪRAH",
+      "name": "chapter_95",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0096",
+      "type": "chapter",
+      "start": 1285600,
+      "end": 1288829,
+      "label": "THE NINETY-SIXTH SŪRAH",
+      "name": "chapter_96",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0097",
+      "type": "chapter",
+      "start": 1288829,
+      "end": 1289596,
+      "label": "THE NINETY-SEVENTH SŪRAH",
+      "name": "chapter_97",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0098",
+      "type": "chapter",
+      "start": 1289596,
+      "end": 1291595,
+      "label": "THE NINETY-EIGHTH SŪRAH",
+      "name": "chapter_98",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0099",
+      "type": "chapter",
+      "start": 1291595,
+      "end": 1292398,
+      "label": "THE NINETY-NINTH SŪRAH",
+      "name": "chapter_99",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0100",
+      "type": "chapter",
+      "start": 1292398,
+      "end": 1293272,
+      "label": "THE HUNDREDTH SŪRAH",
+      "name": "chapter_100",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0101",
+      "type": "chapter",
+      "start": 1293272,
+      "end": 1294083,
+      "label": "THE HUNDRED-FIRST SŪRAH",
+      "name": "chapter_101",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0102",
+      "type": "chapter",
+      "start": 1294083,
+      "end": 1295033,
+      "label": "THE HUNDRED-SECOND SŪRAH",
+      "name": "chapter_102",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0103",
+      "type": "chapter",
+      "start": 1295033,
+      "end": 1295455,
+      "label": "THE HUNDRED-THIRD SŪRAH",
+      "name": "chapter_103",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0104",
+      "type": "chapter",
+      "start": 1295455,
+      "end": 1296303,
+      "label": "THE HUNDRED-FOURTH SŪRAH",
+      "name": "chapter_104",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0105",
+      "type": "chapter",
+      "start": 1296303,
+      "end": 1297864,
+      "label": "THE HUNDRED-FIFTH SŪRAH",
+      "name": "chapter_105",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0106",
+      "type": "chapter",
+      "start": 1297864,
+      "end": 1299416,
+      "label": "THE HUNDRED-SIXTH SŪRAH",
+      "name": "chapter_106",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0107",
+      "type": "chapter",
+      "start": 1299416,
+      "end": 1300281,
+      "label": "THE HUNDRED-SEVENTH SŪRAH",
+      "name": "chapter_107",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0108",
+      "type": "chapter",
+      "start": 1300281,
+      "end": 1301675,
+      "label": "THE HUNDRED-EIGHTH SŪRAH",
+      "name": "chapter_108",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0109",
+      "type": "chapter",
+      "start": 1301675,
+      "end": 1302185,
+      "label": "THE HUNDRED-NINTH SŪRAH",
+      "name": "chapter_109",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0110",
+      "type": "chapter",
+      "start": 1302185,
+      "end": 1303380,
+      "label": "THE HUNDRED-TENTH SŪRAH",
+      "name": "chapter_110",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0111",
+      "type": "chapter",
+      "start": 1303380,
+      "end": 1305064,
+      "label": "THE HUNDRED-ELEVENTH SŪRAH",
+      "name": "chapter_111",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0112",
+      "type": "chapter",
+      "start": 1305064,
+      "end": 1305722,
+      "label": "THE HUNDRED-TWELFTH SŪRAH",
+      "name": "chapter_112",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0113",
+      "type": "chapter",
+      "start": 1305722,
+      "end": 1306584,
+      "label": "THE HUNDRED-THIRTEENTH SŪRAH",
+      "name": "chapter_113",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0114",
+      "type": "chapter",
+      "start": 1306584,
+      "end": 1344185,
+      "label": "THE HUNDRED-FOURTEENTH SŪRAH",
+      "name": "chapter_114",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "appendix-0001",
+      "type": "appendix",
+      "start": 1307081,
+      "end": 1321498,
+      "label": "APPENDIX I",
+      "name": "appendix_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "appendix-0002",
+      "type": "appendix",
+      "start": 1321498,
+      "end": 1326268,
+      "label": "APPENDIX II",
+      "name": "appendix_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "appendix-0003",
+      "type": "appendix",
+      "start": 1326268,
+      "end": 1331947,
+      "label": "APPENDIX III",
+      "name": "appendix_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "appendix-0004",
+      "type": "appendix",
+      "start": 1331947,
+      "end": 1344185,
+      "label": "APPENDIX IV",
+      "name": "appendix_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "header-0001",
+      "type": "header",
+      "start": 39934,
+      "end": 39961,
+      "label": "THE MESSAGE OF THE QUR'ĀN",
+      "name": "header_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0001",
+      "type": "introduction",
+      "start": 39961,
+      "end": 42322,
+      "label": "THE FIRST SŪRAH",
+      "name": "introduction_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0001",
+      "type": "translation",
+      "start": 42322,
+      "end": 42790,
+      "label": "(1) IN THE NAME OF GOD, THE MOST GRACIOUS, THE DISPENSER OF GRACE:6",
+      "name": "translation_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0002",
+      "type": "introduction",
+      "start": 42790,
+      "end": 45349,
+      "label": "THE SECOND SŪRAH",
+      "name": "introduction_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0002",
+      "type": "translation",
+      "start": 45349,
+      "end": 125413,
+      "label": "(1) Alif. Lām. Mīm.10",
+      "name": "translation_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0003",
+      "type": "introduction",
+      "start": 125413,
+      "end": 127881,
+      "label": "THE THIRD SŪRAH",
+      "name": "introduction_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0003",
+      "type": "translation",
+      "start": 127881,
+      "end": 174773,
+      "label": "(1) Alif. Lām. Mīm.288",
+      "name": "translation_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0004",
+      "type": "introduction",
+      "start": 174773,
+      "end": 176469,
+      "label": "THE FOURTH SŪRAH",
+      "name": "introduction_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0004",
+      "type": "translation",
+      "start": 176469,
+      "end": 224954,
+      "label": "(1) O MANKIND! Be conscious of your Sustainer, who has created you out of one li",
+      "name": "translation_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0005",
+      "type": "introduction",
+      "start": 224954,
+      "end": 227680,
+      "label": "THE FIFTH SŪRAH",
+      "name": "introduction_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0005",
+      "type": "translation",
+      "start": 227680,
+      "end": 265209,
+      "label": "(1) O YOU who have attained to faith! Be true to your covenants!623",
+      "name": "translation_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0006",
+      "type": "introduction",
+      "start": 265209,
+      "end": 267390,
+      "label": "THE SIXTH SŪRAH",
+      "name": "introduction_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0006",
+      "type": "translation",
+      "start": 267390,
+      "end": 310824,
+      "label": "(1) A LL PRAISE is due to God, who has created the heavens and the earth, and br",
+      "name": "translation_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0007",
+      "type": "introduction",
+      "start": 310824,
+      "end": 313618,
+      "label": "THE SEVENTH SŪRAH",
+      "name": "introduction_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0007",
+      "type": "translation",
+      "start": 313618,
+      "end": 360109,
+      "label": "(1) Alif. Lām. Mīm. Sād.930",
+      "name": "translation_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0008",
+      "type": "introduction",
+      "start": 360109,
+      "end": 366357,
+      "label": "THE EIGHTH SŪRAH",
+      "name": "introduction_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0008",
+      "type": "translation",
+      "start": 366357,
+      "end": 383965,
+      "label": "(1) T HEY WILL ASK thee about the spoils of war. Say: \"All spoils of war belong ",
+      "name": "translation_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0009",
+      "type": "introduction",
+      "start": 383965,
+      "end": 386841,
+      "label": "THE NINTH SŪRAH",
+      "name": "introduction_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0009",
+      "type": "translation",
+      "start": 386841,
+      "end": 424976,
+      "label": "(1) D ISAVOWAL by God and His Apostle [is herewith announced] unto those who asc",
+      "name": "translation_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0010",
+      "type": "introduction",
+      "start": 424976,
+      "end": 426437,
+      "label": "THE TENTH SŪRAH",
+      "name": "introduction_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0010",
+      "type": "translation",
+      "start": 426437,
+      "end": 453352,
+      "label": "(1) Alif. Lām. Rā.1355",
+      "name": "translation_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0011",
+      "type": "introduction",
+      "start": 453352,
+      "end": 454488,
+      "label": "THE ELEVENTH SŪRAH",
+      "name": "introduction_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0011",
+      "type": "translation",
+      "start": 454488,
+      "end": 483785,
+      "label": "(1) Alif. Lām. Rā.1484",
+      "name": "translation_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0012",
+      "type": "introduction",
+      "start": 483785,
+      "end": 485394,
+      "label": "THE TWELFTH SŪRAH",
+      "name": "introduction_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0012",
+      "type": "translation",
+      "start": 485394,
+      "end": 512455,
+      "label": "(1) Alif. Lām. Rā.1639",
+      "name": "translation_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0013",
+      "type": "introduction",
+      "start": 512455,
+      "end": 514070,
+      "label": "THE THIRTEENTH SŪRAH",
+      "name": "introduction_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0013",
+      "type": "translation",
+      "start": 514070,
+      "end": 527420,
+      "label": "(1) Alif. Lām. Mīm. Rā.1750",
+      "name": "translation_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0014",
+      "type": "introduction",
+      "start": 527420,
+      "end": 528519,
+      "label": "THE FOURTEENTH SŪRAH",
+      "name": "introduction_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0014",
+      "type": "translation",
+      "start": 528519,
+      "end": 541259,
+      "label": "(1) Alif. Lām. Rā.1834",
+      "name": "translation_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0015",
+      "type": "introduction",
+      "start": 541259,
+      "end": 542490,
+      "label": "THE FIFTEENTH SŪRAH",
+      "name": "introduction_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0015",
+      "type": "translation",
+      "start": 542490,
+      "end": 553942,
+      "label": "(1) Alif. Lām. Rā.1899",
+      "name": "translation_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0016",
+      "type": "introduction",
+      "start": 553942,
+      "end": 555066,
+      "label": "THE SIXTEENTH SŪRAH",
+      "name": "introduction_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0016",
+      "type": "translation",
+      "start": 555066,
+      "end": 583697,
+      "label": "(1) G OD'S JUDGMENT is [bound to] come: do not, therefore, call for its speedy a",
+      "name": "translation_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0017",
+      "type": "introduction",
+      "start": 583697,
+      "end": 584670,
+      "label": "THE SEVENTEENTH SŪRAH",
+      "name": "introduction_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0017",
+      "type": "translation",
+      "start": 584670,
+      "end": 608532,
+      "label": "(1) L IMITLESS in His glory is He who transported His servant by night from the ",
+      "name": "translation_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0018",
+      "type": "introduction",
+      "start": 608532,
+      "end": 610435,
+      "label": "THE EIGHTEENTH SŪRAH",
+      "name": "introduction_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0018",
+      "type": "translation",
+      "start": 610435,
+      "end": 633978,
+      "label": "(1) A LL PRAISE is due to God who has bestowed this divine writ from on high upo",
+      "name": "translation_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0019",
+      "type": "introduction",
+      "start": 633978,
+      "end": 635167,
+      "label": "THE NINETEENTH SŪRAH",
+      "name": "introduction_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0019",
+      "type": "translation",
+      "start": 635167,
+      "end": 649867,
+      "label": "(1) Kāf. Hā. Yā. `Ayn. Sād.2360",
+      "name": "translation_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0020",
+      "type": "introduction",
+      "start": 649867,
+      "end": 651147,
+      "label": "THE TWENTIETH SŪRAH",
+      "name": "introduction_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0020",
+      "type": "translation",
+      "start": 651147,
+      "end": 671970,
+      "label": "(1) O MAN!2442 (2) We did not bestow the Qur'ān on thee from on high to make the",
+      "name": "translation_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0021",
+      "type": "introduction",
+      "start": 671970,
+      "end": 673318,
+      "label": "THE TWENTY-FIRST SŪRAH",
+      "name": "introduction_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0021",
+      "type": "translation",
+      "start": 673318,
+      "end": 692200,
+      "label": "(1) C LOSER DRAWS unto men their reckoning: and yet they remain stubbornly heedl",
+      "name": "translation_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0022",
+      "type": "introduction",
+      "start": 692200,
+      "end": 693257,
+      "label": "THE TWENTY-SECOND SŪRAH",
+      "name": "introduction_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0022",
+      "type": "translation",
+      "start": 693257,
+      "end": 712568,
+      "label": "(1) O MEN! Be conscious of your Sustainer: for, verily, the violent convulsion o",
+      "name": "translation_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0023",
+      "type": "introduction",
+      "start": 712568,
+      "end": 713853,
+      "label": "THE TWENTY-THIRD SŪRAH",
+      "name": "introduction_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0023",
+      "type": "translation",
+      "start": 713853,
+      "end": 730339,
+      "label": "(1) T RULY, to a happy state shall attain the believers: (2) those who humble th",
+      "name": "translation_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0024",
+      "type": "introduction",
+      "start": 730339,
+      "end": 731223,
+      "label": "THE TWENTY-FOURTH SŪRAH",
+      "name": "introduction_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0024",
+      "type": "translation",
+      "start": 731223,
+      "end": 749884,
+      "label": "(1) A SŪRAH [is this] which We have bestowed from on high, and which We have lai",
+      "name": "translation_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0025",
+      "type": "introduction",
+      "start": 749884,
+      "end": 751489,
+      "label": "THE TWENTY-FIFTH SŪRAH",
+      "name": "introduction_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0025",
+      "type": "translation",
+      "start": 751489,
+      "end": 765723,
+      "label": "(1) H ALLOWED is He who from on high, step by step, has bestowed upon His servan",
+      "name": "translation_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0026",
+      "type": "introduction",
+      "start": 765723,
+      "end": 767029,
+      "label": "THE TWENTY-SIXTH SŪRAH",
+      "name": "introduction_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0026",
+      "type": "translation",
+      "start": 767029,
+      "end": 788469,
+      "label": "(1) Ṭā. Sīn. Mīm.2985",
+      "name": "translation_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0027",
+      "type": "introduction",
+      "start": 788469,
+      "end": 790083,
+      "label": "THE TWENTY-SEVENTH SŪRAH",
+      "name": "introduction_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0027",
+      "type": "translation",
+      "start": 790083,
+      "end": 807551,
+      "label": "(1) Ṭā. Sīn.3087",
+      "name": "translation_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0028",
+      "type": "introduction",
+      "start": 807551,
+      "end": 808760,
+      "label": "THE TWENTY-EIGHTH SŪRAH",
+      "name": "introduction_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0028",
+      "type": "translation",
+      "start": 808760,
+      "end": 830192,
+      "label": "(1) Ṭā. Sīn. Mīm.3169",
+      "name": "translation_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0029",
+      "type": "introduction",
+      "start": 830192,
+      "end": 831080,
+      "label": "THE TWENTY-NINTH SŪRAH",
+      "name": "introduction_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0029",
+      "type": "translation",
+      "start": 831080,
+      "end": 846312,
+      "label": "(1) Alif. Lām. Mīm.3269",
+      "name": "translation_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0030",
+      "type": "introduction",
+      "start": 846312,
+      "end": 847488,
+      "label": "THE THIRTIETH SŪRAH",
+      "name": "introduction_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0030",
+      "type": "translation",
+      "start": 847488,
+      "end": 859927,
+      "label": "(1) Alif. Lām. Mīm.3330",
+      "name": "translation_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0031",
+      "type": "introduction",
+      "start": 859927,
+      "end": 860340,
+      "label": "THE THIRTY-FIRST SŪRAH",
+      "name": "introduction_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0031",
+      "type": "translation",
+      "start": 860340,
+      "end": 867766,
+      "label": "(1) Alif. Lām. Mīm.3385",
+      "name": "translation_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0032",
+      "type": "introduction",
+      "start": 867766,
+      "end": 868290,
+      "label": "THE THIRTY-SECOND SŪRAH",
+      "name": "introduction_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0032",
+      "type": "translation",
+      "start": 868290,
+      "end": 874239,
+      "label": "(1) Alif. Lām. Mīm.3416",
+      "name": "translation_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0033",
+      "type": "introduction",
+      "start": 874239,
+      "end": 876087,
+      "label": "THE THIRTY-THIRD SŪRAH",
+      "name": "introduction_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0033",
+      "type": "translation",
+      "start": 876087,
+      "end": 894628,
+      "label": "(1) O PROPHET! Remain conscious of God, and defer not to the deniers of the trut",
+      "name": "translation_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0034",
+      "type": "introduction",
+      "start": 894628,
+      "end": 895510,
+      "label": "THE THIRTY-FOURTH SŪRAH",
+      "name": "introduction_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0034",
+      "type": "translation",
+      "start": 895510,
+      "end": 909433,
+      "label": "(1) A LL PRAISE is due to God, to whom all that is in the heavens and all that i",
+      "name": "translation_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0035",
+      "type": "introduction",
+      "start": 909433,
+      "end": 910372,
+      "label": "THE THIRTY-FIFTH SŪRAH",
+      "name": "introduction_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0035",
+      "type": "translation",
+      "start": 910372,
+      "end": 921629,
+      "label": "(1) A LL PRAISE is due to God, Originator of the heavens and the earth, who caus",
+      "name": "translation_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0036",
+      "type": "introduction",
+      "start": 921629,
+      "end": 922349,
+      "label": "THE THIRTY-SIXTH SŪRAH",
+      "name": "introduction_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0036",
+      "type": "translation",
+      "start": 922349,
+      "end": 933816,
+      "label": "(1) O THOU human being!3631 (2) Consider this Qur'ān full of wisdom: (3) verily,",
+      "name": "translation_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0037",
+      "type": "introduction",
+      "start": 933816,
+      "end": 934726,
+      "label": "THE THIRTY-SEVENTH SŪRAH",
+      "name": "introduction_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0037",
+      "type": "translation",
+      "start": 934726,
+      "end": 950265,
+      "label": "(1) C ONSIDER these [messages] ranged in serried ranks,3679",
+      "name": "translation_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0038",
+      "type": "introduction",
+      "start": 950265,
+      "end": 950827,
+      "label": "THE THIRTY-EIGHTH SŪRAH",
+      "name": "introduction_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0038",
+      "type": "translation",
+      "start": 950827,
+      "end": 962787,
+      "label": "(1) Sād.3755",
+      "name": "translation_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0039",
+      "type": "introduction",
+      "start": 962787,
+      "end": 963797,
+      "label": "THE THIRTY-NINTH SŪRAH",
+      "name": "introduction_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0039",
+      "type": "translation",
+      "start": 963797,
+      "end": 981612,
+      "label": "(1) T HE BESTOWAL from on high of this divine writ issues from God, the Almighty",
+      "name": "translation_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0040",
+      "type": "introduction",
+      "start": 981612,
+      "end": 983973,
+      "label": "THE FORTIETH SŪRAH",
+      "name": "introduction_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0040",
+      "type": "translation",
+      "start": 983973,
+      "end": 1001603,
+      "label": "(1) Ḥā. Mīm.3896",
+      "name": "translation_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0041",
+      "type": "introduction",
+      "start": 1001603,
+      "end": 1002042,
+      "label": "THE FORTY-FIRST SŪRAH",
+      "name": "introduction_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0041",
+      "type": "translation",
+      "start": 1002042,
+      "end": 1014310,
+      "label": "(1) Ḥā. Mīm.3965",
+      "name": "translation_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0042",
+      "type": "introduction",
+      "start": 1014310,
+      "end": 1015676,
+      "label": "THE FORTY-SECOND SŪRAH",
+      "name": "introduction_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0042",
+      "type": "translation",
+      "start": 1015676,
+      "end": 1028285,
+      "label": "(1) Ḥā. Mīm. (2) `Ayn. Sīn. Qāf.4016",
+      "name": "translation_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0043",
+      "type": "introduction",
+      "start": 1028285,
+      "end": 1029040,
+      "label": "THE FORTY-THIRD SŪRAH",
+      "name": "introduction_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0043",
+      "type": "translation",
+      "start": 1029040,
+      "end": 1042891,
+      "label": "(1) Ḥā. Mīm.4073",
+      "name": "translation_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0044",
+      "type": "introduction",
+      "start": 1042891,
+      "end": 1043231,
+      "label": "THE FORTY-FOURTH SŪRAH",
+      "name": "introduction_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0044",
+      "type": "translation",
+      "start": 1043231,
+      "end": 1049059,
+      "label": "(1) Ḥā. Mīm.4136",
+      "name": "translation_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0045",
+      "type": "introduction",
+      "start": 1049059,
+      "end": 1049419,
+      "label": "THE FORTY-FIFTH SŪRAH",
+      "name": "introduction_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0045",
+      "type": "translation",
+      "start": 1049419,
+      "end": 1056638,
+      "label": "(1) Ḥā. Mīm.4171",
+      "name": "translation_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0046",
+      "type": "introduction",
+      "start": 1056638,
+      "end": 1057002,
+      "label": "THE FORTY-SIXTH SŪRAH",
+      "name": "introduction_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0046",
+      "type": "translation",
+      "start": 1057002,
+      "end": 1066649,
+      "label": "(1) Ḥā. Mīm.4203",
+      "name": "translation_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0047",
+      "type": "introduction",
+      "start": 1066649,
+      "end": 1067398,
+      "label": "THE FORTY-SEVENTH SŪRAH",
+      "name": "introduction_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0047",
+      "type": "translation",
+      "start": 1067398,
+      "end": 1075952,
+      "label": "(1) A S FOR THOSE who are bent on denying the truth and on barring [others] from",
+      "name": "translation_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0048",
+      "type": "introduction",
+      "start": 1075952,
+      "end": 1080776,
+      "label": "THE FORTY-EIGHTH SŪRAH",
+      "name": "introduction_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0048",
+      "type": "translation",
+      "start": 1080776,
+      "end": 1089233,
+      "label": "(1) V ERILY, [O Muḥammad,] We have laid before thee a manifest victory,4290 (2) ",
+      "name": "translation_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0049",
+      "type": "introduction",
+      "start": 1089233,
+      "end": 1089994,
+      "label": "THE FORTY-NINTH SŪRAH",
+      "name": "introduction_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0049",
+      "type": "translation",
+      "start": 1089994,
+      "end": 1094817,
+      "label": "(1) O you who have attained to faith! Do not put yourselves forward4338 in the p",
+      "name": "translation_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0050",
+      "type": "introduction",
+      "start": 1094817,
+      "end": 1095208,
+      "label": "THE FIFTIETH SŪRAH",
+      "name": "introduction_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0050",
+      "type": "translation",
+      "start": 1095208,
+      "end": 1101116,
+      "label": "(1) Qāf.4360",
+      "name": "translation_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0051",
+      "type": "introduction",
+      "start": 1101116,
+      "end": 1101455,
+      "label": "THE FIFTY-FIRST SŪRAH",
+      "name": "introduction_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0051",
+      "type": "translation",
+      "start": 1101455,
+      "end": 1107680,
+      "label": "(1) C ONSIDER the winds that scatter the dust far and wide,",
+      "name": "translation_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0052",
+      "type": "introduction",
+      "start": 1107680,
+      "end": 1108016,
+      "label": "THE FIFTY-SECOND SŪRAH",
+      "name": "introduction_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0052",
+      "type": "translation",
+      "start": 1108016,
+      "end": 1113791,
+      "label": "(1) C ONSIDER Mount Sinai!4432",
+      "name": "translation_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0053",
+      "type": "introduction",
+      "start": 1113791,
+      "end": 1114371,
+      "label": "THE FIFTY-THIRD SŪRAH",
+      "name": "introduction_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0053",
+      "type": "translation",
+      "start": 1114371,
+      "end": 1120082,
+      "label": "(1) C ONSIDER this unfolding [of God's message], as it comes down from on high!4",
+      "name": "translation_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0054",
+      "type": "introduction",
+      "start": 1120082,
+      "end": 1120578,
+      "label": "THE FIFTY-FOURTH SŪRAH",
+      "name": "introduction_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0054",
+      "type": "translation",
+      "start": 1120578,
+      "end": 1126834,
+      "label": "(1) T HE LAST HOUR draws near, and the moon is split asunder!4500",
+      "name": "translation_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0055",
+      "type": "introduction",
+      "start": 1126834,
+      "end": 1127501,
+      "label": "THE FIFTY-FIFTH SŪRAH",
+      "name": "introduction_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0055",
+      "type": "translation",
+      "start": 1127501,
+      "end": 1133379,
+      "label": "(1) T HE MOST GRACIOUS (2) has imparted this Qur'ān [unto man].",
+      "name": "translation_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0056",
+      "type": "introduction",
+      "start": 1133379,
+      "end": 1133633,
+      "label": "THE FIFTY-SIXTH SŪRAH",
+      "name": "introduction_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0056",
+      "type": "translation",
+      "start": 1133633,
+      "end": 1140478,
+      "label": "(1) W HEN THAT which must come to pass4561 [at last] comes to pass, (2) there wi",
+      "name": "translation_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0057",
+      "type": "introduction",
+      "start": 1140478,
+      "end": 1140994,
+      "label": "THE FIFTY-SEVENTH SŪRAH",
+      "name": "introduction_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0057",
+      "type": "translation",
+      "start": 1140994,
+      "end": 1149493,
+      "label": "(1) A LL THAT IS in the heavens and on earth extols God's limitless glory: for H",
+      "name": "translation_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0058",
+      "type": "introduction",
+      "start": 1149493,
+      "end": 1150333,
+      "label": "THE FIFTY-EIGHTH SŪRAH",
+      "name": "introduction_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0058",
+      "type": "translation",
+      "start": 1150333,
+      "end": 1157321,
+      "label": "(1) God has indeed heard the words of her who pleads with thee concerning her hu",
+      "name": "translation_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0059",
+      "type": "introduction",
+      "start": 1157321,
+      "end": 1160816,
+      "label": "THE FIFTY-NINTH SŪRAH",
+      "name": "introduction_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0059",
+      "type": "translation",
+      "start": 1160816,
+      "end": 1167783,
+      "label": "(1) A LL THAT IS in the heavens and all that is on earth extols God's limitless ",
+      "name": "translation_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0060",
+      "type": "introduction",
+      "start": 1167783,
+      "end": 1168715,
+      "label": "THE SIXTIETH SŪRAH",
+      "name": "introduction_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0060",
+      "type": "translation",
+      "start": 1168715,
+      "end": 1173976,
+      "label": "(1) O YOU who have attained to faith! Do not take My enemies – who are your enem",
+      "name": "translation_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0061",
+      "type": "introduction",
+      "start": 1173976,
+      "end": 1174677,
+      "label": "THE SIXTY-FIRST SŪRAH",
+      "name": "introduction_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0061",
+      "type": "translation",
+      "start": 1174677,
+      "end": 1177968,
+      "label": "(1) A LL THAT IS in the heavens and all that is on earth extols God's limitless ",
+      "name": "translation_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0062",
+      "type": "introduction",
+      "start": 1177968,
+      "end": 1178258,
+      "label": "THE SIXTY-SECOND SŪRAH",
+      "name": "introduction_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0062",
+      "type": "translation",
+      "start": 1178258,
+      "end": 1180762,
+      "label": "(1) A LL THAT IS in the heavens and all that is on earth extols the limitless gl",
+      "name": "translation_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0063",
+      "type": "introduction",
+      "start": 1180762,
+      "end": 1181345,
+      "label": "THE SIXTY-THIRD SŪRAH",
+      "name": "introduction_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0063",
+      "type": "translation",
+      "start": 1181345,
+      "end": 1184027,
+      "label": "(1) W HEN THE HYPOCRITES come unto thee, they say, \"We bear witness that thou ar",
+      "name": "translation_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0064",
+      "type": "introduction",
+      "start": 1184027,
+      "end": 1184429,
+      "label": "THE SIXTY-FOURTH SŪRAH",
+      "name": "introduction_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0064",
+      "type": "translation",
+      "start": 1184429,
+      "end": 1188161,
+      "label": "(1) A LL THAT IS in the heavens and all that is on earth extols God's limitless ",
+      "name": "translation_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0065",
+      "type": "introduction",
+      "start": 1188161,
+      "end": 1188645,
+      "label": "THE SIXTY-FIFTH SŪRAH",
+      "name": "introduction_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0065",
+      "type": "translation",
+      "start": 1188645,
+      "end": 1192897,
+      "label": "(1) O PROPHET! When you4790 [intend to] divorce women, divorce them with a view ",
+      "name": "translation_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0066",
+      "type": "introduction",
+      "start": 1192897,
+      "end": 1193277,
+      "label": "THE SIXTY-SIXTH SŪRAH",
+      "name": "introduction_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0066",
+      "type": "translation",
+      "start": 1193277,
+      "end": 1197205,
+      "label": "(1) O PROPHET! Why dost thou, out of a desire to please [one or another of] thy ",
+      "name": "translation_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0067",
+      "type": "introduction",
+      "start": 1197205,
+      "end": 1197896,
+      "label": "THE SIXTY-SEVENTH SŪRAH",
+      "name": "introduction_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0067",
+      "type": "translation",
+      "start": 1197896,
+      "end": 1203008,
+      "label": "(1) H ALLOWED be He in whose hand all dominion rests, since He has the power to ",
+      "name": "translation_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0068",
+      "type": "introduction",
+      "start": 1203008,
+      "end": 1203648,
+      "label": "THE SIXTY-EIGHTH SŪRAH",
+      "name": "introduction_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0068",
+      "type": "translation",
+      "start": 1203648,
+      "end": 1209007,
+      "label": "(1) Nūn.4857",
+      "name": "translation_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0069",
+      "type": "introduction",
+      "start": 1209007,
+      "end": 1209266,
+      "label": "THE SIXTY-NINTH SŪRAH",
+      "name": "introduction_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0069",
+      "type": "translation",
+      "start": 1209266,
+      "end": 1213625,
+      "label": "(1) O H, THE LAYING-BARE of the truth!4886 (2) How awesome that laying-bare of t",
+      "name": "translation_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0070",
+      "type": "introduction",
+      "start": 1213625,
+      "end": 1214062,
+      "label": "THE SEVENTIETH SŪRAH",
+      "name": "introduction_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0070",
+      "type": "translation",
+      "start": 1214062,
+      "end": 1217783,
+      "label": "(1) O NE who is minded to ask might ask4909 about the suffering which [in the he",
+      "name": "translation_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0071",
+      "type": "introduction",
+      "start": 1217783,
+      "end": 1218214,
+      "label": "THE SEVENTY-FIRST SŪRAH",
+      "name": "introduction_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0071",
+      "type": "translation",
+      "start": 1218214,
+      "end": 1221586,
+      "label": "(1) B EHOLD, We sent Noah unto his people, [saying:] \"Warn thy people ere grievo",
+      "name": "translation_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0072",
+      "type": "introduction",
+      "start": 1221586,
+      "end": 1221881,
+      "label": "THE SEVENTY-SECOND SŪRAH",
+      "name": "introduction_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0072",
+      "type": "translation",
+      "start": 1221881,
+      "end": 1226578,
+      "label": "(1) S AY: \"It has been revealed to me that some of the unseen beings gave ear [t",
+      "name": "translation_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0073",
+      "type": "introduction",
+      "start": 1226578,
+      "end": 1227038,
+      "label": "THE SEVENTY-THIRD SŪRAH",
+      "name": "introduction_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0073",
+      "type": "translation",
+      "start": 1227038,
+      "end": 1229942,
+      "label": "(1) O THOU enwrapped one!4970",
+      "name": "translation_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0074",
+      "type": "introduction",
+      "start": 1229942,
+      "end": 1232092,
+      "label": "THE SEVENTY-FOURTH SŪRAH",
+      "name": "introduction_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0074",
+      "type": "translation",
+      "start": 1232092,
+      "end": 1236415,
+      "label": "(1) O THOU [in thy solitude] enfolded!4984",
+      "name": "translation_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0075",
+      "type": "introduction",
+      "start": 1236415,
+      "end": 1236777,
+      "label": "THE SEVENTY-FIFTH SŪRAH",
+      "name": "introduction_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0075",
+      "type": "translation",
+      "start": 1236777,
+      "end": 1239576,
+      "label": "(1) N AY! I call to witness the Day of Resurrection!5014",
+      "name": "translation_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0076",
+      "type": "introduction",
+      "start": 1239576,
+      "end": 1240101,
+      "label": "THE SEVENTY-SIXTH SŪRAH",
+      "name": "introduction_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0076",
+      "type": "translation",
+      "start": 1240101,
+      "end": 1243951,
+      "label": "(1) H AS THERE [not] been an endless span of time5030 before man [appeared – a t",
+      "name": "translation_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0077",
+      "type": "introduction",
+      "start": 1243951,
+      "end": 1244391,
+      "label": "THE SEVENTY-SEVENTH SŪRAH",
+      "name": "introduction_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0077",
+      "type": "translation",
+      "start": 1244391,
+      "end": 1247721,
+      "label": "(1) C ONSIDER these [messages,] sent forth in waves5059",
+      "name": "translation_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0078",
+      "type": "introduction",
+      "start": 1247721,
+      "end": 1248094,
+      "label": "THE SEVENTY-EIGHTH SŪRAH",
+      "name": "introduction_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0078",
+      "type": "translation",
+      "start": 1248094,
+      "end": 1251186,
+      "label": "(1) A BOUT WHAT do they [most often] ask one another? (2) About the awesome tidi",
+      "name": "translation_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0079",
+      "type": "introduction",
+      "start": 1251186,
+      "end": 1251447,
+      "label": "THE SEVENTY-NINTH SŪRAH",
+      "name": "introduction_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0079",
+      "type": "translation",
+      "start": 1251447,
+      "end": 1254924,
+      "label": "(1) C ONSIDER those [stars] that rise only to set,5094",
+      "name": "translation_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0080",
+      "type": "introduction",
+      "start": 1254924,
+      "end": 1255380,
+      "label": "THE EIGHTIETH SŪRAH",
+      "name": "introduction_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0080",
+      "type": "translation",
+      "start": 1255380,
+      "end": 1257730,
+      "label": "(1) H E FROWNED and turned away (2) because the blind man approached him!5113",
+      "name": "translation_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0081",
+      "type": "introduction",
+      "start": 1257730,
+      "end": 1258131,
+      "label": "THE EIGHTY-FIRST SŪRAH",
+      "name": "introduction_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0081",
+      "type": "translation",
+      "start": 1258131,
+      "end": 1259940,
+      "label": "(1) W HEN THE SUN is shrouded in darkness,",
+      "name": "translation_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0082",
+      "type": "introduction",
+      "start": 1259940,
+      "end": 1260254,
+      "label": "THE EIGHTY-SECOND SŪRAH",
+      "name": "introduction_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0082",
+      "type": "translation",
+      "start": 1260254,
+      "end": 1261663,
+      "label": "(1) W HEN THE SKY is cleft asunder,5134",
+      "name": "translation_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0083",
+      "type": "introduction",
+      "start": 1261663,
+      "end": 1262637,
+      "label": "THE EIGHTY-THIRD SŪRAH",
+      "name": "introduction_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0083",
+      "type": "translation",
+      "start": 1262637,
+      "end": 1265629,
+      "label": "(1) W OE UNTO THOSE who give short measure:",
+      "name": "translation_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0084",
+      "type": "introduction",
+      "start": 1265629,
+      "end": 1265917,
+      "label": "THE EIGHTY-FOURTH SŪRAH",
+      "name": "introduction_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0084",
+      "type": "translation",
+      "start": 1265917,
+      "end": 1267711,
+      "label": "(1) W HEN THE SKY is split asunder,5156",
+      "name": "translation_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0085",
+      "type": "introduction",
+      "start": 1267711,
+      "end": 1267889,
+      "label": "THE EIGHTY-FIFTH SŪRAH",
+      "name": "introduction_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0085",
+      "type": "translation",
+      "start": 1267889,
+      "end": 1269698,
+      "label": "(1) C ONSIDER the sky full of great constellations,",
+      "name": "translation_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0086",
+      "type": "introduction",
+      "start": 1269698,
+      "end": 1270007,
+      "label": "THE EIGHTY-SIXTH SŪRAH",
+      "name": "introduction_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0086",
+      "type": "translation",
+      "start": 1270007,
+      "end": 1271146,
+      "label": "(1) C ONSIDER the heavens and that which comes in the night!5180",
+      "name": "translation_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0087",
+      "type": "introduction",
+      "start": 1271146,
+      "end": 1271426,
+      "label": "THE EIGHTY-SEVENTH SŪRAH",
+      "name": "introduction_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0087",
+      "type": "translation",
+      "start": 1271426,
+      "end": 1272928,
+      "label": "(1) E XTOL the limitless glory of thy Sustainer's name: [the glory of] the All-H",
+      "name": "translation_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0088",
+      "type": "introduction",
+      "start": 1272928,
+      "end": 1273222,
+      "label": "THE EIGHTY-EIGHTH SŪRAH",
+      "name": "introduction_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0088",
+      "type": "translation",
+      "start": 1273222,
+      "end": 1274627,
+      "label": "(1) H AS THERE COME unto thee the tiding of the Overshadowing Event?5196",
+      "name": "translation_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0089",
+      "type": "introduction",
+      "start": 1274627,
+      "end": 1274888,
+      "label": "THE EIGHTY-NINTH SŪRAH",
+      "name": "introduction_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0089",
+      "type": "translation",
+      "start": 1274888,
+      "end": 1277208,
+      "label": "(1) C ONSIDER the daybreak (2) and the ten nights!5202",
+      "name": "translation_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0090",
+      "type": "introduction",
+      "start": 1277208,
+      "end": 1277501,
+      "label": "THE NINETIETH SŪRAH",
+      "name": "introduction_90",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0090",
+      "type": "translation",
+      "start": 1277501,
+      "end": 1278746,
+      "label": "(1) N AY! I call to witness this land – (2) this land in which thou art free to ",
+      "name": "translation_90",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0091",
+      "type": "introduction",
+      "start": 1278746,
+      "end": 1279038,
+      "label": "THE NINETY-FIRST SŪRAH",
+      "name": "introduction_91",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0091",
+      "type": "translation",
+      "start": 1279038,
+      "end": 1280201,
+      "label": "(1) C ONSIDER the sun and its radiant brightness, (2) and the moon as it reflect",
+      "name": "translation_91",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0092",
+      "type": "introduction",
+      "start": 1280201,
+      "end": 1280519,
+      "label": "THE NINETY-SECOND SŪRAH",
+      "name": "introduction_92",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0092",
+      "type": "translation",
+      "start": 1280519,
+      "end": 1281895,
+      "label": "(1) C ONSIDER the night as it veils [the earth] in darkness, (2) and the day as ",
+      "name": "translation_92",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0093",
+      "type": "introduction",
+      "start": 1281895,
+      "end": 1282765,
+      "label": "THE NINETY-THIRD SŪRAH",
+      "name": "introduction_93",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0093",
+      "type": "translation",
+      "start": 1282765,
+      "end": 1283498,
+      "label": "(1) C ONSIDER the bright morning hours, (2) and the night when it grows still an",
+      "name": "translation_93",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0094",
+      "type": "introduction",
+      "start": 1283498,
+      "end": 1284330,
+      "label": "THE NINETY-FOURTH SŪRAH",
+      "name": "introduction_94",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0094",
+      "type": "translation",
+      "start": 1284330,
+      "end": 1284718,
+      "label": "(1) H AVE WE NOT opened up thy heart,5247 (2) and lifted from thee the burden (3",
+      "name": "translation_94",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0095",
+      "type": "introduction",
+      "start": 1284718,
+      "end": 1285159,
+      "label": "THE NINETY-FIFTH SŪRAH",
+      "name": "introduction_95",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0095",
+      "type": "translation",
+      "start": 1285159,
+      "end": 1285600,
+      "label": "(1) C ONSIDER the fig and the olive, (2) and Mount Sinai, (3) and this land secu",
+      "name": "translation_95",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0096",
+      "type": "introduction",
+      "start": 1285600,
+      "end": 1287663,
+      "label": "THE NINETY-SIXTH SŪRAH",
+      "name": "introduction_96",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0096",
+      "type": "translation",
+      "start": 1287663,
+      "end": 1288829,
+      "label": "(1) R EAD5254 in the name of thy Sustainer, who has created – (2) created man ou",
+      "name": "translation_96",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0097",
+      "type": "introduction",
+      "start": 1288829,
+      "end": 1289177,
+      "label": "THE NINETY-SEVENTH SŪRAH",
+      "name": "introduction_97",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0097",
+      "type": "translation",
+      "start": 1289177,
+      "end": 1289596,
+      "label": "(1) B EHOLD, from on high have We bestowed this [divine writ] on the Night of De",
+      "name": "translation_97",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0098",
+      "type": "introduction",
+      "start": 1289596,
+      "end": 1289973,
+      "label": "THE NINETY-EIGHTH SŪRAH",
+      "name": "introduction_98",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0098",
+      "type": "translation",
+      "start": 1289973,
+      "end": 1291595,
+      "label": "(1) I T IS NOT [conceivable] that such as are bent on denying the truth – [be th",
+      "name": "translation_98",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0099",
+      "type": "introduction",
+      "start": 1291595,
+      "end": 1291865,
+      "label": "THE NINETY-NINTH SŪRAH",
+      "name": "introduction_99",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0099",
+      "type": "translation",
+      "start": 1291865,
+      "end": 1292398,
+      "label": "(1) W HEN THE EARTH quakes with her [last] mighty quaking,",
+      "name": "translation_99",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0100",
+      "type": "introduction",
+      "start": 1292398,
+      "end": 1292624,
+      "label": "THE HUNDREDTH SŪRAH",
+      "name": "introduction_100",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0100",
+      "type": "translation",
+      "start": 1292624,
+      "end": 1293272,
+      "label": "(1) O H,5279 the chargers that run panting,",
+      "name": "translation_100",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0101",
+      "type": "introduction",
+      "start": 1293272,
+      "end": 1293483,
+      "label": "THE HUNDRED-FIRST SŪRAH",
+      "name": "introduction_101",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0101",
+      "type": "translation",
+      "start": 1293483,
+      "end": 1294083,
+      "label": "(1) O H, the sudden calamity!5282 (2) How awesome the sudden calamity!",
+      "name": "translation_101",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0102",
+      "type": "introduction",
+      "start": 1294083,
+      "end": 1294475,
+      "label": "THE HUNDRED-SECOND SŪRAH",
+      "name": "introduction_102",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0102",
+      "type": "translation",
+      "start": 1294475,
+      "end": 1295033,
+      "label": "(1) Y OU ARE OBSESSED by greed for more and more (2) until you go down to your g",
+      "name": "translation_102",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0103",
+      "type": "introduction",
+      "start": 1295033,
+      "end": 1295201,
+      "label": "THE HUNDRED-THIRD SŪRAH",
+      "name": "introduction_103",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0103",
+      "type": "translation",
+      "start": 1295201,
+      "end": 1295455,
+      "label": "(1) C ONSIDER the flight of time!5289",
+      "name": "translation_103",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0104",
+      "type": "introduction",
+      "start": 1295455,
+      "end": 1295803,
+      "label": "THE HUNDRED-FOURTH SŪRAH",
+      "name": "introduction_104",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0104",
+      "type": "translation",
+      "start": 1295803,
+      "end": 1296303,
+      "label": "(1) W OE unto every slanderer, fault-finder!5291",
+      "name": "translation_104",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0105",
+      "type": "introduction",
+      "start": 1296303,
+      "end": 1297484,
+      "label": "THE HUNDRED-FIFTH SŪRAH",
+      "name": "introduction_105",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0105",
+      "type": "translation",
+      "start": 1297484,
+      "end": 1297864,
+      "label": "(1) A RT THOU NOT aware of how thy Sustainer dealt with the Army of the Elephant",
+      "name": "translation_105",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0106",
+      "type": "introduction",
+      "start": 1297864,
+      "end": 1299164,
+      "label": "THE HUNDRED-SIXTH SŪRAH",
+      "name": "introduction_106",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0106",
+      "type": "translation",
+      "start": 1299164,
+      "end": 1299416,
+      "label": "(1) S O THAT the Quraysh might remain secure,5300",
+      "name": "translation_106",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0107",
+      "type": "introduction",
+      "start": 1299416,
+      "end": 1299871,
+      "label": "THE HUNDRED-SEVENTH SŪRAH",
+      "name": "introduction_107",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0107",
+      "type": "translation",
+      "start": 1299871,
+      "end": 1300281,
+      "label": "(1) H AST THOU ever considered [the kind of man] who gives the lie to all moral ",
+      "name": "translation_107",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0108",
+      "type": "introduction",
+      "start": 1300281,
+      "end": 1301450,
+      "label": "THE HUNDRED-EIGHTH SŪRAH",
+      "name": "introduction_108",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0108",
+      "type": "translation",
+      "start": 1301450,
+      "end": 1301675,
+      "label": "(1) B EHOLD, We have bestowed upon thee good in abundance:5308 (2) hence, pray u",
+      "name": "translation_108",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0109",
+      "type": "introduction",
+      "start": 1301675,
+      "end": 1301853,
+      "label": "THE HUNDRED-NINTH SŪRAH",
+      "name": "introduction_109",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0109",
+      "type": "translation",
+      "start": 1301853,
+      "end": 1302185,
+      "label": "(1) S AY: \"O you who deny the truth!",
+      "name": "translation_109",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0110",
+      "type": "introduction",
+      "start": 1302185,
+      "end": 1303133,
+      "label": "THE HUNDRED-TENTH SŪRAH",
+      "name": "introduction_110",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0110",
+      "type": "translation",
+      "start": 1303133,
+      "end": 1303380,
+      "label": "(1) W HEN GOD'S SUCCOUR comes, and victory,",
+      "name": "translation_110",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0111",
+      "type": "introduction",
+      "start": 1303380,
+      "end": 1304712,
+      "label": "THE HUNDRED-ELEVENTH SŪRAH",
+      "name": "introduction_111",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0111",
+      "type": "translation",
+      "start": 1304712,
+      "end": 1305064,
+      "label": "(1) D OOMED are the hands of him of the glowing countenance,5315 and doomed is h",
+      "name": "translation_111",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0112",
+      "type": "introduction",
+      "start": 1305064,
+      "end": 1305511,
+      "label": "THE HUNDRED-TWELFTH SŪRAH",
+      "name": "introduction_112",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0112",
+      "type": "translation",
+      "start": 1305511,
+      "end": 1305722,
+      "label": "(1) S AY: \"He is the One God:",
+      "name": "translation_112",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0113",
+      "type": "introduction",
+      "start": 1305722,
+      "end": 1306258,
+      "label": "THE HUNDRED-THIRTEENTH SŪRAH",
+      "name": "introduction_113",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0113",
+      "type": "translation",
+      "start": 1306258,
+      "end": 1306584,
+      "label": "(1) S AY: \"I seek refuge with the Sustainer of the rising dawn,5321",
+      "name": "translation_113",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0114",
+      "type": "introduction",
+      "start": 1306584,
+      "end": 1306800,
+      "label": "THE HUNDRED-FOURTEENTH SŪRAH",
+      "name": "introduction_114",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0114",
+      "type": "translation",
+      "start": 1306800,
+      "end": 1307081,
+      "label": "(1) S AY: \"I seek refuge with the Sustainer of men,",
+      "name": "translation_114",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    }
+  ]
+}

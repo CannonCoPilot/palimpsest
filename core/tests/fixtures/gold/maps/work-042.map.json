@@ -1,0 +1,2515 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 42,
+  "source_file": "Old Testament pseudepigrapha_ Volume one _ More noncanonical -- Richard Bauckham; James R Davila; Alexander Panayotov; James -- INscribe Digital, -- isbn13 9780802827395 -- aab44f565a88b493ecb8ef452087ff78 -- Anna’s Archive.epub",
+  "import_source": "Old Testament pseudepigrapha_ Volume one _ More noncanonical -- Richard Bauckham; James R Davila; Alexander Panayotov; James -- INscribe Digital, -- isbn13 9780802827395 -- aab44f565a88b493ecb8ef452087ff78 -- Anna’s Archive.epub",
+  "reference_sha256": "a96dd88f4faf3890de87da2a758af4eaa44b512661f4f56a39d1aa19ad839aa5",
+  "text_len": 2502115,
+  "element_count": 165,
+  "type_counts": {
+    "body": 1,
+    "copyright": 1,
+    "dedication": 1,
+    "contents": 1,
+    "foreword": 1,
+    "introduction": 40,
+    "glossary": 1,
+    "part": 2,
+    "translation": 39,
+    "bibliography": 40,
+    "footnotes": 38
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "bibliography": true,
+    "body": false,
+    "contents": true,
+    "copyright": true,
+    "dedication": true,
+    "footnotes": true,
+    "foreword": true,
+    "glossary": true,
+    "introduction": true,
+    "part": false,
+    "translation": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 2502115,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 0,
+      "end": 823,
+      "label": "© 2013 Richard Bauckham, James R. Davila, and Alexander Panayotov",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "dedication-0001",
+      "type": "dedication",
+      "start": 823,
+      "end": 1130,
+      "label": "Dedicated to",
+      "name": "dedication_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 1130,
+      "end": 3490,
+      "label": "Contents",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "foreword-0001",
+      "type": "foreword",
+      "start": 3490,
+      "end": 22710,
+      "label": "Foreword: The Fundamental Importance of an Expansive Collection of \"Old Testamen",
+      "name": "foreword_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0001",
+      "type": "introduction",
+      "start": 22710,
+      "end": 107931,
+      "label": "Introduction",
+      "name": "introduction_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "glossary-0001",
+      "type": "glossary",
+      "start": 107931,
+      "end": 109703,
+      "label": "Abbreviations",
+      "name": "glossary_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "part-0001",
+      "type": "part",
+      "start": 109703,
+      "end": 1754609,
+      "label": "I. Texts Ordered according to Biblical Chronology",
+      "name": "part_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "part-0002",
+      "type": "part",
+      "start": 1754609,
+      "end": 2502115,
+      "label": "II. Thematic Texts",
+      "name": "part_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0001",
+      "type": "translation",
+      "start": 109703,
+      "end": 169033,
+      "label": "I. Texts Ordered according to Biblical Chronology",
+      "name": "translation_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0002",
+      "type": "translation",
+      "start": 169033,
+      "end": 184601,
+      "label": "The Life of Adam and Eve (Coptic Fragments)",
+      "name": "translation_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0003",
+      "type": "translation",
+      "start": 184601,
+      "end": 199343,
+      "label": "The Book of the Covenant",
+      "name": "translation_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0004",
+      "type": "translation",
+      "start": 199343,
+      "end": 221000,
+      "label": "The Apocryphon of Seth",
+      "name": "translation_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0005",
+      "type": "translation",
+      "start": 221000,
+      "end": 242747,
+      "label": "The Book of Noah",
+      "name": "translation_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0006",
+      "type": "translation",
+      "start": 242747,
+      "end": 256208,
+      "label": "The Apocryphon of Eber",
+      "name": "translation_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0007",
+      "type": "translation",
+      "start": 256208,
+      "end": 274487,
+      "label": "The Dispute over Abraham",
+      "name": "translation_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0008",
+      "type": "translation",
+      "start": 274487,
+      "end": 287143,
+      "label": "The Inquiry of Abraham (A Possible Allusion to the Apocalypse of Abraham)",
+      "name": "translation_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0009",
+      "type": "translation",
+      "start": 287143,
+      "end": 358194,
+      "label": "The Story of Melchizedek with the Melchizedek Legend from the Chronicon Paschale",
+      "name": "translation_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0010",
+      "type": "translation",
+      "start": 358194,
+      "end": 476418,
+      "label": "The Syriac History of Joseph",
+      "name": "translation_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0011",
+      "type": "translation",
+      "start": 476418,
+      "end": 547717,
+      "label": "Aramaic Levi",
+      "name": "translation_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0012",
+      "type": "translation",
+      "start": 547717,
+      "end": 604635,
+      "label": "Midrash Vayissa'u",
+      "name": "translation_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0013",
+      "type": "translation",
+      "start": 604635,
+      "end": 658405,
+      "label": "The Testament of Job (Coptic Fragments)",
+      "name": "translation_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0014",
+      "type": "translation",
+      "start": 658405,
+      "end": 701067,
+      "label": "The Tiburtine Sibyl (Greek)",
+      "name": "translation_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0015",
+      "type": "translation",
+      "start": 701067,
+      "end": 831621,
+      "label": "The Eighth Book of Moses",
+      "name": "translation_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0016",
+      "type": "translation",
+      "start": 831621,
+      "end": 857722,
+      "label": "The Balaam Text from Tell Deir 'Allā",
+      "name": "translation_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0017",
+      "type": "translation",
+      "start": 857722,
+      "end": 893705,
+      "label": "Eldad and Modad",
+      "name": "translation_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0018",
+      "type": "translation",
+      "start": 893705,
+      "end": 939276,
+      "label": "Songs of David",
+      "name": "translation_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0019",
+      "type": "translation",
+      "start": 939276,
+      "end": 989106,
+      "label": "The Aramaic Song of the Lamb(The Dialogue between David and Goliath)",
+      "name": "translation_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0020",
+      "type": "translation",
+      "start": 989106,
+      "end": 1020226,
+      "label": "Exorcistic Psalms of David and Solomon",
+      "name": "translation_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0021",
+      "type": "translation",
+      "start": 1020226,
+      "end": 1040900,
+      "label": "The Selenodromion of David and Solomon",
+      "name": "translation_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0022",
+      "type": "translation",
+      "start": 1040900,
+      "end": 1102956,
+      "label": "The Hygromancy of Solomon",
+      "name": "translation_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0023",
+      "type": "translation",
+      "start": 1102956,
+      "end": 1164825,
+      "label": "Questions of the Queen of Sheba and Answers by King Solomon",
+      "name": "translation_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0024",
+      "type": "translation",
+      "start": 1164825,
+      "end": 1208743,
+      "label": "The Nine and a Half Tribes",
+      "name": "translation_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0025",
+      "type": "translation",
+      "start": 1208743,
+      "end": 1228000,
+      "label": "The Heartless Rich Man and the Precious Stone",
+      "name": "translation_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0026",
+      "type": "translation",
+      "start": 1228000,
+      "end": 1272569,
+      "label": "Jeremiah's Prophecy to Pashhur",
+      "name": "translation_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0027",
+      "type": "translation",
+      "start": 1272569,
+      "end": 1312290,
+      "label": "The Apocryphon of Ezekiel",
+      "name": "translation_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0028",
+      "type": "translation",
+      "start": 1312290,
+      "end": 1366710,
+      "label": "The Treatise of the Vessels ( Massekhet Kelim)",
+      "name": "translation_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0029",
+      "type": "translation",
+      "start": 1366710,
+      "end": 1448721,
+      "label": "The Seventh Vision of Daniel",
+      "name": "translation_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0030",
+      "type": "translation",
+      "start": 1448721,
+      "end": 1471821,
+      "label": "A Danielic Pseudepigraphon Paraphrased by Papias",
+      "name": "translation_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0031",
+      "type": "translation",
+      "start": 1471821,
+      "end": 1488739,
+      "label": "The Relics of Zechariah and the Boy Buried at His Feet",
+      "name": "translation_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0032",
+      "type": "translation",
+      "start": 1488739,
+      "end": 1556788,
+      "label": "Sefer Zerubbabel: The Prophetic Vision of Zerubbabel ben Shealtiel",
+      "name": "translation_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0033",
+      "type": "translation",
+      "start": 1556788,
+      "end": 1603871,
+      "label": "Fifth Ezra",
+      "name": "translation_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0034",
+      "type": "translation",
+      "start": 1603871,
+      "end": 1651859,
+      "label": "Sixth Ezra",
+      "name": "translation_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0035",
+      "type": "translation",
+      "start": 1651859,
+      "end": 1754629,
+      "label": "The Latin Vision of Ezra",
+      "name": "translation_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0036",
+      "type": "translation",
+      "start": 1754629,
+      "end": 1945291,
+      "label": "The Cave of Treasures",
+      "name": "translation_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0037",
+      "type": "translation",
+      "start": 1945291,
+      "end": 2262535,
+      "label": "Palaea Historica (\"The Old Testament History\")",
+      "name": "translation_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0038",
+      "type": "translation",
+      "start": 2262535,
+      "end": 2339492,
+      "label": "Quotations from Lost Books in the Hebrew Bible",
+      "name": "translation_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "translation-0039",
+      "type": "translation",
+      "start": 2339492,
+      "end": 2502115,
+      "label": "Hebrew Visions of Hell and Paradise",
+      "name": "translation_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0002",
+      "type": "introduction",
+      "start": 109754,
+      "end": 142270,
+      "label": "Adam Octipartite/Septipartite",
+      "name": "introduction_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0003",
+      "type": "introduction",
+      "start": 169033,
+      "end": 174919,
+      "label": "The Life of Adam and Eve (Coptic Fragments)",
+      "name": "introduction_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0004",
+      "type": "introduction",
+      "start": 184601,
+      "end": 187934,
+      "label": "The Book of the Covenant",
+      "name": "introduction_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0005",
+      "type": "introduction",
+      "start": 199343,
+      "end": 210787,
+      "label": "The Apocryphon of Seth",
+      "name": "introduction_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0006",
+      "type": "introduction",
+      "start": 221000,
+      "end": 232419,
+      "label": "The Book of Noah",
+      "name": "introduction_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0007",
+      "type": "introduction",
+      "start": 242747,
+      "end": 249285,
+      "label": "The Apocryphon of Eber",
+      "name": "introduction_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0008",
+      "type": "introduction",
+      "start": 256208,
+      "end": 269685,
+      "label": "The Dispute over Abraham",
+      "name": "introduction_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0009",
+      "type": "introduction",
+      "start": 274487,
+      "end": 283296,
+      "label": "The Inquiry of Abraham (A Possible Allusion to the Apocalypse of Abraham)",
+      "name": "introduction_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0010",
+      "type": "introduction",
+      "start": 287143,
+      "end": 313793,
+      "label": "The Story of Melchizedek with the Melchizedek Legend from the Chronicon Paschale",
+      "name": "introduction_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0011",
+      "type": "introduction",
+      "start": 358194,
+      "end": 375415,
+      "label": "The Syriac History of Joseph",
+      "name": "introduction_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0012",
+      "type": "introduction",
+      "start": 476418,
+      "end": 507464,
+      "label": "Aramaic Levi",
+      "name": "introduction_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0013",
+      "type": "introduction",
+      "start": 547717,
+      "end": 568463,
+      "label": "Midrash Vayissa'u",
+      "name": "introduction_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0014",
+      "type": "introduction",
+      "start": 604635,
+      "end": 617965,
+      "label": "The Testament of Job (Coptic Fragments)",
+      "name": "introduction_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0015",
+      "type": "introduction",
+      "start": 658405,
+      "end": 674217,
+      "label": "The Tiburtine Sibyl (Greek)",
+      "name": "introduction_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0016",
+      "type": "introduction",
+      "start": 701067,
+      "end": 733882,
+      "label": "The Eighth Book of Moses",
+      "name": "introduction_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0017",
+      "type": "introduction",
+      "start": 831621,
+      "end": 843910,
+      "label": "The Balaam Text from Tell Deir 'Allā",
+      "name": "introduction_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0018",
+      "type": "introduction",
+      "start": 857722,
+      "end": 884400,
+      "label": "Eldad and Modad",
+      "name": "introduction_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0019",
+      "type": "introduction",
+      "start": 893705,
+      "end": 907105,
+      "label": "Songs of David",
+      "name": "introduction_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0020",
+      "type": "introduction",
+      "start": 939276,
+      "end": 974401,
+      "label": "The Aramaic Song of the Lamb(The Dialogue between David and Goliath)",
+      "name": "introduction_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0021",
+      "type": "introduction",
+      "start": 989106,
+      "end": 1005576,
+      "label": "Exorcistic Psalms of David and Solomon",
+      "name": "introduction_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0022",
+      "type": "introduction",
+      "start": 1020226,
+      "end": 1027961,
+      "label": "The Selenodromion of David and Solomon",
+      "name": "introduction_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0023",
+      "type": "introduction",
+      "start": 1040900,
+      "end": 1057449,
+      "label": "The Hygromancy of Solomon",
+      "name": "introduction_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0024",
+      "type": "introduction",
+      "start": 1102956,
+      "end": 1130704,
+      "label": "Questions of the Queen of Sheba and Answers by King Solomon",
+      "name": "introduction_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0025",
+      "type": "introduction",
+      "start": 1164825,
+      "end": 1189308,
+      "label": "The Nine and a Half Tribes",
+      "name": "introduction_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0026",
+      "type": "introduction",
+      "start": 1208743,
+      "end": 1221429,
+      "label": "The Heartless Rich Man and the Precious Stone",
+      "name": "introduction_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0027",
+      "type": "introduction",
+      "start": 1228000,
+      "end": 1256839,
+      "label": "Jeremiah's Prophecy to Pashhur",
+      "name": "introduction_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0028",
+      "type": "introduction",
+      "start": 1272569,
+      "end": 1292845,
+      "label": "The Apocryphon of Ezekiel",
+      "name": "introduction_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0029",
+      "type": "introduction",
+      "start": 1312290,
+      "end": 1341234,
+      "label": "The Treatise of the Vessels ( Massekhet Kelim)",
+      "name": "introduction_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0030",
+      "type": "introduction",
+      "start": 1366710,
+      "end": 1389914,
+      "label": "The Seventh Vision of Daniel",
+      "name": "introduction_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0031",
+      "type": "introduction",
+      "start": 1448721,
+      "end": 1464625,
+      "label": "A Danielic Pseudepigraphon Paraphrased by Papias",
+      "name": "introduction_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0032",
+      "type": "introduction",
+      "start": 1471821,
+      "end": 1478811,
+      "label": "The Relics of Zechariah and the Boy Buried at His Feet",
+      "name": "introduction_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0033",
+      "type": "introduction",
+      "start": 1488739,
+      "end": 1500494,
+      "label": "Sefer Zerubbabel: The Prophetic Vision of Zerubbabel ben Shealtiel",
+      "name": "introduction_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0034",
+      "type": "introduction",
+      "start": 1556788,
+      "end": 1582857,
+      "label": "Fifth Ezra",
+      "name": "introduction_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0035",
+      "type": "introduction",
+      "start": 1603871,
+      "end": 1627347,
+      "label": "Sixth Ezra",
+      "name": "introduction_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0036",
+      "type": "introduction",
+      "start": 1651859,
+      "end": 1696926,
+      "label": "The Latin Vision of Ezra",
+      "name": "introduction_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0037",
+      "type": "introduction",
+      "start": 1754629,
+      "end": 1779021,
+      "label": "The Cave of Treasures",
+      "name": "introduction_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0038",
+      "type": "introduction",
+      "start": 1945291,
+      "end": 1986712,
+      "label": "Palaea Historica (\"The Old Testament History\")",
+      "name": "introduction_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0039",
+      "type": "introduction",
+      "start": 2262535,
+      "end": 2296130,
+      "label": "Quotations from Lost Books in the Hebrew Bible",
+      "name": "introduction_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "introduction-0040",
+      "type": "introduction",
+      "start": 2339492,
+      "end": 2386204,
+      "label": "Hebrew Visions of Hell and Paradise",
+      "name": "introduction_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0001",
+      "type": "bibliography",
+      "start": 142272,
+      "end": 146938,
+      "label": "Bibliography",
+      "name": "bibliography_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0002",
+      "type": "bibliography",
+      "start": 174921,
+      "end": 176084,
+      "label": "Bibliography",
+      "name": "bibliography_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0003",
+      "type": "bibliography",
+      "start": 187936,
+      "end": 189098,
+      "label": "Bibliography",
+      "name": "bibliography_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0004",
+      "type": "bibliography",
+      "start": 210789,
+      "end": 211869,
+      "label": "Bibliography",
+      "name": "bibliography_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0005",
+      "type": "bibliography",
+      "start": 232421,
+      "end": 233940,
+      "label": "Bibliography",
+      "name": "bibliography_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0006",
+      "type": "bibliography",
+      "start": 249287,
+      "end": 249731,
+      "label": "Bibliography",
+      "name": "bibliography_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0007",
+      "type": "bibliography",
+      "start": 269687,
+      "end": 270913,
+      "label": "Bibliography",
+      "name": "bibliography_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0008",
+      "type": "bibliography",
+      "start": 283298,
+      "end": 284257,
+      "label": "Bibliography",
+      "name": "bibliography_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0009",
+      "type": "bibliography",
+      "start": 313795,
+      "end": 319795,
+      "label": "Bibliography",
+      "name": "bibliography_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0010",
+      "type": "bibliography",
+      "start": 375417,
+      "end": 377717,
+      "label": "Bibliography",
+      "name": "bibliography_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0011",
+      "type": "bibliography",
+      "start": 507466,
+      "end": 510934,
+      "label": "Bibliography",
+      "name": "bibliography_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0012",
+      "type": "bibliography",
+      "start": 568465,
+      "end": 569728,
+      "label": "Bibliography",
+      "name": "bibliography_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0013",
+      "type": "bibliography",
+      "start": 617967,
+      "end": 620663,
+      "label": "Bibliography",
+      "name": "bibliography_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0014",
+      "type": "bibliography",
+      "start": 674219,
+      "end": 676588,
+      "label": "Bibliography",
+      "name": "bibliography_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0015",
+      "type": "bibliography",
+      "start": 733884,
+      "end": 736210,
+      "label": "Bibliography",
+      "name": "bibliography_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0016",
+      "type": "bibliography",
+      "start": 843912,
+      "end": 845700,
+      "label": "Bibliography",
+      "name": "bibliography_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0017",
+      "type": "bibliography",
+      "start": 884402,
+      "end": 886152,
+      "label": "Bibliography",
+      "name": "bibliography_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0018",
+      "type": "bibliography",
+      "start": 907107,
+      "end": 908852,
+      "label": "Bibliography",
+      "name": "bibliography_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0019",
+      "type": "bibliography",
+      "start": 974403,
+      "end": 976844,
+      "label": "Bibliography",
+      "name": "bibliography_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0020",
+      "type": "bibliography",
+      "start": 1005578,
+      "end": 1008560,
+      "label": "Bibliography",
+      "name": "bibliography_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0021",
+      "type": "bibliography",
+      "start": 1027963,
+      "end": 1029412,
+      "label": "Bibliography",
+      "name": "bibliography_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0022",
+      "type": "bibliography",
+      "start": 1057451,
+      "end": 1102954,
+      "label": "Bibliography",
+      "name": "bibliography_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0023",
+      "type": "bibliography",
+      "start": 1130706,
+      "end": 1133074,
+      "label": "Bibliography",
+      "name": "bibliography_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0024",
+      "type": "bibliography",
+      "start": 1189310,
+      "end": 1191270,
+      "label": "Bibliography",
+      "name": "bibliography_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0025",
+      "type": "bibliography",
+      "start": 1221431,
+      "end": 1222275,
+      "label": "Bibliography",
+      "name": "bibliography_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0026",
+      "type": "bibliography",
+      "start": 1256841,
+      "end": 1258277,
+      "label": "Bibliography",
+      "name": "bibliography_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0027",
+      "type": "bibliography",
+      "start": 1292847,
+      "end": 1294916,
+      "label": "Bibliography",
+      "name": "bibliography_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0028",
+      "type": "bibliography",
+      "start": 1341236,
+      "end": 1343488,
+      "label": "Bibliography",
+      "name": "bibliography_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0029",
+      "type": "bibliography",
+      "start": 1389916,
+      "end": 1394880,
+      "label": "Bibliography",
+      "name": "bibliography_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0030",
+      "type": "bibliography",
+      "start": 1464627,
+      "end": 1465916,
+      "label": "Bibliography",
+      "name": "bibliography_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0031",
+      "type": "bibliography",
+      "start": 1478813,
+      "end": 1479558,
+      "label": "Bibliography",
+      "name": "bibliography_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0032",
+      "type": "bibliography",
+      "start": 1500496,
+      "end": 1502083,
+      "label": "Bibliography",
+      "name": "bibliography_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0033",
+      "type": "bibliography",
+      "start": 1582859,
+      "end": 1586266,
+      "label": "Bibliography",
+      "name": "bibliography_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0034",
+      "type": "bibliography",
+      "start": 1627349,
+      "end": 1629286,
+      "label": "Bibliography",
+      "name": "bibliography_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0035",
+      "type": "bibliography",
+      "start": 1696928,
+      "end": 1700053,
+      "label": "Bibliography",
+      "name": "bibliography_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0036",
+      "type": "bibliography",
+      "start": 1779023,
+      "end": 1781123,
+      "label": "Bibliography",
+      "name": "bibliography_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0037",
+      "type": "bibliography",
+      "start": 1986714,
+      "end": 1989937,
+      "label": "Bibliography",
+      "name": "bibliography_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0038",
+      "type": "bibliography",
+      "start": 2296132,
+      "end": 2297970,
+      "label": "Bibliography",
+      "name": "bibliography_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0039",
+      "type": "bibliography",
+      "start": 2310306,
+      "end": 2339490,
+      "label": "Bibliography",
+      "name": "bibliography_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "bibliography-0040",
+      "type": "bibliography",
+      "start": 2386206,
+      "end": 2388604,
+      "label": "Bibliography",
+      "name": "bibliography_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0001",
+      "type": "footnotes",
+      "start": 146940,
+      "end": 150053,
+      "label": "1. See Max Förster, \"Adams Erschaffung und Namengebung: Ein lateinisches Fragmen",
+      "name": "footnotes_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0002",
+      "type": "footnotes",
+      "start": 176086,
+      "end": 180586,
+      "label": "1. E. Kautzsch, ed., Die Apokryphen und Pseudepigraphen des alten Testaments (Tü",
+      "name": "footnotes_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0003",
+      "type": "footnotes",
+      "start": 189100,
+      "end": 190052,
+      "label": "1. Nautin, Didyme l'Aveugle Sur la Genèse I, 28–29. There he lists the passages ",
+      "name": "footnotes_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0004",
+      "type": "footnotes",
+      "start": 211871,
+      "end": 218614,
+      "label": "1. In Jacques-Paul Migne's edition (PG 56, 637) it bears the subtitle Mons Victo",
+      "name": "footnotes_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0005",
+      "type": "footnotes",
+      "start": 233942,
+      "end": 236348,
+      "label": "1. For this dating and provenance, Elinor Leiber, \"Asaf's Book of Medicines: A H",
+      "name": "footnotes_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0006",
+      "type": "footnotes",
+      "start": 249733,
+      "end": 250267,
+      "label": "1. Dorival, \"Le patriarche Héber et la tour de Babel,\" 181–201.",
+      "name": "footnotes_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0007",
+      "type": "footnotes",
+      "start": 270915,
+      "end": 273527,
+      "label": "1. On the date, see Crouzel, Fournier and Périchon, Origène: Homélies sur S. Luc",
+      "name": "footnotes_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0008",
+      "type": "footnotes",
+      "start": 284259,
+      "end": 285596,
+      "label": "1. It is known variously as De psalmodiae bono and De utilitate hymnorum.",
+      "name": "footnotes_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0009",
+      "type": "footnotes",
+      "start": 319797,
+      "end": 336900,
+      "label": "1. See, in general, Robinson, \"The Apocryphal Story,\" 26–28; Denis, Introduction",
+      "name": "footnotes_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0010",
+      "type": "footnotes",
+      "start": 377719,
+      "end": 391829,
+      "label": "1. Most recently, Sebastian Brock affirmed that the text is \"wrongly attributed ",
+      "name": "footnotes_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0011",
+      "type": "footnotes",
+      "start": 510936,
+      "end": 515369,
+      "label": "1. The most recent editions of all the texts are Drawnell, Aramaic Wisdom Text a",
+      "name": "footnotes_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0012",
+      "type": "footnotes",
+      "start": 569730,
+      "end": 572044,
+      "label": "1. Tamar Alexander and Joseph Dan, \"The Complete Midrash Vayissa'u\" (Heb.), Folk",
+      "name": "footnotes_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0013",
+      "type": "footnotes",
+      "start": 620665,
+      "end": 622038,
+      "label": "1. The dates reported for these manuscripts differ slightly, cf. Schaller, Testa",
+      "name": "footnotes_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0014",
+      "type": "footnotes",
+      "start": 676590,
+      "end": 680280,
+      "label": "1. For this introduction to the Tiburtine Sibyl I have made frequent use of Paul",
+      "name": "footnotes_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0015",
+      "type": "footnotes",
+      "start": 736212,
+      "end": 746541,
+      "label": "1. PGM XIII. 734–1077 corresponds approximately to the final third of the text p",
+      "name": "footnotes_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0016",
+      "type": "footnotes",
+      "start": 845702,
+      "end": 849310,
+      "label": "1. J. Hoftijzer and G. van der Kooij, Aramaic Texts from Deir 'Allā (Leiden: Bri",
+      "name": "footnotes_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0017",
+      "type": "footnotes",
+      "start": 886154,
+      "end": 890991,
+      "label": "1. James, The Lost Apocrypha, 38.",
+      "name": "footnotes_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0018",
+      "type": "footnotes",
+      "start": 908854,
+      "end": 918584,
+      "label": "1. Parts of the introduction and the translation were published in G. W. Lorein ",
+      "name": "footnotes_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0019",
+      "type": "footnotes",
+      "start": 976846,
+      "end": 980397,
+      "label": "1. de Moor and van Staalduine-Sulman, \"The Aramaic Song of the Lamb,\" 266–79; va",
+      "name": "footnotes_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0020",
+      "type": "footnotes",
+      "start": 1008562,
+      "end": 1012676,
+      "label": "1. See Josephus, Ant. 8.42–49; 11Q5 = 11QPs a, col. XXVII, lines 4–10; Origen, I",
+      "name": "footnotes_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0021",
+      "type": "footnotes",
+      "start": 1029414,
+      "end": 1029932,
+      "label": "1. On the first day of the moon, Adam, the first formed, was created. This day i",
+      "name": "footnotes_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0022",
+      "type": "footnotes",
+      "start": 1133076,
+      "end": 1142689,
+      "label": "1. For a discussion of Midrash Mishle as one of the sources of the Hebrew text o",
+      "name": "footnotes_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0023",
+      "type": "footnotes",
+      "start": 1191272,
+      "end": 1199346,
+      "label": "1. It is not known in which order the two works were written, though Poinsotte, ",
+      "name": "footnotes_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0024",
+      "type": "footnotes",
+      "start": 1222277,
+      "end": 1224935,
+      "label": "1. Georgii Monachi chronicon, ed. C. de Boor (2 vols.; Leipzig: Teubner, 1904), ",
+      "name": "footnotes_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0025",
+      "type": "footnotes",
+      "start": 1258279,
+      "end": 1260156,
+      "label": "1. Some MSS read, \"I gave them.\"",
+      "name": "footnotes_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0026",
+      "type": "footnotes",
+      "start": 1294918,
+      "end": 1297384,
+      "label": "1. Since the different fragments have multiple witnesses, almost all of which co",
+      "name": "footnotes_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0027",
+      "type": "footnotes",
+      "start": 1343490,
+      "end": 1348901,
+      "label": "1. This text has never before been translated into English, but it was summarize",
+      "name": "footnotes_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0028",
+      "type": "footnotes",
+      "start": 1394882,
+      "end": 1403430,
+      "label": "1. Kalemkiar, \"Die siebente Vision,\" 111; Macler, \"L'apocalypse arménienne,\" 289",
+      "name": "footnotes_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0029",
+      "type": "footnotes",
+      "start": 1465918,
+      "end": 1470110,
+      "label": "1. On Papias, see, e.g., W. R. Schoedel, \"Papias,\" in: ANRW 27.1, 235–70.",
+      "name": "footnotes_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0030",
+      "type": "footnotes",
+      "start": 1479560,
+      "end": 1484141,
+      "label": "1. Sozomen, Ecclesiastical History, 9.16.3–17.6, ed. J. Bidez and G. C. Hansen (",
+      "name": "footnotes_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0031",
+      "type": "footnotes",
+      "start": 1502085,
+      "end": 1515470,
+      "label": "1. Martin S. Jaffee, \"Rabbinic Authorship as a Collective Enterprise,\" in The Ca",
+      "name": "footnotes_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0032",
+      "type": "footnotes",
+      "start": 1586268,
+      "end": 1588464,
+      "label": "1. For further details on the manuscript situation for 5 Ezra, see Theodore A. B",
+      "name": "footnotes_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0033",
+      "type": "footnotes",
+      "start": 1629288,
+      "end": 1631352,
+      "label": "1. For further details on the manuscript situation for 6 Ezra, see Theodore A. B",
+      "name": "footnotes_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0034",
+      "type": "footnotes",
+      "start": 1700055,
+      "end": 1713207,
+      "label": "1. For the titles in the MSS, see the first note to the translation below.",
+      "name": "footnotes_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0035",
+      "type": "footnotes",
+      "start": 1781125,
+      "end": 1786804,
+      "label": "1. Henceforth abbreviated as SpTh, standing for Latin Spelunca Thesaurorum, i.e.",
+      "name": "footnotes_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0036",
+      "type": "footnotes",
+      "start": 1989939,
+      "end": 2001316,
+      "label": "1. For Greek text, date and provenance of the work, see the next section.",
+      "name": "footnotes_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0037",
+      "type": "footnotes",
+      "start": 2297972,
+      "end": 2306404,
+      "label": "1. The classic biblical example of a victory song is Judges 5.",
+      "name": "footnotes_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    },
+    {
+      "id": "footnotes-0038",
+      "type": "footnotes",
+      "start": 2388606,
+      "end": 2392410,
+      "label": "1. M. Gaster, \"Hebrew Visions of Hell and Paradise,\" JRAS N.S. 25 (1893): 571–61",
+      "name": "footnotes_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "custom"
+      }
+    }
+  ]
+}

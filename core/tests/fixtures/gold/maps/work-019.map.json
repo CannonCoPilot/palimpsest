@@ -1,0 +1,2033 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 19,
+  "source_file": "The Correspondent_ A Novel -- Virginia Evans -- 2025 -- Crown Publishing Group, The -- isbn13 9780593798430 -- f542b169cc729ca2fdc329d48c3911f5 -- Anna’s Archive.epub",
+  "import_source": "The Correspondent_ A Novel -- Virginia Evans -- 2025 -- Crown Publishing Group, The -- isbn13 9780593798430 -- f542b169cc729ca2fdc329d48c3911f5 -- Anna’s Archive.epub",
+  "reference_sha256": "a86ca58a066ada5381aa738b026b6b2ba88f80597d7f75aa569889e068b1417c",
+  "text_len": 364494,
+  "element_count": 133,
+  "type_counts": {
+    "body": 1,
+    "copyright": 1,
+    "contents": 1,
+    "dedication": 1,
+    "epigraph": 1,
+    "preface": 1,
+    "acknowledgments": 1,
+    "discussion": 1,
+    "about_author": 1,
+    "letter": 124
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "about_author": true,
+    "acknowledgments": true,
+    "body": false,
+    "contents": true,
+    "copyright": true,
+    "dedication": true,
+    "discussion": true,
+    "epigraph": true,
+    "letter": false,
+    "preface": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 364494,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 0,
+      "end": 2075,
+      "label": "This is a work of fiction. Names, characters, places, and incidents either are t",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 2075,
+      "end": 2194,
+      "label": "Contents",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "dedication-0001",
+      "type": "dedication",
+      "start": 2194,
+      "end": 2227,
+      "label": "_150929195_",
+      "name": "dedication_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "epigraph-0001",
+      "type": "epigraph",
+      "start": 2227,
+      "end": 2454,
+      "label": "What I have made for myself is personal, but is not exactly peace….",
+      "name": "epigraph_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "preface-0001",
+      "type": "preface",
+      "start": 2454,
+      "end": 3767,
+      "label": "A Preface",
+      "name": "preface_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "acknowledgments-0001",
+      "type": "acknowledgments",
+      "start": 357468,
+      "end": 361325,
+      "label": "Acknowledgments",
+      "name": "acknowledgments_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "discussion-0001",
+      "type": "discussion",
+      "start": 361325,
+      "end": 363959,
+      "label": "The Correspondent",
+      "name": "discussion_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "about_author-0001",
+      "type": "about_author",
+      "start": 363959,
+      "end": 364494,
+      "label": "About the Author",
+      "name": "about_author_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "letter-0001",
+      "type": "letter",
+      "start": 3767,
+      "end": 7457,
+      "label": "Felix Stone",
+      "name": "letter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0002",
+      "type": "letter",
+      "start": 7457,
+      "end": 7855,
+      "label": "Dear Mr. Lübeck,",
+      "name": "letter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0003",
+      "type": "letter",
+      "start": 7855,
+      "end": 15049,
+      "label": "Dear Ann,",
+      "name": "letter_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0004",
+      "type": "letter",
+      "start": 15049,
+      "end": 17410,
+      "label": "Dear Alice,",
+      "name": "letter_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0005",
+      "type": "letter",
+      "start": 17410,
+      "end": 19871,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0006",
+      "type": "letter",
+      "start": 19871,
+      "end": 21520,
+      "label": "Syb,",
+      "name": "letter_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0007",
+      "type": "letter",
+      "start": 21520,
+      "end": 24298,
+      "label": "Dear Rosalie,",
+      "name": "letter_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0008",
+      "type": "letter",
+      "start": 24298,
+      "end": 33872,
+      "label": "Dear James,",
+      "name": "letter_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0009",
+      "type": "letter",
+      "start": 33872,
+      "end": 37857,
+      "label": "Dear Ms. Toole,",
+      "name": "letter_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0010",
+      "type": "letter",
+      "start": 37857,
+      "end": 42855,
+      "label": "Dear Joan,",
+      "name": "letter_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0011",
+      "type": "letter",
+      "start": 42855,
+      "end": 43262,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0012",
+      "type": "letter",
+      "start": 43262,
+      "end": 47927,
+      "label": "Dear Mr. Lübeck,",
+      "name": "letter_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0013",
+      "type": "letter",
+      "start": 47927,
+      "end": 49237,
+      "label": "Sybil,",
+      "name": "letter_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0014",
+      "type": "letter",
+      "start": 49237,
+      "end": 49688,
+      "label": "Dear James,",
+      "name": "letter_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0015",
+      "type": "letter",
+      "start": 49688,
+      "end": 52718,
+      "label": "Dear Rosalie,",
+      "name": "letter_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0016",
+      "type": "letter",
+      "start": 52718,
+      "end": 56072,
+      "label": "Dear Sybil,",
+      "name": "letter_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0017",
+      "type": "letter",
+      "start": 56072,
+      "end": 58201,
+      "label": "Sybil,",
+      "name": "letter_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0018",
+      "type": "letter",
+      "start": 58201,
+      "end": 59350,
+      "label": "Dear Liz,",
+      "name": "letter_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0019",
+      "type": "letter",
+      "start": 59350,
+      "end": 64087,
+      "label": "Dear Mr. Watts,",
+      "name": "letter_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0020",
+      "type": "letter",
+      "start": 64087,
+      "end": 66437,
+      "label": "Hello Sybil,",
+      "name": "letter_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0021",
+      "type": "letter",
+      "start": 66437,
+      "end": 67236,
+      "label": "Hi Sybil,",
+      "name": "letter_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0022",
+      "type": "letter",
+      "start": 67236,
+      "end": 76920,
+      "label": "Dearest Harry,",
+      "name": "letter_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0023",
+      "type": "letter",
+      "start": 76920,
+      "end": 79960,
+      "label": "To: Mr. and Mrs. Stone,",
+      "name": "letter_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0024",
+      "type": "letter",
+      "start": 79960,
+      "end": 81487,
+      "label": "Dear Ms. Genet,",
+      "name": "letter_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0025",
+      "type": "letter",
+      "start": 81487,
+      "end": 84391,
+      "label": "Dear Sybil,",
+      "name": "letter_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0026",
+      "type": "letter",
+      "start": 84391,
+      "end": 85134,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0027",
+      "type": "letter",
+      "start": 85134,
+      "end": 85753,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0028",
+      "type": "letter",
+      "start": 85753,
+      "end": 90548,
+      "label": "Dear Felix,",
+      "name": "letter_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0029",
+      "type": "letter",
+      "start": 90548,
+      "end": 92008,
+      "label": "Dear Mr. Lübeck,",
+      "name": "letter_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0030",
+      "type": "letter",
+      "start": 92008,
+      "end": 92214,
+      "label": "Dear Mr. Lübeck,",
+      "name": "letter_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0031",
+      "type": "letter",
+      "start": 92214,
+      "end": 92812,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0032",
+      "type": "letter",
+      "start": 92812,
+      "end": 94604,
+      "label": "Dear Sybil,",
+      "name": "letter_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0033",
+      "type": "letter",
+      "start": 94604,
+      "end": 99993,
+      "label": "Dear Joan,",
+      "name": "letter_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0034",
+      "type": "letter",
+      "start": 99993,
+      "end": 100244,
+      "label": "Dear Mr. Lübeck,",
+      "name": "letter_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0035",
+      "type": "letter",
+      "start": 100244,
+      "end": 103234,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0036",
+      "type": "letter",
+      "start": 103234,
+      "end": 104352,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0037",
+      "type": "letter",
+      "start": 104352,
+      "end": 105906,
+      "label": "Dear Mick,",
+      "name": "letter_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0038",
+      "type": "letter",
+      "start": 105906,
+      "end": 107131,
+      "label": "Dear Melissa,",
+      "name": "letter_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0039",
+      "type": "letter",
+      "start": 107131,
+      "end": 110833,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0040",
+      "type": "letter",
+      "start": 110833,
+      "end": 113723,
+      "label": "Dear Mr. Ishiguro,",
+      "name": "letter_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0041",
+      "type": "letter",
+      "start": 113723,
+      "end": 113997,
+      "label": "Sybil,",
+      "name": "letter_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0042",
+      "type": "letter",
+      "start": 113997,
+      "end": 125271,
+      "label": "Dear Rosalie,",
+      "name": "letter_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0043",
+      "type": "letter",
+      "start": 125271,
+      "end": 126978,
+      "label": "Hello Basam,",
+      "name": "letter_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0044",
+      "type": "letter",
+      "start": 126978,
+      "end": 128509,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0045",
+      "type": "letter",
+      "start": 128509,
+      "end": 129945,
+      "label": "Sybil,",
+      "name": "letter_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0046",
+      "type": "letter",
+      "start": 129945,
+      "end": 131475,
+      "label": "Dear Rosalie,",
+      "name": "letter_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0047",
+      "type": "letter",
+      "start": 131475,
+      "end": 133015,
+      "label": "Dear Rosalie,",
+      "name": "letter_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0048",
+      "type": "letter",
+      "start": 133015,
+      "end": 133660,
+      "label": "Dear Rosalie,",
+      "name": "letter_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0049",
+      "type": "letter",
+      "start": 133660,
+      "end": 135407,
+      "label": "Dear Mrs. vanAntwerp,",
+      "name": "letter_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0050",
+      "type": "letter",
+      "start": 135407,
+      "end": 141391,
+      "label": "Dear Felix,",
+      "name": "letter_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0051",
+      "type": "letter",
+      "start": 141391,
+      "end": 148292,
+      "label": "Dear Sybil,",
+      "name": "letter_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0052",
+      "type": "letter",
+      "start": 148292,
+      "end": 148539,
+      "label": "Dear Kindred member,",
+      "name": "letter_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0053",
+      "type": "letter",
+      "start": 148539,
+      "end": 150083,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0054",
+      "type": "letter",
+      "start": 150083,
+      "end": 150335,
+      "label": "Basam,",
+      "name": "letter_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0055",
+      "type": "letter",
+      "start": 150335,
+      "end": 151715,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0056",
+      "type": "letter",
+      "start": 151715,
+      "end": 152681,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0057",
+      "type": "letter",
+      "start": 152681,
+      "end": 159029,
+      "label": "Dear Caroline,",
+      "name": "letter_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0058",
+      "type": "letter",
+      "start": 159029,
+      "end": 162952,
+      "label": "Dear Rosalie,",
+      "name": "letter_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0059",
+      "type": "letter",
+      "start": 162952,
+      "end": 170185,
+      "label": "Good morning,",
+      "name": "letter_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0060",
+      "type": "letter",
+      "start": 170185,
+      "end": 172544,
+      "label": "Dear Joan,",
+      "name": "letter_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0061",
+      "type": "letter",
+      "start": 172544,
+      "end": 174001,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0062",
+      "type": "letter",
+      "start": 174001,
+      "end": 178353,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0063",
+      "type": "letter",
+      "start": 178353,
+      "end": 180110,
+      "label": "Hello James,",
+      "name": "letter_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0064",
+      "type": "letter",
+      "start": 180110,
+      "end": 181659,
+      "label": "Dear Basam,",
+      "name": "letter_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0065",
+      "type": "letter",
+      "start": 181659,
+      "end": 182718,
+      "label": "Dear Ms. Sybil Van Antwerp,",
+      "name": "letter_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0066",
+      "type": "letter",
+      "start": 182718,
+      "end": 183412,
+      "label": "Hello Ms. Van Antwerp,",
+      "name": "letter_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0067",
+      "type": "letter",
+      "start": 183412,
+      "end": 183653,
+      "label": "Hello, Ms. Van Antwerp,",
+      "name": "letter_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0068",
+      "type": "letter",
+      "start": 183653,
+      "end": 189822,
+      "label": "Dear Rosalie,",
+      "name": "letter_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0069",
+      "type": "letter",
+      "start": 189822,
+      "end": 192617,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0070",
+      "type": "letter",
+      "start": 192617,
+      "end": 198027,
+      "label": "Dear Sybil,",
+      "name": "letter_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0071",
+      "type": "letter",
+      "start": 198027,
+      "end": 200061,
+      "label": "Hello, Ms. Van Antwerp,",
+      "name": "letter_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0072",
+      "type": "letter",
+      "start": 200061,
+      "end": 206556,
+      "label": "Dear Felix,",
+      "name": "letter_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0073",
+      "type": "letter",
+      "start": 206556,
+      "end": 209787,
+      "label": "Dear Sybil,",
+      "name": "letter_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0074",
+      "type": "letter",
+      "start": 209787,
+      "end": 212732,
+      "label": "Dear Rosalie,",
+      "name": "letter_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0075",
+      "type": "letter",
+      "start": 212732,
+      "end": 214214,
+      "label": "Dear Basam,",
+      "name": "letter_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0076",
+      "type": "letter",
+      "start": 214214,
+      "end": 216645,
+      "label": "Dear Theodore,",
+      "name": "letter_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0077",
+      "type": "letter",
+      "start": 216645,
+      "end": 220150,
+      "label": "Dear Ms. Gleason,",
+      "name": "letter_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0078",
+      "type": "letter",
+      "start": 220150,
+      "end": 223417,
+      "label": "Dear Ms. Gabaldon,",
+      "name": "letter_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0079",
+      "type": "letter",
+      "start": 223417,
+      "end": 226070,
+      "label": "Dear Mr. Lucas,",
+      "name": "letter_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0080",
+      "type": "letter",
+      "start": 226070,
+      "end": 232893,
+      "label": "Sybil,",
+      "name": "letter_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0081",
+      "type": "letter",
+      "start": 232893,
+      "end": 235016,
+      "label": "Dear Sybil,",
+      "name": "letter_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0082",
+      "type": "letter",
+      "start": 235016,
+      "end": 241410,
+      "label": "Dear Sybil,",
+      "name": "letter_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0083",
+      "type": "letter",
+      "start": 241410,
+      "end": 244534,
+      "label": "Dear Felix,",
+      "name": "letter_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0084",
+      "type": "letter",
+      "start": 244534,
+      "end": 248645,
+      "label": "Greetings, Sybil,",
+      "name": "letter_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0085",
+      "type": "letter",
+      "start": 248645,
+      "end": 249480,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0086",
+      "type": "letter",
+      "start": 249480,
+      "end": 255056,
+      "label": "Dear Harry,",
+      "name": "letter_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0087",
+      "type": "letter",
+      "start": 255056,
+      "end": 255438,
+      "label": "To Dezi,",
+      "name": "letter_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0088",
+      "type": "letter",
+      "start": 255438,
+      "end": 262032,
+      "label": "Dear Felix,",
+      "name": "letter_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0089",
+      "type": "letter",
+      "start": 262032,
+      "end": 265628,
+      "label": "To Ms. Van Antwerp,",
+      "name": "letter_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0090",
+      "type": "letter",
+      "start": 265628,
+      "end": 270341,
+      "label": "Dear Sybil,",
+      "name": "letter_90",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0091",
+      "type": "letter",
+      "start": 270341,
+      "end": 271388,
+      "label": "Syb,",
+      "name": "letter_91",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0092",
+      "type": "letter",
+      "start": 271388,
+      "end": 273083,
+      "label": "Dear Harry,",
+      "name": "letter_92",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0093",
+      "type": "letter",
+      "start": 273083,
+      "end": 277280,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_93",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0094",
+      "type": "letter",
+      "start": 277280,
+      "end": 279471,
+      "label": "Dear Theodore,",
+      "name": "letter_94",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0095",
+      "type": "letter",
+      "start": 279471,
+      "end": 284278,
+      "label": "Dear Dezi,",
+      "name": "letter_95",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0096",
+      "type": "letter",
+      "start": 284278,
+      "end": 288754,
+      "label": "Dear Hattie,",
+      "name": "letter_96",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0097",
+      "type": "letter",
+      "start": 288754,
+      "end": 289670,
+      "label": "Dear Sybil,",
+      "name": "letter_97",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0098",
+      "type": "letter",
+      "start": 289670,
+      "end": 291737,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_98",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0099",
+      "type": "letter",
+      "start": 291737,
+      "end": 294720,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_99",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0100",
+      "type": "letter",
+      "start": 294720,
+      "end": 298359,
+      "label": "Dearest Felix,",
+      "name": "letter_100",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0101",
+      "type": "letter",
+      "start": 298359,
+      "end": 300242,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_101",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0102",
+      "type": "letter",
+      "start": 300242,
+      "end": 300496,
+      "label": "Dear Dr. Jameson,",
+      "name": "letter_102",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0103",
+      "type": "letter",
+      "start": 300496,
+      "end": 300811,
+      "label": "Dear Sybil,",
+      "name": "letter_103",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0104",
+      "type": "letter",
+      "start": 300811,
+      "end": 301019,
+      "label": "Dear Dr. Jameson,",
+      "name": "letter_104",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0105",
+      "type": "letter",
+      "start": 301019,
+      "end": 302361,
+      "label": "Dear Sybil,",
+      "name": "letter_105",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0106",
+      "type": "letter",
+      "start": 302361,
+      "end": 311046,
+      "label": "Dear Fiona,",
+      "name": "letter_106",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0107",
+      "type": "letter",
+      "start": 311046,
+      "end": 315240,
+      "label": "Dear Rosalie,",
+      "name": "letter_107",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0108",
+      "type": "letter",
+      "start": 315240,
+      "end": 317909,
+      "label": "Hi Sybil,",
+      "name": "letter_108",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0109",
+      "type": "letter",
+      "start": 317909,
+      "end": 318488,
+      "label": "Dear Dezi,",
+      "name": "letter_109",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0110",
+      "type": "letter",
+      "start": 318488,
+      "end": 320353,
+      "label": "Dear Sybil,",
+      "name": "letter_110",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0111",
+      "type": "letter",
+      "start": 320353,
+      "end": 321185,
+      "label": "Dear Ms. Martinelli,",
+      "name": "letter_111",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0112",
+      "type": "letter",
+      "start": 321185,
+      "end": 326291,
+      "label": "Dear Mr. McMurtry,",
+      "name": "letter_112",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0113",
+      "type": "letter",
+      "start": 326291,
+      "end": 326961,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_113",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0114",
+      "type": "letter",
+      "start": 326961,
+      "end": 328232,
+      "label": "Dear Theodore,",
+      "name": "letter_114",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0115",
+      "type": "letter",
+      "start": 328232,
+      "end": 328458,
+      "label": "My dear Sybil,",
+      "name": "letter_115",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0116",
+      "type": "letter",
+      "start": 328458,
+      "end": 338017,
+      "label": "Dear Rosalie,",
+      "name": "letter_116",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0117",
+      "type": "letter",
+      "start": 338017,
+      "end": 345648,
+      "label": "Dear Sybil,",
+      "name": "letter_117",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0118",
+      "type": "letter",
+      "start": 345648,
+      "end": 348366,
+      "label": "Dear Syb,",
+      "name": "letter_118",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0119",
+      "type": "letter",
+      "start": 348366,
+      "end": 348740,
+      "label": "Dear Ms. Van Antwerp,",
+      "name": "letter_119",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0120",
+      "type": "letter",
+      "start": 348740,
+      "end": 350084,
+      "label": "Dear Rosalie,",
+      "name": "letter_120",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0121",
+      "type": "letter",
+      "start": 350084,
+      "end": 351869,
+      "label": "Dearest Hattie,",
+      "name": "letter_121",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0122",
+      "type": "letter",
+      "start": 351869,
+      "end": 353105,
+      "label": "Dear Mr. Martinelli,",
+      "name": "letter_122",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0123",
+      "type": "letter",
+      "start": 353105,
+      "end": 353841,
+      "label": "Dear Fiona,",
+      "name": "letter_123",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    },
+    {
+      "id": "letter-0124",
+      "type": "letter",
+      "start": 353841,
+      "end": 357468,
+      "label": "Dear Daan,",
+      "name": "letter_124",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:salutation"
+      }
+    }
+  ]
+}

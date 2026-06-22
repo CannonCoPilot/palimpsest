@@ -1,0 +1,1508 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 48,
+  "source_file": "New Testament apocrypha _ more noncanonical scriptures_ -- Tony Burke; Brent Landau -- Grand Rapids, Michigan, 2016 -- Eerdmans Publishing Company, -- isbn13 9780802872890 -- 99bbecbce461db3b220b58e59c569acc -- Anna’s Archive.epub",
+  "import_source": "New Testament apocrypha _ more noncanonical scriptures_ -- Tony Burke; Brent Landau -- Grand Rapids, Michigan, 2016 -- Eerdmans Publishing Company, -- isbn13 9780802872890 -- 99bbecbce461db3b220b58e59c569acc -- Anna’s Archive.epub",
+  "reference_sha256": "becd1b9f9540124d92cc32df2aeac1a7e5596686f099f7dd3132a73bfc42d84a",
+  "text_len": 1944206,
+  "element_count": 98,
+  "type_counts": {
+    "body": 1,
+    "copyright": 2,
+    "dedication": 1,
+    "contents": 1,
+    "preface": 1,
+    "introduction": 30,
+    "glossary": 2,
+    "header": 1,
+    "translation": 30,
+    "bibliography": 29
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "bibliography": true,
+    "body": false,
+    "contents": true,
+    "copyright": true,
+    "dedication": true,
+    "glossary": true,
+    "header": true,
+    "introduction": true,
+    "preface": true,
+    "translation": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 1944206,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 0,
+      "end": 350,
+      "label": "Wm. B. Eerdmans Publishing Co.",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "dedication-0001",
+      "type": "dedication",
+      "start": 425,
+      "end": 501,
+      "label": "Dedicated to current students (and future scholars) of Christian apocrypha",
+      "name": "dedication_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 501,
+      "end": 2441,
+      "label": "Contents",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "preface-0001",
+      "type": "preface",
+      "start": 2441,
+      "end": 6693,
+      "label": "Preface",
+      "name": "preface_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0001",
+      "type": "introduction",
+      "start": 6693,
+      "end": 28184,
+      "label": "Introduction",
+      "name": "introduction_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "glossary-0001",
+      "type": "glossary",
+      "start": 29836,
+      "end": 39116,
+      "label": "Abbreviations",
+      "name": "glossary_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "header-0001",
+      "type": "header",
+      "start": 39116,
+      "end": 39219,
+      "label": "I. Gospels and Related Traditions of New Testament Figures",
+      "name": "header_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "copyright-0002",
+      "type": "copyright",
+      "start": 350,
+      "end": 425,
+      "label": "A catalog record for this book is available from the Library of Congress.",
+      "name": "copyright_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "glossary-0002",
+      "type": "glossary",
+      "start": 28184,
+      "end": 29836,
+      "label": "Note on Cyrillic Transliteration by Slavomír Čéplö",
+      "name": "glossary_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0002",
+      "type": "introduction",
+      "start": 39219,
+      "end": 65265,
+      "label": "A translation and introduction",
+      "name": "introduction_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0003",
+      "type": "introduction",
+      "start": 65265,
+      "end": 139807,
+      "label": "A new translation and introduction",
+      "name": "introduction_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0004",
+      "type": "introduction",
+      "start": 139807,
+      "end": 236598,
+      "label": "A translation and introduction",
+      "name": "introduction_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0005",
+      "type": "introduction",
+      "start": 236598,
+      "end": 390201,
+      "label": "A new translation and introduction",
+      "name": "introduction_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0006",
+      "type": "introduction",
+      "start": 390201,
+      "end": 450652,
+      "label": "A new translation and introduction",
+      "name": "introduction_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0007",
+      "type": "introduction",
+      "start": 450652,
+      "end": 476802,
+      "label": "A translation and introduction",
+      "name": "introduction_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0008",
+      "type": "introduction",
+      "start": 476802,
+      "end": 535344,
+      "label": "A translation and introduction",
+      "name": "introduction_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0009",
+      "type": "introduction",
+      "start": 535344,
+      "end": 590517,
+      "label": "A translation and introduction",
+      "name": "introduction_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0010",
+      "type": "introduction",
+      "start": 590517,
+      "end": 637473,
+      "label": "A translation and introduction",
+      "name": "introduction_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0011",
+      "type": "introduction",
+      "start": 637473,
+      "end": 723127,
+      "label": "A new translation and introduction",
+      "name": "introduction_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0012",
+      "type": "introduction",
+      "start": 723127,
+      "end": 755821,
+      "label": "by Lorne R. Zelyck",
+      "name": "introduction_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0013",
+      "type": "introduction",
+      "start": 755821,
+      "end": 810118,
+      "label": "A new translation and introduction",
+      "name": "introduction_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0014",
+      "type": "introduction",
+      "start": 810118,
+      "end": 1143617,
+      "label": "A translation and introduction",
+      "name": "introduction_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0015",
+      "type": "introduction",
+      "start": 1143617,
+      "end": 1180008,
+      "label": "A new translation and introduction",
+      "name": "introduction_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0016",
+      "type": "introduction",
+      "start": 1180008,
+      "end": 1237491,
+      "label": "A new translation and introduction",
+      "name": "introduction_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0017",
+      "type": "introduction",
+      "start": 1237491,
+      "end": 1281129,
+      "label": "A translation and introduction",
+      "name": "introduction_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0018",
+      "type": "introduction",
+      "start": 1281129,
+      "end": 1328785,
+      "label": "A new translation and introduction",
+      "name": "introduction_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0019",
+      "type": "introduction",
+      "start": 1328785,
+      "end": 1354857,
+      "label": "A new translation and introduction",
+      "name": "introduction_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0020",
+      "type": "introduction",
+      "start": 1354857,
+      "end": 1445803,
+      "label": "Introduction",
+      "name": "introduction_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0021",
+      "type": "introduction",
+      "start": 1445803,
+      "end": 1493816,
+      "label": "A translation and introduction",
+      "name": "introduction_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0022",
+      "type": "introduction",
+      "start": 1493816,
+      "end": 1557319,
+      "label": "A new translation and introduction",
+      "name": "introduction_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0023",
+      "type": "introduction",
+      "start": 1557319,
+      "end": 1609906,
+      "label": "A new translation and introduction",
+      "name": "introduction_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0024",
+      "type": "introduction",
+      "start": 1609906,
+      "end": 1637336,
+      "label": "Introduction",
+      "name": "introduction_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0025",
+      "type": "introduction",
+      "start": 1637336,
+      "end": 1683692,
+      "label": "A translation and introduction",
+      "name": "introduction_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0026",
+      "type": "introduction",
+      "start": 1683692,
+      "end": 1710857,
+      "label": "A translation and introduction",
+      "name": "introduction_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0027",
+      "type": "introduction",
+      "start": 1710857,
+      "end": 1725306,
+      "label": "A translation and introduction",
+      "name": "introduction_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0028",
+      "type": "introduction",
+      "start": 1725306,
+      "end": 1789550,
+      "label": "A new translation and introduction",
+      "name": "introduction_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0029",
+      "type": "introduction",
+      "start": 1789550,
+      "end": 1823772,
+      "label": "A translation and introduction",
+      "name": "introduction_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "introduction-0030",
+      "type": "introduction",
+      "start": 1823772,
+      "end": 1944206,
+      "label": "A translation and introduction",
+      "name": "introduction_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0001",
+      "type": "translation",
+      "start": 52219,
+      "end": 52230,
+      "label": "Translation",
+      "name": "translation_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0002",
+      "type": "translation",
+      "start": 96389,
+      "end": 96400,
+      "label": "Translation",
+      "name": "translation_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0003",
+      "type": "translation",
+      "start": 180697,
+      "end": 180708,
+      "label": "Translation",
+      "name": "translation_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0004",
+      "type": "translation",
+      "start": 285980,
+      "end": 285991,
+      "label": "Translation",
+      "name": "translation_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0005",
+      "type": "translation",
+      "start": 416679,
+      "end": 416690,
+      "label": "Translation",
+      "name": "translation_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0006",
+      "type": "translation",
+      "start": 466952,
+      "end": 466963,
+      "label": "Translation",
+      "name": "translation_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0007",
+      "type": "translation",
+      "start": 502506,
+      "end": 502517,
+      "label": "Translation",
+      "name": "translation_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0008",
+      "type": "translation",
+      "start": 551037,
+      "end": 551049,
+      "label": "Translations",
+      "name": "translation_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0009",
+      "type": "translation",
+      "start": 607396,
+      "end": 607407,
+      "label": "Translation",
+      "name": "translation_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0010",
+      "type": "translation",
+      "start": 657534,
+      "end": 657545,
+      "label": "Translation",
+      "name": "translation_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0011",
+      "type": "translation",
+      "start": 771895,
+      "end": 771907,
+      "label": "Translations",
+      "name": "translation_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0012",
+      "type": "translation",
+      "start": 901827,
+      "end": 901838,
+      "label": "Translation",
+      "name": "translation_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0013",
+      "type": "translation",
+      "start": 1162688,
+      "end": 1162699,
+      "label": "Translation",
+      "name": "translation_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0014",
+      "type": "translation",
+      "start": 1198551,
+      "end": 1198562,
+      "label": "Translation",
+      "name": "translation_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0015",
+      "type": "translation",
+      "start": 1254178,
+      "end": 1254189,
+      "label": "Translation",
+      "name": "translation_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0016",
+      "type": "translation",
+      "start": 1302471,
+      "end": 1302482,
+      "label": "Translation",
+      "name": "translation_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0017",
+      "type": "translation",
+      "start": 1338966,
+      "end": 1338977,
+      "label": "Translation",
+      "name": "translation_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0018",
+      "type": "translation",
+      "start": 1354891,
+      "end": 1354903,
+      "label": "Translations",
+      "name": "translation_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0019",
+      "type": "translation",
+      "start": 1376650,
+      "end": 1376661,
+      "label": "Translation",
+      "name": "translation_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0020",
+      "type": "translation",
+      "start": 1469960,
+      "end": 1469971,
+      "label": "Translation",
+      "name": "translation_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0021",
+      "type": "translation",
+      "start": 1506446,
+      "end": 1506457,
+      "label": "Translation",
+      "name": "translation_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0022",
+      "type": "translation",
+      "start": 1588362,
+      "end": 1588373,
+      "label": "Translation",
+      "name": "translation_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0023",
+      "type": "translation",
+      "start": 1609942,
+      "end": 1609953,
+      "label": "Translation",
+      "name": "translation_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0024",
+      "type": "translation",
+      "start": 1620958,
+      "end": 1620969,
+      "label": "Translation",
+      "name": "translation_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0025",
+      "type": "translation",
+      "start": 1661543,
+      "end": 1661554,
+      "label": "Translation",
+      "name": "translation_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0026",
+      "type": "translation",
+      "start": 1694858,
+      "end": 1694869,
+      "label": "Translation",
+      "name": "translation_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0027",
+      "type": "translation",
+      "start": 1719166,
+      "end": 1719177,
+      "label": "Translation",
+      "name": "translation_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0028",
+      "type": "translation",
+      "start": 1749120,
+      "end": 1749131,
+      "label": "Translation",
+      "name": "translation_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0029",
+      "type": "translation",
+      "start": 1805065,
+      "end": 1805076,
+      "label": "Translation",
+      "name": "translation_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0030",
+      "type": "translation",
+      "start": 1857062,
+      "end": 1857073,
+      "label": "Translation",
+      "name": "translation_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0001",
+      "type": "bibliography",
+      "start": 52747,
+      "end": 52759,
+      "label": "Bibliography",
+      "name": "bibliography_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0002",
+      "type": "bibliography",
+      "start": 96600,
+      "end": 96612,
+      "label": "Bibliography",
+      "name": "bibliography_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0003",
+      "type": "bibliography",
+      "start": 181348,
+      "end": 181360,
+      "label": "Bibliography",
+      "name": "bibliography_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0004",
+      "type": "bibliography",
+      "start": 287062,
+      "end": 287074,
+      "label": "Bibliography",
+      "name": "bibliography_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0005",
+      "type": "bibliography",
+      "start": 417701,
+      "end": 417713,
+      "label": "Bibliography",
+      "name": "bibliography_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0006",
+      "type": "bibliography",
+      "start": 468205,
+      "end": 468217,
+      "label": "Bibliography",
+      "name": "bibliography_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0007",
+      "type": "bibliography",
+      "start": 503287,
+      "end": 503299,
+      "label": "Bibliography",
+      "name": "bibliography_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0008",
+      "type": "bibliography",
+      "start": 551606,
+      "end": 551618,
+      "label": "Bibliography",
+      "name": "bibliography_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0009",
+      "type": "bibliography",
+      "start": 607822,
+      "end": 607834,
+      "label": "Bibliography",
+      "name": "bibliography_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0010",
+      "type": "bibliography",
+      "start": 658416,
+      "end": 658428,
+      "label": "Bibliography",
+      "name": "bibliography_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0011",
+      "type": "bibliography",
+      "start": 748334,
+      "end": 748346,
+      "label": "Bibliography",
+      "name": "bibliography_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0012",
+      "type": "bibliography",
+      "start": 772671,
+      "end": 772683,
+      "label": "Bibliography",
+      "name": "bibliography_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0013",
+      "type": "bibliography",
+      "start": 903926,
+      "end": 903938,
+      "label": "Bibliography",
+      "name": "bibliography_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0014",
+      "type": "bibliography",
+      "start": 1163224,
+      "end": 1163236,
+      "label": "Bibliography",
+      "name": "bibliography_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0015",
+      "type": "bibliography",
+      "start": 1199669,
+      "end": 1199681,
+      "label": "Bibliography",
+      "name": "bibliography_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0016",
+      "type": "bibliography",
+      "start": 1254792,
+      "end": 1254804,
+      "label": "Bibliography",
+      "name": "bibliography_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0017",
+      "type": "bibliography",
+      "start": 1303697,
+      "end": 1303709,
+      "label": "Bibliography",
+      "name": "bibliography_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0018",
+      "type": "bibliography",
+      "start": 1339460,
+      "end": 1339472,
+      "label": "Bibliography",
+      "name": "bibliography_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0019",
+      "type": "bibliography",
+      "start": 1377501,
+      "end": 1377513,
+      "label": "Bibliography",
+      "name": "bibliography_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0020",
+      "type": "bibliography",
+      "start": 1470748,
+      "end": 1470760,
+      "label": "Bibliography",
+      "name": "bibliography_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0021",
+      "type": "bibliography",
+      "start": 1507454,
+      "end": 1507466,
+      "label": "Bibliography",
+      "name": "bibliography_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0022",
+      "type": "bibliography",
+      "start": 1589116,
+      "end": 1589128,
+      "label": "Bibliography",
+      "name": "bibliography_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0023",
+      "type": "bibliography",
+      "start": 1621462,
+      "end": 1621474,
+      "label": "Bibliography",
+      "name": "bibliography_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0024",
+      "type": "bibliography",
+      "start": 1662111,
+      "end": 1662123,
+      "label": "Bibliography",
+      "name": "bibliography_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0025",
+      "type": "bibliography",
+      "start": 1695431,
+      "end": 1695443,
+      "label": "Bibliography",
+      "name": "bibliography_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0026",
+      "type": "bibliography",
+      "start": 1720203,
+      "end": 1720215,
+      "label": "Bibliography",
+      "name": "bibliography_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0027",
+      "type": "bibliography",
+      "start": 1749629,
+      "end": 1749641,
+      "label": "Bibliography",
+      "name": "bibliography_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0028",
+      "type": "bibliography",
+      "start": 1805596,
+      "end": 1805608,
+      "label": "Bibliography",
+      "name": "bibliography_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    },
+    {
+      "id": "bibliography-0029",
+      "type": "bibliography",
+      "start": 1858181,
+      "end": 1858193,
+      "label": "Bibliography",
+      "name": "bibliography_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:regex_in_span"
+      }
+    }
+  ]
+}

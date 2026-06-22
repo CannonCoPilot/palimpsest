@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState, useMemo, memo, type ReactElement } from 'react';
+import { useEffect, useRef, useCallback, useState, useMemo, memo, Fragment, type ReactElement } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useSectionStore } from '../../stores/sectionStore';
 import { computeMaskedIntervals } from '../../utils/sectionMasking';
@@ -6,8 +6,10 @@ import { useTrackStore } from '../../stores/trackStore';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
 import { useViewStore } from '../../stores/viewStore';
 import { TRACK_COLORS } from '../../utils/trackColors';
+import { buildElementGroups } from '../../utils/maskTypeGroups';
 import BrowserToolbar from './BrowserToolbar';
 import TrackDrawer from './TrackDrawer';
+import ElementGroupLane from './ElementGroupLane';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 
 interface TickerTapeProps {
@@ -369,6 +371,10 @@ export default function BrowserView() {
     [trackOrder, trackStates, laneDisplayModes],
   );
 
+  // The unified "elements" track is rendered as one lane per related-type group
+  // (Structure / Content / Headings / Notes / Front / Back Matter); empty groups drop out.
+  const elementGroups = useMemo(() => buildElementGroups(tracks['elements'] ?? []), [tracks]);
+
   // Build text highlight annotations from enabled tracks
   const textHighlightAnns: Array<{ start: number; end: number; color: string }> = [];
   for (const name of Array.from(textHighlightTracks)) {
@@ -409,6 +415,29 @@ export default function BrowserView() {
         />
         <div className="flex-1 overflow-y-auto">
           {visibleTracks.map((name) => {
+            if (name === 'elements') {
+              const elSel = highlightedAnnotation && highlightedAnnotation.trackName === 'elements' ? highlightedAnnotation : null;
+              return (
+                <Fragment key="elements">
+                  {elementGroups.map((g) => {
+                    const laneKey = `elements:${g.key}`;
+                    return (
+                      <ElementGroupLane
+                        key={laneKey}
+                        group={g}
+                        laneKey={laneKey}
+                        viewStart={viewStart}
+                        viewEnd={viewEnd}
+                        width={viewportWidth}
+                        displayMode={laneDisplayModes[laneKey] ?? 'ribbon'}
+                        selectedAnnRange={elSel}
+                        onAnnotationClick={handleAnnotationClick}
+                      />
+                    );
+                  })}
+                </Fragment>
+              );
+            }
             const mode = laneDisplayModes[name] ?? 'ribbon';
             return (
               <TrackLane

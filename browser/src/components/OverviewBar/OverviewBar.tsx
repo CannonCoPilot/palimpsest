@@ -31,11 +31,14 @@ function renderStateBand(annotations: W3CAnnotation[], manifest: TrackManifest |
     if (sel.type !== 'TextPositionSelector' || sel.start == null || sel.end == null) return null;
     const x = (sel.start / documentLength) * width;
     const w = Math.max(1, ((sel.end - sel.start) / documentLength) * width);
-    const stateId = (ann.body as Record<string, unknown>)['palimpsest:stateId'];
+    const body = ann.body as Record<string, unknown>;
+    const stateId = body['palimpsest:stateId'];
     let fill = manifest?.colorScheme?.primary ?? '#888';
     if (scale && typeof stateId === 'number') {
       const val = scale[String(stateId)];
       if (val) fill = val;
+    } else if (typeof body['palimpsest:color'] === 'string') {
+      fill = body['palimpsest:color'] as string;  // per-element type color (e.g. mask elements)
     }
     return <rect key={i} x={x} y={0} width={w} height={height} fill={fill} fillOpacity={0.7} />;
   });

@@ -1,0 +1,559 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 103,
+  "source_file": "The Road Not Taken and Other Poems -- Frost, Robert -- 2012 -- Dover Publications -- isbn13 9780486111292 -- 9d94b2c221d6d795f99642712ed2d7d0 -- Anna’s Archive.epub",
+  "import_source": "The Road Not Taken and Other Poems -- Frost, Robert -- 2012 -- Dover Publications -- isbn13 9780486111292 -- 9d94b2c221d6d795f99642712ed2d7d0 -- Anna’s Archive.epub",
+  "reference_sha256": "8725d1a5e80054c5d1a8a8c4306cf0909017fac6c14f1616d818b9f4f50baf68",
+  "text_len": 71309,
+  "element_count": 35,
+  "type_counts": {
+    "body": 1,
+    "preface": 1,
+    "dedication": 1,
+    "contents": 1,
+    "index": 1,
+    "back_matter": 1,
+    "copyright": 1,
+    "poetry": 28
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "back_matter": true,
+    "body": false,
+    "contents": true,
+    "copyright": true,
+    "dedication": true,
+    "index": true,
+    "poetry": false,
+    "preface": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 71309,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "preface-0001",
+      "type": "preface",
+      "start": 1802,
+      "end": 2738,
+      "label": "Note",
+      "name": "preface_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "dedication-0001",
+      "type": "dedication",
+      "start": 2738,
+      "end": 3064,
+      "label": "TO YOU",
+      "name": "dedication_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 3064,
+      "end": 3677,
+      "label": "Table of Contents",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "index-0001",
+      "type": "index",
+      "start": 62530,
+      "end": 64333,
+      "label": "Alphabetical List of Titles",
+      "name": "index_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "back_matter-0001",
+      "type": "back_matter",
+      "start": 64333,
+      "end": 71309,
+      "label": "DOVER ◆ THRIFT ◆ EDITIONS",
+      "name": "back_matter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 0,
+      "end": 1802,
+      "label": "At Dover Publications we're committed to producing books in en earth-friendly ma",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "poetry-0001",
+      "type": "poetry",
+      "start": 3677,
+      "end": 4428,
+      "label": "The Road Not Taken",
+      "name": "poetry_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0002",
+      "type": "poetry",
+      "start": 4428,
+      "end": 7126,
+      "label": "Christmas Trees",
+      "name": "poetry_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0003",
+      "type": "poetry",
+      "start": 7126,
+      "end": 8341,
+      "label": "An Old Man's Winter Night",
+      "name": "poetry_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0004",
+      "type": "poetry",
+      "start": 8341,
+      "end": 8596,
+      "label": "A Patch of Old Snow",
+      "name": "poetry_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0005",
+      "type": "poetry",
+      "start": 8596,
+      "end": 17758,
+      "label": "In the Home Stretch",
+      "name": "poetry_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0006",
+      "type": "poetry",
+      "start": 17758,
+      "end": 18404,
+      "label": "The Telephone",
+      "name": "poetry_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0007",
+      "type": "poetry",
+      "start": 18404,
+      "end": 19017,
+      "label": "Meeting and Passing",
+      "name": "poetry_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0008",
+      "type": "poetry",
+      "start": 19017,
+      "end": 19650,
+      "label": "Hyla Brook",
+      "name": "poetry_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0009",
+      "type": "poetry",
+      "start": 19650,
+      "end": 20246,
+      "label": "The Oven Bird",
+      "name": "poetry_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0010",
+      "type": "poetry",
+      "start": 20246,
+      "end": 21002,
+      "label": "Bond and Free",
+      "name": "poetry_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0011",
+      "type": "poetry",
+      "start": 21002,
+      "end": 23673,
+      "label": "Birches",
+      "name": "poetry_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0012",
+      "type": "poetry",
+      "start": 23673,
+      "end": 24638,
+      "label": "Pea Brush",
+      "name": "poetry_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0013",
+      "type": "poetry",
+      "start": 24638,
+      "end": 25277,
+      "label": "Putting In the Seed",
+      "name": "poetry_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0014",
+      "type": "poetry",
+      "start": 25277,
+      "end": 25646,
+      "label": "A Time to Talk",
+      "name": "poetry_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0015",
+      "type": "poetry",
+      "start": 25646,
+      "end": 26154,
+      "label": "The Cow in Apple Time",
+      "name": "poetry_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0016",
+      "type": "poetry",
+      "start": 26154,
+      "end": 27181,
+      "label": "An Encounter",
+      "name": "poetry_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0017",
+      "type": "poetry",
+      "start": 27181,
+      "end": 27796,
+      "label": "Range-Finding",
+      "name": "poetry_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0018",
+      "type": "poetry",
+      "start": 27796,
+      "end": 30260,
+      "label": "The Hill Wife",
+      "name": "poetry_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0019",
+      "type": "poetry",
+      "start": 30260,
+      "end": 35330,
+      "label": "The Bonfire",
+      "name": "poetry_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0020",
+      "type": "poetry",
+      "start": 35330,
+      "end": 36777,
+      "label": "A Girl's Garden",
+      "name": "poetry_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0021",
+      "type": "poetry",
+      "start": 36777,
+      "end": 38350,
+      "label": "The Exposed Nest",
+      "name": "poetry_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0022",
+      "type": "poetry",
+      "start": 38350,
+      "end": 39900,
+      "label": "\"Out, Out—\"",
+      "name": "poetry_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0023",
+      "type": "poetry",
+      "start": 39900,
+      "end": 42626,
+      "label": "Brown's Descent or The Willy-Nilly Slide",
+      "name": "poetry_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0024",
+      "type": "poetry",
+      "start": 42626,
+      "end": 44070,
+      "label": "The Gum-Gatherer",
+      "name": "poetry_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0025",
+      "type": "poetry",
+      "start": 44070,
+      "end": 44647,
+      "label": "The Line-Gang",
+      "name": "poetry_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0026",
+      "type": "poetry",
+      "start": 44647,
+      "end": 45999,
+      "label": "The Vanishing Red",
+      "name": "poetry_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0027",
+      "type": "poetry",
+      "start": 45999,
+      "end": 61788,
+      "label": "Snow",
+      "name": "poetry_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    },
+    {
+      "id": "poetry-0028",
+      "type": "poetry",
+      "start": 61788,
+      "end": 62530,
+      "label": "The Sound of the Trees",
+      "name": "poetry_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:title_list"
+      }
+    }
+  ]
+}

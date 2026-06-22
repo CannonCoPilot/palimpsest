@@ -1,0 +1,711 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 70,
+  "source_file": "Charlotte Temple -- Rowson, Susanna Haswell -- 2022 -- Standard Ebooks -- 8491224f92259d041f364596501e9f9a -- Anna’s Archive.epub",
+  "import_source": "Charlotte Temple -- Rowson, Susanna Haswell -- 2022 -- Standard Ebooks -- 8491224f92259d041f364596501e9f9a -- Anna’s Archive.epub",
+  "reference_sha256": "fdc5181d9a50ae253fd54cc29d91ef98803fa9fff4c5435b266c843d2021f677",
+  "text_len": 218036,
+  "element_count": 45,
+  "type_counts": {
+    "body": 1,
+    "endnotes": 1,
+    "colophon": 1,
+    "title_page": 2,
+    "copyright": 1,
+    "epigraph": 1,
+    "preface": 1,
+    "volume": 2,
+    "chapter": 35
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "body": false,
+    "chapter": false,
+    "colophon": true,
+    "copyright": true,
+    "endnotes": true,
+    "epigraph": true,
+    "preface": true,
+    "title_page": true,
+    "volume": false
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 218036,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "endnotes-0001",
+      "type": "endnotes",
+      "start": 208703,
+      "end": 217800,
+      "label": "Endnotes",
+      "name": "endnotes_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "colophon-0001",
+      "type": "colophon",
+      "start": 217800,
+      "end": 218036,
+      "label": "Colophon",
+      "name": "colophon_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "title_page-0001",
+      "type": "title_page",
+      "start": 0,
+      "end": 46,
+      "label": "Charlotte Temple",
+      "name": "title_page_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "copyright-0001",
+      "type": "copyright",
+      "start": 46,
+      "end": 1240,
+      "label": "Imprint",
+      "name": "copyright_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "epigraph-0001",
+      "type": "epigraph",
+      "start": 1240,
+      "end": 1489,
+      "label": "\"She was her parents' only joy: They had but one﻿—one darling child.\" Romeo and ",
+      "name": "epigraph_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "preface-0001",
+      "type": "preface",
+      "start": 1489,
+      "end": 4083,
+      "label": "The Author's Preface",
+      "name": "preface_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "title_page-0002",
+      "type": "title_page",
+      "start": 4083,
+      "end": 4128,
+      "label": "Charlotte Temple",
+      "name": "title_page_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "volume-0001",
+      "type": "volume",
+      "start": 4118,
+      "end": 104021,
+      "label": "Volume I",
+      "name": "volume_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "volume-0002",
+      "type": "volume",
+      "start": 104021,
+      "end": 208703,
+      "label": "Volume II",
+      "name": "volume_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0001",
+      "type": "chapter",
+      "start": 4128,
+      "end": 9148,
+      "label": "I",
+      "name": "chapter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0002",
+      "type": "chapter",
+      "start": 9148,
+      "end": 15638,
+      "label": "II",
+      "name": "chapter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0003",
+      "type": "chapter",
+      "start": 15638,
+      "end": 22712,
+      "label": "III",
+      "name": "chapter_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0004",
+      "type": "chapter",
+      "start": 22712,
+      "end": 30941,
+      "label": "IV",
+      "name": "chapter_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0005",
+      "type": "chapter",
+      "start": 30941,
+      "end": 36392,
+      "label": "V",
+      "name": "chapter_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0006",
+      "type": "chapter",
+      "start": 36392,
+      "end": 42557,
+      "label": "VI",
+      "name": "chapter_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0007",
+      "type": "chapter",
+      "start": 42557,
+      "end": 49147,
+      "label": "VII",
+      "name": "chapter_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0008",
+      "type": "chapter",
+      "start": 49147,
+      "end": 55254,
+      "label": "VIII",
+      "name": "chapter_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0009",
+      "type": "chapter",
+      "start": 55254,
+      "end": 61163,
+      "label": "IX",
+      "name": "chapter_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0010",
+      "type": "chapter",
+      "start": 61163,
+      "end": 65323,
+      "label": "X",
+      "name": "chapter_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0011",
+      "type": "chapter",
+      "start": 65323,
+      "end": 70252,
+      "label": "XI",
+      "name": "chapter_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0012",
+      "type": "chapter",
+      "start": 70252,
+      "end": 76459,
+      "label": "XII",
+      "name": "chapter_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0013",
+      "type": "chapter",
+      "start": 76459,
+      "end": 83141,
+      "label": "XIII",
+      "name": "chapter_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0014",
+      "type": "chapter",
+      "start": 83141,
+      "end": 88759,
+      "label": "XIV",
+      "name": "chapter_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0015",
+      "type": "chapter",
+      "start": 88759,
+      "end": 93189,
+      "label": "XV",
+      "name": "chapter_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0016",
+      "type": "chapter",
+      "start": 93189,
+      "end": 98924,
+      "label": "XVI",
+      "name": "chapter_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0017",
+      "type": "chapter",
+      "start": 98924,
+      "end": 104032,
+      "label": "XVII",
+      "name": "chapter_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0018",
+      "type": "chapter",
+      "start": 104032,
+      "end": 110699,
+      "label": "XVIII",
+      "name": "chapter_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0019",
+      "type": "chapter",
+      "start": 110699,
+      "end": 116924,
+      "label": "XIX",
+      "name": "chapter_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0020",
+      "type": "chapter",
+      "start": 116924,
+      "end": 124650,
+      "label": "XX",
+      "name": "chapter_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0021",
+      "type": "chapter",
+      "start": 124650,
+      "end": 129758,
+      "label": "XXI11",
+      "name": "chapter_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0022",
+      "type": "chapter",
+      "start": 129758,
+      "end": 136031,
+      "label": "XXII",
+      "name": "chapter_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0023",
+      "type": "chapter",
+      "start": 136031,
+      "end": 141949,
+      "label": "XXIII",
+      "name": "chapter_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0024",
+      "type": "chapter",
+      "start": 141949,
+      "end": 150022,
+      "label": "XXIV",
+      "name": "chapter_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0025",
+      "type": "chapter",
+      "start": 150022,
+      "end": 153657,
+      "label": "XXV",
+      "name": "chapter_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0026",
+      "type": "chapter",
+      "start": 153657,
+      "end": 159365,
+      "label": "XXVI",
+      "name": "chapter_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0027",
+      "type": "chapter",
+      "start": 159365,
+      "end": 167478,
+      "label": "XXVII",
+      "name": "chapter_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0028",
+      "type": "chapter",
+      "start": 167478,
+      "end": 172976,
+      "label": "XXVIII",
+      "name": "chapter_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0029",
+      "type": "chapter",
+      "start": 172976,
+      "end": 178909,
+      "label": "XXIX",
+      "name": "chapter_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0030",
+      "type": "chapter",
+      "start": 178909,
+      "end": 184395,
+      "label": "XXX",
+      "name": "chapter_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0031",
+      "type": "chapter",
+      "start": 184395,
+      "end": 189129,
+      "label": "XXXI18",
+      "name": "chapter_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0032",
+      "type": "chapter",
+      "start": 189129,
+      "end": 193742,
+      "label": "XXXII",
+      "name": "chapter_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0033",
+      "type": "chapter",
+      "start": 193742,
+      "end": 201115,
+      "label": "XXXIII",
+      "name": "chapter_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0034",
+      "type": "chapter",
+      "start": 201115,
+      "end": 205727,
+      "label": "XXXIV",
+      "name": "chapter_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "chapter-0035",
+      "type": "chapter",
+      "start": 205727,
+      "end": 208703,
+      "label": "XXXV",
+      "name": "chapter_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    }
+  ]
+}

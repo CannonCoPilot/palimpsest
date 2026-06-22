@@ -54,6 +54,21 @@ export default function SectionMinimap({
   // menu opened by right-clicking the selected section's text in the right panel.
   const [textMenu, setTextMenu] = useState<{ x: number; y: number; off: number } | null>(null);
   const [zoom, setZoom] = useState(1);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  // Change zoom while keeping the document point at the viewport's vertical center
+  // pinned there, so sections in view aren't lost when zooming in/out.
+  const setZoomCentered = useCallback((next: number) => {
+    const z = Math.min(1000, Math.max(1, next));
+    const c = scrollRef.current;
+    const frac = c && c.scrollHeight > 0 ? (c.scrollTop + c.clientHeight / 2) / c.scrollHeight : null;
+    setZoom(z);
+    if (frac !== null) {
+      requestAnimationFrame(() => {
+        const c2 = scrollRef.current;
+        if (c2) c2.scrollTop = frac * c2.scrollHeight - c2.clientHeight / 2;
+      });
+    }
+  }, []);
   const [hidden, setHidden] = useState<Set<string>>(() => new Set());
   const dragRef = useRef<{ id: string; edge: 'start' | 'end' } | null>(null);
 
@@ -186,19 +201,24 @@ export default function SectionMinimap({
   // Log-scale slider: 1×–1000×. A linear range would crush the useful low end into a
   // sliver, so the slider carries log10(zoom) and a book with thousands of sections can
   // still be spread out enough to grab individual boundaries.
+  const zoomBtn = "w-5 h-5 flex items-center justify-center rounded text-[#c8c8cc] bg-white/5 hover:bg-white/15 leading-none";
   const ZoomControl = (
     <div className="flex items-center gap-1.5 shrink-0">
       <span className="text-[10px] text-[#8a8a90]">Zoom</span>
+      <button type="button" className={zoomBtn} aria-label="Zoom out"
+        onClick={() => setZoomCentered(zoom / 1.5)}>−</button>
       <input
         type="range"
         min={0}
         max={3}
         step={0.01}
         value={Math.log10(zoom)}
-        onChange={(e) => setZoom(10 ** Number(e.target.value))}
+        onChange={(e) => setZoomCentered(10 ** Number(e.target.value))}
         className="w-28 accent-[#0a84ff]"
         aria-label="Zoom"
       />
+      <button type="button" className={zoomBtn} aria-label="Zoom in"
+        onClick={() => setZoomCentered(zoom * 1.5)}>+</button>
       <span className="text-[10px] text-[#8a8a90] tabular-nums w-12">
         {zoom >= 10 ? Math.round(zoom) : zoom.toFixed(1)}×
       </span>
@@ -271,7 +291,7 @@ export default function SectionMinimap({
       <div className="flex items-center justify-between gap-3">{LayerToggles}{ZoomControl}</div>
       <div className="flex gap-3 select-none" style={{ height: '60vh' }}>
         {/* Zoomable, scrolling strip + mask gutter */}
-        <div className="overflow-y-auto rounded-lg ring-1 ring-white/10 bg-[#1c1c1e] shrink-0" style={{ width: 200 }}>
+        <div ref={scrollRef} className="overflow-y-auto rounded-lg ring-1 ring-white/10 bg-[#1c1c1e] shrink-0" style={{ width: 200 }}>
           <div className="flex gap-1" style={{ height: `${100 * zoom}%`, minHeight: '100%' }}>
             <div
               ref={ref}

@@ -1,0 +1,4493 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 80,
+  "source_file": "The Dead Sea scrolls translated _ the Qumran texts in -- [edited by] Florentino García Martínez; Wilfred G_E_ -- 2011 -- William B_ Eerdmans -- isbn13 9780802841933 -- d376ed7413b2c8079b55a16507a08979 -- Anna’s Archive.epub",
+  "import_source": "The Dead Sea scrolls translated _ the Qumran texts in -- [edited by] Florentino García Martínez; Wilfred G_E_ -- 2011 -- William B_ Eerdmans -- isbn13 9780802841933 -- d376ed7413b2c8079b55a16507a08979 -- Anna’s Archive.epub",
+  "reference_sha256": "15eba1bf3dfd7e512fa101ef0959d529e4c944aa248262022478291ebfcf0ef3",
+  "text_len": 1237399,
+  "element_count": 297,
+  "type_counts": {
+    "body": 1,
+    "title_page": 1,
+    "contents": 1,
+    "preface": 1,
+    "foreword": 1,
+    "introduction": 10,
+    "bibliography": 1,
+    "endnotes": 1,
+    "part": 9,
+    "translation": 271
+  },
+  "generated_from": "mask_engine/build_elements (gold contract + instance rules)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "bibliography": true,
+    "body": false,
+    "contents": true,
+    "endnotes": true,
+    "foreword": true,
+    "introduction": true,
+    "part": false,
+    "preface": true,
+    "title_page": true,
+    "translation": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 1237399,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "base-generic"
+      }
+    },
+    {
+      "id": "title_page-0001",
+      "type": "title_page",
+      "start": 0,
+      "end": 154,
+      "label": "FLORENTINO GARCIA MARTINEZ",
+      "name": "title_page_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "contents-0001",
+      "type": "contents",
+      "start": 154,
+      "end": 15119,
+      "label": "Contents",
+      "name": "contents_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "preface-0001",
+      "type": "preface",
+      "start": 15119,
+      "end": 20530,
+      "label": "Preface to the English Translation E5 Translator's Note",
+      "name": "preface_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "foreword-0001",
+      "type": "foreword",
+      "start": 20530,
+      "end": 36138,
+      "label": "Foreword",
+      "name": "foreword_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0001",
+      "type": "introduction",
+      "start": 36138,
+      "end": 124274,
+      "label": "Introduction",
+      "name": "introduction_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "bibliography-0001",
+      "type": "bibliography",
+      "start": 1093367,
+      "end": 1237399,
+      "label": "List of the Manuscripts from Qumran",
+      "name": "bibliography_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "singular"
+      }
+    },
+    {
+      "id": "introduction-0002",
+      "type": "introduction",
+      "start": 124274,
+      "end": 126336,
+      "label": "Rules",
+      "name": "introduction_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0003",
+      "type": "introduction",
+      "start": 313826,
+      "end": 325264,
+      "label": "Halakhic Texts",
+      "name": "introduction_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0004",
+      "type": "introduction",
+      "start": 356865,
+      "end": 359336,
+      "label": "Literature with Eschatological Content",
+      "name": "introduction_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0005",
+      "type": "introduction",
+      "start": 457182,
+      "end": 459440,
+      "label": "Exegetical Literature",
+      "name": "introduction_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0006",
+      "type": "introduction",
+      "start": 651282,
+      "end": 654191,
+      "label": "Para-biblical Literature",
+      "name": "introduction_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0007",
+      "type": "introduction",
+      "start": 855559,
+      "end": 857842,
+      "label": "Poetic Texts",
+      "name": "introduction_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0008",
+      "type": "introduction",
+      "start": 952148,
+      "end": 954211,
+      "label": "Liturgical Texts",
+      "name": "introduction_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0009",
+      "type": "introduction",
+      "start": 1050133,
+      "end": 1052655,
+      "label": "Astronomical Texts, Calendars and Horoscopes",
+      "name": "introduction_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "introduction-0010",
+      "type": "introduction",
+      "start": 1082736,
+      "end": 1084874,
+      "label": "The Copper Scroll",
+      "name": "introduction_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "endnotes-0001",
+      "type": "endnotes",
+      "start": 102720,
+      "end": 124276,
+      "label": "Notes to the Introduction",
+      "name": "endnotes_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "supplement"
+      }
+    },
+    {
+      "id": "part-0001",
+      "type": "part",
+      "start": 124274,
+      "end": 313826,
+      "label": "Rules",
+      "name": "part_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "part-0002",
+      "type": "part",
+      "start": 313826,
+      "end": 356865,
+      "label": "Halakhic Texts",
+      "name": "part_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "part-0003",
+      "type": "part",
+      "start": 356865,
+      "end": 457182,
+      "label": "Literature with Eschatological Content",
+      "name": "part_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "part-0004",
+      "type": "part",
+      "start": 457182,
+      "end": 651282,
+      "label": "Exegetical Literature",
+      "name": "part_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "part-0005",
+      "type": "part",
+      "start": 651282,
+      "end": 855559,
+      "label": "Para-biblical Literature",
+      "name": "part_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "part-0006",
+      "type": "part",
+      "start": 855559,
+      "end": 952148,
+      "label": "Poetic Texts",
+      "name": "part_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "part-0007",
+      "type": "part",
+      "start": 952148,
+      "end": 1050133,
+      "label": "Liturgical Texts",
+      "name": "part_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "part-0008",
+      "type": "part",
+      "start": 1050133,
+      "end": 1082736,
+      "label": "Astronomical Texts, Calendars and Horoscopes",
+      "name": "part_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "part-0009",
+      "type": "part",
+      "start": 1082736,
+      "end": 1093367,
+      "label": "The Copper Scroll",
+      "name": "part_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0001",
+      "type": "translation",
+      "start": 126336,
+      "end": 159658,
+      "label": "1QRule of the Community (iQs)",
+      "name": "translation_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0002",
+      "type": "translation",
+      "start": 159658,
+      "end": 161099,
+      "label": "4QRule of the Communitya (4Q255 [4Qpapsa])",
+      "name": "translation_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0003",
+      "type": "translation",
+      "start": 161099,
+      "end": 163760,
+      "label": "4QRule of the Communityb (4Q256 [4Qsb])",
+      "name": "translation_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0004",
+      "type": "translation",
+      "start": 163760,
+      "end": 176971,
+      "label": "4QRule of the Community` (4Q257 [4Qpaps`])",
+      "name": "translation_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0005",
+      "type": "translation",
+      "start": 176971,
+      "end": 187651,
+      "label": "4QRule of the Community` (4Q259 [4QS`])",
+      "name": "translation_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0006",
+      "type": "translation",
+      "start": 187651,
+      "end": 190448,
+      "label": "4QRule of the Community' (4Q26o [4QsI)",
+      "name": "translation_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0007",
+      "type": "translation",
+      "start": 190448,
+      "end": 192448,
+      "label": "4QRule of the Communityg (4Q261 [4Qsg])",
+      "name": "translation_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0008",
+      "type": "translation",
+      "start": 192448,
+      "end": 192789,
+      "label": "4QRule of the Community' (4Q262 14Qs'])",
+      "name": "translation_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0009",
+      "type": "translation",
+      "start": 192789,
+      "end": 193428,
+      "label": "4QRule of the Community' (4Q263 [4Qs'])",
+      "name": "translation_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0010",
+      "type": "translation",
+      "start": 193428,
+      "end": 194837,
+      "label": "4QRule of the Community' (4Q264 [4Qs'])",
+      "name": "translation_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0011",
+      "type": "translation",
+      "start": 194837,
+      "end": 195638,
+      "label": "5QRule of the Community (5Q 11 [5Qs])",
+      "name": "translation_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0012",
+      "type": "translation",
+      "start": 195638,
+      "end": 232765,
+      "label": "Damascus Document (CD-A)",
+      "name": "translation_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0013",
+      "type": "translation",
+      "start": 232765,
+      "end": 241146,
+      "label": "Damascus Documentb (CD-B)",
+      "name": "translation_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0014",
+      "type": "translation",
+      "start": 241146,
+      "end": 243576,
+      "label": "4QDamascus Document\" (4Q266 [4QD']) (now 4Q268 [4QD])",
+      "name": "translation_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0015",
+      "type": "translation",
+      "start": 243576,
+      "end": 269111,
+      "label": "4QDamascus Documentb (4Q267 L4QD6]) (now 4Q266 [4QDa])",
+      "name": "translation_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0016",
+      "type": "translation",
+      "start": 269111,
+      "end": 276512,
+      "label": "4QDamascus Document` (4Q268 14QD`]) (now 4Q271 14QM)",
+      "name": "translation_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0017",
+      "type": "translation",
+      "start": 276512,
+      "end": 283425,
+      "label": "4QDamascus Document\" (4Q269 [4QDd]) (now 4Q267 [4QDb])",
+      "name": "translation_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0018",
+      "type": "translation",
+      "start": 283425,
+      "end": 298229,
+      "label": "4QDamascus Document` (4Q27o [4QDe])",
+      "name": "translation_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0019",
+      "type": "translation",
+      "start": 298229,
+      "end": 304171,
+      "label": "4QDamascus Documentf (4Q271 [4QW]) (now 4Q269 [4QD'1])",
+      "name": "translation_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0020",
+      "type": "translation",
+      "start": 304171,
+      "end": 306612,
+      "label": "4QDamascus Documentg (4Q272 14QD1])",
+      "name": "translation_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0021",
+      "type": "translation",
+      "start": 306612,
+      "end": 307500,
+      "label": "4QDamascus Document' (4Q273 [4QDb])",
+      "name": "translation_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0022",
+      "type": "translation",
+      "start": 307500,
+      "end": 307964,
+      "label": "5QDamascus Document (5Q12 15QD])",
+      "name": "translation_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0023",
+      "type": "translation",
+      "start": 307964,
+      "end": 309859,
+      "label": "6QDamascus Document (6Q15 [6QD])",
+      "name": "translation_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0024",
+      "type": "translation",
+      "start": 309859,
+      "end": 312710,
+      "label": "4QSerek Damascus Rule (4Q265 14QsD])",
+      "name": "translation_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0025",
+      "type": "translation",
+      "start": 312710,
+      "end": 313826,
+      "label": "5QRule (5Q13)",
+      "name": "translation_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0026",
+      "type": "translation",
+      "start": 325264,
+      "end": 329744,
+      "label": "4QHalakhic Letter' (4Q394 [4QMMT°])",
+      "name": "translation_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0027",
+      "type": "translation",
+      "start": 329744,
+      "end": 330718,
+      "label": "4QHalakhic Letter' (4Q395 [4QMMT'])",
+      "name": "translation_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0028",
+      "type": "translation",
+      "start": 330718,
+      "end": 334177,
+      "label": "4QHalakhic Letter` (4Q396 [4QMMT`])",
+      "name": "translation_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0029",
+      "type": "translation",
+      "start": 334177,
+      "end": 338212,
+      "label": "4QHalakhic Letters (4Q397 [4QMMTd])",
+      "name": "translation_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0030",
+      "type": "translation",
+      "start": 338212,
+      "end": 339878,
+      "label": "4QHalakhic Letter` (4Q398 [4QpapMMT`])",
+      "name": "translation_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0031",
+      "type": "translation",
+      "start": 339878,
+      "end": 340690,
+      "label": "4QHalakhic Letterf (4Q399 [4QMMTI)",
+      "name": "translation_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0032",
+      "type": "translation",
+      "start": 340690,
+      "end": 340857,
+      "label": "2QJuridical text (2Q25)",
+      "name": "translation_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0033",
+      "type": "translation",
+      "start": 340857,
+      "end": 343942,
+      "label": "4QOrdinances' (4Q159 [4QOrda])",
+      "name": "translation_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0034",
+      "type": "translation",
+      "start": 343942,
+      "end": 346360,
+      "label": "4QHalakhah (4Q25 1 [4QHalakah' ])",
+      "name": "translation_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0035",
+      "type": "translation",
+      "start": 346360,
+      "end": 349553,
+      "label": "4QPurification rules A (4Q274 [4QTohorot A])",
+      "name": "translation_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0036",
+      "type": "translation",
+      "start": 349553,
+      "end": 350422,
+      "label": "4QPurification rules B (4Q275 [4QTohorot B])",
+      "name": "translation_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0037",
+      "type": "translation",
+      "start": 350422,
+      "end": 351056,
+      "label": "4QPurification rules Bb (4Q276 [4QTohorot Bb])",
+      "name": "translation_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0038",
+      "type": "translation",
+      "start": 351056,
+      "end": 352359,
+      "label": "4QPurification rules B` (4Q277 [4QTohorot B`])",
+      "name": "translation_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0039",
+      "type": "translation",
+      "start": 352359,
+      "end": 352611,
+      "label": "4QPurification rules C (4Q278 [4QTohorot c])",
+      "name": "translation_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0040",
+      "type": "translation",
+      "start": 352611,
+      "end": 353238,
+      "label": "4QPurification rules G (4Q284a [4QLeget])",
+      "name": "translation_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0041",
+      "type": "translation",
+      "start": 353238,
+      "end": 354106,
+      "label": "4QDecrees (4Q477)",
+      "name": "translation_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0042",
+      "type": "translation",
+      "start": 354106,
+      "end": 355810,
+      "label": "4QOrdinancesb (4Q513 [4QOrdb])",
+      "name": "translation_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0043",
+      "type": "translation",
+      "start": 355810,
+      "end": 356865,
+      "label": "4QOrdinances` (4Q514 [4QOrd`]?)",
+      "name": "translation_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0044",
+      "type": "translation",
+      "start": 359336,
+      "end": 389632,
+      "label": "1QWar Scroll (1QM [+1Q33])",
+      "name": "translation_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0045",
+      "type": "translation",
+      "start": 389632,
+      "end": 403231,
+      "label": "4QWar Scrolls (4Q491 [4QM°])",
+      "name": "translation_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0046",
+      "type": "translation",
+      "start": 403231,
+      "end": 405068,
+      "label": "4QWar Scrollb (4Q492 [4QM6])",
+      "name": "translation_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0047",
+      "type": "translation",
+      "start": 405068,
+      "end": 406561,
+      "label": "4QWar Scroll' (4Q493 [4QM`])",
+      "name": "translation_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0048",
+      "type": "translation",
+      "start": 406561,
+      "end": 407162,
+      "label": "4QWar Scrolls (4Q494 [4QMd])",
+      "name": "translation_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0049",
+      "type": "translation",
+      "start": 407162,
+      "end": 407879,
+      "label": "4QWar Scroll' (4Q495 [4QM`])",
+      "name": "translation_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0050",
+      "type": "translation",
+      "start": 407879,
+      "end": 413513,
+      "label": "4QWar Scrollf (4Q496 [4papQMI)",
+      "name": "translation_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0051",
+      "type": "translation",
+      "start": 413513,
+      "end": 415442,
+      "label": "4QWar Scrolls (4Q285 [4QMg ?])",
+      "name": "translation_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0052",
+      "type": "translation",
+      "start": 415442,
+      "end": 416538,
+      "label": "11QBlessings (11Q 14111QBer])",
+      "name": "translation_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0053",
+      "type": "translation",
+      "start": 416538,
+      "end": 418056,
+      "label": "4QWar Scrollh (4Q471)",
+      "name": "translation_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0054",
+      "type": "translation",
+      "start": 418056,
+      "end": 419068,
+      "label": "4QWords of Michael (4Q529)",
+      "name": "translation_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0055",
+      "type": "translation",
+      "start": 419068,
+      "end": 425563,
+      "label": "1QRule of the Congregation (1Q28a [1Qsa])",
+      "name": "translation_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0056",
+      "type": "translation",
+      "start": 425563,
+      "end": 427319,
+      "label": "2QNew Jerusalem (2Q4 [2QNJ ar])",
+      "name": "translation_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0057",
+      "type": "translation",
+      "start": 427319,
+      "end": 431693,
+      "label": "4QNew Jerusalem' (4Q554 [4QNJ' ar])",
+      "name": "translation_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0058",
+      "type": "translation",
+      "start": 431693,
+      "end": 432955,
+      "label": "4QNew Jerusalemb (4Q555 [4QNJb ar])",
+      "name": "translation_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0059",
+      "type": "translation",
+      "start": 432955,
+      "end": 437641,
+      "label": "5QNew Jerusalem (5Q15 [5QNJ ar])",
+      "name": "translation_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0060",
+      "type": "translation",
+      "start": 437641,
+      "end": 443120,
+      "label": "11QNew Jerusalem (11Qi8 [11QNJ ar])",
+      "name": "translation_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0061",
+      "type": "translation",
+      "start": 443120,
+      "end": 449649,
+      "label": "4QFlorilegium (4Q174 [4QFlor])",
+      "name": "translation_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0062",
+      "type": "translation",
+      "start": 449649,
+      "end": 450905,
+      "label": "4QAramaic Apocalypse (4Q246)",
+      "name": "translation_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0063",
+      "type": "translation",
+      "start": 450905,
+      "end": 452525,
+      "label": "4QFour Kingdoms\" (4Q552)",
+      "name": "translation_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0064",
+      "type": "translation",
+      "start": 452525,
+      "end": 453363,
+      "label": "4QFour Kingdoms' (4Q553)",
+      "name": "translation_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0065",
+      "type": "translation",
+      "start": 453363,
+      "end": 457182,
+      "label": "11QMelchizedek (11Q13 [11QMelch])",
+      "name": "translation_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0066",
+      "type": "translation",
+      "start": 459440,
+      "end": 460771,
+      "label": "4QTargum of Leviticus (4Q156 14QtgLev])",
+      "name": "translation_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0067",
+      "type": "translation",
+      "start": 460771,
+      "end": 461305,
+      "label": "4QTargum of Job (4Q 157 [4QtgJob])",
+      "name": "translation_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0068",
+      "type": "translation",
+      "start": 461305,
+      "end": 472222,
+      "label": "11QTargum of Job (11Q1o [11QtgJob])",
+      "name": "translation_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0069",
+      "type": "translation",
+      "start": 472222,
+      "end": 550716,
+      "label": "11QTemple Scroll' (11Q19 [11QTa])",
+      "name": "translation_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0070",
+      "type": "translation",
+      "start": 550716,
+      "end": 564502,
+      "label": "11QTemple Scrollb (11Q20[11QTempleb])",
+      "name": "translation_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0071",
+      "type": "translation",
+      "start": 564502,
+      "end": 564952,
+      "label": "3QIsaiah Pesher (3Q4 [3QPIs])",
+      "name": "translation_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0072",
+      "type": "translation",
+      "start": 564952,
+      "end": 570033,
+      "label": "4Qlsaiah Peshera (4Q161 [4QpIsa])",
+      "name": "translation_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0073",
+      "type": "translation",
+      "start": 570033,
+      "end": 572210,
+      "label": "4QIsaiah Pesherb (V162 [4QpIsd])",
+      "name": "translation_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0074",
+      "type": "translation",
+      "start": 572210,
+      "end": 581272,
+      "label": "4Qlsaiah Pesher' (4Q163 [4QIs`])",
+      "name": "translation_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0075",
+      "type": "translation",
+      "start": 581272,
+      "end": 582037,
+      "label": "4Qlsaiah Pesherd (4Q 164 [4QpIsd])",
+      "name": "translation_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0076",
+      "type": "translation",
+      "start": 582037,
+      "end": 584127,
+      "label": "4Qlsaiah Pesher` (4Q 165 [4QPIs9)",
+      "name": "translation_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0077",
+      "type": "translation",
+      "start": 584127,
+      "end": 586444,
+      "label": "4QHosea Peshera (4Q166 [4QpHosa])",
+      "name": "translation_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0078",
+      "type": "translation",
+      "start": 586444,
+      "end": 588946,
+      "label": "4QHosea Pesher° (4Q16'7 [4QpHosb])",
+      "name": "translation_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0079",
+      "type": "translation",
+      "start": 588946,
+      "end": 592452,
+      "label": "1QMicah Pesher (1Q14 [1QpMic])",
+      "name": "translation_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0080",
+      "type": "translation",
+      "start": 592452,
+      "end": 600272,
+      "label": "4QNahum Pesher (4Q169 14QPNah])",
+      "name": "translation_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0081",
+      "type": "translation",
+      "start": 600272,
+      "end": 615214,
+      "label": "1QHabakkuk Pesher (1QpHab)",
+      "name": "translation_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0082",
+      "type": "translation",
+      "start": 615214,
+      "end": 615799,
+      "label": "lQZephaniah Pesher (IQ15 [iQpZeph])",
+      "name": "translation_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0083",
+      "type": "translation",
+      "start": 615799,
+      "end": 616476,
+      "label": "4QZephaniah Pesher (4Q17o [4QPZeph])",
+      "name": "translation_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0084",
+      "type": "translation",
+      "start": 616476,
+      "end": 625588,
+      "label": "4QPsalms Pesher' (4Q171 14Qpps°])",
+      "name": "translation_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0085",
+      "type": "translation",
+      "start": 625588,
+      "end": 626485,
+      "label": "1QPsalms Pesher (1Q16 [iQpPs])",
+      "name": "translation_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0086",
+      "type": "translation",
+      "start": 626485,
+      "end": 627201,
+      "label": "4QPsalms Pesher' (4Q 173 [4QPPse])",
+      "name": "translation_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0087",
+      "type": "translation",
+      "start": 627201,
+      "end": 631620,
+      "label": "4QTanhumin (4Q176 [4QTanh])",
+      "name": "translation_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0088",
+      "type": "translation",
+      "start": 631620,
+      "end": 639143,
+      "label": "4QCatenaa (4Q 177 [4QCatenaa])",
+      "name": "translation_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0089",
+      "type": "translation",
+      "start": 639143,
+      "end": 640988,
+      "label": "4QAges of Creation (4Q18o [4QAgesCreat])",
+      "name": "translation_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0090",
+      "type": "translation",
+      "start": 640988,
+      "end": 642315,
+      "label": "4QAges of Creation (4Q181 14QAgesCreat])",
+      "name": "translation_90",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0091",
+      "type": "translation",
+      "start": 642315,
+      "end": 642759,
+      "label": "4QCatenab (4Q182 L4QCatenab)",
+      "name": "translation_91",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0092",
+      "type": "translation",
+      "start": 642759,
+      "end": 643402,
+      "label": "4QHistorical Work (4Q183)",
+      "name": "translation_92",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0093",
+      "type": "translation",
+      "start": 643402,
+      "end": 648619,
+      "label": "4QGenesis Pesher° (4Q252 [4QpGen°)",
+      "name": "translation_93",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0094",
+      "type": "translation",
+      "start": 648619,
+      "end": 649490,
+      "label": "4QGenesis Pesherb (4Q253 [4QPGenb)",
+      "name": "translation_94",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0095",
+      "type": "translation",
+      "start": 649490,
+      "end": 651282,
+      "label": "4QGenesis Pesher` (4Q254)",
+      "name": "translation_95",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0096",
+      "type": "translation",
+      "start": 654191,
+      "end": 664446,
+      "label": "A 4QReworked Pentateuch' (4Q158 [4QRP'])",
+      "name": "translation_96",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0097",
+      "type": "translation",
+      "start": 664446,
+      "end": 669982,
+      "label": "B 4QReworked Pentateuchb,` (4Q364-365 [4QRPb'`])",
+      "name": "translation_97",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0098",
+      "type": "translation",
+      "start": 669982,
+      "end": 670455,
+      "label": "2QApocryphon of David(?) (2Q22 [2QapDavid?])",
+      "name": "translation_98",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0099",
+      "type": "translation",
+      "start": 670455,
+      "end": 672186,
+      "label": "4QExhortation based on the Flood (4Q37o)",
+      "name": "translation_99",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0100",
+      "type": "translation",
+      "start": 672186,
+      "end": 675943,
+      "label": "4QApocryphon of Joseph (4Q372 [4QapocrJoseph' ])",
+      "name": "translation_100",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0101",
+      "type": "translation",
+      "start": 675943,
+      "end": 676487,
+      "label": "4QApocryphon of Joseph (4Q373 [4QapocrJosephb])",
+      "name": "translation_101",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0102",
+      "type": "translation",
+      "start": 676487,
+      "end": 677927,
+      "label": "4QNarrative (4Q462)",
+      "name": "translation_102",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0103",
+      "type": "translation",
+      "start": 677927,
+      "end": 678021,
+      "label": "6QGenesis (?) (6Q19)",
+      "name": "translation_103",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0104",
+      "type": "translation",
+      "start": 678021,
+      "end": 680023,
+      "label": "4QWork with Place Names (4Q522)",
+      "name": "translation_104",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0105",
+      "type": "translation",
+      "start": 680023,
+      "end": 680200,
+      "label": "6QDeuteronomy (?) (6Q2o)",
+      "name": "translation_105",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0106",
+      "type": "translation",
+      "start": 680200,
+      "end": 680960,
+      "label": "4QNarrative (4Q458)",
+      "name": "translation_106",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0107",
+      "type": "translation",
+      "start": 680960,
+      "end": 682070,
+      "label": "4QBiblical Chronology (4Q559)",
+      "name": "translation_107",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0108",
+      "type": "translation",
+      "start": 682070,
+      "end": 682714,
+      "label": "lQGenesis Apocryphon (1Q20 [iQapGen ar])",
+      "name": "translation_108",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0109",
+      "type": "translation",
+      "start": 682714,
+      "end": 702978,
+      "label": "IQGenesisApocryphon (iQapGen ar)",
+      "name": "translation_109",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0110",
+      "type": "translation",
+      "start": 702978,
+      "end": 712257,
+      "label": "4QJubilees' (4Q216 14QJub°])",
+      "name": "translation_110",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0111",
+      "type": "translation",
+      "start": 712257,
+      "end": 715305,
+      "label": "11QJubilees (11Q12 [11QJub])",
+      "name": "translation_111",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0112",
+      "type": "translation",
+      "start": 715305,
+      "end": 716382,
+      "label": "4QJubilees` (4Q22o [4QJub`])",
+      "name": "translation_112",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0113",
+      "type": "translation",
+      "start": 716382,
+      "end": 720198,
+      "label": "4QJubileesd (4Q219 [4QJubd])",
+      "name": "translation_113",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0114",
+      "type": "translation",
+      "start": 720198,
+      "end": 721121,
+      "label": "4QJubileesf (4Q221 [4QJubr])",
+      "name": "translation_114",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0115",
+      "type": "translation",
+      "start": 721121,
+      "end": 721523,
+      "label": "3QJubilees (3Q5 [3QJub])",
+      "name": "translation_115",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0116",
+      "type": "translation",
+      "start": 721523,
+      "end": 722047,
+      "label": "2QJubileesa (2Q19 2QJuba])",
+      "name": "translation_116",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0117",
+      "type": "translation",
+      "start": 722047,
+      "end": 722970,
+      "label": "4QJubileesf (4Q176fragments 19-21 [4QJub1)",
+      "name": "translation_117",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0118",
+      "type": "translation",
+      "start": 722970,
+      "end": 723553,
+      "label": "1QJubileesa (1Q17 [1QJuba])",
+      "name": "translation_118",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0119",
+      "type": "translation",
+      "start": 723553,
+      "end": 724394,
+      "label": "1QJubileesb (1Q18 [1QJubb])",
+      "name": "translation_119",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0120",
+      "type": "translation",
+      "start": 724394,
+      "end": 724772,
+      "label": "4QPseudo Jubilees` (4Q227 14QPsJub`])",
+      "name": "translation_120",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0121",
+      "type": "translation",
+      "start": 724772,
+      "end": 732132,
+      "label": "4QEnoch° (4Q201 [4QEn° ar])",
+      "name": "translation_121",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0122",
+      "type": "translation",
+      "start": 732132,
+      "end": 737696,
+      "label": "4QEnochb (4Q2o2 [4QEnb ar])",
+      "name": "translation_122",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0123",
+      "type": "translation",
+      "start": 737696,
+      "end": 751259,
+      "label": "4QEnoch` (4Q2o4 [4QEn` ar])",
+      "name": "translation_123",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0124",
+      "type": "translation",
+      "start": 751259,
+      "end": 754806,
+      "label": "4QEnochd (4Q2o5 [4QEnd ar])",
+      "name": "translation_124",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0125",
+      "type": "translation",
+      "start": 754806,
+      "end": 760402,
+      "label": "4QEnoch` (4Q2o6 [4QEnr ar])",
+      "name": "translation_125",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0126",
+      "type": "translation",
+      "start": 760402,
+      "end": 761043,
+      "label": "4QEnochf (4Q207 14QEnf ar])",
+      "name": "translation_126",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0127",
+      "type": "translation",
+      "start": 761043,
+      "end": 765076,
+      "label": "4QEnochg (4Q212 14QEng ar])",
+      "name": "translation_127",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0128",
+      "type": "translation",
+      "start": 765076,
+      "end": 765519,
+      "label": "iQBook of Giants' (1Q23 [1QEnGiants' ar])",
+      "name": "translation_128",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0129",
+      "type": "translation",
+      "start": 765519,
+      "end": 768058,
+      "label": "4QBook of Giants' (4Q2o3 [4QEnGiants' ar])",
+      "name": "translation_129",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0130",
+      "type": "translation",
+      "start": 768058,
+      "end": 769898,
+      "label": "4QBook of Giants' (4Q53o L4QEnGiantsb ar])",
+      "name": "translation_130",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0131",
+      "type": "translation",
+      "start": 769898,
+      "end": 770856,
+      "label": "4QBook of Giants` (4Q531 [4QEnGiants`])",
+      "name": "translation_131",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0132",
+      "type": "translation",
+      "start": 770856,
+      "end": 771334,
+      "label": "6QBook of Giants (6Q8 [6QEnGiants])",
+      "name": "translation_132",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0133",
+      "type": "translation",
+      "start": 771334,
+      "end": 771848,
+      "label": "1QNoah (1Q1q [1QNoah])",
+      "name": "translation_133",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0134",
+      "type": "translation",
+      "start": 771848,
+      "end": 773494,
+      "label": "4QElect of God (4Q534 [4QMess ar])",
+      "name": "translation_134",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0135",
+      "type": "translation",
+      "start": 773494,
+      "end": 774054,
+      "label": "4QAramaic N (4Q535)",
+      "name": "translation_135",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0136",
+      "type": "translation",
+      "start": 774054,
+      "end": 775331,
+      "label": "4QAramaic C (4Q536)",
+      "name": "translation_136",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0137",
+      "type": "translation",
+      "start": 775331,
+      "end": 776737,
+      "label": "4QApocryphon of Jacob (4Q537 [4QAJa ar])",
+      "name": "translation_137",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0138",
+      "type": "translation",
+      "start": 776737,
+      "end": 777136,
+      "label": "3QTestament of Judah (?) (3Q7 [3QTJuda?])",
+      "name": "translation_138",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0139",
+      "type": "translation",
+      "start": 777136,
+      "end": 777836,
+      "label": "4QApocryphon of Judah (4Q538 [4QAJu at])",
+      "name": "translation_139",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0140",
+      "type": "translation",
+      "start": 777836,
+      "end": 778312,
+      "label": "4QApocryphon of Joseph (4Q539 [4QAJo ar])",
+      "name": "translation_140",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0141",
+      "type": "translation",
+      "start": 778312,
+      "end": 778962,
+      "label": "1QAramaic Levi (1Q21 [1QTLevi at])",
+      "name": "translation_141",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0142",
+      "type": "translation",
+      "start": 778962,
+      "end": 784696,
+      "label": "4QAramaic Levi' (4Q213 [4QTLevi' ar])",
+      "name": "translation_142",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0143",
+      "type": "translation",
+      "start": 784696,
+      "end": 786027,
+      "label": "4QAramaic Levib (4Q214 [4QTLevib ar])",
+      "name": "translation_143",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0144",
+      "type": "translation",
+      "start": 786027,
+      "end": 786573,
+      "label": "4QAaronic Text A = Testament of Levi` (?)",
+      "name": "translation_144",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0145",
+      "type": "translation",
+      "start": 786573,
+      "end": 789739,
+      "label": "4QAaronic Text A = Testament of Levid (?)",
+      "name": "translation_145",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0146",
+      "type": "translation",
+      "start": 789739,
+      "end": 792260,
+      "label": "4QTestament of Naphtali (4Q215 [4QTNaph])",
+      "name": "translation_146",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0147",
+      "type": "translation",
+      "start": 792260,
+      "end": 794800,
+      "label": "4QTestament of Qahat (4Q542 [4QTQahat at])",
+      "name": "translation_147",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0148",
+      "type": "translation",
+      "start": 794800,
+      "end": 796349,
+      "label": "4QVisions of Amram' (4Q543 [4Q`Amram° ar])",
+      "name": "translation_148",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0149",
+      "type": "translation",
+      "start": 796349,
+      "end": 798258,
+      "label": "4QVisions of Amramb (4Q544 [4Q`Amramb ar])",
+      "name": "translation_149",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0150",
+      "type": "translation",
+      "start": 798258,
+      "end": 800256,
+      "label": "4QVisions of Amram' (4Q545 [4Q`Amram` ar])",
+      "name": "translation_150",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0151",
+      "type": "translation",
+      "start": 800256,
+      "end": 801069,
+      "label": "4QVisions of Amram` (4Q547 [4Q`Amram` ar])",
+      "name": "translation_151",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0152",
+      "type": "translation",
+      "start": 801069,
+      "end": 803047,
+      "label": "4QVisions of Amramf (4Q548 [4Q`Amramf ar])",
+      "name": "translation_152",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0153",
+      "type": "translation",
+      "start": 803047,
+      "end": 803613,
+      "label": "4QHur and Miriam (4Q549)",
+      "name": "translation_153",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0154",
+      "type": "translation",
+      "start": 803613,
+      "end": 808590,
+      "label": "1QWords of Moses (1Q22 [1QDM])",
+      "name": "translation_154",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0155",
+      "type": "translation",
+      "start": 808590,
+      "end": 809512,
+      "label": "1QLiturgy of the Three Tongues of Fire (1Q29)",
+      "name": "translation_155",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0156",
+      "type": "translation",
+      "start": 809512,
+      "end": 810317,
+      "label": "4QApocryphon of Moses A (4Q374 [4QapocrMoses A])",
+      "name": "translation_156",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0157",
+      "type": "translation",
+      "start": 810317,
+      "end": 811743,
+      "label": "4QApocryphon of Moses B (4Q375 [4QapocrMoses B])",
+      "name": "translation_157",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0158",
+      "type": "translation",
+      "start": 811743,
+      "end": 812642,
+      "label": "4QLiturgy of the Three Tongues of Fire (4Q376)",
+      "name": "translation_158",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0159",
+      "type": "translation",
+      "start": 812642,
+      "end": 813867,
+      "label": "4QPseudo-Mose' (?) (4Q387a)",
+      "name": "translation_159",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0160",
+      "type": "translation",
+      "start": 813867,
+      "end": 814504,
+      "label": "4QPseudo-Moses` (4Q388 [4QpsMoses`])",
+      "name": "translation_160",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0161",
+      "type": "translation",
+      "start": 814504,
+      "end": 815356,
+      "label": "4QPseudo-Moses\" (4Q389 [4QPsMoses\"])",
+      "name": "translation_161",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0162",
+      "type": "translation",
+      "start": 815356,
+      "end": 818228,
+      "label": "4QPseudo-Moses Apocalypses (4Q39o 14QpsMosess])",
+      "name": "translation_162",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0163",
+      "type": "translation",
+      "start": 818228,
+      "end": 818716,
+      "label": "2QApocryphon of Moses (?) (2Q21 [2QapMoses ?])",
+      "name": "translation_163",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0164",
+      "type": "translation",
+      "start": 818716,
+      "end": 821076,
+      "label": "4QPsalms of Joshua' (4Q378 [4QPsJoshua°])",
+      "name": "translation_164",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0165",
+      "type": "translation",
+      "start": 821076,
+      "end": 822966,
+      "label": "4QPsalms of Joshuab (4Q379)",
+      "name": "translation_165",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0166",
+      "type": "translation",
+      "start": 822966,
+      "end": 824464,
+      "label": "4QVision of Samuel (4Qi6o [4QVisSam])",
+      "name": "translation_166",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0167",
+      "type": "translation",
+      "start": 824464,
+      "end": 824899,
+      "label": "6QApocryphon on Samuel-Kings (6Q9)",
+      "name": "translation_167",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0168",
+      "type": "translation",
+      "start": 824899,
+      "end": 826160,
+      "label": "4QApocryphon of Jeremiah c (4Q385b 14QapocrJer c)",
+      "name": "translation_168",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0169",
+      "type": "translation",
+      "start": 826160,
+      "end": 826539,
+      "label": "4QApocryphon of Jeremiah D (4Q387b [4QapocrJer D)",
+      "name": "translation_169",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0170",
+      "type": "translation",
+      "start": 826539,
+      "end": 829131,
+      "label": "4QPseudo-Ezekiel' (4Q385 [4QPsEza])",
+      "name": "translation_170",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0171",
+      "type": "translation",
+      "start": 829131,
+      "end": 831218,
+      "label": "4QPseudo-Ezekielb (4Q386 4QPsEzb])",
+      "name": "translation_171",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0172",
+      "type": "translation",
+      "start": 831218,
+      "end": 832617,
+      "label": "4QPseudo-Daniels (4Q243 [4QpsDana ar])",
+      "name": "translation_172",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0173",
+      "type": "translation",
+      "start": 832617,
+      "end": 833177,
+      "label": "4QPseudo-Danielb (4Q244 [4QPsDanb ar])",
+      "name": "translation_173",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0174",
+      "type": "translation",
+      "start": 833177,
+      "end": 833640,
+      "label": "4QPseudo-Daniel` (4Q245 [4QPsDan` at])",
+      "name": "translation_174",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0175",
+      "type": "translation",
+      "start": 833640,
+      "end": 834714,
+      "label": "4QPrayer of Nabonidus (4Q242 [4QPrNab ar])",
+      "name": "translation_175",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0176",
+      "type": "translation",
+      "start": 834714,
+      "end": 835198,
+      "label": "4QDaniel-Suzanna (?) (4Q551)",
+      "name": "translation_176",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0177",
+      "type": "translation",
+      "start": 835198,
+      "end": 835902,
+      "label": "4QProto Esthera (4QprEsth' ar)",
+      "name": "translation_177",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0178",
+      "type": "translation",
+      "start": 835902,
+      "end": 836356,
+      "label": "4QProto Estherb (4QprEsthb ar)",
+      "name": "translation_178",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0179",
+      "type": "translation",
+      "start": 836356,
+      "end": 836719,
+      "label": "4QProto Esther` (4QprEsth` at)",
+      "name": "translation_179",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0180",
+      "type": "translation",
+      "start": 836719,
+      "end": 838733,
+      "label": "4QProto Estherd (4QprEstha ar)",
+      "name": "translation_180",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0181",
+      "type": "translation",
+      "start": 838733,
+      "end": 839211,
+      "label": "4QProto Esther` (4QprEsth` ar)",
+      "name": "translation_181",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0182",
+      "type": "translation",
+      "start": 839211,
+      "end": 844764,
+      "label": "4QTobit' (4Q 196 [4QTob\" at])",
+      "name": "translation_182",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0183",
+      "type": "translation",
+      "start": 844764,
+      "end": 851883,
+      "label": "4QTobitb (4Q197 [4QTobb ar])",
+      "name": "translation_183",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0184",
+      "type": "translation",
+      "start": 851883,
+      "end": 852744,
+      "label": "4QTobit` (4Q198 14QTob` ar])",
+      "name": "translation_184",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0185",
+      "type": "translation",
+      "start": 852744,
+      "end": 852861,
+      "label": "4QTobitd (4Q199 [4QTobd ar])",
+      "name": "translation_185",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0186",
+      "type": "translation",
+      "start": 852861,
+      "end": 855559,
+      "label": "4QTobit` (4Q200 14QTob` hebr])",
+      "name": "translation_186",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0187",
+      "type": "translation",
+      "start": 857842,
+      "end": 858080,
+      "label": "4QPsalmsi (4Q88 [4QPW])",
+      "name": "translation_187",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0188",
+      "type": "translation",
+      "start": 858080,
+      "end": 859380,
+      "label": "11QPsalmsa (11Q5 [11QPsa])",
+      "name": "translation_188",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0189",
+      "type": "translation",
+      "start": 859380,
+      "end": 859455,
+      "label": "11QPsalmsb (11Q6 [11QPsI)",
+      "name": "translation_189",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0190",
+      "type": "translation",
+      "start": 859455,
+      "end": 860773,
+      "label": "4QNon-Canonical Psalms A (4Q38o)",
+      "name": "translation_190",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0191",
+      "type": "translation",
+      "start": 860773,
+      "end": 865727,
+      "label": "4QNon-Canonical Psalms B (4Q381)",
+      "name": "translation_191",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0192",
+      "type": "translation",
+      "start": 865727,
+      "end": 883287,
+      "label": "1QHymnsa (1QHodayotha [1QHa])",
+      "name": "translation_192",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0193",
+      "type": "translation",
+      "start": 883287,
+      "end": 884914,
+      "label": "1QHymnsb (1Q35 [1QHb])",
+      "name": "translation_193",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0194",
+      "type": "translation",
+      "start": 884914,
+      "end": 886354,
+      "label": "4Q427 (4QHodayot° [4QHa])",
+      "name": "translation_194",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0195",
+      "type": "translation",
+      "start": 886354,
+      "end": 886519,
+      "label": "4Q428 (4QHodayotb [4QHI)",
+      "name": "translation_195",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0196",
+      "type": "translation",
+      "start": 886519,
+      "end": 886954,
+      "label": "4Q429 (4QHodayot` [4QH`])",
+      "name": "translation_196",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0197",
+      "type": "translation",
+      "start": 886954,
+      "end": 887063,
+      "label": "4Q430 (4QHodayotd [4QHd])",
+      "name": "translation_197",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0198",
+      "type": "translation",
+      "start": 887063,
+      "end": 887253,
+      "label": "4Q431 (4QHodayot` 14QHe])",
+      "name": "translation_198",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0199",
+      "type": "translation",
+      "start": 887253,
+      "end": 887503,
+      "label": "4QSongs of the Sage' (4Q51o [4QShir'])",
+      "name": "translation_199",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0200",
+      "type": "translation",
+      "start": 887503,
+      "end": 891434,
+      "label": "4QSongs of the Sageb (4Q511 [4QShirb])",
+      "name": "translation_200",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0201",
+      "type": "translation",
+      "start": 891434,
+      "end": 896753,
+      "label": "11QApocryphal Psalms' (11Q11[11QPsAp°])",
+      "name": "translation_201",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0202",
+      "type": "translation",
+      "start": 896753,
+      "end": 897379,
+      "label": "4QAgainst Demons (4Q56o)",
+      "name": "translation_202",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0203",
+      "type": "translation",
+      "start": 897379,
+      "end": 897417,
+      "label": "4QWiles of the Wicked Woman (4Q 184)",
+      "name": "translation_203",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0204",
+      "type": "translation",
+      "start": 897417,
+      "end": 898117,
+      "label": "4QSapiential Work (4Q185)",
+      "name": "translation_204",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0205",
+      "type": "translation",
+      "start": 898117,
+      "end": 899315,
+      "label": "4QCryptic A: Words of the Sage to the Sons of Dawn (4Q298)",
+      "name": "translation_205",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0206",
+      "type": "translation",
+      "start": 899315,
+      "end": 899757,
+      "label": "4QSapiential Work (4Q413)",
+      "name": "translation_206",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0207",
+      "type": "translation",
+      "start": 899757,
+      "end": 907491,
+      "label": "4QSapiential Work Ab (4Q416 [4QSap.Work Ab])",
+      "name": "translation_207",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0208",
+      "type": "translation",
+      "start": 907491,
+      "end": 915220,
+      "label": "4QSapiential Work A` (4Q417 14QSap. Work A`])",
+      "name": "translation_208",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0209",
+      "type": "translation",
+      "start": 915220,
+      "end": 931272,
+      "label": "4QSapiential Work A\" (4Q418 [4QSap. Work A\"])",
+      "name": "translation_209",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0210",
+      "type": "translation",
+      "start": 931272,
+      "end": 931984,
+      "label": "4Q Sapiential Work B (4Q419 [4QSap. Work B])",
+      "name": "translation_210",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0211",
+      "type": "translation",
+      "start": 931984,
+      "end": 934598,
+      "label": "4QSapiential Work c (4Q424 [4QSap.Work c])",
+      "name": "translation_211",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0212",
+      "type": "translation",
+      "start": 934598,
+      "end": 936874,
+      "label": "4QMessianic Apocalypse (4Q521)",
+      "name": "translation_212",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0213",
+      "type": "translation",
+      "start": 936874,
+      "end": 942636,
+      "label": "4QWisdom Text with Beatitudes (4Q525 [4QBeat])",
+      "name": "translation_213",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0214",
+      "type": "translation",
+      "start": 942636,
+      "end": 943521,
+      "label": "1QMysteries (1Q27 [1QMyst])",
+      "name": "translation_214",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0215",
+      "type": "translation",
+      "start": 943521,
+      "end": 944475,
+      "label": "4QMysteriesa (4Q299 [4QMysta])",
+      "name": "translation_215",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0216",
+      "type": "translation",
+      "start": 944475,
+      "end": 945843,
+      "label": "4QMysteriesb (4Q300 L4QMystb])",
+      "name": "translation_216",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0217",
+      "type": "translation",
+      "start": 945843,
+      "end": 946911,
+      "label": "4QMysteries' (4Q301 14QMyst`])",
+      "name": "translation_217",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0218",
+      "type": "translation",
+      "start": 946911,
+      "end": 947061,
+      "label": "3QHymn (3Q6)",
+      "name": "translation_218",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0219",
+      "type": "translation",
+      "start": 947061,
+      "end": 949380,
+      "label": "4QApocryphal Lamentations A (4Q 179 [4QapocrLam A])",
+      "name": "translation_219",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0220",
+      "type": "translation",
+      "start": 949380,
+      "end": 950242,
+      "label": "4QLiturgy (4Q409)",
+      "name": "translation_220",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0221",
+      "type": "translation",
+      "start": 950242,
+      "end": 950529,
+      "label": "4QBenediction (4Q5oo)",
+      "name": "translation_221",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0222",
+      "type": "translation",
+      "start": 950529,
+      "end": 950566,
+      "label": "4QApocryphal Lamentations B (4Q5oi)",
+      "name": "translation_222",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0223",
+      "type": "translation",
+      "start": 950566,
+      "end": 950847,
+      "label": "5QCurses (5Q14)",
+      "name": "translation_223",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0224",
+      "type": "translation",
+      "start": 950847,
+      "end": 951140,
+      "label": "6QAllegory of the Vine (6Q11)",
+      "name": "translation_224",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0225",
+      "type": "translation",
+      "start": 951140,
+      "end": 951442,
+      "label": "6QHymn (6Q 18)",
+      "name": "translation_225",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0226",
+      "type": "translation",
+      "start": 951442,
+      "end": 951884,
+      "label": "8QHymn (8Q5)",
+      "name": "translation_226",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0227",
+      "type": "translation",
+      "start": 951884,
+      "end": 952148,
+      "label": "11QHymns\" (11Q15)",
+      "name": "translation_227",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0228",
+      "type": "translation",
+      "start": 954211,
+      "end": 963989,
+      "label": "4QDaily Prayers' (4Q5o3 [4QPrQuot])",
+      "name": "translation_228",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0229",
+      "type": "translation",
+      "start": 963989,
+      "end": 966260,
+      "label": "1QFestival Prayers (1Q34 [1QPrFetes])",
+      "name": "translation_229",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0230",
+      "type": "translation",
+      "start": 966260,
+      "end": 966670,
+      "label": "4QFestival Prayersa (4Q5o7 L4QPrFetesa ?])",
+      "name": "translation_230",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0231",
+      "type": "translation",
+      "start": 966670,
+      "end": 967938,
+      "label": "4QFestival Prayersb (4Q508 [4QPrFetesb])",
+      "name": "translation_231",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0232",
+      "type": "translation",
+      "start": 967938,
+      "end": 972086,
+      "label": "4QFestival Prayers' (4Q5o9 [4QPrFetes`])",
+      "name": "translation_232",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0233",
+      "type": "translation",
+      "start": 972086,
+      "end": 983536,
+      "label": "4QWords of the Luminaries' (4Q5o4 [4QDibHama])",
+      "name": "translation_233",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0234",
+      "type": "translation",
+      "start": 983536,
+      "end": 983955,
+      "label": "4QWords of the Luminariesb (4Q5o5 [4QDibHamb])",
+      "name": "translation_234",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0235",
+      "type": "translation",
+      "start": 983955,
+      "end": 985035,
+      "label": "4QWords of the Luminaries` (4Q5o6 [4QDibHam`])",
+      "name": "translation_235",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0236",
+      "type": "translation",
+      "start": 985035,
+      "end": 988975,
+      "label": "4QSongs of the Sabbath Sacrifice' (4Q4oo L4QShirShabba])",
+      "name": "translation_236",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0237",
+      "type": "translation",
+      "start": 988975,
+      "end": 989978,
+      "label": "4QSongs of the Sabbath Sacrificeb (4Q401 [4QShirShabbb])",
+      "name": "translation_237",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0238",
+      "type": "translation",
+      "start": 989978,
+      "end": 991560,
+      "label": "4QSongs of the Sabbath Sacrifice` (4Q4o2 [4QShirShabb`])",
+      "name": "translation_238",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0239",
+      "type": "translation",
+      "start": 991560,
+      "end": 1002363,
+      "label": "4QSongs of the Sabbath Sacrificed (4Q4o3 [4QShirShabbd])",
+      "name": "translation_239",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0240",
+      "type": "translation",
+      "start": 1002363,
+      "end": 1005911,
+      "label": "4QSongs of the Sabbath Sacrifice` (4Q404 [4QShirShabb`])",
+      "name": "translation_240",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0241",
+      "type": "translation",
+      "start": 1005911,
+      "end": 1019202,
+      "label": "4QSongs of the Sabbath Sacrificer(4Q4o5 [4QShirShabbJ)",
+      "name": "translation_241",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0242",
+      "type": "translation",
+      "start": 1019202,
+      "end": 1023220,
+      "label": "11QSongs of the Sabbath Sacrifice (11Q17 [11QShirShabb])",
+      "name": "translation_242",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0243",
+      "type": "translation",
+      "start": 1023220,
+      "end": 1029243,
+      "label": "1QRule of the Blessings (1Q28b [1QSb])",
+      "name": "translation_243",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0244",
+      "type": "translation",
+      "start": 1029243,
+      "end": 1030083,
+      "label": "4QBlessingsf (4Q28o [4QBerakot- )",
+      "name": "translation_244",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0245",
+      "type": "translation",
+      "start": 1030083,
+      "end": 1030371,
+      "label": "4QPurification Rules B' (4Q275 [4QTohorot Ba])",
+      "name": "translation_245",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0246",
+      "type": "translation",
+      "start": 1030371,
+      "end": 1034265,
+      "label": "4QBlessingsa (4Q286 L4QBerakota])",
+      "name": "translation_246",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0247",
+      "type": "translation",
+      "start": 1034265,
+      "end": 1035470,
+      "label": "4QBlessingsb (4Q287 [4QBerakotb])",
+      "name": "translation_247",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0248",
+      "type": "translation",
+      "start": 1035470,
+      "end": 1037691,
+      "label": "4QBless, Oh my Soul' (4Q434 [4QBar`ki Napshia])",
+      "name": "translation_248",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0249",
+      "type": "translation",
+      "start": 1037691,
+      "end": 1038982,
+      "label": "4QBless, Oh my Soul` (4Q436 [4QBar`ki Napshi`])",
+      "name": "translation_249",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0250",
+      "type": "translation",
+      "start": 1038982,
+      "end": 1039249,
+      "label": "6QBenediction (6Qi6)",
+      "name": "translation_250",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0251",
+      "type": "translation",
+      "start": 1039249,
+      "end": 1039495,
+      "label": "1QLiturgical Text ? (1Q30)",
+      "name": "translation_251",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0252",
+      "type": "translation",
+      "start": 1039495,
+      "end": 1039638,
+      "label": "iQLiturgical Text ? (1Q31)",
+      "name": "translation_252",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0253",
+      "type": "translation",
+      "start": 1039638,
+      "end": 1039797,
+      "label": "1QHymnic Compositions ? (1Q37)",
+      "name": "translation_253",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0254",
+      "type": "translation",
+      "start": 1039797,
+      "end": 1039992,
+      "label": "1QHymnic Compositions ? (1Q38)",
+      "name": "translation_254",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0255",
+      "type": "translation",
+      "start": 1039992,
+      "end": 1040202,
+      "label": "1QHymnic Compositions ? (1Q39)",
+      "name": "translation_255",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0256",
+      "type": "translation",
+      "start": 1040202,
+      "end": 1041043,
+      "label": "4QLiturgical Work (4Q392)",
+      "name": "translation_256",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0257",
+      "type": "translation",
+      "start": 1041043,
+      "end": 1041905,
+      "label": "4QGrace after Meals (4Q434a)",
+      "name": "translation_257",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0258",
+      "type": "translation",
+      "start": 1041905,
+      "end": 1043557,
+      "label": "4QBaptismal Liturgy (4Q414)",
+      "name": "translation_258",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0259",
+      "type": "translation",
+      "start": 1043557,
+      "end": 1046637,
+      "label": "4QRitual of Marriage (4Q5o2)",
+      "name": "translation_259",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0260",
+      "type": "translation",
+      "start": 1046637,
+      "end": 1050133,
+      "label": "4QRitual of Purification (4Q512)",
+      "name": "translation_260",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0261",
+      "type": "translation",
+      "start": 1052655,
+      "end": 1063790,
+      "label": "4QAstronomical Enochb (4Q2o9 [4QEnastrb at])",
+      "name": "translation_261",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0262",
+      "type": "translation",
+      "start": 1063790,
+      "end": 1066722,
+      "label": "4QAstronomic Enoch' (4Q21o [4QEnastr` ar])",
+      "name": "translation_262",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0263",
+      "type": "translation",
+      "start": 1066722,
+      "end": 1067642,
+      "label": "4QAstronomic Enochd (4Q211 [4QEnastrd ar])",
+      "name": "translation_263",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0264",
+      "type": "translation",
+      "start": 1067642,
+      "end": 1068491,
+      "label": "4QPhases of the Moon (4Q317 14QAstrCrypt])",
+      "name": "translation_264",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0265",
+      "type": "translation",
+      "start": 1068491,
+      "end": 1071059,
+      "label": "4QBrontologion (4Q318 [4QBr at])",
+      "name": "translation_265",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0266",
+      "type": "translation",
+      "start": 1071059,
+      "end": 1076884,
+      "label": "4QCalendrical Document A (4Q32o [4QCalendrical Doc A])",
+      "name": "translation_266",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0267",
+      "type": "translation",
+      "start": 1076884,
+      "end": 1079420,
+      "label": "4QCalendrical Document Ba (4Q321 [4QCalendrical Doc Ba])",
+      "name": "translation_267",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0268",
+      "type": "translation",
+      "start": 1079420,
+      "end": 1080161,
+      "label": "4QCalendrical Document Eb (4Q327 [4QCalendrical Doc Eb])",
+      "name": "translation_268",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0269",
+      "type": "translation",
+      "start": 1080161,
+      "end": 1081713,
+      "label": "4QHoroscope (4Q 186)",
+      "name": "translation_269",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0270",
+      "type": "translation",
+      "start": 1081713,
+      "end": 1082736,
+      "label": "4QAramaic Horoscope (4Q561 [4QHor ar])",
+      "name": "translation_270",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    },
+    {
+      "id": "translation-0271",
+      "type": "translation",
+      "start": 1084874,
+      "end": 1093367,
+      "label": "3QCopper Scroll (3Q15)",
+      "name": "translation_271",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "rule:regex_in_span"
+      }
+    }
+  ]
+}
