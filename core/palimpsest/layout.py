@@ -19,8 +19,10 @@ Persisted per project as ``layout_sections.json``.
 
 from __future__ import annotations
 
+import heapq
 import json
 import re
+from collections import defaultdict
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -325,17 +327,24 @@ def masked_intervals(
     valid = [s for s in sections if s.type != "verse" and 0 <= s.start < s.end <= text_len]
     raw: list[tuple[int, int]] = []
     if valid:
+        # Sweep the breakpoints left→right, keeping a heap of sections that have opened but
+        # not yet closed. For each elementary segment [a,b) the covering section that decides
+        # masking is the deepest (smallest span); ties go to the last-defined (highest index
+        # in `valid`) — so the heap is keyed (span, -index) and already-closed entries are
+        # lazily discarded from the top. This is O(N log N) vs. the prior O(N²) per-segment
+        # rescan, and is byte-identical to it.
+        starts_at: dict[int, list[int]] = defaultdict(list)
+        for i, s in enumerate(valid):
+            starts_at[s.start].append(i)
         points = sorted({0, text_len} | {s.start for s in valid} | {s.end for s in valid})
+        heap: list[tuple[int, int, int, int]] = []  # (span, -index, end, index)
         for a, b in zip(points, points[1:]):
-            if a >= b:
-                continue
-            covering = [s for s in valid if s.start <= a and s.end >= b]
-            if not covering:
-                continue  # uncovered text is part of the work → unmasked
-            min_span = min(s.end - s.start for s in covering)
-            # Most-specific section wins; ties broken by definition order (last).
-            chosen = [s for s in covering if (s.end - s.start) == min_span][-1]
-            if effective_mask(chosen, mask_by_type):
+            for i in starts_at.get(a, ()):
+                s = valid[i]
+                heapq.heappush(heap, (s.end - s.start, -i, s.end, i))
+            while heap and heap[0][2] <= a:  # section closed at/before a → no longer covering
+                heapq.heappop(heap)
+            if heap and effective_mask(valid[heap[0][3]], mask_by_type):
                 raw.append((a, b))
 
     if extra_masked:

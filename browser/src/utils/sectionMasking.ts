@@ -46,6 +46,59 @@ export function effectiveMask(s: LayoutSection, maskByType: Record<string, boole
  * `layout.masked_intervals(..., extra_masked=...)`. Passing `[]` (the default) reproduces
  * the pure-structural result byte-for-byte.
  */
+// A covering section in the sweep below: span (end-start) and negIndex (-index in `valid`)
+// form the order key so the heap top is the deepest (smallest span), ties broken by
+// last-defined (highest index); `end` drives lazy removal once a section has closed.
+interface SweepEntry {
+  span: number;
+  negIndex: number;
+  end: number;
+  index: number;
+}
+
+/** Minimal binary min-heap on (span asc, negIndex asc) — JS has no built-in heap. */
+class SweepHeap {
+  private a: SweepEntry[] = [];
+  get size(): number {
+    return this.a.length;
+  }
+  peek(): SweepEntry {
+    return this.a[0];
+  }
+  private less(x: SweepEntry, y: SweepEntry): boolean {
+    return x.span < y.span || (x.span === y.span && x.negIndex < y.negIndex);
+  }
+  push(e: SweepEntry): void {
+    const a = this.a;
+    a.push(e);
+    let i = a.length - 1;
+    while (i > 0) {
+      const p = (i - 1) >> 1;
+      if (!this.less(a[i], a[p])) break;
+      [a[i], a[p]] = [a[p], a[i]];
+      i = p;
+    }
+  }
+  pop(): void {
+    const a = this.a;
+    const last = a.pop()!;
+    if (a.length === 0) return;
+    a[0] = last;
+    let i = 0;
+    const n = a.length;
+    for (;;) {
+      let s = i;
+      const l = 2 * i + 1;
+      const r = 2 * i + 2;
+      if (l < n && this.less(a[l], a[s])) s = l;
+      if (r < n && this.less(a[r], a[s])) s = r;
+      if (s === i) break;
+      [a[i], a[s]] = [a[s], a[i]];
+      i = s;
+    }
+  }
+}
+
 export function computeMaskedIntervals(
   sections: LayoutSection[],
   maskByType: Record<string, boolean>,
@@ -56,19 +109,33 @@ export function computeMaskedIntervals(
 
   const valid = sections.filter((s) => s.start >= 0 && s.start < s.end && s.end <= textLen);
   if (valid.length > 0) {
+    // Sweep breakpoints left→right, keeping a heap of opened-but-not-closed sections. The
+    // heap top is the deepest covering section (smallest span, ties to last-defined); closed
+    // sections are lazily discarded. O(N log N) vs. the prior O(N²) per-segment rescan, and
+    // byte-identical to it. Mirrors core/palimpsest/layout.py masked_intervals.
+    const startsAt = new Map<number, number[]>();
+    valid.forEach((s, i) => {
+      const arr = startsAt.get(s.start);
+      if (arr) arr.push(i);
+      else startsAt.set(s.start, [i]);
+    });
     const points = Array.from(
       new Set<number>([0, textLen, ...valid.flatMap((s) => [s.start, s.end])]),
     ).sort((a, b) => a - b);
 
+    const heap = new SweepHeap();
     for (let i = 0; i < points.length - 1; i++) {
       const a = points[i];
       const b = points[i + 1];
-      if (a >= b) continue;
-      const covering = valid.filter((s) => s.start <= a && s.end >= b);
-      if (covering.length === 0) continue; // uncovered = unmasked
-      const minSpan = Math.min(...covering.map((s) => s.end - s.start));
-      const chosen = covering.filter((s) => s.end - s.start === minSpan).at(-1)!;
-      if (effectiveMask(chosen, maskByType)) raw.push([a, b]);
+      const starts = startsAt.get(a);
+      if (starts) {
+        for (const idx of starts) {
+          const s = valid[idx];
+          heap.push({ span: s.end - s.start, negIndex: -idx, end: s.end, index: idx });
+        }
+      }
+      while (heap.size > 0 && heap.peek().end <= a) heap.pop(); // closed → no longer covering
+      if (heap.size > 0 && effectiveMask(valid[heap.peek().index], maskByType)) raw.push([a, b]);
     }
   }
 
