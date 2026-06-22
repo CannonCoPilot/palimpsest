@@ -126,17 +126,19 @@ class TestGenevaFilters:
 
 
 class TestDouayRheimsFilters:
-    def test_douay_rheims_verse_ref_stripped(self):
-        # Text cleaners operate on the string content, not the DOM.
+    def test_douay_rheims_verse_ref_preserved(self):
+        # The DR profile intentionally KEEPS the "C:V." verse-number markers in the text:
+        # the verse coordinate layer (palimpsest.verses) indexes them and the verse-number
+        # mask layer hides them from analysis. Stripping them at ingest (the old behavior)
+        # would destroy that index, so the DR text_cleaners must be a no-op on verse refs.
         input_text = "1:1. The book of the generation\n1:2. Abraham begot Isaac"
-        expected = "The book of the generation\nAbraham begot Isaac"
 
-        # Apply each text cleaner in order
         result = input_text
         for cleaner in PROFILE_DOUAY_RHEIMS.text_cleaners:
             result = cleaner(result)
 
-        assert result == expected
+        assert result == input_text
+        assert "1:1." in result and "1:2." in result
 
     def test_douay_rheims_heading_promoted(self):
         html = '<div class="wQnqgsgYTu_NfSPYRkhxPg466">Matthew Chapter 1</div>'
