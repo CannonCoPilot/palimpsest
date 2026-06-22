@@ -27,7 +27,9 @@ Two marker dialects are recognised:
 
 from __future__ import annotations
 
+import json
 import re
+from pathlib import Path
 from typing import Any
 
 # A line-anchored "C:V." marker: chapter:verse, a period, then spacing. The whole match
@@ -253,3 +255,23 @@ def verse_number_intervals(records: list[dict[str, Any]]) -> list[tuple[int, int
     prose intact.
     """
     return [(r["num_start"], r["num_end"]) for r in records if r["num_end"] > r["num_start"]]
+
+
+def cached_verse_number_intervals(project_dir: Path) -> list[tuple[int, int]] | None:
+    """Verse-number mask-layer intervals from a project's cached ``tracks/verses.jsonl``.
+
+    Returns one ``(num_start, text_start)`` pair per verse — equivalently the masked ``num``
+    token spans, since each token abuts its prose (``num_end == text_start``) — or ``None`` if
+    the project has no verse track, letting callers fall back to computing from text. Reading the
+    cache avoids re-running ``detect_verses`` over the full reference text on every call.
+    """
+    track_path = project_dir / "tracks" / "verses.jsonl"
+    if not track_path.exists():
+        return None
+    out: list[tuple[int, int]] = []
+    for line in track_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line:
+            r = json.loads(line)
+            out.append((r["ns"], r["s"]))
+    return out

@@ -251,16 +251,8 @@ def _verse_num_intervals(project_dir: Path) -> list[tuple[int, int]]:
     cached ``verses.jsonl`` track, or ``[]`` if the project has none. Union these into
     ``masked_intervals`` so verse numbers are excluded from analysis while verse prose stays.
     """
-    track_path = project_dir / "tracks" / "verses.jsonl"
-    if not track_path.exists():
-        return []
-    out: list[tuple[int, int]] = []
-    for line in track_path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if line:
-            r = json.loads(line)
-            out.append((r["ns"], r["s"]))
-    return out
+    from palimpsest.verses import cached_verse_number_intervals
+    return cached_verse_number_intervals(project_dir) or []
 
 
 _COVER_SUFFIXES = (".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg")

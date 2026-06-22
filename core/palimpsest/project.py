@@ -202,12 +202,19 @@ class Project:
         marker tokens — so verse numbers are excluded from analysis while verse prose stays.
         """
         from palimpsest.layout import load_layout, masked_intervals
-        from palimpsest.verses import detect_verses, verse_number_intervals
+        from palimpsest.verses import (
+            cached_verse_number_intervals,
+            detect_verses,
+            verse_number_intervals,
+        )
         cfg = load_layout(self.path)
         if cfg is None:
             return []
         text = self.reference_text()
-        verse_iv = verse_number_intervals(detect_verses(text))
+        # Prefer the cached verses.jsonl track; only recompute over the full text if absent.
+        verse_iv = cached_verse_number_intervals(self.path)
+        if verse_iv is None:
+            verse_iv = verse_number_intervals(detect_verses(text))
         return masked_intervals(cfg.sections, cfg.mask_by_type, len(text), extra_masked=verse_iv)
 
     @classmethod
