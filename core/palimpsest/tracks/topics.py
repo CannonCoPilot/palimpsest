@@ -11,7 +11,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from palimpsest.annotation.bodies import topic_body
 from palimpsest.annotation.model import Annotation, Creator, Target, TextPositionSelector
 from palimpsest.formats.signals import SignalManifest, write_signal
-from palimpsest.tracks.params import Param, ParameterizedTrack
+from palimpsest.tracks.params import InsufficientCorpusError, Param, ParameterizedTrack
 
 N_TOPICS = 10
 RANDOM_STATE = 42
@@ -59,7 +59,9 @@ class TopicsExtractor(ParameterizedTrack):
         paragraphs = project.paragraphs()
 
         if len(paragraphs) < 2:
-            return []
+            raise InsufficientCorpusError(
+                f"topic modeling needs at least 2 paragraphs, got {len(paragraphs)}"
+            )
 
         cfg = self.resolved_params()
         method = cfg["method"]
@@ -67,23 +69,33 @@ class TopicsExtractor(ParameterizedTrack):
         max_iter = cfg["max_iter"]
 
         para_texts = [text for _, _, text in paragraphs]
-        # `n_topics` is reduced to a feasible value when the corpus is too small for the requested
-        # count; the effective value (not the request) is what gets recorded on disk below.
+        # Clamp the count knobs to corpus feasibility, then record the EFFECTIVE values (record-effective
+        # policy, §2.3): disk reports what actually ran, plus a `{name}_requested` note when it differs,
+        # so the clamp is transparent rather than a silent shrink of the echoed value (finding A2).
         n_topics = min(cfg["n_topics"], len(paragraphs))
+        min_df = min(cfg["min_df"], len(paragraphs))
 
         vectorizer = CountVectorizer(
             token_pattern=r"[a-zA-Z]{3,}",
             stop_words="english",
-            min_df=min(cfg["min_df"], len(paragraphs)),
+            min_df=min_df,
             max_features=cfg["max_features"],
         )
         try:
             dtm = vectorizer.fit_transform(para_texts)
-        except ValueError:
-            return []
+        except ValueError as exc:
+            # An empty vocabulary (every token a stop-word or below min_df) is a degenerate corpus, not
+            # "0 topics computed" — surface it as an honest failure with the real reason (B5/P5).
+            raise InsufficientCorpusError(
+                f"corpus has no usable vocabulary for topic modeling "
+                f"(min_df={min_df}, alphabetic tokens of length ≥3): {exc}"
+            ) from exc
 
         if dtm.shape[0] < n_topics:
             n_topics = max(2, dtm.shape[0])
+
+        self.record_effective("n_topics", n_topics)
+        self.record_effective("min_df", min_df)
 
         if method == "nmf":
             from sklearn.decomposition import NMF
@@ -129,7 +141,8 @@ class TopicsExtractor(ParameterizedTrack):
 
         self._write_distribution_signal(
             project, doc_topic_dist, paragraphs,
-            n_topics=n_topics, method=method, random_state=random_state, min_df=cfg["min_df"],
+            n_topics=n_topics, method=method, random_state=random_state, min_df=min_df,
+            requested={"n_topics": cfg["n_topics"], "min_df": cfg["min_df"]},
         )
         return annotations
 
@@ -143,11 +156,28 @@ class TopicsExtractor(ParameterizedTrack):
         method: str,
         random_state: int,
         min_df: int,
+        requested: dict[str, int],
     ) -> None:
         """Write topics distribution as a binary signal, recording the EFFECTIVE parameters that
-        produced it (the resolved/clamped values, not module constants) so disk never lies."""
+        produced it (the resolved/clamped values, not module constants) so disk never lies. When a
+        value was clamped to corpus feasibility, the manifest also records the requested value under
+        ``{name}_requested`` and lists the clamped names, so the clamp is visible to the consumer."""
         signals_dir = project.path / "signals"
         segment_offsets = [[start, end] for start, end, _ in paragraphs]
+
+        effective = {"n_topics": n_topics, "min_df": min_df}
+        metadata: dict[str, Any] = {
+            "algorithm": method,
+            "n_topics": n_topics,
+            "random_state": random_state,
+            "min_df": min_df,
+            "segment_offsets": segment_offsets,
+        }
+        clamped = [name for name, eff in effective.items() if requested.get(name) != eff]
+        for name in clamped:
+            metadata[f"{name}_requested"] = requested[name]
+        if clamped:
+            metadata["clamped"] = clamped
 
         manifest = SignalManifest(
             type="distribution",
@@ -155,13 +185,7 @@ class TopicsExtractor(ParameterizedTrack):
             source=f"sklearn-{method}/{n_topics}topics",
             reference_sha256=project.metadata.reference_sha256,
             dimensions=[dist.shape[0], dist.shape[1]],
-            metadata={
-                "algorithm": method,
-                "n_topics": n_topics,
-                "random_state": random_state,
-                "min_df": min_df,
-                "segment_offsets": segment_offsets,
-            },
+            metadata=metadata,
         )
         write_signal(signals_dir, dist.astype(np.float32), manifest)
 

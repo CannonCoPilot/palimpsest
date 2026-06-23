@@ -31,12 +31,13 @@ def _sentences_from_spacy(text: str) -> list[Segment]:
 class SentimentExtractor(ParameterizedTrack):
     """Per-sentence sentiment via VADER."""
 
-    # NOTE: `method`/`granularity` are accepted and validated but not yet consumed by extract()
-    # (it always runs VADER over sentence spans). Wiring them — or restricting the choices to what
-    # is implemented — is a D2 refactor; for now the contract preserves the prior accepted values.
+    # Only choices that are actually honored are offered (P5: a knob value the run silently ignores
+    # is a lie). `granularity` is consumed by extract() below; `method` is restricted to the one
+    # implemented lexicon (VADER) — "hedonometer" is not built, so it is not advertised. Re-add it as
+    # a choice only when its scoring path exists.
     PARAMS = (
-        Param("method", str, default="vader", choices=("vader", "hedonometer"),
-              help="sentiment lexicon/model"),
+        Param("method", str, default="vader", choices=("vader",),
+              help="sentiment lexicon/model (only VADER implemented)"),
         Param("granularity", str, default="sentence", choices=("sentence", "paragraph"),
               help="unit over which sentiment is scored"),
     )
@@ -62,23 +63,32 @@ class SentimentExtractor(ParameterizedTrack):
         return "E5"
 
     def extract(self, project: Any) -> list[Annotation]:
-        text = project.reference_text()
-        sentences = _sentences_from_spacy(text)
+        cfg = self.resolved_params()
+        method = cfg["method"]
+        granularity = cfg["granularity"]
         analyzer = _get_analyzer()
         source_urn = f"urn:palimpsest:{project.metadata.id}"
         annotations: list[Annotation] = []
 
-        for sent in sentences:
-            scores = analyzer.polarity_scores(sent.text)
+        # Score over the requested unit: whole paragraphs, or spaCy sentences (default). Both are
+        # normalized to (start, end, text) so granularity is actually honored, not an inert knob.
+        if granularity == "paragraph":
+            units = list(project.paragraphs())
+        else:
+            text = project.reference_text()
+            units = [(seg.start, seg.end, seg.text) for seg in _sentences_from_spacy(text)]
+
+        for start, end, unit_text in units:
+            scores = analyzer.polarity_scores(unit_text)
             valence = scores["compound"]
             arousal = (scores["pos"] + scores["neg"]) / 2.0
             confidence = 0.5 + abs(valence) * 0.4
 
             ann = Annotation(
-                body=sentiment_body(valence=valence, arousal=arousal, model="vader"),
+                body=sentiment_body(valence=valence, arousal=arousal, model=method),
                 target=Target(
                     source=source_urn,
-                    selector=TextPositionSelector(start=sent.start, end=sent.end),
+                    selector=TextPositionSelector(start=start, end=end),
                 ),
                 creator=Creator(name="vaderSentiment/3.3"),
                 confidence=confidence,

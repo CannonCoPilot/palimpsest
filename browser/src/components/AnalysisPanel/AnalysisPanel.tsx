@@ -103,8 +103,8 @@ const TRACK_DETAILS: Record<string, { method: string; explanation: string }> = {
     explanation: 'Identifies named entities (people, places, organizations) in the text using a pre-trained transformer model. Each entity is classified by type (PERSON, ORG, GPE, LOC) and assigned a confidence score based on the model\'s prediction probability.',
   },
   sentiment: {
-    method: 'Sentence-level VADER sentiment + hedonometer valence',
-    explanation: 'Computes sentiment polarity (-1 to +1) and arousal for each sentence using the VADER lexicon. The hedonometer valence score measures word-level happiness. Results are aggregated to paragraph level as mean, min, max, and volatility (standard deviation across sentences).',
+    method: 'VADER sentiment per sentence or paragraph',
+    explanation: 'Computes sentiment polarity (-1 to +1) and arousal for each unit using the VADER lexicon. The Granularity knob selects the scoring unit — each sentence (default) or each whole paragraph.',
   },
   dialogue: {
     method: 'Rule-based quotation detection + BookNLP speaker attribution',
@@ -190,8 +190,10 @@ const TRACK_PARAMS: Record<string, TrackParam[]> = {
   // params), not this generic schema.
   self_similarity: [],
   sentiment: [
+    // Only VADER is implemented; Hedonometer is not offered until its scoring path exists (P5:
+    // don't advertise a value the backend rejects).
     { key: 'method', label: 'Method', type: 'select', default: 'vader', options: [
-      { label: 'VADER', value: 'vader' }, { label: 'Hedonometer', value: 'hedonometer' },
+      { label: 'VADER', value: 'vader' },
     ]},
     { key: 'granularity', label: 'Granularity', type: 'select', default: 'sentence', options: [
       { label: 'Sentence', value: 'sentence' }, { label: 'Paragraph', value: 'paragraph' },

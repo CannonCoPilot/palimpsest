@@ -1068,7 +1068,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                     write_track(track_path, result)
 
                 from palimpsest.atomic import atomic_write_text, write_run_provenance
-                from palimpsest.tracks.params import track_provenance
+                from palimpsest.tracks.params import track_clamps, track_provenance
 
                 manifest_dir = project_dir / "manifests"
                 manifest_dir.mkdir(exist_ok=True)
@@ -1078,8 +1078,13 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 )
                 # Persist the resolved run parameters (C1): without this, a UI-driven run left no param
                 # record on disk — only the CLI wrote provenance. Same writer the CLI uses, so the two
-                # entry points can no longer disagree.
-                write_run_provenance(manifest_dir, track_name, track_provenance(extractor))
+                # entry points can no longer disagree. `clamped` flags any param whose effective value
+                # differed from the request (record-effective policy).
+                clamped = track_clamps(extractor)
+                write_run_provenance(
+                    manifest_dir, track_name, track_provenance(extractor),
+                    extra={"clamped": clamped} if clamped else None,
+                )
                 _running_jobs[job_key] = {"status": "completed", "track": track_name}
             except Exception as exc:
                 # One honest failure path. The previous code relabelled EVERY extract ValueError as

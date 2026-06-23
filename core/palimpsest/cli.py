@@ -20,7 +20,7 @@ from rich.progress import Progress, SpinnerColumn, TextColumn, TimeElapsedColumn
 from palimpsest import __version__
 from palimpsest.atomic import atomic_write_text, write_run_provenance
 from palimpsest.project import Project, ingest_file
-from palimpsest.tracks.params import track_provenance
+from palimpsest.tracks.params import track_clamps, track_provenance
 from palimpsest.tracks.registry import TrackRegistry
 
 console = Console()
@@ -219,7 +219,12 @@ def analyze(project_dir: Path, force: bool) -> None:
                 json.dumps(extractor.manifest(), indent=2),
             )
             # Per-track resolved-params record (C1), via the same writer the HTTP path uses.
-            write_run_provenance(manifest_dir, name, track_provenance(extractor))
+            # `clamped` flags any param whose effective value differed from the request.
+            clamped = track_clamps(extractor)
+            write_run_provenance(
+                manifest_dir, name, track_provenance(extractor),
+                extra={"clamped": clamped} if clamped else None,
+            )
 
             all_params.update(extractor.parameters())
             progress.update(task_id, completed=True)

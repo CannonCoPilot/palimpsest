@@ -15,9 +15,9 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 from palimpsest.annotation.model import Annotation, Body, Creator, Target, TextPositionSelector
-from palimpsest.formats.signals import SignalManifest
+from palimpsest.atomic import atomic_write_text
 from palimpsest.project import Project
-from palimpsest.tracks.params import Param, ParameterizedTrack
+from palimpsest.tracks.params import InsufficientCorpusError, Param, ParameterizedTrack
 
 logger = logging.getLogger(__name__)
 
@@ -174,8 +174,9 @@ class LitHMMExtractor(ParameterizedTrack):
         n_paras = features.shape[0]
 
         if n_paras < 4:
-            logger.info("Skipping LitHMM: only %d paragraphs (need >= 4)", n_paras)
-            return []
+            raise InsufficientCorpusError(
+                f"LitHMM state discovery needs at least 4 paragraphs, got {n_paras}"
+            )
 
         scaler = StandardScaler()
         features_scaled = scaler.fit_transform(features)
@@ -184,8 +185,11 @@ class LitHMMExtractor(ParameterizedTrack):
         random_state = cfg["random_state"]
         n_iter = cfg["n_iter"]
         n_init = cfg["n_init"]
-        # Reduced to a feasible value for the actual paragraph count; the effective value is recorded.
+        # Clamp the state count to a feasible value for the actual paragraph count, then record the
+        # EFFECTIVE value (record-effective policy, §2.3): disk reports what ran plus `n_states_requested`
+        # when it differs, so the clamp is transparent rather than a silent shrink (finding A2).
         n_states = min(cfg["n_states"], max(2, n_paras // 2))
+        self.record_effective("n_states", n_states)
 
         used_hmm = False
         try:
@@ -226,18 +230,23 @@ class LitHMMExtractor(ParameterizedTrack):
                 s, state_means[s], global_means, global_stds
             )
 
+        method_label = "GaussianHMM" if used_hmm else "KMeans-fallback"
         signals_dir = project.path / "signals"
         signals_dir.mkdir(parents=True, exist_ok=True)
-        lithmm_meta = {
+        lithmm_meta: dict[str, Any] = {
             "n_states": n_states,
             "state_descriptions": state_descriptions,
             "state_means": {str(s): state_means[s].tolist() for s in range(n_states)},
             "feature_names": FEATURE_NAMES,
-            "method": "GaussianHMM" if used_hmm else "KMeans-fallback",
+            "method": method_label,
+            # KMeans posteriors are one-hot hard assignments, not probabilities — flag it so a consumer
+            # never renders a fabricated 1.0 as a probabilistic confidence (§5/B5b).
+            "posterior_type": "probabilistic" if used_hmm else "hard-assignment",
         }
-        (signals_dir / "lithmm_meta.json").write_text(
-            json.dumps(lithmm_meta, indent=2), encoding="utf-8"
-        )
+        if cfg["n_states"] != n_states:
+            lithmm_meta["n_states_requested"] = cfg["n_states"]
+            lithmm_meta["clamped"] = ["n_states"]
+        atomic_write_text(signals_dir / "lithmm_meta.json", json.dumps(lithmm_meta, indent=2))
 
         paras = project.paragraphs()
         source_urn = f"urn:palimpsest:{project.metadata.id}"
@@ -257,6 +266,10 @@ class LitHMMExtractor(ParameterizedTrack):
                         "palimpsest:stateId": state,
                         "palimpsest:statePosterior": [round(p, 4) for p in posterior],
                         "palimpsest:stateDescription": state_descriptions.get(str(state), ""),
+                        # Caveat travels WITH the data (§5): the UI must know whether the posterior is
+                        # a real HMM probability or a one-hot KMeans hard assignment before displaying it.
+                        "palimpsest:method": method_label,
+                        "palimpsest:posteriorType": "probabilistic" if used_hmm else "hard-assignment",
                     },
                 ),
                 target=Target(

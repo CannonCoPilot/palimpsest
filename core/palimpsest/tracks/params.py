@@ -30,6 +30,16 @@ from dataclasses import dataclass
 from typing import Any, cast
 
 
+class InsufficientCorpusError(ValueError):
+    """The input is too small/degenerate for this analysis to run (e.g. fewer paragraphs than the
+    minimum a topic model needs, or a corpus whose entire vocabulary is stop-words).
+
+    Raised from ``extract`` instead of silently returning ``[]`` — a degenerate corpus must read as an
+    honest failure with a reason, not as "ran fine, 0 annotations" (finding B5 / principle P5). It
+    subclasses :class:`ValueError`, so the run handlers surface it through the same failed-job /
+    skipped-track path as every other bad-input error, carrying its real message to the user."""
+
+
 @dataclass(frozen=True)
 class Param:
     """One declared parameter of an analysis track.
@@ -119,25 +129,49 @@ def resolve_params(
     return resolved
 
 
+def _strip_prefix(key: str, prefix: str) -> str:
+    return key[len(prefix):] if key.startswith(prefix) else key
+
+
 def track_provenance(extractor: Any) -> dict[str, Any]:
-    """Best-effort resolved parameters of a track, normalized to bare keys, for the on-disk run
+    """Best-effort *effective* parameters of a track, normalized to bare keys, for the on-disk run
     record (G3/C1).
 
-    Prefers ``resolved_params()`` (the validated truth on a :class:`ParameterizedTrack`), then
-    ``validate_params()`` (self_similarity's specialized validator), then ``parameters()`` (every
-    extractor has it). Whatever the source returns is normalized by stripping any ``"{track}."``
-    namespace prefix, so the record reads the same regardless of which entry point or track produced
-    it — self_similarity (namespaced ``parameters()``) and a migrated track (bare ``resolved_params``)
-    now agree. Called after a run has succeeded, so the validators here will not raise."""
+    Prefers ``effective_params()`` (the post-run truth on a :class:`ParameterizedTrack`: resolved
+    request with any runtime clamp applied), then ``resolved_params()``, ``validate_params()``
+    (self_similarity's specialized validator), then ``parameters()`` (every extractor has it).
+    Whatever the source returns is normalized by stripping any ``"{track}."`` namespace prefix, so the
+    record reads the same regardless of which entry point or track produced it. For any param the
+    track clamped at runtime (effective ≠ request — the *record-effective* policy, §2.3), the reported
+    value is the EFFECTIVE one and an extra ``{name}_requested`` key records what was asked, so disk
+    never lies and the clamp is never silent. Called after a run has succeeded, so the validators here
+    will not raise."""
     name = getattr(extractor, "name", "")
     prefix = f"{name}."
     raw: dict[str, Any] = {}
-    for attr in ("resolved_params", "validate_params", "parameters"):
+    for attr in ("effective_params", "resolved_params", "validate_params", "parameters"):
         fn = getattr(extractor, attr, None)
         if callable(fn):
             raw = cast("dict[str, Any]", fn())
             break
-    return {(k[len(prefix):] if k.startswith(prefix) else k): v for k, v in raw.items()}
+    bare = {_strip_prefix(k, prefix): v for k, v in raw.items()}
+
+    clamp_fn = getattr(extractor, "clamped_params", None)
+    if callable(clamp_fn):
+        for k, requested in cast("dict[str, Any]", clamp_fn()).items():
+            bare[f"{_strip_prefix(k, prefix)}_requested"] = requested
+    return bare
+
+
+def track_clamps(extractor: Any) -> list[str]:
+    """Bare names of the params a track clamped at runtime (effective ≠ request), for the provenance
+    record's top-level ``clamped`` flag. Empty for tracks that did not clamp or are not parameterized."""
+    fn = getattr(extractor, "clamped_params", None)
+    if not callable(fn):
+        return []
+    name = getattr(extractor, "name", "")
+    prefix = f"{name}."
+    return sorted(_strip_prefix(k, prefix) for k in cast("dict[str, Any]", fn()))
 
 
 class ParameterizedTrack:
@@ -152,6 +186,10 @@ class ParameterizedTrack:
 
     def __init__(self) -> None:
         self._raw_params: dict[str, Any] = {}
+        # Runtime-effective overrides for params clamped to input feasibility during extract (e.g.
+        # n_topics reduced to the corpus size). Empty unless a track calls record_effective(), so the
+        # whole effective/clamp machinery is invisible for tracks that never clamp.
+        self._effective_params: dict[str, Any] = {}
 
     @property
     def name(self) -> str:  # pragma: no cover - each track overrides this
@@ -162,7 +200,7 @@ class ParameterizedTrack:
         self._raw_params.update(params)
 
     def resolved_params(self) -> dict[str, Any]:
-        """The validated, resolved parameter values — the sole provenance source. Raises on bad input."""
+        """The validated, resolved parameter values — what the user *asked* for. Raises on bad input."""
         return resolve_params(
             self.PARAMS, self._raw_params, reserved=self.RESERVED_PARAMS, track=self.name
         )
@@ -171,10 +209,37 @@ class ParameterizedTrack:
         """Validate and echo the resolved params (→ HTTP 400 on any error)."""
         return self.resolved_params()
 
+    def record_effective(self, name: str, value: Any) -> None:
+        """Record the runtime-EFFECTIVE value of a declared param when the track clamped it to input
+        feasibility (the *record-effective* policy, §2.3). The effective value — not the request — is
+        what :meth:`effective_params` / provenance / the signal manifest report, so disk never lies and
+        a clamp is never silent. ``name`` must be a declared param."""
+        if name not in {p.name for p in self.PARAMS}:
+            raise KeyError(f"{name!r} is not a declared parameter of {self.name}")
+        self._effective_params[name] = value
+
+    def effective_params(self) -> dict[str, Any]:
+        """Resolved params with any recorded runtime-effective overrides applied — the post-run
+        provenance source. Identical to :meth:`resolved_params` unless the track clamped a value."""
+        resolved = self.resolved_params()
+        resolved.update(self._effective_params)
+        return resolved
+
+    def clamped_params(self) -> dict[str, Any]:
+        """``{name: requested_value}`` for each param whose effective runtime value differs from the
+        request — drives the ``{name}_requested`` provenance keys and the ``clamped`` flag."""
+        resolved = self.resolved_params()
+        return {
+            name: resolved[name]
+            for name, eff in self._effective_params.items()
+            if name in resolved and resolved[name] != eff
+        }
+
     def param(self, name: str) -> Any:
         """Resolved value of a single declared parameter (validates the whole set)."""
         return self.resolved_params()[name]
 
     def parameters(self) -> dict[str, Any]:
-        """Namespaced provenance view for ``pipeline_run.json`` (``{track.param: value}``)."""
-        return {f"{self.name}.{k}": v for k, v in self.resolved_params().items()}
+        """Namespaced provenance view for ``pipeline_run.json`` (``{track.param: value}``), reporting
+        the EFFECTIVE values so the aggregate provenance agrees with the per-track run record."""
+        return {f"{self.name}.{k}": v for k, v in self.effective_params().items()}

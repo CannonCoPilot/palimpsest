@@ -13,6 +13,7 @@ from palimpsest.tracks.entities import EntityExtractor
 from palimpsest.tracks.lexical import LexicalExtractor
 from palimpsest.tracks.sentiment import SentimentExtractor
 from palimpsest.tracks.syntax import SyntaxExtractor
+from palimpsest.tracks.params import InsufficientCorpusError
 from palimpsest.tracks.topics import TopicsExtractor
 
 
@@ -128,6 +129,24 @@ class TestSentimentExtractor:
             assert -1.0 <= valence <= 1.0
             assert 0.0 <= arousal <= 1.0
 
+    def test_granularity_paragraph_is_honored(self, pp_project):
+        """granularity is no longer inert: 'paragraph' scores paragraph spans (one annotation per
+        paragraph, aligned to real paragraph boundaries), distinct from the sentence default."""
+        sentence_anns = SentimentExtractor().extract(pp_project)
+
+        para_ext = SentimentExtractor()
+        para_ext.set_params({"granularity": "paragraph"})
+        para_anns = para_ext.extract(pp_project)
+
+        paragraphs = pp_project.paragraphs()
+        para_bounds = {(s, e) for s, e, _ in paragraphs}
+        assert len(para_anns) == len(paragraphs)
+        for ann in para_anns:
+            sel = ann.target.selector
+            assert (sel.start, sel.end) in para_bounds
+        # paragraphs are coarser than sentences -> never more annotations than sentence-level
+        assert 0 < len(para_anns) <= len(sentence_anns)
+
     def test_detects_opening_line(self, pp_project):
         anns = SentimentExtractor().extract(pp_project)
         first = anns[0]
@@ -239,25 +258,54 @@ class TestTopicsExtractor:
 
 
 class TestTopicsEdgeCases:
-    def test_empty_vocabulary_returns_empty(self, tmp_path):
-        """TopicsExtractor must not crash on texts where all words are stopwords."""
+    def test_empty_vocabulary_raises_insufficient_corpus(self, tmp_path):
+        """A corpus whose entire vocabulary is stop-words is degenerate: it must fail loudly with a
+        reason (B5/P5), not silently return [] that reads as 'ran fine, 0 topics'."""
         from palimpsest.project import ingest_file
 
+        # Two paragraphs (blank-line separated) so we pass the >=2 guard and reach the vectorizer,
+        # where an all-stop-word corpus produces an empty vocabulary.
         stopword_txt = tmp_path / "stopwords.txt"
-        stopword_txt.write_text("the the the the.\nand and and and.\n")
+        stopword_txt.write_text("the the the the.\n\nand and and and.\n")
         project = ingest_file(stopword_txt, tmp_path / "out", title="stopwords-test")
-        anns = TopicsExtractor().extract(project)
-        assert anns == []
+        with pytest.raises(InsufficientCorpusError, match="usable vocabulary"):
+            TopicsExtractor().extract(project)
 
-    def test_short_text_returns_empty(self, tmp_path):
-        """Single-paragraph texts should return empty (< 2 paragraphs)."""
+    def test_short_text_raises_insufficient_corpus(self, tmp_path):
+        """Fewer than 2 paragraphs cannot be topic-modeled — surface it, don't silently return []."""
         from palimpsest.project import ingest_file
 
         short_txt = tmp_path / "short.txt"
         short_txt.write_text("Just one sentence here.")
         project = ingest_file(short_txt, tmp_path / "out2", title="short-test")
-        anns = TopicsExtractor().extract(project)
-        assert anns == []
+        with pytest.raises(InsufficientCorpusError, match="at least 2 paragraphs"):
+            TopicsExtractor().extract(project)
+
+    def test_count_clamp_records_effective_and_requested(self, tmp_path):
+        """Requesting more topics than the 3-paragraph corpus supports clamps to feasibility but
+        records the EFFECTIVE count plus the request (record-effective policy) — disk never lies."""
+        text = (
+            "Garden flowers bloom bright under warm sunshine every morning.\n\n"
+            "Bright sunshine fills the garden while flowers bloom and grow.\n\n"
+            "Flowers and garden glow bright; sunshine makes the bloom flourish.\n"
+        )
+        src = tmp_path / "garden.txt"
+        src.write_text(text)
+        project = ingest_file(src, tmp_path / "out", title="garden-test")
+
+        ext = TopicsExtractor()
+        ext.set_params({"n_topics": 25})
+        anns = ext.extract(project)
+        assert len(anns) > 0
+
+        # 3 paragraphs => effective n_topics clamps to <= 3, with the request preserved everywhere.
+        assert ext.effective_params()["n_topics"] <= 3
+        assert ext.clamped_params() == {"n_topics": 25}
+
+        m, _ = read_signal(project.path / "signals", "topics_dist")
+        assert m.metadata["n_topics"] <= 3
+        assert m.metadata["n_topics_requested"] == 25
+        assert "n_topics" in m.metadata["clamped"]
 
 
 class TestSentimentConfidence:
@@ -419,6 +467,58 @@ class TestLitHMMExtractor:
         for key in meta["state_descriptions"]:
             assert isinstance(key, str)
 
+    def test_short_corpus_raises_insufficient(self, tmp_path):
+        """Fewer than 4 paragraphs cannot support state discovery — fail loudly, not silent []."""
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+
+        txt = tmp_path / "tiny.txt"
+        txt.write_text("First para here.\n\nSecond para here.\n\nThird para.\n")
+        project = ingest_file(txt, tmp_path / "out", title="tiny")
+        with pytest.raises(InsufficientCorpusError, match="at least 4 paragraphs"):
+            LitHMMExtractor().extract(project)
+
+    def test_n_states_clamp_records_effective(self, tmp_path):
+        """Requesting more states than the 5-paragraph corpus supports clamps to feasibility but
+        records the EFFECTIVE value + the request in the meta (record-effective policy)."""
+        import json
+
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+
+        paras = "\n\n".join(f"Paragraph number {i} has some words here." for i in range(5))
+        txt = tmp_path / "five.txt"
+        txt.write_text(paras + "\n")
+        project = ingest_file(txt, tmp_path / "out", title="five")
+
+        ext = LitHMMExtractor(n_states=10)
+        anns = ext.extract(project)
+        assert len(anns) == 5
+        # 5 paragraphs => n_states clamps to max(2, 5//2) == 2
+        assert ext.effective_params()["n_states"] == 2
+        assert ext.clamped_params() == {"n_states": 10}
+
+        meta = json.loads((project.path / "signals" / "lithmm_meta.json").read_text())
+        assert meta["n_states"] == 2
+        assert meta["n_states_requested"] == 10
+        assert meta["clamped"] == ["n_states"]
+
+    def test_annotations_carry_method_and_posterior_type(self, tmp_path):
+        """The HMM-vs-KMeans caveat travels with each annotation (§5), not only in the manifest, so
+        a one-hot KMeans posterior is never rendered as a probability."""
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+
+        paras = "\n\n".join(f"Paragraph number {i} has some words here." for i in range(6))
+        txt = tmp_path / "six.txt"
+        txt.write_text(paras + "\n")
+        project = ingest_file(txt, tmp_path / "out", title="six")
+
+        anns = LitHMMExtractor(n_states=3).extract(project)
+        assert anns
+        for ann in anns:
+            method = ann.body.extra["palimpsest:method"]
+            ptype = ann.body.extra["palimpsest:posteriorType"]
+            assert method in ("GaussianHMM", "KMeans-fallback")
+            assert ptype == ("probabilistic" if method == "GaussianHMM" else "hard-assignment")
+
     def test_evidence_level(self):
         from palimpsest.tracks.lithmm import LitHMMExtractor
         assert LitHMMExtractor().evidence_level == "E5"
@@ -515,8 +615,16 @@ class TestTrackParamValidation:
 
     def test_sentiment_accepts_valid(self):
         ext = SentimentExtractor()
-        ext.set_params({"method": "hedonometer", "granularity": "paragraph"})
-        assert ext.validate_params() == {"method": "hedonometer", "granularity": "paragraph"}
+        ext.set_params({"method": "vader", "granularity": "paragraph"})
+        assert ext.validate_params() == {"method": "vader", "granularity": "paragraph"}
+
+    def test_sentiment_rejects_unimplemented_method(self):
+        """hedonometer is not built, so it is no longer advertised/accepted (P5: don't offer a knob
+        value the run silently ignores)."""
+        ext = SentimentExtractor()
+        ext.set_params({"method": "hedonometer"})
+        with pytest.raises(ValueError, match="'method'"):
+            ext.validate_params()
 
     def test_unknown_param_rejected(self):
         """G1 (A4): an undeclared parameter is a 400, not a silent no-op."""
