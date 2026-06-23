@@ -74,6 +74,22 @@ class TestSqliteVecStore:
         assert abs(result[0][0] - 0.1) < 0.01
         store.close()
 
+    def test_get_all_vectors_preserves_order_without_para_index(self, tmp_path):
+        # The self-similarity chunk cache stores vectors with a chunk_index but no para_index, so
+        # every row defaults to para_index = -1 and ties under ORDER BY para_index. get_all_vectors
+        # must still return them in insertion (= chunk) order, or the similarity matrix is permuted.
+        store = SqliteVecStore(tmp_path / "chunks.db", dim=4)
+        n = 6
+        vecs = [[float(k), 0.0, 0.0, 0.0] for k in range(n)]
+        store.add(
+            [f"slug:label:{k}" for k in range(n)],
+            vecs,
+            [{"chunk_index": k} for k in range(n)],  # no para_index → all default to -1
+        )
+        result = store.get_all_vectors()
+        assert [round(v[0]) for v in result] == list(range(n))
+        store.close()
+
     def test_idempotent_embed(self, tmp_path):
         store = SqliteVecStore(tmp_path / "test.db", dim=4)
         store.add(

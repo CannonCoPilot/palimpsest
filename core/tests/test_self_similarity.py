@@ -485,9 +485,30 @@ class TestAlignmentRefinementHonesty:
         from palimpsest.server import _extract_masked
 
         # Non-embedding metrics exercise chunking → matrix → LASTZ without an embedding service.
-        # The repeated sentence gives enough words for slide's even≥10 window (stride size//2).
+        # To get alignments we need two passages similar enough to seed an off-diagonal optimum that
+        # also survive repeat-masking (_mask_repeats), which suppresses any phrase recurring
+        # >= EXACT_REPEAT_MIN_OCCURRENCES (3) times. A verbatim copy would be masked — and slide mode
+        # masks *doubly* hard because _find_exact_repeats concatenates the 50%-overlapping windows,
+        # counting every phrase ~2x. So the second passage shares the first's exact bag-of-words (high
+        # word_overlap / edit_distance similarity) while breaking every 3-gram via an adjacent-word
+        # swap: identical multiset, no recurring phrase, no masking — alignments survive in both modes.
+        block = (
+            "lighthouse compass mariner tempest beacon anchor harbor voyage lantern rudder seagull "
+            "driftwood meridian sextant fathom keel mast galleon cargo wharf pelican estuary saltmarsh "
+            "cormorant barnacle schooner ballast hull tiller jib spinnaker capstan grommet halyard topsail"
+        ).split()
+        swapped = block[:]
+        for i in range(0, len(swapped) - 1, 2):
+            swapped[i], swapped[i + 1] = swapped[i + 1], swapped[i]
+        filler = (
+            "quarterly throughput logistics monsoon warehouse distribution overnight compliance auditor "
+            "inventory shipment freight tariff customs broker pallet forklift loading dock manifest "
+            "invoice receipt ledger surcharge embargo quota consignment depot"
+        )
+        text = f"{' '.join(block)}. {filler}. {' '.join(swapped)}."
+
         src: Path = tmp_path / "src.txt"
-        src.write_text("The quick brown fox jumps over the lazy dog. " * 60, encoding="utf-8")
+        src.write_text(text, encoding="utf-8")
         project = ingest_file(src, tmp_path, title="Refinement")
 
         track = SelfSimilarityTrack()
@@ -505,6 +526,15 @@ class TestAlignmentRefinementHonesty:
             assert info["alignment_refinement"] == expected, (
                 f"{mode} mode metric {metric!r} should report {expected!r} refinement"
             )
+
+        # B3: the label travels on each individual alignment record too (not only the manifest's
+        # metric_info), so the dotplot can mark a single alignment exact vs approximate. The two
+        # bag-identical passages guarantee LASTZ hits, so the combined file exists and is non-empty.
+        combined = project.path / "signals" / "self_similarity_alignments.json"
+        records = json.loads(combined.read_text())
+        assert records, "bag-identical passages should yield alignments"
+        for rec in records:
+            assert rec["refinement"] == expected
 
 
 class TestTransactionalOutputs:

@@ -135,6 +135,54 @@ def _job_display_status(job: dict | None, output_exists: bool) -> tuple[str, str
     return ("computed" if output_exists else "pending"), None
 
 
+def _track_run_info(project_dir: Path, track_name: str) -> dict[str, Any] | None:
+    """Per-track run provenance for the status payload (§5 consumption honesty).
+
+    Surfaces two things the data layer records but the UI could not see: (1) the record-effective
+    clamp — what actually ran vs what was requested — read from ``manifests/{track}.run.json`` (the
+    G3 provenance file); and (2) for ``lithmm``, the *actual* method and posterior type from its signal
+    meta, since an HMM run silently falls back to KMeans on fit/import failure (B5) and the disk is
+    honest while the UI was not. Returns ``None`` only when there is nothing to surface — no clamp and
+    (for non-lithmm tracks) nothing else. A completed lithmm run always reports its actual method and
+    posterior type, so the UI can confirm whether the HMM genuinely ran or fell back to KMeans."""
+    info: dict[str, Any] = {}
+
+    run_path = project_dir / "manifests" / f"{track_name}.run.json"
+    if run_path.exists():
+        try:
+            run_data = json.loads(run_path.read_text())
+        except (OSError, ValueError):
+            run_data = {}
+        params = run_data.get("parameters", {})
+        clamped = run_data.get("clamped", [])
+        # Surface only params we can fully describe — both the effective (ran) value and the
+        # {name}_requested value track_provenance records. A partial record (e.g. a run.json from an
+        # earlier provenance schema that lacked _requested) is skipped rather than rendered to the user
+        # as a nonsensical "ran None (requested None)" note.
+        surfacable = [
+            k for k in clamped
+            if params.get(k) is not None and params.get(f"{k}_requested") is not None
+        ]
+        if surfacable:
+            info["clamped"] = surfacable
+            info["effective"] = {k: params[k] for k in surfacable}
+            info["requested"] = {k: params[f"{k}_requested"] for k in surfacable}
+
+    if track_name == "lithmm":
+        meta_path = project_dir / "signals" / "lithmm_meta.json"
+        if meta_path.exists():
+            try:
+                meta = json.loads(meta_path.read_text())
+            except (OSError, ValueError):
+                meta = {}
+            if meta.get("method"):
+                info["method"] = meta["method"]
+            if meta.get("posterior_type"):
+                info["posteriorType"] = meta["posterior_type"]
+
+    return info or None
+
+
 def _is_signal_consumer(extractor: Any) -> bool:
     """True for extractors whose output positions derive from an upstream track/signal (already in
     original coordinates) rather than from the text — so they run on the full project and are not
@@ -921,6 +969,9 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             }
             if error:
                 entry["error"] = error
+            run_info = _track_run_info(project_dir, name)
+            if run_info:
+                entry["runInfo"] = run_info
             result.append(entry)
 
         return JSONResponse(content=result)

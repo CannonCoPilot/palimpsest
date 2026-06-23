@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react';
+import React, { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useMaskOverlayStore } from '../../stores/maskOverlayStore';
 
@@ -72,6 +72,16 @@ interface TrackStatus {
   // Present only on a failed run — the real error message from the backend (B2/G5). Rendered so the
   // user is told why a run failed instead of a silent revert to "pending".
   error?: string;
+  // §5 consumption honesty: per-run provenance the data layer recorded but the UI couldn't see.
+  // `clamped`/`effective`/`requested` expose record-effective clamps (e.g. n_topics ran 10, requested
+  // 25). `method`/`posteriorType` (lithmm only) expose the silent GaussianHMM→KMeans fallback (B5).
+  runInfo?: {
+    clamped?: string[];
+    effective?: Record<string, number | null>;
+    requested?: Record<string, number | null>;
+    method?: string;
+    posteriorType?: string;
+  };
 }
 
 const STATUS_ICONS: Record<string, { icon: string; color: string; label: string }> = {
@@ -226,11 +236,26 @@ const EMBED_PROVIDER_OPTIONS = [
   { value: 'ollama', label: 'Ollama' },
 ];
 
+// Mirrors the backend's self_similarity.WARN_MATRIX_DIM — the per-side chunk count past which an
+// n×n matrix is flagged as very large (the backend warns but still runs; so does this estimate, B4).
+const WARN_MATRIX_DIM = 16000;
+
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  const units = ['KB', 'MB', 'GB', 'TB'];
+  let v = bytes / 1024;
+  let i = 0;
+  while (v >= 1024 && i < units.length - 1) { v /= 1024; i++; }
+  return `${v >= 100 ? Math.round(v) : v.toFixed(1)} ${units[i]}`;
+}
+
 function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
   onRun: (params: Record<string, string | number>) => void;
   onCancel: () => void;
   projectId: string | undefined;
 }) {
+  const wordCount = useProjectStore((s) => getActiveProject(s).metadata?.word_count ?? 0);
+  const paragraphCount = useProjectStore((s) => getActiveProject(s).metadata?.paragraph_count ?? 0);
   const [metricEnabled, setMetricEnabled] = useState<Record<string, boolean>>({
     cosine: true, jaccard: true, word_overlap: true, edit_distance: true,
   });
@@ -272,6 +297,38 @@ function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
     embedProvider.trim() !== '' && embedEndpoint.trim() !== '' &&
     embedModel.trim() !== '' && embedBatchSize.trim() !== '';
   const canRun = anyEnabled && (!needsEmbedding || embeddingComplete);
+
+  // B4: pre-run cost estimate. Chunk count drives an n×n similarity matrix per metric, so a large
+  // corpus or a tiny chunk size can demand enormous memory. We warn (never block) past
+  // WARN_MATRIX_DIM, matching the backend. The count is approximate — it is derived from the raw
+  // word/paragraph count, while the backend chunks the (slightly shorter) masked analyzable stream.
+  const estimate = useMemo(() => {
+    if (!anyEnabled || wordCount <= 0) return null;
+    const sizes = useSharedSize
+      ? [sharedSize]
+      : enabledMetrics.map((m) => chunkSizes[m]).filter((s) => s > 0);
+    if (!sizes.length) return null;
+    const minSize = Math.min(...sizes); // smallest size → most chunks → the binding (worst) case
+    // Slide mode requires an even window ≥ 10 (matches the backend ChunkingConfig). With the dialog's
+    // default size (7) this is invalid, so estimating chunk counts would mislead — the run would be
+    // rejected before producing anything. Signal the invalidity instead of a bogus matrix size.
+    if (chunkMode === 'slide' && (minSize < 10 || minSize % 2 !== 0)) {
+      return { slideInvalid: true as const };
+    }
+    let n: number;
+    if (chunkMode === 'slide') {
+      const stride = Math.max(1, Math.floor(minSize / 2));
+      n = Math.ceil(Math.max(0, wordCount - minSize) / stride) + 1;
+    } else if (chunkMode === 'smart') {
+      // smart grows variable-size chunks over units; the unit count (paragraphs as proxy) is an
+      // upper bound on how many chunks result.
+      n = paragraphCount > 0 ? paragraphCount : Math.ceil(wordCount / minSize);
+    } else {
+      n = Math.ceil(wordCount / minSize);
+    }
+    const totalBytes = n * n * 4 * enabledMetrics.length; // one float32 n×n matrix per metric
+    return { slideInvalid: false as const, n, totalBytes, huge: n > WARN_MATRIX_DIM };
+  }, [anyEnabled, wordCount, paragraphCount, useSharedSize, sharedSize, enabledMetrics, chunkSizes, chunkMode]);
 
   const handleRun = () => {
     if (!canRun) return;
@@ -419,6 +476,18 @@ function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
           Fill all embedding fields to run cosine/jaccard.
         </div>
       )}
+
+      {estimate && (estimate.slideInvalid ? (
+        <div className="text-[0.78em] mb-2 text-[var(--color-warning,#b45309)]">
+          Slide mode needs an even chunk size ≥ 10. Set a valid size to estimate cost and run.
+        </div>
+      ) : (
+        <div className={`text-[0.78em] mb-2 ${estimate.huge ? 'text-[var(--color-warning,#b45309)]' : 'text-[var(--color-text-muted)]'}`}>
+          Estimate: ~{estimate.n.toLocaleString()} chunks → {estimate.n.toLocaleString()}×{estimate.n.toLocaleString()} matrix
+          {' '}× {enabledMetrics.length} metric{enabledMetrics.length === 1 ? '' : 's'} ≈ {formatBytes(estimate.totalBytes)}
+          {estimate.huge && <span className="font-medium"> ⚠ very large — expect this to be slow and memory-heavy</span>}
+        </div>
+      ))}
 
       <div className="flex gap-2">
         <button onClick={handleRun} disabled={!canRun} className="px-2 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.8em] disabled:opacity-40 disabled:cursor-not-allowed">Run Selected</button>
@@ -781,6 +850,26 @@ export default function AnalysisPanel() {
                     <div className="text-[0.8em] text-[var(--color-text-muted)]">
                       {TRACK_DESCRIPTIONS[track.name] ?? track.lfoTypes.join(', ')}
                     </div>
+                    {track.runInfo?.clamped?.length ? (
+                      <div className="text-[0.75em] text-[#b45309] mt-0.5 flex flex-wrap gap-x-2">
+                        {track.runInfo.clamped.map((k) => (
+                          <span
+                            key={k}
+                            title={`Requested ${String(track.runInfo!.requested?.[k])}, clamped to ${String(track.runInfo!.effective?.[k])} to fit the corpus.`}
+                          >
+                            {k}: ran {String(track.runInfo!.effective?.[k])} (requested {String(track.runInfo!.requested?.[k])})
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                    {track.runInfo?.posteriorType === 'hard-assignment' && (
+                      <div
+                        className="text-[0.75em] text-[#b45309] mt-0.5"
+                        title="The Gaussian HMM could not be fit, so this run fell back to KMeans hard clustering. State labels are one-hot assignments, not probabilistic posteriors."
+                      >
+                        ⚠ KMeans fallback — hard assignment, not probabilities
+                      </div>
+                    )}
                   </td>
                   <td className="px-4 py-2.5">
                     <span className="px-1.5 py-0.5 rounded text-[0.75em] bg-[var(--color-bg-muted)] border border-[var(--color-border-subtle)]">
@@ -896,7 +985,11 @@ export default function AnalysisPanel() {
                       <div className="border border-[var(--color-border-subtle)] rounded p-3 bg-[var(--color-bg-subtle)]">
                         <div className="grid grid-cols-[120px_1fr] gap-y-2 text-[0.85em]">
                           <span className="text-[var(--color-text-muted)] font-semibold">Method</span>
-                          <span>{TRACK_DETAILS[track.name]?.method ?? 'N/A'}</span>
+                          <span>
+                            {track.runInfo?.method
+                              ? `${track.runInfo.method}${track.runInfo.posteriorType ? ` · ${track.runInfo.posteriorType} posteriors` : ''} (actual run)`
+                              : (TRACK_DETAILS[track.name]?.method ?? 'N/A')}
+                          </span>
                           <span className="text-[var(--color-text-muted)] font-semibold">How it works</span>
                           <span>{TRACK_DETAILS[track.name]?.explanation ?? 'No detailed description available.'}</span>
                           <span className="text-[var(--color-text-muted)] font-semibold">Output type</span>

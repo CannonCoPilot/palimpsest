@@ -344,3 +344,61 @@ class TestJobErrorPropagation:
         ss = next(t for t in rows if t["name"] == "self_similarity")
         assert ss["status"] in ("pending", "computed")
         assert "error" not in ss
+
+
+class TestTrackRunInfo:
+    """§5: the status payload surfaces per-track run provenance the data layer records but the UI
+    could not see — the record-effective clamp (ran vs requested) and lithmm's actual method/posterior
+    type (an HMM may have silently fallen back to KMeans, B5). Pure function, tested directly."""
+
+    def _write_run(self, project_dir: Path, track: str, record: dict) -> None:
+        manifests = project_dir / "manifests"
+        manifests.mkdir(parents=True, exist_ok=True)
+        (manifests / f"{track}.run.json").write_text(json.dumps(record))
+
+    def test_none_when_no_provenance(self, tmp_path):
+        from palimpsest.server import _track_run_info
+        assert _track_run_info(tmp_path, "topics") is None
+
+    def test_unclamped_run_adds_no_payload(self, tmp_path):
+        from palimpsest.server import _track_run_info
+        self._write_run(tmp_path, "topics", {"parameters": {"n_topics": 10}})
+        assert _track_run_info(tmp_path, "topics") is None  # no `clamped` → nothing to surface
+
+    def test_clamped_run_reports_effective_and_requested(self, tmp_path):
+        from palimpsest.server import _track_run_info
+        self._write_run(tmp_path, "topics", {
+            "parameters": {"n_topics": 4, "n_topics_requested": 25},
+            "clamped": ["n_topics"],
+        })
+        info = _track_run_info(tmp_path, "topics")
+        assert info["clamped"] == ["n_topics"]
+        assert info["effective"] == {"n_topics": 4}
+        assert info["requested"] == {"n_topics": 25}
+
+    def test_lithmm_surfaces_kmeans_fallback_method(self, tmp_path):
+        from palimpsest.server import _track_run_info
+        signals = tmp_path / "signals"
+        signals.mkdir(parents=True, exist_ok=True)
+        (signals / "lithmm_meta.json").write_text(json.dumps({
+            "method": "KMeans-fallback",
+            "posterior_type": "hard-assignment",
+        }))
+        info = _track_run_info(tmp_path, "lithmm")
+        assert info["method"] == "KMeans-fallback"
+        assert info["posteriorType"] == "hard-assignment"
+
+    def test_lithmm_clamp_and_method_combine(self, tmp_path):
+        from palimpsest.server import _track_run_info
+        self._write_run(tmp_path, "lithmm", {
+            "parameters": {"n_states": 3, "n_states_requested": 10},
+            "clamped": ["n_states"],
+        })
+        signals = tmp_path / "signals"
+        signals.mkdir(parents=True, exist_ok=True)
+        (signals / "lithmm_meta.json").write_text(json.dumps({
+            "method": "GaussianHMM", "posterior_type": "probabilistic",
+        }))
+        info = _track_run_info(tmp_path, "lithmm")
+        assert info["requested"] == {"n_states": 10}
+        assert info["method"] == "GaussianHMM"

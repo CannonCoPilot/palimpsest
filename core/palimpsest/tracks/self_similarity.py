@@ -1258,10 +1258,15 @@ class SelfSimilarityTrack:
             # disables repeat masking for every metric after this one.
             lastz_chunks = [{**chunk, "masked": False} for chunk in chunks]
 
-            # Run LASTZ for this metric and tag records with the metric name
+            # Run LASTZ for this metric and tag records with the metric name + refinement label.
+            # The refinement label travels WITH each record (not only in the manifest's metric_info,
+            # B3) so the dotplot can mark an individual alignment as exact vs approximate: under
+            # slide/smart chunking the chunk boundaries are non-uniform, so the per-chunk alignment
+            # spans are approximate, and a consumer must be able to tell one from an exact one.
             metric_alns = _lastz_align(ref_text, lastz_chunks, matrix, cs)
             logger.info("LASTZ[%s] found %d significant alignments", metric, len(metric_alns))
-            tagged_alns = [{**rec, "metric": metric} for rec in metric_alns]
+            refinement = "approximate" if nonuniform_refine else "exact"
+            tagged_alns = [{**rec, "metric": metric, "refinement": refinement} for rec in metric_alns]
 
             if tagged_alns:
                 _stage_text(cs_dir / f"alignments_{metric}.json",

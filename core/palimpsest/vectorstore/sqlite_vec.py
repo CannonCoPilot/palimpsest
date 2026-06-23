@@ -127,11 +127,18 @@ class SqliteVecStore:
         return row[0] if row and row[0] is not None else -1
 
     def get_all_vectors(self) -> list[list[float]]:
-        """Load all vectors ordered by para_index for matrix computations."""
+        """Load all vectors in stored sequence order, for matrix computations.
+
+        ``rowid`` is the tiebreaker, and it is the load-bearing one: the self-similarity chunk cache
+        stores every vector with ``para_index = -1`` (chunks have no paragraph index), so ordering by
+        ``para_index`` alone leaves every row tied and the return order unspecified — a silent risk of
+        permuting the similarity matrix rows out of chunk order. Because ``add`` inserts in sequence
+        and ``rowid`` is monotonic with insertion, ``rowid`` recovers the exact insertion (= chunk /
+        paragraph) order. For paragraph stores ``para_index`` is unique, so the tiebreaker is inert."""
         rows = self._conn.execute(
             "SELECT v.embedding FROM vec_items v "
             "JOIN vec_meta m ON v.rowid = m.rowid "
-            "ORDER BY m.para_index"
+            "ORDER BY m.para_index, m.rowid"
         ).fetchall()
         results: list[list[float]] = []
         for (blob,) in rows:

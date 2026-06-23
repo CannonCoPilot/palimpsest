@@ -229,6 +229,10 @@ export default function DotplotView(): ReactElement | null {
     chunk_start_a: number; chunk_end_a: number;
     chunk_start_b: number; chunk_end_b: number;
     identity: number; length_chunks: number;
+    metric?: string;
+    // B3: per-record honesty label. "exact" under uniform word/punctuation/verse chunking;
+    // "approximate" under slide/smart, where non-uniform windows make the refined boundaries fuzzy.
+    refinement?: 'exact' | 'approximate';
   }>>([]);
 
   const [corner1, setCorner1] = useState<{ i: number; j: number } | null>(null);
@@ -244,7 +248,7 @@ export default function DotplotView(): ReactElement | null {
 
   const [availableMetrics, setAvailableMetrics] = useState<string[]>([]);
   const [availableChunkSizes, setAvailableChunkSizes] = useState<number[]>([]);
-  const [, setMetricInfo] = useState<Record<string, { unit_type: string; n_units: number; dimensions: number[]; chunk_size?: number }>>({});
+  const [metricInfo, setMetricInfo] = useState<Record<string, { unit_type: string; n_units: number; dimensions: number[]; chunk_size?: number; alignment_refinement?: 'exact' | 'approximate' }>>({});
 
   // Load self-similarity data — responds to metric changes and chunk size changes
   useEffect(() => {
@@ -317,6 +321,12 @@ export default function DotplotView(): ReactElement | null {
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
   const colors = PALETTES[palette];
+
+  // B3: alignment-boundary refinement for the currently displayed metric. Prefer the manifest's
+  // per-metric label; fall back to the per-record label (all records of one run share it). Drives
+  // the "exact vs approximate boundaries" honesty note in the alignments list.
+  const viewRefinement: 'exact' | 'approximate' | undefined =
+    metricInfo[similarityMetric]?.alignment_refinement ?? alignments[0]?.refinement;
 
   const clampViewport = useCallback((vp: Viewport): Viewport => {
     const s = Math.max(2, Math.min(n, vp.span));
@@ -879,6 +889,18 @@ export default function DotplotView(): ReactElement | null {
             className="text-[0.75em] px-2 py-0.5 rounded border border-[var(--color-border-subtle)] bg-[var(--color-bg)] cursor-pointer hover:bg-[var(--color-bg-muted)] w-full text-left font-[var(--font-sans)]"
           >
             {showAlignmentsList ? '▾' : '▸'} Alignments ({alignments.length})
+            {viewRefinement && (
+              <span
+                title={viewRefinement === 'approximate'
+                  ? 'Non-uniform chunking (slide/smart): similarity scores are exact, but the refined alignment start/end boundaries are approximate.'
+                  : 'Uniform chunking: alignment boundaries are exact.'}
+                className={viewRefinement === 'approximate'
+                  ? 'ml-1 text-[var(--color-warning,#b45309)]'
+                  : 'ml-1 text-[var(--color-text-muted)]'}
+              >
+                · {viewRefinement} boundaries
+              </span>
+            )}
           </button>
           {showAlignmentsList && (
             <div className="border border-[var(--color-border-subtle)] border-t-0 rounded-b bg-[var(--color-bg)] max-h-[120px] overflow-y-auto">
@@ -891,6 +913,12 @@ export default function DotplotView(): ReactElement | null {
                     <span className="text-[var(--color-text-muted)]">B:{aln.chunk_start_b}–{aln.chunk_end_b}</span>
                     <span style={{ color: identColor }} className="font-semibold">{(aln.identity * 100).toFixed(1)}%</span>
                     <span className="text-[var(--color-text-muted)]">{aln.length_chunks}c</span>
+                    {aln.refinement === 'approximate' && (
+                      <span
+                        title="Approximate boundaries: this alignment came from non-uniform (slide/smart) chunks, so its start/end chunk indices are fuzzy. The identity score itself is exact."
+                        className="text-[var(--color-warning,#b45309)] text-[0.92em]"
+                      >approx</span>
+                    )}
                     <button
                       className="ml-auto px-1.5 py-0 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[var(--color-text-muted)]"
                       onClick={() => {
