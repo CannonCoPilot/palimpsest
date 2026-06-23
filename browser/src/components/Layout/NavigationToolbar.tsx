@@ -21,6 +21,8 @@ export default function NavigationToolbar() {
   const zoomOut = useViewStore((s) => s.zoomOut);
   const coordSystem = useViewStore((s) => s.coordinateSystem);
   const setCoordSystem = useViewStore((s) => s.setCoordinateSystem);
+  const maskPanelOpen = useViewStore((s) => s.maskPanelOpen);
+  const toggleMaskPanel = useViewStore((s) => s.toggleMaskPanel);
 
   const [posInput, setPosInput] = useState('');
   const maxPara = paragraphs.length;
@@ -148,6 +150,20 @@ export default function NavigationToolbar() {
           </button>
         </Tooltip>
       </div>
+
+      <Tooltip content="Masking & subtext panel" side="bottom">
+        <button
+          onClick={toggleMaskPanel}
+          aria-pressed={maskPanelOpen}
+          className={`px-2 py-0.5 border rounded-[var(--radius-md)] text-[0.8em] cursor-pointer transition-colors ${
+            maskPanelOpen
+              ? 'border-[var(--color-border-focus,#1a73e8)] bg-[var(--color-bg-muted)] text-[var(--color-text)]'
+              : 'border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-muted)]'
+          }`}
+        >
+          Mask
+        </button>
+      </Tooltip>
     </div>
   );
 }

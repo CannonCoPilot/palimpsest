@@ -38,7 +38,12 @@ interface SegmentItem {
   end: number;
   annotations: W3CAnnotation[];
   searchMatch?: { isCurrent: boolean };
+  masked?: boolean;
 }
+
+// Masked-text styling, matching the Browser's TickerTape (dark band, light text).
+const MASKED_BG = '#3a3a3d';
+const MASKED_FG = '#f5f5f5';
 
 function getTrackName(ann: W3CAnnotation): string {
   return BODY_TYPE_TO_TRACK[ann.body.type] ?? '';
@@ -156,8 +161,15 @@ function buildSegments(
   paraEnd: number,
   searchMatches: SearchMatch[],
   currentMatchIndex: number,
+  maskedRanges: ReadonlyArray<readonly [number, number]>,
 ): SegmentItem[] {
-  type Event = { pos: number; type: 'start' | 'end'; ann?: W3CAnnotation; searchCurrent?: boolean };
+  type Event = {
+    pos: number;
+    type: 'start' | 'end';
+    ann?: W3CAnnotation;
+    searchCurrent?: boolean;
+    masked?: boolean;
+  };
   const events: Event[] = [];
 
   for (const ann of annotations) {
@@ -179,6 +191,16 @@ function buildSegments(
     events.push({ pos: e, type: 'end', searchCurrent: mi === currentMatchIndex });
   }
 
+  // Masked (analysis-excluded) ranges — the on-demand masking overlay grays these.
+  for (const [ms, me] of maskedRanges) {
+    if (ms >= paraEnd || me <= paraStart) continue;
+    const s = Math.max(ms - paraStart, 0);
+    const e = Math.min(me - paraStart, paraEnd - paraStart);
+    if (e <= s) continue;
+    events.push({ pos: s, type: 'start', masked: true });
+    events.push({ pos: e, type: 'end', masked: true });
+  }
+
   if (events.length === 0) return [];
 
   events.sort((a, b) => a.pos - b.pos || (a.type === 'end' ? -1 : 1));
@@ -186,21 +208,25 @@ function buildSegments(
   const segments: SegmentItem[] = [];
   const activeAnns: Set<W3CAnnotation> = new Set();
   let activeSearch: { isCurrent: boolean } | undefined;
+  let activeMasked = 0;
   let lastPos = 0;
 
   for (const ev of events) {
-    if (ev.pos > lastPos && (activeAnns.size > 0 || activeSearch)) {
+    if (ev.pos > lastPos && (activeAnns.size > 0 || activeSearch || activeMasked > 0)) {
       segments.push({
         start: lastPos,
         end: ev.pos,
         annotations: [...activeAnns],
         searchMatch: activeSearch,
+        masked: activeMasked > 0,
       });
     }
     lastPos = ev.pos;
     if (ev.ann) {
       if (ev.type === 'start') activeAnns.add(ev.ann);
       else activeAnns.delete(ev.ann);
+    } else if (ev.masked) {
+      activeMasked += ev.type === 'start' ? 1 : -1;
     } else {
       if (ev.type === 'start') activeSearch = { isCurrent: ev.searchCurrent ?? false };
       else activeSearch = undefined;
@@ -217,7 +243,10 @@ interface Props {
   annotations: W3CAnnotation[];
   searchMatches?: SearchMatch[];
   currentMatchIndex?: number;
+  maskedRanges?: ReadonlyArray<readonly [number, number]>;
 }
+
+const EMPTY_MASKED: ReadonlyArray<readonly [number, number]> = [];
 
 function AnnotationOverlayInner({
   text,
@@ -226,16 +255,17 @@ function AnnotationOverlayInner({
   annotations,
   searchMatches = [],
   currentMatchIndex = -1,
+  maskedRanges = EMPTY_MASKED,
 }: Props): ReactElement {
   const selectAnnotation = useViewStore((s) => s.selectAnnotation);
   const selectedAnnotation = useViewStore((s) => s.selectedAnnotation);
   const trackManifests = useTrackManifests();
 
   // Memoize the expensive segment-building step.  It only needs to rerun when
-  // the annotation list, paragraph bounds, or search state changes.
+  // the annotation list, paragraph bounds, search state, or masked ranges change.
   const segments = useMemo(
-    () => buildSegments(annotations, paraStart, paraEnd, searchMatches, currentMatchIndex),
-    [annotations, paraStart, paraEnd, searchMatches, currentMatchIndex],
+    () => buildSegments(annotations, paraStart, paraEnd, searchMatches, currentMatchIndex, maskedRanges),
+    [annotations, paraStart, paraEnd, searchMatches, currentMatchIndex, maskedRanges],
   );
 
   if (segments.length === 0 && searchMatches.length === 0) {
@@ -262,6 +292,12 @@ function AnnotationOverlayInner({
       style = getAnnotationStyle(topAnn, isSelected, manifest);
     } else {
       style = {};
+    }
+
+    // Masking overrides annotation styling (the text is excluded from analysis); a search
+    // hit still wins below so masked text stays findable.
+    if (seg.masked) {
+      style = { ...style, backgroundColor: MASKED_BG, color: MASKED_FG, borderRadius: '2px', padding: '0 1px' };
     }
 
     if (seg.searchMatch) {

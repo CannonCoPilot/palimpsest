@@ -15,6 +15,7 @@ import CompareView from '../CompareView/CompareView';
 import LoadingOverlay from '../common/LoadingOverlay';
 import HelpOverlay from '../common/HelpOverlay';
 import ProjectPicker from '../common/ProjectPicker';
+import MaskingPanel from '../MaskingPanel/MaskingPanel';
 import SectionNav from '../common/SectionNav';
 import ErrorBoundary from '../common/ErrorBoundary';
 import TabBar from './TabBar';
@@ -130,6 +131,10 @@ export default function AppLayout() {
             </ErrorBoundary>
           </aside>
         )}
+
+        <ErrorBoundary fallbackLabel="Masking Panel">
+          <MaskingPanel />
+        </ErrorBoundary>
       </div>
 
       {activeTab !== 'texthic' && activeTab !== 'compare' && <OverviewBar />}

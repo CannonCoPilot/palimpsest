@@ -10,9 +10,41 @@ import { useTrackStore, type TrackState } from '../../stores/trackStore';
 import { useElementVisibilityStore } from '../../stores/elementVisibilityStore';
 import { useViewStore } from '../../stores/viewStore';
 import { useSearchStore, type SearchMatch } from '../../stores/searchStore';
+import { useSectionStore } from '../../stores/sectionStore';
+import { useVerseStore } from '../../stores/verseStore';
+import { useMaskOverlayStore, effectiveMaskByType, effectiveSections } from '../../stores/maskOverlayStore';
+import { computeMaskedIntervals } from '../../utils/sectionMasking';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 import { TRACK_COLORS } from '../../utils/trackColors';
 import AnnotationOverlay from './AnnotationOverlay';
+
+type MaskedRange = readonly [number, number];
+const EMPTY_MASKED: ReadonlyArray<MaskedRange> = [];
+
+/**
+ * Bucket the merged masked intervals by paragraph so each paragraph overlay only sees its
+ * own (small) slice. Both inputs are ordered by start, so one forward sweep suffices; an
+ * interval straddling a paragraph boundary is recorded in every paragraph it overlaps.
+ */
+function bucketMaskedByParagraph(
+  paragraphs: Paragraph[],
+  intervals: ReadonlyArray<MaskedRange>,
+): Map<number, MaskedRange[]> {
+  const out = new Map<number, MaskedRange[]>();
+  if (paragraphs.length === 0 || intervals.length === 0) return out;
+  let j = 0;
+  for (const p of paragraphs) {
+    while (j < intervals.length && intervals[j][1] <= p.start) j++;
+    for (let k = j; k < intervals.length && intervals[k][0] < p.end; k++) {
+      if (intervals[k][1] > p.start) {
+        let arr = out.get(p.index);
+        if (!arr) { arr = []; out.set(p.index, arr); }
+        arr.push(intervals[k]);
+      }
+    }
+  }
+  return out;
+}
 
 /**
  * Build a stable string key representing per-track visibility/threshold/displayMode.
@@ -320,9 +352,10 @@ interface ParagraphViewProps {
   currentMatchIndex: number;
   isSelected: boolean;
   onSelect: () => void;
+  maskedRanges?: ReadonlyArray<MaskedRange>;
 }
 
-function ParagraphView({ paragraph, annotations, searchMatches, currentMatchIndex, isSelected, onSelect }: ParagraphViewProps): ReactElement {
+function ParagraphView({ paragraph, annotations, searchMatches, currentMatchIndex, isSelected, onSelect, maskedRanges }: ParagraphViewProps): ReactElement {
   return (
     <div
       data-para-index={paragraph.index}
@@ -341,16 +374,18 @@ function ParagraphView({ paragraph, annotations, searchMatches, currentMatchInde
         annotations={annotations}
         searchMatches={searchMatches}
         currentMatchIndex={currentMatchIndex}
+        maskedRanges={maskedRanges}
       />
     </div>
   );
 }
 
 function VirtualizedParagraphView({
-  paragraphs, annotationsByPara, searchMatches, currentMatchIndex,
+  paragraphs, annotationsByPara, maskedByPara, searchMatches, currentMatchIndex,
   selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
 }: {
   paragraphs: Paragraph[]; annotationsByPara: Map<number, W3CAnnotation[]>;
+  maskedByPara: Map<number, MaskedRange[]>;
   searchMatches: SearchMatch[]; currentMatchIndex: number;
   selectedParagraphIndex: number | null; setSelectedParagraphIndex: (i: number | null) => void;
   scrollRequest: number | null; clearScrollRequest: () => void;
@@ -388,6 +423,7 @@ function VirtualizedParagraphView({
               <ParagraphView
                 paragraph={p} annotations={annotationsByPara.get(p.index) ?? EMPTY_ANNS} searchMatches={searchMatches}
                 currentMatchIndex={currentMatchIndex}
+                maskedRanges={maskedByPara.get(p.index) ?? EMPTY_MASKED}
                 isSelected={selectedParagraphIndex === p.index}
                 onSelect={() => setSelectedParagraphIndex(selectedParagraphIndex === p.index ? null : p.index)}
               />
@@ -400,10 +436,11 @@ function VirtualizedParagraphView({
 }
 
 function SimpleParagraphView({
-  paragraphs, annotationsByPara, searchMatches, currentMatchIndex,
+  paragraphs, annotationsByPara, maskedByPara, searchMatches, currentMatchIndex,
   selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
 }: {
   paragraphs: Paragraph[]; annotationsByPara: Map<number, W3CAnnotation[]>;
+  maskedByPara: Map<number, MaskedRange[]>;
   searchMatches: SearchMatch[]; currentMatchIndex: number;
   selectedParagraphIndex: number | null; setSelectedParagraphIndex: (i: number | null) => void;
   scrollRequest: number | null; clearScrollRequest: () => void;
@@ -424,6 +461,7 @@ function SimpleParagraphView({
       {paragraphs.map((p) => (
         <ParagraphView key={p.index} paragraph={p} annotations={annotationsByPara.get(p.index) ?? EMPTY_ANNS}
           searchMatches={searchMatches} currentMatchIndex={currentMatchIndex}
+          maskedRanges={maskedByPara.get(p.index) ?? EMPTY_MASKED}
           isSelected={selectedParagraphIndex === p.index}
           onSelect={() => setSelectedParagraphIndex(selectedParagraphIndex === p.index ? null : p.index)} />
       ))}
@@ -434,10 +472,11 @@ function SimpleParagraphView({
 // ── Sentence-level zoom ──
 
 function SentenceLevelView({
-  paragraphs, annotationsByPara, searchMatches, currentMatchIndex,
+  paragraphs, annotationsByPara, maskedByPara, searchMatches, currentMatchIndex,
   selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
 }: {
   paragraphs: Paragraph[]; annotationsByPara: Map<number, W3CAnnotation[]>;
+  maskedByPara: Map<number, MaskedRange[]>;
   searchMatches: SearchMatch[]; currentMatchIndex: number;
   selectedParagraphIndex: number | null; setSelectedParagraphIndex: (i: number | null) => void;
   scrollRequest: number | null; clearScrollRequest: () => void;
@@ -484,6 +523,7 @@ function SentenceLevelView({
                   text={p.text} paraStart={p.start} paraEnd={p.end}
                   annotations={paraAnns} searchMatches={searchMatches}
                   currentMatchIndex={currentMatchIndex}
+                  maskedRanges={maskedByPara.get(p.index) ?? EMPTY_MASKED}
                 />
               </div>
             </div>
@@ -562,8 +602,34 @@ export default function TextLinearView(): ReactElement {
     [filteredParagraphs, allAnnotations],
   );
 
+  // On-demand masking overlay → grayed-out ranges in the reader (mirrors BrowserView).
+  const activeProjectId = useProjectStore((s) => s.activeProjectId);
+  const secProjectId = useSectionStore((s) => s.projectId);
+  const secSections = useSectionStore((s) => s.sections);
+  const secMask = useSectionStore((s) => s.maskByType);
+  const secTextLen = useSectionStore((s) => s.textLen);
+  const ovEnabled = useMaskOverlayStore((s) => s.enabled);
+  const ovTypeOverrides = useMaskOverlayStore((s) => s.typeOverrides);
+  const ovSectionOverrides = useMaskOverlayStore((s) => s.sectionOverrides);
+  const verseProjectId = useVerseStore((s) => s.projectId);
+  const verseNumIntervals = useVerseStore((s) => s.numIntervals);
+
+  const maskedIntervals = useMemo(() => {
+    if (!ovEnabled || !secProjectId || secProjectId !== activeProjectId) return EMPTY_MASKED;
+    const extra = verseProjectId === activeProjectId ? verseNumIntervals : [];
+    const effSections = effectiveSections(secSections, ovSectionOverrides);
+    const effMask = effectiveMaskByType(secMask, ovTypeOverrides);
+    return computeMaskedIntervals(effSections, effMask, secTextLen, extra);
+  }, [ovEnabled, secProjectId, activeProjectId, secSections, secMask, secTextLen,
+      ovSectionOverrides, ovTypeOverrides, verseProjectId, verseNumIntervals]);
+
+  const maskedByPara = useMemo(
+    () => bucketMaskedByParagraph(filteredParagraphs, maskedIntervals),
+    [filteredParagraphs, maskedIntervals],
+  );
+
   const commonProps = {
-    paragraphs: filteredParagraphs, annotationsByPara, searchMatches, currentMatchIndex,
+    paragraphs: filteredParagraphs, annotationsByPara, maskedByPara, searchMatches, currentMatchIndex,
     selectedParagraphIndex, setSelectedParagraphIndex, scrollRequest, clearScrollRequest,
   };
 

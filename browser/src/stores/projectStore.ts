@@ -11,6 +11,7 @@ import { loadTrackManifest, type TrackManifest } from '../adapters/TrackManifest
 import { useTrackStore, type TrackState } from './trackStore';
 import { useSectionStore } from './sectionStore';
 import { useElementVisibilityStore } from './elementVisibilityStore';
+import { useMaskOverlayStore } from './maskOverlayStore';
 import { TRACK_COLORS } from '../utils/trackColors';
 
 export interface ProjectMetadata {
@@ -193,6 +194,8 @@ export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
     // previous project don't silently hide this one's elements.
     if (get().activeProjectId !== projectId) {
       useElementVisibilityStore.getState().showAll();
+      // Reset the non-destructive masking overlay — it is tied to one project's layout.
+      useMaskOverlayStore.getState().setProject(projectId);
     }
     // Load any configured layout sections so masked ranges render (fire-and-forget).
     void useSectionStore.getState().load(projectId);

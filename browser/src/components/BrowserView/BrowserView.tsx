@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback, useState, useMemo, memo, Fragment, type ReactElement } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useSectionStore } from '../../stores/sectionStore';
+import { useMaskOverlayStore, effectiveMaskByType, effectiveSections } from '../../stores/maskOverlayStore';
 import { computeMaskedIntervals } from '../../utils/sectionMasking';
 import { useTrackStore } from '../../stores/trackStore';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
@@ -314,6 +315,11 @@ export default function BrowserView() {
   const secMask = useSectionStore((s) => s.maskByType);
   const secTextLen = useSectionStore((s) => s.textLen);
 
+  // On-demand masking overlay (non-destructive session selection layered over the layout).
+  const ovEnabled = useMaskOverlayStore((s) => s.enabled);
+  const ovTypeOverrides = useMaskOverlayStore((s) => s.typeOverrides);
+  const ovSectionOverrides = useMaskOverlayStore((s) => s.sectionOverrides);
+
   // Lazy verse index: drives both the Verses lane and the verse-number mask layer.
   const verseProjectId = useVerseStore((s) => s.projectId);
   const verseRecords = useVerseStore((s) => s.records);
@@ -328,14 +334,18 @@ export default function BrowserView() {
 
   const maskedIntervals = useMemo(
     () => {
-      if (!secProjectId || secProjectId !== activeProjectId) return [];
+      if (!ovEnabled || !secProjectId || secProjectId !== activeProjectId) return [];
       // Union the verse-number tokens ([ns, s) per verse) on top of structural masking so
       // the `C:V.` tokens gray out in the readable TickerTape — mirroring the backend's
       // _verse_num_intervals union. Numbers gray once the lazy index has loaded.
+      // The overlay's per-type and per-element overrides apply before computing the set.
       const extra = versesLoaded ? verseNumIntervals : [];
-      return computeMaskedIntervals(secSections, secMask, secTextLen, extra);
+      const effSections = effectiveSections(secSections, ovSectionOverrides);
+      const effMask = effectiveMaskByType(secMask, ovTypeOverrides);
+      return computeMaskedIntervals(effSections, effMask, secTextLen, extra);
     },
-    [secProjectId, activeProjectId, secSections, secMask, secTextLen, versesLoaded, verseNumIntervals],
+    [ovEnabled, secProjectId, activeProjectId, secSections, secMask, secTextLen,
+     ovSectionOverrides, ovTypeOverrides, versesLoaded, verseNumIntervals],
   );
 
   const viewportRef = useRef<HTMLDivElement>(null);

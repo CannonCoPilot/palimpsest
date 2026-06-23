@@ -1,5 +1,37 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
+import { useMaskOverlayStore } from '../../stores/maskOverlayStore';
+
+/**
+ * Build the fetch init for an analyze run from the on-demand masking overlay. When the
+ * overlay matches the saved layout (enabled, no overrides) no body is sent and the run is
+ * unchanged; otherwise the override is posted and the run is forced (it changes the masked
+ * set, so cached results must not be reused).
+ */
+function maskOverrideInit(): { init: RequestInit; override: boolean } {
+  const { enabled, typeOverrides, sectionOverrides } = useMaskOverlayStore.getState();
+  const hasOverrides =
+    Object.keys(typeOverrides).length > 0 || Object.keys(sectionOverrides).length > 0;
+  if (enabled && !hasOverrides) return { init: { method: 'POST' }, override: false };
+  return {
+    init: {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        mask_override: { enabled, mask_by_type: typeOverrides, section_masked: sectionOverrides },
+      }),
+    },
+    override: true,
+  };
+}
+
+function analyzeQuery(params: Record<string, string | number> | undefined, force: boolean): string {
+  const obj: Record<string, string> = {};
+  for (const [k, v] of Object.entries(params ?? {})) obj[k] = String(v);
+  if (force) obj.force = 'true';
+  const qs = new URLSearchParams(obj).toString();
+  return qs ? `?${qs}` : '';
+}
 
 interface TrackStatus {
   name: string;
@@ -393,11 +425,9 @@ export default function AnalysisPanel() {
         await new Promise((r) => setTimeout(r, 2000));
         const available = await checkEmbeddings();
         if (available) {
-          // Now run the actual track
-          const qs = params ? '?' + new URLSearchParams(
-            Object.entries(params).map(([k, v]) => [k, String(v)])
-          ).toString() : '';
-          await fetch(`/api/projects/${projectId}/analyze/${trackName}${qs}`, { method: 'POST' });
+          // Now run the actual track, honoring the on-demand masking overlay.
+          const { init, override } = maskOverrideInit();
+          await fetch(`/api/projects/${projectId}/analyze/${trackName}${analyzeQuery(params, override)}`, init);
           fetchStatus();
           return;
         }
@@ -418,10 +448,8 @@ export default function AnalysisPanel() {
       }
     }
 
-    const qs = params ? '?' + new URLSearchParams(
-      Object.entries(params).map(([k, v]) => [k, String(v)])
-    ).toString() : '';
-    await fetch(`/api/projects/${projectId}/analyze/${trackName}${qs}`, { method: 'POST' });
+    const { init, override } = maskOverrideInit();
+    await fetch(`/api/projects/${projectId}/analyze/${trackName}${analyzeQuery(params, override)}`, init);
     setParamDialogTrack(null);
     fetchStatus();
   }, [projectId, fetchStatus, embeddingStatus, checkEmbeddings]);

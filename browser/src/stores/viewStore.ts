@@ -18,6 +18,8 @@ interface ViewState {
   scrollToParagraphRequest: number | null;
   textHicOpen: boolean;
   helpOpen: boolean;
+  maskPanelOpen: boolean;
+  subtextWizardOpen: boolean;
   zoomLevel: ZoomLevel;
   visibleParagraphRange: [number, number] | null;
   coordinateSystem: CoordinateSystem;
@@ -31,6 +33,9 @@ interface ViewState {
   clearScrollRequest: () => void;
   toggleTextHic: () => void;
   toggleHelp: () => void;
+  setMaskPanelOpen: (open: boolean) => void;
+  toggleMaskPanel: () => void;
+  setSubtextWizardOpen: (open: boolean) => void;
   setZoomLevel: (level: ZoomLevel) => void;
   zoomIn: () => void;
   zoomOut: () => void;
@@ -45,6 +50,8 @@ export const useViewStore = create<ViewState>((set, get) => ({
   scrollToParagraphRequest: null,
   textHicOpen: false,
   helpOpen: false,
+  maskPanelOpen: false,
+  subtextWizardOpen: false,
   zoomLevel: 'paragraph',
   visibleParagraphRange: null,
   coordinateSystem: 'paragraph',
@@ -64,6 +71,9 @@ export const useViewStore = create<ViewState>((set, get) => ({
     set({ textHicOpen: next, activeTab: next ? 'texthic' : 'reading' });
   },
   toggleHelp: (): void => set((s) => ({ helpOpen: !s.helpOpen })),
+  setMaskPanelOpen: (open): void => set({ maskPanelOpen: open }),
+  toggleMaskPanel: (): void => set((s) => ({ maskPanelOpen: !s.maskPanelOpen })),
+  setSubtextWizardOpen: (open): void => set({ subtextWizardOpen: open }),
   setZoomLevel: (level): void => set({ zoomLevel: level }),
 
   zoomIn: (): void => {
