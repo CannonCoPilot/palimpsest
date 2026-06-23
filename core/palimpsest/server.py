@@ -115,14 +115,70 @@ class CollectionRequest(BaseModel):
     project_ids: list[str] = []
 
 
-def _extract_masked(project: Any, extractor: Any) -> Any:
-    """Run an extractor under character-level masking.
+_STRUCTURAL_TRACKS = {"segments", "sections", "elements", "verses"}
 
-    Annotation extractors run against the project's analysis view — the masked-resolved analyzable
-    text, with verse-number tokens always stripped — and have their results remapped back to
-    original-document coordinates. Signal extractors still run directly against the full project
-    (their masking inversion is pending)."""
-    if extractor.output_type != "annotation":
+
+def _is_signal_consumer(extractor: Any) -> bool:
+    """True for extractors whose output positions derive from an upstream track/signal (already in
+    original coordinates) rather than from the text — so they run on the full project and are not
+    remapped; the masking is inherited through their (already-masked) upstream. ``coreference`` is
+    excluded: it derives positions from the text via BookNLP despite depending on ``entities``."""
+    if getattr(extractor, "name", "") == "coreference":
+        return False
+    return any(not d.startswith("_") for d in extractor.depends_on)
+
+
+def _remap_signal_dir(signals_dir: Path, omap: Any, prefix: str | None = None) -> None:
+    """Remap signal outputs analyzable→original: manifest ``segment_offsets`` and alignment-record
+    ``char_*`` spans. When ``prefix`` is given, only files belonging to that signal are touched."""
+    from palimpsest.derive import inverse_remap_alignments, inverse_remap_segment_offsets
+    if not signals_dir.is_dir():
+        return
+    for jp in signals_dir.rglob("*.json"):
+        if prefix is not None and prefix not in jp.name and prefix not in jp.parent.name:
+            continue
+        data = json.loads(jp.read_text(encoding="utf-8"))
+        changed = False
+        if isinstance(data, dict) and isinstance(data.get("segment_offsets"), list):
+            data["segment_offsets"] = inverse_remap_segment_offsets(data["segment_offsets"], omap)
+            changed = True
+        elif isinstance(data, list):
+            inverse_remap_alignments(data, omap)
+            changed = True
+        if changed:
+            jp.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
+    """Remap stored annotation tracks analyzable→original (structural tracks are left untouched)."""
+    from palimpsest.derive import inverse_remap_annotation_dicts
+    if not tracks_dir.is_dir():
+        return
+    for tp in tracks_dir.glob("*.jsonl"):
+        if tp.stem in _STRUCTURAL_TRACKS:
+            continue
+        recs = [json.loads(ln) for ln in tp.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        recs = inverse_remap_annotation_dicts(recs, omap)
+        recs.sort(key=lambda r: ((r.get("target") or {}).get("selector") or {}).get("start", 0))
+        tp.write_text(("\n".join(json.dumps(r) for r in recs) + "\n") if recs else "", encoding="utf-8")
+
+
+def _remap_project_outputs(project_dir: Path, omap: Any) -> None:
+    """Remap every analyzable-coordinate output (annotation tracks + signal manifests/alignments)
+    of a batch run back to original document coordinates."""
+    _remap_tracks_dir(project_dir / "tracks", omap)
+    _remap_signal_dir(project_dir / "signals", omap)
+
+
+def _extract_masked(project: Any, extractor: Any) -> Any:
+    """Run a single extractor under character-level masking.
+
+    Text-deriving extractors run against the project's analysis view — the masked-resolved
+    analyzable stream (masked spans and verse-number tokens excised) that they chunk at their own
+    runtime — and their outputs are remapped back to original coordinates (annotation results
+    in-place; any signal files they wrote by name). Signal-consumer extractors run on the full
+    project, inheriting masking through their already-masked, already-original upstream."""
+    if _is_signal_consumer(extractor):
         return extractor.extract(project)
     from palimpsest.derive import remap_result_annotations
 
@@ -131,8 +187,10 @@ def _extract_masked(project: Any, extractor: Any) -> Any:
         result = extractor.extract(view)
     finally:
         view.close_analysis_view()
-    if isinstance(result, list):
-        return remap_result_annotations(result, omap)
+    if extractor.output_type == "annotation" and isinstance(result, list):
+        result = remap_result_annotations(result, omap)
+    # Remap any signal files this extractor wrote (its own signal, or a signal side-effect).
+    _remap_signal_dir(project.path / "signals", omap, prefix=extractor.name)
     return result
 
 
@@ -1267,7 +1325,12 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         return out
 
     async def _compute_tracks(project: Any) -> list[dict[str, str]]:
-        """Step 5: run analysis extractors over the masked-resolved analyzable text."""
+        """Step 5: run every analysis extractor over the masked-resolved analyzable stream.
+
+        The whole batch runs against a single analysis view, so all intermediate cross-track data
+        (e.g. self_similarity's offsets consumed by boundary_detection) lives in one consistent
+        analyzable coordinate space. A final pass then remaps every output — annotation tracks and
+        signal manifests/alignments — back to original document coordinates."""
         import asyncio
 
         from palimpsest.annotation.serializer import write_track
@@ -1275,21 +1338,25 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         failed_tracks: list[dict[str, str]] = []
         registry = TrackRegistry.discover()
-        for extractor_cls in registry.dependency_order():
-            extractor = extractor_cls()
-            try:
-                result = await asyncio.to_thread(_extract_masked, project, extractor)
-                if extractor.output_type == "annotation" and isinstance(result, list):
-                    track_path = project.path / "tracks" / f"{extractor.name}.jsonl"
-                    write_track(track_path, result)
-                manifest_dir = project.path / "manifests"
-                manifest_dir.mkdir(exist_ok=True)
-                (manifest_dir / f"{extractor.name}.manifest.json").write_text(
-                    json.dumps(extractor.manifest(), indent=2), encoding="utf-8",
-                )
-            except Exception as exc:
-                logger.warning("Track %s failed: %s", extractor.name, exc)
-                failed_tracks.append({"track": extractor.name, "error": str(exc)})
+        view, omap = project.analysis_view()
+        try:
+            for extractor_cls in registry.dependency_order():
+                extractor = extractor_cls()
+                try:
+                    result = await asyncio.to_thread(extractor.extract, view)
+                    if extractor.output_type == "annotation" and isinstance(result, list):
+                        write_track(view.path / "tracks" / f"{extractor.name}.jsonl", result)
+                    manifest_dir = view.path / "manifests"
+                    manifest_dir.mkdir(exist_ok=True)
+                    (manifest_dir / f"{extractor.name}.manifest.json").write_text(
+                        json.dumps(extractor.manifest(), indent=2), encoding="utf-8",
+                    )
+                except Exception as exc:
+                    logger.warning("Track %s failed: %s", extractor.name, exc)
+                    failed_tracks.append({"track": extractor.name, "error": str(exc)})
+            await asyncio.to_thread(_remap_project_outputs, project.path, omap)
+        finally:
+            view.close_analysis_view()
         return failed_tracks
 
     @app.get("/api/imports")

@@ -39,6 +39,17 @@ def test_offsetmap_inverse_element_within_and_across_spans():
     assert omap.inverse_element(4, 8) is None          # straddles the dropped gap → dropped
 
 
+def test_offsetmap_inverse_span_keeps_gap_spanning():
+    # sep_len 0 = pure excision: child is parent[0:5] + parent[10:15], child_len 10.
+    omap = OffsetMap([(0, 5), (10, 15)], sep_len=0)
+    assert omap.child_len == 10
+    assert omap.inverse_span(1, 4) == (1, 4)        # wholly inside span 1 → exact
+    assert omap.inverse_span(6, 9) == (11, 14)      # wholly inside span 2 → exact
+    # child [4,7) = parent[4] + parent[10] + parent[11]; the original range includes the excised
+    # gap (5..10) "as if it weren't there" — first char parent[4] to last char parent[11], +1.
+    assert omap.inverse_span(4, 7) == (4, 12)
+
+
 def _masked_project(tmp_path: Path):
     """A small ingested project whose front matter ("CONTENTS …") is masked by an applied layout."""
     from palimpsest.layout import (
@@ -97,3 +108,21 @@ def test_extract_masked_keeps_annotations_out_of_masked_regions(tmp_path: Path):
         assert 0 <= s < e <= len(full)
         for ms, me in masked:                            # no annotation overlaps a masked span
             assert not (s < me and e > ms), f"annotation [{s},{e}) overlaps masked [{ms},{me})"
+
+
+def test_self_similarity_signal_excludes_masked_and_maps_to_original(tmp_path: Path):
+    import json
+
+    from palimpsest.server import _extract_masked
+    from palimpsest.tracks.self_similarity import SelfSimilarityTrack
+
+    project, full = _masked_project(tmp_path)
+    masked = project.masked_intervals()
+    _extract_masked(project, SelfSimilarityTrack())
+    manifest = json.loads((project.path / "signals" / "self_similarity.json").read_text())
+    offsets = manifest["segment_offsets"]
+    assert offsets, "self_similarity should chunk the body"
+    for s, e in offsets:
+        assert 0 <= s < e <= len(full)                   # remapped to original coordinates
+        for ms, me in masked:                            # masked content is excised, never chunked
+            assert not (s >= ms and e <= me), f"chunk [{s},{e}) lies inside masked [{ms},{me})"

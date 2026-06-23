@@ -95,6 +95,25 @@ class OffsetMap:
             return None
         return (s + (cs - self.base[i]), s + (ce - self.base[i]))
 
+    def inverse_span(self, cs: int, ce: int) -> tuple[int, int] | None:
+        """Parent [start,end) for a child [start,end), KEEPING ranges that span excised gaps.
+
+        If the child range lies in one kept span it maps exactly (:meth:`inverse_element`). If it
+        bridges one or more excised masked gaps, it maps to the original span from its first to its
+        last character — so the (now-greyed) masked content sits inside the returned range, exactly
+        the "as if it weren't there" semantics analysis windows want. ``None`` only for an empty or
+        out-of-range child range."""
+        exact = self.inverse_element(cs, ce)
+        if exact is not None:
+            return exact
+        if ce <= cs:
+            return None
+        a = self.inverse_point(cs)
+        b = self.inverse_point(ce - 1)
+        if a is None or b is None:
+            return None
+        return (a, b + 1)
+
 
 def compute_kept_spans(
     sections: list[LayoutSection], extraction_types: set[str], excluded_ids: set[str]
@@ -184,12 +203,56 @@ def remap_result_annotations(annotations: list[Any], omap: OffsetMap) -> list[An
     for ann in annotations:
         sel = getattr(getattr(ann, "target", None), "selector", None)
         if isinstance(sel, TextPositionSelector):
-            m = omap.inverse_element(sel.start, sel.end)
+            m = omap.inverse_span(sel.start, sel.end)
             if m is None:
                 continue
             sel.start, sel.end = m
         out.append(ann)
     return out
+
+
+def inverse_remap_annotation_dicts(records: list[dict[str, Any]], omap: OffsetMap) -> list[dict[str, Any]]:
+    """Remap stored W3C annotation dicts from analyzable to original coordinates, in place, keeping
+    gap-spanning ranges (:meth:`OffsetMap.inverse_span`). Annotations with no usable position are
+    passed through; any that map to nothing are dropped."""
+    out: list[dict[str, Any]] = []
+    for ann in records:
+        sel = (ann.get("target") or {}).get("selector") or {}
+        a, e = sel.get("start"), sel.get("end")
+        if isinstance(a, int) and isinstance(e, int):
+            m = omap.inverse_span(a, e)
+            if m is None:
+                continue
+            sel["start"], sel["end"] = m
+        out.append(ann)
+    return out
+
+
+def inverse_remap_segment_offsets(offsets: list[list[int]], omap: OffsetMap) -> list[list[int]]:
+    """Remap a signal manifest's ``segment_offsets`` (``[[start,end], …]``) analyzable→original."""
+    out: list[list[int]] = []
+    for so in offsets:
+        if len(so) >= 2:
+            m = omap.inverse_span(int(so[0]), int(so[1]))
+            out.append([m[0], m[1]] if m is not None else list(so))
+        else:
+            out.append(list(so))
+    return out
+
+
+_ALIGN_CHAR_SPANS = (("char_start_a", "char_end_a"), ("char_start_b", "char_end_b"))
+
+
+def inverse_remap_alignments(records: list[dict[str, Any]], omap: OffsetMap) -> list[dict[str, Any]]:
+    """Remap alignment records' ``char_*`` span fields analyzable→original (the ``chunk_*`` matrix
+    indices are coordinate-free and left untouched)."""
+    for rec in records:
+        for s_key, e_key in _ALIGN_CHAR_SPANS:
+            if isinstance(rec.get(s_key), int) and isinstance(rec.get(e_key), int):
+                m = omap.inverse_span(rec[s_key], rec[e_key])
+                if m is not None:
+                    rec[s_key], rec[e_key] = m
+    return records
 
 
 def _subtext_source_name(parent_id: str, extraction_types: list[str]) -> str:

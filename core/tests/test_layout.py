@@ -11,8 +11,16 @@ from palimpsest.layout import (
     detect_verse_regions,
     effective_mask,
     masked_intervals,
-    range_is_masked,
 )
+
+
+def _covered(intervals: list[tuple[int, int]], start: int, end: int) -> bool:
+    """True if [start,end) is majority-covered by the masked intervals (test helper)."""
+    span = end - start
+    if span <= 0:
+        return False
+    covered = sum(max(0, min(b, end) - max(a, start)) for a, b in intervals)
+    return covered * 2 >= span
 
 
 _SCRIPTURE = (
@@ -65,23 +73,6 @@ def test_effective_mask_inherits_then_overrides():
     assert effective_mask(_sec("a", "chapter", 0, 1), DEFAULT_MASK_BY_TYPE) is False
     assert effective_mask(_sec("a", "endnotes", 0, 1), DEFAULT_MASK_BY_TYPE) is True
     assert effective_mask(_sec("a", "chapter", 0, 1, masked=True), DEFAULT_MASK_BY_TYPE) is True
-
-
-def test_range_is_masked_uses_majority_coverage():
-    intervals = [(0, 100), (400, 450)]
-    assert range_is_masked(intervals, 10, 20) is True       # fully inside a masked span
-    assert range_is_masked(intervals, 150, 160) is False    # fully outside any masked span
-    assert range_is_masked(intervals, 420, 440) is True     # fully inside a masked span
-
-    # Boundary-straddle: masked iff most of the span is masked (not whether its centre is).
-    assert range_is_masked(intervals, 90, 110) is True      # 10/20 masked → tie counts as masked
-    assert range_is_masked(intervals, 95, 110) is False     # 5/15 masked → minority, kept
-
-    # A short masked token near a chunk's centre must NOT mask the whole chunk: this is the
-    # verse-number-in-prose case the midpoint rule got wrong (centre is masked, majority isn't).
-    assert range_is_masked([(45, 55)], 0, 100) is False     # 10/100 masked → prose retained
-    # …but a chunk mostly inside a masked region IS masked even if its centre lands in a gap.
-    assert range_is_masked([(0, 40), (60, 100)], 0, 100) is True  # 80/100 masked, centre in gap
 
 
 def test_detect_front_matter_chapters_endnotes():
@@ -140,7 +131,7 @@ def test_chapterless_work_keeps_body_unmasked():
     assert (body.start, body.end) == (300, 9500)
     mi = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, 10000)
     assert sum(b - a for a, b in mi) < 10000          # NOT masked end to end
-    assert not range_is_masked(mi, 1000, 2000)        # the body prose is analyzable
+    assert not _covered(mi, 1000, 2000)        # the body prose is analyzable
 
 
 def test_header_carved_from_chapter_heading():
@@ -150,8 +141,8 @@ def test_header_carved_from_chapter_heading():
     header = next(s for s in sections if s.type == "header" and s.start == 0)
     assert header.end == 22
     mi = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, 4000)
-    assert range_is_masked(mi, 0, 22)          # the heading label is masked
-    assert not range_is_masked(mi, 500, 600)   # the chapter prose is not
+    assert _covered(mi, 0, 22)          # the heading label is masked
+    assert not _covered(mi, 500, 600)   # the chapter prose is not
 
 
 def test_chapter_heading_split_into_header_and_metadata():
@@ -447,7 +438,7 @@ def test_title_template_anthology_recovered_without_translation_headings():
     assert body.start < text.index("Chapter 1\n\n")  # body anchored at work 1, not the stray chapters
     # the rendered text of the first work is masked translation; its intro is analyzable.
     mi = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, len(text))
-    assert range_is_masked(mi, text.rindex("The Book of Alpha") + 40, text.rindex("The Book of Alpha") + 200)
+    assert _covered(mi, text.rindex("The Book of Alpha") + 40, text.rindex("The Book of Alpha") + 200)
 
 
 def test_title_template_needs_repeated_titles_not_just_work_headers():

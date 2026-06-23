@@ -299,9 +299,9 @@ class Project:
         so analysis results can be re-anchored. Because masked_intervals always unions the
         verse-number layer, those tokens are absent from the analyzable text by construction.
         """
-        from palimpsest.derive import SEPARATOR, OffsetMap, assemble_text
+        from palimpsest.derive import OffsetMap, assemble_text
         if sep is None:
-            sep = SEPARATOR
+            sep = ""  # pure excision — masked spans vanish "as if not there"; windows span the gap
         text = self.reference_text()
         kept = _complement_spans(self.masked_intervals(), len(text))
         return assemble_text(text, kept, sep), OffsetMap(kept, len(sep))
