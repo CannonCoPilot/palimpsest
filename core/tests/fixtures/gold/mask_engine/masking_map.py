@@ -297,7 +297,10 @@ def _resolve(text: str, anchor: str, mode: str = "first") -> int | None:
 
 def build_elements(idx: int) -> tuple[str, list[dict]]:
     """Return (text, elements) where each element is {type,start,end,source}."""
-    text = project_for(idx).reference_text()
+    proj = project_for(idx)
+    if proj is None:
+        raise SystemExit(f"[{idx}] no ingested project found — run the eval ingest first")
+    text = proj.reference_text()
     n = len(text)
     gold = json.loads((GOLD / f"work-{idx}.json").read_text())
     els: list[dict] = [{"type": "body", "start": 0, "end": n, "source": "base-generic"}]

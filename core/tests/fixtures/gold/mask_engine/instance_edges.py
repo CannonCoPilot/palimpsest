@@ -483,7 +483,10 @@ def _walk_parts(text: str, starts: list[int]) -> list[str]:
 
 
 def reconcile(idx: int) -> None:
-    text = project_for(idx).reference_text()
+    proj = project_for(idx)
+    if proj is None:
+        raise SystemExit(f"[{idx}] no ingested project found — run the eval ingest first")
+    text = proj.reference_text()
     for rule in RULES[idx]:
         starts = materialize(text, rule)
         exp = rule["expected_count"]
@@ -518,6 +521,8 @@ def a23(idx: int) -> None:
     from palimpsest.layout import detect_layout_sections
     from palimpsest.server import _endnote_separator, _layout_boundaries
     proj = project_for(idx)
+    if proj is None:
+        raise SystemExit(f"[{idx}] no ingested project found — run the eval ingest first")
     text = proj.reference_text()
     sections = detect_layout_sections(
         _layout_boundaries(proj), len(text), _endnote_separator(proj.path), text=text
@@ -560,6 +565,9 @@ def summary() -> None:
     print("-" * 92)
     for idx in sorted(RULES):
         proj = project_for(idx)
+        if proj is None:
+            print(f"{idx:>4} (no ingested project — skipped)")
+            continue
         text = proj.reference_text()
         sections = detect_layout_sections(
             _layout_boundaries(proj), len(text), _endnote_separator(proj.path), text=text

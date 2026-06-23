@@ -2,14 +2,30 @@
   "venvPath": "core",
   "venv": ".venv",
   "pythonVersion": "3.12",
-  "include": ["core"],
+  "include": ["core/palimpsest"],
   "extraPaths": ["core"],
   "exclude": [
     "**/.venv",
     "**/node_modules",
     "**/__pycache__",
     "**/target",
-    "browser"
+    "browser",
+    ".scratch",
+    "core/tests/fixtures/gold/**"
   ],
-  "reportMissingImports": "error"
+  "reportMissingImports": "error",
+  "reportUnusedFunction": "none",
+  "reportUnusedVariable": "warning",
+  "executionEnvironments": [
+    {
+      "root": "core/tests",
+      "extraPaths": ["core"],
+      "reportUnusedFunction": "none"
+    },
+    {
+      "root": "core/tests/fixtures/gold",
+      "reportMissingImports": "none",
+      "reportOptionalMemberAccess": "none"
+    }
+  ]
 }
