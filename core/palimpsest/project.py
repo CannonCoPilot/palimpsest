@@ -155,6 +155,13 @@ class Project:
         self._para_cache: list[tuple[int, int, str]] | None = None
         self._para_starts: list[int] | None = None
         self._spacy_doc_cache: Any | None = None
+        # On-demand masking override for one analysis run (set by the server before extract):
+        # {enabled: bool, mask_by_type?: {type: bool}, section_masked?: {id: bool}}.
+        self._mask_override: dict[str, Any] | None = None
+
+    def set_mask_override(self, override: dict[str, Any] | None) -> None:
+        """Apply a transient masking override to this instance's ``masked_intervals``."""
+        self._mask_override = override
 
     def reference_text(self) -> str:
         if self._text_cache is None:
@@ -201,6 +208,8 @@ class Project:
         set is the structural deepest-wins masking UNION the verse-number layer — the "C:V."
         marker tokens — so verse numbers are excluded from analysis while verse prose stays.
         """
+        import dataclasses
+
         from palimpsest.layout import load_layout, masked_intervals
         from palimpsest.verses import (
             cached_verse_number_intervals,
@@ -210,12 +219,25 @@ class Project:
         cfg = load_layout(self.path)
         if cfg is None:
             return []
+        ov = self._mask_override
+        # On-demand masking turned off for this run → nothing is excluded.
+        if ov is not None and not ov.get("enabled", True):
+            return []
         text = self.reference_text()
         # Prefer the cached verses.jsonl track; only recompute over the full text if absent.
         verse_iv = cached_verse_number_intervals(self.path)
         if verse_iv is None:
             verse_iv = verse_number_intervals(detect_verses(text))
-        return masked_intervals(cfg.sections, cfg.mask_by_type, len(text), extra_masked=verse_iv)
+        sections, mask_by_type = cfg.sections, cfg.mask_by_type
+        if ov is not None:
+            if ov.get("mask_by_type"):
+                mask_by_type = {**cfg.mask_by_type, **ov["mask_by_type"]}
+            sm = ov.get("section_masked") or {}
+            if sm:
+                sections = [
+                    dataclasses.replace(s, masked=sm[s.id]) if s.id in sm else s for s in cfg.sections
+                ]
+        return masked_intervals(sections, mask_by_type, len(text), extra_masked=verse_iv)
 
     @classmethod
     def load(cls, path: Path) -> Project:

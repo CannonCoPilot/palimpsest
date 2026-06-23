@@ -89,6 +89,32 @@ class SectionsUpdateRequest(BaseModel):
     extra_types: list[dict[str, Any]] | None = None  # custom user mask layers
 
 
+class MaskOverrideRequest(BaseModel):
+    """On-demand masking overlay applied to a single analysis run (non-destructive)."""
+
+    enabled: bool = True
+    mask_by_type: dict[str, bool] | None = None  # per-type-layer keep/mask overrides
+    section_masked: dict[str, bool] | None = None  # per-element keep/mask overrides (by id)
+
+
+class DeriveRequest(BaseModel):
+    """Derive a subtext child project from a parent's kept extraction layers."""
+
+    extraction_types: list[str]  # type-layers whose element spans form the subtext text
+    excluded_ids: list[str] = []  # Stage-2 per-element deselections
+    title: str = ""
+    author: str = ""
+    collection_id: str | None = None  # add parent+child to this collection (else auto)
+
+
+class CollectionRequest(BaseModel):
+    """Create or update a collection (a named grouping of related projects)."""
+
+    label: str = ""
+    description: str = ""
+    project_ids: list[str] = []
+
+
 def _layout_boundaries(project: Any) -> list[tuple[int, int, str]]:
     """Section boundaries (start, end, heading) from the sections track, else segmenter."""
     out: list[tuple[int, int, str]] = []
@@ -284,6 +310,13 @@ def _safe_project_dir(workspace: Path, project_id: str) -> Path:
     if not project_dir.is_dir():
         raise HTTPException(status_code=404, detail="Project not found")
     return project_dir
+
+
+def _link_derived_collection(workspace: Path, parent: Any, child_id: str, collection_id: str | None) -> str:
+    """Add a parent and its derived subtext to a collection (named, or an auto 'derived' one)."""
+    from palimpsest.collections import link_derived
+
+    return link_derived(workspace, parent.metadata.id, parent.metadata.title, child_id, collection_id)
 
 
 _IMPORT_SUFFIXES = (".epub", ".txt", ".pdf", ".html", ".htm", ".md", ".markdown")
@@ -804,8 +837,10 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         chunk_size_jaccard: int | None = None,
         chunk_size_word_overlap: int | None = None,
         chunk_size_edit_distance: int | None = None,
+        mask_override: MaskOverrideRequest | None = None,
     ) -> JSONResponse:
-        """Run a single track extractor with optional parameters."""
+        """Run a single track extractor with optional parameters and an optional
+        on-demand masking override (non-destructive; scopes this run's masked set)."""
         import asyncio
 
         project_dir = _safe_project_dir(workspace, project_id)
@@ -824,6 +859,8 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         from palimpsest.project import Project
 
         project = Project.load(project_dir)
+        if mask_override is not None:
+            project.set_mask_override(mask_override.model_dump())
         extractor = all_extractors[track_name]()
 
         params: dict[str, Any] = {}
@@ -1483,6 +1520,114 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         text_len = len(Project.load(project_dir).reference_text())
         _write_elements_track(project_dir, project_id, cfg, text_len)
         return JSONResponse(content=_sections_payload(cfg, text_len))
+
+    @app.post("/api/projects/{project_id}/derive")
+    async def derive_subtext_endpoint(project_id: str, req: DeriveRequest) -> JSONResponse:
+        """Derive a subtext child project from the parent's kept extraction layers.
+
+        The kept layers' element spans form the child text; overlapping parent layers (the
+        containers, the verse-number index, annotation tracks) are remapped onto the child with
+        their mask state preserved. The child is auto-linked to its parent in a collection."""
+        import asyncio
+
+        from palimpsest.derive import derive_subtext
+        from palimpsest.project import Project
+
+        parent_dir = _safe_project_dir(workspace, project_id)
+        parent = Project.load(parent_dir)
+        try:
+            child, child_cfg, summary = await asyncio.to_thread(
+                derive_subtext,
+                parent,
+                workspace,
+                extraction_types=req.extraction_types,
+                excluded_ids=req.excluded_ids,
+                title=req.title,
+                author=req.author,
+            )
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+        text_len = len(child.reference_text())
+        _write_elements_track(child.path, child.metadata.id, child_cfg, text_len)
+
+        collection_id = _link_derived_collection(
+            workspace, parent, child.metadata.id, req.collection_id
+        )
+        summary["collection_id"] = collection_id
+        return JSONResponse(content=summary)
+
+    # ── Collections API ──
+
+    @app.get("/api/collections")
+    async def list_collections() -> JSONResponse:
+        """List all collections with member counts."""
+        from palimpsest.collections import load_collections
+
+        cols = load_collections(workspace)
+        return JSONResponse(content=[{**c, "project_count": len(c.get("project_ids", []))} for c in cols])
+
+    @app.post("/api/collections")
+    async def create_collection_endpoint(req: CollectionRequest) -> JSONResponse:
+        from palimpsest.collections import create_collection
+
+        col = create_collection(workspace, req.label, req.description, req.project_ids, kind="manual")
+        return JSONResponse(content=col)
+
+    @app.get("/api/collections/{collection_id}")
+    async def get_collection_endpoint(collection_id: str) -> JSONResponse:
+        """A collection plus lightweight metadata for each member project."""
+        from palimpsest.collections import get_collection
+
+        col = get_collection(workspace, collection_id)
+        if col is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
+        members = []
+        for pid in col.get("project_ids", []):
+            meta_path = workspace / pid / "metadata.json"
+            if meta_path.exists():
+                m = json.loads(meta_path.read_text(encoding="utf-8"))
+                members.append({
+                    "id": pid, "title": m.get("title", pid), "author": m.get("author"),
+                    "parent_project_id": m.get("parent_project_id"),
+                    "cover": _find_cover_url(workspace / pid, m),
+                })
+        return JSONResponse(content={**col, "members": members})
+
+    @app.put("/api/collections/{collection_id}")
+    async def update_collection_endpoint(collection_id: str, req: CollectionRequest) -> JSONResponse:
+        from palimpsest.collections import update_collection
+
+        col = update_collection(workspace, collection_id, label=req.label, description=req.description)
+        if col is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
+        return JSONResponse(content=col)
+
+    @app.delete("/api/collections/{collection_id}")
+    async def delete_collection_endpoint(collection_id: str) -> JSONResponse:
+        from palimpsest.collections import delete_collection
+
+        if not delete_collection(workspace, collection_id):
+            raise HTTPException(status_code=404, detail="Collection not found")
+        return JSONResponse(content={"status": "deleted", "id": collection_id})
+
+    @app.post("/api/collections/{collection_id}/projects/{project_id}")
+    async def add_collection_member(collection_id: str, project_id: str) -> JSONResponse:
+        from palimpsest.collections import add_member
+
+        col = add_member(workspace, collection_id, project_id)
+        if col is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
+        return JSONResponse(content=col)
+
+    @app.delete("/api/collections/{collection_id}/projects/{project_id}")
+    async def remove_collection_member(collection_id: str, project_id: str) -> JSONResponse:
+        from palimpsest.collections import remove_member
+
+        col = remove_member(workspace, collection_id, project_id)
+        if col is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
+        return JSONResponse(content=col)
 
     # ── Alignment API ──
 
