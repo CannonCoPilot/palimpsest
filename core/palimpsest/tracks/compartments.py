@@ -33,8 +33,13 @@ def _compute_compartments(sim_matrix: np.ndarray) -> np.ndarray:
     try:
         eigenvalues, eigenvectors = np.linalg.eigh(obs_exp)
         first_pc = eigenvectors[:, -1]
-    except np.linalg.LinAlgError:
-        return np.zeros(n)
+    except np.linalg.LinAlgError as exc:
+        # A failed eigendecomposition is a failed analysis, not a result. Returning np.zeros here
+        # classified every paragraph as compartment "A" at confidence 0 — a non-convergence
+        # masquerading as data (finding B5). Raise so it surfaces through the G5 failed-job path.
+        raise ValueError(
+            f"compartment eigendecomposition failed on the {n}x{n} similarity matrix: {exc}"
+        ) from exc
 
     return first_pc
 

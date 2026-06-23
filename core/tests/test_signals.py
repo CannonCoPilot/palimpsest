@@ -205,6 +205,59 @@ class TestAlphabet:
         assert track.evidence_level == "E5"
         assert "sentiment" in track.depends_on
 
+    def test_clamp_records_effective_not_constant(self, small_project):
+        """A2/A1: when the requested cluster count exceeds the paragraph count it is clamped, and the
+        EFFECTIVE value (not the constant 16) is what provenance reports — with the request preserved."""
+        from palimpsest.tracks.alphabet import AlphabetTrack
+
+        n_paras = small_project.metadata.paragraph_count  # 5
+        track = AlphabetTrack()
+        track.set_params({"n_clusters": 12})  # > n_paras, will clamp
+        track.extract(small_project)
+
+        meta = json.loads(
+            (small_project.path / "signals" / "alphabet.json").read_text()
+        )["metadata"]
+        assert meta["n_clusters"] == n_paras          # effective value that actually ran
+        assert meta["n_clusters_requested"] == 12     # the request is recorded, not erased
+        assert meta["clamped"] == ["n_clusters"]
+        # The old parameters() returned the constant 16 and lied under clamp; the rail reports effective.
+        assert track.parameters()["alphabet.n_clusters"] == n_paras
+
+    def test_unclamped_run_has_no_clamp_markers(self, small_project):
+        """When the request already fits, no clamp markers appear (clamp flag is honest both ways)."""
+        from palimpsest.tracks.alphabet import AlphabetTrack
+
+        n_paras = small_project.metadata.paragraph_count
+        track = AlphabetTrack()
+        track.set_params({"n_clusters": n_paras})  # exactly fits
+        track.extract(small_project)
+
+        meta = json.loads(
+            (small_project.path / "signals" / "alphabet.json").read_text()
+        )["metadata"]
+        assert meta["n_clusters"] == n_paras
+        assert "n_clusters_requested" not in meta
+        assert "clamped" not in meta
+
+    def test_rejects_out_of_range_and_locked_params(self):
+        """The rail rejects n_clusters above the 16-letter bound and any write to a locked constant."""
+        from palimpsest.tracks.alphabet import AlphabetTrack
+
+        track = AlphabetTrack()
+        track.set_params({"n_clusters": 100})
+        with pytest.raises(ValueError, match="n_clusters.*<= 16"):
+            track.validate_params()
+
+        resolved = AlphabetTrack().validate_params()
+        assert resolved["random_state"] == 42  # locked constant is reported, not hidden
+        assert resolved["n_init"] == 10
+
+        track2 = AlphabetTrack()
+        track2.set_params({"random_state": 99})
+        with pytest.raises(ValueError, match="locked"):
+            track2.validate_params()
+
 
 class TestCoreference:
     def test_properties(self):

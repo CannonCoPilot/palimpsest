@@ -550,6 +550,28 @@ class TestCompartmentsExtractor:
         m = CompartmentsExtractor().manifest()
         assert m["trackName"] == "compartments"
 
+    def test_linalgerror_raises_not_silent_zeros(self, monkeypatch):
+        """B5: a failed eigendecomposition must raise (→ G5 failed-job), not return an all-zero
+        signal that renders as every paragraph in compartment 'A' at confidence 0."""
+        from palimpsest.tracks import compartments
+
+        def _boom(_matrix):
+            raise np.linalg.LinAlgError("eigenvalues did not converge")
+
+        monkeypatch.setattr(np.linalg, "eigh", _boom)
+        sim = np.eye(4, dtype=np.float32)  # n >= 3 so we reach the eigh call
+        with pytest.raises(ValueError, match="eigendecomposition failed"):
+            compartments._compute_compartments(sim)
+
+    def test_too_small_matrix_still_returns_zeros(self):
+        """The n<3 guard is a legitimate too-small input (not a failed computation) and stays a
+        graceful zero vector — distinct from the LinAlgError path above."""
+        from palimpsest.tracks import compartments
+
+        result = compartments._compute_compartments(np.eye(2, dtype=np.float32))
+        assert result.shape == (2,)
+        assert not result.any()
+
 
 class TestTrackParamValidation:
     """G1/G2: tracks declare params (tracks/params.py) and the ParameterizedTrack base derives

@@ -11,17 +11,31 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
+from palimpsest.atomic import atomic_write_text
 from palimpsest.formats.signals import SignalManifest
 from palimpsest.project import Project
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 logger = logging.getLogger(__name__)
 
 N_CLUSTERS = 16
 RANDOM_STATE = 42
+N_INIT = 10
 LETTERS = "ABCDEFGHIJKLMNOP"
 
 
-class AlphabetTrack:
+class AlphabetTrack(ParameterizedTrack):
+    # n_clusters is an analytical knob whose max is the LETTERS alphabet size (16) — a hard
+    # label-index bound, not a tuning preference. random_state/n_init are declared-but-locked
+    # algorithm constants (reported in provenance, not yet user-settable) per the G2 default rule.
+    PARAMS = (
+        Param("n_clusters", int, default=N_CLUSTERS, min=2, max=N_CLUSTERS,
+              help="K-means narrative-state count (2..16; capped at the 16-letter alphabet)"),
+        Param("random_state", int, default=RANDOM_STATE, locked=True,
+              help="RNG seed (reproducibility)"),
+        Param("n_init", int, default=N_INIT, locked=True, help="K-means restarts"),
+    )
+
     @property
     def name(self) -> str:
         return "alphabet"
@@ -96,21 +110,47 @@ class AlphabetTrack:
         else:
             features_scaled = features
 
-        n_clusters = min(N_CLUSTERS, n_paras)
+        cfg = self.resolved_params()
+        random_state = cfg["random_state"]
+        n_init = cfg["n_init"]
+        # Clamp the requested cluster count to feasibility (a corpus of N paragraphs yields at most N
+        # clusters; a 1-paragraph corpus collapses to a single state), then record the EFFECTIVE value
+        # (record-effective policy, §2.3). parameters()/provenance/the manifest now report what actually
+        # ran plus `n_clusters_requested` when it differs — the old parameters() returned the constant
+        # 16 and lied whenever this clamp fired (findings A2/A1).
+        n_clusters = min(cfg["n_clusters"], n_paras)
         if n_clusters < 2:
             sequence = LETTERS[0] * n_paras
+            effective_clusters = 1
         else:
             kmeans = KMeans(
                 n_clusters=n_clusters,
-                random_state=RANDOM_STATE,
-                n_init=10,
+                random_state=random_state,
+                n_init=n_init,
             )
             labels = kmeans.fit_predict(features_scaled)
             sequence = "".join(LETTERS[label] for label in labels)
+            effective_clusters = n_clusters
+        self.record_effective("n_clusters", effective_clusters)
 
         sha = project.metadata.reference_sha256
         signals_dir = project.path / "signals"
         signals_dir.mkdir(parents=True, exist_ok=True)
+
+        metadata: dict[str, Any] = {
+            "n_clusters": effective_clusters,
+            "random_state": random_state,
+            "n_init": n_init,
+            "features": [
+                "sentiment_valence", "lexical_ttr",
+                "dialogue_presence", "topic_weight",
+            ],
+            "sequence": sequence,
+            "note": "K-means structural encoding, complementary to LitHMM passage states",
+        }
+        if cfg["n_clusters"] != effective_clusters:
+            metadata["n_clusters_requested"] = cfg["n_clusters"]
+            metadata["clamped"] = ["n_clusters"]
 
         manifest = SignalManifest(
             type="sequence",
@@ -118,22 +158,13 @@ class AlphabetTrack:
             source="kmeans_narrative_state/0.1",
             reference_sha256=sha,
             dimensions=[n_paras],
-            metadata={
-                "n_clusters": n_clusters if n_paras >= 2 else 1,
-                "random_state": RANDOM_STATE,
-                "features": [
-                    "sentiment_valence", "lexical_ttr",
-                    "dialogue_presence", "topic_weight",
-                ],
-                "sequence": sequence,
-                "note": "K-means structural encoding, complementary to LitHMM passage states",
-            },
+            metadata=metadata,
         )
 
         manifest_path = signals_dir / "alphabet.json"
-        manifest_path.write_text(
+        atomic_write_text(
+            manifest_path,
             json.dumps(manifest.to_dict(), indent=2, ensure_ascii=False),
-            encoding="utf-8",
         )
 
         return manifest_path
@@ -148,10 +179,4 @@ class AlphabetTrack:
                 "scale": [f"hsl({i * 360 // N_CLUSTERS}, 70%, 60%)" for i in range(N_CLUSTERS)],
             },
             "dedicatedView": "barcode",
-        }
-
-    def parameters(self) -> dict[str, Any]:
-        return {
-            "alphabet.n_clusters": N_CLUSTERS,
-            "alphabet.random_state": RANDOM_STATE,
         }
