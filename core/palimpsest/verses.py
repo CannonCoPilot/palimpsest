@@ -275,3 +275,23 @@ def cached_verse_number_intervals(project_dir: Path) -> list[tuple[int, int]] | 
             r = json.loads(line)
             out.append((r["ns"], r["s"]))
     return out
+
+
+def cached_verse_text_spans(project_dir: Path) -> list[tuple[int, int]] | None:
+    """Verse-prose ``[text_start, text_end)`` spans from a project's cached ``tracks/verses.jsonl``,
+    in document order — the verse bodies (number tokens excluded), used as verse-mode chunk units.
+
+    Returns ``None`` if the project has no verse track, so callers can fall back or skip verse-based
+    chunking. Empty spans are dropped.
+    """
+    track_path = project_dir / "tracks" / "verses.jsonl"
+    if not track_path.exists():
+        return None
+    out: list[tuple[int, int]] = []
+    for line in track_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line:
+            r = json.loads(line)
+            if r["e"] > r["s"]:
+                out.append((r["s"], r["e"]))
+    return out

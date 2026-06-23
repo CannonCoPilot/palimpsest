@@ -56,6 +56,8 @@ export default function MaskingPanel(): ReactElement | null {
 
   const enabled = useMaskOverlayStore((s) => s.enabled);
   const setEnabled = useMaskOverlayStore((s) => s.setEnabled);
+  const maskVerseNumbers = useMaskOverlayStore((s) => s.maskVerseNumbers);
+  const setMaskVerseNumbers = useMaskOverlayStore((s) => s.setMaskVerseNumbers);
   const typeOverrides = useMaskOverlayStore((s) => s.typeOverrides);
   const setTypeMask = useMaskOverlayStore((s) => s.setTypeMask);
   const clearOverrides = useMaskOverlayStore((s) => s.clearOverrides);
@@ -88,6 +90,26 @@ export default function MaskingPanel(): ReactElement | null {
         A live overlay — grays text and scopes analysis &amp; subtext export. Does not change the
         saved layout.
       </p>
+
+      {/* Verse-number markers ("C:V.") are a structural layer independent of the section masking
+          above, so this toggle stays interactive even when the master switch is off. */}
+      <button
+        type="button"
+        onClick={() => setMaskVerseNumbers(!maskVerseNumbers)}
+        className="w-full flex items-center gap-2 px-3 py-1.5 text-left text-[0.8em] border-b border-[var(--color-border)] hover:bg-[var(--color-bg-muted)] cursor-pointer"
+        title={maskVerseNumbers ? 'Verse numbers masked (excluded). Click to keep.' : 'Verse numbers kept (analyzed). Click to mask.'}
+      >
+        <span className="truncate flex-1">Verse numbers</span>
+        <span
+          className={`text-[0.72em] px-1.5 py-0.5 rounded ${
+            maskVerseNumbers
+              ? 'bg-[#3a3a3d] text-[#f5f5f5]'
+              : 'bg-[var(--color-success-bg,#e6f4ea)] text-[var(--color-success,#137333)]'
+          }`}
+        >
+          {maskVerseNumbers ? 'Masked' : 'Kept'}
+        </span>
+      </button>
 
       <div className={`flex-1 overflow-y-auto ${enabled ? '' : 'opacity-40 pointer-events-none'}`}>
         {groups.map((g) => (

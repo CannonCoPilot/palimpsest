@@ -180,6 +180,9 @@ class Project:
         # Overrides the on-disk text path for extractors that need a real file (e.g. BookNLP);
         # an analysis view points this at the materialized analyzable text.
         self._text_path: Path | None = None
+        # On an analysis view, the OffsetMap (original→analyzable) so unit boundaries from the
+        # original-coordinate verse index can be projected into the analyzable stream.
+        self._omap: Any = None
 
     def set_mask_override(self, override: dict[str, Any] | None) -> None:
         """Apply a transient masking override to this instance's ``masked_intervals``."""
@@ -261,10 +264,10 @@ class Project:
         """Masked [start,end) ranges excluded from analysis (Step 4 masking).
 
         The masked set is the structural deepest-wins masking UNION the verse-number layer — the
-        "C:V." marker tokens. Verse-number masking is ALWAYS on: even with no layout configured
-        or on-demand masking toggled fully off, the verse-number tokens stay masked (verse prose
-        is untouched). Returns ``[]`` only when there is neither structural masking nor any verse
-        markers.
+        "C:V." marker tokens (verse prose is untouched). Verse-number masking defaults on, since
+        the markers are structural noise, but is a runtime toggle: an on-demand override may set
+        ``mask_verse_numbers: False`` to keep them. With structural masking also off this yields a
+        fully unmasked run. Returns ``[]`` only when nothing is masked at all.
         """
         import dataclasses
 
@@ -273,13 +276,15 @@ class Project:
         if self._pre_masked:
             return []
         text_len = len(self.reference_text())
-        verse_iv = self._verse_intervals()
         cfg = load_layout(self.path)
         ov = self._mask_override
         masking_off = ov is not None and not ov.get("enabled", True)
+        # Verse-number masking defaults on; an explicit override toggle turns it off (R10).
+        mask_verses = ov.get("mask_verse_numbers", True) if ov is not None else True
+        verse_layer = self._verse_intervals() if mask_verses else []
         # No structural masking (none configured, or toggled off) → verse-number layer only.
         if cfg is None or masking_off:
-            return masked_intervals([], {}, text_len, extra_masked=verse_iv)
+            return masked_intervals([], {}, text_len, extra_masked=verse_layer)
         sections, mask_by_type = cfg.sections, cfg.mask_by_type
         if ov is not None:
             if ov.get("mask_by_type"):
@@ -289,7 +294,7 @@ class Project:
                 sections = [
                     dataclasses.replace(s, masked=sm[s.id]) if s.id in sm else s for s in cfg.sections
                 ]
-        return masked_intervals(sections, mask_by_type, text_len, extra_masked=verse_iv)
+        return masked_intervals(sections, mask_by_type, text_len, extra_masked=verse_layer)
 
     def analyzable_text(self, sep: str | None = None) -> tuple[str, Any]:
         """The masked-resolved analyzable text plus an :class:`~palimpsest.derive.OffsetMap`.
@@ -317,7 +322,29 @@ class Project:
         view._text_cache = atext
         view._pre_masked = True
         view._verse_iv_cache = []  # nothing left to mask in the resolved text
+        view._omap = omap  # lets verse-based chunking project verse units into analyzable coords
         return view, omap
+
+    def analyzable_verse_spans(self) -> list[tuple[int, int]]:
+        """Verse-prose spans projected into THIS analysis view's analyzable coordinates, in order.
+
+        Reads the project's verse index (original coordinates) and maps each verse body through the
+        view's OffsetMap (original→analyzable, spanning any internal excised gaps). Returns ``[]``
+        when this is not an analysis view or the project has no verse index, so verse/smart-verse
+        chunking can log and fall back rather than silently masking missing data."""
+        omap = self._omap
+        if omap is None:
+            return []
+        from palimpsest.verses import cached_verse_text_spans
+        spans = cached_verse_text_spans(self.path)
+        if not spans:
+            return []
+        out: list[tuple[int, int]] = []
+        for s, e in spans:
+            m = omap.remap_element(s, e)
+            if m is not None and m[1] > m[0]:
+                out.append(m)
+        return out
 
     def close_analysis_view(self) -> None:
         """Remove the lazily-materialized analyzable-text temp file backing an analysis view."""

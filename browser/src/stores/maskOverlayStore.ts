@@ -17,6 +17,7 @@ import type { LayoutSection } from '../utils/sectionMasking';
 interface MaskOverlayState {
   projectId: string | null;
   enabled: boolean;
+  maskVerseNumbers: boolean; // verse-number "C:V." markers; top-level switch (default on), like `enabled`
   typeOverrides: Record<string, boolean>; // type -> masked (overrides persisted mask_by_type)
   sectionOverrides: Record<string, boolean>; // sectionId -> masked (per-element, Stage 2)
   extractionTypes: string[]; // type-layers whose spans form a derived subtext
@@ -24,6 +25,7 @@ interface MaskOverlayState {
   setProject: (projectId: string | null) => void;
   setEnabled: (enabled: boolean) => void;
   toggleEnabled: () => void;
+  setMaskVerseNumbers: (on: boolean) => void;
   setTypeMask: (type: string, masked: boolean) => void;
   clearTypeMask: (type: string) => void;
   setSectionMask: (id: string, masked: boolean) => void;
@@ -56,6 +58,9 @@ export const useMaskOverlayStore = create<MaskOverlayState>()((set) => ({
   // On by default so the saved layout's masking shows as before (with no overrides the
   // overlay is identical to the persisted state); turning it off reveals everything.
   enabled: true,
+  // Verse-number markers are masked by default (structural noise); a top-level toggle, separate
+  // from the structural `enabled` switch, so a fully unmasked run is reachable by turning both off.
+  maskVerseNumbers: true,
   typeOverrides: {},
   sectionOverrides: {},
   extractionTypes: [],
@@ -65,11 +70,12 @@ export const useMaskOverlayStore = create<MaskOverlayState>()((set) => ({
     set((s) =>
       s.projectId === projectId
         ? s
-        : { projectId, enabled: true, typeOverrides: {}, sectionOverrides: {}, extractionTypes: [] },
+        : { projectId, enabled: true, maskVerseNumbers: true, typeOverrides: {}, sectionOverrides: {}, extractionTypes: [] },
     ),
 
   setEnabled: (enabled) => set({ enabled }),
   toggleEnabled: () => set((s) => ({ enabled: !s.enabled })),
+  setMaskVerseNumbers: (maskVerseNumbers) => set({ maskVerseNumbers }),
 
   setTypeMask: (type, masked) => set((s) => ({ typeOverrides: { ...s.typeOverrides, [type]: masked } })),
   clearTypeMask: (type) =>

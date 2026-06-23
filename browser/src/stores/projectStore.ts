@@ -220,14 +220,8 @@ export const useProjectStore = create<ProjectStoreState>()((set, get) => ({
       }));
 
       await setupTrackStates(baseUrl, projectId, projectData.tracks);
-
-      // Eagerly prepare self-similarity at the default chunk sizes. The endpoint
-      // is idempotent and only queues when embeddings exist and it hasn't been
-      // computed yet, so this is a safe fire-and-forget kick — never awaited, so
-      // it can't delay or fail the project load.
-      void fetch(`${baseUrl}/api/projects/${projectId}/analyze/self_similarity/auto_run`, {
-        method: 'POST',
-      }).catch((err) => console.warn('auto_run self_similarity failed:', err));
+      // Self-similarity is no longer auto-queued on load: analysis runs only when the user
+      // explicitly requests it with explicit chunking + embedding parameters.
     } catch (err) {
       set({
         error: err instanceof Error ? err.message : 'Unknown error',
