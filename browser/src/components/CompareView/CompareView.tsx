@@ -26,8 +26,16 @@ interface ProjectOption {
   author: string;
 }
 
+interface CollectionOption {
+  id: string;
+  label: string;
+  project_ids: string[];
+}
+
 function CompareProjectPicker({ onSelect }: { onSelect: (id: string) => void }) {
   const [projects, setProjects] = useState<ProjectOption[]>([]);
+  const [collections, setCollections] = useState<CollectionOption[]>([]);
+  const [scope, setScope] = useState<string>(''); // '' = all texts, else a collection id
   const [fetchError, setFetchError] = useState(false);
   const activeProjectId = useProjectStore((s) => s.activeProjectId);
 
@@ -39,25 +47,59 @@ function CompareProjectPicker({ onSelect }: { onSelect: (id: string) => void }) 
       .catch(() => setFetchError(true));
   }, [activeProjectId]);
 
+  useEffect(() => {
+    fetch('/api/collections')
+      .then((r) => (r.ok ? r.json() : []))
+      .then((data: CollectionOption[]) => setCollections(data))
+      .catch(() => setCollections([]));
+  }, []);
+
+  // Default the scope to a collection containing the active project, so a parent text and
+  // its subtexts are pre-narrowed for co-analysis.
+  useEffect(() => {
+    if (!scope && activeProjectId) {
+      const owning = collections.find((c) => c.project_ids.includes(activeProjectId));
+      if (owning) setScope(owning.id);
+    }
+  }, [collections, activeProjectId, scope]);
+
   if (fetchError) {
     return <span className="text-[var(--color-danger)] text-[0.85em]">Failed to load projects</span>;
   }
 
-  if (projects.length === 0) {
-    return <span className="text-[var(--color-text-muted)] text-[0.85em]">No other projects available for comparison</span>;
-  }
+  const memberIds = scope ? new Set(collections.find((c) => c.id === scope)?.project_ids ?? []) : null;
+  const options = projects.filter((p) => !memberIds || memberIds.has(p.id));
 
   return (
-    <select
-      onChange={(e) => { if (e.target.value) onSelect(e.target.value); }}
-      defaultValue=""
-      className="px-2 py-1 border border-[var(--color-border)] rounded bg-[var(--color-bg)] text-[0.85em] cursor-pointer"
-    >
-      <option value="" disabled>Select text to compare...</option>
-      {projects.map((p) => (
-        <option key={p.id} value={p.id}>{p.title}{p.author ? ` — ${p.author}` : ''}</option>
-      ))}
-    </select>
+    <div className="flex items-center gap-1.5">
+      {collections.length > 0 && (
+        <select
+          value={scope}
+          onChange={(e) => setScope(e.target.value)}
+          title="Scope to a collection"
+          className="px-2 py-1 border border-[var(--color-border)] rounded bg-[var(--color-bg)] text-[0.85em] cursor-pointer"
+        >
+          <option value="">All texts</option>
+          {collections.map((c) => (
+            <option key={c.id} value={c.id}>{c.label}</option>
+          ))}
+        </select>
+      )}
+      {options.length === 0 ? (
+        <span className="text-[var(--color-text-muted)] text-[0.85em]">No other texts {scope ? 'in this collection' : 'available'}</span>
+      ) : (
+        <select
+          onChange={(e) => { if (e.target.value) onSelect(e.target.value); }}
+          defaultValue=""
+          className="px-2 py-1 border border-[var(--color-border)] rounded bg-[var(--color-bg)] text-[0.85em] cursor-pointer"
+        >
+          <option value="" disabled>Select text to compare...</option>
+          {options.map((p) => (
+            <option key={p.id} value={p.id}>{p.title}{p.author ? ` — ${p.author}` : ''}</option>
+          ))}
+        </select>
+      )}
+    </div>
   );
 }
 

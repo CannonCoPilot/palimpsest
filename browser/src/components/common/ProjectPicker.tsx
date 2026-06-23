@@ -29,6 +29,15 @@ interface ProjectEntry {
   source_file?: string;
 }
 
+interface CollectionEntry {
+  id: string;
+  label: string;
+  description: string;
+  project_ids: string[];
+  kind: string;
+  project_count: number;
+}
+
 // Curated rich/muted [from, to] gradient pairs — Books-like, not random HSL.
 const COVER_PALETTE: ReadonlyArray<readonly [string, string]> = [
   ['#3a6ea5', '#1f3d63'], // blue
@@ -499,6 +508,8 @@ export default function ProjectPicker(): ReactElement {
   const [resumeProject, setResumeProject] = useState<string | null>(null);
   const [page, setPage] = useState<'home' | 'library' | 'store'>('home');
   const [pendingTab, setPendingTab] = useState<TabId | null>(null);
+  const [collections, setCollections] = useState<CollectionEntry[]>([]);
+  const [activeCollection, setActiveCollection] = useState<CollectionEntry | null>(null);
   const loadProject = useProjectStore((s) => s.loadProject);
 
   useEffect(() => {
@@ -515,7 +526,33 @@ export default function ProjectPicker(): ReactElement {
         setError(err.message);
         setLoading(false);
       });
+    fetch('/api/collections')
+      .then((r) => (r.ok ? r.json() : []))
+      .then((data: CollectionEntry[]) => setCollections(data))
+      .catch(() => setCollections([]));
   }, []);
+
+  async function createCollection(): Promise<void> {
+    const label = window.prompt('New collection name');
+    if (!label || !label.trim()) return;
+    try {
+      const res = await fetch('/api/collections', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ label: label.trim() }),
+      });
+      if (res.ok) {
+        const col = await res.json();
+        setCollections((prev) => [...prev, { ...col, project_count: (col.project_ids ?? []).length }]);
+      }
+    } catch { /* ignore */ }
+  }
+
+  function openCollection(col: CollectionEntry): void {
+    setActiveCollection(col);
+    setPage('library');
+    setPendingTab(null);
+  }
 
   // Open a text. If a tool was chosen on Home, land directly in that component.
   function handleSelect(id: string, tab: TabId | null = pendingTab): void {
@@ -534,6 +571,7 @@ export default function ProjectPicker(): ReactElement {
   }
 
   function goLibrary(): void {
+    setActiveCollection(null);
     setPage('library');
   }
 
@@ -592,12 +630,15 @@ export default function ProjectPicker(): ReactElement {
   const pendingToolLabel = pendingTab ? TOOLS.find((t) => t.tab === pendingTab)?.label : null;
 
   const filtered = useMemo(() => {
+    const base = activeCollection
+      ? projects.filter((p) => activeCollection.project_ids.includes(p.id))
+      : projects;
     const q = query.trim().toLowerCase();
-    if (!q) return projects;
-    return projects.filter(
+    if (!q) return base;
+    return base.filter(
       (p) => p.title.toLowerCase().includes(q) || p.author.toLowerCase().includes(q),
     );
-  }, [projects, query]);
+  }, [projects, query, activeCollection]);
 
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-[#1c1c1e] text-[#e8e8ea] font-[var(--font-sans)]">
@@ -624,7 +665,7 @@ export default function ProjectPicker(): ReactElement {
           <NavRow icon="store" label="Book Store" active={page === 'store'} onClick={goStore} />
 
           <SectionLabel>Library</SectionLabel>
-          <NavRow icon="library" label="All" active={page === 'library'} onClick={goLibrary} />
+          <NavRow icon="library" label="All" active={page === 'library' && !activeCollection} onClick={goLibrary} />
           <NavRow icon="wantToRead" label="Started" />
           <NavRow icon="finished" label="Finished" />
           <NavRow icon="book" label="Novels" />
@@ -633,7 +674,16 @@ export default function ProjectPicker(): ReactElement {
           <NavRow icon="users" label="Scholars" />
 
           <SectionLabel>My Collections</SectionLabel>
-          <NavRow icon="plus" label="New Collection" onClick={() => setShowImport(true)} />
+          {collections.map((c) => (
+            <NavRow
+              key={c.id}
+              icon={c.kind === 'derived' ? 'book' : 'columns'}
+              label={`${c.label} (${c.project_count})`}
+              active={activeCollection?.id === c.id}
+              onClick={() => openCollection(c)}
+            />
+          ))}
+          <NavRow icon="plus" label="New Collection" onClick={createCollection} />
         </nav>
 
         <div className="flex items-center gap-2.5 px-4 py-3 border-t border-white/10">
@@ -648,7 +698,7 @@ export default function ProjectPicker(): ReactElement {
       <main className="flex-1 overflow-y-auto">
         <div className="flex items-start justify-between px-10 pt-6">
           <h1 className="text-[34px] font-bold tracking-tight text-white">
-            {page === 'home' ? 'Home' : page === 'store' ? 'Book Store' : 'All'}
+            {page === 'home' ? 'Home' : page === 'store' ? 'Book Store' : activeCollection ? activeCollection.label : 'All'}
           </h1>
           <button
             type="button"
