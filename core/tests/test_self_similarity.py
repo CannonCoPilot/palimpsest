@@ -6,6 +6,8 @@ import numpy as np
 import pytest
 
 from palimpsest.tracks.self_similarity import (
+    LASTZ_SMALL_SAMPLE_THRESHOLD,
+    LOCKED_CONSTANTS,
     METRICS,
     SelfSimilarityTrack,
     _build_word_positions,
@@ -122,13 +124,41 @@ class TestCalibrateThreshold:
     def test_small_input_fallback(self):
         chunks = [{"words": ["a"]}] * 5
         threshold = _calibrate_threshold(chunks)
-        assert threshold == 0.3
+        # the small-sample fallback is the declared LOCKED_CONSTANT, not a magic literal
+        assert threshold == LASTZ_SMALL_SAMPLE_THRESHOLD
 
     def test_deterministic(self):
         chunks = [{"words": ["word", str(i), "test", "the", "and"]} for i in range(50)]
         t1 = _calibrate_threshold(chunks, n_samples=200)
         t2 = _calibrate_threshold(chunks, n_samples=200)
         assert t1 == t2
+
+
+class TestLockedConstants:
+    """The LASTZ calibration + repeat-masking cutoffs are declared and reported, not hidden function
+    defaults (audit A3 / design §6 — locked ≠ hidden)."""
+
+    def test_parameters_report_locked_constants(self):
+        params = SelfSimilarityTrack().parameters()
+        assert params["self_similarity.locked_constants"] == LOCKED_CONSTANTS
+        # the cutoffs that decide the alignment threshold and what text is masked are visible
+        assert LOCKED_CONSTANTS["calibration"]["percentile"] == 0.95
+        assert LOCKED_CONSTANTS["masking"]["coverage_threshold"] == 0.5
+
+    def test_provenance_exposes_constants_bare(self):
+        from palimpsest.tracks.params import track_provenance
+
+        # track_provenance runs post-run via validate_params(); give it a valid embedding-free config
+        # (word_overlap + edit_distance need no embeddings) so validation passes as it would after a run.
+        track = SelfSimilarityTrack()
+        track.set_params({
+            "metrics": ["word_overlap", "edit_distance"],
+            "chunk_mode": "word",
+            "chunk_size": 7,
+        })
+        prov = track_provenance(track)
+        # prefix stripped — the run record reconstructs the cutoffs that produced the matrix (P3)
+        assert prov["locked_constants"] == LOCKED_CONSTANTS
 
 
 class TestEditDistanceTokens:

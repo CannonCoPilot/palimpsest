@@ -53,6 +53,37 @@ DEFAULT_CHUNK_SIZE = 7
 # warn-only — the run proceeds as the user requested rather than silently skipping.
 WARN_MATRIX_DIM = 16000
 
+# Locked analytical constants (G2 / design §6): these change the result for a fixed input — they set
+# the LASTZ alignment cutoff and decide which text is masked out of analysis — so they must be
+# DECLARED and REPORTED, not buried as function-default magic numbers (audit A3). They are not yet
+# user-tunable ("locked"), but parameters() and the signal manifest now report them, so a run is
+# reconstructible and the cutoffs are auditable. Surfaced as LOCKED_CONSTANTS below.
+LASTZ_CALIBRATION_SEED = 42            # RNG seed for the shuffled-pair null distribution
+LASTZ_CALIBRATION_SAMPLES = 1000       # number of shuffled pseudo-chunk pairs sampled
+LASTZ_CALIBRATION_PERCENTILE = 0.95    # percentile of the null distribution used as the cutoff
+LASTZ_THRESHOLD_FLOOR = 0.1            # minimum identity threshold (floor under the calibrated p95)
+LASTZ_SMALL_SAMPLE_THRESHOLD = 0.3     # fallback threshold when there is too little text to calibrate
+EXACT_REPEAT_MIN_WORDS = 3             # shortest repeated phrase considered for masking
+EXACT_REPEAT_MIN_OCCURRENCES = 3       # times a phrase must recur to count as a repeat
+MASK_COVERAGE_THRESHOLD = 0.5          # fraction of a chunk's content covered by repeats to mask it
+
+# The declared-and-reported view of the locked constants above, grouped by role. Reported in
+# parameters() (→ {track}.run.json provenance) and written into the signal manifest metadata.
+LOCKED_CONSTANTS: dict[str, dict[str, float]] = {
+    "calibration": {
+        "seed": LASTZ_CALIBRATION_SEED,
+        "samples": LASTZ_CALIBRATION_SAMPLES,
+        "percentile": LASTZ_CALIBRATION_PERCENTILE,
+        "threshold_floor": LASTZ_THRESHOLD_FLOOR,
+        "small_sample_threshold": LASTZ_SMALL_SAMPLE_THRESHOLD,
+    },
+    "masking": {
+        "exact_repeat_min_words": EXACT_REPEAT_MIN_WORDS,
+        "exact_repeat_min_occurrences": EXACT_REPEAT_MIN_OCCURRENCES,
+        "coverage_threshold": MASK_COVERAGE_THRESHOLD,
+    },
+}
+
 # Back-compat aliases — the canonical chunker and word tokeniser now live in chunking.py.
 _chunk_text = chunk_words
 _build_word_positions = build_word_positions
@@ -237,23 +268,28 @@ def _find_local_optima(matrix: np.ndarray, k: int, min_gap: int = 3) -> list[tup
     return optima
 
 
-def _calibrate_threshold(chunks: list[dict[str, Any]], n_samples: int = 1000) -> float:
+def _calibrate_threshold(
+    chunks: list[dict[str, Any]], n_samples: int = LASTZ_CALIBRATION_SAMPLES
+) -> float:
     """Empirically calibrate identity threshold from shuffled pseudo-chunk pairs.
     Shuffles the full word list and takes contiguous slices to build a true
-    null distribution (no text-order preservation). Returns the 95th percentile."""
-    rng = np.random.default_rng(42)
+    null distribution (no text-order preservation). Returns the calibrated percentile.
+
+    All cutoffs/seeds are the declared LOCKED_CONSTANTS (audit A3): the cutoff this returns
+    decides which alignments survive, so it is reported, not hidden."""
+    rng = np.random.default_rng(LASTZ_CALIBRATION_SEED)
     n = len(chunks)
     if n < 10:
-        return 0.3
+        return LASTZ_SMALL_SAMPLE_THRESHOLD
 
     all_words: list[str] = []
     for c in chunks:
         all_words.extend(c["words"])
 
     if len(all_words) < 20:
-        return 0.3
+        return LASTZ_SMALL_SAMPLE_THRESHOLD
 
-    chunk_size = len(chunks[0]["words"]) if chunks else 17
+    chunk_size = len(chunks[0]["words"]) if chunks else DEFAULT_CHUNK_SIZE
     scores: list[float] = []
 
     for _ in range(n_samples):
@@ -264,9 +300,9 @@ def _calibrate_threshold(chunks: list[dict[str, Any]], n_samples: int = 1000) ->
         scores.append(identity)
 
     scores.sort()
-    p95 = scores[int(len(scores) * 0.95)]
+    p95 = scores[int(len(scores) * LASTZ_CALIBRATION_PERCENTILE)]
     logger.info("LASTZ threshold calibrated: 95th pct = %.3f (from %d shuffled pairs)", p95, n_samples)
-    return max(p95, 0.1)
+    return max(p95, LASTZ_THRESHOLD_FLOOR)
 
 
 def _char_identity(a: str, b: str) -> float:
@@ -532,8 +568,8 @@ def _extend_alignment(
 def _find_exact_repeats(
     text: str,
     chunks: list[dict[str, Any]],
-    min_words: int = 3,
-    min_occurrences: int = 3,
+    min_words: int = EXACT_REPEAT_MIN_WORDS,
+    min_occurrences: int = EXACT_REPEAT_MIN_OCCURRENCES,
 ) -> set[str]:
     """Build a phrase-occurrence index from all chunks and return the set of
     contiguous word sequences (of length min_words to chunk_size) that appear
@@ -618,7 +654,7 @@ def _mask_repeats(
             1 for t, cov in zip(tokens, covered)
             if cov and t and t not in STOPWORDS and len(t) > 1
         )
-        chunk["masked"] = covered_content / len(content_tokens) > 0.5
+        chunk["masked"] = covered_content / len(content_tokens) > MASK_COVERAGE_THRESHOLD
 
     masked_count = sum(1 for c in chunks if c.get("masked"))
     if masked_count:
@@ -1311,6 +1347,9 @@ class SelfSimilarityTrack:
                 "formulaic_patterns": _derive_formulaic_patterns(
                     primary_chunks, set(exact_repeats_list)
                 ) if exact_repeats_list else [],
+                # The LASTZ calibration + repeat-masking cutoffs that produced this matrix, recorded so
+                # the stored artifact alone reconstructs the run (P3) and the cutoffs are auditable (P1).
+                "locked_constants": LOCKED_CONSTANTS,
             },
         }
         manifest_path = signals_dir / "self_similarity.json"
@@ -1346,6 +1385,10 @@ class SelfSimilarityTrack:
             "self_similarity.embed_endpoint": self._embed_endpoint,
             "self_similarity.embed_model": self._embed_model,
             "self_similarity.embed_batch_size": self._embed_batch_size,
+            # Locked analytical constants (LASTZ calibration + repeat-masking cutoffs): declared and
+            # reported, not user-settable yet (G2). Without this they were hidden function defaults
+            # that silently decided the alignment cutoff and what text gets masked (audit A3/P1/P5).
+            "self_similarity.locked_constants": LOCKED_CONSTANTS,
         }
         if self._chunk_mode == "smart":
             params["self_similarity.smart_unit"] = self._smart_unit
