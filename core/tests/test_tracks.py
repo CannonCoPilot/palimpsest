@@ -449,3 +449,106 @@ class TestCompartmentsExtractor:
         from palimpsest.tracks.compartments import CompartmentsExtractor
         m = CompartmentsExtractor().manifest()
         assert m["trackName"] == "compartments"
+
+
+class TestTrackParamValidation:
+    """G1/G2: tracks declare params (tracks/params.py) and the ParameterizedTrack base derives
+    store-raw / coerce-to-400 / reject-unknown / range/choice validation / one resolved_params source.
+    Validation rejects out-of-range/unknown values; locked analytical constants are reported, not
+    hidden; set_params stores verbatim and validate_params raises ValueError (→ HTTP 400)."""
+
+    def test_lithmm_rejects_out_of_range_n_states(self):
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+        ext = LitHMMExtractor()
+        ext.set_params({"n_states": 100})
+        assert ext._raw_params["n_states"] == 100  # stored verbatim, not clamped to 20
+        with pytest.raises(ValueError, match="n_states.*<= 20"):
+            ext.validate_params()
+        ext.set_params({"n_states": 1})
+        with pytest.raises(ValueError, match="n_states.*>= 2"):
+            ext.validate_params()
+
+    def test_lithmm_accepts_in_range_n_states(self):
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+        ext = LitHMMExtractor()
+        ext.set_params({"n_states": 8})
+        resolved = ext.validate_params()
+        assert resolved["n_states"] == 8
+        # G2: the previously-hidden HMM constants are now declared and reported (not settable).
+        assert resolved["random_state"] == 42
+        assert resolved["n_iter"] == 100
+        assert resolved["n_init"] == 10
+
+    def test_lithmm_constructor_arg_flows_through_validation(self):
+        from palimpsest.tracks.lithmm import LitHMMExtractor
+        assert LitHMMExtractor(n_states=3).validate_params()["n_states"] == 3
+
+    def test_topics_rejects_out_of_range_and_unknown_method(self):
+        ext = TopicsExtractor()
+        ext.set_params({"n_topics": 999})
+        with pytest.raises(ValueError, match="n_topics.*<= 50"):
+            ext.validate_params()
+        ext2 = TopicsExtractor()
+        ext2.set_params({"n_topics": 5, "method": "bogus"})
+        with pytest.raises(ValueError, match="'method'"):
+            ext2.validate_params()
+
+    def test_topics_accepts_valid_and_reports_locked_constants(self):
+        ext = TopicsExtractor()
+        ext.set_params({"n_topics": 12, "method": "nmf"})
+        resolved = ext.validate_params()
+        assert resolved["n_topics"] == 12
+        assert resolved["method"] == "nmf"
+        # G2: random_state/max_iter/min_df/max_features are declared+reported, no longer hidden.
+        assert resolved["random_state"] == 42
+        assert resolved["max_features"] == 10_000
+
+    def test_sentiment_rejects_unknown_method_and_granularity(self):
+        ext = SentimentExtractor()
+        ext.set_params({"method": "bogus"})
+        with pytest.raises(ValueError, match="'method'"):
+            ext.validate_params()
+        ext2 = SentimentExtractor()
+        ext2.set_params({"granularity": "word"})
+        with pytest.raises(ValueError, match="'granularity'"):
+            ext2.validate_params()
+
+    def test_sentiment_accepts_valid(self):
+        ext = SentimentExtractor()
+        ext.set_params({"method": "hedonometer", "granularity": "paragraph"})
+        assert ext.validate_params() == {"method": "hedonometer", "granularity": "paragraph"}
+
+    def test_unknown_param_rejected(self):
+        """G1 (A4): an undeclared parameter is a 400, not a silent no-op."""
+        ext = TopicsExtractor()
+        ext.set_params({"n_topics": 5, "bogus_param": 7})
+        with pytest.raises(ValueError, match="unknown parameter"):
+            ext.validate_params()
+
+    def test_locked_param_cannot_be_set(self):
+        """G2: a locked analytical constant rejects a write attempt (it is reported, not tunable)."""
+        ext = TopicsExtractor()
+        ext.set_params({"random_state": 7})
+        with pytest.raises(ValueError, match="locked"):
+            ext.validate_params()
+
+    def test_non_numeric_value_is_400_not_500(self):
+        """G1 (A5): a bad numeric coerces to a clean ValueError (→400), not an uncaught TypeError."""
+        ext = TopicsExtractor()
+        ext.set_params({"n_topics": "not-a-number"})
+        with pytest.raises(ValueError, match="n_topics.*int"):
+            ext.validate_params()
+
+    def test_force_is_reserved_not_a_param(self):
+        """The framework 'force' key is accepted and ignored, never echoed as a track param."""
+        ext = TopicsExtractor()
+        ext.set_params({"n_topics": 5, "force": True})
+        resolved = ext.validate_params()
+        assert "force" not in resolved
+        assert resolved["n_topics"] == 5
+
+    def test_parameters_namespaced_matches_resolved(self):
+        """parameters() (pipeline_run.json view) is the namespaced resolved_params — one source."""
+        ext = TopicsExtractor()
+        ext.set_params({"n_topics": 6})
+        assert ext.parameters()["topics.n_topics"] == ext.resolved_params()["n_topics"] == 6

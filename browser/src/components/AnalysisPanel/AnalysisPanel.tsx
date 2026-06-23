@@ -9,16 +9,23 @@ import { useMaskOverlayStore } from '../../stores/maskOverlayStore';
  * set, so cached results must not be reused).
  */
 function maskOverrideInit(): { init: RequestInit; override: boolean } {
-  const { enabled, typeOverrides, sectionOverrides } = useMaskOverlayStore.getState();
+  const { enabled, maskVerseNumbers, typeOverrides, sectionOverrides } = useMaskOverlayStore.getState();
   const hasOverrides =
     Object.keys(typeOverrides).length > 0 || Object.keys(sectionOverrides).length > 0;
-  if (enabled && !hasOverrides) return { init: { method: 'POST' }, override: false };
+  // Defaults (enabled, verse-masking on, no per-type/element overrides) match the saved layout, so
+  // no body is sent. Turning verse masking off changes the masked set, so it forces an override run.
+  if (enabled && maskVerseNumbers && !hasOverrides) return { init: { method: 'POST' }, override: false };
   return {
     init: {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        mask_override: { enabled, mask_by_type: typeOverrides, section_masked: sectionOverrides },
+        mask_override: {
+          enabled,
+          mask_verse_numbers: maskVerseNumbers,
+          mask_by_type: typeOverrides,
+          section_masked: sectionOverrides,
+        },
       }),
     },
     override: true,
@@ -33,6 +40,27 @@ function analyzeQuery(params: Record<string, string | number> | undefined, force
   return qs ? `?${qs}` : '';
 }
 
+// Embedding config is user-defined-at-runtime with NO code defaults. Fields start empty and are
+// seeded only from the user's own last-used values, persisted here. (Not a default — it is the
+// user's prior explicit choice, surfaced for convenience.)
+const EMBED_LS_KEY = 'palimpsest:embedConfig';
+interface SavedEmbedConfig { provider: string; endpoint: string; model: string; batchSize: string; }
+function loadEmbedConfig(): Partial<SavedEmbedConfig> {
+  try {
+    const raw = localStorage.getItem(EMBED_LS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+function saveEmbedConfig(cfg: SavedEmbedConfig): void {
+  try {
+    localStorage.setItem(EMBED_LS_KEY, JSON.stringify(cfg));
+  } catch {
+    /* persistence is best-effort; a blocked localStorage must not break analysis */
+  }
+}
+
 interface TrackStatus {
   name: string;
   status: 'pending' | 'computed' | 'running' | 'failed';
@@ -41,6 +69,9 @@ interface TrackStatus {
   evidenceLevel: string;
   hasManifest: boolean;
   lfoTypes: string[];
+  // Present only on a failed run — the real error message from the backend (B2/G5). Rendered so the
+  // user is told why a run failed instead of a silent revert to "pending".
+  error?: string;
 }
 
 const STATUS_ICONS: Record<string, { icon: string; color: string; label: string }> = {
@@ -145,7 +176,9 @@ interface TrackParam {
 
 const TRACK_PARAMS: Record<string, TrackParam[]> = {
   lithmm: [
-    { key: 'n_states', label: 'Number of states', type: 'number', default: 5, min: 2, max: 20 },
+    // Default matches the backend's DEFAULT_N_STATES (10) so the interactive default and the
+    // batch/manifest default don't diverge.
+    { key: 'n_states', label: 'Number of states', type: 'number', default: 10, min: 2, max: 20 },
   ],
   topics: [
     { key: 'n_topics', label: 'Number of topics', type: 'number', default: 10, min: 2, max: 50 },
@@ -153,13 +186,9 @@ const TRACK_PARAMS: Record<string, TrackParam[]> = {
       { label: 'LDA', value: 'lda' }, { label: 'NMF', value: 'nmf' },
     ]},
   ],
-  self_similarity: [
-    { key: 'metric', label: 'Similarity metric', type: 'select', default: 'cosine', options: [
-      { label: 'Cosine', value: 'cosine' }, { label: 'Jaccard', value: 'jaccard' },
-      { label: 'Word overlap', value: 'word_overlap' }, { label: 'Edit distance', value: 'edit_distance' },
-    ]},
-    { key: 'chunk_size', label: 'Chunk size (words)', type: 'number', default: 17, min: 5, max: 25 },
-  ],
+  // self_similarity is configured by the dedicated SelfSimilarityParamDialog (chunking + embedding
+  // params), not this generic schema.
+  self_similarity: [],
   sentiment: [
     { key: 'method', label: 'Method', type: 'select', default: 'vader', options: [
       { label: 'VADER', value: 'vader' }, { label: 'Hedonometer', value: 'hedonometer' },
@@ -177,6 +206,24 @@ const SIMILARITY_METRICS = [
   { key: 'edit_distance', label: 'Edit distance', description: 'Token-level Levenshtein + LASTZ alignment' },
 ];
 
+// Chunking modes the self-similarity consumer supports today. The chunking stage also implements
+// "verse" and "punctuation"; those need the self-similarity redesign before this consumer accepts
+// them, so they are intentionally not offered here (the backend rejects them with a clear message).
+const CHUNK_MODE_OPTIONS = [
+  { value: 'word', label: 'Word (fixed, non-overlapping)' },
+  { value: 'slide', label: 'Slide (overlapping, even ≥10)' },
+  { value: 'smart', label: 'Smart (grown per unit)' },
+];
+const SMART_UNIT_OPTIONS = [
+  { value: 'paragraph', label: 'Paragraph' },
+  { value: 'sentence', label: 'Sentence' },
+  { value: 'verse', label: 'Verse' },
+];
+const EMBED_PROVIDER_OPTIONS = [
+  { value: 'mlx', label: 'MLX' },
+  { value: 'ollama', label: 'Ollama' },
+];
+
 function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
   onRun: (params: Record<string, string | number>) => void;
   onCancel: () => void;
@@ -185,11 +232,25 @@ function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
   const [metricEnabled, setMetricEnabled] = useState<Record<string, boolean>>({
     cosine: true, jaccard: true, word_overlap: true, edit_distance: true,
   });
+  const [chunkMode, setChunkMode] = useState('word');
   const [chunkSizes, setChunkSizes] = useState<Record<string, number>>({
-    cosine: 17, jaccard: 17, word_overlap: 17, edit_distance: 17,
+    cosine: 7, jaccard: 7, word_overlap: 7, edit_distance: 7,
   });
   const [useSharedSize, setUseSharedSize] = useState(true);
-  const [sharedSize, setSharedSize] = useState(17);
+  const [sharedSize, setSharedSize] = useState(7);
+  // Smart-mode parameters (sent only when chunkMode === 'smart').
+  const [smartUnit, setSmartUnit] = useState('paragraph');
+  const [growFactor, setGrowFactor] = useState(2);
+  const [remainderRatio, setRemainderRatio] = useState(0.6);
+  // Analyzable-stream separator inserted between kept (unmasked) spans. Empty = pure excision
+  // (masked spans vanish "as if not there"); sent explicitly so it is never a hidden backend default.
+  const [analyzableSep, setAnalyzableSep] = useState('');
+  // Embedding parameters — required at runtime with NO code defaults. Fields start empty and are
+  // seeded only from the user's own last-used values (localStorage), then sent explicitly.
+  const [embedProvider, setEmbedProvider] = useState(() => loadEmbedConfig().provider ?? '');
+  const [embedEndpoint, setEmbedEndpoint] = useState(() => loadEmbedConfig().endpoint ?? '');
+  const [embedModel, setEmbedModel] = useState(() => loadEmbedConfig().model ?? '');
+  const [embedBatchSize, setEmbedBatchSize] = useState(() => loadEmbedConfig().batchSize ?? '');
   const [availableSizes, setAvailableSizes] = useState<number[]>([]);
 
   useEffect(() => {
@@ -200,23 +261,51 @@ function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
       .catch(() => {});
   }, [projectId]);
 
+  const enabledMetrics = Object.entries(metricEnabled).filter(([, v]) => v).map(([k]) => k);
+  const anyEnabled = enabledMetrics.length > 0;
+  // Embedding is required exactly when cosine or jaccard is selected (mirrors the backend's
+  // self_similarity.validate_params); only then are the fields sent and required-to-be-complete.
+  const needsEmbedding = enabledMetrics.some(m => m === 'cosine' || m === 'jaccard');
+  const embeddingComplete =
+    embedProvider.trim() !== '' && embedEndpoint.trim() !== '' &&
+    embedModel.trim() !== '' && embedBatchSize.trim() !== '';
+  const canRun = anyEnabled && (!needsEmbedding || embeddingComplete);
+
   const handleRun = () => {
+    if (!canRun) return;
     const params: Record<string, string | number> = {};
-    const enabled = Object.entries(metricEnabled).filter(([, v]) => v).map(([k]) => k);
-    if (enabled.length === 0) return;
-    params.metrics = enabled.join(',');
+    params.metrics = enabledMetrics.join(',');
+    params.analyzable_sep = analyzableSep;
+    params.chunk_mode = chunkMode;
     if (useSharedSize) {
       params.chunk_size = sharedSize;
     } else {
-      params.chunk_size = chunkSizes[enabled[0]];
-      for (const m of enabled) {
+      params.chunk_size = chunkSizes[enabledMetrics[0]];
+      for (const m of enabledMetrics) {
         params[`chunk_size_${m}`] = chunkSizes[m];
       }
+    }
+    if (chunkMode === 'smart') {
+      params.smart_unit = smartUnit;
+      params.grow_factor = growFactor;
+      params.remainder_ratio = remainderRatio;
+    }
+    // Embedding config — sent only when an embedding metric needs it, and persisted as the user's
+    // last-used values so the fields seed from prior choice (never a code default) next time.
+    if (needsEmbedding) {
+      params.embed_provider = embedProvider;
+      params.embed_endpoint = embedEndpoint;
+      params.embed_model = embedModel;
+      params.embed_batch_size = embedBatchSize;
+      saveEmbedConfig({
+        provider: embedProvider, endpoint: embedEndpoint,
+        model: embedModel, batchSize: embedBatchSize,
+      });
     }
     onRun(params);
   };
 
-  const anyEnabled = Object.values(metricEnabled).some(v => v);
+  const sizeHint = chunkMode === 'slide' ? 'even ≥10' : 'words';
 
   return (
     <div className="border border-[var(--color-border)] rounded p-3 bg-[var(--color-bg)] mt-1 text-[0.85em]">
@@ -229,13 +318,53 @@ function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
       )}
 
       <div className="mb-3">
+        <label className="flex items-center gap-2">
+          <span className="text-[var(--color-text-muted)] w-28">Chunking mode</span>
+          <select value={chunkMode} onChange={(e) => setChunkMode(e.target.value)}
+            className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)]">
+            {CHUNK_MODE_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+          </select>
+        </label>
+      </div>
+
+      <div className="mb-3">
+        <label className="flex items-center gap-2">
+          <span className="text-[var(--color-text-muted)] w-28">Separator</span>
+          <input type="text" value={analyzableSep} onChange={(e) => setAnalyzableSep(e.target.value)}
+            placeholder="(empty = excision)"
+            className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] w-40" />
+        </label>
+        <div className="text-[0.75em] text-[var(--color-text-muted)] mt-0.5 ml-[7.5rem]">
+          Inserted between unmasked spans. Empty excises masked gaps; a space keeps adjacent words apart.
+        </div>
+      </div>
+
+      {chunkMode === 'smart' && (
+        <div className="mb-3 grid grid-cols-[7rem_1fr] gap-x-2 gap-y-1.5 items-center">
+          <span className="text-[var(--color-text-muted)]">Unit</span>
+          <select value={smartUnit} onChange={(e) => setSmartUnit(e.target.value)}
+            className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] w-40">
+            {SMART_UNIT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+          </select>
+          <span className="text-[var(--color-text-muted)]">Grow factor</span>
+          <input type="number" step={0.1} min={1} value={growFactor}
+            onChange={(e) => setGrowFactor(parseFloat(e.target.value))}
+            className="w-20 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
+          <span className="text-[var(--color-text-muted)]">Remainder ratio</span>
+          <input type="number" step={0.05} min={0} max={1} value={remainderRatio}
+            onChange={(e) => setRemainderRatio(parseFloat(e.target.value))}
+            className="w-20 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
+        </div>
+      )}
+
+      <div className="mb-3">
         <label className="flex items-center gap-2 mb-2 cursor-pointer">
           <input type="checkbox" checked={useSharedSize} onChange={(e) => setUseSharedSize(e.target.checked)} className="accent-[var(--color-primary)]" />
-          <span className="text-[var(--color-text-muted)]">Shared chunk size for all metrics</span>
+          <span className="text-[var(--color-text-muted)]">Shared chunk size for all metrics ({sizeHint})</span>
           {useSharedSize && (
-            <input type="number" value={sharedSize} min={5} max={25}
-              onChange={(e) => setSharedSize(Math.max(5, Math.min(25, parseInt(e.target.value, 10) || 17)))}
-              className="w-14 px-1 py-0.5 border border-[var(--color-border)] rounded text-center ml-1" />
+            <input type="number" value={sharedSize} min={1}
+              onChange={(e) => setSharedSize(parseInt(e.target.value, 10))}
+              className="w-16 px-1 py-0.5 border border-[var(--color-border)] rounded text-center ml-1" />
           )}
         </label>
       </div>
@@ -249,18 +378,48 @@ function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
             </label>
             <span className="text-[0.8em] text-[var(--color-text-muted)]">{m.description}</span>
             {!useSharedSize && metricEnabled[m.key] ? (
-              <input type="number" value={chunkSizes[m.key]} min={5} max={25}
-                onChange={(e) => setChunkSizes({ ...chunkSizes, [m.key]: Math.max(5, Math.min(25, parseInt(e.target.value, 10) || 17)) })}
-                className="w-14 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
+              <input type="number" value={chunkSizes[m.key]} min={1}
+                onChange={(e) => setChunkSizes({ ...chunkSizes, [m.key]: parseInt(e.target.value, 10) })}
+                className="w-16 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
             ) : (
-              <span className="text-[0.8em] text-[var(--color-text-muted)] text-center">{useSharedSize ? `${sharedSize}w` : '—'}</span>
+              <span className="text-[0.8em] text-[var(--color-text-muted)] text-center">{useSharedSize ? `${sharedSize}` : '—'}</span>
             )}
           </React.Fragment>
         ))}
       </div>
 
+      <div className="mb-3 border-t border-[var(--color-border)] pt-2">
+        <div className="font-medium mb-1.5">
+          Embedding {needsEmbedding ? '(required for cosine/jaccard)' : '(not needed for selected metrics)'}
+        </div>
+        <div className="grid grid-cols-[7rem_1fr] gap-x-2 gap-y-1.5 items-center">
+          <span className="text-[var(--color-text-muted)]">Provider</span>
+          <select value={embedProvider} onChange={(e) => setEmbedProvider(e.target.value)}
+            className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] w-40">
+            <option value="">— select —</option>
+            {EMBED_PROVIDER_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+          </select>
+          <span className="text-[var(--color-text-muted)]">Endpoint</span>
+          <input type="text" value={embedEndpoint} onChange={(e) => setEmbedEndpoint(e.target.value)}
+            className="px-1 py-0.5 border border-[var(--color-border)] rounded" />
+          <span className="text-[var(--color-text-muted)]">Model</span>
+          <input type="text" value={embedModel} onChange={(e) => setEmbedModel(e.target.value)}
+            className="px-1 py-0.5 border border-[var(--color-border)] rounded" />
+          <span className="text-[var(--color-text-muted)]">Batch size</span>
+          <input type="number" min={1} value={embedBatchSize}
+            onChange={(e) => setEmbedBatchSize(e.target.value)}
+            className="w-20 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
+        </div>
+      </div>
+
+      {needsEmbedding && !embeddingComplete && (
+        <div className="text-[0.75em] text-[var(--color-warning,#b45309)] mb-2">
+          Fill all embedding fields to run cosine/jaccard.
+        </div>
+      )}
+
       <div className="flex gap-2">
-        <button onClick={handleRun} disabled={!anyEnabled} className="px-2 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.8em] disabled:opacity-40">Run Selected</button>
+        <button onClick={handleRun} disabled={!canRun} className="px-2 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.8em] disabled:opacity-40 disabled:cursor-not-allowed">Run Selected</button>
         <button onClick={onCancel} className="px-2 py-1 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.8em]">Cancel</button>
       </div>
     </div>
@@ -687,12 +846,20 @@ export default function AnalysisPanel() {
                       </div>
                     )}
                     {track.status === 'failed' && (
-                      <button
-                        onClick={() => handleRun(track.name)}
-                        className="px-2 py-1 rounded border border-[#ef4444] text-[#ef4444] cursor-pointer hover:bg-[#ef4444] hover:text-white text-[0.8em]"
-                      >
-                        Retry
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <span
+                          className="text-[#ef4444] text-[0.75em] max-w-[20rem] truncate"
+                          title={track.error ?? 'Analysis failed'}
+                        >
+                          {track.error ?? 'Analysis failed'}
+                        </span>
+                        <button
+                          onClick={() => handleRun(track.name)}
+                          className="px-2 py-1 rounded border border-[#ef4444] text-[#ef4444] cursor-pointer hover:bg-[#ef4444] hover:text-white text-[0.8em]"
+                        >
+                          Retry
+                        </button>
+                      </div>
                     )}
                     <button
                       onClick={() => setExpandedTrack(expandedTrack === track.name ? null : track.name)}

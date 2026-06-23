@@ -18,7 +18,9 @@ from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn, TimeElapsedColumn
 
 from palimpsest import __version__
+from palimpsest.atomic import atomic_write_text, write_run_provenance
 from palimpsest.project import Project, ingest_file
+from palimpsest.tracks.params import track_provenance
 from palimpsest.tracks.registry import TrackRegistry
 
 console = Console()
@@ -212,11 +214,12 @@ def analyze(project_dir: Path, force: bool) -> None:
 
             manifest_dir = project_dir / "manifests"
             manifest_dir.mkdir(exist_ok=True)
-            manifest_path = manifest_dir / f"{name}.manifest.json"
-            manifest_path.write_text(
+            atomic_write_text(
+                manifest_dir / f"{name}.manifest.json",
                 json.dumps(extractor.manifest(), indent=2),
-                encoding="utf-8",
             )
+            # Per-track resolved-params record (C1), via the same writer the HTTP path uses.
+            write_run_provenance(manifest_dir, name, track_provenance(extractor))
 
             all_params.update(extractor.parameters())
             progress.update(task_id, completed=True)
@@ -253,9 +256,9 @@ def analyze(project_dir: Path, force: bool) -> None:
         "elapsed_seconds": round(elapsed, 1),
     }
 
-    (project_dir / "pipeline_run.json").write_text(
+    atomic_write_text(
+        project_dir / "pipeline_run.json",
         json.dumps(pipeline_run, indent=2),
-        encoding="utf-8",
     )
 
     total = len(computed_tracks) + len(computed_signals)

@@ -14,6 +14,7 @@ from palimpsest.tracks.self_similarity import (
     _banded_lcs_identity,
     _calibrate_threshold,
     _content_tokens,
+    _embed_cache_label,
     _edit_distance_tokens,
     _edit_distance_matrix,
     _find_exact_repeats,
@@ -62,10 +63,12 @@ class TestChunkText:
                 f"'{text[c['start']:c['end']]}' but expected '{c['text']}'"
             )
 
-    def test_minimum_chunk_size(self):
+    def test_short_tail_is_kept(self):
+        # No silent tail drop: a text shorter than the window is one chunk covering all words.
         text = "one two three four"
         chunks = _chunk_text(text, 5)
-        assert len(chunks) == 0
+        assert len(chunks) == 1
+        assert chunks[0]["words"] == ["one", "two", "three", "four"]
 
     def test_chunk_count(self):
         words = ["w"] * 50
@@ -283,15 +286,22 @@ class TestMetricSelection:
         track.set_params({"metrics": ["cosine", "edit_distance"]})
         assert track._selected_metrics == ["cosine", "edit_distance"]
 
-    def test_invalid_metrics_filtered_out(self):
+    def test_invalid_metric_stored_raw_then_rejected(self):
+        # R6: set_params no longer silently filters — the value is stored verbatim and
+        # validate_params rejects the unknown metric (instead of quietly dropping it).
         track = SelfSimilarityTrack()
-        track.set_params({"metrics": ["bogus", "jaccard"]})
-        assert track._selected_metrics == ["jaccard"]
+        track.set_params({"metrics": ["bogus", "jaccard"], "chunk_mode": "word", "chunk_size": 7})
+        assert track._selected_metrics == ["bogus", "jaccard"]
+        with pytest.raises(ValueError, match="unknown self_similarity metric"):
+            track.validate_params()
 
-    def test_all_invalid_metrics_leaves_selection_unchanged(self):
+    def test_all_invalid_metrics_rejected_not_silently_kept(self):
+        # R6: previously an all-invalid selection silently fell back to running *all* metrics; now it
+        # is rejected.
         track = SelfSimilarityTrack()
-        track.set_params({"metrics": ["nonsense"]})
-        assert track._selected_metrics == list(METRICS)
+        track.set_params({"metrics": ["nonsense"], "chunk_mode": "word", "chunk_size": 7})
+        with pytest.raises(ValueError, match="unknown self_similarity metric"):
+            track.validate_params()
 
 
 class TestPerMetricChunkSize:
@@ -309,9 +319,211 @@ class TestPerMetricChunkSize:
         assert track._chunk_size_for("cosine") == 20
         assert track._chunk_size_for("jaccard") == 12
 
-    def test_chunk_size_clamped_to_bounds(self):
+    def test_chunk_size_not_clamped(self):
+        # Stage parameters are stored verbatim — no silent clamping. Out-of-range values are
+        # rejected later by ChunkingConfig / the API, never quietly rewritten here.
         track = SelfSimilarityTrack()
         track.set_params({"chunk_size_cosine": 999})
-        assert 5 <= track._chunk_size_for("cosine") <= 25
+        assert track._chunk_size_for("cosine") == 999
+
+
+class TestEmbedCacheLabel:
+    """R5: the embedding cache key hashes the actual content + embedding identity, so no two runs
+    that would produce different vectors can ever share a cache file (the prior label encoded only
+    mode+size+sanitized-model and silently collided)."""
+
+    @staticmethod
+    def _cfg(**kw):
+        from palimpsest.tracks.embedding import EmbeddingConfig
+        base = dict(provider="mlx", endpoint="http://x", model="m", batch_size=8)
+        base.update(kw)
+        return EmbeddingConfig(**base)
+
+    def test_differs_when_chunk_text_differs(self):
+        # Different chunk boundaries (e.g. different smart params / separator) → different texts.
+        cfg = self._cfg()
+        a = _embed_cache_label("smart_cs7", [{"text": "alpha"}, {"text": "beta"}], cfg)
+        b = _embed_cache_label("smart_cs7", [{"text": "alpha"}, {"text": "gamma"}], cfg)
+        assert a != b
+
+    def test_same_when_only_batch_size_differs(self):
+        # batch_size changes how vectors are requested, not their values → cache is reused.
+        chunks = [{"text": "alpha"}, {"text": "beta"}]
+        assert _embed_cache_label("word_cs7", chunks, self._cfg(batch_size=8)) == \
+               _embed_cache_label("word_cs7", chunks, self._cfg(batch_size=64))
+
+    def test_differs_on_model_provider_endpoint(self):
+        chunks = [{"text": "alpha"}]
+        base = _embed_cache_label("word_cs7", chunks, self._cfg())
+        assert _embed_cache_label("word_cs7", chunks, self._cfg(model="m2")) != base
+        assert _embed_cache_label("word_cs7", chunks, self._cfg(provider="ollama")) != base
+        assert _embed_cache_label("word_cs7", chunks, self._cfg(endpoint="http://y")) != base
+
+    def test_sanitization_collision_regression(self):
+        # "a:b" and "a/b" both sanitized to "a_b" in the old label → stale-cache collision. The hash
+        # of the raw model name keeps them distinct.
+        chunks = [{"text": "alpha"}]
+        assert _embed_cache_label("word_cs7", chunks, self._cfg(model="a:b")) != \
+               _embed_cache_label("word_cs7", chunks, self._cfg(model="a/b"))
+
+    def test_label_is_filesystem_safe(self):
+        import re
+        label = _embed_cache_label("smart_cs7", [{"text": "a:b/c d"}], self._cfg(model="x/y:z"))
+        assert re.fullmatch(r"[A-Za-z0-9._-]+", label)
+
+
+class TestMetricValidation:
+    """R6: an unknown or empty metric selection is rejected, not silently dropped (the old code kept
+    only recognized metrics and, if none survived, silently ran all of them)."""
+
+    def test_empty_metric_selection_rejected(self):
+        track = SelfSimilarityTrack()
+        track.set_params({"metrics": [], "chunk_mode": "word", "chunk_size": 7})
+        with pytest.raises(ValueError, match="at least one metric"):
+            track.validate_params()
+
+    def test_unknown_singular_metric_rejected(self):
+        track = SelfSimilarityTrack()
+        track.set_params({
+            "metric": "cosin", "metrics": ["word_overlap"],
+            "chunk_mode": "word", "chunk_size": 7,
+        })
+        with pytest.raises(ValueError, match="unknown self_similarity metric"):
+            track.validate_params()
+
+    def test_valid_metrics_pass(self):
+        track = SelfSimilarityTrack()
+        track.set_params({
+            "metrics": ["word_overlap", "edit_distance"],
+            "chunk_mode": "word", "chunk_size": 7,
+        })
+        # No embedding needed for these lexical metrics; valid selection returns the echo-back dict.
+        assert isinstance(track.validate_params(), dict)
+
+    def test_unknown_param_rejected(self):
+        """G1/A4: self-similarity rejects an undeclared parameter instead of silently ignoring it."""
+        track = SelfSimilarityTrack()
+        track.set_params({
+            "metrics": ["word_overlap"], "chunk_mode": "word", "chunk_size": 7,
+            "bogus_param": 1,
+        })
+        with pytest.raises(ValueError, match="unknown parameter.*bogus_param"):
+            track.validate_params()
+
+    def test_non_numeric_chunk_size_raises_valueerror_not_silent(self):
+        """G5/A5: self-similarity coerces numerics inside set_params (``int(chunk_size)``). A
+        non-numeric value must raise ``ValueError`` — the server wraps this call and returns a 400
+        instead of the uncaught 500 the bare ``int(...)`` produced before. (The typed FastAPI query
+        param shields the HTTP path today, so the guarantee is asserted at the track level.)"""
+        track = SelfSimilarityTrack()
+        with pytest.raises(ValueError):
+            track.set_params({"chunk_size": "not-a-number"})
+
+
+class TestSizelessModeRejection:
+    """R7: verse/punctuation are size-less chunking modes the self-similarity refinement can't yet
+    consume (its alignment internals key on an integer word-window). They are refused with a clear
+    message that names the mode and the reason — never silently run or coerced into a window size.
+    Wiring them through is the deferred self-similarity redesign; the chunking *stage* already
+    supports them (see test_chunking)."""
+
+    @pytest.mark.parametrize("mode", ["verse", "punctuation"])
+    def test_validate_params_rejects_sizeless_mode(self, mode):
+        track = SelfSimilarityTrack()
+        track.set_params({"metrics": ["word_overlap"], "chunk_mode": mode})
+        with pytest.raises(ValueError, match=f"does not yet support {mode!r}"):
+            track.validate_params()
+
+
+class TestAlignmentRefinementHonesty:
+    """R9: LASTZ seed-and-extend + sliding-window refinement assume uniform, non-overlapping word
+    windows. ``word`` mode satisfies that, but ``slide`` (overlapping) and ``smart`` (variable-size)
+    do not — the similarity matrices stay exact while the refined alignment *boundaries* become
+    approximate. Rather than reject those modes or silently degrade, extract() records the honest
+    label ``alignment_refinement: "exact"|"approximate"`` per metric in the manifest so a downstream
+    consumer can see what the boundaries mean."""
+
+    @pytest.mark.parametrize(
+        "mode, size, expected",
+        [("word", 7, "exact"), ("slide", 10, "approximate")],
+    )
+    def test_manifest_records_refinement_label(self, tmp_path, mode, size, expected):
+        import json
+        from pathlib import Path
+
+        from palimpsest.project import ingest_file
+        from palimpsest.server import _extract_masked
+
+        # Non-embedding metrics exercise chunking → matrix → LASTZ without an embedding service.
+        # The repeated sentence gives enough words for slide's even≥10 window (stride size//2).
+        src: Path = tmp_path / "src.txt"
+        src.write_text("The quick brown fox jumps over the lazy dog. " * 60, encoding="utf-8")
+        project = ingest_file(src, tmp_path, title="Refinement")
+
+        track = SelfSimilarityTrack()
+        track.set_params({
+            "chunk_mode": mode,
+            "chunk_size": size,
+            "metrics": ["word_overlap", "edit_distance"],
+        })
+        _extract_masked(project, track)
+
+        manifest = json.loads((project.path / "signals" / "self_similarity.json").read_text())
+        metric_info = manifest["metadata"]["metric_info"]
+        assert metric_info, "expected per-metric records in the manifest"
+        for metric, info in metric_info.items():
+            assert info["alignment_refinement"] == expected, (
+                f"{mode} mode metric {metric!r} should report {expected!r} refinement"
+            )
+
+
+class TestTransactionalOutputs:
+    """G3/C3: per-metric matrices, alignment files, and the master manifest are staged to invisible
+    ".partial" siblings and committed together with atomic renames only after the whole run succeeds.
+    A mid-run failure promotes nothing — so no orphan ``.bin`` is left for the chunk-size scanners
+    (``_discover_chunk_sizes``, the chunk_sizes endpoint) to surface as a valid result — and a
+    successful run leaves no ".partial" staging files behind."""
+
+    def _project(self, tmp_path):
+        from palimpsest.project import ingest_file
+
+        src = tmp_path / "src.txt"
+        src.write_text("The quick brown fox jumps over the lazy dog. " * 60, encoding="utf-8")
+        return ingest_file(src, tmp_path, title="Transactional")
+
+    def test_successful_run_leaves_no_partial_files(self, tmp_path):
+        project = self._project(tmp_path)
+        track = SelfSimilarityTrack()
+        track.set_params({"chunk_mode": "word", "chunk_size": 7, "metrics": ["word_overlap"]})
+        track.extract(project)
+        signals = project.path / "signals"
+        assert (signals / "self_similarity.json").exists()
+        assert (signals / "self_similarity_word_overlap.bin").exists()
+        assert list(signals.rglob("*.partial")) == []
+
+    def test_mid_run_failure_promotes_no_orphan_bin_or_manifest(self, tmp_path, monkeypatch):
+        import palimpsest.tracks.self_similarity as ss
+
+        project = self._project(tmp_path)
+        track = SelfSimilarityTrack()
+        # Canonical order is (cosine, jaccard, word_overlap, edit_distance): word_overlap is computed
+        # and STAGED first, then edit_distance raises — so the run dies after one metric is staged but
+        # before commit. The transactional guarantee is that nothing was promoted.
+        track.set_params({
+            "chunk_mode": "word", "chunk_size": 7,
+            "metrics": ["word_overlap", "edit_distance"],
+        })
+
+        def boom(chunks):
+            raise RuntimeError("metric blew up mid-run")
+
+        monkeypatch.setattr(ss, "_edit_distance_matrix", boom)
+        with pytest.raises(RuntimeError, match="blew up"):
+            track.extract(project)
+
+        signals = project.path / "signals"
+        assert not (signals / "self_similarity_word_overlap.bin").exists()
+        assert not (signals / "self_similarity_cs7" / "word_overlap.bin").exists()
+        assert not (signals / "self_similarity.json").exists()
 
 

@@ -1,9 +1,13 @@
 """Unit tests for the subtext-derivation offset map and layer remapping (palimpsest.derive)."""
+import pytest
+
 from palimpsest.derive import (
     OffsetMap,
+    UnmappedCoordinateError,
     assemble_text,
     compute_kept_spans,
     remap_layout,
+    remap_signal_data,
     remap_track_annotations,
     remap_verses,
 )
@@ -93,3 +97,56 @@ def test_remap_track_drops_gap_crossing_annotations():
     out = remap_track_annotations([inside, crossing], omap)
     assert len(out) == 1
     assert out[0]["target"]["selector"] == {"start": 2, "end": 10}
+
+
+class TestRemapSignalContract:
+    """G4/C4: signal coordinates are remapped analyzable→original through a single enforced contract.
+    A recognized shape is remapped; a coordinate-free shape passes through; an offset-bearing field in
+    a position the remap can't handle is a hard error (``UnmappedCoordinateError``), never a silent
+    passthrough that mislabels analyzable coordinates as original."""
+
+    def _omap(self):
+        # span0 → child [0,20); separator(2); span1 → child [22,42). Child→parent: +20 in span0.
+        return OffsetMap([(20, 40), (50, 70)], 2)
+
+    def test_segment_offsets_remapped(self):
+        data = {"type": "matrix", "segment_offsets": [[0, 5], [6, 10]]}
+        assert remap_signal_data(data, self._omap()) is True
+        assert data["segment_offsets"] == [[20, 25], [26, 30]]
+
+    def test_alignment_list_char_keys_remapped_chunk_indices_untouched(self):
+        data = [{"char_start_a": 0, "char_end_a": 5, "char_start_b": 6, "char_end_b": 10,
+                 "chunk_a": 3, "metric": "cosine"}]
+        assert remap_signal_data(data, self._omap()) is True
+        rec = data[0]
+        assert (rec["char_start_a"], rec["char_end_a"]) == (20, 25)
+        assert (rec["char_start_b"], rec["char_end_b"]) == (26, 30)
+        assert rec["chunk_a"] == 3  # coordinate-free matrix index, untouched
+
+    def test_nested_segment_offsets_is_hard_error(self):
+        # The exact C4 landmine: offsets nested under metadata would silently pass through today.
+        data = {"type": "x", "metadata": {"segment_offsets": [[0, 5]]}}
+        with pytest.raises(UnmappedCoordinateError, match="segment_offsets"):
+            remap_signal_data(data, self._omap())
+
+    def test_misplaced_char_key_is_hard_error(self):
+        data = {"foo": {"char_start_a": 0, "char_end_a": 5}}
+        with pytest.raises(UnmappedCoordinateError, match="char_start_a"):
+            remap_signal_data(data, self._omap())
+
+    def test_declared_span_list_field_remapped(self):
+        # The declaration hook: a novel output names its coordinate field and it is remapped + blessed.
+        data = {"type": "graph", "node_spans": [[0, 5], [6, 10]],
+                "analyzable_coordinate_fields": ["node_spans"]}
+        assert remap_signal_data(data, self._omap()) is True
+        assert data["node_spans"] == [[20, 25], [26, 30]]
+
+    def test_declared_pair_field_remapped(self):
+        data = {"span": [0, 5], "analyzable_coordinate_fields": ["span"]}
+        assert remap_signal_data(data, self._omap()) is True
+        assert data["span"] == [20, 25]
+
+    def test_coordinate_free_signal_passes_through(self):
+        data = {"type": "scalar", "metadata": {"count": 5}, "values": [1, 2, 3]}
+        assert remap_signal_data(data, self._omap()) is False
+        assert data == {"type": "scalar", "metadata": {"count": 5}, "values": [1, 2, 3]}

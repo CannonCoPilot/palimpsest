@@ -33,10 +33,12 @@ def write_track(path: Path, annotations: list[Annotation]) -> None:
         return sel.start
 
     sorted_anns = sorted(annotations, key=sort_key)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        for ann in sorted_anns:
-            f.write(json.dumps(ann.to_jsonld(), ensure_ascii=False) + "\n")
+    # Atomic write: a torn .jsonl (process death or a concurrent reader mid-write) would surface as a
+    # malformed-annotation parse error, or worse, a silently short track (C3).
+    from palimpsest.atomic import atomic_write_text
+
+    body = "".join(json.dumps(ann.to_jsonld(), ensure_ascii=False) + "\n" for ann in sorted_anns)
+    atomic_write_text(path, body)
 
 
 def read_track(path: Path) -> list[Annotation]:

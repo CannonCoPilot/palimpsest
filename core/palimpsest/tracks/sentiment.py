@@ -9,6 +9,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from palimpsest.annotation.bodies import sentiment_body
 from palimpsest.annotation.model import Annotation, Creator, Target, TextPositionSelector
 from palimpsest.ingest.segmenter import Segment
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 _ANALYZER: SentimentIntensityAnalyzer | None = None
 
@@ -27,18 +28,18 @@ def _sentences_from_spacy(text: str) -> list[Segment]:
     return segment_sentences(text)
 
 
-class SentimentExtractor:
+class SentimentExtractor(ParameterizedTrack):
     """Per-sentence sentiment via VADER."""
 
-    def __init__(self) -> None:
-        self._method = "vader"
-        self._granularity = "sentence"
-
-    def set_params(self, params: dict[str, Any]) -> None:
-        if "method" in params and params["method"] in ("vader", "hedonometer"):
-            self._method = params["method"]
-        if "granularity" in params and params["granularity"] in ("sentence", "paragraph"):
-            self._granularity = params["granularity"]
+    # NOTE: `method`/`granularity` are accepted and validated but not yet consumed by extract()
+    # (it always runs VADER over sentence spans). Wiring them — or restricting the choices to what
+    # is implemented — is a D2 refactor; for now the contract preserves the prior accepted values.
+    PARAMS = (
+        Param("method", str, default="vader", choices=("vader", "hedonometer"),
+              help="sentiment lexicon/model"),
+        Param("granularity", str, default="sentence", choices=("sentence", "paragraph"),
+              help="unit over which sentiment is scored"),
+    )
 
     @property
     def name(self) -> str:
@@ -97,6 +98,3 @@ class SentimentExtractor:
             "textViewRendering": "highlight",
             "overviewBarRendering": {"type": "density-barcode", "color": "#2ecc71"},
         }
-
-    def parameters(self) -> dict[str, Any]:
-        return {"sentiment.model": "vader"}

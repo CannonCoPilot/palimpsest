@@ -106,6 +106,13 @@ class TestCliAnalyze:
         runner.invoke(main, ["analyze", str(project_dir)])
         assert (project_dir / "tracks" / "entities.jsonl").exists()
         assert (project_dir / "pipeline_run.json").exists()
+        # G3/C1: each track run leaves a resolved-params record on disk via the shared writer the
+        # HTTP path also uses — not just the CLI-only aggregate pipeline_run.json.
+        run_prov = project_dir / "manifests" / "entities.run.json"
+        assert run_prov.exists()
+        prov = json.loads(run_prov.read_text())
+        assert prov["track"] == "entities"
+        assert "parameters" in prov and "run_id" in prov and "timestamp" in prov
 
     def test_analyze_skips_existing(self, runner, pp_ch1_txt, tmp_path):
         runner.invoke(main, [

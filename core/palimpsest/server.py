@@ -10,7 +10,7 @@ import shutil
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, UploadFile
+from fastapi import FastAPI, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
@@ -95,6 +95,7 @@ class MaskOverrideRequest(BaseModel):
     enabled: bool = True
     mask_by_type: dict[str, bool] | None = None  # per-type-layer keep/mask overrides
     section_masked: dict[str, bool] | None = None  # per-element keep/mask overrides (by id)
+    mask_verse_numbers: bool = True  # verse-number "C:V." markers; default on, toggle off to keep them
 
 
 class DeriveRequest(BaseModel):
@@ -118,6 +119,22 @@ class CollectionRequest(BaseModel):
 _STRUCTURAL_TRACKS = {"segments", "sections", "elements", "verses"}
 
 
+def _job_display_status(job: dict | None, output_exists: bool) -> tuple[str, str | None]:
+    """Map a background-job record + on-disk output presence to the UI status vocabulary (G5/B2).
+
+    A failed job surfaces ``("failed", message)`` so the user is told *why* a run failed, instead of a
+    failed job masquerading as ``"running"`` until the 30s cleanup silently reverts it to ``"pending"``.
+    A ``"completed"`` job (or no job at all) maps to ``"computed"``/``"pending"`` by whether the output
+    exists on disk — the vocabulary the frontend ``TrackStatus`` already understands. The error message
+    is passed through verbatim (no "Matrix too large" relabel)."""
+    job_status = job.get("status") if job else None
+    if job_status == "failed":
+        return "failed", (job.get("error") if job else None)
+    if job_status == "running":
+        return "running", None
+    return ("computed" if output_exists else "pending"), None
+
+
 def _is_signal_consumer(extractor: Any) -> bool:
     """True for extractors whose output positions derive from an upstream track/signal (already in
     original coordinates) rather than from the text — so they run on the full project and are not
@@ -131,22 +148,19 @@ def _is_signal_consumer(extractor: Any) -> bool:
 def _remap_signal_dir(signals_dir: Path, omap: Any, prefix: str | None = None) -> None:
     """Remap signal outputs analyzable→original: manifest ``segment_offsets`` and alignment-record
     ``char_*`` spans. When ``prefix`` is given, only files belonging to that signal are touched."""
-    from palimpsest.derive import inverse_remap_alignments, inverse_remap_segment_offsets
+    from palimpsest.atomic import atomic_write_text
+    from palimpsest.derive import remap_signal_data
     if not signals_dir.is_dir():
         return
     for jp in signals_dir.rglob("*.json"):
         if prefix is not None and prefix not in jp.name and prefix not in jp.parent.name:
             continue
         data = json.loads(jp.read_text(encoding="utf-8"))
-        changed = False
-        if isinstance(data, dict) and isinstance(data.get("segment_offsets"), list):
-            data["segment_offsets"] = inverse_remap_segment_offsets(data["segment_offsets"], omap)
-            changed = True
-        elif isinstance(data, list):
-            inverse_remap_alignments(data, omap)
-            changed = True
-        if changed:
-            jp.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+        # remap_signal_data raises UnmappedCoordinateError on an offset-bearing shape it can't handle
+        # (G4): a new output that forgot to declare/remap its coordinates fails loudly here rather than
+        # writing analyzable coordinates mislabeled as original.
+        if remap_signal_data(data, omap):
+            atomic_write_text(jp, json.dumps(data, indent=2, ensure_ascii=False))
 
 
 def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
@@ -170,19 +184,24 @@ def _remap_project_outputs(project_dir: Path, omap: Any) -> None:
     _remap_signal_dir(project_dir / "signals", omap)
 
 
-def _extract_masked(project: Any, extractor: Any) -> Any:
+def _extract_masked(project: Any, extractor: Any, sep: str = "") -> Any:
     """Run a single extractor under character-level masking.
 
     Text-deriving extractors run against the project's analysis view — the masked-resolved
     analyzable stream (masked spans and verse-number tokens excised) that they chunk at their own
     runtime — and their outputs are remapped back to original coordinates (annotation results
     in-place; any signal files they wrote by name). Signal-consumer extractors run on the full
-    project, inheriting masking through their already-masked, already-original upstream."""
+    project, inheriting masking through their already-masked, already-original upstream.
+
+    ``sep`` is the analyzable-stream separator inserted between kept (unmasked) spans; the caller
+    resolves it from a runtime parameter (default "" — pure excision) so it is never a hidden
+    default. It is coordinate-safe: the OffsetMap is built from ``len(sep)``, so remapping back to
+    original coordinates accounts for it."""
     if _is_signal_consumer(extractor):
         return extractor.extract(project)
     from palimpsest.derive import remap_result_annotations
 
-    view, omap = project.analysis_view()
+    view, omap = project.analysis_view(sep)
     try:
         result = extractor.extract(view)
     finally:
@@ -885,10 +904,13 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             if manifest_path.exists():
                 manifest_data = json.loads(manifest_path.read_text())
 
+            # A present job is not always "running": _job_display_status surfaces a failed job's real
+            # status + error so the user is told *why* a run failed (B2), instead of a failed job
+            # masquerading as "running" until the 30s cleanup silently reverts it to "pending".
             job = _running_jobs.get(f"{project_id}:{name}")
-            status = "running" if job else ("computed" if output_exists else "pending")
+            status, error = _job_display_status(job, output_exists)
 
-            result.append({
+            entry = {
                 "name": name,
                 "status": status,
                 "outputType": ext.output_type,
@@ -896,7 +918,10 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 "evidenceLevel": ext.evidence_level,
                 "hasManifest": manifest_data is not None,
                 "lfoTypes": ext.lfo_types,
-            })
+            }
+            if error:
+                entry["error"] = error
+            result.append(entry)
 
         return JSONResponse(content=result)
 
@@ -911,11 +936,21 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         metric: str | None = None,
         metrics: str | None = None,
         granularity: str | None = None,
+        analyzable_sep: str | None = None,
         chunk_size: int | None = None,
         chunk_size_cosine: int | None = None,
         chunk_size_jaccard: int | None = None,
         chunk_size_word_overlap: int | None = None,
         chunk_size_edit_distance: int | None = None,
+        chunk_mode: str | None = None,
+        smart_unit: str | None = None,
+        delimiters: list[str] | None = Query(None),
+        grow_factor: float | None = None,
+        remainder_ratio: float | None = None,
+        embed_provider: str | None = None,
+        embed_endpoint: str | None = None,
+        embed_model: str | None = None,
+        embed_batch_size: int | None = None,
         mask_override: MaskOverrideRequest | None = None,
     ) -> JSONResponse:
         """Run a single track extractor with optional parameters and an optional
@@ -943,10 +978,13 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         extractor = all_extractors[track_name]()
 
         params: dict[str, Any] = {}
+        # n_states / n_topics pass through verbatim — NOT clamped. The owning track's validate_params
+        # rejects out-of-range values with a 400 (below), so the user is told instead of having the
+        # value silently rewritten.
         if n_states is not None:
-            params["n_states"] = max(2, min(20, n_states))
+            params["n_states"] = n_states
         if n_topics is not None:
-            params["n_topics"] = max(2, min(50, n_topics))
+            params["n_topics"] = n_topics
         if method is not None:
             params["method"] = method
         if metric is not None:
@@ -957,8 +995,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 params["metrics"] = selected
         if granularity is not None:
             params["granularity"] = granularity
+        # Chunking + embedding stage parameters pass through verbatim — NOT clamped or defaulted.
+        # ChunkingConfig / EmbeddingConfig validate them; bad/missing values are rejected with a 400
+        # below so the user is told, never silently corrected.
         if chunk_size is not None:
-            params["chunk_size"] = max(5, min(25, chunk_size))
+            params["chunk_size"] = chunk_size
         for _mkey, _mval in (
             ("cosine", chunk_size_cosine),
             ("jaccard", chunk_size_jaccard),
@@ -966,44 +1007,100 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             ("edit_distance", chunk_size_edit_distance),
         ):
             if _mval is not None:
-                params[f"chunk_size_{_mkey}"] = max(5, min(25, _mval))
+                params[f"chunk_size_{_mkey}"] = _mval
+        if chunk_mode is not None:
+            params["chunk_mode"] = chunk_mode
+        if smart_unit is not None:
+            params["smart_unit"] = smart_unit
+        if delimiters is not None:
+            # Each repeated `delimiters` query param is one full clause delimiter — multi-character
+            # allowed (e.g. "||", " -- ", "<<")—not split into characters. Empty values are dropped;
+            # ChunkingConfig rejects an all-empty set, so this is never a silent no-op.
+            params["delimiters"] = tuple(d for d in delimiters if d)
+        if grow_factor is not None:
+            params["grow_factor"] = grow_factor
+        if remainder_ratio is not None:
+            params["remainder_ratio"] = remainder_ratio
+        if embed_provider is not None:
+            params["embed_provider"] = embed_provider
+        if embed_endpoint is not None:
+            params["embed_endpoint"] = embed_endpoint
+        if embed_model is not None:
+            params["embed_model"] = embed_model
+        if embed_batch_size is not None:
+            params["embed_batch_size"] = embed_batch_size
         if force:
             params["force"] = True
         if params and hasattr(extractor, "set_params"):
-            extractor.set_params(params)
+            # self_similarity coerces numerics inside set_params (int()/float()); a non-numeric value
+            # raised an uncaught 500 (finding A5). Surface it as a 400 like every other bad-param path.
+            try:
+                extractor.set_params(params)
+            except (ValueError, TypeError) as exc:
+                raise HTTPException(status_code=400, detail=str(exc))
+
+        # Validate the chunking+embedding parameters synchronously where the extractor supports it,
+        # so the user gets an immediate 400 (with the reason) instead of a silently-defaulted run or
+        # a failure surfacing only later in the async job. The returned dict echoes the resolved
+        # parameters so the caller can confirm exactly what will run.
+        resolved_params: dict[str, Any] | None = None
+        if hasattr(extractor, "validate_params"):
+            try:
+                resolved_params = extractor.validate_params()
+            except ValueError as exc:
+                raise HTTPException(status_code=400, detail=str(exc))
+
+        # Analyzable-stream separator: the string inserted between kept (unmasked) spans when the
+        # masked-resolved analyzable text is assembled. Exposed as a runtime parameter so it is never
+        # a hidden default — "" (the canonical pure-excision semantic, masked spans vanishing "as if
+        # not there") applies only when the caller omits it, and the resolved value is echoed back.
+        resolved_sep = analyzable_sep if analyzable_sep is not None else ""
 
         _running_jobs[job_key] = {"status": "running", "track": track_name, "params": params}
 
         async def run() -> None:
             try:
                 async with _job_semaphore:
-                    try:
-                        result = await asyncio.to_thread(_extract_masked, project, extractor)
-                    except ValueError as exc:
-                        _running_jobs[job_key] = {
-                            "status": "failed",
-                            "track": track_name,
-                            "error": f"Matrix too large: {exc}",
-                        }
-                        return
+                    result = await asyncio.to_thread(_extract_masked, project, extractor, resolved_sep)
                 if extractor.output_type == "annotation" and isinstance(result, list):
                     from palimpsest.annotation.serializer import write_track
                     track_path = project_dir / "tracks" / f"{track_name}.jsonl"
                     write_track(track_path, result)
 
+                from palimpsest.atomic import atomic_write_text, write_run_provenance
+                from palimpsest.tracks.params import track_provenance
+
                 manifest_dir = project_dir / "manifests"
                 manifest_dir.mkdir(exist_ok=True)
-                (manifest_dir / f"{track_name}.manifest.json").write_text(
-                    json.dumps(extractor.manifest(), indent=2), encoding="utf-8",
+                atomic_write_text(
+                    manifest_dir / f"{track_name}.manifest.json",
+                    json.dumps(extractor.manifest(), indent=2),
                 )
+                # Persist the resolved run parameters (C1): without this, a UI-driven run left no param
+                # record on disk — only the CLI wrote provenance. Same writer the CLI uses, so the two
+                # entry points can no longer disagree.
+                write_run_provenance(manifest_dir, track_name, track_provenance(extractor))
                 _running_jobs[job_key] = {"status": "completed", "track": track_name}
             except Exception as exc:
-                _running_jobs[job_key] = {"status": "failed", "track": track_name, "error": str(exc)}
+                # One honest failure path. The previous code relabelled EVERY extract ValueError as
+                # "Matrix too large" — wrong 100% of the time, since no matrix-size error exists (the
+                # size guard is warn-only, B4). Carry the real message *and* the exception type, so a
+                # missing per-metric size, an embedding-service ConnectError, or a degenerate corpus
+                # each reads as what it actually was — end-to-end to the UI (B2).
+                _running_jobs[job_key] = {
+                    "status": "failed",
+                    "track": track_name,
+                    "error": f"{type(exc).__name__}: {exc}",
+                }
             finally:
                 asyncio.get_running_loop().call_later(30.0, lambda: _running_jobs.pop(job_key, None))
 
         asyncio.create_task(run())
-        return JSONResponse(content={"status": "started", "track": track_name})
+        content: dict[str, Any] = {"status": "started", "track": track_name}
+        if resolved_params is not None:
+            content["resolved_params"] = resolved_params
+        content["analyzable_sep"] = resolved_sep
+        return JSONResponse(content=content)
 
     @app.get("/api/projects/{project_id}/analyze/{track_name}/status")
     async def job_status(project_id: str, track_name: str) -> JSONResponse:
@@ -1069,120 +1166,6 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         if not bin_path.exists():
             raise HTTPException(status_code=404, detail=f"No data for chunk_size={chunk_size}, metric={metric}")
         return FileResponse(bin_path, media_type="application/octet-stream")
-
-    # Default chunk sizes queued by auto_run
-    _AUTO_RUN_CHUNK_SIZES = (7, 11, 15)
-
-    @app.post("/api/projects/{project_id}/analyze/self_similarity/auto_run")
-    async def auto_run_self_similarity(project_id: str) -> JSONResponse:
-        """Auto-queue self-similarity computation at chunk sizes 7, 11, and 15.
-
-        Only queues if self-similarity has not been computed yet and paragraph
-        embeddings are available. If self-similarity already exists, returns its
-        current status without re-queuing.
-        """
-        import asyncio
-
-        project_dir = _safe_project_dir(workspace, project_id)
-        signals_dir = project_dir / "signals"
-
-        # Check if already computed
-        manifest_path = signals_dir / "self_similarity.json"
-        if manifest_path.exists():
-            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-            return JSONResponse(content={
-                "status": "already_computed",
-                "available_chunk_sizes": manifest.get("metadata", {}).get("available_chunk_sizes", []),
-                "available_metrics": manifest.get("metadata", {}).get("available_metrics", []),
-            })
-
-        # Check for paragraph embeddings
-        embeddings_db = project_dir / "cache" / "embeddings.db"
-        if not embeddings_db.exists():
-            return JSONResponse(content={
-                "status": "no_embeddings",
-                "message": "Paragraph embeddings must be computed before auto-running self-similarity.",
-            })
-
-        from palimpsest.project import Project
-        from palimpsest.tracks.registry import TrackRegistry
-
-        registry = TrackRegistry.discover()
-        all_extractors = {
-            type(e)().name: type(e)
-            for e in [cls() for cls in registry.dependency_order()]
-        }
-        if "self_similarity" not in all_extractors:
-            raise HTTPException(status_code=500, detail="self_similarity track not registered")
-
-        project = Project.load(project_dir)
-        queued_sizes: list[int] = []
-        job_keys: list[str] = []
-
-        # Identify chunk sizes that still need to be run
-        pending_sizes: list[tuple[str, Any, int]] = []
-        for cs in _AUTO_RUN_CHUNK_SIZES:
-            job_key = f"{project_id}:self_similarity:cs{cs}"
-            if _running_jobs.get(job_key, {}).get("status") == "running":
-                job_keys.append(job_key)
-                continue
-            extractor = all_extractors["self_similarity"]()
-            extractor.set_params({"chunk_size": cs})
-            _running_jobs[job_key] = {
-                "status": "running",
-                "track": "self_similarity",
-                "chunk_size": cs,
-            }
-            queued_sizes.append(cs)
-            job_keys.append(job_key)
-            pending_sizes.append((job_key, extractor, cs))
-
-        async def run_sequential(
-            _project: Any = project,
-            _pending: list[tuple[str, Any, int]] = pending_sizes,
-        ) -> None:
-            """Run each chunk-size job one at a time under the semaphore.
-
-            Each self-similarity computation is already CPU-heavy, so they are
-            run sequentially rather than concurrently.  External concurrency
-            (e.g. from other projects) is still bounded by _job_semaphore.
-            """
-            for _key, _extractor, _cs in _pending:
-                try:
-                    async with _job_semaphore:
-                        try:
-                            await asyncio.to_thread(_extractor.extract, _project)
-                        except ValueError as exc:
-                            _running_jobs[_key] = {
-                                "status": "failed",
-                                "track": "self_similarity",
-                                "chunk_size": _cs,
-                                "error": f"Matrix too large: {exc}",
-                            }
-                            continue
-                    _running_jobs[_key] = {
-                        "status": "completed",
-                        "track": "self_similarity",
-                        "chunk_size": _cs,
-                    }
-                except Exception as exc:
-                    _running_jobs[_key] = {
-                        "status": "failed",
-                        "track": "self_similarity",
-                        "chunk_size": _cs,
-                        "error": str(exc),
-                    }
-                finally:
-                    asyncio.get_running_loop().call_later(30.0, lambda k=_key: _running_jobs.pop(k, None))
-
-        if pending_sizes:
-            asyncio.create_task(run_sequential())
-
-        return JSONResponse(content={
-            "status": "queued",
-            "queued_chunk_sizes": queued_sizes,
-            "job_keys": job_keys,
-        })
 
     @app.get("/api/projects/{project_id}/embeddings/status")
     async def embeddings_status(project_id: str) -> JSONResponse:

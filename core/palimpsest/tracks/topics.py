@@ -11,6 +11,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from palimpsest.annotation.bodies import topic_body
 from palimpsest.annotation.model import Annotation, Creator, Target, TextPositionSelector
 from palimpsest.formats.signals import SignalManifest, write_signal
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 N_TOPICS = 10
 RANDOM_STATE = 42
@@ -19,18 +20,19 @@ MIN_DF = 2
 MAX_FEATURES = 10_000
 
 
-class TopicsExtractor:
-    """Per-paragraph topic modeling via LDA."""
+class TopicsExtractor(ParameterizedTrack):
+    """Per-paragraph topic modeling via LDA / NMF."""
 
-    def __init__(self) -> None:
-        self._n_topics = N_TOPICS
-        self._method = "lda"
-
-    def set_params(self, params: dict[str, Any]) -> None:
-        if "n_topics" in params:
-            self._n_topics = max(2, min(50, int(params["n_topics"])))
-        if "method" in params and params["method"] in ("lda", "nmf"):
-            self._method = params["method"]
+    PARAMS = (
+        Param("n_topics", int, default=N_TOPICS, min=2, max=50, help="number of topics to model"),
+        Param("method", str, default="lda", choices=("lda", "nmf"), help="topic model: LDA or NMF"),
+        # Declared (not hidden) algorithm constants: reported in resolved_params and written to disk,
+        # locked until exposed as user knobs (G2 acceptable-default rule).
+        Param("random_state", int, default=RANDOM_STATE, locked=True, help="RNG seed (reproducibility)"),
+        Param("max_iter", int, default=MAX_ITER, locked=True, help="solver iteration cap"),
+        Param("min_df", int, default=MIN_DF, locked=True, help="CountVectorizer min document frequency"),
+        Param("max_features", int, default=MAX_FEATURES, locked=True, help="CountVectorizer vocab cap"),
+    )
 
     @property
     def name(self) -> str:
@@ -59,14 +61,21 @@ class TopicsExtractor:
         if len(paragraphs) < 2:
             return []
 
+        cfg = self.resolved_params()
+        method = cfg["method"]
+        random_state = cfg["random_state"]
+        max_iter = cfg["max_iter"]
+
         para_texts = [text for _, _, text in paragraphs]
-        n_topics = min(self._n_topics, len(paragraphs))
+        # `n_topics` is reduced to a feasible value when the corpus is too small for the requested
+        # count; the effective value (not the request) is what gets recorded on disk below.
+        n_topics = min(cfg["n_topics"], len(paragraphs))
 
         vectorizer = CountVectorizer(
             token_pattern=r"[a-zA-Z]{3,}",
             stop_words="english",
-            min_df=min(MIN_DF, len(paragraphs)),
-            max_features=MAX_FEATURES,
+            min_df=min(cfg["min_df"], len(paragraphs)),
+            max_features=cfg["max_features"],
         )
         try:
             dtm = vectorizer.fit_transform(para_texts)
@@ -76,14 +85,14 @@ class TopicsExtractor:
         if dtm.shape[0] < n_topics:
             n_topics = max(2, dtm.shape[0])
 
-        if self._method == "nmf":
+        if method == "nmf":
             from sklearn.decomposition import NMF
-            model = NMF(n_components=n_topics, random_state=RANDOM_STATE, max_iter=MAX_ITER)
+            model = NMF(n_components=n_topics, random_state=random_state, max_iter=max_iter)
         else:
             model = LatentDirichletAllocation(
                 n_components=n_topics,
-                random_state=RANDOM_STATE,
-                max_iter=MAX_ITER,
+                random_state=random_state,
+                max_iter=max_iter,
                 learning_method="batch",
             )
         doc_topic_dist = model.fit_transform(dtm)
@@ -110,7 +119,7 @@ class TopicsExtractor:
                     source=source_urn,
                     selector=TextPositionSelector(start=start, end=end),
                 ),
-                creator=Creator(name=f"sklearn-{self._method}/{n_topics}topics"),
+                creator=Creator(name=f"sklearn-{method}/{n_topics}topics"),
                 confidence=weight,
                 evidence_level="E4",
                 project_id=project.metadata.id,
@@ -118,7 +127,10 @@ class TopicsExtractor:
             )
             annotations.append(ann)
 
-        self._write_distribution_signal(project, doc_topic_dist, paragraphs)
+        self._write_distribution_signal(
+            project, doc_topic_dist, paragraphs,
+            n_topics=n_topics, method=method, random_state=random_state, min_df=cfg["min_df"],
+        )
         return annotations
 
     def _write_distribution_signal(
@@ -126,22 +138,28 @@ class TopicsExtractor:
         project: Any,
         dist: np.ndarray,
         paragraphs: list[tuple[int, int, str]],
+        *,
+        n_topics: int,
+        method: str,
+        random_state: int,
+        min_df: int,
     ) -> None:
-        """Write topics distribution as binary signal."""
+        """Write topics distribution as a binary signal, recording the EFFECTIVE parameters that
+        produced it (the resolved/clamped values, not module constants) so disk never lies."""
         signals_dir = project.path / "signals"
         segment_offsets = [[start, end] for start, end, _ in paragraphs]
 
         manifest = SignalManifest(
             type="distribution",
             name="topics_dist",
-            source=f"sklearn-lda/{N_TOPICS}topics",
+            source=f"sklearn-{method}/{n_topics}topics",
             reference_sha256=project.metadata.reference_sha256,
             dimensions=[dist.shape[0], dist.shape[1]],
             metadata={
-                "algorithm": "lda",
-                "n_topics": N_TOPICS,
-                "random_state": RANDOM_STATE,
-                "min_df": MIN_DF,
+                "algorithm": method,
+                "n_topics": n_topics,
+                "random_state": random_state,
+                "min_df": min_df,
                 "segment_offsets": segment_offsets,
             },
         )
@@ -155,12 +173,4 @@ class TopicsExtractor:
             "textViewRendering": "margin-marker",
             "overviewBarRendering": {"type": "density-barcode", "color": "#e74c3c"},
             "dedicatedView": "topics-stacked-bar",
-        }
-
-    def parameters(self) -> dict[str, Any]:
-        return {
-            "topics.n_topics": N_TOPICS,
-            "topics.random_state": RANDOM_STATE,
-            "topics.max_iter": MAX_ITER,
-            "topics.min_df": MIN_DF,
         }

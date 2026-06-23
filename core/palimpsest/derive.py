@@ -255,6 +255,92 @@ def inverse_remap_alignments(records: list[dict[str, Any]], omap: OffsetMap) -> 
     return records
 
 
+class UnmappedCoordinateError(ValueError):
+    """A signal output carries character offsets in a position the analyzable→original remap does not
+    handle. Raised instead of silently writing analyzable coordinates mislabeled as original (C4/G4)."""
+
+
+# The character-offset keys the remap knows how to translate, and the only positions they may legally
+# occupy in a signal payload. ``segment_offsets`` is a manifest's top-level span list; the ``char_*``
+# keys live one-per-record in a top-level array of alignment records. A known coordinate key found
+# anywhere else (nested under ``metadata``, a graph node, …) means a producer emitted offsets the
+# pipeline would pass through untranslated — a hard error, not a silent mislabel.
+_SEGMENT_OFFSETS_KEY = "segment_offsets"
+_DECLARED_FIELDS_KEY = "analyzable_coordinate_fields"
+_ALIGN_CHAR_KEYS = frozenset(k for pair in _ALIGN_CHAR_SPANS for k in pair)
+_KNOWN_COORD_KEYS = _ALIGN_CHAR_KEYS | {_SEGMENT_OFFSETS_KEY}
+
+
+def _coordinate_position_is_blessed(path: list[Any], key: str, declared: frozenset[str]) -> bool:
+    """True if ``key`` (a coordinate-bearing field) sits where the remap actually translates it."""
+    if key == _SEGMENT_OFFSETS_KEY or key in declared:
+        return path == []  # a top-level manifest field
+    if key in _ALIGN_CHAR_KEYS:
+        return len(path) == 1 and isinstance(path[0], int)  # a record in the top-level array
+    return True
+
+
+def _assert_coordinates_blessed(data: Any, declared: frozenset[str]) -> None:
+    """Raise :class:`UnmappedCoordinateError` if any offset-bearing key survived in a position the
+    remap does not handle — the post-remap assertion the P4 contract requires."""
+
+    def walk(node: Any, path: list[Any]) -> None:
+        if isinstance(node, dict):
+            for k, v in node.items():
+                if (k in _KNOWN_COORD_KEYS or k in declared) and not _coordinate_position_is_blessed(
+                    path, k, declared
+                ):
+                    where = path or ["<root>"]
+                    raise UnmappedCoordinateError(
+                        f"offset-bearing field {k!r} at {where} was not remapped to original "
+                        "coordinates; emit it in a handled position (top-level 'segment_offsets', or "
+                        f"'char_*' per record in a top-level array) or declare it in {_DECLARED_FIELDS_KEY!r}"
+                    )
+                walk(v, [*path, k])
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                walk(v, [*path, i])
+
+    walk(data, [])
+
+
+def remap_signal_data(data: Any, omap: OffsetMap) -> bool:
+    """Remap a signal payload's character offsets analyzable→original IN PLACE and assert the remap
+    was total (G4/C4). Returns True if anything was remapped.
+
+    Handled shapes: a manifest dict's top-level ``segment_offsets``; a top-level array of alignment
+    records' ``char_*`` spans; and any field a manifest names in ``analyzable_coordinate_fields`` —
+    the declaration hook for a novel output, whose value is a ``[start, end]`` pair or a
+    ``[[start, end], …]`` span list. After remapping, :func:`_assert_coordinates_blessed` raises
+    :class:`UnmappedCoordinateError` if a known offset key survived in an unhandled position, so a new
+    output shape that forgot to remap fails loudly instead of mislabeling analyzable coordinates as
+    original."""
+    declared: frozenset[str] = frozenset()
+    changed = False
+    if isinstance(data, dict):
+        decl = data.get(_DECLARED_FIELDS_KEY)
+        if isinstance(decl, list):
+            declared = frozenset(str(x) for x in decl)
+        if isinstance(data.get(_SEGMENT_OFFSETS_KEY), list):
+            data[_SEGMENT_OFFSETS_KEY] = inverse_remap_segment_offsets(data[_SEGMENT_OFFSETS_KEY], omap)
+            changed = True
+        for field in declared:
+            val = data.get(field)
+            if isinstance(val, list) and val and all(isinstance(x, list) for x in val):
+                data[field] = inverse_remap_segment_offsets(val, omap)
+                changed = True
+            elif isinstance(val, list) and len(val) >= 2 and all(isinstance(x, int) for x in val[:2]):
+                m = omap.inverse_span(int(val[0]), int(val[1]))
+                if m is not None:
+                    data[field] = [m[0], m[1], *val[2:]]
+                changed = True
+    elif isinstance(data, list):
+        inverse_remap_alignments(data, omap)
+        changed = True
+    _assert_coordinates_blessed(data, declared)
+    return changed
+
+
 def _subtext_source_name(parent_id: str, extraction_types: list[str]) -> str:
     tag = "-".join(t for t in extraction_types) or "subtext"
     return f"{parent_id}--{tag}.txt"

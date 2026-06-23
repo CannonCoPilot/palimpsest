@@ -118,7 +118,15 @@ def test_self_similarity_signal_excludes_masked_and_maps_to_original(tmp_path: P
 
     project, full = _masked_project(tmp_path)
     masked = project.masked_intervals()
-    _extract_masked(project, SelfSimilarityTrack())
+    track = SelfSimilarityTrack()
+    # Non-embedding metrics exercise the chunking → signal → remap path without an embedding service;
+    # all chunking+embedding params are explicit (the stage has no defaults).
+    track.set_params({
+        "chunk_mode": "word",
+        "chunk_size": 7,
+        "metrics": ["word_overlap", "edit_distance"],
+    })
+    _extract_masked(project, track)
     manifest = json.loads((project.path / "signals" / "self_similarity.json").read_text())
     offsets = manifest["segment_offsets"]
     assert offsets, "self_similarity should chunk the body"
@@ -126,3 +134,72 @@ def test_self_similarity_signal_excludes_masked_and_maps_to_original(tmp_path: P
         assert 0 <= s < e <= len(full)                   # remapped to original coordinates
         for ms, me in masked:                            # masked content is excised, never chunked
             assert not (s >= ms and e <= me), f"chunk [{s},{e}) lies inside masked [{ms},{me})"
+
+
+def test_analysis_view_threads_separator(tmp_path: Path, monkeypatch):
+    # R2: the analyzable-stream separator threads through analysis_view → analyzable_text (it is no
+    # longer a hidden "" default) and stays coordinate-safe — separator characters have no original
+    # preimage, while every kept character still round-trips to its unmasked original.
+    from palimpsest.project import ingest_file
+
+    src = tmp_path / "sep.txt"
+    src.write_text("AAAA BBBB CCCC DDDD EEEE", encoding="utf-8")
+    project = ingest_file(src, tmp_path, title="Sep")
+    full = project.reference_text()
+    b = full.index("BBBB")
+    # Mask an interior word so two kept spans flank it and a separator is actually inserted.
+    monkeypatch.setattr(project, "masked_intervals", lambda: [(b, b + 4)])
+
+    empty = project.analysis_view("")[0].reference_text()
+    spaced_view, omap = project.analysis_view(" | ")
+    spaced = spaced_view.reference_text()
+
+    # The separator lands exactly at the excised gap — the spaced stream is the pure-excision stream
+    # with " | " inserted at the join (the first kept span ends at original offset b).
+    assert spaced == empty[:b] + " | " + empty[b:]
+    # Coordinate-safe: every kept (non-separator) character still round-trips to its unmasked original.
+    sep_region = range(b, b + len(" | "))
+    for c in range(len(spaced)):
+        if c in sep_region:
+            continue
+        p = omap.inverse_point(c)
+        if p is not None:
+            assert spaced[c] == full[p]
+
+
+def _verse_project(tmp_path: Path):
+    from palimpsest.project import ingest_file
+
+    text = (
+        "1:1. In the beginning God created the heaven and the earth.\n"
+        "1:2. And the earth was without form, and void.\n"
+        "1:3. And God said, Let there be light: and there was light.\n"
+    )
+    src = tmp_path / "verses.txt"
+    src.write_text(text, encoding="utf-8")
+    return ingest_file(src, tmp_path, title="Verses")
+
+
+def test_verse_number_masking_defaults_on(tmp_path: Path):
+    # R10: with no override the verse-number markers stay masked — the long-standing default that
+    # keeps "C:V." structural noise out of analysis. (Three markers in the fixture: "1:1. " etc.)
+    project = _verse_project(tmp_path)
+    masked = project.masked_intervals()
+    assert len(masked) == 3, "verse-number markers should be masked by default"
+
+
+def test_verse_number_masking_toggle_off_yields_fully_unmasked(tmp_path: Path):
+    # R10: the verse-number layer is now a runtime toggle. With structural masking off AND
+    # mask_verse_numbers off, nothing remains masked — a fully unmasked run, previously impossible
+    # because the verse layer was unconditionally unioned in.
+    project = _verse_project(tmp_path)
+    project.set_mask_override({"enabled": False, "mask_verse_numbers": False})
+    assert project.masked_intervals() == [], "toggling both off should leave nothing masked"
+
+
+def test_verse_number_masking_independent_of_structural_toggle(tmp_path: Path):
+    # R10: the verse toggle is orthogonal to the structural `enabled` toggle — turning structural
+    # masking off keeps verse-number masking on unless verse masking is also explicitly disabled.
+    project = _verse_project(tmp_path)
+    project.set_mask_override({"enabled": False, "mask_verse_numbers": True})
+    assert len(project.masked_intervals()) == 3, "verse layer survives structural-off when left on"

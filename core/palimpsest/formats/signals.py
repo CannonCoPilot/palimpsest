@@ -65,18 +65,21 @@ def write_signal(
     data: np.ndarray,
     manifest: SignalManifest,
 ) -> None:
-    """Write a signal as raw binary + JSON manifest."""
+    """Write a signal as raw binary + JSON manifest (both atomic, so a torn read or a crash mid-write
+    can't surface a half-written matrix or manifest — C3)."""
+    from palimpsest.atomic import atomic_write_bytes, atomic_write_text
+
     signals_dir.mkdir(parents=True, exist_ok=True)
 
     if not manifest.data_file:
         manifest.data_file = f"{manifest.name}.bin"
 
-    data.astype(np.float32).tofile(signals_dir / manifest.data_file)
+    atomic_write_bytes(signals_dir / manifest.data_file, data.astype(np.float32).tobytes())
 
     manifest_path = signals_dir / f"{manifest.name}.json"
-    manifest_path.write_text(
+    atomic_write_text(
+        manifest_path,
         json.dumps(manifest.to_dict(), indent=2, ensure_ascii=False),
-        encoding="utf-8",
     )
 
 

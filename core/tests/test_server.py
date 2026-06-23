@@ -189,11 +189,28 @@ class TestSelfSimilarityEndpoints:
         assert r.status_code == 200
         assert r.json()["chunk_sizes"] == []
 
-    def test_auto_run_without_embeddings(self, client):
+    def test_auto_run_endpoint_removed(self, client):
+        # The hidden-default auto-run endpoint was removed: analysis only runs on explicit request.
         pid = self._pid(client)
         r = client.post(f"/api/projects/{pid}/analyze/self_similarity/auto_run")
-        assert r.status_code == 200
-        assert r.json()["status"] == "no_embeddings"
+        assert r.status_code in (404, 405)  # no POST auto-run endpoint anymore
+
+    def test_self_similarity_rejects_missing_required_params(self, client):
+        # Required params, no defaults: omitting embedding params is a 400, not a silently-defaulted
+        # run.
+        pid = self._pid(client)
+        r = client.post(f"/api/projects/{pid}/analyze/self_similarity?chunk_mode=word&chunk_size=7")
+        assert r.status_code == 400
+        assert "embedding" in r.json()["detail"].lower()
+
+    def test_self_similarity_rejects_unsupported_mode(self, client):
+        # verse/punctuation are stage-only until the self-similarity redesign — rejected, not run.
+        pid = self._pid(client)
+        r = client.post(
+            f"/api/projects/{pid}/analyze/self_similarity"
+            "?chunk_mode=verse&embed_provider=mlx&embed_endpoint=http://x&embed_model=m&embed_batch_size=8"
+        )
+        assert r.status_code == 400
 
     def test_run_analysis_declares_per_metric_chunk_size(self, client):
         # E-NEW1: chunk_size_cosine must be a *declared* int query param. A non-int
@@ -201,3 +218,129 @@ class TestSelfSimilarityEndpoints:
         pid = self._pid(client)
         r = client.post(f"/api/projects/{pid}/analyze/self_similarity?chunk_size_cosine=notanint")
         assert r.status_code == 422
+
+    def test_analyzable_sep_defaults_to_empty_and_is_echoed(self, client):
+        # R2: the analyzable-stream separator is a runtime param, never a hidden default. Omitting it
+        # resolves to "" (pure excision) and the resolved value is echoed back. word_overlap needs no
+        # embedding service, so the run starts and the response carries the echo.
+        pid = self._pid(client)
+        r = client.post(
+            f"/api/projects/{pid}/analyze/self_similarity"
+            "?chunk_mode=word&chunk_size=7&metrics=word_overlap"
+        )
+        assert r.status_code == 200, r.text
+        assert r.json()["analyzable_sep"] == ""
+
+    def test_analyzable_sep_explicit_value_echoed_verbatim(self, client):
+        # R2: an explicit separator (here " | ") is reflected verbatim, so the caller can confirm
+        # exactly how the masked-resolved analyzable stream was assembled.
+        pid = self._pid(client)
+        r = client.post(
+            f"/api/projects/{pid}/analyze/self_similarity"
+            "?chunk_mode=word&chunk_size=7&metrics=word_overlap&analyzable_sep=%20%7C%20"
+        )
+        assert r.status_code == 200, r.text
+        assert r.json()["analyzable_sep"] == " | "
+
+    def test_delimiters_accepts_multi_char_list_param(self, client):
+        # R4: delimiters is a repeated (list) query param — each entry is a full, possibly multi-char
+        # delimiter, not one string split into characters. Punctuation chunking is still rejected by
+        # self-similarity (R7), so this 400s on the *mode*; a malformed param shape would be a 422.
+        # This proves the list param is accepted and forwards the multi-char delimiters intact.
+        pid = self._pid(client)
+        r = client.post(
+            f"/api/projects/{pid}/analyze/self_similarity"
+            "?chunk_mode=punctuation&metrics=word_overlap&delimiters=%7C%7C&delimiters=--"
+        )
+        assert r.status_code == 400, r.text
+        assert "punctuation" in r.json()["detail"].lower()
+
+    def test_unknown_metric_rejected_with_400(self, client):
+        # R6: a typo'd metric is rejected (400) with the offending value named — not silently
+        # dropped (which previously fell back to silently running every metric).
+        pid = self._pid(client)
+        r = client.post(
+            f"/api/projects/{pid}/analyze/self_similarity"
+            "?chunk_mode=word&chunk_size=7&metrics=word_overlap,cosin"
+        )
+        assert r.status_code == 400, r.text
+        detail = r.json()["detail"].lower()
+        assert "unknown" in detail and "cosin" in detail
+
+
+class TestTrackParamEndpoints:
+    """R8: non-chunking tracks reject out-of-range/unknown runtime params at the API (400) instead
+    of silently clamping or dropping them."""
+
+    def _pid(self, client):
+        return client.get("/api/projects").json()[0]["id"]
+
+    def test_lithmm_out_of_range_n_states_rejected(self, client):
+        pid = self._pid(client)
+        r = client.post(f"/api/projects/{pid}/analyze/lithmm?n_states=100")
+        assert r.status_code == 400, r.text
+        assert "n_states" in r.json()["detail"]
+
+    def test_topics_unknown_method_rejected(self, client):
+        pid = self._pid(client)
+        r = client.post(f"/api/projects/{pid}/analyze/topics?method=bogus")
+        assert r.status_code == 400, r.text
+        assert "method" in r.json()["detail"].lower()
+
+
+class TestJobErrorPropagation:
+    """G5/B2: a failed analysis job carries its real message end-to-end. The status endpoint must
+    surface ``failed`` + the error, not mask every present job as ``running`` (which then silently
+    reverts to ``pending`` after the 30s cleanup), and must never relabel the error "Matrix too large".
+
+    The status-derivation policy is a pure function (``_job_display_status``); the background job
+    itself cannot run under ``TestClient`` (the anyio portal only advances the loop during a request,
+    so a fire-and-forget ``asyncio.create_task`` never progresses), so the policy is tested directly."""
+
+    def _pid(self, client):
+        return client.get("/api/projects").json()[0]["id"]
+
+    def test_failed_job_surfaces_failed_and_error(self):
+        from palimpsest.server import _job_display_status
+        job = {"status": "failed", "track": "self_similarity",
+               "error": "ConnectError: All connection attempts failed"}
+        status, error = _job_display_status(job, output_exists=False)
+        assert status == "failed"
+        assert error == "ConnectError: All connection attempts failed"
+
+    def test_failed_job_error_passed_through_verbatim_not_relabeled(self):
+        # The old code relabeled EVERY extract ValueError as "Matrix too large". The error must now
+        # reach the user as whatever actually happened.
+        from palimpsest.server import _job_display_status
+        job = {"status": "failed", "track": "self_similarity",
+               "error": "ValueError: metric 'cosine' requires chunk_size_cosine"}
+        _, error = _job_display_status(job, output_exists=False)
+        assert error is not None
+        assert "Matrix too large" not in error
+        assert "chunk_size_cosine" in error
+
+    def test_running_job_reports_running_without_error(self):
+        from palimpsest.server import _job_display_status
+        status, error = _job_display_status({"status": "running", "track": "x"}, output_exists=False)
+        assert status == "running"
+        assert error is None
+
+    def test_completed_job_maps_to_computed_when_output_exists(self):
+        # The job dict says "completed" (vocabulary the UI doesn't know); it maps to "computed".
+        from palimpsest.server import _job_display_status
+        status, error = _job_display_status({"status": "completed", "track": "x"}, output_exists=True)
+        assert status == "computed"
+        assert error is None
+
+    def test_no_job_maps_to_computed_or_pending_by_output(self):
+        from palimpsest.server import _job_display_status
+        assert _job_display_status(None, output_exists=True) == ("computed", None)
+        assert _job_display_status(None, output_exists=False) == ("pending", None)
+
+    def test_self_similarity_status_payload_has_no_error_when_idle(self, client):
+        # End-to-end: a fresh project has no running job; the status entries carry no error field.
+        pid = self._pid(client)
+        rows = client.get(f"/api/projects/{pid}/analysis/status").json()
+        ss = next(t for t in rows if t["name"] == "self_similarity")
+        assert ss["status"] in ("pending", "computed")
+        assert "error" not in ss

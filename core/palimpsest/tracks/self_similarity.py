@@ -25,6 +25,7 @@ Repeat masking:
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 import os
@@ -35,14 +36,26 @@ from typing import Any
 import numpy as np
 
 from palimpsest.project import Project
+from palimpsest.tracks.chunking import (
+    ChunkingConfig,
+    build_word_positions,
+    chunk_text,
+    chunk_words,
+)
+from palimpsest.tracks.embedding import EmbeddingConfig, embed_texts
 from palimpsest.vectorstore.sqlite_vec import SqliteVecStore
 
 logger = logging.getLogger(__name__)
 
 METRICS = ("cosine", "jaccard", "word_overlap", "edit_distance")
 DEFAULT_CHUNK_SIZE = 7
-MIN_CHUNK_SIZE = 5
-MAX_CHUNK_SIZE = 25
+# Matrices larger than this many chunks per side are unusually heavy (an N×N float32 matrix);
+# warn-only — the run proceeds as the user requested rather than silently skipping.
+WARN_MATRIX_DIM = 16000
+
+# Back-compat aliases — the canonical chunker and word tokeniser now live in chunking.py.
+_chunk_text = chunk_words
+_build_word_positions = build_word_positions
 
 STOPWORDS = frozenset({
     "a", "an", "the", "and", "or", "but", "nor", "not", "no", "so", "as",
@@ -65,34 +78,6 @@ STOPWORDS = frozenset({
 # ---------------------------------------------------------------------------
 # Chunking
 # ---------------------------------------------------------------------------
-
-def _chunk_text(text: str, chunk_size: int) -> list[dict[str, Any]]:
-    """Split text into non-overlapping word chunks of `chunk_size` words.
-    Returns list of {index, start, end, text, words}.
-    Uses pre-built word positions for correct character offsets (avoids
-    first-occurrence bug with repeated words like articles)."""
-    all_words, positions = _build_word_positions(text)
-    chunks: list[dict[str, Any]] = []
-    word_idx = 0
-
-    while word_idx < len(all_words):
-        end_idx = min(word_idx + chunk_size, len(all_words))
-        chunk_words = all_words[word_idx:end_idx]
-        if len(chunk_words) < MIN_CHUNK_SIZE:
-            break
-        start = positions[word_idx][0]
-        end = positions[end_idx - 1][1]
-        chunks.append({
-            "index": len(chunks),
-            "start": start,
-            "end": end,
-            "text": text[start:end],
-            "words": chunk_words,
-        })
-        word_idx += chunk_size
-
-    return chunks
-
 
 def _discover_chunk_sizes(signals_dir: Path) -> list[int]:
     """Find all computed chunk sizes by scanning for self_similarity_csN/ directories."""
@@ -424,23 +409,6 @@ def _sliding_window_refine(
         word_positions[refined_start_b][0],
         word_positions[refined_end_b][1],
     )
-
-
-def _build_word_positions(text: str) -> tuple[list[str], list[tuple[int, int]]]:
-    """Build word list and (start, end) char positions for each word."""
-    words: list[str] = []
-    positions: list[tuple[int, int]] = []
-    i = 0
-    while i < len(text):
-        if text[i].isspace():
-            i += 1
-            continue
-        start = i
-        while i < len(text) and not text[i].isspace():
-            i += 1
-        words.append(text[start:i])
-        positions.append((start, i))
-    return words, positions
 
 
 def _extend_alignment(
@@ -822,94 +790,62 @@ def _lastz_align(
 # Chunk-level embedding
 # ---------------------------------------------------------------------------
 
+def _embed_cache_label(prefix: str, chunks: list[dict[str, Any]], config: EmbeddingConfig) -> str:
+    """A cache label that changes whenever the embedded content or the embedding identity changes.
+
+    Chunk embeddings are a pure function of (chunk texts, embedding provider/endpoint/model), so the
+    label hashes exactly those. This keeps the on-disk cache correct under ANY upstream change that
+    alters the chunk texts — chunk mode/size, smart-mode parameters, punctuation delimiters, the
+    analyzable separator, masking — without enumerating each one. (The prior label encoded only
+    mode+size+sanitized-model, so two smart configs, two separators, or models differing only by a
+    sanitized character — ``a:b`` vs ``a/b`` → ``a_b`` — silently shared one stale cache file.)
+
+    ``batch_size`` is deliberately excluded: it changes how vectors are requested, not their values.
+    ``prefix`` (e.g. ``"smart_cs7"``) is kept human-readable for debugging; the hash guarantees
+    uniqueness regardless of it."""
+    h = hashlib.sha256()
+    h.update(f"{config.provider}\x00{config.endpoint}\x00{config.model}\x00".encode())
+    for c in chunks:
+        h.update(c["text"].encode("utf-8"))
+        h.update(b"\x00")
+    return f"{prefix}_{h.hexdigest()[:16]}"
+
+
 def _embed_chunks(
     project: Project,
     chunks: list[dict[str, Any]],
-    chunk_size: int,
-) -> np.ndarray | None:
-    """Embed chunks via MLX or Ollama. Returns embedding matrix or None."""
+    label: str,
+    config: EmbeddingConfig,
+) -> np.ndarray:
+    """Embed ``chunks`` via the embedding stage, caching vectors per ``label`` (which encodes the
+    chunking parameters and the model). Raises on any embedding failure — never returns ``None`` —
+    so a failed embedding surfaces to the user instead of silently skipping the analysis."""
     cache_dir = project.path / "cache"
     cache_dir.mkdir(parents=True, exist_ok=True)
-    chunk_db = cache_dir / f"embeddings_chunk{chunk_size}.db"
+    chunk_db = cache_dir / f"embeddings_{label}.db"
 
-    # Check if already cached
     if chunk_db.exists():
         store = SqliteVecStore.open_existing(chunk_db)
         try:
-            vectors = store.get_all_vectors()
-            if len(vectors) == len(chunks):
-                return np.array(vectors, dtype=np.float32)
+            cached = store.get_all_vectors()
+            if len(cached) == len(chunks):
+                return np.array(cached, dtype=np.float32)
         finally:
             store.close()
+        # Cache present but stale (chunk count changed) — rebuild from scratch.
+        chunk_db.unlink()
 
-    # Probe for embedding dimension
-    import httpx
-
-    dim: int | None = None
-    try:
-        resp = httpx.post("http://localhost:8000/embed", json={"text": "probe"}, timeout=3.0)
-        if resp.status_code == 200 and "embedding" in resp.json():
-            dim = len(resp.json()["embedding"])
-    except (httpx.ConnectError, httpx.TimeoutException):
-        pass
-
-    if dim is None:
-        try:
-            from palimpsest.services.manager import OllamaManager
-            mgr = OllamaManager()
-            client = mgr.embedding_client()
-            probe = client.embed_one("probe")
-            if probe is not None:
-                dim = len(probe)
-        except Exception:
-            pass
-
-    if dim is None:
-        logger.warning("No embedding service available for chunk embedding")
-        return None
-
-    # Embed chunks
-    # Create a temporary project-like structure for the embedding pipeline
-    # We'll embed directly using the low-level batch API
-    store = SqliteVecStore(chunk_db, dim=dim)
+    texts = [c["text"] for c in chunks]
+    vectors = embed_texts(texts, config)  # raises on any provider/HTTP/shape error
+    store = SqliteVecStore(chunk_db, dim=int(vectors.shape[1]))
     slug = project.metadata.id
-
     try:
-        texts = [c["text"] for c in chunks]
-        batch_size = 32
-
-        try:
-            mlx_client = httpx.Client(base_url="http://localhost:8000")
-            resp = mlx_client.post("/embed", json={"text": "probe"}, timeout=3.0)
-            if resp.status_code == 200:
-                logger.info("Embedding %d chunks via MLX (dim=%d)", len(chunks), dim)
-                for batch_start in range(0, len(texts), batch_size):
-                    batch_texts = texts[batch_start:batch_start + batch_size]
-                    resp = mlx_client.post("/embed_batch", json={"texts": batch_texts}, timeout=30.0)
-                    resp.raise_for_status()
-                    vectors = resp.json()["embeddings"]
-                    ids = [f"{slug}:chunk{chunk_size}:{batch_start + k}" for k in range(len(batch_texts))]
-                    meta = [{"chunk_index": batch_start + k} for k in range(len(batch_texts))]
-                    store.add(ids, vectors, meta)
-            mlx_client.close()
-        except Exception:
-            # Fall back to Ollama
-            logger.info("Embedding %d chunks via Ollama (dim=%d)", len(chunks), dim)
-            ollama_client = httpx.Client(base_url="http://localhost:11434")
-            for batch_start in range(0, len(texts), batch_size):
-                batch_texts = texts[batch_start:batch_start + batch_size]
-                resp = ollama_client.post("/api/embed", json={"model": "qwen3-embedding:4b", "input": batch_texts}, timeout=30.0)
-                resp.raise_for_status()
-                vectors = resp.json()["embeddings"]
-                ids = [f"{slug}:chunk{chunk_size}:{batch_start + k}" for k in range(len(batch_texts))]
-                meta = [{"chunk_index": batch_start + k} for k in range(len(batch_texts))]
-                store.add(ids, vectors, meta)
-            ollama_client.close()
-
-        all_vectors = store.get_all_vectors()
-        return np.array(all_vectors, dtype=np.float32) if all_vectors else None
+        ids = [f"{slug}:{label}:{k}" for k in range(len(texts))]
+        meta = [{"chunk_index": k} for k in range(len(texts))]
+        store.add(ids, vectors.tolist(), meta)
     finally:
         store.close()
+    return vectors
 
 
 # ---------------------------------------------------------------------------
@@ -918,44 +854,171 @@ def _embed_chunks(
 
 class SelfSimilarityTrack:
     def __init__(self) -> None:
+        # Metric selection is the self-similarity analysis method — a separate concern from the
+        # chunking+embedding stage, slated for its own redesign — so it keeps its prior behaviour.
         self._metric = "cosine"
-        # Metrics to compute this run; defaults to all. The UI's per-metric
-        # checkboxes narrow this so large texts can skip expensive metrics
-        # (edit_distance is O(n²)).
         self._selected_metrics: list[str] = list(METRICS)
-        self._chunk_size = DEFAULT_CHUNK_SIZE
-        # Per-metric chunk sizes (None means fall back to shared _chunk_size)
+        # Chunking+embedding stage parameters are user-defined at runtime with NO defaults: they
+        # start unset and are populated by set_params; extract() raises if any required one is
+        # missing (validation/coercion live in ChunkingConfig / EmbeddingConfig, never here).
+        self._chunk_mode: str | None = None
+        self._chunk_size: int | None = None
+        self._smart_unit: str | None = None
+        self._delimiters: tuple[str, ...] | None = None
+        self._grow_factor: float | None = None
+        self._remainder_ratio: float | None = None
         self._chunk_size_cosine: int | None = None
         self._chunk_size_jaccard: int | None = None
         self._chunk_size_word_overlap: int | None = None
         self._chunk_size_edit_distance: int | None = None
+        self._embed_provider: str | None = None
+        self._embed_endpoint: str | None = None
+        self._embed_model: str | None = None
+        self._embed_batch_size: int | None = None
+        # Raw param keys seen, so validate_params can reject an unknown one (G1/A4) rather than
+        # silently ignoring it. self-similarity keeps its specialized conditional validation but
+        # honors the same no-silent-drop contract as the ParameterizedTrack base.
+        self._raw_keys: set[str] = set()
 
-    def _clamp_chunk_size(self, value: int) -> int:
-        return max(MIN_CHUNK_SIZE, min(MAX_CHUNK_SIZE, value))
+    # Every parameter key this track accepts (chunking/embedding stage + metric selection). An
+    # incoming key outside this set is rejected by validate_params; "force" is a reserved framework key.
+    ACCEPTED_PARAMS = frozenset({
+        "metric", "metrics", "chunk_mode", "chunk_size", "smart_unit", "delimiters",
+        "grow_factor", "remainder_ratio",
+        "chunk_size_cosine", "chunk_size_jaccard", "chunk_size_word_overlap", "chunk_size_edit_distance",
+        "embed_provider", "embed_endpoint", "embed_model", "embed_batch_size",
+    })
 
     def set_params(self, params: dict[str, Any]) -> None:
-        if "metric" in params and params["metric"] in METRICS:
+        self._raw_keys.update(params)
+        # Values are stored raw — no clamping, no defaulting. Out-of-range/missing values are
+        # rejected later by ChunkingConfig/EmbeddingConfig (and up front by the API), so the user
+        # always learns when a value was unacceptable instead of having it silently rewritten.
+        # Metrics are stored raw — an unknown metric is NOT silently dropped here; validate_metrics()
+        # (called by validate_params and extract) rejects it with a 400 so the typo surfaces.
+        if "metric" in params:
             self._metric = params["metric"]
         if "metrics" in params:
-            selected = [m for m in params["metrics"] if m in METRICS]
-            if selected:
-                self._selected_metrics = selected
+            self._selected_metrics = list(params["metrics"])
+        if "chunk_mode" in params:
+            self._chunk_mode = params["chunk_mode"]
+        if "smart_unit" in params:
+            self._smart_unit = params["smart_unit"]
+        if "delimiters" in params:
+            self._delimiters = tuple(params["delimiters"])
+        if "grow_factor" in params:
+            self._grow_factor = float(params["grow_factor"])
+        if "remainder_ratio" in params:
+            self._remainder_ratio = float(params["remainder_ratio"])
         if "chunk_size" in params:
-            self._chunk_size = self._clamp_chunk_size(int(params["chunk_size"]))
-        # Per-metric chunk size overrides
+            self._chunk_size = int(params["chunk_size"])
         for metric_key in ("cosine", "jaccard", "word_overlap", "edit_distance"):
             param_key = f"chunk_size_{metric_key}"
             if param_key in params:
-                setattr(
-                    self,
-                    f"_chunk_size_{metric_key}",
-                    self._clamp_chunk_size(int(params[param_key])),
-                )
+                setattr(self, f"_chunk_size_{metric_key}", int(params[param_key]))
+        if "embed_provider" in params:
+            self._embed_provider = params["embed_provider"]
+        if "embed_endpoint" in params:
+            self._embed_endpoint = params["embed_endpoint"]
+        if "embed_model" in params:
+            self._embed_model = params["embed_model"]
+        if "embed_batch_size" in params:
+            self._embed_batch_size = int(params["embed_batch_size"])
 
-    def _chunk_size_for(self, metric: str) -> int:
-        """Return the effective chunk size for a metric, falling back to the shared size."""
+    def _chunk_size_for(self, metric: str) -> int | None:
+        """Effective chunk size for a metric (per-metric override, else the shared size, else None)."""
         per_metric: int | None = getattr(self, f"_chunk_size_{metric}", None)
         return per_metric if per_metric is not None else self._chunk_size
+
+    def _embedding_config(self) -> EmbeddingConfig:
+        """Build the embedding config from user-supplied parameters; raises if any are missing."""
+        missing = [name for name, value in (
+            ("embed_provider", self._embed_provider),
+            ("embed_endpoint", self._embed_endpoint),
+            ("embed_model", self._embed_model),
+            ("embed_batch_size", self._embed_batch_size),
+        ) if value is None]
+        if missing:
+            raise ValueError(
+                "self_similarity requires embedding parameters: " + ", ".join(missing)
+            )
+        return EmbeddingConfig(
+            provider=self._embed_provider,  # type: ignore[arg-type]
+            endpoint=self._embed_endpoint,  # type: ignore[arg-type]
+            model=self._embed_model,  # type: ignore[arg-type]
+            batch_size=self._embed_batch_size,  # type: ignore[arg-type]
+        )
+
+    def _chunking_config(self, size: int | None) -> ChunkingConfig:
+        """Build the chunking config for ``size`` from user-supplied parameters. Only mode-relevant
+        fields are passed; ChunkingConfig validates the rest (missing/extraneous → ValueError)."""
+        if self._chunk_mode is None:
+            raise ValueError("self_similarity requires 'chunk_mode'")
+        mode = self._chunk_mode
+        if mode in ("word", "slide"):
+            return ChunkingConfig(mode=mode, size=size)
+        if mode == "punctuation":
+            return ChunkingConfig(mode=mode, delimiters=self._delimiters)
+        if mode == "verse":
+            return ChunkingConfig(mode=mode)
+        if mode == "smart":
+            return ChunkingConfig(
+                mode=mode, size=size, smart_unit=self._smart_unit,
+                grow_factor=self._grow_factor, remainder_ratio=self._remainder_ratio,
+            )
+        raise ValueError(f"unknown chunk mode: {mode!r}")
+
+    def _validate_metrics(self) -> list[str]:
+        """Return the selected metrics in canonical order, rejecting an unknown or empty selection.
+
+        A typo'd metric (e.g. ``cosin``) must fail loudly rather than being silently dropped — the
+        old behaviour kept only the recognized metrics and, if none survived, silently fell back to
+        running *all* of them. Raises ``ValueError`` (→ HTTP 400)."""
+        unknown = [m for m in self._selected_metrics if m not in METRICS]
+        if unknown:
+            raise ValueError(
+                "unknown self_similarity metric(s): " + ", ".join(map(repr, unknown))
+                + "; valid metrics are " + ", ".join(METRICS)
+            )
+        ordered = [m for m in METRICS if m in self._selected_metrics]
+        if not ordered:
+            raise ValueError("self_similarity requires at least one metric")
+        return ordered
+
+    def validate_params(self) -> dict[str, Any]:
+        """Validate the resolved chunking+embedding parameters and return them for echo-back.
+
+        Raises ``ValueError`` (→ HTTP 400) on any missing/invalid/unsupported parameter — the same
+        checks :meth:`extract` performs, run synchronously so the user is told before the job starts
+        rather than discovering a silently-defaulted run or a late async failure."""
+        unknown = self._raw_keys - self.ACCEPTED_PARAMS - {"force"}
+        if unknown:
+            raise ValueError(
+                "unknown parameter(s) for self_similarity: "
+                + ", ".join(map(repr, sorted(unknown)))
+                + "; valid parameters are " + ", ".join(sorted(self.ACCEPTED_PARAMS))
+            )
+        selected = self._validate_metrics()
+        if self._metric not in METRICS:
+            raise ValueError(
+                f"unknown self_similarity metric: {self._metric!r}; valid metrics are "
+                + ", ".join(METRICS)
+            )
+        if any(m in selected for m in ("cosine", "jaccard")):
+            self._embedding_config()
+        if self._chunk_mode is None:
+            raise ValueError("self_similarity requires 'chunk_mode'")
+        if self._chunk_mode in ("verse", "punctuation"):
+            raise ValueError(
+                f"self_similarity does not yet support {self._chunk_mode!r} chunking (it needs a "
+                "numeric window size); the chunking stage supports it for the upcoming redesign"
+            )
+        for metric in selected:
+            size = self._chunk_size_for(metric)
+            if size is None:
+                raise ValueError(f"chunk mode {self._chunk_mode!r} requires 'chunk_size'")
+            self._chunking_config(size)
+        return self.parameters()
 
     @property
     def name(self) -> str:
@@ -983,7 +1046,6 @@ class SelfSimilarityTrack:
         # coordinates by the caller. Masking is therefore applied by the text itself.
         ref_text = project.reference_text()
 
-        MAX_MATRIX_DIM = 4000
         signals_dir = project.path / "signals"
         signals_dir.mkdir(parents=True, exist_ok=True)
 
@@ -992,22 +1054,69 @@ class SelfSimilarityTrack:
         # All alignments combined across metrics; each record carries a "metric" field.
         all_alignments: list[dict[str, Any]] = []
 
+        # Reject unknown/empty metric selections up front (same check the API runs) so a typo'd
+        # metric fails loudly here too, never silently dropped.
+        selected_metrics = self._validate_metrics()
+        # Embedding config is required only when an embedding-based metric (cosine/jaccard) is
+        # selected — don't demand parameters the run won't use. When required and missing it raises
+        # (surfaced as a failed job) rather than being defaulted.
+        needs_embeddings = any(m in selected_metrics for m in ("cosine", "jaccard"))
+        embed_config = self._embedding_config() if needs_embeddings else None
+        if self._chunk_mode is None:
+            raise ValueError("self_similarity requires 'chunk_mode'")
+        mode = self._chunk_mode
+        smart_unit = self._smart_unit
+        # self_similarity's alignment/refinement internals key on an integer word-window size, so it
+        # consumes only the size-bearing chunking modes (word, slide, smart). The size-less modes
+        # (verse, punctuation) exist in the chunking stage and will be wired in with the
+        # self-similarity redesign; refuse them here rather than inventing a window size.
+        if mode in ("verse", "punctuation"):
+            raise ValueError(
+                f"self_similarity does not yet support {mode!r} chunking (it needs a numeric window "
+                "size); the chunking stage supports it for the upcoming self-similarity redesign"
+            )
+
+        # Unit spans for smart mode don't depend on chunk size, so resolve them once. Missing units
+        # for the requested unit raise — no silent fallback to a different mode.
+        verse_spans: list[tuple[int, int]] | None = None
+        paragraph_spans: list[tuple[int, int]] | None = None
+        sentence_spans: list[tuple[int, int]] | None = None
+        if mode == "smart" and smart_unit == "verse":
+            verse_spans = project.analyzable_verse_spans()
+            if not verse_spans:
+                raise ValueError(
+                    "smart/verse chunking requires a verse index, but project "
+                    f"'{project.path.name}' has none"
+                )
+        if mode == "smart" and smart_unit == "paragraph":
+            paragraph_spans = [(s, e) for s, e, _ in project.paragraphs()]
+        if mode == "smart" and smart_unit == "sentence":
+            from palimpsest.ingest.segmenter import segment_sentences
+            sentence_spans = [(seg.start, seg.end) for seg in segment_sentences(ref_text)]
+
         # Caches keyed by chunk_size to avoid re-chunking when multiple metrics
         # share the same window size.
         _chunks_cache: dict[int, list[dict[str, Any]]] = {}
-        _embeddings_cache: dict[int, np.ndarray | None] = {}
+        _embeddings_cache: dict[int, np.ndarray] = {}
 
         def _get_chunks(cs: int) -> list[dict[str, Any]]:
             if cs not in _chunks_cache:
-                raw = _chunk_text(ref_text, cs)
+                cfg = self._chunking_config(cs)
+                raw = chunk_text(
+                    ref_text, cfg, verse_spans=verse_spans,
+                    paragraph_spans=paragraph_spans, sentence_spans=sentence_spans,
+                )
                 repeats = _find_exact_repeats(ref_text, raw)
                 _mask_repeats(raw, repeats)
                 _chunks_cache[cs] = raw
             return _chunks_cache[cs]
 
-        def _get_embeddings(cs: int) -> np.ndarray | None:
+        def _get_embeddings(cs: int) -> np.ndarray:
+            assert embed_config is not None  # only embedding metrics (cosine/jaccard) reach here
             if cs not in _embeddings_cache:
-                _embeddings_cache[cs] = _embed_chunks(project, _get_chunks(cs), cs)
+                chunks = _get_chunks(cs)
+                label = _embed_cache_label(f"{mode}_cs{cs}", chunks, embed_config)
+                _embeddings_cache[cs] = _embed_chunks(project, chunks, label, embed_config)
             return _embeddings_cache[cs]
 
         # Track which chunk-size is used for cosine so the legacy manifest
@@ -1019,31 +1128,72 @@ class SelfSimilarityTrack:
         # the manifest (used for display / debugging).
         exact_repeats_list: list[str] = []
 
-        # Iterate in canonical METRICS order (keeps cosine first so the primary
-        # manifest fields stay coherent) but only over the selected subset.
-        selected_metrics = [m for m in METRICS if m in self._selected_metrics]
+        # LASTZ seed-and-extend + sliding-window refinement assume uniform, non-overlapping word
+        # windows (it maps chunk indices to fixed-stride word positions). slide (overlapping) and
+        # smart (variable-size) chunks satisfy the matrix computation but not that mapping, so the
+        # similarity matrices stay exact while the refined alignment *boundaries* are approximate.
+        # Surface this rather than applying it silently — but don't reject, since the modes are a
+        # deliberate user choice (full support is the upcoming self-similarity redesign).
+        nonuniform_refine = mode in ("slide", "smart")
+        if nonuniform_refine:
+            logger.warning(
+                "self_similarity: chunk mode %r yields %s windows; LASTZ alignment refinement "
+                "assumes uniform non-overlapping windows, so similarity matrices are exact but "
+                "refined alignment boundaries are approximate for this mode.",
+                mode, "overlapping" if mode == "slide" else "variable-size",
+            )
+
+        # Stage-then-commit (C3). Every per-metric matrix, alignment file, and the master manifest is
+        # written to an invisible sibling ".partial" file and promoted with an atomic os.replace only
+        # after the whole run succeeds. A mid-loop failure (e.g. a later metric's embedding service
+        # dropping) never reaches the commit, so it leaves no orphan .bin that the filename-scanning
+        # readers (_discover_chunk_sizes, the chunk_sizes endpoint) would surface as a valid result —
+        # the ".partial" files end in neither ".bin" nor ".json", so no scanner ever sees them. Outputs
+        # from a prior successful run stay intact until the atomic swap. The manifest is staged last so
+        # it is the last file promoted: a reader never sees metric data without its manifest.
+        staged: list[tuple[Path, Path]] = []
+
+        # Sweep any ".partial" files left by a previously crashed run before we begin.
+        for leftover in signals_dir.rglob("*.partial"):
+            try:
+                leftover.unlink()
+            except OSError:
+                pass
+
+        def _stage_array(final: Path, arr: np.ndarray) -> None:
+            final.parent.mkdir(parents=True, exist_ok=True)
+            tmp = final.with_name(f".{final.name}.partial")
+            arr.astype(np.float32).tofile(tmp)
+            staged.append((tmp, final))
+
+        def _stage_text(final: Path, text: str) -> None:
+            final.parent.mkdir(parents=True, exist_ok=True)
+            tmp = final.with_name(f".{final.name}.partial")
+            tmp.write_text(text, encoding="utf-8")
+            staged.append((tmp, final))
+
+        # Iterate the validated selection (canonical METRICS order, cosine first so the primary
+        # manifest fields stay coherent); `selected_metrics` was resolved by _validate_metrics above.
         for metric in selected_metrics:
             cs = self._chunk_size_for(metric)
+            if cs is None:
+                raise ValueError(f"chunk mode {mode!r} requires 'chunk_size'")
             chunks = _get_chunks(cs)
             n = len(chunks)
             logger.info(
-                "Computing self-similarity: %s (%d chunks, chunk_size=%d)",
-                metric, n, cs,
+                "Computing self-similarity: %s (%d chunks, mode=%s, chunk_size=%d)",
+                metric, n, mode, cs,
             )
 
-            if n > MAX_MATRIX_DIM:
+            if n > WARN_MATRIX_DIM:
                 logger.warning(
-                    "Skipping %s — matrix too large: %d×%d. "
-                    "Increase chunk_size above %d.",
-                    metric, n, n, cs,
+                    "self_similarity %s: %d×%d matrix exceeds %d per side — proceeding as "
+                    "requested (this may be slow and memory-heavy).",
+                    metric, n, n, WARN_MATRIX_DIM,
                 )
-                continue
 
             if metric in ("cosine", "jaccard"):
                 embeddings = _get_embeddings(cs)
-                if embeddings is None:
-                    logger.warning("Skipping %s — no embeddings available", metric)
-                    continue
                 if metric == "cosine":
                     matrix = _cosine_matrix(embeddings)
                 else:
@@ -1061,9 +1211,9 @@ class SelfSimilarityTrack:
             cs_dir = signals_dir / f"self_similarity_cs{cs}"
             cs_dir.mkdir(parents=True, exist_ok=True)
 
-            # Write binary matrix (per-cs dir and legacy flat location)
-            matrix.astype(np.float32).tofile(cs_dir / f"{metric}.bin")
-            matrix.astype(np.float32).tofile(signals_dir / f"self_similarity_{metric}.bin")
+            # Stage binary matrix (per-cs dir and legacy flat location)
+            _stage_array(cs_dir / f"{metric}.bin", matrix)
+            _stage_array(signals_dir / f"self_similarity_{metric}.bin", matrix)
 
             # LASTZ scores final identity on the full (unmasked) text. Build an
             # unmasked *copy* rather than clearing masks on the shared cache —
@@ -1078,9 +1228,8 @@ class SelfSimilarityTrack:
             tagged_alns = [{**rec, "metric": metric} for rec in metric_alns]
 
             if tagged_alns:
-                (cs_dir / f"alignments_{metric}.json").write_text(
-                    json.dumps(tagged_alns, indent=2), encoding="utf-8"
-                )
+                _stage_text(cs_dir / f"alignments_{metric}.json",
+                            json.dumps(tagged_alns, indent=2))
 
             all_alignments.extend(tagged_alns)
 
@@ -1090,6 +1239,8 @@ class SelfSimilarityTrack:
                 "n_units": n,
                 "dimensions": [n, n],
                 "chunk_size": cs,
+                "chunk_mode": mode,
+                "alignment_refinement": "approximate" if nonuniform_refine else "exact",
                 "alignment_count": len(metric_alns),
             }
 
@@ -1105,24 +1256,21 @@ class SelfSimilarityTrack:
         # and the legacy flat file.
         if all_alignments:
             combined_json = json.dumps(all_alignments, indent=2)
-            (signals_dir / "self_similarity_alignments.json").write_text(
-                combined_json, encoding="utf-8"
-            )
-            written_cs: set[int] = {self._chunk_size_for(m) for m in available_metrics}
+            _stage_text(signals_dir / "self_similarity_alignments.json", combined_json)
+            written_cs: set[int] = {
+                cs for m in available_metrics if (cs := self._chunk_size_for(m)) is not None
+            }
             for cs in written_cs:
-                cs_dir = signals_dir / f"self_similarity_cs{cs}"
-                cs_dir.mkdir(parents=True, exist_ok=True)
                 cs_alns = [r for r in all_alignments
                            if self._chunk_size_for(r["metric"]) == cs]
-                (cs_dir / "alignments.json").write_text(
-                    json.dumps(cs_alns, indent=2), encoding="utf-8"
-                )
+                _stage_text(signals_dir / f"self_similarity_cs{cs}" / "alignments.json",
+                            json.dumps(cs_alns, indent=2))
 
         # Discover all computed chunk sizes (including previously computed ones)
         available_chunk_sizes = _discover_chunk_sizes(signals_dir)
         for m in available_metrics:
             cs = self._chunk_size_for(m)
-            if cs not in available_chunk_sizes:
+            if cs is not None and cs not in available_chunk_sizes:
                 available_chunk_sizes.append(cs)
         available_chunk_sizes.sort()
 
@@ -1151,6 +1299,9 @@ class SelfSimilarityTrack:
                 "paragraph_count": len(paras),
                 "chunk_count": n_primary,
                 "chunk_size": primary_chunk_size,
+                "chunk_mode": mode,
+                "smart_unit": smart_unit if mode == "smart" else None,
+                "embedding": embed_config.provenance() if embed_config is not None else None,
                 "available_metrics": available_metrics,
                 "metric_info": metric_info,
                 "alignment_count": len(all_alignments),
@@ -1163,10 +1314,12 @@ class SelfSimilarityTrack:
             },
         }
         manifest_path = signals_dir / "self_similarity.json"
-        manifest_path.write_text(
-            json.dumps(master, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
+        _stage_text(manifest_path, json.dumps(master, indent=2, ensure_ascii=False))
+
+        # Commit: promote every staged file with an atomic rename. Reaching here means the whole run
+        # succeeded; the manifest (staged last) is therefore promoted last.
+        for tmp, final in staged:
+            os.replace(tmp, final)
 
         return manifest_path
 
@@ -1183,11 +1336,25 @@ class SelfSimilarityTrack:
         }
 
     def parameters(self) -> dict[str, Any]:
+        # Echo the actual configured values (the resolved run parameters), not placeholder defaults.
         params: dict[str, Any] = {
-            "self_similarity.metric": "cosine",
+            "self_similarity.metric": self._metric,
+            "self_similarity.chunk_mode": self._chunk_mode,
             "self_similarity.chunk_size": self._chunk_size,
             "self_similarity.source": "chunk_embeddings",
+            "self_similarity.embed_provider": self._embed_provider,
+            "self_similarity.embed_endpoint": self._embed_endpoint,
+            "self_similarity.embed_model": self._embed_model,
+            "self_similarity.embed_batch_size": self._embed_batch_size,
         }
+        if self._chunk_mode == "smart":
+            params["self_similarity.smart_unit"] = self._smart_unit
+            params["self_similarity.grow_factor"] = self._grow_factor
+            params["self_similarity.remainder_ratio"] = self._remainder_ratio
+        if self._chunk_mode == "punctuation":
+            params["self_similarity.delimiters"] = (
+                list(self._delimiters) if self._delimiters else None
+            )
         for metric_key in ("cosine", "jaccard", "word_overlap", "edit_distance"):
             per_metric: int | None = getattr(self, f"_chunk_size_{metric_key}", None)
             if per_metric is not None:

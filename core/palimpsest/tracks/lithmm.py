@@ -17,6 +17,7 @@ from sklearn.preprocessing import StandardScaler
 from palimpsest.annotation.model import Annotation, Body, Creator, Target, TextPositionSelector
 from palimpsest.formats.signals import SignalManifest
 from palimpsest.project import Project
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 logger = logging.getLogger(__name__)
 
@@ -129,15 +130,24 @@ def _describe_state(
     return f"State {state_idx}: {', '.join(descriptors)}"
 
 
-class LitHMMExtractor:
+class LitHMMExtractor(ParameterizedTrack):
     """Multivariate HMM passage state discovery."""
 
-    def __init__(self, n_states: int = DEFAULT_N_STATES) -> None:
-        self._n_states = n_states
+    PARAMS = (
+        Param("n_states", int, default=DEFAULT_N_STATES, min=2, max=20,
+              help="number of latent passage states (2..20 keeps the HMM well-posed)"),
+        # Declared (not hidden) algorithm constants — reported and disk-recorded, locked until exposed.
+        Param("n_iter", int, default=100, locked=True, help="HMM fit iteration cap"),
+        Param("random_state", int, default=42, locked=True, help="RNG seed (reproducibility)"),
+        Param("n_init", int, default=10, locked=True, help="KMeans-fallback restarts"),
+    )
 
-    def set_params(self, params: dict[str, Any]) -> None:
-        if "n_states" in params:
-            self._n_states = max(2, min(20, int(params["n_states"])))
+    def __init__(self, n_states: int | None = None) -> None:
+        super().__init__()
+        # Constructor convenience (used by tests / direct callers): seed the raw param so it flows
+        # through the same validation path as an API-supplied value.
+        if n_states is not None:
+            self._raw_params["n_states"] = n_states
 
     @property
     def name(self) -> str:
@@ -170,7 +180,12 @@ class LitHMMExtractor:
         scaler = StandardScaler()
         features_scaled = scaler.fit_transform(features)
 
-        n_states = min(self._n_states, max(2, n_paras // 2))
+        cfg = self.resolved_params()
+        random_state = cfg["random_state"]
+        n_iter = cfg["n_iter"]
+        n_init = cfg["n_init"]
+        # Reduced to a feasible value for the actual paragraph count; the effective value is recorded.
+        n_states = min(cfg["n_states"], max(2, n_paras // 2))
 
         used_hmm = False
         try:
@@ -178,8 +193,8 @@ class LitHMMExtractor:
             model = GaussianHMM(
                 n_components=n_states,
                 covariance_type="diag",
-                n_iter=100,
-                random_state=42,
+                n_iter=n_iter,
+                random_state=random_state,
             )
             model.fit(features_scaled)
             labels = model.predict(features_scaled)
@@ -188,7 +203,7 @@ class LitHMMExtractor:
             used_hmm = True
         except ImportError:
             from sklearn.cluster import KMeans
-            kmeans = KMeans(n_clusters=n_states, random_state=42, n_init=10)
+            kmeans = KMeans(n_clusters=n_states, random_state=random_state, n_init=n_init)
             labels = kmeans.fit_predict(features_scaled)
             posteriors = np.zeros((n_paras, n_states))
             posteriors[np.arange(n_paras), labels] = 1.0
@@ -196,7 +211,7 @@ class LitHMMExtractor:
         except (ValueError, RuntimeError) as exc:
             logger.warning("HMM fitting failed (%s), falling back to KMeans", exc)
             from sklearn.cluster import KMeans
-            kmeans = KMeans(n_clusters=n_states, random_state=42, n_init=10)
+            kmeans = KMeans(n_clusters=n_states, random_state=random_state, n_init=n_init)
             labels = kmeans.fit_predict(features_scaled)
             posteriors = np.zeros((n_paras, n_states))
             posteriors[np.arange(n_paras), labels] = 1.0
@@ -270,10 +285,4 @@ class LitHMMExtractor:
             },
             "textViewRendering": "color-band",
             "overviewBarRendering": {"type": "state-band", "n_states": DEFAULT_N_STATES},
-        }
-
-    def parameters(self) -> dict[str, Any]:
-        return {
-            "lithmm.n_states": self._n_states,
-            "lithmm.features": FEATURE_NAMES,
         }
