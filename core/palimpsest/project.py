@@ -145,6 +145,21 @@ def _projects_for_source_file(workspace: Path, source_file: str) -> list[Path]:
     return matches
 
 
+def _complement_spans(masked: list[tuple[int, int]], n: int) -> list[tuple[int, int]]:
+    """The unmasked [start,end) spans over [0,n) — the gaps between the sorted, disjoint masked
+    intervals (as returned by :meth:`Project.masked_intervals`)."""
+    spans: list[tuple[int, int]] = []
+    cur = 0
+    for a, b in masked:
+        if a > cur:
+            spans.append((cur, a))
+        if b > cur:
+            cur = b
+    if cur < n:
+        spans.append((cur, n))
+    return spans
+
+
 class Project:
     """Represents a Palimpsest project directory."""
 
@@ -158,6 +173,13 @@ class Project:
         # On-demand masking override for one analysis run (set by the server before extract):
         # {enabled: bool, mask_by_type?: {type: bool}, section_masked?: {id: bool}}.
         self._mask_override: dict[str, Any] | None = None
+        self._verse_iv_cache: list[tuple[int, int]] | None = None
+        # Set on an analysis-view clone whose text is ALREADY mask-resolved: masking is
+        # materialized into the text, so masked_intervals() reports nothing further to mask.
+        self._pre_masked: bool = False
+        # Overrides the on-disk text path for extractors that need a real file (e.g. BookNLP);
+        # an analysis view points this at the materialized analyzable text.
+        self._text_path: Path | None = None
 
     def set_mask_override(self, override: dict[str, Any] | None) -> None:
         """Apply a transient masking override to this instance's ``masked_intervals``."""
@@ -165,8 +187,26 @@ class Project:
 
     def reference_text(self) -> str:
         if self._text_cache is None:
-            self._text_cache = (self.path / "reference.txt").read_text(encoding="utf-8")
+            self._text_cache = self.reference_path().read_text(encoding="utf-8")
         return self._text_cache
+
+    def reference_path(self) -> Path:
+        """The on-disk path of the text to analyse — the project's ``reference.txt`` normally. On
+        an analysis view it lazily materializes the in-memory analyzable text to a temp file (only
+        when a file-path extractor like BookNLP actually asks for it) and returns that."""
+        if self._text_path is not None:
+            return self._text_path
+        if self._pre_masked and self._text_cache is not None:
+            import os
+            import tempfile
+            adir = self.path / ".analysis"
+            adir.mkdir(exist_ok=True)
+            fd, name = tempfile.mkstemp(suffix=".txt", dir=adir)
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                f.write(self._text_cache)
+            self._text_path = Path(name)
+            return self._text_path
+        return self.path / "reference.txt"
 
     def paragraphs(self) -> list[tuple[int, int, str]]:
         """Return (start, end, text) for each paragraph."""
@@ -201,33 +241,45 @@ class Project:
         segs = segment_sections(text)
         return [(s.start, s.end, s.text) for s in segs]
 
-    def masked_intervals(self) -> list[tuple[int, int]]:
-        """Masked [start,end) ranges from the layout config, or [] if none configured.
+    def _verse_intervals(self) -> list[tuple[int, int]]:
+        """The always-on verse-number token spans (cached per instance). Empty for works with no
+        recognised verse markers. Prefers the cached verses.jsonl track over a full-text scan."""
+        iv = self._verse_iv_cache
+        if iv is None:
+            from palimpsest.verses import (
+                cached_verse_number_intervals,
+                detect_verses,
+                verse_number_intervals,
+            )
+            iv = cached_verse_number_intervals(self.path)
+            if iv is None:
+                iv = verse_number_intervals(detect_verses(self.reference_text()))
+            self._verse_iv_cache = iv
+        return iv
 
-        Downstream analyses skip text intersecting these ranges (Step 4 masking). The masked
-        set is the structural deepest-wins masking UNION the verse-number layer — the "C:V."
-        marker tokens — so verse numbers are excluded from analysis while verse prose stays.
+    def masked_intervals(self) -> list[tuple[int, int]]:
+        """Masked [start,end) ranges excluded from analysis (Step 4 masking).
+
+        The masked set is the structural deepest-wins masking UNION the verse-number layer — the
+        "C:V." marker tokens. Verse-number masking is ALWAYS on: even with no layout configured
+        or on-demand masking toggled fully off, the verse-number tokens stay masked (verse prose
+        is untouched). Returns ``[]`` only when there is neither structural masking nor any verse
+        markers.
         """
         import dataclasses
 
         from palimpsest.layout import load_layout, masked_intervals
-        from palimpsest.verses import (
-            cached_verse_number_intervals,
-            detect_verses,
-            verse_number_intervals,
-        )
+        # An analysis view's text is already mask-resolved — nothing remains to mask.
+        if self._pre_masked:
+            return []
+        text_len = len(self.reference_text())
+        verse_iv = self._verse_intervals()
         cfg = load_layout(self.path)
-        if cfg is None:
-            return []
         ov = self._mask_override
-        # On-demand masking turned off for this run → nothing is excluded.
-        if ov is not None and not ov.get("enabled", True):
-            return []
-        text = self.reference_text()
-        # Prefer the cached verses.jsonl track; only recompute over the full text if absent.
-        verse_iv = cached_verse_number_intervals(self.path)
-        if verse_iv is None:
-            verse_iv = verse_number_intervals(detect_verses(text))
+        masking_off = ov is not None and not ov.get("enabled", True)
+        # No structural masking (none configured, or toggled off) → verse-number layer only.
+        if cfg is None or masking_off:
+            return masked_intervals([], {}, text_len, extra_masked=verse_iv)
         sections, mask_by_type = cfg.sections, cfg.mask_by_type
         if ov is not None:
             if ov.get("mask_by_type"):
@@ -237,7 +289,41 @@ class Project:
                 sections = [
                     dataclasses.replace(s, masked=sm[s.id]) if s.id in sm else s for s in cfg.sections
                 ]
-        return masked_intervals(sections, mask_by_type, len(text), extra_masked=verse_iv)
+        return masked_intervals(sections, mask_by_type, text_len, extra_masked=verse_iv)
+
+    def analyzable_text(self, sep: str | None = None) -> tuple[str, Any]:
+        """The masked-resolved analyzable text plus an :class:`~palimpsest.derive.OffsetMap`.
+
+        Every unmasked character span (the complement of :meth:`masked_intervals`) is concatenated
+        with ``sep``; the OffsetMap translates analyzable offsets back to original document offsets
+        so analysis results can be re-anchored. Because masked_intervals always unions the
+        verse-number layer, those tokens are absent from the analyzable text by construction.
+        """
+        from palimpsest.derive import SEPARATOR, OffsetMap, assemble_text
+        if sep is None:
+            sep = SEPARATOR
+        text = self.reference_text()
+        kept = _complement_spans(self.masked_intervals(), len(text))
+        return assemble_text(text, kept, sep), OffsetMap(kept, len(sep))
+
+    def analysis_view(self, sep: str | None = None) -> tuple[Project, Any]:
+        """A lightweight clone whose reference text IS the analyzable text, for running extractors
+        against pre-masked content (they chunk it at their own runtime). Shares this project's path
+        so results are written back to it; its own masked_intervals() is empty. A file-path
+        extractor triggers lazy materialization of the analyzable text via ``reference_path()``;
+        call :meth:`close_analysis_view` afterwards to remove any temp file."""
+        atext, omap = self.analyzable_text(sep)
+        view = Project(self.path, self.metadata)
+        view._text_cache = atext
+        view._pre_masked = True
+        view._verse_iv_cache = []  # nothing left to mask in the resolved text
+        return view, omap
+
+    def close_analysis_view(self) -> None:
+        """Remove the lazily-materialized analyzable-text temp file backing an analysis view."""
+        if self._text_path is not None and self._text_path.parent.name == ".analysis":
+            self._text_path.unlink(missing_ok=True)
+            self._text_path = None
 
     @classmethod
     def load(cls, path: Path) -> Project:

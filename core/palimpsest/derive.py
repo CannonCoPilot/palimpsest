@@ -65,6 +65,36 @@ class OffsetMap:
         ce = self.base[iN] + (min(e, eN) - sN)
         return (cs, ce)
 
+    def _segment_at(self, child_off: int) -> int | None:
+        """Index of the kept span whose CONTENT (excluding the following separator) contains
+        ``child_off``, or ``None`` if it lands in an inter-span separator. O(log n)."""
+        import bisect
+        i = bisect.bisect_right(self.base, child_off) - 1
+        if i < 0:
+            return None
+        s, e = self.spans[i]
+        return i if child_off <= self.base[i] + (e - s) else None
+
+    def inverse_point(self, child_off: int) -> int | None:
+        """Parent offset for a child offset (the inverse of :meth:`translate_point`), or ``None``
+        if it falls inside an inter-span separator with no parent pre-image."""
+        i = self._segment_at(child_off)
+        if i is None:
+            return None
+        return self.spans[i][0] + (child_off - self.base[i])
+
+    def inverse_element(self, cs: int, ce: int) -> tuple[int, int] | None:
+        """Parent [start,end) for a child [start,end) that lies within a SINGLE kept span, or
+        ``None`` if it spans a separator (a dropped parent gap) and has no contiguous pre-image."""
+        i = self._segment_at(cs)
+        if i is None:
+            return None
+        s, e = self.spans[i]
+        seg_end = self.base[i] + (e - s)
+        if ce > seg_end:
+            return None
+        return (s + (cs - self.base[i]), s + (ce - self.base[i]))
+
 
 def compute_kept_spans(
     sections: list[LayoutSection], extraction_types: set[str], excluded_ids: set[str]
@@ -139,6 +169,26 @@ def remap_track_annotations(annotations: list[dict[str, Any]], omap: OffsetMap) 
         new["target"]["selector"]["start"] = m[0]
         new["target"]["selector"]["end"] = m[1]
         out.append(new)
+    return out
+
+
+def remap_result_annotations(annotations: list[Any], omap: OffsetMap) -> list[Any]:
+    """Re-anchor extractor-produced Annotation objects from analyzable to original coordinates.
+
+    Each annotation's ``TextPositionSelector`` is mapped back through the OffsetMap (the inverse of
+    materializing the analyzable text); an annotation straddling a dropped masked gap has no
+    contiguous original image and is dropped. Quote-only selectors (no offsets) pass through."""
+    from palimpsest.annotation.model import TextPositionSelector
+
+    out: list[Any] = []
+    for ann in annotations:
+        sel = getattr(getattr(ann, "target", None), "selector", None)
+        if isinstance(sel, TextPositionSelector):
+            m = omap.inverse_element(sel.start, sel.end)
+            if m is None:
+                continue
+            sel.start, sel.end = m
+        out.append(ann)
     return out
 
 

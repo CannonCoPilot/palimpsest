@@ -84,7 +84,7 @@ class CoreferenceExtractor:
             warnings.filterwarnings("ignore", category=DeprecationWarning)
             booknlp_model = BookNLP("en", model_params)
 
-            input_file = project.path / "reference.txt"
+            input_file = project.reference_path()
             booknlp_model.process(
                 str(input_file),
                 str(cache_dir),

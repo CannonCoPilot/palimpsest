@@ -115,6 +115,27 @@ class CollectionRequest(BaseModel):
     project_ids: list[str] = []
 
 
+def _extract_masked(project: Any, extractor: Any) -> Any:
+    """Run an extractor under character-level masking.
+
+    Annotation extractors run against the project's analysis view — the masked-resolved analyzable
+    text, with verse-number tokens always stripped — and have their results remapped back to
+    original-document coordinates. Signal extractors still run directly against the full project
+    (their masking inversion is pending)."""
+    if extractor.output_type != "annotation":
+        return extractor.extract(project)
+    from palimpsest.derive import remap_result_annotations
+
+    view, omap = project.analysis_view()
+    try:
+        result = extractor.extract(view)
+    finally:
+        view.close_analysis_view()
+    if isinstance(result, list):
+        return remap_result_annotations(result, omap)
+    return result
+
+
 def _layout_boundaries(project: Any) -> list[tuple[int, int, str]]:
     """Section boundaries (start, end, heading) from the sections track, else segmenter."""
     out: list[tuple[int, int, str]] = []
@@ -899,7 +920,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             try:
                 async with _job_semaphore:
                     try:
-                        result = await asyncio.to_thread(extractor.extract, project)
+                        result = await asyncio.to_thread(_extract_masked, project, extractor)
                     except ValueError as exc:
                         _running_jobs[job_key] = {
                             "status": "failed",
@@ -1246,32 +1267,19 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         return out
 
     async def _compute_tracks(project: Any) -> list[dict[str, str]]:
-        """Step 5: run analysis extractors, dropping annotations inside masked ranges."""
+        """Step 5: run analysis extractors over the masked-resolved analyzable text."""
         import asyncio
 
         from palimpsest.annotation.serializer import write_track
-        from palimpsest.layout import range_is_masked
         from palimpsest.tracks.registry import TrackRegistry
-
-        masked = await asyncio.to_thread(project.masked_intervals)
-
-        def _keep(ann: Any) -> bool:
-            sel = getattr(ann.target, "selector", None)
-            start = getattr(sel, "start", None)
-            end = getattr(sel, "end", None)
-            if start is None or end is None:
-                return True  # no position → can't mask → keep
-            return not range_is_masked(masked, start, end)
 
         failed_tracks: list[dict[str, str]] = []
         registry = TrackRegistry.discover()
         for extractor_cls in registry.dependency_order():
             extractor = extractor_cls()
             try:
-                result = await asyncio.to_thread(extractor.extract, project)
+                result = await asyncio.to_thread(_extract_masked, project, extractor)
                 if extractor.output_type == "annotation" and isinstance(result, list):
-                    if masked:
-                        result = [a for a in result if _keep(a)]
                     track_path = project.path / "tracks" / f"{extractor.name}.jsonl"
                     write_track(track_path, result)
                 manifest_dir = project.path / "manifests"
