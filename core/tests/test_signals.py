@@ -100,6 +100,22 @@ class TestNarrativeArc:
         assert m["trackName"] == "narrative_arc"
         assert "dedicatedView" in m
 
+    def test_segments_param_changes_output_shape(self, small_project):
+        """The OPEN segments param is threaded into extract end-to-end (not just validated): an 8-segment
+        run produces an 8x3 arc and records the effective value in the manifest."""
+        from palimpsest.tracks.narrative_arc import NarrativeArcTrack
+
+        track = NarrativeArcTrack()
+        track.set_params({"segments": 8})
+        track.extract(small_project)
+        manifest = json.loads(
+            (small_project.path / "signals" / "narrative_arc.json").read_text()
+        )
+        assert manifest["dimensions"] == [8, 3]
+        assert manifest["metadata"]["segments"] == 8
+        _, data = read_signal(small_project.path / "signals", "narrative_arc")
+        assert data.shape == (8, 3)
+
     def test_properties(self):
         from palimpsest.tracks.narrative_arc import NarrativeArcTrack
 

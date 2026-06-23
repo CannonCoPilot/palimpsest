@@ -682,3 +682,124 @@ class TestTrackParamValidation:
         ext = TopicsExtractor()
         ext.set_params({"n_topics": 6})
         assert ext.parameters()["topics.n_topics"] == ext.resolved_params()["n_topics"] == 6
+
+
+class TestBatchTrackParams:
+    """D2/D3 walk batch: the remaining tracks declare OPEN tunable params (settable + validated → 400)
+    and LOCKED constants (reported, reject writes). Default behavior stays byte-identical (covered by
+    each track's existing tests); these assert the new open/locked contract surface and reporting."""
+
+    def test_lexical_open_threshold_and_locked_confidence(self):
+        from palimpsest.tracks.lexical import LexicalExtractor
+        ext = LexicalExtractor()
+        ext.set_params({"min_tokens": 12})
+        assert ext.validate_params()["min_tokens"] == 12
+        bad = LexicalExtractor()
+        bad.set_params({"min_tokens": 0})
+        with pytest.raises(ValueError, match="min_tokens.*>= 1"):
+            bad.validate_params()
+        locked = LexicalExtractor()
+        locked.set_params({"confidence": 0.5})
+        with pytest.raises(ValueError, match="locked"):
+            locked.validate_params()
+        assert ext.parameters()["lexical.confidence"] == 0.99  # locked constant is reported
+
+    def test_dialogue_open_window_and_locked_per_pattern_confidences(self):
+        from palimpsest.tracks.dialogue import DialogueExtractor
+        ext = DialogueExtractor()
+        ext.set_params({"max_attribution_window": 250})
+        assert ext.validate_params()["max_attribution_window"] == 250
+        params = ext.parameters()
+        assert params["dialogue.confidence_curly"] == 0.92
+        assert params["dialogue.confidence_dash"] == 0.70
+        locked = DialogueExtractor()
+        locked.set_params({"confidence_curly": 0.5})
+        with pytest.raises(ValueError, match="locked"):
+            locked.validate_params()
+
+    def test_entities_and_syntax_spacy_model_open_confidence_locked(self):
+        from palimpsest.tracks.entities import EntityExtractor
+        from palimpsest.tracks.syntax import SyntaxExtractor
+        ent = EntityExtractor()
+        ent.set_params({"spacy_model": "en_core_web_sm"})
+        assert ent.validate_params()["spacy_model"] == "en_core_web_sm"
+        # The existing test_satisfies_protocol/test relies on entities.spacy_model still being reported.
+        assert EntityExtractor().parameters()["entities.spacy_model"] == "en_core_web_lg"
+        ent_locked = EntityExtractor()
+        ent_locked.set_params({"confidence": 0.5})
+        with pytest.raises(ValueError, match="locked"):
+            ent_locked.validate_params()
+        syn = SyntaxExtractor()
+        syn.set_params({"spacy_model": "en_core_web_sm"})
+        assert syn.validate_params()["spacy_model"] == "en_core_web_sm"
+
+    def test_rqa_open_params_and_locked_tfidf_cap(self):
+        from palimpsest.tracks.rqa import RQATrack
+        ext = RQATrack()
+        ext.set_params({"threshold": 0.5, "window_words": 200, "min_line": 4})
+        resolved = ext.validate_params()
+        assert (resolved["threshold"], resolved["window_words"], resolved["min_line"]) == (0.5, 200, 4)
+        bad = RQATrack()
+        bad.set_params({"threshold": 5.0})  # > 1.0
+        with pytest.raises(ValueError, match="threshold.*<= 1"):
+            bad.validate_params()
+        locked = RQATrack()
+        locked.set_params({"tfidf_max_features": 100})
+        with pytest.raises(ValueError, match="locked"):
+            locked.validate_params()
+
+    def test_narrative_arc_segments_open_and_validated(self):
+        from palimpsest.tracks.narrative_arc import NarrativeArcTrack
+        ext = NarrativeArcTrack()
+        ext.set_params({"segments": 8})
+        assert ext.validate_params()["segments"] == 8
+        bad = NarrativeArcTrack()
+        bad.set_params({"segments": 100})
+        with pytest.raises(ValueError, match="segments.*<= 20"):
+            bad.validate_params()
+
+    def test_boundary_detection_reports_hmm_matrices(self):
+        from palimpsest.tracks.boundary_detection import (
+            HMM_TRANSITION_MATRIX,
+            BoundaryDetectionTrack,
+        )
+        params = BoundaryDetectionTrack().parameters()
+        assert params["boundary_detection.min_domain_length"] == 3
+        # Previously-hidden HMM emission/transition matrices are now reported in provenance.
+        assert params["boundary_detection.hmm_transition_matrix"] == HMM_TRANSITION_MATRIX
+        assert params["boundary_detection.method"] == "hmm_viterbi_aggregate"
+        locked = BoundaryDetectionTrack()
+        locked.set_params({"boundary_confidence": 0.9})
+        with pytest.raises(ValueError, match="locked"):
+            locked.validate_params()
+
+    def test_coreference_open_locked_and_availability_preserved(self):
+        from palimpsest.tracks.coreference import CoreferenceExtractor
+        ext = CoreferenceExtractor()
+        ext.set_params({"min_chain_length": 3, "booknlp_model": "small"})
+        resolved = ext.validate_params()
+        assert resolved["min_chain_length"] == 3
+        assert resolved["booknlp_model"] == "small"
+        bad = CoreferenceExtractor()
+        bad.set_params({"booknlp_model": "huge"})  # not a valid choice
+        with pytest.raises(ValueError, match="booknlp_model"):
+            bad.validate_params()
+        # The availability flags a downstream test asserts on survive the parameters() override.
+        p = ext.parameters()
+        assert p["coreference.available"] is True
+        assert "coreference.booknlp_available" in p
+
+    def test_compartments_open_locked_and_method_preserved(self):
+        from palimpsest.tracks.compartments import CompartmentsExtractor
+        ext = CompartmentsExtractor()
+        ext.set_params({"di_window": 8, "domain_threshold": 0.5})
+        resolved = ext.validate_params()
+        assert resolved["di_window"] == 8
+        assert resolved["domain_threshold"] == 0.5
+        p = ext.parameters()
+        assert p["compartments.method"] == "eigenvector_decomposition"  # method label preserved
+        assert p["compartments.domain_confidence"] == 0.70  # locked constant reported
+        locked = CompartmentsExtractor()
+        locked.set_params({"domain_confidence": 0.5})
+        with pytest.raises(ValueError, match="locked"):
+            locked.validate_params()

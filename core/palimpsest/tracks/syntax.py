@@ -8,8 +8,10 @@ import spacy
 
 from palimpsest.annotation.bodies import syntax_body
 from palimpsest.annotation.model import Annotation, Creator, Target, TextPositionSelector
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 DEFAULT_SPACY_MODEL = "en_core_web_lg"
+DEFAULT_CONFIDENCE = 0.90
 _NLP_CACHE: dict[str, Any] = {}
 
 SUBORDINATE_DEPS = frozenset({
@@ -35,8 +37,15 @@ def _tree_depth(token: Any, _depth: int = 0) -> int:
     return 1 + max(_tree_depth(c, _depth + 1) for c in children)
 
 
-class SyntaxExtractor:
+class SyntaxExtractor(ParameterizedTrack):
     """Per-paragraph syntactic complexity features."""
+
+    PARAMS = (
+        Param("spacy_model", str, default=DEFAULT_SPACY_MODEL,
+              help="spaCy model used for dependency parsing (must be installed)"),
+        Param("confidence", float, default=DEFAULT_CONFIDENCE, locked=True,
+              help="fixed confidence assigned to each syntactic-complexity annotation"),
+    )
 
     @property
     def name(self) -> str:
@@ -59,7 +68,10 @@ class SyntaxExtractor:
         return "E5"
 
     def extract(self, project: Any) -> list[Annotation]:
-        doc = project.spacy_doc(DEFAULT_SPACY_MODEL)
+        cfg = self.resolved_params()
+        spacy_model = cfg["spacy_model"]
+        confidence = cfg["confidence"]
+        doc = project.spacy_doc(spacy_model)
 
         paragraphs = project.paragraphs()
         source_urn = f"urn:palimpsest:{project.metadata.id}"
@@ -109,8 +121,8 @@ class SyntaxExtractor:
                     source=source_urn,
                     selector=TextPositionSelector(start=para_start, end=para_end),
                 ),
-                creator=Creator(name=f"spacy/{DEFAULT_SPACY_MODEL}"),
-                confidence=0.90,
+                creator=Creator(name=f"spacy/{spacy_model}"),
+                confidence=confidence,
                 evidence_level="E5",
                 project_id=project.metadata.id,
                 track_name="syntax",
@@ -127,6 +139,3 @@ class SyntaxExtractor:
             "textViewRendering": "margin-marker",
             "overviewBarRendering": {"type": "density-barcode", "color": "#e67e22"},
         }
-
-    def parameters(self) -> dict[str, Any]:
-        return {"syntax.spacy_model": DEFAULT_SPACY_MODEL}

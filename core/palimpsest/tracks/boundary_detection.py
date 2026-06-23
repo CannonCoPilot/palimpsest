@@ -23,8 +23,24 @@ import numpy as np
 
 from palimpsest.annotation.model import Annotation, Body, Creator, Target, TextPositionSelector
 from palimpsest.project import Project
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 logger = logging.getLogger(__name__)
+
+# 3-state boundary HMM — previously hidden inside _viterbi_boundary, now named module constants so
+# they can be reported in parameters() (finding: HMM emission/transition matrices were output-affecting
+# but invisible). States: 0=inside-domain, 1=boundary, 2=transition.
+HMM_N_STATES = 3
+HMM_STATE_MEANS = [-0.5, 1.5, 0.3]
+HMM_STATE_VARS = [0.8, 0.8, 0.5]
+HMM_TRANSITION_MATRIX = [
+    [0.90, 0.03, 0.07],  # inside → inside/boundary/transition
+    [0.20, 0.30, 0.50],  # boundary → inside/boundary/transition
+    [0.40, 0.10, 0.50],  # transition → inside/boundary/transition
+]
+HMM_INITIAL_PROBS = [0.7, 0.1, 0.2]
+MIN_DOMAIN_LENGTH = 3
+DEFAULT_BOUNDARY_CONFIDENCE = 0.7
 
 
 def _directionality_index(matrix: np.ndarray, window: int = 5) -> np.ndarray:
@@ -146,21 +162,17 @@ def _viterbi_boundary(features: np.ndarray) -> np.ndarray:
 
     boundary_evidence /= max(n_signals, 1)
 
-    # 3-state HMM: inside(0), boundary(1), transition(2)
-    n_states = 3
+    # 3-state HMM: inside(0), boundary(1), transition(2) — parameters now named module constants.
+    n_states = HMM_N_STATES
     # Emission: Gaussian approximation from boundary_evidence
-    state_means = np.array([-0.5, 1.5, 0.3])
-    state_vars = np.array([0.8, 0.8, 0.5])
+    state_means = np.array(HMM_STATE_MEANS)
+    state_vars = np.array(HMM_STATE_VARS)
 
     # Transition matrix: domains are sticky, boundaries are rare
-    log_trans = np.log(np.array([
-        [0.90, 0.03, 0.07],  # inside → inside/boundary/transition
-        [0.20, 0.30, 0.50],  # boundary → inside/boundary/transition
-        [0.40, 0.10, 0.50],  # transition → inside/boundary/transition
-    ]))
+    log_trans = np.log(np.array(HMM_TRANSITION_MATRIX))
 
     # Initial probabilities
-    log_pi = np.log(np.array([0.7, 0.1, 0.2]))
+    log_pi = np.log(np.array(HMM_INITIAL_PROBS))
 
     # Log emission probabilities
     def log_emit(obs: float, state: int) -> float:
@@ -191,7 +203,9 @@ def _viterbi_boundary(features: np.ndarray) -> np.ndarray:
     return states
 
 
-def _extract_domains(states: np.ndarray) -> list[dict[str, Any]]:
+def _extract_domains(
+    states: np.ndarray, min_length: int = MIN_DOMAIN_LENGTH
+) -> list[dict[str, Any]]:
     """Extract domain intervals from Viterbi state sequence."""
     n = len(states)
     if n == 0:
@@ -226,14 +240,21 @@ def _extract_domains(states: np.ndarray) -> list[dict[str, Any]]:
             "type": "domain",
         })
 
-    # Filter out very small domains (< 3 chunks)
-    domains = [d for d in domains if d["length"] >= 3]
+    # Filter out very small domains
+    domains = [d for d in domains if d["length"] >= min_length]
 
     return domains
 
 
-class BoundaryDetectionTrack:
+class BoundaryDetectionTrack(ParameterizedTrack):
     """HMM-based boundary detection from multi-metric self-similarity matrices."""
+
+    PARAMS = (
+        Param("min_domain_length", int, default=MIN_DOMAIN_LENGTH, min=1, max=100,
+              help="minimum chunk length for a detected domain to be kept"),
+        Param("boundary_confidence", float, default=DEFAULT_BOUNDARY_CONFIDENCE, locked=True,
+              help="fixed confidence assigned to each boundary-point annotation"),
+    )
 
     @property
     def name(self) -> str:
@@ -262,6 +283,10 @@ class BoundaryDetectionTrack:
         if not sim_json.exists():
             raise FileNotFoundError("Self-similarity not computed yet.")
 
+        cfg = self.resolved_params()
+        min_domain_length = cfg["min_domain_length"]
+        boundary_confidence = cfg["boundary_confidence"]
+
         manifest = json.loads(sim_json.read_text())
         reference_n = manifest.get("dimensions", [0, 0])[0]
 
@@ -276,7 +301,7 @@ class BoundaryDetectionTrack:
             return []
 
         states = _viterbi_boundary(features)
-        domains = _extract_domains(states)
+        domains = _extract_domains(states, min_domain_length)
         logger.info("Boundary detection: found %d domains", len(domains))
 
         # Map chunk indices back to character positions
@@ -344,7 +369,7 @@ class BoundaryDetectionTrack:
                         ),
                     ),
                     creator=Creator(name="palimpsest-boundary-detection/0.1"),
-                    confidence=0.7,
+                    confidence=boundary_confidence,
                     evidence_level="E4",
                     project_id=project.metadata.id,
                     track_name="boundary_detection",
@@ -383,8 +408,16 @@ class BoundaryDetectionTrack:
         }
 
     def parameters(self) -> dict[str, Any]:
+        # Extend the rail's tunable-param view with the structural method labels and the (locked-by-
+        # nature) HMM emission/transition matrices, so the matrices that shape every boundary are
+        # reported in provenance instead of staying hidden inside _viterbi_boundary.
         return {
+            **super().parameters(),
             "boundary_detection.method": "hmm_viterbi_aggregate",
-            "boundary_detection.states": 3,
+            "boundary_detection.states": HMM_N_STATES,
             "boundary_detection.evidence": "multi-metric multi-resolution",
+            "boundary_detection.hmm_state_means": HMM_STATE_MEANS,
+            "boundary_detection.hmm_state_vars": HMM_STATE_VARS,
+            "boundary_detection.hmm_transition_matrix": HMM_TRANSITION_MATRIX,
+            "boundary_detection.hmm_initial_probs": HMM_INITIAL_PROBS,
         }

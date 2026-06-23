@@ -8,6 +8,7 @@ import spacy
 
 from palimpsest.annotation.bodies import entity_body
 from palimpsest.annotation.model import Annotation, Creator, Target, TextPositionSelector
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 _ENTITY_TYPE_MAP = {
     "PERSON": "PER",
@@ -110,8 +111,15 @@ def _shared_surname(a: str, b: str) -> bool:
     return last_a == last_b and len(last_a) >= 3
 
 
-class EntityExtractor:
+class EntityExtractor(ParameterizedTrack):
     """Extract named entities using spaCy NER."""
+
+    PARAMS = (
+        Param("spacy_model", str, default=DEFAULT_SPACY_MODEL,
+              help="spaCy model used for NER (must be installed in the environment)"),
+        Param("confidence", float, default=DEFAULT_CONFIDENCE, locked=True,
+              help="fixed confidence assigned to each extracted entity mention"),
+    )
 
     @property
     def name(self) -> str:
@@ -134,7 +142,10 @@ class EntityExtractor:
         return "E4"
 
     def extract(self, project: Any) -> list[Annotation]:
-        doc = project.spacy_doc(DEFAULT_SPACY_MODEL)
+        cfg = self.resolved_params()
+        spacy_model = cfg["spacy_model"]
+        confidence = cfg["confidence"]
+        doc = project.spacy_doc(spacy_model)
 
         source_urn = f"urn:palimpsest:{project.metadata.id}"
         annotations: list[Annotation] = []
@@ -154,8 +165,8 @@ class EntityExtractor:
                     source=source_urn,
                     selector=TextPositionSelector(start=ent.start_char, end=ent.end_char),
                 ),
-                creator=Creator(name=f"spacy/{DEFAULT_SPACY_MODEL}"),
-                confidence=DEFAULT_CONFIDENCE,
+                creator=Creator(name=f"spacy/{spacy_model}"),
+                confidence=confidence,
                 evidence_level="E4",
                 project_id=project.metadata.id,
                 track_name="entities",
@@ -181,6 +192,3 @@ class EntityExtractor:
             "textViewRendering": "highlight",
             "overviewBarRendering": {"type": "density-barcode", "color": "#3498db"},
         }
-
-    def parameters(self) -> dict[str, Any]:
-        return {"entities.spacy_model": DEFAULT_SPACY_MODEL}

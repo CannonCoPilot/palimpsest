@@ -8,9 +8,11 @@ from typing import Any
 
 from palimpsest.annotation.bodies import lexical_body
 from palimpsest.annotation.model import Annotation, Creator, Target, TextPositionSelector
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 _TOKEN_RE = re.compile(r"[A-Za-z']+")
 MIN_TOKENS = 5
+DEFAULT_CONFIDENCE = 0.99
 
 
 def _yules_k(tokens: list[str]) -> float:
@@ -24,8 +26,15 @@ def _yules_k(tokens: list[str]) -> float:
     return 10_000 * (m2_sum - n) / (n * n)
 
 
-class LexicalExtractor:
+class LexicalExtractor(ParameterizedTrack):
     """Per-paragraph vocabulary statistics."""
+
+    PARAMS = (
+        Param("min_tokens", int, default=MIN_TOKENS, min=1, max=100,
+              help="minimum tokens for a paragraph to receive a lexical annotation"),
+        Param("confidence", float, default=DEFAULT_CONFIDENCE, locked=True,
+              help="fixed annotator confidence for deterministic vocabulary statistics"),
+    )
 
     @property
     def name(self) -> str:
@@ -48,13 +57,16 @@ class LexicalExtractor:
         return "E5"
 
     def extract(self, project: Any) -> list[Annotation]:
+        cfg = self.resolved_params()
+        min_tokens = cfg["min_tokens"]
+        confidence = cfg["confidence"]
         source_urn = f"urn:palimpsest:{project.metadata.id}"
         paragraphs = project.paragraphs()
         annotations: list[Annotation] = []
 
         for start, end, text in paragraphs:
             tokens = [t.lower() for t in _TOKEN_RE.findall(text)]
-            if len(tokens) < MIN_TOKENS:
+            if len(tokens) < min_tokens:
                 continue
 
             types = set(tokens)
@@ -75,7 +87,7 @@ class LexicalExtractor:
                     selector=TextPositionSelector(start=start, end=end),
                 ),
                 creator=Creator(name="palimpsest-lexical/0.1"),
-                confidence=0.99,
+                confidence=confidence,
                 evidence_level="E5",
                 project_id=project.metadata.id,
                 track_name="lexical",
@@ -92,6 +104,3 @@ class LexicalExtractor:
             "textViewRendering": "margin-marker",
             "overviewBarRendering": {"type": "density-barcode", "color": "#9b59b6"},
         }
-
-    def parameters(self) -> dict[str, Any]:
-        return {"lexical.min_tokens": MIN_TOKENS}

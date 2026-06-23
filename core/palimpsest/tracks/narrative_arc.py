@@ -10,6 +10,9 @@ import numpy as np
 
 from palimpsest.formats.signals import SignalManifest, write_signal
 from palimpsest.project import Project
+from palimpsest.tracks.params import Param, ParameterizedTrack
+
+DEFAULT_SEGMENTS = 5
 
 STAGING_WORDS: frozenset[str] = frozenset({
     "a", "an", "the",
@@ -35,7 +38,12 @@ TENSION_WORDS: frozenset[str] = frozenset({
 })
 
 
-class NarrativeArcTrack:
+class NarrativeArcTrack(ParameterizedTrack):
+    PARAMS = (
+        Param("segments", int, default=DEFAULT_SEGMENTS, min=2, max=20,
+              help="number of equal-word arc segments (Boyd's model uses 5)"),
+    )
+
     @property
     def name(self) -> str:
         return "narrative_arc"
@@ -57,19 +65,18 @@ class NarrativeArcTrack:
         return "E5"
 
     def extract(self, project: Project) -> Path:
+        segments = self.resolved_params()["segments"]
         text = project.reference_text()
         all_tokens = re.findall(r"[a-z']+", text.lower())
         n_words = len(all_tokens)
 
-        if n_words == 0:
-            arc = np.zeros((5, 3), dtype=np.float32)
-        else:
-            segment_size = n_words // 5
-            arc = np.zeros((5, 3), dtype=np.float32)
+        arc = np.zeros((segments, 3), dtype=np.float32)
+        if n_words > 0:
+            segment_size = n_words // segments
 
-            for seg_idx in range(5):
+            for seg_idx in range(segments):
                 seg_start = seg_idx * segment_size
-                seg_end = seg_start + segment_size if seg_idx < 4 else n_words
+                seg_end = seg_start + segment_size if seg_idx < segments - 1 else n_words
                 seg_tokens = all_tokens[seg_start:seg_end]
                 seg_count = len(seg_tokens)
                 if seg_count == 0:
@@ -84,11 +91,11 @@ class NarrativeArcTrack:
             name="narrative_arc",
             source="function_word_arc/0.1",
             reference_sha256=sha,
-            dimensions=[5, 3],
+            dimensions=[segments, 3],
             data_file="narrative_arc.bin",
             metadata={
                 "dimensions_label": ["staging", "progression", "tension"],
-                "segments": 5,
+                "segments": segments,
                 "word_count": n_words,
             },
         )
@@ -107,11 +114,4 @@ class NarrativeArcTrack:
                 "scale": ["#EDE9FE", "#8B5CF6", "#4C1D95"],
             },
             "dedicatedView": "sparkline",
-        }
-
-    def parameters(self) -> dict[str, Any]:
-        return {
-            "narrative_arc.model": "function_word_arc",
-            "narrative_arc.segments": 5,
-            "narrative_arc.dimensions": 3,
         }

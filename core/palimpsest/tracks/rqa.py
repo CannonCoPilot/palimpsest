@@ -12,6 +12,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 from palimpsest.formats.signals import SignalManifest, write_signal
 from palimpsest.project import Project
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 logger = logging.getLogger(__name__)
 
@@ -113,7 +114,20 @@ def _compute_rqa_for_window(
     return rr, det, lam
 
 
-class RQATrack:
+class RQATrack(ParameterizedTrack):
+    PARAMS = (
+        Param("threshold", float, default=RQA_THRESHOLD, min=0.0, max=1.0,
+              help="cosine-distance recurrence threshold (points closer than this recur)"),
+        Param("min_line", int, default=RQA_MIN_LINE, min=2, max=50,
+              help="minimum diagonal/vertical line length counted for DET/LAM"),
+        Param("window_words", int, default=WINDOW_WORDS, min=10, max=5000,
+              help="sliding-window size in words"),
+        Param("window_overlap", int, default=WINDOW_OVERLAP, min=0, max=5000,
+              help="word overlap between consecutive windows (must be < window_words)"),
+        Param("tfidf_max_features", int, default=TFIDF_MAX_FEATURES, locked=True,
+              help="TF-IDF vocabulary cap for the fallback state vectors"),
+    )
+
     @property
     def name(self) -> str:
         return "rqa"
@@ -135,11 +149,18 @@ class RQATrack:
         return "E5"
 
     def extract(self, project: Project) -> Path:
+        cfg = self.resolved_params()
+        threshold = cfg["threshold"]
+        min_line = cfg["min_line"]
+        window_words = cfg["window_words"]
+        window_overlap = cfg["window_overlap"]
+        tfidf_max_features = cfg["tfidf_max_features"]
+
         paras = project.paragraphs()
         if len(paras) < 2:
             metrics = np.zeros((1, 3), dtype=np.float32)
         else:
-            windows = _extract_windows(paras)
+            windows = _extract_windows(paras, window_words, window_overlap)
 
             # Try embeddings first, fall back to TF-IDF
             embeddings_db = project.path / "cache" / "embeddings.db"
@@ -158,14 +179,14 @@ class RQATrack:
 
             if state_source == "tfidf":
                 texts = [text for _, _, text in paras]
-                vectorizer = TfidfVectorizer(max_features=TFIDF_MAX_FEATURES)
+                vectorizer = TfidfVectorizer(max_features=tfidf_max_features)
                 tfidf_matrix = vectorizer.fit_transform(texts).toarray()
                 all_vecs_arr = tfidf_matrix.astype(np.float32)
 
             metrics_list: list[tuple[float, float, float]] = []
             for window_indices in windows:
                 vecs = all_vecs_arr[window_indices]
-                rr, det, lam = _compute_rqa_for_window(vecs)
+                rr, det, lam = _compute_rqa_for_window(vecs, threshold, min_line)
                 metrics_list.append((rr, det, lam))
 
             metrics = np.array(metrics_list, dtype=np.float32)
@@ -182,10 +203,10 @@ class RQATrack:
             data_file="rqa.bin",
             metadata={
                 "metrics": ["RR", "DET", "LAM"],
-                "threshold": RQA_THRESHOLD,
-                "min_line": RQA_MIN_LINE,
-                "window_words": WINDOW_WORDS,
-                "window_overlap": WINDOW_OVERLAP,
+                "threshold": threshold,
+                "min_line": min_line,
+                "window_words": window_words,
+                "window_overlap": window_overlap,
                 "state_vector_source": state_source,
                 "n_windows": n_windows,
             },
@@ -205,12 +226,4 @@ class RQATrack:
                 "scale": ["#FFFBEB", "#F59E0B", "#92400E"],
             },
             "dedicatedView": "bar_chart",
-        }
-
-    def parameters(self) -> dict[str, Any]:
-        return {
-            "rqa.threshold": RQA_THRESHOLD,
-            "rqa.min_line": RQA_MIN_LINE,
-            "rqa.window_words": WINDOW_WORDS,
-            "rqa.window_overlap": WINDOW_OVERLAP,
         }

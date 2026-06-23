@@ -8,8 +8,13 @@ from typing import Any
 from palimpsest.annotation.bodies import coreference_body
 from palimpsest.annotation.model import Annotation, Creator, Target, TextPositionSelector
 from palimpsest.project import Project
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 logger = logging.getLogger(__name__)
+
+DEFAULT_CONFIDENCE = 0.75
+DEFAULT_FALLBACK_CONFIDENCE = 0.60
+MIN_CHAIN_LENGTH = 2
 
 BOOKNLP_AVAILABLE = False
 try:
@@ -25,12 +30,23 @@ except ImportError:
     pass
 
 
-class CoreferenceExtractor:
+class CoreferenceExtractor(ParameterizedTrack):
     """Extract coreference chains via BookNLP with spaCy NER fallback.
 
     If BookNLP is not installed, falls back to spaCy-based name repetition
     chains (lower quality but always available).
     """
+
+    PARAMS = (
+        Param("min_chain_length", int, default=MIN_CHAIN_LENGTH, min=2, max=50,
+              help="minimum mentions for a coreference chain to be emitted"),
+        Param("booknlp_model", str, default="big", choices=("big", "small"),
+              help="BookNLP model size (only used when BookNLP is installed)"),
+        Param("confidence", float, default=DEFAULT_CONFIDENCE, locked=True,
+              help="fixed confidence for BookNLP coreference mentions"),
+        Param("fallback_confidence", float, default=DEFAULT_FALLBACK_CONFIDENCE, locked=True,
+              help="fixed confidence for the spaCy name-repetition fallback"),
+    )
 
     @property
     def name(self) -> str:
@@ -53,9 +69,12 @@ class CoreferenceExtractor:
         return "E4"
 
     def extract(self, project: Project) -> list[Annotation]:
+        cfg = self.resolved_params()
         if not BOOKNLP_AVAILABLE:
             return self._spacy_fallback(project)
 
+        min_chain_length = cfg["min_chain_length"]
+        confidence = cfg["confidence"]
 
         import os
         import warnings
@@ -75,7 +94,7 @@ class CoreferenceExtractor:
 
         model_params = {
             "pipeline": "entity,quote,supersense,event,coref",
-            "model": "big",
+            "model": cfg["booknlp_model"],
         }
 
         with warnings.catch_warnings():
@@ -142,7 +161,7 @@ class CoreferenceExtractor:
         source_urn = f"urn:palimpsest:{project.metadata.id}"
 
         for chain_id, mentions in chains.items():
-            if len(mentions) < 2:
+            if len(mentions) < min_chain_length:
                 continue
             referent = mentions[0]["text"]
             for mention in mentions:
@@ -160,7 +179,7 @@ class CoreferenceExtractor:
                         ),
                     ),
                     creator=Creator(name="booknlp/2.0"),
-                    confidence=0.75,
+                    confidence=confidence,
                     evidence_level="E4",
                     project_id=project.metadata.id,
                     track_name="coreference",
@@ -185,6 +204,10 @@ class CoreferenceExtractor:
         """Basic coreference via spaCy NER: link repeated entity mentions into chains."""
         import spacy
 
+        cfg = self.resolved_params()
+        min_chain_length = cfg["min_chain_length"]
+        fallback_confidence = cfg["fallback_confidence"]
+
         try:
             nlp = spacy.load("en_core_web_lg")
         except OSError:
@@ -207,7 +230,7 @@ class CoreferenceExtractor:
         chain_id = 0
 
         for _key, mentions in name_chains.items():
-            if len(mentions) < 2:
+            if len(mentions) < min_chain_length:
                 continue
             referent = max(mentions, key=lambda m: len(m[2]))[2]
             for start, end, mention_text in mentions:
@@ -222,7 +245,7 @@ class CoreferenceExtractor:
                         selector=TextPositionSelector(start=start, end=end),
                     ),
                     creator=Creator(name="spacy-coref-fallback/0.1"),
-                    confidence=0.60,
+                    confidence=fallback_confidence,
                     evidence_level="E4",
                     project_id=project.metadata.id,
                     track_name="coreference",
@@ -233,8 +256,11 @@ class CoreferenceExtractor:
         return annotations
 
     def parameters(self) -> dict[str, Any]:
+        # Extend the rail's tunable-param view with the runtime availability facts (which backend is
+        # actually active) — not tunable params, but provenance a consumer needs.
         return {
-            "coreference.model": "booknlp/big" if BOOKNLP_AVAILABLE else "spacy-fallback",
+            **super().parameters(),
+            "coreference.active_backend": "booknlp" if BOOKNLP_AVAILABLE else "spacy-fallback",
             "coreference.available": True,
             "coreference.booknlp_available": BOOKNLP_AVAILABLE,
         }

@@ -15,8 +15,13 @@ import numpy as np
 
 from palimpsest.annotation.model import Annotation, Body, Creator, Target, TextPositionSelector
 from palimpsest.project import Project
+from palimpsest.tracks.params import Param, ParameterizedTrack
 
 logger = logging.getLogger(__name__)
+
+DEFAULT_DI_WINDOW = 5
+DEFAULT_DOMAIN_THRESHOLD = 0.3
+DEFAULT_DOMAIN_CONFIDENCE = 0.70
 
 
 def _compute_compartments(sim_matrix: np.ndarray) -> np.ndarray:
@@ -86,8 +91,17 @@ def _detect_domains(di: np.ndarray, threshold: float = 0.3) -> list[tuple[int, i
     return domains
 
 
-class CompartmentsExtractor:
+class CompartmentsExtractor(ParameterizedTrack):
     """Thematic compartment and domain detection from self-similarity matrix."""
+
+    PARAMS = (
+        Param("di_window", int, default=DEFAULT_DI_WINDOW, min=1, max=50,
+              help="half-width (in paragraphs) of the directionality-index window"),
+        Param("domain_threshold", float, default=DEFAULT_DOMAIN_THRESHOLD, min=0.0, max=2.0,
+              help="directionality-index jump that marks a domain boundary"),
+        Param("domain_confidence", float, default=DEFAULT_DOMAIN_CONFIDENCE, locked=True,
+              help="fixed confidence assigned to each detected domain span"),
+    )
 
     @property
     def name(self) -> str:
@@ -127,9 +141,12 @@ class CompartmentsExtractor:
         n = dims[0]
         matrix = np.fromfile(str(sim_bin), dtype=np.float32).reshape(n, n)
 
+        cfg = self.resolved_params()
+        domain_confidence = cfg["domain_confidence"]
+
         compartment_values = _compute_compartments(matrix)
-        di = _compute_directionality_index(matrix)
-        domains = _detect_domains(di)
+        di = _compute_directionality_index(matrix, window=cfg["di_window"])
+        domains = _detect_domains(di, threshold=cfg["domain_threshold"])
 
         paras = project.paragraphs()
         source_urn = f"urn:palimpsest:{project.metadata.id}"
@@ -188,7 +205,7 @@ class CompartmentsExtractor:
                     selector=TextPositionSelector(start=para_s, end=para_e),
                 ),
                 creator=Creator(name="palimpsest-compartments/0.1"),
-                confidence=0.70,
+                confidence=domain_confidence,
                 evidence_level="E5",
                 project_id=project.metadata.id,
                 track_name="compartments",
@@ -224,7 +241,10 @@ class CompartmentsExtractor:
         }
 
     def parameters(self) -> dict[str, Any]:
+        # Extend the rail's effective-param view with the structural method labels (which algorithm
+        # produces the signal) so provenance keeps reporting them alongside the tunable knobs.
         return {
+            **super().parameters(),
             "compartments.method": "eigenvector_decomposition",
             "compartments.domain_detection": "directionality_index",
         }
