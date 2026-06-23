@@ -40,7 +40,7 @@ from palimpsest.vectorstore.sqlite_vec import SqliteVecStore
 logger = logging.getLogger(__name__)
 
 METRICS = ("cosine", "jaccard", "word_overlap", "edit_distance")
-DEFAULT_CHUNK_SIZE = 17
+DEFAULT_CHUNK_SIZE = 7
 MIN_CHUNK_SIZE = 5
 MAX_CHUNK_SIZE = 25
 
