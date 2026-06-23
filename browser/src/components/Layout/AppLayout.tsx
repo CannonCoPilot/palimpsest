@@ -16,6 +16,7 @@ import LoadingOverlay from '../common/LoadingOverlay';
 import HelpOverlay from '../common/HelpOverlay';
 import ProjectPicker from '../common/ProjectPicker';
 import MaskingPanel from '../MaskingPanel/MaskingPanel';
+import SubtextWizard from '../MaskingPanel/SubtextWizard';
 import SectionNav from '../common/SectionNav';
 import ErrorBoundary from '../common/ErrorBoundary';
 import TabBar from './TabBar';
@@ -65,6 +66,7 @@ export default function AppLayout() {
     <div className="flex flex-col h-screen font-[var(--font-serif)]">
       <LoadingOverlay />
       <HelpOverlay />
+      <SubtextWizard />
 
       {metadata && (
         <div className="flex items-center gap-4 px-4 py-2 border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]">

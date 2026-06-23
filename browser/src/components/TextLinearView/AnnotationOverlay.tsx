@@ -295,9 +295,10 @@ function AnnotationOverlayInner({
     }
 
     // Masking overrides annotation styling (the text is excluded from analysis); a search
-    // hit still wins below so masked text stays findable.
+    // hit still wins below so masked text stays findable. No `padding` here — it would clash
+    // with an annotation style's `paddingLeft` (shorthand vs. longhand) and warn in React.
     if (seg.masked) {
-      style = { ...style, backgroundColor: MASKED_BG, color: MASKED_FG, borderRadius: '2px', padding: '0 1px' };
+      style = { ...style, backgroundColor: MASKED_BG, color: MASKED_FG, borderRadius: '2px' };
     }
 
     if (seg.searchMatch) {
