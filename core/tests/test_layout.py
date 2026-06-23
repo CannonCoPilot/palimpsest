@@ -67,11 +67,21 @@ def test_effective_mask_inherits_then_overrides():
     assert effective_mask(_sec("a", "chapter", 0, 1, masked=True), DEFAULT_MASK_BY_TYPE) is True
 
 
-def test_range_is_masked_uses_midpoint():
+def test_range_is_masked_uses_majority_coverage():
     intervals = [(0, 100), (400, 450)]
-    assert range_is_masked(intervals, 10, 20) is True
-    assert range_is_masked(intervals, 150, 160) is False
-    assert range_is_masked(intervals, 420, 440) is True
+    assert range_is_masked(intervals, 10, 20) is True       # fully inside a masked span
+    assert range_is_masked(intervals, 150, 160) is False    # fully outside any masked span
+    assert range_is_masked(intervals, 420, 440) is True     # fully inside a masked span
+
+    # Boundary-straddle: masked iff most of the span is masked (not whether its centre is).
+    assert range_is_masked(intervals, 90, 110) is True      # 10/20 masked → tie counts as masked
+    assert range_is_masked(intervals, 95, 110) is False     # 5/15 masked → minority, kept
+
+    # A short masked token near a chunk's centre must NOT mask the whole chunk: this is the
+    # verse-number-in-prose case the midpoint rule got wrong (centre is masked, majority isn't).
+    assert range_is_masked([(45, 55)], 0, 100) is False     # 10/100 masked → prose retained
+    # …but a chunk mostly inside a masked region IS masked even if its centre lands in a gap.
+    assert range_is_masked([(0, 40), (60, 100)], 0, 100) is True  # 80/100 masked, centre in gap
 
 
 def test_detect_front_matter_chapters_endnotes():

@@ -157,8 +157,20 @@ export function computeMaskedIntervals(
   return merged;
 }
 
-/** True if [start,end)'s midpoint lies inside a masked interval. */
+/**
+ * True if at least half of [start,end) is covered by the masked intervals (a majority-coverage
+ * rule, not a midpoint sample). Mirrors `range_is_masked` in layout.py: a boundary-straddling
+ * chunk is masked iff most of it is masked, so prose carrying a short masked token near its
+ * centre is retained while a mostly-masked chunk is excluded. Ties count as masked.
+ */
 export function rangeIsMasked(intervals: Array<[number, number]>, start: number, end: number): boolean {
-  const mid = Math.floor((start + end) / 2);
-  return intervals.some(([a, b]) => a <= mid && mid < b);
+  const span = end - start;
+  if (span <= 0) return false;
+  let covered = 0;
+  for (const [a, b] of intervals) {
+    const lo = a > start ? a : start;
+    const hi = b < end ? b : end;
+    if (hi > lo) covered += hi - lo;
+  }
+  return covered * 2 >= span;
 }

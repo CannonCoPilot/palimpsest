@@ -361,12 +361,27 @@ def masked_intervals(
 
 
 def range_is_masked(intervals: list[tuple[int, int]], start: int, end: int) -> bool:
-    """True if [start,end)'s midpoint falls inside a masked interval."""
-    mid = (start + end) // 2
+    """True if at least half of ``[start, end)`` is covered by ``intervals``.
+
+    A majority-coverage rule rather than a single-point (midpoint) sample. The midpoint test
+    mis-handles boundary-straddling chunks: a verse of prose carrying a short masked
+    verse-number token near its centre was dropped whole (the centre fell in the token), and a
+    chunk mostly inside a masked region was kept whenever its centre landed in a small unmasked
+    gap. Coverage masks a chunk iff most of it is masked, so prose is retained and mostly-masked
+    chunks are excluded. Ties (exactly half masked) count as masked.
+
+    ``intervals`` are the disjoint masked spans from :func:`masked_intervals`.
+    """
+    span = end - start
+    if span <= 0:
+        return False
+    covered = 0
     for a, b in intervals:
-        if a <= mid < b:
-            return True
-    return False
+        lo = a if a > start else start
+        hi = b if b < end else end
+        if hi > lo:
+            covered += hi - lo
+    return covered * 2 >= span
 
 
 # ── Auto-detection (Step 2: "Detect") ─────────────────────────────────────────
