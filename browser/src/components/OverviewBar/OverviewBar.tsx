@@ -181,6 +181,10 @@ export default function OverviewBar() {
   const dragging = useRef(false);
   const dragMode = useRef<'pan' | 'zoom' | 'reader'>('reader');
   const panLastChar = useRef(0);
+  // The track svg the drag started on. Captured at pointerdown so move/up keep resolving offsets
+  // against it even after the pointer strays off the track (pointer capture retargets the events
+  // to the container, where e.target is no longer an svg).
+  const dragSvg = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -220,9 +224,13 @@ export default function OverviewBar() {
     return Math.round(fraction * docLen);
   }, [docLen]);
 
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+  const handlePointerDown = useCallback((e: React.PointerEvent) => {
     const svg = (e.target as Element).closest('svg');
     if (!svg) return;
+    // Capture the pointer so the drag owns it until release — straying off the track (or out of the
+    // bar entirely) no longer drops mid-drag pan/zoom-select.
+    e.currentTarget.setPointerCapture(e.pointerId);
+    dragSvg.current = svg as SVGSVGElement;
     dragging.current = true;
     const offset = fractionToCharOffset(e.clientX, svg as SVGSVGElement);
     if (browserMode) {
@@ -244,11 +252,11 @@ export default function OverviewBar() {
     }
   }, [fractionToCharOffset, browserMode, bvStart, bvEnd, docLen]);
 
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+  const handlePointerMove = useCallback((e: React.PointerEvent) => {
     if (!dragging.current) return;
-    const svg = (e.target as Element).closest('svg');
+    const svg = dragSvg.current;
     if (!svg) return;
-    const offset = fractionToCharOffset(e.clientX, svg as SVGSVGElement);
+    const offset = fractionToCharOffset(e.clientX, svg);
     if (browserMode && dragMode.current === 'pan') {
       useBrowserStore.getState().pan(offset - panLastChar.current);
       panLastChar.current = offset;
@@ -257,9 +265,10 @@ export default function OverviewBar() {
     }
   }, [fractionToCharOffset, browserMode]);
 
-  const handleMouseUp = useCallback(() => {
+  const handlePointerUp = useCallback(() => {
     if (!dragging.current) return;
     dragging.current = false;
+    dragSvg.current = null;
     if (browserMode) {
       if (dragMode.current === 'zoom' && dragStart != null && dragEnd != null) {
         const s = Math.min(dragStart, dragEnd);
@@ -306,10 +315,10 @@ export default function OverviewBar() {
     <div
       ref={containerRef}
       className="border-t border-[var(--color-border)] bg-[var(--color-bg-muted)] px-2 py-1 w-full"
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={() => { if (dragging.current) handleMouseUp(); }}
+      style={{ touchAction: 'none' }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
     >
       {trackNames.filter((name) => !overviewBarHidden.has(name)).map((name) => (
         <TrackBarcode
