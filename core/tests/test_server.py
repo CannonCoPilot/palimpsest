@@ -402,3 +402,112 @@ class TestTrackRunInfo:
         info = _track_run_info(tmp_path, "lithmm")
         assert info["requested"] == {"n_states": 10}
         assert info["method"] == "GaussianHMM"
+
+
+class TestDeriveContainerScope:
+    """HTTP-layer coverage for W1 container-scoped subtext derivation.
+
+    The ``derive_subtext`` function is unit-tested in test_derive.py; this exercises the
+    FastAPI wiring (``DeriveRequest.include_container_ids`` + ValueError->400) end-to-end."""
+
+    def _scoped_workspace(self, tmp_path):
+        from palimpsest.layout import LayoutConfig, LayoutSection, save_layout
+        from palimpsest.project import ingest_file
+
+        workspace = tmp_path / "ws"
+        workspace.mkdir()
+        text = "MAINBODYAAAAAAAAAA" + "APPENDIXBBBBBBBBBB"  # two contiguous 18-char halves
+        src = tmp_path / "src.txt"
+        src.write_text(text, encoding="utf-8")
+        project = ingest_file(src, workspace, title="Scope HTTP Test")
+        full = project.reference_text()
+        m0, a0 = full.index("MAINBODY"), full.index("APPENDIX")
+        end = a0 + len("APPENDIXBBBBBBBBBB")
+
+        def _sec(id, type, start, end, parent_id=None):
+            return LayoutSection(id=id, type=type, start=start, end=end, parent_id=parent_id)
+
+        sections = [
+            _sec("mainbook", "book", m0, a0),
+            _sec("mc1", "chapter", m0, m0 + 9, "mainbook"),
+            _sec("mc2", "chapter", m0 + 9, a0, "mainbook"),
+            _sec("apx", "appendix", a0, end),
+            _sec("ac1", "chapter", a0, a0 + 9, "apx"),
+            _sec("ac2", "chapter", a0 + 9, end, "apx"),
+        ]
+        save_layout(project.path, LayoutConfig(sections=sections, applied=True, parents_computed=True))
+        return workspace, project.metadata.id
+
+    def test_derive_endpoint_scopes_to_container(self, tmp_path):
+        from palimpsest.server import create_app
+
+        workspace, pid = self._scoped_workspace(tmp_path)
+        client = TestClient(create_app(workspace))
+
+        full = client.post(f"/api/projects/{pid}/derive", json={"extraction_types": ["chapter"]})
+        assert full.status_code == 200, full.text
+        scoped = client.post(
+            f"/api/projects/{pid}/derive",
+            json={"extraction_types": ["chapter"], "include_container_ids": ["apx"]},
+        )
+        assert scoped.status_code == 200, scoped.text
+        body = scoped.json()
+        assert body["container_ids"] == ["apx"]
+        # The param must actually change the output: appendix-only is strictly smaller than the
+        # whole work, proving the scope threaded through FastAPI rather than being a no-op echo.
+        assert 0 < body["char_count"] < full.json()["char_count"]
+
+    def test_derive_endpoint_unknown_container_is_400(self, tmp_path):
+        from palimpsest.server import create_app
+
+        workspace, pid = self._scoped_workspace(tmp_path)
+        client = TestClient(create_app(workspace))
+        resp = client.post(
+            f"/api/projects/{pid}/derive",
+            json={"extraction_types": ["chapter"], "include_container_ids": ["nope"]},
+        )
+        assert resp.status_code == 400
+        assert "Unknown or empty container" in resp.json()["detail"]
+
+    def _read_sse(self, client, pid, body):
+        """POST to the streamed derive endpoint and collect the parsed SSE events."""
+        events = []
+        with client.stream("POST", f"/api/projects/{pid}/derive/stream", json=body) as resp:
+            assert resp.status_code == 200, resp.read()
+            for line in resp.iter_lines():
+                if line.startswith("data:"):
+                    events.append(json.loads(line[5:].strip()))
+        return events
+
+    def test_derive_stream_emits_monotonic_progress_then_done(self, tmp_path):
+        from palimpsest.server import create_app
+
+        workspace, pid = self._scoped_workspace(tmp_path)
+        client = TestClient(create_app(workspace))
+
+        events = self._read_sse(client, pid, {"extraction_types": ["chapter"]})
+        progress = [e for e in events if e["type"] == "progress"]
+        done = [e for e in events if e["type"] == "done"]
+
+        assert progress, "expected at least one progress event before completion"
+        pcts = [e["pct"] for e in progress]
+        assert pcts == sorted(pcts), f"progress pct must be monotonic non-decreasing, got {pcts}"
+        assert all(0 <= p <= 100 for p in pcts)
+        assert len(done) == 1, "exactly one terminal done event"
+        d = done[0]
+        assert d["project_id"] and d["char_count"] > 0 and d["collection_id"]
+
+    def test_derive_stream_unknown_container_emits_error_event(self, tmp_path):
+        from palimpsest.server import create_app
+
+        workspace, pid = self._scoped_workspace(tmp_path)
+        client = TestClient(create_app(workspace))
+
+        events = self._read_sse(
+            client, pid, {"extraction_types": ["chapter"], "include_container_ids": ["nope"]}
+        )
+        errors = [e for e in events if e["type"] == "error"]
+        assert len(errors) == 1
+        assert errors[0]["status"] == 400
+        assert "Unknown or empty container" in errors[0]["detail"]
+        assert not [e for e in events if e["type"] == "done"]

@@ -10,8 +10,11 @@ from palimpsest.layout import (
     detect_siglum_regions,
     detect_verse_regions,
     effective_mask,
+    load_layout,
     masked_intervals,
+    save_layout,
 )
+from palimpsest.layout import LayoutConfig
 
 
 def _covered(intervals: list[tuple[int, int]], start: int, end: int) -> bool:
@@ -115,6 +118,27 @@ def test_detect_book_contains_chapters_via_nesting():
     assert masked_intervals(sections, DEFAULT_MASK_BY_TYPE, 800) == [
         (0, 6), (100, 110), (300, 310), (500, 506), (600, 610),
     ]
+
+
+def test_load_layout_backfills_parent_id_for_legacy_layouts(tmp_path):
+    # A legacy layout: containers nest correctly but parent_id was never computed (the case for
+    # scripture/fixture-built projects that show 0% parent_id). load_layout must backfill once.
+    secs = [
+        LayoutSection(id="book", type="book", start=0, end=100),
+        LayoutSection(id="c1", type="chapter", start=10, end=40),
+        LayoutSection(id="c2", type="chapter", start=40, end=90),
+    ]
+    save_layout(tmp_path, LayoutConfig(sections=secs))  # parents_computed defaults to False
+    loaded = load_layout(tmp_path)
+    assert loaded is not None
+    by_id = {s.id: s.parent_id for s in loaded.sections}
+    assert by_id["c1"] == "book" and by_id["c2"] == "book"
+    assert by_id["book"] is None  # nothing contains the book
+    assert loaded.parents_computed is True
+    # Idempotent + persisted: a second load keeps the flag and the computed parents.
+    again = load_layout(tmp_path)
+    assert again is not None and again.parents_computed is True
+    assert {s.id: s.parent_id for s in again.sections}["c1"] == "book"
 
 
 def test_chapterless_work_keeps_body_unmasked():

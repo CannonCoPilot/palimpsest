@@ -7,6 +7,7 @@
 
 import { useMemo, type ReactElement } from 'react';
 import { useViewStore } from '../../stores/viewStore';
+import { useProjectStore } from '../../stores/projectStore';
 import { useSectionStore } from '../../stores/sectionStore';
 import { useMaskOverlayStore, effectiveMaskByType } from '../../stores/maskOverlayStore';
 import { MASK_TYPE_GROUPS, groupForType } from '../../utils/maskTypeGroups';
@@ -49,6 +50,9 @@ export default function MaskingPanel(): ReactElement | null {
   const open = useViewStore((s) => s.maskPanelOpen);
   const setOpen = useViewStore((s) => s.setMaskPanelOpen);
   const openWizard = useViewStore((s) => s.setSubtextWizardOpen);
+  const setRefineRequest = useViewStore((s) => s.setRefineRequest);
+  const activeProjectId = useProjectStore((s) => s.activeProjectId);
+  const closeProject = useProjectStore((s) => s.closeProject);
 
   const sections = useSectionStore((s) => s.sections);
   const baseMask = useSectionStore((s) => s.maskByType);
@@ -159,8 +163,21 @@ export default function MaskingPanel(): ReactElement | null {
         </button>
         <button
           type="button"
+          onClick={() => {
+            if (!activeProjectId) return;
+            setRefineRequest(activeProjectId);
+            closeProject();
+          }}
+          disabled={!activeProjectId}
+          title="Persist these keep/mask choices into the saved layout by reopening the section-refinement wizard."
+          className="ml-auto text-[0.78em] px-2.5 py-1 rounded border border-[var(--color-border)] hover:bg-[var(--color-bg-muted)] disabled:opacity-40 cursor-pointer"
+        >
+          Apply masking…
+        </button>
+        <button
+          type="button"
           onClick={() => openWizard(true)}
-          className="ml-auto text-[0.78em] px-2.5 py-1 rounded bg-[var(--color-accent,#1a73e8)] text-white hover:opacity-90 cursor-pointer"
+          className="text-[0.78em] px-2.5 py-1 rounded bg-[var(--color-accent,#1a73e8)] text-white hover:opacity-90 cursor-pointer"
         >
           Derive subtext…
         </button>

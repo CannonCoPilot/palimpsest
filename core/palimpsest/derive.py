@@ -10,8 +10,10 @@ link in its metadata.
 """
 from __future__ import annotations
 
+import bisect
 import dataclasses
 import json
+from collections.abc import Callable
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
@@ -39,6 +41,11 @@ class OffsetMap:
     def __init__(self, spans: list[tuple[int, int]], sep_len: int) -> None:
         self.spans = spans
         self.sep_len = sep_len
+        # Spans are ordered and disjoint (compute_kept_spans merges adjacency), so parallel
+        # start/end arrays let the forward translators binary-search instead of linear-scan —
+        # critical when remapping the segments track (10⁵ records) over 10³ kept spans.
+        self._starts = [s for s, _ in spans]
+        self._ends = [e for _, e in spans]
         self.base: list[int] = []
         cursor = 0
         for i, (s, e) in enumerate(spans):
@@ -48,19 +55,23 @@ class OffsetMap:
 
     def translate_point(self, off: int) -> int | None:
         """Child offset for a parent offset inside a kept span, else None (in a dropped gap)."""
-        for i, (s, e) in enumerate(self.spans):
-            if s <= off <= e:
-                return self.base[i] + (off - s)
-        return None
+        i = bisect.bisect_right(self._starts, off) - 1
+        if i < 0:
+            return None
+        s, e = self.spans[i]
+        return self.base[i] + (off - s) if off <= e else None
 
     def remap_element(self, a: int, e: int) -> tuple[int, int] | None:
         """Child [start,end) for a parent element [a,e), spanning every kept span it overlaps
         (separator gaps included), or None if it touches no kept span."""
-        over = [(i, s, en) for i, (s, en) in enumerate(self.spans) if s < e and en > a]
-        if not over:
+        # First span with end > a; last span with start < e. On disjoint, ordered spans the
+        # overlap set is exactly the contiguous index range [i0, iN].
+        i0 = bisect.bisect_right(self._ends, a)
+        iN = bisect.bisect_left(self._starts, e) - 1
+        if i0 > iN or i0 >= len(self.spans) or iN < 0:
             return None
-        i0, s0, _ = over[0]
-        iN, sN, eN = over[-1]
+        s0 = self._starts[i0]
+        sN, eN = self.spans[iN]
         cs = self.base[i0] + (max(a, s0) - s0)
         ce = self.base[iN] + (min(e, eN) - sN)
         return (cs, ce)
@@ -68,7 +79,6 @@ class OffsetMap:
     def _segment_at(self, child_off: int) -> int | None:
         """Index of the kept span whose CONTENT (excluding the following separator) contains
         ``child_off``, or ``None`` if it lands in an inter-span separator. O(log n)."""
-        import bisect
         i = bisect.bisect_right(self.base, child_off) - 1
         if i < 0:
             return None
@@ -116,13 +126,25 @@ class OffsetMap:
 
 
 def compute_kept_spans(
-    sections: list[LayoutSection], extraction_types: set[str], excluded_ids: set[str]
+    sections: list[LayoutSection],
+    extraction_types: set[str],
+    excluded_ids: set[str],
+    container_spans: list[tuple[int, int]] | None = None,
 ) -> list[tuple[int, int]]:
-    """Ordered, merged spans of the extraction-layer elements (minus Stage-2 exclusions)."""
+    """Ordered, merged spans of the extraction-layer elements (minus Stage-2 exclusions).
+
+    When ``container_spans`` is non-empty, only elements lying fully within one of those container
+    ranges are kept — geometric scoping (e.g. "only the Appendix books") that works directly off the
+    section ranges, independent of the (often-unpopulated) ``parent_id`` field."""
+
+    def _in_scope(s: int, e: int) -> bool:
+        return not container_spans or any(cs <= s and e <= ce for cs, ce in container_spans)
+
     raw = sorted(
         (s.start, s.end)
         for s in sections
         if s.type in extraction_types and s.id not in excluded_ids and s.start < s.end
+        and _in_scope(s.start, s.end)
     )
     merged: list[tuple[int, int]] = []
     for s, e in raw:
@@ -341,31 +363,47 @@ def remap_signal_data(data: Any, omap: OffsetMap) -> bool:
     return changed
 
 
-def _subtext_source_name(parent_id: str, extraction_types: list[str]) -> str:
+def _subtext_source_name(
+    parent_id: str, extraction_types: list[str], container_ids: list[str] | None = None
+) -> str:
     tag = "-".join(t for t in extraction_types) or "subtext"
+    if container_ids:
+        # Fold the container scope into the id so two subtexts with the same types but different
+        # scopes (e.g. whole-text vs appendix-only chapters) don't collide on the same child id.
+        scope = "-".join(sorted(container_ids))
+        tag = f"{tag}-in-{scope}"
     return f"{parent_id}--{tag}.txt"
 
 
-def _remap_tracks(parent_dir: Path, child_dir: Path, omap: OffsetMap) -> list[str]:
-    """Remap each non-structural annotation track from parent to child. Returns track names written."""
+def _remap_tracks(
+    parent_dir: Path,
+    child_dir: Path,
+    omap: OffsetMap,
+    on_track: Callable[[int, int, str], None] | None = None,
+) -> list[str]:
+    """Remap each non-structural annotation track from parent to child. Returns track names written.
+
+    ``on_track(done, total, name)`` fires after each eligible track is processed, letting callers
+    report derivation progress over the (variable) annotation-track count."""
     written: list[str] = []
     src = parent_dir / "tracks"
     if not src.exists():
         return written
     dst = child_dir / "tracks"
     dst.mkdir(parents=True, exist_ok=True)
-    for path in sorted(src.glob("*.jsonl")):
+    eligible = [p for p in sorted(src.glob("*.jsonl")) if p.stem not in _SKIP_TRACKS]
+    total = len(eligible)
+    for i, path in enumerate(eligible, start=1):
         name = path.stem
-        if name in _SKIP_TRACKS:
-            continue
         recs = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
         remapped = remap_track_annotations(recs, omap)
-        if not remapped:
-            continue
-        (dst / f"{name}.jsonl").write_text(
-            "\n".join(json.dumps(r) for r in remapped) + "\n", encoding="utf-8"
-        )
-        written.append(name)
+        if remapped:
+            (dst / f"{name}.jsonl").write_text(
+                "\n".join(json.dumps(r) for r in remapped) + "\n", encoding="utf-8"
+            )
+            written.append(name)
+        if on_track is not None:
+            on_track(i, total, name)
     return written
 
 
@@ -390,37 +428,106 @@ def _update_metadata(child_dir: Path, parent: Project, extraction_types: list[st
     meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+def _remap_parent_segments(parent_dir: Path, omap: OffsetMap) -> tuple[list[Any], list[Any], list[Any]]:
+    """Remap the parent's segments track (paragraph/section/sentence spans) onto the child.
+
+    Substituting this for re-running the spaCy sentence segmenter on the assembled child text is the
+    main subtext-generation speedup: segmentation already happened once on the parent. A segment fully
+    inside dropped content is dropped; a segment that bridges a dropped gap keeps its bridged child
+    range (matching what re-segmenting the joined child text would produce). Re-indexed per type in
+    document order so the child's indices are contiguous, exactly as a fresh ingest would write them."""
+    from palimpsest.ingest.segmenter import Segment
+
+    src = parent_dir / "tracks" / "segments.jsonl"
+    buckets: dict[str, list[tuple[int, int]]] = {"paragraph": [], "section": [], "sentence": []}
+    if src.exists():
+        for line in src.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            rec = json.loads(line)
+            stype = (rec.get("body") or {}).get("palimpsest:segmentType")
+            if stype not in buckets:
+                continue
+            sel = (rec.get("target") or {}).get("selector") or {}
+            a, e = sel.get("start"), sel.get("end")
+            if not isinstance(a, int) or not isinstance(e, int):
+                continue
+            m = omap.remap_element(a, e)
+            if m is not None:
+                buckets[stype].append(m)
+
+    def _segs(stype: str) -> list[Any]:
+        return [
+            Segment(segment_type=stype, index=i, start=s, end=e, text="")
+            for i, (s, e) in enumerate(sorted(buckets[stype]))
+        ]
+
+    return _segs("paragraph"), _segs("section"), _segs("sentence")
+
+
 def derive_subtext(
     parent: Project,
     workspace: Path,
     *,
     extraction_types: list[str],
     excluded_ids: list[str] | None = None,
+    include_container_ids: list[str] | None = None,
     title: str = "",
     author: str = "",
     sep: str = SEPARATOR,
+    progress: Callable[[str, str, float], None] | None = None,
 ) -> tuple[Project, LayoutConfig, dict[str, Any]]:
     """Build a child subtext project from the parent's kept extraction layers.
+
+    ``include_container_ids`` optionally restricts extraction to elements lying within those
+    container sections (e.g. an appendix), so "the Appendix books' chapters/footnotes" is one
+    selection rather than thousands of manual deselections.
+
+    ``progress(phase, message, fraction)`` is called at each real work boundary with a monotonic
+    fraction in [0, 1), so callers can stream derivation progress (see the SSE derive endpoint).
 
     Returns ``(child_project, child_layout, summary)``. The caller (server) is responsible for
     writing the child's elements track from ``child_layout`` and any collection linking.
     """
     from palimpsest.project import ingest_file
 
+    def _emit(phase: str, message: str, fraction: float) -> None:
+        if progress is not None:
+            progress(phase, message, fraction)
+
     cfg = load_layout(parent.path)
     if cfg is None:
         raise ValueError("Parent project has no layout configured")
     extraction = set(extraction_types)
     excluded = set(excluded_ids or [])
-    spans = compute_kept_spans(cfg.sections, extraction, excluded)
+    container_ids = list(include_container_ids or [])
+    container_spans: list[tuple[int, int]] | None = None
+    if container_ids:
+        by_id = {s.id: s for s in cfg.sections}
+        resolved: list[tuple[int, int]] = []
+        missing: list[str] = []
+        for cid in container_ids:
+            sec = by_id.get(cid)
+            if sec is None or sec.end <= sec.start:
+                missing.append(cid)
+            else:
+                resolved.append((sec.start, sec.end))
+        if missing:
+            raise ValueError(f"Unknown or empty container section(s): {', '.join(missing)}")
+        container_spans = resolved
+    spans = compute_kept_spans(cfg.sections, extraction, excluded, container_spans)
     if not spans:
         raise ValueError("No text matched the selected extraction layers")
+    _emit("scan", "Computing kept regions…", 0.04)
 
     parent_text = parent.reference_text()
     omap = OffsetMap(spans, len(sep))
     child_text = assemble_text(parent_text, spans, sep)
+    _emit("assemble", "Assembling subtext text…", 0.10)
+    segmentation = _remap_parent_segments(parent.path, omap)
+    _emit("segment", "Remapping segmentation…", 0.16)
 
-    source_name = _subtext_source_name(parent.metadata.id, extraction_types)
+    source_name = _subtext_source_name(parent.metadata.id, extraction_types, container_ids)
     child = ingest_file(
         Path(source_name),  # virtual path — content comes from text_extractor below
         workspace,
@@ -430,10 +537,15 @@ def derive_subtext(
         source_name=source_name,
         text_extractor=lambda _p: child_text,
         overwrite=True,
+        segmentation=segmentation,
+        pre_normalized=True,  # child_text is already-normalized parent slices; see ingest_file
+        # ingest's own phase fractions occupy the [0.18, 0.48] slice of the overall derive.
+        progress=lambda _ph, msg, fr: _emit("write", msg, 0.18 + fr * 0.30),
     )
 
     child_cfg = remap_layout(cfg.sections, cfg.mask_by_type, cfg.extra_types, omap)
     save_layout(child.path, child_cfg)
+    _emit("layout", "Writing child layout…", 0.52)
 
     # Verse index: remap (preserves book/chapter/verse so the verse-number layer stays masked).
     verses_path = parent.path / "tracks" / "verses.jsonl"
@@ -443,9 +555,15 @@ def derive_subtext(
         child_verses = remap_verses(recs, omap)
         verse_count = len(child_verses)
         _write_jsonl(child.path / "tracks" / "verses.jsonl", child_verses)
+    _emit("verses", "Remapping verse index…", 0.56)
 
-    tracks_written = _remap_tracks(parent.path, child.path, omap)
+    def _on_track(done: int, total: int, name: str) -> None:
+        # Spread the (variable) annotation-track remapping across the [0.58, 0.92] slice.
+        _emit("tracks", f"Remapping {name}…", 0.58 + (done / max(1, total)) * 0.34)
+
+    tracks_written = _remap_tracks(parent.path, child.path, omap, on_track=_on_track)
     _update_metadata(child.path, parent, extraction_types, list(excluded), sep)
+    _emit("finalize", "Finalizing metadata…", 0.94)
 
     summary = {
         "project_id": child.metadata.id,
@@ -457,5 +575,6 @@ def derive_subtext(
         "verse_count": verse_count,
         "tracks_remapped": tracks_written,
         "extraction_types": list(extraction_types),
+        "container_ids": container_ids,
     }
     return child, child_cfg, summary

@@ -116,16 +116,18 @@ function SectionLabel({ children }: { children: ReactNode }): ReactElement {
   );
 }
 
-function BookCover({ project, onOpen, onReimport, onRefine, onDelete }: {
+function BookCover({ project, collections, onOpen, onReimport, onRefine, onDelete, onAddToCollection }: {
   project: ProjectEntry;
+  collections: CollectionEntry[];
   onOpen: () => void;
   onReimport: () => void;
   onRefine: () => void;
   onDelete: () => void;
+  onAddToCollection: (collectionId: string) => void;
 }): ReactElement {
   const [from, to] = COVER_PALETTE[stableIndex(project.id, COVER_PALETTE.length)];
   const [imgFailed, setImgFailed] = useState(false);
-  const [menu, setMenu] = useState<null | 'main' | 'confirm-delete' | 'confirm-reimport'>(null);
+  const [menu, setMenu] = useState<null | 'main' | 'confirm-delete' | 'confirm-reimport' | 'add-collection'>(null);
   const showImage = Boolean(project.cover) && !imgFailed;
 
   useEffect(() => {
@@ -200,9 +202,22 @@ function BookCover({ project, onOpen, onReimport, onRefine, onDelete }: {
             <>
               <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => { setMenu(null); onOpen(); }}>Open</button>
               <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => { setMenu(null); onRefine(); }}>Refine sections…</button>
+              <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => setMenu('add-collection')}>Add to collection…</button>
               <button className="w-full text-left px-3 py-1.5 hover:bg-white/10" onClick={() => setMenu('confirm-reimport')}>Re-import…</button>
               <button className="w-full text-left px-3 py-1.5 hover:bg-white/10 text-[#ff453a]" onClick={() => setMenu('confirm-delete')}>Delete…</button>
             </>
+          )}
+          {menu === 'add-collection' && (
+            <div className="px-1 py-0.5 max-h-[200px] overflow-y-auto">
+              {collections.length === 0 ? (
+                <p className="px-2 py-1.5 text-[12px] text-[#b0b0b6] leading-snug">No collections yet. Create one from the sidebar first.</p>
+              ) : (
+                collections.map((c) => (
+                  <button key={c.id} className="w-full text-left px-3 py-1.5 hover:bg-white/10 truncate"
+                    onClick={() => { setMenu(null); onAddToCollection(c.id); }}>{c.label}</button>
+                ))
+              )}
+            </div>
           )}
           {menu === 'confirm-reimport' && (
             <div className="px-3 py-2 space-y-2">
@@ -286,8 +301,9 @@ const TOOLS: ReadonlyArray<{ tab: TabId; label: string; icon: string; desc: stri
   { tab: 'compare', label: 'Compare', icon: 'compare', desc: 'Two-text alignment & diff' },
 ];
 
-function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTool, onReimport, onRefine, onDelete }: {
+function HomeView({ projects, collections, onOpenLibrary, onImport, onOpenProject, onLaunchTool, onReimport, onRefine, onDelete, onAddToCollection }: {
   projects: ProjectEntry[];
+  collections: CollectionEntry[];
   onOpenLibrary: () => void;
   onImport: () => void;
   onOpenProject: (id: string) => void;
@@ -295,6 +311,7 @@ function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTo
   onReimport: (p: ProjectEntry) => void;
   onRefine: (p: ProjectEntry) => void;
   onDelete: (p: ProjectEntry) => void;
+  onAddToCollection: (p: ProjectEntry, collectionId: string) => void;
 }): ReactElement {
   const hasProjects = projects.length > 0;
   return (
@@ -344,10 +361,12 @@ function HomeView({ projects, onOpenLibrary, onImport, onOpenProject, onLaunchTo
               <BookCover
                 key={p.id}
                 project={p}
+                collections={collections}
                 onOpen={() => onOpenProject(p.id)}
                 onReimport={() => onReimport(p)}
                 onRefine={() => onRefine(p)}
                 onDelete={() => onDelete(p)}
+                onAddToCollection={(cid) => onAddToCollection(p, cid)}
               />
             ))}
           </div>
@@ -532,6 +551,17 @@ export default function ProjectPicker(): ReactElement {
       .catch(() => setCollections([]));
   }, []);
 
+  // Honor an "Apply masking…" request raised from MaskingPanel: that flow closes the project
+  // (remounting us) after stashing the project id, so we reopen straight into the refine wizard.
+  useEffect(() => {
+    const rid = useViewStore.getState().refineRequestId;
+    if (rid) {
+      setResumeProject(rid);
+      setShowImport(true);
+      useViewStore.getState().setRefineRequest(null);
+    }
+  }, []);
+
   async function createCollection(): Promise<void> {
     const label = window.prompt('New collection name');
     if (!label || !label.trim()) return;
@@ -546,6 +576,20 @@ export default function ProjectPicker(): ReactElement {
         setCollections((prev) => [...prev, { ...col, project_count: (col.project_ids ?? []).length }]);
       }
     } catch { /* ignore */ }
+  }
+
+  async function handleAddToCollection(p: ProjectEntry, collectionId: string): Promise<void> {
+    try {
+      const res = await fetch(
+        `/api/collections/${encodeURIComponent(collectionId)}/projects/${encodeURIComponent(p.id)}`,
+        { method: 'POST' },
+      );
+      if (!res.ok) return;
+      const col = await res.json();
+      const entry = { ...col, project_count: (col.project_ids ?? []).length };
+      setCollections((prev) => prev.map((c) => (c.id === col.id ? { ...c, ...entry } : c)));
+      if (activeCollection?.id === col.id) setActiveCollection(entry);
+    } catch { /* non-fatal */ }
   }
 
   function openCollection(col: CollectionEntry): void {
@@ -713,6 +757,7 @@ export default function ProjectPicker(): ReactElement {
         {page === 'home' ? (
           <HomeView
             projects={projects}
+            collections={collections}
             onOpenLibrary={goLibrary}
             onImport={() => setShowImport(true)}
             onOpenProject={(id) => handleSelect(id, null)}
@@ -720,6 +765,7 @@ export default function ProjectPicker(): ReactElement {
             onReimport={handleReimport}
             onRefine={handleRefine}
             onDelete={handleDelete}
+            onAddToCollection={handleAddToCollection}
           />
         ) : page === 'store' ? (
           <StoreView />
@@ -770,10 +816,12 @@ export default function ProjectPicker(): ReactElement {
                     <BookCover
                       key={p.id}
                       project={p}
+                      collections={collections}
                       onOpen={() => handleSelect(p.id)}
                       onReimport={() => handleReimport(p)}
                       onRefine={() => handleRefine(p)}
                       onDelete={() => handleDelete(p)}
+                      onAddToCollection={(cid) => handleAddToCollection(p, cid)}
                     />
                   ))}
                 </div>

@@ -103,6 +103,7 @@ class DeriveRequest(BaseModel):
 
     extraction_types: list[str]  # type-layers whose element spans form the subtext text
     excluded_ids: list[str] = []  # Stage-2 per-element deselections
+    include_container_ids: list[str] = []  # restrict extraction to these container sections (e.g. appendix)
     title: str = ""
     author: str = ""
     collection_id: str | None = None  # add parent+child to this collection (else auto)
@@ -1573,6 +1574,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         cfg = load_layout(project_dir) or LayoutConfig()
         cfg.sections = sections
         cfg.applied = False
+        cfg.parents_computed = True  # detect_layout_sections already computed parent links
         save_layout(project_dir, cfg)
         return JSONResponse(content=_sections_payload(cfg, text_len))
 
@@ -1584,7 +1586,10 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         project_dir = _safe_project_dir(workspace, project_id)
         text_len = len(Project.load(project_dir).reference_text())
-        cfg = load_layout(project_dir) or LayoutConfig()
+        # On first load of a legacy layout, load_layout lazily backfills parent_id via an
+        # O(n²) pass (then re-saves). For ~9k-section scripture layouts that is multi-second,
+        # so offload it to a worker thread to keep the event loop responsive on this hot path.
+        cfg = await asyncio.to_thread(load_layout, project_dir) or LayoutConfig()
         masked = masked_intervals(cfg.sections, cfg.mask_by_type, text_len,
                                   extra_masked=_verse_num_intervals(project_dir))
         return JSONResponse(content=_sections_payload(cfg, text_len, masked=masked))
@@ -1596,6 +1601,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             DEFAULT_MASK_BY_TYPE,
             LayoutConfig,
             LayoutSection,
+            _compute_parents,
             load_layout,
             sanitize_extra_types,
             save_layout,
@@ -1606,6 +1612,8 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         text_len = len(Project.load(project_dir).reference_text())
         cfg = load_layout(project_dir) or LayoutConfig()
         cfg.sections = [LayoutSection.from_dict(s) for s in req.sections]
+        _compute_parents(cfg.sections)  # user edits may change containment; refresh parent links
+        cfg.parents_computed = True
         if req.extra_types is not None:
             cfg.extra_types = sanitize_extra_types(req.extra_types)
         if req.mask_by_type is not None:
@@ -1656,6 +1664,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 workspace,
                 extraction_types=req.extraction_types,
                 excluded_ids=req.excluded_ids,
+                include_container_ids=req.include_container_ids,
                 title=req.title,
                 author=req.author,
             )
@@ -1670,6 +1679,75 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         )
         summary["collection_id"] = collection_id
         return JSONResponse(content=summary)
+
+    @app.post("/api/projects/{project_id}/derive/stream")
+    async def derive_subtext_stream(project_id: str, req: DeriveRequest) -> StreamingResponse:
+        """Derive a subtext with live per-phase progress as Server-Sent Events.
+
+        Emits ``progress`` events ({phase, message, pct}) as the kept layers are assembled and the
+        parent's overlapping layers remapped, then a terminal ``done`` (derive summary +
+        collection_id) or ``error`` ({detail, status}). The derive runs in a worker thread; its
+        progress callback hands events back to the event loop through a thread-safe queue (mirrors
+        the streamed import endpoint)."""
+        from palimpsest.derive import derive_subtext
+        from palimpsest.project import Project
+
+        parent_dir = _safe_project_dir(workspace, project_id)
+        parent = Project.load(parent_dir)
+
+        queue: asyncio.Queue[dict[str, Any]] = asyncio.Queue()
+        loop = asyncio.get_running_loop()
+
+        def _on_progress(phase: str, message: str, fraction: float) -> None:
+            loop.call_soon_threadsafe(
+                queue.put_nowait,
+                {"type": "progress", "phase": phase, "message": message, "pct": round(fraction * 100)},
+            )
+
+        async def _run() -> None:
+            try:
+                child, child_cfg, summary = await asyncio.to_thread(
+                    derive_subtext,
+                    parent,
+                    workspace,
+                    extraction_types=req.extraction_types,
+                    excluded_ids=req.excluded_ids,
+                    include_container_ids=req.include_container_ids,
+                    title=req.title,
+                    author=req.author,
+                    progress=_on_progress,
+                )
+                await queue.put({"type": "progress", "phase": "elements",
+                                 "message": "Writing elements track…", "pct": 96})
+                text_len = len(child.reference_text())
+                _write_elements_track(child.path, child.metadata.id, child_cfg, text_len)
+                collection_id = _link_derived_collection(
+                    workspace, parent, child.metadata.id, req.collection_id
+                )
+                summary["collection_id"] = collection_id
+                await queue.put({"type": "done", **summary})
+            except ValueError as exc:
+                await queue.put({"type": "error", "detail": str(exc), "status": 400})
+            except Exception as exc:  # noqa: BLE001
+                logger.exception("Streamed derive failed")
+                await queue.put({"type": "error", "detail": str(exc), "status": 500})
+
+        async def _events():
+            task = asyncio.create_task(_run())
+            try:
+                while True:
+                    evt = await queue.get()
+                    yield f"data: {json.dumps(evt)}\n\n"
+                    if evt.get("type") in ("done", "error"):
+                        break
+            finally:
+                await task
+
+        return StreamingResponse(
+            _events(),
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+        )
 
     # ── Collections API ──
 

@@ -6,7 +6,7 @@
  * onto the new child project server-side (palimpsest.derive).
  */
 
-import { useMemo, useState, type ReactElement } from 'react';
+import { useEffect, useMemo, useState, type ReactElement } from 'react';
 import { useViewStore } from '../../stores/viewStore';
 import { useSectionStore } from '../../stores/sectionStore';
 import { useProjectStore } from '../../stores/projectStore';
@@ -18,14 +18,23 @@ interface KeptStats {
   spans: Array<[number, number]>;
 }
 
-/** Merge the (non-excluded) extraction-layer spans; mirrors core compute_kept_spans. */
+/** Structural container types offered as optional extraction scopes (e.g. "only the Appendix"). */
+const CONTAINER_TYPES = new Set(['volume', 'part', 'book', 'appendix']);
+
+/** True when an element lies fully within at least one selected container span (empty = no scope). */
+function inScope(s: LayoutSection, scopeSpans: Array<[number, number]>): boolean {
+  return scopeSpans.length === 0 || scopeSpans.some(([cs, ce]) => cs <= s.start && s.end <= ce);
+}
+
+/** Merge the (non-excluded, in-scope) extraction-layer spans; mirrors core compute_kept_spans. */
 function keptStats(
   sections: LayoutSection[],
   extractionTypes: Set<string>,
   excludedIds: Set<string>,
+  scopeSpans: Array<[number, number]>,
 ): KeptStats {
   const raw = sections
-    .filter((s) => extractionTypes.has(s.type) && !excludedIds.has(s.id) && s.start < s.end)
+    .filter((s) => extractionTypes.has(s.type) && !excludedIds.has(s.id) && s.start < s.end && inScope(s, scopeSpans))
     .map((s): [number, number] => [s.start, s.end])
     .sort((a, b) => a[0] - b[0]);
   const merged: Array<[number, number]> = [];
@@ -46,6 +55,42 @@ function elementLabel(s: LayoutSection): string {
   return num ? `${s.type} ${num}` : s.type;
 }
 
+type DeriveResult = { project_id: string; char_count: number; element_count: number; verse_count: number };
+type DeriveEvent =
+  | { type: 'progress'; phase: string; message: string; pct: number }
+  | ({ type: 'done' } & DeriveResult & { collection_id?: string })
+  | { type: 'error'; detail: string; status?: number };
+
+// Consume the Server-Sent Events from /derive/stream. EventSource is GET-only, so we read the
+// fetch body stream and split on the SSE record separator (mirrors the streamed import consumer).
+async function streamDerive(parentId: string, body: unknown, onEvent: (e: DeriveEvent) => void): Promise<void> {
+  const res = await fetch(`/api/projects/${parentId}/derive/stream`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok || !res.body) {
+    const err = await res.json().catch(() => ({ detail: `HTTP ${res.status}` }));
+    onEvent({ type: 'error', detail: (err as { detail?: string }).detail || 'Derivation failed', status: res.status });
+    return;
+  }
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buf = '';
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += decoder.decode(value, { stream: true });
+    let sep: number;
+    while ((sep = buf.indexOf('\n\n')) >= 0) {
+      const record = buf.slice(0, sep);
+      buf = buf.slice(sep + 2);
+      const dataLine = record.split('\n').find((l) => l.startsWith('data:'));
+      if (dataLine) onEvent(JSON.parse(dataLine.slice(5).trim()) as DeriveEvent);
+    }
+  }
+}
+
 export default function SubtextWizard(): ReactElement | null {
   const open = useViewStore((s) => s.subtextWizardOpen);
   const close = useViewStore((s) => s.setSubtextWizardOpen);
@@ -58,12 +103,27 @@ export default function SubtextWizard(): ReactElement | null {
 
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [extraction, setExtraction] = useState<Set<string>>(new Set());
+  const [scope, setScope] = useState<Set<string>>(new Set());
   const [excluded, setExcluded] = useState<Set<string>>(new Set());
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [title, setTitle] = useState('');
+  const [collectionId, setCollectionId] = useState('');  // '' = auto-create a {parent}+subtexts collection
+  const [collections, setCollections] = useState<Array<{ id: string; label: string }>>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<{ project_id: string; char_count: number; element_count: number; verse_count: number } | null>(null);
+  const [progress, setProgress] = useState<{ pct: number; message: string } | null>(null);
+  const [result, setResult] = useState<DeriveResult | null>(null);
+
+  // Load existing collections so the subtext can be routed into a chosen one (else auto).
+  useEffect(() => {
+    if (!open) return;
+    let cancelled = false;
+    void fetch('/api/collections')
+      .then((r) => (r.ok ? r.json() : []))
+      .then((cols) => { if (!cancelled) setCollections(Array.isArray(cols) ? cols : []); })
+      .catch(() => { /* non-fatal: fall back to auto-collection */ });
+    return () => { cancelled = true; };
+  }, [open]);
 
   // Present mask-types (those with at least one element), with label/color/count.
   const present = useMemo(() => {
@@ -75,11 +135,23 @@ export default function SubtextWizard(): ReactElement | null {
       .sort((a, b) => b.count - a.count);
   }, [sections, types]);
 
-  // Extraction elements grouped by their container (parent_id) for Stage 2.
+  // Container sections offered as optional extraction scopes (appendix, book, volume, part).
+  const containers = useMemo(
+    () => sections
+      .filter((s) => CONTAINER_TYPES.has(s.type) && s.start < s.end)
+      .sort((a, b) => a.start - b.start),
+    [sections],
+  );
+  const scopeSpans = useMemo(
+    (): Array<[number, number]> => containers.filter((c) => scope.has(c.id)).map((c) => [c.start, c.end]),
+    [containers, scope],
+  );
+
+  // Extraction elements (within scope) grouped by their container (parent_id) for Stage 2.
   const groups = useMemo(() => {
     const byId = new Map(sections.map((s) => [s.id, s]));
     const els = sections
-      .filter((s) => extraction.has(s.type))
+      .filter((s) => extraction.has(s.type) && inScope(s, scopeSpans))
       .sort((a, b) => a.start - b.start);
     const out = new Map<string, { label: string; els: LayoutSection[] }>();
     for (const el of els) {
@@ -91,20 +163,22 @@ export default function SubtextWizard(): ReactElement | null {
       out.get(key)!.els.push(el);
     }
     return [...out.entries()].map(([key, v]) => ({ key, ...v }));
-  }, [sections, extraction]);
+  }, [sections, extraction, scopeSpans]);
 
-  const stats = useMemo(() => keptStats(sections, extraction, excluded), [sections, extraction, excluded]);
+  const stats = useMemo(() => keptStats(sections, extraction, excluded, scopeSpans), [sections, extraction, excluded, scopeSpans]);
 
   if (!open) return null;
 
   const reset = (): void => {
-    setStep(1); setExtraction(new Set()); setExcluded(new Set()); setTitle('');
-    setBusy(false); setError(null); setResult(null); setCollapsed(new Set());
+    setStep(1); setExtraction(new Set()); setScope(new Set()); setExcluded(new Set()); setTitle(''); setCollectionId('');
+    setBusy(false); setError(null); setProgress(null); setResult(null); setCollapsed(new Set());
   };
   const dismiss = (): void => { reset(); close(false); };
 
   const toggleExtraction = (t: string): void =>
     setExtraction((prev) => { const n = new Set(prev); n.has(t) ? n.delete(t) : n.add(t); return n; });
+  const toggleScope = (id: string): void =>
+    setScope((prev) => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
   const toggleExcluded = (id: string): void =>
     setExcluded((prev) => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
   const toggleGroup = (els: LayoutSection[], drop: boolean): void =>
@@ -114,28 +188,28 @@ export default function SubtextWizard(): ReactElement | null {
 
   const generate = async (): Promise<void> => {
     if (!parentId) return;
-    setBusy(true); setError(null);
+    setBusy(true); setError(null); setProgress({ pct: 0, message: 'Starting…' });
     try {
-      const res = await fetch(`/api/projects/${parentId}/derive`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          extraction_types: [...extraction],
-          excluded_ids: [...excluded],
-          title: title.trim(),
-        }),
+      await streamDerive(parentId, {
+        extraction_types: [...extraction],
+        excluded_ids: [...excluded],
+        include_container_ids: [...scope],
+        collection_id: collectionId || null,
+        title: title.trim(),
+      }, (e) => {
+        if (e.type === 'progress') {
+          setProgress({ pct: e.pct, message: e.message });
+        } else if (e.type === 'done') {
+          setResult({ project_id: e.project_id, char_count: e.char_count, element_count: e.element_count, verse_count: e.verse_count });
+          setProgress(null); setBusy(false);
+        } else {
+          setError(e.detail || 'Derivation failed');
+          setProgress(null); setBusy(false);
+        }
       });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        setError(body.detail ?? `Derivation failed (${res.status})`);
-        setBusy(false);
-        return;
-      }
-      setResult(await res.json());
-      setBusy(false);
     } catch (e) {
       setError(String(e));
-      setBusy(false);
+      setProgress(null); setBusy(false);
     }
   };
 
@@ -148,6 +222,9 @@ export default function SubtextWizard(): ReactElement | null {
   };
 
   const pct = textLen > 0 ? Math.round((stats.chars / textLen) * 100) : 0;
+  // Kept characters "completed" so far, mapped from the live derive progress fraction. The content
+  // track fills green left-to-right over the kept (blue) regions as this advances.
+  const greenChars = progress ? (progress.pct / 100) * stats.chars : 0;
   const btn = 'px-3 py-1.5 rounded text-[0.85em] cursor-pointer';
   const btnPrimary = `${btn} bg-[var(--color-accent,#1a73e8)] text-white hover:opacity-90 disabled:opacity-40`;
   const btnGhost = `${btn} border border-[var(--color-border)] hover:bg-[var(--color-bg-muted)]`;
@@ -192,12 +269,29 @@ export default function SubtextWizard(): ReactElement | null {
                   <span className="text-[0.85em] text-[var(--color-text-muted)] tabular-nums">{p.count}</span>
                 </label>
               ))}
+              {containers.length > 0 && (
+                <div className="mt-3 pt-3 border-t border-[var(--color-border)]">
+                  <p className="text-[0.8em] text-[var(--color-text-muted)] mb-1.5">
+                    Restrict to section(s) <span className="opacity-70">(optional)</span> — e.g. just the Appendix.
+                    Leave empty to use the whole document.
+                  </p>
+                  <div className="max-h-[160px] overflow-y-auto">
+                    {containers.map((c) => (
+                      <label key={c.id} className="flex items-center gap-2 px-2 py-1 text-[0.82em] hover:bg-[var(--color-bg-muted)] rounded cursor-pointer">
+                        <input type="checkbox" checked={scope.has(c.id)} onChange={() => toggleScope(c.id)} />
+                        <span className="flex-1 truncate">{elementLabel(c)}</span>
+                        <span className="text-[0.78em] text-[var(--color-text-muted)]">{c.type}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ) : step === 2 ? (
             <div>
               <p className="text-[0.8em] text-[var(--color-text-muted)] mb-2">
                 Deselect any elements (or whole containers) to exclude from the subtext.
-                {' '}{stats.count} of {sections.filter((s) => extraction.has(s.type)).length} kept.
+                {' '}{stats.count} of {sections.filter((s) => extraction.has(s.type) && inScope(s, scopeSpans)).length} kept.
               </p>
               {groups.map((g) => {
                 const allDropped = g.els.every((e) => excluded.has(e.id));
@@ -231,6 +325,14 @@ export default function SubtextWizard(): ReactElement | null {
                 <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder={`${parentTitle} — core`}
                   className="mt-1 w-full px-2 py-1.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] focus:border-[var(--color-border-focus)] focus:outline-none" />
               </label>
+              <label className="block text-[0.85em]">
+                <span className="text-[var(--color-text-muted)]">Add to collection</span>
+                <select value={collectionId} onChange={(e) => setCollectionId(e.target.value)}
+                  className="mt-1 w-full px-2 py-1.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] focus:border-[var(--color-border-focus)] focus:outline-none">
+                  <option value="">New collection with parent (automatic)</option>
+                  {collections.map((c) => (<option key={c.id} value={c.id}>{c.label}</option>))}
+                </select>
+              </label>
               <div className="text-[0.82em] space-y-1">
                 <div className="flex justify-between"><span className="text-[var(--color-text-muted)]">Kept elements</span><span className="tabular-nums">{stats.count.toLocaleString()}</span></div>
                 <div className="flex justify-between"><span className="text-[var(--color-text-muted)]">Characters</span><span className="tabular-nums">{stats.chars.toLocaleString()} ({pct}% of parent)</span></div>
@@ -240,8 +342,33 @@ export default function SubtextWizard(): ReactElement | null {
                   <div key={i} className="absolute top-0 bottom-0 bg-[var(--color-accent,#1a73e8)]"
                     style={{ left: `${(s / Math.max(1, textLen)) * 100}%`, width: `${((e - s) / Math.max(1, textLen)) * 100}%` }} />
                 ))}
+                {progress && (() => {
+                  // Paint green over the completed head of the kept regions (in document order),
+                  // so each blue section turns green as generation reaches it.
+                  let cum = 0;
+                  const segs: ReactElement[] = [];
+                  for (let i = 0; i < stats.spans.length; i++) {
+                    const [s, e] = stats.spans[i];
+                    const spanChars = e - s;
+                    const filled = Math.max(0, Math.min(spanChars, greenChars - cum));
+                    cum += spanChars;
+                    if (filled > 0) {
+                      segs.push(
+                        <div key={`g${i}`} className="absolute top-0 bottom-0 bg-[var(--color-success,#137333)] transition-[width] duration-200"
+                          style={{ left: `${(s / Math.max(1, textLen)) * 100}%`, width: `${(filled / Math.max(1, textLen)) * 100}%` }} />,
+                      );
+                    }
+                  }
+                  return segs;
+                })()}
               </div>
-              <p className="text-[0.72em] text-[var(--color-text-muted)]">Kept regions (blue) over the parent text. Generation can take up to a minute for large texts.</p>
+              {progress ? (
+                <p className="text-[0.72em] text-[var(--color-text-muted)] tabular-nums">
+                  <span className="text-[var(--color-success,#137333)] font-semibold">{progress.pct}%</span> · {progress.message}
+                </p>
+              ) : (
+                <p className="text-[0.72em] text-[var(--color-text-muted)]">Kept regions (blue) over the parent text; they fill green as each section is generated.</p>
+              )}
             </div>
           )}
         </div>

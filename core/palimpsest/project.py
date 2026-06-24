@@ -26,7 +26,7 @@ from palimpsest.ingest.normalizer import (
     count_words,
     normalize,
 )
-from palimpsest.ingest.segmenter import segment_paragraphs, segment_sections, segment_sentences
+from palimpsest.ingest.segmenter import Segment, segment_paragraphs, segment_sections, segment_sentences
 
 _SUBDIRS = [
     "tracks",
@@ -439,6 +439,8 @@ def ingest_file(
     progress: Callable[[str, str, float], None] | None = None,
     source_name: str | None = None,
     text_extractor: Callable[[Path], str] | None = None,
+    segmentation: tuple[list[Segment], list[Segment], list[Segment]] | None = None,
+    pre_normalized: bool = False,
 ) -> Project:
     """Ingest a text file into a new project directory.
 
@@ -481,7 +483,11 @@ def ingest_file(
         raw_text = (text_extractor or extract_text)(source_path)
 
     _emit("normalize", "Normalizing text…", 0.45)
-    normalized = normalize(raw_text)
+    # Derived subtexts arrive already normalized (slices of the parent's normalized reference). Re-
+    # normalizing would re-collapse whitespace at the separator junctions, shifting every offset and
+    # desyncing the remapped layers (segments/verses/elements) from reference.txt. Skip it so the
+    # written reference exactly matches the offset map the caller remapped against.
+    normalized = raw_text if pre_normalized else normalize(raw_text)
     sha = compute_sha256(normalized)
     # Re-anchor EPUB heading offsets onto the normalized text (see _relocate_sections).
     relocated_sections = (
@@ -509,10 +515,16 @@ def ingest_file(
     (project_dir / "reference.txt").write_text(normalized, encoding="utf-8")
     (project_dir / "reference.sha256").write_text(sha)
 
-    _emit("segment", "Segmenting paragraphs & sentences…", 0.55)
-    paras = segment_paragraphs(normalized)
-    sections = segment_sections(normalized)
-    sentences = segment_sentences(normalized)
+    if segmentation is not None:
+        # Subtext derivation supplies the parent's segmentation remapped onto the child, so we
+        # skip re-running the (expensive) spaCy sentence segmenter on text we already segmented.
+        _emit("segment", "Reusing parent segmentation…", 0.55)
+        paras, sections, sentences = segmentation
+    else:
+        _emit("segment", "Segmenting paragraphs & sentences…", 0.55)
+        paras = segment_paragraphs(normalized)
+        sections = segment_sections(normalized)
+        sentences = segment_sentences(normalized)
 
     meta_dict: dict[str, Any] = {}
     if epub_result:

@@ -40,6 +40,141 @@ def test_compute_kept_spans_merges_and_excludes():
     assert compute_kept_spans(PARENT, {"chapter"}, {"c2"}) == [(20, 40)]
 
 
+# Two adjacent containers: a "main" book [0,40] and an "appendix" [40,80], each with two chapters.
+SCOPED = [
+    _sec("main", "book", 0, 40),
+    _sec("m1", "chapter", 0, 20, parent_id="main"),
+    _sec("m2", "chapter", 20, 40, parent_id="main"),
+    _sec("apx", "appendix", 40, 80),
+    _sec("a1", "chapter", 40, 60, parent_id="apx"),
+    _sec("a2", "chapter", 60, 80, parent_id="apx"),
+]
+
+
+def test_compute_kept_spans_container_scope_restricts_to_appendix():
+    # No scope (None or empty) keeps every chapter (all four merge into one span).
+    assert compute_kept_spans(SCOPED, {"chapter"}, set()) == [(0, 80)]
+    assert compute_kept_spans(SCOPED, {"chapter"}, set(), []) == [(0, 80)]
+    # Scoped to the appendix container span: only its two chapters survive.
+    assert compute_kept_spans(SCOPED, {"chapter"}, set(), [(40, 80)]) == [(40, 80)]
+
+
+def test_compute_kept_spans_container_scope_honors_exclusions_and_partial_overlap():
+    # Per-element exclusion still applies within a container scope.
+    assert compute_kept_spans(SCOPED, {"chapter"}, {"a2"}, [(40, 80)]) == [(40, 60)]
+    # An element only partially inside the container is NOT included (full containment required).
+    spill = SCOPED + [_sec("x", "chapter", 70, 95)]
+    assert compute_kept_spans(spill, {"chapter"}, set(), [(40, 80)]) == [(40, 80)]
+
+
+def test_derive_subtext_scoped_to_container(tmp_path):
+    from palimpsest.derive import derive_subtext
+    from palimpsest.layout import LayoutConfig, save_layout
+    from palimpsest.project import Project, ingest_file
+
+    text = "MAINBODYAAAAAAAAAA" + "APPENDIXBBBBBBBBBB"  # 18 + 18, contiguous
+    src = tmp_path / "src.txt"
+    src.write_text(text, encoding="utf-8")
+    project = ingest_file(src, tmp_path, title="Scope Test")
+    full = project.reference_text()
+    m0, a0 = full.index("MAINBODY"), full.index("APPENDIX")
+    end = a0 + len("APPENDIXBBBBBBBBBB")
+    sections = [
+        _sec("mainbook", "book", m0, a0),
+        _sec("mc1", "chapter", m0, m0 + 9, parent_id="mainbook"),
+        _sec("mc2", "chapter", m0 + 9, a0, parent_id="mainbook"),
+        _sec("apx", "appendix", a0, end),
+        _sec("ac1", "chapter", a0, a0 + 9, parent_id="apx"),
+        _sec("ac2", "chapter", a0 + 9, end, parent_id="apx"),
+    ]
+    save_layout(project.path, LayoutConfig(sections=sections, applied=True, parents_computed=True))
+    parent = Project.load(project.path)
+
+    child, _cfg, summary = derive_subtext(
+        parent, tmp_path, extraction_types=["chapter"], include_container_ids=["apx"], title="Apx only",
+    )
+    child_text = child.reference_text()
+    assert "APPENDIX" in child_text and "MAINBODY" not in child_text
+    assert summary["container_ids"] == ["apx"]
+
+    # Unknown container id fails loud (no silent empty subtext).
+    with pytest.raises(ValueError, match="Unknown or empty container"):
+        derive_subtext(parent, tmp_path, extraction_types=["chapter"], include_container_ids=["nope"])
+
+
+def test_derive_reuses_parent_segmentation_and_stays_offset_aligned(tmp_path, monkeypatch):
+    """Regression for the slow + mis-aligned subtext derive (fixed 2026-06-23).
+
+    Two root causes are locked here: (1) derivation re-ran the spaCy segmenter on the assembled
+    child (the dominant cost, scaling with child size); it must instead remap the parent's existing
+    segments. (2) ``ingest_file`` re-normalized the child, re-collapsing whitespace at the separator
+    junctions, so ``reference.txt`` drifted from the offset map and pushed segments out of bounds;
+    derivation now passes ``pre_normalized=True``.
+    """
+    import json as _json
+
+    from palimpsest.derive import derive_subtext
+    from palimpsest.layout import LayoutConfig, save_layout
+    from palimpsest.project import Project, ingest_file
+    import palimpsest.project as project_mod
+
+    raw = (
+        "Front matter to drop.\n\n"
+        "Alpha chapter sentence one. Alpha chapter sentence two.\n\n"
+        "Header to drop.\n\n"
+        "Beta chapter sentence one. Beta chapter sentence two."
+    )
+    src = tmp_path / "src.txt"
+    src.write_text(raw, encoding="utf-8")
+    project = ingest_file(src, tmp_path, title="Seg Reuse")
+    full = project.reference_text()
+    c1s = full.index("Alpha")
+    c1e = c1s + len("Alpha chapter sentence one. Alpha chapter sentence two.")
+    c2s = full.index("Beta")
+    sections = [
+        _sec("body", "body", 0, len(full)),
+        _sec("fm", "front_matter", 0, c1s),
+        _sec("c1", "chapter", c1s, c1e, parent_id="body"),
+        _sec("hdr", "header", c1e, c2s),
+        _sec("c2", "chapter", c2s, len(full), parent_id="body"),
+    ]
+    save_layout(project.path, LayoutConfig(sections=sections, applied=True, parents_computed=True))
+    parent = Project.load(project.path)
+
+    # Trap the slow path: the derive must reuse the parent's segmentation, so any call into the spaCy
+    # segmenters during derivation is a regression to the pre-fix behavior — fail it loudly.
+    def _boom(*_a, **_k):
+        raise AssertionError("subtext derivation must reuse parent segmentation, not re-segment")
+
+    monkeypatch.setattr(project_mod, "segment_sentences", _boom)
+    monkeypatch.setattr(project_mod, "segment_paragraphs", _boom)
+    monkeypatch.setattr(project_mod, "segment_sections", _boom)
+
+    child, _cfg, summary = derive_subtext(parent, tmp_path, extraction_types=["chapter"], title="Chapters")
+
+    child_text = child.reference_text()
+    # pre_normalized alignment: reference.txt length is EXACTLY the offset map's child length — no
+    # whitespace re-collapse drift at the separator junctions.
+    assert len(child_text) == summary["char_count"]
+    assert "Alpha" in child_text and "Beta" in child_text and "Front matter" not in child_text
+
+    segs = [
+        _json.loads(line)
+        for line in (child.path / "tracks" / "segments.jsonl").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    assert segs, "derived child should carry remapped segments"
+    # Every remapped segment stays in bounds (the drift bug had pushed sentences past the end).
+    for rec in segs:
+        sel = rec["target"]["selector"]
+        assert 0 <= sel["start"] <= sel["end"] <= len(child_text)
+    # Only the two chapter paragraphs survive; the dropped front-matter/header paragraphs do not.
+    para_count = sum(
+        1 for r in segs if (r.get("body") or {}).get("palimpsest:segmentType") == "paragraph"
+    )
+    assert para_count == 2
+
+
 def test_offset_map_translate_and_assemble():
     spans = [(20, 40), (50, 70)]
     omap = OffsetMap(spans, len("\n\n"))

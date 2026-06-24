@@ -24,6 +24,7 @@ interface ViewState {
   visibleParagraphRange: [number, number] | null;
   coordinateSystem: CoordinateSystem;
   characterFilter: string | null;
+  refineRequestId: string | null;
 
   setActiveTab: (tab: TabId) => void;
   setCoordinateSystem: (cs: CoordinateSystem) => void;
@@ -41,6 +42,7 @@ interface ViewState {
   zoomOut: () => void;
   setVisibleParagraphRange: (range: [number, number]) => void;
   setCharacterFilter: (name: string | null) => void;
+  setRefineRequest: (id: string | null) => void;
 }
 
 export const useViewStore = create<ViewState>((set, get) => ({
@@ -56,6 +58,7 @@ export const useViewStore = create<ViewState>((set, get) => ({
   visibleParagraphRange: null,
   coordinateSystem: 'paragraph',
   characterFilter: null,
+  refineRequestId: null,
 
   setCoordinateSystem: (cs): void => set({ coordinateSystem: cs }),
   setActiveTab: (tab): void => {
@@ -92,4 +95,5 @@ export const useViewStore = create<ViewState>((set, get) => ({
 
   setVisibleParagraphRange: (range): void => set({ visibleParagraphRange: range }),
   setCharacterFilter: (name): void => set({ characterFilter: name }),
+  setRefineRequest: (id): void => set({ refineRequestId: id }),
 }));

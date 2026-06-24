@@ -211,12 +211,17 @@ class LayoutConfig:
     applied: bool = False
     # User-defined mask layers: [{"key", "label", "color", "default_mask"}].
     extra_types: list[dict[str, Any]] = field(default_factory=list)
+    # True once parent_id links have been computed for this section set. Layouts persisted before
+    # parent computation existed (e.g. scripture/fixture-built projects) load with this False and
+    # are backfilled once on read (see load_layout).
+    parents_computed: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "applied": self.applied,
             "mask_by_type": self.mask_by_type,
             "extra_types": self.extra_types,
+            "parents_computed": self.parents_computed,
             "sections": [s.to_dict() for s in self.sections],
         }
 
@@ -232,6 +237,7 @@ class LayoutConfig:
             mask_by_type=mask,
             applied=bool(d.get("applied", False)),
             extra_types=extra,
+            parents_computed=bool(d.get("parents_computed", False)),
         )
 
 
@@ -284,7 +290,18 @@ def load_layout(project_dir: Path) -> LayoutConfig | None:
     p = layout_path(project_dir)
     if not p.exists():
         return None
-    return LayoutConfig.from_dict(json.loads(p.read_text(encoding="utf-8")))
+    cfg = LayoutConfig.from_dict(json.loads(p.read_text(encoding="utf-8")))
+    if cfg.sections and not cfg.parents_computed:
+        # Backfill parent_id for layouts written before parent computation (scripture/fixture-built
+        # projects show 0% parent_id even though their containers nest correctly). Idempotent and
+        # persisted, so the O(n^2) cost is paid once per project.
+        _compute_parents(cfg.sections)
+        cfg.parents_computed = True
+        try:
+            save_layout(project_dir, cfg)
+        except OSError:
+            pass
+    return cfg
 
 
 def save_layout(project_dir: Path, config: LayoutConfig) -> None:
