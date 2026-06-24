@@ -97,6 +97,17 @@ def test_analysis_view_text_is_unmasked_chars_only(tmp_path: Path):
             assert atext[c] == full[p]
 
 
+def test_analyzable_text_length_matches_offset_map(tmp_path: Path):
+    # Bridge invariant: the assembled analyzable text and its OffsetMap agree on length, and the
+    # analysis view exposes that same text already pre-masked (its own masked set is empty).
+    project, _full = _masked_project(tmp_path)
+    atext, omap = project.analyzable_text()
+    assert len(atext) == omap.child_len
+    view, view_omap = project.analysis_view()
+    assert len(view.reference_text()) == view_omap.child_len
+    assert view.masked_intervals() == []
+
+
 def test_extract_masked_keeps_annotations_out_of_masked_regions(tmp_path: Path):
     from palimpsest.server import _extract_masked
     from palimpsest.tracks.lexical import LexicalExtractor

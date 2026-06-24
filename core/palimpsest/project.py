@@ -318,13 +318,25 @@ class Project:
         with ``sep``; the OffsetMap translates analyzable offsets back to original document offsets
         so analysis results can be re-anchored. Because masked_intervals always unions the
         verse-number layer, those tokens are absent from the analyzable text by construction.
+
+        Postcondition: ``len(analyzable_text) == OffsetMap.child_len``. Both outputs are built from
+        the same kept spans and separator, so they must agree on length; a divergence (e.g.
+        normalization slipping into the text path but not the map) would drift every analyzable
+        offset, so it is asserted before returning rather than allowed to corrupt re-anchoring.
         """
         from palimpsest.derive import OffsetMap, assemble_text
         if sep is None:
             sep = ""  # pure excision — masked spans vanish "as if not there"; windows span the gap
         text = self.reference_text()
         kept = _complement_spans(self.masked_intervals(), len(text))
-        return assemble_text(text, kept, sep), OffsetMap(kept, len(sep))
+        atext = assemble_text(text, kept, sep)
+        omap = OffsetMap(kept, len(sep))
+        if len(atext) != omap.child_len:
+            raise ValueError(
+                f"analyzable text ({len(atext)} chars) and its offset map ({omap.child_len}) "
+                "disagree on length — the assembled text and its coordinate map have drifted"
+            )
+        return atext, omap
 
     def analysis_view(self, sep: str | None = None) -> tuple[Project, Any]:
         """A lightweight clone whose reference text IS the analyzable text, for running extractors
