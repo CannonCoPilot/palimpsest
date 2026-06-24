@@ -770,8 +770,48 @@ def _classify_heading(heading: str) -> str | None:
     return None
 
 
+def validate_section_tree(sections: list[LayoutSection]) -> None:
+    """Enforce the element containment contract: section ids are unique, and every
+    ``parent_id`` is either ``None`` or references an existing section that *strictly*
+    contains the child (``parent.start <= child.start``, ``parent.end >= child.end``,
+    with a strictly larger span).
+
+    Strict containment makes the links a forest: walking parent → parent visits
+    ever-larger spans, so it terminates (acyclic by construction — no separate cycle
+    check is needed). Subtext grouping and the derive OffsetMap nest content by these
+    links, so a dangling or over-tight parent is coordinate-level corruption; this
+    raises ``ValueError`` rather than letting it mis-nest silently.
+    """
+    by_id: dict[str, LayoutSection] = {}
+    for s in sections:
+        if s.id in by_id:
+            raise ValueError(f"duplicate section id {s.id!r}")
+        by_id[s.id] = s
+    for s in sections:
+        if s.parent_id is None:
+            continue
+        parent = by_id.get(s.parent_id)
+        if parent is None:
+            raise ValueError(f"section {s.id!r} references unknown parent_id {s.parent_id!r}")
+        if not (
+            parent.start <= s.start
+            and parent.end >= s.end
+            and (parent.end - parent.start) > (s.end - s.start)
+        ):
+            raise ValueError(
+                f"section {s.id!r} ({s.start}, {s.end}) is not strictly contained by its "
+                f"parent {parent.id!r} ({parent.start}, {parent.end})"
+            )
+
+
 def _compute_parents(sections: list[LayoutSection]) -> None:
-    """Set parent_id to the smallest strictly-containing section (in place)."""
+    """Set parent_id to the smallest strictly-containing section (in place).
+
+    Postcondition (the containment contract relied on by subtext grouping and the derive
+    remap): the resulting parent links form a forest — every ``parent_id`` is ``None`` or
+    references an existing section that strictly contains the child — enforced via
+    :func:`validate_section_tree` before returning.
+    """
     for s in sections:
         best: LayoutSection | None = None
         for t in sections:
@@ -781,6 +821,7 @@ def _compute_parents(sections: list[LayoutSection]) -> None:
                 if best is None or (t.end - t.start) < (best.end - best.start):
                     best = t
         s.parent_id = best.id if best else None
+    validate_section_tree(sections)
 
 
 def _assign_names(sections: list[LayoutSection]) -> None:
@@ -932,6 +973,28 @@ _VERSE_BODY_MIN_FRACTION = 0.05  # below this share, verse-numbered lines are in
                                  # (editorial endnotes, ordered lists), not scripture
 
 
+def _validate_span_regions(
+    regions: list[tuple[int, int]], lo: int, hi: int
+) -> list[tuple[int, int]]:
+    """Postcondition for span-region detectors: each ``(start, end)`` satisfies
+    ``lo <= start < end <= hi`` and the regions are ordered by start.
+
+    Regions need not be disjoint — the masking consumer (:func:`masked_intervals`) sorts
+    and merges them — so only bounds and ordering are enforced. Raises ``ValueError`` on
+    violation; returns ``regions`` unchanged so it can wrap a producer's ``return``.
+    """
+    prev_start = lo
+    for start, end in regions:
+        if not (lo <= start < end <= hi):
+            raise ValueError(f"region ({start}, {end}) out of bounds for [{lo}, {hi}]")
+        if start < prev_start:
+            raise ValueError(
+                f"regions must be ordered by start: {start} before prior start {prev_start}"
+            )
+        prev_start = start
+    return regions
+
+
 def detect_verse_regions(text: str, lo: int = 0, hi: int | None = None) -> list[tuple[int, int]]:
     """Find contiguous runs of scripture verses in ``text[lo:hi]`` as (start, end) spans.
 
@@ -976,7 +1039,7 @@ def detect_verse_regions(text: str, lo: int = 0, hi: int | None = None) -> list[
             run = []
         run.append(mk)
     flush(run)
-    return regions
+    return _validate_span_regions(regions, lo, hi)
 
 
 def detect_scholarly_markers(

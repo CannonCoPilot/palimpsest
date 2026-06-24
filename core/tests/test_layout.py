@@ -1,11 +1,15 @@
 """Tests for layout sections + the deepest-section-wins masking rule."""
 
+import pytest
+
 from palimpsest.layout import (
     DEFAULT_MASK_BY_TYPE,
     LayoutSection,
     _MIN_SCHOLARLY_WORKS,
     _classify_heading,
+    _compute_parents,
     _parse_chapter_heading,
+    _validate_span_regions,
     detect_layout_sections,
     detect_siglum_regions,
     detect_verse_regions,
@@ -13,6 +17,7 @@ from palimpsest.layout import (
     load_layout,
     masked_intervals,
     save_layout,
+    validate_section_tree,
 )
 from palimpsest.layout import LayoutConfig
 
@@ -1130,3 +1135,64 @@ def test_manuscript_catalog_classified_as_index():
     assert _classify_heading("List of the Manuscripts from Qumran") == "index"
     assert _classify_heading("Catalogue of Manuscripts") == "index"
     assert _classify_heading("Chapter 4") != "index"
+
+
+# --- Substrate contract: element containment forest + verse-region spans ---
+
+
+def test_compute_parents_builds_valid_forest():
+    # book ⊃ chapter ⊃ footnote: parent links the smallest strict container, and the
+    # result must satisfy the containment contract (_compute_parents enforces it).
+    book = _sec("b", "book", 0, 1000)
+    chapter = _sec("c", "chapter", 100, 900)
+    footnote = _sec("f", "footnote", 200, 300)
+    sections = [book, chapter, footnote]
+    _compute_parents(sections)  # raises via validate_section_tree if the forest is broken
+    assert book.parent_id is None
+    assert chapter.parent_id == "b"
+    assert footnote.parent_id == "c"
+    validate_section_tree(sections)  # explicit: contract holds
+
+
+def test_validate_section_tree_rejects_unknown_parent():
+    child = _sec("c", "chapter", 100, 200)
+    child.parent_id = "ghost"
+    with pytest.raises(ValueError, match="unknown parent_id"):
+        validate_section_tree([child])
+
+
+def test_validate_section_tree_rejects_non_containing_parent():
+    parent = _sec("p", "book", 0, 100)
+    child = _sec("c", "chapter", 200, 300)  # disjoint from its declared parent
+    child.parent_id = "p"
+    with pytest.raises(ValueError, match="not strictly contained"):
+        validate_section_tree([parent, child])
+
+
+def test_validate_section_tree_rejects_duplicate_id():
+    a = _sec("dup", "chapter", 0, 100)
+    b = _sec("dup", "chapter", 200, 300)
+    with pytest.raises(ValueError, match="duplicate section id"):
+        validate_section_tree([a, b])
+
+
+def test_validate_span_regions_rejects_out_of_bounds():
+    with pytest.raises(ValueError, match="out of bounds"):
+        _validate_span_regions([(0, 50)], 0, 40)
+
+
+def test_validate_span_regions_rejects_misordered():
+    with pytest.raises(ValueError, match="ordered by start"):
+        _validate_span_regions([(20, 30), (0, 10)], 0, 100)
+
+
+def test_validate_span_regions_allows_overlap():
+    # Regions need not be disjoint — the masking consumer (masked_intervals) merges them.
+    assert _validate_span_regions([(0, 30), (20, 50)], 0, 100) == [(0, 30), (20, 50)]
+
+
+def test_detect_verse_regions_output_satisfies_contract():
+    regions = detect_verse_regions(_SCRIPTURE)
+    assert regions  # the scripture run is found
+    # Re-validating is a no-op when the producer honored its contract.
+    assert _validate_span_regions(regions, 0, len(_SCRIPTURE)) == regions
