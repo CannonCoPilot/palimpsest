@@ -146,15 +146,26 @@ def _projects_for_source_file(workspace: Path, source_file: str) -> list[Path]:
 
 
 def _complement_spans(masked: list[tuple[int, int]], n: int) -> list[tuple[int, int]]:
-    """The unmasked [start,end) spans over [0,n) — the gaps between the sorted, disjoint masked
-    intervals (as returned by :meth:`Project.masked_intervals`)."""
+    """The unmasked [start,end) spans over [0,n) — the gaps between the masked intervals.
+
+    This is the masking pipeline's partition pivot: it turns the masked set into the kept spans
+    that become the analyzable text and OffsetMap, so a malformed masked set here would silently
+    corrupt every analysis's coordinates. The precondition — ``masked`` is sorted, disjoint, and
+    within [0, n] (the postcondition of :meth:`Project.masked_intervals`) — is therefore enforced:
+    a violation raises ``ValueError`` rather than emitting wrong kept spans.
+    """
     spans: list[tuple[int, int]] = []
     cur = 0
     for a, b in masked:
+        if not (0 <= a < b <= n):
+            raise ValueError(f"masked interval ({a}, {b}) is out of bounds for text length {n}")
+        if a < cur:
+            raise ValueError(
+                f"masked intervals must be sorted and disjoint: ({a}, {b}) overlaps prior end {cur}"
+            )
         if a > cur:
             spans.append((cur, a))
-        if b > cur:
-            cur = b
+        cur = b  # precondition guarantees b > a >= cur, so this always advances
     if cur < n:
         spans.append((cur, n))
     return spans
@@ -268,6 +279,10 @@ class Project:
         the markers are structural noise, but is a runtime toggle: an on-demand override may set
         ``mask_verse_numbers: False`` to keep them. With structural masking also off this yields a
         fully unmasked run. Returns ``[]`` only when nothing is masked at all.
+
+        Postcondition (the masking contract relied on by :func:`_complement_spans` and the
+        OffsetMap): the returned intervals are sorted, mutually disjoint, merged, and each lies
+        within [0, len(reference_text)]. Guaranteed by delegating to :func:`layout.masked_intervals`.
         """
         import dataclasses
 

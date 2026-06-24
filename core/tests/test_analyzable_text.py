@@ -1,6 +1,8 @@
 """Char-level analyzable-text resolver: complement spans and OffsetMap inverse translation."""
 from pathlib import Path
 
+import pytest
+
 from palimpsest.derive import OffsetMap
 from palimpsest.project import _complement_spans
 
@@ -203,3 +205,71 @@ def test_verse_number_masking_independent_of_structural_toggle(tmp_path: Path):
     project = _verse_project(tmp_path)
     project.set_mask_override({"enabled": False, "mask_verse_numbers": True})
     assert len(project.masked_intervals()) == 3, "verse layer survives structural-off when left on"
+
+
+# ── Masking-pipeline contract (Wave-0 substrate hardening) ──────────────────────
+# The masking pipeline is the substrate spine: masked_intervals -> _complement_spans -> analyzable
+# text + OffsetMap. These lock the invariants every downstream analysis silently relies on, so a
+# future change to the masking core cannot quietly corrupt the analyzable coordinate space.
+
+
+def test_complement_spans_rejects_malformed_masked_set():
+    # Update 1: the partition pivot fails loud on a precondition violation instead of emitting
+    # silently-wrong kept spans (which would mis-anchor every analysis).
+    with pytest.raises(ValueError, match="out of bounds"):
+        _complement_spans([(5, 20)], 10)            # end past text length
+    with pytest.raises(ValueError, match="out of bounds"):
+        _complement_spans([(-1, 3)], 10)            # negative start
+    with pytest.raises(ValueError, match="sorted and disjoint"):
+        _complement_spans([(0, 6), (3, 8)], 10)     # overlapping
+    with pytest.raises(ValueError, match="sorted and disjoint"):
+        _complement_spans([(5, 8), (0, 3)], 10)     # out of order
+
+
+def _assert_masking_contract(project) -> None:
+    """Assert the universal masking invariants (I1-I6) for a project's current mask state."""
+    full = project.reference_text()
+    n = len(full)
+    masked = project.masked_intervals()
+
+    # I3 idempotence: recomputation is identical.
+    assert project.masked_intervals() == masked
+
+    # I1/I2: sorted, mutually disjoint (strictly separated after merge), in-bounds.
+    prev_end = -1
+    for a, b in masked:
+        assert 0 <= a < b <= n, f"interval ({a}, {b}) out of bounds for length {n}"
+        assert a > prev_end, f"interval ({a}, {b}) not sorted/disjoint after end {prev_end}"
+        prev_end = b
+
+    # I4 partition: masked ∪ kept tiles [0, n) exactly — no gap, no overlap.
+    kept = _complement_spans(masked, n)
+    cur = 0
+    for a, b in sorted(masked + kept):
+        assert a == cur, f"partition break at {a}, expected {cur}"
+        cur = b
+    assert cur == n, f"partition did not reach text end ({cur} != {n})"
+
+    # I5/I6: pure-excision analyzable text contains only kept chars, each mapping back to its
+    # original character via the OffsetMap.
+    atext, omap = project.analyzable_text(sep="")
+    assert len(atext) == sum(e - s for s, e in kept)        # I6: only kept chars survive
+    for c in range(len(atext)):                              # I5: round-trip to the right char
+        p = omap.inverse_point(c)
+        assert p is not None and atext[c] == full[p], f"analyzable char {c} did not round-trip"
+
+
+def test_masking_contract_holds_for_structural_masking(tmp_path: Path):
+    project, _ = _masked_project(tmp_path)
+    assert project.masked_intervals(), "fixture should mask its front matter"
+    _assert_masking_contract(project)
+
+
+def test_masking_contract_holds_across_verse_and_override_configs(tmp_path: Path):
+    project = _verse_project(tmp_path)
+    _assert_masking_contract(project)                                    # verse-number layer (default on)
+    project.set_mask_override({"enabled": False, "mask_verse_numbers": True})
+    _assert_masking_contract(project)                                    # verse-only (structural off)
+    project.set_mask_override({"enabled": False, "mask_verse_numbers": False})
+    assert project.masked_intervals() == []                             # fully unmasked
+    _assert_masking_contract(project)

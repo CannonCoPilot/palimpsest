@@ -340,6 +340,11 @@ def masked_intervals(
     ``verse`` elements (the verse *text*, if any were ever passed as sections) are skipped:
     they are unmasked and nested inside the (also unmasked) ``chapter`` content, so they can
     never change the masked set.
+
+    Postcondition (the masking contract): the returned intervals are sorted, mutually disjoint,
+    merged, and each lies within [0, text_len]. Downstream (``_complement_spans`` / the OffsetMap)
+    relies on this to partition the document, so it is held by construction here — out-of-range
+    sections and ``extra_masked`` are filtered, then everything is sorted and merged.
     """
     valid = [s for s in sections if s.type != "verse" and 0 <= s.start < s.end <= text_len]
     raw: list[tuple[int, int]] = []
