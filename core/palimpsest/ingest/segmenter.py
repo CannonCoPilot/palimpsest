@@ -2,6 +2,15 @@
 
 Uses spaCy for sentence boundaries. Paragraph boundaries are double-newline
 delimited. Section boundaries detected by ALL-CAPS or "Chapter" headings.
+
+Segmentation contract: every producer here returns segments anchored to
+character offsets in the text it was given, and downstream coordinate machinery
+(``segments.jsonl``, the derive OffsetMap remap) trusts those offsets blindly.
+So each returned list is guaranteed — and self-checked via
+:func:`_validate_segments` — to be index-sequential from 0, in-bounds
+(``0 <= start < end <= len(text)``), ordered and mutually disjoint
+(``prev.end <= cur.start``), and anchored (``seg.text ==
+text[seg.start:seg.end].strip()``).
 """
 
 from __future__ import annotations
@@ -40,6 +49,37 @@ class Segment:
     text: str
 
 
+def _validate_segments(segments: list[Segment], text: str) -> list[Segment]:
+    """Enforce the module's segmentation contract, returning the segments unchanged.
+
+    This is a postcondition self-check run at every producer's return: it holds
+    by construction for correct producers, and raises ``ValueError`` the moment a
+    future change (a reworked regex, a new spaCy version, an offset-shift bug)
+    breaks it — so a coordinate-corrupting segment fails loudly at its source
+    instead of silently poisoning everything that reads ``segments.jsonl``.
+    """
+    n = len(text)
+    prev_end = 0
+    for i, seg in enumerate(segments):
+        if seg.index != i:
+            raise ValueError(f"segment index {seg.index} out of sequence at position {i}")
+        if not (0 <= seg.start < seg.end <= n):
+            raise ValueError(
+                f"segment {i} span ({seg.start}, {seg.end}) out of bounds for text length {n}"
+            )
+        if seg.start < prev_end:
+            raise ValueError(
+                f"segments must be ordered and disjoint: segment {i} starts at {seg.start}, "
+                f"before prior segment's end {prev_end}"
+            )
+        if seg.text != text[seg.start : seg.end].strip():
+            raise ValueError(
+                f"segment {i} text is not anchored to its offsets ({seg.start}, {seg.end})"
+            )
+        prev_end = seg.end
+    return segments
+
+
 def segment_paragraphs(text: str) -> list[Segment]:
     """Split text into paragraphs at double-newline boundaries.
 
@@ -60,7 +100,7 @@ def segment_paragraphs(text: str) -> list[Segment]:
                 )
             )
             idx += 1
-    return segments
+    return _validate_segments(segments, text)
 
 
 def segment_sections(text: str) -> list[Segment]:
@@ -93,7 +133,7 @@ def segment_sections(text: str) -> list[Segment]:
             )
         )
         idx += 1
-    return segments
+    return _validate_segments(segments, text)
 
 
 def segment_sentences(text: str, model: str = "en_core_web_lg") -> list[Segment]:
@@ -132,4 +172,4 @@ def segment_sentences(text: str, model: str = "en_core_web_lg") -> list[Segment]
                 )
             )
             idx += 1
-    return segments
+    return _validate_segments(segments, text)
