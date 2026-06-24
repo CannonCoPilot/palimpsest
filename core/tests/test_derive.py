@@ -189,6 +189,36 @@ def test_offset_map_translate_and_assemble():
     assert len(child) == omap.child_len
 
 
+def test_offset_map_rejects_unordered_spans():
+    with pytest.raises(ValueError, match="ordered and disjoint"):
+        OffsetMap([(50, 70), (20, 40)], 2)
+
+
+def test_offset_map_rejects_overlapping_spans():
+    with pytest.raises(ValueError, match="ordered and disjoint"):
+        OffsetMap([(20, 40), (30, 50)], 2)
+
+
+def test_offset_map_rejects_empty_or_inverted_span():
+    with pytest.raises(ValueError, match="empty or negative"):
+        OffsetMap([(20, 20)], 2)
+    with pytest.raises(ValueError, match="empty or negative"):
+        OffsetMap([(40, 20)], 2)
+
+
+def test_offset_map_roundtrip():
+    # Every parent offset inside a kept span survives translate → inverse unchanged.
+    spans = [(20, 40), (50, 70)]
+    omap = OffsetMap(spans, len("\n\n"))
+    for s, e in spans:
+        for p in range(s, e):
+            c = omap.translate_point(p)
+            assert c is not None
+            assert omap.inverse_point(c) == p
+    # A child offset inside the inter-span separator has no parent pre-image.
+    assert omap.inverse_point(21) is None
+
+
 def test_remap_layout_clips_containers_and_drops_nonoverlap():
     spans = compute_kept_spans(PARENT, {"chapter"}, set())
     omap = OffsetMap(spans, 2)

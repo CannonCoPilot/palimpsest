@@ -36,19 +36,36 @@ class OffsetMap:
     Child text is ``SEPARATOR.join(parent_text[s:e] for (s,e) in spans)``; this maps a parent
     offset to its child offset, and maps a parent element to the single child element spanning
     its overlapped kept region (including the separator gaps between kept spans).
+
+    Precondition (enforced in ``__init__``): ``spans`` is ordered, mutually disjoint, and each is
+    non-empty (``0 <= start < end``) — the kept-spans contract produced by ``_complement_spans``
+    and :func:`compute_kept_spans`. The bisect-based translators are correct *only* under this
+    precondition, so a malformed span set raises ``ValueError`` at construction instead of
+    silently mistranslating every offset. Round-trip: for any parent offset inside a kept span,
+    ``inverse_point(translate_point(off)) == off``.
     """
 
     def __init__(self, spans: list[tuple[int, int]], sep_len: int) -> None:
         self.spans = spans
         self.sep_len = sep_len
-        # Spans are ordered and disjoint (compute_kept_spans merges adjacency), so parallel
-        # start/end arrays let the forward translators binary-search instead of linear-scan —
-        # critical when remapping the segments track (10⁵ records) over 10³ kept spans.
+        # Parallel start/end arrays let the forward translators binary-search instead of
+        # linear-scan — critical when remapping the segments track (10⁵ records) over 10³ kept
+        # spans. The same pass enforces the ordered/disjoint/non-empty precondition the bisect
+        # logic depends on (see class docstring).
         self._starts = [s for s, _ in spans]
         self._ends = [e for _, e in spans]
         self.base: list[int] = []
         cursor = 0
+        prev_end = 0
         for i, (s, e) in enumerate(spans):
+            if not (0 <= s < e):
+                raise ValueError(f"OffsetMap span ({s}, {e}) is empty or negative")
+            if s < prev_end:
+                raise ValueError(
+                    f"OffsetMap spans must be ordered and disjoint: ({s}, {e}) overlaps "
+                    f"prior end {prev_end}"
+                )
+            prev_end = e
             self.base.append(cursor)
             cursor += (e - s) + (sep_len if i < len(spans) - 1 else 0)
         self.child_len = cursor
