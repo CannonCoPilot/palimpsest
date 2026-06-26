@@ -9,7 +9,7 @@
 
 ## 0. How to read this plan
 
-This plan turns the Vision doc's requirements (FR-1…12, NFR-1…7) into five sequenced phases. Each phase is scoped to be **independently landable, tested, and committed** — the project's established cadence (each substrate contract-lock piece was its own verified commit). For every phase:
+This plan turns the Vision doc's requirements (FR-1…14, NFR-1…7) into seven sequenced phases. Each phase is scoped to be **independently landable, tested, and committed** — the project's established cadence (each substrate contract-lock piece was its own verified commit). For every phase:
 
 - **Scope** — what it delivers, by FR/NFR id.
 - **Mechanism** — the concrete code, by `file:line`, that it touches or mirrors. No hand-waving: every new artifact rides an existing rail.
@@ -31,13 +31,16 @@ cd /Users/nathanielcannon/Claude/Projects/palimpsest \
 | Phase | Delivers | Nature | Unblocks |
 |---|---|---|---|
 | **P1 — Chunk-output contract-lock + CLI parity** | FR-1, FR-12, NFR-3 | Correctness no-regret; small, isolating | Nothing (pure hardening); safe to land alone |
-| **P2 — Promote chunk + embed to layer-tracks** | FR-2…7, **FR-13/14 (manifest backbone)**, NFR-1/2/5/6 | Structural core | P3, P4-embedding, P5/P6 rendering, all Wave-1 reuse |
+| **P2 — Layer infrastructure: chunk + embed tracks, resolver, producibility** | FR-2…7, **FR-13/14 (manifest backbone)**, FR-4 (producibility + status), NFR-2/5/6 | Structural core (additive) | P3, P4-embedding, P5/P6 rendering, P7 redesign, all Wave-1 reuse |
 | **P3 — Embedding-as-analysis + visualization suite** | FR-3 (extends), FR-6, **FR-13/14 (embedding data)**, NFR-4 | Embedding viz suite + endpoints | P5 embedding lane, P6 embedding stats |
 | **P4 — Broader Wave-0 analytics tracks** | FR-8, FR-9, FR-10, NFR-7 | New tracks (mostly independent) | P5 Profile/Explore tabs |
 | **P5 — Suite shell + native plural layer-track rendering** | FR-11, **FR-13** | Frontend; data-driven plural rendering | (terminal) tracks visible in browser |
 | **P6 — Per-layer statistics, distributions & viz options** | **FR-14** | Frontend + chunk-stats endpoint | (terminal) stats/viz drill-in |
+| **P7 — self_similarity redesign (layer-consumer)** | embedding-agnostic, fail-loud similarity consumer; foundation for a *family* of similarity methods | Backend redesign (behavior-changing) | future similarity / NN / clustering analyses |
 
-**Critical path:** P1 → P2 → {P3, P4} → {P5, P6}. P1 is detachable (land anytime). P4's tracks are mutually independent and parallelizable once P2 lands. P5 (rendering) and P6 (stats panels) both need P2's manifest backbone + P3's embedding data; they ship together as the user-facing surface. The two new user commitments — *every chunk/embedding layer always renders as a track* (FR-13) and *every layer has quick-access stats/distributions/viz* (FR-14) — are carried by the P2 manifest backbone → P3 embedding data → P5/P6 UI chain.
+> **Re-scope (2026-06-26).** P2 no longer migrates `self_similarity`. The original P2 folded a *byte-identical migration* of self_similarity into the structural work; review concluded that designed *to* the legacy monolith rather than *toward* the vision. P2 is now strictly the **layer infrastructure** (producer tracks + dependency resolver + producibility/status) — additive, no existing behavior changed. The self_similarity rework is promoted to its own phase **P7**, a *ground-up redesign* as an embedding-agnostic, fail-loud **layer consumer** (it does not run when no chunk/embedding layers exist, and does not dictate which embedding model is used), and the framing for a family of similarity methods (self-similarity matrix, NN graphs, clustering, …). Consequently **NFR-1 (byte-identical self_similarity) is retired** — a consumer redesign intentionally changes the workflow; the honest invariant is the weaker *same chunk layer + same embedding vectors → identical similarity math*.
+
+**Critical path:** P1 → P2 → {P3, P4, P7} → {P5, P6}. P1 is detachable (land anytime). P4's tracks are mutually independent and parallelizable once P2 lands. P7 (self_similarity redesign) needs P2's producible layers (FR-4) — you cannot make a consumer *fail-loud-requiring-layers* until users can produce those layers through the normal run flow and see them. P5 (rendering) and P6 (stats panels) both need P2's manifest backbone + P3's embedding data; they ship together as the user-facing surface. The two user commitments — *every chunk/embedding layer always renders as a track* (FR-13) and *every layer has quick-access stats/distributions/viz* (FR-14) — are carried by the P2 manifest backbone → P3 embedding data → P5/P6 UI chain.
 
 ---
 
@@ -86,19 +89,22 @@ Needs nothing. Unblocks nothing structurally, but **must precede P2** so the chu
 
 ---
 
-## P2 — Promote chunk + embed to layer-tracks
+## P2 — Layer infrastructure: chunk + embed tracks, resolver, producibility
 
-> **The structural core.** Converts chunking and embedding from `self_similarity`-owned locals into first-class, persisted, reusable tracks with capability descriptors and a dependency-check resolver — then rewires `self_similarity` to consume them with byte-identical results.
+> **The structural core.** Converts chunking and embedding from `self_similarity`-owned locals into first-class, persisted, reusable tracks with capability descriptors and a dependency-check resolver. The resolver lands here as *additive* infrastructure; the first consumer that declares a requirement against it — the ground-up `self_similarity` redesign — is **P7**, not P2. No existing behavior changes in P2.
 
 ### Scope
 - **FR-2** — `ChunkingTrack` implements `TrackExtractor` (`output_type="signal"`), auto-discovered, runs through `_extract_masked`, persists `signals/chunking_{label}.json`.
-- **FR-3** — `EmbeddingTrack` (`output_type="signal"`, depends on a chunk layer) persists vectors to SQLite-vec + manifest.
-- **FR-4/FR-5** — layers appear in `/analysis/status` with provenance + descriptor; plural layers coexist (label-keyed paths).
+- **FR-3** — `EmbeddingTrack` (`output_type="signal"`, depends on a chunk layer) persists vectors to SQLite-vec + manifest. *(Repeat-masking is **not** a P2 sub-step of this track — see the note below.)*
+
+> **Repeat-masking deferred to a dedicated analysis (decision 2026-06-26).** P2 extracts the exact-repeat helpers into `tracks/repeats.py` so `self_similarity` shares one definition and a future analysis can reuse them — but it does **not** bolt a `repeat_mask` flag onto `EmbeddingTrack`. Repeat-masking is a complex analysis in its own right. The agreed near-term *semantics* is **flag-only** (embed every chunk; record a per-chunk `masked` flag + the repeat phrases for a consumer to honor — mirroring today's `self_similarity`, which embeds all chunks and skips masked ones only in the matrix). The full treatment — what masking *means* for an embedding, how it renders, how a consumer declares it — is promoted to its own to-be-designed analysis (late Wave 0 or first Wave 1), not a one-line track option.
+- **FR-4/FR-5 (producibility + status)** — layer tracks are runnable through the normal HTTP/CLI run flow with their params, and plural label-keyed layers appear in `/analysis/status` each with its label + capability + stats + per-label provenance. This is the prerequisite that lets a future consumer (P7) *require* layers and fail loud when they are absent.
 - **FR-6** — capability descriptor in each manifest.
-- **FR-7** — dependency-check resolver; `self_similarity` migrated to consume layers.
+- **FR-7** — dependency-check resolver (`resolve_layers`): the compatibility binding a downstream consumer declares against (sole-survivor / newest / fail-loud). Additive; no track is migrated onto it in P2 (the first real consumer, the redesigned self_similarity, lands in **P7**).
 - **FR-13/FR-14 (data backbone only)** — each layer manifest carries a `rendering` descriptor + a precomputed `stats` summary, so the P5 rendering and P6 stats UI need no per-layer code. (The *UI* that consumes them ships in P5/P6.)
-- **NFR-1** — `self_similarity` public results byte-identical at existing defaults.
 - **NFR-2/5/6** — provenance-stamped, atomic writes, reuse-over-recompute.
+
+> `self_similarity` is **not** migrated in P2 (re-scope 2026-06-26). The dependency resolver lands here as additive infrastructure; the redesigned self_similarity that consumes it is **P7**. NFR-1 (byte-identical self_similarity) is retired.
 
 ### Mechanism
 - **Track skeletons.** Drop two modules in `tracks/` implementing the protocol (`tracks/base.py:19`); auto-discovery (`tracks/registry.py:88`) picks them up with zero registration. Subclass `ParameterizedTrack` (`tracks/params.py:177`) so chunk size/overlap/model are runtime params under the existing fail-loud `ChunkingConfig`/`EmbeddingConfig`.
@@ -121,41 +127,42 @@ Needs nothing. Unblocks nothing structurally, but **must precede P2** so the chu
   - **`LayerRequirement`** dataclass (`tracks/base.py` or a new `tracks/requirements.py`): `kind: Literal["chunk","embedding"]`, `constraints: dict[str, Any]` (descriptor-field predicates), `digest_match: bool = True`.
   - **Resolver** (`tracks/requirements.py:resolve_layers(project, requirements) -> dict[str, BoundLayer]`), called in the run lifecycle (`server.py:980`, before `asyncio.create_task`) and from the CLI run path (P1's unified runner). For each requirement: enumerate persisted layer manifests of `kind`; filter by every constraint predicate against the capability descriptor (§FR-6) and, if `digest_match`, by `analyzable_digest == project.analysis_view digest`; bind the sole survivor, or the newest by `run.json` timestamp if several (recording the choice in provenance), or **raise `LayerResolutionError`** (a `ValueError` subclass, mirroring `UnmappedCoordinateError`) naming the requirement and listing what was available. No silent consumption, no silent auto-production.
   - Keep `dependency_order()` Kahn topo-sort (`tracks/registry.py:52`) for *ordering* of name-based `depends_on`; the resolver adds *compatibility* binding for `layer_requirements`. The two are orthogonal and compose.
-  - `self_similarity` declares `layer_requirements = [LayerRequirement("chunk", {"overlapping": False}), LayerRequirement("embedding", {"dim": <model-dim>})]` and reads the bound layers instead of computing inline.
-- **`self_similarity` migration (NFR-1, the critical guard).** Replace the inline `chunk_text` (`tracks/self_similarity.py:1141`) + `embed_texts` (`:875`) calls with consumption of a resolved chunk layer + embedding layer. The `_chunks_cache`/`_embeddings_cache` extract-locals (`self_similarity.py:1135-1136`) become reads of the persisted layers.
-  - **The equivalence the byte-identity rests on (made explicit).** `self_similarity`'s embedding cache is keyed `sha256(provider+endpoint+model+chunk_texts)[:16]`. Byte-identity therefore requires that `ChunkingTrack`, run with the *same params* `self_similarity` uses today, yields the **exact same ordered `chunk_texts` list** the inline `chunk_text` produced — only then is the embedding label unchanged, the existing vector cache hit, and the matrix identical. The chunk-layer's own new label (`sha256(mode+params+analyzable_digest)`) is *additional* metadata for layer identity; it does **not** feed the embedding key. So the migration invariant is: *track-produced `chunk_texts` ≡ inline `chunk_text` output, element-for-element.*
-  - **Acceptance bar (two-level):** (1) an upstream test asserts `ChunkingTrack.extract` chunk-text list equals the legacy inline `chunk_text` output on every fixture (this is what *guarantees* the embedding label is unchanged); (2) a downstream regression test asserts the `self_similarity` matrix is byte-identical pre/post migration on every fixture incl. gold DR. Do not merge if either diverges.
+  - The first real consumer to *declare* `layer_requirements` and read the bound layers is the redesigned `self_similarity` in **P7** — P2 lands the resolver as additive infrastructure with its own tests, not wired into any track.
+- **Producibility + status (FR-4).** Make the layer tracks runnable through the normal run flow and visible:
+  - **Run flow.** The HTTP run handler (`server.py:925`) and CLI carry the established chunk/embed param vocabulary (`chunk_mode`/`chunk_size`/`smart_unit`/`delimiters`/`grow_factor`/`remainder_ratio`/`embed_*`); the layer tracks adopt those exact param names (plus a `chunk_label` the handler forwards to `EmbeddingTrack`) so they are produced through the same surface as every other track, not a side door.
+  - **Status.** `/analysis/status` enumerates `signals/{chunking,embedding}_*.json` and reports each layer (label + capability + stats + per-label `runInfo`), in addition to the registry's single track row — so plural label-keyed layers are visible.
+  - **Provenance.** A layer run writes `manifests/{name}_{label}.run.json` (label derived from the returned manifest path), so each plural layer has its own resolved-param record rather than a single name-keyed file that successive runs overwrite.
 
 ### New artifacts
-- `tracks/chunking_track.py`, `tracks/embedding_track.py`.
-- Resolver: small module or function in the run layer (`registry.py`/`runner.py`).
-- Manifest schema additions (capability + `rendering` + `stats` blocks) in `signals.py` writers.
-- `self_similarity.py` rewired to consume layers.
-- Tests: `test_chunking_track.py`, `test_embedding_track.py`, `test_layer_resolver.py`, `test_self_similarity_migration.py` (matrix-equality regression), `test_layer_manifest_schema.py` (rendering + stats blocks present and well-formed).
+- `tracks/chunking_track.py`, `tracks/embedding_track.py` (the producer tracks).
+- `tracks/requirements.py` (the resolver).
+- `tracks/repeats.py` — the exact-repeat helpers (`find_exact_repeats` / `mask_repeats` + `STOPWORDS`) extracted from `self_similarity`, which now imports them back (one definition, no drift). Reusable by the future repeat-masking analysis; **not** wired into `EmbeddingTrack` in P2.
+- `server.py` / `cli.py` run-flow + status changes for label-keyed producibility, provenance, and enumeration (FR-4).
+- Tests: `test_chunking_track.py`, `test_embedding_track.py`, `test_layer_resolver.py`, plus FR-4 producibility/status tests.
 
 ### Tests
 - Track discovery: both tracks appear via `registry.discover()` and in `/analysis/status`.
-- Persistence: chunk/embedding layers written atomically with manifest + `{track}.run.json`; reload round-trips.
+- Persistence: chunk/embedding layers written atomically with manifest + per-label `run.json`; reload round-trips.
 - Plural coexistence: two chunk layers (different params) + two embedding layers coexist without path collision.
-- Descriptor correctness: manifest carries the full descriptor; `analyzable_digest` matches the bridge digest.
-- Resolver: compatible layer reused; incompatible (overlap mismatch, wrong dim, stale digest) → loud error.
-- **NFR-1 regression:** `self_similarity` matrix byte-identical pre/post migration on all fixtures incl. gold DR.
+- Descriptor correctness: manifest carries the full descriptor; `analyzable_digest` matches the analyzable bridge digest.
+- Resolver: compatible layer bound; incompatible (overlap mismatch, wrong dim, stale digest) → loud error.
+- Producibility/status (FR-4): a layer is produced via the run flow with params and then appears in `/analysis/status` with its label/capability/stats. The repeat-mask extraction is covered by `self_similarity`'s existing suite staying byte-identical against the relocated helpers.
 
 ### Done criteria
-- [ ] Both layer-tracks auto-discovered, runnable via HTTP + CLI, persisted with capability + `rendering` + `stats` blocks + provenance.
-- [ ] Plural layers coexist; resolver reuses-or-fails-loud (never silently wrong).
-- [ ] `self_similarity` consumes layers; matrix byte-identical; full suite GREEN.
+- [ ] Both layer-tracks auto-discovered, runnable via HTTP + CLI with their params, persisted with capability + `rendering` + `stats` blocks + per-label provenance.
+- [ ] Plural layers coexist and are enumerated in `/analysis/status`; resolver binds-or-fails-loud (never silently wrong).
+- [ ] Exact-repeat helpers extracted to `tracks/repeats.py` and shared by `self_similarity` (byte-identical); repeat-masking as a standalone analysis is deferred (flag-only baseline, own design).
 - [ ] Manifest-schema test confirms every layer carries well-formed `rendering` + `stats` blocks.
-- [ ] Committed as a small series (track skeletons → descriptor/resolver → self_sim migration), each independently green.
+- [ ] Committed as a small additive series (track skeletons → resolver → producibility/status), each independently green. **(self_similarity is untouched — its redesign is P7.)**
 
 ### Risks & mitigations
-- *Migration changes `self_similarity` numerics.* **Mitigation:** content-addressed embedding label → identical vectors; gate the migration commit on a matrix-equality test; do not merge if any fixture diverges.
-- *Resolver becomes a hidden auto-invocation in disguise* (re-introducing the smell we're removing). **Mitigation:** per Vision OQ#3 recommendation, default resolver = **fail-loud, require the layer to exist**; inline production is an explicit, separately-flagged convenience, not the default.
-- *Embedding-layer home ambiguity* (`cache/` vs `signals/`, Vision OQ#2). **Mitigation:** keep vectors in `cache/embeddings_{label}.db` (today's location) but treat the **manifest** in `signals/` as the first-class result; defer the move decision to human review, code so the manifest is the source of truth either way.
-- *In-memory `_running_jobs` (no job DB) loses layer-run state on restart.* **Mitigation:** on-disk `{track}.run.json` is the authoritative provenance (already true); status reads disk, not the in-memory dict, for completed layers. Documented in §Risk register.
+- *Resolver becomes a hidden auto-invocation in disguise* (re-introducing the smell we're removing). **Mitigation:** the resolver is **fail-loud, require the layer to exist**; it never auto-produces. (The auto-produce-vs-fail-loud decision for the consumer is settled in P7's favour of fail-loud.)
+- *Layer-track params collide with self_similarity's in the shared HTTP handler.* **Mitigation:** the layer tracks adopt the *same* param names the handler already forwards (`chunk_mode`, `chunk_size`, `embed_*`); the handler routes by `track_name`, so there is one vocabulary, not two.
+- *Embedding-layer home ambiguity* (`cache/` vs `signals/`, Vision OQ#2). **Mitigation:** keep vectors in `cache/embeddings_{label}.db` but treat the **manifest** in `signals/` as the first-class result; the manifest is the source of truth either way.
+- *In-memory `_running_jobs` (no job DB) loses layer-run state on restart.* **Mitigation:** on-disk per-label `run.json` is the authoritative provenance; status reads disk, not the in-memory dict, for completed layers.
 
 ### Sequencing
-Needs P1 (coordinate-correct chunk producer + CLI parity). Unblocks P3 (embedding-as-analysis builds on `EmbeddingTrack`), P4 (analytics tracks reuse the layer-track pattern), and all Wave-1 reuse (`self_similarity` now consumes layers; future entity/dialogue/topic tracks declare layer dependencies instead of recomputing).
+Needs P1 (coordinate-correct chunk producer + CLI parity). Unblocks P3 (embedding-as-analysis builds on `EmbeddingTrack`), P4 (analytics tracks reuse the layer-track pattern), **P7 (the self_similarity redesign consumes these producible layers via the resolver)**, and all Wave-1 reuse (future entity/dialogue/topic tracks declare layer dependencies instead of recomputing).
 
 ---
 
@@ -350,15 +357,49 @@ Needs P2 (`stats` summary block), P3 (embedding distributions), and P5 (the shel
 
 ---
 
+## P7 — `self_similarity` redesign (layer-consumer)
+
+> **A ground-up redesign, not a migration.** The original P2 folded a *byte-identical migration* of `self_similarity` into the structural work. Review (2026-06-26) concluded that designing *to* the legacy monolith — preserving its inline chunk/embed/repeat-mask pipeline bit-for-bit — pulls the whole effort back toward the very coupling Wave 0 exists to remove. So the rework is promoted to its own phase and reconceived: `self_similarity` becomes an embedding-**agnostic**, **fail-loud layer consumer**, and the foundation for a *family* of similarity methods (self-similarity matrix, nearest-neighbour graphs, clustering, …) rather than one hard-wired matrix.
+
+### Scope
+- **Consumer, not producer.** `self_similarity` no longer chunks or embeds inline. It declares `layer_requirements` (`[chunk{overlapping:False}, embedding{dim:<method-dim>, chunk_layer_id:<bound chunk>}]`) and consumes the layers P2 makes producible (FR-4) through the P2 resolver (FR-7).
+- **Fail-loud, not auto-produce.** If no compatible chunk/embedding layer exists, the track raises a descriptive `LayerResolutionError` naming the requirement and what was available — it does **not** silently chunk/embed on the user's behalf. Producing a layer is an explicit, separate user action (the layer tracks from P2).
+- **Embedding-agnostic.** The track does not dictate the embedding model. Whatever embedding layer the user produced and bound is what the similarity math runs on; the method records the bound layer's `model_fingerprint` in provenance rather than choosing one.
+- **A family, not a singleton.** The redesign factors the similarity computation behind a method interface so self-similarity-matrix, NN-graph, and clustering variants are siblings sharing the same layer-consumption contract.
+
+### Mechanism
+- Add `layer_requirements` to the `self_similarity` track and call `resolve_layers` (`tracks/requirements.py`) in its `extract`, replacing the inline `_get_chunks`/`_embed_chunks` path (`self_similarity.py:1138`/`:875`). The exact-repeat masking it relies on is, as of P2, a shared helper (`tracks/repeats.py`, imported back into `self_similarity`); how the redesigned consumer — or the dedicated repeat-masking analysis it depends on — applies it is settled as part of that analysis's design (flag-only baseline, see P2's repeat-masking note).
+- The similarity matrix math itself is preserved as one method implementation; the change is *where its inputs come from* (bound layers vs. inline computation), plus the method-interface factoring.
+
+### Tests
+- **Equivalence (the honest invariant).** *Same chunk layer + same embedding vectors → identical similarity math.* This is a 2-level test (the matrix produced from a bound layer equals the matrix the legacy inline path produced for the same chunks/vectors), **not** the retired NFR-1 "byte-identical at existing defaults from a single run" claim — a consumer redesign deliberately changes the entry workflow (you must produce layers first).
+- **Fail-loud:** with no compatible layer present, `extract` raises `LayerResolutionError` and produces no output.
+- **Agnosticism:** binding a different (compatible-dim) embedding layer changes the result and is recorded in provenance; the track never embeds on its own.
+
+### Done criteria
+- [ ] `self_similarity` runs only as a consumer: no inline `chunk_text`/`embed_texts` calls remain in its `extract` path.
+- [ ] Absent layers → loud, descriptive failure (no silent chunk/embed).
+- [ ] Equivalence test green: identical matrix for identical bound chunks + vectors.
+- [ ] Similarity computation factored behind a method interface (room for NN-graph / clustering siblings).
+
+### Risks & mitigations
+- *Equivalence drift from the legacy matrix.* **Mitigation:** the matrix math moves verbatim into the method; the equivalence test gates the commit on identical output for identical inputs; do not merge on any divergence.
+- *Redesign scope creep into Wave-1 similarity features.* **Mitigation:** P7 ships only the consumer-refactor + method-interface seam; concrete NN-graph/clustering methods are explicitly future work, not P7 deliverables.
+
+### Sequencing
+Needs P2's producible layers (FR-4) and the resolver (FR-7) — you cannot make a consumer *require* layers until users can produce them through the normal run flow. Independent of the P3–P6 user-facing surface; can land in parallel with them once P2 is in.
+
+---
+
 ## Cross-cutting concerns
 
 ### Testing strategy
 - Every phase ends with the full backend suite GREEN (`-m "not external"`, JUnit-parsed). Baseline 636/636 at substrate-walk tip.
-- Two recurring acceptance bars from the substrate walk are reused: **(1)** behavior byte-identical for valid inputs (P1 chunk lists, P2 self_similarity matrix); **(2)** validators fire only on impossible-today corruption.
+- Two recurring acceptance bars from the substrate walk are reused: **(1)** behavior byte-identical for valid inputs — P1 chunk lists, and (the weaker consumer form) P7's *same bound chunks + vectors → identical similarity matrix*; **(2)** validators fire only on impossible-today corruption. P2 itself is purely additive, so its bar is "every existing fixture stays green," not an equivalence claim.
 - Frontend (P5/P6): unit/component tests **plus** in-browser feature verification (Playwright) — UI correctness is not claimed from type-check/tests alone. The P5 **plural** golden-path (two chunk layers + one embedding layer rendering as three simultaneous lanes) is the explicit proof of the FR-13 "always rendered, plural" commitment.
 
-### Backward compatibility (NFR-1)
-- No on-disk format is removed; new manifests/descriptors are additive. Existing analyses and artifacts keep working. `self_similarity`'s public results are unchanged (gated by the matrix-equality regression). The only behavior change a user can observe is **new opt-in capability**, never a changed default.
+### Backward compatibility (NFR-1 *retired as a byte-identical claim*)
+- No on-disk format is removed; new manifests/descriptors are additive. Existing analyses and artifacts keep working through P1–P6, which are additive. **NFR-1's original "`self_similarity` results byte-identical at existing defaults" claim is retired** in P7: the redesign makes `self_similarity` a layer-consumer, so the entry workflow deliberately changes (you produce chunk/embedding layers first). The honest, weaker invariant P7 holds is **same bound chunk layer + same embedding vectors → identical similarity matrix** — gated by the equivalence test, not a single-run default. Through P6 the only observable change is **new opt-in capability**; P7 changes how `self_similarity` is invoked.
 
 ### Provenance & auditability (NFR-2, P1/P3 principles)
 - Every layer is stamped via `write_run_provenance` → `{track}.run.json` (`atomic.py:47`) — the **sole** provenance source, read by `_track_run_info` (`server.py:139`). No output-affecting value is hidden (acceptable-default rule). Capability descriptors live in the signal manifest, co-located with the data they describe.
@@ -375,7 +416,7 @@ Needs P2 (`stats` summary block), P3 (embedding distributions), and P5 (the shel
 
 | Risk | Phase | Severity | Mitigation |
 |---|---|---|---|
-| `self_similarity` numerics drift on migration | P2 | High | Content-addressed label → identical vectors; gate commit on matrix-equality regression; don't merge on any divergence |
+| `self_similarity` numerics drift on redesign | P7 | High | Matrix math moves verbatim into the method; equivalence test gates the commit (same bound chunks + vectors → identical matrix); don't merge on any divergence |
 | Resolver becomes hidden auto-invocation (re-introducing the smell) | P2 | Med | Default fail-loud + require-layer-exists (Vision OQ#3a); inline production is explicit/flagged only |
 | `smart` mode legitimately non-partitioning | P1 | Resolved | Contract is disjoint (whitespace gaps allowed), not a partition — `smart` validates as-is; verified byte-identical on gold DR + all fixtures |
 | `_extract_masked` refactor disturbs signal-consumer skip logic | P1 | Med | Move verbatim, server stays thin caller, re-run derive/masking set before+after |
@@ -397,11 +438,13 @@ Needs P2 (`stats` summary block), P3 (embedding distributions), and P5 (the shel
 P1 (contract-lock + CLI parity)  ── no upstream; detachable, land anytime
         │  (coordinate-correct chunk producer + unified masked-run path)
         ▼
-P2 (layer-tracks + capability/RENDER/STATS descriptors + resolver + self_sim migration)
+P2 (layer-tracks + capability/RENDER/STATS descriptors + resolver — additive infrastructure)
         │
         ├──────────► P3 (embedding viz suite: projection / distances / heatmap / clusters / lane)
         │                   │
         ├──────────► P4 (profile / integrity / dispersion + KWIC — parallelizable)
+        │                   │
+        ├──────────► P7 (self_similarity redesign: fail-loud, embedding-agnostic layer consumer)
         │                   │
         └─────────┬─────────┴────► P5 (suite shell + native PLURAL layer-track rendering · FR-13)
                   │                          │
@@ -409,8 +452,8 @@ P2 (layer-tracks + capability/RENDER/STATS descriptors + resolver + self_sim mig
 ```
 
 - **P1** is a pure correctness no-regret; ship it first and alone if desired.
-- **P2** is the linchpin; everything else reuses its layer-track + resolver pattern, and it now also carries the **render + stats manifest backbone** that makes P5 plural-rendering and P6 instant-stats possible. Internal commits: track skeletons → capability/render/stats descriptors + resolver → `self_similarity` migration (each green).
-- **P3 and P4 are independent** of each other and parallelizable post-P2.
+- **P2** is the linchpin; everything else reuses its layer-track + resolver pattern, and it now also carries the **render + stats manifest backbone** that makes P5 plural-rendering and P6 instant-stats possible. It is purely additive. Internal commits: track skeletons → resolver → producibility/status (each green). `self_similarity` is **not** touched in P2 — its redesign is **P7**.
+- **P3, P4, and P7 are independent** of each other and parallelizable post-P2.
 - **P5 + P6 are the terminal user-facing pair.** P5 makes *every* chunk/embedding layer render as a browser track (FR-13, plural-safe); P6 adds the stats/distribution/visualization drill-in (FR-14). Both need P2's backbone + P3's embedding data; P6 additionally needs P5's shell + layer manager to launch from.
 
 ### Open questions carried from the Vision doc
