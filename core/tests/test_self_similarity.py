@@ -482,7 +482,7 @@ class TestAlignmentRefinementHonesty:
         from pathlib import Path
 
         from palimpsest.project import ingest_file
-        from palimpsest.server import _extract_masked
+        from palimpsest.runner import extract_masked as _extract_masked
 
         # Non-embedding metrics exercise chunking → matrix → LASTZ without an embedding service.
         # To get alignments we need two passages similar enough to seed an off-diagonal optimum that

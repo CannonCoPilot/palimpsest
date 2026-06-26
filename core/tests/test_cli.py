@@ -96,6 +96,53 @@ class TestCliAnalyze:
         assert "spacy_model" in pipeline_run
         assert isinstance(pipeline_run["booknlp_available"], bool)
 
+    def test_analyze_routes_through_extract_masked(self, runner, pp_ch1_txt, tmp_path, monkeypatch):
+        """FR-12 (CLI/HTTP parity): `analyze` runs every text-deriving extractor through the
+        shared ``runner.extract_masked`` (character-level masking + analyzable→original remap) —
+        the same code path the HTTP server uses — not ``extractor.extract(project)`` directly.
+
+        Before the fix the CLI called ``extract`` directly, so a masked project analyzed from the
+        CLI left masked spans in and produced wrong coordinates. The spy below fails loudly if a
+        future change reverts the CLI to the unmasked path."""
+        import palimpsest.runner as runner_mod
+
+        runner.invoke(main, [
+            "ingest", str(pp_ch1_txt),
+            "--workspace", str(tmp_path),
+            "--title", "Parity Test",
+        ])
+        project_dir = tmp_path / PP_CH1_SLUG
+
+        seen: list[str] = []
+        real = runner_mod.extract_masked
+
+        def spy(project, extractor, sep=""):
+            seen.append(extractor.name)
+            return real(project, extractor, sep)
+
+        # cli.analyze does `from palimpsest.runner import extract_masked` at call time, so patching
+        # the module attribute is picked up by the command's local import.
+        monkeypatch.setattr(runner_mod, "extract_masked", spy)
+
+        result = runner.invoke(main, ["analyze", str(project_dir)])
+        assert result.exit_code == 0, result.output
+        assert seen, "analyze must route extractors through extract_masked (CLI/HTTP parity)"
+        assert "entities" in seen, "the text-deriving entities track should run via the masked path"
+
+        # Parity must hold for EVERY extractor, not just one: a partial revert that routed only
+        # some tracks through extract_masked would be a silent coordinate-correctness hole. A
+        # freshly-ingested project has nothing cached, so the analyze loop attempts every
+        # registered track, and the spy records each name before delegating (so a track that
+        # raises inside extract_masked still counts as routed-through).
+        from palimpsest.tracks.registry import TrackRegistry
+
+        expected = {cls().name for cls in TrackRegistry.discover().dependency_order()}
+        assert set(seen) == expected, (
+            "CLI/HTTP parity: every registered extractor must route through extract_masked. "
+            f"missing from masked path: {sorted(expected - set(seen))}; "
+            f"unexpected: {sorted(set(seen) - expected)}"
+        )
+
     def test_analyze_writes_output_files(self, runner, pp_ch1_txt, tmp_path):
         runner.invoke(main, [
             "ingest", str(pp_ch1_txt),

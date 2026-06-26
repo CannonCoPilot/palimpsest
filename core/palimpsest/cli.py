@@ -127,6 +127,8 @@ def info(project_dir: Path) -> None:
 @click.option("--force", is_flag=True, help="Recompute all tracks")
 def analyze(project_dir: Path, force: bool) -> None:
     """Run track extraction on a project."""
+    from palimpsest.runner import extract_masked
+
     project = Project.load(project_dir)
     registry = TrackRegistry.discover()
 
@@ -190,7 +192,7 @@ def analyze(project_dir: Path, force: bool) -> None:
 
             task_id = progress.add_task(f"  {name}", total=None)
             try:
-                result = extractor.extract(project)
+                result = extract_masked(project, extractor)
             except Exception as e:
                 progress.update(task_id, completed=True)
                 console.print(f"  [yellow]⚠ {name}: skipped ({type(e).__name__}: {e})[/yellow]")

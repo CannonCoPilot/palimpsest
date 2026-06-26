@@ -284,6 +284,60 @@ def chunk_smart(
 
 
 # ---------------------------------------------------------------------------
+# Output contract
+# ---------------------------------------------------------------------------
+
+def _validate_chunks(chunks: list[Chunk], text: str, *, overlapping: bool) -> list[Chunk]:
+    """Enforce the chunk-output contract, returning the chunks unchanged.
+
+    The chunking analogue of :func:`palimpsest.ingest.segmenter._validate_segments`: a
+    postcondition self-check run at :func:`chunk_text`'s single return point. It holds by
+    construction for correct chunkers and raises ``ValueError`` the moment a
+    coordinate-corrupting chunk is produced (a reworked windowing rule, an off-by-one in a
+    span, a future mode) — so a bad offset fails loudly at its source instead of silently
+    poisoning the OffsetMap remap and everything downstream that consumes the chunk layer.
+
+    Contract (in *analyzable* coordinates): every record is index-sequential from 0, in-bounds
+    (``0 <= start < end <= len(text)``), ordered by start, and anchored
+    (``chunk["text"] == text[start:end]``). The non-overlapping modes (``word``,
+    ``punctuation``, ``verse``, ``smart``) are additionally mutually disjoint
+    (``prev.end <= cur.start`` — gaps over skipped whitespace are allowed; the chunkers snap
+    to content boundaries, so this is *not* a gapless partition and coverage is *not* total).
+    ``slide`` is overlap-tolerant: overlapping windows are expected, so only non-decreasing
+    starts are required. ``overlapping`` is derived from the chunk *mode* by the caller, never
+    inferred from the data, so a degenerate non-overlapping result still fails loudly.
+    """
+    n = len(text)
+    prev_start = 0
+    prev_end = 0
+    for i, c in enumerate(chunks):
+        if c["index"] != i:
+            raise ValueError(f"chunk index {c['index']} out of sequence at position {i}")
+        start, end = c["start"], c["end"]
+        if not (0 <= start < end <= n):
+            raise ValueError(
+                f"chunk {i} span ({start}, {end}) out of bounds for text length {n}"
+            )
+        if overlapping:
+            if start < prev_start:
+                raise ValueError(
+                    f"overlapping chunks must have non-decreasing starts: chunk {i} starts at "
+                    f"{start}, before prior chunk's start {prev_start}"
+                )
+        elif start < prev_end:
+            raise ValueError(
+                f"chunks must be ordered and disjoint: chunk {i} starts at {start}, "
+                f"before prior chunk's end {prev_end}"
+            )
+        if c["text"] != text[start:end]:
+            raise ValueError(
+                f"chunk {i} text is not anchored to its offsets ({start}, {end})"
+            )
+        prev_start, prev_end = start, end
+    return chunks
+
+
+# ---------------------------------------------------------------------------
 # Dispatch
 # ---------------------------------------------------------------------------
 
@@ -297,19 +351,20 @@ def chunk_text(
 ) -> list[Chunk]:
     """Chunk ``text`` per ``config``. Unit spans for verse/smart modes are supplied by the caller
     (already in analyzable coordinates); a unit-based mode whose spans are ``None`` raises rather
-    than falling back to another mode."""
+    than falling back to another mode. The result is contract-checked by :func:`_validate_chunks`
+    before return, so coordinate-corrupting output fails loudly at the producer."""
     mode = config.mode
     if mode == "word":
-        return chunk_words(text, config.size)  # type: ignore[arg-type]
-    if mode == "slide":
-        return chunk_slide(text, config.size)  # type: ignore[arg-type]
-    if mode == "punctuation":
-        return chunk_punctuation(text, config.delimiters)  # type: ignore[arg-type]
-    if mode == "verse":
+        chunks = chunk_words(text, config.size)  # type: ignore[arg-type]
+    elif mode == "slide":
+        chunks = chunk_slide(text, config.size)  # type: ignore[arg-type]
+    elif mode == "punctuation":
+        chunks = chunk_punctuation(text, config.delimiters)  # type: ignore[arg-type]
+    elif mode == "verse":
         if verse_spans is None:
             raise ValueError("verse chunking requires verse_spans (verse index unavailable)")
-        return chunk_verse(text, verse_spans)
-    if mode == "smart":
+        chunks = chunk_verse(text, verse_spans)
+    elif mode == "smart":
         unit = config.smart_unit
         assert unit is not None  # ChunkingConfig guarantees this for smart mode
         units = {
@@ -319,7 +374,9 @@ def chunk_text(
         }[unit]
         if units is None:
             raise ValueError(f"smart chunking by {unit!r} requires {unit}_spans")
-        return chunk_smart(
+        chunks = chunk_smart(
             text, config.size, units, config.grow_factor, config.remainder_ratio,  # type: ignore[arg-type]
         )
-    raise ValueError(f"unknown chunk mode: {mode!r}")  # unreachable: ChunkingConfig validates
+    else:
+        raise ValueError(f"unknown chunk mode: {mode!r}")  # unreachable: ChunkingConfig validates
+    return _validate_chunks(chunks, text, overlapping=(mode == "slide"))

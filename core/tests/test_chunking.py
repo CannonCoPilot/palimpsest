@@ -6,6 +6,7 @@ import pytest
 
 from palimpsest.tracks.chunking import (
     ChunkingConfig,
+    _validate_chunks,
     build_word_positions,
     chunk_punctuation,
     chunk_slide,
@@ -160,6 +161,82 @@ class TestDispatchFailLoud:
         cfg = ChunkingConfig(mode="smart", size=7, smart_unit="sentence", grow_factor=2, remainder_ratio=0.6)
         with pytest.raises(ValueError, match="sentence_spans"):
             chunk_text("a b c d e f g h", cfg)
+
+
+def _mk(index, start, end, text):
+    seg = text[start:end]
+    return {"index": index, "start": start, "end": end, "text": seg, "words": seg.split()}
+
+
+class TestChunkOutputContract:
+    """FR-1: chunk_text self-validates its output (mirrors segmenter._validate_segments).
+
+    The contract is ordered + disjoint for non-overlapping modes (with whitespace gaps
+    allowed — chunkers snap to content, so it is NOT a gapless partition), overlap-tolerant
+    for slide, and always index-sequential / in-bounds / anchored.
+    """
+
+    text = "the quick brown fox jumps over the lazy dog"
+
+    def test_valid_word_passes(self):
+        chunks = chunk_text(self.text, ChunkingConfig(mode="word", size=3))
+        assert _validate_chunks(chunks, self.text, overlapping=False) is chunks
+
+    def test_valid_slide_overlap_passes(self):
+        chunks = chunk_text(self.text, ChunkingConfig(mode="slide", size=10))
+        assert _validate_chunks(chunks, self.text, overlapping=True) is chunks
+
+    def test_whitespace_gap_is_allowed(self):
+        # Non-overlapping chunks may have gaps over skipped whitespace — disjoint, not a partition.
+        text = "alpha   beta"
+        chunks = [_mk(0, 0, 5, text), _mk(1, 9, 12, text)]
+        assert _validate_chunks(chunks, text, overlapping=False) == chunks
+
+    def test_overlap_in_nonoverlap_mode_raises(self):
+        text = "alpha beta gamma"
+        chunks = [_mk(0, 0, 10, text), _mk(1, 6, 16, text)]  # chunk1 starts before chunk0 ends
+        with pytest.raises(ValueError, match="ordered and disjoint"):
+            _validate_chunks(chunks, text, overlapping=False)
+
+    def test_out_of_bounds_end_raises(self):
+        text = "alpha beta"
+        chunks = [_mk(0, 0, len(text), text)]
+        chunks[0]["end"] = 99
+        with pytest.raises(ValueError, match="out of bounds"):
+            _validate_chunks(chunks, text, overlapping=False)
+
+    def test_nonsequential_index_raises(self):
+        text = "alpha beta gamma"
+        chunks = [_mk(0, 0, 5, text), _mk(2, 6, 10, text)]  # index jumps 0 -> 2
+        with pytest.raises(ValueError, match="out of sequence"):
+            _validate_chunks(chunks, text, overlapping=False)
+
+    def test_unordered_starts_in_slide_raises(self):
+        text = "alpha beta gamma delta"
+        chunks = [_mk(0, 6, 10, text), _mk(1, 0, 5, text)]  # second window starts before the first
+        with pytest.raises(ValueError, match="non-decreasing starts"):
+            _validate_chunks(chunks, text, overlapping=True)
+
+    def test_anchor_mismatch_raises(self):
+        text = "alpha beta gamma"
+        chunks = [_mk(0, 0, 5, text)]
+        chunks[0]["text"] = "WRONG"
+        with pytest.raises(ValueError, match="not anchored"):
+            _validate_chunks(chunks, text, overlapping=False)
+
+    def test_all_real_modes_satisfy_contract(self):
+        # Reaching the end = each mode's chunk_text output passed _validate_chunks internally.
+        text = "In the beginning, God created the heavens; and the earth was void."
+        chunk_text(text, ChunkingConfig(mode="word", size=4))
+        chunk_text(text, ChunkingConfig(mode="slide", size=10))
+        chunk_text(text, ChunkingConfig(mode="punctuation", delimiters=(",", ";", ".")))
+        chunk_text(text, ChunkingConfig(mode="verse"), verse_spans=[(0, 30), (31, len(text))])
+        chunk_text(
+            text,
+            ChunkingConfig(mode="smart", size=5, smart_unit="paragraph",
+                           grow_factor=2, remainder_ratio=0.6),
+            paragraph_spans=[(0, len(text))],
+        )
 
 
 class TestEmbeddingConfig:

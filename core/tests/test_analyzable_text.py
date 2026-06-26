@@ -109,7 +109,7 @@ def test_analyzable_text_length_matches_offset_map(tmp_path: Path):
 
 
 def test_extract_masked_keeps_annotations_out_of_masked_regions(tmp_path: Path):
-    from palimpsest.server import _extract_masked
+    from palimpsest.runner import extract_masked as _extract_masked
     from palimpsest.tracks.lexical import LexicalExtractor
 
     project, full = _masked_project(tmp_path)
@@ -126,7 +126,7 @@ def test_extract_masked_keeps_annotations_out_of_masked_regions(tmp_path: Path):
 def test_self_similarity_signal_excludes_masked_and_maps_to_original(tmp_path: Path):
     import json
 
-    from palimpsest.server import _extract_masked
+    from palimpsest.runner import extract_masked as _extract_masked
     from palimpsest.tracks.self_similarity import SelfSimilarityTrack
 
     project, full = _masked_project(tmp_path)

@@ -16,6 +16,8 @@ from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
+from palimpsest.runner import _remap_signal_dir, extract_masked
+
 logger = logging.getLogger(__name__)
 
 # Limit concurrent CPU-heavy analysis jobs to prevent saturation on O(n²) workloads.
@@ -184,34 +186,6 @@ def _track_run_info(project_dir: Path, track_name: str) -> dict[str, Any] | None
     return info or None
 
 
-def _is_signal_consumer(extractor: Any) -> bool:
-    """True for extractors whose output positions derive from an upstream track/signal (already in
-    original coordinates) rather than from the text — so they run on the full project and are not
-    remapped; the masking is inherited through their (already-masked) upstream. ``coreference`` is
-    excluded: it derives positions from the text via BookNLP despite depending on ``entities``."""
-    if getattr(extractor, "name", "") == "coreference":
-        return False
-    return any(not d.startswith("_") for d in extractor.depends_on)
-
-
-def _remap_signal_dir(signals_dir: Path, omap: Any, prefix: str | None = None) -> None:
-    """Remap signal outputs analyzable→original: manifest ``segment_offsets`` and alignment-record
-    ``char_*`` spans. When ``prefix`` is given, only files belonging to that signal are touched."""
-    from palimpsest.atomic import atomic_write_text
-    from palimpsest.derive import remap_signal_data
-    if not signals_dir.is_dir():
-        return
-    for jp in signals_dir.rglob("*.json"):
-        if prefix is not None and prefix not in jp.name and prefix not in jp.parent.name:
-            continue
-        data = json.loads(jp.read_text(encoding="utf-8"))
-        # remap_signal_data raises UnmappedCoordinateError on an offset-bearing shape it can't handle
-        # (G4): a new output that forgot to declare/remap its coordinates fails loudly here rather than
-        # writing analyzable coordinates mislabeled as original.
-        if remap_signal_data(data, omap):
-            atomic_write_text(jp, json.dumps(data, indent=2, ensure_ascii=False))
-
-
 def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
     """Remap stored annotation tracks analyzable→original (structural tracks are left untouched)."""
     from palimpsest.derive import inverse_remap_annotation_dicts
@@ -231,35 +205,6 @@ def _remap_project_outputs(project_dir: Path, omap: Any) -> None:
     of a batch run back to original document coordinates."""
     _remap_tracks_dir(project_dir / "tracks", omap)
     _remap_signal_dir(project_dir / "signals", omap)
-
-
-def _extract_masked(project: Any, extractor: Any, sep: str = "") -> Any:
-    """Run a single extractor under character-level masking.
-
-    Text-deriving extractors run against the project's analysis view — the masked-resolved
-    analyzable stream (masked spans and verse-number tokens excised) that they chunk at their own
-    runtime — and their outputs are remapped back to original coordinates (annotation results
-    in-place; any signal files they wrote by name). Signal-consumer extractors run on the full
-    project, inheriting masking through their already-masked, already-original upstream.
-
-    ``sep`` is the analyzable-stream separator inserted between kept (unmasked) spans; the caller
-    resolves it from a runtime parameter (default "" — pure excision) so it is never a hidden
-    default. It is coordinate-safe: the OffsetMap is built from ``len(sep)``, so remapping back to
-    original coordinates accounts for it."""
-    if _is_signal_consumer(extractor):
-        return extractor.extract(project)
-    from palimpsest.derive import remap_result_annotations
-
-    view, omap = project.analysis_view(sep)
-    try:
-        result = extractor.extract(view)
-    finally:
-        view.close_analysis_view()
-    if extractor.output_type == "annotation" and isinstance(result, list):
-        result = remap_result_annotations(result, omap)
-    # Remap any signal files this extractor wrote (its own signal, or a signal side-effect).
-    _remap_signal_dir(project.path / "signals", omap, prefix=extractor.name)
-    return result
 
 
 def _layout_boundaries(project: Any) -> list[tuple[int, int, str]]:
@@ -1113,7 +1058,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         async def run() -> None:
             try:
                 async with _job_semaphore:
-                    result = await asyncio.to_thread(_extract_masked, project, extractor, resolved_sep)
+                    result = await asyncio.to_thread(extract_masked, project, extractor, resolved_sep)
                 if extractor.output_type == "annotation" and isinstance(result, list):
                     from palimpsest.annotation.serializer import write_track
                     track_path = project_dir / "tracks" / f"{track_name}.jsonl"
