@@ -53,14 +53,21 @@ def _mean_pairwise_cosine_distance(vectors: np.ndarray) -> float | None:
 
 
 class EmbeddingTrack(ParameterizedTrack):
+    # Label-keyed layer track (see ChunkingTrack.layer_keyed): writes signals/embedding_{label}.json,
+    # gets per-label provenance, and is enumerated as plural layers in /analysis/status.
+    layer_keyed = True
+
+    # Param names mirror the self_similarity embed vocabulary (embed_provider/embed_endpoint/embed_model/
+    # embed_batch_size) the shared HTTP run handler already forwards; chunk_label selects which persisted
+    # chunk layer to embed and is forwarded to the handler for this track (FR-4).
     PARAMS = (
         Param("chunk_label", str, required=True,
               help="label of the chunk layer to embed (the {label} in chunking_{label}.json)"),
-        Param("provider", str, required=True, choices=EMBEDDING_PROVIDERS,
+        Param("embed_provider", str, required=True, choices=EMBEDDING_PROVIDERS,
               help="embedding provider (mlx or ollama)"),
-        Param("endpoint", str, required=True, help="embedding service base URL"),
-        Param("model", str, required=True, help="embedding model name or server alias"),
-        Param("batch_size", int, default=32, min=1, help="texts per embedding request"),
+        Param("embed_endpoint", str, required=True, help="embedding service base URL"),
+        Param("embed_model", str, required=True, help="embedding model name or server alias"),
+        Param("embed_batch_size", int, default=32, min=1, help="texts per embedding request"),
     )
 
     @property
@@ -90,8 +97,8 @@ class EmbeddingTrack(ParameterizedTrack):
     def _config(self) -> EmbeddingConfig:
         p = self.resolved_params()
         return EmbeddingConfig(
-            provider=p["provider"], endpoint=p["endpoint"],
-            model=p["model"], batch_size=p["batch_size"],
+            provider=p["embed_provider"], endpoint=p["embed_endpoint"],
+            model=p["embed_model"], batch_size=p["embed_batch_size"],
         )
 
     def _label(self, config: EmbeddingConfig, chunk_texts: list[str]) -> str:

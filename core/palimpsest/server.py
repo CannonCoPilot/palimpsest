@@ -186,6 +186,49 @@ def _track_run_info(project_dir: Path, track_name: str) -> dict[str, Any] | None
     return info or None
 
 
+def _layer_status_entries(project_dir: Path, name: str) -> list[dict[str, Any]]:
+    """Per-layer status rows for a label-keyed layer track (FR-4).
+
+    Enumerates ``signals/{name}_*.json`` — each a plural, content-addressed layer the track produced —
+    and reports each with its label, capability descriptor, precomputed stats, render descriptor, and
+    per-label run provenance. This is what lets the UI list, compare, and drill into the many layers a
+    single registry row cannot express. A manifest that fails to parse is skipped, not faked."""
+    signals_dir = project_dir / "signals"
+    if not signals_dir.is_dir():
+        return []
+    entries: list[dict[str, Any]] = []
+    for path in sorted(signals_dir.glob(f"{name}_*.json")):
+        try:
+            manifest = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        meta = manifest.get("metadata", {})
+        entry: dict[str, Any] = {
+            "label": meta.get("label") or path.stem[len(name) + 1:],
+            "status": "computed",
+            "capability": meta.get("capability"),
+            "stats": meta.get("stats"),
+            "rendering": meta.get("rendering"),
+        }
+        run_info = _track_run_info(project_dir, path.stem)
+        if run_info:
+            entry["runInfo"] = run_info
+        entries.append(entry)
+    return entries
+
+
+def _provenance_name(track_name: str, extractor: Any, result: Any) -> str:
+    """The name a finished run's provenance record is keyed by.
+
+    Layer-keyed tracks (chunking/embedding) return the produced manifest's ``Path``; their provenance is
+    keyed by that path's stem (``{name}_{label}``) so a second run with different params writes a
+    *separate* record instead of overwriting the first layer's (FR-4). Every other track keeps the bare
+    ``track_name`` (one ``{name}.run.json``)."""
+    if getattr(extractor, "layer_keyed", False) and isinstance(result, Path):
+        return result.stem
+    return track_name
+
+
 def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
     """Remap stored annotation tracks analyzable→original (structural tracks are left untouched)."""
     from palimpsest.derive import inverse_remap_annotation_dicts
@@ -888,7 +931,13 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             ext = extractor_cls()
             name = ext.name
             output_exists = False
-            if ext.output_type == "annotation":
+            # Label-keyed layer tracks (chunking/embedding) have no single signals/{name}.json — they
+            # produce plural signals/{name}_{label}.json. Enumerate those as nested `layers` and treat
+            # the track as "computed" when at least one layer exists (FR-4).
+            layers = _layer_status_entries(project_dir, name) if getattr(ext, "layer_keyed", False) else None
+            if layers is not None:
+                output_exists = bool(layers)
+            elif ext.output_type == "annotation":
                 output_exists = (tracks_dir / f"{name}.jsonl").exists()
             elif ext.output_type == "signal":
                 output_exists = (project_dir / "signals" / f"{name}.json").exists()
@@ -918,6 +967,10 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             run_info = _track_run_info(project_dir, name)
             if run_info:
                 entry["runInfo"] = run_info
+            if layers is not None:
+                # Plural layers for this track, each carrying its own label/capability/stats/runInfo. The
+                # track-level row stays (it advertises the producible track even at zero layers).
+                entry["layers"] = layers
             result.append(entry)
 
         return JSONResponse(content=result)
@@ -948,6 +1001,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         embed_endpoint: str | None = None,
         embed_model: str | None = None,
         embed_batch_size: int | None = None,
+        chunk_label: str | None = None,
         mask_override: MaskOverrideRequest | None = None,
     ) -> JSONResponse:
         """Run a single track extractor with optional parameters and an optional
@@ -1026,6 +1080,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             params["embed_model"] = embed_model
         if embed_batch_size is not None:
             params["embed_batch_size"] = embed_batch_size
+        if chunk_label is not None:
+            # Selects which persisted chunk layer EmbeddingTrack embeds (the {label} in
+            # signals/chunking_{label}.json). Only EmbeddingTrack declares it; any other track rejects
+            # it as an unknown parameter (resolve_params), so a stray chunk_label can't pass silently.
+            params["chunk_label"] = chunk_label
         if force:
             params["force"] = True
         if params and hasattr(extractor, "set_params"):
@@ -1077,9 +1136,15 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 # record on disk — only the CLI wrote provenance. Same writer the CLI uses, so the two
                 # entry points can no longer disagree. `clamped` flags any param whose effective value
                 # differed from the request (record-effective policy).
+                #
+                # Layer-keyed tracks (chunking/embedding) write one provenance record PER LABEL
+                # (manifests/{name}_{label}.run.json, label taken from the returned manifest stem), so a
+                # second run with different params does not overwrite the first layer's record (FR-4).
+                # Non-layer tracks keep the single {name}.run.json.
+                provenance_name = _provenance_name(track_name, extractor, result)
                 clamped = track_clamps(extractor)
                 write_run_provenance(
-                    manifest_dir, track_name, track_provenance(extractor),
+                    manifest_dir, provenance_name, track_provenance(extractor),
                     extra={"clamped": clamped} if clamped else None,
                 )
                 _running_jobs[job_key] = {"status": "completed", "track": track_name}

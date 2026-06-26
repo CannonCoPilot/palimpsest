@@ -29,7 +29,7 @@ def pp_project(pp_ch1_txt: Path, tmp_path: Path):
 @pytest.fixture
 def chunk_label(pp_project) -> str:
     track = ChunkingTrack()
-    track.set_params({"mode": "word", "size": 7})
+    track.set_params({"chunk_mode": "word", "chunk_size": 7})
     path = track.extract(pp_project)
     return json.loads(path.read_text())["metadata"]["label"]
 
@@ -55,8 +55,9 @@ def _run_embedding(project, chunk_label, monkeypatch, counter=None):
     )
     track = EmbeddingTrack()
     track.set_params({
-        "chunk_label": chunk_label, "provider": "mlx",
-        "endpoint": "http://localhost:8000", "model": "test-model", "batch_size": 4,
+        "chunk_label": chunk_label, "embed_provider": "mlx",
+        "embed_endpoint": "http://localhost:8000", "embed_model": "test-model",
+        "embed_batch_size": 4,
     })
     path = track.extract(project)
     return json.loads(path.read_text()), path, counter
@@ -135,8 +136,8 @@ class TestEmbeddingTrackExtract:
         )
         track = EmbeddingTrack()
         track.set_params({
-            "chunk_label": "deadbeefdeadbeef", "provider": "mlx",
-            "endpoint": "http://localhost:8000", "model": "test-model",
+            "chunk_label": "deadbeefdeadbeef", "embed_provider": "mlx",
+            "embed_endpoint": "http://localhost:8000", "embed_model": "test-model",
         })
         with pytest.raises(ValueError, match="chunk layer"):
             track.extract(pp_project)

@@ -50,14 +50,14 @@ class TestChunkingTrackProtocol:
 class TestChunkingTrackExtract:
     def test_writes_label_keyed_layer(self, pp_project):
         track = ChunkingTrack()
-        track.set_params({"mode": "word", "size": 5})
+        track.set_params({"chunk_mode": "word", "chunk_size": 5})
         path = track.extract(pp_project)
         assert path.exists()
         assert path.name.startswith("chunking_") and path.suffix == ".json"
         assert path.parent == pp_project.path / "signals"
 
     def test_manifest_core_fields(self, pp_project):
-        m = _run(pp_project, mode="word", size=5)
+        m = _run(pp_project, chunk_mode="word", chunk_size=5)
         assert m["type"] == "chunk-layer"
         assert m["name"].startswith("chunking_")
         assert m["segment_offsets"], "chunk spans must be emitted as segment_offsets (remap-handled)"
@@ -67,7 +67,7 @@ class TestChunkingTrackExtract:
     def test_offsets_anchor_to_text(self, pp_project):
         # Run directly (no masking view) so offsets are original coordinates: each chunk text must
         # equal reference_text()[start:end] — the same anchored contract _validate_chunks enforces.
-        m = _run(pp_project, mode="word", size=7)
+        m = _run(pp_project, chunk_mode="word", chunk_size=7)
         text = pp_project.reference_text()
         offsets = m["segment_offsets"]
         texts = m["metadata"]["chunk_texts"]
@@ -75,7 +75,7 @@ class TestChunkingTrackExtract:
             assert text[start:end] == chunk_text
 
     def test_capability_descriptor(self, pp_project):
-        m = _run(pp_project, mode="word", size=5)
+        m = _run(pp_project, chunk_mode="word", chunk_size=5)
         cap = m["metadata"]["capability"]
         assert cap["kind"] == "chunk"
         assert cap["mode"] == "word"
@@ -85,13 +85,13 @@ class TestChunkingTrackExtract:
         assert isinstance(cap["analyzable_digest"], str) and len(cap["analyzable_digest"]) == 64
 
     def test_rendering_backbone(self, pp_project):
-        m = _run(pp_project, mode="word", size=5)
+        m = _run(pp_project, chunk_mode="word", chunk_size=5)
         rendering = m["metadata"]["rendering"]
         assert rendering["track_view"] == "chunk-band"
         assert rendering["overviewBarRendering"]["type"] == "chunk-band"
 
     def test_stats_backbone(self, pp_project):
-        m = _run(pp_project, mode="word", size=5)
+        m = _run(pp_project, chunk_mode="word", chunk_size=5)
         stats = m["metadata"]["stats"]
         assert stats["count"] == len(m["segment_offsets"])
         assert 0.0 <= stats["coverage_pct"] <= 100.0
@@ -102,20 +102,20 @@ class TestChunkingTrackExtract:
 
     def test_slide_mode_reports_overlap(self, pp_project):
         # slide requires an even window >= MIN_SLIDE_SIZE (10); ChunkingConfig enforces this.
-        m = _run(pp_project, mode="slide", size=10)
+        m = _run(pp_project, chunk_mode="slide", chunk_size=10)
         assert m["metadata"]["capability"]["overlapping"] is True
         assert m["metadata"]["stats"]["overlap_ratio"] > 0.0
 
 
 class TestChunkingTrackPlurality:
     def test_distinct_params_distinct_layer(self, pp_project):
-        m5 = _run(pp_project, mode="word", size=5)
-        m9 = _run(pp_project, mode="word", size=9)
+        m5 = _run(pp_project, chunk_mode="word", chunk_size=5)
+        m9 = _run(pp_project, chunk_mode="word", chunk_size=9)
         assert m5["name"] != m9["name"], "different sizes must produce different label-keyed layers"
         both = list((pp_project.path / "signals").glob("chunking_*.json"))
         assert len(both) == 2, "plural chunk layers must coexist without collision"
 
     def test_label_is_deterministic(self, pp_project):
-        first = _run(pp_project, mode="word", size=5)["name"]
-        second = _run(pp_project, mode="word", size=5)["name"]
+        first = _run(pp_project, chunk_mode="word", chunk_size=5)["name"]
+        second = _run(pp_project, chunk_mode="word", chunk_size=5)["name"]
         assert first == second

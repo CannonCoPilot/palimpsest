@@ -42,8 +42,8 @@ def test_resolver_module_does_not_register_a_track():
 
 class TestResolveLayers:
     def test_binds_sole_survivor_by_constraint(self, pp_project):
-        _chunk(pp_project, mode="word", size=5)
-        _chunk(pp_project, mode="slide", size=10)
+        _chunk(pp_project, chunk_mode="word", chunk_size=5)
+        _chunk(pp_project, chunk_mode="slide", chunk_size=10)
         bound = resolve_layers(
             pp_project, [LayerRequirement("chunk", {"overlapping": False})]
         )
@@ -51,15 +51,15 @@ class TestResolveLayers:
         assert bound["chunk"].capability["overlapping"] is False
 
     def test_constraint_selects_overlapping_layer(self, pp_project):
-        _chunk(pp_project, mode="word", size=5)
-        _chunk(pp_project, mode="slide", size=10)
+        _chunk(pp_project, chunk_mode="word", chunk_size=5)
+        _chunk(pp_project, chunk_mode="slide", chunk_size=10)
         bound = resolve_layers(
             pp_project, [LayerRequirement("chunk", {"overlapping": True})]
         )
         assert bound["chunk"].capability["mode"] == "slide"
 
     def test_digest_match_filters_wrong_text(self, pp_project):
-        _chunk(pp_project, mode="word", size=5)
+        _chunk(pp_project, chunk_mode="word", chunk_size=5)
         with pytest.raises(LayerResolutionError, match="analyzable digest"):
             resolve_layers(
                 pp_project,
@@ -68,7 +68,7 @@ class TestResolveLayers:
             )
 
     def test_digest_match_passes_for_current_text(self, pp_project):
-        _chunk(pp_project, mode="word", size=5)
+        _chunk(pp_project, chunk_mode="word", chunk_size=5)
         digest = project_analyzable_digest(pp_project, "")
         bound = resolve_layers(
             pp_project, [LayerRequirement("chunk", {})], analyzable_digest=digest
@@ -76,15 +76,15 @@ class TestResolveLayers:
         assert bound["chunk"].capability["analyzable_digest"] == digest
 
     def test_no_match_raises_listing_available(self, pp_project):
-        _chunk(pp_project, mode="word", size=5)
+        _chunk(pp_project, chunk_mode="word", chunk_size=5)
         with pytest.raises(LayerResolutionError, match="no chunk layer satisfies"):
             resolve_layers(
                 pp_project, [LayerRequirement("chunk", {"mode": "verse"}, digest_match=False)]
             )
 
     def test_ambiguity_binds_newest_by_mtime(self, pp_project):
-        older = _chunk(pp_project, mode="word", size=5)
-        newer = _chunk(pp_project, mode="word", size=9)
+        older = _chunk(pp_project, chunk_mode="word", chunk_size=5)
+        newer = _chunk(pp_project, chunk_mode="word", chunk_size=9)
         # Both are non-overlapping word layers → two survivors; make mtimes unambiguous.
         os.utime(older, (1_000_000, 1_000_000))
         os.utime(newer, (2_000_000, 2_000_000))

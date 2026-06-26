@@ -72,13 +72,22 @@ def _dist(values: list[int]) -> dict[str, float]:
 
 
 class ChunkingTrack(ParameterizedTrack):
-    # mode is the one required choice; the rest are mode-relevant and validated (presence + range +
-    # cross-field exclusivity) by ChunkingConfig, the single source of truth for chunk-param validity.
+    # Marks this as a *label-keyed layer* track: it writes signals/{name}_{label}.json (plural, one per
+    # param set), so the run handler stamps per-label provenance (manifests/{name}_{label}.run.json) and
+    # /analysis/status enumerates the layers instead of looking for a single signals/{name}.json. Read
+    # via getattr, so non-layer tracks are unaffected.
+    layer_keyed = True
+
+    # chunk_mode is the one required choice; the rest are mode-relevant and validated (presence + range
+    # + cross-field exclusivity) by ChunkingConfig, the single source of truth for chunk-param validity.
     # They are declared here only so they are reported in provenance (G2), never silently defaulted.
+    # The param names mirror the established self_similarity chunk vocabulary (chunk_mode/chunk_size/…)
+    # that the shared HTTP run handler already forwards, so the track is produced through the same
+    # surface as every other track (one vocabulary, routed by track_name) rather than a side door.
     PARAMS = (
-        Param("mode", str, required=True, choices=CHUNK_MODES,
+        Param("chunk_mode", str, required=True, choices=CHUNK_MODES,
               help="chunking mode (word, slide, punctuation, verse, smart)"),
-        Param("size", int, default=None, min=1, help="window size in words (word/slide/smart)"),
+        Param("chunk_size", int, default=None, min=1, help="window size in words (word/slide/smart)"),
         Param("smart_unit", str, default=None, help="smart-mode growth unit (verse/paragraph/sentence)"),
         Param("delimiters", _to_str_tuple, default=None, help="punctuation-mode split delimiters"),
         Param("grow_factor", float, default=None, min=1, help="smart-mode growth factor (>= 1)"),
@@ -115,7 +124,7 @@ class ChunkingTrack(ParameterizedTrack):
         not relevant to the mode and any missing required field, so a bad combination fails loud."""
         p = self.resolved_params()
         return ChunkingConfig(
-            mode=p["mode"], size=p["size"], smart_unit=p["smart_unit"],
+            mode=p["chunk_mode"], size=p["chunk_size"], smart_unit=p["smart_unit"],
             delimiters=p["delimiters"], grow_factor=p["grow_factor"],
             remainder_ratio=p["remainder_ratio"],
         )
