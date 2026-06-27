@@ -275,6 +275,82 @@ def analyze(project_dir: Path, force: bool) -> None:
     console.print("[green]Pipeline run saved:[/green] pipeline_run.json")
 
 
+@main.command(name="run-track")
+@click.argument("project_dir", type=click.Path(exists=True, path_type=Path))
+@click.argument("track_name")
+@click.option(
+    "--param", "-p", "param_pairs", multiple=True, metavar="KEY=VALUE",
+    help="Track parameter as key=value (repeatable); coerced and validated by the track.",
+)
+@click.option(
+    "--sep", "analyzable_sep", default="",
+    help="Separator inserted between kept (unmasked) spans in the analyzable stream "
+    "(default: '' — pure excision).",
+)
+def run_track(
+    project_dir: Path, track_name: str, param_pairs: tuple[str, ...], analyzable_sep: str
+) -> None:
+    """Run a SINGLE track with explicit params — the CLI mirror of the HTTP per-track endpoint.
+
+    For layer tracks (chunking, embedding) the produced layer is content-addressed, so a CLI run
+    ACCUMULATES alongside layers produced from the UI: identical params yield the same label
+    (idempotent, byte-identical artifact), different params yield a new label that coexists. Params
+    are generic ``key=value`` pairs coerced and validated by the track itself — unknown keys and bad
+    values are rejected — so no per-track flags are needed.
+    """
+    from palimpsest.runner import extract_masked, persist_track_outputs
+
+    project = Project.load(project_dir)
+    registry = TrackRegistry.discover()
+    by_name = {cls().name: cls for cls in registry.dependency_order()}
+    if track_name not in by_name:
+        valid = ", ".join(sorted(by_name)) or "(none)"
+        raise click.ClickException(f"Unknown track: {track_name!r}. Available: {valid}")
+    extractor = by_name[track_name]()
+
+    params: dict[str, Any] = {}
+    for pair in param_pairs:
+        if "=" not in pair:
+            raise click.ClickException(f"Invalid -p {pair!r}: expected KEY=VALUE")
+        key, value = pair.split("=", 1)
+        params[key.strip()] = value
+
+    # The same store-raw → coerce-and-validate flow the HTTP handler uses, so the CLI rejects unknown
+    # keys, failed coercions, and missing required params identically (an HTTP 400 there is a non-zero
+    # ClickException exit here). resolve_params coerces each string via the declared Param.type, which
+    # is why generic key=value pairs suffice — no per-track typed options.
+    if params and hasattr(extractor, "set_params"):
+        try:
+            extractor.set_params(params)
+        except (ValueError, TypeError) as exc:
+            raise click.ClickException(str(exc)) from exc
+    resolved: dict[str, Any] | None = None
+    if hasattr(extractor, "validate_params"):
+        try:
+            resolved = extractor.validate_params()
+        except ValueError as exc:
+            raise click.ClickException(str(exc)) from exc
+
+    result = extract_masked(project, extractor, analyzable_sep)
+    pname = persist_track_outputs(project_dir, extractor, result)
+
+    console.print(f"  analyzable_sep: {analyzable_sep!r}")
+    if resolved:
+        console.print(f"  params: {resolved}")
+    if isinstance(result, Path):
+        label = pname[len(track_name) + 1:] if pname.startswith(f"{track_name}_") else pname
+        console.print(f"[green]Layer produced:[/green] {track_name} (label {label})")
+        console.print(f"  {result}")
+    elif isinstance(result, list):
+        console.print(
+            f"[green]Done:[/green] {track_name} — {len(result)} annotations "
+            f"-> tracks/{track_name}.jsonl"
+        )
+    else:
+        console.print(f"[green]Done:[/green] {track_name} (signal)")
+    console.print(f"  provenance: manifests/{pname}.run.json")
+
+
 @main.command()
 @click.argument("project_dir", type=click.Path(exists=True, path_type=Path))
 @click.option("--format", "fmt", type=click.Choice(["w3c", "paf", "csv"]), default="w3c")

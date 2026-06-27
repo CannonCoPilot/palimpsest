@@ -12,10 +12,13 @@ import json
 from pathlib import Path
 
 import pytest
+from click.testing import CliRunner
 from fastapi.testclient import TestClient
 
+from palimpsest.cli import main
 from palimpsest.project import Project, ingest_file
-from palimpsest.server import _layer_status_entries, _provenance_name, create_app
+from palimpsest.runner import provenance_name
+from palimpsest.server import _layer_status_entries, create_app
 from palimpsest.tracks.chunking_track import ChunkingTrack
 
 
@@ -49,16 +52,16 @@ class TestProvenanceName:
     def test_layer_keyed_track_keyed_by_manifest_stem(self):
         # A layer track returns the produced manifest Path; provenance is keyed by its stem so two
         # different-param runs do not overwrite one another's record.
-        name = _provenance_name("chunking", ChunkingTrack(), Path("/x/signals/chunking_abc123.json"))
+        name = provenance_name("chunking", ChunkingTrack(), Path("/x/signals/chunking_abc123.json"))
         assert name == "chunking_abc123"
 
     def test_non_layer_track_keyed_by_track_name(self):
         # A non-layer extractor returns a list (annotations); provenance stays the bare track name.
-        assert _provenance_name("entities", object(), ["ann"]) == "entities"
+        assert provenance_name("entities", object(), ["ann"]) == "entities"
 
     def test_layer_track_without_path_falls_back_to_track_name(self):
         # Defensive: a layer track that somehow didn't return a Path keeps the bare name (no crash).
-        assert _provenance_name("chunking", ChunkingTrack(), None) == "chunking"
+        assert provenance_name("chunking", ChunkingTrack(), None) == "chunking"
 
 
 class TestLayerStatusEntries:
@@ -140,3 +143,50 @@ class TestRunFlowProducibility:
         )
         assert r.status_code == 400
         assert "chunk_label" in r.json()["detail"]
+
+
+class TestRunTrackCli:
+    """The CLI ``run-track`` command runs a single track with params through the SAME shared
+    persistence path as the HTTP handler (``runner.persist_track_outputs``). Chunking runs offline
+    (no embedding service), so its full produce-and-persist path is exercised here end-to-end."""
+
+    def test_chunking_accumulates_per_label_provenance(self, project_dir):
+        # Two runs with different params produce two content-addressed layers that COEXIST, each with
+        # its own per-label run.json — the FR-4 accumulation guarantee (a CLI run lands alongside any
+        # UI-produced layer, no overwrite).
+        runner = CliRunner()
+        r1 = runner.invoke(
+            main, ["run-track", str(project_dir), "chunking", "-p", "chunk_mode=word", "-p", "chunk_size=5"]
+        )
+        assert r1.exit_code == 0, r1.output
+        r2 = runner.invoke(
+            main, ["run-track", str(project_dir), "chunking", "-p", "chunk_mode=word", "-p", "chunk_size=9"]
+        )
+        assert r2.exit_code == 0, r2.output
+
+        layers = sorted((project_dir / "signals").glob("chunking_*.json"))
+        runs = sorted((project_dir / "manifests").glob("chunking_*.run.json"))
+        assert len(layers) == 2
+        assert len(runs) == 2
+        layer_labels = {p.stem[len("chunking_"):] for p in layers}
+        run_labels = {p.name[len("chunking_"):-len(".run.json")] for p in runs}
+        assert len(layer_labels) == 2
+        assert run_labels == layer_labels
+
+    def test_run_track_unknown_param_rejected(self, project_dir):
+        result = CliRunner().invoke(
+            main, ["run-track", str(project_dir), "chunking", "-p", "chunk_mode=word", "-p", "bogus=1"]
+        )
+        assert result.exit_code != 0
+        assert not isinstance(result.exception, (ValueError, TypeError))  # rejected cleanly, not crashed
+
+    def test_run_track_missing_required_param_rejected(self, project_dir):
+        # ChunkingTrack.chunk_mode is required with no default — omitting it is rejected, not run with a
+        # silently-chosen mode.
+        result = CliRunner().invoke(main, ["run-track", str(project_dir), "chunking"])
+        assert result.exit_code != 0
+        assert not isinstance(result.exception, (ValueError, TypeError))
+
+    def test_run_track_unknown_track_rejected(self, project_dir):
+        result = CliRunner().invoke(main, ["run-track", str(project_dir), "nonesuch"])
+        assert result.exit_code != 0

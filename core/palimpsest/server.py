@@ -16,7 +16,7 @@ from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from palimpsest.runner import _remap_signal_dir, extract_masked
+from palimpsest.runner import _remap_signal_dir, extract_masked, persist_track_outputs
 
 logger = logging.getLogger(__name__)
 
@@ -215,18 +215,6 @@ def _layer_status_entries(project_dir: Path, name: str) -> list[dict[str, Any]]:
             entry["runInfo"] = run_info
         entries.append(entry)
     return entries
-
-
-def _provenance_name(track_name: str, extractor: Any, result: Any) -> str:
-    """The name a finished run's provenance record is keyed by.
-
-    Layer-keyed tracks (chunking/embedding) return the produced manifest's ``Path``; their provenance is
-    keyed by that path's stem (``{name}_{label}``) so a second run with different params writes a
-    *separate* record instead of overwriting the first layer's (FR-4). Every other track keeps the bare
-    ``track_name`` (one ``{name}.run.json``)."""
-    if getattr(extractor, "layer_keyed", False) and isinstance(result, Path):
-        return result.stem
-    return track_name
 
 
 def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
@@ -1118,35 +1106,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             try:
                 async with _job_semaphore:
                     result = await asyncio.to_thread(extract_masked, project, extractor, resolved_sep)
-                if extractor.output_type == "annotation" and isinstance(result, list):
-                    from palimpsest.annotation.serializer import write_track
-                    track_path = project_dir / "tracks" / f"{track_name}.jsonl"
-                    write_track(track_path, result)
-
-                from palimpsest.atomic import atomic_write_text, write_run_provenance
-                from palimpsest.tracks.params import track_clamps, track_provenance
-
-                manifest_dir = project_dir / "manifests"
-                manifest_dir.mkdir(exist_ok=True)
-                atomic_write_text(
-                    manifest_dir / f"{track_name}.manifest.json",
-                    json.dumps(extractor.manifest(), indent=2),
-                )
-                # Persist the resolved run parameters (C1): without this, a UI-driven run left no param
-                # record on disk — only the CLI wrote provenance. Same writer the CLI uses, so the two
-                # entry points can no longer disagree. `clamped` flags any param whose effective value
-                # differed from the request (record-effective policy).
-                #
-                # Layer-keyed tracks (chunking/embedding) write one provenance record PER LABEL
-                # (manifests/{name}_{label}.run.json, label taken from the returned manifest stem), so a
-                # second run with different params does not overwrite the first layer's record (FR-4).
-                # Non-layer tracks keep the single {name}.run.json.
-                provenance_name = _provenance_name(track_name, extractor, result)
-                clamped = track_clamps(extractor)
-                write_run_provenance(
-                    manifest_dir, provenance_name, track_provenance(extractor),
-                    extra={"clamped": clamped} if clamped else None,
-                )
+                # Persist exactly as the CLI run-track command does, through the one shared writer in
+                # runner.persist_track_outputs — annotation track + static manifest + per-label run
+                # provenance (FR-4) — so a track produced from either entry point leaves identical
+                # artifacts and the two paths can never disagree on the on-disk shape.
+                persist_track_outputs(project_dir, extractor, result)
                 _running_jobs[job_key] = {"status": "completed", "track": track_name}
             except Exception as exc:
                 # One honest failure path. The previous code relabelled EVERY extract ValueError as

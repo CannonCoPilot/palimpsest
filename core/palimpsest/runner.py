@@ -70,3 +70,49 @@ def extract_masked(project: Any, extractor: Any, sep: str = "") -> Any:
     # Remap any signal files this extractor wrote (its own signal, or a signal side-effect).
     _remap_signal_dir(project.path / "signals", omap, prefix=extractor.name)
     return result
+
+
+def provenance_name(track_name: str, extractor: Any, result: Any) -> str:
+    """The name a finished run's provenance record is keyed by.
+
+    Layer-keyed tracks (chunking/embedding) return the produced manifest's ``Path``; their provenance
+    is keyed by that path's stem (``{name}_{label}``) so a second run with different params writes a
+    *separate* record instead of overwriting the first layer's (FR-4). Every other track keeps the bare
+    ``track_name`` (one ``{name}.run.json``)."""
+    if getattr(extractor, "layer_keyed", False) and isinstance(result, Path):
+        return result.stem
+    return track_name
+
+
+def persist_track_outputs(project_dir: Path, extractor: Any, result: Any) -> str:
+    """Persist a finished extractor run the one way both the HTTP server and the CLI use, so a track
+    produced from either entry point leaves identical on-disk artifacts (annotation tracks coexist;
+    content-addressed layer signals accumulate). Writes:
+
+      - an annotation ``result`` -> ``tracks/{name}.jsonl`` (signal results were already written to
+        ``signals/`` by ``extract`` itself, layer signals as ``{name}_{label}.json``);
+      - ``manifests/{name}.manifest.json`` (the static track manifest);
+      - ``manifests/{provenance_name}.run.json`` (resolved params; per-label for layer-keyed tracks).
+
+    Returns the provenance name (``{name}_{label}`` for a layer, else ``{name}``)."""
+    from palimpsest.atomic import atomic_write_text, write_run_provenance
+    from palimpsest.tracks.params import track_clamps, track_provenance
+
+    name = extractor.name
+    if extractor.output_type == "annotation" and isinstance(result, list):
+        from palimpsest.annotation.serializer import write_track
+        write_track(project_dir / "tracks" / f"{name}.jsonl", result)
+
+    manifest_dir = project_dir / "manifests"
+    manifest_dir.mkdir(parents=True, exist_ok=True)
+    atomic_write_text(
+        manifest_dir / f"{name}.manifest.json",
+        json.dumps(extractor.manifest(), indent=2),
+    )
+    pname = provenance_name(name, extractor, result)
+    clamped = track_clamps(extractor)
+    write_run_provenance(
+        manifest_dir, pname, track_provenance(extractor),
+        extra={"clamped": clamped} if clamped else None,
+    )
+    return pname
