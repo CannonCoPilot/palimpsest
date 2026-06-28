@@ -92,6 +92,8 @@ class ChunkingTrack(ParameterizedTrack):
         Param("delimiters", _to_str_tuple, default=None, help="punctuation-mode split delimiters"),
         Param("grow_factor", float, default=None, min=1, help="smart-mode growth factor (>= 1)"),
         Param("remainder_ratio", float, default=None, help="smart-mode remainder merge ratio (0, 1]"),
+        Param("hide_repeats", str, default=None,
+              help="label of a repeat layer (repeats_{label}) to excise before chunking (FR-16)"),
     )
 
     @property
@@ -156,6 +158,29 @@ class ChunkingTrack(ParameterizedTrack):
         h.update(b"\x00")
         h.update(analyzable_digest.encode("utf-8"))
         return h.hexdigest()[:16]
+
+    def view_mask_intervals(self, project: Project) -> list[Span]:
+        """Pre-chunk excision hook (FR-16), called by ``runner.extract_masked`` on the *original*
+        project before the analysis view is built. When ``hide_repeats`` names a repeat layer, return
+        that layer's original-coordinate intervals so they are excised from the text this run chunks;
+        the resulting chunk layer then content-addresses *distinctly* (its analyzable digest is over the
+        repeat-excised view) and coexists with the un-hidden chunking. Returns ``[]`` when
+        ``hide_repeats`` is unset, so an ordinary chunking run is unchanged.
+
+        Reuses the masking excise/remap substrate as-is (the intervals ride ``analysis_view``'s
+        ``extra_masked`` channel into ``Project.masked_intervals`` → ``_complement_spans`` → ``OffsetMap``)
+        — no new coordinate math, only this interval-injection plumbing."""
+        label = self.resolved_params().get("hide_repeats")
+        if not label:
+            return []
+        path = project.path / "signals" / f"repeats_{label}.json"
+        if not path.exists():
+            raise ValueError(
+                f"chunking: repeat layer 'repeats_{label}' not found at {path} — run the repeats "
+                "track first, or omit hide_repeats"
+            )
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return [(int(s), int(e)) for s, e in data.get("segment_offsets", [])]
 
     def extract(self, project: Project) -> Path:
         # On an analysis view, reference_text() is the masked-resolved analyzable stream; chunk spans

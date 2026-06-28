@@ -161,7 +161,7 @@ def test_analysis_view_threads_separator(tmp_path: Path, monkeypatch):
     full = project.reference_text()
     b = full.index("BBBB")
     # Mask an interior word so two kept spans flank it and a separator is actually inserted.
-    monkeypatch.setattr(project, "masked_intervals", lambda: [(b, b + 4)])
+    monkeypatch.setattr(project, "masked_intervals", lambda extra_masked=None: [(b, b + 4)])
 
     empty = project.analysis_view("")[0].reference_text()
     spaced_view, omap = project.analysis_view(" | ")

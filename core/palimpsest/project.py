@@ -271,7 +271,9 @@ class Project:
             self._verse_iv_cache = iv
         return iv
 
-    def masked_intervals(self) -> list[tuple[int, int]]:
+    def masked_intervals(
+        self, extra_masked: list[tuple[int, int]] | None = None
+    ) -> list[tuple[int, int]]:
         """Masked [start,end) ranges excluded from analysis (Step 4 masking).
 
         The masked set is the structural deepest-wins masking UNION the verse-number layer — the
@@ -279,6 +281,13 @@ class Project:
         the markers are structural noise, but is a runtime toggle: an on-demand override may set
         ``mask_verse_numbers: False`` to keep them. With structural masking also off this yields a
         fully unmasked run. Returns ``[]`` only when nothing is masked at all.
+
+        ``extra_masked`` is an optional list of caller-supplied original-coordinate intervals to
+        excise *in addition* to the structural + verse layers — the injection channel for a per-run
+        interval mask such as ``ChunkingTrack.hide_repeats`` (a repeat layer hidden before chunking,
+        FR-16). It is unioned into the same ``extra_masked`` channel ``layout.masked_intervals`` uses
+        for the verse layer, so it needs no new coordinate logic; with ``extra_masked=None`` the
+        result is byte-identical to before.
 
         Postcondition (the masking contract relied on by :func:`_complement_spans` and the
         OffsetMap): the returned intervals are sorted, mutually disjoint, merged, and each lies
@@ -297,9 +306,15 @@ class Project:
         # Verse-number masking defaults on; an explicit override toggle turns it off (R10).
         mask_verses = ov.get("mask_verse_numbers", True) if ov is not None else True
         verse_layer = self._verse_intervals() if mask_verses else []
-        # No structural masking (none configured, or toggled off) → verse-number layer only.
+        # The interval mask-layers unioned categorically (not structurally): verse-number tokens plus
+        # any caller-supplied intervals (e.g. a hidden repeat layer). layout.masked_intervals filters
+        # out-of-range spans and merges everything, so order/overlap among these is unconstrained.
+        extra = list(verse_layer)
+        if extra_masked:
+            extra.extend((int(s), int(e)) for s, e in extra_masked)
+        # No structural masking (none configured, or toggled off) → interval mask-layers only.
         if cfg is None or masking_off:
-            return masked_intervals([], {}, text_len, extra_masked=verse_layer)
+            return masked_intervals([], {}, text_len, extra_masked=extra)
         sections, mask_by_type = cfg.sections, cfg.mask_by_type
         if ov is not None:
             if ov.get("mask_by_type"):
@@ -309,9 +324,11 @@ class Project:
                 sections = [
                     dataclasses.replace(s, masked=sm[s.id]) if s.id in sm else s for s in cfg.sections
                 ]
-        return masked_intervals(sections, mask_by_type, text_len, extra_masked=verse_layer)
+        return masked_intervals(sections, mask_by_type, text_len, extra_masked=extra)
 
-    def analyzable_text(self, sep: str | None = None) -> tuple[str, Any]:
+    def analyzable_text(
+        self, sep: str | None = None, extra_masked: list[tuple[int, int]] | None = None
+    ) -> tuple[str, Any]:
         """The masked-resolved analyzable text plus an :class:`~palimpsest.derive.OffsetMap`.
 
         Every unmasked character span (the complement of :meth:`masked_intervals`) is concatenated
@@ -328,7 +345,7 @@ class Project:
         if sep is None:
             sep = ""  # pure excision — masked spans vanish "as if not there"; windows span the gap
         text = self.reference_text()
-        kept = _complement_spans(self.masked_intervals(), len(text))
+        kept = _complement_spans(self.masked_intervals(extra_masked), len(text))
         atext = assemble_text(text, kept, sep)
         omap = OffsetMap(kept, len(sep))
         if len(atext) != omap.child_len:
@@ -338,13 +355,19 @@ class Project:
             )
         return atext, omap
 
-    def analysis_view(self, sep: str | None = None) -> tuple[Project, Any]:
+    def analysis_view(
+        self, sep: str | None = None, extra_masked: list[tuple[int, int]] | None = None
+    ) -> tuple[Project, Any]:
         """A lightweight clone whose reference text IS the analyzable text, for running extractors
         against pre-masked content (they chunk it at their own runtime). Shares this project's path
         so results are written back to it; its own masked_intervals() is empty. A file-path
         extractor triggers lazy materialization of the analyzable text via ``reference_path()``;
-        call :meth:`close_analysis_view` afterwards to remove any temp file."""
-        atext, omap = self.analyzable_text(sep)
+        call :meth:`close_analysis_view` afterwards to remove any temp file.
+
+        ``extra_masked`` (original-coordinate intervals) is excised in addition to the structural +
+        verse masking before the view is built, so the view's text — and therefore its
+        ``analyzable_digest`` — reflects the hidden spans (e.g. ``ChunkingTrack.hide_repeats``)."""
+        atext, omap = self.analyzable_text(sep, extra_masked)
         view = Project(self.path, self.metadata)
         view._text_cache = atext
         view._pre_masked = True

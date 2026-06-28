@@ -60,7 +60,17 @@ def extract_masked(project: Any, extractor: Any, sep: str = "") -> Any:
         return extractor.extract(project)
     from palimpsest.derive import remap_result_annotations
 
-    view, omap = project.analysis_view(sep)
+    # Optional per-run pre-chunk masking: a track may declare additional original-coordinate intervals
+    # to hide before the analysis view is built, so the excised text drives extraction and the outputs
+    # remap around the gaps (e.g. ChunkingTrack.hide_repeats excises a repeat layer, FR-16). Generic
+    # tracks have no such hook and are unaffected. The view's analyzable_digest reflects the hidden
+    # spans, so a repeats-hidden layer is content-addressed distinctly with no special-casing.
+    extra_masked = None
+    hook = getattr(extractor, "view_mask_intervals", None)
+    if callable(hook):
+        extra_masked = hook(project) or None
+
+    view, omap = project.analysis_view(sep, extra_masked=extra_masked)
     try:
         result = extractor.extract(view)
     finally:
