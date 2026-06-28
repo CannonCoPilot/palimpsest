@@ -32,6 +32,15 @@ MASK_COVERAGE_THRESHOLD = 0.5          # fraction of a chunk's content covered b
 # document returns early), but kept so the n-gram ceiling has a defined value in every branch.
 _DEFAULT_CHUNK_SIZE = 7
 
+# Default n-gram ceiling for the text-level detection path (the ``repeats`` track), used in place of the
+# chunk-size-derived ceiling the chunk-based path takes. Mirrors self_similarity's DEFAULT_CHUNK_SIZE so
+# default-param detection considers the same phrase lengths.
+DEFAULT_MAX_PHRASE_LEN = 7
+
+# Whitespace-delimited token spans: the text-level path maps a repeated phrase back to character
+# intervals, which ``text.split()`` cannot do (it loses positions).
+_WORD_RE = re.compile(r"\S+")
+
 STOPWORDS = frozenset({
     "a", "an", "the", "and", "or", "but", "nor", "not", "no", "so", "as",
     "at", "by", "for", "from", "in", "into", "of", "on", "to", "up", "with",
@@ -48,6 +57,35 @@ STOPWORDS = frozenset({
     "thereof", "therein", "hereby", "thereby", "wherefore",
     "saith", "cometh", "goeth",
 })
+
+
+def _normalise(words: list[str]) -> list[str]:
+    """Lowercase + strip non-letter/apostrophe characters — the single normalisation both the
+    chunk-based and text-level paths apply before counting, so they can never diverge."""
+    return [re.sub(r"[^a-z']", "", w.lower()) for w in words]
+
+
+def _count_repeats(
+    normalised: list[str], min_words: int, min_occurrences: int, max_ngram: int
+) -> set[str]:
+    """The shared n-gram tally: every contiguous word sequence of length ``min_words..max_ngram`` that
+    occurs at least ``min_occurrences`` times across ``normalised``, skipping all-stopword grams. Both
+    :func:`find_exact_repeats` (chunk-based) and :func:`detect_repeats` (text-level) call this, so the
+    detection logic has one definition — the text-level path can never drift from what ``self_similarity``
+    finds inline."""
+    phrase_counts: dict[str, int] = {}
+    for n in range(min_words, max_ngram + 1):
+        for start in range(len(normalised) - n + 1):
+            gram = normalised[start:start + n]
+            # Skip n-grams that are entirely stopwords
+            if all(w in STOPWORDS or not w for w in gram):
+                continue
+            key = " ".join(gram)
+            if not key.strip():
+                continue
+            phrase_counts[key] = phrase_counts.get(key, 0) + 1
+
+    return {phrase for phrase, count in phrase_counts.items() if count >= min_occurrences}
 
 
 def find_exact_repeats(
@@ -74,24 +112,7 @@ def find_exact_repeats(
     chunk_size = len(chunks[0]["words"]) if chunks else _DEFAULT_CHUNK_SIZE
     max_ngram = min(chunk_size, len(all_words) // 2)
 
-    # Normalise words for comparison (lowercase, strip punctuation)
-    normalised = [re.sub(r"[^a-z']", "", w.lower()) for w in all_words]
-
-    # Count every n-gram of each length
-    phrase_counts: dict[str, int] = {}
-    for n in range(min_words, max_ngram + 1):
-        for start in range(len(normalised) - n + 1):
-            gram = normalised[start:start + n]
-            # Skip n-grams that are entirely stopwords
-            if all(w in STOPWORDS or not w for w in gram):
-                continue
-            key = " ".join(gram)
-            if not key.strip():
-                continue
-            phrase_counts[key] = phrase_counts.get(key, 0) + 1
-
-    repeats = {phrase for phrase, count in phrase_counts.items()
-               if count >= min_occurrences}
+    repeats = _count_repeats(_normalise(all_words), min_words, min_occurrences, max_ngram)
     logger.info(
         "Repeat masking: found %d phrases with >= %d occurrences",
         len(repeats), min_occurrences,
@@ -99,16 +120,82 @@ def find_exact_repeats(
     return repeats
 
 
+def detect_repeats(
+    text: str,
+    *,
+    min_words: int = EXACT_REPEAT_MIN_WORDS,
+    min_occurrences: int = EXACT_REPEAT_MIN_OCCURRENCES,
+    max_phrase_len: int = DEFAULT_MAX_PHRASE_LEN,
+) -> tuple[set[str], list[tuple[int, int]]]:
+    """Detect exact repeats directly from text — the chunk-independent entry point used by the
+    ``repeats`` track (FR-15). Tokenises ``text`` on whitespace (so detection does not depend on any
+    chunking), counts n-grams up to ``max_phrase_len`` with the same shared tally the chunk-based path
+    uses, and maps every occurrence of a repeated phrase back to its character interval in ``text``.
+
+    Returns ``(phrases, intervals)`` where ``phrases`` is the normalised repeated-phrase set and
+    ``intervals`` is the merged, ordered, disjoint list of ``(start, end)`` character spans covered by
+    those phrases — ready to become a signal layer's ``segment_offsets`` (analyzable coordinates,
+    remapped to original by the runner).
+
+    The ``min(max_phrase_len, token_count // 2)`` ceiling preserves the chunk-based path's cap, so at the
+    default ``max_phrase_len`` the considered phrase lengths match what ``self_similarity`` considers."""
+    tokens = list(_WORD_RE.finditer(text))
+    words = [t.group() for t in tokens]
+    if len(words) < min_words:
+        return set(), []
+
+    max_ngram = min(max_phrase_len, len(words) // 2)
+    normalised = _normalise(words)
+    phrases = _count_repeats(normalised, min_words, min_occurrences, max_ngram)
+    logger.info(
+        "Repeat detection: found %d phrases with >= %d occurrences",
+        len(phrases), min_occurrences,
+    )
+    if not phrases:
+        return phrases, []
+
+    # Map each phrase occurrence to the character span from its first token's start to its last token's
+    # end, then merge into ordered disjoint intervals.
+    phrase_token_lists = [p.split() for p in phrases]
+    spans: list[tuple[int, int]] = []
+    for phrase_tokens in phrase_token_lists:
+        plen = len(phrase_tokens)
+        for start in range(len(normalised) - plen + 1):
+            if normalised[start:start + plen] == phrase_tokens:
+                spans.append((tokens[start].start(), tokens[start + plen - 1].end()))
+    return phrases, _merge_spans(spans)
+
+
+def _merge_spans(spans: list[tuple[int, int]]) -> list[tuple[int, int]]:
+    """Merge overlapping/adjacent character spans into an ordered, disjoint interval list (the
+    partition shape ``_complement_spans`` and ``OffsetMap`` consume for excision/remap)."""
+    if not spans:
+        return []
+    ordered = sorted(spans)
+    merged: list[tuple[int, int]] = [ordered[0]]
+    for s, e in ordered[1:]:
+        last_s, last_e = merged[-1]
+        if s <= last_e:
+            merged[-1] = (last_s, max(last_e, e))
+        else:
+            merged.append((s, e))
+    return merged
+
+
 def mask_repeats(
     chunks: list[dict[str, Any]],
     repeats: set[str],
+    coverage_threshold: float = MASK_COVERAGE_THRESHOLD,
 ) -> list[dict[str, Any]]:
-    """Mark chunks where >50% of content words are covered by a repeated phrase.
+    """Mark chunks where more than ``coverage_threshold`` of content words are covered by a repeated
+    phrase.
 
     A content word is 'covered' if it belongs to any repeated n-gram that
     appears somewhere within the chunk's content-token sequence.  The function
     adds a ``masked`` key (True/False) to each chunk dict in-place and also
-    returns the list for convenience.
+    returns the list for convenience. ``coverage_threshold`` defaults to the module constant so a
+    positional ``mask_repeats(chunks, repeats)`` call (``self_similarity``) is byte-identical; the
+    ``repeat_mask`` track passes the user-tunable value.
     """
     if not repeats:
         for chunk in chunks:
@@ -139,7 +226,7 @@ def mask_repeats(
             1 for t, cov in zip(tokens, covered)
             if cov and t and t not in STOPWORDS and len(t) > 1
         )
-        chunk["masked"] = covered_content / len(content_tokens) > MASK_COVERAGE_THRESHOLD
+        chunk["masked"] = covered_content / len(content_tokens) > coverage_threshold
 
     masked_count = sum(1 for c in chunks if c.get("masked"))
     if masked_count:
