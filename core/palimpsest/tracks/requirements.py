@@ -21,13 +21,16 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Literal
 
-LayerKind = Literal["chunk", "embedding"]
+LayerKind = Literal["chunk", "embedding", "repeat-set"]
 
 # On-disk layer file prefix and the capability-descriptor field naming each layer's analyzable digest.
-_KIND_PREFIX: dict[str, str] = {"chunk": "chunking_", "embedding": "embedding_"}
+_KIND_PREFIX: dict[str, str] = {
+    "chunk": "chunking_", "embedding": "embedding_", "repeat-set": "repeats_",
+}
 _KIND_DIGEST_FIELD: dict[str, str] = {
     "chunk": "analyzable_digest",
     "embedding": "chunk_analyzable_digest",
+    "repeat-set": "analyzable_digest",
 }
 
 

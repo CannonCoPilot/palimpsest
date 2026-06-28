@@ -422,11 +422,11 @@ Needs P2's producible layers (FR-4) and the resolver (FR-7) — you cannot make 
 - Producibility/status (FR-4): both new tracks appear in `/analysis/status` with label + capability + stats + per-label provenance; plural repeat / mask layers coexist.
 
 ### Done criteria
-- [ ] `repeats` detection track runs text-level (no chunk dependency), persists the interval layer; detection params open + reported.
-- [ ] `ChunkingTrack.hide_repeats` produces a distinct, coordinate-correct repeats-hidden chunk layer reusing the masking excise/remap path (no new coordinate math; new interval-injection plumbing into `extra_masked`).
-- [ ] `repeat_mask` layer-track binds chunk + repeat layers via the resolver (fail-loud when absent) and persists a renderable, index-aligned per-chunk flag layer.
-- [ ] Masking constants are user-tunable `Param`s defaulting to 3/3/0.5; `self_similarity` byte-identical.
-- [ ] Full suite GREEN; committed as a small additive series (detection → hide-option → mask layer).
+- [x] `repeats` detection track runs text-level (no chunk dependency), persists the interval layer; detection params open + reported.
+- [x] `ChunkingTrack.hide_repeats` produces a distinct, coordinate-correct repeats-hidden chunk layer reusing the masking excise/remap path (no new coordinate math; new interval-injection plumbing into `extra_masked`).
+- [x] `repeat_mask` layer-track binds chunk + repeat layers via the resolver (fail-loud when absent) and persists a renderable, index-aligned per-chunk flag layer.
+- [x] Masking constants are user-tunable `Param`s defaulting to 3/3/0.5; `self_similarity` byte-identical.
+- [x] Full suite GREEN; committed as a small additive series (detection → hide-option → mask layer).
 
 ### Risks & mitigations
 - *Text-level detection diverges from the chunk-based path and silently changes `self_similarity`.* **Mitigation:** `self_similarity` keeps its existing chunk-based call; the text-level entry point is a *new* function used only by the track; a byte-identity guard gates the commit.
