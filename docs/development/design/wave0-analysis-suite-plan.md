@@ -9,7 +9,7 @@
 
 ## 0. How to read this plan
 
-This plan turns the Vision doc's requirements (FR-1…14, NFR-1…7) into seven sequenced phases. Each phase is scoped to be **independently landable, tested, and committed** — the project's established cadence (each substrate contract-lock piece was its own verified commit). For every phase:
+This plan turns the Vision doc's requirements (FR-1…17, NFR-1…7) into eight sequenced phases. Each phase is scoped to be **independently landable, tested, and committed** — the project's established cadence (each substrate contract-lock piece was its own verified commit). For every phase:
 
 - **Scope** — what it delivers, by FR/NFR id.
 - **Mechanism** — the concrete code, by `file:line`, that it touches or mirrors. No hand-waving: every new artifact rides an existing rail.
@@ -37,10 +37,11 @@ cd /Users/nathanielcannon/Claude/Projects/palimpsest \
 | **P5 — Suite shell + native plural layer-track rendering** | FR-11, **FR-13** | Frontend; data-driven plural rendering | (terminal) tracks visible in browser |
 | **P6 — Per-layer statistics, distributions & viz options** | **FR-14** | Frontend + chunk-stats endpoint | (terminal) stats/viz drill-in |
 | **P7 — self_similarity redesign (layer-consumer)** | embedding-agnostic, fail-loud similarity consumer; foundation for a *family* of similarity methods | Backend redesign (behavior-changing) | future similarity / NN / clustering analyses |
+| **P8 — Repeat detection + masking analysis** | FR-15, FR-16, FR-17 | New tracks + chunking option (additive); opens masking constants | P7's flag-only repeat consumption |
 
 > **Re-scope (2026-06-26).** P2 no longer migrates `self_similarity`. The original P2 folded a *byte-identical migration* of self_similarity into the structural work; review concluded that designed *to* the legacy monolith rather than *toward* the vision. P2 is now strictly the **layer infrastructure** (producer tracks + dependency resolver + producibility/status) — additive, no existing behavior changed. The self_similarity rework is promoted to its own phase **P7**, a *ground-up redesign* as an embedding-agnostic, fail-loud **layer consumer** (it does not run when no chunk/embedding layers exist, and does not dictate which embedding model is used), and the framing for a family of similarity methods (self-similarity matrix, NN graphs, clustering, …). Consequently **NFR-1 (byte-identical self_similarity) is retired** — a consumer redesign intentionally changes the workflow; the honest invariant is the weaker *same chunk layer + same embedding vectors → identical similarity math*.
 
-**Critical path:** P1 → P2 → {P3, P4, P7} → {P5, P6}. P1 is detachable (land anytime). P4's tracks are mutually independent and parallelizable once P2 lands. P7 (self_similarity redesign) needs P2's producible layers (FR-4) — you cannot make a consumer *fail-loud-requiring-layers* until users can produce those layers through the normal run flow and see them. P5 (rendering) and P6 (stats panels) both need P2's manifest backbone + P3's embedding data; they ship together as the user-facing surface. The two user commitments — *every chunk/embedding layer always renders as a track* (FR-13) and *every layer has quick-access stats/distributions/viz* (FR-14) — are carried by the P2 manifest backbone → P3 embedding data → P5/P6 UI chain.
+**Critical path:** P1 → P2 → {P3, P4, P8, P7} → {P5, P6}. P1 is detachable (land anytime). P4's tracks are mutually independent and parallelizable once P2 lands. P7 (self_similarity redesign) needs P2's producible layers (FR-4) — you cannot make a consumer *fail-loud-requiring-layers* until users can produce those layers through the normal run flow and see them. P8 (repeat detection + masking) is parallelizable post-P2 like P3/P4, and its `repeat_mask` layer is what makes P7's flag-only repeat consumption concrete, so P8 lands before (or with) P7's repeat step. P5 (rendering) and P6 (stats panels) both need P2's manifest backbone + P3's embedding data; they ship together as the user-facing surface. The two user commitments — *every chunk/embedding layer always renders as a track* (FR-13) and *every layer has quick-access stats/distributions/viz* (FR-14) — are carried by the P2 manifest backbone → P3 embedding data → P5/P6 UI chain.
 
 ---
 
@@ -97,7 +98,7 @@ Needs nothing. Unblocks nothing structurally, but **must precede P2** so the chu
 - **FR-2** — `ChunkingTrack` implements `TrackExtractor` (`output_type="signal"`), auto-discovered, runs through `_extract_masked`, persists `signals/chunking_{label}.json`.
 - **FR-3** — `EmbeddingTrack` (`output_type="signal"`, depends on a chunk layer) persists vectors to SQLite-vec + manifest. *(Repeat-masking is **not** a P2 sub-step of this track — see the note below.)*
 
-> **Repeat-masking deferred to a dedicated analysis (decision 2026-06-26).** P2 extracts the exact-repeat helpers into `tracks/repeats.py` so `self_similarity` shares one definition and a future analysis can reuse them — but it does **not** bolt a `repeat_mask` flag onto `EmbeddingTrack`. Repeat-masking is a complex analysis in its own right. The agreed near-term *semantics* is **flag-only** (embed every chunk; record a per-chunk `masked` flag + the repeat phrases for a consumer to honor — mirroring today's `self_similarity`, which embeds all chunks and skips masked ones only in the matrix). The full treatment — what masking *means* for an embedding, how it renders, how a consumer declares it — is promoted to its own to-be-designed analysis (late Wave 0 or first Wave 1), not a one-line track option.
+> **Repeat-masking deferred to a dedicated analysis (decision 2026-06-26).** P2 extracts the exact-repeat helpers into `tracks/repeats.py` so `self_similarity` shares one definition and a future analysis can reuse them — but it does **not** bolt a `repeat_mask` flag onto `EmbeddingTrack`. Repeat-masking is a complex analysis in its own right. The agreed near-term *semantics* is **flag-only** (embed every chunk; record a per-chunk `masked` flag + the repeat phrases for a consumer to honor — mirroring today's `self_similarity`, which embeds all chunks and skips masked ones only in the matrix). The full treatment — what masking *means* for an embedding, how it renders, how a consumer declares it — is promoted to its own phase, **P8** (now scoped below: a text-level `repeats` detection track, a `ChunkingTrack.hide_repeats` pre-chunk option, and a persisted `repeat_mask` flag layer), not a one-line track option.
 - **FR-4/FR-5 (producibility + status)** — layer tracks are runnable through the normal HTTP/CLI run flow with their params, and plural label-keyed layers appear in `/analysis/status` each with its label + capability + stats + per-label provenance. This is the prerequisite that lets a future consumer (P7) *require* layers and fail loud when they are absent.
 - **FR-6** — capability descriptor in each manifest.
 - **FR-7** — dependency-check resolver (`resolve_layers`): the compatibility binding a downstream consumer declares against (sole-survivor / newest / fail-loud). Additive; no track is migrated onto it in P2 (the first real consumer, the redesigned self_similarity, lands in **P7**).
@@ -368,7 +369,7 @@ Needs P2 (`stats` summary block), P3 (embedding distributions), and P5 (the shel
 - **A family, not a singleton.** The redesign factors the similarity computation behind a method interface so self-similarity-matrix, NN-graph, and clustering variants are siblings sharing the same layer-consumption contract.
 
 ### Mechanism
-- Add `layer_requirements` to the `self_similarity` track and call `resolve_layers` (`tracks/requirements.py`) in its `extract`, replacing the inline `_get_chunks`/`_embed_chunks` path (`self_similarity.py:1138`/`:875`). The exact-repeat masking it relies on is, as of P2, a shared helper (`tracks/repeats.py`, imported back into `self_similarity`); how the redesigned consumer — or the dedicated repeat-masking analysis it depends on — applies it is settled as part of that analysis's design (flag-only baseline, see P2's repeat-masking note).
+- Add `layer_requirements` to the `self_similarity` track and call `resolve_layers` (`tracks/requirements.py`) in its `extract`, replacing the inline `_get_chunks`/`_embed_chunks` path (`self_similarity.py:1138`/`:875`). The exact-repeat masking it relies on is, as of P2, a shared helper (`tracks/repeats.py`, imported back into `self_similarity`); the redesigned consumer honors the `repeat_mask` layer **P8** produces (flag-only: skip the masked chunks) instead of running the inline masking pass — so P7's repeat handling consumes P8's layer rather than re-deriving it.
 - The similarity matrix math itself is preserved as one method implementation; the change is *where its inputs come from* (bound layers vs. inline computation), plus the method-interface factoring.
 
 ### Tests
@@ -388,6 +389,53 @@ Needs P2 (`stats` summary block), P3 (embedding distributions), and P5 (the shel
 
 ### Sequencing
 Needs P2's producible layers (FR-4) and the resolver (FR-7) — you cannot make a consumer *require* layers until users can produce them through the normal run flow. Independent of the P3–P6 user-facing surface; can land in parallel with them once P2 is in.
+
+---
+
+## P8 — Repeat detection + masking analysis
+
+> **Repeat structure as a first-class, semi-independent analysis.** Promotes the exact-repeat logic — today buried in `self_similarity` (`self_similarity.py:1046`) and merely *extracted* to `tracks/repeats.py` in P2 — into a real analysis. Per the 2026-06-28 scoping, detection is **decoupled from chunking** (text-level, order-independent) and masking is a **consumer policy** applied two ways: hide repeats *before* chunking, or flag repeat-dominated chunks *after*. Flag-only throughout — the analysis records the mask; it never silently mutates a downstream result.
+
+### Scope
+- **FR-15** — `repeats` detection track (text-level, `depends_on=[]`): persists `signals/repeats_{label}.json` (repeat intervals + phrases), with open detection params.
+- **FR-16** — `ChunkingTrack.hide_repeats`: optional pre-chunk excision of a named repeat layer, reusing the masking-excision substrate.
+- **FR-17** — `repeat_mask` layer-track: post-chunk per-chunk flag layer (depends on a chunk layer + a repeat layer via the resolver), renderable + stats'd.
+- **Open the masking constants (G2).** `min_words` / `min_occurrences` / `coverage_threshold` move from LOCKED in `repeats.py` (`repeats.py:27-29`) to user-tunable `Param`s, defaulting to 3 / 3 / 0.5 so `self_similarity` stays byte-identical.
+
+### Mechanism
+- **Decouple detection from chunks.** `find_exact_repeats` currently takes `chunks` only to build the word list and derive an n-gram ceiling from `chunk_size` (`repeats.py:69-75`). Add a text-level entry point that tokenizes the analyzable text directly and takes an explicit `max_phrase_len` param in place of the chunk-size ceiling — preserving the existing `min(max_phrase_len, token_count // 2)` cap (`repeats.py:75`) so behavior is unchanged at the default. `self_similarity` keeps calling the existing chunk-based path unchanged (`self_similarity.py:1046`) — its inline masking is byte-identical; only the new track uses the text-level path.
+- **`repeats` track** (`tracks/repeat_track.py`): `ParameterizedTrack`, `output_type="signal"`, `depends_on=[]`, `layer_keyed=True` — structurally a sibling of `ChunkingTrack` (`tracks/chunking_track.py`). `extract(project)` runs on the analyzable view (so `runner.extract_masked` masks + remaps), maps each detected phrase to its character intervals, and writes a `SignalManifest` whose `segment_offsets` are the repeat intervals (analyzable → original after remap, G4) and whose `metadata` carries the phrases/counts, a `capability` (`{kind:"repeat-set", min_words, min_occurrences, max_phrase_len, analyzable_digest}`), a `rendering` (`{track_view:"repeat-band"}`), and a `stats` block (`{phrase_count, interval_count, coverage_pct}`). Label = `sha256(detection-params + analyzable_digest)[:16]`, mirroring `ChunkingTrack._label` (`chunking_track.py:148`).
+- **Pre-chunk hiding (FR-16).** Add a `hide_repeats` param to `ChunkingTrack`. When set to a repeat label, `extract` loads that repeat layer's (original-coordinate) intervals and unions them into the project's excised set for this run. The excise/remap substrate is reused as-is — `Project.masked_intervals(extra_masked=…)` (`project.py:274`; `layout.py:319-373`) unions arbitrary flat disjoint spans, and `_complement_spans` + `OffsetMap` excise + remap them (`project.py:314`/`:341`) — so there is **no new coordinate math**. It does need new *plumbing*, though: today the `extra_masked` channel is hardwired to the verse layer (`project.py:299`) with no path for caller-supplied intervals, so P8 adds one — either an interval field on the per-run mask override (`set_mask_override`, `project.py:198`/`server.py:1016`, whose `MaskOverrideRequest` is today per-type/per-section toggles only) plus a branch in `masked_intervals`, or a dedicated `ChunkingTrack` hook that unions the repeat intervals into `extra_masked`. Because the run then chunks a repeat-excised view, its `analyzable_digest` (already in the label, `chunking_track.py:171`/`:189`) differs automatically, so the repeats-hidden chunk layer is a *distinct* content-addressed layer coexisting with the un-hidden one — no special label-casing. Embedding inherits hiding for free (it embeds whatever chunk layer it is bound to). `hide_repeats` is recorded in provenance params.
+- **Post-chunk mask layer (FR-17).** A `repeat_mask` track (`tracks/repeat_mask_track.py`) declaring `layer_requirements = [chunk{...}, repeat-set{...}]`, resolved by `resolve_layers` (`tracks/requirements.py`, P2/FR-7). `extract` reads the bound chunk layer's `chunk_texts` + the bound repeat layer's phrases, runs `mask_repeats` (`repeats.py:102`) at the resolved `coverage_threshold`, and persists `signals/repeat_mask_{chunk_label}_{repeat_label}.json`: per-chunk `masked` booleans index-aligned to the chunk layer, a `rendering` (`{track_view:"chunk-band", shade:"masked"}`), and a `stats` (`{masked_count, masked_ratio, phrase_count}`). It is a signal-consumer (non-underscore requirements), so it runs on the bound layers' already-original coordinates — no remap. Per-label provenance + status enumeration ride the FR-4 rails already built in P2 (`_layer_status_entries`, `runner.provenance_name`).
+
+### New artifacts
+- `tracks/repeat_track.py` (detection), `tracks/repeat_mask_track.py` (post-chunk flag).
+- `tracks/repeats.py`: a text-level `find_exact_repeats` entry point + the three constants promoted to track `Param`s (defaults unchanged).
+- `tracks/chunking_track.py`: `hide_repeats` param + the new interval-injection plumbing into `extra_masked` (no label change needed — the excised-view digest carries it).
+- Tests: `test_repeat_track.py`, `test_repeat_mask_track.py`, `test_chunk_hide_repeats.py`, plus a `self_similarity` byte-identity guard.
+
+### Tests
+- Detection: deterministic repeat set on a fixture with planted refrains; intervals in-bounds + remapped to original coords; open params change the result and are recorded in provenance; default params reproduce the phrases `self_similarity` finds today.
+- Pre-chunk hiding: a chunk layer produced with `hide_repeats=<label>` excludes the repeated passages (its `chunk_texts` contain none of the repeat phrases) and is coordinate-correct (chunk spans map to the un-repeated original text); its label differs from the un-hidden chunking; both coexist.
+- Post-chunk mask: `repeat_mask` over a chunk + repeat layer flags the same chunks `self_similarity`'s inline pass flags at the default threshold; the layer is index-aligned to the chunk layer (`len(masked) == chunk count`); the resolver fails loud if the repeat layer is absent.
+- **`self_similarity` byte-identical:** its existing suite stays green — the now-`Param` constants default to the prior LOCKED values and its inline chunk-based path is untouched.
+- Producibility/status (FR-4): both new tracks appear in `/analysis/status` with label + capability + stats + per-label provenance; plural repeat / mask layers coexist.
+
+### Done criteria
+- [ ] `repeats` detection track runs text-level (no chunk dependency), persists the interval layer; detection params open + reported.
+- [ ] `ChunkingTrack.hide_repeats` produces a distinct, coordinate-correct repeats-hidden chunk layer reusing the masking excise/remap path (no new coordinate math; new interval-injection plumbing into `extra_masked`).
+- [ ] `repeat_mask` layer-track binds chunk + repeat layers via the resolver (fail-loud when absent) and persists a renderable, index-aligned per-chunk flag layer.
+- [ ] Masking constants are user-tunable `Param`s defaulting to 3/3/0.5; `self_similarity` byte-identical.
+- [ ] Full suite GREEN; committed as a small additive series (detection → hide-option → mask layer).
+
+### Risks & mitigations
+- *Text-level detection diverges from the chunk-based path and silently changes `self_similarity`.* **Mitigation:** `self_similarity` keeps its existing chunk-based call; the text-level entry point is a *new* function used only by the track; a byte-identity guard gates the commit.
+- *Pre-chunk hiding re-implements excision instead of reusing it (coordinate risk).* **Mitigation:** union the repeat intervals into `extra_masked` and reuse `_complement_spans`/`OffsetMap` — the exact excise/remap path content-masking uses (new plumbing only, no new coordinate math); a test asserts hidden chunk spans round-trip to original coords (the G4 invariant).
+- *`repeat_mask` index drift against its chunk layer.* **Mitigation:** the mask is keyed to `chunk_label` and index-aligned; a test asserts `len(masked) == chunk count` and per-index correspondence.
+- *Opening the masking constants subtly shifts `self_similarity` defaults.* **Mitigation:** the `Param` defaults are exactly the prior LOCKED values; the byte-identity guard fails on any drift.
+
+### Sequencing
+Needs **P2** (the resolver FR-7 for `repeat_mask`'s requirements, the FR-4 producibility/status rails, and the `tracks/repeats.py` extraction). Independent of P3–P6. **Unblocks P7's repeat handling:** the redesigned `self_similarity` consumes the `repeat_mask` layer (flag-only: skip the masked chunks) instead of masking inline — so P8's mask layer is what makes P7's repeat consumption concrete. Parallelizable with P3/P4 post-P2; should land before (or with) P7's repeat step.
 
 ---
 
@@ -429,6 +477,9 @@ Needs P2's producible layers (FR-4) and the resolver (FR-7) — you cannot make 
 | O(N²) heatmap / pairwise-distance blow-up at high chunk counts | P3/P6 | Med | Block-reduce heatmap + sample pairwise with **logged** sample size (no silent cap); NN-distance (O(N·k)) is the scalable default view |
 | Per-layer stats duplicate text-level ProfileTrack | P6 | Low | Layer stats compute over `segment_offsets` (a *layer*), distinct from ProfileTrack over the *whole text*; share tokenization helpers, not endpoints |
 | Embedding cost surprises user | P3/P5 | Low | NFR-4 mandatory pre-run estimate; never auto-run embedding |
+| Text-level repeat detection diverges from the chunk-based path, silently changing `self_similarity` | P8 | Med | `self_similarity` keeps its chunk-based call; text-level entry point is new + track-only; byte-identity guard gates the commit |
+| Pre-chunk hiding re-implements excision (coordinate risk) | P8 | Med | Union repeat intervals into `extra_masked`; reuse `_complement_spans`/`OffsetMap` — the exact content-masking excise/remap path (new plumbing only, no new coordinate math); test asserts hidden chunk spans round-trip to original coords (G4) |
+| Opening the masking constants shifts `self_similarity` defaults | P8 | Low | `Param` defaults are the prior LOCKED values (3/3/0.5); byte-identity guard fails on any drift |
 
 ---
 
@@ -444,6 +495,8 @@ P2 (layer-tracks + capability/RENDER/STATS descriptors + resolver — additive i
         │                   │
         ├──────────► P4 (profile / integrity / dispersion + KWIC — parallelizable)
         │                   │
+        ├──────────► P8 (repeat detection + hide-option + repeat_mask layer) ──► feeds P7's repeat step
+        │                   │
         ├──────────► P7 (self_similarity redesign: fail-loud, embedding-agnostic layer consumer)
         │                   │
         └─────────┬─────────┴────► P5 (suite shell + native PLURAL layer-track rendering · FR-13)
@@ -453,7 +506,7 @@ P2 (layer-tracks + capability/RENDER/STATS descriptors + resolver — additive i
 
 - **P1** is a pure correctness no-regret; ship it first and alone if desired.
 - **P2** is the linchpin; everything else reuses its layer-track + resolver pattern, and it now also carries the **render + stats manifest backbone** that makes P5 plural-rendering and P6 instant-stats possible. It is purely additive. Internal commits: track skeletons → resolver → producibility/status (each green). `self_similarity` is **not** touched in P2 — its redesign is **P7**.
-- **P3, P4, and P7 are independent** of each other and parallelizable post-P2.
+- **P3, P4, P8, and P7 are independent** of each other and parallelizable post-P2 — except that **P8's `repeat_mask` layer feeds P7's repeat handling**, so P8 lands before (or with) P7's repeat step. P8 is purely additive (new `repeats` + `repeat_mask` tracks + a `ChunkingTrack.hide_repeats` option); it opens the masking constants but defaults them to today's values, so `self_similarity` stays byte-identical.
 - **P5 + P6 are the terminal user-facing pair.** P5 makes *every* chunk/embedding layer render as a browser track (FR-13, plural-safe); P6 adds the stats/distribution/visualization drill-in (FR-14). Both need P2's backbone + P3's embedding data; P6 additionally needs P5's shell + layer manager to launch from.
 
 ### Open questions carried from the Vision doc
