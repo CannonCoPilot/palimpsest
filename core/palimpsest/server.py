@@ -12,7 +12,7 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
+from fastapi.responses import FileResponse, JSONResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -215,6 +215,44 @@ def _layer_status_entries(project_dir: Path, name: str) -> list[dict[str, Any]]:
             entry["runInfo"] = run_info
         entries.append(entry)
     return entries
+
+
+def _embedding_db_path(project_dir: Path, label: str) -> Path:
+    """Resolve a content-addressed embedding label to its vector DB, validating the label first.
+
+    The label is a hex digest (``EmbeddingTrack._label`` → ``sha256(...)[:16]``); validating it as hex
+    before building the path forecloses traversal (``../``) and keeps the route a pure lookup. Missing
+    layer → 404, not a guess."""
+    import re as _re
+    if not _re.fullmatch(r"[0-9a-f]{6,64}", label):
+        raise HTTPException(status_code=400, detail=f"invalid embedding label: {label!r}")
+    db = project_dir / "cache" / f"embeddings_{label}.db"
+    if not db.exists():
+        raise HTTPException(status_code=404, detail=f"embedding layer {label!r} not found")
+    return db
+
+
+def _load_embedding_vectors(project_dir: Path, label: str) -> Any:
+    """Load all vectors of an embedding layer as an ``(n, dim)`` float32 array, in chunk order.
+
+    ``get_all_vectors()`` returns insertion (= chunk) order, so row *i* is chunk *i* — the alignment the
+    P3 analytics and the frontend's by-index join both depend on."""
+    import numpy as np
+
+    from palimpsest.vectorstore.sqlite_vec import SqliteVecStore
+
+    store = SqliteVecStore.open_existing(_embedding_db_path(project_dir, label))
+    try:
+        vectors = store.get_all_vectors()
+    finally:
+        store.close()
+    return np.array(vectors, dtype=np.float32)
+
+
+def _f32_le_bytes(arr: Any) -> bytes:
+    """Serialize a numpy array to little-endian float32 bytes (C order) — the DotplotView ``.bin``
+    wire contract every binary embedding endpoint shares, so the frontend reuses one fetch path."""
+    return arr.astype("<f4").tobytes()
 
 
 def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
@@ -1371,6 +1409,156 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         asyncio.create_task(run())
         return JSONResponse(content={"status": "started", "dim": dim})
+
+    # ---- P3: embedding-as-analysis + visualization suite (FR-3/6/13/14, NFR-4) ----------------------
+    # On-read semantic-space toolkit over a persisted embedding layer (cache/embeddings_{label}.db).
+    # Every binary endpoint emits the DotplotView wire contract (little-endian Float32Array, C order);
+    # N comes from the embedding manifest's dimensions, so the frontend reuses one fetch path. All
+    # compute is deterministic and numpy-only (palimpsest.vectorstore.analytics) — nothing here calls an
+    # embedding service or persists a new artifact.
+
+    # Rough local-embedding throughput (chunks/sec) for the pre-run estimate only. Deliberately
+    # conservative and provider-agnostic — the estimate is a guard against surprise cost (NFR-4), not a
+    # benchmark; the response says so.
+    _EST_CHUNKS_PER_SEC = 40.0
+
+    @app.get("/api/projects/{project_id}/embedding/estimate")
+    async def embedding_estimate(project_id: str, chunk_label: str = Query(...)) -> JSONResponse:
+        """Pre-run cost estimate (NFR-4): chunk_count → vector_count → rough wall-time, read from the
+        *chunk* layer before any embedding exists. Embedding never auto-runs; this is the confirmation
+        the param dialog shows first. Keyed by chunk_label (not an embedding label) because the
+        embedding layer it would produce does not exist yet — a deliberate deviation from the plan's
+        literal ``/embedding/{label}/estimate`` path, which cannot apply before the run."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        chunk_path = project_dir / "signals" / f"chunking_{chunk_label}.json"
+        if not chunk_path.exists():
+            raise HTTPException(
+                status_code=404, detail=f"chunk layer 'chunking_{chunk_label}' not found"
+            )
+        manifest = json.loads(chunk_path.read_text())
+        chunk_texts = manifest.get("metadata", {}).get("chunk_texts", [])
+        n = len(chunk_texts)
+        return JSONResponse(content={
+            "chunk_label": chunk_label,
+            "chunk_count": n,
+            "vector_count": n,
+            "total_chars": sum(len(t) for t in chunk_texts),
+            "estimated_seconds": round(n / _EST_CHUNKS_PER_SEC, 1),
+            "note": "rough estimate; actual time depends on provider, model, and batch size",
+        })
+
+    @app.get("/api/projects/{project_id}/embedding/{label}/projection")
+    async def embedding_projection(
+        project_id: str, label: str, method: str = Query("pca")
+    ) -> Response:
+        """2-D projection of the embedding layer → N×2 little-endian Float32Array. PCA (numpy,
+        deterministic, zero new deps) is the only method; UMAP is deferred to Vision OQ#4 and rejected
+        loudly rather than silently substituted."""
+        if method != "pca":
+            raise HTTPException(
+                status_code=400,
+                detail=f"projection method {method!r} unsupported; only 'pca' (UMAP deferred, OQ#4)",
+            )
+        from palimpsest.vectorstore import analytics
+        project_dir = _safe_project_dir(workspace, project_id)
+        coords = analytics.pca_projection(_load_embedding_vectors(project_dir, label), 2)
+        return Response(content=_f32_le_bytes(coords), media_type="application/octet-stream")
+
+    @app.get("/api/projects/{project_id}/embedding/{label}/distances")
+    async def embedding_distances(
+        project_id: str, label: str, kind: str = Query("nn"), bins: int = Query(50, ge=1, le=500)
+    ) -> JSONResponse:
+        """Cosine-distance histogram (fixed range [0,2]). ``nn`` (each chunk's nearest-neighbour
+        distance, O(N²) scan, scalable) or ``pairwise`` (all pairs, sampled above the budget). When
+        sampled, ``sampled_pairs`` < ``total_pairs`` reports the realised count — no silent cap."""
+        if kind not in ("pairwise", "nn"):
+            raise HTTPException(status_code=400, detail=f"distance kind {kind!r} must be pairwise|nn")
+        from palimpsest.vectorstore import analytics
+        project_dir = _safe_project_dir(workspace, project_id)
+        vectors = _load_embedding_vectors(project_dir, label)
+        n = int(vectors.shape[0])
+        if kind == "pairwise":
+            edges, counts, sampled = analytics.pairwise_distance_histogram(vectors, bins=bins)
+            total = n * (n - 1) // 2
+            if sampled < total:
+                logger.info("embedding distances: sampled %d of %d pairs for layer %s",
+                            sampled, total, label)
+            return JSONResponse(content={
+                "kind": "pairwise", "bins": bins, "edges": edges.tolist(),
+                "counts": counts.tolist(), "sampled_pairs": int(sampled), "total_pairs": total,
+            })
+        edges, counts, count = analytics.nn_distance_histogram(vectors, bins=bins)
+        return JSONResponse(content={
+            "kind": "nn", "bins": bins, "edges": edges.tolist(),
+            "counts": counts.tolist(), "count": int(count),
+        })
+
+    @app.get("/api/projects/{project_id}/embedding/{label}/heatmap")
+    async def embedding_heatmap(
+        project_id: str, label: str, order: str = Query("chunk"),
+        k: int = Query(8, ge=1, le=256), seed: int = Query(0),
+    ) -> Response:
+        """Cosine-similarity matrix → little-endian Float32Array (C order). ``order=chunk`` keeps chunk
+        order; ``order=cluster`` permutes rows/cols by k-means cluster (returned in ``X-Matrix-Order``
+        so the frontend can map cells back to chunks). Above analytics.HEATMAP_MAX_N the matrix is
+        block-reduced (``X-Matrix-Reduced: 1``); cluster order is not applied to a reduced matrix
+        because reduced cells are index-blocks, not chunks. ``X-Matrix-N`` is the served dimension."""
+        if order not in ("chunk", "cluster"):
+            raise HTTPException(status_code=400, detail=f"heatmap order {order!r} must be chunk|cluster")
+        import numpy as np
+
+        from palimpsest.vectorstore import analytics
+        project_dir = _safe_project_dir(workspace, project_id)
+        vectors = _load_embedding_vectors(project_dir, label)
+        n = int(vectors.shape[0])
+        order_arr = None
+        if order == "cluster" and n <= analytics.HEATMAP_MAX_N:
+            labels, _ = analytics.kmeans(vectors, k, seed=seed)
+            order_arr = np.argsort(labels, kind="stable")
+        matrix, served_order = analytics.similarity_matrix(vectors, order=order_arr)
+        headers = {
+            "X-Matrix-N": str(matrix.shape[0]),
+            "X-Matrix-Reduced": "1" if matrix.shape[0] < n else "0",
+        }
+        if served_order is not None:
+            headers["X-Matrix-Order"] = ",".join(map(str, served_order.tolist()))
+        return Response(
+            content=_f32_le_bytes(matrix), media_type="application/octet-stream", headers=headers,
+        )
+
+    @app.get("/api/projects/{project_id}/embedding/{label}/clusters")
+    async def embedding_clusters(
+        project_id: str, label: str, k: int = Query(8, ge=1, le=256), seed: int = Query(0),
+    ) -> JSONResponse:
+        """k-means cluster id per chunk (chunk order) + cluster sizes. ``k`` is clamped to the chunk
+        count; ``effective_k`` reports the realised cluster count vs the requested ``k``. Deterministic
+        for a given seed (LOCK policy: seed is an explicit param, not hidden)."""
+        from palimpsest.vectorstore import analytics
+        project_dir = _safe_project_dir(workspace, project_id)
+        labels, sizes = analytics.kmeans(_load_embedding_vectors(project_dir, label), k, seed=seed)
+        return JSONResponse(content={
+            "requested_k": k, "effective_k": len(sizes), "seed": seed,
+            "labels": labels.tolist(), "sizes": sizes,
+        })
+
+    @app.get("/api/projects/{project_id}/embedding/{label}/lane")
+    async def embedding_lane(
+        project_id: str, label: str, encoding: str = Query("nn-density"),
+        k: int = Query(8, ge=1, le=256), seed: int = Query(0),
+    ) -> Response:
+        """In-text embedding-lane scalar per chunk (FR-13) → little-endian Float32Array, chunk order.
+        ``pc1`` (first PC), ``cluster`` (k-means id), or ``nn-density`` (inverse nearest-neighbour
+        distance)."""
+        if encoding not in ("cluster", "pc1", "nn-density"):
+            raise HTTPException(
+                status_code=400, detail=f"lane encoding {encoding!r} must be cluster|pc1|nn-density"
+            )
+        from palimpsest.vectorstore import analytics
+        project_dir = _safe_project_dir(workspace, project_id)
+        lane = analytics.lane_encoding(
+            _load_embedding_vectors(project_dir, label), encoding, k=k, seed=seed
+        )
+        return Response(content=_f32_le_bytes(lane), media_type="application/octet-stream")
 
     async def _ingest_and_compute(
         src_path: Path, title: str, author: str, year: int, overwrite: bool = False,

@@ -68,6 +68,12 @@ class EmbeddingTrack(ParameterizedTrack):
         Param("embed_endpoint", str, required=True, help="embedding service base URL"),
         Param("embed_model", str, required=True, help="embedding model name or server alias"),
         Param("embed_batch_size", int, default=32, min=1, help="texts per embedding request"),
+        # Optional standalone-analysis filter (FR-3 "filtered embedding"): a case-insensitive substring;
+        # only chunks whose text contains it are embedded. Structural filters (book/chapter/element-type)
+        # are deferred — the chunk layer carries only chunk_texts + offsets, not per-chunk structural
+        # tags, so those need a sections-track join that does not exist yet (P4/later).
+        Param("embed_filter", str, default=None,
+              help="optional case-insensitive substring; embed only chunks containing it"),
     )
 
     @property
@@ -159,6 +165,23 @@ class EmbeddingTrack(ParameterizedTrack):
         segment_offsets = chunk_manifest.get("segment_offsets", [])
         chunk_digest = chunk_manifest["metadata"]["capability"].get("analyzable_digest")
 
+        # Filtered embedding (FR-3): embed only the chunk subset matching the query. The resulting layer
+        # is a standalone-analysis artifact — its content-addressed label differs from the full layer's
+        # (fewer texts → different digest), so it never collides with or masquerades as the full
+        # embedding, and an empty match fails loud rather than embedding nothing.
+        embed_filter = p.get("embed_filter")
+        source_count = len(chunk_texts)
+        if embed_filter:
+            needle = embed_filter.casefold()
+            kept = [i for i, t in enumerate(chunk_texts) if needle in t.casefold()]
+            if not kept:
+                raise ValueError(
+                    f"embedding: filter {embed_filter!r} matched no chunks in "
+                    f"'chunking_{chunk_label}' ({source_count} chunks)"
+                )
+            chunk_texts = [chunk_texts[i] for i in kept]
+            segment_offsets = [segment_offsets[i] for i in kept] if segment_offsets else []
+
         config = self._config()
         label = self._label(config, chunk_texts)
         vectors = self._embed(project, chunk_texts, label, config)
@@ -176,11 +199,17 @@ class EmbeddingTrack(ParameterizedTrack):
             "model": config.model,
             "dim": dim,
             "model_fingerprint": model_fingerprint,
+            # Provenance for the standalone-analysis filter: None for a full embedding; the query string
+            # plus the parent chunk count when a subset was embedded (so the layer is self-describing).
+            "filter": embed_filter or None,
+            "source_chunk_count": source_count,
         }
         rendering = {
             "track_view": "embedding-lane",
             "encoding": "nn-density",
-            "projection_ref": None,  # 2-D scatter projection is produced in P3
+            # FR-13: the 2-D scatter is computed on-read by the P3 projection endpoint (deterministic,
+            # not persisted), so the render descriptor points at that route rather than a file.
+            "projection_ref": f"/api/projects/{project.metadata.id}/embedding/{label}/projection",
         }
         stats = {
             "count": len(chunk_texts),
