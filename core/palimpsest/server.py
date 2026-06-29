@@ -255,6 +255,32 @@ def _f32_le_bytes(arr: Any) -> bytes:
     return arr.astype("<f4").tobytes()
 
 
+def _analysis_text(project_dir: Path) -> tuple[int, str, Any]:
+    """Original text length, the masked-resolved analyzable text, and its OffsetMap (analyzable→
+    original via ``inverse_span``). The P4 lexical endpoints compute on the analyzable text — so
+    structural noise and verse numbers are excluded — then remap hit spans back to original
+    coordinates for rendering against the source document."""
+    from palimpsest.project import Project
+
+    project = Project.load(project_dir)
+    orig_len = len(project.reference_text())
+    view, omap = project.analysis_view()
+    return orig_len, view.reference_text(), omap
+
+
+def _term_spans_original(term: str, atext: str, omap: Any) -> list[list[int]]:
+    """Whole-word, case-insensitive occurrences of ``term`` in the analyzable text, each remapped to
+    its original-coordinate ``[start, end]``. Occurrences that map cleanly are kept in document order;
+    a span with no original pre-image (entirely inside an excised gap) is dropped."""
+    import re as _re
+    spans: list[list[int]] = []
+    for m in _re.finditer(rf"\b{_re.escape(term)}\b", atext, _re.IGNORECASE):
+        mapped = omap.inverse_span(m.start(), m.end())
+        if mapped is not None:
+            spans.append([mapped[0], mapped[1]])
+    return spans
+
+
 def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
     """Remap stored annotation tracks analyzable→original (structural tracks are left untouched)."""
     from palimpsest.derive import inverse_remap_annotation_dicts
@@ -1559,6 +1585,106 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             _load_embedding_vectors(project_dir, label), encoding, k=k, seed=seed
         )
         return Response(content=_f32_le_bytes(lane), media_type="application/octet-stream")
+
+    # ---- P4: substrate integrity report (FR-9) -----------------------------------------------------
+    @app.get("/api/projects/{project_id}/integrity")
+    async def integrity_report(project_id: str) -> JSONResponse:
+        """Run the substrate contract validators and report pass/violation/na per invariant. Reuses the
+        exact validator functions the producers call (no re-implementation), so the report cannot drift
+        from the real contract."""
+        from palimpsest.analysis.integrity import run_integrity_report
+        from palimpsest.project import Project
+
+        project = Project.load(_safe_project_dir(workspace, project_id))
+        return JSONResponse(content=run_integrity_report(project))
+
+    # ---- P4: positional/lexical analytics (FR-10) --------------------------------------------------
+    # Transient query endpoints (KWIC / collocations / duplicate-finder) + dispersion. All compute on
+    # the analyzable view and return original-coordinate spans; none persist a layer (nothing downstream
+    # depends on them). NOTE: the plan also specifies dispersion as a persisted layer-keyed *annotation*
+    # track (a lexical barcode). That is deferred — label-keyed annotation persistence needs new runner
+    # plumbing, and the barcode render is a P5 concern. The dispersion endpoint here returns the same
+    # hit-span data a barcode would render, so P5 is unblocked.
+
+    @app.get("/api/projects/{project_id}/kwic")
+    async def kwic(
+        project_id: str, term: str = Query(..., min_length=1),
+        window: int = Query(40, ge=0, le=500), limit: int = Query(200, ge=1, le=2000),
+    ) -> JSONResponse:
+        """Keyword-in-context concordance: whole-word, case-insensitive occurrences of ``term`` with
+        ``window`` characters of surrounding context. ``start``/``end`` are original coordinates; the
+        ``left``/``keyword``/``right`` context strings come from the analyzable text. ``total`` reports
+        the full match count even when ``limit`` truncates the returned rows (no silent cap)."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        _, atext, omap = _analysis_text(project_dir)
+        import re as _re
+        rows: list[dict[str, Any]] = []
+        total = 0
+        for m in _re.finditer(rf"\b{_re.escape(term)}\b", atext, _re.IGNORECASE):
+            total += 1
+            if len(rows) >= limit:
+                continue
+            mapped = omap.inverse_span(m.start(), m.end())
+            if mapped is None:
+                continue
+            rows.append({
+                "start": mapped[0], "end": mapped[1],
+                "left": atext[max(0, m.start() - window):m.start()],
+                "keyword": m.group(),
+                "right": atext[m.end():m.end() + window],
+            })
+        return JSONResponse(content={"term": term, "total": total, "returned": len(rows), "rows": rows})
+
+    @app.get("/api/projects/{project_id}/collocations")
+    async def collocations(
+        project_id: str, window: int = Query(2, ge=1, le=10),
+        min_count: int = Query(3, ge=1), top: int = Query(50, ge=1, le=500),
+    ) -> JSONResponse:
+        """Within-window bigram associations (PMI + Dunning's G²) over the analyzable token stream →
+        ``[[a, b, pmi, log_likelihood, count], …]`` ranked by count."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        from palimpsest.analysis import textstats
+        _, atext, _ = _analysis_text(project_dir)
+        cols = textstats.collocations(
+            textstats.tokenize(atext), window=window, min_count=min_count, top=top
+        )
+        return JSONResponse(content={"window": window, "min_count": min_count, "collocations": cols})
+
+    @app.get("/api/projects/{project_id}/duplicates")
+    async def duplicates(
+        project_id: str, min_words: int = Query(5, ge=2, le=50),
+        min_occurrences: int = Query(2, ge=2, le=50),
+    ) -> JSONResponse:
+        """Near-duplicate / repeated-passage finder: surfaces the same exact-repeat signal the masking
+        layer uses (``tracks.repeats.detect_repeats``), with each repeated span remapped to original
+        coordinates. Descriptive only."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        from palimpsest.tracks.repeats import detect_repeats
+        _, atext, omap = _analysis_text(project_dir)
+        phrases, intervals = detect_repeats(
+            atext, min_words=min_words, min_occurrences=min_occurrences
+        )
+        spans: list[list[int]] = []
+        for s, e in intervals:
+            mapped = omap.inverse_span(s, e)
+            if mapped is not None:
+                spans.append([mapped[0], mapped[1]])
+        return JSONResponse(content={
+            "min_words": min_words, "min_occurrences": min_occurrences,
+            "phrase_count": len(phrases), "phrases": sorted(phrases), "spans": spans,
+        })
+
+    @app.get("/api/projects/{project_id}/dispersion")
+    async def dispersion(project_id: str, term: str = Query(..., min_length=1)) -> JSONResponse:
+        """Lexical dispersion of ``term``: every whole-word occurrence as an original-coordinate
+        ``[start, end]`` span, plus the document length, so the frontend can draw a dispersion barcode
+        (where in the text the term clusters)."""
+        project_dir = _safe_project_dir(workspace, project_id)
+        orig_len, atext, omap = _analysis_text(project_dir)
+        spans = _term_spans_original(term, atext, omap)
+        return JSONResponse(content={
+            "term": term, "count": len(spans), "doc_length": orig_len, "spans": spans,
+        })
 
     async def _ingest_and_compute(
         src_path: Path, title: str, author: str, year: int, overwrite: bool = False,
