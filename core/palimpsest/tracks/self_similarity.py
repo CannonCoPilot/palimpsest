@@ -34,7 +34,7 @@ from typing import Any, Callable
 import numpy as np
 
 from palimpsest.project import Project
-from palimpsest.tracks.bundles import LayerBundle, resolve_explicit_bundle
+from palimpsest.tracks.bundles import ComparisonSpec, LayerBundle, resolve_explicit_bundle
 from palimpsest.tracks.chunking import build_word_positions
 from palimpsest.tracks.params import Param, ParameterizedTrack
 from palimpsest.tracks.repeats import STOPWORDS
@@ -222,11 +222,20 @@ def _edit_distance_matrix(chunks: list[dict[str, Any]]) -> np.ndarray:
 @dataclass(frozen=True)
 class SimilarityMethod:
     """One similarity metric: its name, whether it needs an embedding array, and the builder turning
-    ``(chunks, embeddings)`` into an N×N float32 matrix."""
+    ``(chunks, embeddings)`` into an N×N float32 matrix.
+
+    The trailing descriptors are forward metadata for the two-operand generalization (P9/FR-18..20;
+    consumed by P10 cross-text). ``representation`` is what the builder compares over (``embedding`` or
+    ``tokens``); ``symmetric`` means ``R(a, b) == R(b, a)``; ``supports_cross`` means the method
+    generalizes to two distinct operands. Every current method is symmetric and cross-capable — only
+    the executed self (``A = B``) path matters today, so the descriptors change no behavior."""
 
     name: str
     requires_embedding: bool
     build: Callable[..., np.ndarray]
+    representation: str = "embedding"
+    symmetric: bool = True
+    supports_cross: bool = True
 
 
 _METHODS: dict[str, SimilarityMethod] = {
@@ -237,10 +246,12 @@ _METHODS: dict[str, SimilarityMethod] = {
         "jaccard", True, lambda chunks, *, embeddings: _jaccard_matrix(embeddings)
     ),
     "word_overlap": SimilarityMethod(
-        "word_overlap", False, lambda chunks, *, embeddings=None: _word_overlap_matrix(chunks)
+        "word_overlap", False, lambda chunks, *, embeddings=None: _word_overlap_matrix(chunks),
+        representation="tokens",
     ),
     "edit_distance": SimilarityMethod(
-        "edit_distance", False, lambda chunks, *, embeddings=None: _edit_distance_matrix(chunks)
+        "edit_distance", False, lambda chunks, *, embeddings=None: _edit_distance_matrix(chunks),
+        representation="tokens",
     ),
 }
 
@@ -980,6 +991,18 @@ class SelfSimilarityTrack(ParameterizedTrack):
             for method in methods:
                 for bundle in bundles:
                     chunks = reconstruct_chunks(bundle)
+                    # Each bound input is one operand; today every comparison is the self (A=B) case —
+                    # the input schema carries a single within-project operand. A genuine two-operand
+                    # cross-text spec is the deferred P10/FR-21 extension; it is gated fail-loud here so
+                    # the single-operand assumptions below (the self diagonal, the symmetric LASTZ
+                    # alignment) stay explicit rather than silent. This is the one dispatch point P10
+                    # generalizes — the four matrix kernels remain self kernels until then.
+                    spec = ComparisonSpec.self_(bundle, tuple(m.name for m in methods))
+                    if not spec.is_self:
+                        raise NotImplementedError(
+                            "cross-text comparison (operand_a is not operand_b) is deferred to "
+                            "P10/FR-21; self_similarity computes the A=B self case only"
+                        )
                     n = len(chunks)
                     cs = bundle.chunk_size
                     if cs is None:
@@ -995,7 +1018,10 @@ class SelfSimilarityTrack(ParameterizedTrack):
 
                     embeddings = load_embeddings(project, bundle) if method.requires_embedding else None
                     matrix = method.build(chunks, embeddings=embeddings)
-                    np.fill_diagonal(matrix, 1.0)
+                    if spec.is_self:
+                        # A=B: every chunk is identical to itself, so the leading diagonal is 1.0 by
+                        # definition. A genuine cross matrix (P10) has no self-diagonal to set.
+                        np.fill_diagonal(matrix, 1.0)
 
                     cs_dir = signals_dir / f"self_similarity_cs{cs}"
                     cs_dir.mkdir(parents=True, exist_ok=True)
@@ -1068,6 +1094,24 @@ class SelfSimilarityTrack(ParameterizedTrack):
                 "byte_order": "little-endian",
                 "data_file": f"self_similarity_{primary_metric}.bin",
                 "segment_offsets": [[c["start"], c["end"]] for c in primary_chunks],
+                # Coordinate-frame axes (P9/FR-20). Self-similarity is the A=B case: one operand used as
+                # both row and col, so a single axis. ``axes[0]`` mirrors the legacy top-level
+                # ``reference_sha256`` / ``segment_offsets`` / ``dimensions`` — those are kept for
+                # back-compat so DotplotView and /analysis/status need no change, and ``axes`` is purely
+                # additive. A cross-text matrix (P10/FR-21) carries a second axis (the column operand,
+                # coordinate-mapped onto this root backbone via an OffsetMap).
+                "mode": "auto",
+                "symmetric": True,
+                "storage": "dense",
+                "axes": [
+                    {
+                        "role": "both",
+                        "project_id": project.metadata.id,
+                        "ref_sha256": project.metadata.reference_sha256,
+                        "segment_offsets": [[c["start"], c["end"]] for c in primary_chunks],
+                        "label": bundles[0].chunk.label if bundles else None,
+                    }
+                ],
                 "metadata": {
                     "similarity_metric": primary_metric,
                     "paragraph_count": len(paras),

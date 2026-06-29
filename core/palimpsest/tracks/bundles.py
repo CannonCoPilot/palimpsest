@@ -39,6 +39,37 @@ class LayerBundle:
         return self.chunk.capability.get("size")
 
 
+# A LayerBundle IS one operand of a comparison — one text's bound layers. The alias makes the
+# two-operand generalization (cross-text, P10/FR-21) legible: today every comparison is A=A, so the
+# same bundle is both operands.
+Operand = LayerBundle
+
+
+@dataclass(frozen=True)
+class ComparisonSpec:
+    """One resemblance comparison: two operands and the methods to run over them (P9/FR-18).
+
+    Self-similarity is the degenerate ``A = B`` case — :meth:`self_` builds a spec whose two operands
+    are the *same* object, so :attr:`is_self` is ``True``. A genuine two-operand (cross-text) spec,
+    where ``operand_a`` and ``operand_b`` are different texts coordinate-mapped onto a root backbone, is
+    the deferred P10/FR-21 extension this pre-stage is shaped to make additive. Today only the self case
+    is constructed and executed."""
+
+    operand_a: Operand
+    operand_b: Operand
+    methods: tuple[str, ...]
+
+    @classmethod
+    def self_(cls, operand: Operand, methods: tuple[str, ...]) -> "ComparisonSpec":
+        """The ``A = B`` self-comparison: the same operand on both axes (``operand_a is operand_b``)."""
+        return cls(operand, operand, methods)
+
+    @property
+    def is_self(self) -> bool:
+        """``True`` when both operands are the same object — the only mode built today."""
+        return self.operand_a is self.operand_b
+
+
 def _load_layer(project: Any, prefix: str, label: str, kind: str) -> BoundLayer:
     """Load a persisted layer by explicit label (``signals/{prefix}{label}.json``), fail loud if
     absent. Mirrors ``EmbeddingTrack.extract``'s direct-path load."""
