@@ -161,7 +161,7 @@ class TestByteIdentityGuard:
             "index": 0, "start": 0, "end": len(PLANTED_TEXT),
             "text": PLANTED_TEXT, "words": words,
         }]
-        chunk_phrases = find_exact_repeats(PLANTED_TEXT, chunks)
+        chunk_phrases = find_exact_repeats(chunks)
         text_phrases, _intervals = detect_repeats(PLANTED_TEXT, max_phrase_len=len(words) // 2)
         assert text_phrases == chunk_phrases
         assert "ancient mariner sailed onward" in text_phrases
@@ -172,7 +172,7 @@ class TestByteIdentityGuard:
             {"index": i, "words": words[i * 5:(i + 1) * 5]}
             for i in range(len(words) // 5)
         ]
-        repeats = find_exact_repeats(PLANTED_TEXT, [{"words": words}])
+        repeats = find_exact_repeats([{"words": words}])
         default = mask_repeats(copy.deepcopy(chunks), repeats)
         explicit = mask_repeats(copy.deepcopy(chunks), repeats, MASK_COVERAGE_THRESHOLD)
         assert [c["masked"] for c in default] == [c["masked"] for c in explicit]

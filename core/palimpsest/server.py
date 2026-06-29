@@ -973,13 +973,10 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         method: str | None = None,
         metric: str | None = None,
         metrics: str | None = None,
+        inputs: str | None = None,
         granularity: str | None = None,
         analyzable_sep: str | None = None,
         chunk_size: int | None = None,
-        chunk_size_cosine: int | None = None,
-        chunk_size_jaccard: int | None = None,
-        chunk_size_word_overlap: int | None = None,
-        chunk_size_edit_distance: int | None = None,
         chunk_mode: str | None = None,
         smart_unit: str | None = None,
         delimiters: list[str] | None = Query(None),
@@ -1032,6 +1029,10 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             selected = [m.strip() for m in metrics.split(",") if m.strip()]
             if selected:
                 params["metrics"] = selected
+        if inputs is not None:
+            # self_similarity's explicit layer-bundle list (P7), forwarded verbatim as a JSON string;
+            # the track's `_parse_inputs` converter decodes + validates it (malformed → 400 below).
+            params["inputs"] = inputs
         if granularity is not None:
             params["granularity"] = granularity
         # Chunking + embedding stage parameters pass through verbatim — NOT clamped or defaulted.
@@ -1039,14 +1040,6 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         # below so the user is told, never silently corrected.
         if chunk_size is not None:
             params["chunk_size"] = chunk_size
-        for _mkey, _mval in (
-            ("cosine", chunk_size_cosine),
-            ("jaccard", chunk_size_jaccard),
-            ("word_overlap", chunk_size_word_overlap),
-            ("edit_distance", chunk_size_edit_distance),
-        ):
-            if _mval is not None:
-                params[f"chunk_size_{_mkey}"] = _mval
         if chunk_mode is not None:
             params["chunk_mode"] = chunk_mode
         if smart_unit is not None:
@@ -1076,8 +1069,8 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         if force:
             params["force"] = True
         if params and hasattr(extractor, "set_params"):
-            # self_similarity coerces numerics inside set_params (int()/float()); a non-numeric value
-            # raised an uncaught 500 (finding A5). Surface it as a 400 like every other bad-param path.
+            # A bad param (wrong type / out of range) must surface as a 400, not an uncaught 500:
+            # set_params + resolve_params raise ValueError/TypeError, which we map to a clean 400 here.
             try:
                 extractor.set_params(params)
             except (ValueError, TypeError) as exc:
@@ -1157,6 +1150,93 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                     except ValueError:
                         pass
         return JSONResponse(content={"chunk_sizes": sorted(sizes)})
+
+    @app.get("/api/projects/{project_id}/self_similarity/inputs")
+    async def self_similarity_inputs(project_id: str) -> JSONResponse:
+        """Discovery: the layers bindable into a self_similarity run (FR-7, Vision §3.3).
+
+        The consumer binds layers by explicit label (one {chunk, repeat_mask, embedding?} bundle per
+        chunk size), so the picker needs the *coherent* options pre-grouped and server-validated. The
+        same predicate run-time binding uses (``bundles.coherence_reason``) decides nesting here, so
+        discovery and binding can never disagree; incoherent layers are surfaced in ``incompatible``,
+        never silently dropped (NFR-3). Finding no layers is a valid 200 with empty ``chunk_layers``,
+        not an error — producing a layer is a separate, explicit user action.
+
+        Field names are family-neutral (nothing prefixed ``self_similarity_*``) so this can later be
+        promoted to a generic ``…/layers/consumable?for=<track>`` route as a rename, not a redesign.
+        """
+        from palimpsest.tracks.bundles import coherence_reason
+        from palimpsest.tracks.self_similarity import _METHODS
+
+        project_dir = _safe_project_dir(workspace, project_id)
+
+        chunk_layers: list[dict[str, Any]] = []
+        chunks_by_label: dict[str, dict[str, Any]] = {}
+        for c in _layer_status_entries(project_dir, "chunking"):
+            cap = c.get("capability") or {}
+            entry: dict[str, Any] = {
+                "label": c["label"],
+                "size": cap.get("size"),
+                "bundle_ready": False,  # set once coherent repeat_masks are counted
+                "capability": cap,
+                "stats": c.get("stats"),
+                "rendering": c.get("rendering"),
+                "repeat_masks": [],
+                "embeddings": [],
+            }
+            if "runInfo" in c:
+                entry["runInfo"] = c["runInfo"]
+            chunk_layers.append(entry)
+            chunks_by_label[c["label"]] = entry
+
+        incompatible: list[dict[str, Any]] = []
+
+        def _classify(deps: list[dict[str, Any]], kind: str, bucket: str) -> None:
+            # A dependent layer names its parent chunk via capability.chunk_layer_id, so the join is a
+            # direct lookup (not an O(n*m) scan). Present + coherent → nest; otherwise → incompatible
+            # with the reason from the shared predicate (or "not present" when the parent is gone).
+            for dep in deps:
+                cap = dep.get("capability") or {}
+                claimed = cap.get("chunk_layer_id")
+                parent = chunks_by_label.get(claimed)
+                if parent is None:
+                    incompatible.append({
+                        "kind": kind,
+                        "label": dep["label"],
+                        "reason": (
+                            f"{kind} layer '{dep['label']}' was built on chunk layer "
+                            f"'{claimed}', which is not present"
+                        ),
+                    })
+                    continue
+                reason = coherence_reason(
+                    cap, kind, dep["label"],
+                    parent["label"], parent["capability"].get("analyzable_digest"),
+                )
+                if reason:
+                    incompatible.append({"kind": kind, "label": dep["label"], "reason": reason})
+                    continue
+                parent[bucket].append({
+                    "label": dep["label"], "capability": cap, "stats": dep.get("stats"),
+                })
+
+        _classify(_layer_status_entries(project_dir, "repeat_mask"), "repeat-mask", "repeat_masks")
+        _classify(_layer_status_entries(project_dir, "embedding"), "embedding", "embeddings")
+
+        for entry in chunk_layers:
+            entry["bundle_ready"] = len(entry["repeat_masks"]) >= 1
+
+        methods = [
+            {"name": m.name, "requires_embedding": m.requires_embedding}
+            for m in _METHODS.values()
+        ]
+
+        return JSONResponse(content={
+            "consumer": "self_similarity",
+            "chunk_layers": chunk_layers,
+            "methods": methods,
+            "incompatible": incompatible,
+        })
 
     # NOTE: the literal "/alignments" routes MUST be declared before the generic
     # "/{metric}" route below — Starlette matches in declaration order, so a

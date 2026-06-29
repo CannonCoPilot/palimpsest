@@ -8,6 +8,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
+    // Unit tests live under src/; Playwright owns e2e/ (see playwright.config.ts).
+    // Without this, vitest's default glob would try to collect the e2e .spec files.
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html'],

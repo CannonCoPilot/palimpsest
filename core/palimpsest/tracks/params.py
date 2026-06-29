@@ -105,11 +105,15 @@ def resolve_params(
                 )
             try:
                 value = p.type(raw[p.name])
-            except (ValueError, TypeError):
+            except (ValueError, TypeError) as e:
                 tname = getattr(p.type, "__name__", str(p.type))
+                # Surface the converter's own message (chained), not just the generic type name: a
+                # converter like self_similarity's `_parse_inputs` raises a specific reason ("requires
+                # 'chunk_label' …") that the user needs to see to fix the request.
+                detail = f": {e}" if str(e) else ""
                 raise ValueError(
-                    f"parameter {p.name!r} must be {tname}, got {raw[p.name]!r}"
-                )
+                    f"parameter {p.name!r} must be {tname}, got {raw[p.name]!r}{detail}"
+                ) from e
         else:
             if p.required:
                 raise ValueError(f"parameter {p.name!r} is required")

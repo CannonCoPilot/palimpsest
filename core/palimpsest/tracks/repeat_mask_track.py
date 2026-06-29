@@ -47,7 +47,8 @@ class RepeatMaskTrack(ParameterizedTrack):
     # self_similarity's inline pass.
     PARAMS = (
         Param("coverage_threshold", float, default=MASK_COVERAGE_THRESHOLD, min=0.0, max=1.0,
-              help="fraction of a chunk's content words covered by repeats to flag it (0, 1]"),
+              help="repeat-covered fraction of a chunk's content words that must be strictly "
+                   "exceeded (>) to flag it; 0 flags any repeat coverage, 1 never flags. Range [0, 1]"),
     )
 
     @property

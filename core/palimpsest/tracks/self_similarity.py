@@ -1,14 +1,14 @@
-"""Self-similarity matrix track — chunk-based multi-metric with LASTZ-style alignment.
+"""Self-similarity matrix track — a fail-loud, embedding-agnostic layer consumer (Wave-0 P7).
 
-Text is divided into non-overlapping word chunks (default 17 words).
-Four metrics are computed on this chunked representation:
-- cosine: chunk-level embeddings, cosine similarity
-- jaccard: binarized embedding Jaccard
-- word_overlap: content-word-set Jaccard (stopwords removed)
-- edit_distance: coarse token-level Levenshtein + LASTZ seed-and-extend
+This track does not chunk, embed, or detect repeats itself. The user names the layers to analyse
+(one ``{chunk, repeat_mask, embedding?}`` bundle per chunk size); the track binds them by explicit
+label, fails loud if a required layer is absent, and runs the similarity math on the bound layers.
+It supports a family of metrics — ``cosine`` / ``jaccard`` (embedding-based) and ``word_overlap`` /
+``edit_distance`` (text-only) — selected per run; an embedding layer is required only for the
+embedding-based metrics.
 
-LASTZ alignment:
-1. Coarse edit distance on non-overlapping chunks → NxN matrix
+LASTZ alignment (the seed-and-extend pass that surfaces aligned passages on top of the matrix):
+1. Coarse edit distance on the bound chunks → NxN matrix
 2. Find top K off-diagonal local optima (K = 2 × CPU cores)
 3. At each optimum, extend with character-level matching along the diagonal
    in two directions: parallel (1,1) and antiparallel (1,-1).
@@ -17,40 +17,28 @@ LASTZ alignment:
 5. Threshold calibrated empirically via random pseudo-chunk alignment
 6. Mirror deduplication (A↔B counted once)
 
-Repeat masking:
-- Frequent exact n-gram phrases (>= 3 words, >= 3 occurrences) are detected.
-- Chunks where >50% of content words are covered by such phrases are masked.
-- Masked chunks are skipped in matrix computation, then unmasked for final scoring.
+Repeat handling is flag-only and consumed from the bound ``repeat_mask`` layer: masked chunks are
+skipped in matrix computation, then unmasked for final scoring. The track never re-derives the mask.
 """
 
 from __future__ import annotations
 
-import hashlib
 import json
 import logging
 import os
 import re
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import numpy as np
 
 from palimpsest.project import Project
-from palimpsest.tracks.chunking import (
-    ChunkingConfig,
-    build_word_positions,
-    chunk_text,
-    chunk_words,
-)
-from palimpsest.tracks.embedding import EmbeddingConfig, embed_texts
-from palimpsest.tracks.repeats import (
-    EXACT_REPEAT_MIN_OCCURRENCES,
-    EXACT_REPEAT_MIN_WORDS,
-    MASK_COVERAGE_THRESHOLD,
-    STOPWORDS,
-)
-from palimpsest.tracks.repeats import find_exact_repeats as _find_exact_repeats
-from palimpsest.tracks.repeats import mask_repeats as _mask_repeats
+from palimpsest.tracks.bundles import LayerBundle, resolve_explicit_bundle
+from palimpsest.tracks.chunking import build_word_positions
+from palimpsest.tracks.params import Param, ParameterizedTrack
+from palimpsest.tracks.repeats import STOPWORDS
+from palimpsest.tracks.requirements import LayerResolutionError
 from palimpsest.vectorstore.sqlite_vec import SqliteVecStore
 
 logger = logging.getLogger(__name__)
@@ -71,12 +59,11 @@ LASTZ_CALIBRATION_SAMPLES = 1000       # number of shuffled pseudo-chunk pairs s
 LASTZ_CALIBRATION_PERCENTILE = 0.95    # percentile of the null distribution used as the cutoff
 LASTZ_THRESHOLD_FLOOR = 0.1            # minimum identity threshold (floor under the calibrated p95)
 LASTZ_SMALL_SAMPLE_THRESHOLD = 0.3     # fallback threshold when there is too little text to calibrate
-# EXACT_REPEAT_MIN_WORDS / EXACT_REPEAT_MIN_OCCURRENCES / MASK_COVERAGE_THRESHOLD now live in
-# palimpsest.tracks.repeats (imported above) so EmbeddingTrack shares one definition; still reported in
-# LOCKED_CONSTANTS below for provenance.
-
-# The declared-and-reported view of the locked constants above, grouped by role. Reported in
-# parameters() (→ {track}.run.json provenance) and written into the signal manifest metadata.
+# The declared-and-reported view of the LASTZ calibration constants above. Reported in parameters()
+# (→ {track}.run.json provenance) and written into the signal manifest metadata so a stored run is
+# reconstructible and the cutoffs are auditable. The masking cutoffs are deliberately NOT here: post-P7
+# this track does not detect or apply repeat masking — those values live with (and are reported by) the
+# bound repeat / repeat_mask layers, echoed per bundle in the manifest's layer_inputs.
 LOCKED_CONSTANTS: dict[str, dict[str, float]] = {
     "calibration": {
         "seed": LASTZ_CALIBRATION_SEED,
@@ -85,19 +72,10 @@ LOCKED_CONSTANTS: dict[str, dict[str, float]] = {
         "threshold_floor": LASTZ_THRESHOLD_FLOOR,
         "small_sample_threshold": LASTZ_SMALL_SAMPLE_THRESHOLD,
     },
-    "masking": {
-        "exact_repeat_min_words": EXACT_REPEAT_MIN_WORDS,
-        "exact_repeat_min_occurrences": EXACT_REPEAT_MIN_OCCURRENCES,
-        "coverage_threshold": MASK_COVERAGE_THRESHOLD,
-    },
 }
 
-# Back-compat aliases — the canonical chunker and word tokeniser now live in chunking.py.
-_chunk_text = chunk_words
-_build_word_positions = build_word_positions
-
-# STOPWORDS moved to palimpsest.tracks.repeats (imported above) — one definition shared with the
-# repeat-mask helpers and EmbeddingTrack.
+# STOPWORDS lives in palimpsest.tracks.repeats (imported above) — one shared definition for the
+# content-token filter used here and by the repeat helpers.
 
 
 # ---------------------------------------------------------------------------
@@ -111,7 +89,7 @@ def _discover_chunk_sizes(signals_dir: Path) -> list[int]:
         if entry.is_dir() and entry.name.startswith("self_similarity_cs"):
             try:
                 cs = int(entry.name.replace("self_similarity_cs", ""))
-                if (entry / "cosine.bin").exists() or (entry / "word_overlap.bin").exists():
+                if any((entry / f"{m}.bin").exists() for m in METRICS):
                     sizes.append(cs)
             except ValueError:
                 pass
@@ -235,6 +213,56 @@ def _edit_distance_matrix(chunks: list[dict[str, Any]]) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
+# Similarity-method family (Wave-0 P7)
+# ---------------------------------------------------------------------------
+# An extensible registry over the four matrix builders. ``requires_embedding`` is the single switch
+# tying a method to whether a bound input needs an embedding layer; text-only methods ignore the
+# ``embeddings`` argument. Adding a new similarity method later = one registry entry, no other change.
+
+@dataclass(frozen=True)
+class SimilarityMethod:
+    """One similarity metric: its name, whether it needs an embedding array, and the builder turning
+    ``(chunks, embeddings)`` into an N×N float32 matrix."""
+
+    name: str
+    requires_embedding: bool
+    build: Callable[..., np.ndarray]
+
+
+_METHODS: dict[str, SimilarityMethod] = {
+    "cosine": SimilarityMethod(
+        "cosine", True, lambda chunks, *, embeddings: _cosine_matrix(embeddings)
+    ),
+    "jaccard": SimilarityMethod(
+        "jaccard", True, lambda chunks, *, embeddings: _jaccard_matrix(embeddings)
+    ),
+    "word_overlap": SimilarityMethod(
+        "word_overlap", False, lambda chunks, *, embeddings=None: _word_overlap_matrix(chunks)
+    ),
+    "edit_distance": SimilarityMethod(
+        "edit_distance", False, lambda chunks, *, embeddings=None: _edit_distance_matrix(chunks)
+    ),
+}
+
+# METRICS (module constant, imported by server.py and validated against by the frontend) must stay in
+# lock-step with the registry's canonical, cosine-first order. Assert rather than redefine, so the
+# import site at the top of the module is unchanged.
+assert tuple(_METHODS) == METRICS, "similarity-method registry drifted from METRICS order"
+
+
+def resolve_methods(selected: list[str]) -> list[SimilarityMethod]:
+    """Resolve user-selected metric names to :class:`SimilarityMethod` objects in canonical
+    (cosine-first) order. Unknown names fail loud, mirroring the legacy ``_validate_metrics``."""
+    unknown = [m for m in selected if m not in _METHODS]
+    if unknown:
+        raise ValueError(
+            f"unknown similarity metric(s): {', '.join(unknown)}; "
+            f"valid metrics: {', '.join(_METHODS)}"
+        )
+    return [_METHODS[m] for m in METRICS if m in selected]
+
+
+# ---------------------------------------------------------------------------
 # LASTZ-style seed-and-extend alignment
 # ---------------------------------------------------------------------------
 
@@ -290,7 +318,7 @@ def _calibrate_threshold(
         shuffled = rng.permutation(all_words)
         pseudo_a = " ".join(shuffled[:chunk_size])
         pseudo_b = " ".join(shuffled[chunk_size:2 * chunk_size])
-        identity = _char_identity_consistent(pseudo_a, pseudo_b)
+        identity = _char_identity(pseudo_a, pseudo_b)
         scores.append(identity)
 
     scores.sort()
@@ -345,11 +373,6 @@ def _banded_lcs_identity(a: str, b: str, bandwidth: int = 200) -> float:
         prev = curr
     lcs_len = prev[lb]
     return (2 * lcs_len) / (la + lb)
-
-
-def _char_identity_consistent(a: str, b: str) -> float:
-    """Same algorithm as _char_identity — consistent scoring for calibration."""
-    return _char_identity(a, b)
 
 
 def _sliding_window_refine(
@@ -518,7 +541,7 @@ def _extend_alignment(
         coarse_end_b = chunks[best_end_j]["end"]
 
     # Sliding window refinement for sub-chunk boundary precision
-    words, word_positions = _build_word_positions(text)
+    words, word_positions = build_word_positions(text)
     if len(words) > 0:
         refined = _sliding_window_refine(
             text, words, word_positions,
@@ -724,238 +747,140 @@ def _lastz_align(
 
 
 # ---------------------------------------------------------------------------
-# Chunk-level embedding
+# Layer-sourced chunk + embedding access (Wave-0 P7)
 # ---------------------------------------------------------------------------
 
-def _embed_cache_label(prefix: str, chunks: list[dict[str, Any]], config: EmbeddingConfig) -> str:
-    """A cache label that changes whenever the embedded content or the embedding identity changes.
+def reconstruct_chunks(bundle: LayerBundle) -> list[dict[str, Any]]:
+    """Rebuild the chunk dicts the metric builders and LASTZ consume, entirely from layer data: texts
+    and original-coordinate offsets from the chunk layer, the per-chunk ``masked`` flag from the
+    repeat_mask layer (flag-only — never recomputed here). ``words = text.split()`` reproduces the
+    original chunker's ``words`` (proven byte-identical to the inline chunker in P8), so the lexical
+    metrics see identical input."""
+    meta = bundle.chunk.manifest["metadata"]
+    texts: list[str] = meta["chunk_texts"]
+    offsets = bundle.chunk.manifest["segment_offsets"]
+    masked = bundle.repeat_mask.manifest["metadata"]["masked"]
+    if not (len(texts) == len(offsets) == len(masked)):
+        raise ValueError(
+            f"layer length mismatch for chunk layer '{bundle.chunk.label}': "
+            f"{len(texts)} texts, {len(offsets)} offsets, {len(masked)} mask flags"
+        )
+    return [
+        {"text": t, "start": int(s), "end": int(e), "words": t.split(), "masked": bool(mk)}
+        for t, (s, e), mk in zip(texts, offsets, masked)
+    ]
 
-    Chunk embeddings are a pure function of (chunk texts, embedding provider/endpoint/model), so the
-    label hashes exactly those. This keeps the on-disk cache correct under ANY upstream change that
-    alters the chunk texts — chunk mode/size, smart-mode parameters, punctuation delimiters, the
-    analyzable separator, masking — without enumerating each one. (The prior label encoded only
-    mode+size+sanitized-model, so two smart configs, two separators, or models differing only by a
-    sanitized character — ``a:b`` vs ``a/b`` → ``a_b`` — silently shared one stale cache file.)
 
-    ``batch_size`` is deliberately excluded: it changes how vectors are requested, not their values.
-    ``prefix`` (e.g. ``"smart_cs7"``) is kept human-readable for debugging; the hash guarantees
-    uniqueness regardless of it."""
-    h = hashlib.sha256()
-    h.update(f"{config.provider}\x00{config.endpoint}\x00{config.model}\x00".encode())
-    for c in chunks:
-        h.update(c["text"].encode("utf-8"))
-        h.update(b"\x00")
-    return f"{prefix}_{h.hexdigest()[:16]}"
-
-
-def _embed_chunks(
-    project: Project,
-    chunks: list[dict[str, Any]],
-    label: str,
-    config: EmbeddingConfig,
-) -> np.ndarray:
-    """Embed ``chunks`` via the embedding stage, caching vectors per ``label`` (which encodes the
-    chunking parameters and the model). Raises on any embedding failure — never returns ``None`` —
-    so a failed embedding surfaces to the user instead of silently skipping the analysis."""
-    cache_dir = project.path / "cache"
-    cache_dir.mkdir(parents=True, exist_ok=True)
-    chunk_db = cache_dir / f"embeddings_{label}.db"
-
-    if chunk_db.exists():
-        store = SqliteVecStore.open_existing(chunk_db)
-        try:
-            cached = store.get_all_vectors()
-            if len(cached) == len(chunks):
-                return np.array(cached, dtype=np.float32)
-        finally:
-            store.close()
-        # Cache present but stale (chunk count changed) — rebuild from scratch.
-        chunk_db.unlink()
-
-    texts = [c["text"] for c in chunks]
-    vectors = embed_texts(texts, config)  # raises on any provider/HTTP/shape error
-    store = SqliteVecStore(chunk_db, dim=int(vectors.shape[1]))
-    slug = project.metadata.id
+def load_embeddings(project: Project, bundle: LayerBundle) -> np.ndarray:
+    """Load the vectors the embedding layer already computed — the consumer never embeds. Vectors come
+    back in insertion order (= chunk order); the count must match the chunk layer or the layers are out
+    of sync (fail loud)."""
+    if bundle.embedding is None:
+        raise ValueError("load_embeddings called for a bundle without an embedding layer")
+    rel = bundle.embedding.vectorstore_path
+    if not rel:
+        raise ValueError(f"embedding layer '{bundle.embedding.label}' has no vectorstore path")
+    db = Path(project.path) / rel
+    if not db.exists():
+        raise LayerResolutionError(
+            f"embedding vectorstore '{rel}' for layer '{bundle.embedding.label}' is missing — re-run "
+            "the embedding track"
+        )
+    store = SqliteVecStore.open_existing(db)
     try:
-        ids = [f"{slug}:{label}:{k}" for k in range(len(texts))]
-        meta = [{"chunk_index": k} for k in range(len(texts))]
-        store.add(ids, vectors.tolist(), meta)
+        vectors = store.get_all_vectors()
     finally:
         store.close()
-    return vectors
+    n_chunks = len(bundle.chunk.manifest["metadata"]["chunk_texts"])
+    if len(vectors) != n_chunks:
+        raise ValueError(
+            f"embedding layer '{bundle.embedding.label}' has {len(vectors)} vectors but chunk layer "
+            f"'{bundle.chunk.label}' has {n_chunks} chunks"
+        )
+    return np.array(vectors, dtype=np.float32)
+
+
+def _embedding_provenance(bundle: LayerBundle) -> dict[str, Any] | None:
+    """The bound embedding layer's identity, recorded in the manifest so the run is reconstructible
+    (P3). ``None`` when no embedding-based metric was selected."""
+    if bundle.embedding is None:
+        return None
+    cap = bundle.embedding.capability
+    return {
+        "provider": cap.get("provider"),
+        "model": cap.get("model"),
+        "dim": cap.get("dim"),
+        "model_fingerprint": cap.get("model_fingerprint"),
+        "layer_label": bundle.embedding.label,
+    }
+
+
+def _csv_list(value: Any) -> list[str]:
+    """Param converter: a comma-separated string (or an already-list) → a list of metric names."""
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [v.strip() for v in value.split(",") if v.strip()]
+    return [str(v).strip() for v in value]
+
+
+def _parse_inputs(value: Any) -> list[dict[str, str]]:
+    """Param converter for the explicit layer bundles. Accepts a JSON array string (the HTTP path) or an
+    already-decoded list (tests/CLI) of ``{chunk_label, repeat_mask_label, embedding_label?}`` objects.
+    Fails loud (→ 400) on malformed structure or a missing required key."""
+    if isinstance(value, str):
+        value = json.loads(value)  # JSONDecodeError subclasses ValueError → clean 400
+    if not isinstance(value, list) or not value:
+        raise ValueError("inputs must be a non-empty list of layer-bundle objects")
+    out: list[dict[str, str]] = []
+    for i, item in enumerate(value):
+        if not isinstance(item, dict):
+            raise ValueError(f"inputs[{i}] must be an object")
+        chunk = item.get("chunk_label")
+        rmask = item.get("repeat_mask_label")
+        if not chunk or not rmask:
+            raise ValueError(f"inputs[{i}] requires 'chunk_label' and 'repeat_mask_label'")
+        entry: dict[str, str] = {"chunk_label": str(chunk), "repeat_mask_label": str(rmask)}
+        emb = item.get("embedding_label")
+        if emb:
+            entry["embedding_label"] = str(emb)
+        out.append(entry)
+    return out
 
 
 # ---------------------------------------------------------------------------
 # Track class
 # ---------------------------------------------------------------------------
 
-class SelfSimilarityTrack:
-    def __init__(self) -> None:
-        # Metric selection is the self-similarity analysis method — a separate concern from the
-        # chunking+embedding stage, slated for its own redesign — so it keeps its prior behaviour.
-        self._metric = "cosine"
-        self._selected_metrics: list[str] = list(METRICS)
-        # Chunking+embedding stage parameters are user-defined at runtime with NO defaults: they
-        # start unset and are populated by set_params; extract() raises if any required one is
-        # missing (validation/coercion live in ChunkingConfig / EmbeddingConfig, never here).
-        self._chunk_mode: str | None = None
-        self._chunk_size: int | None = None
-        self._smart_unit: str | None = None
-        self._delimiters: tuple[str, ...] | None = None
-        self._grow_factor: float | None = None
-        self._remainder_ratio: float | None = None
-        self._chunk_size_cosine: int | None = None
-        self._chunk_size_jaccard: int | None = None
-        self._chunk_size_word_overlap: int | None = None
-        self._chunk_size_edit_distance: int | None = None
-        self._embed_provider: str | None = None
-        self._embed_endpoint: str | None = None
-        self._embed_model: str | None = None
-        self._embed_batch_size: int | None = None
-        # Raw param keys seen, so validate_params can reject an unknown one (G1/A4) rather than
-        # silently ignoring it. self-similarity keeps its specialized conditional validation but
-        # honors the same no-silent-drop contract as the ParameterizedTrack base.
-        self._raw_keys: set[str] = set()
+class SelfSimilarityTrack(ParameterizedTrack):
+    """Self-similarity as an embedding-agnostic, fail-loud LAYER CONSUMER (Wave-0 P7).
 
-    # Every parameter key this track accepts (chunking/embedding stage + metric selection). An
-    # incoming key outside this set is rejected by validate_params; "force" is a reserved framework key.
-    ACCEPTED_PARAMS = frozenset({
-        "metric", "metrics", "chunk_mode", "chunk_size", "smart_unit", "delimiters",
-        "grow_factor", "remainder_ratio",
-        "chunk_size_cosine", "chunk_size_jaccard", "chunk_size_word_overlap", "chunk_size_edit_distance",
-        "embed_provider", "embed_endpoint", "embed_model", "embed_batch_size",
-    })
+    It no longer chunks, embeds, or masks. The user names explicit layer bundles — one per chunk size,
+    each a ``{chunk_label, repeat_mask_label, embedding_label?}`` triple — and this track reads those
+    persisted layers, computes the selected similarity methods at every bundle's chunk size, and writes
+    the same on-disk dotplot contract as before (``self_similarity.json`` + per-size
+    ``self_similarity_cs{N}/{metric}.bin`` + alignments). It does not run if a named layer is absent or
+    mis-paired (``LayerResolutionError``), and it never dictates the embedding model — embeddings are
+    read from the bound embedding layer's vector cache.
 
-    def set_params(self, params: dict[str, Any]) -> None:
-        self._raw_keys.update(params)
-        # Values are stored raw — no clamping, no defaulting. Out-of-range/missing values are
-        # rejected later by ChunkingConfig/EmbeddingConfig (and up front by the API), so the user
-        # always learns when a value was unacceptable instead of having it silently rewritten.
-        # Metrics are stored raw — an unknown metric is NOT silently dropped here; validate_metrics()
-        # (called by validate_params and extract) rejects it with a 400 so the typo surfaces.
-        if "metric" in params:
-            self._metric = params["metric"]
-        if "metrics" in params:
-            self._selected_metrics = list(params["metrics"])
-        if "chunk_mode" in params:
-            self._chunk_mode = params["chunk_mode"]
-        if "smart_unit" in params:
-            self._smart_unit = params["smart_unit"]
-        if "delimiters" in params:
-            self._delimiters = tuple(params["delimiters"])
-        if "grow_factor" in params:
-            self._grow_factor = float(params["grow_factor"])
-        if "remainder_ratio" in params:
-            self._remainder_ratio = float(params["remainder_ratio"])
-        if "chunk_size" in params:
-            self._chunk_size = int(params["chunk_size"])
-        for metric_key in ("cosine", "jaccard", "word_overlap", "edit_distance"):
-            param_key = f"chunk_size_{metric_key}"
-            if param_key in params:
-                setattr(self, f"_chunk_size_{metric_key}", int(params[param_key]))
-        if "embed_provider" in params:
-            self._embed_provider = params["embed_provider"]
-        if "embed_endpoint" in params:
-            self._embed_endpoint = params["embed_endpoint"]
-        if "embed_model" in params:
-            self._embed_model = params["embed_model"]
-        if "embed_batch_size" in params:
-            self._embed_batch_size = int(params["embed_batch_size"])
+    Repeat masking is consumed FLAG-ONLY from the bound ``repeat_mask`` layer (required); the metric
+    builders skip flagged chunks exactly as before. ``exact_repeats`` / ``formulaic_patterns`` are
+    sourced from the ``repeats`` layer the mask was derived from.
+    """
 
-    def _chunk_size_for(self, metric: str) -> int | None:
-        """Effective chunk size for a metric (per-metric override, else the shared size, else None)."""
-        per_metric: int | None = getattr(self, f"_chunk_size_{metric}", None)
-        return per_metric if per_metric is not None else self._chunk_size
-
-    def _embedding_config(self) -> EmbeddingConfig:
-        """Build the embedding config from user-supplied parameters; raises if any are missing."""
-        missing = [name for name, value in (
-            ("embed_provider", self._embed_provider),
-            ("embed_endpoint", self._embed_endpoint),
-            ("embed_model", self._embed_model),
-            ("embed_batch_size", self._embed_batch_size),
-        ) if value is None]
-        if missing:
-            raise ValueError(
-                "self_similarity requires embedding parameters: " + ", ".join(missing)
-            )
-        return EmbeddingConfig(
-            provider=self._embed_provider,  # type: ignore[arg-type]
-            endpoint=self._embed_endpoint,  # type: ignore[arg-type]
-            model=self._embed_model,  # type: ignore[arg-type]
-            batch_size=self._embed_batch_size,  # type: ignore[arg-type]
-        )
-
-    def _chunking_config(self, size: int | None) -> ChunkingConfig:
-        """Build the chunking config for ``size`` from user-supplied parameters. Only mode-relevant
-        fields are passed; ChunkingConfig validates the rest (missing/extraneous → ValueError)."""
-        if self._chunk_mode is None:
-            raise ValueError("self_similarity requires 'chunk_mode'")
-        mode = self._chunk_mode
-        if mode in ("word", "slide"):
-            return ChunkingConfig(mode=mode, size=size)
-        if mode == "punctuation":
-            return ChunkingConfig(mode=mode, delimiters=self._delimiters)
-        if mode == "verse":
-            return ChunkingConfig(mode=mode)
-        if mode == "smart":
-            return ChunkingConfig(
-                mode=mode, size=size, smart_unit=self._smart_unit,
-                grow_factor=self._grow_factor, remainder_ratio=self._remainder_ratio,
-            )
-        raise ValueError(f"unknown chunk mode: {mode!r}")
-
-    def _validate_metrics(self) -> list[str]:
-        """Return the selected metrics in canonical order, rejecting an unknown or empty selection.
-
-        A typo'd metric (e.g. ``cosin``) must fail loudly rather than being silently dropped — the
-        old behaviour kept only the recognized metrics and, if none survived, silently fell back to
-        running *all* of them. Raises ``ValueError`` (→ HTTP 400)."""
-        unknown = [m for m in self._selected_metrics if m not in METRICS]
-        if unknown:
-            raise ValueError(
-                "unknown self_similarity metric(s): " + ", ".join(map(repr, unknown))
-                + "; valid metrics are " + ", ".join(METRICS)
-            )
-        ordered = [m for m in METRICS if m in self._selected_metrics]
-        if not ordered:
-            raise ValueError("self_similarity requires at least one metric")
-        return ordered
-
-    def validate_params(self) -> dict[str, Any]:
-        """Validate the resolved chunking+embedding parameters and return them for echo-back.
-
-        Raises ``ValueError`` (→ HTTP 400) on any missing/invalid/unsupported parameter — the same
-        checks :meth:`extract` performs, run synchronously so the user is told before the job starts
-        rather than discovering a silently-defaulted run or a late async failure."""
-        unknown = self._raw_keys - self.ACCEPTED_PARAMS - {"force"}
-        if unknown:
-            raise ValueError(
-                "unknown parameter(s) for self_similarity: "
-                + ", ".join(map(repr, sorted(unknown)))
-                + "; valid parameters are " + ", ".join(sorted(self.ACCEPTED_PARAMS))
-            )
-        selected = self._validate_metrics()
-        if self._metric not in METRICS:
-            raise ValueError(
-                f"unknown self_similarity metric: {self._metric!r}; valid metrics are "
-                + ", ".join(METRICS)
-            )
-        if any(m in selected for m in ("cosine", "jaccard")):
-            self._embedding_config()
-        if self._chunk_mode is None:
-            raise ValueError("self_similarity requires 'chunk_mode'")
-        if self._chunk_mode in ("verse", "punctuation"):
-            raise ValueError(
-                f"self_similarity does not yet support {self._chunk_mode!r} chunking (it needs a "
-                "numeric window size); the chunking stage supports it for the upcoming redesign"
-            )
-        for metric in selected:
-            size = self._chunk_size_for(metric)
-            if size is None:
-                raise ValueError(f"chunk mode {self._chunk_mode!r} requires 'chunk_size'")
-            self._chunking_config(size)
-        return self.parameters()
+    # Declarative params (G1/G2). `inputs` is the explicit list of layer bundles; `metrics`/`metric`
+    # select the similarity-method family members (resolved in cosine-first canonical order).
+    PARAMS = (
+        Param("metrics", _csv_list, default=None,
+              help="comma-separated similarity methods (cosine, jaccard, word_overlap, edit_distance); "
+                   "falls back to `metric` when omitted"),
+        Param("metric", str, default="cosine", choices=METRICS,
+              help="primary metric: drives data_file / segment_offsets, and the fallback when metrics "
+                   "is omitted"),
+        Param("inputs", _parse_inputs, required=True,
+              help="explicit layer bundles, one per chunk size: a JSON list of "
+                   "{chunk_label, repeat_mask_label, embedding_label?} objects"),
+    )
 
     @property
     def name(self) -> str:
@@ -967,7 +892,10 @@ class SelfSimilarityTrack:
 
     @property
     def depends_on(self) -> list[str]:
-        return ["_embeddings"]
+        # Real producer names: orders this after chunking/embedding/repeat_mask AND makes it a
+        # signal-CONSUMER, so runner.extract_masked runs it on the full project without remap — the
+        # layers it reads already carry original coordinates.
+        return ["chunking", "embedding", "repeat_mask"]
 
     @property
     def lfo_types(self) -> list[str]:
@@ -977,10 +905,35 @@ class SelfSimilarityTrack:
     def evidence_level(self) -> str:
         return "E4"
 
+    def validate_params(self) -> dict[str, Any]:
+        """Resolve + echo the params, additionally rejecting an unknown metric name synchronously
+        (→ HTTP 400) so a typo fails before the job starts rather than as a late async failure."""
+        resolved = self.resolved_params()
+        resolve_methods(resolved["metrics"] or [resolved["metric"]])
+        return resolved
+
+    def _methods(self, resolved: dict[str, Any]) -> list[SimilarityMethod]:
+        return resolve_methods(resolved["metrics"] or [resolved["metric"]])
+
     def extract(self, project: Project) -> Path:
-        # On an analysis view this is the masked-resolved analyzable stream (masked spans and
-        # verse-number tokens excised); chunks span the excised gaps and are remapped to original
-        # coordinates by the caller. Masking is therefore applied by the text itself.
+        resolved = self.resolved_params()
+        methods = self._methods(resolved)
+        needs_embedding = any(m.requires_embedding for m in methods)
+        inputs = resolved["inputs"]
+
+        # Bind every named bundle up front, so a missing/mis-paired layer fails BEFORE any matrix work
+        # (and never leaves a partial run). Bundle order follows the user's explicit input order;
+        # bundles[0] is the PRIMARY, driving the master manifest's headline fields.
+        bundles = [
+            resolve_explicit_bundle(
+                project, inp["chunk_label"], inp["repeat_mask_label"],
+                need_embedding=needs_embedding, embedding_label=inp.get("embedding_label"),
+            )
+            for inp in inputs
+        ]
+
+        # Signal-consumer: runs on the full project. The chunk layer's offsets are already original
+        # coordinates, so LASTZ char-identity and segment_offsets need no remap.
         ref_text = project.reference_text()
 
         signals_dir = project.path / "signals"
@@ -988,109 +941,18 @@ class SelfSimilarityTrack:
 
         available_metrics: list[str] = []
         metric_info: dict[str, dict[str, Any]] = {}
-        # All alignments combined across metrics; each record carries a "metric" field.
         all_alignments: list[dict[str, Any]] = []
+        alns_by_cs: dict[int, list[dict[str, Any]]] = {}
 
-        # Reject unknown/empty metric selections up front (same check the API runs) so a typo'd
-        # metric fails loudly here too, never silently dropped.
-        selected_metrics = self._validate_metrics()
-        # Embedding config is required only when an embedding-based metric (cosine/jaccard) is
-        # selected — don't demand parameters the run won't use. When required and missing it raises
-        # (surfaced as a failed job) rather than being defaulted.
-        needs_embeddings = any(m in selected_metrics for m in ("cosine", "jaccard"))
-        embed_config = self._embedding_config() if needs_embeddings else None
-        if self._chunk_mode is None:
-            raise ValueError("self_similarity requires 'chunk_mode'")
-        mode = self._chunk_mode
-        smart_unit = self._smart_unit
-        # self_similarity's alignment/refinement internals key on an integer word-window size, so it
-        # consumes only the size-bearing chunking modes (word, slide, smart). The size-less modes
-        # (verse, punctuation) exist in the chunking stage and will be wired in with the
-        # self-similarity redesign; refuse them here rather than inventing a window size.
-        if mode in ("verse", "punctuation"):
-            raise ValueError(
-                f"self_similarity does not yet support {mode!r} chunking (it needs a numeric window "
-                "size); the chunking stage supports it for the upcoming self-similarity redesign"
-            )
-
-        # Unit spans for smart mode don't depend on chunk size, so resolve them once. Missing units
-        # for the requested unit raise — no silent fallback to a different mode.
-        verse_spans: list[tuple[int, int]] | None = None
-        paragraph_spans: list[tuple[int, int]] | None = None
-        sentence_spans: list[tuple[int, int]] | None = None
-        if mode == "smart" and smart_unit == "verse":
-            verse_spans = project.analyzable_verse_spans()
-            if not verse_spans:
-                raise ValueError(
-                    "smart/verse chunking requires a verse index, but project "
-                    f"'{project.path.name}' has none"
-                )
-        if mode == "smart" and smart_unit == "paragraph":
-            paragraph_spans = [(s, e) for s, e, _ in project.paragraphs()]
-        if mode == "smart" and smart_unit == "sentence":
-            from palimpsest.ingest.segmenter import segment_sentences
-            sentence_spans = [(seg.start, seg.end) for seg in segment_sentences(ref_text)]
-
-        # Caches keyed by chunk_size to avoid re-chunking when multiple metrics
-        # share the same window size.
-        _chunks_cache: dict[int, list[dict[str, Any]]] = {}
-        _embeddings_cache: dict[int, np.ndarray] = {}
-
-        def _get_chunks(cs: int) -> list[dict[str, Any]]:
-            if cs not in _chunks_cache:
-                cfg = self._chunking_config(cs)
-                raw = chunk_text(
-                    ref_text, cfg, verse_spans=verse_spans,
-                    paragraph_spans=paragraph_spans, sentence_spans=sentence_spans,
-                )
-                repeats = _find_exact_repeats(ref_text, raw)
-                _mask_repeats(raw, repeats)
-                _chunks_cache[cs] = raw
-            return _chunks_cache[cs]
-
-        def _get_embeddings(cs: int) -> np.ndarray:
-            assert embed_config is not None  # only embedding metrics (cosine/jaccard) reach here
-            if cs not in _embeddings_cache:
-                chunks = _get_chunks(cs)
-                label = _embed_cache_label(f"{mode}_cs{cs}", chunks, embed_config)
-                _embeddings_cache[cs] = _embed_chunks(project, chunks, label, embed_config)
-            return _embeddings_cache[cs]
-
-        # Track which chunk-size is used for cosine so the legacy manifest
-        # fields (dimensions, segment_offsets) stay coherent.
-        primary_chunk_size = self._chunk_size_for("cosine")
         primary_chunks: list[dict[str, Any]] = []
+        primary_chunk_size: int | None = None
+        primary_repeats: list[str] = []
+        embedding_provenance: dict[str, Any] | None = None
 
-        # Collect the set of repeated phrases from the primary chunk size for
-        # the manifest (used for display / debugging).
-        exact_repeats_list: list[str] = []
-
-        # LASTZ seed-and-extend + sliding-window refinement assume uniform, non-overlapping word
-        # windows (it maps chunk indices to fixed-stride word positions). slide (overlapping) and
-        # smart (variable-size) chunks satisfy the matrix computation but not that mapping, so the
-        # similarity matrices stay exact while the refined alignment *boundaries* are approximate.
-        # Surface this rather than applying it silently — but don't reject, since the modes are a
-        # deliberate user choice (full support is the upcoming self-similarity redesign).
-        nonuniform_refine = mode in ("slide", "smart")
-        if nonuniform_refine:
-            logger.warning(
-                "self_similarity: chunk mode %r yields %s windows; LASTZ alignment refinement "
-                "assumes uniform non-overlapping windows, so similarity matrices are exact but "
-                "refined alignment boundaries are approximate for this mode.",
-                mode, "overlapping" if mode == "slide" else "variable-size",
-            )
-
-        # Stage-then-commit (C3). Every per-metric matrix, alignment file, and the master manifest is
-        # written to an invisible sibling ".partial" file and promoted with an atomic os.replace only
-        # after the whole run succeeds. A mid-loop failure (e.g. a later metric's embedding service
-        # dropping) never reaches the commit, so it leaves no orphan .bin that the filename-scanning
-        # readers (_discover_chunk_sizes, the chunk_sizes endpoint) would surface as a valid result —
-        # the ".partial" files end in neither ".bin" nor ".json", so no scanner ever sees them. Outputs
-        # from a prior successful run stay intact until the atomic swap. The manifest is staged last so
-        # it is the last file promoted: a reader never sees metric data without its manifest.
+        # Stage-then-commit (C3): write every matrix/alignment/manifest to an invisible ".partial"
+        # sibling and promote with an atomic os.replace only after the whole run succeeds, so a mid-run
+        # failure leaves no orphan .bin for the filename-scanning readers and no manifest without data.
         staged: list[tuple[Path, Path]] = []
-
-        # Sweep any ".partial" files left by a previously crashed run before we begin.
         for leftover in signals_dir.rglob("*.partial"):
             try:
                 leftover.unlink()
@@ -1109,162 +971,157 @@ class SelfSimilarityTrack:
             tmp.write_text(text, encoding="utf-8")
             staged.append((tmp, final))
 
-        # Iterate the validated selection (canonical METRICS order, cosine first so the primary
-        # manifest fields stay coherent); `selected_metrics` was resolved by _validate_metrics above.
-        for metric in selected_metrics:
-            cs = self._chunk_size_for(metric)
-            if cs is None:
-                raise ValueError(f"chunk mode {mode!r} requires 'chunk_size'")
-            chunks = _get_chunks(cs)
-            n = len(chunks)
-            logger.info(
-                "Computing self-similarity: %s (%d chunks, mode=%s, chunk_size=%d)",
-                metric, n, mode, cs,
+        # Loop (method, bundle): canonical method order (cosine first → coherent primary fields), and
+        # every selected method is computed at every bundle's chunk size, preserving multi-size. The
+        # per-size matrices feed the slider; only the PRIMARY bundle drives the headline manifest fields
+        # (available_metrics / metric_info / dimensions), which DotplotView self-corrects per size from
+        # the matrix byte-length.
+        try:
+            for method in methods:
+                for bundle in bundles:
+                    chunks = reconstruct_chunks(bundle)
+                    n = len(chunks)
+                    cs = bundle.chunk_size
+                    if cs is None:
+                        raise ValueError(
+                            f"chunk layer '{bundle.chunk.label}' has no numeric 'size' capability"
+                        )
+                    if n > WARN_MATRIX_DIM:
+                        logger.warning(
+                            "self_similarity %s: %d×%d matrix exceeds %d per side — proceeding as "
+                            "requested (this may be slow and memory-heavy).",
+                            method.name, n, n, WARN_MATRIX_DIM,
+                        )
+
+                    embeddings = load_embeddings(project, bundle) if method.requires_embedding else None
+                    matrix = method.build(chunks, embeddings=embeddings)
+                    np.fill_diagonal(matrix, 1.0)
+
+                    cs_dir = signals_dir / f"self_similarity_cs{cs}"
+                    cs_dir.mkdir(parents=True, exist_ok=True)
+                    _stage_array(cs_dir / f"{method.name}.bin", matrix)
+                    # The flat per-metric file is the manifest's headline data_file — the PRIMARY size
+                    # only. Stage it once (for bundles[0]); a multi-size run would otherwise stage the
+                    # same flat path once per size, leaving the first temp orphaned at commit (the
+                    # second os.replace would find its source already renamed away). Other sizes are
+                    # served from the cs{N} dirs, and DotplotView self-corrects N from the byte length.
+                    if bundle is bundles[0]:
+                        _stage_array(signals_dir / f"self_similarity_{method.name}.bin", matrix)
+
+                    # LASTZ scores identity on the full (unmasked) text — build an unmasked copy rather
+                    # than clearing the shared chunk list's flags (the matrix above must see the masks).
+                    lastz_chunks = [{**c, "masked": False} for c in chunks]
+                    metric_alns = _lastz_align(ref_text, lastz_chunks, matrix, cs)
+                    mode = bundle.chunk.capability.get("mode")
+                    refinement = "approximate" if mode in ("slide", "smart") else "exact"
+                    tagged = [{**rec, "metric": method.name, "refinement": refinement}
+                              for rec in metric_alns]
+                    if tagged:
+                        _stage_text(cs_dir / f"alignments_{method.name}.json", json.dumps(tagged, indent=2))
+                    all_alignments.extend(tagged)
+                    alns_by_cs.setdefault(cs, []).extend(tagged)
+
+                    if bundle is bundles[0]:
+                        available_metrics.append(method.name)
+                        metric_info[method.name] = {
+                            "unit_type": "chunk",
+                            "n_units": n,
+                            "dimensions": [n, n],
+                            "chunk_size": cs,
+                            "chunk_mode": mode,
+                            "alignment_refinement": refinement,
+                            "alignment_count": len(metric_alns),
+                        }
+                        if not primary_chunks:
+                            primary_chunks = chunks
+                            primary_chunk_size = cs
+                            primary_repeats = sorted(bundle.repeat_phrases)
+                            embedding_provenance = _embedding_provenance(bundle)
+
+            # Combined alignments: the flat file across all sizes, plus a per-size combined file grouped
+            # by the size each alignment was actually computed at (no per-metric size map to re-derive).
+            if all_alignments:
+                _stage_text(signals_dir / "self_similarity_alignments.json",
+                            json.dumps(all_alignments, indent=2))
+                for cs, recs in alns_by_cs.items():
+                    _stage_text(signals_dir / f"self_similarity_cs{cs}" / "alignments.json",
+                                json.dumps(recs, indent=2))
+
+            # All chunk sizes from this run's bundles, unioned with sizes already on disk from prior runs.
+            bundle_sizes = {b.chunk_size for b in bundles if b.chunk_size is not None}
+            available_chunk_sizes = sorted(set(_discover_chunk_sizes(signals_dir)) | bundle_sizes)
+
+            paras = project.paragraphs()
+            n_primary = len(primary_chunks)
+            primary_cap = bundles[0].chunk.capability if bundles else {}
+            primary_metric = (
+                "cosine" if "cosine" in available_metrics
+                else (available_metrics[0] if available_metrics else "cosine")
             )
-
-            if n > WARN_MATRIX_DIM:
-                logger.warning(
-                    "self_similarity %s: %d×%d matrix exceeds %d per side — proceeding as "
-                    "requested (this may be slow and memory-heavy).",
-                    metric, n, n, WARN_MATRIX_DIM,
-                )
-
-            if metric in ("cosine", "jaccard"):
-                embeddings = _get_embeddings(cs)
-                if metric == "cosine":
-                    matrix = _cosine_matrix(embeddings)
-                else:
-                    matrix = _jaccard_matrix(embeddings)
-            elif metric == "word_overlap":
-                matrix = _word_overlap_matrix(chunks)
-            elif metric == "edit_distance":
-                matrix = _edit_distance_matrix(chunks)
-            else:
-                continue
-
-            np.fill_diagonal(matrix, 1.0)
-
-            # Per-chunk-size subdirectory
-            cs_dir = signals_dir / f"self_similarity_cs{cs}"
-            cs_dir.mkdir(parents=True, exist_ok=True)
-
-            # Stage binary matrix (per-cs dir and legacy flat location)
-            _stage_array(cs_dir / f"{metric}.bin", matrix)
-            _stage_array(signals_dir / f"self_similarity_{metric}.bin", matrix)
-
-            # LASTZ scores final identity on the full (unmasked) text. Build an
-            # unmasked *copy* rather than clearing masks on the shared cache —
-            # `chunks` is the per-chunk-size cached list that later metrics reuse
-            # for their masked matrix computation, so mutating it here silently
-            # disables repeat masking for every metric after this one.
-            lastz_chunks = [{**chunk, "masked": False} for chunk in chunks]
-
-            # Run LASTZ for this metric and tag records with the metric name + refinement label.
-            # The refinement label travels WITH each record (not only in the manifest's metric_info,
-            # B3) so the dotplot can mark an individual alignment as exact vs approximate: under
-            # slide/smart chunking the chunk boundaries are non-uniform, so the per-chunk alignment
-            # spans are approximate, and a consumer must be able to tell one from an exact one.
-            metric_alns = _lastz_align(ref_text, lastz_chunks, matrix, cs)
-            logger.info("LASTZ[%s] found %d significant alignments", metric, len(metric_alns))
-            refinement = "approximate" if nonuniform_refine else "exact"
-            tagged_alns = [{**rec, "metric": metric, "refinement": refinement} for rec in metric_alns]
-
-            if tagged_alns:
-                _stage_text(cs_dir / f"alignments_{metric}.json",
-                            json.dumps(tagged_alns, indent=2))
-
-            all_alignments.extend(tagged_alns)
-
-            available_metrics.append(metric)
-            metric_info[metric] = {
-                "unit_type": "chunk",
-                "n_units": n,
-                "dimensions": [n, n],
-                "chunk_size": cs,
-                "chunk_mode": mode,
-                "alignment_refinement": "approximate" if nonuniform_refine else "exact",
-                "alignment_count": len(metric_alns),
+            master = {
+                "type": "matrix",
+                "name": "self_similarity",
+                "source": f"chunk_{primary_chunk_size}/0.3",
+                "reference_sha256": project.metadata.reference_sha256,
+                "dimensions": [n_primary, n_primary],
+                "dtype": "float32",
+                "byte_order": "little-endian",
+                "data_file": f"self_similarity_{primary_metric}.bin",
+                "segment_offsets": [[c["start"], c["end"]] for c in primary_chunks],
+                "metadata": {
+                    "similarity_metric": primary_metric,
+                    "paragraph_count": len(paras),
+                    "chunk_count": n_primary,
+                    "chunk_size": primary_chunk_size,
+                    "chunk_mode": primary_cap.get("mode"),
+                    "smart_unit": primary_cap.get("unit") if primary_cap.get("mode") == "smart" else None,
+                    "embedding": embedding_provenance,
+                    "available_metrics": available_metrics,
+                    "metric_info": metric_info,
+                    "alignment_count": len(all_alignments),
+                    "has_alignments": len(all_alignments) > 0,
+                    "available_chunk_sizes": available_chunk_sizes,
+                    "exact_repeats": primary_repeats,
+                    "formulaic_patterns": _derive_formulaic_patterns(
+                        primary_chunks, set(primary_repeats)
+                    ) if primary_repeats else [],
+                    # The LASTZ calibration cutoffs that produced this matrix (the masking cutoffs now
+                    # live with the repeat/repeat_mask layers — see layer_inputs), recorded so the
+                    # stored artifact alone reconstructs the run (P3) and the cutoffs are auditable (P1).
+                    "locked_constants": LOCKED_CONSTANTS,
+                    # P7 provenance: the exact layer bundles consumed, so the artifact reconstructs
+                    # which chunking / repeat_mask / embedding layers produced this matrix.
+                    "layer_inputs": [
+                        {
+                            "chunk_label": b.chunk.label,
+                            "chunk_size": b.chunk_size,
+                            "chunk_mode": b.chunk.capability.get("mode"),
+                            "repeat_mask_label": b.repeat_mask.label,
+                            "repeat_layer_id": b.repeat_mask.capability.get("repeat_layer_id"),
+                            "coverage_threshold": b.repeat_mask.capability.get("coverage_threshold"),
+                            "embedding_label": (b.embedding.label if b.embedding else None),
+                        }
+                        for b in bundles
+                    ],
+                },
             }
+            manifest_path = signals_dir / "self_similarity.json"
+            _stage_text(manifest_path, json.dumps(master, indent=2, ensure_ascii=False))
 
-            # Populate primary-metric data for manifest segment_offsets
-            if metric == "cosine" or not primary_chunks:
-                primary_chunk_size = cs
-                primary_chunks = chunks
-                # Grab exact-repeat phrases from this chunk size for the manifest
-                cs_repeats = _find_exact_repeats(ref_text, chunks)
-                exact_repeats_list = sorted(cs_repeats)
-
-        # Write the combined alignments.json into each affected cs_dir
-        # and the legacy flat file.
-        if all_alignments:
-            combined_json = json.dumps(all_alignments, indent=2)
-            _stage_text(signals_dir / "self_similarity_alignments.json", combined_json)
-            written_cs: set[int] = {
-                cs for m in available_metrics if (cs := self._chunk_size_for(m)) is not None
-            }
-            for cs in written_cs:
-                cs_alns = [r for r in all_alignments
-                           if self._chunk_size_for(r["metric"]) == cs]
-                _stage_text(signals_dir / f"self_similarity_cs{cs}" / "alignments.json",
-                            json.dumps(cs_alns, indent=2))
-
-        # Discover all computed chunk sizes (including previously computed ones)
-        available_chunk_sizes = _discover_chunk_sizes(signals_dir)
-        for m in available_metrics:
-            cs = self._chunk_size_for(m)
-            if cs is not None and cs not in available_chunk_sizes:
-                available_chunk_sizes.append(cs)
-        available_chunk_sizes.sort()
-
-        paras = project.paragraphs()
-        n_primary = len(primary_chunks)
-        # Primary metric drives both data_file and similarity_metric; derive once
-        # so the two can't drift. data_file stays a flat-path filename because the
-        # frontend loader (SignalAdapter + DotplotView) resolves it relative to
-        # the signals dir and overrides it per-metric with the same flat scheme.
-        primary_metric = (
-            "cosine" if "cosine" in available_metrics
-            else (available_metrics[0] if available_metrics else "cosine")
-        )
-        master = {
-            "type": "matrix",
-            "name": "self_similarity",
-            "source": f"chunk_{primary_chunk_size}/0.3",
-            "reference_sha256": project.metadata.reference_sha256,
-            "dimensions": [n_primary, n_primary],
-            "dtype": "float32",
-            "byte_order": "little-endian",
-            "data_file": f"self_similarity_{primary_metric}.bin",
-            "segment_offsets": [[c["start"], c["end"]] for c in primary_chunks],
-            "metadata": {
-                "similarity_metric": primary_metric,
-                "paragraph_count": len(paras),
-                "chunk_count": n_primary,
-                "chunk_size": primary_chunk_size,
-                "chunk_mode": mode,
-                "smart_unit": smart_unit if mode == "smart" else None,
-                "embedding": embed_config.provenance() if embed_config is not None else None,
-                "available_metrics": available_metrics,
-                "metric_info": metric_info,
-                "alignment_count": len(all_alignments),
-                "has_alignments": len(all_alignments) > 0,
-                "available_chunk_sizes": available_chunk_sizes,
-                "exact_repeats": exact_repeats_list,
-                "formulaic_patterns": _derive_formulaic_patterns(
-                    primary_chunks, set(exact_repeats_list)
-                ) if exact_repeats_list else [],
-                # The LASTZ calibration + repeat-masking cutoffs that produced this matrix, recorded so
-                # the stored artifact alone reconstructs the run (P3) and the cutoffs are auditable (P1).
-                "locked_constants": LOCKED_CONSTANTS,
-            },
-        }
-        manifest_path = signals_dir / "self_similarity.json"
-        _stage_text(manifest_path, json.dumps(master, indent=2, ensure_ascii=False))
-
-        # Commit: promote every staged file with an atomic rename. Reaching here means the whole run
-        # succeeded; the manifest (staged last) is therefore promoted last.
-        for tmp, final in staged:
-            os.replace(tmp, final)
+            # Commit: promote every staged file with an atomic rename. Reaching here means the whole run
+            # succeeded; the manifest (staged last) is therefore promoted last.
+            for tmp, final in staged:
+                os.replace(tmp, final)
+        except BaseException:
+            # Any failure between the first stage and the final rename must leave nothing behind: drop
+            # every staged temp so the filename-scanning readers never see an orphan .bin and no
+            # manifest ever lands without its data. Re-raise the original failure unchanged.
+            for tmp, _ in staged:
+                try:
+                    tmp.unlink()
+                except OSError:
+                    pass
+            raise
 
         return manifest_path
 
@@ -1279,33 +1136,3 @@ class SelfSimilarityTrack:
             },
             "dedicatedView": "dotplot",
         }
-
-    def parameters(self) -> dict[str, Any]:
-        # Echo the actual configured values (the resolved run parameters), not placeholder defaults.
-        params: dict[str, Any] = {
-            "self_similarity.metric": self._metric,
-            "self_similarity.chunk_mode": self._chunk_mode,
-            "self_similarity.chunk_size": self._chunk_size,
-            "self_similarity.source": "chunk_embeddings",
-            "self_similarity.embed_provider": self._embed_provider,
-            "self_similarity.embed_endpoint": self._embed_endpoint,
-            "self_similarity.embed_model": self._embed_model,
-            "self_similarity.embed_batch_size": self._embed_batch_size,
-            # Locked analytical constants (LASTZ calibration + repeat-masking cutoffs): declared and
-            # reported, not user-settable yet (G2). Without this they were hidden function defaults
-            # that silently decided the alignment cutoff and what text gets masked (audit A3/P1/P5).
-            "self_similarity.locked_constants": LOCKED_CONSTANTS,
-        }
-        if self._chunk_mode == "smart":
-            params["self_similarity.smart_unit"] = self._smart_unit
-            params["self_similarity.grow_factor"] = self._grow_factor
-            params["self_similarity.remainder_ratio"] = self._remainder_ratio
-        if self._chunk_mode == "punctuation":
-            params["self_similarity.delimiters"] = (
-                list(self._delimiters) if self._delimiters else None
-            )
-        for metric_key in ("cosine", "jaccard", "word_overlap", "edit_distance"):
-            per_metric: int | None = getattr(self, f"_chunk_size_{metric_key}", None)
-            if per_metric is not None:
-                params[f"self_similarity.chunk_size_{metric_key}"] = per_metric
-        return params

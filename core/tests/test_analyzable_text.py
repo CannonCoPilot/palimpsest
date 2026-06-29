@@ -123,28 +123,32 @@ def test_extract_masked_keeps_annotations_out_of_masked_regions(tmp_path: Path):
             assert not (s < me and e > ms), f"annotation [{s},{e}) overlaps masked [{ms},{me})"
 
 
-def test_self_similarity_signal_excludes_masked_and_maps_to_original(tmp_path: Path):
+def test_chunking_layer_excludes_masked_and_maps_to_original(tmp_path: Path):
+    # P7: self_similarity no longer chunks or masks — it consumes a chunk layer and copies its offsets
+    # verbatim. The masked-exclusion + remap-to-original property therefore lives in ChunkingTrack, run
+    # through the masking-aware runner: extract_masked chunks the analysis VIEW (masked content already
+    # excised) and remaps the spans back to original coordinates. Verifying it here covers the substrate
+    # self_similarity depends on; the consumer's own manifest-offset propagation is covered in
+    # test_self_similarity_consumer.py.
     import json
 
     from palimpsest.runner import extract_masked as _extract_masked
-    from palimpsest.tracks.self_similarity import SelfSimilarityTrack
+    from palimpsest.tracks.chunking_track import ChunkingTrack
 
     project, full = _masked_project(tmp_path)
     masked = project.masked_intervals()
-    track = SelfSimilarityTrack()
-    # Non-embedding metrics exercise the chunking → signal → remap path without an embedding service;
-    # all chunking+embedding params are explicit (the stage has no defaults).
-    track.set_params({
-        "chunk_mode": "word",
-        "chunk_size": 7,
-        "metrics": ["word_overlap", "edit_distance"],
-    })
-    _extract_masked(project, track)
-    manifest = json.loads((project.path / "signals" / "self_similarity.json").read_text())
+    track = ChunkingTrack()
+    track.set_params({"chunk_mode": "word", "chunk_size": 7})
+    manifest_path = _extract_masked(project, track)
+    manifest = json.loads(Path(manifest_path).read_text())
     offsets = manifest["segment_offsets"]
-    assert offsets, "self_similarity should chunk the body"
+    assert offsets, "chunking should chunk the body"
+    # Remap actually happened: the masked front matter sits at the start, so every chunk must begin at
+    # or after the end of the last masked span (in ORIGINAL coordinates) — not at analyzable offset 0.
+    last_masked_end = max(me for _, me in masked)
     for s, e in offsets:
         assert 0 <= s < e <= len(full)                   # remapped to original coordinates
+        assert s >= last_masked_end, f"chunk [{s},{e}) precedes/overlaps masked end {last_masked_end}"
         for ms, me in masked:                            # masked content is excised, never chunked
             assert not (s >= ms and e <= me), f"chunk [{s},{e}) lies inside masked [{ms},{me})"
 

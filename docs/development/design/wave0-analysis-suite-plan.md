@@ -372,6 +372,19 @@ Needs P2 (`stats` summary block), P3 (embedding distributions), and P5 (the shel
 - Add `layer_requirements` to the `self_similarity` track and call `resolve_layers` (`tracks/requirements.py`) in its `extract`, replacing the inline `_get_chunks`/`_embed_chunks` path (`self_similarity.py:1138`/`:875`). The exact-repeat masking it relies on is, as of P2, a shared helper (`tracks/repeats.py`, imported back into `self_similarity`); the redesigned consumer honors the `repeat_mask` layer **P8** produces (flag-only: skip the masked chunks) instead of running the inline masking pass — so P7's repeat handling consumes P8's layer rather than re-deriving it.
 - The similarity matrix math itself is preserved as one method implementation; the change is *where its inputs come from* (bound layers vs. inline computation), plus the method-interface factoring.
 
+### Input-discovery endpoint (`GET /api/projects/{id}/self_similarity/inputs`)
+
+Because the consumer binds layers by **explicit label** (one `{chunk_label, repeat_mask_label, embedding_label?}` bundle per chunk size) and users cannot type sha256 labels, the picker needs a read endpoint that enumerates the bindable layers, **pre-grouped and server-validated for coherence**. This is the read-side of the dependency system (Vision §3.3) — the third leg of the safe-reuse triad alongside `resolve_layers` (implicit discovery) and `resolve_explicit_bundle` (run-time binding); this endpoint is **explicit display-time discovery** (enumerate options, never auto-select).
+
+- **Route / scope (decision, 2026-06-28):** consumer-scoped `…/self_similarity/inputs` today; field names are **family-neutral** (nothing prefixed `self_similarity_*`) so promotion to a generic `…/layers/consumable?for=<track>` is a *rename, not a redesign* for any chunk-rooted consumer. No query params in v1.
+- **Coherence lives server-side (decision, 2026-06-28):** a single source of truth, no Python/TS drift. The endpoint computes coherence with the **same predicate** run-time binding uses (`chunk_layer_id` + `chunk_analyzable_digest` match), factored as `bundles.coherence_reason(dep, chunk_label, chunk_digest) -> str | None`: `_assert_coherent` raises on its truthy return, the endpoint routes truthy → `incompatible[]`. One predicate, two callers — discovery and binding can never disagree.
+- **Response (200):** chunk-rooted, coherent dependents nested.
+  - `chunk_layers[]`: `{label, size, bundle_ready, capability, stats, rendering?, runInfo?, repeat_masks[], embeddings[]}` — `repeat_masks`/`embeddings` are **coherent only**; `bundle_ready = len(repeat_masks) >= 1` (a bundle's `repeat_mask` is mandatory; embedding is required only for embedding-based metrics).
+  - `methods[]`: `{name, requires_embedding}` — single source is `self_similarity._METHODS` (cosine/jaccard `True`; word_overlap/edit_distance `False`).
+  - `incompatible[]`: `{kind, label, reason}` — layers that exist but bind to no present chunk layer, **surfaced not dropped** (NFR-3 fail-loud).
+- **Errors:** `404` project-not-found (existing resolution dependency); `200` with `chunk_layers: []` when nothing is produced yet (discovery finding nothing is not an error); the endpoint **never `400`s on incoherence** — that fails loud at *run* time in `resolve_explicit_bundle`, discovery only reports.
+- **Reuse:** enumerates via the existing `_layer_status_entries(project_dir, name)` (`server.py:189`) for `chunking`/`repeat_mask`/`embedding`; no new persistence, no new coordinate logic.
+
 ### Tests
 - **Equivalence (the honest invariant).** *Same chunk layer + same embedding vectors → identical similarity math.* This is a 2-level test (the matrix produced from a bound layer equals the matrix the legacy inline path produced for the same chunks/vectors), **not** the retired NFR-1 "byte-identical at existing defaults from a single run" claim — a consumer redesign deliberately changes the entry workflow (you must produce layers first).
 - **Fail-loud:** with no compatible layer present, `extract` raises `LayerResolutionError` and produces no output.
@@ -382,6 +395,8 @@ Needs P2 (`stats` summary block), P3 (embedding distributions), and P5 (the shel
 - [ ] Absent layers → loud, descriptive failure (no silent chunk/embed).
 - [ ] Equivalence test green: identical matrix for identical bound chunks + vectors.
 - [ ] Similarity computation factored behind a method interface (room for NN-graph / clustering siblings).
+- [ ] `GET …/self_similarity/inputs` returns coherent, server-validated bundles (`incompatible[]` surfaced, not dropped); coherence shares one predicate with run-time binding.
+- [ ] Picker dialog builds `inputs` from the endpoint (no hand-typed labels); DotplotView Recompute retired (slider = cached-size view only); Playwright golden-path green.
 
 ### Risks & mitigations
 - *Equivalence drift from the legacy matrix.* **Mitigation:** the matrix math moves verbatim into the method; the equivalence test gates the commit on identical output for identical inputs; do not merge on any divergence.

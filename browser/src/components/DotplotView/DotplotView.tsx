@@ -222,8 +222,6 @@ export default function DotplotView(): ReactElement | null {
   const [similarityMetric, setSimilarityMetric] = useState('cosine');
   const [chunkSize, setChunkSize] = useState(17);
   const [loadedChunkSize, setLoadedChunkSize] = useState(17);
-  const [recomputing, setRecomputing] = useState(false);
-  const [reloadKey, setReloadKey] = useState(0);
   const [showAlignments, setShowAlignments] = useState(true);
   const [alignments, setAlignments] = useState<Array<{
     chunk_start_a: number; chunk_end_a: number;
@@ -268,10 +266,20 @@ export default function DotplotView(): ReactElement | null {
         setAvailableChunkSizes(chunkSizes);
         setLoadedChunkSize(manifestChunkSize);
 
+        // Post-P7 a run may compute only a subset of metrics (e.g. a text-only word_overlap run
+        // produces no cosine/jaccard). If the selected metric wasn't computed, fall back to the
+        // manifest's primary metric, else the first available one, and let the effect re-run.
+        if (metrics.length > 0 && !metrics.includes(similarityMetric)) {
+          const primaryMetric = manifest.metadata?.primary;
+          setSimilarityMetric(
+            typeof primaryMetric === 'string' && metrics.includes(primaryMetric) ? primaryMetric : metrics[0],
+          );
+          return;
+        }
+
         // Determine which chunk size to load
         const targetCS = chunkSizes.includes(chunkSize) ? chunkSize : manifestChunkSize;
         if (targetCS !== chunkSize) setChunkSize(targetCS);
-        setRecomputing(false);
 
         // Load from per-chunk-size endpoint if available, else fallback to flat files
         let dataUrl: string;
@@ -317,7 +325,7 @@ export default function DotplotView(): ReactElement | null {
         setError('Self-similarity matrix not available. Run analysis first.');
         setLoading(false);
       });
-  }, [textHicOpen, projectId, similarityMetric, chunkSize, reloadKey]);
+  }, [textHicOpen, projectId, similarityMetric, chunkSize]);
 
   const n = signal ? signal.manifest.dimensions[0] : 0;
   const colors = PALETTES[palette];
@@ -740,7 +748,7 @@ export default function DotplotView(): ReactElement | null {
   const canvasSize = containerRef.current ? Math.max(1, Math.min(containerRef.current.clientWidth - rightPanelWidth - 8, containerRef.current.clientHeight - 120)) : 400;
 
   const chunkSizeHasData = availableChunkSizes.includes(chunkSize);
-  const needsRecompute = !chunkSizeHasData;
+  const chunkSizeNotCached = !chunkSizeHasData;
 
   return (
     <div
@@ -831,27 +839,10 @@ export default function DotplotView(): ReactElement | null {
               <span className="text-green-600 text-[0.85em]">cached</span>
             )}
           </label>
-          {needsRecompute && (
-            <button
-              onClick={async () => {
-                if (!projectId || recomputing) return;
-                setRecomputing(true);
-                await fetch(`/api/projects/${projectId}/analyze/self_similarity?chunk_size=${chunkSize}`, { method: 'POST' });
-                const poll = setInterval(async () => {
-                  const r = await fetch(`/api/projects/${projectId}/analyze/self_similarity/status`);
-                  const d = await r.json();
-                  if (d.status !== 'running') {
-                    clearInterval(poll);
-                    setRecomputing(false);
-                    setReloadKey((k) => k + 1);
-                  }
-                }, 3000);
-              }}
-              disabled={recomputing}
-              className="px-2 py-0.5 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 disabled:opacity-50 disabled:cursor-wait"
-            >
-              {recomputing ? 'Computing…' : 'Recompute'}
-            </button>
+          {chunkSizeNotCached && (
+            <span className="text-[0.8em] text-[var(--color-text-muted)]" title="This view shows cached chunk sizes only — produce a new size from the Analysis panel">
+              not cached — produce in Analysis panel
+            </span>
           )}
         </div>
       )}

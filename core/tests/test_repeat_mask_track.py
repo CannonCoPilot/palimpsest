@@ -68,7 +68,7 @@ def _inline_expected(project, threshold=None) -> list[bool]:
         grow_factor=None, remainder_ratio=None,
     )
     chunks = chunk_text(ref, cfg)
-    repeats = find_exact_repeats(ref, chunks)
+    repeats = find_exact_repeats(chunks)
     if threshold is None:
         mask_repeats(chunks, repeats)
     else:

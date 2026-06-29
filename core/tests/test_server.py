@@ -144,6 +144,12 @@ class TestStaticServing:
         assert response.status_code == 404
 
 
+# A syntactically-valid P7 inputs bundle. The labels need not resolve to real layers for endpoint
+# tests that only assert the synchronous validate_params outcome (200 + echo, or a 400) — layer
+# binding happens later in the async extract job.
+_SS_INPUTS = json.dumps([{"chunk_label": "ck", "repeat_mask_label": "ck_rp"}])
+
+
 class TestSelfSimilarityEndpoints:
     """Coverage for the self-similarity cs/* endpoints (audit E-NEW4) including
     the route-ordering regression and W7 metric-allowlist validation."""
@@ -196,37 +202,22 @@ class TestSelfSimilarityEndpoints:
         assert r.status_code in (404, 405)  # no POST auto-run endpoint anymore
 
     def test_self_similarity_rejects_missing_required_params(self, client):
-        # Required params, no defaults: omitting embedding params is a 400, not a silently-defaulted
-        # run.
+        # P7: `inputs` (the explicit layer bundles) is the required param with no default — omitting it
+        # is a 400, not a silently-defaulted run.
         pid = self._pid(client)
-        r = client.post(f"/api/projects/{pid}/analyze/self_similarity?chunk_mode=word&chunk_size=7")
+        r = client.post(f"/api/projects/{pid}/analyze/self_similarity")
         assert r.status_code == 400
-        assert "embedding" in r.json()["detail"].lower()
-
-    def test_self_similarity_rejects_unsupported_mode(self, client):
-        # verse/punctuation are stage-only until the self-similarity redesign — rejected, not run.
-        pid = self._pid(client)
-        r = client.post(
-            f"/api/projects/{pid}/analyze/self_similarity"
-            "?chunk_mode=verse&embed_provider=mlx&embed_endpoint=http://x&embed_model=m&embed_batch_size=8"
-        )
-        assert r.status_code == 400
-
-    def test_run_analysis_declares_per_metric_chunk_size(self, client):
-        # E-NEW1: chunk_size_cosine must be a *declared* int query param. A non-int
-        # value triggers FastAPI 422; an undeclared param would be silently ignored.
-        pid = self._pid(client)
-        r = client.post(f"/api/projects/{pid}/analyze/self_similarity?chunk_size_cosine=notanint")
-        assert r.status_code == 422
+        assert "inputs" in r.json()["detail"].lower()
 
     def test_analyzable_sep_defaults_to_empty_and_is_echoed(self, client):
         # R2: the analyzable-stream separator is a runtime param, never a hidden default. Omitting it
-        # resolves to "" (pure excision) and the resolved value is echoed back. word_overlap needs no
-        # embedding service, so the run starts and the response carries the echo.
+        # resolves to "" (pure excision) and the resolved value is echoed back. A word_overlap run needs
+        # no embedding service; the endpoint returns 200 once validate_params passes (the named layers
+        # are bound later in the async job), and the 200 carries the echo.
         pid = self._pid(client)
         r = client.post(
-            f"/api/projects/{pid}/analyze/self_similarity"
-            "?chunk_mode=word&chunk_size=7&metrics=word_overlap"
+            f"/api/projects/{pid}/analyze/self_similarity",
+            params={"inputs": _SS_INPUTS, "metrics": "word_overlap"},
         )
         assert r.status_code == 200, r.text
         assert r.json()["analyzable_sep"] == ""
@@ -236,32 +227,33 @@ class TestSelfSimilarityEndpoints:
         # exactly how the masked-resolved analyzable stream was assembled.
         pid = self._pid(client)
         r = client.post(
-            f"/api/projects/{pid}/analyze/self_similarity"
-            "?chunk_mode=word&chunk_size=7&metrics=word_overlap&analyzable_sep=%20%7C%20"
+            f"/api/projects/{pid}/analyze/self_similarity",
+            params={"inputs": _SS_INPUTS, "metrics": "word_overlap", "analyzable_sep": " | "},
         )
         assert r.status_code == 200, r.text
         assert r.json()["analyzable_sep"] == " | "
 
     def test_delimiters_accepts_multi_char_list_param(self, client):
         # R4: delimiters is a repeated (list) query param — each entry is a full, possibly multi-char
-        # delimiter, not one string split into characters. Punctuation chunking is still rejected by
-        # self-similarity (R7), so this 400s on the *mode*; a malformed param shape would be a 422.
-        # This proves the list param is accepted and forwards the multi-char delimiters intact.
+        # delimiter, not one string split into characters. Under P7, delimiters belongs to the chunking
+        # layer (self_similarity no longer chunks), so this exercises the `chunking` track in
+        # punctuation mode. The resolved-params echo proves both multi-char entries survive intact (not
+        # split into single characters).
         pid = self._pid(client)
         r = client.post(
-            f"/api/projects/{pid}/analyze/self_similarity"
-            "?chunk_mode=punctuation&metrics=word_overlap&delimiters=%7C%7C&delimiters=--"
+            f"/api/projects/{pid}/analyze/chunking",
+            params={"chunk_mode": "punctuation", "delimiters": ["||", "--"]},
         )
-        assert r.status_code == 400, r.text
-        assert "punctuation" in r.json()["detail"].lower()
+        assert r.status_code == 200, r.text
+        assert r.json()["resolved_params"]["delimiters"] == ["||", "--"]
 
     def test_unknown_metric_rejected_with_400(self, client):
         # R6: a typo'd metric is rejected (400) with the offending value named — not silently
         # dropped (which previously fell back to silently running every metric).
         pid = self._pid(client)
         r = client.post(
-            f"/api/projects/{pid}/analyze/self_similarity"
-            "?chunk_mode=word&chunk_size=7&metrics=word_overlap,cosin"
+            f"/api/projects/{pid}/analyze/self_similarity",
+            params={"inputs": _SS_INPUTS, "metrics": "word_overlap,cosin"},
         )
         assert r.status_code == 400, r.text
         detail = r.json()["detail"].lower()
@@ -313,11 +305,11 @@ class TestJobErrorPropagation:
         # reach the user as whatever actually happened.
         from palimpsest.server import _job_display_status
         job = {"status": "failed", "track": "self_similarity",
-               "error": "ValueError: metric 'cosine' requires chunk_size_cosine"}
+               "error": "LayerResolutionError: no chunk layer satisfies {'overlapping': False}"}
         _, error = _job_display_status(job, output_exists=False)
         assert error is not None
         assert "Matrix too large" not in error
-        assert "chunk_size_cosine" in error
+        assert "LayerResolutionError" in error
 
     def test_running_job_reports_running_without_error(self):
         from palimpsest.server import _job_display_status

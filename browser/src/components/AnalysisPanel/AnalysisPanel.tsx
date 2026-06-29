@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useMaskOverlayStore } from '../../stores/maskOverlayStore';
 
@@ -38,27 +38,6 @@ function analyzeQuery(params: Record<string, string | number> | undefined, force
   if (force) obj.force = 'true';
   const qs = new URLSearchParams(obj).toString();
   return qs ? `?${qs}` : '';
-}
-
-// Embedding config is user-defined-at-runtime with NO code defaults. Fields start empty and are
-// seeded only from the user's own last-used values, persisted here. (Not a default — it is the
-// user's prior explicit choice, surfaced for convenience.)
-const EMBED_LS_KEY = 'palimpsest:embedConfig';
-interface SavedEmbedConfig { provider: string; endpoint: string; model: string; batchSize: string; }
-function loadEmbedConfig(): Partial<SavedEmbedConfig> {
-  try {
-    const raw = localStorage.getItem(EMBED_LS_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
-function saveEmbedConfig(cfg: SavedEmbedConfig): void {
-  try {
-    localStorage.setItem(EMBED_LS_KEY, JSON.stringify(cfg));
-  } catch {
-    /* persistence is best-effort; a blocked localStorage must not break analysis */
-  }
 }
 
 interface TrackStatus {
@@ -103,7 +82,7 @@ const TRACK_DESCRIPTIONS: Record<string, string> = {
   syntax: 'Syntactic complexity features',
   lithmm: 'Literary Hidden Markov Model states',
   compartments: 'A/B thematic compartments',
-  self_similarity: 'Paragraph embedding similarity matrix',
+  self_similarity: 'Self-similarity matrix over bound layers — cosine/jaccard (embedding) + word_overlap/edit_distance (text-only)',
   boundary_detection: 'HMM Viterbi domain boundary detection (multi-metric)',
 };
 
@@ -196,8 +175,8 @@ const TRACK_PARAMS: Record<string, TrackParam[]> = {
       { label: 'LDA', value: 'lda' }, { label: 'NMF', value: 'nmf' },
     ]},
   ],
-  // self_similarity is configured by the dedicated SelfSimilarityParamDialog (chunking + embedding
-  // params), not this generic schema.
+  // self_similarity has no generic params — it is configured by SelfSimilarityParamDialog, the
+  // layer-picker that builds the explicit {chunk, repeat_mask, embedding?} bundles + metric selection.
   self_similarity: [],
   sentiment: [
     // Only VADER is implemented; Hedonometer is not offered until its scoring path exists (P5:
@@ -211,283 +190,224 @@ const TRACK_PARAMS: Record<string, TrackParam[]> = {
   ],
 };
 
-const SIMILARITY_METRICS = [
-  { key: 'cosine', label: 'Cosine', description: 'Semantic similarity via embeddings' },
-  { key: 'jaccard', label: 'Jaccard', description: 'Binarized embedding overlap' },
-  { key: 'word_overlap', label: 'Word overlap', description: 'Content-word set Jaccard' },
-  { key: 'edit_distance', label: 'Edit distance', description: 'Token-level Levenshtein + LASTZ alignment' },
-];
-
-// Chunking modes the self-similarity consumer supports today. The chunking stage also implements
-// "verse" and "punctuation"; those need the self-similarity redesign before this consumer accepts
-// them, so they are intentionally not offered here (the backend rejects them with a clear message).
-const CHUNK_MODE_OPTIONS = [
-  { value: 'word', label: 'Word (fixed, non-overlapping)' },
-  { value: 'slide', label: 'Slide (overlapping, even ≥10)' },
-  { value: 'smart', label: 'Smart (grown per unit)' },
-];
-const SMART_UNIT_OPTIONS = [
-  { value: 'paragraph', label: 'Paragraph' },
-  { value: 'sentence', label: 'Sentence' },
-  { value: 'verse', label: 'Verse' },
-];
-const EMBED_PROVIDER_OPTIONS = [
-  { value: 'mlx', label: 'MLX' },
-  { value: 'ollama', label: 'Ollama' },
-];
-
-// Mirrors the backend's self_similarity.WARN_MATRIX_DIM — the per-side chunk count past which an
-// n×n matrix is flagged as very large (the backend warns but still runs; so does this estimate, B4).
-const WARN_MATRIX_DIM = 16000;
-
-function formatBytes(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`;
-  const units = ['KB', 'MB', 'GB', 'TB'];
-  let v = bytes / 1024;
-  let i = 0;
-  while (v >= 1024 && i < units.length - 1) { v /= 1024; i++; }
-  return `${v >= 100 ? Math.round(v) : v.toFixed(1)} ${units[i]}`;
+interface SsLayerView {
+  label: string;
+  capability?: Record<string, unknown>;
+  stats?: Record<string, unknown> | null;
 }
+interface SsChunkLayer extends SsLayerView {
+  size: number | null;
+  bundle_ready: boolean;
+  repeat_masks: SsLayerView[];
+  embeddings: SsLayerView[];
+}
+interface SsMethod { name: string; requires_embedding: boolean; }
+interface SsIncompatible { kind: string; label: string; reason: string; }
+interface SelfSimInputs {
+  consumer: string;
+  chunk_layers: SsChunkLayer[];
+  methods: SsMethod[];
+  incompatible: SsIncompatible[];
+}
+interface BundlePick { include: boolean; repeatMask: string; embedding: string; }
 
+const capStr = (c: Record<string, unknown> | undefined | null, k: string): string =>
+  c && c[k] != null ? String(c[k]) : '';
+
+// The self_similarity consumer binds layers by explicit label (one {chunk, repeat_mask, embedding?}
+// bundle per chunk size). This dialog is a *picker* over the server-validated discovery endpoint
+// (GET …/self_similarity/inputs): the backend pre-groups each chunk layer's coherent repeat_masks /
+// embeddings, so the UI never reconstructs binding rules — it just lets the user choose and emits the
+// `inputs` JSON. It never chunks or embeds; producing a layer is a separate track run.
 function SelfSimilarityParamDialog({ onRun, onCancel, projectId }: {
   onRun: (params: Record<string, string | number>) => void;
   onCancel: () => void;
   projectId: string | undefined;
 }) {
-  const wordCount = useProjectStore((s) => getActiveProject(s).metadata?.word_count ?? 0);
-  const paragraphCount = useProjectStore((s) => getActiveProject(s).metadata?.paragraph_count ?? 0);
-  const [metricEnabled, setMetricEnabled] = useState<Record<string, boolean>>({
-    cosine: true, jaccard: true, word_overlap: true, edit_distance: true,
-  });
-  const [chunkMode, setChunkMode] = useState('word');
-  const [chunkSizes, setChunkSizes] = useState<Record<string, number>>({
-    cosine: 7, jaccard: 7, word_overlap: 7, edit_distance: 7,
-  });
-  const [useSharedSize, setUseSharedSize] = useState(true);
-  const [sharedSize, setSharedSize] = useState(7);
-  // Smart-mode parameters (sent only when chunkMode === 'smart').
-  const [smartUnit, setSmartUnit] = useState('paragraph');
-  const [growFactor, setGrowFactor] = useState(2);
-  const [remainderRatio, setRemainderRatio] = useState(0.6);
-  // Analyzable-stream separator inserted between kept (unmasked) spans. Empty = pure excision
-  // (masked spans vanish "as if not there"); sent explicitly so it is never a hidden backend default.
-  const [analyzableSep, setAnalyzableSep] = useState('');
-  // Embedding parameters — required at runtime with NO code defaults. Fields start empty and are
-  // seeded only from the user's own last-used values (localStorage), then sent explicitly.
-  const [embedProvider, setEmbedProvider] = useState(() => loadEmbedConfig().provider ?? '');
-  const [embedEndpoint, setEmbedEndpoint] = useState(() => loadEmbedConfig().endpoint ?? '');
-  const [embedModel, setEmbedModel] = useState(() => loadEmbedConfig().model ?? '');
-  const [embedBatchSize, setEmbedBatchSize] = useState(() => loadEmbedConfig().batchSize ?? '');
-  const [availableSizes, setAvailableSizes] = useState<number[]>([]);
+  const [data, setData] = useState<SelfSimInputs | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [methodOn, setMethodOn] = useState<Record<string, boolean>>({});
+  const [pick, setPick] = useState<Record<string, BundlePick>>({});
 
   useEffect(() => {
     if (!projectId) return;
-    fetch(`/api/projects/${projectId}/self_similarity/chunk_sizes`)
-      .then(r => r.json())
-      .then(d => setAvailableSizes(d.chunk_sizes ?? []))
-      .catch(() => {});
+    let cancelled = false;
+    fetch(`/api/projects/${projectId}/self_similarity/inputs`)
+      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then((d: SelfSimInputs) => {
+        if (cancelled) return;
+        setData(d);
+        setMethodOn(Object.fromEntries(d.methods.map((m) => [m.name, true])));
+        // Pre-pick the sole repeat_mask/embedding when a chunk layer has exactly one (the common
+        // case), so a single-layer project is one checkbox from a valid run. Nothing is *included*
+        // by default — the user opts each chunk size into the run explicitly.
+        const seeded: Record<string, BundlePick> = {};
+        for (const cl of d.chunk_layers) {
+          seeded[cl.label] = {
+            include: false,
+            repeatMask: cl.repeat_masks.length === 1 ? cl.repeat_masks[0].label : '',
+            embedding: cl.embeddings.length === 1 ? cl.embeddings[0].label : '',
+          };
+        }
+        setPick(seeded);
+      })
+      .catch((e) => { if (!cancelled) setLoadError(String(e)); });
+    return () => { cancelled = true; };
   }, [projectId]);
 
-  const enabledMetrics = Object.entries(metricEnabled).filter(([, v]) => v).map(([k]) => k);
-  const anyEnabled = enabledMetrics.length > 0;
-  // Embedding is required exactly when cosine or jaccard is selected (mirrors the backend's
-  // self_similarity.validate_params); only then are the fields sent and required-to-be-complete.
-  const needsEmbedding = enabledMetrics.some(m => m === 'cosine' || m === 'jaccard');
-  const embeddingComplete =
-    embedProvider.trim() !== '' && embedEndpoint.trim() !== '' &&
-    embedModel.trim() !== '' && embedBatchSize.trim() !== '';
-  const canRun = anyEnabled && (!needsEmbedding || embeddingComplete);
+  const methods = data?.methods ?? [];
+  const chunkLayers = data?.chunk_layers ?? [];
+  const incompatible = data?.incompatible ?? [];
+  const enabledMetrics = methods.filter((m) => methodOn[m.name]).map((m) => m.name);
+  // Embedding is needed exactly when a selected metric declares requires_embedding — the same
+  // single source (the endpoint's method registry) the backend validates against.
+  const needsEmbedding = methods.some((m) => methodOn[m.name] && m.requires_embedding);
 
-  // B4: pre-run cost estimate. Chunk count drives an n×n similarity matrix per metric, so a large
-  // corpus or a tiny chunk size can demand enormous memory. We warn (never block) past
-  // WARN_MATRIX_DIM, matching the backend. The count is approximate — it is derived from the raw
-  // word/paragraph count, while the backend chunks the (slightly shorter) masked analyzable stream.
-  const estimate = useMemo(() => {
-    if (!anyEnabled || wordCount <= 0) return null;
-    const sizes = useSharedSize
-      ? [sharedSize]
-      : enabledMetrics.map((m) => chunkSizes[m]).filter((s) => s > 0);
-    if (!sizes.length) return null;
-    const minSize = Math.min(...sizes); // smallest size → most chunks → the binding (worst) case
-    // Slide mode requires an even window ≥ 10 (matches the backend ChunkingConfig). With the dialog's
-    // default size (7) this is invalid, so estimating chunk counts would mislead — the run would be
-    // rejected before producing anything. Signal the invalidity instead of a bogus matrix size.
-    if (chunkMode === 'slide' && (minSize < 10 || minSize % 2 !== 0)) {
-      return { slideInvalid: true as const };
-    }
-    let n: number;
-    if (chunkMode === 'slide') {
-      const stride = Math.max(1, Math.floor(minSize / 2));
-      n = Math.ceil(Math.max(0, wordCount - minSize) / stride) + 1;
-    } else if (chunkMode === 'smart') {
-      // smart grows variable-size chunks over units; the unit count (paragraphs as proxy) is an
-      // upper bound on how many chunks result.
-      n = paragraphCount > 0 ? paragraphCount : Math.ceil(wordCount / minSize);
-    } else {
-      n = Math.ceil(wordCount / minSize);
-    }
-    const totalBytes = n * n * 4 * enabledMetrics.length; // one float32 n×n matrix per metric
-    return { slideInvalid: false as const, n, totalBytes, huge: n > WARN_MATRIX_DIM };
-  }, [anyEnabled, wordCount, paragraphCount, useSharedSize, sharedSize, enabledMetrics, chunkSizes, chunkMode]);
+  const setPickFor = (label: string, patch: Partial<BundlePick>) =>
+    setPick((prev) => ({ ...prev, [label]: { ...prev[label], ...patch } }));
+
+  const included = chunkLayers.filter((cl) => pick[cl.label]?.include);
+  const rowReady = (cl: SsChunkLayer): boolean => {
+    const p = pick[cl.label];
+    return !!p && !!p.repeatMask && (!needsEmbedding || !!p.embedding);
+  };
+  const canRun = enabledMetrics.length > 0 && included.length > 0 && included.every(rowReady);
 
   const handleRun = () => {
     if (!canRun) return;
-    const params: Record<string, string | number> = {};
-    params.metrics = enabledMetrics.join(',');
-    params.analyzable_sep = analyzableSep;
-    params.chunk_mode = chunkMode;
-    if (useSharedSize) {
-      params.chunk_size = sharedSize;
-    } else {
-      params.chunk_size = chunkSizes[enabledMetrics[0]];
-      for (const m of enabledMetrics) {
-        params[`chunk_size_${m}`] = chunkSizes[m];
-      }
-    }
-    if (chunkMode === 'smart') {
-      params.smart_unit = smartUnit;
-      params.grow_factor = growFactor;
-      params.remainder_ratio = remainderRatio;
-    }
-    // Embedding config — sent only when an embedding metric needs it, and persisted as the user's
-    // last-used values so the fields seed from prior choice (never a code default) next time.
-    if (needsEmbedding) {
-      params.embed_provider = embedProvider;
-      params.embed_endpoint = embedEndpoint;
-      params.embed_model = embedModel;
-      params.embed_batch_size = embedBatchSize;
-      saveEmbedConfig({
-        provider: embedProvider, endpoint: embedEndpoint,
-        model: embedModel, batchSize: embedBatchSize,
-      });
-    }
-    onRun(params);
+    const inputs = included.map((cl) => {
+      const p = pick[cl.label];
+      const bundle: Record<string, string> = {
+        chunk_label: cl.label, repeat_mask_label: p.repeatMask,
+      };
+      if (needsEmbedding) bundle.embedding_label = p.embedding;
+      return bundle;
+    });
+    onRun({ metrics: enabledMetrics.join(','), inputs: JSON.stringify(inputs) });
   };
-
-  const sizeHint = chunkMode === 'slide' ? 'even ≥10' : 'words';
 
   return (
     <div className="border border-[var(--color-border)] rounded p-3 bg-[var(--color-bg)] mt-1 text-[0.85em]">
-      <div className="font-semibold mb-2">Self-Similarity Configuration</div>
+      <div className="font-semibold mb-2">Self-Similarity Inputs</div>
+      <div className="text-[0.78em] text-[var(--color-text-muted)] mb-3">
+        Bind existing layers — one chunk size per bundle. Produce chunk, repeat_mask
+        {needsEmbedding ? ' and embedding' : ''} layers from their own tracks first; this consumer
+        never chunks or embeds on its own.
+      </div>
 
-      {availableSizes.length > 0 && (
-        <div className="text-[0.8em] text-[var(--color-text-muted)] mb-2">
-          Cached sizes: {availableSizes.map(s => `${s}w`).join(', ')}
+      {loadError && (
+        <div className="text-[0.78em] text-[var(--color-warning,#b45309)] mb-2">
+          Could not load layers: {loadError}
         </div>
       )}
-
-      <div className="mb-3">
-        <label className="flex items-center gap-2">
-          <span className="text-[var(--color-text-muted)] w-28">Chunking mode</span>
-          <select value={chunkMode} onChange={(e) => setChunkMode(e.target.value)}
-            className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)]">
-            {CHUNK_MODE_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
-          </select>
-        </label>
-      </div>
-
-      <div className="mb-3">
-        <label className="flex items-center gap-2">
-          <span className="text-[var(--color-text-muted)] w-28">Separator</span>
-          <input type="text" value={analyzableSep} onChange={(e) => setAnalyzableSep(e.target.value)}
-            placeholder="(empty = excision)"
-            className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] w-40" />
-        </label>
-        <div className="text-[0.75em] text-[var(--color-text-muted)] mt-0.5 ml-[7.5rem]">
-          Inserted between unmasked spans. Empty excises masked gaps; a space keeps adjacent words apart.
-        </div>
-      </div>
-
-      {chunkMode === 'smart' && (
-        <div className="mb-3 grid grid-cols-[7rem_1fr] gap-x-2 gap-y-1.5 items-center">
-          <span className="text-[var(--color-text-muted)]">Unit</span>
-          <select value={smartUnit} onChange={(e) => setSmartUnit(e.target.value)}
-            className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] w-40">
-            {SMART_UNIT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
-          </select>
-          <span className="text-[var(--color-text-muted)]">Grow factor</span>
-          <input type="number" step={0.1} min={1} value={growFactor}
-            onChange={(e) => setGrowFactor(parseFloat(e.target.value))}
-            className="w-20 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
-          <span className="text-[var(--color-text-muted)]">Remainder ratio</span>
-          <input type="number" step={0.05} min={0} max={1} value={remainderRatio}
-            onChange={(e) => setRemainderRatio(parseFloat(e.target.value))}
-            className="w-20 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
-        </div>
+      {!data && !loadError && (
+        <div className="text-[0.8em] text-[var(--color-text-muted)] mb-2">Loading layers…</div>
       )}
 
-      <div className="mb-3">
-        <label className="flex items-center gap-2 mb-2 cursor-pointer">
-          <input type="checkbox" checked={useSharedSize} onChange={(e) => setUseSharedSize(e.target.checked)} className="accent-[var(--color-primary)]" />
-          <span className="text-[var(--color-text-muted)]">Shared chunk size for all metrics ({sizeHint})</span>
-          {useSharedSize && (
-            <input type="number" value={sharedSize} min={1}
-              onChange={(e) => setSharedSize(parseInt(e.target.value, 10))}
-              className="w-16 px-1 py-0.5 border border-[var(--color-border)] rounded text-center ml-1" />
-          )}
-        </label>
-      </div>
+      {data && (
+        <>
+          <div className="mb-3">
+            <div className="font-medium mb-1.5">Metrics</div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1">
+              {methods.map((m) => (
+                <label key={m.name} className="flex items-center gap-1.5 cursor-pointer">
+                  <input type="checkbox" checked={!!methodOn[m.name]}
+                    onChange={(e) => setMethodOn({ ...methodOn, [m.name]: e.target.checked })}
+                    className="accent-[var(--color-primary)]" />
+                  <span className={methodOn[m.name] ? 'font-medium' : 'text-[var(--color-text-muted)]'}>{m.name}</span>
+                  {m.requires_embedding && (
+                    <span className="text-[0.7em] text-[var(--color-text-muted)]">(needs embedding)</span>
+                  )}
+                </label>
+              ))}
+            </div>
+          </div>
 
-      <div className="grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1.5 items-center mb-3">
-        {SIMILARITY_METRICS.map(m => (
-          <React.Fragment key={m.key}>
-            <label className="flex items-center gap-1.5 cursor-pointer">
-              <input type="checkbox" checked={metricEnabled[m.key]} onChange={(e) => setMetricEnabled({ ...metricEnabled, [m.key]: e.target.checked })} className="accent-[var(--color-primary)]" />
-              <span className={metricEnabled[m.key] ? 'font-medium' : 'text-[var(--color-text-muted)]'}>{m.label}</span>
-            </label>
-            <span className="text-[0.8em] text-[var(--color-text-muted)]">{m.description}</span>
-            {!useSharedSize && metricEnabled[m.key] ? (
-              <input type="number" value={chunkSizes[m.key]} min={1}
-                onChange={(e) => setChunkSizes({ ...chunkSizes, [m.key]: parseInt(e.target.value, 10) })}
-                className="w-16 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
-            ) : (
-              <span className="text-[0.8em] text-[var(--color-text-muted)] text-center">{useSharedSize ? `${sharedSize}` : '—'}</span>
+          <div className="mb-3 border-t border-[var(--color-border)] pt-2">
+            <div className="font-medium mb-1.5">Chunk layers (one bundle per size)</div>
+            {chunkLayers.length === 0 && (
+              <div className="text-[0.8em] text-[var(--color-text-muted)]">
+                No chunk layers yet. Run a chunking track, then a repeat_mask track on it.
+              </div>
             )}
-          </React.Fragment>
-        ))}
-      </div>
+            <div className="flex flex-col gap-2">
+              {chunkLayers.map((cl) => {
+                const p = pick[cl.label];
+                const sizeLabel = cl.size != null ? `${cl.size}` : cl.label.slice(0, 8);
+                const count = capStr(cl.stats, 'count');
+                return (
+                  <div key={cl.label} className="border border-[var(--color-border)] rounded px-2 py-1.5">
+                    <label className={`flex items-center gap-2 ${cl.bundle_ready ? 'cursor-pointer' : 'opacity-60'}`}>
+                      <input type="checkbox" disabled={!cl.bundle_ready} checked={!!p?.include}
+                        onChange={(e) => setPickFor(cl.label, { include: e.target.checked })}
+                        className="accent-[var(--color-primary)]" />
+                      <span className="font-medium">size {sizeLabel}</span>
+                      <span className="text-[0.78em] text-[var(--color-text-muted)]">
+                        {capStr(cl.capability, 'mode')}{count ? ` · ${count} chunks` : ''}
+                      </span>
+                    </label>
 
-      <div className="mb-3 border-t border-[var(--color-border)] pt-2">
-        <div className="font-medium mb-1.5">
-          Embedding {needsEmbedding ? '(required for cosine/jaccard)' : '(not needed for selected metrics)'}
-        </div>
-        <div className="grid grid-cols-[7rem_1fr] gap-x-2 gap-y-1.5 items-center">
-          <span className="text-[var(--color-text-muted)]">Provider</span>
-          <select value={embedProvider} onChange={(e) => setEmbedProvider(e.target.value)}
-            className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] w-40">
-            <option value="">— select —</option>
-            {EMBED_PROVIDER_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
-          </select>
-          <span className="text-[var(--color-text-muted)]">Endpoint</span>
-          <input type="text" value={embedEndpoint} onChange={(e) => setEmbedEndpoint(e.target.value)}
-            className="px-1 py-0.5 border border-[var(--color-border)] rounded" />
-          <span className="text-[var(--color-text-muted)]">Model</span>
-          <input type="text" value={embedModel} onChange={(e) => setEmbedModel(e.target.value)}
-            className="px-1 py-0.5 border border-[var(--color-border)] rounded" />
-          <span className="text-[var(--color-text-muted)]">Batch size</span>
-          <input type="number" min={1} value={embedBatchSize}
-            onChange={(e) => setEmbedBatchSize(e.target.value)}
-            className="w-20 px-1 py-0.5 border border-[var(--color-border)] rounded text-center" />
-        </div>
-      </div>
+                    {!cl.bundle_ready && (
+                      <div className="text-[0.72em] text-[var(--color-text-muted)] mt-1 ml-6">
+                        No repeat_mask layer for this chunk — run a repeat_mask track on it first.
+                      </div>
+                    )}
 
-      {needsEmbedding && !embeddingComplete && (
-        <div className="text-[0.75em] text-[var(--color-warning,#b45309)] mb-2">
-          Fill all embedding fields to run cosine/jaccard.
-        </div>
+                    {cl.bundle_ready && p?.include && (
+                      <div className="grid grid-cols-[7rem_1fr] gap-x-2 gap-y-1.5 items-center mt-1.5 ml-6">
+                        <span className="text-[var(--color-text-muted)]">repeat_mask</span>
+                        <select value={p.repeatMask}
+                          onChange={(e) => setPickFor(cl.label, { repeatMask: e.target.value })}
+                          className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)]">
+                          <option value="">— select —</option>
+                          {cl.repeat_masks.map((rm) => (
+                            <option key={rm.label} value={rm.label}>
+                              {rm.label.slice(0, 14)}
+                              {capStr(rm.stats, 'masked_count') ? ` (${capStr(rm.stats, 'masked_count')} masked)` : ''}
+                            </option>
+                          ))}
+                        </select>
+
+                        {needsEmbedding && (
+                          <>
+                            <span className="text-[var(--color-text-muted)]">embedding</span>
+                            {cl.embeddings.length === 0 ? (
+                              <span className="text-[0.75em] text-[var(--color-warning,#b45309)]">
+                                none — run an embedding track on this chunk, or deselect cosine/jaccard
+                              </span>
+                            ) : (
+                              <select value={p.embedding}
+                                onChange={(e) => setPickFor(cl.label, { embedding: e.target.value })}
+                                className="px-1 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)]">
+                                <option value="">— select —</option>
+                                {cl.embeddings.map((em) => (
+                                  <option key={em.label} value={em.label}>
+                                    {capStr(em.capability, 'model') || em.label.slice(0, 12)}
+                                    {capStr(em.capability, 'dim') ? ` · d${capStr(em.capability, 'dim')}` : ''}
+                                  </option>
+                                ))}
+                              </select>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {incompatible.length > 0 && (
+            <div className="mb-3 text-[0.72em] text-[var(--color-text-muted)]">
+              <div className="font-medium mb-0.5">Not bindable ({incompatible.length})</div>
+              {incompatible.map((inc, i) => (
+                <div key={i}>• {inc.kind} <code>{inc.label.slice(0, 12)}</code>: {inc.reason}</div>
+              ))}
+            </div>
+          )}
+        </>
       )}
-
-      {estimate && (estimate.slideInvalid ? (
-        <div className="text-[0.78em] mb-2 text-[var(--color-warning,#b45309)]">
-          Slide mode needs an even chunk size ≥ 10. Set a valid size to estimate cost and run.
-        </div>
-      ) : (
-        <div className={`text-[0.78em] mb-2 ${estimate.huge ? 'text-[var(--color-warning,#b45309)]' : 'text-[var(--color-text-muted)]'}`}>
-          Estimate: ~{estimate.n.toLocaleString()} chunks → {estimate.n.toLocaleString()}×{estimate.n.toLocaleString()} matrix
-          {' '}× {enabledMetrics.length} metric{enabledMetrics.length === 1 ? '' : 's'} ≈ {formatBytes(estimate.totalBytes)}
-          {estimate.huge && <span className="font-medium"> ⚠ very large — expect this to be slow and memory-heavy</span>}
-        </div>
-      ))}
 
       <div className="flex gap-2">
         <button onClick={handleRun} disabled={!canRun} className="px-2 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.8em] disabled:opacity-40 disabled:cursor-not-allowed">Run Selected</button>
@@ -541,7 +461,11 @@ function ParamDialog({ trackName, onRun, onCancel }: { trackName: string; onRun:
   );
 }
 
-const EMBEDDING_DEPENDENT_TRACKS = new Set(['self_similarity', 'compartments', 'rqa', 'alphabet']);
+// Tracks that auto-consume the legacy paragraph-embedding cache (/embeddings/compute → cache/embeddings.db).
+// self_similarity is deliberately EXCLUDED post-P7: it binds explicit embedding *layers* via its
+// layer-picker (only for metrics that require them), so forcing the paragraph cache here would both
+// block text-only runs (word_overlap/edit_distance) and compute the wrong embedding family.
+const EMBEDDING_DEPENDENT_TRACKS = new Set(['compartments', 'rqa', 'alphabet']);
 
 function EmbeddingDialog({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () => void }) {
   return (
@@ -903,13 +827,27 @@ export default function AnalysisPanel() {
                   </td>
                   <td className="px-4 py-2.5">
                     {track.status === 'pending' && (
-                      <button
-                        onClick={() => handleRun(track.name)}
-                        disabled={unmetDeps.length > 0}
-                        className="px-2 py-1 rounded border border-[var(--color-primary)] text-[var(--color-primary)] cursor-pointer hover:bg-[var(--color-primary)] hover:text-white text-[0.8em] disabled:opacity-40 disabled:cursor-not-allowed"
-                      >
-                        Compute
-                      </button>
+                      // self_similarity has no runnable defaults — it requires an explicit input
+                      // bundle, so the action opens its layer-picker rather than firing a bare
+                      // (guaranteed-400) run. It is NOT dep-gated like other tracks: `embedding`
+                      // is an optional dep (only cosine/jaccard need it; word_overlap/edit_distance
+                      // are text-only), and the picker itself enforces validity per metric.
+                      track.name === 'self_similarity' ? (
+                        <button
+                          onClick={() => setParamDialogTrack(paramDialogTrack === track.name ? null : track.name)}
+                          className="px-2 py-1 rounded border border-[var(--color-primary)] text-[var(--color-primary)] cursor-pointer hover:bg-[var(--color-primary)] hover:text-white text-[0.8em] disabled:opacity-40 disabled:cursor-not-allowed"
+                        >
+                          Configure…
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleRun(track.name)}
+                          disabled={unmetDeps.length > 0}
+                          className="px-2 py-1 rounded border border-[var(--color-primary)] text-[var(--color-primary)] cursor-pointer hover:bg-[var(--color-primary)] hover:text-white text-[0.8em] disabled:opacity-40 disabled:cursor-not-allowed"
+                        >
+                          Compute
+                        </button>
+                      )
                     )}
                     {track.status === 'computed' && (
                       TRACK_PARAMS[track.name] ? (
@@ -945,10 +883,12 @@ export default function AnalysisPanel() {
                           {track.error ?? 'Analysis failed'}
                         </span>
                         <button
-                          onClick={() => handleRun(track.name)}
+                          onClick={() => track.name === 'self_similarity'
+                            ? setParamDialogTrack(paramDialogTrack === track.name ? null : track.name)
+                            : handleRun(track.name)}
                           className="px-2 py-1 rounded border border-[#ef4444] text-[#ef4444] cursor-pointer hover:bg-[#ef4444] hover:text-white text-[0.8em]"
                         >
-                          Retry
+                          {track.name === 'self_similarity' ? 'Reconfigure…' : 'Retry'}
                         </button>
                       </div>
                     )}

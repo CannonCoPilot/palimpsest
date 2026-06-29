@@ -1,16 +1,17 @@
-"""Exact-repeat phrase detection and chunk masking — shared substrate for analyses that must not let
-formulaic, frequently-repeated passages dominate a result.
+"""Exact-repeat phrase detection and chunk masking — shared substrate for the repeat analyses that
+keep formulaic, frequently-repeated passages from dominating a result.
 
 This logic was born inside ``self_similarity`` (where repeated scripture/legal boilerplate would
-otherwise inflate the similarity matrix). It is extracted here so it is reusable by any track that
-embeds or compares chunks — notably the Wave-0 ``EmbeddingTrack`` — instead of living only inside one
-consumer. ``self_similarity`` imports these names back, so there is a single definition (no drift).
+otherwise inflate the similarity matrix). It is extracted here so the P8 repeat tracks share one
+definition: the ``repeats`` detection track calls :func:`detect_repeats` (text-level) and the
+``repeat_mask`` track calls :func:`mask_repeats`; both route through the same :func:`_count_repeats`
+tally, so they can never drift. ``self_similarity`` (now a layer consumer) imports only
+:data:`STOPWORDS` from here for its content-token filter — it no longer detects or masks repeats inline.
 
 A "repeat" is a contiguous word-sequence (n-gram) that recurs at least ``min_occurrences`` times across
 the whole document; a chunk is "masked" when more than ``MASK_COVERAGE_THRESHOLD`` of its content words
 are covered by such repeats. Masking only sets a boolean flag on each chunk dict — what a consumer does
-with that flag (skip in a matrix, exclude from embedding, …) is the consumer's policy, not this
-module's.
+with that flag (skip in a matrix, shade a lane, …) is the consumer's policy, not this module's.
 """
 
 from __future__ import annotations
@@ -21,9 +22,10 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-# Masking knobs (locked analytical constants, design §6 / audit A3): they change which text is excluded
-# from analysis, so they are declared here and re-exported into self_similarity's LOCKED_CONSTANTS for
-# provenance. Not yet user-tunable.
+# Masking knobs (design §6 / audit A3): they change which text is excluded from analysis. They are the
+# single source of the defaults for the now user-tunable Params on the P8 repeats / repeat_mask tracks,
+# kept as named constants so a positional mask_repeats(chunks, repeats) call stays byte-identical to the
+# pre-P8 behaviour.
 EXACT_REPEAT_MIN_WORDS = 3             # shortest repeated phrase considered for masking
 EXACT_REPEAT_MIN_OCCURRENCES = 3       # times a phrase must recur to count as a repeat
 MASK_COVERAGE_THRESHOLD = 0.5          # fraction of a chunk's content covered by repeats to mask it
@@ -89,19 +91,18 @@ def _count_repeats(
 
 
 def find_exact_repeats(
-    text: str,
     chunks: list[dict[str, Any]],
     min_words: int = EXACT_REPEAT_MIN_WORDS,
     min_occurrences: int = EXACT_REPEAT_MIN_OCCURRENCES,
 ) -> set[str]:
-    """Build a phrase-occurrence index from all chunks and return the set of
-    contiguous word sequences (of length min_words to chunk_size) that appear
-    at least min_occurrences times across the full text.
+    """Chunk-based exact-repeat detection: build a phrase-occurrence index over the concatenated word
+    list of ``chunks`` and return every contiguous word sequence (length ``min_words`` to the chunk
+    size) that recurs at least ``min_occurrences`` times across the whole document.
 
-    The index is built once over the concatenated word list (not per-chunk),
-    so phrase counts reflect the whole document.
+    The index is built once over the concatenated word list (not per-chunk), so phrase counts reflect
+    the whole document. This is the reference path the equivalence tests check the text-level
+    :func:`detect_repeats` against; the tracks themselves use the text-level path.
     """
-    # Collect all words from the full text in document order
     all_words: list[str] = []
     for chunk in chunks:
         all_words.extend(chunk["words"])
@@ -114,7 +115,7 @@ def find_exact_repeats(
 
     repeats = _count_repeats(_normalise(all_words), min_words, min_occurrences, max_ngram)
     logger.info(
-        "Repeat masking: found %d phrases with >= %d occurrences",
+        "Exact-repeat detection: found %d phrases with >= %d occurrences",
         len(repeats), min_occurrences,
     )
     return repeats
