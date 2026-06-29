@@ -1,47 +1,47 @@
 <p align="center">
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-Server-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"></a>
   <a href="https://spacy.io/"><img src="https://img.shields.io/badge/spaCy-NLP-09A3D5?style=for-the-badge&logo=spacy&logoColor=white" alt="spaCy"></a>
-  <a href="https://www.sbert.net/"><img src="https://img.shields.io/badge/Sentence_Transformers-Embeddings-FF6F00?style=for-the-badge" alt="Sentence Transformers"></a>
-  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-Web_UI-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"></a>
-  <a href="https://networkx.org/"><img src="https://img.shields.io/badge/NetworkX-Graph_Analysis-4C8CBF?style=for-the-badge" alt="NetworkX"></a>
-  <a href="https://www.nltk.org/"><img src="https://img.shields.io/badge/NLTK-Linguistics-154F5B?style=for-the-badge" alt="NLTK"></a>
+  <a href="https://github.com/asg017/sqlite-vec"><img src="https://img.shields.io/badge/sqlite--vec-Embeddings-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="sqlite-vec"></a>
 </p>
 
 # Palimpsest
 
-A multi-dimensional text comparison system for computational literary analysis. Palimpsest compares large documents (1M+ words) across four independent analytical axes -- semantic similarity, syntactic structure, narrative architecture, and string-level matching -- to surface relationships that no single method would catch alone.
+A computational literary-analysis platform. Palimpsest ingests a text and produces **analysis layers**
+over it — entities, dialogue, lexical and syntactic features, topics, sentiment, repeats, chunkings,
+embeddings, self-similarity, and more — each addressed back to exact character offsets in the original
+document and rendered as a **track** in a genome-browser-style viewer.
 
 > [!NOTE]
-> Named after the ancient practice of scraping and rewriting parchment, where traces of earlier texts remain visible beneath new ones. Palimpsest finds those traces computationally.
+> Named after the ancient practice of scraping and rewriting parchment, where traces of earlier texts
+> remain visible beneath new ones. Palimpsest finds those traces computationally.
+
+The guiding metaphor is the **browser, not the report**: every analysis is a coordinate-bearing layer
+you can line up against the text and against other layers — the way a genome browser stacks annotation
+tracks against a reference sequence.
 
 ---
 
-## The Problem
+## How it works
 
-Existing tools for comparing literary texts operate on a single dimension: either raw string diff, or topic modeling, or syntactic parse trees. But the interesting questions in comparative literature -- Did the author of Mark draw from Matthew? Which Federalist Papers share an author? How did the Odyssey influence the Aeneid? -- require evidence from multiple analytical dimensions simultaneously. A shared phrase matters more when it occurs within a shared syntactic pattern within a shared narrative structure.
+A *project* is a directory on disk. Everything about one text's analysis lives there, which makes
+projects portable, diff-able, and content-addressable. There is **no database server** — project state
+is filesystem-native, and the only DB is a per-project [`sqlite-vec`](https://github.com/asg017/sqlite-vec)
+vector store for embeddings.
 
-Palimpsest runs four independent analysis modules against the same document set and produces a combined similarity score, so researchers can distinguish surface-level borrowing from deep structural influence.
+Every analysis is a **track** implementing a small `TrackExtractor` protocol; dropping a module into
+`core/palimpsest/tracks/` registers it with zero boilerplate. Tracks come in two roles:
 
----
+- **Producers** (chunking, embedding, repeats) emit reusable *layers* carrying a capability descriptor.
+- **Consumers** (e.g. `self_similarity`) declare a dependency on existing layers and bind them
+  explicitly — fail-loud, never silently recomputing. `self_similarity` is embedding-agnostic: its
+  `word_overlap` / `edit_distance` metrics are text-only, while `cosine` / `jaccard` consume an
+  embedding layer.
 
-## Computational Discovery in Literary Texts
-
-Palimpsest addresses a gap between single-method NLP tools and manual close reading. Each module targets a different layer of textual similarity:
-
-| Module | Method | What It Finds |
-|---|---|---|
-| **Semantic** | Sentence-transformer embeddings (`all-MiniLM-L6-v2`) + cosine similarity | Thematic parallels, conceptual overlap even when phrasing differs |
-| **Syntactic** | spaCy dependency parsing + Jaccard/cosine metrics on parse patterns | Shared grammatical fingerprints: passive voice frequency, clause depth, branching factor |
-| **Structural** | NetworkX directed graph hierarchy + narrative flow segmentation | Document architecture similarity, transition patterns (temporal, causal, contrastive) |
-| **String Matching** | Chunked indexing + Levenshtein fuzzy matching with masking/subsampling | Direct textual borrowing, repeated phrases, near-verbatim parallels |
-
-The modules are independent. Run one or all four depending on the research question.
-
-### Example Use Cases
-
-- **Synoptic Gospel comparison** -- Load Matthew, Mark, and Luke from Project Gutenberg; run all four modules to quantify the Synoptic Problem with data
-- **Federalist Papers authorship** -- Compare essays by Hamilton, Madison, and Jay; syntactic fingerprinting reveals stylistic signatures
-- **Epic literature influence** -- Trace structural and thematic echoes from the Iliad through the Aeneid to Paradise Lost
+All outputs map back to the original text through an explicit, remappable coordinate frame
+(`OffsetMap`) — the contract that lets masked-view analysis, layer reuse, and the forward cross-text
+"root backbone" view all be small extensions rather than rewrites.
 
 ---
 
@@ -49,160 +49,90 @@ The modules are independent. Run one or all four depending on the research quest
 
 ```
 palimpsest/
-├── src/
-│   ├── main.py                          # CLI + Flask web server entry point
-│   └── core/
-│       ├── semantic_analysis_module.py   # Sentence-transformer embeddings
-│       ├── syntactic_analysis_module.py  # spaCy dependency parse comparison
-│       ├── structural_analysis_module.py # NetworkX hierarchy + narrative flow
-│       ├── string_matching_analysis.py   # Chunked fuzzy string matching
-│       ├── string_matching_visualization.py  # Heatmaps via seaborn/matplotlib
-│       └── gutenberg_client.py          # Project Gutenberg fetch + cache
-├── ui/                                  # Flask-served web interface
-├── tests/                               # Unit tests per module
-└── docs/development/                    # All design, planning, research, specs, audits, diagrams
+├── core/                       # Python backend (the `palimpsest` package)
+│   ├── palimpsest/
+│   │   ├── server.py           # FastAPI server for the browser frontend
+│   │   ├── cli.py              # `palimpsest` CLI (ingest / analyze / run-track / serve / export)
+│   │   ├── tracks/            # Track extractors + the Wave-0 layer model (registry, resolver)
+│   │   ├── ingest/            # PDF / EPUB / HTML / text ingestion
+│   │   ├── vectorstore/      # sqlite-vec embedding store
+│   │   └── project.py, runner.py, derive.py, …
+│   └── tests/                 # pytest suite (markers: unit / nlp / api / cli / slow)
+├── browser/                    # React 19 + zustand + Tailwind 4 (Vite) frontend
+└── docs/development/           # Design, specs, ADRs, research corpus, audits
 ```
 
-> [!TIP]
-> Development documentation is consolidated under `docs/development/` (see its `README.md` for the map).
-> Mermaid architecture diagrams live in `docs/development/diagrams/`; the research corpus and phase-1
-> task specs are under `docs/development/research/`; the gold-set masking-map audit is at
-> `docs/development/audits/masking-map/`.
+Tech stack: **FastAPI + uvicorn**, **spaCy**, scikit-learn, numpy/scipy, pymupdf/ebooklib (ingest),
+**sqlite-vec**; frontend is **React 19 / zustand / Tailwind 4 / Vite** with hand-rolled `<canvas>`/`<svg>`
+visualizations (no charting libraries). Embeddings are served by a local MLX or Ollama backend
+(Qwen3-Embedding); none of it is required for the text-only analyses.
 
 ---
 
 ## Quick Start
 
-<details>
-<summary>Prerequisites</summary>
-
-- Python 3.8+
-- ~2 GB disk for sentence-transformer model weights
-- spaCy English model (`en_core_web_sm`)
-
-</details>
-
-<details>
-<summary>Installation</summary>
+### Backend (`core/`)
 
 ```bash
-git clone https://github.com/CannonCoPilot/palimpsest.git
-cd palimpsest
+cd core
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+python -m spacy download en_core_web_lg
 
-# Automated install (creates venv, installs deps)
-./install.sh
-
-# Or manually:
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-pip install -e .
-python -m spacy download en_core_web_sm
+# Ingest a text, run the always-on tracks, then serve the browser
+palimpsest ingest path/to/book.epub --workspace projects
+palimpsest analyze projects/<text-id>
+palimpsest serve projects --port 8080
 ```
 
-</details>
+Wave-0 *layer* tracks (`chunking`, `embedding`, `repeats`, `repeat_mask`, `self_similarity`) take
+explicit parameters and are not part of batch `analyze`; produce them with `palimpsest run-track` or the
+browser's Analysis panel. See [`docs/development/WALKTHROUGH.md`](docs/development/WALKTHROUGH.md).
 
-### CLI Mode
+### Frontend (`browser/`)
 
 ```bash
-# Compare two texts, output a report
-python -m src.main source.txt target1.txt target2.txt --output report.txt
-```
-
-### Web UI Mode
-
-```bash
-# Launch the Flask-based analysis interface
-python -m src.main --mode ui --port 8000
-```
-
-The web UI supports document upload, Project Gutenberg retrieval by book ID, module selection, and visualization of string matching results (heatmaps).
-
-### Python API
-
-```python
-from src.core.semantic_analysis_module import SemanticAnalyzer
-
-analyzer = SemanticAnalyzer(model_name='all-MiniLM-L6-v2')
-
-# Pairwise similarity
-score = analyzer.compute_similarity(
-    "In the beginning God created the heaven and the earth.",
-    "First Nephi, having been born of goodly parents."
-)
-print(f"Semantic similarity: {score:.4f}")
-
-# Batch search against a corpus
-matches = analyzer.find_similar_segments(
-    target_text="Blessed are the meek",
-    corpus=passage_list,
-    threshold=0.7
-)
+cd browser
+npm install
+npm run dev            # Vite dev server on :5173, proxies /api to the :8080 backend
 ```
 
 ---
 
-## Analysis Output
+## Documentation
 
-The CLI generates a structured report:
+Development documentation lives under [`docs/development/`](docs/development/) — start with its
+[`README.md`](docs/development/README.md). The authoritative design docs are in
+[`docs/development/design/`](docs/development/design/):
 
-```
-PALIMPSEST ANALYSIS REPORT
-========================
+| Doc | Role |
+|---|---|
+| [`palimpsest_system_design.md`](docs/development/design/palimpsest_system_design.md) | Current system architecture |
+| [`analysis-design-principles.md`](docs/development/design/analysis-design-principles.md) | Analysis paradigm + coordinate-frame contract |
+| [`wave0-analysis-suite-vision.md`](docs/development/design/wave0-analysis-suite-vision.md) | Wave-0 analytics vision (FR-1…22) + forward cross-text design |
+| [`wave0-analysis-suite-plan.md`](docs/development/design/wave0-analysis-suite-plan.md) | Phased development plan (P1–P11) |
 
-Combined relevance score: 0.7234
-
-SEMANTIC CONNECTIONS
--------------------
-Connection 1:
-  Similarity: 0.9142
-  Text: And it came to pass that...
-
-Connection 2:
-  Similarity: 0.8537
-  Text: The Lord spoke unto Moses...
-```
-
-String matching results are saved as CSV files (`preliminary_match_scores.csv`, `fuzzy_match_scores.csv`) with heatmap visualizations generated via seaborn.
+Architecture Decision Records are in [`docs/development/architecture/`](docs/development/architecture/);
+format specs (annotation model, signals, LFO, PAF) in [`docs/development/specs/`](docs/development/specs/).
 
 ---
 
 ## Testing
 
 ```bash
-# Run the full test suite
-./run_tests.sh
-
-# Or directly via unittest
-python -m unittest discover -s tests
+./run_tests.sh fast          # backend, excluding slow/external (pytest in core/)
+./run_tests.sh all           # full backend suite
+./run_tests.sh ui            # frontend (vitest in browser/)
 ```
-
-Test coverage spans semantic similarity validation (embedding dimensions, similarity ordering, threshold filtering), syntactic pattern extraction and comparison, structural hierarchy construction, and narrative flow segmentation.
-
----
-
-## Key Dependencies
-
-| Package | Role |
-|---|---|
-| `sentence-transformers` | Semantic embedding and similarity |
-| `spacy` | Dependency parsing, syntactic analysis |
-| `networkx` | Document hierarchy graph construction |
-| `scikit-learn` | Cosine similarity, metrics |
-| `matplotlib` / `seaborn` | String matching heatmaps |
-| `flask` | Web UI server |
-| `pandas` | Match score storage and manipulation |
-| `gensim` | Topic modeling support |
-| `nltk` | Tokenization, linguistic utilities |
 
 ---
 
 ## Status
 
-This project is in active development (alpha). The semantic and string matching modules are functional end-to-end. Syntactic and structural modules have complete implementations with async analysis pipelines. The Project Gutenberg client handles automated text retrieval with local caching.
-
-> [!IMPORTANT]
-> Designed for research and exploration. The fuzzy matching backend (Levenshtein/Jaro-Winkler) is scaffolded but uses placeholder scoring -- integration with `python-Levenshtein` is the next priority.
+Active development. The substrate (ingest, masking/coordinate contract, the always-on annotation tracks)
+and the Wave-0 layer model (producible chunk/embedding/repeat layers + the `self_similarity` consumer)
+are implemented end-to-end. The forward direction — a general two-operand resemblance operator and a
+cross-text / synteny browser view — is designed and scoped (see the Wave-0 vision §10), not yet built.
 
 ---
 
