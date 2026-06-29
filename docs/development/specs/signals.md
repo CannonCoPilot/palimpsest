@@ -7,7 +7,55 @@
 
 Signals are numerical data products produced by track extractors that don't map directly to span annotations. They include matrices, vectors, metadata, and configuration files stored in the `signals/` and `cache/` directories.
 
-## 2. Signal Files
+## 2. Signal Manifests
+
+Every dense signal layer is a binary matrix/vector (`signals/{name}.bin`, float32 little-endian)
+paired with a JSON manifest (`signals/{name}.json`). The manifest is the source of truth for how to
+read the bytes and how each cell maps back to text. Manifest-only signals (no `.bin`) are valid
+(e.g. `alphabet`).
+
+```json
+{
+  "type": "self_similarity",
+  "name": "self_similarity_cosine",
+  "source": "urn:palimpsest:{project}",
+  "reference_sha256": "<sha256 of reference.txt>",
+  "dimensions": [365, 365],
+  "dtype": "float32",
+  "segment_offsets": [[0, 22], [24, 150], ...],   // span in reference.txt per matrix index
+  "metadata": { "metric_info": { ... } }
+}
+```
+
+`segment_offsets[i]` gives the character span (into `reference.txt`) that row/column `i` represents —
+this is what lets a matrix cell address text. Offsets are remapped analyzable→original at write time
+(the coordinate-frame contract, see `../design/analysis-design-principles.md §4`).
+
+### Coordinate-frame fields (forward design — cross-text pre-stage)
+
+Self-similarity is the `A = B` degenerate case of a two-operand resemblance operator `R(A, B)`
+(Vision §10). To make cross-text **additive rather than a rewrite**, the manifest generalizes the
+single coordinate frame into an explicit list of **axes** (P9 / FR-20, behavior-neutral for self):
+
+```json
+{
+  "mode": "auto",            // auto (A=A) | cross (A×B) | probe | corpus
+  "symmetric": true,         // self matrices are symmetric; cross need not be
+  "storage": "dense",        // dense | sparse-topk (scale modes, P11)
+  "axes": [
+    {"role": "row", "project_id": "...", "ref_sha256": "...", "segment_offsets": [...], "label": "..."},
+    {"role": "col", "project_id": "...", "ref_sha256": "...", "segment_offsets": [...], "label": "..."}
+  ]
+}
+```
+
+For `mode: "auto"` (today) `axes` has length 1, and the legacy top-level
+`segment_offsets`/`reference_sha256`/`dimensions` keep **mirroring `axes[0]`** — so existing readers
+(`DotplotView`, `/analysis/status`) need no change. A cross-text matrix (P10 / FR-21) carries two
+axes, where the `col` axis is a second operand coordinate-mapped onto the `row` (root) backbone via an
+`OffsetMap` into the root frame.
+
+## 3. Signal Files
 
 ### lithmm_meta.json
 ```json
@@ -62,20 +110,25 @@ Boyd et al. 15-D function-word arc, reduced to 3 dimensions.
 ```
 Recurrence Quantification Analysis metrics from the self-similarity matrix.
 
-## 3. Cache Files
+## 4. Cache Files
+
+The embedding store comes in **two families**, both sqlite-vec databases under `cache/`:
 
 ### cache/embeddings.db
-SQLite database with sqlite-vec extension. Contains paragraph-level embeddings.
+Paragraph-level embeddings for whole-text search. Keyed by paragraph index (`para_index` ≥ 0).
+- `vec_items` virtual table: `embedding FLOAT32[{dim}]` (cosine); `vec_meta`: `rowid, id, para_index, metadata`
+- Dimension matches the embedding model (e.g. 2560 for Qwen3-Embedding-4B).
 
-Schema:
-- `embeddings` virtual table: `id TEXT PRIMARY KEY, embedding FLOAT32[{dim}]`
-- ID format: `{project_id}:para:{paragraph_index}`
-- Dimension: matches embedding model (2560 for Qwen3-Embedding-4B)
+### cache/embeddings_{label}.db
+Chunk-level embeddings produced by the **EmbeddingTrack** layer (Wave-0). `{label}` is a
+content-addressed hash of `provider + endpoint + model + chunk_texts`, so re-running with the same
+inputs reuses the cache and distinct configs coexist. Chunk rows carry `para_index = -1`; row order
+(`rowid`) is insertion = chunk order and is load-bearing for matrix reconstruction.
 
 ### cache/spacy_*.pickle
 Cached spaCy Doc objects for the reference text. Model-versioned.
 
-## 4. Coordinates
+## 5. Coordinates
 
 ### coordinates.json
 ```json

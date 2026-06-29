@@ -51,3 +51,17 @@ JSONL storage (one annotation per line) adds:
 - `annotation/paf_export.py` converts W3C → PAF on demand for export
 - All annotations carry `palimpsest:evidenceLevel` (E1-E5) and `palimpsest:confidence` at the annotation root
 - Custom body types are defined in `annotation/bodies.py`
+
+## Amendment (2026-06-29) — "PAF" has two senses; cross-text targets
+
+- **"PAF" is overloaded.** The export named here is the *Palimpsest Annotation Format* — a single-text,
+  flat annotation dump. minimap2's PAF is a *Pairwise Alignment Format* recording an alignment between
+  two sequences. The deferred cross-text direction (P10 / FR-21) needs the latter as a **distinct**
+  format (query/target coordinates in both frames), not an overload of this annotation export. See
+  `../specs/paf-v0.1.md` ("Naming") and `../specs/PAF-export.md`.
+- **Second-source / root-frame targets.** The W3C `target.source` field — which text a selector's
+  offsets address — is the seam for cross-text. A cross-text alignment annotation is expressed in the
+  **root** text's coordinate frame (the operand span mapped via an `OffsetMap`, the same excise/remap
+  math as masking) while retaining the operand source for provenance; it rides E3 ("Cross-text
+  alignment evidence") with no new selector type. The single-source assumption is therefore a default,
+  not a structural constraint. See `../specs/annotation-model.md §5`.

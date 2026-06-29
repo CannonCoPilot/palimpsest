@@ -2,6 +2,14 @@
 
 All features ready for interactive testing as of 2026-06-07.
 
+> **Historical snapshot (M1.2, 2026-06-07).** This guide describes an early track set (5–6 extractors)
+> and predates the Wave-0 layer model. The current roster is larger, and `self_similarity`, `chunking`,
+> `embedding`, `repeats`, and `repeat_mask` are now **layer tracks** — you produce them with explicit
+> params and bind a bundle (they are *not* part of batch `analyze`); `self_similarity` is a fail-loud,
+> embedding-agnostic *consumer*, not inline paragraph embedding. The dotplot renderer now exists. For
+> current behavior see [`../WALKTHROUGH.md`](../WALKTHROUGH.md) and the design docs in
+> [`../design/`](../design/).
+
 ---
 
 ## Setup (one-time)
@@ -216,7 +224,7 @@ After loading, you should see:
 |-----|--------|
 | `j` or Down arrow | Select + scroll to next paragraph |
 | `k` or Up arrow | Select + scroll to previous paragraph |
-| `d` | Toggle dotplot view (state toggles, no renderer yet) |
+| `d` | Toggle the DotplotView self-similarity heatmap (renderer now implemented; needs a computed `self_similarity` layer — see WALKTHROUGH §7.7) |
 | `?` | Opens keyboard shortcut help overlay |
 | `Escape` (while help open) | Closes help overlay |
 

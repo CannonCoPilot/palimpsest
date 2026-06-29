@@ -47,7 +47,8 @@ All terms are referenced via the `palimpsest:lfoType` property in annotation bod
 | `signal.syntactic_complexity` | Syntactic Complexity | Tree depth, subordination, sentence length |
 | `signal.topic_assignment` | Topic Assignment | LDA topic distribution |
 | `signal.narrative_arc` | Narrative Arc | Function-word arc dimensions |
-| `signal.self_similarity` | Self-Similarity | Passage-pair cosine similarity |
+| `signal.self_similarity` | Self-Similarity | Passage-pair resemblance within one text — the `A = B` case of the two-operand operator `R(A,B)`; one of a family of methods (cosine, jaccard, word-overlap, edit-distance), not cosine alone |
+| `signal.cross_text_similarity` | Cross-Text Similarity | *(forward / deferred, P10)* Passage-pair resemblance **between two texts** — the `A × B` mode of `R(A,B)`; the operand text is coordinate-mapped onto a root backbone (E3 alignment evidence) |
 | `signal.rqa` | RQA Metrics | Recurrence quantification: RR, DET, LAM |
 | `signal.narrative_alphabet` | Narrative Alphabet | Discrete state label from K-means |
 | `signal.lithmm_state` | LitHMM State | Passage state from multivariate HMM |

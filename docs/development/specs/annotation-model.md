@@ -72,6 +72,23 @@ Character offsets into `reference.txt` (0-indexed, exclusive end). All annotatio
 ```
 Used for human-created annotations and cross-text alignment results.
 
+### Cross-text targets (forward design — deferred, P10)
+
+Today every annotation's `target.source` is the single project being analyzed, and its selector
+addresses that project's `reference.txt`. The cross-text direction (FR-21, Vision §10) introduces a
+**second operand** and a **root backbone**: an alignment finding relates a span in an operand text to a
+span in a root text. The model extension is deliberately small and additive:
+
+- The `target.source` names which text a selector's offsets belong to (it already exists; for self it is
+  always the one project). A cross-text annotation simply carries the operand's source there.
+- A cross-text alignment is expressed in the **root coordinate frame** — the operand span is mapped onto
+  the root via an `OffsetMap` (the same excise/remap math as masking, pointed at a second target). So a
+  rendered cross-text track addresses the root's `reference.txt`, while provenance retains the operand
+  source. This rides E3 ("Cross-text alignment evidence") with no new selector type.
+
+No second-operand machinery is built yet; this note exists so the single-source assumption is treated as
+a *default*, not a structural constraint.
+
 ## 6. ID Format
 
 Annotation IDs are deterministic SHA-256 hashes:

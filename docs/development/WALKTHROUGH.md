@@ -79,7 +79,11 @@ core/.venv/bin/palimpsest analyze projects/pride-and-prejudice-ch1
 - `pipeline_run.json` records full provenance (version, parameters, timing)
 
 **Expected skips** (not errors):
-- `self_similarity`: skipped if Ollama not running (needs embeddings)
+- `self_similarity`, `chunking`, `embedding`, `repeats`, `repeat_mask`: **not run by batch `analyze`.**
+  These are Wave-0 *layer* tracks that take explicit parameters. Produce them individually with
+  `palimpsest run-track …` (or the Analysis panel) and bind a bundle — see §7.7. `self_similarity` is
+  now a fail-loud *consumer*: it binds existing chunk/embedding/repeat layers and no longer embeds
+  inline or auto-runs.
 - `coreference`: skipped if BookNLP not installed (needs Java 11+)
 
 To recompute everything from scratch:
@@ -184,14 +188,21 @@ Navigate to the URL shown in Vite's terminal output (usually **http://localhost:
 
 ### 7.7 DotplotView (self-similarity heatmap)
 - Press `d` to toggle the dotplot panel (bottom)
-- If the self-similarity matrix exists (requires Ollama for embeddings), shows an N×N heatmap
-- Blue intensity = cosine similarity between paragraph pairs
+- Shows an N×N similarity heatmap **if a `self_similarity` layer has been computed** (see below)
+- Intensity = similarity between **chunk** pairs for the selected metric; choose the metric in the panel
 - Diagonal is always brightest (self-similarity = 1.0)
 - Hover to see cell coordinates and similarity value
-- Click a cell to navigate to that paragraph in the text view
-- Shift+click navigates to the column paragraph instead
+- Click a cell to navigate to that chunk in the text view; Shift+click navigates to the column chunk
 
-**Note**: The dotplot requires embeddings. If you see "Self-similarity matrix not available", run analysis with Ollama first (see Section 9).
+**Producing the matrix (post-P7 layer flow).** `self_similarity` is an embedding-agnostic layer
+*consumer* — it does not embed inline and does not auto-run. To populate the dotplot:
+1. Produce a **chunking** layer, plus **repeats** + **repeat_mask** layers. For the `cosine`/`jaccard`
+   metrics also produce an **embedding** layer; the `word_overlap`/`edit_distance` metrics are
+   **text-only and need no embeddings at all** (so the dotplot works with Ollama/MLX entirely absent).
+2. In the Analysis panel, click **Configure…** on `self_similarity`, pick the metric(s), bind the chunk
+   layer (+ its repeat_mask, + an embedding layer for embedding metrics), then **Run Selected**.
+3. The DotplotView reads the resulting matrix. "Self-similarity matrix not available" means the layer
+   hasn't been produced yet, or the metric you're viewing isn't among the ones you ran.
 
 ### 7.8 Keyboard Navigation
 | Key | Action |
@@ -296,11 +307,18 @@ You should see:
   Embedded 34 paragraphs
 ```
 
-With embeddings, you get:
-- **Self-similarity matrix** — enables the DotplotView heatmap (press `d`)
+A configured embedding backend powers:
+- **Embedding metrics for self-similarity** — the `cosine`/`jaccard` metrics consume a chunk **embedding
+  layer** (produced by the `embedding` track, §7.7). The `word_overlap`/`edit_distance` metrics are
+  text-only and need no backend. *(Chunk embeddings for layers live in `cache/embeddings_{label}.db`;
+  the paragraph embeddings below, used by `/api/search`, are a separate store, `cache/embeddings.db`.)*
 - **Embedding-based RQA** — more accurate recurrence analysis (vs. TF-IDF fallback)
 - **Similarity search** — `/api/search` returns semantically similar paragraphs
 - **LLM summaries** — "Summarize" button in the Detail Panel works
+
+> **Note:** `palimpsest analyze --force` does **not** produce the chunk-embedding layer or the
+> `self_similarity` matrix — those are Wave-0 layer tracks (§3, §7.7). Run them via `run-track` or the
+> Analysis panel after the backend is up.
 
 ### 9b. BookNLP (coreference chains + speaker attribution)
 
@@ -390,7 +408,7 @@ Subsequent runs use cached models with no network access. When BookNLP is availa
 - **Enhanced entity resolution** — canonical character names
 - **Speaker attribution** — who said each line of dialogue
 
-**Note**: BookNLP is slow on first run (~2-5 minutes per chapter). It is the only track that requires Java. If you skip this step, Palimpsest works fine with 9 tracks instead of 10 — the pipeline gracefully skips the coreference track and reports it as unavailable.
+**Note**: BookNLP is slow on first run (~2-5 minutes per chapter). It is the only track that requires Java. If you skip this step, Palimpsest works fine without it — the pipeline gracefully skips the coreference track and reports it as unavailable.
 
 ---
 
@@ -479,8 +497,11 @@ projects/pride-and-prejudice-ch1/
 │   ├── rqa.json/bin           # RR, DET, LAM per window
 │   ├── topics_dist.json/bin   # Per-paragraph topic distributions
 │   ├── alphabet.json          # K-means narrative state sequence
-│   └── self_similarity.json/bin  # N×N cosine matrix (if embeddings)
-├── manifests/                 # Browser rendering config per track
-├── cache/                     # spaCy docs, embeddings DB
+│   ├── chunking_{label}.json    # Wave-0 chunk layer (one per param set)
+│   ├── repeats_{label}.json     # Wave-0 repeat-set layer
+│   ├── repeat_mask_{c}_{r}.json # Wave-0 per-chunk repeat-mask flags
+│   └── self_similarity_{metric}.bin + .json  # per-metric N×N matrix, bound from layers
+├── manifests/                 # Browser rendering config + per-run provenance (*.run.json)
+├── cache/                     # spaCy docs; embeddings.db (paragraph) + embeddings_{label}.db (chunk)
 └── exports/                   # W3C, CSV export outputs
 ```

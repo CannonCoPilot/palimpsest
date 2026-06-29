@@ -10,7 +10,7 @@ documents. Reorganized 2026-06-19; previously these were scattered across the re
 |---|---|
 | [`audits/`](audits/) | Quality audits. **[`masking-map/`](audits/masking-map/)** — character-level masking-map coverage audit of all 20 gold-set works (one report per work + cross-work index + `METHODOLOGY.md`). **`gold-ratification-results.md`** — the prior by-eye gold-set ratification record (Phase A + the 11-work expansion + idx101 promotion). |
 | [`architecture/`](architecture/) | Architecture Decision Records (ADRs) — annotation format, JBrowse2 patterns. |
-| [`design/`](design/) | System design documents (`palimpsest_system_design.md`). |
+| [`design/`](design/) | **Current design docs (authoritative).** `analysis-design-principles.md` (analysis paradigm + coordinate-frame contract), `wave0-analysis-suite-vision.md` (FR-1…22 + forward cross-text / resemblance-operator §10), `wave0-analysis-suite-plan.md` (phased plan P1–P11), `palimpsest_system_design.md` (current system architecture). |
 | [`specs/`](specs/) | Formal specifications — annotation model, PAF export, LFO, signals. |
 | [`diagrams/`](diagrams/) | Mermaid class/sequence diagrams (current + phase2 + legacy root copies). |
 | [`research/`](research/) | The full research corpus — domain synthesis (28 deep-reads + roadmaps), phase-1 task specs (T01–T37), reports, bibliography, UI/design-token studies, development history. |
@@ -19,6 +19,7 @@ documents. Reorganized 2026-06-19; previously these were scattered across the re
 
 ## Entry points
 
+- **Start here — current system design:** [`design/analysis-design-principles.md`](design/analysis-design-principles.md) (analysis paradigm + coordinate-frame contract) → [`design/palimpsest_system_design.md`](design/palimpsest_system_design.md) (architecture) → [`design/wave0-analysis-suite-vision.md`](design/wave0-analysis-suite-vision.md) + [`design/wave0-analysis-suite-plan.md`](design/wave0-analysis-suite-plan.md) (Wave-0 analytics + forward cross-text)
 - **Current masking-map state of the gold set:** [`audits/masking-map/README.md`](audits/masking-map/README.md)
 - **How masking coverage is defined & measured:** [`audits/masking-map/METHODOLOGY.md`](audits/masking-map/METHODOLOGY.md)
 - **Original M1 plan:** `research/domain-synthesis/26-m1-design-philosophy-exit-criteria.md`,

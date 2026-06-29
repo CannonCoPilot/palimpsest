@@ -42,3 +42,20 @@ urn:palimpsest:pp:sentiment:c3d4	sentiment	signal.sentiment	0	116	0.90	E3	vader/
 3. `start < end` and both non-negative
 4. Confidence in [0.0, 1.0]
 5. Evidence level in {E1, E2, E3, E4, E5}
+
+## Naming: two senses of "PAF"
+
+The acronym is overloaded, and the distinction matters for the cross-text direction:
+
+- **PAF here = Palimpsest Annotation Format** — a flat, single-text TSV *export* of W3C annotations
+  (the columns above). Every row's `start`/`end` address one text's `reference.txt`.
+- **PAF in minimap2 = Pairwise Alignment Format** — a genuine record of an alignment *between two
+  sequences*, with coordinates in both frames.
+
+Today Palimpsest only emits the first sense. The forward cross-text work (P10 / FR-21) introduces the
+*second* sense as a distinct concern: a cross-text alignment is a mapping from an operand text onto a
+**root backbone** — an `OffsetMap` into the root frame, the same excise/remap math used for masking,
+pointed at a second target. That alignment is the LFO `signal.cross_text_similarity` layer (E3
+evidence), **not** an annotation-export row. When cross-text export lands, it should adopt minimap2's
+genuine two-frame PAF columns (query/target start/end) rather than overloading this single-text export
+format. See `PAF-export.md` and `../design/wave0-analysis-suite-vision.md §10`.

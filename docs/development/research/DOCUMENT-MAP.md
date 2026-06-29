@@ -1,7 +1,25 @@
 # Palimpsest Project Documentation Map
 
-**Last updated**: 2026-06-10
+**Last updated**: 2026-06-29 (added Current Design Docs pointer; refreshed terminology canon)
 **Total documents**: 33 domain synthesis docs + 40 phase-1 task docs + 5 reports + 8 genome browser reports + bibliography + WALKTHROUGH + this map
+
+---
+
+## Current Design & Spec Docs (authoritative — start here for implementation)
+
+This map indexes the **research corpus** (historical synthesis + phase-1 planning). For how the system
+is actually designed and built *today*, start with the design docs below — they supersede the research
+docs for implementation decisions:
+
+| Doc | Role |
+|-----|------|
+| [`../design/palimpsest_system_design.md`](../design/palimpsest_system_design.md) | Current system architecture — filesystem projects + sqlite-vec, FastAPI, React/zustand, the layer-track model |
+| [`../design/analysis-design-principles.md`](../design/analysis-design-principles.md) | The analysis paradigm + coordinate-frame contract (authoritative) |
+| [`../design/wave0-analysis-suite-vision.md`](../design/wave0-analysis-suite-vision.md) | Wave-0 analytics vision (FR-1…22) + forward cross-text / resemblance-operator design (§10) |
+| [`../design/wave0-analysis-suite-plan.md`](../design/wave0-analysis-suite-plan.md) | Phased development plan (P1–P11) |
+| [`../specs/`](../specs/) | Format specs — annotation-model, signals, LFO, PAF |
+| [`../architecture/`](../architecture/) | ADRs — W3C annotation format (ADR-001), JBrowse 2 patterns (ADR-005) |
+| [`../WALKTHROUGH.md`](../WALKTHROUGH.md) | How to run the current built system |
 
 ---
 
@@ -129,8 +147,8 @@ These documents define how annotation works — the most architecturally load-be
 | HMM passage state classifier | **LitHMM** |
 | Literary feature vocabulary | **Literary Feature Ontology (LFO)** |
 | Primary annotation format | **W3C Web Annotation JSONL** |
-| Computational export format | **PAF** |
-| Passage-pair similarity matrix | **TextHiC** |
+| Computational export format | **PAF** = *Palimpsest Annotation Format* (single-text annotation TSV). **Distinct** from minimap2's PAF (*Pairwise Alignment Format*) — that two-frame sense is reserved for the future cross-text/synteny export (see `../specs/paf-v0.1.md`). |
+| Passage-pair similarity matrix | **TextHiC** (the view). The analysis is **self-similarity** = the `A=B` case of the two-operand resemblance operator `R(A,B)`; cross-text comparison is the `A×B` mode (deferred, P10). |
 | Evidence integration pipeline | **MAKER evidence model** |
 | Discrete passage encoding | **narrative alphabet** |
 | Per-text extension system | **Palimpsest-X** |

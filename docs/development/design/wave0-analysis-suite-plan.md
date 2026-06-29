@@ -9,7 +9,7 @@
 
 ## 0. How to read this plan
 
-This plan turns the Vision doc's requirements (FR-1…17, NFR-1…7) into eight sequenced phases. Each phase is scoped to be **independently landable, tested, and committed** — the project's established cadence (each substrate contract-lock piece was its own verified commit). For every phase:
+This plan turns the Vision doc's requirements (FR-1…22, NFR-1…7) into eight Wave-0 phases (P1–P8), a behavior-neutral pre-stage refactor (P9), and two deferred cross-text phases (P10–P11). Each phase is scoped to be **independently landable, tested, and committed** — the project's established cadence (each substrate contract-lock piece was its own verified commit). For every phase:
 
 - **Scope** — what it delivers, by FR/NFR id.
 - **Mechanism** — the concrete code, by `file:line`, that it touches or mirrors. No hand-waving: every new artifact rides an existing rail.
@@ -38,10 +38,13 @@ cd /Users/nathanielcannon/Claude/Projects/palimpsest \
 | **P6 — Per-layer statistics, distributions & viz options** | **FR-14** | Frontend + chunk-stats endpoint | (terminal) stats/viz drill-in |
 | **P7 — self_similarity redesign (layer-consumer)** | embedding-agnostic, fail-loud similarity consumer; foundation for a *family* of similarity methods | Backend redesign (behavior-changing) | future similarity / NN / clustering analyses |
 | **P8 — Repeat detection + masking analysis** | FR-15, FR-16, FR-17 | New tracks + chunking option (additive); opens masking constants | P7's flag-only repeat consumption |
+| **P9 — Similarity-engine generalization (cross-text pre-stage)** | FR-18, FR-19, FR-20 | Behavior-neutral seam-lift | P10; **gates the "P1/P2/P7/P8 passed" call** |
+| **P10 — Cross-text similarity & synteny view** *(deferred)* | FR-21 | New similarity mode (collection-scoped) | the cross-text / synteny UI |
+| **P11 — Scale & corpus modes** *(deferred)* | FR-22 | Compute strategy (candidate-gen + sparse) | probe / corpus at scale |
 
 > **Re-scope (2026-06-26).** P2 no longer migrates `self_similarity`. The original P2 folded a *byte-identical migration* of self_similarity into the structural work; review concluded that designed *to* the legacy monolith rather than *toward* the vision. P2 is now strictly the **layer infrastructure** (producer tracks + dependency resolver + producibility/status) — additive, no existing behavior changed. The self_similarity rework is promoted to its own phase **P7**, a *ground-up redesign* as an embedding-agnostic, fail-loud **layer consumer** (it does not run when no chunk/embedding layers exist, and does not dictate which embedding model is used), and the framing for a family of similarity methods (self-similarity matrix, NN graphs, clustering, …). Consequently **NFR-1 (byte-identical self_similarity) is retired** — a consumer redesign intentionally changes the workflow; the honest invariant is the weaker *same chunk layer + same embedding vectors → identical similarity math*.
 
-**Critical path:** P1 → P2 → {P3, P4, P8, P7} → {P5, P6}. P1 is detachable (land anytime). P4's tracks are mutually independent and parallelizable once P2 lands. P7 (self_similarity redesign) needs P2's producible layers (FR-4) — you cannot make a consumer *fail-loud-requiring-layers* until users can produce those layers through the normal run flow and see them. P8 (repeat detection + masking) is parallelizable post-P2 like P3/P4, and its `repeat_mask` layer is what makes P7's flag-only repeat consumption concrete, so P8 lands before (or with) P7's repeat step. P5 (rendering) and P6 (stats panels) both need P2's manifest backbone + P3's embedding data; they ship together as the user-facing surface. The two user commitments — *every chunk/embedding layer always renders as a track* (FR-13) and *every layer has quick-access stats/distributions/viz* (FR-14) — are carried by the P2 manifest backbone → P3 embedding data → P5/P6 UI chain.
+**Critical path:** P1 → P2 → {P3, P4, P8, P7} → {P5, P6}. P1 is detachable (land anytime). P4's tracks are mutually independent and parallelizable once P2 lands. P7 (self_similarity redesign) needs P2's producible layers (FR-4) — you cannot make a consumer *fail-loud-requiring-layers* until users can produce those layers through the normal run flow and see them. P8 (repeat detection + masking) is parallelizable post-P2 like P3/P4, and its `repeat_mask` layer is what makes P7's flag-only repeat consumption concrete, so P8 lands before (or with) P7's repeat step. P5 (rendering) and P6 (stats panels) both need P2's manifest backbone + P3's embedding data; they ship together as the user-facing surface. The two user commitments — *every chunk/embedding layer always renders as a track* (FR-13) and *every layer has quick-access stats/distributions/viz* (FR-14) — are carried by the P2 manifest backbone → P3 embedding data → P5/P6 UI chain. **P9** sits off the critical path: it follows P7/P8, is behavior-neutral (self-similarity byte-identical), and is the gate that lets **P1/P2/P7/P8 be declared *passed***. **P10 and P11 are deferred** — P10 (cross-text / synteny) additionally needs the collection analytical tier; P11 (scale / corpus) is a compute-strategy phase. Neither is scheduled, and P9 is explicitly shaped so adding them is additive rather than a rewrite.
 
 ---
 
@@ -454,6 +457,68 @@ Needs **P2** (the resolver FR-7 for `repeat_mask`'s requirements, the FR-4 produ
 
 ---
 
+## P9 — Similarity-engine generalization (cross-text pre-stage)
+
+> **The seam-lift that "passes" Wave 0.** P7 left `self_similarity` a single-operand consumer. P9 lifts the three single-operand assumptions baked into it (Vision §10.2) into parameters, so the cross-text build (P10) is additive — **without changing self-similarity's behavior**. This is the refactor that lets P1/P2/P7/P8 be declared *passed*. It ships no cross-text feature; it removes the constraints that would otherwise force a rewrite to add one.
+
+### Scope
+- **FR-18** — Operand abstraction: `LayerBundle` becomes one **Operand**; a `ComparisonSpec(op_a, op_b, methods)` binds two; self-similarity is the `op_a is op_b` instance.
+- **FR-19** — Two-operand kernel + method capability: `SimilarityMethod.build(op_a, op_b)`; diagonal/symmetry/mirror-dedup conditional on `op_a is op_b`; `{representation, symmetric, supports_cross}` on each method.
+- **FR-20** — Multi-axis output manifest: `axes[]` + `mode` + `symmetric` + `storage` discriminators; the self path emits length-1 `axes` that current readers consume unchanged.
+
+### Mechanism
+- **Operand (FR-18).** Reframe `LayerBundle` (`tracks/bundles.py:27`) as the per-operand unit — it already holds exactly one text's `{chunk, repeat_mask, embedding?}` + repeat phrases. Add a thin `ComparisonSpec` (frozen dataclass: `operand_a`, `operand_b`, `methods`) with a self constructor (`ComparisonSpec.self(operand)` → `op_a is op_b`). `resolve_explicit_bundle` (`bundles.py:92`) is unchanged for within-project operand loading; a second-project `resolve_operand` is **not** built here (P10).
+- **Kernel (FR-19).** Change `SimilarityMethod.build` from `build(chunks, *, embeddings)` (`self_similarity.py:229`) to `build(op_a, op_b)`; the four existing builders read chunks/embeddings off the operands (with `op_a is op_b` for self). In `extract` (`self_similarity.py:980`), make `np.fill_diagonal(matrix, 1.0)` (`:998`), the `_is_self` diagonal guard in `_extend_alignment` (`:497`), and LASTZ mirror-dedup (`:738`) **conditional on `op_a is op_b`**. Add `symmetric`/`supports_cross`/`representation` to the `SimilarityMethod` dataclass (`:222`) — for the four current methods, `symmetric=True, supports_cross=True`, `representation ∈ {vector, token-set}`.
+- **Manifest (FR-20).** In the master manifest (`self_similarity.py:1061`), add an `axes: [{role:"row"|"col", project_id, ref_sha256, segment_offsets, label}]` list plus `mode:"auto"`, `symmetric:true`, `storage:"dense"`. **Back-compat:** keep emitting the legacy top-level `segment_offsets`/`reference_sha256`/`dimensions` (mirroring `axes[0]`) so `DotplotView` + `/analysis/status` need no change; `axes` is purely additive. (Migrating `DotplotView` to *read* `axes` is a P10 concern.)
+
+### Tests
+- **Behavior byte-identical:** every existing `self_similarity` test stays green; the self matrix, alignments, and on-disk files are byte-identical (the seams' single-operand path is the default). This is P9's whole acceptance bar.
+- **Seam unit tests:** `ComparisonSpec.self(op)` yields `op_a is op_b`; a method's `build(op, op)` equals the legacy `build(chunks, embeddings=…)`; the manifest carries a length-1 `axes` whose `axes[0]` mirrors the legacy headline fields.
+
+### Done criteria
+- [ ] `LayerBundle`→Operand + `ComparisonSpec` landed; self-similarity routes through `ComparisonSpec.self`.
+- [ ] Method `build(op_a, op_b)` + `{symmetric, supports_cross, representation}` capability; diagonal/symmetry/dedup conditional on self.
+- [ ] Manifest carries `axes[]`/`mode`/`symmetric`/`storage`; legacy headline fields still emitted (readers unchanged).
+- [ ] Full suite GREEN; **self-similarity byte-identical** (the bar that declares P1/P2/P7/P8 passed).
+
+### Risks & mitigations
+- *Seam-lift silently changes self output.* **Mitigation:** byte-identity guard on every existing fixture; the single-operand path is the literal default of each conditional.
+- *`axes[]` breaks a reader that assumed top-level `segment_offsets`.* **Mitigation:** legacy fields still emitted (additive `axes`); a reader-contract test asserts `DotplotView`'s fetch shape is unchanged.
+
+### Sequencing
+Needs **P7** (the consumer engine it generalizes) and **P8** (the `repeat_mask` layer the operand carries). Unblocks **P10**. Behavior-neutral, so it can land any time after P7/P8. **This is the gate for declaring P1/P2/P7/P8 passed.**
+
+---
+
+## P10 — Cross-text similarity & the synteny view (deferred)
+
+> **The first non-auto mode.** With P9's seams lifted, cross-text comparison is additive: bind two operands, run the same methods, render against a root backbone. Deferred — scoped here so P9 doesn't constrain it. Implements **FR-21**.
+
+### Scope (FR-21)
+- A `ComparisonSpec` over **two distinct operands** (one designated **root**), bound via a `resolve_operand` that loads the second operand's layers (within a collection).
+- **Cross-text alignment:** the LASTZ pass with the `_is_self` guard dropped = **Smith-Waterman local alignment** across the two chunk sequences, persisted as a B→root `OffsetMap`-bearing alignment layer.
+- **Render:** cross-text similarity signals remapped operand→root (analysis-design-principles §4.1) ride the §3.4 rendering loop as root-frame tracks; `DotplotView` reads `axes` for the two-axis **synteny dot-plot**; alignment ribbons from the alignment layer.
+
+### Mechanism (sketch)
+- **Operand-pair binding.** `resolve_operand(scope, operand_ref)` generalizes `resolve_explicit_bundle`; the *cross* coherence predicate checks **shared embedding space** (`model_fingerprint`) across operands, not `chunk_layer_id`.
+- **Alignment layer.** A `cross_alignment` artifact: query/target chunk spans + identity, exported as genuine PAF (`specs/paf-v0.1.md`). It *is* the B→root `OffsetMap`.
+- **Synteny rendering.** `DotplotView` reads `axes[0]`=root, `axes[1]`=compared; a synteny panel stacks root-frame similarity tracks above the dot-plot (the UCSC/JAX idiom). Collection-scoped UI.
+
+### Sequencing & gating
+Needs **P9** (operand/kernel/manifest seams) and the **collection analytical tier** (deferred — the prerequisite for cross-text UI; Vision §8/§10.3). Independent of P3–P6. **Not** scheduled until the collection tier and P9 land.
+
+---
+
+## P11 — Scale & corpus modes (deferred)
+
+> Probe (`q × corpus`) and corpus (N-way) modes + the compute strategy the dense kernels cannot reach. Implements **FR-22**. Scoped, not scheduled.
+
+- **Candidate-generation → exact-score.** Two-stage similarity: ANN over embeddings (`SqliteVecStore.search`) or MinHash/LSH over shingles produces candidate pairs; exact scoring runs only on candidates. Sparse **top-k** output (`storage:"sparse-topk"`, the P9 discriminator) for the O((kN)²) regime the dense lexical/edit kernels (`_word_overlap_matrix`/`_edit_distance_matrix`, today O(N²) Python loops) cannot reach.
+- **Corpus weighting.** Corpus-level IDF/BM25 to down-weight ubiquitous terms (a statistic auto-similarity never needed).
+- **Block parallelism.** Structure per-pair/per-tile computation as independent tasks so a future executor parallelizes without restructuring.
+
+---
+
 ## Cross-cutting concerns
 
 ### Testing strategy
@@ -495,6 +560,9 @@ Needs **P2** (the resolver FR-7 for `repeat_mask`'s requirements, the FR-4 produ
 | Text-level repeat detection diverges from the chunk-based path, silently changing `self_similarity` | P8 | Med | `self_similarity` keeps its chunk-based call; text-level entry point is new + track-only; byte-identity guard gates the commit |
 | Pre-chunk hiding re-implements excision (coordinate risk) | P8 | Med | Union repeat intervals into `extra_masked`; reuse `_complement_spans`/`OffsetMap` — the exact content-masking excise/remap path (new plumbing only, no new coordinate math); test asserts hidden chunk spans round-trip to original coords (G4) |
 | Opening the masking constants shifts `self_similarity` defaults | P8 | Low | `Param` defaults are the prior LOCKED values (3/3/0.5); byte-identity guard fails on any drift |
+| Seam-lift (operand/kernel/manifest) silently changes the self-similarity matrix | P9 | High | Every existing `self_similarity` test stays green + on-disk files byte-identical; the single-operand path (`op_a is op_b`) is the default; equivalence is the whole acceptance bar — don't merge on any divergence |
+| `axes[]` manifest addition breaks `DotplotView` / `/analysis/status` readers | P9 | Med | `axes` is purely additive; legacy top-level `segment_offsets`/`reference_sha256`/`dimensions` keep mirroring `axes[0]`, so no existing reader changes; migrating readers to consume `axes` is a P10 concern |
+| Cross-text coordinate drift — operand mapped to the wrong root frame | P10 | High *(deferred)* | Alignment is an explicit `OffsetMap` into the root backbone (reuse the proven excise/remap math); every cross-text annotation round-trips operand→root→operand in test before render; no implicit frame inference |
 
 ---
 
@@ -517,12 +585,20 @@ P2 (layer-tracks + capability/RENDER/STATS descriptors + resolver — additive i
         └─────────┬─────────┴────► P5 (suite shell + native PLURAL layer-track rendering · FR-13)
                   │                          │
                   └──────────────────────────┴────► P6 (per-layer stats / distributions / viz · FR-14)
+
+P7 + P8 ──► P9 (similarity-engine seam-lift: operand / kernel / manifest — behavior-neutral)
+                  └──► GATE: declares P1 / P2 / P7 / P8 *passed* (self-similarity byte-identical)
+                              │
+                              ▼
+                  P10 (cross-text + synteny view · deferred — also needs the collection tier)
+                  P11 (scale / corpus modes · deferred)
 ```
 
 - **P1** is a pure correctness no-regret; ship it first and alone if desired.
 - **P2** is the linchpin; everything else reuses its layer-track + resolver pattern, and it now also carries the **render + stats manifest backbone** that makes P5 plural-rendering and P6 instant-stats possible. It is purely additive. Internal commits: track skeletons → resolver → producibility/status (each green). `self_similarity` is **not** touched in P2 — its redesign is **P7**.
 - **P3, P4, P8, and P7 are independent** of each other and parallelizable post-P2 — except that **P8's `repeat_mask` layer feeds P7's repeat handling**, so P8 lands before (or with) P7's repeat step. P8 is purely additive (new `repeats` + `repeat_mask` tracks + a `ChunkingTrack.hide_repeats` option); it opens the masking constants but defaults them to today's values, so `self_similarity` stays byte-identical.
 - **P5 + P6 are the terminal user-facing pair.** P5 makes *every* chunk/embedding layer render as a browser track (FR-13, plural-safe); P6 adds the stats/distribution/visualization drill-in (FR-14). Both need P2's backbone + P3's embedding data; P6 additionally needs P5's shell + layer manager to launch from.
+- **P9 is the gate, not a feature.** It is behavior-neutral and sits after P7/P8; it lifts the three single-operand seams (operand/kernel/manifest, FR-18/19/20) so cross-text is later additive. Landing P9 with self-similarity byte-identical is what lets **P1/P2/P7/P8 be declared *passed***. **P10** (cross-text + synteny, FR-21) and **P11** (scale/corpus, FR-22) are **deferred** — P10 also waits on the collection analytical tier, and neither is scheduled; they are scoped only so P9 doesn't constrain them.
 
 ### Open questions carried from the Vision doc
 The Vision doc's nine open questions (esp. layer naming, embedding-layer home, resolver strictness, first-UI-cut scope, CLI-fix timing) are **inputs to this plan, not resolved by it** — they are flagged at the relevant phase risk rows and await human review before P2/P5 lock their respective decisions.

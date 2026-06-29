@@ -236,6 +236,8 @@ A workbench presented immediately after import/mask, for a text *or* a subtext, 
 - **FR-16 — Pre-chunk repeat hiding.** `ChunkingTrack` accepts an optional `hide_repeats=<repeat_label>`. When set, the named repeat layer's (original-coordinate) intervals are unioned into the project's masked set for that run, so the analysis view the chunker sees has the repeated passages excised — the chunker, and any embedding built on the resulting chunk layer, never sees them. This reuses the existing excise/remap path (`Project.masked_intervals(extra_masked=…)` → `_complement_spans` → `OffsetMap`, `project.py`/`layout.py`, which already unions and remaps arbitrary disjoint spans), so it adds **no new coordinate math** — but it does require new *plumbing* to inject the intervals, because today `extra_masked` is hardwired to the verse layer (`project.py:299`): P8 adds either an interval channel on the per-run mask override (`set_mask_override`, `project.py:198`/`server.py:1016`, today toggles-only) plus a branch in `masked_intervals`, or a dedicated `ChunkingTrack` hook that unions the repeat intervals into `extra_masked`. Because the run chunks a repeat-excised view, its `analyzable_digest` already differs, so the repeats-hidden chunk layer is a distinct content-addressed layer coexisting with the un-hidden one. Coordinate-safe by construction (the view's OffsetMap remaps chunk spans past the excised gaps); `hide_repeats` is recorded in provenance.
 - **FR-17 — Post-chunk repeat-mask layer.** A `repeat_mask` layer-track declares `layer_requirements` for a chunk layer + a repeat layer (resolver-checked, FR-7) and persists `signals/repeat_mask_{chunk_label}_{repeat_label}.json`: a per-chunk `masked` boolean (true when more than `coverage_threshold` of the chunk's content words are covered by repeats), index-aligned to the chunk layer, plus a `rendering` descriptor (shaded chunk-band, FR-13) and a `stats` summary (`masked_count` / `masked_ratio` / `phrase_count`, FR-14). `coverage_threshold` is user-tunable (default 0.5). Flag-only: the layer records the mask; honoring it is a consumer's declared policy, never a silent mutation.
 
+- **FR-18…22 — Resemblance-operator / cross-text readiness.** Specified in **§10.4**. FR-18/19/20 (operand abstraction, two-operand kernel, multi-axis manifest) are the pre-stage seams lifted now, behavior-identical for self-similarity; FR-21/22 (cross-text alignment-as-coordinate-map, scale/corpus modes) are deferred-but-scoped.
+
 ### Non-functional requirements
 
 - **NFR-1 — Backward compatibility (additive layers; `self_similarity` equivalence reframed).** No on-disk format is removed and every new manifest/descriptor is additive, so existing analyses and artifacts keep working. The original "`self_similarity` byte-identical at existing defaults" guarantee is **retired**: because `self_similarity` is redesigned into a *layer consumer* (P7), its entry workflow deliberately changes — a user produces chunk/embedding layers first. The honest, weaker invariant is **same bound chunk layer + same embedding vectors → identical similarity math**, enforced by an equivalence test rather than a single-run default.
@@ -275,6 +277,7 @@ The Wave 0 model is an **extension of the analysis-paradigm remediation**, not a
 - We do **not** make chunking a property of the text fixed at import time (no canonical one-size chunking); D1 runtime control is preserved.
 - We do **not** rebuild the Wave-1 analyses here; we only give them a cleaner, declared way to consume Wave-0 layers.
 - We do **not** introduce a persistent job database; the existing in-memory `_running_jobs` + on-disk artifact model is retained (its limits are noted in the plan's risk register).
+- We do **not** build cross-text / corpus comparison, the synteny multi-text view, or the collection analytical tier here. §10 records only the **design-readiness** the substrate is pre-staged for; the cross-text build (FR-21/22) is deferred to a later phase.
 
 ---
 
@@ -285,3 +288,100 @@ The Wave 0 model is an **extension of the analysis-paradigm remediation**, not a
 3. **Dependency-check strictness.** When no compatible layer exists, should a consumer (a) fail loud and require the user to produce the layer first, or (b) offer to produce it inline with the consumer's declared requirements? (Recommendation: (a) for transparency; (b) as an explicit convenience action.)
 4. **Scope of the first UI cut.** Rendering every chunk/embedding layer as a track (FR-13) is committed, not optional; the open question is *staging order* — Profile-only first (cheap, high-value, only `d3-shape`), or Profile + Representations (plural rendering) together? And: server-side PCA (zero new frontend deps) vs client-side `umap-js` for projection?
 5. **CLI parity fix timing.** Fix the CLI `_extract_masked` gap as part of Phase 1 (correctness) or call it out as a separate bug fix? (Recommendation: Phase 1 — a chunking track is the first thing the gap would corrupt.)
+
+---
+
+## 10. Forward design: the resemblance operator & cross-text similarity
+
+Wave 0 exists to make the substrate *reusable* and *honest* so the analyses above it compose cleanly.
+The first analysis to stress that promise is **similarity itself**, which today exists only in its
+single-text form (`self_similarity`, redesigned as a layer consumer in P7). This section records the
+design the substrate must be **pre-staged** for, so the next build-out — comparing a text to *other*
+texts — slots in as a configuration rather than a rewrite. It is design-readiness, not a Wave-0
+deliverable: the seams in §10.2 are lifted **now** (behavior-identical for self-similarity); the
+cross-text build in §10.3 is **deferred**.
+
+### 10.1 Self-similarity is one mode of a resemblance operator
+
+Self-similarity — "where does this text echo itself?" — is the degenerate `A = B` case of a general
+two-operand resemblance operator `R(A, B)`. One engine, four modes chosen at run time:
+
+| Mode | Operands | Output | Question |
+|---|---|---|---|
+| **auto** (today) | `R(A, A)` | square, symmetric, diagonal = 1 | a text echoing itself |
+| **cross** | `R(A, B)` | rectangular `Na×Nb`, asymmetric-capable, no diagonal | intertextuality, translation/recension alignment, quotation, borrowing |
+| **probe** | `R(q, Corpus)` | one query × many | "find passages like this one" (retrieval) |
+| **corpus** | `{R(Ai, Aj)}` | block matrix / text-graph | influence, formula diffusion, near-duplicate, stemma |
+
+Designing `R(A, B)` and making `self` the constrained `A = B` instance is the architecture; the
+alternative — a `cross_similarity` sibling copy-pasting the kernels — is explicitly rejected.
+
+Concrete cross-text analyses this unlocks: translation/recension alignment (e.g. Douay-Rheims vs another
+version, verse-to-verse), quotation/allusion detection (directional), source criticism, plagiarism/
+paraphrase detection, formula/topos diffusion across a corpus, near-duplicate detection (a data-quality
+dividend), and the near-free **metric-gap signal** (embedding-high ∧ lexical-low ⇒ paraphrase/
+translation; both-high ⇒ verbatim quotation) derived from matrices already computed.
+
+### 10.2 The three pre-stage seams (lifted now, behavior-identical for self)
+
+Three single-operand assumptions are baked into the P7 engine. Each is lifted into a parameter so the
+cross-text build is additive; `self_similarity` output stays byte-identical because each seam's
+single-operand path is the default.
+
+| Seam | Baked-in today (`self_similarity.py` / `bundles.py`) | Generalized to | Self path |
+|---|---|---|---|
+| **Operand** | `reconstruct_chunks(bundle)` consumes one `LayerBundle` | `LayerBundle` is one **Operand** (`{chunk, repeat_mask, embedding?}` + coordinate frame); a `ComparisonSpec(op_a, op_b, methods)` binds two | `op_a is op_b` |
+| **Kernel** | `build(chunks, *, embeddings) → N×N`; `fill_diagonal`/`_is_self`/mirror-dedup unconditional | `build(op_a, op_b) → matrix`; diagonal/symmetry/dedup **mode-conditional**; method capability gains `symmetric`, `supports_cross`, `representation` | `a ≡ b` → diagonal on |
+| **Coordinate frame** | one `reference_sha256` + `segment_offsets`; `dimensions:[n,n]` | manifest `axes: [{role, project_id, ref_sha256, segment_offsets, label}]` + `mode` + `symmetric` + `storage` discriminators | `axes` length 1; existing readers unaffected |
+
+These are **FR-18/19/20** (§10.4). Lifting them is the work that lets us call P1/P2/P7/P8 *passed*.
+
+### 10.3 The genome-browser / synteny multi-text view (deferred build)
+
+The cross-text UI is the **synteny-browser** idiom (UCSC Genome Browser + JAX Synteny Browser): a
+**root text** provides the horizontal coordinate backbone; each compared text is **coordinate-mapped
+onto it**; and the cross-text similarity layers ride as **Browser tracks** stacked against the root
+axis — exactly how a genome browser stacks annotation tracks against one reference. The load-bearing
+realization is that this rests on machinery Palimpsest already has:
+
+- **The alignment is the coordinate map.** A cross-text alignment from compared text B into root text
+  A's frame is an `OffsetMap` (analysis-design-principles §4.1). Once B's per-chunk similarity signal is
+  remapped *operand→root*, it is an ordinary root-frame track — so the existing `OverviewBar` lane
+  machinery draws it with no new renderer (the §3.4 rendering commitment, extended to cross-text).
+- **The dot-plot generalizes.** `DotplotView` (the self-similarity heatmap) becomes the **two-axis
+  synteny dot-plot** (row = root, col = compared text), alignment ribbons connecting mapped blocks.
+- **The alignment kernel generalizes.** The LASTZ seed-and-extend pass (`_extend_alignment`, today
+  guarded by `_is_self` to stop at the diagonal) is, with the diagonal guard dropped, **Smith-Waterman
+  local alignment across two sequences** — the canonical cross-text primitive. Chiasmus (antiparallel)
+  generalizes to cross-text mirror.
+- **Export already has a home.** A genuine pairwise-alignment export is what `paf-v0.1` borrowed its
+  name from (minimap2's PAF); cross-text alignments are its real use (see `specs/paf-v0.1.md`).
+
+This view is **collection-scoped** (you compare texts *within a collection*), and the collection
+analytical tier is **deferred** (§8) — the prerequisite for the cross-text *UI*, not for the engine
+pre-stage of §10.2.
+
+### 10.4 Forward-readiness requirements
+
+- **FR-18 — Operand abstraction (pre-stage now).** The similarity engine consumes an **Operand** (one
+  text's bound `{chunk, repeat_mask, embedding?}` layers + its coordinate frame). A `ComparisonSpec`
+  binds two operands and the selected methods; self-similarity is the `op_a is op_b` instance. The
+  current `LayerBundle` becomes the per-operand unit; no behavior changes for self.
+- **FR-19 — Two-operand kernel + method capability (pre-stage now).** Similarity methods build over
+  `(operand_a, operand_b)`; diagonal forcing, symmetry, and mirror-dedup are conditional on `op_a is
+  op_b`. Each `SimilarityMethod` declares `{representation: text|token-set|vector|distribution,
+  symmetric: bool, supports_cross: bool}` (generalizing today's lone `requires_embedding` flag). Adding
+  a method or a topology is a registry entry, not an engine change.
+- **FR-20 — Multi-axis output manifest (pre-stage now).** A similarity output manifest carries
+  `axes: [...]` (length 1 for self, 2 for cross), a `mode` discriminator (`auto|cross|probe|corpus`), a
+  `symmetric` flag, and a `storage` discriminator (`dense|sparse-topk|coo`). The self path emits a
+  length-1 `axes` shape that current readers (`DotplotView`, `/analysis/status`) consume unchanged.
+- **FR-21 — Cross-text alignment as a coordinate-map layer (deferred, scoped).** A cross-text run
+  persists the B→root alignment as an `OffsetMap`-bearing layer; cross-text similarity signals project
+  onto the root axis and render as root-frame Browser tracks (§10.3); the two-axis synteny dot-plot and
+  alignment ribbons render from it. Built on the §4.1 operand→root remap, the §3.4 rendering loop, and
+  the Smith-Waterman generalization of LASTZ.
+- **FR-22 — Scale & corpus modes (deferred, scoped).** Probe and corpus modes; corpus-level IDF/BM25
+  weighting; and a two-stage compute strategy — candidate generation (ANN over embeddings via the
+  existing `SqliteVecStore.search`, or MinHash/LSH over shingles) → exact scoring only on candidates —
+  with sparse top-k output for the O((kN)²) regime the dense lexical/edit kernels cannot reach.

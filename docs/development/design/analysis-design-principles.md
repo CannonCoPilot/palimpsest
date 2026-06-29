@@ -21,7 +21,7 @@ means: for each principle there is a mechanical check that can pass or fail, not
 | **P1** | **Full transparency of mechanics** | Every parameter and algorithm choice that affects output is *named, reported, and visible at the point of consumption* (UI + on-disk), not just in source. |
 | **P2** | **Transparency + guards for data shape / preprocessing** | Before a run, the user is shown what the input will be reshaped into (chunk count, matrix size, cost) and is rejected-or-warned on shapes that cannot work — no silent reshape, no silent skip. |
 | **P3** | **Reporting + storage for visualization & auditability** | From the stored artifact **alone**, you can reconstruct *exactly* what parameters produced it. Disk never lies and never omits. |
-| **P4** | **Flexibility for novel/varying approaches** | A new analysis of a *similar conceptual type* (a new similarity metric, a new clustering method, a new chunker) can be added by satisfying a declared interface — without re-deriving the parameter/validation/persistence/remap machinery. |
+| **P4** | **Flexibility for novel/varying approaches** | A new analysis of a *similar conceptual type* (a new similarity metric, a new clustering method, a new chunker, **a new operand topology such as cross-text or corpus comparison**) can be added by satisfying a declared interface — without re-deriving the parameter/validation/persistence/remap machinery. |
 | **P5** | **The user controls everything and sees everything** | No output-affecting value is fixed where the user cannot set it; no failure or fallback is invisible. Control and visibility are the same requirement applied to inputs and outputs respectively. |
 
 ### The unifying rule
@@ -133,6 +133,29 @@ shape, its results are silently wrong with no error.
 unrecognized shape is a hard error at write time, not a silent passthrough. "I added a new output
 shape and forgot to remap it" must fail loudly, like every other principle here.
 
+### 4.1 Coordinate frames are explicit (the cross-text generalization)
+
+Today every coordinate-bearing field means one thing implicitly: *a span in this project's original
+`reference.txt`*. That implicit single frame is the last assumption standing between the current
+analyses and **cross-text** comparison, where a result's two axes live in **two different documents'**
+coordinate systems. The remap contract generalizes by making the frame *explicit* rather than assumed:
+
+- An analysis declares, per coordinate-bearing field, **which coordinate frame** it is expressed in —
+  today always the operand's own original coordinates; for a cross-text result, the *row* axis and the
+  *column* axis name different operands.
+- A comparison of two texts may designate one as the **root** (the coordinate backbone) and express the
+  other's contributions in the root's frame. **The alignment that maps comparison text B into root text
+  A's frame is itself an `OffsetMap`** — the exact machinery §4 already governs — so a cross-text
+  layer's offsets are remapped *operand→root* by the same assert-or-fail discipline that remaps
+  *analyzable→original* today. No new coordinate math; one additional remap target.
+- **Self-similarity is the degenerate single-frame case** (`A = B`: row and column are the same
+  operand; the root is the text itself). Designing the two-frame contract and treating self as its
+  one-frame instance is what keeps the genome-browser–style multi-text view — a root backbone with
+  other texts' similarity layers drawn as tracks against it — a *configuration*, not a separate
+  subsystem. This is the P4 flexibility requirement applied to **operands**: a resemblance operator
+  `R(A, B)` whose modes (auto `A=A`, cross `A×B`, probe `q×corpus`, corpus N-way) are chosen, not
+  rebuilt.
+
 ---
 
 ## 5. The Transparency-of-Consumption Contract (P1/P5)
@@ -209,7 +232,8 @@ bolted on. Full table and the hidden-constant inventory live in the companion au
 
 ## Appendix B — Relationship to existing docs
 
-- `palimpsest_system_design.md` (this dir) is the stale P0 prototype design (references MongoDB; not
-  the current filesystem/Postgres reality) — superseded for analysis concerns by this document.
+- `palimpsest_system_design.md` (this dir) is the current system-architecture reference (filesystem
+  projects + sqlite-vec, FastAPI server, React/zustand browser, the layer-track producer/consumer
+  model). It defers to *this* document for the analysis paradigm and the coordinate-frame contract.
 - `../WALKTHROUGH.md` is the user-facing feature walkthrough the next phase exercises layer-by-layer.
 - `../audits/analysis-paradigm-audit-2026-06.md` holds the evidence and the sequenced remediation.
