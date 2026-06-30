@@ -2389,6 +2389,21 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
 
+    @app.get("/api/collections/{collection_id}/phyletic-tree")
+    async def collection_phyletic_tree(collection_id: str, root: str | None = None) -> JSONResponse:
+        """The phyletic/stemma tree over the corpus graph's distance structure (C4, FR-38): pangenome
+        Jaccard distances, a neighbor-joining tree, and a suggested root (the most component-complete
+        member) the caller may override with ``?root=``."""
+        from palimpsest.corpus_graph import phyletic_tree, read_corpus_graph
+
+        graph = read_corpus_graph(workspace, collection_id)
+        if graph is None:
+            raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
+        try:
+            return JSONResponse(content=phyletic_tree(graph, root))
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+
     # ── Alignment API ──
 
     _alignment_jobs: dict[str, dict] = {}

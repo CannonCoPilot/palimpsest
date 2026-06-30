@@ -165,3 +165,54 @@ adds the viz). Done-criteria all met by unit + in-process HTTP/CLI tests.
 
 **Done-criteria (plan §C3):** graph over a ≥3-text collection ✓ · core/shell/singleton correct on a
 fixture ✓ · project to a chosen root + verify coordinates ✓ · tests green (857/857) ✓.
+
+---
+
+## C4 — Collection overview visualization (FR-33, FR-38) — IN PROGRESS
+
+### C4a — Phyletic/stemma tree backend ✅ (FR-38)
+
+**Status:** backend complete; **865/865 green** (+8). The remaining C4 work is the frontend overview
+(Circos / block-map / bubble / tree render) + in-browser proof — most of which is a pure data
+transform over the already-shipped corpus-graph endpoint, the tree being the one piece JS shouldn't
+own.
+
+**Why a backend phyletic tree (and only that):** the Circos chord overview and the Mauve block-map are
+*reading the same data the corpus-graph endpoint already returns* — members + components-with-
+classification give all-pairs ribbon counts (shared components per pair) and per-member colored lanes
+directly, in the frontend. The genuinely algorithmic piece is the phyletic/stemma tree (FR-38), which
+needs an inter-text distance matrix and a real tree-building algorithm — so that is the C4 backend,
+and nothing more is invented.
+
+**Shipped:**
+- `core/palimpsest/analysis/phylo.py` (new) — a pure numeric leaf (no I/O, no graph import, like
+  `textstats` / `chunk_stats`): `component_distance_matrix` (pangenome **Jaccard dissimilarity** —
+  members co-occurring in many homology components are close), `participation_counts` (root-
+  completeness signal), `neighbor_joining` (Saitou-Nei 1987, deterministic lowest-index tie-break,
+  negative branch lengths clamped), `root_tree` (BFS-orient the unrooted edge list from a chosen leaf).
+- `core/palimpsest/corpus_graph.py` — `phyletic_tree(graph, root=None)` assembler: maps member ids to
+  indices, builds comp-sets from the graph's components, calls the leaf, suggests the most component-
+  complete member as the backbone root (user-overridable), and serializes a labelled rooted tree +
+  the distance matrix + participation.
+- `core/palimpsest/server.py` — `GET /api/collections/{id}/phyletic-tree?root=`.
+- `core/palimpsest/cli.py` — `collections phyletic-tree` (CLI/HTTP parity, FR-37).
+- `core/tests/test_phylo.py` (new, 6) + `test_corpus_graph.py` (+2 graph-phyletic, + endpoint/CLI
+  coverage): Jaccard maths, deterministic NJ grouping (close pairs paired), base cases, tree
+  orientation; graph-derived distances + suggested/overridden root + guard.
+
+**Autonomous decisions (objective, flagged here):**
+1. **Distance = pangenome Jaccard over shared components**, derived from the C3 graph rather than a
+   second distance notion (e.g. raw alignment score), so the tree is a *reading of the graph's own
+   structure* (plan §C4 "a reading of the reference-free graph's distance structure"). Avoids
+   introducing an independent metric the user would have to reconcile.
+2. **Auto-root = max component participation** (the most complete backbone), ties to lowest index —
+   the "map everything onto the most-shared text" default the synteny lens wants. Manual override is a
+   first-class `?root=` parameter (FR-38 manual-first).
+3. **Neighbor-joining over UPGMA** — NJ is additive and doesn't assume a molecular clock, the genomics
+   standard the plan names; ~40 deterministic lines, fully unit-tested (a known 4-taxon matrix groups
+   the two close pairs).
+
+**Remaining C4 (frontend, Task #6):** collection-overview surface (Circos chords + Mauve block-map +
+bubble + the phyletic tree) consuming `/corpus-graph` and `/phyletic-tree`; click-through overview →
+pair dotplot → single-text browser (the three zoom tiers); in-browser Playwright proof on a real
+≥3-text collection (isolated server, leaving the shared `:8080` untouched — the C2/C3 pattern).

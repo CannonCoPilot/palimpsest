@@ -990,6 +990,25 @@ def collections_corpus_graph_project(workspace: Path, collection_id: str, root: 
         raise SystemExit(1)
 
 
+@collections.command("phyletic-tree")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.option("--root", default=None, help="Member to root the tree on (default: suggested backbone)")
+def collections_phyletic_tree(workspace: Path, collection_id: str, root: str | None) -> None:
+    """Phyletic/stemma tree over the corpus graph's distance structure (neighbor-joining + auto-root)."""
+    from palimpsest.corpus_graph import phyletic_tree, read_corpus_graph
+
+    graph = read_corpus_graph(workspace, collection_id)
+    if graph is None:
+        console.print(f"[red]No corpus graph for '{collection_id}'; run corpus-graph-build first.[/red]")
+        raise SystemExit(1)
+    try:
+        console.print(json.dumps(phyletic_tree(graph, root), indent=2))
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+
+
 @main.command(name="align-paf")
 @click.argument("workspace", type=click.Path(exists=True, path_type=Path))
 @click.argument("query_id")

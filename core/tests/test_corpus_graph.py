@@ -218,6 +218,47 @@ def test_project_to_root_rejects_non_member(corpus: tuple[Path, str]) -> None:
         cg.project_to_root(graph, "delta")
 
 
+# ── phyletic / stemma tree (C4, FR-38) ─────────────────────────────────────────────────────────────
+
+def test_phyletic_tree_distances_and_root(corpus: tuple[Path, str]) -> None:
+    workspace, cid = corpus
+    graph = cg.build_corpus_graph(workspace, cid)
+    tree = cg.phyletic_tree(graph)
+
+    members = tree["members"]
+    di = {m: i for i, m in enumerate(members)}
+    D = tree["distances"]
+    # alpha & beta share core + shell; alpha/beta & gamma share only core → alpha,beta are closer.
+    assert D[di["alpha"]][di["beta"]] == 0.5
+    assert D[di["alpha"]][di["gamma"]] == 0.75
+    assert D[di["beta"]][di["gamma"]] == 0.75
+
+    # alpha and beta participate in 3 components, gamma in 2 → alpha (lowest index) is the backbone.
+    assert tree["participation"] == {"alpha": 3, "beta": 3, "gamma": 2}
+    assert tree["suggested_root"] == "alpha" and tree["root"] == "alpha"
+
+    # every member is a leaf; the root has no parent.
+    leaves = {n["member"] for n in tree["tree"] if n["is_leaf"]}
+    assert leaves == {"alpha", "beta", "gamma"}
+    root_node = next(n for n in tree["tree"] if n["id"] == "alpha")
+    assert root_node["parent"] is None
+
+
+def test_phyletic_tree_reroot_and_guard(corpus: tuple[Path, str]) -> None:
+    workspace, cid = corpus
+    graph = cg.build_corpus_graph(workspace, cid)
+
+    tree = cg.phyletic_tree(graph, root="beta")
+    assert tree["root"] == "beta" and tree["suggested_root"] == "alpha"
+    assert next(n for n in tree["tree"] if n["id"] == "beta")["parent"] is None
+
+    with pytest.raises(ValueError, match="not a member"):
+        cg.phyletic_tree(graph, root="delta")
+
+
+# ── HTTP + CLI parity (FR-37) ─────────────────────────────────────────────────────────────────────
+
+
 # ── HTTP + CLI parity (FR-37) ─────────────────────────────────────────────────────────────────────
 
 def _client(workspace: Path):
@@ -248,9 +289,17 @@ def test_http_corpus_graph(corpus: tuple[Path, str]) -> None:
     assert proj.status_code == 200 and proj.json()["in_root_count"] == 3
     assert client.get(f"/api/collections/{cid}/corpus-graph/projection?root=delta").status_code == 400
 
+    tree = client.get(f"/api/collections/{cid}/phyletic-tree")
+    assert tree.status_code == 200 and tree.json()["suggested_root"] == "alpha"
+    rerooted = client.get(f"/api/collections/{cid}/phyletic-tree?root=beta")
+    assert rerooted.status_code == 200 and rerooted.json()["root"] == "beta"
+    assert client.get(f"/api/collections/{cid}/phyletic-tree?root=delta").status_code == 400
+
     # a <2-member collection cannot form a graph → 400.
     cs.create_collection(workspace, "Solo", "", ["alpha"])
     assert client.post("/api/collections/solo/corpus-graph").status_code == 400
+    # phyletic tree 404s until the graph is built.
+    assert client.get("/api/collections/solo/phyletic-tree").status_code == 404
 
 
 def test_cli_corpus_graph(corpus: tuple[Path, str]) -> None:
@@ -271,3 +320,6 @@ def test_cli_corpus_graph(corpus: tuple[Path, str]) -> None:
         main, ["collections", "corpus-graph-project", str(workspace), cid, "--root", "alpha"]
     )
     assert res.exit_code == 0 and '"root": "alpha"' in res.output
+
+    res = runner.invoke(main, ["collections", "phyletic-tree", str(workspace), cid])
+    assert res.exit_code == 0 and '"suggested_root": "alpha"' in res.output

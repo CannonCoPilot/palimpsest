@@ -344,6 +344,59 @@ def project_to_root(graph: CorpusGraph, root_id: str) -> dict[str, Any]:
     }
 
 
+# ── phyletic / stemma tree (a view over the graph's distance structure, C4 / FR-38) ───────────────
+
+def phyletic_tree(graph: CorpusGraph, root: str | None = None) -> dict[str, Any]:
+    """Derive the phyletic/stemma tree from the corpus graph's distance structure (FR-38).
+
+    Inter-text distance is pangenome Jaccard dissimilarity over shared homology components; the tree is
+    neighbor-joining; the suggested root is the most component-complete member (the natural backbone for
+    a "map everything onto X" lens), which the caller may override via ``root``. The tree is a *reading*
+    of the reference-free graph, not a stored ground truth."""
+    from palimpsest.analysis import phylo
+
+    members = graph.members
+    idx = {m: i for i, m in enumerate(members)}
+    n = len(members)
+    comp_sets = [{idx[m] for m in c.members} for c in graph.components]
+
+    distances = phylo.component_distance_matrix(n, comp_sets)
+    participation = phylo.participation_counts(n, comp_sets)
+    suggested = members[max(range(n), key=lambda i: (participation[i], -i))]
+
+    chosen = suggested if root is None else root
+    if chosen not in idx:
+        raise ValueError(f"Root {chosen!r} is not a member of collection {graph.collection_id}")
+
+    edges, _ = phylo.neighbor_joining(distances)
+    children, parent, branch = phylo.root_tree(edges, idx[chosen])
+
+    def label(node: int) -> str:
+        return members[node] if node < n else f"node{node - n}"
+
+    all_nodes = sorted(set(parent) | set(children))
+    tree = [
+        {
+            "id": label(node),
+            "is_leaf": node < n,
+            "member": members[node] if node < n else None,
+            "parent": None if parent.get(node) is None else label(parent[node]),
+            "branch_length": round(branch.get(node, 0.0), 6),
+            "children": [label(c) for c in children.get(node, [])],
+        }
+        for node in all_nodes
+    ]
+    return {
+        "collection_id": graph.collection_id,
+        "members": members,
+        "distances": [[round(float(distances[i][j]), 6) for j in range(n)] for i in range(n)],
+        "participation": {members[i]: int(participation[i]) for i in range(n)},
+        "suggested_root": suggested,
+        "root": chosen,
+        "tree": tree,
+    }
+
+
 # ── persistence (collections/{id}/, OQ-6 / FR-32) ────────────────────────────────────────────────
 
 def corpus_graph_dir(workspace: Path, collection_id: str) -> Path:
