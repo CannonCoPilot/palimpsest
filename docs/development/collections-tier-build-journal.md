@@ -106,3 +106,62 @@ its superset sibling, runs a word-overlap alignment (100 records, scores 21.5–
 and exercises all three controls: heatmap canvas renders, palette switches blues→viridis, raising the
 threshold drops shown/total (100→27 at p75), and the PAF link carries `export.paf?min_score=`. Green.
 Backend full suite 848/848. *Stretch (not done):* bidirectional B×A overlay toggle.
+
+---
+
+## C3 — Reference-free corpus graph (FR-31, pangenome) — COMPLETE
+
+**Status:** complete; backend **857/857 green** (+9 new). Backend-only (no in-browser bar until C4
+adds the viz). Done-criteria all met by unit + in-process HTTP/CLI tests.
+
+**Shipped:**
+- `core/palimpsest/corpus_graph.py` (new) — the reference-free corpus model. Nodes are *merged
+  paragraph anchors per member*, edges are the C2 pairwise alignment records, a union-find groups
+  anchors into homology **components**, and each component is classified **core** (all members) /
+  **shell** (some) / **singleton** (one) by its distinct-member reach. `build_corpus_graph` reads each
+  pair's stored comparison (`alignment.jsonl` + `metadata.json`, written by `POST /api/alignment/run`),
+  merges per-member intervals into anchors, unions anchors linked by an edge, and adds each member's
+  *unaligned gaps* as isolated singleton nodes. `project_to_root` derives the synteny lens on demand
+  (each component's coordinate in a chosen root member's paragraph frame). Persistence under
+  `workspace/collections/{id}/corpus_graph.json` (OQ-6 / FR-32), provenance-stamped by member
+  `reference.sha256` and the contributing comparison dirs (NFR-C2).
+- `core/palimpsest/server.py` — `POST /api/collections/{id}/corpus-graph` (build + persist → summary),
+  `GET …/corpus-graph` (read full graph; 404 until built), `GET …/corpus-graph/projection?root=` (the
+  root lens).
+- `core/palimpsest/cli.py` — `collections corpus-graph-build / corpus-graph-show / corpus-graph-project`
+  (CLI/HTTP parity, FR-37).
+- `core/tests/test_corpus_graph.py` (new) — 9 tests: a 3-member fixture with real `reference.txt`
+  paragraphs + hand-written comparison dirs proving 1 core / 1 shell / 3 singleton classification;
+  the never-singleton-when-aligned invariant; root-projection coordinates verified against
+  `Project.paragraphs()`; missing-pair reporting (graph still builds from existing edges);
+  persistence roundtrip; build/projection guards; HTTP + CLI parity.
+
+**Two formalized insights (the design's load-bearing properties, now proven):**
+1. **Aligned components are never singletons.** Every alignment record links a *query* member to a
+   *different* target member, so every edge crosses members; every edge-touched component therefore
+   reaches ≥2 members and is core or shell. Singletons can arise *only* from unaligned gaps — passage
+   regions no cross-member alignment covers. This makes the core/shell/singleton partition provably
+   exhaustive over each member's paragraph space, and is asserted directly
+   (`test_aligned_components_are_never_singletons`).
+2. **Paragraph coordinates suffice for the root projection.** Records are paragraph-indexed, so
+   projecting onto a chosen root is just reading each component's anchor in the root's paragraph frame
+   — no character-space `OffsetMap` is needed at this tier (sub-paragraph precision is a C4/C5
+   refinement). Character spans are still attached to nodes from `Project.paragraphs()` for C4
+   rendering, but the graph *reasons* in paragraph space.
+
+**Autonomous decisions (objective, flagged here):**
+1. **Adjacent-anchor coarsening is intended, not a bug.** `_merge_intervals` fuses touching paragraph
+   ranges, so a member's adjacent aligned passages collapse into one anchor node. This matches the
+   design ("nodes = merged paragraph anchors per member"); finer splitting is a C4/C5 concern. The
+   fixture deliberately separates a member's core and shell passages with an unaligned gap paragraph so
+   they stay distinct nodes — which also surfaced a real edge case (see below).
+2. **Gap detection depends on the member's paragraph total.** A member's *trailing* unaligned region is
+   only detectable when the total paragraph count is known (from `Project.paragraphs()`); interior gaps
+   (bounded by aligned ranges on both sides) are found regardless. The fixture's root member ends in a
+   gap, so this path is exercised — an early fixture bug (incomplete `metadata.json` → `Project.load`
+   silently failing → trailing gap lost) confirmed the dependency and is now covered.
+3. **HTTP/CLI parity shipped with C3** (rather than deferred to C4) so the C4 viz is a pure frontend
+   build against a stable contract — the Wave-0 "UI lands per-phase with its backend" pattern.
+
+**Done-criteria (plan §C3):** graph over a ≥3-text collection ✓ · core/shell/singleton correct on a
+fixture ✓ · project to a chosen root + verify coordinates ✓ · tests green (857/857) ✓.

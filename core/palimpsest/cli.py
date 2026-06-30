@@ -934,6 +934,62 @@ def collections_congruence(
         console.print(f"  - {pid}: {key if key else '[red](missing layer)[/red]'}")
 
 
+@collections.command("corpus-graph-build")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+def collections_corpus_graph_build(workspace: Path, collection_id: str) -> None:
+    """Assemble + persist the reference-free corpus graph (C3) from the collection's pairwise edges."""
+    from palimpsest.corpus_graph import build_corpus_graph, write_corpus_graph
+
+    try:
+        graph = build_corpus_graph(workspace, collection_id)
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+    write_corpus_graph(workspace, collection_id, graph)
+    s = graph.summary
+    console.print(
+        f"corpus graph [cyan]{collection_id}[/cyan]: {s['n_members']} members, {s['n_nodes']} nodes, "
+        f"{s['n_edges']} edges → [green]{s['core']} core[/green] / "
+        f"[yellow]{s['shell']} shell[/yellow] / {s['singleton']} singleton"
+    )
+    if s["pairs_missing"]:
+        console.print(f"  [yellow]pairs without edges:[/yellow] {s['pairs_missing']}")
+
+
+@collections.command("corpus-graph-show")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+def collections_corpus_graph_show(workspace: Path, collection_id: str) -> None:
+    """Print the persisted corpus graph (nodes, edges, components, summary) as JSON."""
+    from palimpsest.corpus_graph import read_corpus_graph
+
+    graph = read_corpus_graph(workspace, collection_id)
+    if graph is None:
+        console.print(f"[red]No corpus graph for '{collection_id}'; run corpus-graph-build first.[/red]")
+        raise SystemExit(1)
+    console.print(json.dumps(graph.to_dict(), indent=2))
+
+
+@collections.command("corpus-graph-project")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.option("--root", required=True, help="Member project id to project the graph onto")
+def collections_corpus_graph_project(workspace: Path, collection_id: str, root: str) -> None:
+    """Project the corpus graph onto a chosen root member's paragraph frame (the synteny lens)."""
+    from palimpsest.corpus_graph import project_to_root, read_corpus_graph
+
+    graph = read_corpus_graph(workspace, collection_id)
+    if graph is None:
+        console.print(f"[red]No corpus graph for '{collection_id}'; run corpus-graph-build first.[/red]")
+        raise SystemExit(1)
+    try:
+        console.print(json.dumps(project_to_root(graph, root), indent=2))
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+
+
 @main.command(name="align-paf")
 @click.argument("workspace", type=click.Path(exists=True, path_type=Path))
 @click.argument("query_id")

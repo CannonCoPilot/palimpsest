@@ -2349,6 +2349,46 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
 
+    # ── Corpus graph API (C3, reference-free pangenome model) ──
+
+    @app.post("/api/collections/{collection_id}/corpus-graph")
+    async def build_collection_corpus_graph(collection_id: str) -> JSONResponse:
+        """Assemble + persist the reference-free corpus graph (C3, FR-31) from the collection's
+        computed pairwise edges. Returns the pangenome summary (core/shell/singleton counts plus the
+        pairs that did and did not contribute edges)."""
+        from palimpsest.corpus_graph import build_corpus_graph, write_corpus_graph
+
+        try:
+            graph = build_corpus_graph(workspace, collection_id)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        write_corpus_graph(workspace, collection_id, graph)
+        return JSONResponse(content={"summary": graph.summary, "provenance": graph.provenance})
+
+    @app.get("/api/collections/{collection_id}/corpus-graph")
+    async def get_collection_corpus_graph(collection_id: str) -> JSONResponse:
+        """Read the persisted corpus graph (nodes, edges, components, summary). 404 until built."""
+        from palimpsest.corpus_graph import read_corpus_graph
+
+        graph = read_corpus_graph(workspace, collection_id)
+        if graph is None:
+            raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
+        return JSONResponse(content=graph.to_dict())
+
+    @app.get("/api/collections/{collection_id}/corpus-graph/projection")
+    async def project_collection_corpus_graph(collection_id: str, root: str) -> JSONResponse:
+        """Project the corpus graph onto a chosen root member's paragraph frame (the synteny lens —
+        derived on demand, never stored ground truth)."""
+        from palimpsest.corpus_graph import project_to_root, read_corpus_graph
+
+        graph = read_corpus_graph(workspace, collection_id)
+        if graph is None:
+            raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
+        try:
+            return JSONResponse(content=project_to_root(graph, root))
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+
     # ── Alignment API ──
 
     _alignment_jobs: dict[str, dict] = {}
