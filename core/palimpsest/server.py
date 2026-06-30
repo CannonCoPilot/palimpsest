@@ -16,6 +16,7 @@ from fastapi.responses import FileResponse, JSONResponse, Response, StreamingRes
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
+from palimpsest.alignment.records import comparison_dir, comparison_dirname
 from palimpsest.runner import _remap_signal_dir, extract_masked, persist_track_outputs
 
 logger = logging.getLogger(__name__)
@@ -123,6 +124,17 @@ class RoleRequest(BaseModel):
     """Set a member's collection-local role (FR-25): ``member`` (co-equal) or ``root`` (lens)."""
 
     role: str = "member"
+
+
+class AlignmentRequest(BaseModel):
+    """Pairwise alignment request (POST /api/alignment/run, /api/alignment/diff). Must live at
+    module scope: ``from __future__ import annotations`` stringizes the endpoint's type hints, and
+    FastAPI resolves them via ``get_type_hints`` against module globals — a function-local class is
+    invisible there, so the body model silently degrades to a query param and rejects every POST."""
+
+    query_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
+    target_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
+    method: str = Field(default="semantic", pattern=r"^(semantic|alphabet|word)$")
 
 
 _STRUCTURAL_TRACKS = {"segments", "sections", "elements", "verses"}
@@ -2348,11 +2360,6 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         if not _ID_PATTERN.match(query_id) or not _ID_PATTERN.match(target_id):
             raise HTTPException(status_code=400, detail="Invalid project ID format")
 
-    class AlignmentRequest(BaseModel):
-        query_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
-        target_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
-        method: str = Field(default="semantic", pattern=r"^(semantic|alphabet|word)$")
-
     @app.post("/api/alignment/run")
     async def run_alignment(request: AlignmentRequest) -> JSONResponse:
         """Run pairwise alignment between two projects."""
@@ -2380,7 +2387,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 proj_a = Project.load(query_dir)
                 proj_b = Project.load(target_dir)
 
-                comp_dir = workspace / ".comparisons" / f"{request.query_id}_vs_{request.target_id}"
+                comp_dir = comparison_dir(workspace, request.query_id, request.target_id)
                 comp_dir.mkdir(parents=True, exist_ok=True)
 
                 if request.method == "alphabet":
@@ -2439,7 +2446,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         job_key = f"{query_id}:{target_id}"
         job = _alignment_jobs.get(job_key)
         if not job:
-            comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+            comp_dir = comparison_dir(workspace, query_id, target_id)
             if (comp_dir / "alignment.jsonl").exists():
                 return JSONResponse(content={"status": "completed"})
             return JSONResponse(content={"status": "idle"})
@@ -2447,7 +2454,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
     def _read_alignment(query_id: str, target_id: str):
         """Load persisted alignment records for a comparison, or 404."""
-        comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+        comp_dir = comparison_dir(workspace, query_id, target_id)
         records_path = comp_dir / "alignment.jsonl"
         if not records_path.exists():
             raise HTTPException(status_code=404, detail="No alignment results found")
@@ -2521,13 +2528,13 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         body = "\n".join(lines) + ("\n" if lines else "")
         return PlainTextResponse(
             content=body, media_type="text/x-paf",
-            headers={"Content-Disposition": f'attachment; filename="{query_id}_vs_{target_id}.paf"'},
+            headers={"Content-Disposition": f'attachment; filename="{comparison_dirname(query_id, target_id)}.paf"'},
         )
 
     @app.get("/api/alignment/{query_id}/{target_id}/matrix")
     async def alignment_matrix(query_id: str, target_id: str) -> JSONResponse:
         _validate_ids(query_id, target_id)
-        comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+        comp_dir = comparison_dir(workspace, query_id, target_id)
         manifest_path = comp_dir / "cross_similarity.json"
         if not manifest_path.exists():
             raise HTTPException(status_code=404, detail="No cross-similarity matrix found")
@@ -2549,7 +2556,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         records, summary = await asyncio.to_thread(compute_edition_diff, proj_a, proj_b)
 
-        comp_dir = workspace / ".comparisons" / f"{request.query_id}_vs_{request.target_id}"
+        comp_dir = comparison_dir(workspace, request.query_id, request.target_id)
         await asyncio.to_thread(write_diff_results, comp_dir / "diff.json", records, summary)
 
         return JSONResponse(content={
@@ -2560,7 +2567,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     @app.get("/api/alignment/{query_id}/{target_id}/diff")
     async def get_diff(query_id: str, target_id: str) -> JSONResponse:
         _validate_ids(query_id, target_id)
-        comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+        comp_dir = comparison_dir(workspace, query_id, target_id)
         diff_path = comp_dir / "diff.json"
         if not diff_path.exists():
             raise HTTPException(status_code=404, detail="No diff results found")
@@ -2574,7 +2581,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     @app.get("/api/alignment/{query_id}/{target_id}/matrix.bin")
     async def alignment_matrix_bin(query_id: str, target_id: str) -> FileResponse:
         _validate_ids(query_id, target_id)
-        comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+        comp_dir = comparison_dir(workspace, query_id, target_id)
         bin_path = comp_dir / "cross_similarity.bin"
         if not bin_path.exists():
             raise HTTPException(status_code=404, detail="No cross-similarity binary found")

@@ -944,9 +944,13 @@ def align_paf(
     workspace: Path, query_id: str, target_id: str, output: Path | None, min_score: float | None
 ) -> None:
     """Export a computed pairwise alignment as minimap2 PAF (FR-36)."""
-    from palimpsest.alignment.records import read_alignment_records, records_to_paf
+    from palimpsest.alignment.records import (
+        comparison_dir,
+        read_alignment_records,
+        records_to_paf,
+    )
 
-    comp = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+    comp = comparison_dir(workspace, query_id, target_id)
     rec_path = comp / "alignment.jsonl"
     if not rec_path.exists():
         console.print(f"[red]No alignment results at {comp}[/red]")

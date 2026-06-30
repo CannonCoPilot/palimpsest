@@ -5,6 +5,10 @@ word overlap, narrative alphabet), Gumbel-calibrated significance testing,
 and cross-text similarity matrix computation.
 """
 
-from palimpsest.alignment.records import AlignmentRecord
+from palimpsest.alignment.records import (
+    AlignmentRecord,
+    comparison_dir,
+    comparison_dirname,
+)
 
-__all__ = ["AlignmentRecord"]
+__all__ = ["AlignmentRecord", "comparison_dir", "comparison_dirname"]

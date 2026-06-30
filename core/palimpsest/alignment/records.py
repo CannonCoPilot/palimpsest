@@ -2,11 +2,33 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+# Filesystem path components cap at 255 bytes (APFS/HFS+/ext4). Two long edition slugs joined by
+# ``_vs_`` blow past that, so fall back to a hash below this bound. 200 leaves margin under the cap.
+_MAX_COMPARISON_DIRNAME = 200
+
+
+def comparison_dirname(query_id: str, target_id: str) -> str:
+    """Directory name for a stored pairwise comparison.
+
+    The readable ``{query}_vs_{target}`` form is kept when it fits the per-component byte limit (so
+    short-id pairs and any existing comparisons are unaffected); otherwise writing it would raise
+    ``OSError: [Errno 63] File name too long``, so use a deterministic hash of the same name."""
+    name = f"{query_id}_vs_{target_id}"
+    if len(name.encode("utf-8")) <= _MAX_COMPARISON_DIRNAME:
+        return name
+    return f"cmp-{hashlib.sha1(name.encode('utf-8')).hexdigest()[:16]}"
+
+
+def comparison_dir(workspace: Path, query_id: str, target_id: str) -> Path:
+    """Path to a pairwise comparison's storage dir (length-safe; see :func:`comparison_dirname`)."""
+    return Path(workspace) / ".comparisons" / comparison_dirname(query_id, target_id)
 
 
 @dataclass

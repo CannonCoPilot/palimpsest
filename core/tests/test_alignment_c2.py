@@ -8,6 +8,8 @@ from pathlib import Path
 
 from palimpsest.alignment.records import (
     AlignmentRecord,
+    comparison_dir,
+    comparison_dirname,
     records_to_paf,
     write_alignment_records,
     write_paf,
@@ -27,7 +29,7 @@ def _make_comparison(workspace: Path, q: str = "a", t: str = "b") -> Path:
     (workspace / t).mkdir(parents=True, exist_ok=True)
     (workspace / q / "metadata.json").write_text(json.dumps({"id": q, "character_count": 1000}))
     (workspace / t / "metadata.json").write_text(json.dumps({"id": t, "character_count": 900}))
-    comp = workspace / ".comparisons" / f"{q}_vs_{t}"
+    comp = comparison_dir(workspace, q, t)
     write_alignment_records(comp / "alignment.jsonl", _records())
     (comp / "metadata.json").write_text(json.dumps(
         {"query_id": q, "target_id": t, "method": "semantic", "record_count": 3}))
@@ -125,3 +127,50 @@ def test_cli_align_paf(tmp_path: Path) -> None:
     assert len(res.output.strip().splitlines()) == 3
     res2 = CliRunner().invoke(main, ["align-paf", str(tmp_path), "a", "b", "--min-score", "4"])
     assert res2.exit_code == 0 and len(res2.output.strip().splitlines()) == 2
+
+
+# ── Regressions: live HTTP pipeline (these failure modes only surface over the wire) ──────────────
+
+def test_run_alignment_accepts_json_body(tmp_path: Path) -> None:
+    """POST /api/alignment/run must parse its Pydantic body. ``AlignmentRequest`` was defined inside
+    ``create_app``; under ``from __future__ import annotations`` FastAPI could not resolve the
+    stringized hint against module globals and silently demoted ``request`` to a query param, so every
+    POST 422'd. Guard the contract: a valid body is accepted, an incomplete one is a 422."""
+    _make_comparison(tmp_path)  # creates loadable-enough 'a' and 'b' project dirs
+    client = _client(tmp_path)
+
+    ok = client.post("/api/alignment/run", json={"query_id": "a", "target_id": "b", "method": "word"})
+    assert ok.status_code == 200, ok.text
+    assert ok.json()["status"] == "started"
+
+    bad = client.post("/api/alignment/run", json={"query_id": "a"})  # missing target_id
+    assert bad.status_code == 422
+    # the failure must be about the missing body field, NOT a phantom 'request' query param
+    assert any(err["loc"][-1] == "target_id" for err in bad.json()["detail"])
+
+
+def test_comparison_dirname_is_length_bounded() -> None:
+    """Long edition slugs joined by ``_vs_`` exceed the 255-byte filesystem component limit and raise
+    Errno 63 at write time. Short pairs keep the readable name; long pairs collapse to a stable hash."""
+    assert comparison_dirname("a", "b") == "a_vs_b"  # short → readable + back-compatible
+
+    q, t = "q" * 150, "t" * 150  # 304-byte natural name
+    name = comparison_dirname(q, t)
+    assert len(name.encode("utf-8")) <= 200 and name.startswith("cmp-")
+    assert comparison_dirname(q, t) == name  # deterministic
+    assert comparison_dirname(t, q) != name  # order-sensitive (query vs target)
+
+
+def test_long_id_pair_roundtrips_through_endpoints(tmp_path: Path) -> None:
+    """End-to-end guard for the Errno 63 fix: a comparison between two long-id projects must write,
+    list, and export without tripping the filename-length limit."""
+    q, t = "douay" + "x" * 140, "geneva" + "y" * 140
+    _make_comparison(tmp_path, q, t)  # uses comparison_dir → no OSError
+    client = _client(tmp_path)
+
+    assert len(client.get(f"/api/alignment/{q}/{t}/records").json()) == 3
+    paf = client.get(f"/api/alignment/{q}/{t}/export.paf")
+    assert paf.status_code == 200 and len(paf.text.strip().splitlines()) == 3
+
+    comps = client.get("/api/comparisons").json()
+    assert len(comps) == 1 and comps[0]["query_id"] == q and comps[0]["record_count"] == 3
