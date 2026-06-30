@@ -277,7 +277,7 @@ The Wave 0 model is an **extension of the analysis-paradigm remediation**, not a
 - We do **not** make chunking a property of the text fixed at import time (no canonical one-size chunking); D1 runtime control is preserved.
 - We do **not** rebuild the Wave-1 analyses here; we only give them a cleaner, declared way to consume Wave-0 layers.
 - We do **not** introduce a persistent job database; the existing in-memory `_running_jobs` + on-disk artifact model is retained (its limits are noted in the plan's risk register).
-- We do **not** build cross-text / corpus comparison, the synteny multi-text view, or the collection analytical tier here. §10 records only the **design-readiness** the substrate is pre-staged for; the cross-text build (FR-21/22) is deferred to a later phase.
+- We do **not** build cross-text / corpus comparison, the synteny multi-text view, or the collection analytical tier here. §10 records only the **design-readiness** the substrate is pre-staged for; the cross-text build (FR-21/22) is deferred to a later phase. The collection analytical tier is now specified in its companion: [collections-tier-vision.md](./collections-tier-vision.md).
 
 ---
 
@@ -359,7 +359,7 @@ realization is that this rests on machinery Palimpsest already has:
 
 This view is **collection-scoped** (you compare texts *within a collection*), and the collection
 analytical tier is **deferred** (§8) — the prerequisite for the cross-text *UI*, not for the engine
-pre-stage of §10.2.
+pre-stage of §10.2. That tier is now designed in its companion: [collections-tier-vision.md](./collections-tier-vision.md).
 
 ### 10.4 Forward-readiness requirements
 

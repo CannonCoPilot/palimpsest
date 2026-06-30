@@ -59,4 +59,5 @@ Two Wave-0 developments refine, but do not overturn, this ADR:
    tracks against the backbone — the dotplot/synteny pairing the UCSC and JAX browsers demonstrate
    (`../research/UI/screenshots/`). This extends the *same* adapter/track/display/renderer hierarchy;
    the only new structural piece is a second coordinate axis in the signal manifest (`axes[]`, see
-   `../specs/signals.md §2`), not a new rendering architecture.
+   `../specs/signals.md §2`), not a new rendering architecture. The collection tier this view is
+   scoped within is specified in [`../design/collections-tier-vision.md`](../design/collections-tier-vision.md).
