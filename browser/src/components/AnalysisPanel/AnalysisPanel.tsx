@@ -1,6 +1,11 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import { useMaskOverlayStore } from '../../stores/maskOverlayStore';
+import { collectLayers, laneKind, type LayerStatus } from './layers/types';
+import { LayerWorkbench } from './layers/LayerWorkbench';
+import { ProfileDashboard } from './layers/ProfileDashboard';
+import { EmbeddingScatter } from './layers/EmbeddingScatter';
+import { IntegrityBadge } from './layers/IntegrityBadge';
 
 /**
  * Build the fetch init for an analyze run from the on-demand masking overlay. When the
@@ -61,7 +66,13 @@ interface TrackStatus {
     method?: string;
     posteriorType?: string;
   };
+  // FR-13: plural layers this track produced (label-keyed tracks only — chunking, repeat_mask,
+  // repeat, embedding). Already emitted by /analysis/status (server.py:1025); the suite's Explore /
+  // Representations tabs render these via each layer's `rendering` descriptor.
+  layers?: LayerStatus[];
 }
+
+type SubTab = 'tracks' | 'profile' | 'representations' | 'explore';
 
 const STATUS_ICONS: Record<string, { icon: string; color: string; label: string }> = {
   computed: { icon: '✓', color: '#10b981', label: 'Computed' },
@@ -504,6 +515,7 @@ export default function AnalysisPanel() {
   const [paramDialogTrack, setParamDialogTrack] = useState<string | null>(null);
   const [embeddingDialog, setEmbeddingDialog] = useState<{ trackName: string; params?: Record<string, string | number> } | null>(null);
   const [embeddingStatus, setEmbeddingStatus] = useState<'unknown' | 'available' | 'missing' | 'computing'>('unknown');
+  const [subTab, setSubTab] = useState<SubTab>('tracks');
 
   const fetchStatus = useCallback(async () => {
     if (!projectId) return;
@@ -684,6 +696,11 @@ export default function AnalysisPanel() {
   const computedCount = tracks.filter((t) => t.status === 'computed').length;
   const runningCount = tracks.filter((t) => t.status === 'running').length;
 
+  // FR-13 layer surface: flatten every track's plural layers; embedding layers also feed the
+  // Representations scatter. Derived each render (no fetch — the status poll already carries them).
+  const layerRefs = collectLayers(tracks);
+  const embeddingLayers = layerRefs.filter((r) => laneKind(r.layer.rendering) === 'embedding-lane');
+
   if (loading) {
     return <div className="flex-1 flex items-center justify-center text-[var(--color-text-muted)]">Loading analysis status...</div>;
   }
@@ -699,19 +716,50 @@ export default function AnalysisPanel() {
 
       <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
         <div className="flex items-center gap-3">
-          <span className="font-semibold">Track Analysis</span>
+          <span className="font-semibold">Analysis Suite</span>
           <span className="text-[var(--color-text-muted)] text-[0.85em]">
             {computedCount} computed · {pendingCount} pending · {runningCount} running
+            {layerRefs.length > 0 ? ` · ${layerRefs.length} layers` : ''}
           </span>
         </div>
-        {pendingCount > 0 && (
+        <div className="flex items-center gap-2">
+          <IntegrityBadge projectId={projectId} />
+          {subTab === 'tracks' && pendingCount > 0 && (
+            <button
+              onClick={handleRunAll}
+              className="px-3 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.85em]"
+            >
+              Compute All ({pendingCount})
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Suite sub-tabs (Vision §3.4): Tracks runs producers; Profile / Representations / Explore are
+          the consumer workbench over the layers those producers emit. */}
+      <div role="tablist" aria-label="Analysis suite views" className="flex gap-1 px-4 pt-2 border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
+        {([
+          ['tracks', 'Tracks'],
+          ['profile', 'Profile'],
+          ['representations', 'Representations'],
+          ['explore', 'Explore'],
+        ] as [SubTab, string][]).map(([id, label]) => (
           <button
-            onClick={handleRunAll}
-            className="px-3 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 text-[0.85em]"
+            key={id}
+            role="tab"
+            aria-selected={subTab === id}
+            onClick={() => setSubTab(id)}
+            className={`px-3 py-1.5 text-[0.85em] rounded-t cursor-pointer border-b-2 ${
+              subTab === id
+                ? 'border-[var(--color-primary)] text-[var(--color-primary)] font-semibold'
+                : 'border-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text)]'
+            }`}
           >
-            Compute All ({pendingCount})
+            {label}
+            {id === 'explore' && layerRefs.length > 0 ? ` (${layerRefs.length})` : ''}
+            {id === 'representations' && embeddingLayers.length > 0 ? ` (${embeddingLayers.length})` : ''}
           </button>
-        )}
+        ))}
       </div>
 
       {embeddingStatus === 'computing' && (
@@ -722,6 +770,7 @@ export default function AnalysisPanel() {
       )}
 
       <div className="flex-1 overflow-auto">
+        {subTab === 'tracks' && (<>
         {pendingCount > 0 && computedCount === 0 && runningCount === 0 && (
           <div className="mx-4 mt-3 mb-2 p-4 rounded border border-[var(--color-primary)] bg-[var(--color-primary-subtle,#eff6ff)] text-center">
             <div className="text-[1em] font-semibold mb-1">No tracks computed yet</div>
@@ -972,6 +1021,27 @@ export default function AnalysisPanel() {
               ))}
             </div>
           </div>
+        )}
+        </>)}
+
+        {subTab === 'profile' && <ProfileDashboard projectId={projectId} />}
+
+        {subTab === 'representations' && (
+          embeddingLayers.length === 0 ? (
+            <div className="text-[0.8em] text-[var(--color-text-muted)] italic p-3">
+              No embedding layers yet. Run an embedding track to see its 2-D projection here.
+            </div>
+          ) : (
+            <div className="flex flex-wrap gap-4 p-3">
+              {embeddingLayers.map((r) => (
+                <EmbeddingScatter key={`${r.trackName}:${r.layer.label}`} projectId={projectId ?? ''} layer={r.layer} />
+              ))}
+            </div>
+          )
+        )}
+
+        {subTab === 'explore' && (
+          <LayerWorkbench projectId={projectId ?? ''} layers={layerRefs} />
         )}
       </div>
     </div>
