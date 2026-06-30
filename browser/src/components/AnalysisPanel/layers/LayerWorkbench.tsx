@@ -5,8 +5,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { LayerManager } from './LayerManager';
 import { LayerLane, LANE_W, LANE_H } from './LayerLane';
-import { EmbeddingScatter } from './EmbeddingScatter';
-import { layerKey, laneKind, type LayerRef } from './types';
+import { LayerStatsPanel } from './LayerStatsPanel';
+import { layerKey, type LayerRef } from './types';
 
 function laneLabel(ref: LayerRef): string {
   return `${ref.trackName} · ${ref.layer.label.slice(0, 8)}`;
@@ -17,7 +17,7 @@ export function LayerWorkbench({ projectId, layers }: { projectId: string; layer
   const [orderKeys, setOrderKeys] = useState<string[]>([]);
   const [hidden, setHidden] = useState<Set<string>>(new Set());
   const [overlay, setOverlay] = useState<Set<string>>(new Set());
-  const [selected, setSelected] = useState<LayerRef | null>(null);
+  const [selected, setSelected] = useState<LayerRef[]>([]); // up to 2, for side-by-side compare
 
   const byKey = useMemo(() => {
     const m = new Map<string, LayerRef>();
@@ -49,6 +49,13 @@ export function LayerWorkbench({ projectId, layers }: { projectId: string; layer
     return next;
   };
 
+  // Toggle a layer's stats panel; keep at most two open so a compare flow can sit them side by side.
+  const openStats = (ref: LayerRef) => setSelected((cur) => {
+    const key = layerKey(ref);
+    if (cur.some((r) => layerKey(r) === key)) return cur.filter((r) => layerKey(r) !== key);
+    return [...cur, ref].slice(-2);
+  });
+
   return (
     <div className="flex flex-col gap-3 p-3">
       <LayerManager
@@ -58,7 +65,7 @@ export function LayerWorkbench({ projectId, layers }: { projectId: string; layer
         onReorder={(next) => setOrderKeys(next.map(layerKey))}
         onToggleHidden={(key) => setHidden((s) => toggle(s, key))}
         onToggleOverlay={(key) => setOverlay((s) => toggle(s, key))}
-        onOpenStats={(ref) => setSelected((cur) => (cur && layerKey(cur) === layerKey(ref) ? null : ref))}
+        onOpenStats={openStats}
       />
 
       {/* Lane stack — the visible proof that plural layers render simultaneously. */}
@@ -84,6 +91,10 @@ export function LayerWorkbench({ projectId, layers }: { projectId: string; layer
               {laneLabel(ref)}
             </span>
             <LayerLane projectId={projectId} trackName={ref.trackName} layer={ref.layer} />
+            <button onClick={() => openStats(ref)} aria-label={`Open stats for ${laneLabel(ref)}`}
+              className="px-1.5 py-0.5 rounded border border-[var(--color-border)] text-[var(--color-text-muted)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[0.68em] shrink-0">
+              stats
+            </button>
           </div>
         ))}
         {visible.length === 0 && (
@@ -91,38 +102,16 @@ export function LayerWorkbench({ projectId, layers }: { projectId: string; layer
         )}
       </div>
 
-      {/* Instant stats drill-in (provenance + the manifest's precomputed stats, no fetch). The P6
-          stats panel will deepen this with selectable distributions. */}
-      {selected && (
-        <div className="border border-[var(--color-border)] rounded p-2 text-[0.78em]" aria-label="Layer detail">
-          <div className="flex items-center justify-between mb-1">
-            <span className="font-semibold">{selected.trackName} · <code>{selected.layer.label.slice(0, 12)}</code></span>
-            <button onClick={() => setSelected(null)} className="text-[var(--color-text-muted)] hover:underline cursor-pointer">close</button>
-          </div>
-          <KeyVals title="capability" obj={selected.layer.capability} />
-          <KeyVals title="stats" obj={selected.layer.stats} />
-          {laneKind(selected.layer.rendering) === 'embedding-lane' && (
-            <div className="mt-2">
-              <EmbeddingScatter projectId={projectId} layer={selected.layer} />
-            </div>
-          )}
+      {/* Per-layer stats panels (P6, FR-14): instant summary + selectable distributions. Up to two
+          sit side by side for compare; opened from a LayerManager row or a lane's stats action. */}
+      {selected.length > 0 && (
+        <div className="flex flex-wrap gap-3" aria-label="Layer stats panels" data-testid="stats-panels">
+          {selected.map((ref) => (
+            <LayerStatsPanel key={layerKey(ref)} projectId={projectId} refItem={ref}
+              onClose={() => openStats(ref)} />
+          ))}
         </div>
       )}
-    </div>
-  );
-}
-
-function KeyVals({ title, obj }: { title: string; obj: Record<string, unknown> | null | undefined }) {
-  const entries = obj ? Object.entries(obj).filter(([, v]) => v != null && typeof v !== 'object') : [];
-  if (entries.length === 0) return null;
-  return (
-    <div className="mb-1">
-      <div className="text-[0.72em] font-semibold text-[var(--color-text-muted)]">{title}</div>
-      <div className="flex flex-wrap gap-x-3 gap-y-0.5 font-[var(--font-mono)] text-[0.75em]">
-        {entries.map(([k, v]) => (
-          <span key={k}><span className="text-[var(--color-text-muted)]">{k}:</span> {String(v)}</span>
-        ))}
-      </div>
     </div>
   );
 }

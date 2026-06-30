@@ -268,6 +268,85 @@ def _analysis_text(project_dir: Path) -> tuple[int, str, Any]:
     return orig_len, view.reference_text(), omap
 
 
+def _chunk_signals_path(project_dir: Path, label: str) -> Path:
+    """Resolve a content-addressed chunk label to its signals manifest, validating the label as hex
+    first (like the embedding labels) so the route stays a pure lookup with no traversal. Missing
+    layer → 404, not a guess."""
+    import re as _re
+    if not _re.fullmatch(r"[0-9a-f]{6,64}", label):
+        raise HTTPException(status_code=400, detail=f"invalid chunk label: {label!r}")
+    path = project_dir / "signals" / f"chunking_{label}.json"
+    if not path.exists():
+        raise HTTPException(status_code=404, detail=f"chunk layer {label!r} not found")
+    return path
+
+
+def _deepest_section_type(sections: list[Any], offset: int) -> str:
+    """Element type of the smallest (deepest) structural section containing ``offset`` (original
+    coords); ``"none"`` when no section covers it. Smallest span wins, so a chunk inside a verse
+    inside a chapter is typed by the verse — the most specific structural unit."""
+    best_span: int | None = None
+    best_type = "none"
+    for sec in sections:
+        if sec.start <= offset < sec.end:
+            span = sec.end - sec.start
+            if best_span is None or span < best_span:
+                best_span, best_type = span, sec.type
+    return best_type
+
+
+def _chunk_layer_stats_inputs(project_dir: Path, manifest: dict[str, Any]) -> dict[str, list]:
+    """Assemble the parallel per-chunk lists the pure ``chunk_stats`` helper consumes: char/word
+    lengths from each chunk's analyzable text, an element type per chunk, and chunk start offsets +
+    structural boundaries in a *shared* (original) coordinate system.
+
+    Chunk ``segment_offsets`` are analyzable coordinates; structural sections are original — so each
+    chunk start is remapped through the OffsetMap before the alignment comparison. With no layout
+    there are no structural boundaries, so the remap (and the heavier analysis-view load it needs) is
+    skipped entirely."""
+    from palimpsest.analysis.textstats import TOKEN_RE
+    from palimpsest.layout import load_layout
+
+    seg = manifest.get("segment_offsets") or []
+    meta = manifest.get("metadata", {})
+    chunk_texts = meta.get("chunk_texts")
+    n = len(seg)
+
+    layout = load_layout(project_dir)
+    sections = list(layout.sections) if layout and layout.sections else []
+
+    need_text = not (isinstance(chunk_texts, list) and len(chunk_texts) == n)
+    atext = omap = None
+    if need_text or sections:
+        _, atext, omap = _analysis_text(project_dir)
+    if need_text:
+        chunk_texts = [atext[s:e] for s, e in seg]
+
+    char_lengths = [len(t) for t in chunk_texts]
+    word_counts = [len(TOKEN_RE.findall(t)) for t in chunk_texts]
+
+    if sections:
+        orig_starts: list[int] = []
+        for s, e in seg:
+            mapped = omap.inverse_span(s, e)
+            orig_starts.append(mapped[0] if mapped else s)
+        element_types = [_deepest_section_type(sections, st) for st in orig_starts]
+        structural_boundaries = [sec.start for sec in sections]
+        chunk_starts = orig_starts
+    else:
+        element_types = ["none"] * n
+        structural_boundaries = []
+        chunk_starts = [s for s, _ in seg]
+
+    return {
+        "char_lengths": char_lengths,
+        "word_counts": word_counts,
+        "element_types": element_types,
+        "chunk_starts": chunk_starts,
+        "structural_boundaries": structural_boundaries,
+    }
+
+
 def _term_spans_original(term: str, atext: str, omap: Any) -> list[list[int]]:
     """Whole-word, case-insensitive occurrences of ``term`` in the analyzable text, each remapped to
     its original-coordinate ``[start, end]``. Occurrences that map cleanly are kept in document order;
@@ -1585,6 +1664,25 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             _load_embedding_vectors(project_dir, label), encoding, k=k, seed=seed
         )
         return Response(content=_f32_le_bytes(lane), media_type="application/octet-stream")
+
+    # ---- P6: per-chunk-layer distributions (FR-14) -------------------------------------------------
+    @app.get("/api/projects/{project_id}/chunking/{label}/stats")
+    async def chunking_layer_stats(
+        project_id: str, label: str,
+        bins: int = Query(30, ge=2, le=200), tolerance: int = Query(0, ge=0, le=100000),
+    ) -> JSONResponse:
+        """Per-chunk-layer distribution data behind the stats panel (FR-14): word/char length
+        histograms + ECDFs, by-element-type length groups (violins), and the chunk-boundary-vs-
+        structural alignment breakdown. Computed on-read from the layer's ``segment_offsets`` + the
+        structural layout — deterministic, numpy-only. Distinct from the text-level ProfileTrack
+        (P4): these describe *this chunk layer*, sharing tokenization but not endpoints."""
+        from palimpsest.analysis import chunk_stats
+        project_dir = _safe_project_dir(workspace, project_id)
+        manifest = json.loads(_chunk_signals_path(project_dir, label).read_text())
+        inputs = _chunk_layer_stats_inputs(project_dir, manifest)
+        payload = chunk_stats.compute_chunk_layer_stats(**inputs, bins=bins, tolerance=tolerance)
+        payload["label"] = label
+        return JSONResponse(content=payload)
 
     # ---- P4: substrate integrity report (FR-9) -----------------------------------------------------
     @app.get("/api/projects/{project_id}/integrity")

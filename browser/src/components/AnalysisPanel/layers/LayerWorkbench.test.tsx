@@ -85,11 +85,23 @@ describe('LayerWorkbench — plural coexistence + manager controls (FR-13)', () 
     expect(await within(overlay).findByRole('img', { name: /chunking slide10 band/i })).toBeInTheDocument();
   });
 
-  it('opens an instant-stats drill-in with capability + stats (no fetch)', async () => {
+  it('opens the per-layer stats panel (instant summary + viz selector) from a manager row', async () => {
     render(<LayerWorkbench projectId="p1" layers={refs} />);
     fireEvent.click(screen.getAllByText('stats →')[0]);
-    const detail = await screen.findByLabelText('Layer detail');
-    expect(within(detail).getByText('capability')).toBeInTheDocument();
-    expect(within(detail).getByText(/size:/)).toBeInTheDocument();
+    const panel = await screen.findByLabelText('Layer stats: chunking word7');
+    // Instant summary — straight from the manifest, no fetch.
+    expect(within(panel).getByLabelText('instant stats summary')).toBeInTheDocument();
+    expect(within(panel).getByText(/size:/)).toBeInTheDocument();
+    // A chunk layer offers the selectable distribution set.
+    expect(within(panel).getByRole('tab', { name: 'length histogram' })).toBeInTheDocument();
+  });
+
+  it('opens two stats panels side by side for compare', async () => {
+    render(<LayerWorkbench projectId="p1" layers={refs} />);
+    const statsButtons = screen.getAllByText('stats →');
+    fireEvent.click(statsButtons[0]);
+    fireEvent.click(statsButtons[1]);
+    const panels = screen.getByTestId('stats-panels');
+    expect(within(panels).getAllByTestId('layer-stats-panel')).toHaveLength(2);
   });
 });
