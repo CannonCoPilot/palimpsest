@@ -2445,16 +2445,84 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             return JSONResponse(content={"status": "idle"})
         return JSONResponse(content=job)
 
-    @app.get("/api/alignment/{query_id}/{target_id}/records")
-    async def alignment_records(query_id: str, target_id: str) -> JSONResponse:
-        _validate_ids(query_id, target_id)
+    def _read_alignment(query_id: str, target_id: str):
+        """Load persisted alignment records for a comparison, or 404."""
         comp_dir = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
         records_path = comp_dir / "alignment.jsonl"
         if not records_path.exists():
             raise HTTPException(status_code=404, detail="No alignment results found")
         from palimpsest.alignment.records import read_alignment_records
-        records = read_alignment_records(records_path)
+
+        return read_alignment_records(records_path)
+
+    def _char_count(pid: str) -> int:
+        mp = workspace / pid / "metadata.json"
+        if mp.exists():
+            try:
+                return int(json.loads(mp.read_text(encoding="utf-8")).get("character_count", 0))
+            except (ValueError, json.JSONDecodeError):
+                pass
+        return 0
+
+    @app.get("/api/alignment/{query_id}/{target_id}/records")
+    async def alignment_records(
+        query_id: str, target_id: str,
+        min_score: float | None = None, max_p_value: float | None = None,
+    ) -> JSONResponse:
+        """Alignment records, optionally thresholded — the dotplot's empirical cutoff (FR-40). Filter
+        by ``min_score`` and/or ``max_p_value`` to show only high-scoring local alignments."""
+        _validate_ids(query_id, target_id)
+        records = _read_alignment(query_id, target_id)
+        if min_score is not None:
+            records = [r for r in records if r.score >= min_score]
+        if max_p_value is not None:
+            records = [r for r in records if r.p_value <= max_p_value]
         return JSONResponse(content=[r.to_dict() for r in records])
+
+    @app.get("/api/alignment/{query_id}/{target_id}/scores")
+    async def alignment_scores(query_id: str, target_id: str) -> JSONResponse:
+        """The alignment-score distribution + a suggested empirical threshold for the dotplot (FR-40).
+        The frontend uses this to set the threshold slider's range and default cutoff."""
+        _validate_ids(query_id, target_id)
+        records = _read_alignment(query_id, target_id)
+        scores = sorted(r.score for r in records)
+        if not scores:
+            return JSONResponse(content={"count": 0, "scores": [], "suggested_threshold": None})
+
+        def _q(p: float) -> float:
+            return scores[min(len(scores) - 1, max(0, int(p * (len(scores) - 1))))]
+
+        return JSONResponse(content={
+            "count": len(scores),
+            "min": scores[0], "max": scores[-1],
+            "median": _q(0.5), "p75": _q(0.75), "p90": _q(0.90),
+            # default cutoff: the 75th percentile — show the upper quartile of alignments by score
+            "suggested_threshold": _q(0.75),
+            "scores": scores,
+        })
+
+    @app.get("/api/alignment/{query_id}/{target_id}/export.paf")
+    async def alignment_export_paf(
+        query_id: str, target_id: str,
+        min_score: float | None = None, max_p_value: float | None = None,
+    ):
+        """Export (optionally thresholded) alignment records as minimap2 PAF (FR-36)."""
+        from fastapi.responses import PlainTextResponse
+
+        from palimpsest.alignment.records import records_to_paf
+
+        _validate_ids(query_id, target_id)
+        records = _read_alignment(query_id, target_id)
+        if min_score is not None:
+            records = [r for r in records if r.score >= min_score]
+        if max_p_value is not None:
+            records = [r for r in records if r.p_value <= max_p_value]
+        lines = records_to_paf(records, _char_count(query_id), _char_count(target_id))
+        body = "\n".join(lines) + ("\n" if lines else "")
+        return PlainTextResponse(
+            content=body, media_type="text/x-paf",
+            headers={"Content-Disposition": f'attachment; filename="{query_id}_vs_{target_id}.paf"'},
+        )
 
     @app.get("/api/alignment/{query_id}/{target_id}/matrix")
     async def alignment_matrix(query_id: str, target_id: str) -> JSONResponse:
@@ -2511,6 +2579,28 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         if not bin_path.exists():
             raise HTTPException(status_code=404, detail="No cross-similarity binary found")
         return FileResponse(bin_path, media_type="application/octet-stream")
+
+    @app.get("/api/comparisons")
+    async def list_comparisons() -> JSONResponse:
+        """Discover computed pairwise comparisons under ``.comparisons/`` — the index the frontend
+        needs to surface prior cross-text results (none existed before)."""
+        comps_dir = workspace / ".comparisons"
+        out: list[dict] = []
+        if comps_dir.is_dir():
+            for d in sorted(comps_dir.iterdir()):
+                if not d.is_dir():
+                    continue
+                meta_path = d / "metadata.json"
+                entry: dict = {"id": d.name}
+                if meta_path.exists():
+                    try:
+                        entry.update(json.loads(meta_path.read_text(encoding="utf-8")))
+                    except json.JSONDecodeError:
+                        pass
+                entry["has_matrix"] = (d / "cross_similarity.bin").exists()
+                entry["has_records"] = (d / "alignment.jsonl").exists()
+                out.append(entry)
+        return JSONResponse(content=out)
 
     @app.get("/data/{project_id}/{path:path}")
     async def serve_project_file(project_id: str, path: str) -> FileResponse:

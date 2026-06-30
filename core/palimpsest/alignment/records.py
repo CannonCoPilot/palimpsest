@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -76,3 +77,50 @@ def read_alignment_records(path: Path) -> list[AlignmentRecord]:
             if line:
                 records.append(AlignmentRecord.from_dict(json.loads(line)))
     return records
+
+
+def _mapq_from_pvalue(p_value: float) -> int:
+    """Phred-scaled mapping quality from a p-value, capped to PAF's 0–255 range."""
+    p = min(max(p_value, 1e-9), 1.0)
+    return max(0, min(255, int(round(-10.0 * math.log10(p)))))
+
+
+def records_to_paf(
+    records: list[AlignmentRecord], query_len: int, target_len: int
+) -> list[str]:
+    """Render alignment records as minimap2 PAF lines (FR-36): 12 mandatory tab-separated columns
+    plus optional tags.
+
+    Our records carry character spans but no per-residue CIGAR, so the residue-match count (col 10) is
+    approximated from ``identity × block_len`` (block_len = the longer of the two spans), and mapping
+    quality (col 12) is the Phred-scaled p-value. Score, p-value, identity and method travel as PAF
+    optional tags so nothing is lost: ``AS:i`` (score), ``pv:f`` (p-value), ``id:f`` (identity),
+    ``mt:Z`` (method)."""
+    lines: list[str] = []
+    for r in records:
+        q_span = max(0, r.query_end - r.query_start)
+        t_span = max(0, r.target_end - r.target_start)
+        block = max(q_span, t_span, 1)
+        matches = int(round(r.identity * block)) if r.identity > 0 else block
+        matches = min(matches, block)
+        cols = [
+            r.query_id, str(query_len), str(r.query_start), str(r.query_end),
+            r.strand or "+",
+            r.target_id, str(target_len), str(r.target_start), str(r.target_end),
+            str(matches), str(block), str(_mapq_from_pvalue(r.p_value)),
+            f"AS:i:{int(round(r.score))}",
+            f"pv:f:{r.p_value:.6g}",
+            f"id:f:{r.identity:.6g}",
+            f"mt:Z:{r.method}",
+        ]
+        lines.append("\t".join(cols))
+    return lines
+
+
+def write_paf(
+    path: Path, records: list[AlignmentRecord], *, query_len: int, target_len: int
+) -> None:
+    """Write alignment records in minimap2 PAF format (FR-36)."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    body = "\n".join(records_to_paf(records, query_len, target_len))
+    path.write_text(body + ("\n" if records else ""), encoding="utf-8")

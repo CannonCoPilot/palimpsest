@@ -932,3 +932,42 @@ def collections_congruence(
     for pid in rep["members"]:
         key = rep["keys"].get(pid)
         console.print(f"  - {pid}: {key if key else '[red](missing layer)[/red]'}")
+
+
+@main.command(name="align-paf")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("query_id")
+@click.argument("target_id")
+@click.option("--output", "-o", type=click.Path(path_type=Path), default=None, help="Write PAF here (else stdout)")
+@click.option("--min-score", type=float, default=None, help="Only export records scoring >= this")
+def align_paf(
+    workspace: Path, query_id: str, target_id: str, output: Path | None, min_score: float | None
+) -> None:
+    """Export a computed pairwise alignment as minimap2 PAF (FR-36)."""
+    from palimpsest.alignment.records import read_alignment_records, records_to_paf
+
+    comp = workspace / ".comparisons" / f"{query_id}_vs_{target_id}"
+    rec_path = comp / "alignment.jsonl"
+    if not rec_path.exists():
+        console.print(f"[red]No alignment results at {comp}[/red]")
+        raise SystemExit(1)
+    records = read_alignment_records(rec_path)
+    if min_score is not None:
+        records = [r for r in records if r.score >= min_score]
+
+    def _cc(pid: str) -> int:
+        mp = workspace / pid / "metadata.json"
+        if mp.exists():
+            try:
+                return int(json.loads(mp.read_text(encoding="utf-8")).get("character_count", 0))
+            except (ValueError, json.JSONDecodeError):
+                pass
+        return 0
+
+    lines = records_to_paf(records, _cc(query_id), _cc(target_id))
+    text = "\n".join(lines) + ("\n" if lines else "")
+    if output:
+        output.write_text(text, encoding="utf-8")
+        console.print(f"[green]Wrote[/green] {len(records)} record(s) -> {output}")
+    else:
+        click.echo(text)
