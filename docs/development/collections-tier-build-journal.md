@@ -60,3 +60,49 @@ ground (low regression risk), not a rewrite.
 **Done-criteria (plan §C1):** assemble collection ✓ · cross-project operand bind, fail-loud ✓ ·
 per-metric incongruence detection ✓ · re-run keeps prior versions ✓ · CLI+HTTP parity ✓ · backend
 green ✓ · no single-text regression (NFR-C1) ✓.
+
+---
+
+## C2 — Pairwise engine: heatmap + dotplot (FR-21, FR-33, FR-40, FR-36) — COMPLETE
+
+**Discovery:** ~80% pre-existing. The `palimpsest.alignment` package (rectangular M×N cross-similarity
+matrix, Smith-Waterman local alignment, Gumbel significance, JSONL records) and a full frontend Compare
+tab (Alignment / Dotplot / Synteny / Circos / Diff sub-views, `ComparativeDotplot` heatmap with record
+overlay, `comparisonStore`) already exist and are wired to live cross-text data. C2 = build the
+**documented gaps only**, not a rewrite.
+
+**Backend — committed `4435cda` (gap completions) + bug-fix commit (below):**
+- `alignment/records.py` — `records_to_paf` / `write_paf` (minimap2 PAF, FR-36): 12 columns + tags
+  `AS:i` (score), `pv:f` (p-value), `id:f` (identity), `mt:Z` (method); match count ≈ identity×block,
+  mapping quality = Phred-scaled p-value.
+- `server.py` — `GET …/records?min_score=&max_p_value=` (the dotplot's empirical cutoff, FR-40);
+  `GET …/scores` (score distribution + suggested p75 threshold); `GET …/export.paf` (thresholdable PAF
+  download); `GET /api/comparisons` (discovery — none existed).
+- `cli.py` — `align-paf` command (CLI/HTTP parity).
+- `tests/test_alignment_c2.py` — 9 tests (PAF format/roundtrip, record thresholding, score
+  distribution, PAF export, comparison discovery, CLI, + 3 regression tests for the bugs below).
+
+**Two real bugs surfaced by live HTTP validation (unit tests with on-disk fixtures missed both):**
+1. **Every alignment POST 422'd.** `AlignmentRequest` was a Pydantic model defined *inside*
+   `create_app`. Under `from __future__ import annotations` the endpoint's type hints are stringized,
+   and FastAPI's `get_type_hints` resolves them against *module* globals only — a function-local class
+   is invisible, so `request` silently degraded to a required query param and rejected every body.
+   Fix: move `AlignmentRequest` to module scope (where all sibling request models already live).
+2. **Long-id pairs hit `[Errno 63] File name too long`.** The comparison dir was named
+   `{query}_vs_{target}`; two full edition slugs (≈150 chars each) blow past the 255-byte component
+   limit — i.e. the headline use case (comparing Bible editions) was unrunnable. Fix: a shared
+   `comparison_dir()` / `comparison_dirname()` helper keeps the readable name when it fits and falls
+   back to a deterministic `cmp-<sha1[:16]>` hash otherwise; wired into all 8 construction sites.
+
+**Frontend — verified + committed:** `ComparativeDotplot.tsx` gained a palette switcher
+(blues/viridis — viridis was defined but unwired), a **score-threshold slider** (FR-40: hides
+low-scoring alignments so only high-scoring local structure renders; range from the records' own score
+min/max; shows shown/total count), and a **PAF download** link (`export.paf?min_score=…`). Covered by
+`ComparativeDotplot.test.tsx` (3 vitest cases) — frontend 63/63 green, `tsc -b && vite build` clean.
+
+**In-browser proof (C2 done-criterion):** `e2e/compare_dotplot_c2.spec.ts` drives the live stack on an
+isolated server (`:8090`, leaving the shared `:8080` untouched). Loads a DR appendix sub-text, picks
+its superset sibling, runs a word-overlap alignment (100 records, scores 21.5–34.0), opens the Dotplot,
+and exercises all three controls: heatmap canvas renders, palette switches blues→viridis, raising the
+threshold drops shown/total (100→27 at p75), and the PAF link carries `export.paf?min_score=`. Green.
+Backend full suite 848/848. *Stretch (not done):* bidirectional B×A overlay toggle.

@@ -4,7 +4,7 @@
  * generalized for non-square matrices.
  */
 
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { useProjectStore, getActiveProject, getSecondaryProject } from '../../stores/projectStore';
 import { useComparisonStore } from '../../stores/comparisonStore';
 
@@ -42,9 +42,19 @@ export default function ComparativeDotplot() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [viewport, setViewport] = useState<Viewport>({ x: 0, y: 0, spanX: 0, spanY: 0 });
   const [hoveredCell, setHoveredCell] = useState<{ i: number; j: number } | null>(null);
+  const [palette, setPalette] = useState<'blues' | 'viridis'>('blues');
+  const [scoreThreshold, setScoreThreshold] = useState(0);
 
   const n = dims?.[0] ?? 0;
   const m = dims?.[1] ?? 0;
+
+  // Score range drives the threshold slider — the dotplot's empirical cutoff (FR-40): below the
+  // threshold, alignments are hidden so only high-scoring local structure renders.
+  const { minScore, maxScore } = useMemo(() => {
+    if (!records.length) return { minScore: 0, maxScore: 0 };
+    const s = records.map((r) => r.score);
+    return { minScore: Math.min(...s), maxScore: Math.max(...s) };
+  }, [records]);
 
   useEffect(() => {
     if (!matrix && queryId && targetId) {
@@ -97,7 +107,7 @@ export default function ComparativeDotplot() {
     const { x: vpX, y: vpY, spanX, spanY } = viewport;
     const cellW = canvasW / spanX;
     const cellH = canvasH / spanY;
-    const colors = PALETTES.blues;
+    const colors = PALETTES[palette];
 
     ctx.fillStyle = '#f8f8f8';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -121,6 +131,7 @@ export default function ComparativeDotplot() {
     ctx.strokeStyle = 'rgba(255, 100, 0, 0.6)';
     ctx.lineWidth = 2;
     for (const rec of records) {
+      if (rec.score < scoreThreshold) continue;  // thresholded dotplot (FR-40)
       const rx = (rec.targetStart - vpX) * cellW;
       const ry = (rec.queryStart - vpY) * cellH;
       const rw = (rec.targetEnd - rec.targetStart) * cellW;
@@ -154,7 +165,7 @@ export default function ComparativeDotplot() {
       ctx.lineWidth = 2;
       ctx.strokeRect(hx, hy, cellW, cellH);
     }
-  }, [matrix, n, m, viewport, records, hoveredCell]);
+  }, [matrix, n, m, viewport, records, hoveredCell, palette, scoreThreshold]);
 
   // Wheel zoom
   useEffect(() => {
@@ -208,6 +219,47 @@ export default function ComparativeDotplot() {
           <span className="text-[var(--color-text-muted)]">
             [{hoveredCell.i}, {hoveredCell.j}]: {hoverValue.toFixed(3)}
           </span>
+        )}
+        <label className="flex items-center gap-1">
+          palette
+          <select
+            value={palette}
+            onChange={(e) => setPalette(e.target.value as 'blues' | 'viridis')}
+            className="border border-[var(--color-border)] rounded px-1 bg-[var(--color-bg)]"
+          >
+            <option value="blues">blues</option>
+            <option value="viridis">viridis</option>
+          </select>
+        </label>
+        {records.length > 0 && maxScore > minScore && (
+          <label
+            className="flex items-center gap-1"
+            title="Show only alignments scoring ≥ threshold — the dotplot's empirical cutoff"
+          >
+            score ≥ {scoreThreshold.toFixed(1)}
+            <input
+              type="range"
+              min={minScore}
+              max={maxScore}
+              step={(maxScore - minScore) / 100 || 1}
+              value={scoreThreshold}
+              onChange={(e) => setScoreThreshold(Number(e.target.value))}
+            />
+            <span className="text-[var(--color-text-muted)]">
+              {records.filter((r) => r.score >= scoreThreshold).length}/{records.length}
+            </span>
+          </label>
+        )}
+        {queryId && targetId && records.length > 0 && (
+          <a
+            href={`/api/alignment/${queryId}/${targetId}/export.paf${
+              scoreThreshold > minScore ? `?min_score=${scoreThreshold}` : ''
+            }`}
+            download
+            className="text-[var(--color-accent,#2563eb)] underline"
+          >
+            PAF
+          </a>
         )}
         <span className="ml-auto text-[var(--color-text-muted)]">
           {n}×{m} · Wheel=zoom
