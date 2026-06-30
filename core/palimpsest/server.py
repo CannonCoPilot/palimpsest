@@ -119,6 +119,12 @@ class CollectionRequest(BaseModel):
     project_ids: list[str] = []
 
 
+class RoleRequest(BaseModel):
+    """Set a member's collection-local role (FR-25): ``member`` (co-equal) or ``root`` (lens)."""
+
+    role: str = "member"
+
+
 _STRUCTURAL_TRACKS = {"segments", "sections", "elements", "verses"}
 
 
@@ -2286,6 +2292,50 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         if col is None:
             raise HTTPException(status_code=404, detail="Collection not found")
         return JSONResponse(content=col)
+
+    @app.get("/api/projects/{project_id}/lattice")
+    async def project_lattice_endpoint(project_id: str) -> JSONResponse:
+        """Inverse navigation for a project (FR-24): its Work tag, parent + derived children (subtext
+        edge), edition siblings (shared Work), and the collections it belongs to."""
+        from palimpsest.collections_ops import project_lattice
+
+        try:
+            return JSONResponse(content=project_lattice(workspace, project_id))
+        except (FileNotFoundError, ValueError) as exc:
+            raise HTTPException(status_code=404, detail=str(exc))
+
+    @app.put("/api/collections/{collection_id}/roles/{project_id}")
+    async def set_collection_role(
+        collection_id: str, project_id: str, req: RoleRequest
+    ) -> JSONResponse:
+        """Assign a member's collection-local role (FR-25). Fails 400 on an invalid role or a non-member."""
+        from palimpsest.collections import set_member_role
+
+        try:
+            col = set_member_role(workspace, collection_id, project_id, req.role)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        if col is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
+        return JSONResponse(content=col)
+
+    @app.get("/api/collections/{collection_id}/congruence")
+    async def collection_congruence(
+        collection_id: str, metric: str = "cosine", embedding_label: str | None = None
+    ) -> JSONResponse:
+        """Per-metric congruence across a collection's members — the compatibility-badge data
+        (FR-27/FR-39): each member's congruence key, the congruent cohorts, members missing the
+        required layer, and whether the whole collection is comparable on the metric."""
+        from palimpsest.collections_ops import congruence_report
+
+        try:
+            return JSONResponse(
+                content=congruence_report(workspace, collection_id, metric, embedding_label)
+            )
+        except KeyError:
+            raise HTTPException(status_code=404, detail="Collection not found")
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
 
     # ── Alignment API ──
 

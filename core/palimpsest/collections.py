@@ -137,6 +137,43 @@ def collections_for_project(workspace: Path, project_id: str) -> list[str]:
     return [c["id"] for c in load_collections(workspace) if project_id in c.get("project_ids", [])]
 
 
+VALID_ROLES = ("member", "root")
+
+
+def member_role(collection: dict[str, Any], project_id: str) -> str:
+    """A member's collection-local role (FR-25). Default ``member`` (co-equal); ``root`` marks the
+    per-view coordinate-backbone lens. Role is a property of the *collection*, not the project, so the
+    same project can be a co-equal member of one collection and the root lens of another."""
+    return collection.get("roles", {}).get(project_id, "member")
+
+
+def set_member_role(
+    workspace: Path, collection_id: str, project_id: str, role: str
+) -> dict[str, Any] | None:
+    """Set a member's collection-local role. ``role`` ∈ :data:`VALID_ROLES`. The project must already
+    belong to the collection (else :class:`ValueError`). Only non-default (``root``) roles are stored,
+    keeping the record clean. Returns the updated collection, or ``None`` if the collection is unknown."""
+    if role not in VALID_ROLES:
+        raise ValueError(f"role must be one of {VALID_ROLES}, got {role!r}")
+    cols = load_collections(workspace)
+    for c in cols:
+        if c["id"] == collection_id:
+            if project_id not in c.get("project_ids", []):
+                raise ValueError(f"project {project_id!r} is not a member of collection {collection_id!r}")
+            roles = c.get("roles", {})
+            if role == "member":
+                roles.pop(project_id, None)
+            else:
+                roles[project_id] = role
+            if roles:
+                c["roles"] = roles
+            else:
+                c.pop("roles", None)
+            save_collections(workspace, cols)
+            return c
+    return None
+
+
 def link_derived(
     workspace: Path, parent_id: str, parent_title: str, child_id: str, collection_id: str | None
 ) -> str:

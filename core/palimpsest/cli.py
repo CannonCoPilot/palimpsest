@@ -792,3 +792,143 @@ def dedup_ids(workspace: Path, apply_changes: bool) -> None:
     console.print(
         f"\n[green]Done[/green]: {len(renames)} renamed, {len(conflicts)} conflict(s) left for manual review."
     )
+
+
+@main.group()
+def collections() -> None:
+    """Manage collections — named groupings of related projects (Collections tier, FR-37 parity)."""
+
+
+@collections.command("list")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+def collections_list(workspace: Path) -> None:
+    """List all collections with member counts."""
+    from palimpsest.collections import load_collections
+
+    cols = load_collections(workspace)
+    if not cols:
+        console.print("[yellow]No collections.[/yellow]")
+        return
+    for c in cols:
+        console.print(
+            f"[cyan]{c['id']}[/cyan] ({c.get('kind', 'manual')}) — {c.get('label', c['id'])}: "
+            f"{len(c.get('project_ids', []))} member(s)"
+        )
+
+
+@collections.command("show")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+def collections_show(workspace: Path, collection_id: str) -> None:
+    """Show a collection and its members (with collection-local roles)."""
+    from palimpsest.collections import get_collection, member_role
+
+    col = get_collection(workspace, collection_id)
+    if col is None:
+        console.print(f"[red]Collection '{collection_id}' not found.[/red]")
+        raise SystemExit(1)
+    console.print(f"[bold]{col.get('label', collection_id)}[/bold] ({col.get('kind', 'manual')})")
+    for pid in col.get("project_ids", []):
+        console.print(f"  - {pid} [dim]({member_role(col, pid)})[/dim]")
+
+
+@collections.command("create")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("label")
+@click.option("--project", "projects", multiple=True, help="Member project id (repeatable)")
+@click.option("--description", default="", help="Collection description")
+def collections_create(workspace: Path, label: str, projects: tuple[str, ...], description: str) -> None:
+    """Create a manual collection."""
+    from palimpsest.collections import create_collection
+
+    col = create_collection(workspace, label, description, list(projects))
+    console.print(f"[green]Created[/green] collection [cyan]{col['id']}[/cyan] with {len(projects)} member(s).")
+
+
+@collections.command("add-member")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.argument("project_id")
+def collections_add_member(workspace: Path, collection_id: str, project_id: str) -> None:
+    """Add a project to a collection."""
+    from palimpsest.collections import add_member
+
+    if add_member(workspace, collection_id, project_id) is None:
+        console.print(f"[red]Collection '{collection_id}' not found.[/red]")
+        raise SystemExit(1)
+    console.print(f"[green]Added[/green] {project_id} -> {collection_id}.")
+
+
+@collections.command("remove-member")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.argument("project_id")
+def collections_remove_member(workspace: Path, collection_id: str, project_id: str) -> None:
+    """Remove a project from a collection."""
+    from palimpsest.collections import remove_member
+
+    if remove_member(workspace, collection_id, project_id) is None:
+        console.print(f"[red]Collection '{collection_id}' not found.[/red]")
+        raise SystemExit(1)
+    console.print(f"[green]Removed[/green] {project_id} from {collection_id}.")
+
+
+@collections.command("role")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.argument("project_id")
+@click.argument("role", type=click.Choice(["member", "root"]))
+def collections_role(workspace: Path, collection_id: str, project_id: str, role: str) -> None:
+    """Set a member's collection-local role (member | root lens)."""
+    from palimpsest.collections import set_member_role
+
+    try:
+        col = set_member_role(workspace, collection_id, project_id, role)
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+    if col is None:
+        console.print(f"[red]Collection '{collection_id}' not found.[/red]")
+        raise SystemExit(1)
+    console.print(f"[green]Set[/green] {project_id} role -> {role} in {collection_id}.")
+
+
+@collections.command("lattice")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("project_id")
+def collections_lattice(workspace: Path, project_id: str) -> None:
+    """Show a project's membership lattice (work, parent, children, siblings, collections)."""
+    from palimpsest.collections_ops import project_lattice
+
+    try:
+        lat = project_lattice(workspace, project_id)
+    except (FileNotFoundError, ValueError) as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+    console.print(json.dumps(lat, indent=2))
+
+
+@collections.command("congruence")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.option("--metric", default="cosine", help="Metric to test congruence on")
+@click.option("--embedding-label", default=None, help="Specific embedding layer label")
+def collections_congruence(
+    workspace: Path, collection_id: str, metric: str, embedding_label: str | None
+) -> None:
+    """Report per-metric congruence across a collection's members (the compatibility badge data)."""
+    from palimpsest.collections_ops import congruence_report
+
+    try:
+        rep = congruence_report(workspace, collection_id, metric, embedding_label)
+    except KeyError:
+        console.print(f"[red]Collection '{collection_id}' not found.[/red]")
+        raise SystemExit(1)
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+    badge = "[green]congruent[/green]" if rep["all_congruent"] else "[yellow]incongruent[/yellow]"
+    console.print(f"metric [cyan]{metric}[/cyan]: {badge}")
+    for pid in rep["members"]:
+        key = rep["keys"].get(pid)
+        console.print(f"  - {pid}: {key if key else '[red](missing layer)[/red]'}")
