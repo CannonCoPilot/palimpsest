@@ -11,7 +11,7 @@
 
 import { useEffect, useState } from 'react';
 
-interface CongruenceReport {
+export interface CongruenceReport {
   metric: string;
   needs_embedding: boolean;
   members: string[];

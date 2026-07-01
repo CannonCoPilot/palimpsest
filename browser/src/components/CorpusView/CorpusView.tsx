@@ -13,10 +13,12 @@ import { useProjectStore } from '../../stores/projectStore';
 import { useComparisonStore } from '../../stores/comparisonStore';
 import { useViewStore } from '../../stores/viewStore';
 import { useCollectionStore, activeCollection, type CollectionOption } from '../../stores/collectionStore';
-import CongruenceBadge from './CongruenceBadge';
+import CongruenceBadge, { type CongruenceReport } from './CongruenceBadge';
 import MembersPanel from './MembersPanel';
 import SweepPanel from './SweepPanel';
 import AnalysesPanel from './AnalysesPanel';
+import ProbePanel from './ProbePanel';
+import CostDialog from './CostDialog';
 import {
   blockMapLanes,
   sharedComponentMatrix,
@@ -31,7 +33,7 @@ import {
   type RootTrack,
 } from './corpusOverview';
 
-type SubTab = 'overview' | 'members' | 'corpus' | 'masking' | 'analyses' | 'sweep';
+type SubTab = 'overview' | 'members' | 'corpus' | 'masking' | 'analyses' | 'sweep' | 'probe';
 const SUB_TABS: { id: SubTab; label: string }[] = [
   { id: 'overview', label: 'Overview' },
   { id: 'members', label: 'Members' },
@@ -39,10 +41,11 @@ const SUB_TABS: { id: SubTab; label: string }[] = [
   { id: 'masking', label: 'Masking' },
   { id: 'analyses', label: 'Analyses' },
   { id: 'sweep', label: 'Sweep' },
+  { id: 'probe', label: 'Probe' },
 ];
 
 // Sub-tabs that stand on their own data (not the corpus graph) — they must not show the graph gate.
-const GRAPH_FREE_TABS = new Set<SubTab>(['members', 'sweep']);
+const GRAPH_FREE_TABS = new Set<SubTab>(['members', 'sweep', 'probe']);
 
 function ClassBadge({ label, count, color }: { label: string; count: number; color: string }) {
   return (
@@ -270,6 +273,7 @@ export default function CorpusView() {
   const roles = useCollectionStore(activeCollection)?.roles ?? {};
 
   const [subTab, setSubTab] = useState<SubTab>('overview');
+  const [reconcile, setReconcile] = useState<CongruenceReport | null>(null);
   const [graph, setGraph] = useState<CorpusGraph | null>(null);
   const [tree, setTree] = useState<PhyleticTree | null>(null);
   const [repeats, setRepeats] = useState<CorpusRepeats | null>(null);
@@ -377,7 +381,7 @@ export default function CorpusView() {
         )}
         {loading && <span className="text-[var(--color-text-muted)]">Assembling graph…</span>}
         <div className="ml-auto flex items-center gap-1.5">
-          {collectionId && <CongruenceBadge collectionId={collectionId} />}
+          {collectionId && <CongruenceBadge collectionId={collectionId} onReconcile={setReconcile} />}
           {summary && !loading && (
             <>
               <ClassBadge label="core" count={summary.core ?? 0} color={blockColor('core-legend', 'core')} />
@@ -427,6 +431,10 @@ export default function CorpusView() {
           <SweepPanel collectionId={collectionId} members={members} />
         )}
 
+        {subTab === 'probe' && collectionId && (
+          <ProbePanel collectionId={collectionId} members={members} />
+        )}
+
         {!GRAPH_FREE_TABS.has(subTab) && !graph && !loading && !error && (
           <div className="text-[var(--color-text-muted)] text-[0.9em]">Select a collection to assemble its corpus graph.</div>
         )}
@@ -468,6 +476,35 @@ export default function CorpusView() {
           </div>
         )}
       </div>
+
+      {reconcile && (
+        <CostDialog
+          title="Reconcile embedding space"
+          confirmLabel={reconcile.missing.length > 0 ? `Open ${reconcile.missing[0]} to embed` : 'Close'}
+          onConfirm={() => {
+            const target = reconcile.missing[0];
+            setReconcile(null);
+            if (target) void openMember(target);
+          }}
+          onCancel={() => setReconcile(null)}
+        >
+          <p>
+            Members must share one embedding space to compare on <span className="font-mono">{reconcile.metric}</span>.{' '}
+            {reconcile.missing.length > 0
+              ? `${reconcile.missing.length} member${reconcile.missing.length !== 1 ? 's have' : ' has'} no embedding layer yet:`
+              : 'Members sit in different embedding spaces.'}
+          </p>
+          {reconcile.missing.length > 0 && (
+            <ul className="list-disc pl-5">
+              {reconcile.missing.map((m) => (
+                <li key={m} className="truncate" title={m}>{m}</li>
+              ))}
+            </ul>
+          )}
+          {reconcile.reconcile_hint && <p className="text-[var(--color-text-muted)]">{reconcile.reconcile_hint}</p>}
+          <p>Reconciling re-embeds each member with the same model — an expensive per-member run in that text's Analysis tab. Open a member to compute its embeddings.</p>
+        </CostDialog>
+      )}
     </div>
   );
 }
