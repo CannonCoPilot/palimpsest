@@ -12,6 +12,7 @@ import DotplotView from '../DotplotView/DotplotView';
 import CharactersPanel from '../CharactersPanel/CharactersPanel';
 import AnalysisPanel from '../AnalysisPanel/AnalysisPanel';
 import CompareView from '../CompareView/CompareView';
+import CorpusView from '../CorpusView/CorpusView';
 import LoadingOverlay from '../common/LoadingOverlay';
 import HelpOverlay from '../common/HelpOverlay';
 import ProjectPicker from '../common/ProjectPicker';
@@ -123,6 +124,7 @@ export default function AppLayout() {
             {activeTab === 'characters' && <CharactersPanel />}
             {activeTab === 'analysis' && <AnalysisPanel />}
             {activeTab === 'compare' && <CompareView />}
+            {activeTab === 'corpus' && <CorpusView />}
           </ErrorBoundary>
         </main>
 
@@ -139,7 +141,7 @@ export default function AppLayout() {
         </ErrorBoundary>
       </div>
 
-      {activeTab !== 'texthic' && activeTab !== 'compare' && <OverviewBar />}
+      {activeTab !== 'texthic' && activeTab !== 'compare' && activeTab !== 'corpus' && <OverviewBar />}
     </div>
   );
 }

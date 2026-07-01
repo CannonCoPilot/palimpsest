@@ -114,9 +114,10 @@ export function setupKeyboardHandlers(): () => void {
       case '4':
       case '5':
       case '6':
+      case '7':
         if (!isInput && e.altKey) {
           e.preventDefault();
-          const tabs = ['reading', 'browser', 'texthic', 'characters', 'analysis', 'compare'] as const;
+          const tabs = ['reading', 'browser', 'texthic', 'characters', 'analysis', 'compare', 'corpus'] as const;
           const idx = parseInt(e.key, 10) - 1;
           if (idx < tabs.length) useViewStore.getState().setActiveTab(tabs[idx]);
         } else if (!isInput) {
@@ -124,7 +125,6 @@ export function setupKeyboardHandlers(): () => void {
           useTrackStore.getState().toggleTrackByIndex(parseInt(e.key, 10));
         }
         break;
-      case '7':
       case '8':
       case '9':
         if (!isInput) {
