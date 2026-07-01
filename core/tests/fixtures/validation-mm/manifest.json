@@ -1,0 +1,43 @@
+{
+  "collection_id": "matthew-mark-validation",
+  "label": "Matthew-Mark Cross-Translation Validation",
+  "description": "Standing validation collection: Matthew+Mark subtexts from the Douay-Rheims (1582-1610) and the 1599 Geneva Bible. Cross-translation ground truth for all Palimpsest similarity/masking validation.",
+  "workspace": ".scratch/validation-mm",
+  "copyright_note": "Source text bodies are copyrighted-edition scripture (DR 2018 reprint / Geneva Tolle Lege 2013). Per repo convention (imports/ gitignored; no reference.txt committed) the bodies are NOT committed. Regenerate locally from imports/ with build.py; assert with validate.py.",
+  "parity_note": "Geneva 1749 vs DR 1747 verses (+1 Matthew, +1 Mark) reflects genuine Vulgate-vs-Protestant versification differences — intended cross-translation variance, not an error.",
+  "members": [
+    {
+      "role": "DR-MM",
+      "project_id": "douay-rheims-bible-complete-original-unabriged-full-douay-rheims-version-2018-1a24ae78af9f25ce66b9f156d163841a-anna-s-archive-chapter-in-book-0047-book-0048",
+      "title": "Douay-Rheims -- Matthew & Mark",
+      "author": "Douay-Rheims (1582-1610)",
+      "source_edition": "Douay-Rheims Bible (2018 reprint), Anna's Archive",
+      "derived_from": "gold Douay-Rheims full Bible (.scratch/demo), containers book-0047 (Matthew) + book-0048 (Mark)",
+      "reference_sha256_prefix": "31a52664d2443a50",
+      "expected": {
+        "chars": 211868,
+        "words": 39958,
+        "verses": 1747,
+        "matthew": { "chapters": 28, "verses": 1070 },
+        "mark": { "chapters": 16, "verses": 677 }
+      }
+    },
+    {
+      "role": "Geneva-MM",
+      "project_id": "1599-geneva-bible-tolle-lege-press-press-tolle-lege-2013-tolle-lege-press-19f28a695686af95cd3f5997c53aa3f2-anna-s-archive-chapter-in-book-mark-book-matthew",
+      "title": "1599 Geneva -- Matthew & Mark",
+      "author": "Geneva (1599)",
+      "source_edition": "1599 Geneva Bible, Tolle Lege Press 2013 (modernized spelling), Anna's Archive",
+      "derived_from": "COMPLETE re-ingest of the Geneva EPUB with corrected content filter, containers book-matthew + book-mark",
+      "reference_sha256_prefix": "698a71eded676246",
+      "expected": {
+        "chars": 211947,
+        "words": 40763,
+        "verses": 1749,
+        "matthew": { "chapters": 28, "verses": 1071 },
+        "mark": { "chapters": 16, "verses": 678 }
+      }
+    }
+  ],
+  "build_steps": ["dr", "geneva-complete", "geneva-layout", "geneva-verses", "geneva-mm"]
+}
