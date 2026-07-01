@@ -422,3 +422,45 @@ shared pericopes share *content/structure*, not exact *wording*. That is a prope
 the extractor; embedding-method alignment (and the C6c recall dial) is where synoptic recall improves. The
 synoptic TP/TN oracle for scoring this lives at `core/tests/fixtures/validation-mm/synoptic-ground-truth.json`
 (101 shared pericopes, 51 unique).
+
+### C6b — Probe mode `R(q, Corpus)` ✅ (FR-31)
+
+Retrieval over a collection's **shared embedding space**: rank every member's chunk embeddings against a
+query vector and return the corpus-wide top-`k` with `(project_id, chunk_index, text, similarity)`
+attribution. The value it adds over the pairwise C2 engine is *one-to-many* — "which passages anywhere in
+the corpus are nearest this query" — rather than a fixed A↔B matrix.
+
+**The honesty guarantee is the C1 metric-congruence contract (FR-27/39), applied at two boundaries, so a
+probe is never a silent cross-space comparison:**
+
+1. **Members.** `_gate_congruent_cohort` resolves each member's embedding layer (newest-wins) and computes
+   its congruence key (`embedding:{metric}:{model_fingerprint}`). Any member missing the layer, or sitting
+   on a divergent key, raises `MetricCongruenceError` naming the offenders and the reconcile action — the
+   same picture the compatibility badge shows. No partial-corpus probe.
+2. **Query.** The query vector must carry the corpus dimension; and when the query is embedded from text at
+   the boundary, its re-derived `model_fingerprint` must equal the corpus key's fingerprint. A query
+   embedded with a different provider/model is rejected *before* any search.
+
+**Architecture (leaf-vs-glue, deliberate).** The core `probe_corpus(…, query_vector, …)` takes a *vector*
+— so the gate + `SqliteVecStore.search` + merge/top-`k` are deterministic and unit-testable with no live
+embedding service. Turning query *text* → vector is service I/O (MLX/Ollama), isolated at the boundary in
+`embed_probe_query`; a fully service-free query path, `query_vector_from_ref`, reuses a passage already
+embedded in the corpus ("find passages like this one"). Nothing is silently dropped: every member search is
+reported (`members_searched`, `n_candidates`), and `k` caps only the returned rows, not the candidate count.
+
+**Refactor (zero blast radius).** Extracted `collections_ops.member_embedding_layer` (returns the whole
+`BoundLayer` — label + capability) as the single newest-wins resolver; `member_embedding_capability` now
+delegates to it. This lets the probe locate the vector DB *and* congruence-gate from one resolution. All 904
+prior tests stayed green, confirming behavior-identical delegation.
+
+**Surface:** `POST /api/collections/{id}/probe` (body = `q` text + provider/endpoint/model, **or**
+`ref_project`+`ref_chunk`; `409` on any congruence failure, `400`/`404` otherwise); CLI
+`collections probe … --query …` or `--ref-project/--ref-chunk`. **Tests:** +13 (`test_collections_probe.py`
+— ranking/attribution/snippets, ref-mode, and the full fail-loud gate: missing layer, incongruent members,
+wrong-space query fingerprint, wrong dimension, token metric, unknown collection, CLI parity). Full backend
+suite **917 green** (was 904).
+
+**Note (standing collection).** The validation members were aligned with the embedding-free *word* method,
+so they carry no embedding layer yet — the probe is proven here on deterministic synthetic vector stores.
+Embedding the standing collection into a shared space (then an in-browser probe) is a C7/live-validation
+step, not a C6b backend gate.

@@ -214,19 +214,29 @@ def operands_congruent(
     )
 
 
-def member_embedding_capability(
+def member_embedding_layer(
     workspace: Path, project_id: str, embedding_label: str | None = None
-) -> dict[str, Any] | None:
-    """The embedding-layer capability for a member (newest-wins, or the named label), or ``None`` if
-    the member has no matching embedding layer."""
+) -> Any | None:
+    """The member's chosen embedding :class:`BoundLayer` (newest-wins, or the named label), or ``None``
+    if it has no matching embedding layer. Returns the whole layer — carrying ``label`` (→ its
+    ``cache/embeddings_{label}.db``) and ``capability`` — so the probe (C6b) can both congruence-gate on
+    the capability and locate the vector store from one newest-wins resolution."""
     ref = _project_ref(workspace, project_id)
     layers = _enumerate_layers(ref, "embedding")
     if embedding_label is not None:
         layers = [layer for layer in layers if layer.label == embedding_label]
     if not layers:
         return None
-    chosen = max(layers, key=lambda layer: layer.manifest_path.stat().st_mtime)
-    return chosen.capability
+    return max(layers, key=lambda layer: layer.manifest_path.stat().st_mtime)
+
+
+def member_embedding_capability(
+    workspace: Path, project_id: str, embedding_label: str | None = None
+) -> dict[str, Any] | None:
+    """The embedding-layer capability for a member (newest-wins, or the named label), or ``None`` if
+    the member has no matching embedding layer."""
+    layer = member_embedding_layer(workspace, project_id, embedding_label)
+    return layer.capability if layer else None
 
 
 def congruence_report(

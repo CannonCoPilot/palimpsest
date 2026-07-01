@@ -148,6 +148,25 @@ class LiftoverRequest(BaseModel):
     persist: bool = False
 
 
+class ProbeRequest(BaseModel):
+    """Probe R(q, Corpus) over a collection's shared embedding space (POST collections/{id}/probe,
+    C6b/FR-31). Module scope for the same reason as :class:`AlignmentRequest`. Exactly one query source:
+    ``q`` (text, embedded here via provider/endpoint/model) or ``ref_project``+``ref_chunk`` (reuse a
+    passage already embedded in the corpus — service-free)."""
+
+    q: str | None = None
+    provider: str | None = None
+    endpoint: str | None = None
+    model: str | None = None
+    ref_project: str | None = Field(default=None, pattern=r"^[a-zA-Z0-9_\-]+$")
+    ref_chunk: int | None = None
+    metric: str = "cosine"
+    embedding_label: str | None = None
+    k: int = Field(default=10, ge=1, le=200)
+    per_member_k: int | None = Field(default=None, ge=1, le=200)
+    snippet_chars: int = Field(default=200, ge=0, le=2000)
+
+
 _STRUCTURAL_TRACKS = {"segments", "sections", "elements", "verses"}
 
 
@@ -2435,6 +2454,58 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
         return JSONResponse(content=corpus_analyses(
             workspace, graph, duplicate_threshold=duplicate_threshold, top_terms=top_terms))
+
+    @app.post("/api/collections/{collection_id}/probe")
+    async def collection_probe(collection_id: str, request: ProbeRequest) -> JSONResponse:
+        """R(q, Corpus): rank corpus passages against a query over the shared embedding space (C6b,
+        FR-31). Query is either ``q`` text (embedded here, then checked into the corpus's space) or a
+        ``ref_project``/``ref_chunk`` passage already in the corpus (service-free). Gated by the C1
+        metric-congruence contract — fail-loud (409) on incongruent members or a mismatched query
+        space, never a silent cross-key probe."""
+        from palimpsest.collections_ops import MetricCongruenceError
+        from palimpsest.collections_probe import (
+            embed_probe_query,
+            probe_corpus,
+            query_vector_from_ref,
+        )
+
+        has_text = bool(request.q and request.q.strip())
+        has_ref = request.ref_project is not None and request.ref_chunk is not None
+        if has_text == has_ref:
+            raise HTTPException(
+                status_code=400,
+                detail="provide exactly one query source: 'q' (text) or 'ref_project'+'ref_chunk'",
+            )
+        query_fingerprint: str | None = None
+        try:
+            if has_text:
+                if not (request.provider and request.endpoint and request.model):
+                    raise HTTPException(
+                        status_code=400,
+                        detail="text query requires 'provider', 'endpoint' and 'model' to embed it",
+                    )
+                query_vector, query_fingerprint = embed_probe_query(
+                    request.q, provider=request.provider,
+                    endpoint=request.endpoint, model=request.model,
+                )
+            else:
+                query_vector = query_vector_from_ref(
+                    workspace, request.ref_project, int(request.ref_chunk),
+                    embedding_label=request.embedding_label,
+                )
+            result = probe_corpus(
+                workspace, collection_id, query_vector,
+                metric=request.metric, embedding_label=request.embedding_label,
+                k=request.k, per_member_k=request.per_member_k,
+                snippet_chars=request.snippet_chars, query_fingerprint=query_fingerprint,
+            )
+        except MetricCongruenceError as exc:
+            raise HTTPException(status_code=409, detail=str(exc))
+        except KeyError:
+            raise HTTPException(status_code=404, detail=f"collection {collection_id!r} not found")
+        except (ValueError, FileNotFoundError) as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        return JSONResponse(content=result)
 
     # ── Cross-text masking, tracks & liftover (C5, FR-29/30/42) ──
 

@@ -1033,6 +1033,63 @@ def collections_corpus_analyses(
         workspace, graph, duplicate_threshold=duplicate_threshold, top_terms=top_terms), indent=2))
 
 
+@collections.command("probe")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.option("--query", "query", default=None, help="Query text to embed and probe the corpus with")
+@click.option("--provider", default=None, help="Embedding provider for --query (mlx or ollama)")
+@click.option("--endpoint", default=None, help="Embedding service base URL for --query")
+@click.option("--model", default=None, help="Embedding model for --query")
+@click.option("--ref-project", default=None, help="Service-free query: reuse a passage's embedding")
+@click.option("--ref-chunk", type=int, default=None, help="Chunk index of --ref-project to query with")
+@click.option("--metric", default="cosine", show_default=True, help="Embedding metric to probe on")
+@click.option("--embedding-label", default=None, help="Specific embedding layer label")
+@click.option("-k", "top_k", type=int, default=10, show_default=True, help="Corpus-wide results to return")
+def collections_probe(
+    workspace: Path, collection_id: str, query: str | None,
+    provider: str | None, endpoint: str | None, model: str | None,
+    ref_project: str | None, ref_chunk: int | None,
+    metric: str, embedding_label: str | None, top_k: int,
+) -> None:
+    """Probe R(q, Corpus): rank corpus passages against a query over the shared embedding space (C6b).
+
+    Query is either --query text (needs --provider/--endpoint/--model to embed) or a service-free
+    --ref-project/--ref-chunk passage already embedded in the corpus. Congruence-gated: fails loud on
+    incongruent members or a mismatched query space."""
+    from palimpsest.collections_ops import MetricCongruenceError
+    from palimpsest.collections_probe import embed_probe_query, probe_corpus, query_vector_from_ref
+
+    has_text = bool(query and query.strip())
+    has_ref = ref_project is not None and ref_chunk is not None
+    if has_text == has_ref:
+        console.print("[red]Provide exactly one query source: --query, or --ref-project + --ref-chunk.[/red]")
+        raise SystemExit(1)
+    try:
+        query_fingerprint = None
+        if has_text:
+            if not (provider and endpoint and model):
+                console.print("[red]--query needs --provider, --endpoint and --model to embed it.[/red]")
+                raise SystemExit(1)
+            query_vector, query_fingerprint = embed_probe_query(
+                query, provider=provider, endpoint=endpoint, model=model)
+        else:
+            query_vector = query_vector_from_ref(
+                workspace, ref_project, int(ref_chunk), embedding_label=embedding_label)
+        result = probe_corpus(
+            workspace, collection_id, query_vector, metric=metric,
+            embedding_label=embedding_label, k=top_k, query_fingerprint=query_fingerprint)
+    except MetricCongruenceError as exc:
+        console.print(f"[yellow]{exc}[/yellow]")
+        raise SystemExit(1)
+    except KeyError:
+        console.print(f"[red]Collection '{collection_id}' not found.[/red]")
+        raise SystemExit(1)
+    except (ValueError, FileNotFoundError) as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+    console.print(json.dumps(result, indent=2))
+
+
 @collections.command("corpus-repeats")
 @click.argument("workspace", type=click.Path(exists=True, path_type=Path))
 @click.argument("collection_id")
