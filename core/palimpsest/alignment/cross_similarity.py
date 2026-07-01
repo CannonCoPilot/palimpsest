@@ -43,8 +43,8 @@ def compute_cross_similarity(
     elif metric == "jaccard":
         matrix = _jaccard_similarity(emb_a, emb_b)
     else:
-        logger.warning("Unknown similarity metric '%s', falling back to cosine", metric)
-        matrix = _cosine_similarity(emb_a, emb_b)
+        # Fail loud: a silent cosine fallback would mask a caller bug and mislabel the result's metric.
+        raise ValueError(f"Unknown cross-similarity metric {metric!r}; expected 'cosine' or 'jaccard'")
 
     paras_a = project_a.paragraphs()
     paras_b = project_b.paragraphs()
@@ -72,12 +72,19 @@ def compute_cross_similarity(
 
 
 def _load_embeddings(project: Project) -> np.ndarray:
-    """Load paragraph embeddings from a project's cache."""
-    emb_db = project.path / "cache" / "embeddings.db"
+    """Load a project's embeddings, resolving the labeled vector store the modern pipeline writes.
+
+    The embedding track writes one store per layer at ``cache/embeddings_{label}.db``; a legacy
+    unlabeled ``cache/embeddings.db`` may also exist from ``palimpsest analyze``. Resolve the newest
+    labeled store first (else a member embedded through the modern pipeline is invisible — the path
+    split that made default *semantic* cross-alignment unreachable), then fall back to the legacy path."""
+    cache = project.path / "cache"
+    labeled = sorted(cache.glob("embeddings_*.db"), key=lambda p: p.stat().st_mtime, reverse=True)
+    emb_db = labeled[0] if labeled else cache / "embeddings.db"
     if not emb_db.exists():
         raise FileNotFoundError(
-            f"Embeddings not found for {project.metadata.id}. "
-            "Run `palimpsest analyze` with Ollama available first."
+            f"Embeddings not found for {project.metadata.id} (looked for cache/embeddings_*.db then "
+            "cache/embeddings.db). Run the embedding track or `palimpsest analyze` first."
         )
     store = SqliteVecStore.open_existing(emb_db)
     try:
