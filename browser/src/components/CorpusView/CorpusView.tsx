@@ -12,6 +12,9 @@ import { useEffect, useState, useCallback } from 'react';
 import { useProjectStore } from '../../stores/projectStore';
 import { useComparisonStore } from '../../stores/comparisonStore';
 import { useViewStore } from '../../stores/viewStore';
+import { useCollectionStore, activeCollection, type CollectionOption } from '../../stores/collectionStore';
+import CongruenceBadge from './CongruenceBadge';
+import MembersPanel from './MembersPanel';
 import {
   blockMapLanes,
   sharedComponentMatrix,
@@ -26,11 +29,13 @@ import {
   type RootTrack,
 } from './corpusOverview';
 
-interface CollectionOption {
-  id: string;
-  label: string;
-  project_ids: string[];
-}
+type SubTab = 'overview' | 'members' | 'corpus' | 'masking';
+const SUB_TABS: { id: SubTab; label: string }[] = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'members', label: 'Members' },
+  { id: 'corpus', label: 'Corpus' },
+  { id: 'masking', label: 'Masking' },
+];
 
 function ClassBadge({ label, count, color }: { label: string; count: number; color: string }) {
   return (
@@ -251,8 +256,13 @@ function ConservationLane({ track }: { track: RootTrack }) {
 }
 
 export default function CorpusView() {
-  const [collections, setCollections] = useState<CollectionOption[]>([]);
-  const [collectionId, setCollectionId] = useState<string>('');
+  const collections = useCollectionStore((s) => s.collections);
+  const collectionId = useCollectionStore((s) => s.collectionId);
+  const setCollections = useCollectionStore((s) => s.setCollections);
+  const setCollectionId = useCollectionStore((s) => s.setCollectionId);
+  const roles = useCollectionStore(activeCollection)?.roles ?? {};
+
+  const [subTab, setSubTab] = useState<SubTab>('overview');
   const [graph, setGraph] = useState<CorpusGraph | null>(null);
   const [tree, setTree] = useState<PhyleticTree | null>(null);
   const [repeats, setRepeats] = useState<CorpusRepeats | null>(null);
@@ -268,16 +278,20 @@ export default function CorpusView() {
   const setActiveSubView = useComparisonStore((s) => s.setActiveSubView);
   const setActiveTab = useViewStore((s) => s.setActiveTab);
 
+  const reloadCollections = useCallback(async () => {
+    try {
+      const data: CollectionOption[] = await fetch('/api/collections').then((r) => (r.ok ? r.json() : []));
+      const usable = data.filter((c) => c.project_ids.length >= 2);
+      setCollections(usable);
+      if (usable.length && !useCollectionStore.getState().collectionId) setCollectionId(usable[0].id);
+    } catch {
+      setError('Failed to load collections');
+    }
+  }, [setCollections, setCollectionId]);
+
   useEffect(() => {
-    fetch('/api/collections')
-      .then((r) => (r.ok ? r.json() : []))
-      .then((data: CollectionOption[]) => {
-        const usable = data.filter((c) => c.project_ids.length >= 2);
-        setCollections(usable);
-        if (usable.length && !collectionId) setCollectionId(usable[0].id);
-      })
-      .catch(() => setError('Failed to load collections'));
-  }, []);
+    void reloadCollections();
+  }, [reloadCollections]);
 
   const loadOverview = useCallback(async (id: string, root?: string) => {
     setLoading(true);
@@ -335,6 +349,8 @@ export default function CorpusView() {
 
   const summary = graph?.summary as { core?: number; shell?: number; singleton?: number; n_edges?: number } | undefined;
 
+  const members = collections.find((c) => c.id === collectionId)?.project_ids ?? [];
+
   return (
     <div className="flex-1 flex flex-col overflow-hidden font-[var(--font-sans)]">
       <div className="flex items-center gap-3 px-4 py-2 border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)] text-[0.85em]">
@@ -353,40 +369,59 @@ export default function CorpusView() {
           </select>
         )}
         {loading && <span className="text-[var(--color-text-muted)]">Assembling graph…</span>}
-        {summary && !loading && (
-          <div className="ml-auto flex items-center gap-1.5">
-            <ClassBadge label="core" count={summary.core ?? 0} color={blockColor('core-legend', 'core')} />
-            <ClassBadge label="shell" count={summary.shell ?? 0} color={blockColor('shell-legend', 'shell')} />
-            <ClassBadge label="singleton" count={summary.singleton ?? 0} color="var(--color-bg-muted, #e5e7eb)" />
-          </div>
-        )}
+        <div className="ml-auto flex items-center gap-1.5">
+          {collectionId && <CongruenceBadge collectionId={collectionId} />}
+          {summary && !loading && (
+            <>
+              <ClassBadge label="core" count={summary.core ?? 0} color={blockColor('core-legend', 'core')} />
+              <ClassBadge label="shell" count={summary.shell ?? 0} color={blockColor('shell-legend', 'shell')} />
+              <ClassBadge label="singleton" count={summary.singleton ?? 0} color="var(--color-bg-muted, #e5e7eb)" />
+            </>
+          )}
+        </div>
       </div>
+
+      {collectionId && (
+        <div className="flex items-center gap-1 px-4 border-b border-[var(--color-border)] bg-[var(--color-bg)] text-[0.82em]" role="tablist" aria-label="Collection workbench">
+          {SUB_TABS.map((t) => (
+            <button
+              key={t.id}
+              role="tab"
+              aria-selected={subTab === t.id}
+              onClick={() => setSubTab(t.id)}
+              className={`px-3 py-1.5 border-b-2 cursor-pointer ${subTab === t.id ? 'border-[var(--color-primary)] text-[var(--color-primary)] font-medium' : 'border-transparent text-[var(--color-text-muted)] hover:text-[var(--color-text)]'}`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="flex-1 overflow-auto p-4">
         {error && (
           <div className="mb-3 px-3 py-2 rounded bg-[var(--color-danger-subtle)] text-[var(--color-danger)] text-[0.85em]">{error}</div>
         )}
-        {!graph && !loading && !error && (
+
+        {subTab === 'members' && collectionId && (
+          <MembersPanel
+            collectionId={collectionId}
+            members={members}
+            roles={roles}
+            onMember={openMember}
+            onRolesChanged={reloadCollections}
+          />
+        )}
+
+        {subTab !== 'members' && !graph && !loading && !error && (
           <div className="text-[var(--color-text-muted)] text-[0.9em]">Select a collection to assemble its corpus graph.</div>
         )}
-        {graph && tree && (
+
+        {subTab === 'overview' && graph && tree && (
           <div className="flex flex-col gap-6 max-w-[900px]">
             <section>
               <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Block map · homology components across members</h3>
               <BlockMap graph={graph} onMember={openMember} />
             </section>
-            {repeats && (
-              <section>
-                <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Corpus repeats · phrases shared across members</h3>
-                <RepeatLanes repeats={repeats} onMember={openMember} />
-              </section>
-            )}
-            {rootTrack && (
-              <section>
-                <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Cross-text conservation · root lens</h3>
-                <ConservationLane track={rootTrack} />
-              </section>
-            )}
             <div className="flex flex-wrap gap-10">
               <section>
                 <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">All-pairs shared components</h3>
@@ -397,6 +432,24 @@ export default function CorpusView() {
                 <PhyleticTreeView tree={tree} onRoot={reRoot} onMember={openMember} />
               </section>
             </div>
+          </div>
+        )}
+
+        {subTab === 'corpus' && graph && repeats && (
+          <div className="flex flex-col gap-6 max-w-[900px]">
+            <section>
+              <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Corpus repeats · phrases shared across members</h3>
+              <RepeatLanes repeats={repeats} onMember={openMember} />
+            </section>
+          </div>
+        )}
+
+        {subTab === 'masking' && graph && rootTrack && (
+          <div className="flex flex-col gap-6 max-w-[900px]">
+            <section>
+              <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Cross-text conservation · root lens</h3>
+              <ConservationLane track={rootTrack} />
+            </section>
           </div>
         )}
       </div>
