@@ -164,7 +164,7 @@ export default function ProbePanel({ collectionId, members }: { collectionId: st
         </div>
 
         {error && (
-          <div className="px-3 py-2 rounded bg-[var(--color-danger-subtle)] text-[var(--color-danger)] text-[0.85em]">{error}</div>
+          <div role="alert" className="px-3 py-2 rounded bg-[var(--color-danger-subtle)] text-[var(--color-danger)] text-[0.85em]">{error}</div>
         )}
       </section>
 
