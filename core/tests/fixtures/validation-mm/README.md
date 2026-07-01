@@ -50,6 +50,23 @@ create_collection(WS, "Matthew-Mark Cross-Translation Validation",
 PY
 ```
 
+## Embed the collection (optional)
+
+Chunk + embed both members so the embedding-gated paths (cosine metric-congruence, cross-translation
+probe) work. Requires a live embedding service — MLX at `http://localhost:8000` serving
+`mlx-community/Qwen3-Embedding-4B-4bit-DWQ` (dim 2560) by default; edit the `EMBED_*` constants in
+`build.py` for the Ollama fallback. Run **after** the collection exists (the step reads its
+membership); both tracks are content-addressed, so re-running is idempotent (same labels, no
+duplicate layers).
+
+```sh
+core/.venv/bin/python core/tests/fixtures/validation-mm/build.py embed
+```
+
+Without this step the members are word-method only: cosine congruence reports *incongruent* (missing
+embedding layer) and probe fails loud — the honest deferral paths. The `collection_workbench_c7`
+e2e asserts the embedded state, and its `beforeAll` guard points here if the collection isn't embedded.
+
 ## Validate
 
 ```sh

@@ -15,13 +15,19 @@ Pipeline (run each step in order):
   geneva-layout    author the Geneva Mt+Mk layout (book containers + per-chapter heading+chapter)
   geneva-verses    build Geneva's verse-number mask layer
   geneva-mm        derive the Geneva-MM subtext
+  embed            chunk + MLX-embed every collection member (optional; needs a live embed service
+                   and the collection to already exist — enables cosine congruence + probe)
 
     core/.venv/bin/python core/tests/fixtures/validation-mm/build.py <step>
 
-Then create the collection (see README.md) and run validate.py.
+The subtext steps come first; then create the collection (see README.md). The `embed` step is
+optional and runs last (it reads the collection's membership), unlocking the embedding-gated paths
+(cosine congruence, cross-translation probe). Run validate.py to assert the expected metrics.
 """
 from __future__ import annotations
 
+import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -37,6 +43,18 @@ DR_ID = "douay-rheims-bible-complete-original-unabriged-full-douay-rheims-versio
 # verse text ("1:1. ..."); header/heading[=chapter argument]/footnotes are mask=true and excluded.
 DR_MATTHEW_BOOK = "book-0047"
 DR_MARK_BOOK = "book-0048"
+
+# Standing collection id (created per README before the `embed` step reads its membership).
+CID = "matthew-mark-validation"
+# Embedding provider for the reproducible `embed` step. MLX (Qwen3-Embedding-4B, dim 2560) is the
+# default; swap to the Ollama fallback (provider=ollama, endpoint=http://localhost:11434,
+# model=qwen3-embedding:4b) if MLX is not running. word/100 chunking matches the layers the
+# collection tier was validated against; both tracks are content-addressed, so re-running is
+# idempotent (identical params -> identical labels, no duplicate layers).
+CHUNK_MODE, CHUNK_SIZE = "word", "100"
+EMBED_PROVIDER = "mlx"
+EMBED_ENDPOINT = "http://localhost:8000"
+EMBED_MODEL = "mlx-community/Qwen3-Embedding-4B-4bit-DWQ"
 
 
 def build_dr_mm() -> str:
@@ -284,6 +302,63 @@ def derive_geneva_mm() -> str:
     return child.metadata.id
 
 
+def _run_track(member_dir: Path, track_name: str, params: dict[str, str]) -> str:
+    """Invoke the `run-track` CLI (the venv console script) and return its stdout, or fail loud."""
+    cli = Path(sys.executable).with_name("palimpsest")  # console script beside this interpreter
+    cmd = [str(cli), "run-track", str(member_dir), track_name]
+    for key, value in params.items():
+        cmd += ["-p", f"{key}={value}"]
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+    if proc.returncode != 0:
+        raise SystemExit(
+            f"run-track {track_name} failed for {member_dir.name}:\n{proc.stdout}\n{proc.stderr}")
+    return proc.stdout
+
+
+def _parse_label(stdout: str, track_name: str) -> str:
+    """Pull the content-addressed layer label out of `... {track_name} (label <hex>)`."""
+    m = re.search(rf"{re.escape(track_name)} \(label\s+([0-9a-f]+)\)", stdout)
+    if not m:
+        raise SystemExit(f"could not parse {track_name} label from run-track output:\n{stdout}")
+    return m.group(1)
+
+
+def embed_members() -> None:
+    """Stage C (optional): chunk + embed every collection member so the embedding-gated paths work.
+
+    Reads the standing collection's membership (created per README) and, for each member, runs the
+    chunking track (word/100) then the embedding track (MLX by default) over that chunk layer. Both
+    tracks are content-addressed and idempotent, so re-running reproduces the same labels rather than
+    piling up duplicate layers. Requires a live embedding service; a provider/endpoint failure exits
+    non-zero (no silent fallback). After this, cosine congruence is all-congruent and probe returns
+    cross-translation matches.
+    """
+    from palimpsest.collections import get_collection
+
+    col = get_collection(WS, CID)
+    if col is None:
+        raise SystemExit(
+            f"collection {CID!r} not found in {WS}; create it first (see README 'Create the collection')")
+    members = col.get("project_ids") or []
+    if not members:
+        raise SystemExit(f"collection {CID!r} has no members")
+    for pid in members:
+        member_dir = WS / pid
+        if not member_dir.exists():
+            raise SystemExit(f"member dir missing: {member_dir}")
+        chunk_label = _parse_label(
+            _run_track(member_dir, "chunking",
+                       {"chunk_mode": CHUNK_MODE, "chunk_size": CHUNK_SIZE}),
+            "chunking")
+        embed_label = _parse_label(
+            _run_track(member_dir, "embedding",
+                       {"chunk_label": chunk_label, "embed_provider": EMBED_PROVIDER,
+                        "embed_endpoint": EMBED_ENDPOINT, "embed_model": EMBED_MODEL}),
+            "embedding")
+        print(f"{pid}: chunk={chunk_label} embed={embed_label}")
+    print(f"embedded {len(members)} member(s) via {EMBED_PROVIDER} ({EMBED_MODEL})")
+
+
 if __name__ == "__main__":
     step = sys.argv[1] if len(sys.argv) > 1 else "dr"
     steps = {
@@ -292,6 +367,7 @@ if __name__ == "__main__":
         "geneva-layout": build_geneva_layout,
         "geneva-verses": write_geneva_verses,
         "geneva-mm": derive_geneva_mm,
+        "embed": embed_members,
     }
     if step not in steps:
         raise SystemExit(f"unknown step {step!r}; choose from {', '.join(steps)}")

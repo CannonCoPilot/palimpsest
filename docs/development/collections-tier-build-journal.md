@@ -585,3 +585,29 @@ embedding-free collection (FR-31).
 incongruent space and routes to reconcile; the run/version manager lists + deletes runs; every expensive op
 shows a pre-run estimate and never auto-runs; CLI + HTTP parity throughout; frontend (vitest 98) + Playwright
 (5/5) green in-browser. **All C1–C7 complete.**
+
+### Embedding the standing collection ✅
+
+The #8 word-method "honest limitation" (probe/reconcile deferred, cosine incongruent) is now lifted by
+embedding both members into a shared cosine space — MLX (`mlx-community/Qwen3-Embedding-4B-4bit-DWQ`, dim
+2560) over word/100 chunks. This is captured as a **reproducible fixture step**, not a one-off manual
+recipe: `core/tests/fixtures/validation-mm/build.py embed` reads the collection's membership and, for each
+member, runs the chunking then embedding tracks. Because both tracks are **content-addressed**, the step is
+idempotent — re-running reproduces the same labels (DR `chunk=21d911f0e3e1f100 embed=8183bb57745abb57`,
+Geneva `chunk=93b36d292624f0ac embed=871a3ae739394b3b`) rather than accumulating duplicate layers, and a
+provider/endpoint failure exits non-zero (no silent fallback).
+
+**Embedded-state truths** (verified directly and in-browser): cosine congruence is `all_congruent=True`
+(both members share key `embedding:cosine:c9757c16f8473ef1`, which excludes the per-text digest by design);
+probe in ref mode finds a genuine cross-translation match the word method missed — DR's Magi passage *"his
+star in the East"* ↔ Geneva's *"Where is the King of the Jews that is born?"* at **sim 0.9416**; and a
+high-recall cosine sweep (dense_threshold=0) reaches **mean recall 1.0** (ANN over-fetch recovers the full
+oracle), versus 0.102 for the word-shingle LSH sweep — the same dial, the metric's fit to the signal being
+the whole difference.
+
+`collection_workbench_c7.spec.ts` is updated to this embedded truth: the congruence test asserts **congruent**
+cosine and the probe test asserts **ranked results** (not the `409`/`role="alert"` deferral). A `beforeAll`
+congruence guard fails fast with a pointer to `build.py embed` if the collection was built but never embedded,
+so the spec can't silently couple to a manual embed step. Re-ran **5/5 green** in-browser on the isolated
+`:8092` (Sir's `:8080` untouched). The word-method 409/fail-loud paths remain covered by the
+`ProbePanel`/`CongruenceBadge` unit tests.
