@@ -611,3 +611,25 @@ congruence guard fails fast with a pointer to `build.py embed` if the collection
 so the spec can't silently couple to a manual embed step. Re-ran **5/5 green** in-browser on the isolated
 `:8092` (Sir's `:8080` untouched). The word-method 409/fail-loud paths remain covered by the
 `ProbePanel`/`CongruenceBadge` unit tests.
+
+## Post-audit correctness fixes — live re-verify (2026-07-01)
+
+After the 6-way expanded audit, the backend correctness clusters were implemented and live-re-verified on
+the DR/Geneva/KJV × Matthew/Mark collection. Two results are worth recording as ground truth:
+
+- **Phyletic distance (fixed, verified live).** With alignment-identity-aware distance the phyletic tree is
+  now ground-truth-correct: Geneva-Matthew sisters KJV-Matthew, Geneva-Mark sisters KJV-Mark, with the
+  Douay-Rheims (Vulgate) as the outgroup. This resolves the audit's "KJV-Matthew mis-clusters with Mark."
+
+- **Corpus-graph over-merge (DEFERRED — open methodology question).** The committed fix gates homology edges
+  on scale-free block *identity*, but a live sweep proved **no `edge_min_identity` value separates Matthew
+  from Mark into two cores**: it stays one core through 0.75, fragments into shells at 0.8, and goes
+  all-singleton at 0.86 — never passing through a clean per-book split. Root cause: cross-book synoptic
+  parallels have identity **0.657–0.836**, overlapping same-book **0.576–0.857** (they genuinely *are* the
+  same stories at the word level). The only clean discriminator is length/coverage-proportional *score*
+  (same-book 99–622 vs cross-book 1.3–4.4), which the fix deliberately rejected as not-comparable-across-pairs.
+  **Marked for later investigation** (per Sir): resolve via a coverage/score-aware homology gate vs. accept
+  one shared core as legitimate for synoptic corpora — a decision that needs a firmer grasp of the
+  core/shell/singleton reach methodology before committing. A KJV **Luke** subtext is being added to the
+  validation collection as a genuine outgroup to aid this (none of the six same-book Matt/Mark texts is a
+  true root).
