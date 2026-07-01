@@ -13,6 +13,7 @@ import { useProjectStore } from '../../stores/projectStore';
 import { useComparisonStore } from '../../stores/comparisonStore';
 import { useViewStore } from '../../stores/viewStore';
 import { useCollectionStore, activeCollection, type CollectionOption } from '../../stores/collectionStore';
+import { useProjectLabelStore, useMemberLabel } from '../../stores/projectLabelStore';
 import CongruenceBadge, { type CongruenceReport } from './CongruenceBadge';
 import MembersPanel from './MembersPanel';
 import SweepPanel from './SweepPanel';
@@ -57,6 +58,7 @@ function ClassBadge({ label, count, color }: { label: string; count: number; col
 }
 
 function BlockMap({ graph, onMember }: { graph: CorpusGraph; onMember: (m: string) => void }) {
+  const label = useMemberLabel();
   const lanes = blockMapLanes(graph);
   const globalMax = Math.max(1, ...lanes.map((l) => l.span));
   const W = 460;
@@ -69,7 +71,7 @@ function BlockMap({ graph, onMember }: { graph: CorpusGraph; onMember: (m: strin
             title={`Open ${lane.member} in the single-text browser`}
             className="w-28 shrink-0 truncate text-right text-[0.78em] text-[var(--color-primary)] hover:underline cursor-pointer"
           >
-            {lane.member}
+            {label(lane.member)}
           </button>
           <svg width={W} height={16} role="img" aria-label={`${lane.member} block map`}>
             <rect x={0} y={0} width={W} height={16} fill="var(--color-bg-muted, #f3f4f6)" />
@@ -93,6 +95,7 @@ function BlockMap({ graph, onMember }: { graph: CorpusGraph; onMember: (m: strin
 }
 
 function AllPairsMatrix({ graph, onPair }: { graph: CorpusGraph; onPair: (a: string, b: string) => void }) {
+  const label = useMemberLabel();
   const M = sharedComponentMatrix(graph);
   const members = graph.members;
   const maxCount = Math.max(1, ...M.flat());
@@ -102,7 +105,7 @@ function AllPairsMatrix({ graph, onPair }: { graph: CorpusGraph; onPair: (a: str
       <tbody>
         {members.map((rowM, i) => (
           <tr key={rowM}>
-            <td className="pr-2 text-right whitespace-nowrap text-[var(--color-text-muted)] max-w-24 truncate" title={rowM}>{rowM}</td>
+            <td className="pr-2 text-right whitespace-nowrap text-[var(--color-text-muted)] max-w-24 truncate" title={rowM}>{label(rowM)}</td>
             {members.map((colM, j) => {
               const v = M[i][j];
               const intensity = v / maxCount;
@@ -112,7 +115,7 @@ function AllPairsMatrix({ graph, onPair }: { graph: CorpusGraph; onPair: (a: str
                   <button
                     disabled={isSelf || v === 0}
                     onClick={() => onPair(rowM, colM)}
-                    title={isSelf ? rowM : `${rowM} ↔ ${colM}: ${v} shared component${v !== 1 ? 's' : ''} — open dotplot`}
+                    title={isSelf ? rowM : `${label(rowM)} ↔ ${label(colM)}: ${v} shared component${v !== 1 ? 's' : ''} — open dotplot`}
                     className={`block ${isSelf || v === 0 ? 'cursor-default' : 'cursor-pointer hover:outline hover:outline-1 hover:outline-[var(--color-primary)]'}`}
                     style={{
                       width: cell,
@@ -133,7 +136,7 @@ function AllPairsMatrix({ graph, onPair }: { graph: CorpusGraph; onPair: (a: str
         <tr>
           <td />
           {members.map((m) => (
-            <td key={m} className="text-center text-[var(--color-text-muted)] max-w-8 truncate" title={m}>{m.slice(0, 4)}</td>
+            <td key={m} className="text-center text-[var(--color-text-muted)] max-w-8 truncate" title={m}>{label(m).slice(0, 4)}</td>
           ))}
         </tr>
       </tbody>
@@ -146,6 +149,7 @@ function PhyleticTreeView({ tree, onRoot, onMember }: {
   onRoot: (root: string) => void;
   onMember: (m: string) => void;
 }) {
+  const label = useMemberLabel();
   const { nodes } = layoutTree(tree.tree);
   const byId = new Map(nodes.map((n) => [n.id, n]));
   const W = 300;
@@ -166,7 +170,7 @@ function PhyleticTreeView({ tree, onRoot, onMember }: {
         >
           {tree.members.map((m) => (
             <option key={m} value={m}>
-              {m}{m === tree.suggested_root ? ' (suggested)' : ''}
+              {label(m)}{m === tree.suggested_root ? ' (suggested)' : ''}
             </option>
           ))}
         </select>
@@ -188,7 +192,7 @@ function PhyleticTreeView({ tree, onRoot, onMember }: {
               className="text-[10px] fill-[var(--color-primary)] cursor-pointer"
               onClick={() => onMember(n.member!)}
             >
-              {n.member}
+              {label(n.member!)}
             </text>
           </g>
         ))}
@@ -198,6 +202,7 @@ function PhyleticTreeView({ tree, onRoot, onMember }: {
 }
 
 function RepeatLanes({ repeats, onMember }: { repeats: CorpusRepeats; onMember: (m: string) => void }) {
+  const label = useMemberLabel();
   const lanes = repeatLanes(repeats);
   const W = 460;
   return (
@@ -213,7 +218,7 @@ function RepeatLanes({ repeats, onMember }: { repeats: CorpusRepeats; onMember: 
               title={`Open ${lane.member} in the single-text browser`}
               className="w-28 shrink-0 truncate text-right text-[0.78em] text-[var(--color-primary)] hover:underline cursor-pointer"
             >
-              {lane.member}
+              {label(lane.member)}
             </button>
             <svg width={W} height={12} role="img" aria-label={`${lane.member} corpus repeats`}>
               <rect x={0} y={0} width={W} height={12} fill="var(--color-bg-muted, #f3f4f6)" />
@@ -239,12 +244,13 @@ function RepeatLanes({ repeats, onMember }: { repeats: CorpusRepeats; onMember: 
 }
 
 function ConservationLane({ track }: { track: RootTrack }) {
+  const label = useMemberLabel();
   const segments = conservationLane(track);
   const W = 460;
   return (
     <div className="flex flex-col gap-1.5">
       <div className="text-[0.78em] text-[var(--color-text-muted)]">
-        Corpus conservation on the <span className="font-medium text-[var(--color-primary)]">{track.root}</span> lens (darker = shared by more of {track.member_total} members)
+        Corpus conservation on the <span className="font-medium text-[var(--color-primary)]" title={track.root}>{label(track.root)}</span> lens (darker = shared by more of {track.member_total} members)
       </div>
       <svg width={W} height={16} role="img" aria-label={`conservation on ${track.root}`}>
         <rect x={0} y={0} width={W} height={16} fill="var(--color-bg-muted, #f3f4f6)" />
@@ -303,6 +309,11 @@ export default function CorpusView() {
   useEffect(() => {
     void reloadCollections();
   }, [reloadCollections]);
+
+  // Load the id→title map once; every panel below resolves member slugs to project titles via useMemberLabel.
+  useEffect(() => {
+    useProjectLabelStore.getState().ensureLoaded();
+  }, []);
 
   const loadOverview = useCallback(async (id: string, root?: string) => {
     setLoading(true);

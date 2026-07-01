@@ -9,6 +9,7 @@
  */
 
 import { useCallback, useState } from 'react';
+import { useMemberLabel } from '../../stores/projectLabelStore';
 import CostDialog from './CostDialog';
 
 interface ProbeResult {
@@ -26,6 +27,7 @@ interface ProbeResult {
 type QueryMode = 'ref' | 'text';
 
 export default function ProbePanel({ collectionId, members }: { collectionId: string; members: string[] }) {
+  const label = useMemberLabel();
   const [mode, setMode] = useState<QueryMode>('ref');
   const [refProject, setRefProject] = useState(members[0] ?? '');
   const [refChunk, setRefChunk] = useState(0);
@@ -109,7 +111,7 @@ export default function ProbePanel({ collectionId, members }: { collectionId: st
                 className="px-2 py-1 border border-[var(--color-border)] rounded bg-[var(--color-bg)] cursor-pointer max-w-64 truncate"
               >
                 {members.map((m) => (
-                  <option key={m} value={m}>{m}</option>
+                  <option key={m} value={m}>{label(m)}</option>
                 ))}
               </select>
             </label>
@@ -187,7 +189,7 @@ export default function ProbePanel({ collectionId, members }: { collectionId: st
               {result.results.map((r, i) => (
                 <tr key={`${r.project_id}-${r.chunk_index}`} className="border-b border-[var(--color-border)] align-top">
                   <td className="py-1 pr-3 tabular-nums text-[var(--color-text-muted)]">{i + 1}</td>
-                  <td className="py-1 pr-3 truncate max-w-40" title={r.project_id}>{r.project_id}</td>
+                  <td className="py-1 pr-3 truncate max-w-40" title={r.project_id}>{label(r.project_id)}</td>
                   <td className="py-1 pr-3 text-right tabular-nums">{r.chunk_index}</td>
                   <td className="py-1 pr-3 text-right tabular-nums">{r.similarity.toFixed(4)}</td>
                   <td className="py-1 text-[var(--color-text-muted)]">{r.text}</td>

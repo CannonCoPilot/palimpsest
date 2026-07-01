@@ -4,7 +4,6 @@ import {
   formatRecall,
   formatPct,
   journalPairs,
-  shortMember,
   type SweepJournal,
 } from './sweep';
 
@@ -36,12 +35,5 @@ describe('sweep transforms', () => {
     const j = { pairs: { 'a\x00b': { a: 'a', b: 'b' }, 'a\x00c': { a: 'a', b: 'c' } } } as unknown as SweepJournal;
     expect(journalPairs(j).length).toBe(2);
     expect(journalPairs({ pairs: {} } as SweepJournal)).toEqual([]);
-  });
-
-  it('shortMember clips long slugs but leaves short ones untouched', () => {
-    expect(shortMember('alpha')).toBe('alpha');
-    const long = 'douay-rheims-1a24ae78af9-anna-s-archive';
-    expect(shortMember(long).length).toBeLessThan(long.length);
-    expect(shortMember(long)).toContain('…');
   });
 });

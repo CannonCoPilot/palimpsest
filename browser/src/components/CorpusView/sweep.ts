@@ -82,8 +82,3 @@ export function formatPct(f: number | null | undefined, digits = 1): string {
 export function journalPairs(journal: SweepJournal): SweepJournalPair[] {
   return Object.values(journal.pairs ?? {});
 }
-
-/** Members are long slugs; clip the middle for compact table cells (full id stays in the `title`). */
-export function shortMember(m: string): string {
-  return m.length <= 20 ? m : `${m.slice(0, 10)}…${m.slice(-7)}`;
-}

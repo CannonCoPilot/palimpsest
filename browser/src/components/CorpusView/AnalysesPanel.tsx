@@ -9,6 +9,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import { useMemberLabel } from '../../stores/projectLabelStore';
 
 interface CorpusAnalyses {
   collection_id: string;
@@ -45,6 +46,7 @@ const SPREAD_BANDS = [
 export default function AnalysesPanel({ collectionId }: { collectionId: string }) {
   const [data, setData] = useState<CorpusAnalyses | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const label = useMemberLabel();
 
   useEffect(() => {
     let cancelled = false;
@@ -126,7 +128,7 @@ export default function AnalysesPanel({ collectionId }: { collectionId: string }
             {data.near_duplicate_clusters.map((c, i) => (
               <li key={i} className="flex items-center gap-2">
                 <span className="px-1.5 py-0.5 rounded bg-[var(--color-bg-subtle)] text-[var(--color-text-muted)] tabular-nums">{c.size}</span>
-                <span className="truncate" title={c.members.join(', ')}>{c.members.join(' · ')}</span>
+                <span className="truncate" title={c.members.join(', ')}>{c.members.map(label).join(' · ')}</span>
               </li>
             ))}
           </ul>
@@ -169,7 +171,7 @@ export default function AnalysesPanel({ collectionId }: { collectionId: string }
         <div className="flex flex-col gap-1 mt-1">
           {reach.map((r) => (
             <div key={r.member} className="flex items-center gap-2 text-[0.78em]">
-              <span className="w-40 shrink-0 truncate text-right text-[var(--color-text-muted)]" title={r.member}>{r.member}</span>
+              <span className="w-40 shrink-0 truncate text-right text-[var(--color-text-muted)]" title={r.member}>{label(r.member)}</span>
               <div className="flex-1 h-3 bg-[var(--color-bg-muted,#f3f4f6)] rounded overflow-hidden max-w-[300px]">
                 <div className="h-3" style={{ width: `${r.value * 100}%`, background: 'var(--color-primary)' }} />
               </div>

@@ -9,6 +9,7 @@
  */
 
 import { useEffect, useState, useCallback } from 'react';
+import { useMemberLabel } from '../../stores/projectLabelStore';
 
 interface Lattice {
   project_id: string;
@@ -35,6 +36,7 @@ export default function MembersPanel({
   const [lattices, setLattices] = useState<Record<string, Lattice>>({});
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const label = useMemberLabel();
 
   useEffect(() => {
     let cancelled = false;
@@ -108,7 +110,7 @@ export default function MembersPanel({
                     title={`Open ${m} in the single-text browser`}
                     className="text-[var(--color-primary)] hover:underline cursor-pointer truncate max-w-52 text-left"
                   >
-                    {m}
+                    {label(m)}
                   </button>
                 </td>
                 <td className="py-1.5 pr-3 text-[var(--color-text-muted)]">
@@ -117,7 +119,7 @@ export default function MembersPanel({
                 <td className="py-1.5 pr-3 text-[var(--color-text-muted)] text-[0.92em]">
                   {lat ? (
                     <div className="flex flex-col gap-0.5">
-                      {lat.parent && <span>↳ from <span className="text-[var(--color-text)]">{lat.parent}</span></span>}
+                      {lat.parent && <span>↳ from <span className="text-[var(--color-text)]" title={lat.parent}>{label(lat.parent)}</span></span>}
                       {lat.children.length > 0 && <span>{lat.children.length} derived</span>}
                       {lat.siblings.length > 0 && <span>{lat.siblings.length} sibling{lat.siblings.length !== 1 ? 's' : ''}</span>}
                       {!lat.parent && lat.children.length === 0 && lat.siblings.length === 0 && (
