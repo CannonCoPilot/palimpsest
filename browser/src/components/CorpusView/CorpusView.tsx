@@ -16,6 +16,7 @@ import { useCollectionStore, activeCollection, type CollectionOption } from '../
 import CongruenceBadge from './CongruenceBadge';
 import MembersPanel from './MembersPanel';
 import SweepPanel from './SweepPanel';
+import AnalysesPanel from './AnalysesPanel';
 import {
   blockMapLanes,
   sharedComponentMatrix,
@@ -30,12 +31,13 @@ import {
   type RootTrack,
 } from './corpusOverview';
 
-type SubTab = 'overview' | 'members' | 'corpus' | 'masking' | 'sweep';
+type SubTab = 'overview' | 'members' | 'corpus' | 'masking' | 'analyses' | 'sweep';
 const SUB_TABS: { id: SubTab; label: string }[] = [
   { id: 'overview', label: 'Overview' },
   { id: 'members', label: 'Members' },
   { id: 'corpus', label: 'Corpus' },
   { id: 'masking', label: 'Masking' },
+  { id: 'analyses', label: 'Analyses' },
   { id: 'sweep', label: 'Sweep' },
 ];
 
@@ -415,6 +417,10 @@ export default function CorpusView() {
             onMember={openMember}
             onRolesChanged={reloadCollections}
           />
+        )}
+
+        {subTab === 'analyses' && graph && collectionId && (
+          <AnalysesPanel collectionId={collectionId} />
         )}
 
         {subTab === 'sweep' && collectionId && (
