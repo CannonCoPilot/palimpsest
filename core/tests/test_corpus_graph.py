@@ -256,7 +256,88 @@ def test_phyletic_tree_reroot_and_guard(corpus: tuple[Path, str]) -> None:
         cg.phyletic_tree(graph, root="delta")
 
 
-# ── HTTP + CLI parity (FR-37) ─────────────────────────────────────────────────────────────────────
+# ── over-merge guards (audit 2026-07-01: corpus-graph over-merge cluster) ────────────────────────────
+
+def test_edge_min_identity_gates_union(tmp_path: Path) -> None:
+    """A cross-member edge below ``edge_min_identity`` is recorded (flagged ``weak``) but does NOT fuse
+    its two passages into one homology component — so weak cross-book noise cannot over-merge."""
+    a = _member(tmp_path, "alpha", [
+        "Strong shared core passage about the beginning of all things.",
+        "Alpha gap padding present only in alpha here.",
+        "Weak noisy passage that only faintly overlaps.",
+    ])
+    b = _member(tmp_path, "beta", [
+        "Strong shared core passage about the beginning of all things.",
+        "Beta gap padding present only in beta here.",
+        "Weak noisy passage that only faintly overlaps.",
+    ])
+    # One comparison, two records at different block identities: para 0 is a true correspondence
+    # (high identity), para 2 is faint noise (low identity).
+    d = comparison_dir(tmp_path, a, b)
+    d.mkdir(parents=True, exist_ok=True)
+    write_alignment_records(d / "alignment.jsonl", [
+        AlignmentRecord(query_id=a, query_start=0, query_end=1, target_id=b,
+                        target_start=0, target_end=1, score=40.0, identity=0.9),
+        AlignmentRecord(query_id=a, query_start=2, query_end=3, target_id=b,
+                        target_start=2, target_end=3, score=12.0, identity=0.2),
+    ])
+    (d / "metadata.json").write_text(json.dumps({"query_id": a, "target_id": b}), encoding="utf-8")
+    cid = cs.create_collection(tmp_path, "Pair", "two-text", [a, b])["id"]
+
+    # Default (0.0): both edges union → both shared passages become 2-member "core" components.
+    loose = cg.build_corpus_graph(tmp_path, cid)
+    assert all(not e["weak"] for e in loose.edges)
+    assert sum(1 for c in loose.components if c.classification == "core") == 2
+
+    # Gate at 0.5: the strong edge still unions, the weak edge is recorded-not-unioned.
+    gated = cg.build_corpus_graph(tmp_path, cid, edge_min_identity=0.5)
+    weak = [e for e in gated.edges if e["weak"]]
+    strong = [e for e in gated.edges if not e["weak"]]
+    assert len(weak) == 1 and weak[0]["identity"] == 0.2
+    assert len(strong) == 1 and strong[0]["identity"] == 0.9
+    # Only the true correspondence remains a core component; the noisy passages split apart.
+    assert sum(1 for c in gated.components if c.classification == "core") == 1
+    assert gated.summary["edge_min_identity"] == 0.5
+
+
+def test_suggested_root_excludes_singletons(tmp_path: Path) -> None:
+    """The suggested root counts only SHARED (multi-member) components: a fragmented member whose many
+    unique gaps inflate its total participation must not out-rank the true shared backbone."""
+    aaa = _member(tmp_path, "aaa", [
+        "core beginning passage about all things",
+        "shell passage shared with bbb only",
+        "shell passage shared with zzz only",
+    ])
+    bbb = _member(tmp_path, "bbb", [
+        "core beginning passage about all things",
+        "shell passage shared with aaa only",
+    ])
+    zzz = _member(tmp_path, "zzz", [
+        "core beginning passage about all things",
+        "gap one unique to zzz alone",
+        "shell passage shared with aaa only",
+        "gap two unique to zzz alone",
+    ])
+    _comparison(tmp_path, aaa, bbb, [(0, 1, 0, 1), (1, 2, 1, 2)])
+    _comparison(tmp_path, aaa, zzz, [(0, 1, 0, 1), (2, 3, 2, 3)])
+    _comparison(tmp_path, bbb, zzz, [(0, 1, 0, 1)])
+    cid = cs.create_collection(tmp_path, "Frag", "fragmented outgroup", [aaa, bbb, zzz])["id"]
+
+    graph = cg.build_corpus_graph(tmp_path, cid)
+    tree = cg.phyletic_tree(graph)
+    # Full participation (still reported) would nominate zzz — its 2 singleton gaps inflate it.
+    assert tree["participation"]["zzz"] > tree["participation"]["aaa"]
+    # Shared-only participation correctly nominates the backbone aaa.
+    assert tree["suggested_root"] == "aaa"
+
+
+def test_spread_histogram_shell_not_mislabeled_singleton() -> None:
+    """A low-``N`` shell component (2/6 = 0.333) must bin as shell, not singleton: ``narrow + broad``
+    always equals the shell-component count and ``singleton`` counts only true 1-member components."""
+    hist = cg._spread_histogram([1 / 6, 2 / 6, 6 / 6], 6)
+    assert hist["singleton"] == 1  # only the genuine 1-member component
+    assert hist["core"] == 1
+    assert hist["narrow"] + hist["broad"] == 1  # the 2-member shell, not a singleton
 
 
 # ── HTTP + CLI parity (FR-37) ─────────────────────────────────────────────────────────────────────

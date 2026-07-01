@@ -940,12 +940,20 @@ def collections_congruence(
 @click.option("--anchor-trim", type=float, default=0.0,
               help="Trim aligned blocks past boundary cells below this cross-similarity before the "
                    "homology union (C6a anchor honesty; 0 = off)")
-def collections_corpus_graph_build(workspace: Path, collection_id: str, anchor_trim: float) -> None:
+@click.option("--edge-min-identity", type=float, default=0.0,
+              help="Alignment records below this block identity are recorded but do not union "
+                   "homology components (weak cross-member edges cannot over-merge; 0 = off)")
+def collections_corpus_graph_build(
+    workspace: Path, collection_id: str, anchor_trim: float, edge_min_identity: float
+) -> None:
     """Assemble + persist the reference-free corpus graph (C3) from the collection's pairwise edges."""
     from palimpsest.corpus_graph import build_corpus_graph, write_corpus_graph
 
     try:
-        graph = build_corpus_graph(workspace, collection_id, anchor_trim=anchor_trim)
+        graph = build_corpus_graph(
+            workspace, collection_id,
+            anchor_trim=anchor_trim, edge_min_identity=edge_min_identity,
+        )
     except ValueError as exc:
         console.print(f"[red]{exc}[/red]")
         raise SystemExit(1)

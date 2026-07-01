@@ -200,7 +200,8 @@ def _reference_sha(workspace: Path, member: str) -> str | None:
 # ── build ───────────────────────────────────────────────────────────────────────────────────────
 
 def build_corpus_graph(
-    workspace: Path, collection_id: str, *, anchor_trim: float = 0.0
+    workspace: Path, collection_id: str, *, anchor_trim: float = 0.0,
+    edge_min_identity: float = 0.0,
 ) -> CorpusGraph:
     """Assemble the reference-free corpus graph for a collection from its computed pairwise edges.
 
@@ -211,7 +212,13 @@ def build_corpus_graph(
     past boundary cells whose cross-similarity is below the threshold before it becomes an anchor, so
     a shared passage extended by a weakly-overlapping (trailing/leading) paragraph no longer absorbs a
     disjoint passage into a ``core``/``shell`` homology component. ``0.0`` (default) keeps the raw
-    record ranges (prior behavior). The trimmed span is reported under ``summary.anchor_trim``."""
+    record ranges (prior behavior). The trimmed span is reported under ``summary.anchor_trim``.
+
+    ``edge_min_identity``: an alignment record whose scale-free block identity (mean per-cell
+    similarity, ``AlignmentRecord.identity``) is below this threshold is still recorded as an edge but
+    flagged ``weak`` and does NOT union its endpoints — so a weak cross-member correspondence cannot
+    fuse two otherwise-disjoint passages into one homology component. ``0.0`` (default) unions every
+    edge (prior behavior). Reported under ``summary.edge_min_identity``."""
     collection = get_collection(workspace, collection_id)
     if collection is None:
         raise ValueError(f"Collection not found: {collection_id}")
@@ -221,7 +228,7 @@ def build_corpus_graph(
 
     # 1. Gather aligned intervals per member + the raw records (with their owning members) per pair.
     member_intervals: dict[str, list[tuple[int, int]]] = {m: [] for m in members}
-    raw_edges: list[tuple[str, tuple[int, int], str, tuple[int, int], float, str]] = []
+    raw_edges: list[tuple[str, tuple[int, int], str, tuple[int, int], float, float, str]] = []
     pairs_with_edges: list[list[str]] = []
     pairs_missing: list[list[str]] = []
 
@@ -254,7 +261,9 @@ def build_corpus_graph(
                 t_iv = (ts, te)
                 member_intervals[q_id].append(q_iv)
                 member_intervals[t_id].append(t_iv)
-                raw_edges.append((q_id, q_iv, t_id, t_iv, float(r.score), comp_dir.name))
+                raw_edges.append(
+                    (q_id, q_iv, t_id, t_iv, float(r.score), float(r.identity), comp_dir.name)
+                )
 
     # 2. Merge each member's intervals into anchor nodes; index by (member, start) for lookup.
     nodes: list[PassageNode] = []
@@ -285,12 +294,15 @@ def build_corpus_graph(
     for n in nodes:
         uf.add(n.id)
     edges: list[dict[str, Any]] = []
-    for q_id, q_iv, t_id, t_iv, score, comp_name in raw_edges:
+    for q_id, q_iv, t_id, t_iv, score, identity, comp_name in raw_edges:
         na, nb = _anchor_of(q_id, q_iv), _anchor_of(t_id, t_iv)
         if na is None or nb is None:
             continue
-        uf.union(na, nb)
-        edges.append({"a": na, "b": nb, "comparison": comp_name, "score": score})
+        weak = identity < edge_min_identity
+        if not weak:  # weak edges are recorded but never fuse homology components
+            uf.union(na, nb)
+        edges.append({"a": na, "b": nb, "comparison": comp_name,
+                      "score": score, "identity": identity, "weak": weak})
 
     # 4. Add unaligned regions as singleton nodes (each its own component later).
     for member in members:
@@ -336,6 +348,7 @@ def build_corpus_graph(
         "pairs_with_edges": pairs_with_edges,
         "pairs_missing": pairs_missing,
         "anchor_trim": anchor_trim,
+        "edge_min_identity": edge_min_identity,
     }
     provenance = {
         "member_sha256": {m: _reference_sha(workspace, m) for m in members},
@@ -405,7 +418,12 @@ def phyletic_tree(graph: CorpusGraph, root: str | None = None) -> dict[str, Any]
 
     distances = phylo.component_distance_matrix(n, comp_sets)
     participation = phylo.participation_counts(n, comp_sets)
-    suggested = members[max(range(n), key=lambda i: (participation[i], -i))]
+    # Root = most component-complete member, but count only SHARED (multi-member) components: a
+    # heavily-fragmented outgroup accrues many singleton components from its own gaps, which would
+    # otherwise inflate its participation and wrongly nominate it as the backbone.
+    shared_sets = [s for s in comp_sets if len(s) > 1]
+    root_participation = phylo.participation_counts(n, shared_sets)
+    suggested = members[max(range(n), key=lambda i: (root_participation[i], -i))]
 
     chosen = suggested if root is None else root
     if chosen not in idx:
@@ -512,7 +530,7 @@ def corpus_analyses(
                 "influence/derivation claim"
             ),
             "member_reach": {members[i]: round(reach[i], 4) for i in range(n)},
-            "component_spread_histogram": _spread_histogram(spreads),
+            "component_spread_histogram": _spread_histogram(spreads, n),
             "core_fraction": round(sum(1 for s in spreads if s >= 1.0) / len(spreads), 4)
             if spreads else 0.0,
         },
@@ -527,18 +545,24 @@ def phylo_distance_rows(n: int, comp_member_sets: list[set[int]]) -> list[list[f
     return [[float(D[i][j]) for j in range(n)] for i in range(n)]
 
 
-def _spread_histogram(spreads: list[float]) -> dict[str, int]:
-    """Bucket component spread fractions into coarse breadth bands for a compact readout."""
+def _spread_histogram(spreads: list[float], n_members: int) -> dict[str, int]:
+    """Bucket component spread fractions into coarse breadth bands for a compact readout.
+
+    ``singleton`` and ``core`` key on distinct-member COUNT (exactly one member / all members) to match
+    the graph's own classification, so a low-``N`` shell component (e.g. 2/6 = 0.333) is never
+    mis-binned as a singleton; ``narrow``/``broad`` sub-divide the remaining shell band by breadth.
+    Consequently ``narrow + broad`` always equals the shell-component count."""
     bins = {"singleton": 0, "narrow": 0, "broad": 0, "core": 0}
     for s in spreads:
-        if s >= 1.0:
+        k = round(s * n_members)  # distinct members reached
+        if n_members > 0 and k >= n_members:
             bins["core"] += 1
+        elif k <= 1:
+            bins["singleton"] += 1
         elif s >= 0.66:
             bins["broad"] += 1
-        elif s >= 0.34:
-            bins["narrow"] += 1
         else:
-            bins["singleton"] += 1
+            bins["narrow"] += 1
     return bins
 
 

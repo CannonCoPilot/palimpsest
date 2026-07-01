@@ -2397,7 +2397,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
     @app.post("/api/collections/{collection_id}/corpus-graph")
     async def build_collection_corpus_graph(
-        collection_id: str, anchor_trim: float = 0.0
+        collection_id: str, anchor_trim: float = 0.0, edge_min_identity: float = 0.0
     ) -> JSONResponse:
         """Assemble + persist the reference-free corpus graph (C3, FR-31) from the collection's
         computed pairwise edges. Returns the pangenome summary (core/shell/singleton counts plus the
@@ -2405,11 +2405,18 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         ``anchor_trim`` (C6a anchor honesty): when ``> 0``, trims each aligned block inward past
         boundary cells below that cross-similarity before the homology union, so a trailing/leading
-        mismatch no longer pulls a disjoint passage into a core/shell component."""
+        mismatch no longer pulls a disjoint passage into a core/shell component.
+
+        ``edge_min_identity``: alignment records below this block identity are recorded but flagged
+        ``weak`` and do not union homology components, so a weak cross-member correspondence cannot
+        fuse two disjoint passages into one component (0 = union every edge)."""
         from palimpsest.corpus_graph import build_corpus_graph, write_corpus_graph
 
         try:
-            graph = build_corpus_graph(workspace, collection_id, anchor_trim=anchor_trim)
+            graph = build_corpus_graph(
+                workspace, collection_id,
+                anchor_trim=anchor_trim, edge_min_identity=edge_min_identity,
+            )
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
         write_corpus_graph(workspace, collection_id, graph)

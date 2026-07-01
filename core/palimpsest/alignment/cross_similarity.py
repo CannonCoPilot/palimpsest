@@ -8,6 +8,7 @@ import numpy as np
 
 from palimpsest.formats.signals import SignalManifest
 from palimpsest.project import Project
+from palimpsest.tracks.self_similarity import _content_set
 from palimpsest.vectorstore.sqlite_vec import SqliteVecStore
 
 logger = logging.getLogger(__name__)
@@ -106,12 +107,18 @@ def _cosine_similarity(a: np.ndarray, b: np.ndarray) -> np.ndarray:
 
 
 def _word_overlap_similarity(project_a: Project, project_b: Project) -> np.ndarray:
-    """Word-overlap (Jaccard on token sets) between all paragraph pairs."""
+    """Word-overlap (Jaccard on content-token sets) between all paragraph pairs.
+
+    Tokens are content words (stopwords + punctuation + single chars stripped, via the same
+    ``_content_set`` the self-similarity track uses), NOT a raw ``split()``. Function words are
+    shared by every paragraph in a language, so raw-token Jaccard floats unrelated cross-book
+    passages above the Smith-Waterman zero-point (``score = sim*2-1``) and manufactures spurious
+    homology edges; content-token Jaccard keeps only genuine lexical overlap."""
     paras_a = [text for _, _, text in project_a.paragraphs()]
     paras_b = [text for _, _, text in project_b.paragraphs()]
 
-    sets_a = [set(t.lower().split()) for t in paras_a]
-    sets_b = [set(t.lower().split()) for t in paras_b]
+    sets_a = [_content_set(t.split()) for t in paras_a]
+    sets_b = [_content_set(t.split()) for t in paras_b]
 
     n = len(sets_a)
     m = len(sets_b)
