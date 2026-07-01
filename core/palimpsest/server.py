@@ -137,6 +137,17 @@ class AlignmentRequest(BaseModel):
     method: str = Field(default="semantic", pattern=r"^(semantic|alphabet|word)$")
 
 
+class LiftoverRequest(BaseModel):
+    """Project a member's intervals onto another via their alignment (POST collections/{id}/liftover,
+    C5/FR-42). Module scope for the same reason as :class:`AlignmentRequest`."""
+
+    source_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
+    target_id: str = Field(pattern=r"^[a-zA-Z0-9_\-]+$")
+    intervals: list[list[int]] = []
+    kind: str = "mask"
+    persist: bool = False
+
+
 _STRUCTURAL_TRACKS = {"segments", "sections", "elements", "verses"}
 
 
@@ -2403,6 +2414,100 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             return JSONResponse(content=phyletic_tree(graph, root))
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
+
+    # ── Cross-text masking, tracks & liftover (C5, FR-29/30/42) ──
+
+    @app.get("/api/collections/{collection_id}/corpus-repeats")
+    async def collection_corpus_repeats(
+        collection_id: str,
+        min_members: int = 2,
+        min_words: int = 3,
+        max_phrase_len: int = 7,
+    ) -> JSONResponse:
+        """Phrases recurring across ``>= min_members`` members, with per-member intervals (FR-29). A
+        corpus-scale generalisation of Wave-0 repeats: a phrase appearing once per member is found here
+        though no single text repeats it."""
+        from palimpsest.collections_masking import corpus_repeats
+
+        try:
+            return JSONResponse(content=corpus_repeats(
+                workspace, collection_id,
+                min_members=min_members, min_words=min_words, max_phrase_len=max_phrase_len,
+            ))
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+
+    @app.get("/api/collections/{collection_id}/low-correspondence")
+    async def collection_low_correspondence(collection_id: str) -> JSONResponse:
+        """Per-member char spans that aligned to no other member — the corpus graph's singletons.
+        404-equivalent (400) until the graph is built."""
+        from palimpsest.collections_masking import low_correspondence_intervals
+
+        try:
+            return JSONResponse(content=low_correspondence_intervals(workspace, collection_id))
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+
+    @app.get("/api/collections/{collection_id}/cross-text-mask/{member}")
+    async def collection_cross_text_mask(
+        collection_id: str,
+        member: str,
+        repeats: bool = True,
+        low_correspondence: bool = True,
+        min_members: int = 2,
+    ) -> JSONResponse:
+        """A member's cross-text mask (corpus-repeat ∪ low-correspondence), original-coordinate
+        intervals ready for ``extra_masked`` (FR-29)."""
+        from palimpsest.collections_masking import cross_text_mask
+
+        try:
+            return JSONResponse(content=cross_text_mask(
+                workspace, collection_id, member,
+                include_repeats=repeats, include_low_correspondence=low_correspondence,
+                min_members=min_members,
+            ))
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+
+    @app.get("/api/collections/{collection_id}/root-track")
+    async def collection_root_track(
+        collection_id: str, root: str, kind: str = "conservation"
+    ) -> JSONResponse:
+        """A cross-text similarity track on the ``root`` member's coordinate frame (FR-30): each in-root
+        passage annotated with its corpus conservation, as a root-frame lane."""
+        from palimpsest.collections_masking import cross_text_track
+
+        try:
+            return JSONResponse(content=cross_text_track(workspace, collection_id, root, kind=kind))
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+
+    @app.post("/api/collections/{collection_id}/liftover")
+    async def collection_liftover(collection_id: str, request: LiftoverRequest) -> JSONResponse:
+        """Project ``source_id``'s intervals onto ``target_id``'s frame across their alignment (FR-42).
+        ``dropped`` intervals (touching no aligned block) are reported. With ``persist=true`` the lift
+        lands on the target as a new additive run version (FR-41)."""
+        from palimpsest.collections_masking import (
+            lift_intervals_across,
+            lifted_track_is_stale,
+            persist_lifted_track,
+        )
+
+        intervals = [(int(s), int(e)) for s, e in request.intervals]
+        try:
+            result = lift_intervals_across(
+                workspace, request.source_id, request.target_id, intervals
+            )
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        if request.persist:
+            result["stale"] = lifted_track_is_stale(
+                workspace, collection_id, result, kind=request.kind
+            )
+            result["version"] = persist_lifted_track(
+                workspace, collection_id, result, kind=request.kind
+            )
+        return JSONResponse(content=result)
 
     # ── Alignment API ──
 

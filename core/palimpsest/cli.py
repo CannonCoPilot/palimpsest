@@ -1009,6 +1009,76 @@ def collections_phyletic_tree(workspace: Path, collection_id: str, root: str | N
         raise SystemExit(1)
 
 
+@collections.command("corpus-repeats")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.option("--min-members", default=2, show_default=True, help="Distinct members a phrase must span")
+def collections_corpus_repeats(workspace: Path, collection_id: str, min_members: int) -> None:
+    """Phrases recurring across >= min-members members, with per-member intervals (C5, FR-29)."""
+    from palimpsest.collections_masking import corpus_repeats
+
+    try:
+        console.print(json.dumps(
+            corpus_repeats(workspace, collection_id, min_members=min_members), indent=2))
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+
+
+@collections.command("cross-text-mask")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.argument("member")
+def collections_cross_text_mask(workspace: Path, collection_id: str, member: str) -> None:
+    """A member's cross-text mask: corpus-repeat ∪ low-correspondence intervals (C5, FR-29)."""
+    from palimpsest.collections_masking import cross_text_mask
+
+    try:
+        console.print(json.dumps(cross_text_mask(workspace, collection_id, member), indent=2))
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+
+
+@collections.command("root-track")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.option("--root", required=True, help="Member to express the cross-text track on")
+def collections_root_track(workspace: Path, collection_id: str, root: str) -> None:
+    """A cross-text conservation track on the root member's coordinate frame (C5, FR-30)."""
+    from palimpsest.collections_masking import cross_text_track
+
+    try:
+        console.print(json.dumps(cross_text_track(workspace, collection_id, root), indent=2))
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+
+
+@collections.command("liftover")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("source_id")
+@click.argument("target_id")
+@click.option("--interval", "intervals", multiple=True, metavar="START:END",
+              help="Source char interval to project (repeatable)")
+def collections_liftover(
+    workspace: Path, source_id: str, target_id: str, intervals: tuple[str, ...]
+) -> None:
+    """Project source intervals onto the target's frame across their alignment (C5, FR-42)."""
+    from palimpsest.collections_masking import lift_intervals_across
+
+    parsed: list[tuple[int, int]] = []
+    for iv in intervals:
+        s, _, e = iv.partition(":")
+        parsed.append((int(s), int(e)))
+    try:
+        console.print(json.dumps(
+            lift_intervals_across(workspace, source_id, target_id, parsed), indent=2))
+    except ValueError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+
+
 @main.command(name="align-paf")
 @click.argument("workspace", type=click.Path(exists=True, path_type=Path))
 @click.argument("query_id")

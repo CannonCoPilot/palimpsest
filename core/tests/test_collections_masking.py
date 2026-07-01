@@ -259,3 +259,79 @@ def test_persist_lifted_track_versions_and_staleness(corpus: tuple[Path, str]) -
     # A different source lift → different identity → the prior version is now stale.
     changed = {**res, "lifted": [[0, 3]]}
     assert cm.lifted_track_is_stale(workspace, cid, changed, kind="mask")
+
+
+# ── HTTP + CLI parity (FR-37) ─────────────────────────────────────────────────────────────────────
+
+def _client(workspace: Path):
+    from fastapi.testclient import TestClient
+
+    from palimpsest.server import create_app
+
+    return TestClient(create_app(workspace))
+
+
+def test_http_c5_endpoints(corpus: tuple[Path, str]) -> None:
+    workspace, cid = corpus
+    client = _client(workspace)
+
+    # corpus-repeats needs no graph.
+    cr = client.get(f"/api/collections/{cid}/corpus-repeats?min_members=2")
+    assert cr.status_code == 200 and cr.json()["phrases"]
+
+    # graph-dependent endpoints 400 until the graph is built.
+    assert client.get(f"/api/collections/{cid}/low-correspondence").status_code == 400
+    assert client.get(f"/api/collections/{cid}/root-track?root=alpha").status_code == 400
+
+    client.post(f"/api/collections/{cid}/corpus-graph")
+
+    low = client.get(f"/api/collections/{cid}/low-correspondence")
+    assert low.status_code == 200 and low.json()["alpha"]
+
+    mask = client.get(f"/api/collections/{cid}/cross-text-mask/alpha")
+    assert mask.status_code == 200 and mask.json()["intervals"]
+
+    rt = client.get(f"/api/collections/{cid}/root-track?root=alpha")
+    assert rt.status_code == 200 and rt.json()["member_total"] == 3
+    assert client.get(f"/api/collections/{cid}/root-track?root=delta").status_code == 400
+
+    a_paras = Project.load(workspace / "alpha").paragraphs()
+    b_paras = Project.load(workspace / "beta").paragraphs()
+    lift = client.post(f"/api/collections/{cid}/liftover", json={
+        "source_id": "alpha", "target_id": "beta",
+        "intervals": [[a_paras[0][0] + 4, a_paras[0][0] + 20]], "persist": True,
+    })
+    assert lift.status_code == 200
+    body = lift.json()
+    assert body["lifted"] == [[b_paras[0][0], b_paras[0][1]]]
+    assert body["version"]["version_id"] == "v1"
+
+    # a missing pair 400s.
+    assert client.post(f"/api/collections/{cid}/liftover", json={
+        "source_id": "alpha", "target_id": "delta", "intervals": [[0, 5]]}).status_code == 400
+
+
+def test_cli_c5(corpus: tuple[Path, str]) -> None:
+    from click.testing import CliRunner
+
+    from palimpsest.cli import main
+
+    workspace, cid = corpus
+    cg.write_corpus_graph(workspace, cid, cg.build_corpus_graph(workspace, cid))
+    runner = CliRunner()
+
+    res = runner.invoke(main, ["collections", "corpus-repeats", str(workspace), cid])
+    assert res.exit_code == 0 and "eternal covenant endures forever" in res.output
+
+    res = runner.invoke(main, ["collections", "cross-text-mask", str(workspace), cid, "alpha"])
+    assert res.exit_code == 0 and '"intervals"' in res.output
+
+    res = runner.invoke(main, ["collections", "root-track", str(workspace), cid, "--root", "alpha"])
+    assert res.exit_code == 0 and '"root": "alpha"' in res.output
+
+    a_paras = Project.load(workspace / "alpha").paragraphs()
+    res = runner.invoke(main, [
+        "collections", "liftover", str(workspace), "alpha", "beta",
+        "--interval", f"{a_paras[0][0] + 4}:{a_paras[0][0] + 20}",
+    ])
+    assert res.exit_code == 0 and '"lifted"' in res.output
