@@ -79,9 +79,12 @@ def _count_repeats(
     for n in range(min_words, max_ngram + 1):
         for start in range(len(normalised) - n + 1):
             gram = normalised[start:start + n]
-            # An empty token marks a text boundary (a pilcrow/paragraph-break split). Skip any n-gram
-            # spanning one: it is not a contiguous phrase, and joining through it mints a double-space
-            # key that fragments the real phrase's occurrence count.
+            # _normalise() maps a whitespace-isolated punctuation/number token — in practice an inline
+            # verse marker ("3", "1:1.") — to "". That is a structural boundary, not a word, so an
+            # n-gram straddling one is not a contiguous phrase (it joins the tail of one verse to the
+            # head of the next): skip it. Attached punctuation (a trailing comma) normalises into its
+            # own word and never becomes "", so within-verse phrases are untouched; this only drops
+            # boundary-straddling grams, and avoids the double-space keys that fragment phrase counts.
             if any(w == "" for w in gram):
                 continue
             # Skip n-grams that are entirely stopwords.
