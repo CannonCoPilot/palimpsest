@@ -39,5 +39,29 @@
       }
     }
   ],
-  "build_steps": ["dr", "geneva-complete", "geneva-layout", "geneva-verses", "geneva-mm"]
+  "build_steps": ["dr", "geneva-complete", "geneva-layout", "geneva-verses", "geneva-mm"],
+  "companion_collections": [
+    {
+      "collection_id": "matthew-mark-6way",
+      "label": "Matthew / Mark — 6-way cross-translation",
+      "description": "Matthew-only and Mark-only single-book subtexts from all three translations (DR, 1599 Geneva, KJV). The collection the corpus-graph over-merge / score-gate, phyletic tree, and synoptic precision/recall oracle are validated against. Each member is a derive-of-a-derive (split from the *-MM subtext), so building it also exercises derivation robustness.",
+      "kjv_note": "The KJV EPUB packs a whole chapter into one <p> with inline <span class=\"verses\">N</span> markers; kjv-complete verse-paragraph-patches it (</p><p> before each verse span) so paragraph-vs-paragraph alignment is not degenerate. The KJV layout is a Mt+Mk+Lk superset so the Luke outgroup stays re-derivable.",
+      "members": [
+        { "role": "DR-Matthew", "translation": "Douay-Rheims", "book": "Matthew", "expected_verses": 1070 },
+        { "role": "DR-Mark", "translation": "Douay-Rheims", "book": "Mark", "expected_verses": 677 },
+        { "role": "Geneva-Matthew", "translation": "1599 Geneva", "book": "Matthew", "expected_verses": 1071 },
+        { "role": "Geneva-Mark", "translation": "1599 Geneva", "book": "Mark", "expected_verses": 678 },
+        { "role": "KJV-Matthew", "translation": "King James", "book": "Matthew", "expected_verses": 1071 },
+        { "role": "KJV-Mark", "translation": "King James", "book": "Mark", "expected_verses": 678 }
+      ],
+      "build_steps": ["dr", "geneva-complete", "geneva-layout", "geneva-verses", "geneva-mm", "kjv-complete", "kjv-layout", "kjv-verses", "kjv-mm", "split", "validate-splits", "align", "graph"]
+    },
+    {
+      "collection_id": "matthew-mark-luke-7way",
+      "label": "Matthew / Mark / Luke (7-way, Luke outgroup)",
+      "description": "The six 6-way members plus a KJV Luke single-book subtext as a genuine phyletic outgroup (none of the same-book Matthew/Mark texts is a true root). Used to stress-test the phyletic tree.",
+      "extra_member": { "role": "KJV-Luke", "translation": "King James", "book": "Luke", "expected_verses": 1151, "chapters": 24 },
+      "build_steps": ["kjv-luke", "kjv-luke-validate", "luke-collection"]
+    }
+  ]
 }

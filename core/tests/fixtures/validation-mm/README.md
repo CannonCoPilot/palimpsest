@@ -13,6 +13,11 @@ Two independent translations of the same two gospels give known true-positive al
 (shared synoptic pericopes) and true-negatives (unique material), plus genuine versification
 variance (Geneva has +1 verse in each gospel vs the Vulgate-versified Douay-Rheims).
 
+A richer **6-way** collection (`matthew-mark-6way`) adds the KJV as a third translation and splits
+each translation into single-book Matthew-only / Mark-only members — the substrate for the
+corpus-graph over-merge / score-gate and the synoptic precision/recall oracle. See
+[The 6-way collection](#the-6-way-collection-matthewmark--three-translations) below.
+
 ## Why the text bodies are not committed
 
 The source editions (Douay-Rheims 2018 reprint; 1599 Geneva, Tolle Lege Press 2013 modernized
@@ -66,6 +71,41 @@ core/.venv/bin/python core/tests/fixtures/validation-mm/build.py embed
 Without this step the members are word-method only: cosine congruence reports *incongruent* (missing
 embedding layer) and probe fails loud — the honest deferral paths. The `collection_workbench_c7`
 e2e asserts the embedded state, and its `beforeAll` guard points here if the collection isn't embedded.
+
+## The 6-way collection (Matthew/Mark × three translations)
+
+A richer collection, `matthew-mark-6way`, splits each translation's Matthew+Mark subtext into a
+Matthew-only and a Mark-only single-book member (6 members total). It is the substrate for the
+corpus-graph over-merge / score-gate, the phyletic tree, and the synoptic precision/recall oracle
+(`score_synoptic.py`). Building it also needs the KJV as a third translation. Requires the KJV EPUB
+in `imports/Scripture/Bibles/` in addition to the DR + Geneva sources above. After the `dr` and
+`geneva-*` steps, from the repo root (`V=core/.venv/bin/python`):
+
+```sh
+# 3rd translation: the KJV, verse-paragraph patched (see manifest kjv_note), Mt+Mk+Lk superset layout
+$V core/tests/fixtures/validation-mm/build.py kjv-complete
+$V core/tests/fixtures/validation-mm/build.py kjv-layout
+$V core/tests/fixtures/validation-mm/build.py kjv-verses
+$V core/tests/fixtures/validation-mm/build.py kjv-mm
+# derive the 6 single-book members + create the matthew-mark-6way collection, then assert them
+$V core/tests/fixtures/validation-mm/build.py split
+$V core/tests/fixtures/validation-mm/build.py validate-splits
+# analysis substrate: word-align every pair + build the corpus graph
+$V core/tests/fixtures/validation-mm/build.py align
+$V core/tests/fixtures/validation-mm/build.py graph
+```
+
+The MM parents are discovered by glob (never by hardcoded content-hash id), and each split child's
+id is a function of parent + book container, so every step is idempotent. Expected per-member verse
+counts are in `manifest.json` under `companion_collections`; `validate-splits` asserts them.
+
+For a genuine phyletic **outgroup**, add the KJV Luke subtext and build the 7-member variant:
+
+```sh
+$V core/tests/fixtures/validation-mm/build.py kjv-luke
+$V core/tests/fixtures/validation-mm/build.py kjv-luke-validate
+$V core/tests/fixtures/validation-mm/build.py luke-collection   # creates matthew-mark-luke-7way
+```
 
 ## Validate
 
