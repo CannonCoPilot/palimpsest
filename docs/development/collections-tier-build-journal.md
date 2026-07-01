@@ -464,3 +464,59 @@ suite **917 green** (was 904).
 so they carry no embedding layer yet — the probe is proven here on deterministic synthetic vector stores.
 Embedding the standing collection into a shared space (then an in-browser probe) is a C7/live-validation
 step, not a C6b backend gate.
+
+### C6c — Scale: candidate generation as a recall dial + resumable run journal ✅ (FR-35)
+
+Sweeping a collection exactly is O(pairs² × N×M): every member pair, every chunk pair, scored with the
+expensive exact alignment + Gumbel significance. C6c makes that tractable **without hiding anything** — a
+recall dial prunes the pair space with cheap candidate generation, and every pruned pair is *counted and
+reported*, never silently capped.
+
+**The dial (`analysis/candidate_gen.py`, pure numpy leaf, sibling to `phylo`/`corpus_analysis`).** It
+prunes the *expensive* per-pair step; the recall knob is the generator's reach:
+
+- **embeddings → over-fetch ANN** (`ann_candidate_pairs`): each row's top-`depth` cosine neighbors,
+  unioned. `depth` is the knob; `depth ≥ n_b` degrades to exhaustive.
+- **tokens / word family → MinHash-LSH** (`minhash_signatures` + `lsh_candidate_pairs`): banded LSH over
+  word-shingle sets; band count is the knob. This is the family that runs on a word-method corpus with no
+  embeddings — i.e. the standing validation collection.
+
+`plan_sweep` resolves the mode: **small spaces (`≤ dense_threshold`) stay exhaustive** (no signal to miss
+where it's cheap; reported as `auto_dense`), and a **forced-exhaustive escape** overrides mode *and* size.
+`summarize_candidates` reports `n_pairs_total / n_candidates / n_pruned` and — critically — an **empirical**
+`estimated_recall`: the fraction of a sampled exact-nearest oracle actually recovered by the candidate set,
+reported with its sample size, or an honest `null` when there is no sample (never a fabricated 1.0). A true
+ANN *index* (HNSW/IVF) is the deferred scale path; the numpy over-fetch gives the dial semantics without a
+new dependency.
+
+**The run journal (`collections_sweep.py`, resumable sidecar).** `sweep_pairwise` walks member pairs,
+reduces each member to the dial primitive (congruence-gated for embedding metrics, reusing the C6b gate —
+a mixed-space corpus fails loud), plans + prunes each pair, and **checkpoints to
+`collections/{id}/sweeps/{run_id}.json` after every pair**. The `run_id` is content-addressed from
+`collection + members + mode + metric` (no wall-clock), so re-invoking the same sweep re-opens the same
+journal and **skips pairs already `done`** — resume-after-interruption for free, losing at most one pair to
+an interruption. A `progress_cb(done, total, label)` fires per pair for staged %-progress. This is the
+lightweight-sidecar half of the run-persistence decision; the full job DB (scheduler/queue) remains the
+deferred later-phase feature.
+
+**Live proof on the standing collection** (`palimpsest collections sweep …/validation-mm matthew-mark-validation`):
+
+| run | mode | n_pairs_total | n_candidates | pruned | estimated_recall |
+|---|---|---|---|---|---|
+| high-recall | LSH prune | **3,055,503** | 620 | **99.98%** | **0.102** (measured) |
+| forced-exhaustive | escape | 3,055,503 | 3,055,503 | 0% | 1.0 |
+
+The 0.102 recall is the honesty guarantee working, not a defect: MinHash-LSH recovers a true-near verse pair
+(Jaccard ≈ 0.3, 4 rows/band) with ≈ 0.8% probability per band × 32 bands ≈ 10-24% — the measured value. Two
+translations share *content*, not *wording*, at verse granularity (the same signal-spread limitation flagged
+in C6a). The dial *reports* that so a user can raise the mode or hit the exhaustive escape, rather than
+receiving 620 pairs as if complete. Resume was confirmed live (re-run → every pair `(cached)`); the pruned
+journal is 32 KB (candidate index lists persisted for the scoring stage), the dense journal 1.8 KB (no list —
+dense pairs store `candidates: null`).
+
+**Surface:** `POST /api/collections/{id}/sweep` (dial + escape + resume; `409` congruence-gated for embedding
+metrics) + `GET …/sweep/{run_id}` (full journal); CLI `collections sweep … --mode --force-exhaustive
+--dense-threshold --no-resume` (prints staged progress). **Tests:** +26 (`test_candidate_gen.py` 13 — dial
+planning, both generators + oracles, honest summary incl. null-recall; `test_collections_sweep.py` 13 —
+dense/prune/escape, journal resume vs `--no-resume`, param-addressed run_id, congruence gate, CLI + HTTP
+roundtrip). Full backend suite **943 green** (was 917).

@@ -167,6 +167,20 @@ class ProbeRequest(BaseModel):
     snippet_chars: int = Field(default=200, ge=0, le=2000)
 
 
+class SweepRequest(BaseModel):
+    """Run the recall-dial sweep over a collection's member pairs (POST collections/{id}/sweep,
+    C6c/FR-35). Module scope for the same reason as :class:`AlignmentRequest`. ``mode`` is the dial
+    (exhaustive ↔ high-recall ↔ fast); ``force_exhaustive`` is the escape hatch; ``resume`` re-opens the
+    content-addressed run journal and skips member pairs already done."""
+
+    metric: str = "word_overlap"
+    mode: str = Field(default="high-recall", pattern=r"^(exhaustive|high-recall|fast)$")
+    force_exhaustive: bool = False
+    embedding_label: str | None = None
+    dense_threshold: int = Field(default=10_000, ge=0)  # 0 = never auto-dense (force candidate-gen)
+    resume: bool = True
+
+
 _STRUCTURAL_TRACKS = {"segments", "sections", "elements", "verses"}
 
 
@@ -2506,6 +2520,42 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         except (ValueError, FileNotFoundError) as exc:
             raise HTTPException(status_code=400, detail=str(exc))
         return JSONResponse(content=result)
+
+    @app.post("/api/collections/{collection_id}/sweep")
+    async def collection_sweep(collection_id: str, request: SweepRequest) -> JSONResponse:
+        """Recall-dial sweep over the collection's member pairs (C6c, FR-35): prune the O(N×M) chunk-pair
+        space at ``mode`` (exhaustive ↔ high-recall ↔ fast; ``force_exhaustive`` overrides), report
+        estimated recall + pruned counts (never a silent cap), and journal to a resumable sidecar.
+        Embedding metrics are congruence-gated (409). Re-POSTing the same params resumes the journal."""
+        from palimpsest.collections_ops import MetricCongruenceError
+        from palimpsest.collections_sweep import sweep_pairwise
+
+        try:
+            result = sweep_pairwise(
+                workspace, collection_id,
+                metric=request.metric, mode=request.mode,
+                force_exhaustive=request.force_exhaustive,
+                embedding_label=request.embedding_label,
+                dense_threshold=request.dense_threshold, resume=request.resume,
+            )
+        except MetricCongruenceError as exc:
+            raise HTTPException(status_code=409, detail=str(exc))
+        except KeyError:
+            raise HTTPException(status_code=404, detail=f"collection {collection_id!r} not found")
+        except (ValueError, FileNotFoundError) as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        return JSONResponse(content=result)
+
+    @app.get("/api/collections/{collection_id}/sweep/{run_id}")
+    async def collection_sweep_journal(collection_id: str, run_id: str) -> JSONResponse:
+        """The persisted run journal for a sweep (C6c): full per-pair candidate sets + progress. 404 if
+        no such run — the run_id is content-addressed from the sweep params."""
+        from palimpsest.collections_sweep import read_sweep_journal
+
+        journal = read_sweep_journal(workspace, collection_id, run_id)
+        if journal is None:
+            raise HTTPException(status_code=404, detail=f"no sweep run {run_id!r} for {collection_id!r}")
+        return JSONResponse(content=journal)
 
     # ── Cross-text masking, tracks & liftover (C5, FR-29/30/42) ──
 

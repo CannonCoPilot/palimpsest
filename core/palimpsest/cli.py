@@ -1090,6 +1090,46 @@ def collections_probe(
     console.print(json.dumps(result, indent=2))
 
 
+@collections.command("sweep")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.option("--metric", default="word_overlap", show_default=True, help="Metric family (token or embedding)")
+@click.option("--mode", type=click.Choice(["exhaustive", "high-recall", "fast"]), default="high-recall",
+              show_default=True, help="Recall dial")
+@click.option("--force-exhaustive", is_flag=True, help="Escape hatch: dense every pair regardless of size")
+@click.option("--embedding-label", default=None, help="Specific embedding layer label (embedding metrics)")
+@click.option("--dense-threshold", type=int, default=10_000, show_default=True,
+              help="Pair spaces at or below this stay exhaustive")
+@click.option("--no-resume", is_flag=True, help="Ignore any existing run journal and re-sweep from scratch")
+def collections_sweep(
+    workspace: Path, collection_id: str, metric: str, mode: str,
+    force_exhaustive: bool, embedding_label: str | None, dense_threshold: int, no_resume: bool,
+) -> None:
+    """Recall-dial sweep over member pairs (C6c): prune the O(N×M) space at --mode, report estimated
+    recall + pruned counts, and journal to a resumable sidecar. Prints staged progress; re-run to resume."""
+    from palimpsest.collections_ops import MetricCongruenceError
+    from palimpsest.collections_sweep import sweep_pairwise
+
+    def _progress(done: int, total: int, label: str) -> None:
+        console.print(f"  [{done}/{total}] {label}")
+
+    try:
+        result = sweep_pairwise(
+            workspace, collection_id, metric=metric, mode=mode,
+            force_exhaustive=force_exhaustive, embedding_label=embedding_label,
+            dense_threshold=dense_threshold, resume=not no_resume, progress_cb=_progress)
+    except MetricCongruenceError as exc:
+        console.print(f"[yellow]{exc}[/yellow]")
+        raise SystemExit(1)
+    except KeyError:
+        console.print(f"[red]Collection '{collection_id}' not found.[/red]")
+        raise SystemExit(1)
+    except (ValueError, FileNotFoundError) as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise SystemExit(1)
+    console.print(json.dumps(result, indent=2))
+
+
 @collections.command("corpus-repeats")
 @click.argument("workspace", type=click.Path(exists=True, path_type=Path))
 @click.argument("collection_id")
