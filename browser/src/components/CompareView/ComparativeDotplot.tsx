@@ -56,6 +56,19 @@ export default function ComparativeDotplot() {
     return { minScore: Math.min(...s), maxScore: Math.max(...s) };
   }, [records]);
 
+  // Honest metric/domain label. The cross-similarity manifest carries no metric field, so the
+  // served metric is inferred from the records' method: cosine lives in [-1,1] but interpolateColor
+  // clamps to [0,1] (negatives floor to the 0-end color — the sign is lost, so we say so); word
+  // overlap is natively [0,1]. Falls back to a generic label when no records pin down the metric.
+  const metricCaption = useMemo(() => {
+    const method = (records[0]?.method ?? '').toLowerCase();
+    if (method.includes('semantic') || method.includes('cosine'))
+      return 'cosine · negatives clamped to 0';
+    if (method.includes('word')) return 'word-overlap (Jaccard) · 0–1';
+    if (method.includes('alphabet') || method.includes('edit')) return 'alphabet similarity · 0–1';
+    return 'similarity · 0–1';
+  }, [records]);
+
   useEffect(() => {
     if (!matrix && queryId && targetId) {
       loadMatrix(queryId, targetId);
@@ -264,6 +277,19 @@ export default function ComparativeDotplot() {
         <span className="ml-auto text-[var(--color-text-muted)]">
           {n}×{m} · Wheel=zoom
         </span>
+      </div>
+      {/* Legend — color ramp + honest metric/domain caption + hidden-cell disclosure (#12b-d) */}
+      <div className="flex items-center gap-2 mb-1 text-[0.7em] text-[var(--color-text-muted)] shrink-0 flex-wrap">
+        <span>0</span>
+        <div className="h-3 rounded-sm overflow-hidden flex" style={{ width: 160 }}>
+          {Array.from({ length: 40 }, (_, i) => {
+            const [r, g, b] = interpolateColor(i / 39, PALETTES[palette]);
+            return <div key={i} className="flex-1" style={{ backgroundColor: `rgb(${r},${g},${b})` }} />;
+          })}
+        </div>
+        <span>1</span>
+        <span className="ml-1">{metricCaption}</span>
+        <span className="ml-2">cells &lt; 0.1 not drawn</span>
       </div>
       <div className="flex-1 flex items-center justify-center">
         <canvas
