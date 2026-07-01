@@ -285,6 +285,7 @@ export default function CorpusView() {
   const [repeats, setRepeats] = useState<CorpusRepeats | null>(null);
   const [rootTrack, setRootTrack] = useState<RootTrack | null>(null);
   const [loading, setLoading] = useState(false);
+  const [layersLoading, setLayersLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const loadProject = useProjectStore((s) => s.loadProject);
@@ -326,24 +327,30 @@ export default function CorpusView() {
     setLoading(true);
     setError(null);
     try {
-      const built = await fetch(`/api/collections/${id}/corpus-graph`, { method: 'POST' });
-      if (!built.ok) {
-        const j = await built.json().catch(() => ({}));
-        throw new Error(j.detail ?? 'Failed to build corpus graph');
+      // GET-first (#12j): the build is the costed operation, the read is free. Display a persisted
+      // graph without rebuilding; POST-build only when none exists yet (404). So auto-build-on-select
+      // fires exactly once for a fresh collection, and neither a tab revisit nor a re-root silently
+      // rebuilds an already-computed graph.
+      let gRes = await fetch(`/api/collections/${id}/corpus-graph`);
+      if (gRes.status === 404) {
+        const built = await fetch(`/api/collections/${id}/corpus-graph`, { method: 'POST' });
+        if (!built.ok) {
+          const j = await built.json().catch(() => ({}));
+          throw new Error(j.detail ?? 'Failed to build corpus graph');
+        }
+        gRes = await fetch(`/api/collections/${id}/corpus-graph`);
       }
-      const g: CorpusGraph = await fetch(`/api/collections/${id}/corpus-graph`).then((r) => r.json());
+      if (!gRes.ok) throw new Error('Failed to load corpus graph');
+      const g: CorpusGraph = await gRes.json();
       const t: PhyleticTree = await fetch(
         `/api/collections/${id}/phyletic-tree${root ? `?root=${encodeURIComponent(root)}` : ''}`,
       ).then((r) => r.json());
-      // C5 cross-text layers: corpus repeats (collection-wide) + conservation on the chosen root lens.
-      const cr: CorpusRepeats = await fetch(`/api/collections/${id}/corpus-repeats`).then((r) => r.json());
-      const rt: RootTrack = await fetch(
-        `/api/collections/${id}/root-track?root=${encodeURIComponent(t.root)}`,
-      ).then((r) => r.json());
+      // Only the graph + tree — the cheap primary overview — load on select. The C5 cross-text layers
+      // (corpus repeats, root conservation) are costed cross-member scans feeding the non-default
+      // Corpus/Masking sub-tabs; loading them here would re-introduce the #12j violation (a costed op
+      // auto-run on select). They load lazily when their sub-tab is opened (effects below).
       setGraph(g);
       setTree(t);
-      setRepeats(cr);
-      setRootTrack(rt);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
       setGraph(null);
@@ -358,6 +365,42 @@ export default function CorpusView() {
   useEffect(() => {
     if (collectionId) loadOverview(collectionId);
   }, [collectionId, loadOverview]);
+
+  // Clear the lazily-loaded C5 layers when the collection changes, so a new selection never shows the
+  // previous collection's repeats/conservation while its own scan is still pending.
+  useEffect(() => {
+    setRepeats(null);
+    setRootTrack(null);
+  }, [collectionId]);
+
+  // Lazy-load the costed corpus-repeats scan only when the Corpus sub-tab is opened. It is
+  // collection-scoped and root-independent, so it is fetched once per collection.
+  useEffect(() => {
+    if (subTab !== 'corpus' || !collectionId || !graph || repeats) return;
+    let cancelled = false;
+    setLayersLoading(true);
+    fetch(`/api/collections/${collectionId}/corpus-repeats`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('corpus-repeats'))))
+      .then((cr: CorpusRepeats) => { if (!cancelled) setRepeats(cr); })
+      .catch(() => { if (!cancelled) setError('Failed to load corpus repeats'); })
+      .finally(() => { if (!cancelled) setLayersLoading(false); });
+    return () => { cancelled = true; };
+  }, [subTab, collectionId, graph, repeats]);
+
+  // Lazy-load the root-conservation track when the Masking sub-tab is opened, re-fetching when the
+  // chosen root changes; gated on the loaded track's own root to avoid a refetch loop.
+  useEffect(() => {
+    if (subTab !== 'masking' || !collectionId || !tree || rootTrack?.root === tree.root) return;
+    const root = tree.root;
+    let cancelled = false;
+    setLayersLoading(true);
+    fetch(`/api/collections/${collectionId}/root-track?root=${encodeURIComponent(root)}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('root-track'))))
+      .then((rt: RootTrack) => { if (!cancelled) setRootTrack(rt); })
+      .catch(() => { if (!cancelled) setError('Failed to load conservation track'); })
+      .finally(() => { if (!cancelled) setLayersLoading(false); });
+    return () => { cancelled = true; };
+  }, [subTab, collectionId, tree, rootTrack]);
 
   const reRoot = useCallback((root: string) => {
     if (collectionId) loadOverview(collectionId, root);
@@ -476,22 +519,30 @@ export default function CorpusView() {
           </div>
         )}
 
-        {subTab === 'corpus' && graph && repeats && (
-          <div className="flex flex-col gap-6 max-w-[900px]">
-            <section>
-              <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Corpus repeats · phrases shared across members</h3>
-              <RepeatLanes repeats={repeats} onMember={openMember} />
-            </section>
-          </div>
+        {subTab === 'corpus' && graph && (
+          repeats ? (
+            <div className="flex flex-col gap-6 max-w-[900px]">
+              <section>
+                <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Corpus repeats · phrases shared across members</h3>
+                <RepeatLanes repeats={repeats} onMember={openMember} />
+              </section>
+            </div>
+          ) : (
+            layersLoading && <div className="text-[var(--color-text-muted)] text-[0.9em]">Scanning cross-member repeats…</div>
+          )
         )}
 
-        {subTab === 'masking' && graph && rootTrack && (
-          <div className="flex flex-col gap-6 max-w-[900px]">
-            <section>
-              <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Cross-text conservation · root lens</h3>
-              <ConservationLane track={rootTrack} />
-            </section>
-          </div>
+        {subTab === 'masking' && graph && (
+          rootTrack ? (
+            <div className="flex flex-col gap-6 max-w-[900px]">
+              <section>
+                <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Cross-text conservation · root lens</h3>
+                <ConservationLane track={rootTrack} />
+              </section>
+            </div>
+          ) : (
+            layersLoading && <div className="text-[var(--color-text-muted)] text-[0.9em]">Projecting conservation onto root lens…</div>
+          )
         )}
       </div>
 

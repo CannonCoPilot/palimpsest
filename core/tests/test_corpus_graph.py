@@ -302,6 +302,57 @@ def test_edge_min_identity_gates_union(tmp_path: Path) -> None:
     assert gated.summary["edge_min_identity"] == 0.5
 
 
+def test_edge_min_score_gates_union_where_identity_cannot(tmp_path: Path) -> None:
+    """The score gate separates *shared-source* from *shared-content* correspondences where identity
+    cannot. Both cross-member edges carry the SAME block identity — a synoptic-parallel fragment can be
+    locally as identical as a genuine translation match — but the whole-text correspondence scores far
+    higher because score is length/coverage-proportional. No ``edge_min_identity`` threshold keeps the
+    first and drops the second (they share identity); ``edge_min_score`` does."""
+    a = _member(tmp_path, "alpha", [
+        "A long collinear passage that aligns end to end like a faithful translation of one source.",
+        "Alpha gap padding present only in alpha here.",
+        "A brief shared phrase.",
+    ])
+    b = _member(tmp_path, "beta", [
+        "A long collinear passage that aligns end to end like a faithful translation of one source.",
+        "Beta gap padding present only in beta here.",
+        "A brief shared phrase.",
+    ])
+    # Same identity on both records; only the score differs — a long collinear correspondence (high
+    # score) vs a short shared fragment (low score). Identity alone cannot tell them apart.
+    d = comparison_dir(tmp_path, a, b)
+    d.mkdir(parents=True, exist_ok=True)
+    write_alignment_records(d / "alignment.jsonl", [
+        AlignmentRecord(query_id=a, query_start=0, query_end=1, target_id=b,
+                        target_start=0, target_end=1, score=40.0, identity=0.85),
+        AlignmentRecord(query_id=a, query_start=2, query_end=3, target_id=b,
+                        target_start=2, target_end=3, score=8.0, identity=0.85),
+    ])
+    (d / "metadata.json").write_text(json.dumps({"query_id": a, "target_id": b}), encoding="utf-8")
+    cid = cs.create_collection(tmp_path, "Pair", "two-text", [a, b])["id"]
+
+    # Default (no gate): both edges union → both shared passages become 2-member core components.
+    loose = cg.build_corpus_graph(tmp_path, cid)
+    assert all(not e["weak"] for e in loose.edges)
+    assert sum(1 for c in loose.components if c.classification == "core") == 2
+
+    # Identity gate is powerless here: identical identities mean every threshold treats both edges
+    # alike. Below 0.85 both union (2 core); above 0.85 neither unions (0 core). It never yields 1.
+    assert sum(1 for c in cg.build_corpus_graph(tmp_path, cid, edge_min_identity=0.5).components
+               if c.classification == "core") == 2
+    assert sum(1 for c in cg.build_corpus_graph(tmp_path, cid, edge_min_identity=0.9).components
+               if c.classification == "core") == 0
+
+    # Score gate separates them: the long correspondence unions, the short fragment is recorded-weak.
+    gated = cg.build_corpus_graph(tmp_path, cid, edge_min_score=20.0)
+    weak = [e for e in gated.edges if e["weak"]]
+    strong = [e for e in gated.edges if not e["weak"]]
+    assert len(weak) == 1 and weak[0]["score"] == 8.0
+    assert len(strong) == 1 and strong[0]["score"] == 40.0
+    assert sum(1 for c in gated.components if c.classification == "core") == 1
+    assert gated.summary["edge_min_score"] == 20.0
+
+
 def test_suggested_root_excludes_singletons(tmp_path: Path) -> None:
     """The suggested root counts only SHARED (multi-member) components: a fragmented member whose many
     unique gaps inflate its total participation must not out-rank the true shared backbone."""

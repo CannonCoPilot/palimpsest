@@ -2392,7 +2392,8 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
     @app.post("/api/collections/{collection_id}/corpus-graph")
     async def build_collection_corpus_graph(
-        collection_id: str, anchor_trim: float = 0.0, edge_min_identity: float = 0.0
+        collection_id: str, anchor_trim: float = 0.0, edge_min_identity: float = 0.0,
+        edge_min_score: float = 0.0,
     ) -> JSONResponse:
         """Assemble + persist the reference-free corpus graph (C3, FR-31) from the collection's
         computed pairwise edges. Returns the pangenome summary (core/shell/singleton counts plus the
@@ -2411,6 +2412,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             graph = build_corpus_graph(
                 workspace, collection_id,
                 anchor_trim=anchor_trim, edge_min_identity=edge_min_identity,
+                edge_min_score=edge_min_score,
             )
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))

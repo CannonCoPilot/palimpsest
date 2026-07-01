@@ -203,7 +203,7 @@ def _reference_sha(workspace: Path, member: str) -> str | None:
 
 def build_corpus_graph(
     workspace: Path, collection_id: str, *, anchor_trim: float = 0.0,
-    edge_min_identity: float = 0.0,
+    edge_min_identity: float = 0.0, edge_min_score: float = 0.0,
 ) -> CorpusGraph:
     """Assemble the reference-free corpus graph for a collection from its computed pairwise edges.
 
@@ -220,7 +220,18 @@ def build_corpus_graph(
     similarity, ``AlignmentRecord.identity``) is below this threshold is still recorded as an edge but
     flagged ``weak`` and does NOT union its endpoints — so a weak cross-member correspondence cannot
     fuse two otherwise-disjoint passages into one homology component. ``0.0`` (default) unions every
-    edge (prior behavior). Reported under ``summary.edge_min_identity``."""
+    edge (prior behavior). Reported under ``summary.edge_min_identity``.
+
+    ``edge_min_score``: the same weak-flagging gate keyed on ``AlignmentRecord.score`` instead of
+    identity. Score is length/coverage-proportional (a long collinear alignment accumulates; a short
+    fragment does not), so it separates *shared-source* correspondences (whole-text alignable —
+    translations of one work) from *shared-content* ones (a handful of synteny blocks — e.g. synoptic
+    parallels between distinct source texts) where per-block identity alone cannot: synoptic blocks
+    reach the same identity as genuine translation matches but score far lower. An edge below this
+    score is recorded but ``weak`` and does not union. ``0.0`` (default) applies no score gate. NOTE:
+    raw score is not comparable across pairs of very different sizes; choose the threshold relative to
+    a collection's score distribution (a coverage-normalized gate is the scale-free generalization).
+    Reported under ``summary.edge_min_score``."""
     collection = get_collection(workspace, collection_id)
     if collection is None:
         raise ValueError(f"Collection not found: {collection_id}")
@@ -300,7 +311,7 @@ def build_corpus_graph(
         na, nb = _anchor_of(q_id, q_iv), _anchor_of(t_id, t_iv)
         if na is None or nb is None:
             continue
-        weak = identity < edge_min_identity
+        weak = identity < edge_min_identity or score < edge_min_score
         if not weak:  # weak edges are recorded but never fuse homology components
             uf.union(na, nb)
         edges.append({"a": na, "b": nb, "comparison": comp_name,
@@ -351,6 +362,7 @@ def build_corpus_graph(
         "pairs_missing": pairs_missing,
         "anchor_trim": anchor_trim,
         "edge_min_identity": edge_min_identity,
+        "edge_min_score": edge_min_score,
     }
     provenance = {
         "member_sha256": {m: _reference_sha(workspace, m) for m in members},
