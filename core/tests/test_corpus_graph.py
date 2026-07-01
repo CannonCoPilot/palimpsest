@@ -591,6 +591,45 @@ def test_corpus_analyses_report(corpus: tuple[Path, str]) -> None:
     assert rep["diffusion"]["core_fraction"] == 0.2
 
 
+def test_diffusion_histogram_matches_graph_classification(corpus: tuple[Path, str]) -> None:
+    """Regression (audit finding): the /corpus-graph classification and the /corpus-analyses diffusion
+    histogram must agree on the SAME graph. A low-N shell (e.g. 2/6 members) was double-counted as a
+    singleton when the histogram binned by spread fraction rather than member count; this pins the two
+    endpoints together so they can't drift apart again."""
+    workspace, cid = corpus
+    graph = cg.build_corpus_graph(workspace, cid)
+    hist = cg.corpus_analyses(workspace, graph, duplicate_threshold=0.6)[
+        "diffusion"]["component_spread_histogram"]
+    assert hist["singleton"] == graph.summary["singleton"]
+    assert hist["core"] == graph.summary["core"]
+    assert hist["narrow"] + hist["broad"] == graph.summary["shell"]
+    assert sum(hist.values()) == graph.summary["n_components"]  # every component counted exactly once
+
+
+def test_near_duplicate_pair_is_globally_closest(corpus: tuple[Path, str]) -> None:
+    """Regression (audit finding): near-duplicate clustering and the phyletic tree must be derived from
+    ONE consistent, symmetric distance — the clustered pair must also be the globally closest pair, and
+    the distance must be order-independent. Guards single-linkage + pangenome distance against a
+    symmetry/consistency regression. (The real-data over-merge that can bury a near-identical pair
+    inside a shell is a separate, deferred methodology question; this guards the plumbing on a clean
+    graph where alpha & beta genuinely share the most homology.)"""
+    workspace, cid = corpus
+    graph = cg.build_corpus_graph(workspace, cid)
+    rep = cg.corpus_analyses(workspace, graph, duplicate_threshold=0.6)
+    assert {"alpha", "beta"} in [set(c["members"]) for c in rep["near_duplicate_clusters"]]
+
+    members = graph.members
+    n = len(members)
+    idx = {m: i for i, m in enumerate(members)}
+    comp_sets = [{idx[m] for m in comp.members} for comp in graph.components]
+    D = cg.phylo_distance_rows(n, comp_sets)
+    assert all(D[i][j] == D[j][i] for i in range(n) for j in range(n))  # symmetric
+    ab = D[idx["alpha"]][idx["beta"]]
+    others = [D[i][j] for i in range(n) for j in range(i + 1, n)
+              if {members[i], members[j]} != {"alpha", "beta"}]
+    assert all(ab <= o for o in others)  # the near-dup pair is a global minimum (ties allowed)
+
+
 def test_http_and_cli_corpus_analyses(corpus: tuple[Path, str]) -> None:
     from click.testing import CliRunner
 
