@@ -5,6 +5,7 @@ from types import SimpleNamespace
 
 import pytest
 
+import palimpsest.project as pj
 from palimpsest.project import Project, _make_slug, _relocate_sections, ingest_file
 
 
@@ -183,6 +184,42 @@ class TestIngestFile:
         for start, end, text in paras:
             assert start < end
             assert len(text) > 0
+
+
+class TestLoadSpacyModel:
+    """A missing spaCy model must fall back *loudly* (RuntimeWarning), never silently —
+    a quiet model swap changes entity/syntax analysis with no trace (finding 305)."""
+
+    @pytest.fixture(autouse=True)
+    def _clean_model_cache(self):
+        # _NLP_MODEL_CACHE is process-wide; clear before and after so a stub model
+        # loaded here can't leak into other tests (or vice versa).
+        pj._NLP_MODEL_CACHE.clear()
+        yield
+        pj._NLP_MODEL_CACHE.clear()
+
+    def test_missing_model_warns_and_falls_back(self, monkeypatch):
+        sentinel = object()
+
+        def fake_load(name, *args, **kwargs):
+            if name == pj._SPACY_FALLBACK:
+                return sentinel
+            raise OSError(f"[E050] Can't find model '{name}'")
+
+        monkeypatch.setattr("spacy.load", fake_load)
+        with pytest.warns(RuntimeWarning, match="falling back"):
+            nlp = pj._load_spacy_model("en_core_web_lg")
+        assert nlp is sentinel
+
+    def test_missing_fallback_reraises(self, monkeypatch):
+        # If the fallback itself is unavailable, a retry can't help — let spaCy's
+        # own OSError (carrying its install hint) propagate instead of masking it.
+        def fake_load(name, *args, **kwargs):
+            raise OSError(f"[E050] Can't find model '{name}'")
+
+        monkeypatch.setattr("spacy.load", fake_load)
+        with pytest.raises(OSError):
+            pj._load_spacy_model(pj._SPACY_FALLBACK)
 
 
 class TestProjectLoad:

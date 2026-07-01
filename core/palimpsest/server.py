@@ -2985,12 +2985,33 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         bin_path = comp_dir / "cross_similarity.bin"
         if not bin_path.exists():
             raise HTTPException(status_code=404, detail="No cross-similarity binary found")
-        return FileResponse(bin_path, media_type="application/octet-stream")
+        # Self-describing headers (mirror the embedding heatmap.bin) so a client can decode the
+        # little-endian Float32 [rows x cols] C-order buffer without a second /matrix JSON fetch.
+        headers = {"X-Matrix-Dtype": "float32-le"}
+        manifest_path = comp_dir / "cross_similarity.json"
+        if manifest_path.exists():
+            try:
+                dims = json.loads(manifest_path.read_text(encoding="utf-8")).get("dimensions")
+            except json.JSONDecodeError:
+                dims = None
+            if isinstance(dims, list) and len(dims) == 2:
+                headers["X-Matrix-Rows"] = str(dims[0])
+                headers["X-Matrix-Cols"] = str(dims[1])
+        return FileResponse(bin_path, media_type="application/octet-stream", headers=headers)
 
     @app.get("/api/comparisons")
-    async def list_comparisons() -> JSONResponse:
+    async def list_comparisons(collection_id: str | None = Query(None)) -> JSONResponse:
         """Discover computed pairwise comparisons under ``.comparisons/`` — the index the frontend
-        needs to surface prior cross-text results (none existed before)."""
+        needs to surface prior cross-text results (none existed before). ``?collection_id=`` scopes
+        the list to one collection: only comparisons whose *both* endpoints are members are returned,
+        so a collection view isn't polluted by unrelated cross-text results elsewhere in the workspace."""
+        members: set[str] | None = None
+        if collection_id is not None:
+            from palimpsest.collections import get_collection
+            col = get_collection(workspace, collection_id)
+            if col is None:
+                raise HTTPException(status_code=404, detail="Collection not found")
+            members = set(col.get("project_ids", []))
         comps_dir = workspace / ".comparisons"
         out: list[dict] = []
         if comps_dir.is_dir():
@@ -3004,6 +3025,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                         entry.update(json.loads(meta_path.read_text(encoding="utf-8")))
                     except json.JSONDecodeError:
                         pass
+                if members is not None:
+                    # Both endpoints must be members; skip any comparison whose metadata can't
+                    # prove membership rather than leaking it into a scoped collection view.
+                    if entry.get("query_id") not in members or entry.get("target_id") not in members:
+                        continue
                 entry["has_matrix"] = (d / "cross_similarity.bin").exists()
                 entry["has_records"] = (d / "alignment.jsonl").exists()
                 out.append(entry)

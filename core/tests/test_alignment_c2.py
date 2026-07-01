@@ -126,6 +126,44 @@ def test_list_comparisons(tmp_path: Path) -> None:
     assert comps[0]["query_id"] == "a" and comps[0]["record_count"] == 3
 
 
+def test_list_comparisons_scoped_to_collection(tmp_path: Path) -> None:
+    """``?collection_id=`` returns only comparisons whose *both* endpoints are members, so a scoped
+    collection view isn't polluted by unrelated cross-text results elsewhere in the workspace."""
+    from palimpsest.collections import create_collection
+
+    _make_comparison(tmp_path, "a", "b")  # both will be members
+    _make_comparison(tmp_path, "a", "c")  # c is NOT a member
+    client = _client(tmp_path)
+
+    assert len(client.get("/api/comparisons").json()) == 2  # unfiltered = workspace-global
+
+    cid = create_collection(tmp_path, "Pair", "", ["a", "b"], kind="manual")["id"]
+    scoped = client.get(f"/api/comparisons?collection_id={cid}").json()
+    assert [c["id"] for c in scoped] == ["a_vs_b"]  # a_vs_c dropped (c not a member)
+
+    # Unknown collection → 404 (honest), not a silently-empty list.
+    assert client.get("/api/comparisons?collection_id=ghost").status_code == 404
+
+
+def test_matrix_bin_has_self_describing_headers(tmp_path: Path) -> None:
+    """matrix.bin carries X-Matrix-Rows/Cols/Dtype (parity with the embedding heatmap.bin) so a client
+    decodes the flat little-endian Float32 [rows x cols] buffer without a second /matrix JSON fetch."""
+    import numpy as np
+
+    comp = _make_comparison(tmp_path)  # a_vs_b
+    matrix = np.arange(6, dtype=np.float32).reshape(2, 3)
+    (comp / "cross_similarity.bin").write_bytes(matrix.tobytes())
+    (comp / "cross_similarity.json").write_text(json.dumps({"dimensions": [2, 3]}))
+
+    resp = _client(tmp_path).get("/api/alignment/a/b/matrix.bin")
+    assert resp.status_code == 200
+    assert resp.headers["X-Matrix-Rows"] == "2"
+    assert resp.headers["X-Matrix-Cols"] == "3"
+    assert resp.headers["X-Matrix-Dtype"] == "float32-le"
+    got = np.frombuffer(resp.content, dtype="<f4").reshape(2, 3)
+    assert np.array_equal(got, matrix)
+
+
 def test_cli_align_paf(tmp_path: Path) -> None:
     from click.testing import CliRunner
 
