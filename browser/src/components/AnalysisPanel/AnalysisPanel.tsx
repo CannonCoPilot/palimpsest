@@ -6,6 +6,7 @@ import { LayerWorkbench } from './layers/LayerWorkbench';
 import { ProfileDashboard } from './layers/ProfileDashboard';
 import { EmbeddingScatter } from './layers/EmbeddingScatter';
 import { IntegrityBadge } from './layers/IntegrityBadge';
+import { EVIDENCE_DESCRIPTIONS } from '../../utils/evidenceLevels';
 
 /**
  * Build the fetch init for an analyze run from the on-demand masking overlay. When the
@@ -984,7 +985,7 @@ export default function AnalysisPanel() {
                           <span className="text-[var(--color-text-muted)] font-semibold">Output type</span>
                           <span>{track.outputType === 'annotation' ? 'JSONL annotations (W3C Web Annotation)' : 'Binary signal matrix + JSON manifest'}</span>
                           <span className="text-[var(--color-text-muted)] font-semibold">Evidence level</span>
-                          <span>{track.evidenceLevel} — {track.evidenceLevel === 'E5' ? 'Deterministic algorithm' : track.evidenceLevel === 'E4' ? 'Statistical/ML model' : 'Other'}</span>
+                          <span>{track.evidenceLevel} — {EVIDENCE_DESCRIPTIONS[track.evidenceLevel] ?? 'Other'}</span>
                           {trackStats[track.name] && (
                             <>
                               <span className="text-[var(--color-text-muted)] font-semibold">Annotations</span>

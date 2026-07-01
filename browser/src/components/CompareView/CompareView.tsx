@@ -128,7 +128,7 @@ export default function CompareView() {
     if (activeProjectId && secondaryProjectId) {
       void loadAlignmentResults(activeProjectId, secondaryProjectId).then(() => {
         // Method-honesty (#12i): reflect the method that actually produced the on-disk records in the
-        // dropdown, so the selector never claims "Semantic (SBERT)" while a word-overlap alignment is
+        // dropdown, so the selector never claims "Semantic (embeddings)" while a word-overlap alignment is
         // on screen. Runs only on pair change (this effect's deps) — a manual dropdown change stands.
         const m = useComparisonStore.getState().alignmentRecords[0]?.method;
         if (m === 'semantic' || m === 'alphabet' || m === 'word') setActiveMethod(m);
@@ -178,7 +178,7 @@ export default function CompareView() {
                 onChange={(e) => setActiveMethod(e.target.value as typeof activeMethod)}
                 className="px-1.5 py-0.5 border border-[var(--color-border)] rounded bg-[var(--color-bg)] cursor-pointer text-[0.85em]"
               >
-                <option value="semantic">Semantic (SBERT)</option>
+                <option value="semantic">Semantic (embeddings)</option>
                 <option value="alphabet">Alphabet</option>
                 <option value="word">Word overlap</option>
               </select>

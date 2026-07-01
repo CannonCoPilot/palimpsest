@@ -8,6 +8,10 @@ import type { LayerStatus } from './types';
 
 const SIZE = 320;
 const PAD = 12;
+// Legend swatch for the point color scale — must track the hsl(0→270) ramp used per point below,
+// so the legend truthfully says what the colors encode (chunk sequence position).
+const SEQUENCE_GRADIENT =
+  'linear-gradient(to right, hsl(0,65%,50%), hsl(90,65%,50%), hsl(180,65%,50%), hsl(270,65%,50%))';
 
 export function EmbeddingScatter({ projectId, layer, size = SIZE }: {
   projectId: string; layer: LayerStatus; size?: number;
@@ -67,10 +71,30 @@ export function EmbeddingScatter({ projectId, layer, size = SIZE }: {
           projection load failed: {error}
         </div>
       ) : (
-        <canvas ref={canvasRef} width={size} height={size}
-          role="img" aria-label={`embedding ${layer.label} projection scatter, ${nPoints} points`}
-          className="border border-[var(--color-border)] rounded bg-white" />
+        <div className="flex items-stretch gap-1">
+          {/* Y axis = second principal component (decorative label; the canvas aria-label states it). */}
+          <div className="flex items-center text-[0.7em] text-[var(--color-text-muted)]" aria-hidden="true">
+            <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>PC2 →</span>
+          </div>
+          <div className="inline-flex flex-col gap-0.5">
+            <canvas ref={canvasRef} width={size} height={size}
+              role="img"
+              aria-label={`embedding ${layer.label} PCA projection scatter — x axis PC1, y axis PC2, ${nPoints} points colored by chunk order`}
+              className="border border-[var(--color-border)] rounded bg-white" />
+            {/* X axis = first principal component. */}
+            <div className="text-center text-[0.7em] text-[var(--color-text-muted)]" aria-hidden="true">
+              PC1 →
+            </div>
+          </div>
+        </div>
       )}
+      {/* Color legend: point hue encodes chunk sequence position (first → last). */}
+      <div className="flex items-center gap-1 text-[0.7em] text-[var(--color-text-muted)]">
+        <span>chunk order</span>
+        <span className="inline-block h-2 w-16 rounded border border-[var(--color-border)]"
+          style={{ background: SEQUENCE_GRADIENT }} aria-hidden="true" />
+        <span>first → last</span>
+      </div>
       <div className="text-[0.7em] text-[var(--color-text-muted)]">
         {points ? `${nPoints} chunks` : 'loading…'}
       </div>

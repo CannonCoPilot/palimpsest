@@ -4,6 +4,7 @@ import { useProjectStore, getActiveProject } from '../../stores/projectStore';
 import LLMSummary from './LLMSummary';
 import StateExplainer from './StateExplainer';
 import { Tooltip } from '../common/Tooltip';
+import { EVIDENCE_DESCRIPTIONS } from '../../utils/evidenceLevels';
 
 function ConfidenceBadge({ value }: { value: number }): React.JSX.Element {
   const pct = Math.round(value * 100);
@@ -19,15 +20,8 @@ function ConfidenceBadge({ value }: { value: number }): React.JSX.Element {
 }
 
 function EvidenceBadge({ level }: { level: string }): React.JSX.Element {
-  const descriptions: Record<string, string> = {
-    E1: 'Explicit in text',
-    E2: 'Human annotator',
-    E3: 'Cross-text homology',
-    E4: 'ML prediction',
-    E5: 'Rule-based/statistical',
-  };
   return (
-    <Tooltip content={descriptions[level] || level} side="bottom">
+    <Tooltip content={EVIDENCE_DESCRIPTIONS[level] || level} side="bottom">
       <span
         className="inline-block px-[6px] py-[2px] rounded-[3px] font-bold text-[0.85em] bg-[var(--color-primary-subtle)] text-[var(--color-primary-hover)]"
       >
