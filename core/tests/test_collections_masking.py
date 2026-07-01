@@ -101,11 +101,14 @@ def test_corpus_repeats_detects_cross_member_phrase(corpus: tuple[Path, str]) ->
     assert "eternal covenant endures forever" in joined
     assert "shared refrain" in joined  # present in alpha + beta only, still >= 2 members
 
-    paras = Project.load(workspace / "alpha").paragraphs()
+    alpha = Project.load(workspace / "alpha")
+    paras = alpha.paragraphs()
     alpha_iv = cr["intervals"]["alpha"]
     assert alpha_iv, "alpha must carry corpus-repeat intervals"
     # gamma lacks the refrain paragraph, so its intervals sit only in p0.
     assert all(_within(iv, paras, 0) or _within(iv, paras, 2) for iv in alpha_iv)
+    # per-member length lets a lane x-scale intervals against the true extent.
+    assert cr["lengths"]["alpha"] == len(alpha.reference_text())
 
 
 def test_corpus_repeats_min_members_gate(corpus: tuple[Path, str]) -> None:
@@ -209,7 +212,9 @@ def test_cross_text_track_conservation_on_root_lens(corpus: tuple[Path, str]) ->
     assert track["root"] == "alpha" and track["member_total"] == 3
     assert track["rendering"]["track_view"] == "root-conservation-lane"
 
-    paras = Project.load(workspace / "alpha").paragraphs()
+    alpha = Project.load(workspace / "alpha")
+    assert track["root_length"] == len(alpha.reference_text())
+    paras = alpha.paragraphs()
     by_class = {s["classification"]: s for s in track["segments"]}
     # core passage (p0) is shared by all three members → conservation 1.0, on alpha's p0 char span.
     assert by_class["core"]["conservation"] == 1.0
@@ -309,6 +314,12 @@ def test_http_c5_endpoints(corpus: tuple[Path, str]) -> None:
     # a missing pair 400s.
     assert client.post(f"/api/collections/{cid}/liftover", json={
         "source_id": "alpha", "target_id": "delta", "intervals": [[0, 5]]}).status_code == 400
+
+    # mask-effect demonstrates a cross-text mask changes a downstream alignment (done-criterion 2).
+    eff = client.get(f"/api/collections/{cid}/mask-effect?a=alpha&b=beta&metric=word_overlap")
+    assert eff.status_code == 200
+    body = eff.json()
+    assert body["mask_intervals"] > 0 and body["changed"] is True
 
 
 def test_cli_c5(corpus: tuple[Path, str]) -> None:

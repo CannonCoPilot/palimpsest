@@ -71,18 +71,22 @@ def _member_phrases(normalised: list[str], min_words: int, max_ngram: int) -> se
 def _phrase_intervals(text: str, phrases: set[str]) -> list[Span]:
     """Character intervals in ``text`` covered by any phrase in ``phrases`` (merged, disjoint).
 
-    Same occurrence→span mapping as ``tracks.repeats.detect_repeats``, reusing the shared tokeniser and
-    normaliser so the coordinates match the single-text path exactly."""
+    Reuses the shared tokeniser and normaliser so the coordinates match the single-text path exactly.
+    Scans the token stream once per distinct phrase length testing set membership — O(tokens × lengths)
+    rather than ``detect_repeats``'s per-phrase re-scan (O(phrases × tokens)); at corpus scale a member
+    can carry thousands of shared phrases, where the per-phrase form is intractable on a large text."""
     if not phrases:
         return []
     tokens = list(_WORD_RE.finditer(text))
     normalised = _normalise([t.group() for t in tokens])
+    lengths = sorted({len(p.split()) for p in phrases})
+    n = len(normalised)
     spans: list[Span] = []
-    for phrase in phrases:
-        ptoks = phrase.split()
-        plen = len(ptoks)
-        for start in range(len(normalised) - plen + 1):
-            if normalised[start:start + plen] == ptoks:
+    for start in range(n):
+        for plen in lengths:
+            if start + plen > n:
+                break
+            if " ".join(normalised[start:start + plen]) in phrases:
                 spans.append((tokens[start].start(), tokens[start + plen - 1].end()))
     return _merge_spans(spans)
 
@@ -139,6 +143,8 @@ def corpus_repeats(
         "phrases": sorted(corpus_phrases),
         "phrase_members": {p: phrase_members[p] for p in sorted(corpus_phrases)},
         "intervals": intervals,
+        # Per-member text length so a frontend lane can x-scale intervals against the true extent.
+        "lengths": {m: len(member_texts[m]) for m in members},
         "summary": {
             "phrase_count": len(corpus_phrases),
             "masked_chars": {m: sum(e - s for s, e in intervals[m]) for m in members},
@@ -276,11 +282,14 @@ def cross_text_track(
             "members": row["members"],
         })
     segments.sort(key=lambda s: (s["char_start"], s["char_end"]))
+    root_length = len(Project.load(workspace / root).reference_text())
     return {
         "collection_id": collection_id,
         "root": root,
         "kind": kind,
         "member_total": total,
+        # Root text length so the lane x-scales segments against the true root extent.
+        "root_length": root_length,
         "segment_offsets": [[s["char_start"], s["char_end"]] for s in segments],
         "values": [s["conservation"] for s in segments],
         "segments": segments,

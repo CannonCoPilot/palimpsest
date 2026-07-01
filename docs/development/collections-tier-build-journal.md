@@ -259,3 +259,102 @@ into a store — deferred as polish, not a done-criteria blocker.
 **Done-criteria (plan §C4):** collection-overview surface (block-map + all-pairs matrix + phyletic
 tree) ✓ · phyletic tree with root override re-projecting ✓ · three click-through zoom tiers ✓ ·
 frontend + Playwright green **in-browser** on a real ≥3-text collection ✓.
+
+## C5 — Cross-text masking, tracks & liftover (FR-29, FR-30, FR-42) — COMPLETE
+
+**Status:** backend committed local (`c9be1cc` C5a, `0286737` C5b, `72134fb` C5c, `f8d28d0` C5d);
+C5e frontend + in-browser proof this session. **Backend suite 891 green**, **frontend vitest 72 green**,
+`tsc -b && vite build` clean. **In-browser Playwright 3/3 green** on an isolated three-text collection
+(shared `:8080` untouched). Push HELD per standing discipline.
+
+### C5a — Liftover leaf ✅ (`c9be1cc`, FR-42)
+`core/palimpsest/alignment/liftover.py` (new) — `AlignmentMap`: paragraph-block character
+correspondence between two members, built from their `AlignmentRecord`s. `project_span` / `lift_intervals`
+project a source interval onto the target frame; intervals touching no aligned block are **dropped** and
+reported. 10 tests.
+
+> **FLAG (i) — purpose-built, NOT an `OffsetMap`.** The design doc said liftover "is itself an
+> OffsetMap". It isn't: `OffsetMap` (derive.py) models *single-text excision* (analyzable↔original within
+> one text); liftover models *cross-text correspondence* (member A char-frame ↔ member B char-frame). They
+> are different coordinate problems, so C5a is a distinct type. Rationale in the file docstring.
+
+> **FLAG (ii) — block-granular, honest.** Liftover maps at aligned-paragraph-**block** granularity — no
+> within-block interpolation. A 50-char source interval inside a 136-char aligned block lifts to the
+> whole 142-char target block, not a proportional 50-char sub-span. This refuses to smuggle a precision
+> the paragraph-level alignment never established. Verified live: `alpha[0,50] → beta[0,142]`.
+
+### C5b — Cross-text masking assembler ✅ (`0286737`, FR-29/30/42)
+`core/palimpsest/collections_masking.py` (new):
+- `corpus_repeats` — cross-member phrase tally (a phrase recurring once-per-member across ≥`min_members`
+  is caught here though no single text repeats it). Reuses Wave-0 `tracks.repeats` `_normalise` /
+  `_WORD_RE` / `STOPWORDS` / `_merge_spans` verbatim (no drift).
+- `low_correspondence_intervals` — per-member spans that aligned to nothing (the corpus graph's
+  singletons).
+- `cross_text_mask` — union of the two, original-coordinate intervals ready for `extra_masked`.
+- `masked_cross_similarity` — proves a mask *changes* a downstream alignment (the mask-effect signal).
+- `lift_intervals_across` + `persist_lifted_track` (append run version, FR-41) + `lifted_track_is_stale`.
+11 tests.
+
+### C5c — Cross-text conservation track ✅ (`72134fb`, FR-30)
+`cross_text_track` — corpus conservation on the **root lens** via `project_to_root`: root-frame
+`segment_offsets` + a per-segment `[0,1]` conservation scalar (member_count / member_total) +
+`rendering.track_view: "root-conservation-lane"`; `write_cross_text_track` →
+`workspace/collections/{id}/tracks/`. 3 tests.
+
+> **FLAG (iii) — collection-scoped, NOT injected into the root project's per-project registry.** The plan
+> said render "via the FR-13 lane loop". Instead the track is written under the *collection* directory and
+> the frontend renders the lane directly — injecting a cross-text artifact into a single project's track
+> registry would widen blast radius (shared persist/remap, per-project readers) for no gain. Deliberate
+> deviation.
+
+### C5d — HTTP + CLI surface ✅ (`f8d28d0`, FR-37)
+`server.py` +GET `corpus-repeats` / `low-correspondence` / `cross-text-mask/{member}` / `root-track` and
++POST `liftover` (with `persist` option); `LiftoverRequest` at **module scope** (the future-annotations
+FastAPI body-parsing gotcha). `cli.py` `collections` subgroup gains `corpus-repeats` / `cross-text-mask` /
+`root-track` / `liftover` for parity. 2 parity tests.
+
+### C5e — Frontend + in-browser proof ✅
+**Frontend (`browser/src/components/CorpusView/`):**
+- `corpusOverview.ts` — new pure transforms `repeatLanes()` / `conservationLane()` / `conservationColor()`
+  + `CorpusRepeats` / `RootTrack` types. Unit-testable, no React/fetch (leaf pattern).
+- `CorpusView.tsx` — `loadOverview` also GETs `corpus-repeats` + `root-track?root=<phyletic suggested
+  root>`; renders `<RepeatLanes>` (one red-band SVG per member, x-scaled by `lengths[m]`) and
+  `<ConservationLane>` (root-frame heat lane). `corpusOverview.test.ts` +4 (vitest 72 total).
+
+**Backend tweaks (mods to the already-committed C5 files):** `corpus_repeats` gains a `lengths` field and
+`cross_text_track` a `root_length` (frontend lane x-scaling); new GET `mask-effect?a=&b=&metric=` (proves
+done-crit 2 end-to-end: unmasked vs masked word-overlap matrix + `changed` bool). `_phrase_intervals`
+optimized to a single-pass O(tokens × phrase-lengths) set-membership scan.
+
+> **FLAG (iv) — corpus-repeat cost.** `_phrase_intervals` was O(phrases × tokens) — untenable on the
+> real 5.5 MB C4 member. Rewritten single-pass to O(tokens × phrase-lengths), behavior-identical
+> (16/16 masking unit tests unchanged). Still per-member linear; genuine corpus-scale
+> many-large-members is C6 recall-dial territory.
+
+**In-browser proof rig (isolated — Sir's shared `:8080` untouched):**
+`core/.venv/bin/palimpsest serve .scratch/c5-demo --port 8092` against a **fresh** workspace (not the
+shared `.scratch/demo`). Fixture **`c5-masking-proof`** via gitignored `.scratch/c5_setup.py`: three tiny
+synthetic members. `browser/e2e/corpus_masking_c5.spec.ts` (3 tests) drives all four done-criteria green.
+Rerun: `cd browser && PALIMPSEST_BASE_URL=http://localhost:8092 PALIMPSEST_API_URL=http://localhost:8092 npx playwright test corpus_masking_c5 --reporter=list`.
+
+**Fixture engineering (the non-obvious part).** A natural-English fixture over-merged the whole corpus
+into a single `core` component (uniform, meaningless conservation lane); a fully token-disjoint fixture
+produced **zero** alignment records. Both are consequences of the committed alignment pipeline, not C5:
+`word_overlap` is raw Jaccard on `.lower().split()` (no stopword stripping), and `smith_waterman` uses
+`min_length=2` with `score = sim*2 − 1` (identical paragraph +1, disjoint −1). So a homology block needs
+**≥2 consecutive identical paragraphs** to be reported, and **≥2 token-disjoint separator paragraphs** to
+cancel a block's +2 buffer and reset the SW diagonal (else the positive score bridges a lone unique
+paragraph and re-merges). The fixture is built to those constraints: SHARED (2 paras, all three) → core,
+REFRAIN (2 paras, alpha+beta) → shell, coined-disjoint runs → singletons. Result graph on `root=c5-alpha`:
+**core cons 1.0 / singleton cons 0.333 / shell cons 0.667** — real variation. (One caveat: SW's
+repeated-traceback also emits trailing-mismatch records, e.g. `q[0:3]` score 1.0, which absorb one
+adjacent unique paragraph into the core anchor — a committed-pipeline artifact; the lane still varies.)
+
+**Live-verified values:** corpus-repeats `phrase_count=60`, `lengths {alpha 317, beta 322, gamma 196}`;
+mask-effect `a=alpha,b=beta` → `changed=true`, matrix `[7,7]→[2,7]`; liftover core span `alpha[0,50] →
+beta[0,142]` (lands), singleton span `alpha[138,186] →` dropped.
+
+**Done-criteria (plan §C5):** (1) corpus-repeat layer renders on the overview ✓ · (2) cross-text mask
+changes a downstream alignment ✓ · (3) cross-text conservation track draws on the root lens ✓ · (4) mask
+lifted A→B lands at correct B-coords (block-granular) and drops unaligned spans ✓ · (5) suites green
+(backend 891, frontend 72) ✓.

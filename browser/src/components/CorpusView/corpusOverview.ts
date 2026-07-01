@@ -178,3 +178,87 @@ export function blockColor(componentId: string, classification: Classification):
   const light = classification === 'core' ? 45 : 62; // core darker/stronger than shell
   return `hsl(${h}, 65%, ${light}%)`;
 }
+
+// ── C5: cross-text masking (corpus repeats) + conservation track on the root lens ─────────────────
+
+export interface CorpusRepeats {
+  collection_id: string;
+  members: string[];
+  min_members: number;
+  phrases: string[];
+  phrase_members: Record<string, number>;
+  intervals: Record<string, number[][]>;
+  lengths: Record<string, number>;
+  summary: { phrase_count: number; masked_chars: Record<string, number> };
+}
+
+export interface RepeatBand {
+  start: number; // fraction [0,1] of the member's text
+  end: number;
+}
+
+export interface RepeatLane {
+  member: string;
+  bands: RepeatBand[];
+  maskedFraction: number; // fraction of the member covered by corpus repeats
+}
+
+/** Per-member corpus-repeat lanes: each member's repeat intervals x-scaled against its own text length
+ * (so lanes of unequal-length members stay comparable), plus its masked fraction for a density readout. */
+export function repeatLanes(cr: CorpusRepeats): RepeatLane[] {
+  return cr.members.map((member) => {
+    const len = cr.lengths[member] || 1;
+    const ivs = cr.intervals[member] ?? [];
+    const bands = ivs.map(([s, e]) => ({ start: s / len, end: e / len }));
+    const maskedChars = cr.summary?.masked_chars?.[member] ?? ivs.reduce((a, [s, e]) => a + (e - s), 0);
+    return { member, bands, maskedFraction: maskedChars / len };
+  });
+}
+
+export interface RootTrackSegment {
+  component: string;
+  classification: Classification;
+  char_start: number;
+  char_end: number;
+  conservation: number;
+  members: string[];
+}
+
+export interface RootTrack {
+  collection_id: string;
+  root: string;
+  kind: string;
+  member_total: number;
+  root_length: number;
+  segment_offsets: number[][];
+  values: number[];
+  segments: RootTrackSegment[];
+  rendering: { track_view: string; encoding: string; domain: number[] };
+}
+
+export interface ConservationSegment {
+  start: number; // fraction [0,1] of the root text
+  end: number;
+  value: number; // conservation in [0,1]
+  classification: Classification;
+  members: string[];
+}
+
+/** The cross-text conservation lane on the root frame: each in-root passage x-scaled against the root
+ * text length, carrying its conservation value so the lane can heat-shade it. */
+export function conservationLane(track: RootTrack): ConservationSegment[] {
+  const len = track.root_length || 1;
+  return track.segments.map((s) => ({
+    start: s.char_start / len,
+    end: s.char_end / len,
+    value: s.conservation,
+    classification: s.classification,
+    members: s.members,
+  }));
+}
+
+/** Blue heat for a conservation value in [0,1]: darker = more conserved across the corpus. */
+export function conservationColor(value: number): string {
+  const v = Math.max(0, Math.min(1, value));
+  return `hsl(210, 80%, ${88 - v * 50}%)`;
+}

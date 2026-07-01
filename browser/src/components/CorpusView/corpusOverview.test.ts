@@ -4,8 +4,13 @@ import {
   sharedComponentMatrix,
   layoutTree,
   blockColor,
+  repeatLanes,
+  conservationLane,
+  conservationColor,
   type CorpusGraph,
   type TreeNode,
+  type CorpusRepeats,
+  type RootTrack,
 } from './corpusOverview';
 
 // alpha:[0]core [1]singleton [2]shell   beta:[0]core [1]singleton [2]shell   gamma:[0]core [1]singleton
@@ -94,5 +99,69 @@ describe('blockColor', () => {
     expect(blockColor('c2', 'singleton')).toContain('muted');
     expect(blockColor('c0', 'core')).toMatch(/^hsl\(/);
     expect(blockColor('c0', 'core')).toBe(blockColor('c0', 'core')); // deterministic
+  });
+});
+
+describe('repeatLanes', () => {
+  const CR: CorpusRepeats = {
+    collection_id: 'corpus',
+    members: ['alpha', 'beta'],
+    min_members: 2,
+    phrases: ['eternal covenant endures'],
+    phrase_members: { 'eternal covenant endures': 2 },
+    intervals: { alpha: [[0, 25], [50, 75]], beta: [[10, 30]] },
+    lengths: { alpha: 100, beta: 40 },
+    summary: { phrase_count: 1, masked_chars: { alpha: 50, beta: 20 } },
+  };
+
+  it('x-scales each member’s intervals against its own text length', () => {
+    const lanes = repeatLanes(CR);
+    expect(lanes.map((l) => l.member)).toEqual(['alpha', 'beta']);
+    // alpha: [0,25]/100 and [50,75]/100 → bands at fractions.
+    expect(lanes[0].bands).toEqual([{ start: 0, end: 0.25 }, { start: 0.5, end: 0.75 }]);
+    expect(lanes[0].maskedFraction).toBeCloseTo(0.5);
+    // beta uses beta's own length (40), not alpha's.
+    expect(lanes[1].bands).toEqual([{ start: 0.25, end: 0.75 }]);
+    expect(lanes[1].maskedFraction).toBeCloseTo(0.5);
+  });
+
+  it('handles a member with no repeats', () => {
+    const lanes = repeatLanes({
+      ...CR,
+      intervals: { alpha: [], beta: [] },
+      summary: { phrase_count: 0, masked_chars: { alpha: 0, beta: 0 } },
+    });
+    expect(lanes[0].bands).toEqual([]);
+    expect(lanes[0].maskedFraction).toBe(0);
+  });
+});
+
+describe('conservationLane', () => {
+  const TRACK: RootTrack = {
+    collection_id: 'corpus',
+    root: 'alpha',
+    kind: 'conservation',
+    member_total: 3,
+    root_length: 200,
+    segment_offsets: [[0, 50], [50, 100]],
+    values: [1, 2 / 3],
+    segments: [
+      { component: 'c0', classification: 'core', char_start: 0, char_end: 50, conservation: 1, members: ['alpha', 'beta', 'gamma'] },
+      { component: 'c1', classification: 'shell', char_start: 50, char_end: 100, conservation: 2 / 3, members: ['alpha', 'beta'] },
+    ],
+    rendering: { track_view: 'root-conservation-lane', encoding: 'heat', domain: [0, 1] },
+  };
+
+  it('x-scales segments against the root length and carries conservation values', () => {
+    const segs = conservationLane(TRACK);
+    expect(segs[0]).toMatchObject({ start: 0, end: 0.25, value: 1, classification: 'core' });
+    expect(segs[1]).toMatchObject({ start: 0.25, end: 0.5, classification: 'shell' });
+    expect(segs[1].value).toBeCloseTo(2 / 3);
+  });
+
+  it('darkens with conservation (more-shared passages render stronger)', () => {
+    // higher value → lower lightness in the hsl string.
+    const light = (c: string) => Number(c.match(/(\d+(?:\.\d+)?)%\)$/)![1]);
+    expect(light(conservationColor(1))).toBeLessThan(light(conservationColor(0)));
   });
 });

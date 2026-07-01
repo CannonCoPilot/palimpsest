@@ -2509,6 +2509,35 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             )
         return JSONResponse(content=result)
 
+    @app.get("/api/collections/{collection_id}/mask-effect")
+    async def collection_mask_effect(
+        collection_id: str, a: str, b: str, metric: str = "word_overlap"
+    ) -> JSONResponse:
+        """Demonstrate that a cross-text mask *changes* a downstream alignment (FR-29): the word-overlap
+        matrix of (a, b) unmasked vs with a's cross-text mask excised. ``changed`` is the done-criterion
+        signal — masking a member alters its paragraph token-sets, so the matrix must differ."""
+        import numpy as np
+
+        from palimpsest.collections_masking import cross_text_mask, masked_cross_similarity
+        from palimpsest.project import Project
+
+        pa = Project.load(_safe_project_dir(workspace, a))
+        pb = Project.load(_safe_project_dir(workspace, b))
+        try:
+            mask_a = [(s, e) for s, e in cross_text_mask(workspace, collection_id, a)["intervals"]]
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        unmasked = masked_cross_similarity(pa, pb, metric=metric)
+        masked = masked_cross_similarity(pa, pb, mask_a=mask_a, metric=metric)
+        changed = unmasked.shape != masked.shape or not np.array_equal(unmasked, masked)
+        return JSONResponse(content={
+            "collection_id": collection_id, "a": a, "b": b, "metric": metric,
+            "mask_intervals": len(mask_a),
+            "unmasked_shape": list(unmasked.shape),
+            "masked_shape": list(masked.shape),
+            "changed": bool(changed),
+        })
+
     # ── Alignment API ──
 
     _alignment_jobs: dict[str, dict] = {}

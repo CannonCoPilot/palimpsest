@@ -17,8 +17,13 @@ import {
   sharedComponentMatrix,
   layoutTree,
   blockColor,
+  repeatLanes,
+  conservationLane,
+  conservationColor,
   type CorpusGraph,
   type PhyleticTree,
+  type CorpusRepeats,
+  type RootTrack,
 } from './corpusOverview';
 
 interface CollectionOption {
@@ -177,11 +182,81 @@ function PhyleticTreeView({ tree, onRoot, onMember }: {
   );
 }
 
+function RepeatLanes({ repeats, onMember }: { repeats: CorpusRepeats; onMember: (m: string) => void }) {
+  const lanes = repeatLanes(repeats);
+  const W = 460;
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="text-[0.78em] text-[var(--color-text-muted)]">
+        {repeats.summary.phrase_count} phrase{repeats.summary.phrase_count !== 1 ? 's' : ''} recurring across ≥{repeats.min_members} members
+      </div>
+      <div className="flex flex-col gap-1.5">
+        {lanes.map((lane) => (
+          <div key={lane.member} className="flex items-center gap-2">
+            <button
+              onClick={() => onMember(lane.member)}
+              title={`Open ${lane.member} in the single-text browser`}
+              className="w-28 shrink-0 truncate text-right text-[0.78em] text-[var(--color-primary)] hover:underline cursor-pointer"
+            >
+              {lane.member}
+            </button>
+            <svg width={W} height={12} role="img" aria-label={`${lane.member} corpus repeats`}>
+              <rect x={0} y={0} width={W} height={12} fill="var(--color-bg-muted, #f3f4f6)" />
+              {lane.bands.map((b, i) => (
+                <rect
+                  key={i}
+                  x={b.start * W}
+                  y={0}
+                  width={Math.max(1, (b.end - b.start) * W)}
+                  height={12}
+                  fill="var(--color-danger, #ef4444)"
+                >
+                  <title>{`corpus repeat · ${(b.start * 100).toFixed(0)}–${(b.end * 100).toFixed(0)}%`}</title>
+                </rect>
+              ))}
+            </svg>
+            <span className="text-[0.7em] text-[var(--color-text-muted)] w-10 shrink-0">{(lane.maskedFraction * 100).toFixed(1)}%</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ConservationLane({ track }: { track: RootTrack }) {
+  const segments = conservationLane(track);
+  const W = 460;
+  return (
+    <div className="flex flex-col gap-1.5">
+      <div className="text-[0.78em] text-[var(--color-text-muted)]">
+        Corpus conservation on the <span className="font-medium text-[var(--color-primary)]">{track.root}</span> lens (darker = shared by more of {track.member_total} members)
+      </div>
+      <svg width={W} height={16} role="img" aria-label={`conservation on ${track.root}`}>
+        <rect x={0} y={0} width={W} height={16} fill="var(--color-bg-muted, #f3f4f6)" />
+        {segments.map((s, i) => (
+          <rect
+            key={i}
+            x={s.start * W}
+            y={0}
+            width={Math.max(1, (s.end - s.start) * W)}
+            height={16}
+            fill={conservationColor(s.value)}
+          >
+            <title>{`${s.classification} · conserved in ${s.members.length}/${track.member_total} (${(s.value * 100).toFixed(0)}%)`}</title>
+          </rect>
+        ))}
+      </svg>
+    </div>
+  );
+}
+
 export default function CorpusView() {
   const [collections, setCollections] = useState<CollectionOption[]>([]);
   const [collectionId, setCollectionId] = useState<string>('');
   const [graph, setGraph] = useState<CorpusGraph | null>(null);
   const [tree, setTree] = useState<PhyleticTree | null>(null);
+  const [repeats, setRepeats] = useState<CorpusRepeats | null>(null);
+  const [rootTrack, setRootTrack] = useState<RootTrack | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -217,12 +292,21 @@ export default function CorpusView() {
       const t: PhyleticTree = await fetch(
         `/api/collections/${id}/phyletic-tree${root ? `?root=${encodeURIComponent(root)}` : ''}`,
       ).then((r) => r.json());
+      // C5 cross-text layers: corpus repeats (collection-wide) + conservation on the chosen root lens.
+      const cr: CorpusRepeats = await fetch(`/api/collections/${id}/corpus-repeats`).then((r) => r.json());
+      const rt: RootTrack = await fetch(
+        `/api/collections/${id}/root-track?root=${encodeURIComponent(t.root)}`,
+      ).then((r) => r.json());
       setGraph(g);
       setTree(t);
+      setRepeats(cr);
+      setRootTrack(rt);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
       setGraph(null);
       setTree(null);
+      setRepeats(null);
+      setRootTrack(null);
     } finally {
       setLoading(false);
     }
@@ -291,6 +375,18 @@ export default function CorpusView() {
               <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Block map · homology components across members</h3>
               <BlockMap graph={graph} onMember={openMember} />
             </section>
+            {repeats && (
+              <section>
+                <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Corpus repeats · phrases shared across members</h3>
+                <RepeatLanes repeats={repeats} onMember={openMember} />
+              </section>
+            )}
+            {rootTrack && (
+              <section>
+                <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">Cross-text conservation · root lens</h3>
+                <ConservationLane track={rootTrack} />
+              </section>
+            )}
             <div className="flex flex-wrap gap-10">
               <section>
                 <h3 className="text-[0.8em] font-semibold uppercase tracking-wide text-[var(--color-text-muted)] mb-2">All-pairs shared components</h3>
