@@ -1,6 +1,6 @@
 # Wave 0 Analysis Suite — Development Plan
 
-**Status:** Draft for human review
+**Status:** As-built — Wave-0 phases P1–P9 shipped (2026-06; see git history and the [collections-tier build journal](../collections-tier-build-journal.md) for the cross-text continuation)
 **Date:** 2026-06-24
 **Companion:** [wave0-analysis-suite-vision.md](./wave0-analysis-suite-vision.md) (the vision & requirements this plan implements)
 **Builds on:** [analysis-design-principles.md](./analysis-design-principles.md) (P1–P5 + acceptable-default rule), [analysis-paradigm-audit-2026-06.md](../audits/analysis-paradigm-audit-2026-06.md) (G1–G5), and the substrate contract-lock walk (masking / segmentation / verse-element / OffsetMap / analyzable-bridge).
@@ -79,10 +79,10 @@ cd /Users/nathanielcannon/Claude/Projects/palimpsest \
 - CLI parity test: a chunking/derive run via `cli.py` produces the same masked, original-coordinate output as the HTTP path on the same project.
 
 ### Done criteria
-- [ ] `_validate_chunks` enforces the contract at `chunk_text`'s output; all five modes pass on real fixtures.
-- [ ] CLI `analyze` produces masked, remapped coordinates identical to HTTP for a shared project.
-- [ ] New tests green; full suite still 636/636 (+ new) GREEN.
-- [ ] One commit, behavior byte-identical for valid inputs.
+- [x] `_validate_chunks` enforces the contract at `chunk_text`'s output; all five modes pass on real fixtures.
+- [x] CLI `analyze` produces masked, remapped coordinates identical to HTTP for a shared project.
+- [x] New tests green; full suite still 636/636 (+ new) GREEN.
+- [x] One commit, behavior byte-identical for valid inputs.
 
 ### Risks & mitigations
 - *`smart` mode may legitimately not perfectly partition* (it grows over heterogeneous units). **Resolved:** the contract is disjoint, not a partition, so `smart`'s whitespace micro-gaps validate as-is without special-casing — confirmed byte-identical on the gold DR fixture and every other real fixture.
@@ -153,11 +153,11 @@ Needs nothing. Unblocks nothing structurally, but **must precede P2** so the chu
 - Producibility/status (FR-4): a layer is produced via the run flow with params and then appears in `/analysis/status` with its label/capability/stats. The repeat-mask extraction is covered by `self_similarity`'s existing suite staying byte-identical against the relocated helpers.
 
 ### Done criteria
-- [ ] Both layer-tracks auto-discovered, runnable via HTTP + CLI with their params, persisted with capability + `rendering` + `stats` blocks + per-label provenance.
-- [ ] Plural layers coexist and are enumerated in `/analysis/status`; resolver binds-or-fails-loud (never silently wrong).
-- [ ] Exact-repeat helpers extracted to `tracks/repeats.py` and shared by `self_similarity` (byte-identical); repeat-masking as a standalone analysis is deferred (flag-only baseline, own design).
-- [ ] Manifest-schema test confirms every layer carries well-formed `rendering` + `stats` blocks.
-- [ ] Committed as a small additive series (track skeletons → resolver → producibility/status), each independently green. **(self_similarity is untouched — its redesign is P7.)**
+- [x] Both layer-tracks auto-discovered, runnable via HTTP + CLI with their params, persisted with capability + `rendering` + `stats` blocks + per-label provenance.
+- [x] Plural layers coexist and are enumerated in `/analysis/status`; resolver binds-or-fails-loud (never silently wrong).
+- [x] Exact-repeat helpers extracted to `tracks/repeats.py` and shared by `self_similarity` (byte-identical); repeat-masking as a standalone analysis is deferred (flag-only baseline, own design).
+- [x] Manifest-schema test confirms every layer carries well-formed `rendering` + `stats` blocks.
+- [x] Committed as a small additive series (track skeletons → resolver → producibility/status), each independently green. **(self_similarity is untouched — its redesign is P7.)**
 
 ### Risks & mitigations
 - *Resolver becomes a hidden auto-invocation in disguise* (re-introducing the smell we're removing). **Mitigation:** the resolver is **fail-loud, require the layer to exist**; it never auto-produces. (The auto-produce-vs-fail-loud decision for the consumer is settled in P7's favour of fail-loud.)
@@ -205,11 +205,11 @@ All compute reads the persisted vectors — `get_all_vectors()` returns them in 
 - Cost estimate returns before any vectors are computed.
 
 ### Done criteria
-- [ ] Embedding runs as a standalone analysis with model/filter choice + provenance.
-- [ ] All six endpoints return deterministic, index-aligned data consumable by the frontend fetch pattern.
-- [ ] Embedding-lane encoding (FR-13) and distribution data (FR-14) exist for P5/P6 to render.
-- [ ] Cost estimate precedes every embedding run; no auto-run.
-- [ ] Suite GREEN.
+- [x] Embedding runs as a standalone analysis with model/filter choice + provenance.
+- [x] All six endpoints return deterministic, index-aligned data consumable by the frontend fetch pattern.
+- [x] Embedding-lane encoding (FR-13) and distribution data (FR-14) exist for P5/P6 to render.
+- [x] Cost estimate precedes every embedding run; no auto-run.
+- [x] Suite GREEN.
 
 ### Risks & mitigations
 - *UMAP nondeterminism / heavy dependency.* **Mitigation:** PCA (numpy, deterministic, zero new deps) is the default; UMAP opt-in, host decided in OQ#4.
@@ -236,6 +236,7 @@ Needs P2 (`EmbeddingTrack` + descriptor + `rendering`/`stats` blocks). Unblocks 
 - **Integrity report (FR-9, the contract-lock's second dividend).** A user-runnable report that **executes the substrate contract validators already built** — `_complement_spans` partition (masking, `e6758de`), `_validate_segments` (`c13db0f`), `validate_section_tree` + `_validate_span_regions` (`b402e00`), `OffsetMap.__init__` round-trip (`5778533`), analyzable-bridge length agreement (`5cd15cc`) — and returns green/violation per invariant. This makes the substrate invariants **legible** to the user ("are my coordinates sound?") and reuses validators verbatim (no new validation logic, just a presentation surface). Plus encoding/normalization sanity, near-duplicate finder (surface the repeat-masking signal), masking-coverage + structural-count summary.
 - **Positional/lexical (FR-10).** Two delivery shapes, chosen by whether the result is a reusable layer or a transient query:
   - **Dispersion = a layer-producing track** (`tracks/dispersion_track.py`): for a query term, emit an `annotation`-type track whose records are `{start, end, term}` hits in original coordinates (one per occurrence), rendered as a lexical barcode via the existing `OverviewBar` lane. Reuses `_extract_masked` + remap like any track; persists as `tracks/dispersion_{label}.jsonl`.
+    - **As-built (deviation):** dispersion shipped as a **transient query endpoint** (`GET /api/projects/{id}/dispersion`, original-coord via `OffsetMap.inverse_span`), *not* a persisted layer-keyed barcode track — the label-keyed-annotation runner plumbing it needs touches shared persist/remap and is deferred. See the `server.py` dispersion handler note.
   - **KWIC / collocations / duplicate-finder = transient query endpoints** (not persisted layers — they are interactive lookups): `GET /api/projects/{id}/kwic?term=&window=` returns `[{start, end, left, keyword, right}]`; `GET …/collocations?window=` returns `[{a, b, pmi, loglik, count}]` (PMI / log-likelihood over a co-occurrence window); duplicate-finder returns repeat-passage spans (surfacing the repeat-masking signal as a report). These compute on the analyzable view and need no descriptor/provenance because nothing downstream depends on them.
 - **Honesty (NFR-7).** All framed descriptive-of-this-text; explicit caveats where no reference corpus exists (consistent with the §5 consumption-honesty pass). No inferential claims dressed as descriptive.
 
@@ -249,10 +250,10 @@ Needs P2 (`EmbeddingTrack` + descriptor + `rendering`/`stats` blocks). Unblocks 
 - KWIC/dispersion: correct positions for a known term; collocation scores deterministic.
 
 ### Done criteria
-- [ ] ProfileTrack runs, emits report + distributions; stats deterministic.
-- [ ] Integrity report runs all substrate validators and reports per-invariant pass/violation.
-- [ ] KWIC/dispersion/collocations/dup-finder available; layer-producing where applicable.
-- [ ] All framed descriptive (NFR-7); suite GREEN.
+- [x] ProfileTrack runs, emits report + distributions; stats deterministic.
+- [x] Integrity report runs all substrate validators and reports per-invariant pass/violation.
+- [x] KWIC/dispersion/collocations/dup-finder available; layer-producing where applicable.
+- [x] All framed descriptive (NFR-7); suite GREEN.
 
 ### Risks & mitigations
 - *Stat libraries pull heavy deps.* **Mitigation:** TTR/MTLD/Zipf/Heaps are small pure-Python/numpy computations; avoid new deps; reuse existing tokenization.
@@ -301,11 +302,11 @@ Needs P2 (layer-track pattern; ProfileTrack may consume a chunk layer for chunk-
 - (UI correctness is feature-verified in-browser, not only unit-tested — per project practice.)
 
 ### Done criteria
-- [ ] Profile / Representations / Explore reachable; layer manager lists layers with provenance + descriptor + instant stats.
-- [ ] **Every chunk & embedding layer auto-renders as a track lane via its manifest `rendering` descriptor; producing an additional layer adds a lane with no code change.**
-- [ ] Plural layers coexist; layer manager reorders / toggles / overlays them.
-- [ ] Substrate-integrity badge runs the P4 report.
-- [ ] Frontend tests + the plural Playwright golden-path green; verified in-browser.
+- [x] Profile / Representations / Explore reachable; layer manager lists layers with provenance + descriptor + instant stats.
+- [x] **Every chunk & embedding layer auto-renders as a track lane via its manifest `rendering` descriptor; producing an additional layer adds a lane with no code change.**
+- [x] Plural layers coexist; layer manager reorders / toggles / overlays them.
+- [x] Substrate-integrity badge runs the P4 report.
+- [x] Frontend tests + the plural Playwright golden-path green; verified in-browser.
 
 ### Risks & mitigations
 - *Render dispatch hard-codes a per-label branch (defeating plural-safety).* **Mitigation:** the dispatch keys on `rendering.track_view` only; a test adds a *second* chunk layer and asserts it renders with no new code path.
@@ -346,10 +347,10 @@ Needs P2 (`rendering` descriptor + layer data) and P3 (embedding `lane`/`project
 - Quick-nav: one click from a layer-manager row opens the correct layer's panel.
 
 ### Done criteria
-- [ ] Every chunk & embedding layer exposes a stats panel: instant summary + selectable distribution visualizations.
-- [ ] Chunk distributions endpoint deterministic + index-correct; embedding views reuse P3 data.
-- [ ] One-click navigation from layer manager and track lane; side-by-side compare works.
-- [ ] Frontend + Playwright green; backend suite GREEN.
+- [x] Every chunk & embedding layer exposes a stats panel: instant summary + selectable distribution visualizations.
+- [x] Chunk distributions endpoint deterministic + index-correct; embedding views reuse P3 data.
+- [x] One-click navigation from layer manager and track lane; side-by-side compare works.
+- [x] Frontend + Playwright green; backend suite GREEN.
 
 ### Risks & mitigations
 - *O(N²) heatmap / pairwise blow-up at high chunk counts.* **Mitigation:** reuse P3's block-reduction + sampling (with logged sample size — no silent cap); NN-distance is the scalable default view.
@@ -394,12 +395,12 @@ Because the consumer binds layers by **explicit label** (one `{chunk_label, repe
 - **Agnosticism:** binding a different (compatible-dim) embedding layer changes the result and is recorded in provenance; the track never embeds on its own.
 
 ### Done criteria
-- [ ] `self_similarity` runs only as a consumer: no inline `chunk_text`/`embed_texts` calls remain in its `extract` path.
-- [ ] Absent layers → loud, descriptive failure (no silent chunk/embed).
-- [ ] Equivalence test green: identical matrix for identical bound chunks + vectors.
-- [ ] Similarity computation factored behind a method interface (room for NN-graph / clustering siblings).
-- [ ] `GET …/self_similarity/inputs` returns coherent, server-validated bundles (`incompatible[]` surfaced, not dropped); coherence shares one predicate with run-time binding.
-- [ ] Picker dialog builds `inputs` from the endpoint (no hand-typed labels); DotplotView Recompute retired (slider = cached-size view only); Playwright golden-path green.
+- [x] `self_similarity` runs only as a consumer: no inline `chunk_text`/`embed_texts` calls remain in its `extract` path.
+- [x] Absent layers → loud, descriptive failure (no silent chunk/embed).
+- [x] Equivalence test green: identical matrix for identical bound chunks + vectors.
+- [x] Similarity computation factored behind a method interface (room for NN-graph / clustering siblings).
+- [x] `GET …/self_similarity/inputs` returns coherent, server-validated bundles (`incompatible[]` surfaced, not dropped); coherence shares one predicate with run-time binding.
+- [x] Picker dialog builds `inputs` from the endpoint (no hand-typed labels); DotplotView Recompute retired (slider = cached-size view only); Playwright golden-path green.
 
 ### Risks & mitigations
 - *Equivalence drift from the legacy matrix.* **Mitigation:** the matrix math moves verbatim into the method; the equivalence test gates the commit on identical output for identical inputs; do not merge on any divergence.
@@ -476,10 +477,10 @@ Needs **P2** (the resolver FR-7 for `repeat_mask`'s requirements, the FR-4 produ
 - **Seam unit tests:** `ComparisonSpec.self(op)` yields `op_a is op_b`; a method's `build(op, op)` equals the legacy `build(chunks, embeddings=…)`; the manifest carries a length-1 `axes` whose `axes[0]` mirrors the legacy headline fields.
 
 ### Done criteria
-- [ ] `LayerBundle`→Operand + `ComparisonSpec` landed; self-similarity routes through `ComparisonSpec.self`.
-- [ ] Method `build(op_a, op_b)` + `{symmetric, supports_cross, representation}` capability; diagonal/symmetry/dedup conditional on self.
-- [ ] Manifest carries `axes[]`/`mode`/`symmetric`/`storage`; legacy headline fields still emitted (readers unchanged).
-- [ ] Full suite GREEN; **self-similarity byte-identical** (the bar that declares P1/P2/P7/P8 passed).
+- [x] `LayerBundle`→Operand + `ComparisonSpec` landed; self-similarity routes through `ComparisonSpec.self`.
+- [x] Method `build(op_a, op_b)` + `{symmetric, supports_cross, representation}` capability; diagonal/symmetry/dedup conditional on self.
+- [x] Manifest carries `axes[]`/`mode`/`symmetric`/`storage`; legacy headline fields still emitted (readers unchanged).
+- [x] Full suite GREEN; **self-similarity byte-identical** (the bar that declares P1/P2/P7/P8 passed).
 
 ### Risks & mitigations
 - *Seam-lift silently changes self output.* **Mitigation:** byte-identity guard on every existing fixture; the single-operand path is the literal default of each conditional.

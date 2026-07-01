@@ -223,6 +223,10 @@ When the next phase reaches an analysis layer, it satisfies this checklist befor
 
 ## Appendix A — Track contract status (2026-06-23 snapshot)
 
+> **Superseded by Wave-0 (2026-06).** This snapshot predates the layer-track work: `chunking`,
+> `embedding`, `repeats`, `repeat_mask`, and `profile` now ship as parameterized layer-tracks
+> (`ParameterizedTrack`, with `set_params`/`validate_params`). Treat the counts below as historical.
+
 14 registered tracks; **only 4** (`topics`, `sentiment`, `lithmm`, `self_similarity`) implement
 `set_params`/`validate_params`. The other 10 (`lexical`, `dialogue`, `entities`, `syntax`,
 `coreference`, `alphabet`, `narrative_arc`, `compartments`, `rqa`, `boundary_detection`) are

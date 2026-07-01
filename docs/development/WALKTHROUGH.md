@@ -462,7 +462,7 @@ print(f'Time:    {pr[\"elapsed_seconds\"]}s')
 ## 11. Run Tests
 
 ```bash
-# Python tests (193 tests)
+# Python tests (run the suite for the current count)
 core/.venv/bin/python -m pytest core/tests/ -q
 
 # Rust tests (24 tests)

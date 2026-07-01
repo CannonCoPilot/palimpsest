@@ -1,6 +1,6 @@
 # Collections Tier — Development Plan
 
-**Status:** Draft for human review
+**Status:** As-built — Collections tier C1–C7 shipped (see the [build journal](../collections-tier-build-journal.md))
 **Date:** 2026-06-30
 **Companion (vision & requirements):** [collections-tier-vision.md](./collections-tier-vision.md) (FR-23…37, NFR-C1…7, OQ-1…7)
 **Continues:** [wave0-analysis-suite-plan.md](./wave0-analysis-suite-plan.md) — P9 (seam-lift) landed; P10/P11 (cross-text) are **reframed here** as consumers of this tier rather than independent phases.

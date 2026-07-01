@@ -1,6 +1,6 @@
 # Collections Tier — Vision & Requirements (the cross-text analytical tier)
 
-**Status:** Draft for human review
+**Status:** As-built — Collections tier C1–C7 shipped (see the [build journal](../collections-tier-build-journal.md))
 **Date:** 2026-06-30
 **Companion (engine pre-stage):** [wave0-analysis-suite-vision.md §10](./wave0-analysis-suite-vision.md) (the resemblance operator `R(A,B)`, FR-18…22) and [wave0-analysis-suite-plan.md](./wave0-analysis-suite-plan.md) (P9 seam-lift landed; P10/P11 cross-text build).
 **Builds on:** [analysis-design-principles.md §4.1](./analysis-design-principles.md) (coordinate frames are explicit; alignment = `OffsetMap`), [ADR-005-jbrowse2-patterns.md](../architecture/ADR-005-jbrowse2-patterns.md) (cross-text = `LinearSyntenyView`), and `core/palimpsest/collections.py` (the current CRUD stub this tier grows from).
