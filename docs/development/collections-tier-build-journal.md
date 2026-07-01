@@ -520,3 +520,68 @@ metrics) + `GET …/sweep/{run_id}` (full journal); CLI `collections sweep … -
 planning, both generators + oracles, honest summary incl. null-recall; `test_collections_sweep.py` 13 —
 dense/prune/escape, journal resume vs `--no-resume`, param-addressed run_id, congruence gate, CLI + HTTP
 roundtrip). Full backend suite **943 green** (was 917).
+
+## C7 — Collection workbench UI (FR-24/25/31/35/39, P2/NFR-C4) — COMPLETE
+
+The frontend face of the whole tier: one workbench over a chosen collection, sub-tabbed by capability
+(Overview · Members · Corpus · Masking · Analyses · Sweep · Probe). Every panel inherits the backend's
+honesty rather than papering over it — pruned counts and empirical recall are shown (or `n/a`), the
+non-directional spread caveat is rendered verbatim, an incongruent metric space fails loud with a reconcile
+route, and every expensive op is gated behind a pre-run cost dialog that never auto-runs. Frontend:
+`browser/` (Vite + React 19 + zustand, no router); the panels live in `browser/src/components/CorpusView/`.
+
+### C7a — Workbench shell (FR-24/25/39) ✅ (`6de761e`)
+
+`stores/collectionStore.ts` hoists the selected collection out of `CorpusView` local state — one selection
+shared by every sub-tab, surviving a tab-away/return re-mount (the C4 known-bug fix). `MembersPanel` lists
+each member's inverse-navigation lattice (`GET /projects/{id}/lattice` — Work tag, parent, derived children,
+siblings) and its collection-local role; toggling a member to **root** (`PUT /collections/{id}/roles/{pid}`)
+re-coordinates the lens the Overview/Corpus surfaces project onto. `CongruenceBadge` (FR-39) reads
+`GET /collections/{id}/congruence?metric=` and flags congruent (green) / incongruent (amber) with a
+per-member key popover and a reconcile affordance. Vitest 81 (+9); build clean.
+
+### C7b — Recall-dial sweep UI + run/version manager (FR-35) ✅ (`b6a2daf`)
+
+`SweepPanel` drives `POST /sweep` with the dial (mode + force-exhaustive + dense-threshold). Two guarantees
+are surfaced, not hidden: it **never auto-runs** — the pre-run line shows the member-pair count (`C(n,2)`)
+and nothing fires until Run (asserted: zero POST on mount) — and every result reports `n_pruned` /
+`prune_fraction` / an **empirical** mean recall, with `null` rendered `n/a` (a measured `0%` is distinct
+from unmeasured). The run/version manager is scoped to sweep runs — a new
+`GET /collections/{id}/sweeps` (headline roll-ups: dial, progress, prune%, recall) and
+`DELETE …/sweep/{run_id}`, with `list_sweep_runs` / `delete_sweep_run` in `collections_sweep.py`
+(a corrupt journal is skipped, not fatal) and CLI parity (`collections sweeps` / `sweep-delete`). Sweeps are
+recomputable candidate-gen artifacts, so delete discards only the cached journal, never ground truth. Backend
+**947 green** (+4); vitest 90 (+9); build clean.
+
+### C7c — Analyses panel · probe · reusable cost dialog (FR-31, P2/NFR-C4) ✅ (`f7689eb`, `587c126`)
+
+`AnalysesPanel` is a read-only surface over `GET /corpus-analyses`: cross-member boilerplate + most-
+discriminative terms (corpus IDF), near-duplicate clusters, and an **undirected** spread readout (member-
+reach bars, spread histogram, core fraction). The backend's non-directional note is rendered **verbatim** —
+the UI never implies a directional "A influenced B" story the metric cannot support. `CostDialog` is the
+reusable pre-run cost surface (mirrors `AnalysisPanel`'s `EmbeddingDialog`): every expensive op shows its
+cost and runs only on confirm. `ProbePanel` ranks corpus passages against a query (`POST /probe`) from
+either a **ref** passage already embedded in the corpus (service-free, direct) or free **text** (embedded
+first — an expensive op gated behind the cost dialog). Probing is embedding-space work, so a mixed / word-
+method space fails loud (`409`) and the panel surfaces a reconcile pointer, never a silent cross-space
+probe. The congruence badge's reconcile action now routes through `CostDialog` — listing the members
+missing an embedding layer and opening one to compute it. Vitest 98 (+8); build clean.
+
+**Honest limitation.** Probe + reconcile *execution* are embedding-gated. The standing Matthew-Mark
+validation collection is word-method (no embeddings), so in-browser it exercises only the `409`/deferral
+paths — which *is* the honest FR-39 demo. A live probe-with-results proof awaits an embedded collection.
+
+### #8 — Live in-browser validation ✅ (`84398e9`)
+
+`browser/e2e/collection_workbench_c7.spec.ts` drives the workbench against the live stack on an **isolated**
+server (`:8092` on `.scratch/validation-mm`; Sir's shared `:8080` untouched). **5/5 green** (6.0s): the
+congruence badge flags cosine incongruent (FR-39); a Members role toggle re-coordinates the root (FR-24/25);
+the Analyses tab renders with its non-directional caveat (FR-31); the Sweep tab pre-estimates, prunes on Run,
+and lists the run in the manager — the content-addressed journal made the re-run resume instantly, proving
+the resume path live too (FR-35); and the Probe tab fails loud (`role="alert"`) rather than silently on the
+embedding-free collection (FR-31).
+
+**Tier DoD met.** Every workbench tab is live with a backing capability; the congruence badge flags an
+incongruent space and routes to reconcile; the run/version manager lists + deletes runs; every expensive op
+shows a pre-run estimate and never auto-runs; CLI + HTTP parity throughout; frontend (vitest 98) + Playwright
+(5/5) green in-browser. **All C1–C7 complete.**
