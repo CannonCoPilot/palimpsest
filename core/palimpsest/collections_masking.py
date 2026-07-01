@@ -1,4 +1,4 @@
-"""Cross-text masking, corpus repeats & liftover — the C5 assembler (FR-29, FR-30, FR-42).
+"""Cross-text masking, corpus repeats, tracks & liftover — the C5 assembler (FR-29, FR-30, FR-42).
 
 This composes existing leaves into collection-scoped operations; the genuinely new machinery lives in
 the leaves (``alignment.liftover.AlignmentMap`` for cross-text projection) and the primitives are
@@ -14,6 +14,10 @@ reused verbatim so the cross-text features can never drift from their single-tex
 * **Cross-text mask** = corpus-repeat ∪ low-correspondence per member, delivered as original-coordinate
   intervals through the existing ``Project.analysis_view(extra_masked=...)`` channel, so a masked run
   reuses the whole masking/OffsetMap pipeline and demonstrably changes a downstream alignment.
+* **Cross-text track** annotates each root-frame passage with how conserved it is across the corpus —
+  a pure transform over the C3 graph's ``project_to_root`` output (root char span + member set per
+  component), rendered as a lane on the root lens. Collection-scoped (kept in the collection tier, not
+  the root project's per-project registry), so collection membership never leaks into project state.
 * **Liftover** projects one member's mask/annotation intervals onto another member's coordinate frame
   across their stored alignment via ``AlignmentMap``, persisted as a new *additive* run version
   (FR-41 non-destructive; nothing on the target is overwritten).
@@ -30,7 +34,7 @@ from palimpsest.alignment.liftover import AlignmentMap
 from palimpsest.alignment.records import comparison_dir, read_alignment_records
 from palimpsest.collections import get_collection
 from palimpsest.collections_ops import append_run_version, is_stale
-from palimpsest.corpus_graph import read_corpus_graph
+from palimpsest.corpus_graph import project_to_root, read_corpus_graph
 from palimpsest.project import Project
 from palimpsest.tracks.repeats import (
     STOPWORDS,
@@ -227,6 +231,71 @@ def masked_cross_similarity(
     else:
         matrix, _ = compute_cross_similarity(view_a, view_b, metric=metric)
     return matrix
+
+
+# ── cross-text track on the root lens ────────────────────────────────────────────────────────────
+
+def cross_text_track(
+    workspace: Path,
+    collection_id: str,
+    root: str,
+    *,
+    kind: str = "conservation",
+) -> dict[str, Any]:
+    """A cross-text similarity track expressed on the ``root`` member's coordinate frame.
+
+    Each in-root passage (a graph component present in the root) is annotated with its *conservation* —
+    the fraction of members whose text corresponds there (core → 1.0, shell → partial, root-only → 1/N).
+    A pure read of the C3 graph's ``project_to_root`` output: the root char spans and member sets are
+    already computed, so no new coordinate math enters. Returns root-frame ``segment_offsets`` + a
+    per-segment scalar in [0, 1] plus a ``rendering`` descriptor shaped for a lane, so the frontend
+    draws it on the root lens the same way ordinary segment tracks are drawn (FR-13 shape).
+
+    Raises ``ValueError`` if the corpus graph is missing or ``root`` is not a member.
+    """
+    graph = read_corpus_graph(workspace, collection_id)
+    if graph is None:
+        raise ValueError(f"No corpus graph for {collection_id} — build it first (C3)")
+    proj = project_to_root(graph, root)  # raises ValueError if root is not a member
+    total = len(graph.members)
+    segments: list[dict[str, Any]] = []
+    for row in proj["components"]:
+        rs = row.get("root_span")
+        if not row.get("in_root") or rs is None:
+            continue
+        member_count = len(row["members"])
+        segments.append({
+            "component": row["component"],
+            "classification": row["classification"],
+            "char_start": rs["char_start"],
+            "char_end": rs["char_end"],
+            "para_start": rs["para_start"],
+            "para_end": rs["para_end"],
+            "member_count": member_count,
+            "conservation": member_count / total if total else 0.0,
+            "members": row["members"],
+        })
+    segments.sort(key=lambda s: (s["char_start"], s["char_end"]))
+    return {
+        "collection_id": collection_id,
+        "root": root,
+        "kind": kind,
+        "member_total": total,
+        "segment_offsets": [[s["char_start"], s["char_end"]] for s in segments],
+        "values": [s["conservation"] for s in segments],
+        "segments": segments,
+        "rendering": {"track_view": "root-conservation-lane", "encoding": "heat", "domain": [0.0, 1.0]},
+    }
+
+
+def write_cross_text_track(
+    workspace: Path, collection_id: str, track: dict[str, Any]
+) -> Path:
+    """Persist a cross-text track under the collection tier (workspace/collections/{id}/, OQ-6)."""
+    path = workspace / "collections" / collection_id / "tracks" / f"{track['kind']}_{track['root']}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(track, indent=2), encoding="utf-8")
+    return path
 
 
 # ── liftover (project a member's intervals onto another via their alignment) ─────────────────────

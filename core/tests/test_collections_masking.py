@@ -201,6 +201,49 @@ def test_liftover_missing_pair_raises(corpus: tuple[Path, str]) -> None:
         cm.lift_intervals_across(workspace, "alpha", "delta", [(0, 5)])
 
 
+def test_cross_text_track_conservation_on_root_lens(corpus: tuple[Path, str]) -> None:
+    workspace, cid = corpus
+    cg.write_corpus_graph(workspace, cid, cg.build_corpus_graph(workspace, cid))
+
+    track = cm.cross_text_track(workspace, cid, "alpha")
+    assert track["root"] == "alpha" and track["member_total"] == 3
+    assert track["rendering"]["track_view"] == "root-conservation-lane"
+
+    paras = Project.load(workspace / "alpha").paragraphs()
+    by_class = {s["classification"]: s for s in track["segments"]}
+    # core passage (p0) is shared by all three members → conservation 1.0, on alpha's p0 char span.
+    assert by_class["core"]["conservation"] == 1.0
+    assert [by_class["core"]["char_start"], by_class["core"]["char_end"]] == list(paras[0][:2])
+    # shell (p2, {alpha,beta}) → 2/3; alpha's own singleton (p1) → 1/3.
+    assert by_class["shell"]["conservation"] == pytest.approx(2 / 3)
+    assert by_class["singleton"]["conservation"] == pytest.approx(1 / 3)
+
+    # Only alpha-present components appear (beta/gamma singletons are absent from the alpha frame).
+    assert len(track["segments"]) == 3
+    offsets = track["segment_offsets"]
+    assert offsets == sorted(offsets)
+    assert track["values"] == [s["conservation"] for s in track["segments"]]
+
+
+def test_cross_text_track_guards(corpus: tuple[Path, str]) -> None:
+    workspace, cid = corpus
+    with pytest.raises(ValueError, match="build it first"):
+        cm.cross_text_track(workspace, cid, "alpha")
+    cg.write_corpus_graph(workspace, cid, cg.build_corpus_graph(workspace, cid))
+    with pytest.raises(ValueError, match="not a member"):
+        cm.cross_text_track(workspace, cid, "delta")
+
+
+def test_write_cross_text_track_persists_in_collection_tier(corpus: tuple[Path, str]) -> None:
+    workspace, cid = corpus
+    cg.write_corpus_graph(workspace, cid, cg.build_corpus_graph(workspace, cid))
+    track = cm.cross_text_track(workspace, cid, "alpha")
+    path = cm.write_cross_text_track(workspace, cid, track)
+    assert path == workspace / "collections" / cid / "tracks" / "conservation_alpha.json"
+    assert path.exists()
+    assert json.loads(path.read_text())["root"] == "alpha"
+
+
 def test_persist_lifted_track_versions_and_staleness(corpus: tuple[Path, str]) -> None:
     workspace, cid = corpus
     a_paras = Project.load(workspace / "alpha").paragraphs()
