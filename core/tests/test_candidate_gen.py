@@ -113,3 +113,29 @@ def test_summary_partial_recall_is_measured_not_guessed() -> None:
 def test_summary_no_oracle_is_null_recall_not_fabricated() -> None:
     s = cg.summarize_candidates(2, 2, [], set(), dense=False)
     assert s["estimated_recall"] is None  # honest: no sample → no number, not a fake 1.0
+
+
+def test_recall_basis_dense_is_trivial() -> None:
+    s = cg.summarize_candidates(4, 4, [], None, dense=True)
+    assert s["recall_basis"] == "dense"
+
+
+def test_recall_basis_measured_when_oracle_is_a_different_approximation() -> None:
+    # token family: LSH candidates vs exact-Jaccard oracle → recall is a genuine measurement.
+    oracle = {(0, 0), (1, 1)}
+    s = cg.summarize_candidates(3, 3, [(0, 0), (1, 1)], oracle, dense=False)
+    assert s["recall_basis"] == "measured" and s["estimated_recall"] == 1.0
+
+
+def test_recall_basis_exact_by_construction_flags_the_tautology() -> None:
+    # embedding family: candidates and oracle rank by the same cosine metric → 1.0 is forced, not earned.
+    oracle = {(0, 0), (1, 1)}
+    s = cg.summarize_candidates(
+        3, 3, [(0, 0), (1, 1)], oracle, dense=False, recall_exact_by_construction=True,
+    )
+    assert s["recall_basis"] == "exact_by_construction" and s["estimated_recall"] == 1.0
+
+
+def test_recall_basis_unmeasured_when_no_oracle_sampled() -> None:
+    s = cg.summarize_candidates(2, 2, [], set(), dense=False)
+    assert s["recall_basis"] == "unmeasured"

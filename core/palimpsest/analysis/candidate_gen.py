@@ -196,25 +196,40 @@ def summarize_candidates(
     oracle_pairs: set[tuple[int, int]] | None,
     *,
     dense: bool,
+    recall_exact_by_construction: bool = False,
 ) -> dict:
     """The honest sweep report: totals, prune counts, and an empirical estimated recall.
 
     ``estimated_recall`` is ``|oracle ∩ candidates| / |oracle|`` on the sampled oracle — a measured
     fraction, reported with its sample size. A dense sweep is 1.0 by construction. ``n_pruned`` is what
-    the dial removed from the exhaustive space — reported so a cap is never silent."""
+    the dial removed from the exhaustive space — reported so a cap is never silent.
+
+    ``recall_basis`` qualifies what that number is worth, because not every 1.0 is earned:
+      - ``dense``               — no pruning, recall is 1.0 trivially.
+      - ``exact_by_construction`` — candidate-gen and the oracle rank by the *same* metric with
+        over-fetch depth ≥ the oracle's top-N (the embedding/ANN family). The candidates then contain
+        the oracle by construction, so recall is forced to 1.0 and measures nothing. Pass
+        ``recall_exact_by_construction=True`` for these so a reader never mistakes the tautology for
+        evidence the ANN dial is safe.
+      - ``measured``            — candidate-gen approximates a *different* oracle (token MinHash-LSH vs
+        exact Jaccard); the fraction is a genuine empirical recall.
+      - ``unmeasured``          — no oracle sample was drawn (e.g. empty operands)."""
     total = int(n_a) * int(n_b)
     n_cand = total if dense else len(candidate_pairs)
     if dense:
         recall: float | None = 1.0
         oracle_size = 0
+        recall_basis = "dense"
     elif oracle_pairs:
         cand_set = set(candidate_pairs)
         recovered = sum(1 for p in oracle_pairs if p in cand_set)
         recall = round(recovered / len(oracle_pairs), 4)
         oracle_size = len(oracle_pairs)
+        recall_basis = "exact_by_construction" if recall_exact_by_construction else "measured"
     else:
         recall = None  # no oracle sample (e.g. empty operands) — honest null, not a fabricated 1.0
         oracle_size = 0
+        recall_basis = "unmeasured"
     return {
         "n_pairs_total": total,
         "n_candidates": n_cand,
@@ -222,5 +237,6 @@ def summarize_candidates(
         "prune_fraction": round((total - n_cand) / total, 4) if total else 0.0,
         "estimated_recall": recall,
         "recall_sample_size": oracle_size,
+        "recall_basis": recall_basis,
         "dense": dense,
     }

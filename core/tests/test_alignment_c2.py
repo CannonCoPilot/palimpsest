@@ -93,6 +93,16 @@ def test_records_threshold_and_scores(tmp_path: Path) -> None:
     assert client.get("/api/alignment/a/ghost/records").status_code == 404
 
 
+def test_scores_reports_scale_free_identity_distribution(tmp_path: Path) -> None:
+    # Raw score is length-proportional (a sum over the alignment) → not comparable across pairs. The
+    # endpoint must also surface identity ∈ [0,1] (scale-free) + say so, so a client thresholds right.
+    _make_comparison(tmp_path)
+    scores = _client(tmp_path).get("/api/alignment/a/b/scores").json()  # identities: 0.1, 0.5, 0.8
+    ident = scores["identity"]
+    assert ident["min"] == 0.1 and ident["max"] == 0.8 and ident["median"] == 0.5
+    assert "identity" in scores["note"] and "not comparable" in scores["note"]
+
+
 def test_export_paf_endpoint(tmp_path: Path) -> None:
     _make_comparison(tmp_path)
     client = _client(tmp_path)

@@ -74,6 +74,37 @@ def test_low_threshold_prunes_and_reports_recall(corpus: tuple[Path, str]) -> No
         assert p["n_candidates"] + p["n_pruned"] == p["n_pairs_total"]  # nothing lost silently
 
 
+def test_run_recall_basis_word_overlap_is_measured(corpus: tuple[Path, str]) -> None:
+    # token family (LSH candidates vs exact-Jaccard oracle) → the run's recall is a real measurement.
+    ws, cid = corpus
+    res = sweep.sweep_pairwise(ws, cid, metric="word_overlap", mode="high-recall", dense_threshold=0)
+    assert res["recall_basis"] == "measured"
+    assert all(p["recall_basis"] == "measured" for p in res["pairs"])
+
+
+def test_run_recall_basis_dense_when_unpruned(corpus: tuple[Path, str]) -> None:
+    ws, cid = corpus
+    res = sweep.sweep_pairwise(ws, cid, metric="word_overlap", mode="high-recall")
+    assert res["recall_basis"] == "dense"  # tiny corpus auto-dense → 1.0 is trivial, flagged as such
+
+
+def test_run_level_recall_basis_flags_embedding_tautology() -> None:
+    # An embedding-family run: every pruned pair's recall is exact-by-construction (ANN + oracle share
+    # cosine), so the run roll-up says so too — its mean_estimated_recall 1.0 is never read as empirical.
+    journal = {
+        "run_id": "r", "collection_id": "c", "metric": "cosine", "mode": "high-recall",
+        "force_exhaustive": False, "members": ["a", "b"],
+        "pairs": {
+            "a|b": {"a": "a", "b": "b", "n_pairs_total": 100, "n_candidates": 10,
+                    "estimated_recall": 1.0, "recall_basis": "exact_by_construction", "dense": False},
+        },
+    }
+    roll = sweep._summarize_run(journal)
+    assert roll["recall_basis"] == "exact_by_construction"
+    assert roll["mean_estimated_recall"] == 1.0
+    assert roll["pairs"][0]["recall_basis"] == "exact_by_construction"
+
+
 def test_force_exhaustive_escape_beats_the_dial(corpus: tuple[Path, str]) -> None:
     ws, cid = corpus
     res = sweep.sweep_pairwise(

@@ -2868,18 +2868,30 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         records = _read_alignment(query_id, target_id)
         scores = sorted(r.score for r in records)
         if not scores:
-            return JSONResponse(content={"count": 0, "scores": [], "suggested_threshold": None})
+            return JSONResponse(content={
+                "count": 0, "scores": [], "suggested_threshold": None, "identity": None,
+            })
 
-        def _q(p: float) -> float:
-            return scores[min(len(scores) - 1, max(0, int(p * (len(scores) - 1))))]
+        def _q(sorted_vals: list[float], p: float) -> float:
+            return sorted_vals[min(len(sorted_vals) - 1, max(0, int(p * (len(sorted_vals) - 1))))]
 
+        identities = sorted(r.identity for r in records)
         return JSONResponse(content={
             "count": len(scores),
             "min": scores[0], "max": scores[-1],
-            "median": _q(0.5), "p75": _q(0.75), "p90": _q(0.90),
+            "median": _q(scores, 0.5), "p75": _q(scores, 0.75), "p90": _q(scores, 0.90),
             # default cutoff: the 75th percentile — show the upper quartile of alignments by score
-            "suggested_threshold": _q(0.75),
+            "suggested_threshold": _q(scores, 0.75),
             "scores": scores,
+            # Raw score = Σ per-cell similarity over the alignment, so it grows with length and is NOT
+            # comparable across pairs. identity (mean per-block similarity, ∈ [0,1]) is scale-free —
+            # threshold on it when comparing alignments across different pairs.
+            "identity": {
+                "min": identities[0], "max": identities[-1],
+                "median": _q(identities, 0.5), "p75": _q(identities, 0.75), "p90": _q(identities, 0.90),
+            },
+            "note": "score is length-proportional and not comparable across pairs; "
+                    "identity is the scale-free measure.",
         })
 
     @app.get("/api/alignment/{query_id}/{target_id}/export.paf")

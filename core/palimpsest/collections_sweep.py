@@ -206,7 +206,13 @@ def sweep_pairwise(
         n_a, n_b = _pair_sizes(metric, prim_a, prim_b)
         plan = cg.plan_sweep(n_a, n_b, mode, force_exhaustive=force_exhaustive, dense_threshold=dense_threshold)
         pairs, oracle = _candidates_for_pair(metric, plan, prim_a, prim_b)
-        summary = cg.summarize_candidates(n_a, n_b, pairs, oracle, dense=plan["dense"])
+        summary = cg.summarize_candidates(
+            n_a, n_b, pairs, oracle, dense=plan["dense"],
+            # embedding family: ANN candidates and the oracle share the cosine metric → recall is
+            # exact-by-construction (tautological 1.0), not a measured approximation. Token family is
+            # a genuine LSH-vs-Jaccard approximation, so its recall stays honestly "measured".
+            recall_exact_by_construction=cg_metric_needs_embedding(metric),
+        )
 
         journal["pairs"][key] = {
             "a": a, "b": b, "plan": plan, **summary,
@@ -230,6 +236,15 @@ def _summarize_run(journal: dict[str, Any]) -> dict[str, Any]:
     total_pairs = sum(p["n_pairs_total"] for p in pairs.values())
     total_cand = sum(p["n_candidates"] for p in pairs.values())
     recalls = [p["estimated_recall"] for p in pairs.values() if p.get("estimated_recall") is not None]
+    # A single run is single-metric, so its pruned pairs share one recall_basis. Surface it at run
+    # level so mean_estimated_recall is never read as empirical when it is exact-by-construction.
+    pruned_bases = {p.get("recall_basis") for p in pairs.values() if not p.get("dense")}
+    if len(pruned_bases) == 1:
+        run_basis: str | None = pruned_bases.pop()
+    elif not pruned_bases:
+        run_basis = "dense" if pairs else None
+    else:
+        run_basis = "mixed"
     return {
         "run_id": journal["run_id"],
         "collection_id": journal["collection_id"],
@@ -243,10 +258,11 @@ def _summarize_run(journal: dict[str, Any]) -> dict[str, Any]:
         "n_pruned": total_pairs - total_cand,
         "prune_fraction": round((total_pairs - total_cand) / total_pairs, 4) if total_pairs else 0.0,
         "mean_estimated_recall": round(sum(recalls) / len(recalls), 4) if recalls else None,
+        "recall_basis": run_basis,
         "pairs": [
             {k: v.get(k) for k in (
                 "a", "b", "n_pairs_total", "n_candidates", "n_pruned",
-                "prune_fraction", "estimated_recall", "dense")}
+                "prune_fraction", "estimated_recall", "recall_basis", "dense")}
             for v in pairs.values()
         ],
     }
