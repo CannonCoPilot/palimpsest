@@ -1,0 +1,931 @@
+{
+ "dimensions": [
+  {
+   "key": "backend-arch",
+   "title": "Backend architecture & code quality",
+   "health": "good",
+   "summary": "The Palimpsest backend is a mature, disciplined codebase with strong architectural bones: a structurally-typed track protocol with dependency-ordered execution, a deliberate atomic-write module, well-documented coordinate-remapping invariants that fail loud, and a genuine shared run path (runner.py) that dedups HTTP and CLI single-track execution. Path/injection validation is thorough and holds up under live probing (traversal returns 403/404, no leak). The main weaknesses are localized rather than systemic: several persisted-and-concurrently-read artifacts bypass the atomic-write module the codebase built for exactly this hazard, several CPU-heavy collections endpoints block the async event loop, and the CLI bulk analyze command re-implements persistence in a way that diverges from the shared writer for layer-keyed tracks. Because the server binds localhost-only for a single-user desktop app, the concurrency/durability gaps are real but bounded in blast radius.",
+   "strengths": [
+    "atomic.py is genuinely crash-safe for the file body: temp file in the same dir + f.flush() + os.fsync() + os.replace(), with temp-file cleanup on BaseException (core/palimpsest/atomic.py:22-39). The module docstring correctly articulates the torn-file / concurrent-poller hazard it defends against.",
+    "Path-traversal defense is consistent and verified live: _safe_project_dir/_safe_import_path/_safe_gold_map_path all reject '..'/absolute/backslash AND re-check is_relative_to() after resolve() (server.py:631-694); _validate_ids uses a strict ^[a-zA-Z0-9_\\-]+$ allowlist (server.py:2706-2710); embedding/chunk labels are hex-validated (server.py:289,338). Live probes on :8092 returned 404/403 for encoded and raw traversal on project_id, embedding label, and /data/{path:path}.",
+    "The module-scope-BaseModel FastAPI gotcha (silent 422 on function-scoped bodies) is honored: all 17 request/response models are defined at module scope (server.py:28-170), before create_app at line 835.",
+    "Coordinate correctness is engineered to fail loud, not drift silently: OffsetMap enforces its ordered/disjoint/non-empty span precondition in __init__ (derive.py:33-60); analyzable_text asserts len(text)==omap.child_len before returning (project.py:351-355); remap_signal_data raises UnmappedCoordinateError on an offset-bearing shape it can't handle (derive.py:297,333) rather than mislabeling analyzable coords as original.",
+    "runner.py successfully removes a whole class of HTTP-vs-CLI drift: extract_masked + persist_track_outputs are the single shared masked-run + persistence path, imported by both the /analyze endpoint (server.py:1306-1311) and the CLI run-track command (cli.py:334-335), and it carries no web-framework dependency so the CLI need not import FastAPI.",
+    "Type discipline is enforced at the project level (pyproject.toml: [tool.mypy] strict = true), and the server error-handling philosophy is deliberately fail-loud at boundaries \u2014 e.g. set_params/validate_params ValueErrors are mapped to clean 400s with the real message (server.py:1279-1293) and the async job records the actual exception type+message rather than a canned label (server.py:1313-1323)."
+   ],
+   "findings": [
+    {
+     "title": "Persisted-and-concurrently-read artifacts bypass the atomic-write module, reintroducing the exact torn-file hazard atomic.py was built to prevent",
+     "severity": "medium",
+     "category": "bug",
+     "evidence": "core/palimpsest/alignment/records.py:88 (write_alignment_records uses open(path,'w')) and :148 (.write_text); core/palimpsest/server.py:2772 (comp_dir/'metadata.json'.write_text non-atomic); core/palimpsest/layout.py:308 (save_layout write_text); core/palimpsest/corpus_graph.py:555 (write_corpus_graph write_text). Each is read by a separate GET endpoint (e.g. read_corpus_graph server.py:2418; alignment_records server.py:2823; load_layout during status polls). atomic.py's own docstring names 'the analysis-status poller reading a manifest while a job rewrites it' as the motivating case.",
+     "grounded": true,
+     "recommendation": "Route these persisted-artifact writes through atomic_write_text/atomic_write_bytes. write_alignment_records and save_layout and write_corpus_graph are the highest-value since each has a paired reader endpoint that can be hit during a rewrite.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "CPU-bound collections endpoints run synchronously inside async handlers, blocking the single-threaded event loop",
+     "severity": "medium",
+     "category": "perf",
+     "evidence": "server.py:~2398 build_collection_corpus_graph calls build_corpus_graph() (union-find over all pairwise edges, corpus_graph.py:202-292) + write_corpus_graph() with no asyncio.to_thread; same pattern for phyletic_tree (neighbor-joining O(n^3) distance matrices, corpus_graph.py:392-435) and corpus_analyses (IDF/BM25/clustering, corpus_graph.py:457-527). Contrast run_alignment (server.py:2743-2768) and compute_embeddings (server.py:1561) which correctly wrap heavy work in asyncio.to_thread. A concurrent analysis/status poll stalls until the graph build finishes.",
+     "grounded": true,
+     "recommendation": "Wrap build_corpus_graph / phyletic_tree / corpus_analyses (and their write step) in asyncio.to_thread, matching the alignment/embedding handlers, so a large-collection compute doesn't freeze all other requests.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "CLI bulk `analyze` re-implements persistence inline and diverges from the shared writer for layer-keyed tracks \u2014 latent FR-4 provenance-keying violation",
+     "severity": "medium",
+     "category": "bug",
+     "evidence": "cli.py:217-229 hand-rolls manifest + write_run_provenance(manifest_dir, name, ...) using the bare track name, instead of calling runner.persist_track_outputs. persist_track_outputs keys layer-keyed tracks (chunking/embedding) by provenance_name()={name}_{label} (runner.py:92,122), so the bulk `analyze` path writes a differently-shaped provenance record than the single-track path (cli.py:335) and the HTTP path (server.py:1311) for the same track. This is precisely the HTTP-vs-CLI divergence runner.py exists to eliminate.",
+     "grounded": true,
+     "recommendation": "Have the bulk `analyze` loop call persist_track_outputs(project_dir, extractor, result) rather than duplicating write_track + write_run_provenance, so all three entry points leave identical on-disk provenance including per-label keying.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Silent spaCy model fallback: requested model missing \u2192 silently substitutes en_core_web_sm, changing analysis results without telling anyone",
+     "severity": "low",
+     "category": "bug",
+     "evidence": "core/palimpsest/project.py:52-55 \u2014 _load_spacy_model catches OSError and loads 'en_core_web_sm' unconditionally. spacy_doc defaults to 'en_core_web_lg' (project.py:243) and pipeline_run records spacy_model as en_core_web_lg (cli.py:257), so provenance can claim _lg while entities/syntax actually ran on _sm. This is a silent-fallback-masking-missing-data pattern the project explicitly rejects ('Fallbacks Are Failures').",
+     "grounded": true,
+     "recommendation": "Either fail loud when the requested model is absent, or record the actually-loaded model name in provenance so pipeline_run.json doesn't misattribute the model.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "load_layout swallows OSError from its persisted backfill, silently discarding the one-time parent-computation work on any write failure",
+     "severity": "low",
+     "category": "bug",
+     "evidence": "core/palimpsest/layout.py:300-303 \u2014 after backfilling parent_id and setting parents_computed=True in memory, save_layout is wrapped in try/except OSError: pass. If the save fails (disk full, permissions), the in-memory cfg is still returned as if persisted, so the O(n^2) backfill re-runs every load and no error is surfaced.",
+     "grounded": true,
+     "recommendation": "Log at minimum, or let the OSError propagate; combined with making save_layout atomic this becomes a clean fail-loud path.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "atomic_write_bytes fsyncs the file but not the parent directory after os.replace \u2014 the rename can be lost on a crash even though the file body is durable",
+     "severity": "low",
+     "category": "bug",
+     "evidence": "core/palimpsest/atomic.py:28-32 fsyncs the temp file fd, then os.replace(tmp, path) at line 32, but never opens+fsyncs path.parent. On most filesystems a crash immediately after os.replace can leave the directory entry pointing at the old (or no) inode. For a local desktop app this is a minor durability gap, not a correctness-under-normal-operation bug.",
+     "grounded": true,
+     "recommendation": "After os.replace, open the parent dir with os.open(dir, O_DIRECTORY) and os.fsync it (best-effort, ignore ENOTSUP) to make the rename itself crash-durable, completing the guarantee the module docstring implies.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "All job/run state is in-memory module-level dicts \u2014 lost on server restart, leaving completed/failed runs invisible and no cross-process coordination",
+     "severity": "low",
+     "category": "design",
+     "evidence": "server.py:25 _job_semaphore=asyncio.Semaphore(3); _running_jobs / _alignment_jobs are plain dicts populated at server.py:1301,1319,1554,2724,2782. A completed run's status is only knowable for 30\u201360s (call_later cleanup at :1325,:1575,:2787) then reconstructed from disk existence; a mid-run restart drops the 'running' marker and any error message. The already_running guard (e.g. server.py:1211) is per-process only.",
+     "grounded": true,
+     "recommendation": "Acceptable for the current localhost single-process desktop deployment, but if multi-worker/uvicorn --workers is ever used the guards break silently. Document the single-worker assumption, or persist job state (the run.json provenance already exists as a durable anchor).",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "api-contract",
+   "title": "API contract & endpoint integrity",
+   "health": "good",
+   "summary": "The 77 HTTP endpoints in server.py are well-disciplined: OpenAPI reports exactly 77 operations across 70 paths (matching the documented count), error codes are consistent and semantically correct (400 bad-request, 404 missing, 409 metric-congruence), path-traversal is blocked, and the SSE streaming and metric-congruence-gated endpoints are exemplary. Live probes of :8092 all passed: congruence returns all_congruent=true for both cosine and word_overlap, bad metric yields 400, missing collection yields 404, and matrix.bin byte-count matches the manifest dimensions exactly. The two real weaknesses are (1) a binary wire-contract that is inconsistently self-describing across the four .bin endpoints, and (2) substantial HTTP/CLI drift \u2014 the claim that cli.py mirrors all endpoints is false: the entire Wave-0 per-project analysis surface and alignment run/diff operations are HTTP-only.",
+   "strengths": [
+    "Congruence contract is fully correct on the live server: GET /api/collections/matthew-mark-validation/congruence?metric=cosine returns all_congruent=true with needs_embedding=true and per-member congruence keys (embedding:cosine:c9757c16...); ?metric=word_overlap returns all_congruent=true needs_embedding=false; ?metric=BOGUS returns HTTP 400 with 'unknown similarity metric(s): BOGUS; valid metrics: cosine, jaccard, word_overlap, edit_distance'; missing collection returns HTTP 404 'Collection not found' (server.py:2378-2394).",
+    "Metric-congruence gating is a genuine architectural strength: the probe endpoint (server.py:2472-2522) maps MetricCongruenceError->409, KeyError->404, ValueError/FileNotFoundError->400, and enforces mutual-exclusion validation (exactly one of 'q' or 'ref_project'+'ref_chunk', else 400). Sweep mirrors the same 409 gating (server.py:2542).",
+    "Binary matrix contract is internally consistent where it counts: live matrix.bin returned exactly 12,222,012 bytes and the sibling /matrix JSON manifest reports dimensions [1747,1749], dtype float32, byte_order little-endian \u2014 1747*1749*4 = 12,222,012, a byte-exact match, and _f32_le_bytes serializes as '<f4' C-order (server.py:314-317).",
+    "SSE streaming endpoints are robust: /import/local/stream and /derive/stream (server.py:2025-2086, 2211-2278) run ingest/derive in a worker thread, marshal progress via loop.call_soon_threadsafe into an asyncio.Queue, emit terminal done/error events carrying the real HTTP status in the payload, and set Cache-Control:no-cache + X-Accel-Buffering:no for proxy-safe streaming.",
+    "Error-code and traversal discipline verified live: missing alignment records -> 404 'No alignment results found', missing project analysis/status -> 404 'Project not found', encoded traversal (..%2F..%2Fetc) -> 404 (route-level rejection); _safe_project_dir and serve_project_file both reject '..','/','\\\\' and enforce is_relative_to(workspace) (server.py:631-640, 2961-2974)."
+   ],
+   "findings": [
+    {
+     "title": "HTTP/CLI drift: cli.py does NOT mirror the 77 endpoints \u2014 the entire Wave-0 per-project analysis surface and alignment run/diff are HTTP-only",
+     "severity": "medium",
+     "category": "gap",
+     "evidence": "`palimpsest --help` lists only 11 top-level commands (align-paf, analyze, collections, dedup-ids, doctor, export, info, ingest, run-track, serve, stop, validate). `palimpsest derive --help` and `palimpsest align --help` both fail ('No such command'). No CLI command exists for POST /api/projects/{id}/derive, POST /api/alignment/run, POST /api/alignment/diff, GET .../self_similarity/*, .../embedding/*, .../kwic, .../collocations, .../dispersion, or POST /api/import/local. The collections tier (C1-C7) is well-mirrored (22 subcommands), but the per-project analysis and alignment-run surfaces are not.",
+     "grounded": true,
+     "recommendation": "Correct the 'cli.py mirrors them' claim in docs/architecture notes to scope it to the collections tier + run-track. Either add CLI parity for derive/align-run/self-similarity (headless automation use cases) or explicitly document these as HTTP-only in WALKTHROUGH.md so operators don't assume a CLI path exists.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Binary wire-contract is inconsistently self-describing: matrix.bin, /lane, and /projection ship NO shape/dtype header while /heatmap does",
+     "severity": "medium",
+     "category": "design",
+     "evidence": "GET /api/alignment/{q}/{t}/matrix.bin returns raw application/octet-stream with headers date/server/content-type/accept-ranges/content-length/last-modified/etag but NO X-Matrix-N, dtype, or byte_order \u2014 the shape lives ONLY in the separate /matrix JSON manifest (server.py:2930-2937). /lane (server.py:1728) and /projection (server.py:1632) also return bare Response(content=_f32_le_bytes(...)) with no shape header. Only /heatmap sets X-Matrix-N/X-Matrix-Reduced/X-Matrix-Order (server.py:1686-1691). So one binary family self-describes via headers, another relies on an out-of-band JSON fetch, and lane/projection rely on byteLength/4 inference.",
+     "grounded": true,
+     "recommendation": "Standardize a minimal binary header on every .bin endpoint: X-Matrix-N (and X-Matrix-Cols for N\u00d72/N\u00d7M), X-Dtype: float32, X-Byte-Order: little-endian. This makes matrix.bin decodable without the coupled /matrix fetch and lets clients validate rather than infer.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Frontend trusts little-endian blindly and never validates the manifest byte_order it fetches",
+     "severity": "low",
+     "category": "bug",
+     "evidence": "comparisonStore.ts:163-169 fetches the /matrix manifest AND matrix.bin, then does `new Float32Array(buffer)` \u2014 which uses the host's native endianness (LE on x86/ARM in practice) and ignores the manifest's byte_order:'little-endian' field entirely. LayerLane.tsx:104, EmbeddingScatter.tsx:27, and DotplotView.tsx:300-314 likewise do `new Float32Array(buf)` with no header/endianness check (grep for headers.get in these files returns nothing). The contract is correct today only because _f32_le_bytes always writes '<f4' and all target platforms are LE.",
+     "grounded": true,
+     "recommendation": "Either assert manifest.byte_order==='little-endian' on the client and throw loudly otherwise, or drop byte_order from the manifest as a false-promise field. A silently-ignored contract field is worse than none.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Non-streaming /derive does not map FileExistsError to 409, unlike its /derive/stream sibling and the import endpoints",
+     "severity": "low",
+     "category": "bug",
+     "evidence": "POST /api/projects/{id}/derive (server.py:2174-2209) wraps only `except ValueError -> 400`; a FileExistsError (child project id collision) propagates unhandled -> 500. Its stream sibling maps ValueError->400 but ALSO leaks FileExistsError to the generic 500 (server.py:2257-2261), while /import and /import/local/stream both explicitly map FileExistsError->409 'Project already exists' (server.py:1990-1991, 2018-2019, 2063-2064). So derive-on-collision returns 500 where import-on-collision returns 409 \u2014 inconsistent conflict semantics.",
+     "grounded": true,
+     "recommendation": "Add `except FileExistsError: raise HTTPException(409, 'Project already exists')` to both /derive and /derive/stream so a name collision is a conflict, not a server error, matching the import contract.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "matrix.bin can serve a stale binary that mismatches the /matrix manifest dimensions \u2014 no integrity coupling",
+     "severity": "low",
+     "category": "bug",
+     "evidence": "matrix.bin (server.py:2930-2937) returns FileResponse(cross_similarity.bin) and /matrix (server.py:2883-2890) returns cross_similarity.json independently; neither validates that the binary length equals dimensions[0]*dimensions[1]*4. If a recompute writes a new manifest but the .bin write is interrupted (or vice-versa), the client's `new Float32Array(buffer)` reshaped to manifest dims would silently read garbage/misalign. Live data is consistent today (byte-exact match verified), but nothing enforces it.",
+     "grounded": true,
+     "recommendation": "In matrix.bin, stat the file and compare byte length against the manifest's dimensions product; 409 or 500 with a clear 'matrix/manifest size mismatch' if they diverge, rather than serving a decode-hazard binary.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "No /api/health (or any liveness) endpoint \u2014 GET /api/health returns 404",
+     "severity": "low",
+     "category": "gap",
+     "evidence": "Live probe: /api/health, /health, /api all return HTTP 404 ({'detail':'Not Found'}); only / (SPA), /docs, /openapi.json return 200. No health/readiness route is registered in server.py (grep for 'health' in server routes: none). Frontend does not reference one either.",
+     "grounded": true,
+     "recommendation": "Add a trivial GET /api/health returning {status:'ok', version}. It is the standard hook for uptime monitoring, container readiness probes, and the CLI's serve auto-kill/health logic, and its absence forces callers to probe a data endpoint as a proxy for liveness.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Encoded-traversal on project routes is caught by Starlette routing (404), never reaching the handler's own 400 'Invalid project ID'",
+     "severity": "info",
+     "category": "design",
+     "evidence": "GET /api/projects/..%2F..%2Fetc/integrity returns 404 'Not Found' (Starlette route match fails on the decoded slash) rather than the handler's 400 'Invalid project ID' from _safe_project_dir (server.py:633-634). Safe in outcome (access blocked), but the documented 400 validation path for malformed IDs is unreachable for slash-bearing inputs, so the contract's stated 400 behavior only applies to non-slash junk IDs.",
+     "grounded": true,
+     "recommendation": "This is defense-in-depth working correctly; no fix required, but note in the API contract that malformed IDs containing path separators surface as 404 (route miss), not 400, so clients should treat both as 'bad/unknown project'.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "frontend-ui",
+   "title": "Frontend / UI code quality & architecture",
+   "health": "good",
+   "summary": "browser/src is a mature, disciplined React-19 + Vite + zustand + Tailwind codebase. The build is genuinely clean (tsc -b exits 0, verified), the documented track-map over-subscription perf bug has been fixed with deliberate per-track/useShallow selectors, and state, error-boundary, and tab a11y patterns are largely correct and consistent. The main weaknesses are architectural sprawl in a few 1000+ LOC component monoliths, a total absence of any central fetch/API client (71 inline fetches with inconsistent error/cancellation handling), and a handful of UX-primitive inconsistencies (one legacy inline-styled component, ad-hoc loading strings, a keyboard-inaccessible SVG click target). None are critical; all are addressable incrementally.",
+   "strengths": [
+    "Zustand selector discipline is real and the documented over-subscription regression is fixed: trackStore.ts:99-118 exposes useTrackVisibility (subscribes to a single track's visible flag) and useTrackManifests (wrapped in useShallow so the manifest map stays shallow-equal across toggles), each with comments explaining exactly why. AppLayout's maskTypeCount selector (AppLayout.tsx:32-40) builds a Set internally but returns .size (a primitive), so it does not leak a new reference each render.",
+    "Build health matches the docs: `npx tsc -b` returns exit 0 with zero errors (personally run), confirming the previously-flaky React-19 typecheck is now genuinely clean.",
+    "Correct, consistent tab/ARIA semantics across the app: role=tablist/tab, aria-selected, and aria-controls={`panel-${id}`} in TabBar.tsx:19-25 correctly point at AppLayout.tsx:110-111 (role=tabpanel, matching id). ErrorBoundary wraps every tab panel plus DetailPanel and MaskingPanel individually (AppLayout.tsx:120-141), so one view crashing cannot white-screen the app.",
+    "LLMSummary.tsx models async state as a discriminated union (idle | loading | done | unavailable | error, lines 8-13) rather than boolean flags, giving exhaustive, race-free rendering of every state including a distinct 'AI service unavailable' path (line 40) \u2014 a genuinely good pattern the rest of the codebase should copy.",
+    "SVG data visualizations are annotated for a11y and tooltips: BlockMap, AllPairsMatrix, PhyleticTreeView, RepeatLanes, ConservationLane in CorpusView.tsx and the LayerLane/BandLane family all carry role=img + aria-label and per-rect <title> hover text, and the AllPairsMatrix cells are real <button>s (CorpusView.tsx:112-127), which is keyboard-accessible."
+   ],
+   "findings": [
+    {
+     "title": "No central API client \u2014 71 inline fetch() calls across 28 files with divergent error/base-URL handling",
+     "severity": "medium",
+     "category": "design",
+     "evidence": "grep counts 71 `fetch(` across src (stores + 20 component files). Base URL is inconsistent: projectStore.loadProjectData takes a `baseUrl` param (projectStore.ts:113) while comparisonStore, AnalysisPanel, CorpusView, LLMSummary etc. all hardcode relative paths like fetch('/api/collections') (CorpusView.tsx:294) and fetch('/api/summarize') (LLMSummary.tsx:30). No shared client, no shared error typing, no shared retry/timeout.",
+     "grounded": true,
+     "recommendation": "Introduce a thin src/adapters/apiClient.ts (base URL from one config, JSON+ok check, typed error) and route stores/components through it. This also fixes the response-guard and cancellation inconsistencies noted below in one place.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "CorpusView.loadOverview fires 4 dependent GETs serially with no per-response .ok guard",
+     "severity": "medium",
+     "category": "bug",
+     "evidence": "CorpusView.tsx:316-324: `const g = await fetch(.../corpus-graph).then(r=>r.json())`, then phyletic-tree, corpus-repeats, root-track, each `.then(r=>r.json())` with no `if(!r.ok)` check. Only the POST at line 311 is guarded. A 500 on any GET yields a JSON-parse throw caught by the generic outer catch, surfacing a parser error string to the user instead of the server's detail. The four awaits are also sequential though independent (graph/tree/repeats could parallelize).",
+     "grounded": true,
+     "recommendation": "Guard each response (r.ok) and surface j.detail like the POST branch does; Promise.all the independent GETs. Live-probed http://localhost:8092: the corpus-graph GET already returns 200 even before the POST build, so the POST\u2192GET sequence is partly redundant for cached graphs.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Two orphaned empty component/registry directories (dead scaffolding)",
+     "severity": "low",
+     "category": "gap",
+     "evidence": "`ls src/registry/` and `ls src/components/CrossTextDotplot/` both return only . and .. \u2014 zero files. CrossTextDotplot is superseded by CompareView/ComparativeDotplot.tsx; registry/ is never imported.",
+     "grounded": true,
+     "recommendation": "Delete both empty directories; they imply capabilities that don't exist and confuse the component map.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "AnalysisPanel.tsx is a 1049-line monolith mixing 4 dialogs, ~200 lines of static copy, and all fetch/poll orchestration",
+     "severity": "medium",
+     "category": "design",
+     "evidence": "AnalysisPanel.tsx: single file holds SelfSimilarityParamDialog (233-429), ParamDialog (431-473), EmbeddingDialog (481-508), the default export with 8 useState + 6 useCallback + 4 useEffect and duplicated embedding-compute-then-poll logic in both handleRun/computeEmbeddingsThenRun (576-603) and handleRunAll (623-673), plus ~180 lines of TRACK_DESCRIPTIONS/TRACK_DETAILS literal copy (84-165). DotplotView.tsx (1024) and import/ImportWizard.tsx (909) are similarly oversized.",
+     "grounded": true,
+     "recommendation": "Extract the three dialogs and the static TRACK_* metadata into sibling modules; factor the duplicated 'compute embeddings then poll then run' into one helper. Reduces the file to the table+orchestration shell.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "~60% of data-fetching components lack request-cancellation, risking stale-render/setState-after-unmount",
+     "severity": "medium",
+     "category": "bug",
+     "evidence": "Only 8 of 20 component files that call fetch() use an AbortController or a `cancelled` flag (grep). Good citizens exist (LayerLane BandLane uses `let cancelled` at :50-59; SelfSimilarityParamDialog uses it at AnalysisPanel.tsx:245-266). But CorpusView.loadOverview (316-338), AnalysisPanel.fetchStatus/checkEmbeddings (520-539), and the trackStats effect (678-693) call setState after awaits with no cancellation \u2014 a fast collection/tab switch can land a stale response on the new selection.",
+     "grounded": true,
+     "recommendation": "Standardize on AbortController in the shared client (see finding 1) or a cancelled-flag cleanup in every fetch effect; the codebase already has the pattern in ~40% of files.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "LLMSummary is a styling/design-token outlier \u2014 inline style objects with hardcoded hex instead of Tailwind + CSS vars",
+     "severity": "low",
+     "category": "ux",
+     "evidence": "Every other component styles via Tailwind classes bound to CSS variables (var(--color-primary), var(--color-danger)). LLMSummary.tsx:58-121 uses inline style={{ backgroundColor:'#3498db' }}, '#e74c3c', '#2ecc71', '#f8f9fa', '#e67e22' \u2014 none theme-aware, so this widget ignores the design system and won't respond to theming.",
+     "grounded": true,
+     "recommendation": "Port LLMSummary to the Tailwind + var(--color-*) convention used app-wide; its state-machine logic is fine, only the presentation is legacy.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Inconsistent loading/empty-state copy \u2014 10 distinct ad-hoc strings, no shared loading primitive",
+     "severity": "low",
+     "category": "ux",
+     "evidence": "grep for 'Loading' strings yields 'Loading\u2026', 'Loading analysis status...', 'Loading character index...', 'Loading layers\u2026', 'Loading library\u2026', 'Loading profile\u2026', 'Loading self-similarity matrix...', 'Loading text\u2026', 'Loading Palimpsest' \u2014 mixed '\u2026' vs '...' ellipsis, each hand-written per component despite a common/LoadingOverlay.tsx existing. Empty-states are similarly bespoke ('No tracks computed yet', 'No profile computed yet', 'Select a collection...').",
+     "grounded": true,
+     "recommendation": "Add a small <Loading label> / <EmptyState> primitive in common/ and adopt it; normalizes tone, ellipsis, and future spinner/skeleton work.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "SVG <text> click target in phyletic tree is not keyboard-accessible",
+     "severity": "low",
+     "category": "ux",
+     "evidence": "CorpusView.tsx:182-193 PhyleticTreeView renders member labels as <text ... onClick={() => onMember(n.member!)}> with no role, tabIndex, or onKeyDown. SVG <text> is not focusable, so keyboard users cannot open a member from the tree (whereas the sibling AllPairsMatrix uses real <button> cells at :112). TrackPanel.tsx:69,168 similarly attach onClick to plain <span> without keyboard handlers.",
+     "grounded": true,
+     "recommendation": "Wrap the tree-label click in a focusable element (foreignObject+button, or add role='button' tabIndex={0} onKeyDown Enter/Space); convert the TrackPanel expand/toggle spans to buttons.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "ErrorBoundary swallows errors with no componentDidCatch \u2014 no logging/telemetry on render crashes",
+     "severity": "low",
+     "category": "gap",
+     "evidence": "common/ErrorBoundary.tsx implements only getDerivedStateFromError (24-26) and render; there is no componentDidCatch, so caught render errors are shown to the user but never logged to console or any sink. In dev this loses the stack; in any future prod deploy there's zero error reporting.",
+     "grounded": true,
+     "recommendation": "Add componentDidCatch(error, info) that at minimum console.errors the error+componentStack (and is a hook point for future telemetry).",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "cl-similarity",
+   "title": "Comp-ling: chunking, embedding & similarity engine",
+   "health": "good",
+   "summary": "The core similarity math is sound and, unusually for this class of tool, correct in the details I could verify empirically: cosine is L2-normalized with a safe zero-vector guard; word_overlap is a true content-token Jaccard; edit_distance normalizes token-level Levenshtein correctly to [0,1]; IDF/BM25 are textbook Lucene/Okapi; Smith-Waterman's Waterman-Eggert non-overlap correctly preserves genuine repeats (verified live: a query range aligning to two distinct target ranges yields 2 records). Metric-congruence is principled \u2014 token metrics key on metric-only (\"tokens:word_overlap\"), embedding metrics fold in a provider+endpoint+model+dim fingerprint while deliberately EXCLUDING the per-text analyzable digest, which is exactly right for cross-text comparability (confirmed live: both Matthew-Mark editions share embedding:cosine:c9757c16f8473ef1). The weak spots are statistical/peripheral: Gumbel p-values are only wired for the semantic method (word/alphabet alignments ship p=1.0), the null model permutes one axis only, and a few masking/labeling inconsistencies exist at the edges.",
+   "strengths": [
+    "Waterman-Eggert non-overlap is correctly implemented and the 'repeats survive' claim holds under live test: smith_waterman.py:102-112 rejects a candidate only when it overlaps an accepted record on BOTH axes; I built a tandem-repeat matrix (query 0-2 aligning to targets 0-2 AND 5-7) and got exactly 2 records, confirming a one-axis-overlapping repeat is kept (smith_waterman.py:106-107 'disjoint on an axis -> distinct block -> keep').",
+    "The 'no silent cap' claim is real: smith_waterman default max_alignments=None extracts exhaustively (smith_waterman.py:119-124), and if a positive cap is hit while cells remain above threshold it logs at WARNING (lines 187-192) rather than silently truncating \u2014 a genuine fix over the described legacy min(100, n*m) cap.",
+    "Metric-congruence key design is linguistically principled (collections_ops.py:175-195): token metrics are text-independent ('tokens:{metric}') so any two chunked texts are congruent, while embedding metrics require an identical vector space via model_fingerprint = sha256(provider:endpoint:model:dim) \u2014 and crucially the per-text chunk_analyzable_digest is NOT folded in, so two DIFFERENT texts embedded by the same model correctly land in one comparability cohort. Live congruence GET confirms both editions share one key and all_congruent=true.",
+    "The four similarity kernels are individually correct: _cosine_matrix (self_similarity.py:114-120) L2-normalizes with a 1e-8 zero guard and clips to [-1,1]; _word_overlap_matrix (131-155) is a true content-token Jaccard |A\u2229B|/|A\u222aB|; _edit_distance_matrix normalizes 1 - dist/max(la,lb) to [0,1] (verified: 2-vs-1 token overlap -> 0.5); corpus_idf/bm25_scores (corpus_analysis.py:28-87) are exact smoothed-IDF + Okapi BM25.",
+    "Chunking offset discipline is rigorous: chunk_text runs a postcondition self-check (_validate_chunks, chunking.py:290-337) verifying every record is index-sequential, in-bounds (0<=start<end<=n), start-ordered, disjoint (or non-decreasing for slide), AND text-anchored (chunk['text']==text[start:end]) \u2014 a coordinate-corrupting chunk fails loud at the producer instead of poisoning the OffsetMap downstream."
+   ],
+   "findings": [
+    {
+     "title": "Gumbel p-value calibration is wired ONLY for the semantic method; word/alphabet alignments always ship p_value=1.0",
+     "severity": "high",
+     "category": "bug",
+     "evidence": "server.py:2742-2766 \u2014 the alignment/run handler calibrates Gumbel and assigns rec.p_value ONLY inside the else (cosine/semantic) branch (lines 2764-2766). The method=='word' branch (2744-2753) and method=='alphabet' branch (2742-2743) never call calibrate_gumbel, so their records keep AlignmentRecord's default p_value=1.0 (records.py:45). The records/scores endpoints then filter on max_p_value (server.py:2834-2835, 2874-2875), meaning EVERY word/alphabet alignment is treated as maximally non-significant and any max_p_value<1.0 filter silently discards all of them.",
+     "grounded": true,
+     "recommendation": "Move the calibrate_gumbel + p_value assignment out of the else branch so all three methods get calibrated p-values (word-overlap and alphabet matrices are equally amenable to the shuffle-null). Alternatively, if p-values are intentionally semantic-only, make the records/scores endpoints reject max_p_value filtering for non-semantic methods with a 400 rather than silently zeroing the result set.",
+     "verdict": "partial",
+     "adjusted_severity": "medium",
+     "verify_reasoning": "CONFIRMED (grounded, code + live API): server.py:2764-2766 assigns rec.p_value from calibrate_gumbel ONLY inside the else/semantic branch; the word branch (2744-2753) and alphabet branch (2742-2743) never calibrate. records.py:45 defaults p_value=1.0, so those records ship 1.0. server.py:2834-2835 (/records) and 2874-2875 (export.paf) filter r.p_value <= max_p_value, so any max_p_value<1.0 discards all word/alphabet records. Empirically verified on live :8092: word comparison douay-rheims\u20260047-0048 vs 1599-geneva\u2026mark-matthew returns 103 records all pValue=1.0, and ?max_p_value=0.99 returns 0. Eight stored word comparisons on disk (511 records) are uniformly pValue=1.0. test_alignment_c2.py:86-87 tests the filter only with injected p-values, never the real word/alphabet path \u2014 confirming the gap is unintentional/untested, not asserted design.\n\nPARTIAL / severity lowered high->medium for three reasons. (1) Fix imprecision: the recommended 'move calibrate_gumbel out of the else branch' works for word (its matrix is in handler scope at 2751) but NOT for alphabet \u2014 align_alphabets (alphabet_align.py:59-74) builds sim_matrix internally and returns only records; the matrix is never surfaced to the handler, so calibration needs matrix exposure or an in-function change. Diagnosis correct, one-liner fix isn't. (2) Blast radius: the shipping React UI (ComparativeDotplot.tsx:245-257) filters on score only, PAF link passes only min_score, comparisonStore.ts:152 fetches /records with no params, and the CLI exposes no alignment-records path (grep of cli.py empty). No shipping user-facing surface currently trips the silent loss \u2014 it's an API-contract bug a scripted consumer or a future p-value slider would hit. (3) Design intent: FR-40 (collections-tier-vision.md:222, plan.md:73) thresholds the dotplot on the SCORE distribution, not p-values; /scores suggested_threshold is score-based. A semantic-only p-value reading is defensible, which the finding's own alternative (400 on max_p_value for non-semantic) accommodates. Real bug worth fixing (uncalibrated records + silent filter = footgun), but scoped down from 'EVERY alignment silently discarded' to an API-level correctness gap with no live UI path."
+    },
+    {
+     "title": "Gumbel null permutes a single axis, leaving column structure intact \u2014 anti-conservative for autocorrelated matrices",
+     "severity": "medium",
+     "category": "perf",
+     "evidence": "gumbel.py:42-45 \u2014 calibrate_gumbel does `perm = rng.permutation(n); shuffled = matrix[perm, :]`, permuting rows only. Each column's value multiset and any column-band autocorrelation survive the shuffle. I built a matrix with identical rows (pure column structure); the 'shuffled' null was numerically identical to the observed matrix, so the null max-score distribution collapses onto the observed scale and p-values are systematically too small (anti-conservative) for matrices with column autocorrelation \u2014 which semantic similarity matrices typically have.",
+     "grounded": true,
+     "recommendation": "Permute both axes independently (matrix[rng.permutation(n)][:, rng.permutation(m)]) to destroy 2-D structure, matching the standard sequence-alignment null where both sequences are shuffled. Also note n_shuffles=30 (gumbel.py:20) is thin for a 2-parameter EVD fit; document the resulting variance or raise the default.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "extract() unconditionally sets masked chunks' diagonal to 1.0, violating the masking contract",
+     "severity": "low",
+     "category": "bug",
+     "evidence": "self_similarity.py:1021-1024 runs `np.fill_diagonal(matrix, 1.0)` for the self case AFTER the kernel intentionally left masked chunks all-zero. I fed _word_overlap_matrix a 3-chunk input with chunk 1 masked: its diagonal came back [1.0, 0.0, 1.0] (masked cell correctly 0), but after extract's fill_diagonal it becomes [1.0, 1.0, 1.0]. The kernel docstrings promise 'masked chunks skipped (cells remain 0)' (self_similarity.py:133, 188), so the shipped matrix contradicts them on the diagonal.",
+     "grounded": true,
+     "recommendation": "Fill the diagonal only for unmasked chunks, e.g. iterate and set matrix[i,i]=1.0 where not chunks[i].get('masked'), or apply the mask after the diagonal fill. Impact is small (diagonal is self-trivial and dotplots ignore it) but it undermines the masking invariant and any downstream check that treats masked rows as all-zero.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Antiparallel pass is labeled 'chiasmus (ABBA)' detection but compares chunk text left-to-right, so it cannot detect reversed-content chiasmus",
+     "severity": "medium",
+     "category": "doc-drift",
+     "evidence": "self_similarity.py:14-15, 496-498, 718-721 repeatedly claim the (1,-1) antiparallel direction 'detects chiasmus / ABBA mirror structures' where 'themes appear in reverse order'. But _extend_alignment (515-517, 585-586) scores every step with _char_identity(chunks[ci]['text'], chunks[cj]['text']) \u2014 an LCS that reads both strings left-to-right. I tested 'the lord god almighty reigns' vs its word-reversal: LCS identity is only 0.500 vs 1.000 for the identical string. So the antiparallel pass detects positional mirroring of IDENTICAL chunks across the matrix anti-diagonal, not linguistically reversed (chiastic) content \u2014 the two are different phenomena and the docs conflate them.",
+     "grounded": true,
+     "recommendation": "Either (a) reverse one operand's token/char order before scoring the antiparallel extension so it actually rewards reversed content, or (b) retire the 'chiasmus/ABBA' language and describe the pass as 'anti-diagonal positional mirroring of repeated passages', which is what the LCS-on-forward-text code actually finds.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "edit_distance 3x length prune and sim>0.05 floor silently report low/zero similarity for legitimately short-vs-long pairs",
+     "severity": "low",
+     "category": "design",
+     "evidence": "self_similarity.py:205-211 \u2014 pairs where `la > 3*lb or lb > 3*la` are skipped (cell stays 0), and computed sims `<= 0.05` are also dropped to 0. A short formulaic phrase embedded in a much longer chunk (>3x) is reported as zero similarity, not low similarity, so the matrix conflates 'not comparable by this heuristic' with 'genuinely dissimilar'. The word_overlap kernel has no such length gate, so the two token metrics disagree on the same chunk pair's comparability.",
+     "grounded": true,
+     "recommendation": "The 3x prune is a defensible speed heuristic but should be documented as producing a structural zero (not a similarity of zero) \u2014 or lift it, since the empty-intersection early-exit in _edit_distance_tokens (self_similarity.py:174-175) already bounds the expensive DP. At minimum align the gate with word_overlap so the two token metrics don't silently disagree on which pairs are comparable.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "_char_identity uses LCS ratio while _edit_distance uses Levenshtein \u2014 'identity' means two different things across the alignment vs matrix layers",
+     "severity": "low",
+     "category": "design",
+     "evidence": "The LASTZ layer scores identity as 2*LCS/(la+lb) at the character level (self_similarity.py:341-360, 363-386) and calibrates its threshold against a shuffled-char LCS null (304-338). The edit_distance matrix scores 1 - Levenshtein/max(la,lb) at the token level (186-212). Both are surfaced to the user as 'identity'/'similarity' but are different metrics (LCS ratio is insensitive to transpositions; Levenshtein penalizes them). The alignment records' `identity` field (records.py:48) is yet a third thing \u2014 the mean raw matrix cell value (smith_waterman.py:164-165). Three distinct 'identity' definitions share one label.",
+     "grounded": true,
+     "recommendation": "Disambiguate the field names/labels (e.g. lcs_identity, edit_similarity, mean_cell_similarity) or document precisely which identity each surfaced number is, so a user comparing an alignment's `identity` to a matrix cell isn't comparing incommensurable quantities.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "PAF residue-match count is fabricated from identity\u00d7block_len with no real CIGAR, misrepresenting alignment quality to downstream PAF consumers",
+     "severity": "low",
+     "category": "gap",
+     "evidence": "records.py:110-139 records_to_paf sets column 10 (matches) = round(identity \u00d7 max(query_span, target_span)) because 'our records carry character spans but no per-residue CIGAR' (docstring 118-120), and the cigar field is always empty (records.py:49, 81). Any minimap2/PAF-consuming tool reading these files will treat an approximate identity-derived count as a true residue-match count, and block_len is the longer span rather than the true alignment column count. The mapping quality (col 12) is derived from p_value which, per finding 1, is 1.0 for word/alphabet methods -> MAPQ 0 for all of them.",
+     "grounded": true,
+     "recommendation": "Emit a real CIGAR from the traceback aligned_pairs (the =/X/I/D ops are available from the Smith-Waterman path) so PAF matches/block are exact, and add an explicit 'approx' tag when they are estimated. Given finding 1, MAPQ will read 0 for every word/alphabet record until p-values are calibrated.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "cl-masking-profile",
+   "title": "Comp-ling: masking, profiling, integrity & lexical stats",
+   "health": "good",
+   "summary": "The lexical-diversity and statistics core is mathematically sound: I verified Yule's K, MTLD (against the reference lexical-diversity algorithm), MATTR, Zipf, Heaps, Dunning's G\u00b2, and PMI against the literature and independent reimplementations, and all match. Verse-number masking is genuinely content-preserving and reversible (probed live: \"1:1. \" masked, prose intact), and KWIC/dispersion original-coordinate remaps verified byte-exact against the reference text. The real correctness defects are narrower: a masking/detection bug when repeated phrases contain punctuation-only tokens (double-space phrase keys break the span-mapping and coverage comparison), and an OffsetMap boundary-aliasing gap that the integrity round-trip validator never exercises. Overall a mature, well-documented codebase with a few surgical bugs.",
+   "strengths": [
+    "MTLD is implemented correctly including the bidirectional mean and the partial-factor `(1 - TTR)/(1 - threshold)` remainder (textstats.py:66-88) \u2014 I reimplemented the canonical McCarthy & Jarvis / lexical-diversity algorithm independently and got identical output (7.8191 on a 2000-token sample). MTLD/MATTR are the two measures most commonly gotten subtly wrong, and both are right here.",
+    "Yule's K matches the canonical `10^4 * (sum_i i^2*V_i - N) / N^2` formula exactly (textstats.py:91-99): verified 2222.2222 on a hand-computed toy case. Dunning's G\u00b2 (textstats.py:186-199), though written as a factored two-binomial log-likelihood, is algebraically identical to the standard 2x2 contingency form \u2014 verified 65.2835 against an independent Rayson-style reimplementation.",
+    "Masking is truly content-preserving and reversible for verse numbers: live probe of the DR project confirmed the mask span [0,5) covers exactly the token \"1:1. \" while the prose \"The book of the generation of Jesus...\" (offset 5+) stays analyzable (verses.py:43-69; reference.txt). The integrity report exposes the coordinate invariants as a first-class user surface (integrity.py) rather than burying them.",
+    "Coordinate remap to original space is correct on the hot paths: KWIC start/end (server.py:1787) and dispersion spans (server.py:1844) both mapped byte-exact against reference.txt (offset 76376:76385 == 'beginning', 35:40 == 'Jesus'). ECDF ends at 1.0 and histogram counts sum to n (live chunking/stats probe: n=383, sum(counts)=383, y[-1]=1.0), so the distribution primitives are internally consistent.",
+    "Detection and masking share a single `_count_repeats` tally (repeats.py:70-90) so the `repeats` and `repeat_mask` tracks provably cannot drift on the counting logic, and OffsetMap enforces its ordered/disjoint/non-empty span precondition at construction (derive.py:60-71) instead of silently mistranslating."
+   ],
+   "findings": [
+    {
+     "title": "Repeated phrases with punctuation-only tokens are silently dropped from masking coverage and mis-mapped in duplicate spans",
+     "severity": "high",
+     "category": "bug",
+     "evidence": "repeats.py:88 builds phrase keys via `\" \".join(gram)`; a token that `_normalise` (repeats.py:64-67) reduces to \"\" (e.g. \"--\") yields a key with an embedded double space like 'the cat  sat'. In detect_repeats (repeats.py:160-166) and mask_repeats (repeats.py:207,218-224) that key is re-tokenised with `p.split()`, which COLLAPSES the double space to ['the','cat','sat'] (len 3), so the slice comparison `normalised[start:start+plen] == phrase_tokens` never matches the actual location ['the','cat','','sat'] (len 4). Verified live: detect_repeats on 'the cat -- sat ...'x3 returns phrase 'the cat  sat' but maps intervals to just 'the cat' (0,7); mask_repeats([chunk], {'the cat  sat'}, 0.1) returns masked=False despite 3 in-chunk occurrences.",
+     "grounded": true,
+     "recommendation": "Filter empty tokens out of each n-gram before building the phrase key in `_count_repeats` (e.g. skip grams containing \"\" or use a non-space join sentinel), OR store phrase keys as tuples rather than space-joined strings so `.split()` cannot lose token count. This affects `/duplicates`, the repeats track, and repeat-mask coverage on any corpus with em-dashes/OCR punctuation tokens.",
+     "verdict": "confirmed",
+     "adjusted_severity": "medium",
+     "verify_reasoning": "Confirmed the mechanism and every reproduction live; adjusting severity high->medium as the blast radius is narrower than \"high\" implies. File is at core/palimpsest/tracks/repeats.py (auditor's line refs are ~offset but map correctly: _normalise at 64-67, key join at 85, detect_repeats span map at 160-166, mask_repeats at 207/218-224).\n\nROOT CAUSE VERIFIED: _normalise (repeats.py:67, re.sub(r\"[^a-z']\",\"\",...)) reduces any token with no letters to \"\". _count_repeats (line 85) joins the gram with \" \".join(gram); an embedded \"\" yields a double-space key (e.g. 'the cat  sat'), leading/trailing \"\" yields leading/trailing-space keys. The guard at line 86 `if not key.strip()` only rejects all-whitespace keys, so malformed keys with a single interior/edge space leak through. detect_repeats (line 160) re-tokenises phrases with p.split(), which collapses the double space, so `normalised[start:start+plen] == phrase_tokens` compares len-3 ['the','cat','sat'] against the real len-4 ['the','cat','','sat'] and never matches the true location.\n\nLIVE REPROS (all personally run against core/.venv):\n- detect_repeats('the cat -- sat'x3...) returns {'the cat  sat','cat  sat','the cat '} and maps intervals to only 'the cat' (0,7)x3 \u2014 the '-- sat' tail is dropped from coverage.\n- mask_repeats([chunk of the/cat/--/sat x3], {'the cat  sat'}, 0.1) -> masked=False (auditor's exact claim reproduced), because 'the cat  sat'.split()=['the','cat','sat'] never matches chunk tokens ['the','cat','','sat']. The no-punct control 'the cat sat' -> masked=True, proving the punctuation token is the cause.\n- COUNT FRAGMENTATION (worse than span-only): an occurrence with a number inserted mid-phrase ('kingdom 12 of heaven') is tallied under malformed key 'kingdom  of heaven' (count=1) instead of reinforcing 'kingdom of heaven' (count=3). If only 2 clean occurrences existed, the third would be silently dropped below min_occurrences and never detected or masked \u2014 this is the \"silently dropped from masking coverage\" the auditor asserted.\n\nWIDER TRIGGER SURFACE than the auditor's em-dash/OCR framing: _normalise reduces ALL of '--','\u2014','...','***','!?', and every standalone number ('1599','42', verse/chapter/page numbers, dates, footnote markers) to \"\". Numeric tokens are ubiquitous in real corpora, so the trigger surface is broad.\n\nREAL PIPELINE + ENDPOINT IMPACT CONFIRMED: repeat_mask_track.py:85-91 reads phrases from the repeats layer manifest and feeds the same corrupted set into mask_repeats, so the corruption propagates across the repeats track, the repeat_mask track, and self_similarity's shared substrate. Live GET /api/projects/{geneva-matthew-mark}/duplicates?min_words=3&min_occurrences=3 returned 2883 phrases of which 24 are malformed and user-facing, e.g. ' and it came to pass' (leading space), 'son of god ' (trailing space), 'him  now'/'men  and' (double space) \u2014 server.py:1834 returns sorted(phrases) verbatim, and their spans are truncated at the empty-token boundary.\n\nSEVERITY JUSTIFICATION (medium, not high): it is a genuine correctness bug with a live end-to-end repro, but (1) it is a descriptive/analytical feature \u2014 no data corruption, security, or persistence damage; (2) it is bounded to phrases that straddle empty tokens \u2014 clean-token phrases are unaffected and dominate (2859/2883 clean in the live run); (3) the mask flag degrades gracefully via prefix/partial matches rather than flipping wholesale (observed masked=True in the multi-phrase case despite the broken full-phrase match). Impact is partial accuracy degradation plus cosmetic API pollution, so high overstates the blast radius.\n\nFIX is correct and surgical as recommended: skip grams containing \"\" in _count_repeats (or store phrase keys as tuples instead of space-joined strings so .split() cannot lose token count) \u2014 a one-line change that also removes the leading/trailing-space keys."
+    },
+    {
+     "title": "OffsetMap separator-only child ranges map to a bogus parent pre-image (inverse_span not None-safe at the separator)",
+     "severity": "medium",
+     "category": "bug",
+     "evidence": "derive.py:96-111: `_segment_at(child_off)` uses `bisect_right(self.base, child_off)-1` and returns index i when `child_off <= base[i]+(e-s)`, so the FIRST separator character (child offset == content end) aliases to the content boundary. Verified on OffsetMap([(0,5),(10,15)], sep_len=2): `inverse_span(5,6)` returns (5,6) \u2014 but child [5,6) is entirely inside the '\\n\\n' separator and has NO parent pre-image; parent offset 5 is a DROPPED gap character. `inverse_point(5)` returns 5 while `translate_point(5)` returns 5 too, yet 5 is not in any kept span, so `translate_point(inverse_point(5)) != inverse_point(...)` round-trip breaks at separator boundaries.",
+     "grounded": true,
+     "recommendation": "In `_segment_at`, treat `child_off == base[i]+(e-s)` (the content-exclusive end) as landing in the following separator (return None) rather than in the span, so separator-only ranges yield None from inverse_span/inverse_point. Impact is bounded (KWIC word matches don't fall in separators) but segment_offsets / repeat spans / verse text_ends that abut a kept-span boundary can produce a range that includes a dropped separator boundary char.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Integrity round-trip validator never exercises the span-end boundary, so the OffsetMap aliasing reads all-green",
+     "severity": "medium",
+     "category": "test",
+     "evidence": "integrity.py:78 samples only `{s, (s+e)//2, e-1}` for each kept span \u2014 it deliberately omits `off == e` (the exclusive end). Live `/integrity` on the DR project returns offsetmap-roundtrip=pass. Because the sampled set excludes the exclusive-end and separator offsets, the boundary alias demonstrated above (translate_point(e) returning a separator offset; inverse_point disagreeing) is untested and the 'invariant' reports green despite the non-invertibility at boundaries.",
+     "grounded": true,
+     "recommendation": "Add boundary samples to the round-trip check: assert `translate_point(e)` for exclusive end e is either None or maps back consistently, and assert inverse_point on the first separator offset (base[i]+(e-s)) returns None. This makes the integrity surface actually cover the boundary contract it claims (docstring: 'inverse_point(translate_point(x))==x').",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Chunk-based vs text-level repeat detection diverge whenever chunk size != 7 (docstring claims parity only at default)",
+     "severity": "low",
+     "category": "design",
+     "evidence": "find_exact_repeats caps n-grams at `min(chunk_size, len//2)` (repeats.py:113-114) where chunk_size = len(chunks[0]['words']), while detect_repeats caps at `min(max_phrase_len=7, len//2)` (repeats.py:148). Verified: with chunk_size=3 the chunk path returns only up-to-3-grams while the text path returns up-to-6-grams over the same input (DIVERGE=True). The module's headline claim that the two paths 'can never drift' holds only for the shared `_count_repeats` tally and only at chunk_size==7; the ceilings differ otherwise.",
+     "grounded": true,
+     "recommendation": "This is documented as intended (self_similarity uses chunk_size 7) and the production tracks use the text-level path, so it is not a live correctness bug. Consider tightening the docstring at repeats.py:98-105 to say parity holds only when chunk_size == DEFAULT_MAX_PHRASE_LEN, to avoid a false 'cannot drift' guarantee.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "hapax_ratio denominator is types, not tokens \u2014 legitimate but easily misread",
+     "severity": "info",
+     "category": "doc-drift",
+     "evidence": "basic_counts (textstats.py:44) computes `hapax_ratio = hapax / len(freq)` i.e. hapax / TYPES (proportion of the vocabulary seen once), whereas 'hapax ratio' in much corpus-linguistics literature denotes hapax / TOKENS. Verified on 'a a b c c d': returns 0.5 (2 hapax / 4 types), not 0.333 (2/6 tokens). Both are valid measures but the docstring 'Token/type/hapax counts' does not disambiguate which normalisation is used.",
+     "grounded": true,
+     "recommendation": "Either rename the field to `hapax_type_ratio` or document that it is hapax-over-types (vocabulary richness), so downstream reports don't mislabel it as the hapax-over-tokens rate. No math error \u2014 purely a labeling/framing risk.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "collections-tier",
+   "title": "Collections tier end-to-end correctness",
+   "health": "good",
+   "summary": "The collections tier is a genuinely mature, mathematically careful implementation of a reference-free pangenome/phylo model. The pure leaves (phylo NJ Saitou-Nei, Jaccard dissimilarity, corpus IDF/BM25, union-find, single-linkage) are correct and I verified them empirically against hand-built cases and the live :8092 API. Core/shell/singleton classification is sound (shell=0 for the N=2 validation corpus is mathematically correct). The congruence gate and non-destructive run versioning are principled. The two substantive weaknesses are both in the recall dial (C6c): the ANN \"empirical recall\" is tautologically 1.0 by construction, and the whole dial is not wired into any downstream exact-alignment step, so its stated purpose (accelerating an intractable O(N\u00d7M) sweep) is unrealized end-to-end.",
+   "strengths": [
+    "Phylo math is correct and verified: neighbor_joining (phylo.py:55-104) implements the Saitou-Nei Q-criterion with deterministic lowest-index tie-breaking, negative-branch clamping, and the correct new-distance update duc=0.5*(d(a,c)+d(b,c)-d(a,b)); I ran it on a hand-built 3-member core/shell/singleton case and got the expected topology (internal node 3 joining leaves 0,1, then 2). Jaccard dissimilarity D[i,j]=1-both/union (phylo.py:33-52) is the correct pangenome distance.",
+    "The honesty discipline is real and not cosmetic: summarize_candidates (candidate_gen.py:192-226) returns estimated_recall=None (not a fabricated 1.0) when there is no oracle sample, and the live word_overlap sweep openly reports mean_estimated_recall=0.102 rather than hiding a poor result. n_pruned/prune_fraction are always reported so a cap is never silent (verified via GET /sweeps on :8092).",
+    "The metric-congruence contract is correctly and consistently enforced as a fail-loud gate across probe, sweep, and comparison resolution (collections_probe.py:63-113 _gate_congruent_cohort; collections_ops.py:307-343 resolve_comparison), with the subtle and correct design choice to EXCLUDE the per-text analyzable digest from the congruence key (collections_ops.py:20-25) so cross-text comparison is not impossible by construction \u2014 while still folding the digest into operand_identity (collections_ops.py:348-362) to drive FR-28 staleness.",
+    "Union-find (corpus_graph.py:101-118) is correct: two-pass path compression verified to fully flatten a 4-deep chain to the root, and anchor_of full-containment lookup is consistent because anchors are built from the same (possibly trimmed) intervals that seed the edges (corpus_graph.py:247-281).",
+    "anchor_trim (C6a anchor honesty, corpus_graph.py:150-168) is a thoughtful correctness safeguard: it trims trailing/leading low-similarity boundary cells before a Smith-Waterman block becomes an anchor, preventing a weakly-overlapping paragraph from absorbing a disjoint passage into a core/shell homology component, and drops a wholly-low-similarity block instead of anchoring it."
+   ],
+   "findings": [
+    {
+     "title": "ANN sweep 'empirical estimated_recall' is tautologically 1.0 \u2014 not a real measurement",
+     "severity": "high",
+     "category": "design",
+     "evidence": "collections_sweep.py:34-35 (_RECALL_TOP_N=3), candidate_gen.py:34 (_MODE_DEPTH high-recall=20, fast=5); live GET /api/collections/matthew-mark-validation/sweep/368bd5c8d95e shows cosine high-recall pruning 94.78% yet estimated_recall=1.0. I reproduced it: cg.ann_candidate_pairs(depth=20) vs cg.exact_top_pairs_cosine(top_n=3) -> 0 oracle pairs missing from candidates -> recall=1.0; forcing top_n=50 drops recall to 0.4.",
+     "grounded": true,
+     "recommendation": "The oracle (exact_top_pairs_cosine) and the candidate generator both rank B-neighbors by the identical cosine metric, and depth (5/20) is always >= top_n (3), so the candidate top-depth set provably contains the oracle top-3 for every sampled row \u2014 recall is 1.0 by construction, never measuring whether the pruned set preserves the pairs an EXACT-ALIGNMENT sweep would deem significant. Make the oracle independent of the pruning ranking: set _RECALL_TOP_N > max depth, or (better) use the true expensive per-pair score (alignment/Gumbel) as the oracle, not cosine self-consistency.",
+     "verdict": "confirmed",
+     "adjusted_severity": "high",
+     "verify_reasoning": "Verified the mechanism, reproduced it, and hit the live API. The tautology is real and specific to the cosine/embedding path.\n\nCODE (grounded): collections_sweep.py:35 sets _RECALL_TOP_N=3 and :117 calls cg.exact_top_pairs_cosine(..., top_n=3) as the recall oracle; candidate_gen.py:34 sets _MODE_DEPTH={high-recall:20, fast:5}; :208 the candidate generator is cg.ann_candidate_pairs(..., depth). Both rank B-neighbors by the identical cosine metric: ann_candidate_pairs (candidate_gen.py:83-99) takes each A-row's top-`depth` B-columns; exact_top_pairs_cosine (candidate_gen.py:156-171) takes each sampled A-row's top-`top_n` B-columns by the same cosine. Since top_n(3) <= depth(5 or 20) always, the oracle set is a subset of the candidate set, so summarize_candidates (candidate_gen.py:210-213) computes |oracle \u2229 candidates|/|oracle| = 1.0. estimated_recall never measures whether pruning preserves the pairs the EXPENSIVE downstream step keeps \u2014 and candidate_gen.py:7-8's own docstring names that step as 'exact alignment + Gumbel significance', a different metric from cosine.\n\nREPRODUCED (core/.venv): depth=20,top_n=3 -> recall=1.0; depth=5,top_n=3 -> 1.0; forcing top_n=50 -> 0.4 (high-recall) / 0.1 (fast); top_n=21>depth=20 -> 0.952 \u2014 recall only departs from 1.0 once top_n exceeds depth, confirming the by-construction relationship.\n\nLIVE API (grounded): GET http://localhost:8092/api/collections/matthew-mark-validation/sweep/368bd5c8d95e returns metric=cosine, mode=high-recall, plan.depth=20, n_pairs_total=149753, n_candidates=7820, prune_fraction=0.9478, estimated_recall=1.0, recall_sample_size=147 \u2014 exactly the cited instance: 94.78% pruned yet 'recall' 1.0.\n\nASYMMETRY (finding correctly scopes to cosine): the token/MinHash-LSH path is NOT tautological \u2014 LSH bucket collision (lsh_candidate_pairs) is a genuinely different mechanism from exact Jaccard top-n (exact_top_pairs_jaccard), so its recall is a real measurement. I reproduced 0.0 on random shingles, and the build journal (collections-tier-build-journal.md:506) reports 0.102 measured on the live collection. This asymmetry is exactly why the finding matters: the build journal (:604-606) directly compares 'cosine mean recall 1.0 vs LSH 0.102' and attributes it to 'the metric's fit to the signal being the whole difference' \u2014 a misleading conclusion, because only the LSH oracle is independent of its generator. The cosine 1.0 is a self-consistency artifact, not evidence cosine ANN is a better fit.\n\nMINOR OVERSTATEMENT (severity moderator, not refutation): 'tautologically 1.0' is not exact in the strict math sense \u2014 argpartition tie-breaking can differ between oracle and generator, so recall dips below 1.0 in 18/200 pathological low-dimensional integer-vector cases I constructed. But with realistic continuous 2560-dim embeddings (matching the actual MLX-embedded validation collection), recall was 1.0 in 100/100 randomized trials. So on this platform's real data it is effectively 1.0 by construction; the tie escape hatch never fires in practice.\n\nThe recommendation is sound and correctly root-caused: make the oracle independent of the pruning ranking (set _RECALL_TOP_N > max depth, or better use the true expensive alignment/Gumbel score the docstring already names). I keep HIGH severity: this is a correctness/epistemic defect in a metric the docstrings, tests (test_candidate_gen/test_collections_sweep), CLI, API, and build journal all present as the tier's 'honesty guarantee', and it silently underwrites a wrong published conclusion (build journal line 604-606). It is not a crash or data-loss bug, so not critical."
+    },
+    {
+     "title": "Recall dial produces candidate pairs that nothing consumes \u2014 FR-35 not realized end-to-end",
+     "severity": "high",
+     "category": "gap",
+     "evidence": "collections_sweep.py:1-18 docstring: candidate gen exists to prune 'which (i,j) chunk pairs are worth scoring exactly'. But grep shows the only consumer of journal['pairs'][k]['candidates'] is read_sweep_journal -> GET /sweep/{run_id} (server.py:2549-2558), which echoes them verbatim. No code path drives exact alignment/Gumbel scoring over just the candidate pairs.",
+     "grounded": true,
+     "recommendation": "The sweep is currently a standalone instrumentation artifact, not the accelerator its design describes: the O(N\u00d7M) exact sweep is never actually run on the pruned candidate set. Either wire the candidate pairs into a downstream per-pair exact-scoring step (the real FR-35 payoff), or explicitly re-scope the docs/FR to 'candidate-set analysis only' so the tier isn't credited with an acceleration it doesn't perform.",
+     "verdict": "partial",
+     "adjusted_severity": "medium",
+     "verify_reasoning": "The finding's factual core is CONFIRMED and grounded by direct code reading + live-server probing:\n\n1. Intent is explicit. candidate_gen.py:7-9 and collections_sweep.py:1-7 state candidate gen exists to prune \"which (i,j) chunk pairs are worth scoring exactly\" for \"the expensive per-pair step (exact alignment + Gumbel significance).\" The design plan reinforces this: plan.md:114 lists \"exact scoring on candidates -> sparse top-k\" in C6c scope, and the risk register (plan.md:132) says candidate gen runs \"before exact scoring.\"\n\n2. No consumer. grep across core/palimpsest confirms the only writer of journal['pairs'][k]['candidates'] is collections_sweep.py:213, and the only reader is read_sweep_journal -> GET /api/collections/{id}/sweep/{run_id} (server.py:2549-2558), which echoes it verbatim. The collections_probe.py 'candidates' hits are an unrelated local variable.\n\n3. Scoring path is decoupled. run_alignment (server.py:2712-2790) computes the FULL N\u00d7M matrix (compute_cross_similarity / compute_word_overlap) and runs Smith-Waterman + Gumbel over the whole matrix; AlignmentRequest (server.py:129-137) exposes only query_id/target_id/method \u2014 no run_id or candidate-set parameter. Live openapi.json on :8092 confirms alignment endpoints (/alignment/run, /scores, /records, /matrix) take query/target ids only; no route joins a sweep run to scoring. So the O(N\u00d7M) exact sweep is never actually run on the pruned candidate set \u2014 the described accelerator payoff is absent end-to-end. This part of the report is accurate.\n\nSEVERITY OVERSTATED (why partial, not confirmed-at-high):\n- The plan's concrete C6c done-criteria (plan.md:117) require only \"the recall dial prunes an O(N\u00b2) sweep with a reported estimated-recall and a working forced-exhaustive escape... resumes from the run journal after interruption.\" All of these ARE delivered and I verified them live on :8092: a real 3,055,503->620 word_overlap prune (99.98%), a 149,753->7,820 cosine prune, empirical estimated_recall values (0.102 and 1.0, not fabricated), and resume-from-journal. Nothing here is silently broken or dishonest.\n- The authors explicitly know scoring is a downstream stage: build-journal line 514 says the candidate index lists are \"persisted for the scoring stage,\" and the vision frames the whole dial as \"optional, dimension-driven\" instrumentation. This is a deliberately-staged gap between an aspirational scope bullet (plan.md:114 \"exact scoring on candidates\") and what C6c actually completes \u2014 not an unacknowledged false claim.\n\nNet: real, well-grounded gap \u2014 the FR-35 acceleration loop genuinely isn't wired, and the \"before exact scoring\" framing in plan.md:114/132 oversells what ships \u2014 but it's a known, honestly-instrumented, dimension-scoped deferral whose own completion criteria were met, so medium not high. The recommendation stands (either wire candidates into per-pair exact scoring, or re-scope docs/FR to \"candidate-set analysis only\"); the second half is the more accurate framing of current reality.\n\nFiles: /Users/nathanielcannon/Claude/Projects/palimpsest/core/palimpsest/collections_sweep.py; /Users/nathanielcannon/Claude/Projects/palimpsest/core/palimpsest/analysis/candidate_gen.py; /Users/nathanielcannon/Claude/Projects/palimpsest/core/palimpsest/server.py (129-137, 2524-2575, 2712-2790); /Users/nathanielcannon/Claude/Projects/palimpsest/docs/development/design/collections-tier-plan.md (114-117, 132); /Users/nathanielcannon/Claude/Projects/palimpsest/docs/development/collections-tier-build-journal.md (468-522)."
+    },
+    {
+     "title": "'high-recall' token/LSH mode recovers only ~10-13% of cross-translation paraphrase pairs",
+     "severity": "medium",
+     "category": "design",
+     "evidence": "candidate_gen.py:35 (_MODE_BANDS high-recall=32), collections_sweep.py:119 (num_perm=bands*4 -> r=4 rows/band). Live word_overlap sweep 5be231121c07 on :8092: mean_estimated_recall=0.102, prune_fraction=0.9998. LSH S-curve for r=4,b=32 gives P(collision)=0.23 at Jaccard 0.3, 0.56 at 0.4. I simulated the paraphrase regime (Jaccard~0.25) and measured recall 0.133.",
+     "grounded": true,
+     "recommendation": "The LSH configuration's S-curve inflection (~Jaccard 0.4-0.5) sits well above where cross-translation paraphrase pairs live (~0.2-0.3 on 3-word shingles) \u2014 exactly the validation corpus's use case. 'high-recall' is a misnomer for the token family's flagship scenario. Lower rows-per-band (e.g. r=2) or raise bands to shift the threshold down, and/or shorten _SHINGLE_K from 3 to 1-2 so paraphrases share more shingles. The honest 0.102 report is a strength; the poor default it exposes is the fix.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Phyletic tree roots AT a leaf, drawing the suggested-root member as ancestor of the others",
+     "severity": "medium",
+     "category": "viz",
+     "evidence": "corpus_graph.py:408 (suggested = most component-complete member) then root_tree(edges, idx[chosen]) at phylo.py:107-136; live GET /phyletic-tree on :8092 returns the Douay leaf as root with parent=null and the Geneva leaf as its child. I verified root_tree(edges,0) on a 3-taxon tree yields children={0:[3],3:[1,2]} \u2014 the leaf becomes an internal-like root.",
+     "grounded": true,
+     "recommendation": "Rooting a bifurcating NJ tree AT a taxon (rather than ON the branch to it) makes the root member render as an ancestor of the rest, implying a douay->geneva derivation. This contradicts the tier's strong, repeated 'reference-free graph carries no arrow of transmission' stance (corpus_analysis.py:16-19, corpus_graph.py:510-513). Either root on the midpoint/branch (standard outgroup rooting) or attach the same non-directional disclaimer to the phyletic-tree payload that corpus-analyses carries.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "corpus-analyses 'most_discriminative' ranking degenerates to alphabetical at small N",
+     "severity": "low",
+     "category": "ux",
+     "evidence": "corpus_analysis.py:28-39 idf=ln((N+1)/(df+1))+1; corpus_graph.py:487 sorts by (-idf, term). Live GET /corpus-analyses on :8092 (N=2): every single-member term has identical idf=1.4055, so most_discriminative is a pure alphabetical dump (abia, abiding, abijah, abode, abound...) with n_shared_by_all=1888.",
+     "grounded": true,
+     "recommendation": "With N members IDF has only N+1 distinct levels; at N=2 the discriminative ranking carries no signal and the tie-break is alphabetical, which reads as noise to a user. Either suppress/annotate the most_discriminative panel when N is small (e.g. N<=3), or break IDF ties by within-member term frequency so the top terms are genuinely the most distinctive rather than the alphabetically-first single-member terms.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "dense_threshold=0 on the live sweeps disables the small-space exhaustive safety net",
+     "severity": "low",
+     "category": "design",
+     "evidence": "candidate_gen.py:31 default DENSE_PAIR_THRESHOLD=10000 (docstring: '<= this many pairs -> exhaustive, cheap, no missed signal'); but both live journals (368bd5c8d95e, 5be231121c07 via GET /sweep) record plan.dense_threshold=0, so plan_sweep (candidate_gen.py:56-57 small = total <= 0) never treats any space as small and always prunes.",
+     "grounded": true,
+     "recommendation": "A dense_threshold of 0 means even a trivially small pair space is candidate-generated (and thus subject to recall loss) when it would be cheaper and lossless to sweep exhaustively. Confirm this override is intentional for the validation harness; if it is leaking from a default elsewhere (server/CLI passing 0), restore the 10k guard so small collections stay exhaustive as the dial's docstring promises.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "member_reach mixes singleton components into a member's 'backbone' reach score",
+     "severity": "low",
+     "category": "design",
+     "evidence": "corpus_analysis.py:134-148 member_reach averages component_spread over EVERY component a member participates in, including its own singletons (spread=1/N). For the N=2 live corpus a member's 140 singletons each contribute spread=0.5, diluting reach toward 0.5 regardless of true conservation.",
+     "grounded": true,
+     "recommendation": "Including a member's own singletons (which by definition reach only that member) in its mean-reach pulls every member toward 1/N and blunts the intended 'holds the common backbone vs largely idiosyncratic' contrast the docstring describes. Consider weighting reach by component size/coverage, or reporting core-participation fraction separately, so a genuinely backbone-heavy member is distinguishable from a singleton-heavy one.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "doc-coherence",
+   "title": "Documentation coherence & requirement traceability",
+   "health": "good",
+   "summary": "Requirement traceability is strong: all 43 FRs (Wave-0 FR-1..22 across plan phases P1-P9; Collections FR-23..43 across C1-C7) are implemented in code and confirmed live on :8092 \u2014 the running server exposes 70 endpoints including the full embedding-viz suite, self_similarity `/inputs` picker, corpus-graph/phyletic/probe/sweep, and CLI/HTTP parity throughout. The collections-tier-build-journal is an exceptionally honest, file:line-grounded record that flags its own deviations (FLAG i-iv). The main coherence defects are: (a) the wave0 plan's done-criteria checkboxes are stale \u2014 only P8 is marked complete though P1-P9 all shipped; (b) FR-27's congruence-key definition in the vision doc still lists the analyzable digest that the implementation deliberately dropped; and (c) several Phase-1 literary tracks (narrative_arc, rqa, boundary_detection) are runnable from the Analysis UI but have no rendering path, so a user computes them and sees nothing.",
+   "strengths": [
+    "The collections-tier-build-journal.md is grounded to a fault: every phase cites file:line, records exact test counts that match reality (947 backend / 98 frontend \u2014 verified against the stated baseline), documents autonomous deviations transparently (FLAG i-iv, e.g. liftover is a purpose-built AlignmentMap not an OffsetMap at journal:276-284), and captures empirical before/after tables (C6a smith_waterman fix, journal:378-386). This is model requirement-traceability documentation.",
+    "CLI/HTTP parity (FR-37) is genuinely complete, not aspirational: `palimpsest collections --help` exposes 21 subcommands (create/add-member/role/lattice/congruence/corpus-graph-*/phyletic-tree/probe/sweep/liftover/\u2026) mirroring every collection HTTP endpoint, and the live /congruence endpoint returns exactly the keys the code computes.",
+    "Superseded-design hygiene is excellent: docs/development/research/domain-synthesis/12-development-roadmap.md is v2.0 with a bold SUPERSEDED banner naming its successor (v4.0, doc 28) and explicitly warning that its tech decisions (MobX-state-tree, D3) are obsolete \u2014 the opposite of stale-doc drift.",
+    "WALKTHROUGH.md is current with the post-P7 architecture: it documents the self_similarity layer-consumer flow (Configure -> bind chunk/repeat_mask/embedding bundles, WALKTHROUGH:197-203) and that chunking/embedding/repeats/repeat_mask/self_similarity are NOT run by batch analyze (WALKTHROUGH:82) \u2014 matching the shipped code exactly.",
+    "The FR-27 congruence deviation, while undocumented in the vision, is defended in-code at collections_ops.py:22-24 with the exact rationale (two distinct texts always have distinct digests, so folding the digest into a cross-text key makes comparison impossible by construction) \u2014 a reasoned engineering call, not an accident."
+   ],
+   "findings": [
+    {
+     "title": "Phase-1 signal tracks (narrative_arc, rqa) are runnable in the UI but have no rendering path anywhere",
+     "severity": "medium",
+     "category": "gap",
+     "evidence": "narrative_arc.py:52 and rqa.py:136 both return output_type=\"signal\"; live /analysis/status lists both as runnable tracks with Compute buttons (AnalysisPanel.tsx renders every status row). But grep of browser/src finds zero consumer of their signal output \u2014 they appear only in AnalysisPanel TRACK_DETAILS descriptions and LoadingOverlay.tsx:6. WALKTHROUGH.md:418-436 confirms the ONLY way to inspect them is command-line numpy on signals/narrative_arc.bin / rqa.bin. AnnotationOverlay BODY_TYPE_TO_TRACK (AnnotationOverlay.tsx:19-34) has no entry for either.",
+     "grounded": true,
+     "recommendation": "Either (a) gate these tracks out of the Analysis panel's runnable list until a viewer exists (they are Wave-1 out-of-scope per wave0-vision:18), or (b) add a signal-lane viewer. As-is, a user clicks Compute, the track succeeds, and nothing appears \u2014 a silent dead-end. At minimum, document in the panel that these produce raw signals with no in-app view yet.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "boundary_detection annotations are unrenderable: it emits body types the frontend map does not know",
+     "severity": "medium",
+     "category": "bug",
+     "evidence": "boundary_detection.py:325,355 emit type=\"palimpsest:TextDomainAnnotation\" and \"palimpsest:TextBoundaryAnnotation\". The reading-view map AnnotationOverlay.tsx:19-34 only knows \"palimpsest:DomainAnnotation\" (emitted by compartments.py:193) and \"palimpsest:CompartmentAnnotation\" \u2014 the Text-prefixed variants fall through getTrackName() (AnnotationOverlay.tsx:48-50) to '' and never render. No frontend consumer of TextDomain/TextBoundary exists (grep across browser/src). Yet AnalysisPanel.tsx:157-160 describes boundary_detection with a full Hi-C 'boxes and stripes' visualization that does not exist.",
+     "grounded": true,
+     "recommendation": "Add 'palimpsest:TextDomainAnnotation' and 'palimpsest:TextBoundaryAnnotation' to BODY_TYPE_TO_TRACK (or rename the backend body types to the mapped 'DomainAnnotation'), and either build the promised domain/boundary overlay or trim the AnalysisPanel description to match what actually renders.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "wave0 plan done-criteria checkboxes are stale \u2014 only P8 marked complete though P1-P9 all shipped",
+     "severity": "low",
+     "category": "doc-drift",
+     "evidence": "In wave0-analysis-suite-plan.md, awk-scan of Done-criteria blocks shows P8 has 5/5 checked [x] (lines ~443-447) while P1,P2,P3,P4,P5,P6,P7,P9 are ALL 0-checked (every criterion still [ ]). But the code proves all phases shipped: tracks/{chunking_track,embedding_track,requirements,profile_track,repeat_track,repeat_mask_track}.py exist, analysis/integrity.py exists, self_similarity is a fail-loud consumer, and the live /self_similarity/inputs endpoint returns the exact family-neutral method registry P7 specifies (cosine/jaccard requires_embedding=true, word_overlap/edit_distance=false).",
+     "grounded": true,
+     "recommendation": "Update the P1-P7 and P9 done-criteria checkboxes to [x] (or add a phase-status header per section). The current state falsely reads as 'Wave-0 mostly not done' when the whole suite is live, undermining the plan as a status source of truth.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "FR-27 congruence-key definition in the vision contradicts the shipped key (digest deliberately dropped)",
+     "severity": "low",
+     "category": "doc-drift",
+     "evidence": "collections-tier-vision.md FR-27 (line 209) and \u00a73.5 (line 134) both define the congruence key as '(analysis-type + model/params + dimensionality + analyzable digest)'. The implementation excludes the digest: congruence_key() (collections_ops.py:175) builds 'embedding:{metric}:{model_fingerprint}', and the live /collections/matthew-mark-validation/congruence?metric=cosine returns keys of the form 'embedding:cosine:c9757c16f8473ef1' (no digest). The code docstring (collections_ops.py:22-24) explicitly notes 'The vision lists the digest in the congruence key' but keeps it out by design; the vision doc was never reconciled.",
+     "grounded": true,
+     "recommendation": "Amend FR-27 / \u00a73.5 in collections-tier-vision.md to state the congruence key is cross-text (excludes the per-text analyzable digest, which is the orthogonal intra-project coherence check via bundles.coherence_reason). This is a well-reasoned deviation that should be promoted from a code comment to the requirement itself.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Vision/plan-doc coordinate assertion for liftover (\"is itself an OffsetMap\") contradicts as-built AlignmentMap",
+     "severity": "info",
+     "category": "doc-drift",
+     "evidence": "The C5 design text said liftover 'is itself an OffsetMap' and renders 'via the FR-13 lane loop'. As built (flagged honestly in build-journal:276-284, 304-308), liftover is a purpose-built AlignmentMap (alignment/liftover.py) \u2014 cross-text A<->B block correspondence, distinct from single-text OffsetMap \u2014 and the cross-text conservation track is collection-scoped (collections/{id}/tracks/) NOT injected into the per-project FR-13 registry. FR-30/FR-42 in the vision were updated with '(As built C5: \u2026)' parentheticals, but the plan's C5 prose and any 'via the FR-13 lane loop' wording still carry the original framing.",
+     "grounded": true,
+     "recommendation": "The build journal already records these deviations excellently; propagate the '(As built)' corrections from the vision FR rows into the collections-tier-plan.md C5 body prose so the plan and vision agree. Purely a consistency pass \u2014 no code change.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "NFR-1 retirement is well-documented but the vision's own FR-18..22 \u00a710.4 still references self-similarity byte-identity as a live guarantee in places",
+     "severity": "info",
+     "category": "doc-drift",
+     "evidence": "The plan cleanly retires NFR-1 (byte-identical self_similarity) in favor of the weaker 'same bound chunk layer + same vectors -> identical matrix' invariant (plan \u00a7P2 re-scope note line 45, \u00a7Backward-compat line 529-530, NFR-1 vision line 243). This is thoroughly reconciled. However the retirement means 'self_similarity byte-identical' language that survives as a P9 acceptance bar (plan:475,482) is the *seam-lift* invariant, not the retired one \u2014 the two 'byte-identical' claims are subtly different and a careless reader could conflate them.",
+     "grounded": true,
+     "recommendation": "No action strictly required \u2014 this is already the most carefully-documented reframe in the corpus. Optionally add a one-line footnote distinguishing 'P9 self-similarity byte-identical (seam-lift, same inputs)' from the retired 'NFR-1 byte-identical at defaults (single run)'.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "regression-gaps",
+   "title": "Regression, gaps & latent bug hunt",
+   "health": "good",
+   "summary": "Palimpsest is a mature, unusually disciplined codebase: zero TODO/FIXME/bare-except markers, no silent-cap anti-patterns (the team explicitly documents \"never a silent cap\" and exposes total-vs-returned counts), 947 backend + 98 frontend tests green, and all integrity invariants pass on the live collection. The adversarial hunt surfaced one reproducible latent bug (RQA UnboundLocalError on <2-paragraph projects), one weaker-than-canonical path-traversal guard on /api/explain, and a real feature-completeness gap: several fully-built P4 and C5 endpoints (KWIC, collocations, dispersion, cross-text-mask, low-correspondence, mask-effect, corpus-graph/projection) have zero UI consumers. Nothing critical; the issues are surgical and localized.",
+   "strengths": [
+    "Systematic anti-silent-cap discipline: alignment/smith_waterman.py:92-97 removed a former min(100,n*m) cap that hid near-duplicate alignments, replaced with proper cell-disjoint non-overlap extraction; max_alignments truncation is WARN-logged as 'not a silent cap' (smith_waterman.py:189-191); KWIC exposes total vs returned so limit=200 truncation is visible (server.py:1777, verified live: total 253 / returned 200); kmeans k=min(k,n) clamp is documented in the docstring (analytics.py:110).",
+    "Honest error surfacing: the analyze job handler (server.py:1313-1323) carries the real exception type+message end-to-end instead of the previous code that relabelled every error as a bogus 'Matrix too large', and out-of-range params (n_states/n_topics) return a clean 400 rather than being silently clamped (server.py:1222-1224, 1276-1293).",
+    "Robust integrity layer: live GET /api/projects/{id}/integrity returns all_green=true across masked-partition, span-region-bounds, segment-contract, section-tree, offsetmap-roundtrip, and analyzable-bridge invariants \u2014 a real self-validation harness, not decorative.",
+    "Deterministic, reference-free collections tier that actually works end-to-end on the live Matthew/Mark cross-translation collection: corpus-graph, phyletic-tree (NJ distances), cross-text-mask liftover, and low-correspondence all return well-formed real data via GET on :8092.",
+    "Canonical path-traversal guard _safe_project_dir (server.py:631-640) is genuinely strict (blocks .. / \\\\ AND verifies is_relative_to(workspace) after resolve) and is used consistently across almost all endpoints."
+   ],
+   "findings": [
+    {
+     "title": "RQA track raises UnboundLocalError on any project with <2 paragraphs",
+     "severity": "medium",
+     "category": "bug",
+     "evidence": "core/palimpsest/tracks/rqa.py: state_source is assigned only inside the else branch (lines 167 and 177) that runs when len(paras) >= 2, but is referenced unconditionally afterward at line 200 (source=f\"rqa_{state_source}/0.1\") and line 210 (\"state_vector_source\": state_source). When len(paras) < 2 the if-branch at line 160-161 sets metrics and skips the else, leaving state_source unbound. Reproduced: RQATrack().extract(project-with-1-paragraph) -> 'UnboundLocalError: cannot access local variable state_source where it is not associated with a value'. The analyze job handler (server.py:1313-1323) catches it and surfaces the raw UnboundLocalError text to the UI instead of a graceful 'too few paragraphs' message. AST confirms state_source has no assignment on the short-paragraph path.",
+     "grounded": true,
+     "recommendation": "Initialize state_source = \"tfidf\" (and n_windows) before the if/else at rqa.py:159, or move the manifest-write inside the else. Add a test with a 0/1-paragraph project fixture \u2014 test_signals.py::TestRQA only uses the multi-paragraph small_project fixture, so this path is entirely uncovered.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "/api/explain uses a weaker path-traversal guard than the rest of the codebase (workspace-escape via absolute or slash-containing project id)",
+     "severity": "medium",
+     "category": "security",
+     "evidence": "server.py:909 guards only with `if \"..\" in request.project`, then builds three filesystem paths from the unsanitized value: workspace / request.project / \"signals\" / \"lithmm_meta.json\" (line 912), Project.load(workspace / request.project) (923), and workspace / request.project / \"tracks\" / \"lithmm.jsonl\" (926). Because pathlib discards the base when joined with an absolute path, project=\"/etc/hosts\" passes the '..' check and resolves to /etc/hosts/signals/lithmm_meta.json (verified). The canonical _safe_project_dir (server.py:633) and the sibling guard at server.py:1007 additionally reject '/' and '\\\\' and verify is_relative_to(workspace) \u2014 this endpoint does neither. Endpoint is live (POST /api/explain with a benign id returned the workspace-relative 404, confirming the path is built from input). Read-only impact (reads/loads files), not write.",
+     "grounded": true,
+     "recommendation": "Route request.project through _safe_project_dir(workspace, request.project) like every other project endpoint, instead of the ad-hoc `\"..\" in` check.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Six-plus fully-built P4/C5 endpoints have zero UI consumers (backend-only features)",
+     "severity": "medium",
+     "category": "gap",
+     "evidence": "Cross-referencing server.py GET routes against browser/src fetch call sites (grep, incl. template-literals and test files): dispersion (server.py:1837, live returns count=253 + spans for term=Jesus) = 0 UI refs; kwic (server.py:1769) = 0; collocations (server.py:1798) = 0; low-correspondence = 0; cross-text-mask (live returns real intervals for a Geneva member) = 0; mask-effect (requires a,b) = 0; corpus-graph/projection = 0; alignment/scores = 0. By contrast corpus-graph(3), phyletic(7), corpus-repeats(1), corpus-analyses(3), probe(22), sweep(29) ARE surfaced. The C5 cross-text mask+liftover tier and P4 concordance tools are implemented and functional server-side but unreachable from any of the 7 UI tabs.",
+     "grounded": true,
+     "recommendation": "Either surface these in AnalysisPanel (KWIC/collocations/dispersion) and CorpusView (cross-text-mask/low-correspondence/mask-effect) or explicitly document them as CLI/API-only so the backend-vs-UI drift is intentional, not accidental.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "layout parent_id backfill silently swallows a failed re-save, defeating the 'paid once' guarantee",
+     "severity": "low",
+     "category": "perf",
+     "evidence": "core/palimpsest/layout.py:294-303: load_layout runs the O(n\u00b2) _compute_parents backfill when parents_computed is False, then save_layout inside `try/except OSError: pass` (lines 300-303). The comment at 296-297 promises 'the O(n^2) cost is paid once per project', but if the re-save fails (read-only fs, permission, lock) the exception is swallowed and parents_computed is never persisted \u2014 so the multi-second backfill re-runs on EVERY load. server.py:2117-2119 confirms this is the hot /sections path (offloaded to a worker thread precisely because of the multi-second cost on ~9k-section scripture layouts).",
+     "grounded": true,
+     "recommendation": "Log a warning when the re-save fails (currently invisible) so a persistently read-only project's repeated O(n\u00b2) cost is at least diagnosable, or cache parents_computed in-process for the request lifetime.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Track registry silently drops a track whose module fails to import (optional-dep tracks can vanish with only a log warning)",
+     "severity": "low",
+     "category": "gap",
+     "evidence": "core/palimpsest/tracks/registry.py:97-100 wraps importlib.import_module in `except ImportError as e: logger.warning('Skipping track module %s', ...)`. coreference.py:29, syntax.py, and entities.py conditionally import optional NLP deps. If such a dep is missing at runtime, the affected track disappears from TrackRegistry.discover().names() with no user-facing signal \u2014 the /api/analyze/{track} endpoint would then 404 that track as 'Unknown track' (server.py:1207-1208) rather than reporting 'dependency missing'. All 19 tracks register in the current venv, so this is latent, not active.",
+     "grounded": true,
+     "recommendation": "Track import failures in a registry field (e.g. self._skipped[name]=reason) and expose them via the /tracks or /analysis/status endpoint, so a missing optional dependency surfaces as an actionable 'spacy not installed' rather than a silent 404.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Test coverage gap: RQA degenerate-input path is entirely untested",
+     "severity": "low",
+     "category": "test",
+     "evidence": "tests/test_signals.py::TestRQA (lines 129-164) exercises test_produces_signal, test_values_in_range, test_tfidf_fallback, test_properties, and _extract_windows \u2014 all via the multi-paragraph small_project fixture. No test drives len(paras) in {0,1}, which is exactly the branch that triggers the UnboundLocalError finding above. Baseline test_signals.py = 26 passed (verified via junitxml), so the crash path slips through green.",
+     "grounded": true,
+     "recommendation": "Add a single-paragraph/empty-project fixture and assert RQATrack().extract(...) produces a valid zeroed signal rather than raising.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "visualization",
+   "title": "Visualization correctness & data-viz integrity",
+   "health": "good",
+   "summary": "Palimpsest's visualizations are, for the most part, faithful renderers of real backend data with strong coordinate discipline: canvas heatmaps read little-endian Float32 buffers in documented C order, char/paragraph/chunk axes are consciously distinguished, min-width rect guards prevent sub-pixel bands from vanishing, and the PCA/k-means backend is explicitly deterministic with sign-canonicalization and no-silent-cap sampling. The most material integrity gap is color-scale honesty for cosine: the two primary heatmaps (DotplotView TextHiC, ComparativeDotplot) feed raw cosine [-1,1] into a [0,1]-clamping color ramp and label the legend \"0...1 similarity,\" while the very same repo maps cosine correctly as (x+1)/2 in LayerStatsPanel \u2014 an internal inconsistency, not ignorance. A second real defect: the phyletic-tree layout collapses to a single overlapping row for the standing 2-member validation collection because it assumes internal nodes are never leaves. Everything else audited (BlockMap, OverviewBar barcode, conservation/repeat lanes, alignment overlays, distance histograms) renders real data honestly.",
+   "strengths": [
+    "Backend viz compute is genuinely deterministic and honest about degradation: analytics.py canonicalizes PCA component signs (_canonicalize_signs, analytics.py:52-60) so scatter plots are reproducible across BLAS/platforms; k-means is seeded with tie-breaking to lowest index; and sampling/block-reduction report the realized count via X-Matrix-Reduced / sampled_pairs headers rather than silently truncating (analytics.py:14-15, server.py:1686-1691).",
+    "Index-alignment contract is explicit and preserved end-to-end: analytics.py's module docstring (lines 6-9) documents that row i == chunk i and only order=cluster permutes (returning the permutation via X-Matrix-Order so cells map back to chunks), preventing silent document mislabeling.",
+    "Coordinate axes are consciously distinguished, not conflated: DotplotView labels axes as chunk indices with an explicit comment 'Axis labels \u2014 chunk indices, not paragraph indices' (DotplotView.tsx:401) and aria-label states '{n}x{n} chunks ({chunkSize} words each)'; ComparativeDotplot correctly labels paragraph axes '\u00b6N' matching the backend's paragraph-embedding matrix (cross_similarity.py:21-24).",
+    "The correct cosine [-1,1]->[0,1] transform DOES exist in the codebase (LayerStatsPanel.tsx:174 'row.push((flat[i*dim+j] + 1) / 2)'), proving the team knows the honest mapping \u2014 the primary heatmaps simply don't reuse it.",
+    "SVG rect math consistently guards against invisible bands via Math.max(1, ...) width floors (OverviewBar.tsx:37,58; CorpusView.tsx:81,225,256; LayerLane.tsx:73), and distance histograms clip float-error excursions back into [0,2] with an explicit comment that np.histogram would otherwise silently undercount (analytics.py:212-216)."
+   ],
+   "findings": [
+    {
+     "title": "TextHiC heatmap legend claims '0...1 similarity' but renders raw cosine [-1,1] through a [0,1]-clamping ramp",
+     "severity": "high",
+     "category": "viz",
+     "evidence": "DotplotView.tsx:26 interpolateColor clamps `Math.max(0, Math.min(1, value))`; legend at DotplotView.tsx:796-806 hardcodes labels '0' ... '1' ... 'similarity'. Backend _cosine_matrix returns values clipped to [-1,1] (self_similarity.py:119 `np.clip(matrix, -1.0, 1.0)`). Empirically the live Matthew/Mark embedding heatmap (GET /api/projects/.../embedding/871a3ae739394b3b/heatmap) has min offdiag=0.529, max=1.0 \u2014 so the entire lower ~53% of the color ramp is dead and every cell reads as 'high similarity', a compressed/misleading dynamic range. For other embedding models negative cosines would be silently floored to white (indistinguishable from 'similarity 0').",
+     "grounded": true,
+     "recommendation": "Map cosine metrics honestly before coloring, reusing the existing LayerStatsPanel.tsx:174 transform `(v+1)/2`, and either relabel the legend '-1 ... 1 (cosine)' or auto-fit the ramp to the observed [min,max] with the range printed in the legend. Word-overlap/jaccard are genuinely [0,1] and can keep the current mapping; gate the transform on metric family.",
+     "verdict": "partial",
+     "adjusted_severity": "medium",
+     "verify_reasoning": "Core mechanism CONFIRMED at the code level. DotplotView.tsx:26 interpolateColor clamps `Math.max(0, Math.min(1, value))`; the legend (DotplotView.tsx:798/805/806) hardcodes '0' \u2026 '1' \u2026 'similarity'. The data path (DotplotView.tsx:314) sets signal.data directly from the raw self_similarity `.bin` buffer, and DotplotView.tsx:377/393 pass those raw values straight into interpolateColor with NO cosine transform. Backend _cosine_matrix (self_similarity.py:114-120) stores cosine RAW in [-1,1] (`np.clip(matrix, -1.0, 1.0)`), whereas jaccard/word_overlap/edit_distance builders genuinely produce [0,1] (lines 128, 153, 208). So for the cosine metric specifically, DotplotView's [0,1] clamp is applied to a [-1,1] signal: the [0, observed-min] portion of the ramp is dead and any negative cosine would floor to white \u2014 the finding's mechanism is accurate. The recommended fix is also sound: LayerStatsPanel.tsx:174 already does `(flat[...]+1)/2 // cosine [-1,1] \u2192 [0,1]` for the sibling embedding-heatmap render path, so a gated `(v+1)/2` for the cosine family plus an honest legend is a minimal, existing-pattern change.\n\nEmpirical range CONFIRMED but the cited endpoint MISATTRIBUTED (why this is 'partial', not 'confirmed'): I hit GET /api/projects/{geneva-mm}/embedding/871a3ae739394b3b/heatmap on the live :8092 server (X-Matrix-N 391, 611524 bytes) and computed min offdiag=0.5293, max=1.0, mean=0.843, 99% of offdiag in [0.67,0.92] \u2014 reproducing the '0.529\u20261.0' figure almost exactly and showing the lower ~53% of a [0,1] ramp is unused. BUT that endpoint feeds LayerStatsPanel, which ALREADY applies the (v+1)/2 transform correctly (LayerStatsPanel.tsx:174) \u2014 it is NOT the DotplotView render path and is NOT buggy. The finding uses a non-buggy sibling path as proof of the buggy path. DotplotView's actual data source is /api/projects/{id}/self_similarity/cs/{cs}/cosine, which is NOT materialized in the validation workspace (chunk_sizes:[] for both MM projects, embeddings/status available:false on the standalone project), so I could not directly render DotplotView showing the compressed ramp \u2014 the code path is unambiguous but the live proof is by analogy. Two further overstatements: (a) 'negative cosines silently floored to white' is LATENT not observed \u2014 the real MLX data has zero negative offdiag values (min 0.529), so the practical harm here is compressed dynamic range, not sign-flip-to-white; (b) mitigating factors the finding omits: the hover tooltip shows the raw value to 3 decimals (DotplotView.tsx:763, aria-label 973) and the active metric name is displayed (line 791), so exact values remain inspectable. Note the threshold slider (default 0, DotplotView.tsx:219/817) also filters on raw cosine (line 376/390), so its 0-100% semantics are likewise skewed for cosine \u2014 a related, unmentioned symptom that mildly reinforces the finding.\n\nSeverity: this is a genuine data-viz-integrity defect (misleading legend + compressed/potentially-sign-losing ramp on the cosine metric), but it is a display-layer cosmetic issue confined to one metric family, raw values are recoverable via tooltip, no negative-flooring is actually occurring on real data, and the fix is a known one-liner. High overstates it; I adjust to medium. Grounding: read DotplotView.tsx:1-60/210-328/760-812, self_similarity.py:114-212, LayerStatsPanel.tsx:160-186, server.py:1474-1481/1663-1694; hit live :8092 heatmap and computed the matrix stats with numpy."
+    },
+    {
+     "title": "Phyletic tree collapses to a single overlapping row for the standing 2-member collection (root-leaf treated as non-leaf)",
+     "severity": "high",
+     "category": "bug",
+     "evidence": "layoutTree (corpusOverview.ts:143-159) increments leafCounter only for nodes with `children.length===0`. Live GET /api/collections/matthew-mark-validation/phyletic-tree returns a degenerate NJ tree where leaf A has parent=null (is the root) and leaf B has parent=A. Simulating layoutTree on this exact topology yields leafCount=1, so both members get y=0.5 (corpusOverview.ts:164 `leafCount>1 ? ... : 0.5`) \u2014 they render on the same horizontal line. PhyleticTreeView (CorpusView.tsx:182-194) draws both member labels, which overlap.",
+     "grounded": true,
+     "recommendation": "Count leaves by `is_leaf` (which the backend supplies) rather than `children.length===0`, or insert a synthetic root above two-taxon trees. Add a viz test for the 2-member NJ case; it's the exact shape of the standing validation collection.",
+     "verdict": "confirmed",
+     "adjusted_severity": "medium",
+     "verify_reasoning": "Verified end-to-end against live API and source. (1) GET :8092/api/collections/matthew-mark-validation/phyletic-tree returns exactly the described topology: node A parent=null, children=[B], is_leaf=true; node B parent=A, children=[], is_leaf=true \u2014 both leaves carry member ids. (2) layoutTree at browser/src/components/CorpusView/corpusOverview.ts:143-159 increments leafCounter only when node.children.length===0 (line 148); on this topology only B qualifies, so leafCount=1. Line 164 `y: leafCount > 1 ? (yPos.get(n.id) ?? 0)/(leafCount-1) : 0.5` therefore assigns y=0.5 to BOTH nodes. (3) Render side confirmed: CorpusView.tsx:156 py(y)=14+y*(H-28) puts both at the same vertical center, and lines 182-194 draw a label for every node with a member, so both labels overlap. All cited file:line references are exact. (4) This is not a data fluke: phylo.py:64-65 shows NJ returns a single edge with NO internal node for n==2, and root_tree (phylo.py:107-136) then makes one leaf the root \u2014 so the degenerate root-leaf-with-one-leaf-child shape is structurally guaranteed for EVERY 2-member collection, which is precisely the shape of the standing matthew-mark-validation collection. (5) Test-gap claim verified: the sole layoutTree test (corpusOverview.test.ts:71-90) uses a 3-taxon tree yielding leafCount=2, never exercising the `: 0.5` degenerate branch; the 2-member case is untested. Baseline vitest for this file is green (9/9). Adjusting severity high->medium: the defect is real, deterministic, and hits the flagship validation collection, but it is a bounded visualization-legibility collapse (overlapping labels) with no data-integrity, crash, or security impact \u2014 the underlying distances/tree JSON are correct and labels remain individually clickable via SVG order. The recommended fix (count leaves by is_leaf, which TreeNode already carries at corpusOverview.ts:40, or insert a synthetic root above two-taxon trees) is directly implementable; note a pure is_leaf count still needs the y-assignment to separate a root-leaf from its child-leaf, so the synthetic-root option is the more complete remedy."
+    },
+    {
+     "title": "ComparativeDotplot applies a hidden `value < 0.1` similarity floor with no legend or disclosure",
+     "severity": "medium",
+     "category": "viz",
+     "evidence": "ComparativeDotplot.tsx:123 `if (value < 0.1) continue;` silently drops all cross-similarity cells below 0.1, and interpolateColor (ComparativeDotplot.tsx:16-27) clamps [0,1] while the backend cross-matrix is cosine clipped to [-1,1] (cross_similarity.py:104). There is no legend at all on this chart and no on-screen note that a floor is applied, so negative and low-positive paragraph pairs render identically to 'no data' background (#f8f8f8). The score-threshold slider only affects the orange alignment overlays, not the underlying heatmap floor.",
+     "grounded": true,
+     "recommendation": "Add a color legend to ComparativeDotplot, expose or remove the 0.1 floor, and apply the (x+1)/2 cosine mapping so the heatmap distinguishes 'dissimilar' from 'unrendered'.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "EmbeddingLane min-max normalizes an unbounded, right-skewed nn-density scalar, skewing the color ramp toward light",
+     "severity": "medium",
+     "category": "viz",
+     "evidence": "EmbeddingLane (LayerLane.tsx:112-121) min-max normalizes then ramps via rampBlue. The default encoding is nn-density = inverse NN cosine distance `1/(dist+eps)` (analytics.py:256), which is unbounded above. Empirically on the live layer (GET .../lane?encoding=nn-density, n=391): min=5.53, max=33.44, median=13.74 \u2014 the median chunk lands at only 0.29 on the [min,max] ramp, so a majority of chunks read as pale. A single very-dense chunk (dist\u21920) would blow up max and wash out the whole lane.",
+     "grounded": true,
+     "recommendation": "Normalize nn-density on a robust scale (e.g. percentile clip at p95, or log/rank transform) and note the transform in the aria-label, so one dense outlier can't dominate the ramp.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "EmbeddingLane 'cluster' encoding renders categorical cluster IDs through a sequential blue ramp, implying false ordinal magnitude",
+     "severity": "medium",
+     "category": "viz",
+     "evidence": "lane_encoding returns k-means cluster ids as float32 for encoding='cluster' (analytics.py:250-251), and EmbeddingLane feeds any scalar through the sequential rampBlue after min-max (LayerLane.tsx:118-121). A categorical id (cluster 3 vs cluster 1) thus gets a darker-vs-lighter blue, falsely encoding order/distance between nominal clusters. Reachable via /lane?encoding=cluster; the default UI path uses nn-density (embedding_track.py:209), so this is latent rather than always-on.",
+     "grounded": true,
+     "recommendation": "Detect categorical encodings (cluster) in EmbeddingLane and use a qualitative palette (distinct hues per id) rather than a sequential ramp; keep sequential only for pc1/nn-density.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "charts.tsx generic Heatmap hardcodes a [0,1] assumption in its own comment and clamp",
+     "severity": "low",
+     "category": "viz",
+     "evidence": "charts.tsx:191 comment 'Values assumed in [0,1]; deeper = higher' and charts.tsx:205 `Math.max(0, Math.min(1, v))`. This component is fed by LayerStatsPanel which DOES pre-map cosine via (x+1)/2 (LayerStatsPanel.tsx:174), so it's currently correct there \u2014 but the component silently trusts its caller with no range assertion, so any future caller passing raw cosine would be silently distorted (the same class of bug already live in DotplotView).",
+     "grounded": true,
+     "recommendation": "Either accept an explicit [min,max] domain prop on Heatmap or document the contract as load-bearing; consider a dev assertion when values fall outside [0,1].",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "EmbeddingScatter auto-scales X and Y axes independently, distorting PCA variance aspect ratio",
+     "severity": "low",
+     "category": "viz",
+     "evidence": "EmbeddingScatter.tsx:46-51 computes separate sx=(maxX-minX) and sy=(maxY-minY) and stretches each axis to fill the square canvas. PC1 carries more variance than PC2 by construction, but independent per-axis scaling makes PC2 spread visually equal to PC1, so semantically round clusters appear stretched and inter-cluster distances are anisotropically distorted. No axis ticks or scale are shown, so a viewer cannot recover true proportions.",
+     "grounded": true,
+     "recommendation": "Use a single shared scale (equal units on both axes, letterboxing the shorter axis) so PCA geometry is preserved, and/or annotate the explained-variance ratio per axis.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  },
+  {
+   "key": "ux-workflows",
+   "title": "UX & end-to-end workflow completeness",
+   "health": "good",
+   "summary": "Palimpsest's single-text journey (import \u2192 sections \u2192 tracks \u2192 reading/browser/analysis/dotplot) and the collections workbench (Compare, Corpus with Overview/Members/Corpus/Masking/Analyses/Sweep/Probe) are genuinely mature and mostly complete, with strong empty/loading/error states and an unusually disciplined cost-confirmation culture in the collections tier (Probe, Sweep, Reconcile all gate expensive work behind a CostDialog and never auto-run). The main friction is at the seams: the cross-text mental model (Project vs Collection) is under-signposted \u2014 the Corpus tab is absent from the Home launchpad and can only be reached after opening a single text, and the corpus-graph auto-builds without the cost discipline applied elsewhere. A few analysis dead-ends tell the scholar to \"run analysis first\" with no in-place CTA, and the embedding cost estimate the backend already computes is never surfaced in the UI. These are polish gaps on top of a real, working product, not structural holes.",
+   "strengths": [
+    "Cost/confirm discipline in the collections tier is exemplary and consistent: ProbePanel runs a free ref-lookup directly but gates the expensive text-embedding probe behind CostDialog with explicit 'runs only when you confirm' copy (ProbePanel.tsx:71-76, 201-212); SweepPanel shows the exact pre-run member-pair count and states 'Nothing runs until you click Run' (SweepPanel.tsx:209-219); CorpusView's reconcile flow explains the per-member re-embed cost before acting (CorpusView.tsx:480-506).",
+    "Honesty about analytical limits is surfaced in the UI rather than hidden: AnalysesPanel renders the diffusion metric's non_directional_note verbatim so the tool never implies an 'A influenced B' causal claim (AnalysesPanel.tsx:141-143); SweepPanel/ProbePanel show empirical recall as 'n/a' when the oracle was unsampled instead of a fake number (sweep.ts:5-7); AnalysisPanel exposes clamped/effective/requested params and silent HMM->KMeans fallbacks (AnalysisPanel.tsx:59-68).",
+    "Empty, loading, and error states are handled across nearly every view: CompareView distinguishes no-project / no-secondary / ready-to-align / computing states with tailored copy and a shimmer bar (CompareView.tsx:220-257); Synteny/Circos/Diff each have their own empty state; CorpusView shows a graph gate only for graph-dependent sub-tabs (CorpusView.tsx:47-48, 438-440).",
+    "The metric-congruence contract has a first-class UI affordance: CongruenceBadge asks the backend whether members are comparable on the chosen metric and offers a reconcile action rather than silently comparing across incompatible embedding spaces (CongruenceBadge.tsx:1-47; live /congruence returns needs_embedding:true for the validation collection).",
+    "The subtext-derivation journey is a complete 3-step wizard (pick layers -> refine elements -> generate) with live SSE progress and optional routing into a chosen or auto-created collection (SubtextWizard.tsx:2-6, 104-117, 386-388), tying the single-text and collection tiers together coherently."
+   ],
+   "findings": [
+    {
+     "title": "DotplotView dead-ends on 'Run analysis first' with no way to run it",
+     "severity": "high",
+     "category": "gap",
+     "evidence": "browser/src/components/DotplotView/DotplotView.tsx:325 sets error 'Self-similarity matrix not available. Run analysis first.'; rendered as a terminal centered message at line 945 with no button/link. The self_similarity track producer lives on a different tab (Analysis > Tracks).",
+     "grounded": true,
+     "recommendation": "Turn the dead-end into an actionable CTA: render a 'Compute self-similarity' button that either POSTs /analyze/self_similarity for this project or switches to the Analysis tab with that track pre-focused. Otherwise a scholar who launches TextHiC on an un-analyzed text is stranded with instructions but no controls.",
+     "verdict": "partial",
+     "adjusted_severity": "medium",
+     "verify_reasoning": "Core claim confirmed by code + live server. DotplotView.tsx:325 sets 'Self-similarity matrix not available. Run analysis first.' and line 945 renders it as a terminal centered message (text-[#b91c1c]) with no button or link; the toolbar (lines 759-789) and error branch contain no CTA. I reproduced the trigger on live server :8092: GET /data/{douay-rheims...}/signals/self_similarity.json returns 404 ({\"detail\":\"File not found\"}), which flows line 258 (throw 'not found') -> line 324 catch -> line 325 setError. The texthic/TextHiC tab is ungated (TabBar.tsx:7 'Alt+3'; ProjectPicker.tsx:298), so a scholar can genuinely land here on an un-analyzed text and be stranded. The producer really is on another surface: AnalysisPanel's SelfSimilarityParamDialog (AnalysisPanel.tsx:955-960), on the Analysis tab.\n\nHowever, the auditor's primary recommendation ('render a Compute self-similarity button that POSTs /analyze/self_similarity for this project') is technically unsound: per AnalysisPanel.tsx:189-191 and 879-883, self_similarity 'has no runnable defaults -- it requires an explicit input bundle, so [a bare run] is guaranteed-400'. The real producer endpoint is POST /api/projects/{id}/analyze/{track} but it needs an explicit layer bundle chosen in the dialog. Only the auditor's ALTERNATIVE (switch to Analysis tab with the track pre-focused / open the config dialog) is implementable. Feasibility of that fix is high: useViewStore with setActiveTab('analysis') is already imported at DotplotView.tsx:2, and /self_similarity/inputs returns 200 for discovery.\n\nSeverity: real UX friction, not a correctness/data/security defect. Nothing breaks or is lost, and the message ('Run analysis first') does instruct the user, just without a control; a knowledgeable user reaches the Analysis tab. High overstates it. Adjusting to medium."
+    },
+    {
+     "title": "Corpus tab is unreachable from the landing page and requires opening a single text first",
+     "severity": "high",
+     "category": "ux",
+     "evidence": "ProjectPicker TOOLS launchpad lists only 6 tools and omits 'corpus' (ProjectPicker.tsx:295-302), while TabBar exposes all 7 including Corpus (TabBar.tsx:11). AppLayout gates the entire tabbed shell \u2014 including the cross-text corpus/compare views \u2014 on a single active project's metadata (AppLayout.tsx:60-62), and the default tab is 'reading' (viewStore.ts:49).",
+     "grounded": true,
+     "recommendation": "Add a Corpus/Collections entry to the Home launchpad that opens a collection workbench directly, and let the Corpus tab load with no active single project (it already fetches its own collections list). As-is, the cross-text (Collection) mental model is a hidden second-class citizen behind the single-text (Project) model \u2014 a scholar must open some arbitrary text just to reach corpus-wide analysis.",
+     "verdict": "confirmed",
+     "adjusted_severity": "medium",
+     "verify_reasoning": "Every cited fact checks out against the code I read:\n\n1. ProjectPicker TOOLS launchpad (browser/src/components/common/ProjectPicker.tsx:295-302) lists exactly 6 tools \u2014 reading, browser, texthic, characters, analysis, compare \u2014 and omits 'corpus'. CONFIRMED verbatim.\n2. TabBar (browser/src/components/Layout/TabBar.tsx:4-12) exposes all 7 tabs including {id:'corpus', shortcut:'Alt+7'}. CONFIRMED.\n3. AppLayout gates the ENTIRE tabbed shell on a single active project: line 30 derives metadata = projects[activeProjectId]?.metadata; lines 60-62 return <ProjectPicker/> whenever !metadata. So TabBar (line 96) and CorpusView (line 127) never mount without an active single project. CONFIRMED.\n4. Default tab is 'reading' (viewStore.ts:49). CONFIRMED.\n5. The recommendation's premise \u2014 CorpusView 'already fetches its own collections list' and could load standalone \u2014 is accurate. CorpusView.tsx:292-305 runs reloadCollections() on mount, fetching /api/collections and auto-selecting the first usable collection (line 297); it reads from useCollectionStore/collectionStore (line 15, 269-273), NOT from the active project. Its only activeProjectId use (line 354) is an on-demand cell-click jump to the Compare dotplot, not a render prerequisite.\n\nI confirmed there is genuinely no alternate path to the corpus tab: AppLayout honors only a ?project= URL param (line 49-53), no ?tab= deep-link; the Alt+7 keyboard shortcut (keyboard.ts:120-122) only works after the shell mounts, which requires metadata; launchTool()/TOOLS never passes 'corpus'; and openCollection() (ProjectPicker.tsx:595-599) merely filters BookCovers to a library page, where clicking a cover calls handleSelect \u2192 loadProject (single text). So reaching corpus requires: open some arbitrary single text, then click Corpus/Alt+7.\n\nLive API grounds the standalone claim: GET http://localhost:8092/api/collections returns the standing 'matthew-mark-validation' collection (2 projects) with no project context; /api/projects returns 3. The corpus data source is reachable independently of any active project.\n\nAdversarial cross-check that strengthens rather than refutes: Compare (CompareView.tsx) is the sibling cross-text/N-text view and it IS in the launchpad AND ships its own in-view project/collection picker (CompareProjectPicker, lines 35-40, fetches projects+collections, scope by collection). Corpus is architecturally the same class of cross-text tool with its own reloadCollections but is the single tab excluded from the launchpad \u2014 evidence the omission is an inconsistency, not a deliberate design.\n\nSeverity adjusted high->medium. It is a real, grounded second-class-citizen problem for the entire collections/corpus tier (a headline C1-C7 / FR-33/FR-38 capability), but it is navigation friction, not broken functionality or data loss: the corpus tab is reachable in ~2 clicks, and collections ARE surfaced elsewhere on the landing page (sidebar 'My Collections' NavRows at ProjectPicker.tsx:720-730, plus BookCover add-to-collection). The finding's 'hidden second-class citizen' framing is mildly overstated \u2014 collections appear prominently in the sidebar; what is actually gated behind opening an arbitrary text is specifically the corpus-analysis workbench entry point."
+    },
+    {
+     "title": "corpus-graph auto-builds on every collection selection with no cost confirmation, breaking the tier's own discipline",
+     "severity": "medium",
+     "category": "design",
+     "evidence": "CorpusView.loadOverview POSTs /collections/{id}/corpus-graph unconditionally (CorpusView.tsx:311) fired by a useEffect on collectionId change (CorpusView.tsx:340-342). This is the all-pairs homology assembly (union-find over candidate generation) yet shows only 'Assembling graph\u2026' (line 382) \u2014 no CostDialog, unlike Probe/Sweep/Reconcile which all gate on cost.",
+     "grounded": true,
+     "recommendation": "For collections beyond a small member/pair threshold, gate the initial corpus-graph build behind the same CostDialog used elsewhere (show member and pair counts), or make the first build an explicit 'Build corpus graph' button. Silently launching potentially O(N^2) work on tab entry is inconsistent with the surrounding honesty guarantees.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Backend embedding cost estimate exists but is never shown; EmbeddingDialog hard-codes a guess",
+     "severity": "medium",
+     "category": "gap",
+     "evidence": "GET /api/projects/{id}/embedding/estimate?chunk_label=... returns {chunk_count:391, total_chars:204936, estimated_seconds:9.8} (live probe). No frontend code calls it (grep of browser/src finds zero uses). EmbeddingDialog instead prints a static 'This typically takes 10-30 seconds' (AnalysisPanel.tsx:486-489), and handleRunAll fires /embeddings/compute with no cost surface at all (AnalysisPanel.tsx:634).",
+     "grounded": true,
+     "recommendation": "Fetch /embedding/estimate for the active chunk label and render the real chunk_count / estimated_seconds inside EmbeddingDialog, and show the same estimate before 'Compute All' triggers embeddings. The data is already computed server-side; wiring it in closes the single-text pre-run cost gap that the collections tier already solved.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "No way to add or remove collection members from inside the Corpus workbench",
+     "severity": "medium",
+     "category": "gap",
+     "evidence": "MembersPanel offers only role toggle and open-member (MembersPanel.tsx:104-146); it has no add/remove affordance. Add-to-collection lives only in ProjectPicker's per-book overflow menu (ProjectPicker.tsx:205, 581-593), and there is no remove-from-collection UI anywhere despite DELETE /api/collections/{id}/projects/{project_id} existing (server endpoint list).",
+     "grounded": true,
+     "recommendation": "Add 'Add member' (project picker) and 'Remove' controls to MembersPanel so a scholar can curate a collection while analyzing it, instead of context-switching back to the library landing page. The remove endpoint already exists but is UI-orphaned.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Corpus 'Masking' sub-tab shows only a read-only conservation lane, not a cross-text masking editor",
+     "severity": "medium",
+     "category": "ux",
+     "evidence": "CorpusView 'masking' sub-tab renders solely a ConservationLane from root-track when graph && rootTrack (CorpusView.tsx:470-477). The backend exposes cross-text-mask/{member}, liftover, and mask-effect endpoints (server endpoint list) that have no UI here. A scholar reading the tab label 'Masking' expects controls to mask/liftover across texts.",
+     "grounded": true,
+     "recommendation": "Either surface the cross-text mask + liftover + mask-effect capabilities in this sub-tab (with the same overlay-editor pattern the single-text MaskingPanel uses), or rename the sub-tab to 'Conservation' so its label matches the read-only content and doesn't imply missing editing affordances.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Probe 'existing passage' mode requires typing a raw chunk index with no passage preview",
+     "severity": "low",
+     "category": "ux",
+     "evidence": "ProbePanel ref mode exposes a bare numeric 'Chunk index' input (ProbePanel.tsx:116-125) with no way to see which passage a given index maps to; the scholar must guess or already know the integer offset.",
+     "grounded": true,
+     "recommendation": "Replace/augment the raw index input with a passage picker or a preview of the chunk text at the selected index (the chunk store is already server-side accessible), so the ref-probe query is chosen by content rather than by memorized offset.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Sweep-run delete fires immediately with no confirmation",
+     "severity": "low",
+     "category": "ux",
+     "evidence": "SweepPanel deleteRun DELETEs /collections/{id}/sweep/{run_id} on click with no confirm step (SweepPanel.tsx:139-149, button at 282-288), unlike ProjectPicker's delete which requires an in-menu confirm (ProjectPicker.tsx:231-239).",
+     "grounded": true,
+     "recommendation": "Add a lightweight confirm (inline 'Delete?' toggle) for consistency. Low severity because the panel documents sweeps as recomputable (only the cached journal is discarded), but the inconsistency with the project-delete confirm pattern is a minor foot-gun.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    },
+    {
+     "title": "Alignment sub-tab can render blank when a run yields zero records",
+     "severity": "low",
+     "category": "ux",
+     "evidence": "CompareView only mounts AlignmentView when alignmentRecords.length > 0 (CompareView.tsx:259); the 'Ready to align' empty state also requires alignmentRecords.length === 0 (line 233). After an alignment that returns zero records, jobStatus is no longer 'idle', so neither branch matches and the Alignment panel area shows nothing under the header.",
+     "grounded": true,
+     "recommendation": "Add an explicit 'Alignment ran but found no aligned passages' state for the alignment sub-view when a completed run produced zero records, so the outcome is legible rather than an empty panel.",
+     "verdict": null,
+     "adjusted_severity": null,
+     "verify_reasoning": null
+    }
+   ]
+  }
+ ],
+ "stats": {
+  "dimensions": 10,
+  "totalFindings": 70,
+  "confirmed": 4,
+  "refuted": 0
+ }
+}
