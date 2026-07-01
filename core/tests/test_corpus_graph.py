@@ -55,14 +55,16 @@ def _member(workspace: Path, pid: str, paragraphs: list[str]) -> str:
 
 
 def _comparison(
-    workspace: Path, q: str, t: str, pairs: list[tuple[int, int, int, int]], score: float = 30.0
+    workspace: Path, q: str, t: str, pairs: list[tuple[int, int, int, int]],
+    score: float = 30.0, identity: float = 0.0,
 ) -> Path:
     """Write a pairwise comparison exactly as the alignment run does: alignment.jsonl + metadata.json.
 
-    ``pairs`` are (query_start, query_end, target_start, target_end) half-open paragraph ranges."""
+    ``pairs`` are (query_start, query_end, target_start, target_end) half-open paragraph ranges.
+    ``identity`` is the block identity stamped on every record (0.0 = the AlignmentRecord default)."""
     records = [
-        AlignmentRecord(query_id=q, query_start=qs, query_end=qe,
-                        target_id=t, target_start=ts, target_end=te, score=score)
+        AlignmentRecord(query_id=q, query_start=qs, query_end=qe, target_id=t,
+                        target_start=ts, target_end=te, score=score, identity=identity)
         for qs, qe, ts, te in pairs
     ]
     d = comparison_dir(workspace, q, t)
@@ -329,6 +331,35 @@ def test_suggested_root_excludes_singletons(tmp_path: Path) -> None:
     assert tree["participation"]["zzz"] > tree["participation"]["aaa"]
     # Shared-only participation correctly nominates the backbone aaa.
     assert tree["suggested_root"] == "aaa"
+
+
+def test_phyletic_distance_uses_alignment_identity(tmp_path: Path) -> None:
+    """The phyletic distance reflects alignment IDENTITY, not just shared-component membership: two
+    near-identical members land closer than two distant ones, even when Jaccard cannot tell them apart
+    (all three share only the core component, so Jaccard makes every pair equidistant)."""
+    a = _member(tmp_path, "aaa", ["core beginning passage about all things", "aaa unique tail gap"])
+    b = _member(tmp_path, "bbb", ["core beginning passage about all things", "bbb unique tail gap"])
+    c = _member(tmp_path, "ccc", ["core beginning passage about all things", "ccc unique tail gap"])
+    _comparison(tmp_path, a, b, [(0, 1, 0, 1)], identity=0.95)  # near-identical
+    _comparison(tmp_path, a, c, [(0, 1, 0, 1)], identity=0.30)  # distant
+    _comparison(tmp_path, b, c, [(0, 1, 0, 1)], identity=0.30)  # distant
+    cid = cs.create_collection(tmp_path, "Ident", "identity distance", [a, b, c])["id"]
+    graph = cg.build_corpus_graph(tmp_path, cid)
+    ii = {m: i for i, m in enumerate(graph.members)}
+
+    # Jaccard flattens all three pairs to one distance (each shares exactly the core).
+    Dj = cg.phyletic_tree(graph, distance="jaccard")["distances"]
+    assert Dj[ii["aaa"]][ii["bbb"]] == Dj[ii["aaa"]][ii["ccc"]] == Dj[ii["bbb"]][ii["ccc"]]
+
+    # auto selects alignment identity (informative edges present) and separates the close pair.
+    tree = cg.phyletic_tree(graph)
+    assert tree["distance_basis"] == "alignment_identity"
+    D = tree["distances"]
+    assert D[ii["aaa"]][ii["bbb"]] == 0.05  # 1 - 0.95
+    assert D[ii["aaa"]][ii["bbb"]] < D[ii["aaa"]][ii["ccc"]]
+    assert D[ii["aaa"]][ii["bbb"]] < D[ii["bbb"]][ii["ccc"]]
+    # only the core is shared across all 3 members → the coarse-structure warning is honest.
+    assert tree["distance_warning"] is not None
 
 
 def test_spread_histogram_shell_not_mislabeled_singleton() -> None:

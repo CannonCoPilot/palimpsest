@@ -24,6 +24,8 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+
 from palimpsest.alignment.records import comparison_dir, read_alignment_records
 from palimpsest.collections import get_collection
 from palimpsest.formats.signals import read_signal
@@ -402,13 +404,63 @@ def project_to_root(graph: CorpusGraph, root_id: str) -> dict[str, Any]:
 
 # ── phyletic / stemma tree (a view over the graph's distance structure, C4 / FR-38) ───────────────
 
-def phyletic_tree(graph: CorpusGraph, root: str | None = None) -> dict[str, Any]:
+def _alignment_distance(
+    graph: CorpusGraph, idx: dict[str, int], n: int, fallback: np.ndarray
+) -> tuple[np.ndarray, bool]:
+    """Member-pair distance ``1 − mean edge identity``, with per-pair fallback to ``fallback`` (Jaccard).
+
+    Aggregates ``identity`` over the graph's cross-member edges (populated by Smith-Waterman; see
+    ``AlignmentRecord.identity``). A pair with no edges, or edges whose identity is uninformative
+    (summing to 0 — e.g. unpopulated legacy records), keeps its ``fallback`` distance. Returns the
+    distance matrix and whether ANY pair had informative identity (so the caller can auto-select)."""
+    node_member = {nd.id: nd.member for nd in graph.nodes}
+    id_sum = np.zeros((n, n))
+    id_cnt = np.zeros((n, n))
+    for e in graph.edges:
+        ma, mb = node_member.get(e["a"]), node_member.get(e["b"])
+        if ma is None or mb is None or ma == mb:
+            continue
+        i, j = idx[ma], idx[mb]
+        ident = float(e.get("identity", 0.0))
+        id_sum[i, j] += ident
+        id_sum[j, i] += ident
+        id_cnt[i, j] += 1
+        id_cnt[j, i] += 1
+
+    dist = fallback.copy()
+    informative = False
+    for i in range(n):
+        for j in range(i + 1, n):
+            if id_cnt[i, j] > 0 and id_sum[i, j] > 0.0:
+                d = float(np.clip(1.0 - id_sum[i, j] / id_cnt[i, j], 0.0, 1.0))
+                dist[i, j] = dist[j, i] = d
+                informative = True
+    return dist, informative
+
+
+def phyletic_tree(
+    graph: CorpusGraph, root: str | None = None, *, distance: str = "auto"
+) -> dict[str, Any]:
     """Derive the phyletic/stemma tree from the corpus graph's distance structure (FR-38).
 
-    Inter-text distance is pangenome Jaccard dissimilarity over shared homology components; the tree is
-    neighbor-joining; the suggested root is the most component-complete member (the natural backbone for
-    a "map everything onto X" lens), which the caller may override via ``root``. The tree is a *reading*
-    of the reference-free graph, not a stored ground truth."""
+    The tree is neighbor-joining; the suggested root is the most SHARED-component-complete member (the
+    natural backbone for a "map everything onto X" lens), which the caller may override via ``root``.
+    The tree is a *reading* of the reference-free graph, not a stored ground truth.
+
+    ``distance`` selects the inter-text metric:
+
+      - ``"alignment_identity"`` — ``1 − mean alignment identity`` of the edges between each member
+        pair (falling back to Jaccard for a pair whose edges carry no informative identity). Pangenome
+        Jaccard alone counts *which* components two members share but is blind to alignment QUALITY, so
+        two near-identical translations and two distant paraphrases that merely co-occur in the core
+        land at the same distance — the tree then contradicts ground truth. Identity restores the
+        gradient.
+      - ``"jaccard"`` — pangenome Jaccard dissimilarity over shared homology components (prior behavior).
+      - ``"auto"`` (default) — alignment identity when any member pair has informative edge identity,
+        else Jaccard.
+
+    ``summary.distance_basis`` reports which metric produced the returned ``distances``; a
+    ``distance_warning`` is set when there are too few shared components to resolve the tree stably."""
     from palimpsest.analysis import phylo
 
     members = graph.members
@@ -416,7 +468,20 @@ def phyletic_tree(graph: CorpusGraph, root: str | None = None) -> dict[str, Any]
     n = len(members)
     comp_sets = [{idx[m] for m in c.members} for c in graph.components]
 
-    distances = phylo.component_distance_matrix(n, comp_sets)
+    jaccard = phylo.component_distance_matrix(n, comp_sets)
+    align, informative = _alignment_distance(graph, idx, n, jaccard)
+    use_align = informative if distance == "auto" else distance in ("alignment", "alignment_identity")
+    distances = align if use_align else jaccard
+    distance_basis = "alignment_identity" if use_align else "jaccard"
+
+    n_shared = sum(1 for c in graph.components if len(c.members) > 1)
+    distance_warning = None
+    if n_shared < n - 1:
+        distance_warning = (
+            f"only {n_shared} shared (multi-member) component(s) across {n} members — the distance "
+            "structure is coarse and the tree may be unstable"
+        )
+
     participation = phylo.participation_counts(n, comp_sets)
     # Root = most component-complete member, but count only SHARED (multi-member) components: a
     # heavily-fragmented outgroup accrues many singleton components from its own gaps, which would
@@ -451,6 +516,8 @@ def phyletic_tree(graph: CorpusGraph, root: str | None = None) -> dict[str, Any]
         "collection_id": graph.collection_id,
         "members": members,
         "distances": [[round(float(distances[i][j]), 6) for j in range(n)] for i in range(n)],
+        "distance_basis": distance_basis,
+        "distance_warning": distance_warning,
         "participation": {members[i]: int(participation[i]) for i in range(n)},
         "suggested_root": suggested,
         "root": chosen,
