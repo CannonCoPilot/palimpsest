@@ -180,3 +180,64 @@ def test_sweep_endpoint_and_journal_roundtrip(corpus: tuple[Path, str]) -> None:
     # embedding sweep with no embeddings → congruence gate → 409, not a silent partial run
     bad = client.post(f"/api/collections/{cid}/sweep", json={"metric": "cosine"})
     assert bad.status_code == 409
+
+
+# ── run/version manager: list + delete (C7, FR-35) ─────────────────────────────────────────────────
+
+def test_list_and_delete_sweep_runs(corpus: tuple[Path, str]) -> None:
+    ws, cid = corpus
+    res = sweep.sweep_pairwise(ws, cid, metric="word_overlap", dense_threshold=0)
+    run_id = res["run_id"]
+
+    runs = sweep.list_sweep_runs(ws, cid)
+    assert len(runs) == 1
+    headline = runs[0]
+    assert headline["run_id"] == run_id
+    assert "pairs" not in headline                       # headline omits per-pair detail
+    assert headline["progress"]["pairs_done"] == 3
+    assert headline["n_pruned"] == res["n_pruned"]
+
+    assert sweep.delete_sweep_run(ws, cid, run_id) is True
+    assert sweep.list_sweep_runs(ws, cid) == []
+    assert sweep.delete_sweep_run(ws, cid, run_id) is False  # second delete: gone
+
+
+def test_list_sweeps_empty_when_none(tmp_path: Path) -> None:
+    _member(tmp_path, "a", ["one two three four five"])
+    _member(tmp_path, "b", ["five six seven eight nine"])
+    col = cs.create_collection(tmp_path, "AB", "", ["a", "b"])
+    assert sweep.list_sweep_runs(tmp_path, col["id"]) == []
+
+
+def test_sweeps_list_and_delete_http(corpus: tuple[Path, str]) -> None:
+    from fastapi.testclient import TestClient
+
+    from palimpsest.server import create_app
+
+    ws, cid = corpus
+    client = TestClient(create_app(ws))
+    run_id = client.post(f"/api/collections/{cid}/sweep",
+                         json={"metric": "word_overlap", "dense_threshold": 0}).json()["run_id"]
+
+    listing = client.get(f"/api/collections/{cid}/sweeps")
+    assert listing.status_code == 200
+    runs = listing.json()["runs"]
+    assert len(runs) == 1 and runs[0]["run_id"] == run_id
+
+    deleted = client.delete(f"/api/collections/{cid}/sweep/{run_id}")
+    assert deleted.status_code == 200 and deleted.json()["deleted"] == run_id
+    assert client.get(f"/api/collections/{cid}/sweeps").json()["runs"] == []
+    assert client.delete(f"/api/collections/{cid}/sweep/{run_id}").status_code == 404
+
+
+def test_sweeps_list_cli(corpus: tuple[Path, str]) -> None:
+    from click.testing import CliRunner
+
+    from palimpsest.cli import main
+
+    ws, cid = corpus
+    sweep.sweep_pairwise(ws, cid, metric="word_overlap", dense_threshold=0)
+    result = CliRunner().invoke(main, ["collections", "sweeps", str(ws), cid])
+    assert result.exit_code == 0, result.output
+    payload = json.loads(result.output[result.output.index("{"):])
+    assert len(payload["runs"]) == 1

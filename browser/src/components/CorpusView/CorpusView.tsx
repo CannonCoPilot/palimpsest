@@ -15,6 +15,7 @@ import { useViewStore } from '../../stores/viewStore';
 import { useCollectionStore, activeCollection, type CollectionOption } from '../../stores/collectionStore';
 import CongruenceBadge from './CongruenceBadge';
 import MembersPanel from './MembersPanel';
+import SweepPanel from './SweepPanel';
 import {
   blockMapLanes,
   sharedComponentMatrix,
@@ -29,13 +30,17 @@ import {
   type RootTrack,
 } from './corpusOverview';
 
-type SubTab = 'overview' | 'members' | 'corpus' | 'masking';
+type SubTab = 'overview' | 'members' | 'corpus' | 'masking' | 'sweep';
 const SUB_TABS: { id: SubTab; label: string }[] = [
   { id: 'overview', label: 'Overview' },
   { id: 'members', label: 'Members' },
   { id: 'corpus', label: 'Corpus' },
   { id: 'masking', label: 'Masking' },
+  { id: 'sweep', label: 'Sweep' },
 ];
+
+// Sub-tabs that stand on their own data (not the corpus graph) — they must not show the graph gate.
+const GRAPH_FREE_TABS = new Set<SubTab>(['members', 'sweep']);
 
 function ClassBadge({ label, count, color }: { label: string; count: number; color: string }) {
   return (
@@ -412,7 +417,11 @@ export default function CorpusView() {
           />
         )}
 
-        {subTab !== 'members' && !graph && !loading && !error && (
+        {subTab === 'sweep' && collectionId && (
+          <SweepPanel collectionId={collectionId} members={members} />
+        )}
+
+        {!GRAPH_FREE_TABS.has(subTab) && !graph && !loading && !error && (
           <div className="text-[var(--color-text-muted)] text-[0.9em]">Select a collection to assemble its corpus graph.</div>
         )}
 

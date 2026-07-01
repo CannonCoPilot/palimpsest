@@ -1130,6 +1130,30 @@ def collections_sweep(
     console.print(json.dumps(result, indent=2))
 
 
+@collections.command("sweeps")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+def collections_sweeps(workspace: Path, collection_id: str) -> None:
+    """List persisted sweep runs for a collection (C7 run/version manager): the headline roll-up per run."""
+    from palimpsest.collections_sweep import list_sweep_runs
+
+    console.print(json.dumps({"runs": list_sweep_runs(workspace, collection_id)}, indent=2))
+
+
+@collections.command("sweep-delete")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.argument("run_id")
+def collections_sweep_delete(workspace: Path, collection_id: str, run_id: str) -> None:
+    """Delete a sweep run's journal (C7 run/version manager). Sweeps are recomputable candidate-gen artifacts."""
+    from palimpsest.collections_sweep import delete_sweep_run
+
+    if not delete_sweep_run(workspace, collection_id, run_id):
+        console.print(f"[red]No sweep run '{run_id}' for '{collection_id}'.[/red]")
+        raise SystemExit(1)
+    console.print(f"Deleted sweep run {run_id}.")
+
+
 @collections.command("corpus-repeats")
 @click.argument("workspace", type=click.Path(exists=True, path_type=Path))
 @click.argument("collection_id")

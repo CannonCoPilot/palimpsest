@@ -2557,6 +2557,24 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             raise HTTPException(status_code=404, detail=f"no sweep run {run_id!r} for {collection_id!r}")
         return JSONResponse(content=journal)
 
+    @app.get("/api/collections/{collection_id}/sweeps")
+    async def collection_sweeps(collection_id: str) -> JSONResponse:
+        """List every persisted sweep run for the collection (C7 run/version manager): compact headline
+        roll-ups (run_id, dial, pruned counts, mean recall, progress). Empty list when none have run."""
+        from palimpsest.collections_sweep import list_sweep_runs
+
+        return JSONResponse(content={"runs": list_sweep_runs(workspace, collection_id)})
+
+    @app.delete("/api/collections/{collection_id}/sweep/{run_id}")
+    async def collection_sweep_delete(collection_id: str, run_id: str) -> JSONResponse:
+        """Delete a sweep run's journal (C7 run/version manager). 404 if no such run. Sweeps are
+        recomputable candidate-gen artifacts; deleting one discards only its cached journal."""
+        from palimpsest.collections_sweep import delete_sweep_run
+
+        if not delete_sweep_run(workspace, collection_id, run_id):
+            raise HTTPException(status_code=404, detail=f"no sweep run {run_id!r} for {collection_id!r}")
+        return JSONResponse(content={"deleted": run_id})
+
     # ── Cross-text masking, tracks & liftover (C5, FR-29/30/42) ──
 
     @app.get("/api/collections/{collection_id}/corpus-repeats")

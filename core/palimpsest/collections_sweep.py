@@ -250,3 +250,42 @@ def _summarize_run(journal: dict[str, Any]) -> dict[str, Any]:
             for v in pairs.values()
         ],
     }
+
+
+# ── run/version manager (C7, FR-35) ────────────────────────────────────────────────────────────────
+
+def _run_headline(journal: dict[str, Any]) -> dict[str, Any]:
+    """A one-line-per-run summary for the run manager list: the roll-up headline numbers plus progress,
+    without the per-pair detail (fetch the full journal via ``read_sweep_journal`` for that)."""
+    roll = _summarize_run(journal)
+    roll.pop("pairs", None)
+    roll["progress"] = journal.get("progress", {"pairs_total": 0, "pairs_done": 0})
+    return roll
+
+
+def list_sweep_runs(workspace: Path, collection_id: str) -> list[dict[str, Any]]:
+    """Every persisted sweep run for a collection, as compact headlines (C7 run/version manager).
+    Ordered by run_id for a stable listing; a corrupt/partial journal is skipped rather than failing the
+    whole list."""
+    d = sweeps_dir(workspace, collection_id)
+    if not d.exists():
+        return []
+    out: list[dict[str, Any]] = []
+    for path in sorted(d.glob("*.json")):
+        try:
+            journal = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        out.append(_run_headline(journal))
+    return out
+
+
+def delete_sweep_run(workspace: Path, collection_id: str, run_id: str) -> bool:
+    """Delete a sweep run's journal (C7 run/version manager). Returns False if the run does not exist.
+    Sweeps are recomputable candidate-gen artifacts — deleting one discards only its cached journal, never
+    any ground-truth data."""
+    path = sweep_journal_path(workspace, collection_id, run_id)
+    if not path.exists():
+        return False
+    path.unlink()
+    return True
