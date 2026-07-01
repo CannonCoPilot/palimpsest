@@ -358,3 +358,67 @@ beta[0,142]` (lands), singleton span `alpha[138,186] →` dropped.
 changes a downstream alignment ✓ · (3) cross-text conservation track draws on the root lens ✓ · (4) mask
 lifted A→B lands at correct B-coords (block-granular) and drops unaligned spans ✓ · (5) suites green
 (backend 891, frontend 72) ✓.
+
+## C6 — Corpus analyses, probe & scale (FR-31, FR-22, FR-35)
+
+### C6a — Corpus analyses leaf + anchor honesty ✅ (FR-31)
+
+**The load-bearing finding (#9 validation review).** Running the word-method alignment on the standing
+Matthew-Mark validation collection (DR-MM ↔ Geneva-MM, a 1747×1749 verse-level word-overlap matrix)
+exposed two compounding defects in `smith_waterman`, both pre-existing (C2/C3, not a C6 regression):
+
+1. **Silent cap.** The extraction loop ran `for _ in range(min(100, n*m))` — a hard 100-alignment
+   ceiling with no report when hit.
+2. **Insufficient traceback masking.** Each extraction marked only its *traceback-path* cells `used`
+   and never checked used cells, so the next `argmax` re-discovered the *same* accumulated diagonal
+   shifted by one column — a flood of near-duplicate records. On the validation matrix this exhausted
+   the 100-cap re-finding the early-Matthew diagonal, leaving **all of Mark and the later text
+   unaligned** (records all started at paragraph 15, ended 473–478).
+
+**Before → after (empirical, `.scratch/verify_c6a.py`):**
+
+| metric | before | after |
+|---|---|---|
+| DR Matthew verses covered | fragment of one region | **986 / 1070 (92%)** |
+| DR Mark verses covered | **0%** | **390 / 677 (58%)** |
+| corpus graph | 1 core / 4 singleton (coarse) | 67 core / 0 shell / 140 singleton (honest) |
+| record score range | flat 32–35 (near-dupes) | 0.11–35.67 (real distribution) |
+
+**The fix (`smith_waterman`).** Waterman-Eggert-style non-overlap: accepted alignments consume their
+cells and traceback stops at any consumed cell, so alignments are cell-disjoint; a candidate whose
+paragraph ranges overlap an accepted alignment on **both** axes (a shifted diagonal or trailing-mismatch
+extension) is rejected — while a genuine repeat (one query range → several target ranges, overlapping on
+one axis only) survives. The silent cap is replaced by `max_alignments: int | None = None` (default
+exhaustive; a positive limit is logged at WARNING when hit — never silent). *Performance:* naive
+exhaustive extraction re-scanned the 3M-cell matrix per iteration (~6 min on the validation matrix);
+since `H` is fixed after the DP fill, candidate cells are now sorted **once** and walked, skipping
+consumed cells — back to **~5.6 s**, byte-identical record set.
+
+**Anchor honesty (plan §C6a).** `build_corpus_graph(…, anchor_trim=φ)` trims each record's block inward
+past boundary cells whose cross-similarity is `< φ` (read from the stored `cross_similarity` signal)
+before the homology union, so a shared block extended by a weakly-overlapping trailing/leading paragraph
+no longer absorbs a disjoint passage into a `core`/`shell` component (the exact artifact flagged in the
+C5 note above). Default `0.0` preserves prior behavior; the trimmed span is reported under
+`summary.anchor_trim`. On the validation collection, `anchor_trim=0.3` resolves the coarse 458-verse
+merged anchor into finer per-passage anchors (core 67→75, singletons 140→156).
+
+**Corpus-analyses leaf** (`analysis/corpus_analysis.py`, pure/dependency-free, mirrors `phylo`/`textstats`):
+corpus **IDF/BM25** (down-weight cross-member boilerplate), **single-linkage near-duplicate clustering**
+over the pangenome Jaccard distance, and **diffusion/spread** (per-component breadth + per-member reach) —
+explicitly undirected: spread across members, never a who-influenced-whom claim (the reference-free graph
+carries no arrow of transmission). Assembler `corpus_graph.corpus_analyses` reads member texts + the graph
+and calls the leaf. On the validation collection: 1888/3041 vocabulary terms are cross-member boilerplate
+(two translations of one text), most-discriminative terms are translation-specific spellings (DR "abia" vs
+Geneva "abijah"), member_reach symmetric at 0.745.
+
+**Surface:** `GET /api/collections/{id}/corpus-analyses`; `POST …/corpus-graph?anchor_trim=`;
+CLI `collections corpus-analyses` + `corpus-graph-build --anchor-trim`. **Tests:** +13
+(`test_corpus_analysis.py` 6, `test_alignment.py` non-overlap/cap 4, `test_corpus_graph.py` trim/analyses 3);
+full backend suite **904 green** (was 891).
+
+**Honest limitation (carry to C6c).** Word-overlap at verse granularity detects translation-equivalence
+strongly (100 same-book diagonal records) but synoptic Mt↔Mk parallels only weakly (3 cross-book records) —
+shared pericopes share *content/structure*, not exact *wording*. That is a property of the word metric, not
+the extractor; embedding-method alignment (and the C6c recall dial) is where synoptic recall improves. The
+synoptic TP/TN oracle for scoring this lives at `core/tests/fixtures/validation-mm/synoptic-ground-truth.json`
+(101 shared pericopes, 51 unique).

@@ -323,3 +323,85 @@ def test_cli_corpus_graph(corpus: tuple[Path, str]) -> None:
 
     res = runner.invoke(main, ["collections", "phyletic-tree", str(workspace), cid])
     assert res.exit_code == 0 and '"suggested_root": "alpha"' in res.output
+
+
+# ── C6a: anchor honesty (trim) + corpus analyses ────────────────────────────────────────────────
+
+def _comparison_with_matrix(
+    workspace: Path, q: str, t: str, pairs: list[tuple[int, int, int, int]], matrix
+) -> Path:
+    """Like _comparison but also writes the cross_similarity signal the anchor trim reads."""
+    import numpy as np
+
+    from palimpsest.formats.signals import SignalManifest, write_signal
+
+    d = _comparison(workspace, q, t, pairs)
+    arr = np.asarray(matrix, dtype=np.float32)
+    manifest = SignalManifest(
+        type="cross_similarity", name="cross_similarity", source=f"{q}->{t}",
+        reference_sha256="", dimensions=list(arr.shape),
+    )
+    write_signal(d, arr, manifest)
+    return d
+
+
+def test_anchor_trim_prevents_trailing_mismatch_absorption(tmp_path: Path) -> None:
+    """A shared block extended by a trailing mismatch would pull each member's unique final paragraph
+    into a core component; anchor_trim shrinks the block to the high-similarity core so those unique
+    paragraphs fall out as singletons."""
+    a = _member(tmp_path, "alpha", ["shared one", "shared two", "alpha only unique tail"])
+    b = _member(tmp_path, "beta", ["shared one", "shared two", "beta only unique tail"])
+    # one record spanning all 3 paragraphs; matrix says para2<->para2 is a weak (trailing) match.
+    matrix = [[0.9, 0.1, 0.1], [0.1, 0.9, 0.1], [0.1, 0.1, 0.2]]
+    _comparison_with_matrix(tmp_path, a, b, [(0, 3, 0, 3)], matrix)
+    col = cs.create_collection(tmp_path, "MM", "", [a, b])
+
+    untrimmed = cg.build_corpus_graph(tmp_path, col["id"])  # trim off (default)
+    assert untrimmed.summary["core"] == 1 and untrimmed.summary["singleton"] == 0
+
+    trimmed = cg.build_corpus_graph(tmp_path, col["id"], anchor_trim=0.5)
+    assert trimmed.summary["anchor_trim"] == 0.5
+    # the shared [0,2) stays core; each member's trailing unique paragraph is now its own singleton.
+    assert trimmed.summary["core"] == 1
+    assert trimmed.summary["singleton"] == 2
+
+
+def test_corpus_analyses_report(corpus: tuple[Path, str]) -> None:
+    workspace, cid = corpus
+    graph = cg.build_corpus_graph(workspace, cid)
+    rep = cg.corpus_analyses(workspace, graph, duplicate_threshold=0.6)
+
+    # words in every member's shared opening are boilerplate; a member-unique word is discriminative.
+    assert "core" in rep["boilerplate"]["shared_by_all"]
+    disc_terms = {d["term"] for d in rep["boilerplate"]["most_discriminative"]}
+    assert "singleton" in disc_terms  # only gamma's unique paragraph has this word
+
+    # alpha & beta are within 0.6 pangenome distance → clustered; gamma stays apart.
+    clusters = [set(c["members"]) for c in rep["near_duplicate_clusters"]]
+    assert {"alpha", "beta"} in clusters
+
+    # diffusion is symmetric spread, present for every member, with the non-directionality note.
+    assert set(rep["diffusion"]["member_reach"]) == {"alpha", "beta", "gamma"}
+    assert "not a directional" in rep["diffusion"]["non_directional_note"]
+    # 1 core component out of 5 total (1 core + 1 shell + 3 singletons).
+    assert rep["diffusion"]["core_fraction"] == 0.2
+
+
+def test_http_and_cli_corpus_analyses(corpus: tuple[Path, str]) -> None:
+    from click.testing import CliRunner
+
+    from palimpsest.cli import main
+
+    workspace, cid = corpus
+    client = _client(workspace)
+
+    assert client.get(f"/api/collections/{cid}/corpus-analyses").status_code == 404  # not built
+    client.post(f"/api/collections/{cid}/corpus-graph")
+    rep = client.get(f"/api/collections/{cid}/corpus-analyses?duplicate_threshold=0.6")
+    assert rep.status_code == 200
+    assert {"alpha", "beta"} in [set(c["members"]) for c in rep.json()["near_duplicate_clusters"]]
+
+    res = CliRunner().invoke(
+        main, ["collections", "corpus-analyses", str(workspace), cid, "--duplicate-threshold", "0.6"]
+    )
+    assert res.exit_code == 0 and '"member_reach"' in res.output

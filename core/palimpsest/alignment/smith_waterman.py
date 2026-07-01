@@ -8,7 +8,6 @@ objects for each significant local alignment found.
 from __future__ import annotations
 
 import logging
-from typing import Any
 
 import numpy as np
 
@@ -26,11 +25,18 @@ def smith_waterman(
     gap_extend: float = -0.5,
     score_threshold: float = 0.0,
     min_length: int = 2,
+    max_alignments: int | None = None,
 ) -> list[AlignmentRecord]:
     """Smith-Waterman local alignment on a pre-computed NxM similarity matrix.
 
-    Uses affine gap penalties. Returns all non-overlapping local alignments
-    above score_threshold, sorted by score descending.
+    Uses affine gap penalties. Returns non-overlapping local alignments above
+    ``score_threshold``, sorted by score descending. "Non-overlapping" is enforced
+    in cell space (Waterman-Eggert style): each accepted alignment consumes its
+    traceback path, and a later candidate that overlaps an accepted alignment on
+    *both* the query and target axes (a shifted diagonal or trailing-mismatch
+    extension of the same block) is rejected rather than re-reported. A genuine
+    repeat — one query range aligning to several target ranges — overlaps on only
+    one axis and survives.
 
     Args:
         similarity_matrix: NxM matrix where [i,j] = similarity between
@@ -42,6 +48,11 @@ def smith_waterman(
         gap_extend: Penalty for extending a gap (negative).
         score_threshold: Minimum alignment score to report.
         min_length: Minimum alignment length (in paragraphs).
+        max_alignments: Optional ceiling on the number of alignments returned.
+            ``None`` (default) extracts exhaustively until no cell scores above
+            threshold — no silent cap. If a positive limit is hit while signal
+            remains above threshold, the truncation is logged at WARNING (never
+            silent); raise the limit for exhaustive extraction.
     """
     n, m = similarity_matrix.shape
     if n == 0 or m == 0:
@@ -78,26 +89,55 @@ def smith_waterman(
             else:
                 trace[i, j] = 3
 
-    # Extract all local alignments by repeated traceback from highest scoring cells
+    # Extract non-overlapping local alignments by repeated traceback from the highest-scoring
+    # cell. Each accepted alignment consumes its traceback path (used[i,j]); traceback also stops
+    # at any already-consumed cell, so accepted alignments never share cells. A candidate whose
+    # paragraph ranges overlap an accepted alignment on BOTH axes (a shifted-diagonal duplicate or
+    # a trailing-mismatch extension of the same block) is rejected — the previous silent
+    # ``min(100, n*m)`` cap masked exactly this by hiding the flood of near-duplicates.
     records: list[AlignmentRecord] = []
     used = np.zeros((n + 1, m + 1), dtype=bool)
+    overlap_tol = 0.5  # reject if overlap exceeds this fraction on BOTH axes vs. an accepted record
 
-    for _ in range(min(100, n * m)):
-        # Find highest unused cell
-        masked_H = np.where(used, 0.0, H)
-        max_score = float(masked_H.max())
-        if max_score <= score_threshold:
+    def _is_duplicate(qs: int, qe: int, ts: int, te: int) -> bool:
+        for r in records:
+            q_ov = max(0, min(qe, r.query_end) - max(qs, r.query_start))
+            t_ov = max(0, min(te, r.target_end) - max(ts, r.target_start))
+            if q_ov <= 0 or t_ov <= 0:
+                continue  # disjoint on an axis → distinct block (e.g. a repeat) → keep
+            q_frac = q_ov / max(1, min(qe - qs, r.query_end - r.query_start))
+            t_frac = t_ov / max(1, min(te - ts, r.target_end - r.target_start))
+            if q_frac > overlap_tol and t_frac > overlap_tol:
+                return True
+        return False
+
+    # Candidate endpoint cells, highest H first. H is fixed after the DP fill, so the above-threshold
+    # cells are sorted ONCE and walked in order, skipping any consumed by an earlier traceback — far
+    # cheaper than re-scanning the whole matrix for the argmax on every extraction. Ties break by
+    # ascending flat index (stable sort) so the result is deterministic.
+    flat = H.ravel()
+    cand = np.where(flat > score_threshold)[0]
+    cand = cand[np.argsort(-flat[cand], kind="stable")]
+    width = m + 1
+
+    truncated = False
+    for flat_idx in cand:
+        if max_alignments is not None and len(records) >= max_alignments:
+            truncated = True  # candidate cells above threshold remain unexamined
             break
 
-        max_pos = np.unravel_index(masked_H.argmax(), H.shape)
-        i, j = int(max_pos[0]), int(max_pos[1])
+        i = int(flat_idx) // width
+        j = int(flat_idx) % width
+        if used[i, j]:
+            continue
 
-        # Traceback
+        max_score = float(H[i, j])
         query_end = i
         target_end = j
         aligned_pairs: list[tuple[int, int]] = []
 
-        while i > 0 and j > 0 and H[i, j] > 0 and trace[i, j] != 0:
+        # Traceback; stop at cells already consumed so accepted alignments stay cell-disjoint.
+        while i > 0 and j > 0 and H[i, j] > 0 and trace[i, j] != 0 and not used[i, j]:
             used[i, j] = True
             if trace[i, j] == 1:  # diagonal
                 aligned_pairs.append((i - 1, j - 1))
@@ -115,6 +155,10 @@ def smith_waterman(
 
         query_start = aligned_pairs[0][0]
         target_start = aligned_pairs[0][1]
+
+        # Half-open paragraph ranges are [start, end); reject shifted/trailing duplicates.
+        if _is_duplicate(query_start, query_end, target_start, target_end):
+            continue
 
         # Compute average identity within aligned block
         sims = [float(similarity_matrix[qi, tj]) for qi, tj in aligned_pairs]
@@ -140,5 +184,11 @@ def smith_waterman(
         ))
 
     records.sort(key=lambda r: r.score, reverse=True)
+    if truncated:
+        logger.warning(
+            "smith_waterman: stopped at max_alignments=%d with signal still above "
+            "threshold=%.3f — raise max_alignments for exhaustive extraction (not a silent cap)",
+            max_alignments, score_threshold,
+        )
     logger.info("Found %d alignments (threshold=%.2f)", len(records), score_threshold)
     return records

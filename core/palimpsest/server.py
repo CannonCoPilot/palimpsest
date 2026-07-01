@@ -2363,14 +2363,20 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     # ── Corpus graph API (C3, reference-free pangenome model) ──
 
     @app.post("/api/collections/{collection_id}/corpus-graph")
-    async def build_collection_corpus_graph(collection_id: str) -> JSONResponse:
+    async def build_collection_corpus_graph(
+        collection_id: str, anchor_trim: float = 0.0
+    ) -> JSONResponse:
         """Assemble + persist the reference-free corpus graph (C3, FR-31) from the collection's
         computed pairwise edges. Returns the pangenome summary (core/shell/singleton counts plus the
-        pairs that did and did not contribute edges)."""
+        pairs that did and did not contribute edges).
+
+        ``anchor_trim`` (C6a anchor honesty): when ``> 0``, trims each aligned block inward past
+        boundary cells below that cross-similarity before the homology union, so a trailing/leading
+        mismatch no longer pulls a disjoint passage into a core/shell component."""
         from palimpsest.corpus_graph import build_corpus_graph, write_corpus_graph
 
         try:
-            graph = build_corpus_graph(workspace, collection_id)
+            graph = build_corpus_graph(workspace, collection_id, anchor_trim=anchor_trim)
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
         write_corpus_graph(workspace, collection_id, graph)
@@ -2414,6 +2420,21 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             return JSONResponse(content=phyletic_tree(graph, root))
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc))
+
+    @app.get("/api/collections/{collection_id}/corpus-analyses")
+    async def collection_corpus_analyses(
+        collection_id: str, duplicate_threshold: float = 0.15, top_terms: int = 25
+    ) -> JSONResponse:
+        """Corpus-level analyses over the persisted graph + member texts (C6a, FR-31): cross-member
+        boilerplate / IDF, near-duplicate clusters over the pangenome distance, and undirected
+        diffusion/spread (breadth across members — never a directional influence claim)."""
+        from palimpsest.corpus_graph import corpus_analyses, read_corpus_graph
+
+        graph = read_corpus_graph(workspace, collection_id)
+        if graph is None:
+            raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
+        return JSONResponse(content=corpus_analyses(
+            workspace, graph, duplicate_threshold=duplicate_threshold, top_terms=top_terms))
 
     # ── Cross-text masking, tracks & liftover (C5, FR-29/30/42) ──
 

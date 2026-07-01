@@ -19,12 +19,14 @@ downstream rendering (C4) but the graph reasons in paragraph space.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
 from palimpsest.alignment.records import comparison_dir, read_alignment_records
 from palimpsest.collections import get_collection
+from palimpsest.formats.signals import read_signal
 from palimpsest.project import Project
 
 CORPUS_GRAPH_FILE = "corpus_graph.json"
@@ -145,6 +147,27 @@ def _gaps(covered: list[tuple[int, int]], total: int) -> list[tuple[int, int]]:
     return gaps
 
 
+def _trim_to_high_sim(
+    matrix: Any, qs: int, qe: int, ts: int, te: int, trim: float
+) -> tuple[int, int, int, int]:
+    """Shrink a record's ``[qs,qe) x [ts,te)`` block inward past low-similarity boundary cells.
+
+    Anchor honesty (C6a): a Smith-Waterman block always starts and ends on a diagonal (match)
+    cell, but a *trailing/leading mismatch* — a shared passage extended by one weakly-overlapping
+    paragraph — inflates the anchor and can pull a genuinely disjoint passage into a ``core``/``shell``
+    homology component. Trimming boundary cells whose cross-similarity is ``< trim`` keeps only the
+    high-similarity core. The trim walks the diagonal correspondence in lockstep (valid at the block
+    endpoints, which are diagonal by construction). Returns the trimmed range; may be empty."""
+    rows, cols = matrix.shape
+    while qe > qs and te > ts and qe - 1 < rows and te - 1 < cols and float(matrix[qe - 1, te - 1]) < trim:
+        qe -= 1
+        te -= 1
+    while qs < qe and ts < te and qs < rows and ts < cols and float(matrix[qs, ts]) < trim:
+        qs += 1
+        ts += 1
+    return qs, qe, ts, te
+
+
 def _find_comparison(workspace: Path, a: str, b: str) -> tuple[Path, str, str] | None:
     """Locate a stored pairwise comparison for the unordered pair ``{a, b}``.
 
@@ -176,11 +199,19 @@ def _reference_sha(workspace: Path, member: str) -> str | None:
 
 # ── build ───────────────────────────────────────────────────────────────────────────────────────
 
-def build_corpus_graph(workspace: Path, collection_id: str) -> CorpusGraph:
+def build_corpus_graph(
+    workspace: Path, collection_id: str, *, anchor_trim: float = 0.0
+) -> CorpusGraph:
     """Assemble the reference-free corpus graph for a collection from its computed pairwise edges.
 
     Pairs without a stored comparison contribute no edges (reported under ``summary.pairs_missing``);
-    the graph still builds from whatever correspondences exist."""
+    the graph still builds from whatever correspondences exist.
+
+    ``anchor_trim`` (C6a anchor honesty): when ``> 0``, each record's aligned block is trimmed inward
+    past boundary cells whose cross-similarity is below the threshold before it becomes an anchor, so
+    a shared passage extended by a weakly-overlapping (trailing/leading) paragraph no longer absorbs a
+    disjoint passage into a ``core``/``shell`` homology component. ``0.0`` (default) keeps the raw
+    record ranges (prior behavior). The trimmed span is reported under ``summary.anchor_trim``."""
     collection = get_collection(workspace, collection_id)
     if collection is None:
         raise ValueError(f"Collection not found: {collection_id}")
@@ -206,10 +237,21 @@ def build_corpus_graph(workspace: Path, collection_id: str) -> CorpusGraph:
             if not records:
                 pairs_missing.append([a, b])
                 continue
+            matrix = None
+            if anchor_trim > 0.0:
+                try:
+                    _, matrix = read_signal(comp_dir, "cross_similarity")
+                except Exception:
+                    matrix = None  # no stored matrix → fall back to untrimmed ranges (reported)
             pairs_with_edges.append([a, b])
             for r in records:
-                q_iv = (r.query_start, r.query_end)
-                t_iv = (r.target_start, r.target_end)
+                qs, qe, ts, te = r.query_start, r.query_end, r.target_start, r.target_end
+                if matrix is not None:
+                    qs, qe, ts, te = _trim_to_high_sim(matrix, qs, qe, ts, te, anchor_trim)
+                    if qe <= qs or te <= ts:
+                        continue  # whole block was low-similarity boundary → drop, don't anchor
+                q_iv = (qs, qe)
+                t_iv = (ts, te)
                 member_intervals[q_id].append(q_iv)
                 member_intervals[t_id].append(t_iv)
                 raw_edges.append((q_id, q_iv, t_id, t_iv, float(r.score), comp_dir.name))
@@ -293,6 +335,7 @@ def build_corpus_graph(workspace: Path, collection_id: str) -> CorpusGraph:
         "singleton": counts["singleton"],
         "pairs_with_edges": pairs_with_edges,
         "pairs_missing": pairs_missing,
+        "anchor_trim": anchor_trim,
     }
     provenance = {
         "member_sha256": {m: _reference_sha(workspace, m) for m in members},
@@ -395,6 +438,108 @@ def phyletic_tree(graph: CorpusGraph, root: str | None = None) -> dict[str, Any]
         "root": chosen,
         "tree": tree,
     }
+
+
+# ── corpus analyses (C6a — leaves over the graph + member texts, FR-31) ────────────────────────────
+
+_CORPUS_WORD_RE = re.compile(r"\w+")
+
+
+def _member_tokens(workspace: Path, member: str) -> list[str]:
+    """Lowercased word tokens of a member's analyzable (masked-resolved) text."""
+    try:
+        text, _ = Project.load(workspace / member).analyzable_text(sep=" ")
+    except Exception:
+        return []
+    return _CORPUS_WORD_RE.findall(text.lower())
+
+
+def corpus_analyses(
+    workspace: Path,
+    graph: CorpusGraph,
+    *,
+    duplicate_threshold: float = 0.15,
+    top_terms: int = 25,
+) -> dict[str, Any]:
+    """Collection-level corpus analyses over the C3 graph + member texts (C6a, FR-31).
+
+    Reads member texts and the corpus graph, reduces them to primitive inputs, and calls the pure
+    ``analysis.corpus_analysis`` leaf. Three honest families:
+
+      - **boilerplate / IDF** — terms shared by every member (lowest IDF) are the cross-member
+        boilerplate to down-weight; ``top_terms`` highest-IDF terms are the most discriminative.
+      - **near-duplicate clusters** — single-linkage groups over the pangenome Jaccard distance
+        (``duplicate_threshold``); members sharing almost all homology collapse together.
+      - **diffusion / spread** — per-component breadth and per-member reach across the corpus.
+        Undirected by construction: spread, never who-influenced-whom (the reference-free graph
+        carries no arrow of transmission — stated, not implied)."""
+    from palimpsest.analysis import corpus_analysis as ca
+
+    members = graph.members
+    idx = {m: i for i, m in enumerate(members)}
+    n = len(members)
+
+    token_lists = [_member_tokens(workspace, m) for m in members]
+    token_sets = [set(t) for t in token_lists]
+
+    idf = ca.corpus_idf(token_sets)
+    boilerplate = ca.boilerplate_terms(token_sets)
+    discriminative = sorted(idf.items(), key=lambda kv: (-kv[1], kv[0]))[:top_terms]
+
+    comp_sets_int = [[idx[m] for m in c.members] for c in graph.components]
+    comp_sets_set = [set(s) for s in comp_sets_int]
+    distances = phylo_distance_rows(n, comp_sets_set)
+    clusters = ca.single_linkage_clusters(distances, duplicate_threshold)
+
+    spreads = ca.component_spread(n, comp_sets_int)
+    reach = ca.member_reach(n, comp_sets_int)
+
+    return {
+        "collection_id": graph.collection_id,
+        "members": members,
+        "boilerplate": {
+            "shared_by_all": boilerplate[:top_terms],
+            "n_shared_by_all": len(boilerplate),
+            "most_discriminative": [{"term": t, "idf": round(v, 4)} for t, v in discriminative],
+            "vocab_size": len(idf),
+        },
+        "near_duplicate_clusters": [
+            {"members": [members[i] for i in cl], "size": len(cl)} for cl in clusters if len(cl) > 1
+        ],
+        "diffusion": {
+            "non_directional_note": (
+                "reference-free graph: this is passage spread across members, not a directional "
+                "influence/derivation claim"
+            ),
+            "member_reach": {members[i]: round(reach[i], 4) for i in range(n)},
+            "component_spread_histogram": _spread_histogram(spreads),
+            "core_fraction": round(sum(1 for s in spreads if s >= 1.0) / len(spreads), 4)
+            if spreads else 0.0,
+        },
+    }
+
+
+def phylo_distance_rows(n: int, comp_member_sets: list[set[int]]) -> list[list[float]]:
+    """Pangenome Jaccard distance as plain nested lists (the leaf's single-linkage input)."""
+    from palimpsest.analysis import phylo
+
+    D = phylo.component_distance_matrix(n, comp_member_sets)
+    return [[float(D[i][j]) for j in range(n)] for i in range(n)]
+
+
+def _spread_histogram(spreads: list[float]) -> dict[str, int]:
+    """Bucket component spread fractions into coarse breadth bands for a compact readout."""
+    bins = {"singleton": 0, "narrow": 0, "broad": 0, "core": 0}
+    for s in spreads:
+        if s >= 1.0:
+            bins["core"] += 1
+        elif s >= 0.66:
+            bins["broad"] += 1
+        elif s >= 0.34:
+            bins["narrow"] += 1
+        else:
+            bins["singleton"] += 1
+    return bins
 
 
 # ── persistence (collections/{id}/, OQ-6 / FR-32) ────────────────────────────────────────────────

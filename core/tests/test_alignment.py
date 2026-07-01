@@ -69,6 +69,66 @@ class TestSmithWaterman:
         assert len(records) >= 1
 
 
+class TestSmithWatermanNonOverlap:
+    """C6a: extraction is non-overlapping (Waterman-Eggert style) and has no silent cap."""
+
+    def test_shifted_diagonal_duplicate_is_rejected(self):
+        """A 2-wide high-similarity diagonal offers a main path and a shifted path overlapping it on
+        both axes; only one alignment should survive (the flood the old min(100,...) cap hid)."""
+        n = 6
+        matrix = np.zeros((n, n + 1), dtype=np.float32)
+        for i in range(n):
+            matrix[i, i] = 0.9
+            matrix[i, i + 1] = 0.85
+        records = smith_waterman(matrix, "a", "b", min_length=2)
+        assert len(records) == 1
+        # and no two records ever overlap >50% on both axes (the invariant, trivially here).
+        for x in range(len(records)):
+            for y in range(x + 1, len(records)):
+                rx, ry = records[x], records[y]
+                q_ov = max(0, min(rx.query_end, ry.query_end) - max(rx.query_start, ry.query_start))
+                t_ov = max(0, min(rx.target_end, ry.target_end) - max(rx.target_start, ry.target_start))
+                assert not (q_ov > 0 and t_ov > 0)
+
+    def test_repeat_survives_overlap_on_a_single_axis(self):
+        """One query range aligning to two disjoint target ranges (a repeat) overlaps only on the
+        query axis, so both alignments must be kept."""
+        matrix = np.zeros((4, 16), dtype=np.float32)
+        matrix[0:4, 0:4] = np.eye(4) * 0.9
+        matrix[0:4, 8:12] = np.eye(4) * 0.9
+        records = smith_waterman(matrix, "a", "b", min_length=2)
+        assert len(records) == 2
+        targets = sorted(r.target_start for r in records)
+        assert targets[0] < 4 and targets[1] >= 8  # two distinct target locations
+
+    @staticmethod
+    def _six_disjoint_blocks() -> np.ndarray:
+        """Six 3x3 identity blocks on the ANTI-diagonal — disjoint in both rows and cols, so no single
+        monotonic path can chain them (a main-diagonal layout would merge into one local alignment)."""
+        matrix = np.zeros((30, 30), dtype=np.float32)
+        for k in range(6):
+            r = k * 5
+            c = (5 - k) * 5
+            matrix[r:r + 3, c:c + 3] = np.eye(3) * 0.9
+        return matrix
+
+    def test_exhaustive_by_default_no_silent_cap(self):
+        """Six disjoint blocks are all returned by default (no arbitrary result cap)."""
+        records = smith_waterman(self._six_disjoint_blocks(), "a", "b", min_length=2)
+        assert len(records) == 6
+
+    def test_max_alignments_caps_and_warns(self, caplog):
+        """An explicit ceiling truncates, but the truncation is logged (never silent)."""
+        import logging
+
+        with caplog.at_level(logging.WARNING, logger="palimpsest.alignment.smith_waterman"):
+            records = smith_waterman(
+                self._six_disjoint_blocks(), "a", "b", min_length=2, max_alignments=2
+            )
+        assert len(records) == 2
+        assert any("max_alignments" in r.message for r in caplog.records)
+
+
 class TestGumbel:
     def test_calibration(self):
         """Gumbel calibration should return reasonable parameters."""

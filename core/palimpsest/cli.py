@@ -937,12 +937,15 @@ def collections_congruence(
 @collections.command("corpus-graph-build")
 @click.argument("workspace", type=click.Path(exists=True, path_type=Path))
 @click.argument("collection_id")
-def collections_corpus_graph_build(workspace: Path, collection_id: str) -> None:
+@click.option("--anchor-trim", type=float, default=0.0,
+              help="Trim aligned blocks past boundary cells below this cross-similarity before the "
+                   "homology union (C6a anchor honesty; 0 = off)")
+def collections_corpus_graph_build(workspace: Path, collection_id: str, anchor_trim: float) -> None:
     """Assemble + persist the reference-free corpus graph (C3) from the collection's pairwise edges."""
     from palimpsest.corpus_graph import build_corpus_graph, write_corpus_graph
 
     try:
-        graph = build_corpus_graph(workspace, collection_id)
+        graph = build_corpus_graph(workspace, collection_id, anchor_trim=anchor_trim)
     except ValueError as exc:
         console.print(f"[red]{exc}[/red]")
         raise SystemExit(1)
@@ -1007,6 +1010,27 @@ def collections_phyletic_tree(workspace: Path, collection_id: str, root: str | N
     except ValueError as exc:
         console.print(f"[red]{exc}[/red]")
         raise SystemExit(1)
+
+
+@collections.command("corpus-analyses")
+@click.argument("workspace", type=click.Path(exists=True, path_type=Path))
+@click.argument("collection_id")
+@click.option("--duplicate-threshold", type=float, default=0.15, show_default=True,
+              help="Max pangenome distance to cluster members as near-duplicates")
+@click.option("--top-terms", type=int, default=25, show_default=True, help="Terms to list per band")
+def collections_corpus_analyses(
+    workspace: Path, collection_id: str, duplicate_threshold: float, top_terms: int
+) -> None:
+    """Corpus analyses over the graph + member texts (C6a): boilerplate/IDF, near-duplicate clusters,
+    undirected diffusion/spread."""
+    from palimpsest.corpus_graph import corpus_analyses, read_corpus_graph
+
+    graph = read_corpus_graph(workspace, collection_id)
+    if graph is None:
+        console.print(f"[red]No corpus graph for '{collection_id}'; run corpus-graph-build first.[/red]")
+        raise SystemExit(1)
+    console.print(json.dumps(corpus_analyses(
+        workspace, graph, duplicate_threshold=duplicate_threshold, top_terms=top_terms), indent=2))
 
 
 @collections.command("corpus-repeats")
