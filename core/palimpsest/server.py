@@ -2724,6 +2724,18 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         query_dir = _safe_project_dir(workspace, request.query_id)
         target_dir = _safe_project_dir(workspace, request.target_id)
 
+        # Embedding-based methods (anything but the token methods word/alphabet) require both operands
+        # in a congruent embedding space. Gate synchronously so an incongruent or un-embedded pair
+        # fails fast with 409 (mirroring probe/sweep) instead of dispatching a job that dies mid-run
+        # with a FileNotFoundError.
+        if request.method not in ("word", "alphabet"):
+            from palimpsest.collections_ops import member_embedding_capability, operands_congruent
+            cap_a = member_embedding_capability(workspace, request.query_id)
+            cap_b = member_embedding_capability(workspace, request.target_id)
+            ok, reason = operands_congruent("cosine", cap_a, cap_b)
+            if not ok:
+                raise HTTPException(status_code=409, detail=reason)
+
         job_key = f"{request.query_id}:{request.target_id}"
         if job_key in _alignment_jobs and _alignment_jobs[job_key].get("status") == "running":
             return JSONResponse(content={"status": "already_running"})
@@ -2746,6 +2758,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 comp_dir = comparison_dir(workspace, request.query_id, request.target_id)
                 comp_dir.mkdir(parents=True, exist_ok=True)
 
+                matrix = None
                 if request.method == "alphabet":
                     records = await asyncio.to_thread(align_alphabets, proj_a, proj_b)
                 elif request.method == "word":
@@ -2768,6 +2781,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                         sw_align, matrix, request.query_id, request.target_id, request.method
                     )
 
+                # Significance for ANY matrix-backed method: permute the similarity matrix to calibrate
+                # a Gumbel null for the SW scores. Previously only the semantic branch did this, so word
+                # alignments shipped p_value = 1.0. Alphabet alignment produces no matrix, so its records
+                # honestly keep the default (no null model to permute — stated, not silently uniform).
+                if matrix is not None:
                     mu, beta = await asyncio.to_thread(calibrate_gumbel, matrix)
                     for rec in records:
                         rec.p_value = p_value(rec.score, mu, beta)

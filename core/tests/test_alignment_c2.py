@@ -149,6 +149,23 @@ def test_run_alignment_accepts_json_body(tmp_path: Path) -> None:
     assert any(err["loc"][-1] == "target_id" for err in bad.json()["detail"])
 
 
+def test_semantic_alignment_is_congruence_gated(tmp_path: Path) -> None:
+    """Semantic (embedding) alignment on members that share no congruent embedding space fails fast
+    with 409 (FR-27) instead of dispatching a job that dies mid-run with FileNotFoundError. Token
+    methods (word/alphabet) need no embeddings and are unaffected."""
+    _make_comparison(tmp_path)  # 'a','b' are loadable but NOT embedded
+    client = _client(tmp_path)
+
+    gated = client.post(
+        "/api/alignment/run", json={"query_id": "a", "target_id": "b", "method": "semantic"})
+    assert gated.status_code == 409
+    assert "embedding" in gated.json()["detail"].lower()
+
+    ok = client.post(
+        "/api/alignment/run", json={"query_id": "a", "target_id": "b", "method": "word"})
+    assert ok.status_code == 200
+
+
 def test_comparison_dirname_is_length_bounded() -> None:
     """Long edition slugs joined by ``_vs_`` exceed the 255-byte filesystem component limit and raise
     Errno 63 at write time. Short pairs keep the readable name; long pairs collapse to a stable hash."""
