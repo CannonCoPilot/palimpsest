@@ -119,6 +119,16 @@ export default function CompareView() {
   const setActiveMethod = useComparisonStore((s) => s.setActiveMethod);
   const runAlignment = useComparisonStore((s) => s.runAlignment);
   const jobStatus = useComparisonStore((s) => s.jobStatus);
+  const loadAlignmentResults = useComparisonStore((s) => s.loadAlignmentResults);
+
+  // Hydrate any alignment already on disk for this pair so Alignment/Synteny/Circos/Diff reflect
+  // existing results instead of a false "Ready to align" empty state — mirrors ComparativeDotplot's
+  // matrix auto-load. Silent when nothing is persisted (loadAlignmentResults degrades, no error banner).
+  useEffect(() => {
+    if (activeProjectId && secondaryProjectId) {
+      void loadAlignmentResults(activeProjectId, secondaryProjectId);
+    }
+  }, [activeProjectId, secondaryProjectId, loadAlignmentResults]);
 
   const handleSelectSecondary = useCallback(async (id: string) => {
     await loadSecondary('', id);

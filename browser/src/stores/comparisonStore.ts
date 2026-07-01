@@ -148,13 +148,18 @@ export const useComparisonStore = create<ComparisonState>((set, get) => ({
   },
 
   loadAlignmentResults: async (queryId, targetId) => {
+    // Absence of persisted results is NOT an error — it is the "not aligned yet" state. Degrade
+    // silently (like loadCrossMatrix) so an auto-hydrate on mount never raises a false error banner.
     try {
       const res = await fetch(`/api/alignment/${queryId}/${targetId}/records`);
-      if (!res.ok) throw new Error('No alignment results found');
+      if (!res.ok) {
+        set({ alignmentRecords: [] });
+        return;
+      }
       const records: AlignmentRecord[] = await res.json();
       set({ alignmentRecords: records });
-    } catch (err) {
-      set({ error: err instanceof Error ? err.message : 'Unknown error' });
+    } catch {
+      set({ alignmentRecords: [] });
     }
   },
 
