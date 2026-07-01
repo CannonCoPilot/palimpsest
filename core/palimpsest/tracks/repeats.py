@@ -79,12 +79,15 @@ def _count_repeats(
     for n in range(min_words, max_ngram + 1):
         for start in range(len(normalised) - n + 1):
             gram = normalised[start:start + n]
-            # Skip n-grams that are entirely stopwords
-            if all(w in STOPWORDS or not w for w in gram):
+            # An empty token marks a text boundary (a pilcrow/paragraph-break split). Skip any n-gram
+            # spanning one: it is not a contiguous phrase, and joining through it mints a double-space
+            # key that fragments the real phrase's occurrence count.
+            if any(w == "" for w in gram):
+                continue
+            # Skip n-grams that are entirely stopwords.
+            if all(w in STOPWORDS for w in gram):
                 continue
             key = " ".join(gram)
-            if not key.strip():
-                continue
             phrase_counts[key] = phrase_counts.get(key, 0) + 1
 
     return {phrase for phrase, count in phrase_counts.items() if count >= min_occurrences}

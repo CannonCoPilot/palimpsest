@@ -1,5 +1,7 @@
 """Unit tests for palimpsest.analysis.textstats — P4 deterministic descriptive statistics (FR-8/10)."""
 
+import math
+
 import pytest
 
 from palimpsest.analysis import textstats as T
@@ -100,3 +102,24 @@ class TestNgramsAndCollocations:
 
     def test_collocations_deterministic(self, tokens):
         assert T.collocations(tokens, 2, 3, 10) == T.collocations(tokens, 2, 3, 10)
+
+    def test_collocations_pmi_normalized_by_windowed_pair_total(self):
+        # "a b a b" with window=1 → pairs {(a,b):2, (b,a):1}; total_pairs=3, n=4, ua=ub=2.
+        # Correct PMI(a,b) = log2( P(a,b) / (P(a)·P(b)) ) with P(a,b)=c/total_pairs, P(x)=ux/n
+        #                  = log2( c·n·n / (total_pairs·ua·ub) ) = log2(32/12) ≈ 1.415.
+        # The prior bug normalized the joint by the token count n (one-pair-per-token) → log2(8/4)=1.0.
+        cols = T.collocations(["a", "b", "a", "b"], window=1, min_count=2, top=10)
+        assert len(cols) == 1
+        a, b, pmi, _g2, count = cols[0]
+        assert (a, b, count) == ("a", "b", 2)
+        assert pmi == round(math.log2((2 * 4 * 4) / (3 * 2 * 2)), 4) == 1.415
+        assert pmi != 1.0  # the old token-count-normalized value
+
+    def test_log_likelihood_zero_cell_keeps_surviving_term(self):
+        # c12 == c2 (the bigram accounts for every occurrence of the second word) → the "second word
+        # without the first" cell is empty. 0·log0 = 0 must zero only that term; the paired
+        # (total-k)·log(1-p) term is still valid. The old guard discarded the whole term at k=0,
+        # understating G². New: 6.189; old (whole-term-dropped): 3.065.
+        g2 = T._log_likelihood(c12=2, c1=3, c2=2, n=10)
+        assert g2 == 6.189
+        assert g2 != 3.065

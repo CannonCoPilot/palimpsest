@@ -18,6 +18,7 @@ from palimpsest.tracks.registry import TrackRegistry
 from palimpsest.tracks.repeat_track import RepeatTrack
 from palimpsest.tracks.repeats import (
     MASK_COVERAGE_THRESHOLD,
+    _count_repeats,
     detect_repeats,
     find_exact_repeats,
     mask_repeats,
@@ -176,3 +177,23 @@ class TestByteIdentityGuard:
         default = mask_repeats(copy.deepcopy(chunks), repeats)
         explicit = mask_repeats(copy.deepcopy(chunks), repeats, MASK_COVERAGE_THRESHOLD)
         assert [c["masked"] for c in default] == [c["masked"] for c in explicit]
+
+
+class TestEmptyTokenBoundary:
+    """An empty token in the normalised stream marks a text boundary (a pilcrow/paragraph split).
+    An n-gram straddling one is not a contiguous phrase and must be skipped, rather than joined into
+    a space-padded key that pollutes — or even reaches the threshold of — the phrase tally."""
+
+    def test_grams_spanning_empty_boundary_are_dropped(self):
+        # "a|b a|b" across two boundaries: the only recurring bigrams straddle empty tokens, so a
+        # correct tally finds nothing. The old all-stopword-only guard admitted "a "/" b" keys that
+        # each reached occurrence 2 — phantom phrases from the boundary.
+        result = _count_repeats(["a", "", "b", "a", "", "b"], min_words=2, min_occurrences=2, max_ngram=2)
+        assert result == set()
+
+    def test_empty_token_is_a_hard_separator(self):
+        # "alpha beta" recurs contiguously twice; the boundary between the copies must not let the
+        # tally merge "beta … alpha" into a phantom phrase, and no key carries a space artifact.
+        result = _count_repeats(["alpha", "beta", "", "alpha", "beta"], min_words=2, min_occurrences=2, max_ngram=3)
+        assert result == {"alpha beta"}
+        assert all(k == k.strip() and "  " not in k for k in result)

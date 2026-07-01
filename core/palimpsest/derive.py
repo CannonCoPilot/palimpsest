@@ -77,6 +77,9 @@ class OffsetMap:
         if i < 0:
             return None
         s, e = self.spans[i]
+        # Inclusive of the exclusive end e on purpose: this also translates half-open range *endpoints*
+        # (remap_verses passes each verse's e), which must map to the child offset one past the span's
+        # last kept char. A genuine in-gap offset is already off > e here and returns None.
         return self.base[i] + (off - s) if off <= e else None
 
     def remap_element(self, a: int, e: int) -> tuple[int, int] | None:

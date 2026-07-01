@@ -186,9 +186,11 @@ def function_word_profile(
 def _log_likelihood(c12: int, c1: int, c2: int, n: int) -> float:
     """Dunning's G² for a bigram's association (2×2 contingency). Higher = more surprising than chance."""
     def _ll(k: float, total: float, p: float) -> float:
-        if k <= 0 or p <= 0 or p >= 1:
+        # Guard each term independently for the empty cell: 0·log(0) is 0 by convention, so k=0 (or
+        # total==k) must zero only ITS term, not discard the other. The p-domain guard avoids log(≤0).
+        if p <= 0 or p >= 1:
             return 0.0
-        return k * math.log(p) + (total - k) * math.log(1 - p)
+        return (k * math.log(p) if k > 0 else 0.0) + ((total - k) * math.log(1 - p) if total - k > 0 else 0.0)
 
     if n <= 0 or c1 <= 0 or c2 <= 0:
         return 0.0
@@ -215,11 +217,13 @@ def collocations(
     for i in range(n):
         for j in range(i + 1, min(i + 1 + window, n)):
             pairs[(tokens[i], tokens[j])] += 1
+    total_pairs = sum(pairs.values())  # true windowed-pair total normalizes P(a,b), not the token count
     out: list[list[object]] = []
     for (a, b), c in pairs.items():
         if c < min_count:
             continue
-        pmi = math.log2((c * n) / (unigram[a] * unigram[b]))
+        # PMI = log2( P(a,b) / (P(a)·P(b)) ), with P(a,b)=c/total_pairs, P(a)=ua/n, P(b)=ub/n.
+        pmi = math.log2((c * n * n) / (total_pairs * unigram[a] * unigram[b]))
         out.append([a, b, round(pmi, 4), _log_likelihood(c, unigram[a], unigram[b], n), c])
     out.sort(key=lambda r: (-r[4], r[0], r[1]))
     return out[:top]
