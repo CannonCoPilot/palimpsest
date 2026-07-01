@@ -91,6 +91,14 @@ export default function DiffView() {
         </div>
       )}
 
+      {/* Method banner (#12h) — the edition diff is a fixed algorithm, independent of the
+          toolbar's alignment method; naming it keeps versification-drift noise from reading as a bug. */}
+      <div className="px-4 py-1.5 border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-subtle)] text-[0.78em] text-[var(--color-text-muted)]">
+        Edition diff: LCS paragraph alignment + character-level diff — independent of the toolbar&rsquo;s
+        alignment method. Best for editions of one translation; across translations, or where verse
+        numbering differs, most paragraphs read as &ldquo;changed,&rdquo; which is expected here, not an error.
+      </div>
+
       {/* Diff records */}
       <div className="flex-1 overflow-auto">
         {changeRecords.length === 0 ? (

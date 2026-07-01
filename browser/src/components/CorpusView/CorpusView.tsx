@@ -300,11 +300,18 @@ export default function CorpusView() {
       const data: CollectionOption[] = await fetch('/api/collections').then((r) => (r.ok ? r.json() : []));
       const usable = data.filter((c) => c.project_ids.length >= 2);
       setCollections(usable);
-      if (usable.length && !useCollectionStore.getState().collectionId) setCollectionId(usable[0].id);
+      if (usable.length && !useCollectionStore.getState().collectionId) {
+        // Default to the active project's owning collection so opening Corpus from a loaded text lands
+        // on the relevant collection, not an arbitrary first one. Falls back to the first usable.
+        const owning = activeProjectId
+          ? usable.find((c) => c.project_ids.includes(activeProjectId))
+          : undefined;
+        setCollectionId((owning ?? usable[0]).id);
+      }
     } catch {
       setError('Failed to load collections');
     }
-  }, [setCollections, setCollectionId]);
+  }, [setCollections, setCollectionId, activeProjectId]);
 
   useEffect(() => {
     void reloadCollections();

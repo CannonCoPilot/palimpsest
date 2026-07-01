@@ -299,6 +299,7 @@ const TOOLS: ReadonlyArray<{ tab: TabId; label: string; icon: string; desc: stri
   { tab: 'characters', label: 'Characters', icon: 'users', desc: 'Entity index & co-occurrence' },
   { tab: 'analysis', label: 'Analysis', icon: 'sliders', desc: 'Track computation & parameters' },
   { tab: 'compare', label: 'Compare', icon: 'compare', desc: 'Two-text alignment & diff' },
+  { tab: 'corpus', label: 'Corpus', icon: 'columns', desc: 'Cross-text & collection analysis' },
 ];
 
 function HomeView({ projects, collections, onOpenLibrary, onImport, onOpenProject, onLaunchTool, onReimport, onRefine, onDelete, onAddToCollection }: {

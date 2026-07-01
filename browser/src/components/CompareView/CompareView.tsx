@@ -126,9 +126,15 @@ export default function CompareView() {
   // matrix auto-load. Silent when nothing is persisted (loadAlignmentResults degrades, no error banner).
   useEffect(() => {
     if (activeProjectId && secondaryProjectId) {
-      void loadAlignmentResults(activeProjectId, secondaryProjectId);
+      void loadAlignmentResults(activeProjectId, secondaryProjectId).then(() => {
+        // Method-honesty (#12i): reflect the method that actually produced the on-disk records in the
+        // dropdown, so the selector never claims "Semantic (SBERT)" while a word-overlap alignment is
+        // on screen. Runs only on pair change (this effect's deps) — a manual dropdown change stands.
+        const m = useComparisonStore.getState().alignmentRecords[0]?.method;
+        if (m === 'semantic' || m === 'alphabet' || m === 'word') setActiveMethod(m);
+      });
     }
-  }, [activeProjectId, secondaryProjectId, loadAlignmentResults]);
+  }, [activeProjectId, secondaryProjectId, loadAlignmentResults, setActiveMethod]);
 
   const handleSelectSecondary = useCallback(async (id: string) => {
     await loadSecondary('', id);
@@ -240,13 +246,24 @@ export default function CompareView() {
           </div>
         )}
 
-        {activeProjectId && secondaryProjectId && !loading && jobStatus === 'idle' && alignmentRecords.length === 0 && (
+        {activeProjectId && secondaryProjectId && !loading && alignmentRecords.length === 0 && activeSubView !== 'dotplot' && (
           <div className="flex-1 flex flex-col items-center justify-center gap-4 text-[var(--color-text-muted)]">
-            <div className="text-[1.1em]">Ready to align</div>
+            <div className="text-[1.1em]">{jobStatus === 'completed' ? 'No alignments found' : 'Ready to align'}</div>
             <div className="text-[0.85em]">
               {activeMeta?.title} ({activeMeta?.paragraph_count} paragraphs) vs {secondaryMeta?.title} ({secondaryMeta?.paragraph_count} paragraphs)
             </div>
-            <div className="text-[0.85em]">Select a method and click "Align" to compute pairwise alignment.</div>
+            <div className="text-[0.85em]">
+              {jobStatus === 'completed'
+                ? 'This method produced no aligned regions — pick another method in the toolbar above and run again.'
+                : 'Pick a method in the toolbar above, then run the alignment.'}
+            </div>
+            <button
+              onClick={handleRunAlignment}
+              disabled={loading}
+              className="px-3 py-1 rounded bg-[var(--color-primary)] text-white cursor-pointer hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed text-[0.85em]"
+            >
+              {loading ? 'Running...' : `Run ${activeMethod} alignment`}
+            </button>
           </div>
         )}
 
@@ -273,10 +290,10 @@ export default function CompareView() {
         {!loading && activeSubView === 'dotplot' && secondaryProjectId && (
           <ComparativeDotplot />
         )}
-        {!loading && activeSubView === 'synteny' && secondaryProjectId && (
+        {!loading && activeSubView === 'synteny' && secondaryProjectId && alignmentRecords.length > 0 && (
           <SyntenyView />
         )}
-        {!loading && activeSubView === 'circos' && secondaryProjectId && (
+        {!loading && activeSubView === 'circos' && secondaryProjectId && alignmentRecords.length > 0 && (
           <CircosView />
         )}
         {!loading && activeSubView === 'diff' && secondaryProjectId && (

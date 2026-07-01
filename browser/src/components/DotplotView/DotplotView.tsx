@@ -731,6 +731,7 @@ export default function DotplotView(): ReactElement | null {
   }, [clampViewport]);
 
   const activeTab = useViewStore((s) => s.activeTab);
+  const setActiveTab = useViewStore((s) => s.setActiveTab);
   const isTabMode = activeTab === 'texthic';
   if (!textHicOpen && !isTabMode) return null;
 
@@ -763,6 +764,7 @@ export default function DotplotView(): ReactElement | null {
           {hoveredCell && hoverValue != null ? ` — [${hoveredCell.i}, ${hoveredCell.j}]: ${hoverValue.toFixed(3)}` : ''}
           {corner1 ? ` — Click second corner (first: ${corner1.i},${corner1.j})` : ''}
         </span>
+        {signal && (
         <div className="flex items-center gap-2 text-[var(--color-text-muted)]">
           <select value={palette} onChange={(e) => setPalette(e.target.value as PaletteKey)}
             className="text-[0.85em] border border-[var(--color-border)] rounded px-1 py-0.5 bg-[var(--color-bg)] cursor-pointer">
@@ -790,6 +792,7 @@ export default function DotplotView(): ReactElement | null {
           <button onClick={() => exportImage('svg')} className="text-[0.8em] px-1.5 py-0.5 rounded border border-[var(--color-border)] cursor-pointer hover:bg-[var(--color-bg-muted)]">SVG</button>
           <span className="text-[0.8em]">{n > 0 ? `${n}×${n} chunks (${chunkSize}w) · ${similarityMetric}` : ''}{alignments.length > 0 ? ` · ${alignments.length} alns` : ''}{loading ? ' · Loading…' : ''} · Wheel=zoom · Ctrl/Right-drag=pan</span>
         </div>
+        )}
       </div>
 
       {/* Legend */}
@@ -942,7 +945,17 @@ export default function DotplotView(): ReactElement | null {
       )}
 
       {loading && <div className="flex-1 flex items-center justify-center text-[var(--color-text-muted)]">Loading self-similarity matrix...</div>}
-      {error && <div className="flex-1 flex items-center justify-center text-[#b91c1c]">{error}</div>}
+      {error && (
+        <div className="flex-1 flex flex-col items-center justify-center gap-3 text-[var(--color-text-muted)] text-[0.9em]">
+          <div>{error}</div>
+          <button
+            onClick={() => setActiveTab('analysis')}
+            className="px-3 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg)] cursor-pointer hover:bg-[var(--color-bg-muted)] text-[var(--color-text)]"
+          >
+            Compute in the Analysis tab →
+          </button>
+        </div>
+      )}
 
       {!loading && !error && signal && (
         <div className="flex-1 overflow-hidden flex">
