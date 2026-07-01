@@ -17,6 +17,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from palimpsest.alignment.records import comparison_dir, comparison_dirname
+from palimpsest.atomic import atomic_write_text
 from palimpsest.runner import _remap_signal_dir, extract_masked, persist_track_outputs
 
 logger = logging.getLogger(__name__)
@@ -433,7 +434,7 @@ def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
         recs = [json.loads(ln) for ln in tp.read_text(encoding="utf-8").splitlines() if ln.strip()]
         recs = inverse_remap_annotation_dicts(recs, omap)
         recs.sort(key=lambda r: ((r.get("target") or {}).get("selector") or {}).get("start", 0))
-        tp.write_text(("\n".join(json.dumps(r) for r in recs) + "\n") if recs else "", encoding="utf-8")
+        atomic_write_text(tp, ("\n".join(json.dumps(r) for r in recs) + "\n") if recs else "")
 
 
 def _remap_project_outputs(project_dir: Path, omap: Any) -> None:
@@ -559,7 +560,8 @@ def _write_elements_track(project_dir: Path, project_id: str, cfg: Any, text_len
         track_path.unlink(missing_ok=True)  # drop a stale track if nothing remains
     manifests_dir = project_dir / "manifests"
     manifests_dir.mkdir(exist_ok=True)
-    (manifests_dir / "elements.manifest.json").write_text(
+    atomic_write_text(
+        manifests_dir / "elements.manifest.json",
         json.dumps({
             "trackName": "elements",
             "bodyType": "palimpsest:ElementAnnotation",
@@ -568,7 +570,6 @@ def _write_elements_track(project_dir: Path, project_id: str, cfg: Any, text_len
             "overviewBarRendering": {"type": "state-band"},
             "evidenceLevel": "E1",
         }, indent=2),
-        encoding="utf-8",
     )
     return len(anns)
 
@@ -594,7 +595,7 @@ def _write_verses_track(project_dir: Path, text: str) -> int:
                        ensure_ascii=False)
             for r in records
         ]
-        track_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        atomic_write_text(track_path, "\n".join(lines) + "\n")
     else:
         track_path.unlink(missing_ok=True)
     return len(records)
@@ -906,10 +907,9 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         """Explain a LitHMM state using its feature profile and sample passages."""
         import asyncio
 
-        if ".." in request.project:
-            raise HTTPException(status_code=400, detail="Invalid project ID")
+        proj_dir = _safe_project_dir(workspace, request.project)
 
-        meta_path = workspace / request.project / "signals" / "lithmm_meta.json"
+        meta_path = proj_dir / "signals" / "lithmm_meta.json"
         if not meta_path.exists():
             raise HTTPException(status_code=404, detail="LitHMM metadata not found — run analysis first")
 
@@ -920,10 +920,10 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         from palimpsest.project import Project
 
-        proj = Project.load(workspace / request.project)
+        proj = Project.load(proj_dir)
         ref_text = proj.reference_text()
 
-        track_path = workspace / request.project / "tracks" / "lithmm.jsonl"
+        track_path = proj_dir / "tracks" / "lithmm.jsonl"
         sample_passages: list[str] = []
         feature_profile: dict[str, str] = {}
 
@@ -1004,13 +1004,12 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         """Similarity search over paragraph embeddings."""
         import asyncio
 
-        if ".." in project or "/" in project or "\\" in project:
-            raise HTTPException(status_code=400, detail="Invalid project ID")
-        project_dir = (workspace / project).resolve()
-        if not project_dir.is_relative_to(workspace.resolve()):
-            raise HTTPException(status_code=400, detail="Invalid project ID")
-        if not project_dir.is_dir():
-            return SearchResponse(results=[], embedding_available=False)
+        try:
+            project_dir = _safe_project_dir(workspace, project)
+        except HTTPException as exc:
+            if exc.status_code == 404:  # unknown project → honest empty result, not an error
+                return SearchResponse(results=[], embedding_available=False)
+            raise  # 400: a traversal attempt stays a hard rejection
 
         embeddings_db = project_dir / "cache" / "embeddings.db"
         if not embeddings_db.exists():
@@ -1075,8 +1074,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         paras = [{"start": p[0], "end": p[1]} for p in proj.paragraphs()]
         characters = await asyncio.to_thread(build_character_index, project_dir, paras)
 
-        cache_path.parent.mkdir(exist_ok=True)
-        cache_path.write_text(json.dumps(characters, indent=2), encoding="utf-8")
+        atomic_write_text(cache_path, json.dumps(characters, indent=2))
 
         return JSONResponse(content=characters)
 
@@ -1098,8 +1096,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             paras = [{"start": p[0], "end": p[1]} for p in proj.paragraphs()]
             characters = await asyncio.to_thread(build_character_index, project_dir, paras)
 
-            cache_path.parent.mkdir(exist_ok=True)
-            cache_path.write_text(json.dumps(characters, indent=2), encoding="utf-8")
+            atomic_write_text(cache_path, json.dumps(characters, indent=2))
 
         from palimpsest.characters import compute_cooccurrence
 
@@ -1554,6 +1551,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         _running_jobs[job_key] = {"status": "running", "track": "_embeddings"}
 
         async def run() -> None:
+            await _job_semaphore.acquire()  # bound concurrent heavy embedding jobs (shared job limit)
             try:
                 embeddings_db.parent.mkdir(parents=True, exist_ok=True)
                 store = SqliteVecStore(embeddings_db, dim=dim)
@@ -1572,6 +1570,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             except Exception as exc:
                 _running_jobs[job_key] = {"status": "failed", "track": "_embeddings", "error": str(exc)}
             finally:
+                _job_semaphore.release()
                 asyncio.get_running_loop().call_later(30.0, lambda: _running_jobs.pop(job_key, None))
 
         asyncio.create_task(run())
@@ -1901,7 +1900,6 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         signal manifests/alignments — back to original document coordinates."""
         import asyncio
 
-        from palimpsest.annotation.serializer import write_track
         from palimpsest.tracks.registry import TrackRegistry
 
         failed_tracks: list[dict[str, str]] = []
@@ -1912,13 +1910,10 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 extractor = extractor_cls()
                 try:
                     result = await asyncio.to_thread(extractor.extract, view)
-                    if extractor.output_type == "annotation" and isinstance(result, list):
-                        write_track(view.path / "tracks" / f"{extractor.name}.jsonl", result)
-                    manifest_dir = view.path / "manifests"
-                    manifest_dir.mkdir(exist_ok=True)
-                    (manifest_dir / f"{extractor.name}.manifest.json").write_text(
-                        json.dumps(extractor.manifest(), indent=2), encoding="utf-8",
-                    )
+                    # One writer for both entry points (runner.persist_track_outputs): annotation track
+                    # + atomic manifest + per-run provenance. The batch path previously wrote the
+                    # manifest non-atomically and emitted no provenance record (finding C1).
+                    persist_track_outputs(view.path, extractor, result)
                 except Exception as exc:
                     logger.warning("Track %s failed: %s", extractor.name, exc)
                     failed_tracks.append({"track": extractor.name, "error": str(exc)})
@@ -2425,8 +2420,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     @app.get("/api/collections/{collection_id}/corpus-graph")
     async def get_collection_corpus_graph(collection_id: str) -> JSONResponse:
         """Read the persisted corpus graph (nodes, edges, components, summary). 404 until built."""
+        from palimpsest.collections import get_collection
         from palimpsest.corpus_graph import read_corpus_graph
 
+        if get_collection(workspace, collection_id) is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
         graph = read_corpus_graph(workspace, collection_id)
         if graph is None:
             raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
@@ -2436,8 +2434,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
     async def project_collection_corpus_graph(collection_id: str, root: str) -> JSONResponse:
         """Project the corpus graph onto a chosen root member's paragraph frame (the synteny lens —
         derived on demand, never stored ground truth)."""
+        from palimpsest.collections import get_collection
         from palimpsest.corpus_graph import project_to_root, read_corpus_graph
 
+        if get_collection(workspace, collection_id) is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
         graph = read_corpus_graph(workspace, collection_id)
         if graph is None:
             raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
@@ -2451,8 +2452,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         """The phyletic/stemma tree over the corpus graph's distance structure (C4, FR-38): pangenome
         Jaccard distances, a neighbor-joining tree, and a suggested root (the most component-complete
         member) the caller may override with ``?root=``."""
+        from palimpsest.collections import get_collection
         from palimpsest.corpus_graph import phyletic_tree, read_corpus_graph
 
+        if get_collection(workspace, collection_id) is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
         graph = read_corpus_graph(workspace, collection_id)
         if graph is None:
             raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
@@ -2468,8 +2472,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         """Corpus-level analyses over the persisted graph + member texts (C6a, FR-31): cross-member
         boilerplate / IDF, near-duplicate clusters over the pangenome distance, and undirected
         diffusion/spread (breadth across members — never a directional influence claim)."""
+        from palimpsest.collections import get_collection
         from palimpsest.corpus_graph import corpus_analyses, read_corpus_graph
 
+        if get_collection(workspace, collection_id) is None:
+            raise HTTPException(status_code=404, detail="Collection not found")
         graph = read_corpus_graph(workspace, collection_id)
         if graph is None:
             raise HTTPException(status_code=404, detail="Corpus graph not built; POST to build it first")
@@ -2505,16 +2512,18 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                         status_code=400,
                         detail="text query requires 'provider', 'endpoint' and 'model' to embed it",
                     )
-                query_vector, query_fingerprint = embed_probe_query(
-                    request.q, provider=request.provider,
+                query_vector, query_fingerprint = await asyncio.to_thread(
+                    embed_probe_query, request.q, provider=request.provider,
                     endpoint=request.endpoint, model=request.model,
                 )
             else:
-                query_vector = query_vector_from_ref(
+                query_vector = await asyncio.to_thread(
+                    query_vector_from_ref,
                     workspace, request.ref_project, int(request.ref_chunk),
                     embedding_label=request.embedding_label,
                 )
-            result = probe_corpus(
+            result = await asyncio.to_thread(  # member vector-store search off the event loop
+                probe_corpus,
                 workspace, collection_id, query_vector,
                 metric=request.metric, embedding_label=request.embedding_label,
                 k=request.k, per_member_k=request.per_member_k,
@@ -2538,7 +2547,8 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         from palimpsest.collections_sweep import sweep_pairwise
 
         try:
-            result = sweep_pairwise(
+            result = await asyncio.to_thread(  # CPU/IO-heavy pair sweep off the event loop
+                sweep_pairwise,
                 workspace, collection_id,
                 metric=request.metric, mode=request.mode,
                 force_exhaustive=request.force_exhaustive,
@@ -2743,6 +2753,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         _alignment_jobs[job_key] = {"status": "running", "method": request.method}
 
         async def run() -> None:
+            await _job_semaphore.acquire()  # bound concurrent heavy alignment jobs (shared job limit)
             try:
                 from palimpsest.alignment.cross_similarity import compute_cross_similarity
                 from palimpsest.alignment.smith_waterman import smith_waterman as sw_align
@@ -2794,14 +2805,14 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                     write_alignment_records, comp_dir / "alignment.jsonl", records
                 )
 
-                (comp_dir / "metadata.json").write_text(
+                atomic_write_text(
+                    comp_dir / "metadata.json",
                     json.dumps({
                         "query_id": request.query_id,
                         "target_id": request.target_id,
                         "method": request.method,
                         "record_count": len(records),
                     }, indent=2),
-                    encoding="utf-8",
                 )
 
                 _alignment_jobs[job_key] = {"status": "completed", "record_count": len(records)}
@@ -2809,6 +2820,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 logger.exception("Alignment failed: %s", exc)
                 _alignment_jobs[job_key] = {"status": "failed", "error": str(exc)}
             finally:
+                _job_semaphore.release()
                 asyncio.get_running_loop().call_later(60.0, lambda: _alignment_jobs.pop(job_key, None))
 
         asyncio.create_task(run())

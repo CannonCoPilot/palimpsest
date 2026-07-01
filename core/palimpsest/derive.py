@@ -17,6 +17,7 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
+from palimpsest.atomic import atomic_write_text
 from palimpsest.layout import LayoutConfig, LayoutSection, load_layout, save_layout
 
 if TYPE_CHECKING:
@@ -415,8 +416,9 @@ def _remap_tracks(
         recs = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
         remapped = remap_track_annotations(recs, omap)
         if remapped:
-            (dst / f"{name}.jsonl").write_text(
-                "\n".join(json.dumps(r) for r in remapped) + "\n", encoding="utf-8"
+            atomic_write_text(
+                dst / f"{name}.jsonl",
+                "\n".join(json.dumps(r) for r in remapped) + "\n",
             )
             written.append(name)
         if on_track is not None:
@@ -425,9 +427,8 @@ def _remap_tracks(
 
 
 def _write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        ("\n".join(json.dumps(r) for r in records) + "\n") if records else "", encoding="utf-8"
+    atomic_write_text(
+        path, ("\n".join(json.dumps(r) for r in records) + "\n") if records else ""
     )
 
 
@@ -442,7 +443,7 @@ def _update_metadata(child_dir: Path, parent: Project, extraction_types: list[st
         "excluded_ids": list(excluded_ids),
         "separator": sep,
     }
-    meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
+    atomic_write_text(meta_path, json.dumps(meta, indent=2, ensure_ascii=False))
 
 
 def _remap_parent_segments(parent_dir: Path, omap: OffsetMap) -> tuple[list[Any], list[Any], list[Any]]:

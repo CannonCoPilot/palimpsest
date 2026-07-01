@@ -154,6 +154,34 @@ class TestRQA:
         manifest = json.loads(manifest_path.read_text())
         assert manifest["metadata"]["state_vector_source"] == "tfidf"
 
+    def test_short_input_does_not_raise_unbound_state_source(self, tmp_path):
+        # Regression: a <2-paragraph project skipped the else-branch that assigned state_source, so
+        # building the manifest's `source` string raised UnboundLocalError. It now defaults before the
+        # guard, so a one-paragraph text produces a valid (1, 3) rqa signal instead of crashing.
+        from palimpsest.project import Project
+        from palimpsest.tracks.rqa import RQATrack
+
+        project_dir = tmp_path / "tiny"
+        for d in ("tracks", "signals", "manifests", "cache"):
+            (project_dir / d).mkdir(parents=True)
+        text = "Only a single paragraph of text here, with no blank-line break."
+        (project_dir / "reference.txt").write_text(text)
+        (project_dir / "reference.sha256").write_text("abc123")
+        (project_dir / "metadata.json").write_text(json.dumps({
+            "id": "tiny", "title": "Tiny", "language": "en", "source_format": "txt",
+            "source_file": "t.txt", "ingest_date": "2026-07-01", "palimpsest_version": "0.1.0",
+            "reference_sha256": "abc123", "word_count": len(text.split()),
+            "paragraph_count": 1, "section_count": 1, "sentence_count": 1,
+            "character_count": len(text),
+        }))
+
+        result = RQATrack().extract(Project.load(project_dir))  # must not raise
+        assert result.exists() and result.name == "rqa.json"
+        manifest = json.loads(result.read_text())
+        assert manifest["metadata"]["state_vector_source"] == "tfidf"  # state_source bound, not unbound
+        _, data = read_signal(project_dir / "signals", "rqa")
+        assert data.shape == (1, 3)
+
     def test_properties(self):
         from palimpsest.tracks.rqa import RQATrack
 

@@ -106,6 +106,28 @@ class TestSearchAPI:
         data = response.json()
         assert data["embedding_available"] is False
 
+    def test_search_rejects_path_traversal(self, client):
+        # /api/search takes a raw query param (no Pydantic pattern), so _safe_project_dir is the guard:
+        # a '..' segment is a hard 400, never a silent empty result that could mask a traversal attempt.
+        response = client.get("/api/search?project=../secret&query=test")
+        assert response.status_code == 400
+
+
+class TestEndpointGuards:
+    def test_explain_unknown_project_is_404(self, client):
+        # _safe_project_dir now backs /api/explain: a pattern-valid but absent project is a clean 404,
+        # not a 500 from loading a missing directory.
+        response = client.post("/api/explain", json={"project": "no-such-project", "state_id": 0})
+        assert response.status_code == 404
+        assert response.json()["detail"] == "Project not found"
+
+    def test_corpus_graph_unknown_collection_says_collection_not_found(self, client):
+        # 404-ordering: check the collection exists before the graph. A missing collection must not
+        # masquerade as an un-built graph ("Corpus graph not built") — that misdirects the caller.
+        response = client.get("/api/collections/no-such-collection/corpus-graph")
+        assert response.status_code == 404
+        assert response.json()["detail"] == "Collection not found"
+
 
 class TestStaticServing:
     def test_serve_reference_txt(self, client):

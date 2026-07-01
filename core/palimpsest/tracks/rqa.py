@@ -157,6 +157,8 @@ class RQATrack(ParameterizedTrack):
         tfidf_max_features = cfg["tfidf_max_features"]
 
         paras = project.paragraphs()
+        state_source = "tfidf"  # default; upgraded to "embeddings" below. Set before the <2 guard so
+        # the manifest's source string is always bound (short inputs skip the else and would else raise).
         if len(paras) < 2:
             metrics = np.zeros((1, 3), dtype=np.float32)
         else:
@@ -164,7 +166,6 @@ class RQATrack(ParameterizedTrack):
 
             # Try embeddings first, fall back to TF-IDF
             embeddings_db = project.path / "cache" / "embeddings.db"
-            state_source = "tfidf"
             all_vecs_arr = np.zeros((len(paras), 1), dtype=np.float32)
 
             if embeddings_db.exists():

@@ -28,6 +28,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+from palimpsest.atomic import atomic_write_text
+
 # The fixed section vocabulary, grouped by role. Custom user types may extend this
 # at runtime (they are tolerated everywhere; only the default mask differs).
 SECTION_TYPES: tuple[str, ...] = (
@@ -305,8 +307,9 @@ def load_layout(project_dir: Path) -> LayoutConfig | None:
 
 
 def save_layout(project_dir: Path, config: LayoutConfig) -> None:
-    layout_path(project_dir).write_text(
-        json.dumps(config.to_dict(), indent=2, ensure_ascii=False), encoding="utf-8",
+    atomic_write_text(
+        layout_path(project_dir),
+        json.dumps(config.to_dict(), indent=2, ensure_ascii=False),
     )
 
 
