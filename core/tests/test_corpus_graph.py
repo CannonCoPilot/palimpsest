@@ -353,6 +353,40 @@ def test_edge_min_score_gates_union_where_identity_cannot(tmp_path: Path) -> Non
     assert gated.summary["edge_min_score"] == 20.0
 
 
+def test_edge_min_score_splits_synoptic_over_merge(tmp_path: Path) -> None:
+    """A corpus of two source texts, each in two translations, must not collapse into one homology
+    component via low-score cross-text (synoptic) edges. Mirrors the live Matthew/Mark x translations
+    finding: same-book translation edges score ~hundreds (length-proportional), cross-book synoptic
+    parallels score only a few yet carry the SAME local block identity as a real translation match —
+    so no ``edge_min_identity`` can remove them, but a score gate can. With the gate, one backbone
+    survives per source text and no single component spans both books."""
+    mt_a = _member(tmp_path, "mt_a", ["Matthew story shared with Mark, translation A."])
+    mt_b = _member(tmp_path, "mt_b", ["Matthew story shared with Mark, translation B."])
+    mk_a = _member(tmp_path, "mk_a", ["Mark story shared with Matthew, translation A."])
+    mk_b = _member(tmp_path, "mk_b", ["Mark story shared with Matthew, translation B."])
+    # same-book: the two translations of each book align end to end (high, length-proportional score).
+    _comparison(tmp_path, mt_a, mt_b, [(0, 1, 0, 1)], score=120.0, identity=0.9)
+    _comparison(tmp_path, mk_a, mk_b, [(0, 1, 0, 1)], score=120.0, identity=0.9)
+    # cross-book synoptic: a sparse parallel sharing content not wording — low score, but the SAME
+    # block identity (0.9) as a genuine translation match, so an identity gate cannot separate it.
+    _comparison(tmp_path, mt_a, mk_a, [(0, 1, 0, 1)], score=2.0, identity=0.9)
+    _comparison(tmp_path, mt_b, mk_b, [(0, 1, 0, 1)], score=2.0, identity=0.9)
+    cid = cs.create_collection(tmp_path, "Synoptic", "2 books x 2 translations",
+                               [mt_a, mt_b, mk_a, mk_b])["id"]
+
+    # No gate: the cross-book edges bridge the two books into one 4-member component (the over-merge).
+    merged = cg.build_corpus_graph(tmp_path, cid)
+    assert max(len(c.members) for c in merged.components) == 4
+
+    # Score gate above the synoptic noise (2) but below same-book (120): bridge edges go weak, leaving
+    # exactly one backbone per source text, neither spanning all four members.
+    split = cg.build_corpus_graph(tmp_path, cid, edge_min_score=10.0)
+    backbones = sorted((len(c.members) for c in split.components if len(c.members) >= 2), reverse=True)
+    assert backbones == [2, 2]
+    assert max(len(c.members) for c in split.components) == 2
+    assert sum(1 for e in split.edges if e["weak"]) == 2  # exactly the two cross-book edges gated
+
+
 def test_suggested_root_excludes_singletons(tmp_path: Path) -> None:
     """The suggested root counts only SHARED (multi-member) components: a fragmented member whose many
     unique gaps inflate its total participation must not out-rank the true shared backbone."""
@@ -474,6 +508,13 @@ def test_cli_corpus_graph(corpus: tuple[Path, str]) -> None:
     runner = CliRunner()
 
     res = runner.invoke(main, ["collections", "corpus-graph-build", str(workspace), cid])
+    assert res.exit_code == 0 and "1 core" in res.output and "1 shell" in res.output
+
+    # --edge-min-score parity with the POST endpoint + core param: threads through and is
+    # backward-safe at its 0.0 default (same result as the unflagged build above).
+    res = runner.invoke(
+        main, ["collections", "corpus-graph-build", str(workspace), cid, "--edge-min-score", "0.0"]
+    )
     assert res.exit_code == 0 and "1 core" in res.output and "1 shell" in res.output
 
     res = runner.invoke(main, ["collections", "corpus-graph-show", str(workspace), cid])

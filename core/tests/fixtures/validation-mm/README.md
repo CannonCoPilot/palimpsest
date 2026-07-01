@@ -77,3 +77,23 @@ Prints a validation report for the Geneva-MM member: membership, per-book chapte
 verse-number masking, and the absence of chapter arguments, cross-references, and other books
 (each confirmed present in the full parent). Expected metrics for both members are in
 `manifest.json`.
+
+## Score synoptic detection (precision/recall)
+
+`validate.py` checks the *builder* output; `score_synoptic.py` scores the *analysis* against the
+`synoptic-ground-truth.json` oracle. It maps each oracle pericope's book/chapter:verse refs to
+paragraph indices via `tracks/verses.jsonl`, reads the collection's cross-book alignment edges, and
+reports: pooled recall over the 101 shared pericopes (TP), record-level precision, the true-negative
+false-link rate over the 51 unique passages (TN), and — with `--min-score` — a corpus-graph
+`edge_min_score` sweep showing whether the two source texts separate into distinct backbones.
+
+Run against a locally-built, verse-tracked collection (e.g. `matthew-mark-6way`):
+
+```sh
+core/.venv/bin/python core/tests/fixtures/validation-mm/score_synoptic.py matthew-mark-6way --min-score 10
+```
+
+The scorer's logic is regression-tested on synthetic data in `core/tests/test_synoptic_scorer.py`
+(the text bodies are gitignored, so the scorer is a CLI, not a CI test). Empirical results on the
+6-way (word method) and the resolution of the corpus-graph over-merge are recorded in
+`docs/development/collections-tier-build-journal.md`.

@@ -633,3 +633,43 @@ the DR/Geneva/KJV × Matthew/Mark collection. Two results are worth recording as
   core/shell/singleton reach methodology before committing. A KJV **Luke** subtext is being added to the
   validation collection as a genuine outgroup to aid this (none of the six same-book Matt/Mark texts is a
   true root).
+
+## Synoptic over-merge — RESOLVED via score-based homology gate + committed precision/recall (2026-07-01)
+
+The over-merge deferred above is resolved, and the flagship validation is no longer eyeball-only.
+
+**Mechanism.** `build_corpus_graph` now takes `edge_min_score` (committed `4faedef`): a homology edge
+whose alignment score falls below the gate is recorded but flagged `weak` and does **not** union its
+anchors, so low-score cross-book synteny cannot fuse two source texts into one core. This is the
+score-based discriminator the deferral identified — block *identity* cannot separate Matthew from Mark
+(synoptic parallels carry the same 0.66–0.84 identity as genuine translation matches) but
+length/coverage-proportional *score* can, exactly as hypothesized.
+
+**Empirical validation** — new committed scorer `core/tests/fixtures/validation-mm/score_synoptic.py`,
+run on the local `matthew-mark-6way`:
+
+- *Over-merge structure* (score-gate sweep): at `edge_min_score` 0–2 one component spans all 6 members
+  (Mt+Mk conflated — the bug); at **≥5** the graph splits into `backbones=[3,3]` — verified to be
+  {DR,Geneva,KJV}-Matthew and {DR,Geneva,KJV}-Mark — with **no** component spanning all 6. Stable and
+  identical from 5 through 50 (same-book diagonals score 99–622, cross-book synoptic noise ≤4.4, a
+  ~20× margin — a robust threshold, not knife-edge).
+- *Synoptic detection vs the committed oracle* (word method): **recall 0.436** (44/101 shared pericopes
+  linked cross-book), **precision 0.979**, F1 0.603, and only **1/51** unique passages spuriously
+  cross-linked. Word-overlap recovers the strongly-worded ~44% of parallels at near-perfect precision;
+  the looser-paraphrase half awaits the cosine path (audit finding #1, embedding-DB split, fixed in
+  `cc9804f` — a cosine re-score is the next lever to raise recall).
+- *Luke outgroup* (`matthew-mark-luke-7way`): the same gate yields `backbones=[3,3]` with the single
+  KJV Luke correctly a non-backbone singleton (no sibling translation to form a Luke core) — it does
+  not falsely merge into Matthew or Mark.
+
+**Committed with this work.** The scorer + CI-safe logic tests (`core/tests/test_synoptic_scorer.py`,
+synthetic geometries/records — the text bodies are gitignored so the scorer is a CLI, not a CI test)
++ a synthetic over-merge regression (`test_edge_min_score_splits_synoptic_over_merge` in
+`test_corpus_graph.py`). Closes the audit's validation-methodology confirmed-high "oracle never used —
+eyeball-only" finding.
+
+**Remaining caveat (for refinement).** Raw score is length-proportional and not comparable across pairs
+of very different sizes, so a single `edge_min_score` is collection-relative (pick it from the score
+distribution). The scale-free generalization is a coverage-normalized gate (aligned fraction of each
+member), which would transfer across collections without a per-collection threshold — left as the next
+refinement per the standing "circle back to the mechanics" note.

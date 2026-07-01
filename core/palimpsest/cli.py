@@ -943,8 +943,13 @@ def collections_congruence(
 @click.option("--edge-min-identity", type=float, default=0.0,
               help="Alignment records below this block identity are recorded but do not union "
                    "homology components (weak cross-member edges cannot over-merge; 0 = off)")
+@click.option("--edge-min-score", type=float, default=0.0,
+              help="Alignment records below this length/coverage-proportional score are recorded but "
+                   "do not union homology components — separates shared-source (high-score collinear) "
+                   "from shared-content (low-score synoptic) edges the identity gate cannot; 0 = off")
 def collections_corpus_graph_build(
-    workspace: Path, collection_id: str, anchor_trim: float, edge_min_identity: float
+    workspace: Path, collection_id: str, anchor_trim: float,
+    edge_min_identity: float, edge_min_score: float,
 ) -> None:
     """Assemble + persist the reference-free corpus graph (C3) from the collection's pairwise edges."""
     from palimpsest.corpus_graph import build_corpus_graph, write_corpus_graph
@@ -953,6 +958,7 @@ def collections_corpus_graph_build(
         graph = build_corpus_graph(
             workspace, collection_id,
             anchor_trim=anchor_trim, edge_min_identity=edge_min_identity,
+            edge_min_score=edge_min_score,
         )
     except ValueError as exc:
         console.print(f"[red]{exc}[/red]")
