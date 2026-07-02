@@ -1196,3 +1196,56 @@ def test_detect_verse_regions_output_satisfies_contract():
     assert regions  # the scripture run is found
     # Re-validating is a no-op when the producer honored its contract.
     assert _validate_span_regions(regions, 0, len(_SCRIPTURE)) == regions
+
+
+# --- Geneva-style Bible: layout recovered from the verse index ----------------------------
+
+_NBSP = "\xa0"
+
+
+def _geneva_layout_text() -> str:
+    """A synthetic Geneva-format Bible: bare book names, argument paragraphs, NBSP verses."""
+    blocks = []
+    for book in ("MATTHEW", "MARK"):
+        blocks.append(book)
+        for ch in range(1, 15):
+            blocks.append(f"{ch} Argument summarizing chapter {ch} of {book.title()}.")
+            for v in range(1, 6):
+                blocks.append(f"{v}{_NBSP} Verse {v} of chapter {ch} prose text.")
+    return "\n\n".join(blocks)
+
+
+def test_geneva_layout_recovers_books_chapters_and_arguments():
+    text = _geneva_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    kinds = {}
+    for s in sections:
+        kinds.setdefault(s.type, 0)
+        kinds[s.type] += 1
+    assert kinds.get("book") == 2
+    assert kinds.get("chapter") == 28
+    assert kinds.get("heading") == 28  # one masked argument per chapter
+    # Chapters nest under their book.
+    books = {s.id: s.label for s in sections if s.type == "book"}
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert all(c.parent_id in books for c in chapters)
+
+
+def test_geneva_layout_masks_arguments_but_not_verse_prose():
+    text = _geneva_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    intervals = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, len(text))
+
+    def masked(pos: int) -> bool:
+        return any(s <= pos < e for s, e in intervals)
+
+    assert masked(text.find("Argument summarizing chapter 1"))  # editorial argument is masked
+    assert not masked(text.find("Verse 1 of chapter 1 prose"))  # verse prose stays analyzable
+
+
+def test_non_geneva_text_uses_generic_pipeline():
+    # A plain heading-tracked work must not trip the Geneva branch.
+    text = "Chapter 1\n\nOnce upon a time." + "\n\nmore prose." * 20
+    sections = detect_layout_sections([(0, 9, "Chapter 1")], len(text), -1, text)
+    assert any(s.type == "chapter" for s in sections)
+    assert not any(s.label.endswith("argument") for s in sections)
