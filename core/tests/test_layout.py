@@ -1249,3 +1249,47 @@ def test_non_geneva_text_uses_generic_pipeline():
     sections = detect_layout_sections([(0, 9, "Chapter 1")], len(text), -1, text)
     assert any(s.type == "chapter" for s in sections)
     assert not any(s.label.endswith("argument") for s in sections)
+
+
+# --- KJV-style Bible: layout recovered from the verse index -------------------------------
+
+def _kjv_layout_text() -> str:
+    """A synthetic KJV-format Bible: bare book-name lines, "BookName N" chapter headings, and
+    regular-space verses ("1. Samuel" exercises the ordinal-with-period book spelling)."""
+    books = ["Genesis", "Exodus", "Leviticus", "Numbers", "Joshua", "Judges", "Ruth", "1. Samuel"]
+    blocks = []
+    for book in books:
+        blocks.append(book)  # bare book-name (h1) line
+        for ch in range(1, 4):
+            blocks.append(f"{book} {ch}")  # "BookName N" chapter heading line
+            for v in range(1, 5):
+                blocks.append(f"{v} Verse {v} of chapter {ch} prose text here.")
+    return "\n\n".join(blocks)
+
+
+def test_kjv_layout_recovers_books_and_chapters():
+    text = _kjv_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    kinds: dict[str, int] = {}
+    for s in sections:
+        kinds[s.type] = kinds.get(s.type, 0) + 1
+    assert kinds.get("book") == 8  # includes the numbered "1. Samuel" -> "1 Samuel"
+    assert kinds.get("chapter") == 24
+    assert kinds.get("header") == 24  # one masked "BookName N" heading line per chapter
+    # Chapters nest under their book.
+    books = {s.id: s.label for s in sections if s.type == "book"}
+    assert "1 Samuel" in books.values()
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert all(c.parent_id in books for c in chapters)
+
+
+def test_kjv_layout_masks_headings_but_not_verse_prose():
+    text = _kjv_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    intervals = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, len(text))
+
+    def masked(pos: int) -> bool:
+        return any(s <= pos < e for s, e in intervals)
+
+    assert masked(text.find("Genesis 1"))  # the chapter-heading line is masked
+    assert not masked(text.find("Verse 1 of chapter 1 prose"))  # verse prose stays analyzable

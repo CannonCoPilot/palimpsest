@@ -1481,6 +1481,91 @@ def _geneva_layout_sections(
     return sections
 
 
+def _kjv_layout_sections(
+    text: str, text_len: int, endnote_separator: int
+) -> list[LayoutSection] | None:
+    """Book/chapter layout for a KJV-style Bible, read off its verse index.
+
+    The KJV EPUB carries real ``Genesis`` / ``Genesis 1`` headings, but the generic classifier
+    does not recognise a "BookName N" line as a chapter (so it recovers zero chapters) and its
+    "1. Samuel" ordinal spelling defeats the book lexicon (so it recovers only 49 of 66 books).
+    The KJV verse dialect (:func:`palimpsest.verses._kjv_verses`) already resolves every book,
+    chapter, and verse, so the layout is taken straight from that: one unmasked ``book`` container
+    per book and, per chapter, a masked ``header`` (the "BookName N" heading line) plus an
+    unmasked ``chapter`` spanning the verse bodies. Returns ``None`` unless the verse dialect fires
+    (it self-gates on run/book density), leaving every other corpus to the generic pipeline.
+    """
+    from palimpsest.verses import _kjv_book_headers, _kjv_verses
+
+    recs = _kjv_verses(text)
+    if not recs:
+        return None
+
+    body_end = endnote_separator if 0 < endnote_separator < text_len else text_len
+
+    # Group the verse records into per-chapter (v_start, v_end) spans, in document order.
+    chapters: list[tuple[int, int, str, int]] = []
+    grp: list[dict[str, Any]] = []
+    key: tuple[str, int] | None = None
+    for r in recs:
+        k = (r["book"], r["chapter"])
+        if k != key and grp:
+            chapters.append((grp[0]["num_start"], grp[-1]["text_end"], grp[0]["book"], grp[0]["chapter"]))
+            grp = []
+        key = k
+        grp.append(r)
+    if grp:
+        chapters.append((grp[0]["num_start"], grp[-1]["text_end"], grp[0]["book"], grp[0]["chapter"]))
+    if not chapters:
+        return None
+
+    headers = [(pos, name) for pos, name in _kjv_book_headers(text) if pos < body_end]
+    body_start = min(chapters[0][0], headers[0][0] if headers else chapters[0][0])
+    backmatter_start = max(body_start, max(c[1] for c in chapters))
+
+    sections: list[LayoutSection] = []
+    nid = 0
+
+    def add(type_: str, start: int, end: int, label: str = "",
+            metadata: dict[str, Any] | None = None) -> None:
+        nonlocal nid
+        if end <= start:
+            return
+        nid += 1
+        sections.append(LayoutSection(
+            id=f"ls-{nid}", type=type_, start=start, end=end,
+            label=label or SECTION_LABELS.get(type_, type_), source="auto",
+            metadata=dict(metadata or {})))
+
+    add("front_matter", 0, body_start, "Front Matter")
+    add("body", body_start, backmatter_start, "Body")
+    add("back_matter", backmatter_start, body_end, "Back Matter")
+
+    for i, (bstart, bname) in enumerate(headers):
+        bend = headers[i + 1][0] if i + 1 < len(headers) else backmatter_start
+        add("book", max(bstart, body_start), min(bend, backmatter_start), bname, {"book": bname})
+
+    # Per chapter: the "BookName N" heading line just before the first verse becomes a masked
+    # `header`; the verse bodies become an unmasked `chapter`. The heading search is bounded by the
+    # previous chapter's end so a chapter never masks into its neighbour (and a chapter-1 book line
+    # sitting further back stays outside the carve).
+    prev_end = body_start
+    for vstart, vend, book, chnum in chapters:
+        head_end = text.rfind("\n\n", prev_end, vstart)
+        if head_end > prev_end:
+            head_start = text.rfind("\n\n", prev_end, head_end)
+            head_start = prev_end if head_start < 0 else head_start + 2
+            add("header", head_start, head_end, f"{book} {chnum}" if book else f"Chapter {chnum}")
+        add("chapter", vstart, vend, f"{book} {chnum}" if book else f"Chapter {chnum}",
+            {"book": book, "number": str(chnum)})
+        prev_end = vend
+
+    sections.sort(key=lambda s: (s.start, -(s.end - s.start)))
+    _compute_parents(sections)
+    _assign_names(sections)
+    return sections
+
+
 def detect_layout_sections(
     boundaries: list[tuple[int, int, str]],
     text_len: int,
@@ -1495,12 +1580,16 @@ def detect_layout_sections(
     back-matter run; structural sections nest inside the body and each one's heading
     label is carved out as a masked ``header`` window.
     """
-    # A Geneva-style Bible has no usable heading track; recover its structure from the verse
-    # index instead (no-op / None for every other corpus).
+    # A Geneva- or KJV-style Bible is best structured from its verse index: Geneva has no usable
+    # heading track, and KJV's "BookName N" chapter headings defeat the generic chapter classifier.
+    # Each derivation self-gates on its verse dialect (no-op / None for every other corpus).
     if text is not None:
         geneva = _geneva_layout_sections(text, text_len, endnote_separator)
         if geneva is not None:
             return geneva
+        kjv = _kjv_layout_sections(text, text_len, endnote_separator)
+        if kjv is not None:
+            return kjv
 
     bounds = sorted(boundaries, key=lambda b: b[0])
     body_end = endnote_separator if 0 < endnote_separator < text_len else text_len
