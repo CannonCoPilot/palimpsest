@@ -351,13 +351,26 @@ RULES[101] = [
 
 _CHAP6 = "\n\n(?:(?!\n\n)[\\s\\S])*?(?=\n\n1\xa0)"  # argument/superscription block before each verse-1
 _OBAD6 = ["\n\nOBADIAH\n\n1 1 The vision"]  # Obadiah's v1 fused into its argument (no \n\n1\xa0 marker)
+# 22 chapters print no argument and open with a bare "<chapter> 1 " verse-1 line
+# (regular or NBSP space after the "1"): Proverbs 11–29, Lamentations 2–4, plus
+# Obadiah's single chapter. These are structural `chapter` divisions with nothing
+# to mask, so they extend `chapter` to the full 1189 without adding to the 1167
+# masked `chapter_heading` arguments. Empirically exactly these 23 in-span, no
+# collision with the _CHAP6 NBSP-argument starts.
+_CHAP6_NOARG = "\n\n\\d{1,3} 1[ \xa0]"
+_SPAN6 = {"span_start": "THE FIRST BOOK OF MOSES", "span_end": "A FORM OF PRAYER TO BE USED"}
 RULES[6] = [
+    # structural chapter divisions: 1166 NBSP-argument chapters + 23 argument-less
+    # ("N 1 ") ones (Proverbs 11–29, Lamentations 2–4, Obadiah) = 1189 (canonical).
     {"type": "chapter", "kind": "regex_in_span", "pattern": _CHAP6, "at": "start",
-     "tile": True, "span_start": "THE FIRST BOOK OF MOSES", "span_end": "A FORM OF PRAYER TO BE USED",
-     "extra_anchors": _OBAD6, "expected_count": 1133},
+     "tile": True, **_SPAN6,
+     "extra_spans": [{"pattern": _CHAP6_NOARG, **_SPAN6}], "expected_count": 1189},
+    # masked editorial arguments: only the 1167 chapters that actually print one
+    # (1166 NBSP-argument + Obadiah's fused argument). The 22 argument-less chapters
+    # have no heading to mask, so they are excluded here.
     {"type": "chapter_heading", "kind": "regex_in_span", "pattern": _CHAP6, "at": "start",
-     "tile": False, "span_start": "THE FIRST BOOK OF MOSES", "span_end": "A FORM OF PRAYER TO BE USED",
-     "extra_anchors": _OBAD6, "expected_count": 1133},
+     "tile": False, **_SPAN6,
+     "extra_anchors": _OBAD6, "expected_count": 1167},
 ]
 
 RULES[105] = [
@@ -447,6 +460,17 @@ def materialize(text: str, rule: dict) -> list[int]:
         for a in rule.get("extra_anchors", []):
             if text.count(a) == 1:
                 starts.add(text.find(a))
+        # A repeating structure can mix two heading dialects (e.g. an argument
+        # block before NBSP verse-1 vs. a bare "N 1 " chapter/verse line with no
+        # argument). extra_spans folds a second header regex, bounded to its own
+        # sub-span, into the same start set so one tiled type stays contiguous.
+        for xs in rule.get("extra_spans", []):
+            xpat = re.compile(xs["pattern"])
+            xlo = _resolve_span(text, xs["span_start"]) if xs.get("span_start") else 0
+            xhi = _resolve_span(text, xs["span_end"]) if xs.get("span_end") else len(text)
+            starts.update(
+                m.start() for m in xpat.finditer(text) if xlo <= m.start() < xhi
+            )
         return sorted(starts)
     if rule["kind"] != "roman_in_span":
         raise SystemExit(f"unknown rule kind {rule['kind']}")

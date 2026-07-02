@@ -9,15 +9,15 @@
       "mask": true,
       "structure": "repeating",
       "role": "primary",
-      "expected_count": 1133,
-      "count_cue": "one numbered \"argument\" per chapter, between the chapter heading and verse 1; its numerals are verse refs so it MIMICS verses (~1189 chapters in the Geneva Bible). Count left null: no clean text cue (\"CHAPTER\" x786 are cross-refs, not heads) — honest, not fabricated. Presence-tested instead. || RECONCILED 2026-06-19 (None→1133): one numbered 'argument'/superscription block precedes each chapter's verse 1.",
+      "expected_count": 1189,
+      "count_cue": "One editorial 'argument' (a numbered chapter summary whose numerals are verse refs, so it MIMICS verses) precedes each chapter's verse 1. The corrected e-text (sha 5385f413) holds the full 66-book Protestant canon = 1189 chapters (Genesis 50 … Revelation 22), of which 1167 print an argument. The 22 argument-less chapters — Proverbs 11–29, Lamentations 2–4 (unnumbered lead verse), and Obadiah (fused v1) — open with a bare 'N 1 ' verse-1 line and mask nothing. RECONCILED 2026-07-02 (1133→1189): re-anchored to the corrected text; runtime detector now resolves all 1189 (was 0 on the stale 6.69M apparatus text → MIRAGE).",
       "exemplars": [
         {
           "start_anchor": "He createth the sun, the moon, and the stars",
-          "note": "Genesis 1 argument (full span: \"God created the heaven and the earth. 3 The light... 29 And provideth nurture for man and beast\") — verse-numbered editorial summary before verse 1"
+          "note": "Genesis 1 argument — a verse-numbered editorial summary before verse 1 (\"…16 He createth the sun, the moon, and the stars. 21 He createth the fish…\")."
         }
       ],
-      "note": "Geneva numbered chapter arguments — the canonical verse-mimicking chapter_heading. Detector finds 0 chapters (only 21 books) → MIRAGE: structure present, detector blind.",
+      "note": "Geneva numbered chapter arguments — the canonical verse-mimicking chapter_heading. On the corrected text the runtime detector resolves 66 books / 1189 chapters (A3 target: OPTIMIZED); the stale apparatus-laden text (sha 415c0c10) yielded 0 chapters → MIRAGE.",
       "instance_rule": {
         "kind": "regex_in_span",
         "pattern": "\n\n(?:(?!\n\n)[\\s\\S])*?(?=\n\n1 )",
@@ -28,7 +28,8 @@
         ],
         "at": "start",
         "tile": false,
-        "expected_count": 1133
+        "expected_count": 1167,
+        "note": "Masks the 1167 printed arguments: 1166 argument blocks that precede an NBSP verse-1 marker ('\\n\\n1<NBSP>') plus Obadiah's fused v1 (extra_anchor). The 22 argument-less chapters (Proverbs 11-29, Lamentations 2-4, Obadiah) are structural `chapter` divisions only — materialized for the `chapter` type via a secondary 'N 1 ' dialect (regex '\\n\\n\\d{1,3} 1[<space|NBSP>]'), never masked as a heading."
       }
     },
     {
@@ -37,14 +38,14 @@
       "structure": "repeating",
       "role": "secondary",
       "expected_count": 66,
-      "count_cue": "~80 books incl. Apocrypha (1599 Geneva, Tolle Lege). Count left null: ALLCAPS headings (x84) conflate book titles with front-matter section heads, so not cleanly countable. Detector finds only 21 `book` elements — under-detected. || RECONCILED 2026-06-19 (None→66): 39 OT + 27 NT; the Apocrypha (Ecclesiasticus, Maccabees, Esdras, Tobit, Judith, Wisdom, Baruch, Manasses) are entirely ABSENT in this e-text.",
+      "count_cue": "39 OT + 27 NT = 66 books (Protestant canon); the Apocrypha (Ecclesiasticus, Maccabees, Esdras, Tobit, Judith, Wisdom, Baruch, Manasses) are entirely ABSENT in this e-text. On the corrected text (sha 5385f413) the runtime detector resolves all 66 (was 21 on the stale text — under-detected).",
       "exemplars": [
         {
           "start_anchor": "THE FIRST BOOK OF MOSES",
           "note": "Genesis book heading (\"THE FIRST BOOK OF MOSES, called Genesis\")"
         }
       ],
-      "note": "Secondary grouping level, also under-segmented (21 of ~80)."
+      "note": "Secondary grouping level. Runtime now resolves all 66 books on the corrected text."
     },
     {
       "type": "glossary",
@@ -54,5 +55,5 @@
       "note": "Back-matter 'Glossary of Middle-English Terms' (alphabetical, abalienate→wrought, with WORD/MEANING/SAMPLE LOCATION columns) at the very END of the work. ADDED 2026-06-18 (untyped FN): this e-text is SCRAMBLED — its glossary TITLE line ('Glossary of Middle-English Terms…') is displaced to the front (offset 1283, where the detector mislabels the foreword block as 'glossary'), while the actual A–Z glossary CONTENT sits here at EOF, swallowed into the giant trailing 'book' section. Masked."
     }
   ],
-  "map_status": "complete 2026-06-19: every character covered by >=1 generic (body/volume/book/part) and >=1 specific mask-type; per-instance edges materialized, 100% two-layer (see docs/development/audits/masking-map/)"
+  "map_status": "complete 2026-07-02: re-authored for the corrected 1599 Geneva text (sha 5385f413, 4,599,273 chars, 66 books / 1189 chapters). Every character covered by >=1 generic (body) and >=1 specific mask-type; structural chapter divisions = 1189, masked chapter_heading arguments = 1167; 100% two-layer (gen_gold_maps.py 6 -> maps/work-006.map.json)."
 }
