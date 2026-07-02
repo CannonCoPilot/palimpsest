@@ -1583,17 +1583,25 @@ def _dr_layout_sections(
 ) -> list[LayoutSection] | None:
     """Douay-Rheims Bible layout: verse-index-derived books/chapters + masked chapter headings.
 
-    The DR EPUB prints ``BookName Chapter N`` / ``Chapter N`` heading lines that the generic
-    classifier only partly recovers — the single-chapter books (Abdias, Philemon, 2/3 John, Jude,
-    the Prayer of Manasses, the 1582 variants) print no "Chapter 1" line, so ~45 chapters go
-    missing. The canonical ``C:V.`` verse pass plus the appendix pass together already resolve all
-    78 books and 1364 chapters, so :func:`_versed_bible_layout` reads the layout off that instead.
+    The DR EPUB prints ``BookName Chapter N`` / ``Chapter N`` heading lines, but the generic
+    classifier recovered them only partly: the single-chapter books (Abdias, Philemon, 2/3 John,
+    Jude, the Prayer of Manasses, the 1582 variants) print no "Chapter 1" line, so it dropped dozens
+    of chapters (1319 of 1364). The canonical ``C:V.`` verse pass plus the appendix pass together
+    resolve all 78 books and 1364 chapters, so :func:`_versed_bible_layout` reads the layout off the
+    verse index instead — recovering the chapters the heading track alone could not.
 
     DR's book names are folded into the chapter headings rather than standing on their own line, so
     the book containers are derived from the verse records (``header_fn=None``). Unlike the Geneva
     and KJV verse dialects, the canonical pass does not self-gate, so the book count is checked here
     (``>= _MIN_BIBLE_BOOKS``) to keep this inert for a non-scripture corpus that merely prints a few
     ``C:V.`` citations.
+
+    A few chapters are legitimately heading-less, faithfully mirroring source-text quirks (WYSIWYG):
+    3 Kings 2 opens with a verse the source misprints as "1:1", so its "Chapter 2" heading sits
+    inside chapter 1's span and no separate ``chapter_heading`` is masked for it; Baruch 6 and
+    1 Machabees 1 & 11 carry misprinted verse numbers that file them under a neighbouring chapter.
+    These are not patched — the source's own numbering hides the boundary, and overriding it to
+    synthesise a heading would violate WYSIWYG fidelity.
     """
     from palimpsest.verses import _appendix_verses, _canonical_verses
 
