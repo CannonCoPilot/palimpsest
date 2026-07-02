@@ -673,3 +673,29 @@ of very different sizes, so a single `edge_min_score` is collection-relative (pi
 distribution). The scale-free generalization is a coverage-normalized gate (aligned fraction of each
 member), which would transfer across collections without a per-collection threshold — left as the next
 refinement per the standing "circle back to the mechanics" note.
+
+---
+
+## Deferred to a future development phase (post-2026-07-01 audit)
+
+The 109-finding 6-way audit was remediated in clusters #5–#14 (see git history `4faedef..436d919`).
+These items were **deliberately deferred** rather than dropped — each needs a design decision or is a
+feature, not an objective one-line fix:
+
+1. **Extend the honest-spaCy-fallback fix beyond `project.py`.** Finding 305 was fixed in
+   `project.py._load_spacy_model` (warn on substitution, re-raise if the fallback itself is missing).
+   The identical silent-fallback pattern still lives in `ingest/segmenter.py`, `tracks/entities.py`,
+   `tracks/syntax.py`, and `tracks/coreference.py`. Small, mechanical, and consistency-improving — apply
+   the same warn/re-raise there in a follow-up.
+2. **Synoptic noise-floor (finding 289).** A methodology question entangled with the over-merge gate —
+   what identity/coverage floor separates genuine synoptic parallel from incidental shared wording.
+3. **Edition-diff similarity grading (finding 335, MEDIUM).** A real feature, not a fix: grade the
+   `DiffView` LCS/char-diff output by similarity so versification-drift noise reads distinctly from
+   substantive divergence.
+4. **Boundary-alignment tolerance default (LOW).** The chunk-boundary alignment tolerance default is a
+   UX/methodology call — pick a defensible default and expose it.
+5. **Over-merge *core-count* classification refinement.** The #13 score-gate already separates
+   Matthew/Mark structurally (`backbones=[3,3]`, proven by test). What remains is the *labeling*: `core`
+   currently means "spans ALL members", so a score-gated 6-way yields two `shell` components rather than
+   a literal "2-core". The refinement is `core = maximal shared-source clique` plus the coverage-
+   normalized gate from the caveat above — the standing "circle back to the mechanics" pass.
