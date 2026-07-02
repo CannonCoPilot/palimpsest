@@ -9,6 +9,14 @@ from typing import Any, Callable
 
 logger = logging.getLogger(__name__)
 
+# Block-level tags whose boundaries the epub parser turns into paragraph breaks. Mirrors
+# ``epub_parser._BLOCK_TAGS`` (kept local to avoid a circular import); a split_before element is
+# lifted into a new tag of its enclosing block's kind so it begins a fresh paragraph.
+_BLOCK_TAGS = frozenset({
+    "p", "div", "h1", "h2", "h3", "h4", "h5", "h6",
+    "blockquote", "li", "tr", "section", "article", "aside",
+})
+
 
 @dataclass
 class ElementSelector:
@@ -25,15 +33,28 @@ class ContentProfile:
     name: str
     strip_selectors: list[ElementSelector] = field(default_factory=list)
     promote_selectors: list[ElementSelector] = field(default_factory=list)
+    # Elements before which the enclosing <p> is split, so the element begins a new paragraph.
+    split_before_selectors: list[ElementSelector] = field(default_factory=list)
     skip_file_patterns: list[str] = field(default_factory=list)
     text_cleaners: list[Callable[[str], str]] = field(default_factory=list)
 
 
 PROFILE_LITERARY = ContentProfile(name="literary")
 
+# The KJV epub packs a whole chapter into one <p> with inline <span class="verses">N</span> verse
+# markers. Formerly this profile *stripped* those spans, deleting the verse numbers and leaving the
+# chapter as a single paragraph — which both lost the canonical references and made verse-vs-verse
+# alignment degenerate. Instead: PRESERVE each verse span and split the chapter <p> so every verse
+# becomes its own paragraph (soup equivalent of the fixture's _patch_epub), then strip only the
+# TOC/index anchors (a.index book links + a.index2a per-book chapter links, which live on the index
+# pages and carry no verse text). Mirrors the gold-verified _kjv_profile in validation-mm/build.py.
 PROFILE_KJV = ContentProfile(
     name="bible-kjv",
     strip_selectors=[
+        ElementSelector(tag="a", classes=frozenset({"index"})),
+        ElementSelector(tag="a", classes=frozenset({"index2a"})),
+    ],
+    split_before_selectors=[
         ElementSelector(tag="span", classes=frozenset({"verses"})),
     ],
 )
@@ -191,8 +212,13 @@ def _has_bible_markers(html: str) -> bool:
 
 
 def apply_content_filters(soup: Any, profile: ContentProfile) -> None:
-    """Modify soup in-place: decompose elements matching strip_selectors, promote elements matching promote_selectors."""
+    """Modify soup in-place: split enclosing blocks before split_before_selectors, decompose
+    elements matching strip_selectors, promote elements matching promote_selectors."""
     from bs4 import Tag
+
+    # Split first so verse-span boundaries define paragraph structure before anything is removed.
+    for selector in profile.split_before_selectors:
+        _split_block_before(soup, selector)
 
     for selector in profile.strip_selectors:
         for elem in _find_matching(soup, selector):
@@ -202,6 +228,68 @@ def apply_content_filters(soup: Any, profile: ContentProfile) -> None:
         for elem in _find_matching(soup, selector):
             if isinstance(elem, Tag):
                 elem.name = "h2"
+
+
+def _enclosing_block(elem: Any) -> Any:
+    """The nearest block-level ancestor of ``elem`` (inclusive), or None if none exists."""
+    node = elem
+    while node is not None:
+        name = getattr(node, "name", None)
+        if name in _BLOCK_TAGS:
+            return node
+        node = node.parent
+    return None
+
+
+def _split_block_before(soup: Any, selector: ElementSelector) -> None:
+    """Split each matching element's enclosing block so the element begins a new paragraph.
+
+    Soup equivalent of the fixture's raw-HTML patch (``<span class="verses">`` ->
+    ``</p><p><span class="verses">``): a chapter ``<p>`` packed with several inline verse spans is
+    partitioned into one ``<p>`` per verse. For each enclosing block, every matching top-level child
+    (and its following siblings up to the next match) is lifted into a fresh sibling block, so each
+    verse span opens its own paragraph while its number and text are preserved verbatim.
+    """
+    # Group matches by enclosing block in document order; ascend each match to the block's direct
+    # child so the split point is always a top-level sibling we can partition on.
+    order: list[int] = []
+    grouped: dict[int, tuple[Any, list[Any]]] = {}
+    for elem in _find_matching(soup, selector):
+        block = _enclosing_block(elem)
+        if block is None:
+            continue
+        node = elem
+        while node.parent is not block:
+            node = node.parent
+            if node is None:
+                break
+        if node is None:
+            continue
+        key = id(block)
+        if key not in grouped:
+            grouped[key] = (block, [])
+            order.append(key)
+        grouped[key][1].append(node)
+
+    for key in order:
+        block, points = grouped[key]
+        # Extract from last point to first so earlier siblings stay put; each insert_after(block)
+        # lands immediately after the block, so processing in reverse yields correct final order.
+        for point in reversed(points):
+            new_block = soup.new_tag(block.name)
+            for sibling in _self_and_following(point):
+                new_block.append(sibling.extract())
+            block.insert_after(new_block)
+
+
+def _self_and_following(node: Any) -> list[Any]:
+    """``node`` plus all of its following siblings, captured before any are moved."""
+    collected = []
+    sib = node
+    while sib is not None:
+        collected.append(sib)
+        sib = sib.next_sibling
+    return collected
 
 
 def _find_matching(soup: Any, sel: ElementSelector) -> list[Any]:

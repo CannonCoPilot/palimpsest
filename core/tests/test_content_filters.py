@@ -35,12 +35,17 @@ def _soup(html: str) -> BeautifulSoup:
 # ---------------------------------------------------------------------------
 
 class TestKJVFilters:
-    def test_kjv_verse_number_stripped(self):
+    def test_kjv_verse_number_preserved_and_split(self):
+        # KJV preserves the verse number and splits the enclosing <p> so the verse becomes its own
+        # paragraph; the masking layer later marks the number as masked rather than deleting it.
         html = '<p><span class="verses">1</span> The book of the generation of Jesus Christ</p>'
         soup = _soup(html)
         apply_content_filters(soup, PROFILE_KJV)
-        text = soup.get_text(strip=True)
-        assert "1" not in text
+        verse_ps = [p for p in soup.find_all("p") if p.find("span", class_="verses")]
+        assert len(verse_ps) == 1
+        assert verse_ps[0].find("span", class_="verses").get_text(strip=True) == "1"
+        text = verse_ps[0].get_text()
+        assert "1" in text
         assert "The book of the generation of Jesus Christ" in text
 
     def test_kjv_red_letter_preserved(self):
@@ -223,17 +228,17 @@ class TestCombinedFilters:
         soup = _soup(html)
         apply_content_filters(soup, PROFILE_KJV)
 
-        # Check the verse paragraph body independently (the <h2> legitimately
-        # contains "Matthew 1", so we scope the digit-absence check to the <p>).
-        para_text = soup.find("p").get_text()
+        # The chapter paragraph is split into one <p> per verse, each opening with its preserved
+        # verse-number span; the <h2> chapter heading is left untouched.
+        verse_ps = [p for p in soup.find_all("p") if p.find("span", class_="verses")]
+        assert len(verse_ps) == 2
+        for p in verse_ps:
+            assert len(p.find_all("span", class_="verses")) == 1
+        assert verse_ps[0].find("span", class_="verses").get_text(strip=True) == "1"
+        assert verse_ps[1].find("span", class_="verses").get_text(strip=True) == "2"
 
-        # Verse numbers must be gone from the paragraph
-        assert re.search(r'\b1\b', para_text) is None
-        assert re.search(r'\b2\b', para_text) is None
-
+        # Prose content — including supplied-word <small> and red-letter spans — stays intact.
         text = soup.get_text()
-
-        # Prose content must be intact
         for word in ("generation", "Jesus", "Christ", "Abraham", "Isaac"):
             assert word in text
 

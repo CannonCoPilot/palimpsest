@@ -14,7 +14,7 @@ The index is the single source: the lazy verse *track* renders from it, and the 
 *mask layer* is the union of its ``num`` spans. Detection is purely text-based, so a work with
 no recognised verse markers simply yields an empty index (no verses), and the layer is a no-op.
 
-Two marker dialects are recognised:
+Four marker dialects are recognised:
   * **Canonical** — line-anchored ``C:V.`` (the Challoner main text), keyed off ``X Chapter N``
     headings; safe and generic.
   * **Appendix** — the Douay-Rheims end-matter (Manasses, 3 & 4 Esdras incl. the Bensly
@@ -23,6 +23,13 @@ Two marker dialects are recognised:
     The appendix pass is gated on the DR end-matter anchors, so it is inert for other works;
     the bare-inline style is guarded by parenthetical-cross-reference exclusion and a
     monotonic-increase check to suppress false positives.
+  * **Geneva (1599)** — no ``C:V.`` markers or ``Chapter N`` headings: each verse is a
+    paragraph line-anchored ``<num>\xa0`` (non-breaking space); chapters are inferred from
+    verse-number resets and books from bare upper-case name lines.
+  * **KJV** — after the import splits each chapter paragraph into one paragraph per verse (see
+    ``content_filters.PROFILE_KJV``), verses are line-anchored ``<num> `` (regular space).
+    Chapters are inferred from verse-number resets (like Geneva); books from the mixed-case
+    ``Genesis`` / ``1. Samuel`` heading lines the epub already carries.
 """
 
 from __future__ import annotations
@@ -358,20 +365,130 @@ def _geneva_verses(text: str) -> list[dict[str, Any]]:
     return records
 
 
+# --- KJV verse detection ------------------------------------------------------------------
+#
+# The KJV epub packs a whole chapter into one <p> with inline "<span class=verses>N</span>"
+# markers; PROFILE_KJV splits that paragraph so each verse becomes its own paragraph,
+# line-anchored "<num> <prose>" — the verse number followed by a REGULAR space (unlike Geneva's
+# non-breaking space). The epub carries real book ("Genesis", "1. Samuel") and chapter
+# ("Genesis 1") headings, but the printed heading text is format-quirky ("1. Samuel" with a
+# period), so chapters are inferred from verse-number resets (robust and format-free, like
+# Geneva) while books are read from the bare mixed-case name lines the headings leave in the text.
+_KJV_VERSE_LINE = re.compile(r"(?m)^(\d{1,3})[ \t]+")
+_KJV_MIN_CHAPTERS = 20  # this many reset-anchored verse runs ⇒ KJV-style scripture
+_KJV_MIN_CHAPTER_VERSES = 2  # a real chapter has ≥2 verses; filters stray front-matter numerals
+_KJV_MIN_BOOKS = 8  # this many distinct book-name lines ⇒ a scripture canon, not incidental text
+# A standalone book-name line: the whole line is a book name, optionally prefixed by an ordinal
+# printed "1. " / "2. " (period or space separator). It ends in letters — never a trailing chapter
+# number — so chapter headings ("Genesis 1") and verse lines ("1 In the beginning…") never match.
+_KJV_BOOK_LINE = re.compile(r"(?m)^((?:[123][.\s]+)?[A-Za-z][A-Za-z’' ]{1,40})$")
+_KJV_BOOK_ORDINAL = re.compile(r"^([123])[.\s]+(.+)$")
+
+
+def _kjv_book_name(line: str) -> str | None:
+    """Canonical display name if ``line`` is a KJV book heading, else None.
+
+    Normalises the epub's "1. Samuel" ordinal spelling to "1 Samuel" so the shared book lexicon
+    (which accepts "1 Samuel" / "Second Kings" style) resolves the numbered books.
+    """
+    from palimpsest.layout import _match_bible_book
+
+    s = line.strip()
+    m = _KJV_BOOK_ORDINAL.match(s)
+    return _match_bible_book(f"{m.group(1)} {m.group(2)}" if m else s)
+
+
+def _kjv_book_headers(text: str) -> list[tuple[int, str]]:
+    """(position, display-name) for KJV book-name lines, in document order."""
+    out: list[tuple[int, str]] = []
+    for m in _KJV_BOOK_LINE.finditer(text):
+        name = _kjv_book_name(m.group(1))
+        if name:
+            out.append((m.start(), name))
+    return out
+
+
+def _kjv_verses(text: str) -> list[dict[str, Any]]:
+    """One record per KJV "<num> <prose>" verse, chaptered by verse-number resets.
+
+    Returns ``[]`` unless the text carries enough reset-anchored verse runs *and* book-name lines
+    to be KJV-style scripture, so this pass is inert for every other corpus (and, in particular,
+    Geneva — whose verses use a non-breaking space and so never match ``_KJV_VERSE_LINE``). Verse
+    numbers reset to 1 at each chapter; chapters are numbered sequentially within each book. The
+    masked ``num`` token spans the number plus its trailing spaces so the verse prose stays
+    analyzable, mirroring the Douay-Rheims ``C:V. `` treatment.
+    """
+    markers = [(m.start(), m.end(), int(m.group(1))) for m in _KJV_VERSE_LINE.finditer(text)]
+    if not markers:
+        return []
+
+    # Group into chapters by verse-number resets: a chapter is a maximal run of increasing verse
+    # numbers; a marker that does not exceed its predecessor starts a new chapter. Runs shorter
+    # than the minimum (stray front-matter numerals) are discarded.
+    runs: list[list[tuple[int, int, int]]] = []
+    cur: list[tuple[int, int, int]] = []
+    for mk in markers:
+        if cur and mk[2] <= cur[-1][2]:
+            runs.append(cur)
+            cur = []
+        cur.append(mk)
+    if cur:
+        runs.append(cur)
+    chapters = [r for r in runs if len(r) >= _KJV_MIN_CHAPTER_VERSES]
+    if len(chapters) < _KJV_MIN_CHAPTERS:
+        return []
+
+    headers = _kjv_book_headers(text)
+    if len({name for _, name in headers}) < _KJV_MIN_BOOKS:
+        return []
+
+    records: list[dict[str, Any]] = []
+    hi = 0
+    cur_book = ""
+    chapter_in_book = 0
+    for run in chapters:
+        c_start = run[0][0]
+        # Advance the book cursor to the latest header preceding this chapter; a new book resets
+        # the per-book chapter counter.
+        while hi < len(headers) and headers[hi][0] <= c_start:
+            if headers[hi][1] != cur_book:
+                cur_book = headers[hi][1]
+                chapter_in_book = 0
+            hi += 1
+        chapter_in_book += 1
+        for k, (ns, num_end, verse) in enumerate(run):
+            nxt = run[k + 1][0] if k + 1 < len(run) else None
+            para_end = text.find("\n\n", num_end)
+            if para_end < 0:
+                para_end = len(text)
+            text_end = min(nxt, para_end) if nxt is not None else para_end
+            records.append({
+                "book": cur_book,
+                "chapter": chapter_in_book,
+                "verse": verse,
+                "num_start": ns,
+                "num_end": num_end,
+                "text_start": num_end,
+                "text_end": text_end,
+            })
+    return records
+
+
 def detect_verses(text: str) -> list[dict[str, Any]]:
     """Verse index records for ``text``, in document order.
 
     Returns ``[{book, chapter, verse, num_start, num_end, text_start, text_end}]`` covering the
-    canonical line-anchored ``C:V.`` verses, the Douay-Rheims appendix books, and the Geneva
-    ``<num>\\xa0`` verse dialect. ``book`` is the most recent preceding book heading's name
+    canonical line-anchored ``C:V.`` verses, the Douay-Rheims appendix books, and the Geneva /
+    KJV reset-chaptered dialects. ``book`` is the most recent preceding book heading's name
     (``""`` if none); ``chapter`` is an int, except the Bensly fragment's ``"A"``.
     """
     records = _canonical_verses(text) + _appendix_verses(text)
-    # Geneva prints no "C:V." markers, so the canonical/appendix passes yield nothing for it. Fall
-    # back to the Geneva dialect only then, so a corpus already resolved by the DR passes is
-    # untouched and the Geneva pass stays inert for everything else (it self-gates on run density).
+    # DR prints "C:V." markers; Geneva and KJV do not, so the canonical/appendix passes yield
+    # nothing for them. Fall back to the reset-chaptered dialects only then — Geneva first (its
+    # non-breaking-space markers never match the KJV regular-space regex, so the two are mutually
+    # exclusive), each self-gating on run/book density so both stay inert for every other corpus.
     if not records:
-        records = _geneva_verses(text)
+        records = _geneva_verses(text) or _kjv_verses(text)
     records.sort(key=lambda r: (r["num_start"], r["text_start"]))
     return records
 

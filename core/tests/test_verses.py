@@ -1,7 +1,8 @@
-"""Tests for verse-coordinate detection — the Geneva ``<num>\\xa0`` dialect in particular."""
+"""Tests for verse-coordinate detection — the Geneva ``<num>\\xa0`` and KJV ``<num> `` dialects."""
 
 from palimpsest.verses import (
     _geneva_book_headers,
+    _kjv_book_headers,
     detect_verses,
     verse_number_intervals,
 )
@@ -99,3 +100,59 @@ def test_geneva_song_of_solomon_recovered_from_split_title():
 def test_non_scripture_text_yields_no_verses():
     prose = "\n\n".join("It was a bright cold day in April and the clocks were striking." for _ in range(50))
     assert detect_verses(prose) == []
+
+
+# --- KJV dialect (regular-space verse markers, reset-chaptered) ----------------------------
+
+# Enough distinct book-name lines to clear the canon gate (_KJV_MIN_BOOKS); "1. Samuel" exercises
+# the ordinal-with-period spelling the epub prints.
+_KJV_BOOKS = ["Genesis", "Exodus", "Leviticus", "Numbers", "Joshua", "Judges", "Ruth", "1. Samuel"]
+
+
+def _kjv_chapter(book: str, ch: int, verses: list[int]) -> str:
+    """A ``BookName N`` heading line then one paragraph per verse, line-anchored ``<num> <prose>``
+    (the KJV print form after PROFILE_KJV splits the chapter paragraph)."""
+    body = "\n\n".join(f"{v} Verse {v} prose text here for length." for v in verses)
+    return f"{book} {ch}\n\n{body}"
+
+
+def _kjv_sample() -> str:
+    """A synthetic KJV-format Bible: bare book-name lines, ``BookName N`` chapter headings, and
+    regular-space verse markers, with enough chapters/books to pass both density gates."""
+    blocks: list[str] = []
+    for book in _KJV_BOOKS:
+        blocks.append(book)  # bare book-name (h1) line
+        for ch in range(1, 4):
+            blocks.append(_kjv_chapter(book, ch, [1, 2, 3, 4]))
+    return "\n\n".join(blocks)
+
+
+def test_kjv_books_and_chapters():
+    text = _kjv_sample()
+    recs = detect_verses(text)
+    assert recs, "KJV dialect should fire on run-dense regular-space scripture"
+
+    by_book: dict[str, set[int]] = {}
+    for r in recs:
+        by_book.setdefault(r["book"], set()).add(r["chapter"])
+
+    # The ordinal "1. Samuel" heading normalises to "1 Samuel"; every book has its 3 chapters.
+    assert set(by_book) == {"Genesis", "Exodus", "Leviticus", "Numbers",
+                            "Joshua", "Judges", "Ruth", "1 Samuel"}
+    assert all(len(chs) == 3 for chs in by_book.values())
+
+
+def test_kjv_mask_token_is_number_plus_regular_space():
+    text = _kjv_sample()
+    recs = detect_verses(text)
+    r = next(r for r in recs if r["book"] == "Genesis" and r["chapter"] == 1 and r["verse"] == 1)
+    token = text[r["num_start"]:r["num_end"]]
+    assert token.startswith("1")
+    assert " " in token and NBSP not in token  # regular space, unlike Geneva's NBSP
+    # The verse prose (analyzable span) begins right after the masked number token.
+    assert text[r["text_start"]:].startswith("Verse 1")
+
+
+def test_kjv_ordinal_book_heading_normalized():
+    headers = _kjv_book_headers("1. Samuel\n\n")
+    assert [name for _, name in headers] == ["1 Samuel"]
