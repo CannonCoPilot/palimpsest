@@ -870,13 +870,20 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
         project_dir = _safe_project_dir(workspace, project_id)
         shutil.rmtree(project_dir)
         # Remove the deleted project from every collection so member counts stay
-        # accurate (fix E).  Use load/save helpers from collections module.
+        # accurate, and drop any collection-local role it held so no stale backbone
+        # reference lingers (a same-slug re-import would otherwise inherit it).
         from palimpsest.collections import load_collections, save_collections
         cols = load_collections(workspace)
         changed = False
         for col in cols:
             if project_id in col.get("project_ids", []):
                 col["project_ids"] = [pid for pid in col["project_ids"] if pid != project_id]
+                changed = True
+            roles = col.get("roles")
+            if roles and project_id in roles:
+                del roles[project_id]
+                if not roles:
+                    col.pop("roles", None)  # keep the "no empty roles map" invariant
                 changed = True
         if changed:
             save_collections(workspace, cols)

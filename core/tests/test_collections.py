@@ -326,6 +326,24 @@ def test_http_lattice_roles_congruence(tmp_path: Path) -> None:
     assert client.get("/api/collections/ghost/congruence?metric=cosine").status_code == 404
 
 
+def test_delete_project_cascades_into_collections(tmp_path: Path) -> None:
+    """Deleting a project must scrub it from every collection — both the membership list
+    (so counts stay accurate) and the collection-local roles map (so no stale backbone
+    reference lingers for a same-slug re-import to inherit)."""
+    _make_project(tmp_path, "drb")
+    _make_project(tmp_path, "kjv")
+    cs.create_collection(tmp_path, "Scripture", "", ["drb", "kjv"])
+    cs.set_member_role(tmp_path, "scripture", "drb", "root")
+    assert cs.get_collection(tmp_path, "scripture")["roles"] == {"drb": "root"}
+    client = _client(tmp_path)
+
+    assert client.delete("/api/projects/drb").status_code == 200
+
+    col = cs.get_collection(tmp_path, "scripture")
+    assert col["project_ids"] == ["kjv"]  # membership strip (count drops)
+    assert "roles" not in col  # role scrubbed; empty map pruned per invariant
+
+
 def test_cli_collections(tmp_path: Path) -> None:
     from click.testing import CliRunner
 
