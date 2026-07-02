@@ -29,6 +29,7 @@ from pathlib import Path
 from typing import Any
 
 from palimpsest.atomic import atomic_write_text
+from palimpsest.canon import book_division
 
 # The fixed section vocabulary, grouped by role. Custom user types may extend this
 # at runtime (they are tolerated everywhere; only the default mask differs).
@@ -40,6 +41,12 @@ SECTION_TYPES: tuple[str, ...] = (
     # `chapter` (verse content only, post inline-note carve) now sits inside. `verse` is
     # the finest grain: one element per verse / scripture paragraph, nested in `chapter`.
     "volume", "book", "part", "section", "chapter", "verse", "letter",
+    # Content-type canonical-division containers grouping consecutive books by literary genre
+    # (Law · Historical · Wisdom-poetry · Prophets-Major · Prophets-Minor · Gospels · Epistles);
+    # the genre rides in metadata["genre"]. Deuterocanonical books additionally carry
+    # metadata["apocrypha"]=True on their `book` — a parallel flag, not a second container,
+    # since the section tree is strict single-parent.
+    "genre_division",
     # Verse-form authorial content (poems, songs) carried inside the body.
     "poetry",
     # Masked windows carved inside the body. `header` = a name line (book / chapter / section
@@ -69,6 +76,7 @@ SECTION_LABELS: dict[str, str] = {
     "body": "Body",
     "volume": "Volume", "book": "Book", "part": "Part", "section": "Section",
     "chapter": "Chapter", "verse": "Verse", "letter": "Letter", "poetry": "Poetry",
+    "genre_division": "Canonical Division",
     "header": "Header", "heading": "Heading", "chapter_heading": "Chapter Heading",
     "footnotes": "Footnotes", "endnotes": "Endnotes",
     "epigraph": "Epigraph", "translation": "Translation", "commentary": "Commentary",
@@ -87,6 +95,7 @@ SECTION_LABELS: dict[str, str] = {
 # (matter, headers, editorial summaries, notes, the translated source text) is masked by default.
 _UNMASKED_TYPES = frozenset({
     "body", "volume", "book", "part", "section", "chapter", "verse", "letter", "commentary", "poetry",
+    "genre_division",
 })
 DEFAULT_MASK_BY_TYPE: dict[str, bool] = {t: t not in _UNMASKED_TYPES for t in SECTION_TYPES}
 
@@ -117,6 +126,7 @@ SECTION_COLORS: dict[str, str] = {
     # content main text — green; `verse` (finest grain) a lighter green tint of `chapter`;
     # verse-form specialties get their own hue
     "chapter": "#30d158", "verse": "#6fdc8c", "letter": "#40c8a0", "poetry": "#9d8df1",
+    "genre_division": "#e0a458",
     "translation": "#d68cff", "commentary": "#30b0c7",
     # editorial argument / summary — gold; epigraph brown
     "heading": "#c9a227", "chapter_heading": "#c9a227", "epigraph": "#ac8e68",
@@ -128,7 +138,7 @@ SECTION_COLORS: dict[str, str] = {
 
 # Structural nesting depth: body(0) > volume > book/part > chapter. A section of
 # level L extends until the next boundary whose level is <= L, which yields containment.
-_TYPE_LEVEL: dict[str, int] = {"body": 0, "volume": 1, "book": 2, "part": 2, "section": 3, "chapter": 4, "verse": 5}
+_TYPE_LEVEL: dict[str, int] = {"body": 0, "volume": 1, "genre_division": 1, "book": 2, "part": 2, "section": 3, "chapter": 4, "verse": 5}
 
 # Type roles for region detection.
 _STRUCTURAL = frozenset({"volume", "book", "part", "chapter"})
@@ -1482,9 +1492,37 @@ def _versed_bible_layout(
     add("body", body_start, backmatter_start, "Body")
     add("back_matter", backmatter_start, body_end, "Back Matter")
 
+    # Clamp book spans, then overlay content-type genre divisions. Each book carries its
+    # literary genre (and, for the deuterocanon, an apocrypha flag) in metadata; consecutive
+    # books of the same genre are wrapped in a `genre_division` container. A single-book run
+    # (e.g. Acts alone between the Gospels and Epistles) gets no container — one would be
+    # span-identical to the book and tie the parent search — so its genre rides on the book.
+    book_spans: list[tuple[int, int, str, str | None, bool]] = []
     for i, (bstart, bname) in enumerate(headers):
         bend = headers[i + 1][0] if i + 1 < len(headers) else backmatter_start
-        add("book", max(bstart, body_start), min(bend, backmatter_start), bname, {"book": bname})
+        bs, be = max(bstart, body_start), min(bend, backmatter_start)
+        if be <= bs:
+            continue
+        div, apoc = book_division(bname)
+        book_spans.append((bs, be, bname, div, apoc))
+
+    if book_spans:
+        run = 0
+        for j in range(len(book_spans) + 1):
+            if j < len(book_spans) and book_spans[j][3] == book_spans[run][3]:
+                continue
+            div = book_spans[run][3]
+            if div is not None and j - run >= 2:
+                add("genre_division", book_spans[run][0], book_spans[j - 1][1], div, {"genre": div})
+            run = j
+
+    for bs, be, bname, div, apoc in book_spans:
+        meta: dict[str, Any] = {"book": bname}
+        if div is not None:
+            meta["genre"] = div
+        if apoc:
+            meta["apocrypha"] = True
+        add("book", bs, be, bname, meta)
 
     # Per chapter: the argument/heading paragraph immediately before the first verse becomes a
     # masked `chapter_heading`; the verse bodies become an unmasked `chapter`. The search is bounded
