@@ -1224,7 +1224,7 @@ def test_geneva_layout_recovers_books_chapters_and_arguments():
         kinds[s.type] += 1
     assert kinds.get("book") == 2
     assert kinds.get("chapter") == 28
-    assert kinds.get("heading") == 28  # one masked argument per chapter
+    assert kinds.get("chapter_heading") == 28  # one masked argument per chapter
     # Chapters nest under their book.
     books = {s.id: s.label for s in sections if s.type == "book"}
     chapters = [s for s in sections if s.type == "chapter"]
@@ -1275,7 +1275,7 @@ def test_kjv_layout_recovers_books_and_chapters():
         kinds[s.type] = kinds.get(s.type, 0) + 1
     assert kinds.get("book") == 8  # includes the numbered "1. Samuel" -> "1 Samuel"
     assert kinds.get("chapter") == 24
-    assert kinds.get("header") == 24  # one masked "BookName N" heading line per chapter
+    assert kinds.get("chapter_heading") == 24  # one masked "BookName N" heading line per chapter
     # Chapters nest under their book.
     books = {s.id: s.label for s in sections if s.type == "book"}
     assert "1 Samuel" in books.values()
@@ -1293,3 +1293,53 @@ def test_kjv_layout_masks_headings_but_not_verse_prose():
 
     assert masked(text.find("Genesis 1"))  # the chapter-heading line is masked
     assert not masked(text.find("Verse 1 of chapter 1 prose"))  # verse prose stays analyzable
+
+
+# --- Douay-Rheims-style Bible: layout recovered from the verse index ----------------------
+
+def _dr_layout_text() -> str:
+    """A synthetic Douay-Rheims-format Bible: "BookName Chapter N" heading lines and line-anchored
+    "C:V." verses (no standalone book-name line — the book name rides on the chapter heading)."""
+    books = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Josue", "Judges", "Ruth"]
+    blocks = []
+    for book in books:
+        for ch in range(1, 4):
+            blocks.append(f"{book} Chapter {ch}")  # DR chapter heading carries the book name
+            for v in range(1, 5):
+                blocks.append(f"{ch}:{v}. Verse {v} of chapter {ch} of {book}.")
+    return "\n\n".join(blocks)
+
+
+def test_dr_layout_recovers_books_chapters_and_headings():
+    text = _dr_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    kinds: dict[str, int] = {}
+    for s in sections:
+        kinds[s.type] = kinds.get(s.type, 0) + 1
+    assert kinds.get("book") == 8
+    assert kinds.get("chapter") == 24
+    assert kinds.get("chapter_heading") == 24  # every heading masked, including the very first
+    # Chapters nest under their book.
+    books = {s.id: s.label for s in sections if s.type == "book"}
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert all(c.parent_id in books for c in chapters)
+
+
+def test_dr_layout_masks_headings_but_not_verse_prose():
+    text = _dr_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    intervals = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, len(text))
+
+    def masked(pos: int) -> bool:
+        return any(s <= pos < e for s, e in intervals)
+
+    assert masked(text.find("Genesis Chapter 1"))  # the chapter-heading line is masked
+    assert not masked(text.find("Verse 1 of chapter 1"))  # verse prose stays analyzable
+
+
+def test_dr_layout_gated_off_below_min_books():
+    from palimpsest.layout import _dr_layout_sections
+    # A non-scripture corpus with only a handful of "C:V." citations (one "book") stays inert,
+    # so it falls through to the generic pipeline instead of being mis-read as a Bible.
+    text = "\n\n".join(["Genesis Chapter 1", "1:1. In the beginning.", "1:2. And the earth."])
+    assert _dr_layout_sections(text, len(text), -1) is None

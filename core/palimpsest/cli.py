@@ -79,11 +79,16 @@ def ingest(file: Path, title: str, author: str, year: int, workspace: Path, prof
         profile = get_profile(profile_name)
     try:
         project = ingest_file(file, workspace, title=title, author=author, year=year, content_profile=profile)
+        # Mask at import, exactly as the API and UI do, so all three produce the same layout +
+        # verse index. Masking is structural only (no analysis extractors), so it stays fast.
+        from palimpsest.masking import compute_masking
+        masking = compute_masking(project)
         console.print(f"[green]Project created:[/green] {project.path}")
         console.print(f"  ID: {project.metadata.id}")
         console.print(f"  Words: {project.metadata.word_count:,}")
         console.print(f"  Paragraphs: {project.metadata.paragraph_count}")
         console.print(f"  Sentences: {project.metadata.sentence_count}")
+        console.print(f"  Masked: {masking['sections']} sections, {masking['verses']} verses")
     except FileExistsError as e:
         console.print(f"[red]Error:[/red] {e}")
         raise SystemExit(1) from e

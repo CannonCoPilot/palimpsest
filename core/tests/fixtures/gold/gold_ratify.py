@@ -41,7 +41,7 @@ from palimpsest.layout import (  # noqa: E402
     DEFAULT_MASK_BY_TYPE,
     detect_layout_sections,
 )
-from palimpsest.server import _endnote_separator, _layout_boundaries  # noqa: E402
+from palimpsest.masking import _endnote_separator, _layout_boundaries  # noqa: E402
 
 GOLD = HERE
 

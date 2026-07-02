@@ -26,11 +26,12 @@ with two refinements that fall forward instead of guessing:
   * When expected_count is null, recall is uncomputable, so the structure-
     PRESENCE test (does the proxy detector type appear at all?) stands in.
 
-Detection of the 4 new mask types (chapter_heading/letter/poetry/colophon) is
-deferred to Phase B, so the detector cannot emit them yet. Segmentation recall
-is therefore scored through a stopgap PROXY map -- the existing detector type
-each structure currently resolves to. TYPE correctness for the new types is a
-known Phase-B gap, reported per annotation, not folded into the rating.
+``chapter_heading`` is now emitted natively by the Bible layout emitters, so it is
+scored by identity. The remaining new mask types (letter/poetry/colophon) are still
+deferred to Phase B, so the detector cannot emit them yet; their segmentation recall
+is scored through a stopgap PROXY map -- the existing detector type each structure
+currently resolves to. TYPE correctness for those types is a known Phase-B gap,
+reported per annotation, not folded into the rating.
 
 Usage:
   a3_score.py            # score every gold work, print report + write a3_scores.json
@@ -47,12 +48,12 @@ REPO = HERE.parents[3]
 GOLD = HERE
 DIAG = REPO / ".scratch" / "mask-eval" / "diagnostics"  # machine-local harness output
 
-# Stopgap gold-type -> detector-type proxy. The 4 new types are not emitted yet
-# (Phase B), so segmentation recall counts the existing type each structure
-# currently resolves to: chapter_heading tracks chapters 1:1; poems are mis-typed
-# as `chapter`; letters/colophons have no detector equivalent yet (-> recall 0).
+# Stopgap gold-type -> detector-type proxy for the mask types the detector does not emit yet
+# (Phase B): poems are mis-typed as `chapter`; letters/colophons/addenda have no detector
+# equivalent yet (-> recall 0). `chapter_heading` is now emitted natively by the Bible layout
+# emitters (see palimpsest.layout._versed_bible_layout), so it has no proxy entry and counts by
+# identity via _found — retiring the stopgap that tracked `chapter` 1:1.
 PROXY: dict[str, list[str]] = {
-    "chapter_heading": ["chapter"],
     "poetry": ["chapter"],
     "letter": [],
     "colophon": [],

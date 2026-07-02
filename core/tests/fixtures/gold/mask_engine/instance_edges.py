@@ -543,7 +543,7 @@ def reconcile(idx: int) -> None:
 def a23(idx: int) -> None:
     """A3 boundary accuracy + A2 assignment correctness, gold edges vs detector."""
     from palimpsest.layout import detect_layout_sections
-    from palimpsest.server import _endnote_separator, _layout_boundaries
+    from palimpsest.masking import _endnote_separator, _layout_boundaries
     proj = project_for(idx)
     if proj is None:
         raise SystemExit(f"[{idx}] no ingested project found — run the eval ingest first")
@@ -583,7 +583,7 @@ def summary() -> None:
     from collections import Counter
 
     from palimpsest.layout import detect_layout_sections
-    from palimpsest.server import _endnote_separator, _layout_boundaries
+    from palimpsest.masking import _endnote_separator, _layout_boundaries
     print(f"{'idx':>4} {'type':<11} {'cnt':>5} {'gate':<5} {'A3-exact':>9} "
           f"{'A3<=5c':>7}  A2 detector-type (mis-assignment)")
     print("-" * 92)

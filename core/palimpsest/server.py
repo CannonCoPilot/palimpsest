@@ -18,7 +18,12 @@ from pydantic import BaseModel, Field
 
 from palimpsest.alignment.records import comparison_dir, comparison_dirname
 from palimpsest.atomic import atomic_write_text
-from palimpsest.runner import _remap_signal_dir, extract_masked, persist_track_outputs
+from palimpsest.masking import (
+    _write_verses_track,
+    compute_masking,
+    detect_and_save_layout,
+)
+from palimpsest.runner import extract_masked, persist_track_outputs
 
 logger = logging.getLogger(__name__)
 
@@ -180,9 +185,6 @@ class SweepRequest(BaseModel):
     embedding_label: str | None = None
     dense_threshold: int = Field(default=10_000, ge=0)  # 0 = never auto-dense (force candidate-gen)
     resume: bool = True
-
-
-_STRUCTURAL_TRACKS = {"segments", "sections", "elements", "verses"}
 
 
 def _job_display_status(job: dict | None, output_exists: bool) -> tuple[str, str | None]:
@@ -423,60 +425,6 @@ def _term_spans_original(term: str, atext: str, omap: Any) -> list[list[int]]:
     return spans
 
 
-def _remap_tracks_dir(tracks_dir: Path, omap: Any) -> None:
-    """Remap stored annotation tracks analyzable→original (structural tracks are left untouched)."""
-    from palimpsest.derive import inverse_remap_annotation_dicts
-    if not tracks_dir.is_dir():
-        return
-    for tp in tracks_dir.glob("*.jsonl"):
-        if tp.stem in _STRUCTURAL_TRACKS:
-            continue
-        recs = [json.loads(ln) for ln in tp.read_text(encoding="utf-8").splitlines() if ln.strip()]
-        recs = inverse_remap_annotation_dicts(recs, omap)
-        recs.sort(key=lambda r: ((r.get("target") or {}).get("selector") or {}).get("start", 0))
-        atomic_write_text(tp, ("\n".join(json.dumps(r) for r in recs) + "\n") if recs else "")
-
-
-def _remap_project_outputs(project_dir: Path, omap: Any) -> None:
-    """Remap every analyzable-coordinate output (annotation tracks + signal manifests/alignments)
-    of a batch run back to original document coordinates."""
-    _remap_tracks_dir(project_dir / "tracks", omap)
-    _remap_signal_dir(project_dir / "signals", omap)
-
-
-def _layout_boundaries(project: Any) -> list[tuple[int, int, str]]:
-    """Section boundaries (start, end, heading) from the sections track, else segmenter."""
-    out: list[tuple[int, int, str]] = []
-    sec_path = project.path / "tracks" / "sections.jsonl"
-    if sec_path.exists():
-        for line in sec_path.read_text(encoding="utf-8").splitlines():
-            if not line.strip():
-                continue
-            d = json.loads(line)
-            sel = d.get("target", {}).get("selector", {})
-            start = sel.get("start")
-            end = sel.get("end")
-            body = d.get("body", {})
-            heading = body.get("palimpsest:headingText") or body.get("value") or ""
-            if start is not None:
-                out.append((int(start), int(end if end is not None else start), str(heading)))
-    if not out:
-        out = [(s, e, h) for s, e, h in project.sections()]
-    out.sort(key=lambda b: b[0])
-    return out
-
-
-def _endnote_separator(project_dir: Path) -> int:
-    """Char offset where the endnote region begins, or -1."""
-    coord = project_dir / "coordinates.json"
-    if coord.exists():
-        c = json.loads(coord.read_text())
-        er = c.get("endnote_region")
-        if er and int(er.get("separator_offset", -1)) > 0:
-            return int(er["separator_offset"])
-    return -1
-
-
 def _sections_payload(
     cfg: Any, text_len: int, masked: list[tuple[int, int]] | None = None
 ) -> dict[str, Any]:
@@ -572,33 +520,6 @@ def _write_elements_track(project_dir: Path, project_id: str, cfg: Any, text_len
         }, indent=2),
     )
     return len(anns)
-
-
-def _write_verses_track(project_dir: Path, text: str) -> int:
-    """Write the per-project verse coordinate index as a compact ``verses.jsonl`` track.
-
-    One line per verse: ``{b: book, c: chapter, v: verse, ns: num_start, s: text_start,
-    e: text_end}``. The masked number token is ``[ns, s)``; the verse prose is ``[s, e)``.
-    This is BOTH the lazy verse track's source and the verse-number mask layer (the union
-    of ``[ns, s)`` spans). It is far more compact than W3C element annotations — tens of
-    thousands of verses stay a ~1-2MB file the Browser can fetch lazily when zoomed in.
-    """
-    from palimpsest.verses import detect_verses
-
-    records = detect_verses(text)
-    track_path = project_dir / "tracks" / "verses.jsonl"
-    track_path.parent.mkdir(parents=True, exist_ok=True)
-    if records:
-        lines = [
-            json.dumps({"b": r["book"], "c": r["chapter"], "v": r["verse"],
-                        "ns": r["num_start"], "s": r["text_start"], "e": r["text_end"]},
-                       ensure_ascii=False)
-            for r in records
-        ]
-        atomic_write_text(track_path, "\n".join(lines) + "\n")
-    else:
-        track_path.unlink(missing_ok=True)
-    return len(records)
 
 
 def _verse_num_intervals(project_dir: Path) -> list[tuple[int, int]]:
@@ -1863,14 +1784,18 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             "term": term, "count": len(spans), "doc_length": orig_len, "spans": spans,
         })
 
-    async def _ingest_and_compute(
+    async def _ingest_and_mask(
         src_path: Path, title: str, author: str, year: int, overwrite: bool = False,
         source_name: str | None = None,
     ) -> dict[str, Any]:
-        """Ingest a source file and compute all tracks (legacy one-shot path)."""
+        """Ingest a source file, then detect and persist its masking (structural layout +
+        verse index). Runs NO analysis extractors — analysis is on-demand via
+        POST /analyze/{track}. Import stops at accurate masking, keeping it fast."""
         project = await _ingest_only(src_path, title, author, year, overwrite, source_name)
-        failed = await _compute_tracks(project)
-        return _ingest_summary(project, staged=False, failed_tracks=failed)
+        masking = await _compute_masking(project)
+        summary = _ingest_summary(project, staged=False)
+        summary["masking"] = masking
+        return summary
 
     async def _ingest_only(
         src_path: Path, title: str, author: str, year: int, overwrite: bool = False,
@@ -1909,36 +1834,11 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             out["failed_tracks"] = failed_tracks
         return out
 
-    async def _compute_tracks(project: Any) -> list[dict[str, str]]:
-        """Step 5: run every analysis extractor over the masked-resolved analyzable stream.
-
-        The whole batch runs against a single analysis view, so all intermediate cross-track data
-        (e.g. self_similarity's offsets consumed by boundary_detection) lives in one consistent
-        analyzable coordinate space. A final pass then remaps every output — annotation tracks and
-        signal manifests/alignments — back to original document coordinates."""
-        import asyncio
-
-        from palimpsest.tracks.registry import TrackRegistry
-
-        failed_tracks: list[dict[str, str]] = []
-        registry = TrackRegistry.discover()
-        view, omap = project.analysis_view()
-        try:
-            for extractor_cls in registry.dependency_order():
-                extractor = extractor_cls()
-                try:
-                    result = await asyncio.to_thread(extractor.extract, view)
-                    # One writer for both entry points (runner.persist_track_outputs): annotation track
-                    # + atomic manifest + per-run provenance. The batch path previously wrote the
-                    # manifest non-atomically and emitted no provenance record (finding C1).
-                    persist_track_outputs(view.path, extractor, result)
-                except Exception as exc:
-                    logger.warning("Track %s failed: %s", extractor.name, exc)
-                    failed_tracks.append({"track": extractor.name, "error": str(exc)})
-            await asyncio.to_thread(_remap_project_outputs, project.path, omap)
-        finally:
-            view.close_analysis_view()
-        return failed_tracks
+    async def _compute_masking(project: Any) -> dict[str, int]:
+        """Detect and persist the project's masking at import — structural layout + verse index —
+        off the event loop. Delegates to the shared :func:`palimpsest.masking.compute_masking` so
+        the API, the CLI, and the ``/sections/detect`` endpoint all mask identically."""
+        return await asyncio.to_thread(compute_masking, project)
 
     @app.get("/api/imports")
     async def list_imports() -> JSONResponse:
@@ -1996,7 +1896,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
         try:
             if process:
-                return JSONResponse(content=await _ingest_and_compute(
+                return JSONResponse(content=await _ingest_and_mask(
                     tmp_path, title, author, year, source_name=file.filename))
             project = await _ingest_only(tmp_path, title, author, year, source_name=file.filename)
             return JSONResponse(content=_ingest_summary(project, staged=True))
@@ -2022,7 +1922,7 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
                 return JSONResponse(content=summary)
             if req.process:
                 return JSONResponse(
-                    content=await _ingest_and_compute(
+                    content=await _ingest_and_mask(
                         src, req.title, req.author, req.year, req.overwrite
                     )
                 )
@@ -2100,23 +2000,13 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
     @app.post("/api/projects/{project_id}/sections/detect")
     async def detect_sections(project_id: str) -> JSONResponse:
-        """Step 2: classify the text into typed layout sections and persist them."""
-        from palimpsest.layout import LayoutConfig, detect_layout_sections, load_layout, save_layout
+        """Step 2: classify the text into typed layout sections and persist them (the layout half
+        of import masking, shared via palimpsest.masking so the UI button and import agree)."""
         from palimpsest.project import Project
 
         project_dir = _safe_project_dir(workspace, project_id)
         project = Project.load(project_dir)
-        reference = project.reference_text()
-        text_len = len(reference)
-        sections = detect_layout_sections(
-            _layout_boundaries(project), text_len, _endnote_separator(project_dir),
-            text=reference,
-        )
-        cfg = load_layout(project_dir) or LayoutConfig()
-        cfg.sections = sections
-        cfg.applied = False
-        cfg.parents_computed = True  # detect_layout_sections already computed parent links
-        save_layout(project_dir, cfg)
+        cfg, text_len = detect_and_save_layout(project)
         return JSONResponse(content=_sections_payload(cfg, text_len))
 
     @app.get("/api/projects/{project_id}/sections")
