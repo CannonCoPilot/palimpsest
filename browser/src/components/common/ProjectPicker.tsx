@@ -138,7 +138,7 @@ function BookCover({ project, collections, onOpen, onReimport, onRefine, onDelet
   }, [menu]);
 
   return (
-    <div className="group relative flex flex-col">
+    <div className={`group relative flex flex-col ${menu ? 'z-30' : ''}`}>
       <button type="button" onClick={onOpen} className="flex flex-col text-left focus:outline-none">
         <div
           className="relative w-full aspect-[2/3] rounded-[3px] overflow-hidden ring-1 ring-black/40
@@ -530,6 +530,7 @@ export default function ProjectPicker(): ReactElement {
   const [pendingTab, setPendingTab] = useState<TabId | null>(null);
   const [collections, setCollections] = useState<CollectionEntry[]>([]);
   const [activeCollection, setActiveCollection] = useState<CollectionEntry | null>(null);
+  const [showAddText, setShowAddText] = useState(false);
   const loadProject = useProjectStore((s) => s.loadProject);
 
   useEffect(() => {
@@ -579,6 +580,22 @@ export default function ProjectPicker(): ReactElement {
     } catch { /* ignore */ }
   }
 
+  // Delete a collection (fix F). The DELETE /api/collections/:id endpoint already exists.
+  async function handleDeleteCollection(col: CollectionEntry): Promise<void> {
+    if (!window.confirm(`Delete collection "${col.label}"? The texts inside will not be deleted.`)) return;
+    try {
+      const res = await fetch(`/api/collections/${encodeURIComponent(col.id)}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setCollections((prev) => prev.filter((c) => c.id !== col.id));
+      if (activeCollection?.id === col.id) {
+        setActiveCollection(null);
+        setPage('library');
+      }
+    } catch (err) {
+      window.alert(`Could not delete collection "${col.label}": ${err instanceof Error ? err.message : 'unknown error'}`);
+    }
+  }
+
   async function handleAddToCollection(p: ProjectEntry, collectionId: string): Promise<void> {
     try {
       const res = await fetch(
@@ -591,6 +608,13 @@ export default function ProjectPicker(): ReactElement {
       setCollections((prev) => prev.map((c) => (c.id === col.id ? { ...c, ...entry } : c)));
       if (activeCollection?.id === col.id) setActiveCollection(entry);
     } catch { /* non-fatal */ }
+  }
+
+  // Add an existing text to the active collection (fix D-i).
+  async function handleAddExistingToCollection(p: ProjectEntry): Promise<void> {
+    if (!activeCollection) return;
+    await handleAddToCollection(p, activeCollection.id);
+    setShowAddText(false);
   }
 
   function openCollection(col: CollectionEntry): void {
@@ -643,6 +667,11 @@ export default function ProjectPicker(): ReactElement {
       const res = await fetch(`/api/projects/${encodeURIComponent(p.id)}`, { method: 'DELETE' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setProjects((prev) => prev.filter((x) => x.id !== p.id));
+      // Re-fetch collections so member counts reflect the deletion (fix E).
+      fetch('/api/collections')
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data: CollectionEntry[] | null) => { if (data) setCollections(data); })
+        .catch(() => { /* non-fatal */ });
     } catch (err) {
       window.alert(`Could not delete “${p.title}”: ${err instanceof Error ? err.message : 'unknown error'}`);
     }
@@ -720,13 +749,27 @@ export default function ProjectPicker(): ReactElement {
 
           <SectionLabel>My Collections</SectionLabel>
           {collections.map((c) => (
-            <NavRow
-              key={c.id}
-              icon={c.kind === 'derived' ? 'book' : 'columns'}
-              label={`${c.label} (${c.project_count})`}
-              active={activeCollection?.id === c.id}
-              onClick={() => openCollection(c)}
-            />
+            <div key={c.id} className="flex items-center group/col">
+              <div className="flex-1 min-w-0">
+                <NavRow
+                  icon={c.kind === 'derived' ? 'book' : 'columns'}
+                  label={`${c.label} (${c.project_count})`}
+                  active={activeCollection?.id === c.id}
+                  onClick={() => openCollection(c)}
+                />
+              </div>
+              <button
+                type="button"
+                aria-label={`Delete collection ${c.label}`}
+                onClick={() => handleDeleteCollection(c)}
+                className="shrink-0 mr-1 w-5 h-5 flex items-center justify-center rounded text-[#8a8a90] hover:text-[#ff453a] opacity-0 group-hover/col:opacity-100 transition-opacity"
+                title="Delete collection"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5" aria-hidden="true">
+                  <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6" />
+                </svg>
+              </button>
+            </div>
           ))}
           <NavRow icon="plus" label="New Collection" onClick={createCollection} />
         </nav>
@@ -745,15 +788,72 @@ export default function ProjectPicker(): ReactElement {
           <h1 className="text-[34px] font-bold tracking-tight text-white">
             {page === 'home' ? 'Home' : page === 'store' ? 'Book Store' : activeCollection ? activeCollection.label : 'All'}
           </h1>
-          <button
-            type="button"
-            onClick={() => setShowImport(true)}
-            className="mt-2 flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[13px] text-[#d6d6d8] hover:bg-white/[0.08] transition-colors"
-            title="Import a text"
-          >
-            <Icon name="plus" className="w-4 h-4" /> Import
-          </button>
+          <div className="mt-2 flex items-center gap-2">
+            {/* Add text to collection button — shown only in a collection view (fix D-i). */}
+            {page === 'library' && activeCollection && (
+              <button
+                type="button"
+                onClick={() => setShowAddText(true)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[13px] text-[#d6d6d8] hover:bg-white/[0.08] transition-colors"
+                title="Add an existing text to this collection"
+              >
+                <Icon name="plus" className="w-4 h-4" /> Add text…
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={() => setShowImport(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[13px] text-[#d6d6d8] hover:bg-white/[0.08] transition-colors"
+              title="Import a text"
+            >
+              <Icon name="plus" className="w-4 h-4" /> Import
+            </button>
+          </div>
         </div>
+
+        {/* Add-text-to-collection picker overlay (fix D-i). */}
+        {showAddText && activeCollection && (() => {
+          const memberIds = new Set(activeCollection.project_ids);
+          const candidates = projects.filter((p) => !memberIds.has(p.id));
+          return (
+            <div
+              className="fixed inset-0 z-[var(--z-overlay)] flex items-center justify-center bg-black/60"
+              onClick={() => setShowAddText(false)}
+            >
+              <div
+                className="relative w-[380px] max-h-[480px] rounded-xl bg-[#2a2a2c] ring-1 ring-white/15 shadow-2xl flex flex-col"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
+                  <span className="text-[14px] font-semibold text-white">Add text to "{activeCollection.label}"</span>
+                  <button
+                    type="button"
+                    onClick={() => setShowAddText(false)}
+                    className="w-7 h-7 rounded-full text-[#8e8e93] hover:text-white hover:bg-white/10 flex items-center justify-center"
+                    aria-label="Close"
+                  >✕</button>
+                </div>
+                <div className="overflow-y-auto flex-1 py-1">
+                  {candidates.length === 0 ? (
+                    <p className="px-4 py-4 text-[13px] text-[#8e8e93]">All texts are already in this collection.</p>
+                  ) : (
+                    candidates.map((p) => (
+                      <button
+                        key={p.id}
+                        type="button"
+                        onClick={() => handleAddExistingToCollection(p)}
+                        className="w-full text-left px-4 py-2.5 hover:bg-white/[0.08] transition-colors"
+                      >
+                        <span className="block text-[13px] text-white truncate">{p.title}</span>
+                        {p.author && <span className="block text-[11px] text-[#8e8e93] truncate">{p.author}</span>}
+                      </button>
+                    ))
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
         {page === 'home' ? (
           <HomeView
