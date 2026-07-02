@@ -1343,3 +1343,44 @@ def test_dr_layout_gated_off_below_min_books():
     # so it falls through to the generic pipeline instead of being mis-read as a Bible.
     text = "\n\n".join(["Genesis Chapter 1", "1:1. In the beginning.", "1:2. And the earth."])
     assert _dr_layout_sections(text, len(text), -1) is None
+
+
+def _dr_genre_layout_text() -> str:
+    """DR-format synthetic spanning several genre divisions, including a deuterocanonical book
+    (Tobias) to exercise the apocrypha flag. 8 books satisfy the _MIN_BIBLE_BOOKS gate."""
+    books = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Josue", "Tobias", "Isaias"]
+    blocks = []
+    for book in books:
+        for ch in range(1, 4):
+            blocks.append(f"{book} Chapter {ch}")
+            for v in range(1, 5):
+                blocks.append(f"{ch}:{v}. Verse {v} of chapter {ch} of {book}.")
+    return "\n\n".join(blocks)
+
+
+def test_dr_layout_emits_genre_divisions_and_apocrypha_flag():
+    text = _dr_genre_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    by_type: dict[str, list] = {}
+    for s in sections:
+        by_type.setdefault(s.type, []).append(s)
+
+    # Law (Genesis–Deuteronomy, 5 books) and Historical (Josue + Tobias, 2 books) are multi-book
+    # runs → containers; Isaias (Prophets-Major, lone) gets no container — its genre rides on the
+    # book to avoid a division span-identical to the book.
+    divisions = by_type.get("genre_division", [])
+    assert {d.label for d in divisions} == {"Law", "Historical"}
+    assert len(divisions) == 2
+
+    by_id = {s.id: s for s in sections}
+    law = next(d for d in divisions if d.label == "Law")
+    assert len([s for s in by_type["book"] if s.parent_id == law.id]) == 5
+
+    # The one deuterocanonical book carries the apocrypha flag AND its literary genre.
+    apoc = [s for s in by_type["book"] if s.metadata.get("apocrypha")]
+    assert len(apoc) == 1
+    assert apoc[0].metadata.get("genre") == "Historical"
+
+    # A lone-genre book conveys its genre via metadata without spawning a container.
+    isaias = next(s for s in by_type["book"] if s.metadata.get("genre") == "Prophets-Major")
+    assert by_id[isaias.parent_id].type != "genre_division"
