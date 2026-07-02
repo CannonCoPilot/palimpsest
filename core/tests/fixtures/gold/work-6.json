@@ -48,6 +48,29 @@
       "note": "Secondary grouping level. Runtime now resolves all 66 books on the corrected text."
     },
     {
+      "type": "genre_division",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 7,
+      "count_cue": "7 canonical-division containers over runs of >=2 consecutive same-genre books in Protestant order: Law (5), Historical, Wisdom-poetry, Prophets-Major, Prophets-Minor, Gospels, and Epistles (incl. Revelation). This 66-book canon has no deuterocanon, so — unlike the Douay-Rheims (8 divisions) — there are no apocrypha flags and no separate Machabees run (the DR's second Historical). A lone-genre run (Acts, between the Gospels and Epistles) carries its genre on the book itself rather than spawning a container. Counted by identity — the layout emits `genre_division` natively, so there is no PROXY entry.",
+      "exemplars": [
+        {
+          "start_anchor": "11 God created the heaven and the earth.",
+          "note": "Law division start (Genesis 1 argument)"
+        },
+        {
+          "start_anchor": "That Jesus is that Messiah, the Savior",
+          "note": "Gospels division start (Matthew argument)"
+        },
+        {
+          "start_anchor": "He first showeth on what authority his",
+          "note": "Epistles division start (Romans argument)"
+        }
+      ],
+      "note": "Secondary content-type grouping layer overlaid on the book structure (reported, not rated), mirroring the `book` annotation. Genre also rides on each book's metadata; a lone-genre run conveys its genre without a container."
+    },
+    {
       "type": "glossary",
       "mask": true,
       "start_anchor": "GLOSSARY\n\nWORD",

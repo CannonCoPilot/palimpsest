@@ -51,6 +51,33 @@
         "tile": true,
         "expected_count": 78
       }
+    },
+    {
+      "type": "genre_division",
+      "mask": false,
+      "structure": "repeating",
+      "role": "secondary",
+      "expected_count": 8,
+      "count_cue": "8 canonical-division containers, each wrapping a run of >=2 consecutive books of one literary genre: Law (5), Historical (OT historical books incl. the deuterocanonical Tobias/Judith), Wisdom-poetry, Prophets-Major, Prophets-Minor, a SECOND Historical run for the Machabees (which follow the prophets in Vulgate order and so form a separate contiguous run), Gospels, and Epistles (incl. the Apocalypse). A lone-genre run (Acts, between the Gospels and Epistles) carries its genre on the book itself rather than spawning a container span-identical to it. Counted by identity — the Bible layout emits `genre_division` natively, so there is no PROXY entry.",
+      "exemplars": [
+        {
+          "start_anchor": "God createth Heaven and Earth, and all things",
+          "note": "Law division start (Genesis 1 argument)"
+        },
+        {
+          "start_anchor": "The reign of Alexander and his successors",
+          "note": "second Historical division (1 Machabees) — Maccabees form a separate Historical run after the prophets"
+        },
+        {
+          "start_anchor": "The genealogy of Christ: he is conceived and",
+          "note": "Gospels division start (Matthew 1 argument)"
+        },
+        {
+          "start_anchor": "He commends the faith of the Romans, whom he",
+          "note": "Epistles division start (Romans argument)"
+        }
+      ],
+      "note": "Secondary content-type grouping layer overlaid on the book structure (reported, not rated), mirroring the `book` annotation. Deuterocanonical books additionally carry a parallel `apocrypha` flag in book.metadata — a flag, not a division, since the section tree is strict single-parent and a book cannot sit inside both a genre and an apocrypha container."
     }
   ],
   "map_status": "complete 2026-06-22: full materialized map = 9129 elements. Name lines and editorial apparatus are now split: `header` (1438 = 2 testament dividers + 73 canonical book names + 1363 chapter names) and `heading` (1434 = 73 book summaries + 1361 chapter arguments); legacy `chapter_heading` retired in this work's map. Book labels carry the clean ceremonial title only (run-on summaries split into `heading`). Still includes per-chapter `section` spans (1363) and the inline `footnotes` carve (1758) so `chapter` = verse content only (3039). Every char >=1 generic (body/volume/book/part/section) and >=1 specific mask-type; 100% two-layer. Structural masked set UNCHANGED by the reclassification (3040 spans / 600290 chars); the verse-number mask layer (union of 37210 per-verse number-token spans from the lazy verses.jsonl index — canonical `C:V.` plus the appendix books Prayer of Manasses, 3 & 4 Esdras incl. the Bensly fragment, and 1582 Abdias / Jude, in their bracket `[N]` / `A:N.` / bare-inline `N ` dialects) is unioned on top at serve/verify time, so the live masked set is 39007 spans / 830643 chars. See docs/development/audits/masking-map/."
