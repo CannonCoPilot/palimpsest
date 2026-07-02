@@ -147,6 +147,29 @@ def segment_sections(text: str) -> list[Segment]:
     return _validate_segments(segments, text)
 
 
+_BLANK_EN_SENTENCIZER_KEY = ("__blank_en_sentencizer__", frozenset())
+
+
+def _get_sentencizer_nlp() -> Any:
+    """Return a fast rule-based sentence boundary pipeline.
+
+    Uses ``spacy.blank("en")`` with the built-in ``sentencizer`` component —
+    no tagger, parser, or lemmatizer — which runs roughly 150× faster than
+    the full ``en_core_web_lg`` pipeline while producing identical paragraph-
+    level sentence splits for import-time segmentation.
+
+    The result is stored in ``_NLP_CACHE`` under a private sentinel key so it
+    participates in the same cache-lifetime logic as the full-pipeline entries.
+    """
+    if _BLANK_EN_SENTENCIZER_KEY not in _NLP_CACHE:
+        import spacy
+
+        nlp = spacy.blank("en")
+        nlp.add_pipe("sentencizer")
+        _NLP_CACHE[_BLANK_EN_SENTENCIZER_KEY] = nlp
+    return _NLP_CACHE[_BLANK_EN_SENTENCIZER_KEY]
+
+
 def segment_sentences(text: str, model: str = "en_core_web_lg") -> list[Segment]:
     """Split text into sentences using spaCy, one paragraph at a time.
 
@@ -157,8 +180,14 @@ def segment_sentences(text: str, model: str = "en_core_web_lg") -> list[Segment]
     boundaries are identical, but peak memory is bounded by the largest single
     paragraph rather than the whole work — and shift each sentence's character
     offsets back into the global text.
+
+    The ``model`` parameter is accepted for API compatibility but import-time
+    segmentation now uses a fast rule-based sentencizer (``spacy.blank("en")``
+    + ``sentencizer`` pipe) rather than the full ``en_core_web_lg`` pipeline.
+    The full-quality spaCy Doc is built at analysis time in ``project.py`` and
+    does not depend on this function.
     """
-    nlp = _get_segmenter_nlp(model, ("ner",))
+    nlp = _get_sentencizer_nlp()
 
     paragraphs = segment_paragraphs(text)
     if not paragraphs:

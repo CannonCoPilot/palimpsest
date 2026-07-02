@@ -435,6 +435,7 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
     sections: list[SectionBoundary] = []
     section_index = 0
     spine_offsets: dict[str, int] = {}
+    _parts_len: int = 0  # running total of len(parts) — avoids O(n²) sum() in loops
 
     spine_items = []
     for item_id, _ in book.spine:
@@ -450,7 +451,7 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
         if profile and should_skip_spine_item(item, profile):
             continue
 
-        spine_offsets[item.get_name()] = sum(len(p) for p in parts)
+        spine_offsets[item.get_name()] = _parts_len
         html_content = item.get_content()
         soup = BeautifulSoup(html_content, "html.parser")
 
@@ -481,8 +482,10 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
                 # but keep drop-cap initials intact (see _needs_separating_space).
                 if parts and _needs_separating_space(parts[-1], text_content):
                     parts.append(" ")
+                    _parts_len += 1
 
                 parts.append(text_content)
+                _parts_len += len(text_content)
 
             elif isinstance(elem, Tag):
                 heading_match = _HEADING_RE.match(elem.name)
@@ -492,9 +495,9 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
                     if heading_text and len(heading_text) < 500:
                         if parts and not parts[-1].endswith("\n\n"):
                             parts.append("\n\n")
-                        offset = sum(len(p) for p in parts)
+                            _parts_len += 2
                         sections.append(SectionBoundary(
-                            offset=offset,
+                            offset=_parts_len,
                             heading_text=heading_text,
                             heading_level=heading_level,
                             section_index=section_index,
@@ -505,8 +508,10 @@ def _assemble_text(book: Any, profile: Any = None) -> tuple[
                     if parts and parts[-1] and not parts[-1].endswith("\n\n"):
                         if parts[-1].endswith("\n"):
                             parts.append("\n")
+                            _parts_len += 1
                         else:
                             parts.append("\n\n")
+                            _parts_len += 2
 
     raw = "".join(parts)
 
