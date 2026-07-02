@@ -8,6 +8,7 @@ call-site/note-text links, and OPF publication metadata.
 from __future__ import annotations
 
 import logging
+import posixpath
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -159,7 +160,9 @@ def _extract_cover(book: Any) -> tuple[bytes | None, str]:
        which ebooklib surfaces as ITEM_COVER),
     2. the EPUB2 OPF <meta name="cover" content="ITEM_ID"> pointer,
     3. any manifest image whose name looks like a cover (the only strategy that
-       matches many real-world files — verified empirically).
+       matches many real-world files — verified empirically),
+    4. the image embedded in a title/cover front-matter page (many scans, e.g.
+       the 1599 Geneva Bible, ship the cover only as a titlepage <image>).
     """
     import ebooklib
 
@@ -197,6 +200,49 @@ def _extract_cover(book: Any) -> tuple[bytes | None, str]:
         if content:
             return content, getattr(item, "media_type", "") or ""
 
+    return _frontmatter_cover(book)
+
+
+def _frontmatter_cover(book: Any) -> tuple[bytes | None, str]:
+    """Return the image embedded in a title/cover front-matter page, or (None, "").
+
+    Fallback for EPUBs that declare no cover but render one as a titlepage image
+    (SVG <image> or <img>). Only front-matter spine docs whose name/id reads as a
+    cover/title page are scanned, so a decorative body image is never mistaken for
+    the cover. The referenced href is resolved against the manifest images.
+    """
+    import ebooklib
+
+    images = {it.get_name(): it for it in book.get_items_of_type(ebooklib.ITEM_IMAGE)}
+    if not images:
+        return None, ""
+    ref_re = re.compile(r'(?:src|xlink:href)\s*=\s*["\']([^"\']+)["\']', re.IGNORECASE)
+    front_keys = ("cover", "title", "front", "halftitle")
+    for spine_id, _ in getattr(book, "spine", []):
+        doc = book.get_item_with_id(spine_id)
+        if doc is None:
+            continue
+        name = doc.get_name().lower()
+        if not any(k in name or k in str(spine_id).lower() for k in front_keys):
+            continue
+        try:
+            html = doc.get_content().decode("utf-8", "replace")
+        except Exception:
+            continue
+        base = posixpath.dirname(doc.get_name())
+        for ref in ref_re.findall(html):
+            ref = ref.split("#")[0].strip()
+            if not ref:
+                continue
+            resolved = posixpath.normpath(posixpath.join(base, ref)) if base else ref
+            item = images.get(resolved) or images.get(ref) or next(
+                (im for nm, im in images.items()
+                 if posixpath.basename(nm) == posixpath.basename(resolved)), None)
+            if item is None:
+                continue
+            content = item.get_content()
+            if content:
+                return content, getattr(item, "media_type", "") or ""
     return None, ""
 
 

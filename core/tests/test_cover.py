@@ -46,6 +46,41 @@ def _build_epub(path: Path, *, with_cover: bool) -> Path:
     return path
 
 
+def _build_epub_titlepage_image(path: Path) -> Path:
+    """An EPUB with NO declared cover, but a titlepage that embeds an image via
+    an SVG <image> (the 1599 Geneva Bible shape). The image name has no "cover"
+    substring, so only the front-matter fallback — not the name heuristic — finds it.
+    """
+    from ebooklib import epub
+
+    book = epub.EpubBook()
+    book.set_identifier("titlepage-image-test")
+    book.set_title("Titlepage Image Book")
+    book.set_language("en")
+    book.add_author("Test Author")
+
+    img = epub.EpubItem(uid="img0", file_name="images/00004.png",
+                        media_type="image/png", content=_PNG_1x1)
+    book.add_item(img)
+    titlepage = epub.EpubHtml(title="Title", file_name="titlepage.xhtml", lang="en")
+    titlepage.content = (
+        '<html xmlns="http://www.w3.org/1999/xhtml"><body><div>'
+        '<svg xmlns="http://www.w3.org/2000/svg" '
+        'xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1 1">'
+        '<image xlink:href="images/00004.png"/></svg></div></body></html>'
+    )
+    book.add_item(titlepage)
+    chapter = epub.EpubHtml(title="Chapter 1", file_name="chap_01.xhtml", lang="en")
+    chapter.content = _BODY
+    book.add_item(chapter)
+    book.add_item(epub.EpubNcx())
+    book.add_item(epub.EpubNav())
+    book.toc = (chapter,)
+    book.spine = [titlepage, chapter]
+    epub.write_epub(str(path), book)
+    return path
+
+
 @pytest.fixture
 def epub_with_cover(tmp_path: Path) -> Path:
     return _build_epub(tmp_path / "with-cover.epub", with_cover=True)
@@ -54,6 +89,11 @@ def epub_with_cover(tmp_path: Path) -> Path:
 @pytest.fixture
 def epub_without_cover(tmp_path: Path) -> Path:
     return _build_epub(tmp_path / "no-cover.epub", with_cover=False)
+
+
+@pytest.fixture
+def epub_titlepage_image(tmp_path: Path) -> Path:
+    return _build_epub_titlepage_image(tmp_path / "titlepage-image.epub")
 
 
 def test_cover_extension_mapping():
@@ -75,6 +115,22 @@ def test_parse_epub_without_cover_is_none(epub_without_cover):
     result = parse_epub(epub_without_cover)
     assert result.cover_image is None
     assert result.cover_media_type == ""
+
+
+def test_parse_epub_extracts_titlepage_image(epub_titlepage_image):
+    # No declared cover: the fallback pulls the image out of the titlepage.
+    result = parse_epub(epub_titlepage_image)
+    assert result.cover_image == _PNG_1x1
+    assert result.cover_media_type == "image/png"
+
+
+def test_ingest_persists_titlepage_cover(epub_titlepage_image, tmp_path):
+    workspace = tmp_path / "ws"
+    workspace.mkdir()
+    project = ingest_file(epub_titlepage_image, workspace)
+    meta = json.loads((project.path / "metadata.json").read_text())
+    assert meta.get("cover") == "cover.png"
+    assert (project.path / "cover.png").is_file()
 
 
 def test_ingest_persists_cover_file_and_metadata(epub_with_cover, tmp_path):
