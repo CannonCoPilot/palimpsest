@@ -1384,3 +1384,76 @@ def test_dr_layout_emits_genre_divisions_and_apocrypha_flag():
     # A lone-genre book conveys its genre via metadata without spawning a container.
     isaias = next(s for s in by_type["book"] if s.metadata.get("genre") == "Prophets-Major")
     assert by_id[isaias.parent_id].type != "genre_division"
+
+
+# --- Cross-dialect mask-type parity ------------------------------------------------------
+#
+# The Gold-Set requirement: every Bible edition must be *checked for the same set of
+# mask-types*, structural and content-type alike. All three editions delegate to one engine
+# (`_versed_bible_layout`), so this holds by construction — these tests pin it against
+# regression. Each renders the SAME logical Bible (front matter + 9 books spanning three
+# genres with two multi-book runs and one lone-genre book + a glossary back matter) in its own
+# verse dialect, then asserts the emitted type vocabulary is identical across all three.
+
+# Books span Law (5 → container), Historical (3 → container) and Prophets-Major (1 → lone),
+# so genre_division containers and a lone-genre book both appear. Each dialect uses the book
+# spelling its own detector recognises.
+_PARITY_BOOKS = {
+    "dr":     ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Josue", "Judges", "Ruth", "Isaias"],
+    "geneva": ["GENESIS", "EXODUS", "LEVITICUS", "NUMBERS", "DEUTERONOMY", "JOSHUA", "JUDGES", "RUTH", "ISAIAH"],
+    "kjv":    ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth", "Isaiah"],
+}
+
+_PARITY_FRONT = "THE HOLY BIBLE\n\nFaithfully translated. This preface stands before any book."
+_PARITY_BACK = "GLOSSARY\n\nAmen: so be it — a closing note that follows the last verse."
+
+# The full structural + content-type vocabulary a scripture edition is checked for.
+_BIBLE_MASK_VOCAB = {
+    "front_matter", "body", "back_matter",
+    "genre_division", "book", "chapter_heading", "chapter",
+}
+
+
+def _parity_bible_text(dialect: str) -> str:
+    """Render the parity Bible in one verse dialect, wrapped in front + back matter."""
+    blocks = [_PARITY_FRONT]
+    for book in _PARITY_BOOKS[dialect]:
+        if dialect in ("geneva", "kjv"):
+            blocks.append(book)  # bare book-name line (DR folds the name into its heading)
+        for ch in range(1, 4):
+            if dialect == "dr":
+                blocks.append(f"{book} Chapter {ch}")
+            elif dialect == "geneva":
+                blocks.append(f"{ch} Argument for chapter {ch} of {book.title()}.")
+            else:  # kjv
+                blocks.append(f"{book} {ch}")
+            for v in range(1, 5):
+                if dialect == "dr":
+                    blocks.append(f"{ch}:{v}. Verse {v} of chapter {ch}.")
+                elif dialect == "geneva":
+                    blocks.append(f"{v}{_NBSP} Verse {v} of chapter {ch} prose text.")
+                else:  # kjv
+                    blocks.append(f"{v} Verse {v} of chapter {ch} prose text here.")
+    blocks.append(_PARITY_BACK)
+    return "\n\n".join(blocks)
+
+
+@pytest.mark.parametrize("dialect", ["dr", "geneva", "kjv"])
+def test_bible_dialect_emits_full_mask_vocabulary(dialect):
+    text = _parity_bible_text(dialect)
+    sections = detect_layout_sections([], len(text), -1, text)
+    assert sections, f"{dialect} layout returned None"
+    validate_section_tree(sections)  # raises if the tree is malformed
+    assert {s.type for s in sections} == _BIBLE_MASK_VOCAB
+
+
+def test_all_three_bibles_check_identical_mask_types():
+    """The direct encoding of the Gold-Set parity requirement: DR, Geneva and KJV emit the
+    identical structural + content-type mask vocabulary from equivalent scripture content."""
+    vocab = {}
+    for dialect in ("dr", "geneva", "kjv"):
+        text = _parity_bible_text(dialect)
+        sections = detect_layout_sections([], len(text), -1, text)
+        assert sections, f"{dialect} layout returned None"
+        vocab[dialect] = {s.type for s in sections}
+    assert vocab["dr"] == vocab["geneva"] == vocab["kjv"] == _BIBLE_MASK_VOCAB
