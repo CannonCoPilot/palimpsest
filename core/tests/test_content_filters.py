@@ -188,11 +188,19 @@ class TestSkipSpineItem:
         return item
 
     def test_skip_file_pattern_match(self):
+        profile = ContentProfile(name="t", skip_file_patterns=["split_003"])
         item = self._item("split_003.xhtml")
-        assert should_skip_spine_item(item, PROFILE_GENEVA) is True
+        assert should_skip_spine_item(item, profile) is True
 
     def test_skip_file_pattern_no_match(self):
+        profile = ContentProfile(name="t", skip_file_patterns=["split_003"])
         item = self._item("chapter_44.xhtml")
+        assert should_skip_spine_item(item, profile) is False
+
+    def test_geneva_keeps_all_spine_files(self):
+        # The corrected Geneva profile skips no spine file: the split it once dropped also holds
+        # tail-chapter verse text (Matthew 27-28), so skipping truncated the Gospels.
+        item = self._item("split_003.xhtml")
         assert should_skip_spine_item(item, PROFILE_GENEVA) is False
 
 

@@ -47,6 +47,12 @@ PROFILE_TYNDALE = ContentProfile(
     ],
 )
 
+# Geneva footnote/cross-reference paragraph classes. ``second_scripture``/``fn-sub``/``fn_line``
+# are footnote-only paragraphs; ``midtx``/``midtx1``/``midtx2`` are marginal cross-references
+# ("a Luke 3:23"). Stripping these leaves the chapter-verse (verse text) and chapter (argument)
+# paragraphs — the analyzable frame — matching the Douay-Rheims clean-text standard.
+_GENEVA_NOTE_CLASSES = ("second_scripture", "fn-sub", "fn_line", "midtx", "midtx1", "midtx2")
+
 PROFILE_GENEVA = ContentProfile(
     name="bible-geneva",
     strip_selectors=[
@@ -54,8 +60,12 @@ PROFILE_GENEVA = ContentProfile(
         ElementSelector(tag="a", id_pattern=re.compile(r"MIDDLENOTE")),
         # Verse numbers inside calibre5 sups: <sup class="calibre5"><span class="bold1">1</span></sup>
         ElementSelector(tag="sup", classes=frozenset({"calibre5"}), text_pattern=re.compile(r"^\s*[\d,\s]+$")),
+        *(ElementSelector(tag="p", classes=frozenset({c})) for c in _GENEVA_NOTE_CLASSES),
     ],
-    skip_file_patterns=["split_003"],
+    # Keep every spine file: the old skip_file_patterns=["split_003"] dropped a file that also
+    # holds tail-chapter verse text (Matthew 27-28), truncating the Gospels. The footnote content
+    # that motivated the skip is removed above by paragraph-class stripping instead.
+    skip_file_patterns=[],
 )
 
 PROFILE_DOUAY_RHEIMS = ContentProfile(

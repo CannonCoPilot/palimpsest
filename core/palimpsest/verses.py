@@ -233,15 +233,145 @@ def _appendix_verses(text: str) -> list[dict[str, Any]]:
     return out
 
 
+# --- Geneva (1599) verse detection --------------------------------------------------------
+#
+# The 1599 Geneva Bible prints no line-anchored "C:V." markers and no "Chapter N" headings, so
+# neither the canonical nor the appendix pass sees it. Instead each verse is its own paragraph,
+# line-anchored "<num>\xa0 <prose>" — the verse number followed by a NON-BREAKING SPACE (U+00A0),
+# which the chapter *argument* paragraphs (digit + a regular space) never use, so the two never
+# collide. A chapter carries no printed heading: it is a run of verses whose numbering starts at
+# 1 and increases; the next reset to 1 begins the next chapter. Book names print as bare
+# upper-case lines ("MATTHEW") or wrapper blocks ("THE FIRST BOOK OF MOSES, CALLED\nGENESIS").
+_GENEVA_VERSE_LINE = re.compile(r"(?m)^(\d{1,3})\xa0+[ \t]*")
+_GENEVA_MIN_CHAPTERS = 20  # this many reset-anchored verse runs ⇒ Geneva-style scripture
+_GENEVA_MIN_CHAPTER_VERSES = 2  # a real chapter has ≥2 verses; filters stray front-matter numerals
+# An upper-case standalone line naming a book. Geneva prefixes many name lines with a stray "1 "
+# print artifact ("1 GENESIS", "1 PSALMS", "1 CHRONICLES,"), so an optional leading numeral is
+# consumed before the name. The wrapper block that introduces an ordinal ("THE FIRST BOOK OF … /
+# SAMUEL") is itself an upper-case line, so it is captured as the *preceding* caps line.
+_GENEVA_CAPS_LINE = re.compile(r"(?m)^(?:\d{1,3}[ \xa0]+)?([A-Z][A-Z0-9 ,.'’&-]{1,45})$")
+_GENEVA_ORDINAL_WORD = re.compile(r"\b(FIRST|SECOND|THIRD|FOURTH)\b")
+_GENEVA_ORD_VALUE = {"FIRST": "1", "SECOND": "2", "THIRD": "3", "FOURTH": "4"}
+# Only these bases are actually numbered in the canon. Gates out false ordinals: "THE FIRST BOOK
+# OF MOSES, CALLED GENESIS" numbers the Pentateuch, not Genesis, so Genesis must not become
+# "1 Genesis"; likewise "THE 1 GENERAL EPISTLE OF JAMES" must stay "James".
+_GENEVA_NUMBERED_BASES = frozenset({
+    "samuel", "kings", "chronicles", "paralipomenon", "corinthians", "thessalonians",
+    "timothy", "peter", "john", "esdras", "maccabees", "machabees",
+})
+
+
+def _geneva_book_headers(text: str) -> list[tuple[int, str]]:
+    """(position, display-name) for Geneva book-name lines, in document order.
+
+    Matches standalone upper-case lines against the scripture-book lexicon. For a canonically
+    numbered book (1/2 Samuel, 1/2/3 John, …) an ordinal *word* in the immediately preceding
+    wrapper line ("THE SECOND EPISTLE OF … / JOHN") is folded in so the members stay distinct;
+    the ordinal is applied only to numbered bases, so the Pentateuch's "FIRST BOOK OF MOSES" and
+    a stray "1" artifact never mis-number Genesis or James. Non-book caps lines (front-matter
+    titles, Psalm 119 Hebrew acrostic labels) don't match the lexicon and are dropped.
+    """
+    from palimpsest.layout import _match_bible_book
+
+    prev_line = ""
+    out: list[tuple[int, str]] = []
+    for m in _GENEVA_CAPS_LINE.finditer(text):
+        line = m.group(1).strip()
+        name = _match_bible_book(line)
+        # Song of Solomon prints its title across three lines ("AN 1 EXCELLENT / SONG / WHICH WAS
+        # SOLOMON'S"); the bare "SONG" line isn't in the lexicon, so recover it from the SOLOMON
+        # that follows.
+        if not name and line == "SONG" and "SOLOMON" in text[m.end():m.end() + 60]:
+            name = "Song of Solomon"
+        if name and not name[0].isdigit() and name.lower() in _GENEVA_NUMBERED_BASES:
+            om = _GENEVA_ORDINAL_WORD.search(prev_line)
+            if om:
+                name = f"{_GENEVA_ORD_VALUE[om.group(1)]} {name}"
+        if name:
+            out.append((m.start(), name))
+        prev_line = line
+    return out
+
+
+def _geneva_verses(text: str) -> list[dict[str, Any]]:
+    """One record per Geneva "<num>\\xa0 <prose>" verse, chaptered by verse-number resets.
+
+    Returns ``[]`` unless the text carries enough reset-anchored verse runs to be Geneva-style
+    scripture (so this pass is inert for every other corpus). Verse numbers reset to 1 at each
+    chapter; chapters are numbered sequentially within each book. The masked ``num`` token spans
+    the number plus its trailing non-breaking/regular spaces, mirroring the canonical ``C:V. ``
+    span so the verse prose stays analyzable.
+    """
+    markers = [(m.start(), m.end(), int(m.group(1))) for m in _GENEVA_VERSE_LINE.finditer(text)]
+    if not markers:
+        return []
+
+    # Group into chapters by verse-number resets: a chapter is a maximal run of increasing verse
+    # numbers. A marker that does not exceed its predecessor starts a new chapter — normally a
+    # reset to 1, or to 2 when the chapter's first verse is unnumbered (Obadiah embeds verse 1 in
+    # its argument; 19 Proverbs chapters and 3 of Lamentations print no verse-1 numeral). The
+    # decrementing print-run grids on the copyright page ("12 … 8 … 7") fall into length-1 runs.
+    # Runs shorter than the minimum are discarded.
+    runs: list[list[tuple[int, int, int]]] = []
+    cur: list[tuple[int, int, int]] = []
+    for mk in markers:
+        if cur and mk[2] <= cur[-1][2]:
+            runs.append(cur)
+            cur = []
+        cur.append(mk)
+    if cur:
+        runs.append(cur)
+    chapters = [r for r in runs if len(r) >= _GENEVA_MIN_CHAPTER_VERSES]
+    if len(chapters) < _GENEVA_MIN_CHAPTERS:
+        return []
+
+    headers = _geneva_book_headers(text)
+    records: list[dict[str, Any]] = []
+    hi = 0
+    cur_book = ""
+    chapter_in_book = 0
+    for run in chapters:
+        c_start = run[0][0]
+        # Advance the book cursor to the latest header preceding this chapter; a new book resets
+        # the per-book chapter counter.
+        while hi < len(headers) and headers[hi][0] <= c_start:
+            if headers[hi][1] != cur_book:
+                cur_book = headers[hi][1]
+                chapter_in_book = 0
+            hi += 1
+        chapter_in_book += 1
+        for k, (ns, num_end, verse) in enumerate(run):
+            nxt = run[k + 1][0] if k + 1 < len(run) else None
+            para_end = text.find("\n\n", num_end)
+            if para_end < 0:
+                para_end = len(text)
+            text_end = min(nxt, para_end) if nxt is not None else para_end
+            records.append({
+                "book": cur_book,
+                "chapter": chapter_in_book,
+                "verse": verse,
+                "num_start": ns,
+                "num_end": num_end,
+                "text_start": num_end,
+                "text_end": text_end,
+            })
+    return records
+
+
 def detect_verses(text: str) -> list[dict[str, Any]]:
     """Verse index records for ``text``, in document order.
 
     Returns ``[{book, chapter, verse, num_start, num_end, text_start, text_end}]`` covering the
-    canonical line-anchored ``C:V.`` verses and the Douay-Rheims appendix books. ``book`` is the
-    most recent preceding chapter-heading's book name (``""`` if none); ``chapter`` is an int,
-    except the Bensly fragment's ``"A"``.
+    canonical line-anchored ``C:V.`` verses, the Douay-Rheims appendix books, and the Geneva
+    ``<num>\\xa0`` verse dialect. ``book`` is the most recent preceding book heading's name
+    (``""`` if none); ``chapter`` is an int, except the Bensly fragment's ``"A"``.
     """
     records = _canonical_verses(text) + _appendix_verses(text)
+    # Geneva prints no "C:V." markers, so the canonical/appendix passes yield nothing for it. Fall
+    # back to the Geneva dialect only then, so a corpus already resolved by the DR passes is
+    # untouched and the Geneva pass stays inert for everything else (it self-gates on run density).
+    if not records:
+        records = _geneva_verses(text)
     records.sort(key=lambda r: (r["num_start"], r["text_start"]))
     return records
 
