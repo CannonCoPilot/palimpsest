@@ -4,7 +4,7 @@
 **Corpus for this run:** KJV, Douay-Rheims (DR), and 1599 Geneva Bibles → extract **Matthew** and **Mark** from each → 6 subtext projects → 1 collection.
 **Scope:** every capability from import to N-way corpus analysis, labeled by build status, with the genomics analogue and the exact click-path for each.
 
-> This guide complements `docs/development/WALKTHROUGH.md` (which covers only the single-text Wave-0 flows and predates the Collections tier). Everything below is current as of the C1–C7 collections build + the 2026-07-01 audit-remediation pass.
+> This guide complements `docs/development/WALKTHROUGH.md` (which covers only the single-text Wave-0 flows and predates the Collections tier). Everything below is current as of the C1–C7 collections build + the full 2026-07-01 audit remediation (clusters #11–#14, all shipped) at `HEAD` `46b5283`. Status tags reflect that post-remediation state — a 🟡/🔧 tag is a genuine open item, not in-flight churn.
 
 ---
 
@@ -238,7 +238,7 @@ The **self-alignment dotplot**: an N×N chunk-similarity heatmap with LASTZ-styl
 
 Reach it via the **TextHiC tab** (Alt+3) or press `d`. Because it consumes `self_similarity`, you must **Configure** that track first (Analysis → self_similarity → Configure…) binding a chunk layer (+ optional repeat-mask + embedding). Empty state: "Self-similarity matrix not available. Run analysis first."
 
-🟡 **BUILT/verify:** the matrix + alignments render live; but see §7 — the "Run analysis first" empty state is a **dead-end with no in-place CTA** (KNOWN GAP 🔧, audit item) — you must independently go to the Analysis tab.
+🟡 **BUILT/verify:** the matrix + alignments render live. The former empty-state dead-end was **fixed (audit #12f, `050cd68`)**: the "matrix not available" state now shows a **"Compute in the Analysis tab →" CTA**, and the palette/zoom/export toolbar stays hidden until a matrix loads. (You still navigate to Analysis to run `self_similarity`; the CTA now points the way instead of leaving you stranded.)
 
 **▷ Probe & note:** With `word_overlap` on a gospel, do refrains show as off-diagonal streaks? Does the anti-diagonal (chiasmus) detection surface anything in, say, Matthew's genealogy or the Sermon? Is the identity % honest vs the visual streak length?
 
@@ -256,21 +256,22 @@ Entity index + interaction matrix. Sortable table (Name/Mentions/Type/Distributi
 
 **Genomics analogue:** whole-genome alignment. This is a single WGA between two "assemblies" (two books). Everything here is `R(A,B)`.
 
-### 4.1 Setup  ✅ / 🟡
-Open one book, then in Compare pick a second via the **CompareProjectPicker** (a collection-scope dropdown narrows candidates to co-members — e.g. scope to your gospel collection, then pick DR-Matthew as the partner for KJV-Matthew). Choose a **method** — **Semantic (SBERT)** / **Alphabet** / **Word overlap** — and click **Align**.
+### 4.1 Setup  ✅
+Open one book, then in Compare pick a second via the **CompareProjectPicker** (a collection-scope dropdown narrows candidates to co-members — e.g. scope to your gospel collection, then pick DR-Matthew as the partner for KJV-Matthew). Choose a **method** — **Semantic (embeddings)** / **Alphabet** / **Word overlap** — and click **Align**.
 
 - Semantic is **409-gated** on embedding congruence: both texts must share an embedding space (same model fingerprint), or it fails loud with a reconcile pointer. Word/alphabet are token-only, ungated.
-- 🟡 **Just fixed this session (audit #12a):** Compare now **auto-loads any alignment already on disk** when you pick a partner, so Alignment/Synteny/Circos/Diff reflect existing results instead of showing a false "Ready to align." Previously it hid completed alignments behind an empty state and forced a redundant re-Align.
+- ✅ The method label reads **"Semantic (embeddings)"** — corrected from "Semantic (SBERT)" (audit #309, `5539427`): the backend uses Qwen3-Embedding-4B/cosine, not SBERT. When you load an existing alignment, the dropdown now **syncs to the method that actually produced the on-disk records** (#12i), so it can't claim "Semantic" while a word-overlap matrix is on screen.
+- ✅ **Fixed (audit #12a, `3d779e4`):** Compare **auto-loads any alignment already on disk** when you pick a partner, so Alignment/Synteny/Circos/Diff reflect existing results instead of a false "Ready to align." (Previously it hid completed alignments behind an empty state and forced a redundant re-Align.)
 
 ### 4.2 The five sub-views
 
 | Sub-view | Shows | Genomics analogue | Status |
 |---|---|---|---|
 | **Alignment** ✅ | Split query/target panes with SVG ribbons connecting aligned passages; click a ribbon → scroll both. | Aligned-block ribbon view. | SHIPPED |
-| **Dotplot** 🟡 | N×M cross-similarity **heatmap**; palette; **score-threshold slider**; **PAF export** link; wheel-zoom. | The M×N chunk-distance heatmap. | See gaps below |
-| **Synteny** ✅ | Two stacked linear tracks + trapezoid ribbons between aligned blocks. | Synteny/collinearity plot. | SHIPPED |
-| **Circos** ✅ | Circular arcs; comparative mode = concentric rings + ribbons; click → Alignment. | Circos chord diagram. | SHIPPED |
-| **Diff** ✅ | Auto-run paragraph diff; added/removed/changed with a summary bar. | Variant/edit call between two near-identical assemblies. | SHIPPED |
+| **Dotplot** ✅ | N×M cross-similarity **heatmap**; palette; **score-threshold slider**; **color legend + honest metric caption** (new, #12b-d); **PAF export** link; wheel-zoom. | The M×N chunk-distance heatmap. | SHIPPED (see §4.5) |
+| **Synteny** ✅ | Two stacked linear tracks + trapezoid ribbons between aligned blocks; **gated on records** so it no longer draws bare output on zero alignments. | Synteny/collinearity plot. | SHIPPED |
+| **Circos** ✅ | Circular arcs; comparative mode = concentric rings + ribbons; click → Alignment; **gated on records** (no more bare rings reading as a false null). | Circos chord diagram. | SHIPPED |
+| **Diff** ✅ | Auto-run paragraph diff (**fixed LCS + character-diff, method-independent** — now stated in a banner); added/removed/changed with a summary bar. | Variant/edit call between two near-identical assemblies. | SHIPPED |
 
 ### 4.3 The heatmap-vs-dotplot distinction (important, and a genomicist will care)  ✅ design / 🟡 build
 
@@ -284,19 +285,22 @@ They inter-map through character coordinates (alignment streaks overlay the heat
 - **Gumbel p-values** are computed for the word & semantic methods (calibrated by shuffling); the `/scores` endpoint returns the score/identity distribution + a **suggested threshold (p75)**, with an honest note that raw score is length-proportional while identity is scale-free.
 - **PAF export** (`/export.paf`) writes minimap2's real 12-column pairwise format with tags `AS:i` (score), `pv:f` (p-value), `id:f` (identity), `mt:Z` (method); mapping quality = Phred-scaled p-value. This is the genuine interop point — you can pull cross-text alignments into genomics tooling.
 
-### 4.5 Known gaps in Compare (audit #12 — several in flight this session)  🔧
-Record these; they are flagged findings, not your error:
-- 🟡 **Dotplot has no color legend and no metric label** — blue intensity is unmapped to any value/method (the self-similarity `DotplotView` *does* render a 0→1 legend; the comparative one doesn't). **Fix in progress this session (#12b).**
-- 🔧 The dotplot **clamps cosine [−1,1]→[0,1]** and a legend would need to say so honestly; and a hidden `value < 0.1` floor drops ~80% of cells with no annotation.
-- 🔧 **Method-mismatch honesty:** the matrix can render `word_overlap` while the dropdown says "Semantic (SBERT)."
-- 🔧 **Circos/Synteny/Diff empty states** lack an inline "Run alignment" button (the only run control is the header **Align**); Circos draws bare rings on zero records that read like a null result rather than "not run yet."
-- 🔧 **Diff** ignores the selected method and reports near-identical translations as ~all-changed.
+### 4.5 Compare — audit #12 fixes (now shipped) + residual honest caveats  ✅
+The audit #12 cluster that was in-flight when this guide was first drafted has **shipped** (commits `50c1420`, `050cd68`, `3d779e4`). What changed:
+- ✅ **Dotplot now has a color legend + honest metric caption** (#12b-d, `50c1420`). The caption is inferred from the records' method and states the domain: `cosine · negatives clamped to 0` / `word-overlap (Jaccard) · 0–1` / `alphabet similarity · 0–1`, plus a hidden-cell disclosure. The cosine clamp `[−1,1]→[0,1]` (negatives floor to the 0-end color, losing the sign) is now **declared in the caption** rather than silent.
+- ✅ **Method-honesty** (#12i): the dropdown syncs to the method that actually produced the loaded records, so it can no longer show "Semantic (embeddings)" over a word-overlap matrix.
+- ✅ **Empty-state CTAs** (#12e): the "Ready to align" state now carries a **`Run {method} alignment` button** that also covers the ran-but-empty case ("this method produced no aligned regions — pick another"). **Synteny/Circos are gated on records** so they no longer render bare/confusing output at zero alignments.
+- ✅ **Diff method banner** (#12h): a banner states the edition diff is a fixed LCS + character-diff, **independent of the toolbar method** — so across translations (or where verse numbering differs) "most paragraphs read as changed" is labeled as *expected*, not a bug.
+
+**Residual honest caveats worth your eye** (behavior is now labeled, but the methodology is still worth judging):
+- 🔧 The dotplot's cosine **sign-loss** is disclosed but not *fixed* — a diverging palette centered at 0 would preserve it. Note whether the clamp costs you anything on the semantic matrix.
+- 🔧 §4.3's **heatmap-vs-dotplot** distinction still holds: the "Dotplot" tab is a *heatmap renderer*; a true thresholded local-alignment dotplot (score-cutoff on seed-extend) is the intended second product.
 
 **▷ Probe & note (Part 4):**
 - Align **KJV-Matthew vs DR-Matthew** with `word` and with `semantic`. Does the metric-gap signal (embedding-high ∧ lexical-low ⇒ paraphrase/translation; both-high ⇒ verbatim) hold? This is the synonymous-vs-identical-substitution analogue and is the crux of translation analysis.
 - Align **Matthew vs Mark** (same Bible). Synoptic parallels should show as strong local diagonals amid large indels (Matthew's non-Markan material). Do the anti-diagonals ever fire (cross-gospel chiasmus)?
 - Export a PAF and sanity-check the columns/tags against minimap2's spec.
-- Without a legend, can you actually read the dotplot? (This is the #12b motivation — your reaction is useful signal.)
+- The dotplot now has a legend + metric caption (#12b-d) — does the caption correctly name the metric/domain, and is the cosine sign-clamp disclosure (`negatives clamped to 0`) something you'd want handled with a diverging palette instead?
 
 ---
 
@@ -304,12 +308,12 @@ Record these; they are flagged findings, not your error:
 
 **Genomics analogue:** comparative/pangenome genomics. This is the N-way alignment set over all six books (or a per-gospel sub-collection). Reach it via the **Corpus tab** (Alt+7). Pick a collection (only ≥2-member collections appear). The header shows a **CongruenceBadge** and **core/shell/singleton** class counts.
 
-> 🟡 Recently fixed (audit #11, this session): member labels across the whole Corpus workbench now show **project titles** ("KJV — Matthew") instead of opaque slugs ("…chapter-in-book-0047"). If you still see slugs anywhere, note it.
+> ✅ Fixed (audit #11): member labels across the whole Corpus workbench now show **project titles** ("KJV — Matthew") instead of opaque slugs ("…chapter-in-book-0047"). If you still see slugs anywhere, note it.
 
 ### 5.1 The corpus graph — build it first  ✅ (C3)
 Selecting a collection triggers a **build** of the reference-free corpus graph: `POST /api/collections/{id}/corpus-graph`. Under the hood: nodes are merged paragraph anchors per member; edges are the C2 pairwise alignment records; a **union-find** groups anchors into **homology components**, each classified **core** (all members) / **shell** (some) / **singleton** (one) — the core/accessory/cloud pangenome exactly. Proven invariant: aligned components are never singletons; singletons arise only from unaligned gaps.
 
-🔧 **KNOWN GAP (audit item j):** this build **POSTs automatically on collection selection with no cost confirmation**, which is inconsistent with the app's "never auto-run costed ops" contract. Note it.
+✅ **Fixed (audit #12j, `4faedef`):** the workbench is now **GET-first** — it reads a persisted graph for free and only **POST-builds when none exists yet (404)**; re-root and revisit never rebuild. The costed C5 cross-member scans (**corpus-repeats**, **root-track**) were also moved off the auto-select path — they now **load lazily when their Corpus/Masking sub-tab opens**, so landing on Overview no longer triggers a ~30 s scan. (The one-time first build is still un-gated by a cost dialog; that's the remaining sliver of the "never auto-run costed ops" contract — note whether the first-selection build surprises you.)
 
 ### 5.2 The seven sub-tabs
 
@@ -357,7 +361,7 @@ Cross-text mask/annotation projection A→B across the alignment (`POST /api/col
 | Guarantee | What it means | Where to test |
 |---|---|---|
 | **Fail-loud** (NFR-3) | Invalid params → 400; incongruent metric → 409; unplaceable coordinate → `UnmappedCoordinateError`. No silent fallback. | Try a semantic align on un-embedded texts (expect 409); a bad chunk config (expect 400). |
-| **Cost transparency** (NFR-4) | Embedding/probe/reconcile never auto-run; a CostDialog/pre-run estimate gates them. | Every embedding-dependent action. (Exception 🔧: corpus-graph build auto-fires — §5.1.) |
+| **Cost transparency** (NFR-4) | Embedding/probe/reconcile never auto-run; a CostDialog/pre-run estimate gates them. | Every embedding-dependent action. (Narrowed exception 🔧: the **first** corpus-graph build still auto-fires without a cost dialog; reads/re-roots are now free and the costed C5 scans load lazily — §5.1.) |
 | **Non-destructive versioning** (FR-41) | Re-runs are kept as tagged versions; only **structural/content masks** are ground-truth and supersede. | Re-run a track; check versions accumulate. |
 | **Provenance** (NFR-2) | Every layer stamped with a `.run.json`; no hidden output-affecting value. | Layer manager provenance. |
 | **Honest viz** (NFR-7) | Descriptive-not-inferential framing; no faked progress; caveats travel to the point of display (e.g. "approximate boundaries", "recall n/a"). | Sweep recall, LASTZ boundary labels, diffusion's non-directional note. |
@@ -369,24 +373,34 @@ Cross-text mask/annotation projection A→B across the alignment (`POST /api/col
 
 ### 7.1 Stubs / dead-ends (note if they trip you)  🔧
 - **ProjectPicker sidebar rows** Started / Finished / Novels / Translations / Papers / Scholars — **non-functional** (no onClick). Only "All" and your Collections filter.
-- **Home "Analysis tools" grid omits Corpus** — only 6 of 7 tabs launch from Home; Corpus is reachable only via the tab bar.
+- ✅ **Home now launches Corpus** — the "Analysis tools" grid gained the Corpus tile (audit #12g, `050cd68`); all 7 tabs launch from Home. (Was: Corpus reachable only via the tab bar.)
 - **Sentiment = VADER only** (Hedonometer withheld).
 - **self_similarity = Configure-only** (no bare Compute).
-- **Empty-state dead-ends without CTAs:** TextHiC ("Run analysis first"), Profile, Representations/Explore — you must independently go compute the track.
+- **Empty-state guidance (partially fixed):** ✅ TextHiC now has a "Compute in the Analysis tab →" CTA (#12f). Still guide-text-only (no one-click compute button): **Profile** ("Run the profile track") and **Representations** ("No embedding layers yet. Run an embedding track…") — informative, but they don't run the track for you.
 - **UMAP** → 400 (PCA only), by design.
 - **Text-level profile** has no HTTP endpoint (track + file only).
+- 🔧 **`edge_min_score` homology gate is API/CLI-only** — the #13 score gate (§7.3) is *not* surfaced as a browser control, so from the UI the corpus graph always builds at the default (`edge_min_score=0.0`, no score gate). Exposing it is an open enhancement.
 
-### 7.2 In-flight audit fixes (this session)  🟡
-- **#11 friendly member labels** — ✅ done (Corpus workbench shows titles, not slugs).
-- **#12a Compare auto-load** — ✅ done (no more false "Ready to align" when an alignment exists).
-- **#12b–j** — dotplot legend + honest metric, empty-state CTAs, method-mismatch honesty, Diff banner, corpus-graph cost confirm — **in progress**; expect these to change under you.
+### 7.2 Audit remediation status (all shipped as of `46b5283`)  ✅
+The audit #11–#14 clusters that were in-flight when this guide was first drafted are **complete and pushed**:
+- **#11 friendly member labels** — ✅ Corpus workbench shows titles, not slugs.
+- **#12a Compare auto-load** — ✅ no false "Ready to align" when an alignment exists (`3d779e4`).
+- **#12b–d dotplot legend + honest metric caption** — ✅ (`50c1420`).
+- **#12e–i empty-state CTAs, Synteny/Circos record-gating, Diff method banner, method-honesty, Corpus-on-Home** — ✅ (`050cd68`).
+- **#12j GET-first corpus-graph + lazy costed layers**, **#13 score homology gate** — ✅ (`4faedef`).
+- **#14 batch A** honest spaCy fallback + scoped comparisons + self-describing `matrix.bin` — ✅ (`432bea3`); **batch B** "Semantic (embeddings)" label + shared E1–E5 evidence table + PCA scatter axes/legend — ✅ (`5539427`); **batch C** doc reconciliation — ✅ (`436d919`).
+- **Follow-up** honest spaCy fallback extended to `segmenter`/`entities`/`syntax`/`coreference` — ✅ (`46b5283`).
+
+So unless noted otherwise, what you see in the UI is the *post-remediation* state — the 🟡/🔧 tags remaining below are genuine open items, not in-flight churn.
 
 ### 7.3 The open methodology question — core/shell over-merge (your expertise wanted)  🔧⏳
 On a synoptic corpus, **no `edge_min_identity` threshold separates Matthew from Mark into two cores** — the corpus graph collapses to `core=1`. The reason is genuinely interesting and squarely in your domain: **cross-book synoptic parallels share wording at identities that overlap same-book (translation) identities.** Word-overlap alignment cannot tell "same story retold" (Mt∥Mk) from "same text retranslated" (KJV-Mt / DR-Mt) on identity alone. Score (length/coverage-proportional) separates them cleanly, but the homology-edge gate deliberately uses identity, not score.
 
 A KJV **Luke** subtext was added as a true outgroup to stress this; it landed mid-ladder rather than cleanly rooting, and the engine self-reported the cause ("only 1 shared multi-member component across 7 members — coarse/unstable"). The hypothesis is that **embedding (semantic) distance, not word-overlap, is needed for a stable synoptic tree.**
 
-This is the pangenome analogue of the **high-identity paralog vs ortholog boundary** — separating recent duplicates that share sequence from truly orthologous regions. Your read on whether to (a) gate homology edges on a coverage/length-aware **score** rather than identity, (b) require semantic-space alignment for corpus-graph edges, or (c) accept `core=1` as *legitimate* (synoptic gospels genuinely share a core) is exactly the input this design needs. **Please note your reasoning here in detail** — it's the highest-leverage methodology decision on the roadmap.
+**Partial progress since (audit #13, `4faedef`):** a **score-based homology gate `edge_min_score`** was added to `build_corpus_graph`. Score is length/coverage-proportional — a long collinear translation correspondence accumulates score, while a short synoptic-parallel fragment scores far lower *even at the same per-block identity* — so a score gate separates shared-source from shared-content where identity provably cannot (a regression test asserts no `edge_min_identity` reproduces the `core=1` outcome that `edge_min_score` fixes). **But**: (i) it defaults to `0.0` (off, prior behavior), (ii) it is **API/CLI-only — not a browser control** (§7.1), and (iii) raw score isn't comparable across pairs of very different sizes, so the truly correct object is a **coverage-normalized, scale-free gate** — which is not yet built.
+
+This is the pangenome analogue of the **high-identity paralog vs ortholog boundary** — separating recent duplicates that share sequence from truly orthologous regions. The open decision is now sharper: (a) make a **coverage-normalized score** the *default* homology gate (generalizing the raw `edge_min_score`), (b) require **semantic-space alignment** for corpus-graph edges, and/or (c) accept `core=1` as *legitimate* (synoptic gospels genuinely share a core) — plus the UX question of whether/how to expose the gate in the browser. **Please note your reasoning here in detail** — it's the highest-leverage methodology decision on the roadmap, and your ortholog/paralog and coverage-normalization intuitions map onto it directly.
 
 ### 7.4 Deferred by roadmap (absence is by design)  ⏳
 - A **persistent job DB / scheduler** (only a lightweight resumable run-journal sidecar exists today; full queue is a later phase).
@@ -438,12 +452,12 @@ Grouping by **Gap type** lets me route directly: BUG → fix + regression test; 
 | Self-similarity (TextHiC) | `…/self_similarity/…` | 🟡 |
 | Characters + co-occurrence | `…/characters[/cooccurrence]` | ✅ |
 | Pairwise align + records + scores | `POST /api/alignment/run`, `…/{records,scores}` | ✅ |
-| Cross-similarity matrix | `…/matrix[.bin]` | ✅ (legend 🟡) |
+| Cross-similarity matrix | `…/matrix[.bin]` | ✅ (legend + metric caption shipped; `matrix.bin` self-describing via `X-Matrix-*`) |
 | PAF export | `…/export.paf` | ✅ |
-| Edition diff | `POST /api/alignment/diff` | ✅ (method-aware 🔧) |
+| Edition diff | `POST /api/alignment/diff` | ✅ (fixed LCS+char-diff + honest method banner) |
 | Collections CRUD + lattice + roles | `/api/collections…`, `…/lattice`, `…/roles/{pid}` | ✅ |
 | Congruence | `…/congruence` | ✅ |
-| Corpus graph + projection | `POST/GET …/corpus-graph[/projection]` | ✅ (auto-build cost 🔧) |
+| Corpus graph + projection | `POST/GET …/corpus-graph[/projection]` | ✅ (GET-first #12j; `edge_min_score` gate API-only 🔧) |
 | Phyletic tree | `…/phyletic-tree?root=` | ✅ |
 | Corpus analyses | `…/corpus-analyses` | ✅ |
 | Corpus repeats / low-correspondence / cross-text-mask / root-track / mask-effect | `…/{corpus-repeats,low-correspondence,cross-text-mask,root-track,mask-effect}` | ✅ |
@@ -454,4 +468,4 @@ Grouping by **Gap type** lets me route directly: BUG → fix + regression test; 
 
 ---
 
-*Generated 2026-07-01 from a full backend (79-route)/frontend/vision/pipeline survey of the repository at commit `3d779e4`. Where this guide and older docs disagree on build status, trust `docs/development/collections-tier-build-journal.md` + this file.*
+*Generated 2026-07-01 from a full backend (79-route)/frontend/vision/pipeline survey at commit `3d779e4`; **status tags refreshed 2026-07-01 to current `HEAD` `46b5283`** after the audit #12–#14 remediation shipped (see §7.2 for the commit-by-commit map). Where this guide and older docs disagree on build status, trust `docs/development/collections-tier-build-journal.md` + this file.*
