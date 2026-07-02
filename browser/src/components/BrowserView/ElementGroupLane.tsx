@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, memo } from 'react';
 import { useBrowserStore, LANE_HEIGHTS, type LaneDisplayMode } from '../../stores/browserStore';
 import { useElementVisibilityStore } from '../../stores/elementVisibilityStore';
 import type { ElementGroupData } from '../../utils/maskTypeGroups';
+import { resolveElementColor, isApocrypha } from '../../utils/maskTypeGroups';
 import type { W3CAnnotation } from '../../adapters/AnnotationAdapter';
 
 const EXPANDED_ROW_H = 18; // clean per-type sub-row (no labels/titles) — the former 'detail' height
@@ -20,8 +21,7 @@ function elementTypeOf(ann: W3CAnnotation): string {
 }
 
 function elementColorOf(ann: W3CAnnotation, fallback: string): string {
-  const c = (ann.body as Record<string, unknown>)['palimpsest:color'];
-  return typeof c === 'string' ? c : fallback;
+  return resolveElementColor(ann, fallback);
 }
 
 // Exon/intron connectors: `chapter` is carved into verse-run segments split by inline
@@ -209,6 +209,20 @@ const ElementGroupLane = memo(function ElementGroupLane({
         )}
       </div>
       <svg width={width} height={height} className="shrink-0">
+        {/* Apocrypha hatch pattern — diagonal white stripes at 30% opacity overlaid on
+            any book element whose palimpsest:apocrypha field is true. The pattern is
+            defined once and referenced by rect elements per annotation. */}
+        <defs>
+          <pattern
+            id={`apocrypha-hatch-${laneKey}`}
+            patternUnits="userSpaceOnUse"
+            width={6}
+            height={6}
+            patternTransform="rotate(45)"
+          >
+            <line x1={0} y1={0} x2={0} y2={6} stroke="#fff" strokeWidth={2} strokeOpacity={0.35} />
+          </pattern>
+        </defs>
         {showConnectors && allConnectors.map(([aEnd, bStart], i) => {
           if (bStart <= viewStart || aEnd >= viewEnd) return null; // intron gap off-screen
           const x1 = ((aEnd - viewStart) / range) * width;
@@ -236,6 +250,7 @@ const ElementGroupLane = memo(function ElementGroupLane({
           const w = Math.max(1, ((end - start) / range) * width);
           const fill = elementColorOf(ann, groupColor);
           const isSelected = selectedAnnRange != null && sel.start === selectedAnnRange.start && sel.end === selectedAnnRange.end;
+          const apocrypha = isApocrypha(ann);
 
           let y: number;
           let h: number;
@@ -254,6 +269,7 @@ const ElementGroupLane = memo(function ElementGroupLane({
           const title = (ann.body.value || '').trim();
           // Detail mode prints the element's title directly on the bar (Expanded stays clean).
           const showTitle = mode === 'detail' && w > 24 && title.length > 0;
+          const apocryphaLabel = apocrypha ? ' [Apocrypha]' : '';
 
           return (
             <g
@@ -271,8 +287,20 @@ const ElementGroupLane = memo(function ElementGroupLane({
                 fillOpacity={isSelected ? 1 : 0.7}
                 rx={mode === 'condensed' ? 1 : 2}
               >
-                <title>{`${elementTypeOf(ann)}: ${title}`.trim()}</title>
+                <title>{`${elementTypeOf(ann)}: ${title}${apocryphaLabel}`.trim()}</title>
               </rect>
+              {/* Apocrypha diagonal-stripe overlay — sits on top of the base fill rect */}
+              {apocrypha && (
+                <rect
+                  x={x}
+                  y={y}
+                  width={w}
+                  height={h}
+                  fill={`url(#apocrypha-hatch-${laneKey})`}
+                  rx={mode === 'condensed' ? 1 : 2}
+                  className="pointer-events-none"
+                />
+              )}
               {showTitle && (
                 <text
                   x={x + 3}

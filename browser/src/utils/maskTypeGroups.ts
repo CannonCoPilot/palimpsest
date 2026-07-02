@@ -28,8 +28,8 @@ export const MASK_TYPE_GROUPS: MaskTypeGroup[] = [
     // family) lead, then front_matter, title_page, contents, appendix, glossary — then the
     // remaining structural/matter types (other works only).
     types: [
-      'volume', 'book', 'section', 'header', 'front_matter', 'title_page', 'contents',
-      'appendix', 'glossary',
+      'genre_division', 'volume', 'book', 'section', 'header', 'front_matter', 'title_page',
+      'contents', 'appendix', 'glossary',
       'body', 'part', 'copyright', 'dedication', 'foreword',
       'back_matter', 'afterword', 'acknowledgments', 'about_author',
       'index', 'bibliography', 'addendum', 'insert', 'colophon',
@@ -79,14 +79,49 @@ export interface ElementGroupData {
 
 const DEFAULT_ELEMENT_COLOR = '#5ac8fa';
 
+// -------------------------------------------------------------------
+// Genre-division color map
+// 7 distinct hues, one per Bible literary genre recognised by the backend.
+// Base color for genre_division from SECTION_COLORS is #e0a458 (amber);
+// the per-genre map overrides it so each division block shows a unique hue.
+// -------------------------------------------------------------------
+export const GENRE_COLORS: Record<string, string> = {
+  'Law':             '#c0392b', // crimson-red
+  'Historical':      '#27ae60', // forest-green
+  'Wisdom-poetry':   '#8e44ad', // violet
+  'Prophets-Major':  '#2980b9', // steel-blue
+  'Prophets-Minor':  '#16a085', // teal
+  'Gospels':         '#e67e22', // orange
+  'Epistles':        '#d4ac0d', // gold
+};
+
+/** Resolve the display color for an elements annotation.
+ *  genre_division annotations override the backend's uniform SECTION_COLORS entry
+ *  with a per-genre hue; all other types fall back to palimpsest:color or the default. */
+export function resolveElementColor(ann: W3CAnnotation, fallback: string): string {
+  const body = ann.body as Record<string, unknown>;
+  const et = body['palimpsest:elementType'];
+  if (et === 'genre_division') {
+    const genre = body['palimpsest:genre'];
+    if (typeof genre === 'string' && genre in GENRE_COLORS) return GENRE_COLORS[genre];
+  }
+  const c = body['palimpsest:color'];
+  return typeof c === 'string' ? c : fallback;
+}
+
+/** True when the annotation carries a palimpsest:apocrypha = true flag. */
+export function isApocrypha(ann: W3CAnnotation): boolean {
+  return (ann.body as Record<string, unknown>)['palimpsest:apocrypha'] === true;
+}
+
 function readElementType(ann: W3CAnnotation): string | null {
   const et = (ann.body as Record<string, unknown>)['palimpsest:elementType'];
   return typeof et === 'string' ? et : null;
 }
 
 function readElementColor(ann: W3CAnnotation): string {
-  const c = (ann.body as Record<string, unknown>)['palimpsest:color'];
-  return typeof c === 'string' ? c : DEFAULT_ELEMENT_COLOR;
+  // For genre_division use the genre-aware resolver; others use the raw color field.
+  return resolveElementColor(ann, DEFAULT_ELEMENT_COLOR);
 }
 
 /**

@@ -484,6 +484,10 @@ def _write_elements_track(project_dir: Path, project_id: str, cfg: Any, text_len
             extra["palimpsest:chapterNumber"] = s.metadata["number"]
         if s.metadata.get("name"):
             extra["palimpsest:chapterTitle"] = s.metadata["name"]
+        if s.metadata.get("genre"):
+            extra["palimpsest:genre"] = s.metadata["genre"]
+        if s.metadata.get("apocrypha"):
+            extra["palimpsest:apocrypha"] = True
         body = Body(
             type="palimpsest:ElementAnnotation",
             purpose="classifying",
