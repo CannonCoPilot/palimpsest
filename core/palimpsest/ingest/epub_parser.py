@@ -218,12 +218,21 @@ def _frontmatter_cover(book: Any) -> tuple[bytes | None, str]:
         return None, ""
     ref_re = re.compile(r'(?:src|xlink:href)\s*=\s*["\']([^"\']+)["\']', re.IGNORECASE)
     front_keys = ("cover", "title", "front", "halftitle")
+
+    def _is_front(*labels: str) -> bool:
+        # Token-prefix match (not raw substring) so "subtitle"/"discover" don't
+        # read as front matter while "titlepage"/"half-title" still do.
+        for label in labels:
+            for tok in re.split(r"[^a-z0-9]+", label.lower()):
+                if tok.startswith(front_keys):
+                    return True
+        return False
+
     for spine_id, _ in getattr(book, "spine", []):
         doc = book.get_item_with_id(spine_id)
         if doc is None:
             continue
-        name = doc.get_name().lower()
-        if not any(k in name or k in str(spine_id).lower() for k in front_keys):
+        if not _is_front(doc.get_name(), str(spine_id)):
             continue
         try:
             html = doc.get_content().decode("utf-8", "replace")
