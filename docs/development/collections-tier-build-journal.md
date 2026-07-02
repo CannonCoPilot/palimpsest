@@ -679,14 +679,16 @@ refinement per the standing "circle back to the mechanics" note.
 ## Deferred to a future development phase (post-2026-07-01 audit)
 
 The 109-finding 6-way audit was remediated in clusters #5–#14 (see git history `4faedef..436d919`).
-These items were **deliberately deferred** rather than dropped — each needs a design decision or is a
-feature, not an objective one-line fix:
+These items were **deliberately deferred** rather than dropped. Item 1 was the one objective,
+decision-free item and has since been done (see ✅ below); items 2–5 each still need a design decision
+or are a feature, not an objective one-line fix:
 
-1. **Extend the honest-spaCy-fallback fix beyond `project.py`.** Finding 305 was fixed in
-   `project.py._load_spacy_model` (warn on substitution, re-raise if the fallback itself is missing).
-   The identical silent-fallback pattern still lives in `ingest/segmenter.py`, `tracks/entities.py`,
-   `tracks/syntax.py`, and `tracks/coreference.py`. Small, mechanical, and consistency-improving — apply
-   the same warn/re-raise there in a follow-up.
+1. **Extend the honest-spaCy-fallback fix beyond `project.py`.** ✅ **DONE (follow-up).** Finding 305
+   was fixed in `project.py._load_spacy_model` (warn on substitution, re-raise if the fallback itself
+   is missing). The identical silent-fallback pattern lived in `ingest/segmenter.py`,
+   `tracks/entities.py`, `tracks/syntax.py`, and `tracks/coreference.py` — all four now carry the same
+   warn/re-raise via a module-level `_SPACY_FALLBACK` (coreference names its requested model
+   `_SPACY_COREF_MODEL = "en_core_web_lg"`). Suite 982 green, no behavior change on the happy path.
 2. **Synoptic noise-floor (finding 289).** A methodology question entangled with the over-merge gate —
    what identity/coverage floor separates genuine synoptic parallel from incidental shared wording.
 3. **Edition-diff similarity grading (finding 335, MEDIUM).** A real feature, not a fix: grade the

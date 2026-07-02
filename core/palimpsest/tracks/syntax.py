@@ -13,6 +13,7 @@ from palimpsest.tracks.params import Param, ParameterizedTrack
 DEFAULT_SPACY_MODEL = "en_core_web_lg"
 DEFAULT_CONFIDENCE = 0.90
 _NLP_CACHE: dict[str, Any] = {}
+_SPACY_FALLBACK = "en_core_web_sm"
 
 SUBORDINATE_DEPS = frozenset({
     "advcl", "relcl", "acl", "csubj", "ccomp", "xcomp",
@@ -24,7 +25,17 @@ def _get_nlp(model: str = DEFAULT_SPACY_MODEL) -> Any:
         try:
             _NLP_CACHE[model] = spacy.load(model)
         except OSError:
-            _NLP_CACHE[model] = spacy.load("en_core_web_sm")
+            # Substituting a different model silently would change syntactic parsing without a
+            # trace; surface it. If the requested model already IS the fallback, a retry can't help.
+            if model == _SPACY_FALLBACK:
+                raise
+            import warnings
+            warnings.warn(
+                f"spaCy model {model!r} unavailable; falling back to {_SPACY_FALLBACK!r}. "
+                f"Install the requested model with `python -m spacy download {model}`.",
+                RuntimeWarning, stacklevel=2,
+            )
+            _NLP_CACHE[model] = spacy.load(_SPACY_FALLBACK)
     return _NLP_CACHE[model]
 
 

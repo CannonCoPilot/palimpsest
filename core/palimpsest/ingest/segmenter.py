@@ -24,6 +24,7 @@ from typing import Any
 # once per ingest, so without this cache a multi-file ingest (or a test suite
 # that ingests per test) reloads the model every time. Mirrors tracks/syntax.py.
 _NLP_CACHE: dict[tuple[str, frozenset[str]], Any] = {}
+_SPACY_FALLBACK = "en_core_web_sm"
 
 
 def _get_segmenter_nlp(model: str, exclude: tuple[str, ...]) -> Any:
@@ -34,7 +35,17 @@ def _get_segmenter_nlp(model: str, exclude: tuple[str, ...]) -> Any:
         try:
             _NLP_CACHE[key] = spacy.load(model, exclude=list(exclude))
         except OSError:
-            _NLP_CACHE[key] = spacy.load("en_core_web_sm", exclude=list(exclude))
+            # Substituting a different model silently would change segmentation without a trace;
+            # surface it. If the requested model already IS the fallback, a retry can't help.
+            if model == _SPACY_FALLBACK:
+                raise
+            import warnings
+            warnings.warn(
+                f"spaCy model {model!r} unavailable; falling back to {_SPACY_FALLBACK!r}. "
+                f"Install the requested model with `python -m spacy download {model}`.",
+                RuntimeWarning, stacklevel=2,
+            )
+            _NLP_CACHE[key] = spacy.load(_SPACY_FALLBACK, exclude=list(exclude))
     return _NLP_CACHE[key]
 
 

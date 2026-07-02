@@ -15,6 +15,8 @@ logger = logging.getLogger(__name__)
 DEFAULT_CONFIDENCE = 0.75
 DEFAULT_FALLBACK_CONFIDENCE = 0.60
 MIN_CHAIN_LENGTH = 2
+_SPACY_COREF_MODEL = "en_core_web_lg"
+_SPACY_FALLBACK = "en_core_web_sm"
 
 BOOKNLP_AVAILABLE = False
 try:
@@ -209,9 +211,19 @@ class CoreferenceExtractor(ParameterizedTrack):
         fallback_confidence = cfg["fallback_confidence"]
 
         try:
-            nlp = spacy.load("en_core_web_lg")
+            nlp = spacy.load(_SPACY_COREF_MODEL)
         except OSError:
-            nlp = spacy.load("en_core_web_sm")
+            # Substituting a different model silently would change the coreference chains without a
+            # trace; surface it. If the requested model already IS the fallback, a retry can't help.
+            if _SPACY_COREF_MODEL == _SPACY_FALLBACK:
+                raise
+            import warnings
+            warnings.warn(
+                f"spaCy model {_SPACY_COREF_MODEL!r} unavailable; falling back to {_SPACY_FALLBACK!r}. "
+                f"Install the requested model with `python -m spacy download {_SPACY_COREF_MODEL}`.",
+                RuntimeWarning, stacklevel=2,
+            )
+            nlp = spacy.load(_SPACY_FALLBACK)
 
         text = project.reference_text()
         nlp.max_length = len(text) + 1000
