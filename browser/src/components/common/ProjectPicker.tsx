@@ -19,6 +19,7 @@ import { useEffect, useMemo, useState, type ReactElement, type ReactNode } from 
 import { useProjectStore } from '../../stores/projectStore';
 import { useViewStore, type TabId } from '../../stores/viewStore';
 import ImportWizard from '../import/ImportWizard';
+import GoldLibrary from './GoldLibrary';
 
 interface ProjectEntry {
   id: string;
@@ -524,6 +525,7 @@ export default function ProjectPicker(): ReactElement {
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [showImport, setShowImport] = useState(false);
+  const [showGold, setShowGold] = useState(false);
   const [reimportFile, setReimportFile] = useState<string | null>(null);
   const [resumeProject, setResumeProject] = useState<string | null>(null);
   const [page, setPage] = useState<'home' | 'library' | 'store'>('home');
@@ -740,6 +742,7 @@ export default function ProjectPicker(): ReactElement {
 
           <SectionLabel>Library</SectionLabel>
           <NavRow icon="library" label="All" active={page === 'library' && !activeCollection} onClick={goLibrary} />
+          <NavRow icon="book" label="Gold Set" onClick={() => setShowGold(true)} />
           <NavRow icon="wantToRead" label="Started" />
           <NavRow icon="finished" label="Finished" />
           <NavRow icon="book" label="Novels" />
@@ -937,6 +940,18 @@ export default function ProjectPicker(): ReactElement {
           onClose={closeImport}
           initialSourceFile={reimportFile ?? undefined}
           resumeProjectId={resumeProject ?? undefined}
+        />
+      )}
+
+      {showGold && (
+        <GoldLibrary
+          onClose={() => setShowGold(false)}
+          onApplied={() => {
+            fetch('/api/projects')
+              .then((r) => (r.ok ? r.json() : []))
+              .then((data: ProjectEntry[]) => setProjects(data))
+              .catch(() => { /* leave the current list on refresh failure */ });
+          }}
         />
       )}
     </div>
