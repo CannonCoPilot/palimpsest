@@ -55,6 +55,10 @@ VERSE_RE = re.compile(r"(?m)^(\d{1,3})[ \t]+")    # "1 In the beginning..."
 PROL_RE = re.compile(r"(?m)^@ (.+)$")             # "@ Prologe on Exodus" -> apparatus block
 
 GENERIC = {"body", "volume", "book", "part", "section"}
+# Kept aligned with the runtime verse detector (verses.py _MARKER_MIN_BOOKS). A lower
+# floor here would let the generator emit a structurally-valid map for a partial canon
+# (e.g. the 4-book Wessex Gospels) that the runtime then masks with ZERO verses — a
+# silent structural-only gold. Both gates must drop together to admit Gospel harmonies.
 MIN_BOOKS = 8
 MIN_CHAPTERS = 20
 
