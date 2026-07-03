@@ -1284,3 +1284,91 @@ def align_paf(
         console.print(f"[green]Wrote[/green] {len(records)} record(s) -> {output}")
     else:
         click.echo(text)
+
+
+@main.group()
+def gold() -> None:
+    """Bible Gold Set — the registry of durable, verified masking maps (list/apply/verify)."""
+
+
+@gold.command("list")
+def gold_list() -> None:
+    """List the Bible Gold Set: translation, kind, canon, local availability, validation."""
+    from rich.table import Table
+
+    from palimpsest.gold import load_manifest, map_path
+
+    manifest = load_manifest()
+    table = Table(title=f"Bible Gold Set ({manifest.get('count', 0)})")
+    for col in ("id", "translation", "kind", "canon", "map", "src", "CLI/API/UI"):
+        table.add_column(col)
+    for b in manifest["bibles"]:
+        have_map = "OK" if map_path(b["id"]).is_file() else "--"
+        have_src = "OK" if b.get("source_present") else " ."
+        v = b.get("validated", {})
+        vcol = "".join("Y" if v.get(k) else "N" for k in ("cli", "api", "ui"))
+        table.add_row(str(b["id"]), b.get("translation", ""), b.get("kind", ""),
+                      b.get("canon", ""), have_map, have_src, vcol)
+    console.print(table)
+
+
+@gold.command("apply")
+@click.argument("idx", type=int)
+@click.argument("workspace", type=click.Path(path_type=Path))
+@click.option("--overwrite", is_flag=True, help="Replace an existing project for this source.")
+def gold_apply(idx: int, workspace: Path, overwrite: bool) -> None:
+    """Ingest a registered Bible's source and apply its gold map, by id.
+
+    Direct-import (no HTTP): reuses the API/UI apply path so all three produce an identical
+    layout. Requires the source binary present locally (preserve-don't-push).
+    """
+    from palimpsest.gold import manifest_entry
+    from palimpsest.server import _apply_gold_map, _default_imports_dir, _find_import_by_name
+
+    entry = manifest_entry(idx)
+    if entry is None:
+        console.print(f"[red]No gold Bible with id {idx}.[/red]")
+        raise SystemExit(1)
+    src = _find_import_by_name(_default_imports_dir(), entry.get("source_file", ""))
+    if src is None:
+        console.print(
+            f"[red]Source binary for Bible {idx} not present locally[/red] "
+            "(preserve-don't-push) — cannot ingest to apply its gold map."
+        )
+        raise SystemExit(1)
+    workspace.mkdir(parents=True, exist_ok=True)
+    try:
+        project = ingest_file(src, workspace, title=entry.get("translation", ""),
+                              year=entry.get("year") or 0, overwrite=overwrite)
+        summary = _apply_gold_map(project, f"work-{idx:03d}.map.json")
+    except Exception as e:  # noqa: BLE001
+        console.print(f"[red]Apply failed:[/red] {getattr(e, 'detail', e)}")
+        raise SystemExit(1) from e
+    console.print(f"[green]Applied[/green] {entry.get('translation', '')} -> {project.path}")
+    console.print(
+        f"  sha_verified: {summary['sha_verified']}, elements: {summary['element_count']}, "
+        f"verses: {summary['verse_count']}, masked_chars: {summary['masked_chars']:,}"
+    )
+
+
+@gold.command("verify")
+@click.argument("idx", type=int, required=False)
+def gold_verify(idx: int | None) -> None:
+    """Verify gold map(s) from JSON alone: structural gates + canon versification oracle."""
+    from palimpsest.gold import load_manifest, verify_map
+
+    ids = [idx] if idx is not None else [b["id"] for b in load_manifest()["bibles"]]
+    failed = 0
+    for i in ids:
+        problems = verify_map(i)
+        if problems:
+            failed += 1
+            console.print(f"[red]FAIL work-{i:03d}[/red]")
+            for p in problems:
+                console.print(f"    {p}")
+        else:
+            console.print(f"[green]ok   work-{i:03d}[/green]")
+    if failed:
+        console.print(f"[red]{failed} of {len(ids)} map(s) failed verification.[/red]")
+        raise SystemExit(1)
+    console.print(f"[green]All {len(ids)} gold map(s) verified.[/green]")

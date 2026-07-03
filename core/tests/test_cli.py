@@ -276,3 +276,41 @@ class TestCliExport:
         assert paf_file.exists()
         lines = paf_file.read_text().strip().split("\n")
         assert lines[0].startswith("#")
+
+
+class TestCliGold:
+    """The `gold` command group — registry list, from-JSON verify, and apply error paths.
+
+    list/verify are hermetic (no source text). The happy-path apply needs the copyrighted
+    source binary, so it is a machine-local check (verified live); here we cover the two
+    guarded exits — unknown id and source-absent — the latter via an empty imports dir."""
+
+    def test_gold_list(self, runner):
+        res = runner.invoke(main, ["gold", "list"])
+        assert res.exit_code == 0, res.output
+        assert "Bible Gold Set" in res.output
+        assert "216" in res.output
+
+    def test_gold_verify_single(self, runner):
+        res = runner.invoke(main, ["gold", "verify", "216"])
+        assert res.exit_code == 0, res.output
+        assert "work-216" in res.output
+        assert "verified" in res.output
+
+    def test_gold_verify_all(self, runner):
+        res = runner.invoke(main, ["gold", "verify"])
+        assert res.exit_code == 0, res.output
+        assert "All 19 gold map(s) verified." in res.output
+
+    def test_gold_apply_unknown_idx(self, runner, tmp_path):
+        res = runner.invoke(main, ["gold", "apply", "999", str(tmp_path / "ws")])
+        assert res.exit_code == 1
+        assert "No gold Bible" in res.output
+
+    def test_gold_apply_source_absent(self, runner, tmp_path, monkeypatch):
+        empty = tmp_path / "empty"
+        empty.mkdir()
+        monkeypatch.setattr("palimpsest.server._default_imports_dir", lambda: empty)
+        res = runner.invoke(main, ["gold", "apply", "216", str(tmp_path / "ws")])
+        assert res.exit_code == 1
+        assert "not present locally" in res.output
