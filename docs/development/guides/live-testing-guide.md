@@ -277,8 +277,16 @@ palimpsest info PROJECT_DIR
 palimpsest analyze PROJECT_DIR [--force]
 palimpsest export PROJECT_DIR --format {w3c,csv,paf} [-o OUTPUT_DIR]
 palimpsest serve WORKSPACE [--port INT]
+palimpsest gold list                       # Gold Set registry (idx, translation, availability)
+palimpsest gold apply IDX WORKSPACE [--overwrite]  # ingest source + apply gold map (sha-checked)
+palimpsest gold verify [IDX]               # hermetic map gates + canon oracle (all, or one Bible)
 palimpsest --version
 ```
+
+> **Gold Set (added 2026-07-03).** The `gold` group applies committed, CI-verified Bible masking
+> maps by id — the same `_apply_gold_map` core the `GET/POST /api/gold` API and the browser
+> **Gold Library** overlay use. See [`../gold-set-standard.md`](../gold-set-standard.md) for the
+> standard and [`full-feature-walkthrough.md`](full-feature-walkthrough.md#the-gold-set--reproducible-standard-verified-bible-masks) for the full tour.
 
 ---
 

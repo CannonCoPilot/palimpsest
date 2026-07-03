@@ -101,7 +101,7 @@ Reach it from the landing page: **Home → Import a Text**, or **Library → Imp
 
 **Under the hood — masking is deepest-section-wins.** For each elementary text segment, the *smallest* covering section decides masked/unmasked (an O(N log N) heap). So a `mask=yes` header nested inside a `mask=no` chapter carves only the header window. The result is a sorted, disjoint, merged interval set — the "masking contract." Verse-number tokens and hidden repeats are unioned in as `extra_masked`.
 
-**Gold-map path (advanced):** `POST /api/import/local` accepts a `layout_path` — a pre-generated masking map applied verbatim and **sha256-verified** against the ingested text (409 on mismatch). This is how the reproducible gold Bible fixtures are built; not exposed as a normal UI button.
+**Gold-map path:** `POST /api/import/local` accepts a `layout_path` — a pre-generated masking map applied verbatim and **sha256-verified** against the ingested text (409 on mismatch). This is how the reproducible gold Bible fixtures are built. As of 2026-07-03 it is also **first-classed by id** through a browse-and-apply **Gold Library** UI, a `palimpsest gold` CLI group, and a `GET/POST /api/gold` API — see the dedicated **"The Gold Set"** section after Part 5.
 
 ### 1.3 What import captures  ✅
 
@@ -356,6 +356,62 @@ Cross-text mask/annotation projection A→B across the alignment (`POST /api/col
 
 ---
 
+## The Gold Set — reproducible, standard-verified Bible masks  ✅ (2026-07-03)
+
+**Genomics analogue:** a curated **benchmark truth set with a reproducibility harness** — Genome-in-a-Bottle for masking: a panel every tool is measured against, plus the recipe to regenerate it byte-for-byte and the QC that proves it still holds.
+
+The Gold Set is the set of Bibles whose masking is a **committed, CI-verified contract**, not a one-off hand edit. Its bar and internal model are specified in [`../gold-set-standard.md`](../gold-set-standard.md) — read that for the authoritative definitions of *complete / accurate / precise* and the two gold kinds. This section is the operational face.
+
+### The bar (summary)
+A Bible is Gold Set only when its masking is **complete** (a generic layer `{body,volume,book,part,section}` and a specific layer each tile the whole text with no gaps), **accurate** (correct mask-types present; applied elements correctly typed), and **precise** (each masked element's char-level start/end capture its marker with no overrun into adjacent prose) — plus **validation parity** with peers of its kind and **operational readiness** through CLI + API + UI.
+
+### Two gold kinds (one standard)
+- **Reconstruction map — universal.** Every gold Bible has a committed `core/tests/fixtures/gold/maps/work-<idx>.map.json` (schema `palimpsest.gold-map/v1`): a full char-span tiling + the `reference_sha256` of the exact text it was cut against. The map **is** the masking; `server._apply_gold_map` applies it verbatim after the sha check.
+- **Detection annotation — conditional.** Only where structure must be inferred (implicit-structure epub/pdf) does a sparse anchor-based gold (`work-<idx>.json`) drive the machine-local detector-recall tools (`gold_ratify.py` / `a3_score.py`). Self-marking marker scripture is exempt by design — scoring a detector against chapter/verse markers the text states outright would be theater.
+
+### Rigor parity — the accuracy lens per kind
+Map-internal consistency proves the map *sound*, not *correct* (a scrape that dropped a chapter still tiles perfectly). Each kind closes that blind spot with an independent lens:
+- **Marker scripture (201–219):** a **canon versification oracle** (`canon_chapters.json`, `test_gold_canon.py`, prod logic in `palimpsest/gold.py`) checks per-book chapter counts against an external table — accuracy *stronger* than eyeball, since the external counts (stable since Langton, c. 1227) never touched the map. It strict-gates the universal 66-book Protestant core; tradition-variant deuterocanon is *recorded, not gated*, so the oracle never self-blesses a versification difference as an error. This is the pangenome analogue of validating a called gene model against an external, independently-curated annotation rather than against itself.
+- **Detector epub (5, 100):** annotation gold + detector recall.
+- **Bespoke (108):** map gates only (canon oracle N/A — Catholic Vulgate canon).
+
+### The registry — one record, three roles
+`core/tests/fixtures/gold/sources.manifest.json` (`palimpsest.gold-sources/v1`) is at once an **audit trail** (`source_sha256` of the source binary + `reference_sha256` of the produced text — provable without ever distributing the binary), a **registry** (the enumeration behind CLI/API/UI), and a **scorecard** (`validated:{cli,api,ui}`). Generated (not hand-authored) by `mask_engine/gen_sources_manifest.py`; guarded hermetically by `test_gold_sources.py`.
+
+**Copyright — preserve, don't push.** Full *use* rights (masks/annotations/derivatives are committed) but **no distribution** of source binaries — epub/pdf/txt stay in gitignored `imports/`; only fingerprints ship.
+
+### The three operational paths  ✅
+All three apply *any* registered Bible by id over the same `_apply_gold_map` core, so the resulting mask is identical.
+
+| Path | How | Entry |
+|---|---|---|
+| **API** | `GET /api/gold` (registry + `map_present`/`source_present` local-availability flags); `POST /api/gold/{idx}/apply` (ingest the registered source + apply the map after the sha check; 404 if the source isn't present locally) | `server.py` |
+| **CLI** | `palimpsest gold list` / `gold apply <idx> <workspace>` / `gold verify [idx]` (direct-import; `verify` is the CLI face of the hermetic gates + canon oracle) | `cli.py` `gold` group |
+| **UI** | ProjectPicker sidebar → **Gold Set** row → **Gold Library** overlay: browse the registry, **Apply** a Bible. Apply is disabled with a reason when the map isn't committed or the source isn't present locally. | `browser/src/components/common/GoldLibrary.tsx` |
+
+### The set as it stands
+**19 Bibles registered; 17 appliable on a machine holding the corpus.** (idx 6 Geneva-1599 and 108 DR-original keep their source outside `imports/`, so their UI Apply is disabled — preserve-don't-push, flagged honestly by `source_present:false`.) Marker Bibles: 201 Coverdale, 202 Bishops, 203 Wycliffe, 208 Great, 209 Matthew's, 210 Webster's, 211 Wessex (4 gospels), 212 Young's, 213 Julia Smith, 214 KJV-2016-NT, 215 EMTV-NT, 216 KJV-1769, 217 Tyndale, 218 Geneva-1560, 219 KJV-1611 (80 books). Epub (detector) golds: 5 DR-Haydock, 100 DR-Challoner. Bespoke: 108 DR-original.
+
+### Verification lenses (what proves each criterion)
+| Lens | Runs where | Proves |
+|---|---|---|
+| `test_gold_maps.py` | CI (hermetic) | map structurally sound (spans in-range, two-layer coverage, taxonomy, marker parity, production round-trip) |
+| `test_gold_canon.py` | CI (hermetic) | marker-Bible chapter counts match the external canon |
+| `test_gold_sources.py` | CI (hermetic) | registry complete, reconciles with maps, fresh |
+| `gold_ratify.py` / `a3_score.py` | machine-local | detector accuracy for epub golds (needs copyrighted text) |
+| `reference_sha256` re-check | apply-time (machine-local) | the map's offsets align to freshly-ingested text |
+
+The sha tie and the detector lenses are machine-local **by design** — they need the copyrighted source text — so that boundary is a property, not a gap.
+
+**▷ Probe & note (Gold Set):**
+- Open the **Gold Library** (sidebar → **Gold Set**). Do the 19 Bibles list with correct availability flags (2 disabled for absent source)? Apply idx **211** (Wessex) — does it land as a project with masked chapter headings + verse-number tokens?
+- On an applied marker Bible, zoom to readable text: does `## <Book> <n>` grey out while the following verse prose stays visible? Are the verse-number tokens (`2 `, `3 `) greyed but the verse *text* not?
+- On **203** (Wycliffe) / **219** (KJV-1611): the large front-matter prologue/preface blocks are masked as whole units — is each greyed block bounded exactly at the first book heading, with no verse prose eaten?
+- On the epub golds **5** (Haydock) / **100** (Challoner): `heading`/`chapter_heading` spans legitimately carry book/chapter *arguments/summaries* (bigger greyed blocks) — precise for those editions, not an overrun. Note if the UI render disagrees.
+- Run `palimpsest gold verify` — do all 19 pass? Does `gold verify <idx>` on a marker Bible exercise the canon oracle?
+
+---
+
 ## Part 6 — Cross-cutting guarantees (worth verifying hold everywhere)
 
 | Guarantee | What it means | Where to test |
@@ -372,7 +428,7 @@ Cross-text mask/annotation projection A→B across the alignment (`POST /api/col
 ## Part 7 — The honest boundary: gaps, stubs, deferred, and the one open methodology question
 
 ### 7.1 Stubs / dead-ends (note if they trip you)  🔧
-- **ProjectPicker sidebar rows** Started / Finished / Novels / Translations / Papers / Scholars — **non-functional** (no onClick). Only "All" and your Collections filter.
+- **ProjectPicker sidebar rows** Started / Finished / Novels / Translations / Papers / Scholars — **non-functional** (no onClick). Only "All", your Collections filter, and the **Gold Set** row (✅ opens the Gold Library overlay — see "The Gold Set") are wired.
 - ✅ **Home now launches Corpus** — the "Analysis tools" grid gained the Corpus tile (audit #12g, `050cd68`); all 7 tabs launch from Home. (Was: Corpus reachable only via the tab bar.)
 - **Sentiment = VADER only** (Hedonometer withheld).
 - **self_similarity = Configure-only** (no bare Compute).
@@ -468,4 +524,4 @@ Grouping by **Gap type** lets me route directly: BUG → fix + regression test; 
 
 ---
 
-*Generated 2026-07-01 from a full backend (79-route)/frontend/vision/pipeline survey at commit `3d779e4`; **status tags refreshed 2026-07-01 to current `HEAD` `46b5283`** after the audit #12–#14 remediation shipped (see §7.2 for the commit-by-commit map). Where this guide and older docs disagree on build status, trust `docs/development/collections-tier-build-journal.md` + this file.*
+*Generated 2026-07-01 from a full backend (79-route)/frontend/vision/pipeline survey at commit `3d779e4`; **status tags refreshed 2026-07-01 to `46b5283`** after the audit #12–#14 remediation shipped (see §7.2 for the commit-by-commit map); **"The Gold Set" section added 2026-07-03** for the Gold-Set-Standard work (maps + canon oracle + sources manifest + CLI/API/UI, commits `1959f8c..4c80ff3`). Where this guide and older docs disagree on build status, trust `docs/development/collections-tier-build-journal.md` + this file.*

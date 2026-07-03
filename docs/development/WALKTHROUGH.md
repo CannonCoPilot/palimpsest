@@ -477,6 +477,37 @@ cd browser && npx tsc --noEmit && cd ..
 
 ---
 
+## 12. The Gold Set (reproducible, standard-verified Bible masks)
+
+The **Gold Set** is the panel of Bibles whose masking is a committed, CI-verified contract
+(schema `palimpsest.gold-map/v1`), applied verbatim after a `reference_sha256` check. The bar
+and model are specified in [`gold-set-standard.md`](gold-set-standard.md); the operational tour
+is in [`guides/full-feature-walkthrough.md`](guides/full-feature-walkthrough.md#the-gold-set--reproducible-standard-verified-bible-masks).
+Apply any registered Bible by id through three equivalent paths (same `_apply_gold_map` core):
+
+```bash
+# CLI — browse, apply, verify
+core/.venv/bin/palimpsest gold list                 # registry: idx, translation, availability
+core/.venv/bin/palimpsest gold apply 211 ./data     # ingest source + apply map (sha-checked)
+core/.venv/bin/palimpsest gold verify               # run hermetic gates + canon oracle on all 19
+core/.venv/bin/palimpsest gold verify 216           # ...or one Bible
+
+# API (server running on :8080)
+curl -s localhost:8080/api/gold | python3 -m json.tool          # registry + map/source flags
+curl -s -X POST localhost:8080/api/gold/211/apply \
+  -H 'Content-Type: application/json' -d '{"overwrite": true}'  # apply Wessex by id
+```
+
+**UI:** ProjectPicker sidebar → **Gold Set** → the **Gold Library** overlay (browse + Apply).
+Apply is disabled (with a reason) when the map isn't committed or the source binary isn't present
+locally — 17 of the 19 registered Bibles are appliable on a machine holding the `imports/` corpus.
+
+**Accuracy rigor:** marker Bibles (idx 201–219) are additionally checked by a **canon versification
+oracle** (per-book chapter counts vs. an external table); epub golds (5, 100) get detector-recall
+scoring; the copyrighted sources stay gitignored (**preserve, don't push** — only fingerprints ship).
+
+---
+
 ## Quick Reference: Project Structure
 
 ```

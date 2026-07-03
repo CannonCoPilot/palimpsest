@@ -11,7 +11,16 @@ CLI/API/UI gold paths all reference.
 A text is **Gold Set Standard** only when all three hold:
 
 1. **Complete, accurate, precise masking** — its masking layout is confirmed to tile the
-   work with correct structure, verified by machinery, not eyeball.
+   work with correct structure, verified by machinery, not eyeball. The three terms are
+   defined precisely:
+   - **Complete** — the minimum mask-type tiling is *(1 generic + 1 specific)*. Each of
+     the generic layer `{body, volume, book, part, section}` and the specific layer
+     independently tiles `[0, text_len)` with no gaps.
+   - **Accurate** — proper mask-types are not missing, *and* the applied mask-elements are
+     the correct types.
+   - **Precise** — mask-elements are generated with character-level specificity: each
+     element's start–end bounds capture the appropriate text without overruns — no over- or
+     under-reach into adjacent spans.
 2. **Validation parity with other Gold-Set texts of its kind** — it carries the same
    verification lenses as its peers; kind differences are explicit here, never silent.
 3. **Operational readiness through every path** — it can be applied through the CLI, the
