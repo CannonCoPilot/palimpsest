@@ -1,8 +1,11 @@
-"""Tests for verse-coordinate detection — the Geneva ``<num>\\xa0`` and KJV ``<num> `` dialects."""
+"""Tests for verse-coordinate detection — the Geneva ``<num>\\xa0``, KJV ``<num> ``, and canonical
+explicit-marker (``#`` / ``##``) dialects."""
 
 from palimpsest.verses import (
     _geneva_book_headers,
     _kjv_book_headers,
+    _marker_book_headers,
+    _marker_verses,
     detect_verses,
     verse_number_intervals,
 )
@@ -156,3 +159,58 @@ def test_kjv_mask_token_is_number_plus_regular_space():
 def test_kjv_ordinal_book_heading_normalized():
     headers = _kjv_book_headers("1. Samuel\n\n")
     assert [name for _, name in headers] == ["1 Samuel"]
+
+
+# --- Explicit-marker dialect (canonical import format) -------------------------------------
+
+# Books and chapters are read straight from "#"/"##" markers, so no book lexicon is needed;
+# "Ecclesiasticus" is a deuterocanonical name the KJV/Geneva lexicons do not carry, proving it.
+_MARKER_BOOKS = ["Genesis", "Exodus", "Leviticus", "Numbers", "Joshua", "Judges",
+                 "Ruth", "1 Samuel", "Ecclesiasticus"]
+
+
+def _marker_sample() -> str:
+    """A synthetic canonical-format Bible: ``# Book`` / ``## Book N`` / ``<num> prose`` blocks,
+    with enough books and chapters to pass both density gates."""
+    blocks: list[str] = []
+    for book in _MARKER_BOOKS:
+        blocks.append(f"# {book}")
+        for ch in range(1, 4):
+            blocks.append(f"## {book} {ch}")
+            for v in range(1, 5):
+                blocks.append(f"{v} Verse {v} of chapter {ch} prose text here.")
+    return "\n\n".join(blocks)
+
+
+def test_marker_books_and_chapters():
+    text = _marker_sample()
+    recs = detect_verses(text)
+    assert recs, "explicit-marker dialect should fire on #/##-marked scripture"
+
+    by_book: dict[str, set[int]] = {}
+    for r in recs:
+        by_book.setdefault(r["book"], set()).add(r["chapter"])
+
+    # Names are read verbatim from the markers — including the deuterocanonical book no lexicon has.
+    assert set(by_book) == set(_MARKER_BOOKS)
+    assert all(chs == {1, 2, 3} for chs in by_book.values())
+
+
+def test_marker_mask_token_is_number_plus_space():
+    text = _marker_sample()
+    recs = detect_verses(text)
+    r = next(r for r in recs if r["book"] == "Genesis" and r["chapter"] == 1 and r["verse"] == 1)
+    assert text[r["num_start"]:r["num_end"]] == "1 "  # number plus its trailing space
+    assert text[r["text_start"]:].startswith("Verse 1")  # prose begins after the masked token
+
+
+def test_marker_book_headers_verbatim_lexicon_free():
+    headers = _marker_book_headers("# Ecclesiasticus\n\n## Ecclesiasticus 1\n\n1 Prose.\n\n")
+    assert [name for _, name in headers] == ["Ecclesiasticus"]
+
+
+def test_marker_inert_below_density_gate():
+    # A handful of "#"/"##" lines — far below the book/chapter density gates — so the dialect stays
+    # inert and an incidental markdown-ish document is never mis-read as scripture.
+    text = "# Intro\n\n## Notes 1\n\n1 A numbered item, not a verse.\n\n2 Another item."
+    assert _marker_verses(text) == []

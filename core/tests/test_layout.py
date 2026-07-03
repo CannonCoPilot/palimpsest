@@ -1295,6 +1295,51 @@ def test_kjv_layout_masks_headings_but_not_verse_prose():
     assert not masked(text.find("Verse 1 of chapter 1 prose"))  # verse prose stays analyzable
 
 
+# --- Explicit-marker Bible: layout recovered from the canonical-format markers ------------
+
+def _marker_layout_text() -> str:
+    """A synthetic canonical-format Bible: ``# Book`` / ``## Book N`` / ``<num> prose`` blocks
+    ("Ecclesiasticus" is a deuterocanonical name no book lexicon carries)."""
+    books = ["Genesis", "Exodus", "Leviticus", "Numbers", "Joshua", "Judges",
+             "Ruth", "1 Samuel", "Ecclesiasticus"]
+    blocks = []
+    for book in books:
+        blocks.append(f"# {book}")  # "# BookName" marker line
+        for ch in range(1, 4):
+            blocks.append(f"## {book} {ch}")  # "## BookName N" chapter marker line
+            for v in range(1, 5):
+                blocks.append(f"{v} Verse {v} of chapter {ch} prose text here.")
+    return "\n\n".join(blocks)
+
+
+def test_marker_layout_recovers_books_and_chapters():
+    text = _marker_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    kinds: dict[str, int] = {}
+    for s in sections:
+        kinds[s.type] = kinds.get(s.type, 0) + 1
+    assert kinds.get("book") == 9  # includes the lexicon-free "Ecclesiasticus"
+    assert kinds.get("chapter") == 27
+    assert kinds.get("chapter_heading") == 27  # one masked "## Book N" marker per chapter
+    # Chapters nest under their book.
+    books = {s.id: s.label for s in sections if s.type == "book"}
+    assert "Ecclesiasticus" in books.values()
+    chapters = [s for s in sections if s.type == "chapter"]
+    assert all(c.parent_id in books for c in chapters)
+
+
+def test_marker_layout_masks_marker_lines_but_not_verse_prose():
+    text = _marker_layout_text()
+    sections = detect_layout_sections([], len(text), -1, text)
+    intervals = masked_intervals(sections, DEFAULT_MASK_BY_TYPE, len(text))
+
+    def masked(pos: int) -> bool:
+        return any(s <= pos < e for s, e in intervals)
+
+    assert masked(text.find("## Genesis 1"))  # the "## Book N" marker line is masked
+    assert not masked(text.find("Verse 1 of chapter 1 prose"))  # verse prose stays analyzable
+
+
 # --- Douay-Rheims-style Bible: layout recovered from the verse index ----------------------
 
 def _dr_layout_text() -> str:

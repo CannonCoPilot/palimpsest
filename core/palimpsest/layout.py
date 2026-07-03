@@ -1616,6 +1616,25 @@ def _dr_layout_sections(
         text, text_len, endnote_separator, verse_fn=_dr_verses, header_fn=None)
 
 
+def _marker_layout_sections(
+    text: str, text_len: int, endnote_separator: int
+) -> list[LayoutSection] | None:
+    """Explicit-marker Bible layout: book/chapter/heading read off the canonical-format markers.
+
+    The project's canonical scripture-import format (``# Book`` / ``## Book N`` / ``<num> prose``
+    blocks) resolves every book, chapter, and verse from its markers (:func:`verses._marker_verses`),
+    so :func:`_versed_bible_layout` reads the layout straight off that index — no book lexicon and no
+    ``Chapter N`` heading track, which is what lets it cover editions the Geneva/KJV dialects can't
+    (KJV-1611 deuterocanon, Wycliffe, Tyndale). Each ``## Book N`` marker paragraph is masked as the
+    chapter heading; the pass self-gates on marker density, so it is inert for every other corpus.
+    """
+    from palimpsest.verses import _marker_book_headers, _marker_verses
+
+    return _versed_bible_layout(
+        text, text_len, endnote_separator,
+        verse_fn=_marker_verses, header_fn=_marker_book_headers)
+
+
 def detect_layout_sections(
     boundaries: list[tuple[int, int, str]],
     text_len: int,
@@ -1630,12 +1649,16 @@ def detect_layout_sections(
     back-matter run; structural sections nest inside the body and each one's heading
     label is carved out as a masked ``header`` window.
     """
-    # A Geneva-, KJV-, or Douay-Rheims-style Bible is best structured from its verse index: Geneva
-    # has no usable heading track, KJV's "BookName N" chapter headings defeat the generic chapter
-    # classifier, and DR's single-chapter books print no "Chapter 1" line. Each derivation self-gates
-    # on its verse dialect (no-op / None for every other corpus), and the three dialects are mutually
-    # exclusive (NBSP resets vs. regular-space resets vs. line-anchored ``C:V.`` markers).
+    # A canonical-marker, Geneva-, KJV-, or Douay-Rheims-style Bible is best structured from its
+    # verse index: the marker format carries explicit ``#``/``##`` structure, Geneva has no usable
+    # heading track, KJV's "BookName N" chapter headings defeat the generic chapter classifier, and
+    # DR's single-chapter books print no "Chapter 1" line. Each derivation self-gates on its verse
+    # dialect (no-op / None for every other corpus), and the four dialects are mutually exclusive
+    # (``#``/``##`` markers vs. NBSP resets vs. regular-space resets vs. line-anchored ``C:V.``).
     if text is not None:
+        marker = _marker_layout_sections(text, text_len, endnote_separator)
+        if marker is not None:
+            return marker
         geneva = _geneva_layout_sections(text, text_len, endnote_separator)
         if geneva is not None:
             return geneva

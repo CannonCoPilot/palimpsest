@@ -14,7 +14,7 @@ The index is the single source: the lazy verse *track* renders from it, and the 
 *mask layer* is the union of its ``num`` spans. Detection is purely text-based, so a work with
 no recognised verse markers simply yields an empty index (no verses), and the layer is a no-op.
 
-Four marker dialects are recognised:
+Five marker dialects are recognised:
   * **Canonical** — line-anchored ``C:V.`` (the Challoner main text), keyed off ``X Chapter N``
     headings; safe and generic.
   * **Appendix** — the Douay-Rheims end-matter (Manasses, 3 & 4 Esdras incl. the Bensly
@@ -30,6 +30,10 @@ Four marker dialects are recognised:
     ``content_filters.PROFILE_KJV``), verses are line-anchored ``<num> `` (regular space).
     Chapters are inferred from verse-number resets (like Geneva); books from the mixed-case
     ``Genesis`` / ``1. Samuel`` heading lines the epub already carries.
+  * **Explicit-marker** — the project's canonical scripture-import format (scraped / OCR'd
+    editions): ``# Book`` / ``## Book N`` / ``<num> prose`` blocks. Book and chapter are read
+    straight from the markers, so it is lexicon-free and reset-free — the format for editions the
+    other dialects' book lexicons don't cover (KJV-1611 deuterocanon, Wycliffe, Tyndale).
 """
 
 from __future__ import annotations
@@ -474,6 +478,75 @@ def _kjv_verses(text: str) -> list[dict[str, Any]]:
     return records
 
 
+# --- Canonical explicit-marker verse detection --------------------------------------------
+#
+# The project's canonical scripture-import format marks structure explicitly, one block per
+# paragraph (double-newline separated) — the shape the scraped/OCR'd editions are stored in:
+#
+#     # BookName
+#     ## BookName ChapterNumber
+#     <num>\t<verse prose>
+#
+# Unlike the Geneva and KJV EPUB dialects — which infer books from a name lexicon and chapters
+# from verse-number resets — this reads book and chapter straight from the ``#`` / ``##`` markers,
+# so it is lexicon-free: it handles any edition's spelling (the KJV-1611 "Ecclesiasticus" and the
+# rest of the deuterocanon, Wycliffe, Tyndale) with no book table and no reset heuristics. The
+# markers are non-blank lines, so they survive whitespace normalisation and are the self-gating
+# signal that this is canonical-format scripture. Post-normalisation the verse lines are line-
+# anchored "<num> <prose>" (the scraper's tab collapses to a space) — identical in shape to a KJV
+# verse; the ``#`` / ``##`` markers are what distinguish the two, so this dialect is tried first.
+_MARKER_BOOK_LINE = re.compile(r"(?m)^# (.+)$")            # "# Genesis"
+_MARKER_CHAP_LINE = re.compile(r"(?m)^## .*?(\d+)\s*$")    # "## Genesis 1" → trailing int is chapter
+_MARKER_VERSE_LINE = re.compile(r"(?m)^(\d{1,3})[ \t]+")   # "1 In the beginning…"
+_MARKER_MIN_BOOKS = 8       # this many "# Book" markers ⇒ a scripture canon, not incidental text
+_MARKER_MIN_CHAPTERS = 20   # this many "## Book N" markers ⇒ canonical-format scripture
+
+
+def _marker_book_headers(text: str) -> list[tuple[int, str]]:
+    """(position, verbatim name) for each ``# BookName`` marker line, in document order."""
+    return [(m.start(), m.group(1).strip()) for m in _MARKER_BOOK_LINE.finditer(text)]
+
+
+def _marker_verses(text: str) -> list[dict[str, Any]]:
+    """One record per verse for canonical-format scripture (``#`` / ``##`` / ``<num> `` markers).
+
+    Returns ``[]`` unless the text carries enough ``#`` book and ``##`` chapter markers to be
+    canonical-format scripture, so this pass is inert for every other corpus. The book name and
+    chapter number are read verbatim from the markers (no lexicon, no verse-number-reset inference),
+    so an unnumbered lead verse or a chapter that starts above 1 is handled by construction. The
+    masked ``num`` token spans the number plus its trailing space, mirroring the other dialects so
+    the verse prose stays analyzable.
+    """
+    books = _marker_book_headers(text)
+    chapters = [(m.start(), int(m.group(1))) for m in _MARKER_CHAP_LINE.finditer(text)]
+    if len(books) < _MARKER_MIN_BOOKS or len(chapters) < _MARKER_MIN_CHAPTERS:
+        return []
+
+    records: list[dict[str, Any]] = []
+    bi = ci = 0
+    cur_book = ""
+    cur_chapter = 0
+    for m in _MARKER_VERSE_LINE.finditer(text):
+        num_start, num_end = m.start(), m.end()
+        while bi < len(books) and books[bi][0] <= num_start:
+            cur_book = books[bi][1]
+            bi += 1
+        while ci < len(chapters) and chapters[ci][0] <= num_start:
+            cur_chapter = chapters[ci][1]
+            ci += 1
+        para_end = text.find("\n\n", num_end)
+        records.append({
+            "book": cur_book,
+            "chapter": cur_chapter,
+            "verse": int(m.group(1)),
+            "num_start": num_start,
+            "num_end": num_end,
+            "text_start": num_end,
+            "text_end": para_end if para_end >= 0 else len(text),
+        })
+    return records
+
+
 def detect_verses(text: str) -> list[dict[str, Any]]:
     """Verse index records for ``text``, in document order.
 
@@ -483,12 +556,14 @@ def detect_verses(text: str) -> list[dict[str, Any]]:
     (``""`` if none); ``chapter`` is an int, except the Bensly fragment's ``"A"``.
     """
     records = _canonical_verses(text) + _appendix_verses(text)
-    # DR prints "C:V." markers; Geneva and KJV do not, so the canonical/appendix passes yield
-    # nothing for them. Fall back to the reset-chaptered dialects only then — Geneva first (its
-    # non-breaking-space markers never match the KJV regular-space regex, so the two are mutually
-    # exclusive), each self-gating on run/book density so both stay inert for every other corpus.
+    # DR prints "C:V." markers; the canonical-format editions and the Geneva/KJV EPUBs do not, so
+    # the canonical/appendix passes yield nothing for them. Fall back to the marker- and reset-
+    # chaptered dialects only then: the explicit-marker pass first (its "#"/"##" markers are unique,
+    # and its verse lines otherwise look like KJV's), then Geneva (whose non-breaking-space markers
+    # never match the KJV regular-space regex), then KJV. Each self-gates on marker/run/book density
+    # so all three stay inert — and mutually exclusive — for every other corpus.
     if not records:
-        records = _geneva_verses(text) or _kjv_verses(text)
+        records = _marker_verses(text) or _geneva_verses(text) or _kjv_verses(text)
     records.sort(key=lambda r: (r["num_start"], r["text_start"]))
     return records
 
