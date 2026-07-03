@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Any
 
 from palimpsest.atomic import atomic_write_text
-from palimpsest.canon import book_division
+from palimpsest.canon import book_division, esdras_is_apocryphal
 
 # The fixed section vocabulary, grouped by role. Custom user types may extend this
 # at runtime (they are tolerated everywhere; only the default mask differs).
@@ -1415,6 +1415,7 @@ def _versed_bible_layout(
     verse_fn: Callable[[str], list[dict[str, Any]]],
     header_fn: Callable[[str], list[tuple[int, str]]] | None,
     heading_suffix: str = "",
+    mask_book_name: bool = False,
 ) -> list[LayoutSection] | None:
     """Book/chapter/chapter-heading layout for a scripture edition, read off its verse index.
 
@@ -1431,7 +1432,10 @@ def _versed_bible_layout(
     folded into the "BookName Chapter 1" headings rather than standing alone) the book containers
     are derived from the verse records themselves. ``heading_suffix`` is appended to each
     ``chapter_heading`` label — Geneva prints an editorial argument paragraph, so it passes
-    ``" argument"``; KJV and DR print a bare heading line and pass ``""``.
+    ``" argument"``; KJV and DR print a bare heading line and pass ``""``. ``mask_book_name`` masks
+    each standalone book-name line as a ``header`` (the canonical import format prints an explicit
+    "# Book" marker line; the legacy EPUB editions leave it off to preserve their pinned mask
+    vocabulary and gold maps).
     """
     recs = verse_fn(text)
     if not recs:
@@ -1497,13 +1501,16 @@ def _versed_bible_layout(
     # books of the same genre are wrapped in a `genre_division` container. A single-book run
     # (e.g. Acts alone between the Gospels and Epistles) gets no container — one would be
     # span-identical to the book and tie the parent search — so its genre rides on the book.
+    # "1/2 Esdras" mean Ezra/Nehemiah in a Douay-Rheims edition but the apocryphal Greek Esdras /
+    # Ezra-apocalypse in a KJV-Apocrypha one; the tell is whether this edition names Ezra directly.
+    esdras_apoc = esdras_is_apocryphal(name for _, name in headers)
     book_spans: list[tuple[int, int, str, str | None, bool]] = []
     for i, (bstart, bname) in enumerate(headers):
         bend = headers[i + 1][0] if i + 1 < len(headers) else backmatter_start
         bs, be = max(bstart, body_start), min(bend, backmatter_start)
         if be <= bs:
             continue
-        div, apoc = book_division(bname)
+        div, apoc = book_division(bname, esdras_apocryphal=esdras_apoc)
         book_spans.append((bs, be, bname, div, apoc))
 
     if book_spans:
@@ -1523,6 +1530,14 @@ def _versed_bible_layout(
         if apoc:
             meta["apocrypha"] = True
         add("book", bs, be, bname, meta)
+        # The canonical import format prints an explicit "# Book" marker line; mask it as a `header`
+        # (the book/chapter/section name-line type) since it is a structural marker, not prose. Gated
+        # on mask_book_name so the legacy EPUB editions keep their pinned mask vocabulary and gold
+        # maps — the Douay-Rheims has no standalone book-name line anyway (folded into its first
+        # chapter heading), so cross-edition mask-type parity there is unaffected.
+        if mask_book_name and header_fn is not None:
+            name_end = text.find("\n\n", bs)
+            add("header", bs, name_end if 0 <= name_end <= be else be, bname)
 
     # Per chapter: the argument/heading paragraph immediately before the first verse becomes a
     # masked `chapter_heading`; the verse bodies become an unmasked `chapter`. The search is bounded
@@ -1632,7 +1647,7 @@ def _marker_layout_sections(
 
     return _versed_bible_layout(
         text, text_len, endnote_separator,
-        verse_fn=_marker_verses, header_fn=_marker_book_headers)
+        verse_fn=_marker_verses, header_fn=_marker_book_headers, mask_book_name=True)
 
 
 def detect_layout_sections(

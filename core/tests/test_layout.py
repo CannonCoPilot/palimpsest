@@ -1336,8 +1336,11 @@ def test_marker_layout_masks_marker_lines_but_not_verse_prose():
     def masked(pos: int) -> bool:
         return any(s <= pos < e for s, e in intervals)
 
+    assert masked(text.find("# Genesis"))  # the "# Book" marker line is masked (as a header)
     assert masked(text.find("## Genesis 1"))  # the "## Book N" marker line is masked
     assert not masked(text.find("Verse 1 of chapter 1 prose"))  # verse prose stays analyzable
+    # One masked book-name header per book, mirroring how the EPUB book-name line would be treated.
+    assert sum(1 for s in sections if s.type == "header") == 9
 
 
 # --- Douay-Rheims-style Bible: layout recovered from the verse index ----------------------

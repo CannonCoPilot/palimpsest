@@ -10,6 +10,7 @@ apply to every version even though their physical book order differs.
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable
 
 #: The seven canonical-division genre categories, in canonical order.
 DIVISIONS: tuple[str, ...] = (
@@ -39,12 +40,15 @@ _BASE_DIVISION: dict[str, str] = {
     "proverbs": "Wisdom-poetry", "ecclesiastes": "Wisdom-poetry",
     "canticle of canticles": "Wisdom-poetry", "song of solomon": "Wisdom-poetry",
     "song of songs": "Wisdom-poetry", "wisdom": "Wisdom-poetry",
+    "wisdom of solomon": "Wisdom-poetry",
     "sirach": "Wisdom-poetry", "ecclesiasticus": "Wisdom-poetry",
     "prayer of manasses": "Wisdom-poetry", "prayer of manasseh": "Wisdom-poetry",
     "prayer of azariah": "Wisdom-poetry", "song of the three children": "Wisdom-poetry",
     # Prophets-Major (incl. deuterocanonical Baruch, per the project rule)
     "isaiah": "Prophets-Major", "isaias": "Prophets-Major", "jeremiah": "Prophets-Major",
     "jeremias": "Prophets-Major", "lamentations": "Prophets-Major", "baruch": "Prophets-Major",
+    "letter of jeremiah": "Prophets-Major", "epistle of jeremiah": "Prophets-Major",
+    "epistle of jeremy": "Prophets-Major",
     "ezekiel": "Prophets-Major", "ezechiel": "Prophets-Major", "daniel": "Prophets-Major",
     # Prophets-Minor (the Twelve)
     "hosea": "Prophets-Minor", "osee": "Prophets-Minor", "joel": "Prophets-Minor",
@@ -68,7 +72,8 @@ _BASE_DIVISION: dict[str, str] = {
 # Deuterocanonical / apocryphal base names (Protestant "Apocrypha"). These carry
 # metadata["apocrypha"]=True on their book section in addition to their literary genre.
 _APOCRYPHA_BASES: frozenset[str] = frozenset({
-    "tobit", "tobias", "judith", "wisdom", "sirach", "ecclesiasticus", "baruch",
+    "tobit", "tobias", "judith", "wisdom", "wisdom of solomon", "sirach", "ecclesiasticus",
+    "baruch", "letter of jeremiah", "epistle of jeremiah", "epistle of jeremy",
     "maccabees", "machabees", "prayer of manasses", "prayer of manasseh",
     "susanna", "bel and the dragon", "song of the three children", "prayer of azariah",
 })
@@ -104,7 +109,22 @@ def _normalize(name: str) -> tuple[int | None, str]:
     return ordinal, base
 
 
-def book_division(name: str) -> tuple[str | None, bool]:
+def esdras_is_apocryphal(book_names: Iterable[str]) -> bool:
+    """Whether an edition's ``1/2 Esdras`` are the apocryphal books rather than Ezra/Nehemiah.
+
+    ``Esdras`` collides across canons: Douay-Rheims/Vulgate print Ezra and Nehemiah *as*
+    "1 Esdras" / "2 Esdras" (canonical Historical) and have no standalone Ezra, whereas a
+    KJV-*Apocrypha* edition keeps Ezra and Nehemiah under their own names and prints separate
+    apocryphal "1/2 Esdras" (the Greek Esdras and the Ezra-apocalypse). The tell is therefore
+    whether the edition already names Ezra (and Nehemiah) directly: if it does, any Esdras it
+    also prints must be the apocryphal ones. Deriving the hint from the book set keeps it
+    edition-agnostic — no per-edition configuration to maintain.
+    """
+    bases = {_normalize(n)[1] for n in book_names}
+    return "ezra" in bases and ("nehemiah" in bases or "nehemias" in bases)
+
+
+def book_division(name: str, *, esdras_apocryphal: bool = False) -> tuple[str | None, bool]:
     """Return ``(genre_division, is_apocrypha)`` for a printed book name.
 
     ``genre_division`` is one of :data:`DIVISIONS` or ``None`` when the name is not a
@@ -115,10 +135,11 @@ def book_division(name: str) -> tuple[str | None, bool]:
     * ``John`` with no ordinal is a Gospel; ``1/2/3 John`` are Epistles.
     * ``Esdras`` collides across canons — in Douay-Rheims/Vulgate ``1/2 Esdras`` ARE
       Ezra/Nehemiah (canonical Historical), while apocryphal ``3/4 Esdras`` are the Greek
-      Esdras (Historical) and the Ezra-apocalypse (Prophets-Major). This resolves them by
-      the DR/Vulgate convention, which is what the three current editions print; a KJV
-      *Apocrypha* edition renames Ezra/Nehemiah, so its "1/2 Esdras" are the apocryphal
-      books — handle that with an edition-canon hint when those editions are imported.
+      Esdras (Historical) and the Ezra-apocalypse (Prophets-Major). Pass
+      ``esdras_apocryphal=True`` (see :func:`esdras_is_apocryphal`) for a KJV-*Apocrypha*
+      edition, which keeps Ezra/Nehemiah under their own names, so *its* "1 Esdras" is the
+      Greek Esdras (Historical) and "2 Esdras" the Ezra-apocalypse (Prophets-Major) — both
+      apocryphal, mirroring the Vulgate 3/4 Esdras.
     """
     ordinal, base = _normalize(name)
     if base == "john":
@@ -126,5 +147,7 @@ def book_division(name: str) -> tuple[str | None, bool]:
     if base == "esdras":
         if ordinal in (3, 4):
             return ("Historical" if ordinal == 3 else "Prophets-Major"), True
+        if esdras_apocryphal:
+            return ("Prophets-Major" if ordinal == 2 else "Historical"), True
         return "Historical", False
     return _BASE_DIVISION.get(base), base in _APOCRYPHA_BASES
