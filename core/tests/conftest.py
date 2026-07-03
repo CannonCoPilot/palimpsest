@@ -54,6 +54,7 @@ _UNIT_MODULES = frozenset({
     "test_registry", "test_vectorstore", "test_layout",
     "test_boundary_detection", "test_ingest", "test_epub_parser",
     "test_characters", "test_extractor", "test_gold_maps", "test_gold_canon",
+    "test_gold_sources",
 })
 _API_MODULES = frozenset({"test_server", "test_sections_api"})
 _CLI_MODULES = frozenset({"test_cli"})

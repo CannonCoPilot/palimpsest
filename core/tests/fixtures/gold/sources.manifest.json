@@ -1,0 +1,543 @@
+{
+  "schema": "palimpsest.gold-sources/v1",
+  "scope": "bibles",
+  "note": "Audit trail + registry + scorecard for the Bible Gold Set. Source binaries are NOT distributed (imports/ is gitignored); source_sha256 is the fingerprint. Regenerate with mask_engine/gen_sources_manifest.py; verify local corpus with verify_sources.py.",
+  "count": 19,
+  "bibles": [
+    {
+      "id": 5,
+      "translation": "Douay-Rheims Bible (Haydock)",
+      "year": null,
+      "spelling": "modern",
+      "typeset": "modern",
+      "canon": "catholic-douay",
+      "kind": "detector-epub",
+      "source_origin": "published-epub",
+      "source_file": "Douay-Rheims Bible Complete - Original, Unabriged, Full -- Douay-Rheims Version -- 2018 -- 1a24ae78af9f25ce66b9f156d163841a -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "397ef4da881432e4a2057d5ef12c6b3732536d7c7f36f51a4a9f2037d826543b",
+      "reference_sha256": "a46f4f3bc8564255d56995ad61f382830a34421b87267adcc6a73a0587a27215",
+      "structure": {
+        "books": 78,
+        "chapters": 3039,
+        "verses": null
+      },
+      "gold_map": "maps/work-005.map.json",
+      "annotation_gold": "work-5.json",
+      "accuracy_source": "annotation+detector",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 6,
+      "translation": "Geneva Bible (1599, Tolle Lege)",
+      "year": 2013,
+      "spelling": "modernized",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "detector-epub",
+      "source_origin": "published-epub",
+      "source_file": "1599 Geneva Bible -- Tolle Lege Press [Press, Tolle Lege] -- 2013 -- Tolle Lege Press -- 19f28a695686af95cd3f5997c53aa3f2 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": false,
+      "source_sha256": null,
+      "reference_sha256": "5385f4133161b687540098f4069e72ac61d99feb14a0a1eac24dc29e8806f353",
+      "structure": {
+        "books": null,
+        "chapters": 1189,
+        "verses": null
+      },
+      "gold_map": "maps/work-006.map.json",
+      "annotation_gold": "work-6.json",
+      "accuracy_source": "annotation+detector",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 100,
+      "translation": "Douay-Rheims Bible (Challoner, Global Grey)",
+      "year": 2024,
+      "spelling": "modern",
+      "typeset": "modern",
+      "canon": "catholic-douay",
+      "kind": "detector-epub",
+      "source_origin": "published-epub",
+      "source_file": "Douay–Rheims Bible -- Challoner's Revised Version -- 2024 -- Global Grey ebooks -- d727529260a20949024cead95f4b81cf -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "0f30d4106a12088ddb6dac64b1c7831326d8aa8c79e1eb8d508892b5a2dfbd95",
+      "reference_sha256": "a03424d25c995be49b36d3179feebdee4107e1bce3ae7bf18fb9f75af15d6eb1",
+      "structure": {
+        "books": 73,
+        "chapters": 1334,
+        "verses": null
+      },
+      "gold_map": "maps/work-100.map.json",
+      "annotation_gold": "work-100.json",
+      "accuracy_source": "annotation+detector",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 108,
+      "translation": "Douay-Rheims Bible (Original, 1582-1610)",
+      "year": 1610,
+      "spelling": "archaic",
+      "typeset": "modern",
+      "canon": "catholic-douay",
+      "kind": "bespoke",
+      "source_origin": "reconstructed-from-digital-edition",
+      "source_file": "douay-rheims-original-1582-1610.txt",
+      "source_file_type": "txt",
+      "source_present": false,
+      "source_sha256": null,
+      "reference_sha256": "64722ad621ab857a71e7034f380c63791f0b32d776720478f58185efe4444bb7",
+      "structure": {
+        "books": 76,
+        "chapters": 1361,
+        "verses": null
+      },
+      "gold_map": "maps/work-108.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      },
+      "note": "Catholic Vulgate canon (Esther 16, Daniel 14) — not gated by the Protestant canon oracle; route to full parity = annotation gold or Catholic oracle."
+    },
+    {
+      "id": 201,
+      "translation": "Coverdale Bible",
+      "year": 1535,
+      "spelling": "archaic",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "Coverdale.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "828bcc8c6adcb80da5d703c43622c5eccc78c3757fdfacaa5b1870e1f7de19f2",
+      "reference_sha256": "ebb2229a8aeab3841df2674e871c1b7c055790fa7b620b1c91e687e7dc007bc5",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31102
+      },
+      "gold_map": "maps/work-201.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 202,
+      "translation": "Bishops' Bible",
+      "year": 1568,
+      "spelling": "archaic",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "Bishops.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "e67167edca8268be7b11b72112ca90bb993cfa931cdd7e92b2264024db628e27",
+      "reference_sha256": "51eb443180a4bf54a8acac5b5c1ea57dc900cc1dcb9fec43c452710497ffc431",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31103
+      },
+      "gold_map": "maps/work-202.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 203,
+      "translation": "Wycliffe Bible",
+      "year": 1382,
+      "spelling": "archaic-middle-english",
+      "typeset": "modern",
+      "canon": "wider-73",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "Wycliffe-reconstructed.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "f9da3dad6c9c3d98c718473f79875bc77e9b9e23a68ec4a0d63f61543d972a7c",
+      "reference_sha256": "37fdb7762b0f03308fc6ecbeacdb2e87c79453096da192a6838a38cdb62c929e",
+      "structure": {
+        "books": 73,
+        "chapters": 1328,
+        "verses": 32857
+      },
+      "gold_map": "maps/work-203.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      },
+      "note": "core-66 gated; deuterocanon recorded (Vulgate counts)."
+    },
+    {
+      "id": 208,
+      "translation": "Great Bible",
+      "year": 1539,
+      "spelling": "archaic",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "Great.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "6d6d0974c64351ccf6506d53268cbd8d7a0623ef6a1ab5725fa96f41651412b4",
+      "reference_sha256": "208828fc9c5e373c35ab23c77b6d0b204291596ae6b7a36f8ee0b0559f4a8e39",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31101
+      },
+      "gold_map": "maps/work-208.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 209,
+      "translation": "Matthew's Bible",
+      "year": 1537,
+      "spelling": "archaic",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "Matthews.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "0a6c15f6b3e8fa75972d3a8599987256f9f149d348a5ce001cd3c948092b9930",
+      "reference_sha256": "c90477aa62411f05ddfcd57918e071b8c5ab580b63e91b53edd0f324b71ef3d4",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31101
+      },
+      "gold_map": "maps/work-209.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 210,
+      "translation": "Webster's Bible",
+      "year": 1833,
+      "spelling": "modern",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "Websters.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "76e2fd9b324aa6c5b81512c4c32cf9f287615c5315c41ae8957f1fcf9b1ef23b",
+      "reference_sha256": "52950413beb8222b2c27a0a896c6cf946ca51715b20fb28c06801c4c03a6fe8f",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31102
+      },
+      "gold_map": "maps/work-210.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 211,
+      "translation": "Wessex Gospels",
+      "year": 990,
+      "spelling": "archaic-old-english",
+      "typeset": "modern",
+      "canon": "gospels-only",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "Wessex.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "3c706c8e61c5b8cdd25b2272da2ea81e8cb3c30a7a943f4d535e2191c5df406a",
+      "reference_sha256": "5fe1ac03dedb8cef58faca2df38db6beb463da2f29619c88e2ca57386da04890",
+      "structure": {
+        "books": 4,
+        "chapters": 89,
+        "verses": 3697
+      },
+      "gold_map": "maps/work-211.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 212,
+      "translation": "Young's Literal Translation",
+      "year": 1898,
+      "spelling": "modern",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "Youngs.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "8983653689c99bf34f66c2843b7c0c61798aba55fce2884a0657e4e41eb13cde",
+      "reference_sha256": "955c798f148f79fe2333a0b7a591d091f4e373a3505065816f58f34a0c6a0651",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31102
+      },
+      "gold_map": "maps/work-212.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 213,
+      "translation": "Julia E. Smith Translation",
+      "year": 1876,
+      "spelling": "modern",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "JuliaSmith.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "cabe3182d67c67f35d240b4d876c3c03d051616e5e094a2d1eff231c90bb6d9e",
+      "reference_sha256": "82e1566eb8a82800905c29382e7be0a024b6af37264de716169138aa9b79f2ea",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31102
+      },
+      "gold_map": "maps/work-213.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 214,
+      "translation": "King James Version (2016, NT)",
+      "year": 2016,
+      "spelling": "modern",
+      "typeset": "modern",
+      "canon": "new-testament",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "KJV2016.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "31ebe2b11ac807133136b10da88e10c82d2c043cc5e7685587fb60fab84b524c",
+      "reference_sha256": "aeec53bed961a91eca1a53c8fdcf08fcf20b47c6b4643601e25525ac14eb7088",
+      "structure": {
+        "books": 27,
+        "chapters": 260,
+        "verses": 7957
+      },
+      "gold_map": "maps/work-214.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 215,
+      "translation": "EMTV (English Majority Text Version, NT)",
+      "year": 2003,
+      "spelling": "modern",
+      "typeset": "modern",
+      "canon": "new-testament",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "EMTV.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "9d9a1d767ddb0157e77111d98e9f351609ea6d5c42cad42b92a482956d62342a",
+      "reference_sha256": "8cdcd21ea808af097c2fc9bd31df2064a4c95e0bc34da6e2ec51d1edfa09767c",
+      "structure": {
+        "books": 27,
+        "chapters": 260,
+        "verses": 7957
+      },
+      "gold_map": "maps/work-215.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 216,
+      "translation": "King James Version (1769)",
+      "year": 1769,
+      "spelling": "modern-standardized",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "KJV1769.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "b8a51b9b90e8e1ff51084b5d4f17c7e9d23b3b6e5d4bf7eafa6eb7be17ec84f6",
+      "reference_sha256": "40907f193f1914e17a8e297c2439e346465952e21d704d9f2b453952484c9a8c",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31102
+      },
+      "gold_map": "maps/work-216.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 217,
+      "translation": "Tyndale Bible",
+      "year": 1535,
+      "spelling": "archaic",
+      "typeset": "modern",
+      "canon": "partial",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-epub",
+      "source_file": "Tyndale-epub-reconstructed.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "cd77bdb5e649a5c3e5a3244389f04befba56692b0014b5653374481e92c9de25",
+      "reference_sha256": "681f30035f9a257631ac63a429b13a92c7ce645edad61efb2c68fbb6da29dbe6",
+      "structure": {
+        "books": 33,
+        "chapters": 451,
+        "verses": 13843
+      },
+      "gold_map": "maps/work-217.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 218,
+      "translation": "Geneva Bible (1560)",
+      "year": 1560,
+      "spelling": "archaic",
+      "typeset": "modern",
+      "canon": "protestant-66",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-epub",
+      "source_file": "Geneva1560-epub-reconstructed.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "fd5c2a9192291f47fbbf5d26a5b0ade9eebc72d6db74afed3f81c1bfa4f93e86",
+      "reference_sha256": "6624fa147ab11fdbef020a5c53b166f26fc918d319a053376231ae1b42f2d661",
+      "structure": {
+        "books": 66,
+        "chapters": 1189,
+        "verses": 31090
+      },
+      "gold_map": "maps/work-218.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      }
+    },
+    {
+      "id": 219,
+      "translation": "King James Version (1611, comprehensive)",
+      "year": 1611,
+      "spelling": "archaic",
+      "typeset": "modern",
+      "canon": "kjv-1611-80",
+      "kind": "marker",
+      "source_origin": "reconstructed-from-web-scrape",
+      "source_file": "KJV1611-comprehensive-reconstructed.txt",
+      "source_file_type": "txt",
+      "source_present": true,
+      "source_sha256": "6ceaf2e014339b08dfff15e26c6f8c393cc738d803b3b6d3aa2245b5898fcc1c",
+      "reference_sha256": "e62120bc695ab097d906df0a6ac598f53f6100ad7acdcbeca0aae250bf6dffcd",
+      "structure": {
+        "books": 80,
+        "chapters": 1355,
+        "verses": 36700
+      },
+      "gold_map": "maps/work-219.map.json",
+      "annotation_gold": null,
+      "accuracy_source": "canon-oracle",
+      "validated": {
+        "cli": true,
+        "api": true,
+        "ui": true
+      },
+      "note": "80-book edition with 1611 apparatus; core-66 + KJV-Apocrypha gated by the canon oracle."
+    }
+  ]
+}
