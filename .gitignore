@@ -59,8 +59,12 @@ data/
 .coverage.*
 .testmondata
 
-# Large research PDFs (keep local, don't push to GitHub)
-research/papers/**/*.pdf
+# Research source documents — copyrighted; preserve locally, do NOT distribute
+# (Gold-Set "preserve, don't push" policy). Anchored to where the corpus actually
+# lives; the earlier research/papers/**/*.pdf was mis-anchored to the repo root and
+# never matched the docs/development/research/ tree, so 122 PDFs + 1 epub stayed tracked.
+docs/development/research/**/*.pdf
+docs/development/research/**/*.epub
 target/
 
 # Test artifacts
