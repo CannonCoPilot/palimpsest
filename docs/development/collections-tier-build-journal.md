@@ -2,7 +2,9 @@
 
 Running log of the autonomous Collections-tier build + full-app regression validation
 (authorized 2026-06-30). Companion specs: `design/collections-tier-vision.md`,
-`design/collections-tier-plan.md`. Commit discipline: commit at green milestones **locally**;
+`design/collections-tier-plan.md`. The Gold-Set guarantee is codified separately in
+`gold-set-standard.md` (the two gold kinds, the 3-criteria bar, per-kind parity, and the
+registry/audit model). Commit discipline: commit at green milestones **locally**;
 **push held** pending explicit authorization.
 
 ## Baseline (2026-06-30, pre-build)
