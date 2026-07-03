@@ -498,8 +498,8 @@ def _kjv_verses(text: str) -> list[dict[str, Any]]:
 _MARKER_BOOK_LINE = re.compile(r"(?m)^# (.+)$")            # "# Genesis"
 _MARKER_CHAP_LINE = re.compile(r"(?m)^## .*?(\d+)\s*$")    # "## Genesis 1" → trailing int is chapter
 _MARKER_VERSE_LINE = re.compile(r"(?m)^(\d{1,3})[ \t]+")   # "1 In the beginning…"
-_MARKER_MIN_BOOKS = 8       # this many "# Book" markers ⇒ a scripture canon, not incidental text
-_MARKER_MIN_CHAPTERS = 20   # this many "## Book N" markers ⇒ canonical-format scripture
+_MARKER_MIN_BOOKS = 4       # ≥4 "# Book" markers admits Gospel harmonies (e.g. the 4-book Wessex)
+_MARKER_MIN_CHAPTERS = 20   # ≥20 "## Book N" markers is the strong guard against incidental text
 
 
 def _marker_book_headers(text: str) -> list[tuple[int, str]]:

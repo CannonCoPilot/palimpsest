@@ -214,3 +214,36 @@ def test_marker_inert_below_density_gate():
     # inert and an incidental markdown-ish document is never mis-read as scripture.
     text = "# Intro\n\n## Notes 1\n\n1 A numbered item, not a verse.\n\n2 Another item."
     assert _marker_verses(text) == []
+
+
+def _marker_harmony_sample() -> str:
+    """A 4-book Gospel harmony in canonical-marker format: below the old 8-book floor but well
+    above the 20-chapter guard, so the dialect must fire (partial canons are still scripture)."""
+    blocks: list[str] = []
+    for book in ["Matthew", "Mark", "Luke", "John"]:
+        blocks.append(f"# {book}")
+        for ch in range(1, 7):  # 4 books x 6 chapters = 24 chapters (>= 20)
+            blocks.append(f"## {book} {ch}")
+            for v in range(1, 4):
+                blocks.append(f"{v} Verse {v} of {book} chapter {ch}.")
+    return "\n\n".join(blocks)
+
+
+def test_marker_gospel_harmony_fires_partial_canon():
+    # 4 books is below the old 8-book floor but a Gospel harmony is genuine scripture; the
+    # 20-chapter guard (24 here) is what confirms it, so the marker dialect must fire.
+    recs = detect_verses(_marker_harmony_sample())
+    assert {r["book"] for r in recs} == {"Matthew", "Mark", "Luke", "John"}
+    assert all(r["chapter"] in range(1, 7) for r in recs)
+
+
+def test_marker_chapter_gate_still_guards_book_rich_doc():
+    # 4 "# " headings but only 8 "## " lines: clears the book floor yet fails the 20-chapter
+    # guard, so an incidental structured doc is still never mis-read as scripture.
+    blocks: list[str] = []
+    for book in ["Alpha", "Beta", "Gamma", "Delta"]:
+        blocks.append(f"# {book}")
+        for ch in range(1, 3):  # 4 x 2 = 8 chapters (< 20)
+            blocks.append(f"## {book} {ch}")
+            blocks.append(f"1 A line under {book} {ch}.")
+    assert _marker_verses("\n\n".join(blocks)) == []

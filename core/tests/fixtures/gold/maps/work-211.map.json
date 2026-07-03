@@ -1,0 +1,3038 @@
+{
+  "schema": "palimpsest.gold-map/v1",
+  "idx": 211,
+  "source_file": "Wessex.txt",
+  "import_source": "Wessex.txt",
+  "reference_sha256": "5fe1ac03dedb8cef58faca2df38db6beb463da2f29619c88e2ca57386da04890",
+  "text_len": 389341,
+  "element_count": 188,
+  "type_counts": {
+    "body": 1,
+    "genre_division": 1,
+    "book": 4,
+    "header": 4,
+    "chapter": 89,
+    "chapter_heading": 89
+  },
+  "verse_count": 3697,
+  "generated_from": "mask_engine/gen_marker_gold (independent marker parse)",
+  "applied": true,
+  "extra_types": [],
+  "mask_by_type": {
+    "body": false,
+    "book": false,
+    "chapter": false,
+    "chapter_heading": true,
+    "genre_division": false,
+    "header": true
+  },
+  "sections": [
+    {
+      "id": "body-0001",
+      "type": "body",
+      "start": 0,
+      "end": 389341,
+      "label": "",
+      "name": "body",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:body"
+      }
+    },
+    {
+      "id": "genre_division-0001",
+      "type": "genre_division",
+      "start": 0,
+      "end": 389341,
+      "label": "Gospels",
+      "name": "genre_division_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Gospels"
+      }
+    },
+    {
+      "id": "book-0001",
+      "type": "book",
+      "start": 0,
+      "end": 116487,
+      "label": "Matthew",
+      "name": "book_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:book",
+        "book": "Matthew",
+        "genre": "Gospels"
+      }
+    },
+    {
+      "id": "header-0001",
+      "type": "header",
+      "start": 0,
+      "end": 9,
+      "label": "Matthew",
+      "name": "header_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:header"
+      }
+    },
+    {
+      "id": "chapter-0001",
+      "type": "chapter",
+      "start": 0,
+      "end": 2473,
+      "label": "Matthew 1",
+      "name": "chapter_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "1"
+      }
+    },
+    {
+      "id": "chapter_heading-0001",
+      "type": "chapter_heading",
+      "start": 11,
+      "end": 23,
+      "label": "Matthew 1",
+      "name": "chapter_heading_1",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0002",
+      "type": "chapter",
+      "start": 2473,
+      "end": 5047,
+      "label": "Matthew 2",
+      "name": "chapter_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "2"
+      }
+    },
+    {
+      "id": "chapter_heading-0002",
+      "type": "chapter_heading",
+      "start": 2473,
+      "end": 2485,
+      "label": "Matthew 2",
+      "name": "chapter_heading_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0003",
+      "type": "chapter",
+      "start": 5047,
+      "end": 7036,
+      "label": "Matthew 3",
+      "name": "chapter_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "3"
+      }
+    },
+    {
+      "id": "chapter_heading-0003",
+      "type": "chapter_heading",
+      "start": 5047,
+      "end": 5059,
+      "label": "Matthew 3",
+      "name": "chapter_heading_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0004",
+      "type": "chapter",
+      "start": 7036,
+      "end": 9487,
+      "label": "Matthew 4",
+      "name": "chapter_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "4"
+      }
+    },
+    {
+      "id": "chapter_heading-0004",
+      "type": "chapter_heading",
+      "start": 7036,
+      "end": 7048,
+      "label": "Matthew 4",
+      "name": "chapter_heading_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0005",
+      "type": "chapter",
+      "start": 9487,
+      "end": 14679,
+      "label": "Matthew 5",
+      "name": "chapter_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "5"
+      }
+    },
+    {
+      "id": "chapter_heading-0005",
+      "type": "chapter_heading",
+      "start": 9487,
+      "end": 9499,
+      "label": "Matthew 5",
+      "name": "chapter_heading_5",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0006",
+      "type": "chapter",
+      "start": 14679,
+      "end": 18602,
+      "label": "Matthew 6",
+      "name": "chapter_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "6"
+      }
+    },
+    {
+      "id": "chapter_heading-0006",
+      "type": "chapter_heading",
+      "start": 14679,
+      "end": 14691,
+      "label": "Matthew 6",
+      "name": "chapter_heading_6",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0007",
+      "type": "chapter",
+      "start": 18602,
+      "end": 21672,
+      "label": "Matthew 7",
+      "name": "chapter_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "7"
+      }
+    },
+    {
+      "id": "chapter_heading-0007",
+      "type": "chapter_heading",
+      "start": 18602,
+      "end": 18614,
+      "label": "Matthew 7",
+      "name": "chapter_heading_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0008",
+      "type": "chapter",
+      "start": 21672,
+      "end": 25661,
+      "label": "Matthew 8",
+      "name": "chapter_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "8"
+      }
+    },
+    {
+      "id": "chapter_heading-0008",
+      "type": "chapter_heading",
+      "start": 21672,
+      "end": 21684,
+      "label": "Matthew 8",
+      "name": "chapter_heading_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0009",
+      "type": "chapter",
+      "start": 25661,
+      "end": 29789,
+      "label": "Matthew 9",
+      "name": "chapter_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "9"
+      }
+    },
+    {
+      "id": "chapter_heading-0009",
+      "type": "chapter_heading",
+      "start": 25661,
+      "end": 25673,
+      "label": "Matthew 9",
+      "name": "chapter_heading_9",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0010",
+      "type": "chapter",
+      "start": 29789,
+      "end": 34282,
+      "label": "Matthew 10",
+      "name": "chapter_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "10"
+      }
+    },
+    {
+      "id": "chapter_heading-0010",
+      "type": "chapter_heading",
+      "start": 29789,
+      "end": 29802,
+      "label": "Matthew 10",
+      "name": "chapter_heading_10",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0011",
+      "type": "chapter",
+      "start": 34282,
+      "end": 37443,
+      "label": "Matthew 11",
+      "name": "chapter_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "11"
+      }
+    },
+    {
+      "id": "chapter_heading-0011",
+      "type": "chapter_heading",
+      "start": 34282,
+      "end": 34295,
+      "label": "Matthew 11",
+      "name": "chapter_heading_11",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0012",
+      "type": "chapter",
+      "start": 37443,
+      "end": 43077,
+      "label": "Matthew 12",
+      "name": "chapter_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "12"
+      }
+    },
+    {
+      "id": "chapter_heading-0012",
+      "type": "chapter_heading",
+      "start": 37443,
+      "end": 37456,
+      "label": "Matthew 12",
+      "name": "chapter_heading_12",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0013",
+      "type": "chapter",
+      "start": 43077,
+      "end": 49904,
+      "label": "Matthew 13",
+      "name": "chapter_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "13"
+      }
+    },
+    {
+      "id": "chapter_heading-0013",
+      "type": "chapter_heading",
+      "start": 43077,
+      "end": 43090,
+      "label": "Matthew 13",
+      "name": "chapter_heading_13",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0014",
+      "type": "chapter",
+      "start": 49904,
+      "end": 53459,
+      "label": "Matthew 14",
+      "name": "chapter_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "14"
+      }
+    },
+    {
+      "id": "chapter_heading-0014",
+      "type": "chapter_heading",
+      "start": 49904,
+      "end": 49917,
+      "label": "Matthew 14",
+      "name": "chapter_heading_14",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0015",
+      "type": "chapter",
+      "start": 53459,
+      "end": 57370,
+      "label": "Matthew 15",
+      "name": "chapter_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "15"
+      }
+    },
+    {
+      "id": "chapter_heading-0015",
+      "type": "chapter_heading",
+      "start": 53459,
+      "end": 53472,
+      "label": "Matthew 15",
+      "name": "chapter_heading_15",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0016",
+      "type": "chapter",
+      "start": 57370,
+      "end": 60344,
+      "label": "Matthew 16",
+      "name": "chapter_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "16"
+      }
+    },
+    {
+      "id": "chapter_heading-0016",
+      "type": "chapter_heading",
+      "start": 57370,
+      "end": 57383,
+      "label": "Matthew 16",
+      "name": "chapter_heading_16",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0017",
+      "type": "chapter",
+      "start": 60344,
+      "end": 63532,
+      "label": "Matthew 17",
+      "name": "chapter_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "17"
+      }
+    },
+    {
+      "id": "chapter_heading-0017",
+      "type": "chapter_heading",
+      "start": 60344,
+      "end": 60357,
+      "label": "Matthew 17",
+      "name": "chapter_heading_17",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0018",
+      "type": "chapter",
+      "start": 63532,
+      "end": 67481,
+      "label": "Matthew 18",
+      "name": "chapter_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "18"
+      }
+    },
+    {
+      "id": "chapter_heading-0018",
+      "type": "chapter_heading",
+      "start": 63532,
+      "end": 63545,
+      "label": "Matthew 18",
+      "name": "chapter_heading_18",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0019",
+      "type": "chapter",
+      "start": 67481,
+      "end": 70743,
+      "label": "Matthew 19",
+      "name": "chapter_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "19"
+      }
+    },
+    {
+      "id": "chapter_heading-0019",
+      "type": "chapter_heading",
+      "start": 67481,
+      "end": 67494,
+      "label": "Matthew 19",
+      "name": "chapter_heading_19",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0020",
+      "type": "chapter",
+      "start": 70743,
+      "end": 74771,
+      "label": "Matthew 20",
+      "name": "chapter_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "20"
+      }
+    },
+    {
+      "id": "chapter_heading-0020",
+      "type": "chapter_heading",
+      "start": 70743,
+      "end": 70756,
+      "label": "Matthew 20",
+      "name": "chapter_heading_20",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0021",
+      "type": "chapter",
+      "start": 74771,
+      "end": 80224,
+      "label": "Matthew 21",
+      "name": "chapter_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "21"
+      }
+    },
+    {
+      "id": "chapter_heading-0021",
+      "type": "chapter_heading",
+      "start": 74771,
+      "end": 74784,
+      "label": "Matthew 21",
+      "name": "chapter_heading_21",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0022",
+      "type": "chapter",
+      "start": 80224,
+      "end": 84390,
+      "label": "Matthew 22",
+      "name": "chapter_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "22"
+      }
+    },
+    {
+      "id": "chapter_heading-0022",
+      "type": "chapter_heading",
+      "start": 80224,
+      "end": 80237,
+      "label": "Matthew 22",
+      "name": "chapter_heading_22",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0023",
+      "type": "chapter",
+      "start": 84390,
+      "end": 88434,
+      "label": "Matthew 23",
+      "name": "chapter_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "23"
+      }
+    },
+    {
+      "id": "chapter_heading-0023",
+      "type": "chapter_heading",
+      "start": 84390,
+      "end": 84403,
+      "label": "Matthew 23",
+      "name": "chapter_heading_23",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0024",
+      "type": "chapter",
+      "start": 88434,
+      "end": 93404,
+      "label": "Matthew 24",
+      "name": "chapter_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "24"
+      }
+    },
+    {
+      "id": "chapter_heading-0024",
+      "type": "chapter_heading",
+      "start": 88434,
+      "end": 88447,
+      "label": "Matthew 24",
+      "name": "chapter_heading_24",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0025",
+      "type": "chapter",
+      "start": 93404,
+      "end": 98091,
+      "label": "Matthew 25",
+      "name": "chapter_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "25"
+      }
+    },
+    {
+      "id": "chapter_heading-0025",
+      "type": "chapter_heading",
+      "start": 93404,
+      "end": 93417,
+      "label": "Matthew 25",
+      "name": "chapter_heading_25",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0026",
+      "type": "chapter",
+      "start": 98091,
+      "end": 106498,
+      "label": "Matthew 26",
+      "name": "chapter_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "26"
+      }
+    },
+    {
+      "id": "chapter_heading-0026",
+      "type": "chapter_heading",
+      "start": 98091,
+      "end": 98104,
+      "label": "Matthew 26",
+      "name": "chapter_heading_26",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0027",
+      "type": "chapter",
+      "start": 106498,
+      "end": 114135,
+      "label": "Matthew 27",
+      "name": "chapter_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "27"
+      }
+    },
+    {
+      "id": "chapter_heading-0027",
+      "type": "chapter_heading",
+      "start": 106498,
+      "end": 106511,
+      "label": "Matthew 27",
+      "name": "chapter_heading_27",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0028",
+      "type": "chapter",
+      "start": 114135,
+      "end": 116487,
+      "label": "Matthew 28",
+      "name": "chapter_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Matthew",
+        "number": "28"
+      }
+    },
+    {
+      "id": "chapter_heading-0028",
+      "type": "chapter_heading",
+      "start": 114135,
+      "end": 114148,
+      "label": "Matthew 28",
+      "name": "chapter_heading_28",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "book-0002",
+      "type": "book",
+      "start": 116487,
+      "end": 184438,
+      "label": "Mark",
+      "name": "book_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:book",
+        "book": "Mark",
+        "genre": "Gospels"
+      }
+    },
+    {
+      "id": "header-0002",
+      "type": "header",
+      "start": 116487,
+      "end": 116493,
+      "label": "Mark",
+      "name": "header_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:header"
+      }
+    },
+    {
+      "id": "chapter-0029",
+      "type": "chapter",
+      "start": 116487,
+      "end": 120258,
+      "label": "Mark 1",
+      "name": "chapter_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "1"
+      }
+    },
+    {
+      "id": "chapter_heading-0029",
+      "type": "chapter_heading",
+      "start": 116495,
+      "end": 116504,
+      "label": "Mark 1",
+      "name": "chapter_heading_29",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0030",
+      "type": "chapter",
+      "start": 120258,
+      "end": 123129,
+      "label": "Mark 2",
+      "name": "chapter_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "2"
+      }
+    },
+    {
+      "id": "chapter_heading-0030",
+      "type": "chapter_heading",
+      "start": 120258,
+      "end": 120267,
+      "label": "Mark 2",
+      "name": "chapter_heading_30",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0031",
+      "type": "chapter",
+      "start": 123129,
+      "end": 126356,
+      "label": "Mark 3",
+      "name": "chapter_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "3"
+      }
+    },
+    {
+      "id": "chapter_heading-0031",
+      "type": "chapter_heading",
+      "start": 123129,
+      "end": 123138,
+      "label": "Mark 3",
+      "name": "chapter_heading_31",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0032",
+      "type": "chapter",
+      "start": 126356,
+      "end": 130412,
+      "label": "Mark 4",
+      "name": "chapter_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "4"
+      }
+    },
+    {
+      "id": "chapter_heading-0032",
+      "type": "chapter_heading",
+      "start": 126356,
+      "end": 126365,
+      "label": "Mark 4",
+      "name": "chapter_heading_32",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0033",
+      "type": "chapter",
+      "start": 130412,
+      "end": 134540,
+      "label": "Mark 5",
+      "name": "chapter_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "5"
+      }
+    },
+    {
+      "id": "chapter_heading-0033",
+      "type": "chapter_heading",
+      "start": 130412,
+      "end": 130421,
+      "label": "Mark 5",
+      "name": "chapter_heading_33",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0034",
+      "type": "chapter",
+      "start": 134540,
+      "end": 140322,
+      "label": "Mark 6",
+      "name": "chapter_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "6"
+      }
+    },
+    {
+      "id": "chapter_heading-0034",
+      "type": "chapter_heading",
+      "start": 134540,
+      "end": 134549,
+      "label": "Mark 6",
+      "name": "chapter_heading_34",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0035",
+      "type": "chapter",
+      "start": 140322,
+      "end": 144109,
+      "label": "Mark 7",
+      "name": "chapter_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "7"
+      }
+    },
+    {
+      "id": "chapter_heading-0035",
+      "type": "chapter_heading",
+      "start": 140322,
+      "end": 140331,
+      "label": "Mark 7",
+      "name": "chapter_heading_35",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0036",
+      "type": "chapter",
+      "start": 144109,
+      "end": 147886,
+      "label": "Mark 8",
+      "name": "chapter_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "8"
+      }
+    },
+    {
+      "id": "chapter_heading-0036",
+      "type": "chapter_heading",
+      "start": 144109,
+      "end": 144118,
+      "label": "Mark 8",
+      "name": "chapter_heading_36",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0037",
+      "type": "chapter",
+      "start": 147886,
+      "end": 153065,
+      "label": "Mark 9",
+      "name": "chapter_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "9"
+      }
+    },
+    {
+      "id": "chapter_heading-0037",
+      "type": "chapter_heading",
+      "start": 147886,
+      "end": 147895,
+      "label": "Mark 9",
+      "name": "chapter_heading_37",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0038",
+      "type": "chapter",
+      "start": 153065,
+      "end": 158475,
+      "label": "Mark 10",
+      "name": "chapter_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "10"
+      }
+    },
+    {
+      "id": "chapter_heading-0038",
+      "type": "chapter_heading",
+      "start": 153065,
+      "end": 153075,
+      "label": "Mark 10",
+      "name": "chapter_heading_38",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0039",
+      "type": "chapter",
+      "start": 158475,
+      "end": 162070,
+      "label": "Mark 11",
+      "name": "chapter_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "11"
+      }
+    },
+    {
+      "id": "chapter_heading-0039",
+      "type": "chapter_heading",
+      "start": 158475,
+      "end": 158485,
+      "label": "Mark 11",
+      "name": "chapter_heading_39",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0040",
+      "type": "chapter",
+      "start": 162070,
+      "end": 166785,
+      "label": "Mark 12",
+      "name": "chapter_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "12"
+      }
+    },
+    {
+      "id": "chapter_heading-0040",
+      "type": "chapter_heading",
+      "start": 162070,
+      "end": 162080,
+      "label": "Mark 12",
+      "name": "chapter_heading_40",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0041",
+      "type": "chapter",
+      "start": 166785,
+      "end": 170566,
+      "label": "Mark 13",
+      "name": "chapter_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "13"
+      }
+    },
+    {
+      "id": "chapter_heading-0041",
+      "type": "chapter_heading",
+      "start": 166785,
+      "end": 166795,
+      "label": "Mark 13",
+      "name": "chapter_heading_41",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0042",
+      "type": "chapter",
+      "start": 170566,
+      "end": 177953,
+      "label": "Mark 14",
+      "name": "chapter_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "14"
+      }
+    },
+    {
+      "id": "chapter_heading-0042",
+      "type": "chapter_heading",
+      "start": 170566,
+      "end": 170576,
+      "label": "Mark 14",
+      "name": "chapter_heading_42",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0043",
+      "type": "chapter",
+      "start": 177953,
+      "end": 182220,
+      "label": "Mark 15",
+      "name": "chapter_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "15"
+      }
+    },
+    {
+      "id": "chapter_heading-0043",
+      "type": "chapter_heading",
+      "start": 177953,
+      "end": 177963,
+      "label": "Mark 15",
+      "name": "chapter_heading_43",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0044",
+      "type": "chapter",
+      "start": 182220,
+      "end": 184438,
+      "label": "Mark 16",
+      "name": "chapter_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Mark",
+        "number": "16"
+      }
+    },
+    {
+      "id": "chapter_heading-0044",
+      "type": "chapter_heading",
+      "start": 182220,
+      "end": 182230,
+      "label": "Mark 16",
+      "name": "chapter_heading_44",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "book-0003",
+      "type": "book",
+      "start": 184438,
+      "end": 298247,
+      "label": "Luke",
+      "name": "book_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:book",
+        "book": "Luke",
+        "genre": "Gospels"
+      }
+    },
+    {
+      "id": "header-0003",
+      "type": "header",
+      "start": 184438,
+      "end": 184444,
+      "label": "Luke",
+      "name": "header_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:header"
+      }
+    },
+    {
+      "id": "chapter-0045",
+      "type": "chapter",
+      "start": 184438,
+      "end": 191511,
+      "label": "Luke 1",
+      "name": "chapter_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "1"
+      }
+    },
+    {
+      "id": "chapter_heading-0045",
+      "type": "chapter_heading",
+      "start": 184446,
+      "end": 184455,
+      "label": "Luke 1",
+      "name": "chapter_heading_45",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0046",
+      "type": "chapter",
+      "start": 191511,
+      "end": 196147,
+      "label": "Luke 2",
+      "name": "chapter_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "2"
+      }
+    },
+    {
+      "id": "chapter_heading-0046",
+      "type": "chapter_heading",
+      "start": 191511,
+      "end": 191520,
+      "label": "Luke 2",
+      "name": "chapter_heading_46",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0047",
+      "type": "chapter",
+      "start": 196147,
+      "end": 198881,
+      "label": "Luke 3",
+      "name": "chapter_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "3"
+      }
+    },
+    {
+      "id": "chapter_heading-0047",
+      "type": "chapter_heading",
+      "start": 196147,
+      "end": 196156,
+      "label": "Luke 3",
+      "name": "chapter_heading_47",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0048",
+      "type": "chapter",
+      "start": 198881,
+      "end": 203661,
+      "label": "Luke 4",
+      "name": "chapter_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "4"
+      }
+    },
+    {
+      "id": "chapter_heading-0048",
+      "type": "chapter_heading",
+      "start": 198881,
+      "end": 198890,
+      "label": "Luke 4",
+      "name": "chapter_heading_48",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0049",
+      "type": "chapter",
+      "start": 203661,
+      "end": 208114,
+      "label": "Luke 5",
+      "name": "chapter_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "5"
+      }
+    },
+    {
+      "id": "chapter_heading-0049",
+      "type": "chapter_heading",
+      "start": 203661,
+      "end": 203670,
+      "label": "Luke 5",
+      "name": "chapter_heading_49",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0050",
+      "type": "chapter",
+      "start": 208114,
+      "end": 213546,
+      "label": "Luke 6",
+      "name": "chapter_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "6"
+      }
+    },
+    {
+      "id": "chapter_heading-0050",
+      "type": "chapter_heading",
+      "start": 208114,
+      "end": 208123,
+      "label": "Luke 6",
+      "name": "chapter_heading_50",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0051",
+      "type": "chapter",
+      "start": 213546,
+      "end": 219017,
+      "label": "Luke 7",
+      "name": "chapter_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "7"
+      }
+    },
+    {
+      "id": "chapter_heading-0051",
+      "type": "chapter_heading",
+      "start": 213546,
+      "end": 213555,
+      "label": "Luke 7",
+      "name": "chapter_heading_51",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0052",
+      "type": "chapter",
+      "start": 219017,
+      "end": 225538,
+      "label": "Luke 8",
+      "name": "chapter_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "8"
+      }
+    },
+    {
+      "id": "chapter_heading-0052",
+      "type": "chapter_heading",
+      "start": 219017,
+      "end": 219026,
+      "label": "Luke 8",
+      "name": "chapter_heading_52",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0053",
+      "type": "chapter",
+      "start": 225538,
+      "end": 232253,
+      "label": "Luke 9",
+      "name": "chapter_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "9"
+      }
+    },
+    {
+      "id": "chapter_heading-0053",
+      "type": "chapter_heading",
+      "start": 225538,
+      "end": 225547,
+      "label": "Luke 9",
+      "name": "chapter_heading_53",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0054",
+      "type": "chapter",
+      "start": 232253,
+      "end": 236739,
+      "label": "Luke 10",
+      "name": "chapter_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "10"
+      }
+    },
+    {
+      "id": "chapter_heading-0054",
+      "type": "chapter_heading",
+      "start": 232253,
+      "end": 232263,
+      "label": "Luke 10",
+      "name": "chapter_heading_54",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0055",
+      "type": "chapter",
+      "start": 236739,
+      "end": 242843,
+      "label": "Luke 11",
+      "name": "chapter_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "11"
+      }
+    },
+    {
+      "id": "chapter_heading-0055",
+      "type": "chapter_heading",
+      "start": 236739,
+      "end": 236749,
+      "label": "Luke 11",
+      "name": "chapter_heading_55",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0056",
+      "type": "chapter",
+      "start": 242843,
+      "end": 249016,
+      "label": "Luke 12",
+      "name": "chapter_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "12"
+      }
+    },
+    {
+      "id": "chapter_heading-0056",
+      "type": "chapter_heading",
+      "start": 242843,
+      "end": 242853,
+      "label": "Luke 12",
+      "name": "chapter_heading_56",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0057",
+      "type": "chapter",
+      "start": 249016,
+      "end": 253108,
+      "label": "Luke 13",
+      "name": "chapter_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "13"
+      }
+    },
+    {
+      "id": "chapter_heading-0057",
+      "type": "chapter_heading",
+      "start": 249016,
+      "end": 249026,
+      "label": "Luke 13",
+      "name": "chapter_heading_57",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0058",
+      "type": "chapter",
+      "start": 253108,
+      "end": 256732,
+      "label": "Luke 14",
+      "name": "chapter_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "14"
+      }
+    },
+    {
+      "id": "chapter_heading-0058",
+      "type": "chapter_heading",
+      "start": 253108,
+      "end": 253118,
+      "label": "Luke 14",
+      "name": "chapter_heading_58",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0059",
+      "type": "chapter",
+      "start": 256732,
+      "end": 260247,
+      "label": "Luke 15",
+      "name": "chapter_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "15"
+      }
+    },
+    {
+      "id": "chapter_heading-0059",
+      "type": "chapter_heading",
+      "start": 256732,
+      "end": 256742,
+      "label": "Luke 15",
+      "name": "chapter_heading_59",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0060",
+      "type": "chapter",
+      "start": 260247,
+      "end": 261706,
+      "label": "Luke 16",
+      "name": "chapter_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "16"
+      }
+    },
+    {
+      "id": "chapter_heading-0060",
+      "type": "chapter_heading",
+      "start": 260247,
+      "end": 260257,
+      "label": "Luke 16",
+      "name": "chapter_heading_60",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0061",
+      "type": "chapter",
+      "start": 261706,
+      "end": 265055,
+      "label": "Luke 17",
+      "name": "chapter_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "17"
+      }
+    },
+    {
+      "id": "chapter_heading-0061",
+      "type": "chapter_heading",
+      "start": 261706,
+      "end": 261716,
+      "label": "Luke 17",
+      "name": "chapter_heading_61",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0062",
+      "type": "chapter",
+      "start": 265055,
+      "end": 268636,
+      "label": "Luke 18",
+      "name": "chapter_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "18"
+      }
+    },
+    {
+      "id": "chapter_heading-0062",
+      "type": "chapter_heading",
+      "start": 265055,
+      "end": 265065,
+      "label": "Luke 18",
+      "name": "chapter_heading_62",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0063",
+      "type": "chapter",
+      "start": 268636,
+      "end": 273174,
+      "label": "Luke 19",
+      "name": "chapter_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "19"
+      }
+    },
+    {
+      "id": "chapter_heading-0063",
+      "type": "chapter_heading",
+      "start": 268636,
+      "end": 268646,
+      "label": "Luke 19",
+      "name": "chapter_heading_63",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0064",
+      "type": "chapter",
+      "start": 273174,
+      "end": 277681,
+      "label": "Luke 20",
+      "name": "chapter_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "20"
+      }
+    },
+    {
+      "id": "chapter_heading-0064",
+      "type": "chapter_heading",
+      "start": 273174,
+      "end": 273184,
+      "label": "Luke 20",
+      "name": "chapter_heading_64",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0065",
+      "type": "chapter",
+      "start": 277681,
+      "end": 281186,
+      "label": "Luke 21",
+      "name": "chapter_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "21"
+      }
+    },
+    {
+      "id": "chapter_heading-0065",
+      "type": "chapter_heading",
+      "start": 277681,
+      "end": 277691,
+      "label": "Luke 21",
+      "name": "chapter_heading_65",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0066",
+      "type": "chapter",
+      "start": 281186,
+      "end": 287752,
+      "label": "Luke 22",
+      "name": "chapter_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "22"
+      }
+    },
+    {
+      "id": "chapter_heading-0066",
+      "type": "chapter_heading",
+      "start": 281186,
+      "end": 281196,
+      "label": "Luke 22",
+      "name": "chapter_heading_66",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0067",
+      "type": "chapter",
+      "start": 287752,
+      "end": 293151,
+      "label": "Luke 23",
+      "name": "chapter_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "23"
+      }
+    },
+    {
+      "id": "chapter_heading-0067",
+      "type": "chapter_heading",
+      "start": 287752,
+      "end": 287762,
+      "label": "Luke 23",
+      "name": "chapter_heading_67",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0068",
+      "type": "chapter",
+      "start": 293151,
+      "end": 298247,
+      "label": "Luke 24",
+      "name": "chapter_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "Luke",
+        "number": "24"
+      }
+    },
+    {
+      "id": "chapter_heading-0068",
+      "type": "chapter_heading",
+      "start": 293151,
+      "end": 293161,
+      "label": "Luke 24",
+      "name": "chapter_heading_68",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "book-0004",
+      "type": "book",
+      "start": 298247,
+      "end": 389341,
+      "label": "John",
+      "name": "book_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:book",
+        "book": "John",
+        "genre": "Gospels"
+      }
+    },
+    {
+      "id": "header-0004",
+      "type": "header",
+      "start": 298247,
+      "end": 298253,
+      "label": "John",
+      "name": "header_4",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:header"
+      }
+    },
+    {
+      "id": "chapter-0069",
+      "type": "chapter",
+      "start": 298247,
+      "end": 303187,
+      "label": "John 1",
+      "name": "chapter_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "1"
+      }
+    },
+    {
+      "id": "chapter_heading-0069",
+      "type": "chapter_heading",
+      "start": 298255,
+      "end": 298264,
+      "label": "John 1",
+      "name": "chapter_heading_69",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0070",
+      "type": "chapter",
+      "start": 303187,
+      "end": 305684,
+      "label": "John 2",
+      "name": "chapter_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "2"
+      }
+    },
+    {
+      "id": "chapter_heading-0070",
+      "type": "chapter_heading",
+      "start": 303187,
+      "end": 303196,
+      "label": "John 2",
+      "name": "chapter_heading_70",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0071",
+      "type": "chapter",
+      "start": 305684,
+      "end": 309388,
+      "label": "John 3",
+      "name": "chapter_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "3"
+      }
+    },
+    {
+      "id": "chapter_heading-0071",
+      "type": "chapter_heading",
+      "start": 305684,
+      "end": 305693,
+      "label": "John 3",
+      "name": "chapter_heading_71",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0072",
+      "type": "chapter",
+      "start": 309388,
+      "end": 314991,
+      "label": "John 4",
+      "name": "chapter_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "4"
+      }
+    },
+    {
+      "id": "chapter_heading-0072",
+      "type": "chapter_heading",
+      "start": 309388,
+      "end": 309397,
+      "label": "John 4",
+      "name": "chapter_heading_72",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0073",
+      "type": "chapter",
+      "start": 314991,
+      "end": 319760,
+      "label": "John 5",
+      "name": "chapter_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "5"
+      }
+    },
+    {
+      "id": "chapter_heading-0073",
+      "type": "chapter_heading",
+      "start": 314991,
+      "end": 315000,
+      "label": "John 5",
+      "name": "chapter_heading_73",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0074",
+      "type": "chapter",
+      "start": 319760,
+      "end": 326567,
+      "label": "John 6",
+      "name": "chapter_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "6"
+      }
+    },
+    {
+      "id": "chapter_heading-0074",
+      "type": "chapter_heading",
+      "start": 319760,
+      "end": 319769,
+      "label": "John 6",
+      "name": "chapter_heading_74",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0075",
+      "type": "chapter",
+      "start": 326567,
+      "end": 331515,
+      "label": "John 7",
+      "name": "chapter_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "7"
+      }
+    },
+    {
+      "id": "chapter_heading-0075",
+      "type": "chapter_heading",
+      "start": 326567,
+      "end": 326576,
+      "label": "John 7",
+      "name": "chapter_heading_75",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0076",
+      "type": "chapter",
+      "start": 331515,
+      "end": 337769,
+      "label": "John 8",
+      "name": "chapter_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "8"
+      }
+    },
+    {
+      "id": "chapter_heading-0076",
+      "type": "chapter_heading",
+      "start": 331515,
+      "end": 331524,
+      "label": "John 8",
+      "name": "chapter_heading_76",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0077",
+      "type": "chapter",
+      "start": 337769,
+      "end": 341862,
+      "label": "John 9",
+      "name": "chapter_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "9"
+      }
+    },
+    {
+      "id": "chapter_heading-0077",
+      "type": "chapter_heading",
+      "start": 337769,
+      "end": 337778,
+      "label": "John 9",
+      "name": "chapter_heading_77",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0078",
+      "type": "chapter",
+      "start": 341862,
+      "end": 345764,
+      "label": "John 10",
+      "name": "chapter_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "10"
+      }
+    },
+    {
+      "id": "chapter_heading-0078",
+      "type": "chapter_heading",
+      "start": 341862,
+      "end": 341872,
+      "label": "John 10",
+      "name": "chapter_heading_78",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0079",
+      "type": "chapter",
+      "start": 345764,
+      "end": 351467,
+      "label": "John 11",
+      "name": "chapter_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "11"
+      }
+    },
+    {
+      "id": "chapter_heading-0079",
+      "type": "chapter_heading",
+      "start": 345764,
+      "end": 345774,
+      "label": "John 11",
+      "name": "chapter_heading_79",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0080",
+      "type": "chapter",
+      "start": 351467,
+      "end": 356826,
+      "label": "John 12",
+      "name": "chapter_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "12"
+      }
+    },
+    {
+      "id": "chapter_heading-0080",
+      "type": "chapter_heading",
+      "start": 351467,
+      "end": 351477,
+      "label": "John 12",
+      "name": "chapter_heading_80",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0081",
+      "type": "chapter",
+      "start": 356826,
+      "end": 360777,
+      "label": "John 13",
+      "name": "chapter_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "13"
+      }
+    },
+    {
+      "id": "chapter_heading-0081",
+      "type": "chapter_heading",
+      "start": 356826,
+      "end": 356836,
+      "label": "John 13",
+      "name": "chapter_heading_81",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0082",
+      "type": "chapter",
+      "start": 360777,
+      "end": 364146,
+      "label": "John 14",
+      "name": "chapter_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "14"
+      }
+    },
+    {
+      "id": "chapter_heading-0082",
+      "type": "chapter_heading",
+      "start": 360777,
+      "end": 360787,
+      "label": "John 14",
+      "name": "chapter_heading_82",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0083",
+      "type": "chapter",
+      "start": 364146,
+      "end": 366510,
+      "label": "John 15",
+      "name": "chapter_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "15"
+      }
+    },
+    {
+      "id": "chapter_heading-0083",
+      "type": "chapter_heading",
+      "start": 364146,
+      "end": 364156,
+      "label": "John 15",
+      "name": "chapter_heading_83",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0084",
+      "type": "chapter",
+      "start": 366510,
+      "end": 369898,
+      "label": "John 16",
+      "name": "chapter_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "16"
+      }
+    },
+    {
+      "id": "chapter_heading-0084",
+      "type": "chapter_heading",
+      "start": 366510,
+      "end": 366520,
+      "label": "John 16",
+      "name": "chapter_heading_84",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0085",
+      "type": "chapter",
+      "start": 369898,
+      "end": 372864,
+      "label": "John 17",
+      "name": "chapter_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "17"
+      }
+    },
+    {
+      "id": "chapter_heading-0085",
+      "type": "chapter_heading",
+      "start": 369898,
+      "end": 369908,
+      "label": "John 17",
+      "name": "chapter_heading_85",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0086",
+      "type": "chapter",
+      "start": 372864,
+      "end": 377531,
+      "label": "John 18",
+      "name": "chapter_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "18"
+      }
+    },
+    {
+      "id": "chapter_heading-0086",
+      "type": "chapter_heading",
+      "start": 372864,
+      "end": 372874,
+      "label": "John 18",
+      "name": "chapter_heading_86",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0087",
+      "type": "chapter",
+      "start": 377531,
+      "end": 382650,
+      "label": "John 19",
+      "name": "chapter_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "19"
+      }
+    },
+    {
+      "id": "chapter_heading-0087",
+      "type": "chapter_heading",
+      "start": 377531,
+      "end": 377541,
+      "label": "John 19",
+      "name": "chapter_heading_87",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0088",
+      "type": "chapter",
+      "start": 382650,
+      "end": 385937,
+      "label": "John 20",
+      "name": "chapter_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "20"
+      }
+    },
+    {
+      "id": "chapter_heading-0088",
+      "type": "chapter_heading",
+      "start": 382650,
+      "end": 382660,
+      "label": "John 20",
+      "name": "chapter_heading_88",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    },
+    {
+      "id": "chapter-0089",
+      "type": "chapter",
+      "start": 385937,
+      "end": 389341,
+      "label": "John 21",
+      "name": "chapter_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter",
+        "book": "John",
+        "number": "21"
+      }
+    },
+    {
+      "id": "chapter_heading-0089",
+      "type": "chapter_heading",
+      "start": 385937,
+      "end": 385947,
+      "label": "John 21",
+      "name": "chapter_heading_89",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:chapter_heading"
+      }
+    }
+  ]
+}
