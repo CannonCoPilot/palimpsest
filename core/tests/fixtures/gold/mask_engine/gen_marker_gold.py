@@ -52,6 +52,7 @@ WS_RE = re.compile(r"\s+")
 BOOK_RE = re.compile(r"(?m)^# (.+)$")             # "# Genesis"
 CHAP_RE = re.compile(r"(?m)^## .*?(\d+)\s*$")     # "## Genesis 1" -> trailing int
 VERSE_RE = re.compile(r"(?m)^(\d{1,3})[ \t]+")    # "1 In the beginning..."
+PROL_RE = re.compile(r"(?m)^@ (.+)$")             # "@ Prologe on Exodus" -> apparatus block
 
 GENERIC = {"body", "volume", "book", "part", "section"}
 MIN_BOOKS = 8
@@ -86,15 +87,45 @@ def _gaps(merged: list[tuple[int, int]], n: int) -> list[tuple[int, int]]:
     return gaps
 
 
+def _prologue_blocks(text: str) -> list[tuple[int, int, str]]:
+    """Apparatus (``@ Title``) blocks: span [@ marker -> next @ or # marker / EOF).
+
+    The interior is opaque to the book/chapter/verse grammar, so a prologue's prose
+    (which routinely leaks OCR page numbers, ``N PROLOGUE.`` footnote lines, etc.) can
+    never be miscounted as scripture. ``## `` lines do NOT terminate a block.
+    """
+    stops = sorted([m.start() for m in PROL_RE.finditer(text)]
+                   + [m.start() for m in BOOK_RE.finditer(text)])
+    blocks: list[tuple[int, int, str]] = []
+    for m in PROL_RE.finditer(text):
+        s = m.start()
+        nxt = next((p for p in stops if p > s), len(text))
+        blocks.append((s, nxt, m.group(1).strip()))
+    return blocks
+
+
 def build_marker_elements(text: str) -> list[dict]:
-    """Independent, contiguously-tiled gold elements from the marker structure."""
+    """Independent, contiguously-tiled gold elements from the marker structure.
+
+    ``@ Title`` apparatus blocks (prologues, general prologues) are masked as
+    ``front_matter``, carved out of chapter tiling, and their interiors are opaque to
+    the marker grammar. Bibles with no ``@`` markers behave exactly as before.
+    """
     n = len(text)
-    books = [(m.start(), m.group(1).strip()) for m in BOOK_RE.finditer(text)]
-    chaps = [(m.start(), int(m.group(1))) for m in CHAP_RE.finditer(text)]
-    n_verses = sum(1 for _ in VERSE_RE.finditer(text))
+    blocks = _prologue_blocks(text)
+
+    def _in_block(pos: int) -> bool:
+        return any(s <= pos < e for s, e, _ in blocks)
+
+    books = [(m.start(), m.group(1).strip())
+             for m in BOOK_RE.finditer(text) if not _in_block(m.start())]
+    chaps = [(m.start(), int(m.group(1)))
+             for m in CHAP_RE.finditer(text) if not _in_block(m.start())]
+    n_verses = sum(1 for m in VERSE_RE.finditer(text) if not _in_block(m.start()))
     if len(books) < MIN_BOOKS or len(chaps) < MIN_CHAPTERS:
         raise SystemExit(f"not marker-format scripture: {len(books)} books, {len(chaps)} chapters")
 
+    block_starts = sorted(s for s, _, _ in blocks)
     body_start = books[0][0]
     body_end = n
     els: list[dict] = [{"type": "body", "start": 0, "end": n, "source": "marker:body", "label": ""}]
@@ -132,6 +163,11 @@ def build_marker_elements(text: str) -> list[dict]:
         bchaps = [c for c in chaps if bstart <= c[0] < bend]
         for k, (cstart, chnum) in enumerate(bchaps):
             nxt = bchaps[k + 1][0] if k + 1 < len(bchaps) else bend
+            # carve out any apparatus block that opens inside this chapter's span so the
+            # chapter never absorbs a following book's prologue (would mask it as scripture)
+            clip = next((bs for bs in block_starts if cstart < bs < nxt), None)
+            if clip is not None:
+                nxt = clip
             span_start = bstart if k == 0 else cstart  # first chapter absorbs the "# Book" line
             label = f"{bname} {chnum}"
             els.append({"type": "chapter", "start": span_start, "end": nxt,
@@ -140,7 +176,13 @@ def build_marker_elements(text: str) -> list[dict]:
             els.append({"type": "chapter_heading", "start": cstart, "end": _eol(text, cstart),
                         "source": "marker:chapter_heading", "label": label})
 
-    if body_start > 0:
+    # apparatus blocks -> masked front_matter (carved from chapter tiling above)
+    for s, e, title in blocks:
+        els.append({"type": "front_matter", "start": s, "end": e,
+                    "source": "marker:prologue", "label": title or "Prologue"})
+
+    # leading front matter (only if not already an apparatus block anchored at offset 0)
+    if body_start > 0 and not any(s == 0 for s, _, _ in blocks):
         els.append({"type": "front_matter", "start": 0, "end": body_start,
                     "source": "marker:front_matter", "label": "Front Matter"})
 
