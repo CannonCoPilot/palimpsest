@@ -91,6 +91,11 @@ class LocalImportRequest(BaseModel):
     layout_path: str | None = None
 
 
+class GoldApplyRequest(BaseModel):
+    # Re-import in place if a project already exists for this Bible's source.
+    overwrite: bool = False
+
+
 class SectionsUpdateRequest(BaseModel):
     sections: list[dict[str, Any]]
     mask_by_type: dict[str, bool] | None = None
@@ -659,6 +664,33 @@ def _apply_gold_map(project: Any, layout_path: str) -> dict[str, Any]:
         "masked_spans": len(mi),
         "masked_chars": sum(b - a for a, b in mi),
     }
+
+
+def _gold_manifest_path() -> Path:
+    """The Bible Gold-Set registry manifest (sibling of the maps dir)."""
+    return _gold_maps_dir().parent / "sources.manifest.json"
+
+
+def _load_gold_manifest() -> dict[str, Any]:
+    path = _gold_manifest_path()
+    if not path.is_file():
+        raise HTTPException(status_code=500, detail="gold sources manifest missing")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _find_import_by_name(imports_dir: Path, name: str) -> Path | None:
+    """Locate a source binary by basename anywhere under the imports corpus.
+
+    The registry records only basenames (matching gen_sources_manifest's index) and the
+    preserved corpus may nest them in per-author/title subfolders, so resolve by name
+    rather than assuming a flat layout. Returns None when the binary is not present — the
+    expected "preserve, don't push" state on a machine without the source corpus."""
+    if not name or not imports_dir.is_dir():
+        return None
+    for path in imports_dir.rglob("*"):
+        if path.is_file() and path.name == name:
+            return path
+    return None
 
 
 _ROMAN = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
@@ -2001,6 +2033,63 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             media_type="text/event-stream",
             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
         )
+
+    @app.get("/api/gold")
+    async def list_gold() -> JSONResponse:
+        """Enumerate the Bible Gold Set from the registry manifest.
+
+        Each entry is flagged with local availability — ``map_present`` (the masking
+        contract is committed here) and the manifest's own ``source_present`` (the source
+        binary is in the local corpus) — so a client can show which Bibles are appliable
+        on this machine without redistributing the (copyrighted) sources."""
+        manifest = _load_gold_manifest()
+        maps_dir = _gold_maps_dir()
+        bibles = []
+        for entry in manifest.get("bibles", []):
+            item = dict(entry)
+            item["map_present"] = (maps_dir / Path(entry["gold_map"]).name).is_file()
+            bibles.append(item)
+        return JSONResponse(content={
+            "schema": manifest.get("schema"),
+            "scope": manifest.get("scope"),
+            "count": len(bibles),
+            "bibles": bibles,
+        })
+
+    @app.post("/api/gold/{idx}/apply")
+    async def apply_gold(idx: int, req: GoldApplyRequest) -> JSONResponse:
+        """Ingest a registered Bible's source and apply its stored gold map, by id.
+
+        A by-id wrapper over the /api/import/local gold path: resolves the Bible in the
+        registry, locates its (uncommitted, preserve-don't-push) source binary, ingests
+        the text, then applies the map verbatim after the reference_sha256 check. 404s
+        when the id is unknown or the source binary is not present on this machine."""
+        manifest = _load_gold_manifest()
+        entry = next((b for b in manifest.get("bibles", []) if b.get("id") == idx), None)
+        if entry is None:
+            raise HTTPException(status_code=404, detail=f"no gold Bible with id {idx}")
+        src = _find_import_by_name(imports_dir, entry.get("source_file", ""))
+        if src is None:
+            raise HTTPException(
+                status_code=404,
+                detail=(f"source binary for Bible {idx} not present locally "
+                        "(preserve-don't-push) — cannot ingest to apply its gold map"),
+            )
+        if src.suffix.lower() not in _IMPORT_SUFFIXES:
+            raise HTTPException(status_code=400, detail="Unsupported source format")
+        layout_path = Path(entry["gold_map"]).name  # maps dir is implicit in _apply_gold_map
+        try:
+            project = await _ingest_only(
+                src, entry.get("translation", ""), "", entry.get("year") or 0, req.overwrite)
+            summary = _ingest_summary(project, staged=False)
+            summary["gold_map"] = _apply_gold_map(project, layout_path)
+            return JSONResponse(content=summary)
+        except FileExistsError:
+            raise HTTPException(status_code=409, detail="Project already exists")
+        except HTTPException:
+            raise  # preserve 400/404/409 from gold-map validation (don't re-wrap as 500)
+        except Exception as e:  # noqa: BLE001
+            raise HTTPException(status_code=500, detail=str(e))
 
     @app.post("/api/projects/{project_id}/sections/detect")
     async def detect_sections(project_id: str) -> JSONResponse:

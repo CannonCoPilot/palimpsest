@@ -525,3 +525,44 @@ class TestDeriveContainerScope:
         assert errors[0]["status"] == 400
         assert "Unknown or empty container" in errors[0]["detail"]
         assert not [e for e in events if e["type"] == "done"]
+
+
+class TestGoldAPI:
+    """First-class gold endpoints: GET /api/gold (registry) + POST /api/gold/{idx}/apply.
+
+    The happy-path apply (ingest + reference_sha256 verify) needs the copyrighted,
+    never-committed source binary, so it is a machine-local check (see the plan's curl
+    verification) — the same reason ``_apply_gold_map``'s sha tie is not CI-runnable.
+    Here we cover the hermetic surface: the registry read and the two 404 paths."""
+
+    def test_list_gold_enumerates_registry(self, client):
+        res = client.get("/api/gold")
+        assert res.status_code == 200, res.text
+        data = res.json()
+        assert data["scope"] == "bibles"
+        assert data["count"] == len(data["bibles"]) >= 19
+        by_id = {b["id"]: b for b in data["bibles"]}
+        # Every sub-kind is registered and its masking contract is committed here.
+        for idx in (5, 6, 100, 108, 216, 219):
+            assert idx in by_id, f"Bible {idx} missing from /api/gold"
+            assert by_id[idx]["map_present"] is True
+            assert by_id[idx]["validated"] == {"cli": True, "api": True, "ui": True}
+        assert by_id[216]["translation"].startswith("King James")
+
+    def test_apply_gold_unknown_idx_is_404(self, client):
+        res = client.post("/api/gold/999/apply", json={})
+        assert res.status_code == 404
+        assert "no gold Bible" in res.json()["detail"]
+
+    def test_apply_gold_source_absent_is_404(self, tmp_path):
+        # An empty imports corpus is the "preserve, don't push" state: the map is
+        # committed but the source binary isn't here, so apply must 404 cleanly rather
+        # than half-ingesting. Deterministic regardless of the machine's real corpus.
+        workspace = tmp_path / "ws"
+        workspace.mkdir()
+        empty = tmp_path / "empty"
+        empty.mkdir()
+        client = TestClient(create_app(workspace, imports_dir=empty))
+        res = client.post("/api/gold/216/apply", json={})
+        assert res.status_code == 404
+        assert "not present locally" in res.json()["detail"]
