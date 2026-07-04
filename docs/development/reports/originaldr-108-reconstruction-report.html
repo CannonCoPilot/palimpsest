@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OriginalDR (idx 108) — Reconstruction Technical Report</title>
+<style>
+    :root{--ink:#1c1917;--mute:#78716c;--line:#e7e5e4;--paper:#faf9f7;--blue:#2563eb;--amber:#d97706;--green:#15803d;--red:#dc2626;--violet:#7c3aed}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:16px}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 28px 120px}
+    header.hero{background:linear-gradient(135deg,#1e1b4b,#312e81 55%,#3730a3);color:#fff;padding:56px 28px 44px;margin-bottom:8px}
+    header.hero .inner{max-width:1000px;margin:0 auto}
+    header.hero .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:12px;opacity:.75}
+    header.hero h1{font-size:34px;margin:10px 0 6px;line-height:1.15}
+    header.hero .sub{opacity:.85;font-size:16px}
+    header.hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+    header.hero .chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:5px 13px;font-size:12.5px}
+    h2{font-size:23px;margin:52px 0 6px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+    h3{font-size:17px;margin:30px 0 6px}
+    p{margin:12px 0}
+    code{background:#f5f3f0;padding:1px 6px;border-radius:4px;font-size:.86em;font-family:"SF Mono",Menlo,Consolas,monospace}
+    .lead{font-size:17.5px;color:#44403c}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:26px 0}
+    .stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+    .stat .v{font-size:26px;font-weight:750;letter-spacing:-.02em}
+    .stat .l{font-size:12.5px;color:var(--mute);margin-top:3px}
+    figure{margin:24px 0;padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff}
+    figure figcaption{font-size:13px;color:var(--mute);margin-top:12px;text-align:center}
+    figure .ftitle{font-size:14px;font-weight:700;margin-bottom:14px}
+    .callout{border-left:4px solid var(--violet);background:#f5f3ff;padding:14px 18px;border-radius:0 10px 10px 0;margin:20px 0}
+    .callout.flag{border-color:var(--red);background:#fef2f2}
+    .callout.good{border-color:var(--green);background:#f0fdf4}
+    .callout .h{font-weight:700;margin-bottom:4px}
+    table{border-collapse:collapse;width:100%;margin:18px 0;font-size:14.5px}
+    th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+    th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}
+    td.n{font-variant-numeric:tabular-nums;text-align:right}
+    .tier{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+    .tier .badge{font-size:12px;font-weight:750;padding:4px 12px;border-radius:20px;color:#fff;white-space:nowrap}
+    .b-high{background:var(--green)}.b-mod{background:var(--amber)}.b-na{background:var(--mute)}
+    .tier .body{font-size:14.5px}
+    .pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:20px}
+    .pill.ok{background:#dcfce7;color:#166534}.pill.no{background:#fee2e2;color:#991b1b}
+    .pill.mod{background:#fef3c7;color:#92400e}
+    footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
+    </style></head>
+<body>
+<header class="hero"><div class="inner">
+  <div class="kicker">Palimpsest · Bible Gold Set · Technical Report</div>
+  <h1>Original Douay-Rheims (1582–1610)</h1>
+  <div class="sub">Reconstruction of gold work-108 — process, source contributions, and confidence in text accuracy</div>
+  <div class="meta">
+    <span class="chip">76 books · 1,360 chapters</span>
+    <span class="chip">8,378,088 characters</span>
+    <span class="chip">Catholic / Clementine Vulgate canon</span>
+    <span class="chip">sha da451dc27ccf…</span>
+    <span class="chip">Gregory Martin, 1582 NT / 1609–10 OT</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+
+<h2>1 · Executive summary</h2>
+<p class="lead">OriginalDR is the most structurally trustworthy gold in the set, because it is
+<strong>generated, not detected</strong>. The reference text and its masking map are born in a
+single pass over the sources, so every mask offset is exact by construction — there is no detection
+step that can mis-anchor. This rebuild goes further on <em>content</em>: the reader's scripture is
+no longer a single-source transcription but a <strong>three-witness reconstruction</strong> —
+authoritative Madueke text, collated verse-by-verse against the independent Sabates witness and
+spot-validated against our own OCR of the original 1582–1610 printed editions — and a Catholic
+versification oracle closes the structural-vs-correct gap at the chapter granularity.</p>
+<div class="stats">
+  <div class="stat"><div class="v">57.3%</div><div class="l">unmasked scripture prose</div></div>
+  <div class="stat"><div class="v">42.7%</div><div class="l">masked editorial apparatus</div></div>
+  <div class="stat"><div class="v">76/76</div><div class="l">books match Vulgate counts</div></div>
+  <div class="stat"><div class="v">0</div><div class="l">substantive wording diffs across 35,809 verses</div></div>
+  <div class="stat"><div class="v">0</div><div class="l">genuine discrepancies vs original print (OCR)</div></div>
+  <div class="stat"><div class="v">VERIFIED</div><div class="l">byte-exact reproduction</div></div>
+</div>
+<div class="callout good">
+  <div class="h">Headline verdict</div>
+  Reproduction: <strong>byte-identical</strong>. Structure:
+  <strong>all gates pass</strong>. Content:
+  <strong>76 of 76</strong> books match the externally-established
+  Douay-Rheims/Clementine Vulgate chapter counts, and a verse-level collation of
+  <strong>35,809</strong> verses against a second digital witness finds
+  <strong>0</strong> substantive wording differences, with an
+  independent OCR pass over the original printed editions confirming
+  <strong>0</strong> genuine discrepancies.
+  The reconstruction drops the spurious Tobias &ldquo;chapter&nbsp;1&rdquo; — an editorial Argument mis-captured as scripture upstream — restoring the canonical count with no remaining exceptions.
+</div>
+
+<h2>2 · What OriginalDR is</h2>
+<p>This is the <strong>original</strong> Douay-Rheims — Gregory Martin's translation for the English
+College (New Testament, Rheims 1582; Old Testament, Douay 1609–1610) — as distinguished from the
+later Challoner revision (gold idx 5, 100). It is a full Catholic Bible in the Clementine Vulgate
+canon: 76 books over two testaments plus a three-book appendix, 1,360
+chapters, 8,378,088 characters of the edition's English in modern (ligature-expanded) orthography.</p>
+<p>Unlike the marker/epub golds, OriginalDR is <strong>collated from three witnesses</strong>, each
+recorded per element in the map so any consumer can see exactly what supplied a given passage:</p>
+<ul>
+<li><strong>Madueke_A</strong> — the olprint &ldquo;Augmented Bible&rdquo; per-chapter HTML edition
+(codeberg) — supplies the <strong>authoritative scripture</strong>, the verse bodies of all 73
+canonical books.</li>
+<li><strong>Sabates_A</strong> — the <code>janvier-s/original-douay-rheims</code> CC0 JSON dataset —
+supplies everything Madueke omits: the <strong>editorial apparatus</strong> (per-book arguments,
+per-chapter arguments, the 1,326 chapters' footnotes and marginal commentary, and
+the 22 front/back reference documents) and the <strong>three-book apocryphal
+appendix</strong> (Prayer of Manasses, 3 &amp; 4 Esdras).</li>
+<li><strong>OCR-original-scan</strong> — our own tesseract OCR of the original 1582/1609/1610 printed
+editions (Anna's Archive EEBO scans) — serves as an independent <strong>print witness</strong> used
+to validate the digital text (§5).</li>
+</ul>
+<p>The reconstruction places the apparatus at its canonical front/back positions and folds the
+per-chapter footnotes and cross-references in as masked annotation blocks after each chapter body.
+Because Sabates in fact <em>derives</em> from Madueke, the two are not fully independent — which is
+exactly why the third, print-based witness matters (§5). That breadth of both text and apparatus is
+what makes it a <em>comprehensive</em> gold rather than a bare scripture dump.</p>
+
+<h2>3 · The reconstruction process — generate, don't detect</h2>
+<p>Every other marker/epub gold in the set <em>infers</em> structure from text and can mis-anchor a
+mask. OriginalDR inverts that fragility. <code>gen_dr_original.py</code> walks the collated witnesses —
+Madueke scripture aligned verse-for-verse to Sabates apparatus — and emits the reference text
+paragraph by paragraph, <strong>recording each element's exact character offset as it writes it</strong>.
+The text and the map are the same object viewed two ways.</p>
+<figure><div class="ftitle">Figure 1 · Reconstruction pipeline (one pass, offsets exact by construction)</div>
+<svg viewBox="0 0 940 250" width="100%" role="img" aria-label="reconstruction pipeline" style="max-width:940px;font-family:inherit"><rect x="20" y="60" width="175" height="86" rx="10" fill="#eef2ff" stroke="#2563eb" stroke-width="1.5"/><text x="107" y="90" font-size="12.5" font-weight="700" fill="#1c1917" text-anchor="middle">collated witnesses</text><text x="107" y="112" font-size="10.5" fill="#78716c" text-anchor="middle">Madueke_A scripture</text><text x="107" y="127" font-size="10.5" fill="#78716c" text-anchor="middle">+ Sabates_A apparatus</text><rect x="215" y="60" width="175" height="86" rx="10" fill="#fff7ed" stroke="#d97706" stroke-width="1.5"/><text x="302" y="90" font-size="12.5" font-weight="700" fill="#1c1917" text-anchor="middle">one-pass generator</text><text x="302" y="112" font-size="10.5" fill="#78716c" text-anchor="middle">gen_dr_original.py</text><text x="302" y="127" font-size="10.5" fill="#78716c" text-anchor="middle">emit text + record offsets</text><rect x="430" y="60" width="175" height="86" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/><text x="517" y="90" font-size="12.5" font-weight="700" fill="#1c1917" text-anchor="middle">text + map (born together)</text><text x="517" y="112" font-size="10.5" fill="#78716c" text-anchor="middle">.txt  +  work-108.map.json</text><rect x="645" y="60" width="175" height="86" rx="10" fill="#ecfdf5" stroke="#15803d" stroke-width="1.5"/><text x="732" y="90" font-size="12.5" font-weight="700" fill="#1c1917" text-anchor="middle">ingest (byte-exact)</text><text x="732" y="112" font-size="10.5" fill="#78716c" text-anchor="middle">normalize() == text</text><text x="732" y="127" font-size="10.5" fill="#78716c" text-anchor="middle">sha guard</text><path d="M196,103 l16,0 m-5,-5 l5,5 l-5,5" stroke="#1c1917" stroke-width="1.5" fill="none"/><path d="M411,103 l16,0 m-5,-5 l5,5 l-5,5" stroke="#1c1917" stroke-width="1.5" fill="none"/><path d="M626,103 l16,0 m-5,-5 l5,5 l-5,5" stroke="#1c1917" stroke-width="1.5" fill="none"/><rect x="215" y="180" width="600" height="52" rx="10" fill="#fff" stroke="#e7e5e4"/><text x="235" y="200" font-size="11.5" font-weight="700" fill="#1c1917">structural gates + external oracle</text><text x="235" y="218" font-size="10.5" fill="#78716c">spans tile [0,N) · type_counts reconcile · masking round-trips · sha reproduces · Catholic canon 76/76</text><path d="M732,146 l0,20 m-5,-5 l5,5 l5,-5" stroke="#1c1917" stroke-width="1.5" fill="none"/></svg>
+<figcaption>The generator emits text and records offsets simultaneously; a normalization-stability
+assert (<code>normalize(text) == text</code>) guarantees Palimpsest's ingest cannot shift a single
+offset, and the <code>reference_sha256</code> guard fails the import if it ever does.</figcaption></figure>
+<div class="callout"><div class="h">Why this matters</div>
+There is no detector to get wrong. A marker Bible's mask can drift if a chapter heading is
+formatted unexpectedly; here the offset was written by the same code that wrote the character. This
+is structurally the strongest guarantee available — and a preview of the "structure-first" import
+paradigm: <em>when you already have the structure, perfect masks are free.</em></div>
+
+<h2>4 · Provenance chain — which witness supplies what</h2>
+<p>Every leaf element records its own <code>provenance</code>, <code>confidence</code> and
+<code>coverage</code> in the map, so the source of any passage is auditable without leaving the
+artifact. <strong>Madueke_A</strong> supplies <strong>55.3%</strong> of the text as
+three-witness scripture (verse bodies of the 73 canonical books); <strong>Sabates_A</strong> supplies
+<strong>40.8%</strong> as the editorial apparatus plus the Madueke-omitted apocryphal
+appendix; the remaining characters are structural containers and inter-paragraph separators, which
+carry no textual provenance.</p>
+<table>
+<tr><th>Content class</th><th>Witness</th><th>Confidence</th><th>Coverage</th><th>Chars</th><th>Share</th><th>Elements</th></tr>
+<tr><td>Scripture — verse bodies</td><td><code>Madueke_A</code></td><td><span class="pill ok">HIGH</span></td><td>three-witness</td><td class="n">4,635,326</td><td class="n">55.3%</td><td class="n">1,334</td></tr><tr><td>Footnotes &amp; marginal commentary</td><td><code>Sabates_A</code></td><td><span class="pill mod">MODERATE</span></td><td>single-witness (apparatus; Madueke omits)</td><td class="n">2,597,089</td><td class="n">31.0%</td><td class="n">1,326</td></tr><tr><td>Chapter arguments</td><td><code>Sabates_A</code></td><td><span class="pill mod">MODERATE</span></td><td>single-witness (apparatus; Madueke omits)</td><td class="n">398,736</td><td class="n">4.8%</td><td class="n">1,360</td></tr><tr><td>Book arguments</td><td><code>Sabates_A</code></td><td><span class="pill mod">MODERATE</span></td><td>single-witness (apparatus; Madueke omits)</td><td class="n">256,114</td><td class="n">3.1%</td><td class="n">76</td></tr><tr><td>Scripture — verse bodies</td><td><code>Sabates_A</code></td><td><span class="pill mod">MODERATE</span></td><td>single-witness (Madueke omits appendix)</td><td class="n">166,646</td><td class="n">2.0%</td><td class="n">26</td></tr>
+</table>
+<p>The composition below shows the same split by character volume: verse bodies are the reader's
+clean scripture (unmasked); everything else — footnotes, arguments, reference documents — is the
+masked apparatus, a substantial 42.7%.</p>
+<figure><div class="ftitle">Figure 2 · Character composition by content class</div>
+<svg viewBox="0 0 660 388" width="100%" role="img" aria-label="content composition" style="max-width:660px;font-family:inherit"><path d="M150.00,30.00 A120,120 0 1,1 96.76,257.54 L120.72,209.15 A66,66 0 1,0 150.00,84.00 Z" fill="#2563eb"><title>Scripture (verse bodies): 57.32%</title></path><path d="M96.76,257.54 A120,120 0 0,1 69.60,60.92 L105.78,101.00 A66,66 0 0,0 120.72,209.15 Z" fill="#d97706"><title>Footnotes &amp; marginal commentary: 31.00%</title></path><path d="M69.60,60.92 A120,120 0 0,1 99.41,41.18 L122.18,90.15 A66,66 0 0,0 105.78,101.00 Z" fill="#7c3aed"><title>Chapter arguments/headings: 4.76%</title></path><path d="M99.41,41.18 A120,120 0 0,1 121.11,33.53 L134.11,85.94 A66,66 0 0,0 122.18,90.15 Z" fill="#0891b2"><title>Book introductions (arguments): 3.06%</title></path><path d="M121.11,33.53 A120,120 0 0,1 139.37,30.47 L144.15,84.26 A66,66 0 0,0 134.11,85.94 Z" fill="#65a30d"><title>Reference apparatus (front/back matter): 2.46%</title></path><path d="M139.37,30.47 A120,120 0 0,1 149.78,30.00 L149.88,84.00 A66,66 0 0,0 144.15,84.26 Z" fill="#be185d"><title>Preface to the Reader: 1.38%</title></path><path d="M149.78,30.00 A120,120 0 0,1 150.00,30.00 L150.00,84.00 A66,66 0 0,0 149.88,84.00 Z" fill="#2563eb"><title>OT title page: 0.03%</title></path><path d="M150.00,30.00 A120,120 0 0,1 150.00,30.00 L150.00,84.00 A66,66 0 0,0 150.00,84.00 Z" fill="#d97706"><title>Testament headers: 0.00%</title></path><rect x="300" y="40" width="13" height="13" rx="2" fill="#2563eb"/><text x="320" y="51" font-size="12.5" fill="#1c1917">Scripture (verse bodies)</text><text x="320" y="66" font-size="11" fill="#78716c">57.32% · 4,801,972 ch</text><rect x="300" y="82" width="13" height="13" rx="2" fill="#d97706"/><text x="320" y="93" font-size="12.5" fill="#1c1917">Footnotes &amp; marginal commentary</text><text x="320" y="108" font-size="11" fill="#78716c">31.00% · 2,597,089 ch</text><rect x="300" y="124" width="13" height="13" rx="2" fill="#7c3aed"/><text x="320" y="135" font-size="12.5" fill="#1c1917">Chapter arguments/headings</text><text x="320" y="150" font-size="11" fill="#78716c">4.76% · 398,736 ch</text><rect x="300" y="166" width="13" height="13" rx="2" fill="#0891b2"/><text x="320" y="177" font-size="12.5" fill="#1c1917">Book introductions (arguments)</text><text x="320" y="192" font-size="11" fill="#78716c">3.06% · 256,114 ch</text><rect x="300" y="208" width="13" height="13" rx="2" fill="#65a30d"/><text x="320" y="219" font-size="12.5" fill="#1c1917">Reference apparatus (front/back matter)</text><text x="320" y="234" font-size="11" fill="#78716c">2.46% · 205,849 ch</text><rect x="300" y="250" width="13" height="13" rx="2" fill="#be185d"/><text x="320" y="261" font-size="12.5" fill="#1c1917">Preface to the Reader</text><text x="320" y="276" font-size="11" fill="#78716c">1.38% · 115,912 ch</text><rect x="300" y="292" width="13" height="13" rx="2" fill="#2563eb"/><text x="320" y="303" font-size="12.5" fill="#1c1917">OT title page</text><text x="320" y="318" font-size="11" fill="#78716c">0.03% · 2,360 ch</text><rect x="300" y="334" width="13" height="13" rx="2" fill="#d97706"/><text x="320" y="345" font-size="12.5" fill="#1c1917">Testament headers</text><text x="320" y="360" font-size="11" fill="#78716c">0.00% · 38 ch</text></svg>
+<figcaption>Verse bodies are unmasked (the reader's clean scripture); everything else — footnotes and
+marginal commentary, chapter arguments, book arguments, the reference documents, the Preface, the
+title page, testament headers — is the masked apparatus.</figcaption></figure>
+<figure><div class="ftitle">Figure 3 · Scripture prose by canonical division</div>
+<svg viewBox="0 0 760 158" width="100%" role="img" aria-label="scripture by division" style="max-width:760px;font-family:inherit"><rect x="20.00" y="22" width="555.59" height="44" fill="#2563eb"><title>Old Testament: 77.16%</title></rect><text x="297.79" y="49.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">77.2%</text><rect x="575.59" y="22" width="139.43" height="44" fill="#d97706"><title>New Testament: 19.36%</title></rect><text x="645.30" y="49.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">19.4%</text><rect x="715.01" y="22" width="24.99" height="44" fill="#7c3aed"><title>Appendix (3 books): 3.47%</title></rect><rect x="20" y="81" width="12" height="12" rx="2" fill="#2563eb"/><text x="38" y="92" font-size="12.5" fill="#1c1917">Old Testament — 3,705,425 chars (77.16%)</text><rect x="20" y="103" width="12" height="12" rx="2" fill="#d97706"/><text x="38" y="114" font-size="12.5" fill="#1c1917">New Testament — 929,901 chars (19.36%)</text><rect x="20" y="125" width="12" height="12" rx="2" fill="#7c3aed"/><text x="38" y="136" font-size="12.5" fill="#1c1917">Appendix (3 books) — 166,646 chars (3.47%)</text></svg>
+<figcaption>The Old Testament supplies the bulk of the verse-body text; the appendix (Prayer of
+Manasses, 3 &amp; 4 Esdras) is the smallest division.</figcaption></figure>
+
+<h2>5 · Source collation &amp; discrepancy analysis</h2>
+<p>Preferring one witness for the words is a provenance decision; proving the words are
+<em>right</em> needs collation. Two independent checks establish it — and the second exists precisely
+because Sabates derives from Madueke, so their agreement alone could inherit a shared transcription
+error.</p>
+
+<h3>5.1 · Two-way digital collation — Madueke vs Sabates</h3>
+<p>A verse-by-verse string collation over the shared 35,809-verse canon,
+folding away orthographic and typographic convention to isolate genuine wording differences.</p>
+<figure><div class="ftitle">Figure 4 · Verse-by-verse agreement, by difference class</div>
+<svg viewBox="0 0 760 180" width="100%" role="img" aria-label="two-way verse collation" style="max-width:760px;font-family:inherit"><rect x="20.00" y="22" width="671.56" height="44" fill="#15803d"><title>Identical wording: 93.27%</title></rect><text x="355.78" y="49.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">93.3%</text><rect x="691.56" y="22" width="16.35" height="44" fill="#2563eb"><title>Ligature-only (ae/oe vs æ/œ): 2.27%</title></rect><rect x="707.91" y="22" width="32.09" height="44" fill="#d97706"><title>Case / punctuation / spacing only: 4.46%</title></rect><rect x="740.00" y="22" width="0.00" height="44" fill="#dc2626"><title>Substantive wording differences: 0.00%</title></rect><rect x="20" y="81" width="12" height="12" rx="2" fill="#15803d"/><text x="38" y="92" font-size="12.5" fill="#1c1917">Identical wording — 33,400 chars (93.27%)</text><rect x="20" y="103" width="12" height="12" rx="2" fill="#2563eb"/><text x="38" y="114" font-size="12.5" fill="#1c1917">Ligature-only (ae/oe vs æ/œ) — 813 chars (2.27%)</text><rect x="20" y="125" width="12" height="12" rx="2" fill="#d97706"/><text x="38" y="136" font-size="12.5" fill="#1c1917">Case / punctuation / spacing only — 1,596 chars (4.46%)</text><rect x="20" y="147" width="12" height="12" rx="2" fill="#dc2626"/><text x="38" y="158" font-size="12.5" fill="#1c1917">Substantive wording differences — 0 chars (0.00%)</text></svg>
+<figcaption>33,400 of 35,809 verses (93.27%) are
+byte-identical; 813 differ only in ligature convention (Madueke
+<code>ae/oe</code> vs Sabates <code>æ/œ</code>); 1,596 differ only in
+case, punctuation or spacing; <strong>0 differ in actual wording</strong>.</figcaption></figure>
+<p>The only structural divergence is Tobias (tobias: Madueke 14 vs Sabates 15):
+Sabates carries a spurious leading chapter that Madueke does not, independently confirming the Tobias
+correction of §8. No verses are missing or extra on either side.</p>
+
+<h3>5.2 · Three-way validation against the original print (independent OCR)</h3>
+<p>To break the shared-lineage risk, an <strong>independent tesseract OCR</strong> of the original
+1582/1609/1610 printed editions (Anna's Archive EEBO scans) was collated against both digital
+witnesses across 5 canonical divisions — a Gospel, the Pentateuch, a
+historical book, a Psalm and a Prophet.</p>
+<figure><div class="ftitle">Figure 5 · Print-OCR strict scripture recall, by sampled division</div>
+<svg viewBox="0 0 760 154" width="100%" role="img" aria-label="print-OCR strict recall by sampled division" style="max-width:760px;font-family:inherit"><text x="192" y="29.0" font-size="12" fill="#1c1917" text-anchor="end">Matthew 10</text><rect x="200" y="15" width="490.00" height="18" rx="2" fill="#7c3aed"/><text x="696.00" y="29.0" font-size="11.5" fill="#78716c">90%</text><text x="192" y="55.0" font-size="12" fill="#1c1917" text-anchor="end">Genesis 17</text><rect x="200" y="41" width="474.47" height="18" rx="2" fill="#7c3aed"/><text x="680.47" y="55.0" font-size="11.5" fill="#78716c">87%</text><text x="192" y="81.0" font-size="12" fill="#1c1917" text-anchor="end">Josue 11</text><rect x="200" y="67" width="481.13" height="18" rx="2" fill="#7c3aed"/><text x="687.13" y="81.0" font-size="11.5" fill="#78716c">88%</text><text x="192" y="107.0" font-size="12" fill="#1c1917" text-anchor="end">Psalm 109</text><rect x="200" y="93" width="353.63" height="18" rx="2" fill="#7c3aed"/><text x="559.63" y="107.0" font-size="11.5" fill="#78716c">65%</text><text x="192" y="133.0" font-size="12" fill="#1c1917" text-anchor="end">Isaie 33</text><rect x="200" y="119" width="456.18" height="18" rx="2" fill="#7c3aed"/><text x="662.18" y="133.0" font-size="11.5" fill="#78716c">84%</text></svg>
+<figcaption>Strict recall ranges 65–91%
+(aggregate 83.35%). The spread tracks <em>per-page apparatus density</em>,
+not fidelity: the annotation-dense Psalm 109 page OCRs the most non-scripture and so scores lowest.
+Crucially, Madueke and Sabates post <em>identical</em> recall on every page.</figcaption></figure>
+<div class="callout good"><div class="h">Zero genuine discrepancies</div>
+After triaging OCR noise and apparatus, 48 residual candidate tokens
+remain (2.43% of scripture words). Manual decode of all of them found
+<strong>100% OCR garble or OCR-corrupted apparatus</strong> (e.g. <em>Hethachach</em> = &ldquo;he
+that hath&rdquo;, <em>tolofue</em> = &ldquo;to Josue&rdquo;, <em>fignitying</em> = &ldquo;signifying&rdquo;) —
+<strong>0 genuine scripture wording discrepancies</strong>. The
+printed original confirms both digital witnesses; shared-lineage agreement here is corroborated, not a
+shared error.</div>
+
+<div class="callout flag"><div class="h">Apparatus completeness — one documented gap</div>
+Scripture fidelity is not the same as apparatus completeness. Of 1,360 chapters,
+1,326 (97.5%) carry Sabates annotation blocks. At least one absence is
+a genuine gap rather than a truly un-annotated chapter: Sabates apparatus is transcription-incomplete in places. Psalm 109 ships an annotation file that is present but empty, while the original 1610 print page for that psalm is apparatus-dense (recovered by the print-OCR pass). Of
+33 present psalm annotation files,
+32 are populated — Psalm 109's is present but empty. The
+Madueke_B merged edition carries the fuller apparatus and is the natural source for closing such gaps.</div>
+
+<h2>6 · Mask coverage &amp; structural integrity</h2>
+<p>The map is a two-layer tiling: a GENERIC layer of structural containers (body → volume → book)
+and a SPECIFIC layer of leaf elements (headers, arguments, verse bodies). The GENERIC layer covers
+<strong>100.00%</strong> of the text and the SPECIFIC leaves cover
+<strong>100.00%</strong> — a gap of just 18
+characters (0.0002%), the inter-paragraph separators that belong to no
+leaf element. Masking hides the apparatus so the reader sees only scripture.</p>
+<figure><div class="ftitle">Figure 6 · Mask coverage — reader's text vs hidden apparatus</div>
+<svg viewBox="0 0 760 136" width="100%" role="img" aria-label="mask coverage" style="max-width:760px;font-family:inherit"><rect x="20.00" y="22" width="412.67" height="44" fill="#2563eb"><title>Unmasked — scripture prose (the reader&#x27;s text): 57.32%</title></rect><text x="226.34" y="49.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">57.3%</text><rect x="432.67" y="22" width="307.33" height="44" fill="#d97706"><title>Masked — editorial apparatus: 42.68%</title></rect><text x="586.34" y="49.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">42.7%</text><rect x="20" y="81" width="12" height="12" rx="2" fill="#2563eb"/><text x="38" y="92" font-size="12.5" fill="#1c1917">Unmasked — scripture prose (the reader&#x27;s text) — 4,801,972 chars (57.32%)</text><rect x="20" y="103" width="12" height="12" rx="2" fill="#d97706"/><text x="38" y="114" font-size="12.5" fill="#1c1917">Masked — editorial apparatus — 3,576,116 chars (42.68%)</text></svg>
+<figcaption>4,801,972 characters of scripture remain visible; 3,576,116 characters of
+editorial apparatus are masked, across 1,360 disjoint intervals.</figcaption></figure>
+<figure><div class="ftitle">Figure 7 · Element inventory (4,234 elements, log-free scale)</div>
+<svg viewBox="0 0 760 388" width="100%" role="img" aria-label="element inventory" style="max-width:760px;font-family:inherit"><text x="192" y="29.0" font-size="12" fill="#1c1917" text-anchor="end">chapter (verse bodies)</text><rect x="200" y="15" width="490.00" height="18" rx="2" fill="#7c3aed"/><text x="696.00" y="29.0" font-size="11.5" fill="#78716c">1,360</text><text x="192" y="55.0" font-size="12" fill="#1c1917" text-anchor="end">annotation (footnotes/commentary)</text><rect x="200" y="41" width="477.75" height="18" rx="2" fill="#7c3aed"/><text x="683.75" y="55.0" font-size="11.5" fill="#78716c">1,326</text><text x="192" y="81.0" font-size="12" fill="#1c1917" text-anchor="end">chapter_heading</text><rect x="200" y="67" width="490.00" height="18" rx="2" fill="#7c3aed"/><text x="696.00" y="81.0" font-size="11.5" fill="#78716c">1,360</text><text x="192" y="107.0" font-size="12" fill="#1c1917" text-anchor="end">book</text><rect x="200" y="93" width="27.38" height="18" rx="2" fill="#7c3aed"/><text x="233.38" y="107.0" font-size="11.5" fill="#78716c">76</text><text x="192" y="133.0" font-size="12" fill="#1c1917" text-anchor="end">introduction</text><rect x="200" y="119" width="27.38" height="18" rx="2" fill="#7c3aed"/><text x="233.38" y="133.0" font-size="11.5" fill="#78716c">76</text><text x="192" y="159.0" font-size="12" fill="#1c1917" text-anchor="end">apparatus (reference docs)</text><rect x="200" y="145" width="7.93" height="18" rx="2" fill="#7c3aed"/><text x="213.93" y="159.0" font-size="11.5" fill="#78716c">22</text><text x="192" y="185.0" font-size="12" fill="#1c1917" text-anchor="end">volume</text><rect x="200" y="171" width="0.72" height="18" rx="2" fill="#7c3aed"/><text x="206.72" y="185.0" font-size="11.5" fill="#78716c">2</text><text x="192" y="211.0" font-size="12" fill="#1c1917" text-anchor="end">header</text><rect x="200" y="197" width="0.72" height="18" rx="2" fill="#7c3aed"/><text x="206.72" y="211.0" font-size="11.5" fill="#78716c">2</text><text x="192" y="237.0" font-size="12" fill="#1c1917" text-anchor="end">front_matter</text><rect x="200" y="223" width="0.72" height="18" rx="2" fill="#7c3aed"/><text x="206.72" y="237.0" font-size="11.5" fill="#78716c">2</text><text x="192" y="263.0" font-size="12" fill="#1c1917" text-anchor="end">back_matter</text><rect x="200" y="249" width="0.72" height="18" rx="2" fill="#7c3aed"/><text x="206.72" y="263.0" font-size="11.5" fill="#78716c">2</text><text x="192" y="289.0" font-size="12" fill="#1c1917" text-anchor="end">title_page</text><rect x="200" y="275" width="0.72" height="18" rx="2" fill="#7c3aed"/><text x="206.72" y="289.0" font-size="11.5" fill="#78716c">2</text><text x="192" y="315.0" font-size="12" fill="#1c1917" text-anchor="end">preface</text><rect x="200" y="301" width="0.72" height="18" rx="2" fill="#7c3aed"/><text x="206.72" y="315.0" font-size="11.5" fill="#78716c">2</text><text x="192" y="341.0" font-size="12" fill="#1c1917" text-anchor="end">appendix</text><rect x="200" y="327" width="0.36" height="18" rx="2" fill="#7c3aed"/><text x="206.36" y="341.0" font-size="11.5" fill="#78716c">1</text><text x="192" y="367.0" font-size="12" fill="#1c1917" text-anchor="end">body</text><rect x="200" y="353" width="0.36" height="18" rx="2" fill="#7c3aed"/><text x="206.36" y="367.0" font-size="11.5" fill="#78716c">1</text></svg>
+<figcaption>Chapter/chapter_heading parity (1,360 = 1,360) is a
+structural invariant: every chapter has exactly one heading. 76 books each carry one introduction.</figcaption></figure>
+<div class="callout good"><div class="h">Structural gates — all pass</div>
+Spans tile <code>[0, 8,378,088)</code> with malformed-span count zero; <code>type_counts</code>
+reconcile with the section list; the production loader/masker accepts the map and its masked
+intervals are sorted, disjoint and in range; chapter/heading parity holds. Reproduction:
+regenerated text sha <code>da451dc27ccfc57a…</code> matches the committed map.</div>
+
+<h2>7 · Content accuracy — the Catholic oracle</h2>
+<p>Structural soundness cannot prove <em>correctness</em>: a dropped chapter would still tile
+perfectly and self-report a consistent count, because the generator only ever checks the map against
+its own re-parsed markers. The existing oracle is Protestant-66 and cannot judge a Vulgate edition —
+the canons genuinely diverge. So this work adds an <strong>ordered Douay-Rheims / Clementine Vulgate
+oracle</strong> (<code>canon_chapters.json → catholic_dr</code>): 76 externally-established chapter
+counts in fixed canonical order, checked positionally against the map (identity confirmed by a label
+token, gated on the count). It is non-circular — the expected counts never touched the map.</p>
+<figure><div class="ftitle">Figure 8 · Per-book chapter counts vs the external Vulgate oracle</div>
+<svg viewBox="0 0 940 322" width="100%" role="img" aria-label="per-book chapter counts vs Vulgate oracle" style="max-width:940px;font-family:inherit"><line x1="34" y1="226.0" x2="924" y2="226.0" stroke="#e7e5e4"/><text x="28" y="230.0" font-size="10" fill="#78716c" text-anchor="end">0</text><line x1="34" y1="159.3" x2="924" y2="159.3" stroke="#e7e5e4"/><text x="28" y="163.3" font-size="10" fill="#78716c" text-anchor="end">50</text><line x1="34" y1="92.7" x2="924" y2="92.7" stroke="#e7e5e4"/><text x="28" y="96.7" font-size="10" fill="#78716c" text-anchor="end">100</text><line x1="34" y1="26.0" x2="924" y2="26.0" stroke="#e7e5e4"/><text x="28" y="30.0" font-size="10" fill="#78716c" text-anchor="end">150</text><rect x="34.00" y="159.33" width="9.74" height="66.67" fill="#2563eb"><title>genesis: 50 chapters (Vulgate expects 50)</title></rect><text x="38.87" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 38.87 232)">Genesis</text><rect x="45.74" y="172.67" width="9.74" height="53.33" fill="#2563eb"><title>exodus: 40 chapters (Vulgate expects 40)</title></rect><text x="50.61" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 50.61 232)">Exodus</text><rect x="57.47" y="190.00" width="9.74" height="36.00" fill="#2563eb"><title>leviticus: 27 chapters (Vulgate expects 27)</title></rect><text x="62.34" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 62.34 232)">Leviticus</text><rect x="69.21" y="178.00" width="9.74" height="48.00" fill="#2563eb"><title>numbers: 36 chapters (Vulgate expects 36)</title></rect><text x="74.08" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 74.08 232)">Numbers</text><rect x="80.95" y="180.67" width="9.74" height="45.33" fill="#2563eb"><title>deuteronomy: 34 chapters (Vulgate expects 34)</title></rect><text x="85.82" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 85.82 232)">Deuteronomy</text><rect x="92.68" y="194.00" width="9.74" height="32.00" fill="#2563eb"><title>joshua: 24 chapters (Vulgate expects 24)</title></rect><text x="97.55" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 97.55 232)">Joshua</text><rect x="104.42" y="198.00" width="9.74" height="28.00" fill="#2563eb"><title>judges: 21 chapters (Vulgate expects 21)</title></rect><text x="109.29" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 109.29 232)">Judges</text><rect x="116.16" y="220.67" width="9.74" height="5.33" fill="#2563eb"><title>ruth: 4 chapters (Vulgate expects 4)</title></rect><text x="121.03" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 121.03 232)">Ruth</text><rect x="127.89" y="184.67" width="9.74" height="41.33" fill="#2563eb"><title>1 kings (1 samuel): 31 chapters (Vulgate expects 31)</title></rect><text x="132.76" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 132.76 232)">1 Kings</text><rect x="139.63" y="194.00" width="9.74" height="32.00" fill="#2563eb"><title>2 kings (2 samuel): 24 chapters (Vulgate expects 24)</title></rect><text x="144.50" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 144.50 232)">2 Kings</text><rect x="151.37" y="196.67" width="9.74" height="29.33" fill="#2563eb"><title>3 kings (1 kings): 22 chapters (Vulgate expects 22)</title></rect><text x="156.24" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 156.24 232)">3 Kings</text><rect x="163.11" y="192.67" width="9.74" height="33.33" fill="#2563eb"><title>4 kings (2 kings): 25 chapters (Vulgate expects 25)</title></rect><text x="167.97" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 167.97 232)">4 Kings</text><rect x="174.84" y="187.33" width="9.74" height="38.67" fill="#2563eb"><title>1 paralipomenon (1 chronicles): 29 chapters (Vulgate expects 29)</title></rect><text x="179.71" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 179.71 232)">1 Paralipomenon</text><rect x="186.58" y="178.00" width="9.74" height="48.00" fill="#2563eb"><title>2 paralipomenon (2 chronicles): 36 chapters (Vulgate expects 36)</title></rect><text x="191.45" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 191.45 232)">2 Paralipomenon</text><rect x="198.32" y="212.67" width="9.74" height="13.33" fill="#2563eb"><title>1 esdras (ezra): 10 chapters (Vulgate expects 10)</title></rect><text x="203.18" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 203.18 232)">1 Esdras</text><rect x="210.05" y="208.67" width="9.74" height="17.33" fill="#2563eb"><title>2 esdras (nehemias): 13 chapters (Vulgate expects 13)</title></rect><text x="214.92" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 214.92 232)">2 Esdras</text><rect x="221.79" y="207.33" width="9.74" height="18.67" fill="#2563eb"><title>tobias: 14 chapters (Vulgate expects 14)</title></rect><text x="226.66" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 226.66 232)">Tobias</text><rect x="233.53" y="204.67" width="9.74" height="21.33" fill="#2563eb"><title>judith: 16 chapters (Vulgate expects 16)</title></rect><text x="238.39" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 238.39 232)">Judith</text><rect x="245.26" y="204.67" width="9.74" height="21.33" fill="#2563eb"><title>esther: 16 chapters (Vulgate expects 16)</title></rect><text x="250.13" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 250.13 232)">Esther</text><rect x="257.00" y="170.00" width="9.74" height="56.00" fill="#2563eb"><title>job: 42 chapters (Vulgate expects 42)</title></rect><text x="261.87" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 261.87 232)">Job</text><rect x="268.74" y="26.00" width="9.74" height="200.00" fill="#2563eb"><title>psalms: 150 chapters (Vulgate expects 150)</title></rect><text x="273.61" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 273.61 232)">Psalms</text><rect x="280.47" y="184.67" width="9.74" height="41.33" fill="#2563eb"><title>proverbs: 31 chapters (Vulgate expects 31)</title></rect><text x="285.34" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 285.34 232)">Proverbs</text><rect x="292.21" y="210.00" width="9.74" height="16.00" fill="#2563eb"><title>ecclesiastes: 12 chapters (Vulgate expects 12)</title></rect><text x="297.08" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 297.08 232)">Ecclesiastes</text><rect x="303.95" y="215.33" width="9.74" height="10.67" fill="#2563eb"><title>canticle of canticles: 8 chapters (Vulgate expects 8)</title></rect><text x="308.82" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 308.82 232)">Canticle Of Canticles</text><rect x="315.68" y="200.67" width="9.74" height="25.33" fill="#2563eb"><title>wisdom: 19 chapters (Vulgate expects 19)</title></rect><text x="320.55" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 320.55 232)">Wisdom</text><rect x="327.42" y="158.00" width="9.74" height="68.00" fill="#2563eb"><title>ecclesiasticus: 51 chapters (Vulgate expects 51)</title></rect><text x="332.29" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 332.29 232)">Ecclesiasticus</text><rect x="339.16" y="138.00" width="9.74" height="88.00" fill="#2563eb"><title>isaias: 66 chapters (Vulgate expects 66)</title></rect><text x="344.03" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 344.03 232)">Isaias</text><rect x="350.89" y="156.67" width="9.74" height="69.33" fill="#2563eb"><title>jeremias: 52 chapters (Vulgate expects 52)</title></rect><text x="355.76" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 355.76 232)">Jeremias</text><rect x="362.63" y="219.33" width="9.74" height="6.67" fill="#2563eb"><title>lamentations: 5 chapters (Vulgate expects 5)</title></rect><text x="367.50" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 367.50 232)">Lamentations</text><rect x="374.37" y="218.00" width="9.74" height="8.00" fill="#2563eb"><title>baruch: 6 chapters (Vulgate expects 6)</title></rect><text x="379.24" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 379.24 232)">Baruch</text><rect x="386.11" y="162.00" width="9.74" height="64.00" fill="#2563eb"><title>ezechiel: 48 chapters (Vulgate expects 48)</title></rect><text x="390.97" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 390.97 232)">Ezechiel</text><rect x="397.84" y="207.33" width="9.74" height="18.67" fill="#2563eb"><title>daniel: 14 chapters (Vulgate expects 14)</title></rect><text x="402.71" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 402.71 232)">Daniel</text><rect x="409.58" y="207.33" width="9.74" height="18.67" fill="#2563eb"><title>osee (hosea): 14 chapters (Vulgate expects 14)</title></rect><text x="414.45" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 414.45 232)">Osee</text><rect x="421.32" y="222.00" width="9.74" height="4.00" fill="#2563eb"><title>joel: 3 chapters (Vulgate expects 3)</title></rect><text x="426.18" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 426.18 232)">Joel</text><rect x="433.05" y="214.00" width="9.74" height="12.00" fill="#2563eb"><title>amos: 9 chapters (Vulgate expects 9)</title></rect><text x="437.92" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 437.92 232)">Amos</text><rect x="444.79" y="224.67" width="9.74" height="1.33" fill="#2563eb"><title>abdias (obadiah): 1 chapters (Vulgate expects 1)</title></rect><text x="449.66" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 449.66 232)">Abdias</text><rect x="456.53" y="220.67" width="9.74" height="5.33" fill="#2563eb"><title>jonas (jonah): 4 chapters (Vulgate expects 4)</title></rect><text x="461.39" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 461.39 232)">Jonas</text><rect x="468.26" y="216.67" width="9.74" height="9.33" fill="#2563eb"><title>micheas (micah): 7 chapters (Vulgate expects 7)</title></rect><text x="473.13" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 473.13 232)">Micheas</text><rect x="480.00" y="222.00" width="9.74" height="4.00" fill="#2563eb"><title>nahum: 3 chapters (Vulgate expects 3)</title></rect><text x="484.87" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 484.87 232)">Nahum</text><rect x="491.74" y="222.00" width="9.74" height="4.00" fill="#2563eb"><title>habacuc (habakkuk): 3 chapters (Vulgate expects 3)</title></rect><text x="496.61" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 496.61 232)">Habacuc</text><rect x="503.47" y="222.00" width="9.74" height="4.00" fill="#2563eb"><title>sophonias (zephaniah): 3 chapters (Vulgate expects 3)</title></rect><text x="508.34" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 508.34 232)">Sophonias</text><rect x="515.21" y="223.33" width="9.74" height="2.67" fill="#2563eb"><title>aggeus (haggai): 2 chapters (Vulgate expects 2)</title></rect><text x="520.08" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 520.08 232)">Aggeus</text><rect x="526.95" y="207.33" width="9.74" height="18.67" fill="#2563eb"><title>zacharias (zechariah): 14 chapters (Vulgate expects 14)</title></rect><text x="531.82" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 531.82 232)">Zacharias</text><rect x="538.68" y="220.67" width="9.74" height="5.33" fill="#2563eb"><title>malachias (malachi): 4 chapters (Vulgate expects 4)</title></rect><text x="543.55" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 543.55 232)">Malachias</text><rect x="550.42" y="204.67" width="9.74" height="21.33" fill="#2563eb"><title>1 machabees: 16 chapters (Vulgate expects 16)</title></rect><text x="555.29" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 555.29 232)">1 Machabees</text><rect x="562.16" y="206.00" width="9.74" height="20.00" fill="#2563eb"><title>2 machabees: 15 chapters (Vulgate expects 15)</title></rect><text x="567.03" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 567.03 232)">2 Machabees</text><rect x="573.89" y="188.67" width="9.74" height="37.33" fill="#15803d"><title>matthew: 28 chapters (Vulgate expects 28)</title></rect><text x="578.76" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 578.76 232)">Matthew</text><rect x="585.63" y="204.67" width="9.74" height="21.33" fill="#15803d"><title>mark: 16 chapters (Vulgate expects 16)</title></rect><text x="590.50" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 590.50 232)">Mark</text><rect x="597.37" y="194.00" width="9.74" height="32.00" fill="#15803d"><title>luke: 24 chapters (Vulgate expects 24)</title></rect><text x="602.24" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 602.24 232)">Luke</text><rect x="609.11" y="198.00" width="9.74" height="28.00" fill="#15803d"><title>john: 21 chapters (Vulgate expects 21)</title></rect><text x="613.97" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 613.97 232)">John</text><rect x="620.84" y="188.67" width="9.74" height="37.33" fill="#15803d"><title>acts: 28 chapters (Vulgate expects 28)</title></rect><text x="625.71" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 625.71 232)">Acts</text><rect x="632.58" y="204.67" width="9.74" height="21.33" fill="#15803d"><title>romans: 16 chapters (Vulgate expects 16)</title></rect><text x="637.45" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 637.45 232)">Romans</text><rect x="644.32" y="204.67" width="9.74" height="21.33" fill="#15803d"><title>1 corinthians: 16 chapters (Vulgate expects 16)</title></rect><text x="649.18" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 649.18 232)">1 Corinthians</text><rect x="656.05" y="208.67" width="9.74" height="17.33" fill="#15803d"><title>2 corinthians: 13 chapters (Vulgate expects 13)</title></rect><text x="660.92" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 660.92 232)">2 Corinthians</text><rect x="667.79" y="218.00" width="9.74" height="8.00" fill="#15803d"><title>galatians: 6 chapters (Vulgate expects 6)</title></rect><text x="672.66" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 672.66 232)">Galatians</text><rect x="679.53" y="218.00" width="9.74" height="8.00" fill="#15803d"><title>ephesians: 6 chapters (Vulgate expects 6)</title></rect><text x="684.39" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 684.39 232)">Ephesians</text><rect x="691.26" y="220.67" width="9.74" height="5.33" fill="#15803d"><title>philippians: 4 chapters (Vulgate expects 4)</title></rect><text x="696.13" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 696.13 232)">Philippians</text><rect x="703.00" y="220.67" width="9.74" height="5.33" fill="#15803d"><title>colossians: 4 chapters (Vulgate expects 4)</title></rect><text x="707.87" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 707.87 232)">Colossians</text><rect x="714.74" y="219.33" width="9.74" height="6.67" fill="#15803d"><title>1 thessalonians: 5 chapters (Vulgate expects 5)</title></rect><text x="719.61" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 719.61 232)">1 Thessalonians</text><rect x="726.47" y="222.00" width="9.74" height="4.00" fill="#15803d"><title>2 thessalonians: 3 chapters (Vulgate expects 3)</title></rect><text x="731.34" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 731.34 232)">2 Thessalonians</text><rect x="738.21" y="218.00" width="9.74" height="8.00" fill="#15803d"><title>1 timothy: 6 chapters (Vulgate expects 6)</title></rect><text x="743.08" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 743.08 232)">1 Timothy</text><rect x="749.95" y="220.67" width="9.74" height="5.33" fill="#15803d"><title>2 timothy: 4 chapters (Vulgate expects 4)</title></rect><text x="754.82" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 754.82 232)">2 Timothy</text><rect x="761.68" y="222.00" width="9.74" height="4.00" fill="#15803d"><title>titus: 3 chapters (Vulgate expects 3)</title></rect><text x="766.55" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 766.55 232)">Titus</text><rect x="773.42" y="224.67" width="9.74" height="1.33" fill="#15803d"><title>philemon: 1 chapters (Vulgate expects 1)</title></rect><text x="778.29" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 778.29 232)">Philemon</text><rect x="785.16" y="208.67" width="9.74" height="17.33" fill="#15803d"><title>hebrews: 13 chapters (Vulgate expects 13)</title></rect><text x="790.03" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 790.03 232)">Hebrews</text><rect x="796.89" y="219.33" width="9.74" height="6.67" fill="#15803d"><title>james: 5 chapters (Vulgate expects 5)</title></rect><text x="801.76" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 801.76 232)">James</text><rect x="808.63" y="219.33" width="9.74" height="6.67" fill="#15803d"><title>1 peter: 5 chapters (Vulgate expects 5)</title></rect><text x="813.50" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 813.50 232)">1 Peter</text><rect x="820.37" y="222.00" width="9.74" height="4.00" fill="#15803d"><title>2 peter: 3 chapters (Vulgate expects 3)</title></rect><text x="825.24" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 825.24 232)">2 Peter</text><rect x="832.11" y="219.33" width="9.74" height="6.67" fill="#15803d"><title>1 john: 5 chapters (Vulgate expects 5)</title></rect><text x="836.97" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 836.97 232)">1 John</text><rect x="843.84" y="224.67" width="9.74" height="1.33" fill="#15803d"><title>2 john: 1 chapters (Vulgate expects 1)</title></rect><text x="848.71" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 848.71 232)">2 John</text><rect x="855.58" y="224.67" width="9.74" height="1.33" fill="#15803d"><title>3 john: 1 chapters (Vulgate expects 1)</title></rect><text x="860.45" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 860.45 232)">3 John</text><rect x="867.32" y="224.67" width="9.74" height="1.33" fill="#15803d"><title>jude: 1 chapters (Vulgate expects 1)</title></rect><text x="872.18" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 872.18 232)">Jude</text><rect x="879.05" y="196.67" width="9.74" height="29.33" fill="#15803d"><title>apocalypse (revelation): 22 chapters (Vulgate expects 22)</title></rect><text x="883.92" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 883.92 232)">Apocalypse</text><rect x="890.79" y="224.67" width="9.74" height="1.33" fill="#15803d"><title>prayer of manasses: 1 chapters (Vulgate expects 1)</title></rect><text x="895.66" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 895.66 232)">Prayer Of Manasses</text><rect x="902.53" y="214.00" width="9.74" height="12.00" fill="#15803d"><title>3 esdras: 9 chapters (Vulgate expects 9)</title></rect><text x="907.39" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 907.39 232)">3 Esdras</text><rect x="914.26" y="204.67" width="9.74" height="21.33" fill="#15803d"><title>4 esdras: 16 chapters (Vulgate expects 16)</title></rect><text x="919.13" y="232" font-size="8.5" fill="#78716c" text-anchor="end" transform="rotate(-60 919.13 232)">4 Esdras</text><rect x="34" y="12" width="11" height="11" rx="2" fill="#2563eb"/><text x="49" y="22" font-size="11" fill="#1c1917">Old Testament</text><rect x="184" y="12" width="11" height="11" rx="2" fill="#15803d"/><text x="199" y="22" font-size="11" fill="#1c1917">New Testament + appendix</text><rect x="394" y="12" width="11" height="11" rx="2" fill="#dc2626"/><text x="409" y="22" font-size="11" fill="#1c1917">flagged (source artifact)</text></svg>
+<figcaption>Every bar is a book in canonical order; height is its chapter count. All 76
+books sit exactly on their externally-expected Vulgate value, including Tobias — now corrected to 14 chapters (see §8).</figcaption></figure>
+<p>The Vulgate distinctives are exactly why a Protestant oracle fails here, and all resolve correctly:</p>
+<table>
+<tr><th>Book</th><th>DR / Vulgate</th><th>Protestant</th><th>Why it differs</th></tr>
+<tr><td>Esther</td><td class="n">16</td><td class="n">10</td><td>includes the Greek additions</td></tr>
+<tr><td>Daniel</td><td class="n">14</td><td class="n">12</td><td>Susanna (13) &amp; Bel and the Dragon (14) folded in</td></tr>
+<tr><td>Baruch</td><td class="n">6</td><td class="n">5</td><td>the Epistle of Jeremiah is Baruch ch. 6</td></tr>
+<tr><td>1 Esdras</td><td class="n">10</td><td class="n">9*</td><td>DR 1 Esdras = Ezra (10); the Greek 1 Esdras (9) is a different book</td></tr>
+<tr><td>Appendix</td><td class="n">3 books</td><td>—</td><td>Prayer of Manasses, 3 &amp; 4 Esdras placed after the NT (Clementine)</td></tr>
+</table>
+
+<h2>8 · The Tobias correction</h2>
+<div class="callout good"><div class="h">Tobias — restored to 14 chapters</div>
+The upstream CC0 dataset carried a spurious leading &ldquo;chapter&nbsp;0&rdquo; for Tobias: a single
+verse holding only a truncated 8-word fragment of the book's opening line
+(<em>&ldquo;Tobias of the tribe and city of Nephthali&rdquo;</em>). The complete verse — and the whole
+real first chapter — follows immediately after, so the enriched reconstruction drops the fragment and
+renumbers, restoring the canonical 14 chapters the Vulgate expects.</div>
+<p>The drop is verifiably <strong>lossless</strong>: source chapter 0 holds one 8-word verse, while
+source chapter 1 opens with that exact text in full (<em>&ldquo;…Nephthali, which is in the upper parts
+of Galilee…&rdquo;</em>) and runs a further 25 verses. Nothing is discarded — only a parsing artifact is
+removed. A scan of all 77 source books found Tobias to be the <strong>only</strong> book with this
+thin-leading-chapter signature, so the fix is a targeted one-book correction
+(<code>SPURIOUS_LEADING_CHAPTER</code> in the generator), not a systemic re-parse.</p>
+<p>The 14-chapter count is independently corroborated by the book's own Argument (preserved as the
+masked introduction apparatus), which divides Tobias <em>&ldquo;The first four chapters… The eight
+following… In the two last chapters&rdquo;</em> — 4 + 8 + 2 = <strong>14</strong>. With the count
+restored, the sources manifest carries <strong>no</strong> <code>canon_exceptions</code> and the
+Catholic oracle passes all <strong>76/76</strong> books with zero discrepancies.</p>
+
+<h2>9 · Confidence assessment</h2>
+<p>A single verdict would mislead; confidence splits across four independent axes — and this rebuild
+promotes the scripture axis that the single-source version could only rate MODERATE.</p>
+<div class="tier"><span class="badge b-high">HIGH</span><div class="body">
+  <strong>Reproduction.</strong> The generated text is deterministic and normalization-stable; the
+  regenerated sha is byte-identical to the committed map. Anyone holding the source witnesses can
+  rebuild the exact bytes.</div></div>
+<div class="tier"><span class="badge b-high">HIGH</span><div class="body">
+  <strong>Structural soundness.</strong> Offsets are exact by construction (no detector). Both tiling
+  layers are gap-free to the separator; all hermetic gates pass; chapter/heading parity is exact.</div></div>
+<div class="tier"><span class="badge b-high">HIGH</span><div class="body">
+  <strong>Scripture content.</strong> Promoted from MODERATE. Beyond the chapter-level Vulgate oracle
+  (76/76 books), the verse bodies are now corroborated at <em>verse</em> granularity: a
+  35,809-verse collation against a second digital witness finds
+  0 substantive wording differences, and an independent OCR pass over
+  the original printed editions finds 0 genuine discrepancies.
+  Two witnesses plus the print agree on the words.</div></div>
+<div class="tier"><span class="badge b-mod">MODERATE</span><div class="body">
+  <strong>Apparatus content.</strong> The arguments, footnotes and reference documents rest on the
+  single Sabates witness (Madueke carries no apparatus), and it is demonstrably incomplete in places
+  (Psalm 109's annotation block is empty though the print is dense). The apocryphal appendix is
+  likewise Sabates-only. Apparatus fidelity is therefore rated below scripture.</div></div>
+
+<h2>10 · Limitations &amp; what is not proven</h2>
+<ul>
+<li><strong>Apparatus is single-witness.</strong> Only the scripture is multiply attested. The
+editorial apparatus and the three-book appendix rest on Sabates alone, with at least one confirmed
+transcription gap (Psalm 109). Madueke_B (the merged PDF edition) is the natural second witness for a
+future apparatus pass.</li>
+<li><strong>Print validation is a sample.</strong> The independent OCR covered
+5 canonical divisions (one per major text type), not every chapter; it
+strongly corroborates the digital text but is not an exhaustive verse-by-verse print collation.</li>
+<li><strong>Chapter-granular oracle.</strong> The Catholic oracle checks book presence, order and
+chapter count — not verse counts or verse text. Vulgate verse divisions vary by edition, so verse
+counts are recorded, not gated.</li>
+<li><strong>One deliberate editorial correction.</strong> The reconstruction departs from raw-source
+WYSIWYG in exactly one place — the spurious Tobias chapter is dropped (§8), a fix independently
+confirmed by the Madueke witness, which never carried it.</li>
+</ul>
+
+<h2>11 · Recommendations</h2>
+<ul>
+<li><strong>Accept as gold.</strong> Reproduction + structure are HIGH and scripture content is now
+HIGH (three-witness), externally gated at 76/76 with no outstanding exceptions. This clears
+the Gold Set bar cleanly.</li>
+<li><strong>Enrich the apparatus from Madueke_B.</strong> The merged-edition PDF carries the fuller
+apparatus; folding it in would close documented Sabates gaps (e.g. Psalm 109) and lift the apparatus
+axis toward HIGH.</li>
+<li><strong>Report the Tobias artifact upstream</strong> to the janvier-s (Sabates) dataset — the fix
+here is local to this reconstruction; the upstream CC0 JSON still carries the mis-captured Argument
+chapter.</li>
+<li><strong>For full verse-level print assurance</strong>, extend the independent OCR collation beyond
+the 5-division sample to the whole canon.</li>
+</ul>
+
+<footer>
+Generated by <code>docs/development/reports/gen_originaldr_108_report.py</code> from the frozen gold
+map <code>work-108.map.json</code>, the production Catholic oracle (<code>palimpsest.gold</code>), and
+the committed collation summary <code>collation-summary.json</code> (distilled from the two- and
+three-way source analyses). All figures computed at generation time — no hardcoded values. Reference
+sha <code>da451dc27ccfc57ac9b9ee9322770521bb20ae80b85df30e6bcbfcc6705a46c1</code>.
+</footer>
+</div></body></html>

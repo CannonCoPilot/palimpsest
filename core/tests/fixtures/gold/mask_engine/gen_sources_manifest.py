@@ -49,11 +49,23 @@ PROVENANCE: dict[int, dict] = {
           "kind": "detector-epub", "source_origin": "published-epub",
           "accuracy_source": "annotation+detector"},
     108: {"translation": "Douay-Rheims Bible (Original, 1582-1610)", "year": 1610,
-          "spelling": "archaic", "typeset": "modern", "canon": "catholic-douay",
-          "kind": "bespoke", "source_origin": "reconstructed-from-digital-edition",
-          "accuracy_source": "map-gates",
-          "note": "Catholic Vulgate canon (Esther 16, Daniel 14) — not gated by the "
-                  "Protestant canon oracle; route to full parity = annotation gold or Catholic oracle."},
+          "spelling": "modern", "typeset": "modern", "canon": "catholic-douay",
+          "kind": "bespoke", "source_origin": "reconstructed-from-collated-digital-editions",
+          "accuracy_source": "catholic-oracle",
+          "note": "Scripture text is authoritatively the Madueke_A olprint 'Augmented Bible' HTML "
+                  "edition (73 books); editorial apparatus (book/chapter arguments, footnotes, "
+                  "annotations, 26 front/back reference documents) and the three-book apocryphal "
+                  "appendix come from the janvier-s/original-douay-rheims CC0 dataset, which Madueke "
+                  "omits. The two witnesses share a transcription lineage, so a verse-by-verse "
+                  "collation (0 substantive wording differences) plus an INDEPENDENT tesseract OCR "
+                  "of the original 1582/1609/1610 printed scans (0 genuine wording discrepancies "
+                  "across five canonical divisions) confirm the scripture against the print — a "
+                  "three-witness provenance recorded per element. Catholic Vulgate canon, gated by "
+                  "the ordered Douay-Rheims/Clementine oracle (catholic_dr): all 76 books match the "
+                  "external Vulgate chapter counts (Esther 16, Daniel 14, Baruch 6, 1 Esdras=Ezra=10, "
+                  "3+4 Esdras appendix). The janvier-s dataset had captured Tobias's Argument as a "
+                  "spurious 1-verse chapter 1; the reconstruction drops it, restoring the canonical "
+                  "14 chapters (the Argument itself divides the book 4+8+2)."},
     201: {"translation": "Coverdale Bible", "year": 1535, "spelling": "archaic", "typeset": "modern",
           "canon": "protestant-66", "kind": "marker", "source_origin": "reconstructed-from-web-scrape",
           "accuracy_source": "canon-oracle"},
@@ -159,6 +171,7 @@ def build() -> dict:
             # registry entry, so all Bibles are reachable once those paths exist; the
             # path's own test is the evidence.
             "validated": {"cli": True, "api": True, "ui": True},
+            **({"canon_exceptions": prov["canon_exceptions"]} if "canon_exceptions" in prov else {}),
             **({"note": prov["note"]} if "note" in prov else {}),
         })
     return {

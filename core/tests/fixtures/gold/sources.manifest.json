@@ -92,30 +92,30 @@
       "id": 108,
       "translation": "Douay-Rheims Bible (Original, 1582-1610)",
       "year": 1610,
-      "spelling": "archaic",
+      "spelling": "modern",
       "typeset": "modern",
       "canon": "catholic-douay",
       "kind": "bespoke",
-      "source_origin": "reconstructed-from-digital-edition",
-      "source_file": "douay-rheims-original-1582-1610.txt",
+      "source_origin": "reconstructed-from-collated-digital-editions",
+      "source_file": "OriginalDR-modern-1582-1610.txt",
       "source_file_type": "txt",
-      "source_present": false,
-      "source_sha256": null,
-      "reference_sha256": "64722ad621ab857a71e7034f380c63791f0b32d776720478f58185efe4444bb7",
+      "source_present": true,
+      "source_sha256": "da451dc27ccfc57ac9b9ee9322770521bb20ae80b85df30e6bcbfcc6705a46c1",
+      "reference_sha256": "da451dc27ccfc57ac9b9ee9322770521bb20ae80b85df30e6bcbfcc6705a46c1",
       "structure": {
         "books": 76,
-        "chapters": 1361,
+        "chapters": 1360,
         "verses": null
       },
       "gold_map": "maps/work-108.map.json",
       "annotation_gold": null,
-      "accuracy_source": "map-gates",
+      "accuracy_source": "catholic-oracle",
       "validated": {
         "cli": true,
         "api": true,
         "ui": true
       },
-      "note": "Catholic Vulgate canon (Esther 16, Daniel 14) — not gated by the Protestant canon oracle; route to full parity = annotation gold or Catholic oracle."
+      "note": "Scripture text is authoritatively the Madueke_A olprint 'Augmented Bible' HTML edition (73 books); editorial apparatus (book/chapter arguments, footnotes, annotations, 26 front/back reference documents) and the three-book apocryphal appendix come from the janvier-s/original-douay-rheims CC0 dataset, which Madueke omits. The two witnesses share a transcription lineage, so a verse-by-verse collation (0 substantive wording differences) plus an INDEPENDENT tesseract OCR of the original 1582/1609/1610 printed scans (0 genuine wording discrepancies across five canonical divisions) confirm the scripture against the print — a three-witness provenance recorded per element. Catholic Vulgate canon, gated by the ordered Douay-Rheims/Clementine oracle (catholic_dr): all 76 books match the external Vulgate chapter counts (Esther 16, Daniel 14, Baruch 6, 1 Esdras=Ezra=10, 3+4 Esdras appendix). The janvier-s dataset had captured Tobias's Argument as a spurious 1-verse chapter 1; the reconstruction drops it, restoring the canonical 14 chapters (the Argument itself divides the book 4+8+2)."
     },
     {
       "id": 201,

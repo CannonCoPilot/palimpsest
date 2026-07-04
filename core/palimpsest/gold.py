@@ -103,6 +103,40 @@ def classify_books(idx: int) -> tuple[list, list, list, list]:
     return core_ok, core_bad, deutero, unresolved
 
 
+def classify_books_catholic(idx: int) -> tuple[list, list, list]:
+    """Resolve a Catholic (Vulgate/Douay-Rheims) map against the ordered DR canon.
+
+    The Protestant name-keyed oracle cannot judge a Vulgate edition: its canon genuinely
+    differs (Esther 16 with the Greek additions, Daniel 14 with Susanna+Bel, Baruch 6 with
+    the Epistle of Jeremiah, 1 Esdras = Ezra = 10), and the original-DR book labels are
+    verbose incipits ("The Book of Iosue, in Hebrew Iehosua …") that defeat name lookup. So
+    this checks the map's book *sequence* positionally against ``catholic_dr`` — the fixed
+    Clementine Vulgate order being itself an externally-established fact — confirming each
+    slot's identity by a label token and gating on the external chapter count.
+
+    Returns (ok, count_bad, align_bad), each a list of (position, book, label, got,
+    expected) tuples: ``count_bad`` are books in the right slot with the wrong chapter
+    count; ``align_bad`` are slots whose label does not carry the expected book's token (or
+    a book-count length mismatch) — a divergence from the canonical order itself.
+    """
+    canon = load_canon()["catholic_dr"]
+    books = books_chapters(load_map(idx))
+    ok: list = []
+    count_bad: list = []
+    align_bad: list = []
+    if len(books) != len(canon):
+        align_bad.append((0, "*length*", f"map has {len(books)} books", len(books), len(canon)))
+    for pos, (exp, (label, got)) in enumerate(zip(canon, books), 1):
+        row = (pos, exp["book"], label, got, exp["chapters"])
+        if exp["match"] not in label.lower():
+            align_bad.append(row)
+        elif got == exp["chapters"]:
+            ok.append(row)
+        else:
+            count_bad.append(row)
+    return ok, count_bad, align_bad
+
+
 def verify_map(idx: int) -> list[str]:
     """Verify a frozen gold map from the JSON alone — structural gates + canon oracle.
 
@@ -152,5 +186,19 @@ def verify_map(idx: int) -> list[str]:
             problems.append(f"canon chapter mismatches: {core_bad}")
         if core_ok and unresolved:
             problems.append(f"unresolved book labels (add alias?): {[u[1] for u in unresolved]}")
+
+    if entry and entry.get("accuracy_source") == "catholic-oracle":
+        ok, count_bad, align_bad = classify_books_catholic(idx)
+        # Chapter mismatches known to originate in the source edition (recorded in the
+        # manifest with provenance) are surfaced there, not gated — a specific, cited
+        # exception, never a blanket pass. All others, and any order divergence, fail.
+        allowed = {e.get("position") for e in (entry.get("canon_exceptions") or [])}
+        undocumented = [r for r in count_bad if r[0] not in allowed]
+        if align_bad:
+            problems.append(f"catholic canon order/identity errors: {align_bad}")
+        if undocumented:
+            problems.append(f"catholic chapter mismatches: {undocumented}")
+        if not ok:
+            problems.append("no catholic-canon books resolved — is idx 108 map present?")
 
     return problems

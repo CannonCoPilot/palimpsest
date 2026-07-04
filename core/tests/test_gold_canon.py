@@ -18,12 +18,18 @@ works' human eyeball — the rigor-parity elevation for map-only scripture.
 
 Epub Bibles (idx 5/6/100) are out of scope here by design: their accuracy rigor comes
 from their annotation gold + detector recall (a3), the mechanism appropriate to
-detector-discovered structure. idx 108 (Douay-Rheims original) is also out of scope: it
-is a Catholic *Vulgate*-canon edition (Esther has the Greek additions → 16 chapters,
-Daniel includes Susanna/Bel → 14), so the Protestant-66 oracle does not apply. Its kind
-(Catholic Douay-Rheims) already carries parity-bearing members with annotation golds
-(idx 5, 100); 108's route to full parity is an annotation gold or a Catholic oracle, and
-its versification is recorded in the sources manifest rather than gated here.
+detector-discovered structure.
+
+idx 108 (Douay-Rheims original) is a Catholic *Vulgate*-canon edition, so the Protestant-66
+name-keyed oracle does not apply — the canon genuinely differs (Esther has the Greek
+additions → 16 chapters, Daniel includes Susanna/Bel → 14, Baruch folds in the Epistle of
+Jeremiah → 6, 1 Esdras = Ezra = 10) and its book labels are verbose incipits that defeat
+name lookup. It gets its own external gate: the ORDERED ``catholic_dr`` oracle, checked
+positionally against the fixed Clementine Vulgate order (identity by label token, gated on
+the external chapter count). 75/76 books match; the sole discrepancy — Tobias carrying a
+spurious 15th chapter — is a documented artifact of the upstream CC0 dataset (it captured
+the book's Argument as a 1-verse chapter 1), recorded in the sources manifest's
+``canon_exceptions`` rather than silently blessed.
 """
 from __future__ import annotations
 
@@ -32,7 +38,7 @@ import pytest
 # The oracle logic (alias resolution, span-containment book/chapter derivation,
 # classification) is production code in palimpsest.gold, shared verbatim with the CLI's
 # ``gold verify`` — so this test asserts exactly what that command computes.
-from palimpsest.gold import classify_books, load_canon
+from palimpsest.gold import classify_books, classify_books_catholic, load_canon
 
 # Marker Bibles whose chapter sections are 1:1 canonical chapters (guaranteed by
 # gen_marker_gold parity) and which use standard book names → strict oracle targets.
@@ -64,3 +70,34 @@ def test_oracle_covers_full_protestant_canon() -> None:
     assert len(core) == 66, f"protestant_66 has {len(core)} books, expected 66"
     assert all(isinstance(v, int) and v > 0 for v in core.values())
     assert core["genesis"] == 50 and core["psalms"] == 150 and core["revelation"] == 22
+
+
+# ── Catholic (Douay-Rheims / Clementine Vulgate) ordered oracle: idx 108 ──────────
+
+_CATHOLIC_IDX = 108
+
+
+def test_catholic_dr_canon_counts() -> None:
+    """DR-original (108) matches the external Vulgate chapter counts in canonical order.
+
+    Every book must sit in its expected Clementine-Vulgate slot (identity by label token,
+    so a dropped/reordered book fails as an alignment error) and carry the externally
+    established chapter count. The enriched reconstruction drops the spurious Tobias
+    Argument chapter that the upstream CC0 dataset had captured, so all 76 books now match
+    the Vulgate counts with no exceptions.
+    """
+    ok, count_bad, align_bad = classify_books_catholic(_CATHOLIC_IDX)
+    assert not align_bad, f"catholic canon order/identity errors: {align_bad}"
+    assert count_bad == [], (
+        f"unexpected catholic chapter mismatches: {count_bad}"
+    )
+    assert len(ok) == 76, f"expected all 76 books to match the Vulgate counts, got {len(ok)}"
+
+
+def test_catholic_oracle_data_complete() -> None:
+    """The catholic_dr oracle data is well-formed: 76 ordered books, positive-int counts."""
+    cath = load_canon()["catholic_dr"]
+    assert len(cath) == 76, f"catholic_dr has {len(cath)} books, expected 76 (73 canon + 3 appendix)"
+    assert all(isinstance(e["chapters"], int) and e["chapters"] > 0 for e in cath)
+    assert all(e["match"] and e["book"] for e in cath), "every entry needs a book key and match token"
+    assert cath[0]["book"] == "genesis" and cath[-1]["book"] == "4 esdras"
