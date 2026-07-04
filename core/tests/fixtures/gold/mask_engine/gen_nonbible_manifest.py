@@ -16,10 +16,12 @@ Honesty of the scorecard (standard §3: soundness ≠ correctness):
     endpoint drive the SAME verified ``_apply_gold_map`` over the same source, so the CLI
     evidence substantiates both. ``ui`` stays false for every entry: the frontend reads only
     the ``bibles`` array, so no non-Bible work is exercised through the browser yet.
-  * ``accuracy_source`` is ``quran-oracle`` only for the two Qur'an works (29, 107), which
-    carry an external count-oracle (114 suras, gated in ``verify_map``); every other kind
-    has no external accuracy lens yet, so it is honestly ``map-gates`` (structural gates
-    only — the audit's §2/§3 accuracy GAP, not a solved problem).
+  * ``accuracy_source`` is an external count-oracle where one exists: ``quran-oracle`` for
+    the two Qur'an works (29, 107 — 114 suras) and ``novel-oracle`` for the two novels whose
+    chapter total is author-fixed and edition-stable (56 Mohicans = 33, 71 Jekyll = 10), both
+    gated in ``verify_map`` against ``canon_chapters.json``. Every other kind — and the novels
+    whose chapter count is edition-variable (70, 19) — has no external accuracy lens yet, so it
+    is honestly ``map-gates`` (structural gates only — the audit's §2/§3 accuracy GAP).
   * ``cohort_status`` records the §3 min-of-two verdict: ``candidate`` for the two
     lone-of-kind works (18 patristics, 101 LDS), ``standard`` for the rest.
 
@@ -50,7 +52,7 @@ OUT = GOLD / "sources.nonbible.manifest.json"
 # Curated editorial metadata, keyed by gold idx. Everything else is derived from the map.
 #   kind:            genre cohort (audit report-4b / NON-BIBLE-WORKLIST tables)
 #   cohort_status:   §3 min-of-two verdict — standard | candidate (lone-of-kind)
-#   accuracy_source: quran-oracle (external count) | map-gates (structural only, no oracle)
+#   accuracy_source: quran-oracle / novel-oracle (external count) | map-gates (structural only)
 #   author/year:     filled only when the audit report or an uncontested publication fact
 #                    establishes them; null otherwise (no fabrication).
 NON_BIBLE_PROVENANCE: dict[int, dict] = {
@@ -67,14 +69,16 @@ NON_BIBLE_PROVENANCE: dict[int, dict] = {
     48:  {"title": "New Testament Apocrypha", "author": None, "year": None,
           "kind": "apocrypha", "cohort_status": "standard", "accuracy_source": "map-gates"},
     56:  {"title": "The Last of the Mohicans", "author": "James Fenimore Cooper", "year": 1826,
-          "kind": "novel", "cohort_status": "standard", "accuracy_source": "map-gates"},
+          "kind": "novel", "cohort_status": "standard", "accuracy_source": "novel-oracle",
+          "note": "Chapter count author-fixed at 33 across standard editions (novel-oracle)."},
     64:  {"title": "The Books of Enoch", "author": None, "year": None,
           "kind": "pseudepigrapha", "cohort_status": "standard", "accuracy_source": "map-gates",
           "note": "Enoch family (1/2/3 Enoch); chapter:230 has no single authoritative count."},
     70:  {"title": "Charlotte Temple", "author": "Susanna Rowson", "year": 1791,
           "kind": "novel", "cohort_status": "standard", "accuracy_source": "map-gates"},
     71:  {"title": "The Strange Case of Dr Jekyll and Mr Hyde", "author": "Robert Louis Stevenson",
-          "year": 1886, "kind": "novel", "cohort_status": "standard", "accuracy_source": "map-gates"},
+          "year": 1886, "kind": "novel", "cohort_status": "standard", "accuracy_source": "novel-oracle",
+          "note": "Chapter count author-fixed at 10 across standard editions (novel-oracle)."},
     80:  {"title": "The Dead Sea Scrolls Translated", "author": None, "year": None,
           "kind": "dss", "cohort_status": "standard", "accuracy_source": "map-gates"},
     101: {"title": "LDS Scripture (Book of Mormon, Doctrine & Covenants, Pearl of Great Price)",
@@ -177,9 +181,9 @@ def build() -> dict:
                 "fails a sha mismatch (see its note) and is marked validated.cli=api=false. "
                 "validated.api mirrors cli because /api/gold/{id}/apply drives the same "
                 "_apply_gold_map; ui stays false (frontend reads only `bibles`). "
-                "accuracy_source is quran-oracle "
-                "for the count-gated Qur'an works, map-gates (structural only) elsewhere — the "
-                "§2/§3 per-kind accuracy lens is still an open gap. Regenerate with "
+                "accuracy_source is an external count-oracle where one exists — quran-oracle "
+                "(29, 107) and novel-oracle (56, 71) — and map-gates (structural only) elsewhere; "
+                "the §2/§3 per-kind accuracy lens is still an open gap. Regenerate with "
                 "mask_engine/gen_nonbible_manifest.py.",
         "count": len(entries),
         "works": entries,

@@ -42,6 +42,7 @@ from palimpsest.gold import (
     classify_books,
     classify_books_catholic,
     load_canon,
+    novel_chapter_count,
     quran_sura_count,
 )
 
@@ -132,3 +133,25 @@ def test_quran_oracle_data_present() -> None:
     """The canon oracle records the fixed 114-sura Qur'an count as a positive int."""
     suras = load_canon()["quran_suras"]
     assert isinstance(suras, int) and suras == 114
+
+
+# Single-work novels with an author-fixed, edition-stable chapter total.
+_NOVEL_IDXS = ((56, 33), (71, 10))
+
+
+@pytest.mark.parametrize("idx,expected", _NOVEL_IDXS, ids=[f"work-{i}" for i, _ in _NOVEL_IDXS])
+def test_novel_chapter_count(idx: int, expected: int) -> None:
+    """Each novel map carries exactly its canonical chapter total.
+
+    Like the Qur'an, these novels are structurally flat (top-level ``chapter`` sections,
+    no book nesting), so the oracle is a pure section count checked against the
+    author-fixed figure in ``canon_chapters.json['novel_chapters']``.
+    """
+    assert novel_chapter_count(idx) == load_canon()["novel_chapters"][str(idx)] == expected
+
+
+def test_novel_oracle_data_present() -> None:
+    """The canon oracle records each gated novel's chapter total as a positive int."""
+    novels = load_canon()["novel_chapters"]
+    assert novels["56"] == 33 and novels["71"] == 10
+    assert all(isinstance(v, int) and v > 0 for v in novels.values())

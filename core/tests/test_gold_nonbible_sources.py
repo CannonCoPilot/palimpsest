@@ -40,6 +40,7 @@ _EXPECTED_NONBIBLE_IDXS = frozenset({18, 19, 29, 42, 48, 56, 64, 70, 71, 80,
                                      101, 102, 103, 104, 105, 106, 107})
 # Works with an external accuracy oracle vs. structural-only gates (the §2/§3 gap).
 _QURAN_IDXS = frozenset({29, 107})
+_NOVEL_ORACLE_IDXS = frozenset({56, 71})  # novels with an author-fixed, edition-stable count
 _LONE_OF_KIND_IDXS = frozenset({18, 101})  # §3 min-of-two flag → candidate, not standard
 # `gold apply` was live-verified from the local corpus: sha_verified=True for 16/17. idx 101
 # (LDS) fails a reference_sha256 tie (map stale / source diverged), so it must NOT claim CLI
@@ -101,8 +102,13 @@ def test_scorecard_is_honest(entry: dict) -> None:
         assert "sha" in (entry.get("note") or "").lower(), "record WHY apply is blocked"
     else:
         assert v["cli"] is True, "apply was live-verified (sha_verified=True) → CLI+API-ready"
-    # Qur'an works carry the external count-oracle; every other kind is honestly structural.
-    expect = "quran-oracle" if entry["id"] in _QURAN_IDXS else "map-gates"
+    # Works with an external count-oracle declare it; every other kind is honestly structural.
+    if entry["id"] in _QURAN_IDXS:
+        expect = "quran-oracle"
+    elif entry["id"] in _NOVEL_ORACLE_IDXS:
+        expect = "novel-oracle"
+    else:
+        expect = "map-gates"
     assert entry["accuracy_source"] == expect
     # §3 min-of-two: the two lone-of-kind works are candidates, never "standard".
     expect_cohort = "candidate" if entry["id"] in _LONE_OF_KIND_IDXS else "standard"
@@ -154,6 +160,19 @@ def test_quran_oracle_gates(idx: int, monkeypatch) -> None:
     problems = verify_map(idx)
     assert any("Qur'an sura count" in p for p in problems), (
         f"quran-oracle did not gate work-{idx:03d}: {problems}"
+    )
+
+
+@pytest.mark.parametrize("idx", sorted(_NOVEL_ORACLE_IDXS))
+def test_novel_oracle_gates(idx: int, monkeypatch) -> None:
+    """A wrong chapter count makes verify_map fail — proving the novel branch actually gates."""
+    # Clean today.
+    assert verify_map(idx) == []
+    # Force a wrong count; verify_map must now surface a novel-count problem.
+    monkeypatch.setattr("palimpsest.gold.novel_chapter_count", lambda _idx: 999)
+    problems = verify_map(idx)
+    assert any("novel chapter count" in p for p in problems), (
+        f"novel-oracle did not gate work-{idx:03d}: {problems}"
     )
 
 

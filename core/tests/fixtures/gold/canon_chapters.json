@@ -6,7 +6,8 @@
     "book_key": "canon._normalize() form: lowercased base name with a leading ordinal where applicable (e.g. '1 samuel', 'song of solomon', 'revelation'). Variant spellings (Vulgate/Old-English) are aliased to these keys by the oracle resolver.",
     "catholic_dr_entry": "{book: canonical display key, match: a lowercased token guaranteed to appear in the DR book label (identity/alignment check), chapters: the externally-established Clementine-Vulgate chapter count}. Order is the fixed Clementine Vulgate sequence: 46 OT + 27 NT + 3-book appendix (Prayer of Manasses, 3 Esdras, 4 Esdras) placed after the New Testament.",
     "verse_counts": "recorded per-Bible in the map's verse_count and the sources manifest, NOT gated here (KJV vs Vulgate vs Masoretic versification differ).",
-    "quran_suras": "The Qur'an (idx 29, 107) is structurally flat: its 114 suras are top-level 'chapter' sections with no enclosing 'book', so the Bibles' positional book->chapter oracle does not apply (books_chapters would find nothing). Its externally-established fact is the fixed 114-sura canon, gated as a pure section count by palimpsest.gold.quran_sura_count. Counting 'chapter' specifically avoids inflating the tally with a map's parallel per-sura 'introduction'/'translation' sections."
+    "quran_suras": "The Qur'an (idx 29, 107) is structurally flat: its 114 suras are top-level 'chapter' sections with no enclosing 'book', so the Bibles' positional book->chapter oracle does not apply (books_chapters would find nothing). Its externally-established fact is the fixed 114-sura canon, gated as a pure section count by palimpsest.gold.quran_sura_count. Counting 'chapter' specifically avoids inflating the tally with a map's parallel per-sura 'introduction'/'translation' sections.",
+    "novel_chapters": "Single-work novels are structurally flat like the Qur'an (top-level 'chapter' sections, no 'book' nesting), so their external accuracy lens is also a pure count -- of the author-fixed chapter total -- gated by palimpsest.gold.novel_chapter_count. Only novels whose chapter division is unambiguous across standard editions are listed here and strict-gated (idx 56 The Last of the Mohicans = 33; idx 71 Dr Jekyll and Mr Hyde = 10). Novels with edition-variable or absent chapter divisions (idx 70 Charlotte Temple, idx 19 The Correspondent) are deliberately omitted and remain structural map-gates, not gated on a contestable count."
   },
   "protestant_66": {
     "genesis": 50, "exodus": 40, "leviticus": 27, "numbers": 36, "deuteronomy": 34,
@@ -108,5 +109,9 @@
     {"book": "3 esdras", "match": "3 esdras", "chapters": 9},
     {"book": "4 esdras", "match": "4 esdras", "chapters": 16}
   ],
-  "quran_suras": 114
+  "quran_suras": 114,
+  "novel_chapters": {
+    "56": 33,
+    "71": 10
+  }
 }

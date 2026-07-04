@@ -167,6 +167,18 @@ def quran_sura_count(idx: int) -> int:
     return sum(1 for s in load_map(idx)["sections"] if s["type"] == "chapter")
 
 
+def novel_chapter_count(idx: int) -> int:
+    """Count the chapters of a flat-structured single-work novel (idx 56, 71).
+
+    Like the Qur'an (see :func:`quran_sura_count`) a novel's chapters are top-level
+    ``chapter`` sections with no enclosing ``book`` span, so the Bibles' positional
+    book→chapter oracle does not apply. The externally-established fact is instead the
+    author-fixed chapter total, so this is a pure section count checked against
+    ``canon_chapters.json['novel_chapters']``.
+    """
+    return sum(1 for s in load_map(idx)["sections"] if s["type"] == "chapter")
+
+
 def verify_map(idx: int) -> list[str]:
     """Verify a frozen gold map from the JSON alone — structural gates + canon oracle.
 
@@ -239,5 +251,17 @@ def verify_map(idx: int) -> list[str]:
         expected = load_canon()["quran_suras"]
         if got != expected:
             problems.append(f"Qur'an sura count {got} != canonical {expected}")
+
+    if entry and entry.get("accuracy_source") == "novel-oracle":
+        # Single-work novels are structurally flat (top-level chapter sections, no book
+        # nesting), so — like the Qur'an — the external lens is a pure count against the
+        # author-fixed chapter total recorded in canon_chapters['novel_chapters'].
+        expected = load_canon().get("novel_chapters", {}).get(str(idx))
+        if expected is None:
+            problems.append(f"novel-oracle idx {idx} has no canonical chapter count")
+        else:
+            got = novel_chapter_count(idx)
+            if got != expected:
+                problems.append(f"novel chapter count {got} != canonical {expected}")
 
     return problems
