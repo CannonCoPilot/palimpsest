@@ -137,6 +137,20 @@ def classify_books_catholic(idx: int) -> tuple[list, list, list]:
     return ok, count_bad, align_bad
 
 
+def quran_sura_count(idx: int) -> int:
+    """Count the suras of a flat-structured Qur'an map (idx 29, 107).
+
+    Unlike the Bibles (book → chapter nesting), the Qur'an's 114 suras are top-level
+    ``chapter`` sections with no enclosing ``book`` span, so ``books_chapters`` — which
+    derives its tallies *inside* book spans — would find nothing and any book-based oracle
+    would vacuously pass. The externally-established fact is instead the fixed 114-sura
+    canon, so this is a pure section count. It counts ``chapter`` specifically because a
+    Qur'an map may carry parallel per-sura ``introduction``/``translation`` sections (idx
+    29) that must not inflate the tally.
+    """
+    return sum(1 for s in load_map(idx)["sections"] if s["type"] == "chapter")
+
+
 def verify_map(idx: int) -> list[str]:
     """Verify a frozen gold map from the JSON alone — structural gates + canon oracle.
 

@@ -5,7 +5,8 @@
     "scope": "protestant_66 counts are universal and externally verifiable (stable since Langton, c.1227) and are strict-gated for every Bible that contains those books. Deuterocanonical chapter divisions vary by tradition (Vulgate folds the Epistle of Jeremiah into Baruch ch.6; KJV keeps it a separate book), so only the well-established KJV-Apocrypha set is strict-gated (idx 219); other traditions' deuterocanon is recorded, not gated, to avoid blessing whatever a map happens to contain. catholic_dr is the ORDERED Douay-Rheims/Clementine-Vulgate canon (idx 108): a Protestant-66 name-keyed table cannot gate it (the Vulgate has Esther 16 with the Greek additions, Daniel 14 with Susanna+Bel, Baruch 6 with the Epistle of Jeremiah, 1 Esdras=Ezra=10 not the Greek 1 Esdras=9), and the original-DR book labels are verbose incipits that defeat name lookup — so it is checked POSITIONALLY against the fixed Vulgate order, each slot confirmed by a label token and gated on the external chapter count.",
     "book_key": "canon._normalize() form: lowercased base name with a leading ordinal where applicable (e.g. '1 samuel', 'song of solomon', 'revelation'). Variant spellings (Vulgate/Old-English) are aliased to these keys by the oracle resolver.",
     "catholic_dr_entry": "{book: canonical display key, match: a lowercased token guaranteed to appear in the DR book label (identity/alignment check), chapters: the externally-established Clementine-Vulgate chapter count}. Order is the fixed Clementine Vulgate sequence: 46 OT + 27 NT + 3-book appendix (Prayer of Manasses, 3 Esdras, 4 Esdras) placed after the New Testament.",
-    "verse_counts": "recorded per-Bible in the map's verse_count and the sources manifest, NOT gated here (KJV vs Vulgate vs Masoretic versification differ)."
+    "verse_counts": "recorded per-Bible in the map's verse_count and the sources manifest, NOT gated here (KJV vs Vulgate vs Masoretic versification differ).",
+    "quran_suras": "The Qur'an (idx 29, 107) is structurally flat: its 114 suras are top-level 'chapter' sections with no enclosing 'book', so the Bibles' positional book->chapter oracle does not apply (books_chapters would find nothing). Its externally-established fact is the fixed 114-sura canon, gated as a pure section count by palimpsest.gold.quran_sura_count. Counting 'chapter' specifically avoids inflating the tally with a map's parallel per-sura 'introduction'/'translation' sections."
   },
   "protestant_66": {
     "genesis": 50, "exodus": 40, "leviticus": 27, "numbers": 36, "deuteronomy": 34,
@@ -106,5 +107,6 @@
     {"book": "prayer of manasses", "match": "prayer of manasses", "chapters": 1},
     {"book": "3 esdras", "match": "3 esdras", "chapters": 9},
     {"book": "4 esdras", "match": "4 esdras", "chapters": 16}
-  ]
+  ],
+  "quran_suras": 114
 }

@@ -38,7 +38,12 @@ import pytest
 # The oracle logic (alias resolution, span-containment book/chapter derivation,
 # classification) is production code in palimpsest.gold, shared verbatim with the CLI's
 # ``gold verify`` — so this test asserts exactly what that command computes.
-from palimpsest.gold import classify_books, classify_books_catholic, load_canon
+from palimpsest.gold import (
+    classify_books,
+    classify_books_catholic,
+    load_canon,
+    quran_sura_count,
+)
 
 # Marker Bibles whose chapter sections are 1:1 canonical chapters (guaranteed by
 # gen_marker_gold parity) and which use standard book names → strict oracle targets.
@@ -101,3 +106,29 @@ def test_catholic_oracle_data_complete() -> None:
     assert all(isinstance(e["chapters"], int) and e["chapters"] > 0 for e in cath)
     assert all(e["match"] and e["book"] for e in cath), "every entry needs a book key and match token"
     assert cath[0]["book"] == "genesis" and cath[-1]["book"] == "4 esdras"
+
+
+# ── Qur'an flat-sura count oracle: idx 29, 107 ────────────────────────────────────
+
+# Both Qur'an gold maps: their 114 suras are top-level ``chapter`` sections with no
+# enclosing ``book``, so the Bibles' positional book-identity oracle does not apply — the
+# externally-established fact is the fixed 114-sura canon, gated as a pure count.
+_QURAN_IDXS = (29, 107)
+
+
+@pytest.mark.parametrize("idx", _QURAN_IDXS, ids=[f"work-{i}" for i in _QURAN_IDXS])
+def test_quran_sura_count(idx: int) -> None:
+    """Each Qur'an map carries exactly the canonical 114 suras.
+
+    The Qur'an is structurally flat (114 sura sections directly under the body, no
+    book → chapter nesting), so the positional book-alignment used for the Bibles cannot
+    apply. The external fact is the fixed 114-sura canon, so the oracle is a pure section
+    count — checked here against the ``quran_suras`` figure in canon_chapters.json.
+    """
+    assert quran_sura_count(idx) == load_canon()["quran_suras"] == 114
+
+
+def test_quran_oracle_data_present() -> None:
+    """The canon oracle records the fixed 114-sura Qur'an count as a positive int."""
+    suras = load_canon()["quran_suras"]
+    assert isinstance(suras, int) and suras == 114
