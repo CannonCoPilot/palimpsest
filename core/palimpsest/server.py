@@ -666,6 +666,20 @@ def _apply_gold_map(project: Any, layout_path: str) -> dict[str, Any]:
     }
 
 
+def _gold_import_name(layout_path: str, fallback: str) -> str:
+    """The filename to ingest for a gold map: its ``import_source`` if set, else ``fallback``.
+
+    A map's offsets are computed against the exact text ``ingest_file`` produced at
+    generation. Most sources are reproducible by a standard ingest of the source binary,
+    so ``import_source`` equals ``source_file``. A few are not (e.g. idx 101's LDS scripture
+    needs column-aware extraction), so the generator stages a pre-extracted ``.txt`` in
+    imports/ and records its basename as ``import_source``; the map is the authority on
+    which file reproduces its ``reference_sha256``, so apply must ingest that one.
+    """
+    gmap = json.loads(_safe_gold_map_path(layout_path).read_text(encoding="utf-8"))
+    return gmap.get("import_source") or fallback
+
+
 def _gold_manifest_path() -> Path:
     """The Bible Gold-Set registry manifest (sibling of the maps dir)."""
     return _gold_maps_dir().parent / "sources.manifest.json"
@@ -2092,7 +2106,9 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             entry = next((w for w in _load_nonbible_manifest().get("works", []) if w.get("id") == idx), None)
         if entry is None:
             raise HTTPException(status_code=404, detail=f"no gold work with id {idx}")
-        src = _find_import_by_name(imports_dir, entry.get("source_file", ""))
+        layout_path = Path(entry["gold_map"]).name  # maps dir is implicit in _apply_gold_map
+        import_name = _gold_import_name(layout_path, entry.get("source_file", ""))
+        src = _find_import_by_name(imports_dir, import_name)
         if src is None:
             raise HTTPException(
                 status_code=404,
@@ -2101,7 +2117,6 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
             )
         if src.suffix.lower() not in _IMPORT_SUFFIXES:
             raise HTTPException(status_code=400, detail="Unsupported source format")
-        layout_path = Path(entry["gold_map"]).name  # maps dir is implicit in _apply_gold_map
         title = entry.get("translation") or entry.get("title", "")  # Bibles carry translation; works carry title
         try:
             project = await _ingest_only(

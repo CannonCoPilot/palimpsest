@@ -11,11 +11,12 @@ registry closes the data + CLI half of that gap: it enumerates the 17 works so
 
 Honesty of the scorecard (standard §3: soundness ≠ correctness):
   * ``validated`` is ``{cli: apply_ok, api: apply_ok, ui: false}`` — cli and api both track
-    whether a live ``gold apply`` passed the reference_sha256 tie (true for 16/17; false for
-    idx 101, whose source diverged). They mirror because the CLI and the ``/api/gold`` apply
-    endpoint drive the SAME verified ``_apply_gold_map`` over the same source, so the CLI
-    evidence substantiates both. ``ui`` stays false for every entry: the frontend reads only
-    the ``bibles`` array, so no non-Bible work is exercised through the browser yet.
+    whether a live ``gold apply`` passed the reference_sha256 tie (true for all 17: each apply
+    ingests the map's ``import_source``, so idx 101's column-aware LDS text reproduces its
+    sha too). They mirror because the CLI and the ``/api/gold`` apply endpoint drive the SAME
+    verified ``_apply_gold_map`` over the same source, so the CLI evidence substantiates both.
+    ``ui`` stays false for every entry: the frontend reads only the ``bibles`` array, so no
+    non-Bible work is exercised through the browser yet.
   * ``accuracy_source`` is an external count-oracle where one exists: ``quran-oracle`` for
     the two Qur'an works (29, 107 — 114 suras) and ``novel-oracle`` for the two novels whose
     chapter total is author-fixed and edition-stable (56 Mohicans = 33, 71 Jekyll = 10), both
@@ -83,14 +84,15 @@ NON_BIBLE_PROVENANCE: dict[int, dict] = {
           "kind": "dss", "cohort_status": "standard", "accuracy_source": "map-gates"},
     101: {"title": "LDS Scripture (Book of Mormon, Doctrine & Covenants, Pearl of Great Price)",
           "author": None, "year": None, "kind": "lds", "cohort_status": "candidate",
-          "accuracy_source": "map-gates", "cli_apply": False,
-          "note": "Lone-of-kind (§3): needs a 2nd LDS work or reclassification. Apply "
-                  "BLOCKED: gold apply fails a reference_sha256 mismatch (map d862fc92c1d3 vs "
-                  "current re-ingest 47c3624db060), so the map's offsets no longer align with "
-                  "the local source under the current pipeline — the map is stale or the local "
-                  "source diverged. The other 3 PDFs (105/106/107) verify clean, so the pipeline "
-                  "is sound; this is specific to idx 101 and needs map regeneration or source "
-                  "reconciliation (a gold-contract change). validated.cli is false accordingly."},
+          "accuracy_source": "map-gates",
+          "note": "Lone-of-kind (§3): needs a 2nd LDS work or reclassification (orthogonal to "
+                  "apply). Apply ingests the map's import_source (LDS_eng.reference.txt, a "
+                  "column-aware pre-extraction staged in imports/) rather than the raw "
+                  "LDS_eng.pdf: the map's offsets were computed against that reference text, so "
+                  "ingesting it reproduces reference_sha256 d862fc92c1d3 exactly and gold apply "
+                  "verifies (sha_verified=True, 9227 elements). The earlier 'sha mismatch' report "
+                  "came from re-ingesting the raw PDF via the standard extractor, not the "
+                  "import_source the map declares — a resolution bug in the apply path, since fixed."},
     102: {"title": "The Collected Poems of Emily Dickinson", "author": "Emily Dickinson", "year": None,
           "kind": "poetry", "cohort_status": "standard", "accuracy_source": "map-gates"},
     103: {"title": "The Road Not Taken and Other Poems", "author": "Robert Frost", "year": None,
@@ -161,12 +163,13 @@ def build() -> dict:
             "annotation_gold": f"work-{idx}.json" if ann.exists() else None,
             "accuracy_source": prov["accuracy_source"],
             # Operational-readiness scorecard, honest to this environment. apply_ok is true
-            # where a live `gold apply` passed the reference_sha256 tie (sha_verified=True);
-            # false for a work whose apply fails (``cli_apply``, e.g. idx 101). Both cli and
-            # api mirror it because the CLI and the /api/gold apply endpoint drive the SAME
-            # verified _apply_gold_map over the same source — the API added no new failure
-            # mode, so the CLI evidence substantiates both. ui stays false: the frontend
-            # reads only `bibles`, so no non-Bible work is exercised through the browser yet.
+            # where a live `gold apply` passed the reference_sha256 tie (sha_verified=True) —
+            # true for all 17. A work can set ``cli_apply: False`` to record a genuine apply
+            # failure (none currently do). Both cli and api mirror apply_ok because the CLI and
+            # the /api/gold apply endpoint drive the SAME verified _apply_gold_map over the same
+            # source — the API added no new failure mode, so the CLI evidence substantiates
+            # both. ui stays false: the frontend reads only `bibles`, so no non-Bible work is
+            # exercised through the browser yet.
             "validated": {"cli": apply_ok, "api": apply_ok, "ui": False},
             **({"note": prov["note"]} if "note" in prov else {}),
         })
@@ -177,8 +180,9 @@ def build() -> dict:
                 "of sources.manifest.json (bibles). Source binaries are NOT distributed "
                 "(imports/ is gitignored); source_sha256 is the fingerprint. The local corpus "
                 "holds all 17 sources, so the gold apply path was live-verified: `gold apply` "
-                "passed the reference_sha256 tie (sha_verified=True) for 16/17 — idx 101 (LDS) "
-                "fails a sha mismatch (see its note) and is marked validated.cli=api=false. "
+                "passed the reference_sha256 tie (sha_verified=True) for all 17 — including idx "
+                "101 (LDS), which ingests the map's import_source (LDS_eng.reference.txt) per its "
+                "note. validated.cli=api=true accordingly. "
                 "validated.api mirrors cli because /api/gold/{id}/apply drives the same "
                 "_apply_gold_map; ui stays false (frontend reads only `bibles`). "
                 "accuracy_source is an external count-oracle where one exists — quran-oracle "

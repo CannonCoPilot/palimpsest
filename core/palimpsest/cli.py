@@ -1330,13 +1330,19 @@ def gold_apply(idx: int, workspace: Path, overwrite: bool) -> None:
     layout. Requires the source binary present locally (preserve-don't-push).
     """
     from palimpsest.gold import manifest_entry
-    from palimpsest.server import _apply_gold_map, _default_imports_dir, _find_import_by_name
+    from palimpsest.server import (
+        _apply_gold_map,
+        _default_imports_dir,
+        _find_import_by_name,
+        _gold_import_name,
+    )
 
     entry = manifest_entry(idx)
     if entry is None:
         console.print(f"[red]No gold work with id {idx}.[/red]")
         raise SystemExit(1)
-    src = _find_import_by_name(_default_imports_dir(), entry.get("source_file", ""))
+    import_name = _gold_import_name(f"work-{idx:03d}.map.json", entry.get("source_file", ""))
+    src = _find_import_by_name(_default_imports_dir(), import_name)
     if src is None:
         console.print(
             f"[red]Source binary for work {idx} not present locally[/red] "

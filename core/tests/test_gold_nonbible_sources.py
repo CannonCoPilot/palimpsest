@@ -42,10 +42,10 @@ _EXPECTED_NONBIBLE_IDXS = frozenset({18, 19, 29, 42, 48, 56, 64, 70, 71, 80,
 _QURAN_IDXS = frozenset({29, 107})
 _NOVEL_ORACLE_IDXS = frozenset({56, 71})  # novels with an author-fixed, edition-stable count
 _LONE_OF_KIND_IDXS = frozenset({18, 101})  # §3 min-of-two flag → candidate, not standard
-# `gold apply` was live-verified from the local corpus: sha_verified=True for 16/17. idx 101
-# (LDS) fails a reference_sha256 tie (map stale / source diverged), so it must NOT claim CLI
-# operational readiness — this pins that honest exception.
-_APPLY_BLOCKED_IDXS = frozenset({101})
+# `gold apply` was live-verified from the local corpus: sha_verified=True for all 17 (each
+# apply ingests the map's import_source, so idx 101's column-aware LDS text reproduces its sha
+# too). A genuinely apply-blocked work would go here (cli/api must then be false); none are.
+_APPLY_BLOCKED_IDXS: frozenset[int] = frozenset()
 
 
 def _load_generator():
