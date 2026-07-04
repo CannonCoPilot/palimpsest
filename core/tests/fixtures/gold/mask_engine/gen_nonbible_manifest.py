@@ -78,8 +78,14 @@ NON_BIBLE_PROVENANCE: dict[int, dict] = {
           "kind": "dss", "cohort_status": "standard", "accuracy_source": "map-gates"},
     101: {"title": "LDS Scripture (Book of Mormon, Doctrine & Covenants, Pearl of Great Price)",
           "author": None, "year": None, "kind": "lds", "cohort_status": "candidate",
-          "accuracy_source": "map-gates",
-          "note": "Lone-of-kind (§3): needs a 2nd LDS work or reclassification."},
+          "accuracy_source": "map-gates", "cli_apply": False,
+          "note": "Lone-of-kind (§3): needs a 2nd LDS work or reclassification. Apply "
+                  "BLOCKED: gold apply fails a reference_sha256 mismatch (map d862fc92c1d3 vs "
+                  "current re-ingest 47c3624db060), so the map's offsets no longer align with "
+                  "the local source under the current pipeline — the map is stale or the local "
+                  "source diverged. The other 3 PDFs (105/106/107) verify clean, so the pipeline "
+                  "is sound; this is specific to idx 101 and needs map regeneration or source "
+                  "reconciliation (a gold-contract change). validated.cli is false accordingly."},
     102: {"title": "The Collected Poems of Emily Dickinson", "author": "Emily Dickinson", "year": None,
           "kind": "poetry", "cohort_status": "standard", "accuracy_source": "map-gates"},
     103: {"title": "The Road Not Taken and Other Poems", "author": "Robert Frost", "year": None,
@@ -148,11 +154,13 @@ def build() -> dict:
             "gold_map": f"maps/work-{idx:03d}.map.json",
             "annotation_gold": f"work-{idx}.json" if ann.exists() else None,
             "accuracy_source": prov["accuracy_source"],
-            # Operational-readiness scorecard, honest to this environment: CLI enumeration
-            # and verification are wired + tested here; the API/UI gold paths and `apply`
-            # (needs the gitignored source binary) are NOT verified here, so they are
-            # false until closed on a machine holding the corpus + a running server.
-            "validated": {"cli": True, "api": False, "ui": False},
+            # Operational-readiness scorecard, honest to this environment. cli is true where
+            # the CLI gold path is confirmed end-to-end — list/verify plus a live `gold apply`
+            # that passed the reference_sha256 tie (sha_verified=True); it is false for a work
+            # whose apply fails (``cli_apply``). api/ui remain false: those paths need a running
+            # server + the browser, not exercised here. (Sources ARE present locally, so apply
+            # was live-verifiable — 16/17 pass; see the manifest note.)
+            "validated": {"cli": prov.get("cli_apply", True), "api": False, "ui": False},
             **({"note": prov["note"]} if "note" in prov else {}),
         })
     return {
@@ -160,11 +168,14 @@ def build() -> dict:
         "scope": "non-bibles",
         "note": "Registry + scorecard for the 17 non-Bible gold works (Step-4b audit). Sibling "
                 "of sources.manifest.json (bibles). Source binaries are NOT distributed "
-                "(imports/ is gitignored); source_sha256 is the fingerprint. validated reflects "
-                "THIS environment: cli wired+tested; api/ui deferred (need corpus + running "
-                "server). accuracy_source is quran-oracle for the count-gated Qur'an works, "
-                "map-gates (structural only) elsewhere — the §2/§3 per-kind accuracy lens is "
-                "still an open gap. Regenerate with mask_engine/gen_nonbible_manifest.py.",
+                "(imports/ is gitignored); source_sha256 is the fingerprint. The local corpus "
+                "holds all 17 sources, so the CLI gold path was live-verified: `gold apply` "
+                "passed the reference_sha256 tie (sha_verified=True) for 16/17 — idx 101 (LDS) "
+                "fails a sha mismatch (see its note) and is marked validated.cli=false. api/ui "
+                "stay false (need a running server + browser). accuracy_source is quran-oracle "
+                "for the count-gated Qur'an works, map-gates (structural only) elsewhere — the "
+                "§2/§3 per-kind accuracy lens is still an open gap. Regenerate with "
+                "mask_engine/gen_nonbible_manifest.py.",
         "count": len(entries),
         "works": entries,
     }

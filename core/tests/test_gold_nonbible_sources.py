@@ -41,6 +41,10 @@ _EXPECTED_NONBIBLE_IDXS = frozenset({18, 19, 29, 42, 48, 56, 64, 70, 71, 80,
 # Works with an external accuracy oracle vs. structural-only gates (the §2/§3 gap).
 _QURAN_IDXS = frozenset({29, 107})
 _LONE_OF_KIND_IDXS = frozenset({18, 101})  # §3 min-of-two flag → candidate, not standard
+# `gold apply` was live-verified from the local corpus: sha_verified=True for 16/17. idx 101
+# (LDS) fails a reference_sha256 tie (map stale / source diverged), so it must NOT claim CLI
+# operational readiness — this pins that honest exception.
+_APPLY_BLOCKED_IDXS = frozenset({101})
 
 
 def _load_generator():
@@ -84,11 +88,14 @@ def test_loader_matches_file() -> None:
 
 @pytest.mark.parametrize("entry", _ENTRIES, ids=_ENTRY_IDS)
 def test_scorecard_is_honest(entry: dict) -> None:
-    """Only the CLI path is claimed validated here; api/ui/apply are deferred, not faked."""
+    """api/ui are never claimed here; cli is claimed only where `gold apply` was verified."""
     v = entry["validated"]
-    assert v == {"cli": True, "api": False, "ui": False}, (
-        "non-Bible readiness is CLI-only in this environment; api/ui must not be claimed"
-    )
+    assert v["api"] is False and v["ui"] is False, "api/ui are not exercised here — must be false"
+    if entry["id"] in _APPLY_BLOCKED_IDXS:
+        assert v["cli"] is False, "an apply-blocked work must not claim CLI operational readiness"
+        assert "sha" in (entry.get("note") or "").lower(), "record WHY apply is blocked"
+    else:
+        assert v["cli"] is True, "apply was live-verified (sha_verified=True) → CLI-ready"
     # Qur'an works carry the external count-oracle; every other kind is honestly structural.
     expect = "quran-oracle" if entry["id"] in _QURAN_IDXS else "map-gates"
     assert entry["accuracy_source"] == expect
