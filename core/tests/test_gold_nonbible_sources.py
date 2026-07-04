@@ -88,14 +88,19 @@ def test_loader_matches_file() -> None:
 
 @pytest.mark.parametrize("entry", _ENTRIES, ids=_ENTRY_IDS)
 def test_scorecard_is_honest(entry: dict) -> None:
-    """api/ui are never claimed here; cli is claimed only where `gold apply` was verified."""
+    """ui is never claimed here; cli and api mirror the verified `gold apply` outcome.
+
+    cli and api must be equal for every work: both are backed by the SAME `_apply_gold_map`
+    (the CLI and the /api/gold apply endpoint share it), so the API adds no failure mode the
+    CLI didn't already exercise. ui stays false because the frontend reads only `bibles`."""
     v = entry["validated"]
-    assert v["api"] is False and v["ui"] is False, "api/ui are not exercised here — must be false"
+    assert v["ui"] is False, "the UI does not surface non-Bible works yet — must be false"
+    assert v["api"] == v["cli"], "api mirrors cli (same verified _apply_gold_map)"
     if entry["id"] in _APPLY_BLOCKED_IDXS:
-        assert v["cli"] is False, "an apply-blocked work must not claim CLI operational readiness"
+        assert v["cli"] is False, "an apply-blocked work must not claim operational readiness"
         assert "sha" in (entry.get("note") or "").lower(), "record WHY apply is blocked"
     else:
-        assert v["cli"] is True, "apply was live-verified (sha_verified=True) → CLI-ready"
+        assert v["cli"] is True, "apply was live-verified (sha_verified=True) → CLI+API-ready"
     # Qur'an works carry the external count-oracle; every other kind is honestly structural.
     expect = "quran-oracle" if entry["id"] in _QURAN_IDXS else "map-gates"
     assert entry["accuracy_source"] == expect

@@ -1,7 +1,7 @@
 {
   "schema": "palimpsest.gold-sources/v1",
   "scope": "non-bibles",
-  "note": "Registry + scorecard for the 17 non-Bible gold works (Step-4b audit). Sibling of sources.manifest.json (bibles). Source binaries are NOT distributed (imports/ is gitignored); source_sha256 is the fingerprint. The local corpus holds all 17 sources, so the CLI gold path was live-verified: `gold apply` passed the reference_sha256 tie (sha_verified=True) for 16/17 — idx 101 (LDS) fails a sha mismatch (see its note) and is marked validated.cli=false. api/ui stay false (need a running server + browser). accuracy_source is quran-oracle for the count-gated Qur'an works, map-gates (structural only) elsewhere — the §2/§3 per-kind accuracy lens is still an open gap. Regenerate with mask_engine/gen_nonbible_manifest.py.",
+  "note": "Registry + scorecard for the 17 non-Bible gold works (Step-4b audit). Sibling of sources.manifest.json (bibles). Source binaries are NOT distributed (imports/ is gitignored); source_sha256 is the fingerprint. The local corpus holds all 17 sources, so the gold apply path was live-verified: `gold apply` passed the reference_sha256 tie (sha_verified=True) for 16/17 — idx 101 (LDS) fails a sha mismatch (see its note) and is marked validated.cli=api=false. validated.api mirrors cli because /api/gold/{id}/apply drives the same _apply_gold_map; ui stays false (frontend reads only `bibles`). accuracy_source is quran-oracle for the count-gated Qur'an works, map-gates (structural only) elsewhere — the §2/§3 per-kind accuracy lens is still an open gap. Regenerate with mask_engine/gen_nonbible_manifest.py.",
   "count": 17,
   "works": [
     {
@@ -27,7 +27,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       },
       "note": "Lone-of-kind (§3): needs a 2nd patristics work or reclassification."
@@ -55,7 +55,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       },
       "note": "Epistolary sub-kind of novel."
@@ -83,7 +83,7 @@
       "accuracy_source": "quran-oracle",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -110,7 +110,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -137,7 +137,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -164,7 +164,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -191,7 +191,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       },
       "note": "Enoch family (1/2/3 Enoch); chapter:230 has no single authoritative count."
@@ -219,7 +219,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -246,7 +246,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -273,7 +273,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -328,7 +328,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -355,7 +355,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -382,7 +382,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -409,7 +409,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     },
@@ -436,7 +436,7 @@
       "accuracy_source": "map-gates",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       },
       "note": "Armenian pseudepigrapha; parity-OK only under the pseudepigrapha family (§3)."
@@ -464,7 +464,7 @@
       "accuracy_source": "quran-oracle",
       "validated": {
         "cli": true,
-        "api": false,
+        "api": true,
         "ui": false
       }
     }

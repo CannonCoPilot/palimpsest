@@ -539,6 +539,7 @@ class TestGoldAPI:
         res = client.get("/api/gold")
         assert res.status_code == 200, res.text
         data = res.json()
+        # scope/count/bibles keep their original Bible-only meaning (backward compatible).
         assert data["scope"] == "bibles"
         assert data["count"] == len(data["bibles"]) >= 19
         by_id = {b["id"]: b for b in data["bibles"]}
@@ -549,10 +550,21 @@ class TestGoldAPI:
             assert by_id[idx]["validated"] == {"cli": True, "api": True, "ui": True}
         assert by_id[216]["translation"].startswith("King James")
 
+    def test_list_gold_enumerates_nonbible_works(self, client):
+        # The additive `works` array exposes the sibling non-Bible registry alongside
+        # the Bibles, each flagged with map_present, without disturbing `bibles`.
+        data = client.get("/api/gold").json()
+        assert data["works_count"] == len(data["works"]) >= 17
+        works_by_id = {w["id"]: w for w in data["works"]}
+        # A Qur'an, a novel, and the flagged LDS work span the non-Bible kinds.
+        for idx in (29, 107, 101):
+            assert idx in works_by_id, f"work {idx} missing from /api/gold works"
+            assert works_by_id[idx]["map_present"] is True
+
     def test_apply_gold_unknown_idx_is_404(self, client):
         res = client.post("/api/gold/999/apply", json={})
         assert res.status_code == 404
-        assert "no gold Bible" in res.json()["detail"]
+        assert "no gold work" in res.json()["detail"]
 
     def test_apply_gold_source_absent_is_404(self, tmp_path):
         # An empty imports corpus is the "preserve, don't push" state: the map is

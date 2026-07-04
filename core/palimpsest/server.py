@@ -678,6 +678,19 @@ def _load_gold_manifest() -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _nonbible_manifest_path() -> Path:
+    """The non-Bible Gold-Set registry manifest (sibling of the maps dir)."""
+    return _gold_maps_dir().parent / "sources.nonbible.manifest.json"
+
+
+def _load_nonbible_manifest() -> dict[str, Any]:
+    """The non-Bible registry; empty (not an error) if the optional sibling file is absent."""
+    path = _nonbible_manifest_path()
+    if not path.is_file():
+        return {"scope": "non-bibles", "count": 0, "works": []}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def _find_import_by_name(imports_dir: Path, name: str) -> Path | None:
     """Locate a source binary by basename anywhere under the imports corpus.
 
@@ -2036,51 +2049,63 @@ def create_app(workspace: Path, imports_dir: Path | None = None) -> FastAPI:
 
     @app.get("/api/gold")
     async def list_gold() -> JSONResponse:
-        """Enumerate the Bible Gold Set from the registry manifest.
+        """Enumerate the Gold Set from the registry manifests: Bibles plus non-Bible works.
 
         Each entry is flagged with local availability — ``map_present`` (the masking
         contract is committed here) and the manifest's own ``source_present`` (the source
-        binary is in the local corpus) — so a client can show which Bibles are appliable
-        on this machine without redistributing the (copyrighted) sources."""
+        binary is in the local corpus) — so a client can show which entries are appliable
+        on this machine without redistributing the (copyrighted) sources.
+
+        The response is additive: ``scope``/``count``/``bibles`` keep their original
+        Bible-only meaning (existing clients read only these), while ``works``/``works_count``
+        expose the sibling non-Bible registry when its optional manifest is present."""
         manifest = _load_gold_manifest()
         maps_dir = _gold_maps_dir()
-        bibles = []
-        for entry in manifest.get("bibles", []):
+
+        def _flag(entry: dict[str, Any]) -> dict[str, Any]:
             item = dict(entry)
             item["map_present"] = (maps_dir / Path(entry["gold_map"]).name).is_file()
-            bibles.append(item)
+            return item
+
+        bibles = [_flag(e) for e in manifest.get("bibles", [])]
+        works = [_flag(e) for e in _load_nonbible_manifest().get("works", [])]
         return JSONResponse(content={
             "schema": manifest.get("schema"),
             "scope": manifest.get("scope"),
             "count": len(bibles),
             "bibles": bibles,
+            "works": works,
+            "works_count": len(works),
         })
 
     @app.post("/api/gold/{idx}/apply")
     async def apply_gold(idx: int, req: GoldApplyRequest) -> JSONResponse:
-        """Ingest a registered Bible's source and apply its stored gold map, by id.
+        """Ingest a registered work's source and apply its stored gold map, by id.
 
-        A by-id wrapper over the /api/import/local gold path: resolves the Bible in the
-        registry, locates its (uncommitted, preserve-don't-push) source binary, ingests
-        the text, then applies the map verbatim after the reference_sha256 check. 404s
-        when the id is unknown or the source binary is not present on this machine."""
-        manifest = _load_gold_manifest()
-        entry = next((b for b in manifest.get("bibles", []) if b.get("id") == idx), None)
+        A by-id wrapper over the /api/import/local gold path: resolves the id in the
+        registry (Bibles first, then the non-Bible works), locates its (uncommitted,
+        preserve-don't-push) source binary, ingests the text, then applies the map
+        verbatim after the reference_sha256 check. 404s when the id is unknown or the
+        source binary is not present on this machine."""
+        entry = next((b for b in _load_gold_manifest().get("bibles", []) if b.get("id") == idx), None)
         if entry is None:
-            raise HTTPException(status_code=404, detail=f"no gold Bible with id {idx}")
+            entry = next((w for w in _load_nonbible_manifest().get("works", []) if w.get("id") == idx), None)
+        if entry is None:
+            raise HTTPException(status_code=404, detail=f"no gold work with id {idx}")
         src = _find_import_by_name(imports_dir, entry.get("source_file", ""))
         if src is None:
             raise HTTPException(
                 status_code=404,
-                detail=(f"source binary for Bible {idx} not present locally "
+                detail=(f"source binary for work {idx} not present locally "
                         "(preserve-don't-push) — cannot ingest to apply its gold map"),
             )
         if src.suffix.lower() not in _IMPORT_SUFFIXES:
             raise HTTPException(status_code=400, detail="Unsupported source format")
         layout_path = Path(entry["gold_map"]).name  # maps dir is implicit in _apply_gold_map
+        title = entry.get("translation") or entry.get("title", "")  # Bibles carry translation; works carry title
         try:
             project = await _ingest_only(
-                src, entry.get("translation", ""), "", entry.get("year") or 0, req.overwrite)
+                src, title, "", entry.get("year") or 0, req.overwrite)
             summary = _ingest_summary(project, staged=False)
             summary["gold_map"] = _apply_gold_map(project, layout_path)
             return JSONResponse(content=summary)
