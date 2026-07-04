@@ -5,10 +5,10 @@
   "import_source": "Great.txt",
   "reference_sha256": "208828fc9c5e373c35ab23c77b6d0b204291596ae6b7a36f8ee0b0559f4a8e39",
   "text_len": 4351008,
-  "element_count": 2518,
+  "element_count": 2519,
   "type_counts": {
     "body": 1,
-    "genre_division": 7,
+    "genre_division": 8,
     "book": 66,
     "header": 66,
     "chapter": 1189,
@@ -141,10 +141,26 @@
     {
       "id": "genre_division-0007",
       "type": "genre_division",
+      "start": 3803603,
+      "end": 3939451,
+      "label": "Historical",
+      "name": "genre_division_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0008",
+      "type": "genre_division",
       "start": 3939451,
       "end": 4351008,
       "label": "Epistles",
-      "name": "genre_division_7",
+      "name": "genre_division_8",
       "parent_id": null,
       "source": "gold",
       "masked": null,

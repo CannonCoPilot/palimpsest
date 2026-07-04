@@ -5,10 +5,10 @@
   "import_source": "JuliaSmith.txt",
   "reference_sha256": "82e1566eb8a82800905c29382e7be0a024b6af37264de716169138aa9b79f2ea",
   "text_len": 4145752,
-  "element_count": 2518,
+  "element_count": 2519,
   "type_counts": {
     "body": 1,
-    "genre_division": 7,
+    "genre_division": 8,
     "book": 66,
     "header": 66,
     "chapter": 1189,
@@ -141,10 +141,26 @@
     {
       "id": "genre_division-0007",
       "type": "genre_division",
+      "start": 3639419,
+      "end": 3767557,
+      "label": "Historical",
+      "name": "genre_division_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0008",
+      "type": "genre_division",
       "start": 3767557,
       "end": 4145752,
       "label": "Epistles",
-      "name": "genre_division_7",
+      "name": "genre_division_8",
       "parent_id": null,
       "source": "gold",
       "masked": null,

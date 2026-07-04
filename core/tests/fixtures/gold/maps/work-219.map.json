@@ -5,10 +5,10 @@
   "import_source": "KJV1611-comprehensive-reconstructed.txt",
   "reference_sha256": "e62120bc695ab097d906df0a6ac598f53f6100ad7acdcbeca0aae250bf6dffcd",
   "text_len": 5191236,
-  "element_count": 2885,
+  "element_count": 2886,
   "type_counts": {
     "body": 1,
-    "genre_division": 12,
+    "genre_division": 13,
     "book": 80,
     "header": 80,
     "chapter": 1355,
@@ -143,10 +143,26 @@
     {
       "id": "genre_division-0007",
       "type": "genre_division",
+      "start": 3873861,
+      "end": 4009602,
+      "label": "Historical",
+      "name": "genre_division_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0008",
+      "type": "genre_division",
       "start": 4009602,
       "end": 4414302,
       "label": "Epistles",
-      "name": "genre_division_7",
+      "name": "genre_division_8",
       "parent_id": null,
       "source": "gold",
       "masked": null,
@@ -157,12 +173,12 @@
       }
     },
     {
-      "id": "genre_division-0008",
+      "id": "genre_division-0009",
       "type": "genre_division",
       "start": 4593611,
       "end": 4692030,
       "label": "Historical",
-      "name": "genre_division_8",
+      "name": "genre_division_9",
       "parent_id": null,
       "source": "gold",
       "masked": null,
@@ -173,12 +189,12 @@
       }
     },
     {
-      "id": "genre_division-0009",
+      "id": "genre_division-0010",
       "type": "genre_division",
       "start": 4692030,
       "end": 4914250,
       "label": "Wisdom-poetry",
-      "name": "genre_division_9",
+      "name": "genre_division_10",
       "parent_id": null,
       "source": "gold",
       "masked": null,
@@ -189,12 +205,12 @@
       }
     },
     {
-      "id": "genre_division-0010",
+      "id": "genre_division-0011",
       "type": "genre_division",
       "start": 4914250,
       "end": 4942172,
       "label": "Prophets-Major",
-      "name": "genre_division_10",
+      "name": "genre_division_11",
       "parent_id": null,
       "source": "gold",
       "masked": null,
@@ -205,12 +221,12 @@
       }
     },
     {
-      "id": "genre_division-0011",
+      "id": "genre_division-0012",
       "type": "genre_division",
       "start": 4949694,
       "end": 4963544,
       "label": "Historical",
-      "name": "genre_division_11",
+      "name": "genre_division_12",
       "parent_id": null,
       "source": "gold",
       "masked": null,
@@ -221,12 +237,12 @@
       }
     },
     {
-      "id": "genre_division-0012",
+      "id": "genre_division-0013",
       "type": "genre_division",
       "start": 4965874,
       "end": 5191236,
       "label": "Historical",
-      "name": "genre_division_12",
+      "name": "genre_division_13",
       "parent_id": null,
       "source": "gold",
       "masked": null,

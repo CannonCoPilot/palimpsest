@@ -5,10 +5,10 @@
   "import_source": "Bishops.txt",
   "reference_sha256": "51eb443180a4bf54a8acac5b5c1ea57dc900cc1dcb9fec43c452710497ffc431",
   "text_len": 4346686,
-  "element_count": 2518,
+  "element_count": 2519,
   "type_counts": {
     "body": 1,
-    "genre_division": 7,
+    "genre_division": 8,
     "book": 66,
     "header": 66,
     "chapter": 1189,
@@ -141,10 +141,26 @@
     {
       "id": "genre_division-0007",
       "type": "genre_division",
+      "start": 3802165,
+      "end": 3939188,
+      "label": "Historical",
+      "name": "genre_division_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0008",
+      "type": "genre_division",
       "start": 3939188,
       "end": 4346686,
       "label": "Epistles",
-      "name": "genre_division_7",
+      "name": "genre_division_8",
       "parent_id": null,
       "source": "gold",
       "masked": null,

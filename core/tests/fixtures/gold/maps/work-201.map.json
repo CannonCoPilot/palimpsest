@@ -5,10 +5,10 @@
   "import_source": "Coverdale.txt",
   "reference_sha256": "ebb2229a8aeab3841df2674e871c1b7c055790fa7b620b1c91e687e7dc007bc5",
   "text_len": 4247485,
-  "element_count": 2518,
+  "element_count": 2519,
   "type_counts": {
     "body": 1,
-    "genre_division": 7,
+    "genre_division": 8,
     "book": 66,
     "header": 66,
     "chapter": 1189,
@@ -141,10 +141,26 @@
     {
       "id": "genre_division-0007",
       "type": "genre_division",
+      "start": 3705033,
+      "end": 3840333,
+      "label": "Historical",
+      "name": "genre_division_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0008",
+      "type": "genre_division",
       "start": 3840333,
       "end": 4247485,
       "label": "Epistles",
-      "name": "genre_division_7",
+      "name": "genre_division_8",
       "parent_id": null,
       "source": "gold",
       "masked": null,

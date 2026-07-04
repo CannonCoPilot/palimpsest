@@ -5,10 +5,10 @@
   "import_source": "KJV2016.txt",
   "reference_sha256": "aeec53bed961a91eca1a53c8fdcf08fcf20b47c6b4643601e25525ac14eb7088",
   "text_len": 983371,
-  "element_count": 577,
+  "element_count": 578,
   "type_counts": {
     "body": 1,
-    "genre_division": 2,
+    "genre_division": 3,
     "book": 27,
     "header": 27,
     "chapter": 260,
@@ -61,10 +61,26 @@
     {
       "id": "genre_division-0002",
       "type": "genre_division",
+      "start": 451550,
+      "end": 584459,
+      "label": "Historical",
+      "name": "genre_division_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0003",
+      "type": "genre_division",
       "start": 584459,
       "end": 983371,
       "label": "Epistles",
-      "name": "genre_division_2",
+      "name": "genre_division_3",
       "parent_id": null,
       "source": "gold",
       "masked": null,

@@ -5,10 +5,10 @@
   "import_source": "Tyndale-epub-reconstructed.txt",
   "reference_sha256": "681f30035f9a257631ac63a429b13a92c7ce645edad61efb2c68fbb6da29dbe6",
   "text_len": 1792773,
-  "element_count": 972,
+  "element_count": 973,
   "type_counts": {
     "body": 1,
-    "genre_division": 3,
+    "genre_division": 4,
     "book": 33,
     "header": 33,
     "chapter": 451,
@@ -77,10 +77,26 @@
     {
       "id": "genre_division-0003",
       "type": "genre_division",
+      "start": 1258617,
+      "end": 1390832,
+      "label": "Historical",
+      "name": "genre_division_3",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0004",
+      "type": "genre_division",
       "start": 1390832,
       "end": 1792773,
       "label": "Epistles",
-      "name": "genre_division_3",
+      "name": "genre_division_4",
       "parent_id": null,
       "source": "gold",
       "masked": null,

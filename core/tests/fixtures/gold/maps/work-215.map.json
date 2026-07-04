@@ -5,10 +5,10 @@
   "import_source": "EMTV.txt",
   "reference_sha256": "8cdcd21ea808af097c2fc9bd31df2064a4c95e0bc34da6e2ec51d1edfa09767c",
   "text_len": 993221,
-  "element_count": 577,
+  "element_count": 578,
   "type_counts": {
     "body": 1,
-    "genre_division": 2,
+    "genre_division": 3,
     "book": 27,
     "header": 27,
     "chapter": 260,
@@ -61,10 +61,26 @@
     {
       "id": "genre_division-0002",
       "type": "genre_division",
+      "start": 455349,
+      "end": 591589,
+      "label": "Historical",
+      "name": "genre_division_2",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0003",
+      "type": "genre_division",
       "start": 591589,
       "end": 993221,
       "label": "Epistles",
-      "name": "genre_division_2",
+      "name": "genre_division_3",
       "parent_id": null,
       "source": "gold",
       "masked": null,

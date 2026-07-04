@@ -5,10 +5,10 @@
   "import_source": "Geneva1560-epub-reconstructed.txt",
   "reference_sha256": "6624fa147ab11fdbef020a5c53b166f26fc918d319a053376231ae1b42f2d661",
   "text_len": 4317809,
-  "element_count": 2518,
+  "element_count": 2519,
   "type_counts": {
     "body": 1,
-    "genre_division": 7,
+    "genre_division": 8,
     "book": 66,
     "header": 66,
     "chapter": 1189,
@@ -141,10 +141,26 @@
     {
       "id": "genre_division-0007",
       "type": "genre_division",
+      "start": 3769991,
+      "end": 3906904,
+      "label": "Historical",
+      "name": "genre_division_7",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0008",
+      "type": "genre_division",
       "start": 3906904,
       "end": 4317809,
       "label": "Epistles",
-      "name": "genre_division_7",
+      "name": "genre_division_8",
       "parent_id": null,
       "source": "gold",
       "masked": null,

@@ -151,3 +151,15 @@ def book_division(name: str, *, esdras_apocryphal: bool = False) -> tuple[str | 
             return ("Prophets-Major" if ordinal == 2 else "Historical"), True
         return "Historical", False
     return _BASE_DIVISION.get(base), base in _APOCRYPHA_BASES
+
+
+#: Books whose division is genuine but which stand alone in canonical order (no run of
+#: ≥2 same-division neighbours), so they would otherwise emit no ``genre_division``. Acts
+#: is the sole New-Testament Historical book, marooned between the Gospels and the
+#: Epistles; without this it renders as an unlabelled gap in the genre track.
+STANDALONE_DIVISION_BASES: frozenset[str] = frozenset({"acts"})
+
+
+def is_standalone_division_book(name: str) -> bool:
+    """Whether a lone book of its division should still emit its own ``genre_division``."""
+    return _normalize(name)[1] in STANDALONE_DIVISION_BASES

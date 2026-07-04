@@ -5,10 +5,10 @@
   "import_source": "Wycliffe-reconstructed.txt",
   "reference_sha256": "37fdb7762b0f03308fc6ecbeacdb2e87c79453096da192a6838a38cdb62c929e",
   "text_len": 4981425,
-  "element_count": 2849,
+  "element_count": 2850,
   "type_counts": {
     "body": 1,
-    "genre_division": 8,
+    "genre_division": 9,
     "book": 73,
     "header": 73,
     "chapter": 1328,
@@ -159,10 +159,26 @@
     {
       "id": "genre_division-0008",
       "type": "genre_division",
+      "start": 4420511,
+      "end": 4578660,
+      "label": "Historical",
+      "name": "genre_division_8",
+      "parent_id": null,
+      "source": "gold",
+      "masked": null,
+      "mask_as": null,
+      "metadata": {
+        "gold_source": "marker:genre",
+        "genre": "Historical"
+      }
+    },
+    {
+      "id": "genre_division-0009",
+      "type": "genre_division",
       "start": 4578660,
       "end": 4981425,
       "label": "Epistles",
-      "name": "genre_division_8",
+      "name": "genre_division_9",
       "parent_id": null,
       "source": "gold",
       "masked": null,

@@ -41,7 +41,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[4]  # mask_engine -> gold -> fixtures -> tests -> core -> <repo>
 sys.path.insert(0, str(REPO / "core"))
-from palimpsest.canon import book_division, esdras_is_apocryphal  # noqa: E402
+from palimpsest.canon import (  # noqa: E402
+    book_division, esdras_is_apocryphal, is_standalone_division_book)
 from palimpsest.layout import _UNMASKED_TYPES  # noqa: E402
 
 MAPS = HERE.parent / "maps"
@@ -140,13 +141,17 @@ def build_marker_elements(text: str) -> list[dict]:
         div, apoc = book_division(bname, esdras_apocryphal=esdras_apoc)
         book_spans.append((bstart, bend, bname, div, apoc))
 
-    # genre_division containers over consecutive same-division runs (>=2 books)
+    # genre_division containers over consecutive same-division runs (>=2 books), plus
+    # standalone-division books (Acts) that warrant their own container even when alone.
     run = 0
     for j in range(len(book_spans) + 1):
         if j < len(book_spans) and book_spans[j][3] == book_spans[run][3]:
             continue
         div = book_spans[run][3]
-        if div is not None and j - run >= 2:
+        run_len = j - run
+        emit = run_len >= 2 or (
+            run_len == 1 and is_standalone_division_book(book_spans[run][2]))
+        if div is not None and emit:
             els.append({"type": "genre_division", "start": book_spans[run][0],
                         "end": book_spans[j - 1][1], "source": "marker:genre",
                         "label": div, "metadata": {"genre": div}})
