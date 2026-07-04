@@ -16,6 +16,13 @@ A text is **Gold Set Standard** only when all three hold:
    - **Complete** — the minimum mask-type tiling is *(1 generic + 1 specific)*. Each of
      the generic layer `{body, volume, book, part, section}` and the specific layer
      independently tiles `[0, text_len)` with no gaps.
+     - *Sub-layers need not tile.* `genre_division` (Gospels / Historical / Epistles / …)
+       is an optional labeling of consecutive same-division book runs, **not** part of the
+       completeness tiling. A book that is the sole member of its division still gets its
+       own `genre_division` container — e.g. Acts, the lone New-Testament Historical book,
+       is emitted individually so it never renders as an unlabeled gap between the Gospels
+       and Epistles. An empty stretch in a sub-layer is by design and is never a
+       completeness defect; only the generic and merged-specific layers are gap-checked.
    - **Accurate** — proper mask-types are not missing, *and* the applied mask-elements are
      the correct types.
    - **Precise** — mask-elements are generated with character-level specificity: each
