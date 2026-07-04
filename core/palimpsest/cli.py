@@ -1288,27 +1288,34 @@ def align_paf(
 
 @main.group()
 def gold() -> None:
-    """Bible Gold Set — the registry of durable, verified masking maps (list/apply/verify)."""
+    """Gold Set — the registry of durable, verified masking maps (list/apply/verify).
+
+    Spans both registries: the Bibles (sources.manifest.json) and the non-Bible works
+    (sources.nonbible.manifest.json). The non-Bible ``validated`` scorecard is honest to
+    the environment — CLI list/verify are wired here; api/ui/apply are deferred to a
+    machine holding the source corpus and a running server.
+    """
 
 
 @gold.command("list")
 def gold_list() -> None:
-    """List the Bible Gold Set: translation, kind, canon, local availability, validation."""
+    """List the whole Gold Set: label, kind, canon/cohort, local availability, validation."""
     from rich.table import Table
 
-    from palimpsest.gold import load_manifest, map_path
+    from palimpsest.gold import map_path, registry_entries
 
-    manifest = load_manifest()
-    table = Table(title=f"Bible Gold Set ({manifest.get('count', 0)})")
-    for col in ("id", "translation", "kind", "canon", "map", "src", "CLI/API/UI"):
+    entries = registry_entries()
+    table = Table(title=f"Gold Set ({len(entries)})")
+    for col in ("id", "label", "kind", "canon/cohort", "map", "src", "CLI/API/UI"):
         table.add_column(col)
-    for b in manifest["bibles"]:
+    for b in entries:
         have_map = "OK" if map_path(b["id"]).is_file() else "--"
         have_src = "OK" if b.get("source_present") else " ."
         v = b.get("validated", {})
         vcol = "".join("Y" if v.get(k) else "N" for k in ("cli", "api", "ui"))
-        table.add_row(str(b["id"]), b.get("translation", ""), b.get("kind", ""),
-                      b.get("canon", ""), have_map, have_src, vcol)
+        table.add_row(str(b["id"]), b.get("translation") or b.get("title", ""),
+                      b.get("kind", ""), b.get("canon") or b.get("cohort_status", ""),
+                      have_map, have_src, vcol)
     console.print(table)
 
 
@@ -1327,18 +1334,18 @@ def gold_apply(idx: int, workspace: Path, overwrite: bool) -> None:
 
     entry = manifest_entry(idx)
     if entry is None:
-        console.print(f"[red]No gold Bible with id {idx}.[/red]")
+        console.print(f"[red]No gold work with id {idx}.[/red]")
         raise SystemExit(1)
     src = _find_import_by_name(_default_imports_dir(), entry.get("source_file", ""))
     if src is None:
         console.print(
-            f"[red]Source binary for Bible {idx} not present locally[/red] "
+            f"[red]Source binary for work {idx} not present locally[/red] "
             "(preserve-don't-push) — cannot ingest to apply its gold map."
         )
         raise SystemExit(1)
     workspace.mkdir(parents=True, exist_ok=True)
     try:
-        project = ingest_file(src, workspace, title=entry.get("translation", ""),
+        project = ingest_file(src, workspace, title=entry.get("translation") or entry.get("title", ""),
                               year=entry.get("year") or 0, overwrite=overwrite)
         summary = _apply_gold_map(project, f"work-{idx:03d}.map.json")
     except Exception as e:  # noqa: BLE001
@@ -1354,10 +1361,10 @@ def gold_apply(idx: int, workspace: Path, overwrite: bool) -> None:
 @gold.command("verify")
 @click.argument("idx", type=int, required=False)
 def gold_verify(idx: int | None) -> None:
-    """Verify gold map(s) from JSON alone: structural gates + canon versification oracle."""
-    from palimpsest.gold import load_manifest, verify_map
+    """Verify gold map(s) from JSON alone: structural gates + per-kind accuracy oracle."""
+    from palimpsest.gold import registry_entries, verify_map
 
-    ids = [idx] if idx is not None else [b["id"] for b in load_manifest()["bibles"]]
+    ids = [idx] if idx is not None else [e["id"] for e in registry_entries()]
     failed = 0
     for i in ids:
         problems = verify_map(i)

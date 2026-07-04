@@ -19,6 +19,7 @@ from palimpsest.canon import _normalize
 GOLD_DIR = Path(__file__).resolve().parent.parent / "tests" / "fixtures" / "gold"
 MAPS_DIR = GOLD_DIR / "maps"
 MANIFEST_PATH = GOLD_DIR / "sources.manifest.json"
+NONBIBLE_MANIFEST_PATH = GOLD_DIR / "sources.nonbible.manifest.json"
 CANON_PATH = GOLD_DIR / "canon_chapters.json"
 
 # Variant base names (Vulgate/Latin/Old-English/apocryphal spellings) → canon_chapters
@@ -45,6 +46,21 @@ def load_manifest() -> dict[str, Any]:
     return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
 
 
+def load_nonbible_manifest() -> dict[str, Any]:
+    """The non-Bible Gold-Set registry (sources.nonbible.manifest.json)."""
+    return json.loads(NONBIBLE_MANIFEST_PATH.read_text(encoding="utf-8"))
+
+
+def registry_entries() -> list[dict[str, Any]]:
+    """Every gold entry across the whole set — Bibles + non-Bible works — kind-agnostic.
+
+    The two manifests are kept as separate files so each keeps an honest ``scope``, but the
+    lookup/enumeration paths (``manifest_entry``, ``gold list``, ``gold verify``) treat the
+    gold set as one registry. Bibles carry a ``translation`` label, works a ``title``.
+    """
+    return list(load_manifest()["bibles"]) + list(load_nonbible_manifest()["works"])
+
+
 @lru_cache(maxsize=1)
 def load_canon() -> dict[str, Any]:
     """The external versification oracle (canon_chapters.json)."""
@@ -61,7 +77,7 @@ def load_map(idx: int) -> dict[str, Any]:
 
 
 def manifest_entry(idx: int) -> dict[str, Any] | None:
-    return next((b for b in load_manifest()["bibles"] if b.get("id") == idx), None)
+    return next((e for e in registry_entries() if e.get("id") == idx), None)
 
 
 def canon_key(label: str) -> str:
@@ -214,5 +230,14 @@ def verify_map(idx: int) -> list[str]:
             problems.append(f"catholic chapter mismatches: {undocumented}")
         if not ok:
             problems.append("no catholic-canon books resolved — is idx 108 map present?")
+
+    if entry and entry.get("accuracy_source") == "quran-oracle":
+        # The Qur'an is structurally flat (114 top-level sura sections, no book nesting),
+        # so its external accuracy lens is a pure count against the fixed 114-sura canon
+        # rather than the Bibles' positional book alignment (see quran_sura_count).
+        got = quran_sura_count(idx)
+        expected = load_canon()["quran_suras"]
+        if got != expected:
+            problems.append(f"Qur'an sura count {got} != canonical {expected}")
 
     return problems

@@ -1,0 +1,472 @@
+{
+  "schema": "palimpsest.gold-sources/v1",
+  "scope": "non-bibles",
+  "note": "Registry + scorecard for the 17 non-Bible gold works (Step-4b audit). Sibling of sources.manifest.json (bibles). Source binaries are NOT distributed (imports/ is gitignored); source_sha256 is the fingerprint. validated reflects THIS environment: cli wired+tested; api/ui deferred (need corpus + running server). accuracy_source is quran-oracle for the count-gated Qur'an works, map-gates (structural only) elsewhere — the §2/§3 per-kind accuracy lens is still an open gap. Regenerate with mask_engine/gen_nonbible_manifest.py.",
+  "count": 17,
+  "works": [
+    {
+      "id": 18,
+      "title": "Ante-Nicene Fathers, Vol. 3",
+      "author": null,
+      "year": null,
+      "kind": "patristics",
+      "cohort_status": "candidate",
+      "source_origin": "published-epub",
+      "source_file": "Ante-Nicene Fathers Volume 3 - Enhanced Version -- Philip Schaff [Schaff, Philip] -- Ante-Nicene Fathers Volume 3, 2009 -- Christian Classics Ethereal -- eef3b5fa6fe129392d6fb890c5b5ca85 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "af48bbc102bdca3c595aee056e2f5bd0d436fd769b581583fd6f71883702b3b4",
+      "reference_sha256": "83ba28401b54508d992d33eda0f04493004c6250a9ae9361771f05df19ef838a",
+      "structure": {
+        "books": null,
+        "chapters": 743,
+        "elements": 7078
+      },
+      "gold_map": "maps/work-018.map.json",
+      "annotation_gold": "work-18.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      },
+      "note": "Lone-of-kind (§3): needs a 2nd patristics work or reclassification."
+    },
+    {
+      "id": 19,
+      "title": "The Correspondent",
+      "author": "Evans",
+      "year": 2025,
+      "kind": "novel",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "The Correspondent_ A Novel -- Virginia Evans -- 2025 -- Crown Publishing Group, The -- isbn13 9780593798430 -- f542b169cc729ca2fdc329d48c3911f5 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "b0d4a54295b26764dd5591ce98c2448fec2a805dbbcb0f7ab192f55b11160e26",
+      "reference_sha256": "a86ca58a066ada5381aa738b026b6b2ba88f80597d7f75aa569889e068b1417c",
+      "structure": {
+        "books": null,
+        "chapters": null,
+        "elements": 133
+      },
+      "gold_map": "maps/work-019.map.json",
+      "annotation_gold": "work-19.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      },
+      "note": "Epistolary sub-kind of novel."
+    },
+    {
+      "id": 29,
+      "title": "The Message of the Qur'an",
+      "author": "Muhammad Asad",
+      "year": null,
+      "kind": "quran",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "The Message of the Qur'An -- Muhammad Asad [Asad, Muhammad] -- Place of publication not identified, 1980 -- The Book Foundation -- isbn13 9780317524567 -- f720bfc6c8902fb7c76dbd9aa6f64f30 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "26d98e8304e98d5b53cbc0c406d993deb50f2d3df2747d2b884b4f6e6c19c007",
+      "reference_sha256": "d76c8e16f30ccb5ce5ed59054741d97fb252d1ba747c50bb9a3075605076217b",
+      "structure": {
+        "books": null,
+        "chapters": 114,
+        "elements": 353
+      },
+      "gold_map": "maps/work-029.map.json",
+      "annotation_gold": "work-29.json",
+      "accuracy_source": "quran-oracle",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 42,
+      "title": "Old Testament Pseudepigrapha, Vol. 1",
+      "author": null,
+      "year": null,
+      "kind": "pseudepigrapha",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "Old Testament pseudepigrapha_ Volume one _ More noncanonical -- Richard Bauckham; James R Davila; Alexander Panayotov; James -- INscribe Digital, -- isbn13 9780802827395 -- aab44f565a88b493ecb8ef452087ff78 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "6a200f8956224f1842322b56f6d75b5009b1e77a50e41ebc0e591e59dd19d60d",
+      "reference_sha256": "a96dd88f4faf3890de87da2a758af4eaa44b512661f4f56a39d1aa19ad839aa5",
+      "structure": {
+        "books": null,
+        "chapters": null,
+        "elements": 165
+      },
+      "gold_map": "maps/work-042.map.json",
+      "annotation_gold": "work-42.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 48,
+      "title": "New Testament Apocrypha",
+      "author": null,
+      "year": null,
+      "kind": "apocrypha",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "New Testament apocrypha _ more noncanonical scriptures_ -- Tony Burke; Brent Landau -- Grand Rapids, Michigan, 2016 -- Eerdmans Publishing Company, -- isbn13 9780802872890 -- 99bbecbce461db3b220b58e59c569acc -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "c0bcf723bcdd8ba89cf91df5524910c328294056908d48516a3f7c70ca61ba5a",
+      "reference_sha256": "becd1b9f9540124d92cc32df2aeac1a7e5596686f099f7dd3132a73bfc42d84a",
+      "structure": {
+        "books": null,
+        "chapters": null,
+        "elements": 98
+      },
+      "gold_map": "maps/work-048.map.json",
+      "annotation_gold": "work-48.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 56,
+      "title": "The Last of the Mohicans",
+      "author": "James Fenimore Cooper",
+      "year": 1826,
+      "kind": "novel",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "The Last of the Mohicans -- Cooper, James Fenimore -- The Leatherstocking Tales 2, 1919 -- C_ Scribner's sons -- isbn13 9785551075097 -- 1164165e8537a4b55cd9c0d05ff87858 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "2e9f22e25eb5efa52d8ab83bd7d8d703f35ea846ed797837bf916026d298acb7",
+      "reference_sha256": "6fd16270d7d1b49a0a985223793fd439ba20523ccec1df47c15342f3baa9d8ac",
+      "structure": {
+        "books": null,
+        "chapters": 33,
+        "elements": 70
+      },
+      "gold_map": "maps/work-056.map.json",
+      "annotation_gold": "work-56.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 64,
+      "title": "The Books of Enoch",
+      "author": null,
+      "year": null,
+      "kind": "pseudepigrapha",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "The Books of Enoch_ A Complete Volume Containing 1 Enoch -- Enoch & Joseph B_ Lumpkin [Enoch & Lumpkin, Joseph B_] -- 2009 -- Fifth Estate, -- isbn13 9781933580807 -- 6d9f4271e0a52f5b84fa059abc2857c0 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "eab3e5ac959acd0009873eb32b5140316f66c87c448a99049a0f1761bc3dc09a",
+      "reference_sha256": "1309aace21fd5dcd0bc0700400f7badf5adb559c26a6e36e4e21c2821868d687",
+      "structure": {
+        "books": null,
+        "chapters": 230,
+        "elements": 240
+      },
+      "gold_map": "maps/work-064.map.json",
+      "annotation_gold": "work-64.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      },
+      "note": "Enoch family (1/2/3 Enoch); chapter:230 has no single authoritative count."
+    },
+    {
+      "id": 70,
+      "title": "Charlotte Temple",
+      "author": "Susanna Rowson",
+      "year": 1791,
+      "kind": "novel",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "Charlotte Temple -- Rowson, Susanna Haswell -- 2022 -- Standard Ebooks -- 8491224f92259d041f364596501e9f9a -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "740544dcb40758077d2da906c6f26616c3e3df4fd39857ac19bc92aa9e026ecd",
+      "reference_sha256": "fdc5181d9a50ae253fd54cc29d91ef98803fa9fff4c5435b266c843d2021f677",
+      "structure": {
+        "books": null,
+        "chapters": 35,
+        "elements": 45
+      },
+      "gold_map": "maps/work-070.map.json",
+      "annotation_gold": "work-70.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 71,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "author": "Robert Louis Stevenson",
+      "year": 1886,
+      "kind": "novel",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "The Strange Case of Dr_ Jekyll and Mr_ Hyde -- Robert Louis Stevenson -- 2015 -- Standard Ebooks -- 5b35483a9d153cce497b54a0d6b50431 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "0c65463b29e403ff8c6ec49a23c9ebf92a34a56891e228b5ec76f5189a64f3ad",
+      "reference_sha256": "3acd41af033d0882961e71e945a63e55a668d9a9983677f77448339c7b5fd49c",
+      "structure": {
+        "books": null,
+        "chapters": 10,
+        "elements": 13
+      },
+      "gold_map": "maps/work-071.map.json",
+      "annotation_gold": "work-71.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 80,
+      "title": "The Dead Sea Scrolls Translated",
+      "author": null,
+      "year": null,
+      "kind": "dss",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "The Dead Sea scrolls translated _ the Qumran texts in -- [edited by] Florentino García Martínez; Wilfred G_E_ -- 2011 -- William B_ Eerdmans -- isbn13 9780802841933 -- d376ed7413b2c8079b55a16507a08979 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "646fcccb90fc3190a80a96c68a00cfd22d104e50b96a877fac39659f6f4596a6",
+      "reference_sha256": "15eba1bf3dfd7e512fa101ef0959d529e4c944aa248262022478291ebfcf0ef3",
+      "structure": {
+        "books": null,
+        "chapters": null,
+        "elements": 297
+      },
+      "gold_map": "maps/work-080.map.json",
+      "annotation_gold": "work-80.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 101,
+      "title": "LDS Scripture (Book of Mormon, Doctrine & Covenants, Pearl of Great Price)",
+      "author": null,
+      "year": null,
+      "kind": "lds",
+      "cohort_status": "candidate",
+      "source_origin": "published-pdf",
+      "source_file": "LDS_eng.pdf",
+      "source_file_type": "pdf",
+      "source_present": true,
+      "source_sha256": "f2d6d2545e871abe67b5ded9afc09380813f28a424c367a2426445a9d974a6fe",
+      "reference_sha256": "d862fc92c1d3453ee7ee45b0ca80ce7179468ef321522c787ead10022cf84458",
+      "structure": {
+        "books": 20,
+        "chapters": 393,
+        "elements": 9227
+      },
+      "gold_map": "maps/work-101.map.json",
+      "annotation_gold": "work-101.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      },
+      "note": "Lone-of-kind (§3): needs a 2nd LDS work or reclassification."
+    },
+    {
+      "id": 102,
+      "title": "The Collected Poems of Emily Dickinson",
+      "author": "Emily Dickinson",
+      "year": null,
+      "kind": "poetry",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "The Collected Poems of Emily Dickinson (Barnes & Noble -- Dickinson, Emily; Wetzsteon, Rachel -- Barnes & Noble classics, New York, New York State, -- isbn13 9781593080501 -- a4d7cce7b4c5749f13a3b3e795969a32 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "6068eb40886ee4680d6a1bff7b6643428530d4854b3048f4146d6635d6a624c0",
+      "reference_sha256": "073229a253ec5b4eaf71331c5602f18af9e22fd91437969c8bd27fe60fca8f0f",
+      "structure": {
+        "books": null,
+        "chapters": null,
+        "elements": 599
+      },
+      "gold_map": "maps/work-102.map.json",
+      "annotation_gold": "work-102.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 103,
+      "title": "The Road Not Taken and Other Poems",
+      "author": "Robert Frost",
+      "year": null,
+      "kind": "poetry",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "The Road Not Taken and Other Poems -- Frost, Robert -- 2012 -- Dover Publications -- isbn13 9780486111292 -- 9d94b2c221d6d795f99642712ed2d7d0 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "a6694a2a2d953cc8d9d18a8121914a8cd169a405dc343191073af73cc642d8f3",
+      "reference_sha256": "8725d1a5e80054c5d1a8a8c4306cf0909017fac6c14f1616d818b9f4f50baf68",
+      "structure": {
+        "books": null,
+        "chapters": null,
+        "elements": 35
+      },
+      "gold_map": "maps/work-103.map.json",
+      "annotation_gold": "work-103.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 104,
+      "title": "is 5",
+      "author": "E. E. Cummings",
+      "year": 1926,
+      "kind": "poetry",
+      "cohort_status": "standard",
+      "source_origin": "published-epub",
+      "source_file": "is 5 -- E_E_ Cummings -- 1926 -- Boni & Liveright, New York -- fdb61a2b996b8f7a13a83b2ea8e001a2 -- Anna’s Archive.epub",
+      "source_file_type": "epub",
+      "source_present": true,
+      "source_sha256": "bb95521f4b293f3ad813f49856ca5714b572698f89d5bd356bd368095a318b47",
+      "reference_sha256": "b36ee440bf09965f1877434fb2e4049e0fbe9d67ea3fe84789218cdc96905937",
+      "structure": {
+        "books": null,
+        "chapters": null,
+        "elements": 87
+      },
+      "gold_map": "maps/work-104.map.json",
+      "annotation_gold": "work-104.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 105,
+      "title": "The Dead Sea Scrolls Reader, Vol. 1",
+      "author": null,
+      "year": null,
+      "kind": "dss",
+      "cohort_status": "standard",
+      "source_origin": "published-pdf",
+      "source_file": "The Dead Sea Scrolls Reader, Vol_ 1_ Texts Concerned With -- edited by Donald W_ Parry & Emanuel Tov with the assistance -- 1, 2004 -- Brill Academic -- isbn13 9781423712275 -- 79bba3ff81b9b5adf8d401cdd0f7d237 -- Anna’s Archive.pdf",
+      "source_file_type": "pdf",
+      "source_present": true,
+      "source_sha256": "88356709c2e8060d209e96e91e5d8b1080df3a9d028139f4e7957e2502d81b69",
+      "reference_sha256": "97acfda75f99ef653a0054bbcba643185d10c519c12ef0ca139484afdea75959",
+      "structure": {
+        "books": 6,
+        "chapters": null,
+        "elements": 92
+      },
+      "gold_map": "maps/work-105.map.json",
+      "annotation_gold": "work-105.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    },
+    {
+      "id": 106,
+      "title": "Adam and Eve in the Armenian Tradition",
+      "author": null,
+      "year": null,
+      "kind": "pseudepigrapha",
+      "cohort_status": "standard",
+      "source_origin": "published-pdf",
+      "source_file": "Adam And Eve In The Armenian Tradition, Fifth Through -- Michael E_ Stone -- SBL Early Judaism and Its Literature, 38, 2013 -- Society of Biblical -- isbn13 9781589838987 -- b3740d792550531690234343f398e9b7 -- Anna’s Archive.pdf",
+      "source_file_type": "pdf",
+      "source_present": true,
+      "source_sha256": "defaefacc9bb8227cefb8d6da857a14015fa21fd7d40cf9e4f09c0d24a5299c7",
+      "reference_sha256": "c1a67fb218034688cb40cdeb1874b0e5c75772d5b17dd42838787d646a089903",
+      "structure": {
+        "books": null,
+        "chapters": 20,
+        "elements": 2660
+      },
+      "gold_map": "maps/work-106.map.json",
+      "annotation_gold": "work-106.json",
+      "accuracy_source": "map-gates",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      },
+      "note": "Armenian pseudepigrapha; parity-OK only under the pseudepigrapha family (§3)."
+    },
+    {
+      "id": 107,
+      "title": "The Holy Qur'an (Arabic + English)",
+      "author": null,
+      "year": null,
+      "kind": "quran",
+      "cohort_status": "standard",
+      "source_origin": "published-pdf",
+      "source_file": "The Holy Quran With Arabic Text And English Translation -- Maulawī Sher ʻAlī; Tahir Ahmad -- 2021 -- Islam International Publications Limited -- isbn13 9781848800229 -- 45d547fdc78588e53a0fc7b3166a36b4 -- Anna’s Archive.pdf",
+      "source_file_type": "pdf",
+      "source_present": true,
+      "source_sha256": "77f19bafbd239d6db9c600aa8fc4257453ba14cc46b97c6d49997472d1f84210",
+      "reference_sha256": "6a46b84dcf7277b9c76af53983309d0e53056b8ee22d784d677a0c72a79c2b92",
+      "structure": {
+        "books": null,
+        "chapters": 114,
+        "elements": 126
+      },
+      "gold_map": "maps/work-107.map.json",
+      "annotation_gold": "work-107.json",
+      "accuracy_source": "quran-oracle",
+      "validated": {
+        "cli": true,
+        "api": false,
+        "ui": false
+      }
+    }
+  ]
+}

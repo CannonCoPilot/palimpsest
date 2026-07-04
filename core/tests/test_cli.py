@@ -288,8 +288,9 @@ class TestCliGold:
     def test_gold_list(self, runner):
         res = runner.invoke(main, ["gold", "list"])
         assert res.exit_code == 0, res.output
-        assert "Bible Gold Set" in res.output
-        assert "216" in res.output
+        assert "Gold Set" in res.output
+        assert "216" in res.output  # a Bible
+        assert "101" in res.output  # a non-Bible work — the registry is unified
 
     def test_gold_verify_single(self, runner):
         res = runner.invoke(main, ["gold", "verify", "216"])
@@ -300,12 +301,13 @@ class TestCliGold:
     def test_gold_verify_all(self, runner):
         res = runner.invoke(main, ["gold", "verify"])
         assert res.exit_code == 0, res.output
-        assert "All 19 gold map(s) verified." in res.output
+        assert "work-107" in res.output  # a non-Bible work is in the unified registry
+        assert "All 36 gold map(s) verified." in res.output
 
     def test_gold_apply_unknown_idx(self, runner, tmp_path):
         res = runner.invoke(main, ["gold", "apply", "999", str(tmp_path / "ws")])
         assert res.exit_code == 1
-        assert "No gold Bible" in res.output
+        assert "No gold work" in res.output
 
     def test_gold_apply_source_absent(self, runner, tmp_path, monkeypatch):
         empty = tmp_path / "empty"
