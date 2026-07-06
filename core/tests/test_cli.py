@@ -302,7 +302,7 @@ class TestCliGold:
         res = runner.invoke(main, ["gold", "verify"])
         assert res.exit_code == 0, res.output
         assert "work-107" in res.output  # a non-Bible work is in the unified registry
-        assert "All 36 gold map(s) verified." in res.output
+        assert "All 37 gold map(s) verified." in res.output
 
     def test_gold_apply_unknown_idx(self, runner, tmp_path):
         res = runner.invoke(main, ["gold", "apply", "999", str(tmp_path / "ws")])

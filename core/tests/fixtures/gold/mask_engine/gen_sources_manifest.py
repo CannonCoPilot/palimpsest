@@ -72,6 +72,28 @@ PROVENANCE: dict[int, dict] = {
                   "Phase-1 basis database (render_modern.py): verse bodies from the consensus modern "
                   "surface under modern-standard.json, apparatus + structure from janvier-s at render "
                   "time — the reference text is byte-identical to the direct-witness build."},
+    109: {"translation": "Douay-Rheims Bible (Original, 1582-1610, archaic diplomatic)", "year": 1610,
+          "spelling": "archaic", "typeset": "archaic-diplomatic", "canon": "catholic-douay",
+          "kind": "bespoke", "source_origin": "reconstructed-from-collated-digital-editions",
+          "accuracy_source": "catholic-oracle",
+          "note": "Diplomatic-facsimile archaic sibling of idx 108: the SAME Phase-1 basis database "
+                  "projected to the archaic spelling/typeset layer (render_archaic.py). Verse bodies "
+                  "are the consensus archaic surface from the archaic witnesses — s-dismas (primary; "
+                  "Gen→Wisdom + all NT), originaldouayrheims.com, and majority-consensus fresh OCR of "
+                  "the 1582/1609/1610 print — preserving the diplomatic glyphs long-ſ, æ/œ, u/v, i/j, "
+                  "vv and &. Editorial apparatus and structure are shared with idx 108 (the masked "
+                  "janvier-s apparatus is hidden from the reader, so a 108-vs-109 diff isolates only "
+                  "the scripture spelling/typeset delta); sourcing an archaic apparatus witness is a "
+                  "documented follow-up. 199 coordinates in the OT/apocryphal books with no archaic "
+                  "witness (Ecclesiasticus, 4-Esdras and the prophets — absent from s-dismas and "
+                  "odr-com) carry the attested modern surface, FLAGGED as archaic-coverage gaps rather "
+                  "than glyph-transformed (which would fabricate unattested diplomatic detail). 55 "
+                  "archaic-only coordinates (positions the modern edition lacks, dominated by "
+                  "single-witness OCR artifacts) are deferred as a versification adjudication set. "
+                  "Distinct from the modernized-type archaic Bibles (201/202/217, typeset=modern): "
+                  "idx 109 is a diplomatic facsimile that preserves the original letterforms. Same "
+                  "Catholic Vulgate canon as idx 108, gated by the ordered catholic_dr oracle "
+                  "(76/76), with which it shares its skeleton and element structure exactly."},
     201: {"translation": "Coverdale Bible", "year": 1535, "spelling": "archaic", "typeset": "modern",
           "canon": "protestant-66", "kind": "marker", "source_origin": "reconstructed-from-web-scrape",
           "accuracy_source": "canon-oracle"},

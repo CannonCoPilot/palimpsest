@@ -1,0 +1,120 @@
+{
+  "artifact": "render-archaic",
+  "phase": "P2b",
+  "idx": 109,
+  "generated_by": "render_archaic.py",
+  "note": "idx 109 rendered as a diplomatic-archaic projection of the basis DB: verse bodies from the consensus render_archaic surface (s-dismas / odr-com / fresh-OCR), cleaned normalization-stable with long-ſ/æ/œ/u-v/i-j/vv/& preserved; apparatus + structure from janvier-s at render time, shared with idx 108. idx 109 shares idx 108's skeleton and element structure exactly and differs only in the scripture spelling/typeset layer. The archaic reference text has no pre-existing witness to gate against; the sha below is minted by this deterministic projection. Verse render surfaces live in the gitignored basis-db.sqlite; this JSON is the diff-reviewable, CI-safe summary.",
+  "reference": {
+    "file": "imports/Scripture/Bibles/OriginalDR/OriginalDR-archaic-1582-1610.txt",
+    "sha256": "08b75de16a84f459ce0eb3bd7ec82989d15899f967e2b972476565496fc92b64",
+    "text_len": 8532060,
+    "sha_provenance": "minted by this projection (no prior archaic reference text)"
+  },
+  "structural_parity_vs_108": {
+    "element_count_108": 4234,
+    "element_count_109": 4234,
+    "element_count_equal": true,
+    "type_counts_equal": true,
+    "text_len_108": 8377928,
+    "text_len_109": 8532060,
+    "note": "same skeleton + apparatus placement; only verse-body bytes differ (archaic vs modern surface)"
+  },
+  "diplomatic_glyphs_preserved": [
+    "long-s (ſ)",
+    "æ",
+    "œ",
+    "u/v",
+    "i/j",
+    "vv",
+    "&"
+  ],
+  "glyph_inventory": {
+    "counts": {
+      "AE (Æ)": 559,
+      "OE (Œ)": 0,
+      "ae (æ)": 117,
+      "ampersand (&)": 3144,
+      "long-s (ſ)": 83869,
+      "oe (œ)": 11
+    },
+    "rendered_verses_with_long_s": 23682,
+    "note": "aggregate retained-glyph counts over the rendered archaic verse bodies — evidence the type is genuinely archaic (§6.2). Per-book glyph charts are a Phase-3 report deliverable (§7.2)."
+  },
+  "diplomatic_fidelity": {
+    "render_backing": "every rendered archaic verse is consensus-called at independent-depth >=2 (see rendered_independent_depth / rendered_confidence_tiers — no depth-1 verse is rendered archaic; the single-witness low-tier coords are exactly the coverage gaps that fall through to the modern surface). The archaic surfaces are the majority-consensus of s-dismas + odr-com + fresh OCR, not raw single-source OCR.",
+    "known_upstream_artifacts": {
+      "example": "scripture/genesis/1/2 renders '...and the the Spirite of God moued...' — a doubled article carried verbatim from the s-dismas archaic surface (an upstream witness transcription artifact, faithfully projected, not introduced by the renderer).",
+      "note": "surfaced here rather than silently corrected; cataloguing and adjudicating such residuals is the §6.2 deliverable below."
+    },
+    "validation_followup": "the rigorous §6.2 word-for-word correspondence check (archaic↔modern post-fold; only residual wording diffs count) and §6.3 independent print-validation bootstrap CIs are a documented NEXT increment: they require the §6.1 bidirectional spelling-glyph model (spelling-glyph-model.json — not yet built). A rough check with the OCR-tolerance skel() fold confirms the archaic↔modern divergence is spelling-dominated (alwaies/always, reioyc/reioice), so a proper §6.1 fold is needed to separate genuine wording residuals from expected orthographic variation; the fidelity CIs land with the P3 brief (§7.1)."
+  },
+  "apparatus": {
+    "source": "janvier-s (Sabates_A) modern apparatus, shared with idx 108",
+    "note": "the masked apparatus is identical to idx 108 (it is hidden from the reader, so the 108-vs-109 diff stays a pure scripture spelling delta). Sourcing an archaic apparatus witness is a documented follow-up; basis-db apparatus render surfaces are null except the 26 reference-doc titles."
+  },
+  "scripture_projection": {
+    "basis_db_verses": 37185,
+    "archaic_surface_verses": 36986,
+    "verse_bodies_from_basis_db": 36931,
+    "render_time_fallbacks": 0,
+    "pure_basis_db_projection_over_attested": true,
+    "archaic_coverage_gaps": 199,
+    "archaic_coverage_gap_note": "modern-present coords with NO archaic witness (books absent from s-dismas [Gen→Wisdom] and odr-com: Ecclesiasticus, 4-Esdras, prophets). Rendered from the attested modern surface and FLAGGED — not glyph-transformed (that would fabricate unattested diplomatic detail). idx 109 == idx 108 byte-for-byte on exactly these verses.",
+    "archaic_coverage_gap_by_book": {
+      "ecclesiasticus": 50,
+      "4-esdras": 40,
+      "isaie": 21,
+      "zacharias": 16,
+      "proverbs": 13,
+      "ezechiel": 12,
+      "jeremie": 9,
+      "3-esdras": 7,
+      "osee": 5,
+      "3-kings": 4,
+      "1-paralipomenon": 3,
+      "job": 3,
+      "micheas": 3,
+      "abdias": 2,
+      "amos": 2,
+      "habacuc": 2,
+      "1-kings": 1,
+      "2-kings": 1,
+      "aggeus": 1,
+      "esther": 1,
+      "joel": 1,
+      "nahum": 1,
+      "psalms": 1
+    },
+    "archaic_coverage_gap_sample": [
+      "scripture/1-kings/14/29",
+      "scripture/1-paralipomenon/9/14",
+      "scripture/1-paralipomenon/9/16",
+      "scripture/1-paralipomenon/9/17",
+      "scripture/2-kings/17/28",
+      "scripture/3-esdras/3/2",
+      "scripture/3-esdras/3/4",
+      "scripture/3-esdras/4/11"
+    ],
+    "archaic_only_coordinates_deferred": 55,
+    "archaic_only_note": "positions absent from the modern edition; NOT injected — dominated by single-witness OCR artifacts (e.g. matthew/4/32 = Matthew 4:23 text; genesis/1/32 = Genesis 1:31). Versification-divergence adjudication set for a follow-up.",
+    "archaic_only_sample": [
+      "scripture/1-corinthians/7/41",
+      "scripture/1-corinthians/8/14",
+      "scripture/2-corinthians/1/24",
+      "scripture/2-corinthians/5/22",
+      "scripture/2-corinthians/9/16",
+      "scripture/2-kings/14/34",
+      "scripture/2-kings/18/34",
+      "scripture/3-kings/6/39"
+    ],
+    "rendered_confidence_tiers": {
+      "high": 30514,
+      "moderate": 6417
+    },
+    "rendered_independent_depth": {
+      "2": 8665,
+      "3": 15472,
+      "4": 12794
+    }
+  }
+}

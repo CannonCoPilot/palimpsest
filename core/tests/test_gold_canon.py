@@ -78,13 +78,17 @@ def test_oracle_covers_full_protestant_canon() -> None:
     assert core["genesis"] == 50 and core["psalms"] == 150 and core["revelation"] == 22
 
 
-# ── Catholic (Douay-Rheims / Clementine Vulgate) ordered oracle: idx 108 ──────────
+# ── Catholic (Douay-Rheims / Clementine Vulgate) ordered oracle: idx 108, 109 ─────
 
-_CATHOLIC_IDX = 108
+# idx 108 (modern) and idx 109 (archaic diplomatic) are the two renderings of the SAME basis
+# database; they share the catholic_dr skeleton and element structure exactly, so both must clear
+# the ordered Vulgate oracle 76/76 (differing only in the scripture spelling/typeset layer).
+_CATHOLIC_IDXS = (108, 109)
 
 
-def test_catholic_dr_canon_counts() -> None:
-    """DR-original (108) matches the external Vulgate chapter counts in canonical order.
+@pytest.mark.parametrize("idx", _CATHOLIC_IDXS)
+def test_catholic_dr_canon_counts(idx: int) -> None:
+    """DR-original (108 modern / 109 archaic) matches the external Vulgate chapter counts in order.
 
     Every book must sit in its expected Clementine-Vulgate slot (identity by label token,
     so a dropped/reordered book fails as an alignment error) and carry the externally
@@ -92,7 +96,7 @@ def test_catholic_dr_canon_counts() -> None:
     Argument chapter that the upstream CC0 dataset had captured, so all 76 books now match
     the Vulgate counts with no exceptions.
     """
-    ok, count_bad, align_bad = classify_books_catholic(_CATHOLIC_IDX)
+    ok, count_bad, align_bad = classify_books_catholic(idx)
     assert not align_bad, f"catholic canon order/identity errors: {align_bad}"
     assert count_bad == [], (
         f"unexpected catholic chapter mismatches: {count_bad}"
