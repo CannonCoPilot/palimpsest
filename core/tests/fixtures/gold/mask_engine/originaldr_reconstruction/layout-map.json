@@ -148,6 +148,1446 @@
       "crop_image": "placement-crops/layout-04-ot_prophetical.png"
     }
   ],
+  "scripture_order": {
+    "note": "The 76 books in canonical skeleton order, grouped into the tome/part sections confirmed against the original scans. Section starts are anchored to the grounded scripture_layout divider leaves; the two internal boundaries (First-Tome close after Iob; the Sapiential-Bookes divider after the Psalter) each carry a rendered OCR-located crop. Physical tome and abstract part can diverge (e.g. Iob), which the section notes make explicit.",
+    "book_total": 76,
+    "section_total": 6,
+    "sections": [
+      {
+        "section_id": "nt",
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "testament": "NT",
+        "ordinal_span": [
+          47,
+          73
+        ],
+        "book_count": 27,
+        "books": [
+          {
+            "ordinal": 47,
+            "slug": "matthew",
+            "testament": "NT",
+            "chapters": 28,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 48,
+            "slug": "mark",
+            "testament": "NT",
+            "chapters": 16,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 49,
+            "slug": "luke",
+            "testament": "NT",
+            "chapters": 24,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 50,
+            "slug": "john",
+            "testament": "NT",
+            "chapters": 21,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 51,
+            "slug": "acts",
+            "testament": "NT",
+            "chapters": 28,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 52,
+            "slug": "romans",
+            "testament": "NT",
+            "chapters": 16,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 53,
+            "slug": "1-corinthians",
+            "testament": "NT",
+            "chapters": 16,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 54,
+            "slug": "2-corinthians",
+            "testament": "NT",
+            "chapters": 13,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 55,
+            "slug": "galatians",
+            "testament": "NT",
+            "chapters": 6,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 56,
+            "slug": "ephesians",
+            "testament": "NT",
+            "chapters": 6,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 57,
+            "slug": "philippians",
+            "testament": "NT",
+            "chapters": 4,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 58,
+            "slug": "colossians",
+            "testament": "NT",
+            "chapters": 4,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 59,
+            "slug": "1-thessalonians",
+            "testament": "NT",
+            "chapters": 5,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 60,
+            "slug": "2-thessalonians",
+            "testament": "NT",
+            "chapters": 3,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 61,
+            "slug": "1-timothy",
+            "testament": "NT",
+            "chapters": 6,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 62,
+            "slug": "2-timothy",
+            "testament": "NT",
+            "chapters": 4,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 63,
+            "slug": "titus",
+            "testament": "NT",
+            "chapters": 3,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 64,
+            "slug": "philemon",
+            "testament": "NT",
+            "chapters": 1,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 65,
+            "slug": "hebrews",
+            "testament": "NT",
+            "chapters": 13,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 66,
+            "slug": "james",
+            "testament": "NT",
+            "chapters": 5,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 67,
+            "slug": "1-peter",
+            "testament": "NT",
+            "chapters": 5,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 68,
+            "slug": "2-peter",
+            "testament": "NT",
+            "chapters": 3,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 69,
+            "slug": "1-john",
+            "testament": "NT",
+            "chapters": 5,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 70,
+            "slug": "2-john",
+            "testament": "NT",
+            "chapters": 1,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 71,
+            "slug": "3-john",
+            "testament": "NT",
+            "chapters": 1,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 72,
+            "slug": "jude",
+            "testament": "NT",
+            "chapters": 1,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 73,
+            "slug": "apocalypse",
+            "testament": "NT",
+            "chapters": 22,
+            "is_appendix": false
+          }
+        ],
+        "grounding": "scripture_layout leaf 0 — Rheims NT 1582 general title.",
+        "layout_leaf_ref": {
+          "order": 0,
+          "part": "New Testament",
+          "witness": "eebo_18c502ea",
+          "page": 1,
+          "crop_image": "placement-crops/layout-00-nt_partial.png"
+        }
+      },
+      {
+        "section_id": "ot-tome1-pentateuch",
+        "tome": "Douay OT First Tome (1609)",
+        "part": "First Part: the Pentateuch (Legal bookes)",
+        "testament": "OT",
+        "ordinal_span": [
+          1,
+          5
+        ],
+        "book_count": 5,
+        "books": [
+          {
+            "ordinal": 1,
+            "slug": "genesis",
+            "testament": "OT",
+            "chapters": 50,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 2,
+            "slug": "exodus",
+            "testament": "OT",
+            "chapters": 40,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 3,
+            "slug": "leviticus",
+            "testament": "OT",
+            "chapters": 27,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 4,
+            "slug": "numbers",
+            "testament": "OT",
+            "chapters": 36,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 5,
+            "slug": "deuteronomy",
+            "testament": "OT",
+            "chapters": 34,
+            "is_appendix": false
+          }
+        ],
+        "grounding": "scripture_layout leaf 1 — OT First Tome general title / Pentateuch.",
+        "layout_leaf_ref": {
+          "order": 1,
+          "part": "general title / Pentateuch",
+          "witness": "eebo_c0ef3be2",
+          "page": 1,
+          "crop_image": "placement-crops/layout-01-ot_holybible.png"
+        }
+      },
+      {
+        "section_id": "ot-tome1-historical",
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "testament": "OT",
+        "ordinal_span": [
+          6,
+          20
+        ],
+        "book_count": 15,
+        "books": [
+          {
+            "ordinal": 6,
+            "slug": "josue",
+            "testament": "OT",
+            "chapters": 24,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 7,
+            "slug": "judges",
+            "testament": "OT",
+            "chapters": 21,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 8,
+            "slug": "ruth",
+            "testament": "OT",
+            "chapters": 4,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 9,
+            "slug": "1-kings",
+            "testament": "OT",
+            "chapters": 31,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 10,
+            "slug": "2-kings",
+            "testament": "OT",
+            "chapters": 24,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 11,
+            "slug": "3-kings",
+            "testament": "OT",
+            "chapters": 22,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 12,
+            "slug": "4-kings",
+            "testament": "OT",
+            "chapters": 25,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 13,
+            "slug": "1-paralipomenon",
+            "testament": "OT",
+            "chapters": 29,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 14,
+            "slug": "2-paralipomenon",
+            "testament": "OT",
+            "chapters": 36,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 15,
+            "slug": "1-esdras",
+            "testament": "OT",
+            "chapters": 10,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 16,
+            "slug": "2-esdras",
+            "testament": "OT",
+            "chapters": 13,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 17,
+            "slug": "tobias",
+            "testament": "OT",
+            "chapters": 14,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 18,
+            "slug": "judith",
+            "testament": "OT",
+            "chapters": 16,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 19,
+            "slug": "esther",
+            "testament": "OT",
+            "chapters": 16,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 20,
+            "slug": "job",
+            "testament": "OT",
+            "chapters": 42,
+            "is_appendix": false
+          }
+        ],
+        "grounding": "scripture_layout leaf 2 — 'THE SECOND PART ... HISTORICAL BOOKES' (Iosve). The First Tome physically closes after Iob (ord 20): ot1-1609 p.1133 prints 'THE END OF THE FIRST TOME.', which grounds the First/Second-tome split at Iob | Psalmes.",
+        "layout_leaf_ref": {
+          "order": 2,
+          "part": "Second Part: Historical Bookes",
+          "witness": "eebo_2cfaea2c",
+          "page": 1,
+          "crop_image": "placement-crops/layout-02-ot_historical.png"
+        },
+        "boundary_leaf": {
+          "authority": "archive.org",
+          "alias": "ot1-1609",
+          "sha256": "a3beb9c46596ab282f998c8e1514ee85eece4bbed60ff7d9ffb77a7a33dfea77",
+          "page": 1133,
+          "identifying_text": "THE END OF THE FIRST TOME. (closing Iob's argument)",
+          "crop_image": "placement-crops/scripture-order-first-tome-end.png"
+        },
+        "note": "Iob is printed as the final book of the First Tome under the Historical heading; no Sapiential divider precedes it in the scan. The DR's abstract four-fold scheme (Legal / Historical / Sapiential / Prophetical, stated in ot1-1609) counts Iob among the Sapiential bookes, but the formal 'argument of Sapiential Bookes' leaf stands only in the Second Tome — so by physical placement Iob falls in this section."
+      },
+      {
+        "section_id": "ot-tome2-sapiential",
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Third Part: Sapiential Bookes (with the Psalter)",
+        "testament": "OT",
+        "ordinal_span": [
+          21,
+          26
+        ],
+        "book_count": 6,
+        "books": [
+          {
+            "ordinal": 21,
+            "slug": "psalms",
+            "testament": "OT",
+            "chapters": 150,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 22,
+            "slug": "proverbs",
+            "testament": "OT",
+            "chapters": 31,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 23,
+            "slug": "ecclesiastes",
+            "testament": "OT",
+            "chapters": 12,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 24,
+            "slug": "canticle-of-canticles",
+            "testament": "OT",
+            "chapters": 8,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 25,
+            "slug": "wisdom",
+            "testament": "OT",
+            "chapters": 19,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 26,
+            "slug": "ecclesiasticus",
+            "testament": "OT",
+            "chapters": 51,
+            "is_appendix": false
+          }
+        ],
+        "grounding": "scripture_layout leaf 3 — OT Second Tome general title. The Psalter opens the Second Tome and the formal 'The argument of Sapiential Bookes' divider (CONTEINING SAPIENTIAL) follows at ot2-1610 p.268, introducing Prouerbs .. Ecclesiasticus.",
+        "layout_leaf_ref": {
+          "order": 3,
+          "part": "general title",
+          "witness": "eebo_8ff9c022",
+          "page": 1,
+          "crop_image": "placement-crops/layout-03-ot_secondtome.png"
+        },
+        "boundary_leaf": {
+          "authority": "archive.org",
+          "alias": "ot2-1610",
+          "sha256": "12d40023948756cf5fcf1e8f7884845774e4e8955eaac57e16b40d84779096ba",
+          "page": 268,
+          "identifying_text": "THE THIRD PART OF THE OLD TESTAMENT, CONTEINING SAPIENTIAL BOOKES. The argument of Sapiential Bookes. (ornamental divider leaf; printed folio 267, after the Psalter)",
+          "crop_image": "placement-crops/scripture-order-sapiential-divider.png"
+        },
+        "note": "Psalmes (ord 21) is printed first in the Second Tome, ahead of the formal Sapiential divider; the DR treats the Psalter as partly Sapiential."
+      },
+      {
+        "section_id": "ot-tome2-prophetical",
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "testament": "OT",
+        "ordinal_span": [
+          27,
+          46
+        ],
+        "book_count": 20,
+        "books": [
+          {
+            "ordinal": 27,
+            "slug": "isaie",
+            "testament": "OT",
+            "chapters": 66,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 28,
+            "slug": "jeremie",
+            "testament": "OT",
+            "chapters": 52,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 29,
+            "slug": "lamentations",
+            "testament": "OT",
+            "chapters": 5,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 30,
+            "slug": "baruch",
+            "testament": "OT",
+            "chapters": 6,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 31,
+            "slug": "ezechiel",
+            "testament": "OT",
+            "chapters": 48,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 32,
+            "slug": "daniel",
+            "testament": "OT",
+            "chapters": 14,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 33,
+            "slug": "osee",
+            "testament": "OT",
+            "chapters": 14,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 34,
+            "slug": "joel",
+            "testament": "OT",
+            "chapters": 3,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 35,
+            "slug": "amos",
+            "testament": "OT",
+            "chapters": 9,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 36,
+            "slug": "abdias",
+            "testament": "OT",
+            "chapters": 1,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 37,
+            "slug": "jonas",
+            "testament": "OT",
+            "chapters": 4,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 38,
+            "slug": "micheas",
+            "testament": "OT",
+            "chapters": 7,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 39,
+            "slug": "nahum",
+            "testament": "OT",
+            "chapters": 3,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 40,
+            "slug": "habacuc",
+            "testament": "OT",
+            "chapters": 3,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 41,
+            "slug": "sophonias",
+            "testament": "OT",
+            "chapters": 3,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 42,
+            "slug": "aggeus",
+            "testament": "OT",
+            "chapters": 2,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 43,
+            "slug": "zacharias",
+            "testament": "OT",
+            "chapters": 14,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 44,
+            "slug": "malachie",
+            "testament": "OT",
+            "chapters": 4,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 45,
+            "slug": "1-machabees",
+            "testament": "OT",
+            "chapters": 16,
+            "is_appendix": false
+          },
+          {
+            "ordinal": 46,
+            "slug": "2-machabees",
+            "testament": "OT",
+            "chapters": 15,
+            "is_appendix": false
+          }
+        ],
+        "grounding": "scripture_layout leaf 4 — 'THE FOVRTH PART ... PROPHETICAL BOOKES' (Isaie).",
+        "layout_leaf_ref": {
+          "order": 4,
+          "part": "Fourth Part: Prophetical Bookes",
+          "witness": "eebo_55c87902",
+          "page": 1,
+          "crop_image": "placement-crops/layout-04-ot_prophetical.png"
+        },
+        "note": "the two bookes of Machabees (ord 45-46) close the Second Tome after the Prophets; they are historical in genre but printed within the Prophetical part/tome."
+      },
+      {
+        "section_id": "ot-appendix",
+        "tome": "Douay OT (end of Second Tome) — appendix",
+        "part": "Appendix: bookes not received as canonical",
+        "testament": "APPENDIX",
+        "ordinal_span": [
+          74,
+          76
+        ],
+        "book_count": 3,
+        "books": [
+          {
+            "ordinal": 74,
+            "slug": "prayer-of-manasses",
+            "testament": "APPENDIX",
+            "chapters": 1,
+            "is_appendix": true
+          },
+          {
+            "ordinal": 75,
+            "slug": "3-esdras",
+            "testament": "APPENDIX",
+            "chapters": 9,
+            "is_appendix": true
+          },
+          {
+            "ordinal": 76,
+            "slug": "4-esdras",
+            "testament": "APPENDIX",
+            "chapters": 16,
+            "is_appendix": true
+          }
+        ],
+        "grounding": "skeleton structural — Prayer of Manasses + 3 & 4 Esdras. The DR prints these as a non-canonical appendix; no distinct scan divider is grounded here.",
+        "note": "the skeleton lists the appendix at ordinals 74-76 (after the NT) for id stability, but physically the DR prints these OT-apocryphal bookes at the end of the OT."
+      }
+    ],
+    "canonical_order": [
+      {
+        "ordinal": 1,
+        "slug": "genesis",
+        "testament": "OT",
+        "chapters": 50,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "First Part: the Pentateuch (Legal bookes)",
+        "section_id": "ot-tome1-pentateuch"
+      },
+      {
+        "ordinal": 2,
+        "slug": "exodus",
+        "testament": "OT",
+        "chapters": 40,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "First Part: the Pentateuch (Legal bookes)",
+        "section_id": "ot-tome1-pentateuch"
+      },
+      {
+        "ordinal": 3,
+        "slug": "leviticus",
+        "testament": "OT",
+        "chapters": 27,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "First Part: the Pentateuch (Legal bookes)",
+        "section_id": "ot-tome1-pentateuch"
+      },
+      {
+        "ordinal": 4,
+        "slug": "numbers",
+        "testament": "OT",
+        "chapters": 36,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "First Part: the Pentateuch (Legal bookes)",
+        "section_id": "ot-tome1-pentateuch"
+      },
+      {
+        "ordinal": 5,
+        "slug": "deuteronomy",
+        "testament": "OT",
+        "chapters": 34,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "First Part: the Pentateuch (Legal bookes)",
+        "section_id": "ot-tome1-pentateuch"
+      },
+      {
+        "ordinal": 6,
+        "slug": "josue",
+        "testament": "OT",
+        "chapters": 24,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 7,
+        "slug": "judges",
+        "testament": "OT",
+        "chapters": 21,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 8,
+        "slug": "ruth",
+        "testament": "OT",
+        "chapters": 4,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 9,
+        "slug": "1-kings",
+        "testament": "OT",
+        "chapters": 31,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 10,
+        "slug": "2-kings",
+        "testament": "OT",
+        "chapters": 24,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 11,
+        "slug": "3-kings",
+        "testament": "OT",
+        "chapters": 22,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 12,
+        "slug": "4-kings",
+        "testament": "OT",
+        "chapters": 25,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 13,
+        "slug": "1-paralipomenon",
+        "testament": "OT",
+        "chapters": 29,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 14,
+        "slug": "2-paralipomenon",
+        "testament": "OT",
+        "chapters": 36,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 15,
+        "slug": "1-esdras",
+        "testament": "OT",
+        "chapters": 10,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 16,
+        "slug": "2-esdras",
+        "testament": "OT",
+        "chapters": 13,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 17,
+        "slug": "tobias",
+        "testament": "OT",
+        "chapters": 14,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 18,
+        "slug": "judith",
+        "testament": "OT",
+        "chapters": 16,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 19,
+        "slug": "esther",
+        "testament": "OT",
+        "chapters": 16,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 20,
+        "slug": "job",
+        "testament": "OT",
+        "chapters": 42,
+        "is_appendix": false,
+        "tome": "Douay OT First Tome (1609)",
+        "part": "Second Part: Historical Bookes",
+        "section_id": "ot-tome1-historical"
+      },
+      {
+        "ordinal": 21,
+        "slug": "psalms",
+        "testament": "OT",
+        "chapters": 150,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Third Part: Sapiential Bookes (with the Psalter)",
+        "section_id": "ot-tome2-sapiential"
+      },
+      {
+        "ordinal": 22,
+        "slug": "proverbs",
+        "testament": "OT",
+        "chapters": 31,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Third Part: Sapiential Bookes (with the Psalter)",
+        "section_id": "ot-tome2-sapiential"
+      },
+      {
+        "ordinal": 23,
+        "slug": "ecclesiastes",
+        "testament": "OT",
+        "chapters": 12,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Third Part: Sapiential Bookes (with the Psalter)",
+        "section_id": "ot-tome2-sapiential"
+      },
+      {
+        "ordinal": 24,
+        "slug": "canticle-of-canticles",
+        "testament": "OT",
+        "chapters": 8,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Third Part: Sapiential Bookes (with the Psalter)",
+        "section_id": "ot-tome2-sapiential"
+      },
+      {
+        "ordinal": 25,
+        "slug": "wisdom",
+        "testament": "OT",
+        "chapters": 19,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Third Part: Sapiential Bookes (with the Psalter)",
+        "section_id": "ot-tome2-sapiential"
+      },
+      {
+        "ordinal": 26,
+        "slug": "ecclesiasticus",
+        "testament": "OT",
+        "chapters": 51,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Third Part: Sapiential Bookes (with the Psalter)",
+        "section_id": "ot-tome2-sapiential"
+      },
+      {
+        "ordinal": 27,
+        "slug": "isaie",
+        "testament": "OT",
+        "chapters": 66,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 28,
+        "slug": "jeremie",
+        "testament": "OT",
+        "chapters": 52,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 29,
+        "slug": "lamentations",
+        "testament": "OT",
+        "chapters": 5,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 30,
+        "slug": "baruch",
+        "testament": "OT",
+        "chapters": 6,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 31,
+        "slug": "ezechiel",
+        "testament": "OT",
+        "chapters": 48,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 32,
+        "slug": "daniel",
+        "testament": "OT",
+        "chapters": 14,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 33,
+        "slug": "osee",
+        "testament": "OT",
+        "chapters": 14,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 34,
+        "slug": "joel",
+        "testament": "OT",
+        "chapters": 3,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 35,
+        "slug": "amos",
+        "testament": "OT",
+        "chapters": 9,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 36,
+        "slug": "abdias",
+        "testament": "OT",
+        "chapters": 1,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 37,
+        "slug": "jonas",
+        "testament": "OT",
+        "chapters": 4,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 38,
+        "slug": "micheas",
+        "testament": "OT",
+        "chapters": 7,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 39,
+        "slug": "nahum",
+        "testament": "OT",
+        "chapters": 3,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 40,
+        "slug": "habacuc",
+        "testament": "OT",
+        "chapters": 3,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 41,
+        "slug": "sophonias",
+        "testament": "OT",
+        "chapters": 3,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 42,
+        "slug": "aggeus",
+        "testament": "OT",
+        "chapters": 2,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 43,
+        "slug": "zacharias",
+        "testament": "OT",
+        "chapters": 14,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 44,
+        "slug": "malachie",
+        "testament": "OT",
+        "chapters": 4,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 45,
+        "slug": "1-machabees",
+        "testament": "OT",
+        "chapters": 16,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 46,
+        "slug": "2-machabees",
+        "testament": "OT",
+        "chapters": 15,
+        "is_appendix": false,
+        "tome": "Douay OT Second Tome (1610)",
+        "part": "Fourth Part: Prophetical Bookes (with Machabees)",
+        "section_id": "ot-tome2-prophetical"
+      },
+      {
+        "ordinal": 47,
+        "slug": "matthew",
+        "testament": "NT",
+        "chapters": 28,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 48,
+        "slug": "mark",
+        "testament": "NT",
+        "chapters": 16,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 49,
+        "slug": "luke",
+        "testament": "NT",
+        "chapters": 24,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 50,
+        "slug": "john",
+        "testament": "NT",
+        "chapters": 21,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 51,
+        "slug": "acts",
+        "testament": "NT",
+        "chapters": 28,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 52,
+        "slug": "romans",
+        "testament": "NT",
+        "chapters": 16,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 53,
+        "slug": "1-corinthians",
+        "testament": "NT",
+        "chapters": 16,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 54,
+        "slug": "2-corinthians",
+        "testament": "NT",
+        "chapters": 13,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 55,
+        "slug": "galatians",
+        "testament": "NT",
+        "chapters": 6,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 56,
+        "slug": "ephesians",
+        "testament": "NT",
+        "chapters": 6,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 57,
+        "slug": "philippians",
+        "testament": "NT",
+        "chapters": 4,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 58,
+        "slug": "colossians",
+        "testament": "NT",
+        "chapters": 4,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 59,
+        "slug": "1-thessalonians",
+        "testament": "NT",
+        "chapters": 5,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 60,
+        "slug": "2-thessalonians",
+        "testament": "NT",
+        "chapters": 3,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 61,
+        "slug": "1-timothy",
+        "testament": "NT",
+        "chapters": 6,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 62,
+        "slug": "2-timothy",
+        "testament": "NT",
+        "chapters": 4,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 63,
+        "slug": "titus",
+        "testament": "NT",
+        "chapters": 3,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 64,
+        "slug": "philemon",
+        "testament": "NT",
+        "chapters": 1,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 65,
+        "slug": "hebrews",
+        "testament": "NT",
+        "chapters": 13,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 66,
+        "slug": "james",
+        "testament": "NT",
+        "chapters": 5,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 67,
+        "slug": "1-peter",
+        "testament": "NT",
+        "chapters": 5,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 68,
+        "slug": "2-peter",
+        "testament": "NT",
+        "chapters": 3,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 69,
+        "slug": "1-john",
+        "testament": "NT",
+        "chapters": 5,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 70,
+        "slug": "2-john",
+        "testament": "NT",
+        "chapters": 1,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 71,
+        "slug": "3-john",
+        "testament": "NT",
+        "chapters": 1,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 72,
+        "slug": "jude",
+        "testament": "NT",
+        "chapters": 1,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 73,
+        "slug": "apocalypse",
+        "testament": "NT",
+        "chapters": 22,
+        "is_appendix": false,
+        "tome": "Rheims New Testament (1582)",
+        "part": "New Testament",
+        "section_id": "nt"
+      },
+      {
+        "ordinal": 74,
+        "slug": "prayer-of-manasses",
+        "testament": "APPENDIX",
+        "chapters": 1,
+        "is_appendix": true,
+        "tome": "Douay OT (end of Second Tome) — appendix",
+        "part": "Appendix: bookes not received as canonical",
+        "section_id": "ot-appendix"
+      },
+      {
+        "ordinal": 75,
+        "slug": "3-esdras",
+        "testament": "APPENDIX",
+        "chapters": 9,
+        "is_appendix": true,
+        "tome": "Douay OT (end of Second Tome) — appendix",
+        "part": "Appendix: bookes not received as canonical",
+        "section_id": "ot-appendix"
+      },
+      {
+        "ordinal": 76,
+        "slug": "4-esdras",
+        "testament": "APPENDIX",
+        "chapters": 16,
+        "is_appendix": true,
+        "tome": "Douay OT (end of Second Tome) — appendix",
+        "part": "Appendix: bookes not received as canonical",
+        "section_id": "ot-appendix"
+      }
+    ]
+  },
   "apparatus_placements": [
     {
       "slot": "ot-title-page",
@@ -735,6 +2175,8 @@
     "co-located": 6,
     "unlocatable": 1,
     "inventoried": 2,
-    "scripture_layout_leaves": 5
+    "scripture_layout_leaves": 5,
+    "scripture_books": 76,
+    "scripture_sections": 6
   }
 }

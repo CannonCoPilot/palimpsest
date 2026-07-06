@@ -49,6 +49,7 @@ REPO = HERE.parents[5]
 ORIGINAL = REPO / "imports/Scripture/Bibles/DouayRheims_DR/Original"
 ARCHIVE_ORG = REPO / "imports/Scripture/Bibles/DouayRheims_DR/archive-org"
 APPARATUS_ORDER = HERE.parent / "originaldr_validation" / "apparatus-order.json"
+SKELETON = HERE / "skeleton.json"
 CROPS_DIR = HERE / "placement-crops"
 OUT = HERE / "layout-map.json"
 RENDER_DPI = 200
@@ -306,6 +307,70 @@ LAYOUT_LEAVES: list[dict[str, Any]] = [
 ]
 
 
+# --- scripture book order, grouped into the scan-grounded tome/part sections ---------------- #
+# Book identity + canonical order come from skeleton.json (the 76-book oracle). Each section's
+# START is anchored to a grounded scripture_layout divider leaf (layout_leaf = its `order`); the
+# two INTERNAL boundaries that fall between divider leaves are grounded by their own OCR-located
+# leaf (rendered crop): the First Tome physically closes after Iob ("THE END OF THE FIRST TOME.",
+# ot1-1609 p.1133), and the formal "argument of Sapiential Bookes" divider stands after the
+# Psalter (ot2-1610 p.268). `ordinals` are inclusive skeleton-ordinal spans.
+BoundaryCrop = dict[str, Any]
+SCRIPTURE_SECTIONS: list[dict[str, Any]] = [
+    dict(section_id="nt", tome="Rheims New Testament (1582)", part="New Testament",
+         testament="NT", ordinals=(47, 73), layout_leaf=0,
+         grounding="scripture_layout leaf 0 — Rheims NT 1582 general title.",
+         note=None, boundary_crop=None),
+    dict(section_id="ot-tome1-pentateuch", tome="Douay OT First Tome (1609)",
+         part="First Part: the Pentateuch (Legal bookes)", testament="OT", ordinals=(1, 5),
+         layout_leaf=1,
+         grounding="scripture_layout leaf 1 — OT First Tome general title / Pentateuch.",
+         note=None, boundary_crop=None),
+    dict(section_id="ot-tome1-historical", tome="Douay OT First Tome (1609)",
+         part="Second Part: Historical Bookes", testament="OT", ordinals=(6, 20), layout_leaf=2,
+         grounding="scripture_layout leaf 2 — 'THE SECOND PART ... HISTORICAL BOOKES' (Iosve). "
+                   "The First Tome physically closes after Iob (ord 20): ot1-1609 p.1133 prints "
+                   "'THE END OF THE FIRST TOME.', which grounds the First/Second-tome split at "
+                   "Iob | Psalmes.",
+         note="Iob is printed as the final book of the First Tome under the Historical heading; "
+              "no Sapiential divider precedes it in the scan. The DR's abstract four-fold scheme "
+              "(Legal / Historical / Sapiential / Prophetical, stated in ot1-1609) counts Iob "
+              "among the Sapiential bookes, but the formal 'argument of Sapiential Bookes' leaf "
+              "stands only in the Second Tome — so by physical placement Iob falls in this section.",
+         boundary_crop=dict(alias="ot1-1609", page=1133, box=(0.0, 0.80, 1.0, 1.0),
+                            text="THE END OF THE FIRST TOME. (closing Iob's argument)",
+                            out="scripture-order-first-tome-end")),
+    dict(section_id="ot-tome2-sapiential", tome="Douay OT Second Tome (1610)",
+         part="Third Part: Sapiential Bookes (with the Psalter)", testament="OT", ordinals=(21, 26),
+         layout_leaf=3,
+         grounding="scripture_layout leaf 3 — OT Second Tome general title. The Psalter opens the "
+                   "Second Tome and the formal 'The argument of Sapiential Bookes' divider "
+                   "(CONTEINING SAPIENTIAL) follows at ot2-1610 p.268, introducing "
+                   "Prouerbs .. Ecclesiasticus.",
+         note="Psalmes (ord 21) is printed first in the Second Tome, ahead of the formal "
+              "Sapiential divider; the DR treats the Psalter as partly Sapiential.",
+         boundary_crop=dict(alias="ot2-1610", page=268, box=(0.0, 0.0, 1.0, 0.30),
+                            text="THE THIRD PART OF THE OLD TESTAMENT, CONTEINING SAPIENTIAL "
+                                 "BOOKES. The argument of Sapiential Bookes. (ornamental divider "
+                                 "leaf; printed folio 267, after the Psalter)",
+                            out="scripture-order-sapiential-divider")),
+    dict(section_id="ot-tome2-prophetical", tome="Douay OT Second Tome (1610)",
+         part="Fourth Part: Prophetical Bookes (with Machabees)", testament="OT", ordinals=(27, 46),
+         layout_leaf=4,
+         grounding="scripture_layout leaf 4 — 'THE FOVRTH PART ... PROPHETICAL BOOKES' (Isaie).",
+         note="the two bookes of Machabees (ord 45-46) close the Second Tome after the Prophets; "
+              "they are historical in genre but printed within the Prophetical part/tome.",
+         boundary_crop=None),
+    dict(section_id="ot-appendix", tome="Douay OT (end of Second Tome) — appendix",
+         part="Appendix: bookes not received as canonical", testament="APPENDIX",
+         ordinals=(74, 76), layout_leaf=None,
+         grounding="skeleton structural — Prayer of Manasses + 3 & 4 Esdras. The DR prints these "
+                   "as a non-canonical appendix; no distinct scan divider is grounded here.",
+         note="the skeleton lists the appendix at ordinals 74-76 (after the NT) for id stability, "
+              "but physically the DR prints these OT-apocryphal bookes at the end of the OT.",
+         boundary_crop=None),
+]
+
+
 def testament_of(section: str) -> str:
     return "NT" if section.startswith("nt") else "OT"
 
@@ -405,9 +470,83 @@ def build_layout() -> list[dict]:
     return out
 
 
+def build_scripture_order(scripture_layout: list[dict]) -> dict[str, Any]:
+    """Group the 76 skeleton books into the scan-grounded tome/part sections.
+
+    Book identity/order = skeleton.json (the oracle); each section is anchored to a grounded
+    divider leaf, with the two internal tome/part boundaries proven by their own rendered crop.
+    Fails loudly if the sections don't partition the 76 ordinals exactly once (determinism guard).
+    """
+    CROPS_DIR.mkdir(exist_ok=True)
+    books = json.loads(SKELETON.read_text())["books"]
+    by_ord = {b["ordinal"]: b for b in books}
+    if sorted(by_ord) != list(range(1, len(books) + 1)):
+        raise SystemExit(f"skeleton ordinals not 1..{len(books)} contiguous")
+
+    sections_out: list[dict[str, Any]] = []
+    ordinal_to_section: dict[int, str] = {}
+    for sec in SCRIPTURE_SECTIONS:
+        lo, hi = sec["ordinals"]
+        members = []
+        for o in range(lo, hi + 1):
+            b = by_ord.get(o)
+            if b is None:
+                raise SystemExit(f"section {sec['section_id']} references missing ordinal {o}")
+            if o in ordinal_to_section:
+                raise SystemExit(f"ordinal {o} claimed by two sections")
+            ordinal_to_section[o] = sec["section_id"]
+            members.append({"ordinal": o, "slug": b["slug"], "testament": b["testament"],
+                            "chapters": b["chapters"], "is_appendix": b["is_appendix"]})
+        rec: dict[str, Any] = {
+            "section_id": sec["section_id"], "tome": sec["tome"], "part": sec["part"],
+            "testament": sec["testament"], "ordinal_span": [lo, hi],
+            "book_count": len(members), "books": members, "grounding": sec["grounding"]}
+        leaf = sec["layout_leaf"]
+        if leaf is not None:
+            lf = scripture_layout[leaf]
+            rec["layout_leaf_ref"] = {"order": leaf, "part": lf["part"],
+                                      "witness": lf["title_leaf"]["witness"],
+                                      "page": lf["title_leaf"]["page"], "crop_image": lf["crop_image"]}
+        bc = sec["boundary_crop"]
+        if bc is not None:
+            _, sha = ao_pdf(bc["alias"])
+            crop_rel = f"placement-crops/{bc['out']}.png"
+            render_ao_crop(bc["alias"], bc["page"], bc["box"], HERE / crop_rel)
+            rec["boundary_leaf"] = {"authority": "archive.org", "alias": bc["alias"],
+                                    "sha256": sha, "page": bc["page"],
+                                    "identifying_text": bc["text"], "crop_image": crop_rel}
+        if sec["note"]:
+            rec["note"] = sec["note"]
+        sections_out.append(rec)
+
+    missing = sorted(set(by_ord) - set(ordinal_to_section))
+    if missing:
+        raise SystemExit(f"books not assigned to any section: {missing}")
+
+    canonical = [{"ordinal": o, "slug": by_ord[o]["slug"], "testament": by_ord[o]["testament"],
+                  "chapters": by_ord[o]["chapters"], "is_appendix": by_ord[o]["is_appendix"],
+                  "tome": next(s["tome"] for s in SCRIPTURE_SECTIONS
+                               if s["section_id"] == ordinal_to_section[o]),
+                  "part": next(s["part"] for s in SCRIPTURE_SECTIONS
+                               if s["section_id"] == ordinal_to_section[o]),
+                  "section_id": ordinal_to_section[o]}
+                 for o in range(1, len(books) + 1)]
+    return {
+        "note": "The 76 books in canonical skeleton order, grouped into the tome/part sections "
+                "confirmed against the original scans. Section starts are anchored to the grounded "
+                "scripture_layout divider leaves; the two internal boundaries (First-Tome close "
+                "after Iob; the Sapiential-Bookes divider after the Psalter) each carry a rendered "
+                "OCR-located crop. Physical tome and abstract part can diverge (e.g. Iob), which "
+                "the section notes make explicit.",
+        "book_total": len(books), "section_total": len(sections_out),
+        "sections": sections_out, "canonical_order": canonical,
+    }
+
+
 def main() -> int:
     apparatus = json.loads(APPARATUS_ORDER.read_text())
     scripture_layout = build_layout()
+    scripture_order = build_scripture_order(scripture_layout)
     placements, counts = build_placements(apparatus)
     scan_sources: dict[str, Any] = {}
     for key, md5 in EEBO.items():
@@ -437,13 +576,17 @@ def main() -> int:
                 "corrected here. Phase-0 seal UNAFFECTED (seal never used EEBO).",
         "scan_sources": scan_sources,
         "scripture_layout": scripture_layout,
+        "scripture_order": scripture_order,
         "apparatus_placements": placements,
         "summary": {"apparatus_slots": len(placements), **counts,
-                    "scripture_layout_leaves": len(scripture_layout)},
+                    "scripture_layout_leaves": len(scripture_layout),
+                    "scripture_books": scripture_order["book_total"],
+                    "scripture_sections": scripture_order["section_total"]},
     }
     OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n")
     print(f"layout-map.json  ·  {len(placements)} apparatus slots {counts}  ·  "
-          f"{len(scripture_layout)} layout leaves  ·  crops -> {CROPS_DIR.relative_to(REPO)}")
+          f"{len(scripture_layout)} layout leaves  ·  {scripture_order['book_total']} books / "
+          f"{scripture_order['section_total']} sections  ·  crops -> {CROPS_DIR.relative_to(REPO)}")
     return 0
 
 
