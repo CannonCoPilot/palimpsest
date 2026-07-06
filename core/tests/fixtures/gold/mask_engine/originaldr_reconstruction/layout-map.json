@@ -3,55 +3,77 @@
   "phase": "P1.4",
   "idx": 108,
   "generated_by": "build_layout_map.py",
-  "note": "Scan-grounded layout & apparatus placement. EEBO facsimile PDFs = layout authority; each scripture-layout leaf and each grounded apparatus slot carries a committed header crop + transcribed identifying_text + source sha256, with an archive.org OCR offset as independent second proof. Slot statuses are honest: grounded / co-located / inventoried (crop pending) / unlocatable. The EEBO volume->content mapping was visually verified (filename 'vol_ N' tokens are NOT OT volume numbers; vol_1 is the 1582 Rheims NT).",
+  "note": "Scan-grounded layout & apparatus placement. EEBO facsimile PDFs = primary layout authority; archive.org full-tome scans (searchable text layer) = fallback authority for the back-matter tables absent from the partial EEBO facsimiles. Each grounded leaf/slot carries a committed header crop + transcribed identifying_text + source sha256, with an OCR offset as second proof where available. Statuses are honest: grounded / co-located / unlocatable / inventoried. The EEBO OT scans are the 1635 Rouen reissue (Cousturier, 'Permissu Superiorum'), not 1609/1610; and the ot_prophetical (55c87902 = Fourth Part) and ot_secondtome (8ff9c022 = Second Tome title) scans were swapped in the earlier mapping and are corrected here. Phase-0 seal UNAFFECTED (seal never used EEBO).",
   "scan_sources": {
     "eebo_18c502ea": {
+      "authority": "eebo",
       "key": "nt_partial",
       "md5": "18c502ead5119303881f2a8def094a5e",
       "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
       "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 1) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 18c502ead5119303881f2a8def094a5e -- Anna’s Archive.pdf",
-      "content_verified": "Rheims New Testament 1582 — front matter + partial NT",
-      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+      "content_verified": "Rheims New Testament 1582 (Rhemes: Iohn Fogny, 'Cum priuilegio') — NT general title + front matter (Censure & Approbation p.2, Preface p.3) + partial NT",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection 2026-07-06"
     },
     "eebo_c0ef3be2": {
+      "authority": "eebo",
       "key": "ot_holybible",
       "md5": "c0ef3be20b3fdc19c26debe03ef520de",
       "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
       "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 2) -- Martin, Gregory & Allen, William & Bristow, Richard & -- c0ef3be20b3fdc19c26debe03ef520de -- Anna’s Archive.pdf",
-      "content_verified": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch",
-      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+      "content_verified": "OT First Tome general title 'THE HOLY BIBLE' — Rouen: Iohn Covsturier, 'Permissu Superiorum', M.DC.XXXV (1635 reissue of the 1609 Douay OT First Tome); front matter (Approbatio p.2, Preface p.3+) + Pentateuch",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection 2026-07-06"
     },
     "eebo_2cfaea2c": {
+      "authority": "eebo",
       "key": "ot_historical",
       "md5": "2cfaea2cb717e2b87bcb00c803ec2479",
       "sha256": "4361bbc156e47a29db362cd57e7c3f0a4524920b59fa258617db9ce088128681",
       "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 3) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 2cfaea2cb717e2b87bcb00c803ec2479 -- Anna’s Archive.pdf",
-      "content_verified": "OT 'THE SECOND PART OF THE OLD TESTAMENT: HISTORICAL BOOKES' (Josue, leaf p.419)",
-      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+      "content_verified": "OT 'THE SECOND PART OF THE OLD TESTAMENT: HISTORICAL BOOKES' (Argument of Iosve; leaf printed p.419) — First-Tome divider fragment",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection 2026-07-06"
     },
     "eebo_8ff9c022": {
-      "key": "ot_prophetical",
+      "authority": "eebo",
+      "key": "ot_secondtome",
       "md5": "8ff9c0224c2dec4d8a7de4861ab3b38c",
       "sha256": "7fd5a1c88ff7bc7edf645d90637cec279ef3d1fdd5a7dbceaa72e93607c9bf6f",
       "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 4) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 8ff9c0224c2dec4d8a7de4861ab3b38c -- Anna’s Archive.pdf",
-      "content_verified": "OT 'THE FOURTH PART OF THE OLD TESTAMENT: PROPHETICAL BOOKES'",
-      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+      "content_verified": "OT Second Tome general title 'THE SECOND TOME OF THE HOLIE BIBLE' — Rouen: Iohn Covsturier, 1635",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection 2026-07-06"
     },
     "eebo_55c87902": {
-      "key": "ot_secondtome",
+      "authority": "eebo",
+      "key": "ot_prophetical",
       "md5": "55c87902453884748a6069ea26bcf41b",
       "sha256": "6294605a04cfa1cc33d8f4d4aa22860a3107bc41699c059266bbd0383a11ca0d",
       "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 5) 1_0 -- Martin, Gregory & Allen, William & Bristow, Richard & -- 55c87902453884748a6069ea26bcf41b -- Anna’s Archive.pdf",
-      "content_verified": "OT Second Tome 1610 — general title 'THE SECOND TOME OF THE HOLIE BIBLE' (partial)",
-      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+      "content_verified": "OT 'THE FOVRTH PART OF THE OLD TESTAMENT: PROPHETICAL BOOKES' (Argument of Prophetical bookes in general; leaf printed p.442)",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection 2026-07-06"
     },
     "eebo_b7bca433": {
+      "authority": "eebo",
       "key": "nt_full",
       "md5": "b7bca433de548ed960cba8616ec77c10",
       "sha256": "eef1f4be0e2e1fcd6a2ce555b405f164bdd96ef5a4986cea2cc7f4d0688b03a7",
       "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (New Testament) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 2010 -- Eebo Editions, Proquest -- isbn13 9781171276302 -- b7bca433de548ed960cba8616ec77c10 -- Anna’s Archive.pdf",
-      "content_verified": "New Testament — full Rheims NT 1582, incl. back-matter tables",
-      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+      "content_verified": "Full Rheims New Testament 1582, incl. back-matter tables (Tables of S. Peter / S. Paul + Apostles' Creed after Acts; Explication of words, Heretical Corruptions, Epistles & Gospels, and the Table of Controversies at the end)",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection 2026-07-06"
+    },
+    "ao_nt-1582": {
+      "authority": "archive.org",
+      "alias": "nt-1582",
+      "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/archive-org/nt-1582/1582 Douai Rheims Douay Rheims First Edition  3 of 3 1582 New Testament_text.pdf",
+      "content": "full Rheims New Testament 1582 (archive.org) — carries the NT back-matter tables",
+      "verified_via": "OCR text-layer page lookup (pdftotext) + rendered header crop"
+    },
+    "ao_ot2-1610": {
+      "authority": "archive.org",
+      "alias": "ot2-1610",
+      "sha256": "12d40023948756cf5fcf1e8f7884845774e4e8955eaac57e16b40d84779096ba",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/archive-org/ot2-1610/1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_text.pdf",
+      "content": "Douay Old Testament Second Tome (archive.org) — carries the OT back-matter Historical Table + Particular Table of Principal Things",
+      "verified_via": "OCR text-layer page lookup (pdftotext) + rendered header crop"
     }
   },
   "scripture_layout": [
@@ -64,7 +86,7 @@
         "witness": "eebo_18c502ea",
         "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
         "page": 1,
-        "content": "Rheims New Testament 1582 — front matter + partial NT"
+        "content": "Rheims New Testament 1582 (Rhemes: Iohn Fogny, 'Cum priuilegio') — NT general title + front matter (Censure & Approbation p.2, Preface p.3) + partial NT"
       },
       "identifying_text": "THE NEVV TESTAMENT OF IESVS CHRIST ... ENGLISH COLLEGE OF RHEMES ... 1582",
       "crop_image": "placement-crops/layout-00-nt_partial.png"
@@ -72,27 +94,27 @@
     {
       "order": 1,
       "section": "ot",
-      "tome": "Douay OT First Tome 1609",
+      "tome": "Douay OT First Tome (1635 Cousturier reissue)",
       "part": "general title / Pentateuch",
       "title_leaf": {
         "witness": "eebo_c0ef3be2",
         "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
         "page": 1,
-        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+        "content": "OT First Tome general title 'THE HOLY BIBLE' — Rouen: Iohn Covsturier, 'Permissu Superiorum', M.DC.XXXV (1635 reissue of the 1609 Douay OT First Tome); front matter (Approbatio p.2, Preface p.3+) + Pentateuch"
       },
-      "identifying_text": "THE HOLY BIBLE FAITHFVLLY TRANSLATED INTO ENGLISH ... 1609",
+      "identifying_text": "THE HOLY BIBLE FAITHFVLLY TRANSLATED INTO ENGLISH ... M.DC.XXXV (1635)",
       "crop_image": "placement-crops/layout-01-ot_holybible.png"
     },
     {
       "order": 2,
       "section": "ot",
-      "tome": "Douay OT First Tome 1609",
+      "tome": "Douay OT First Tome (1635 Cousturier)",
       "part": "Second Part: Historical Bookes",
       "title_leaf": {
         "witness": "eebo_2cfaea2c",
         "sha256": "4361bbc156e47a29db362cd57e7c3f0a4524920b59fa258617db9ce088128681",
         "page": 1,
-        "content": "OT 'THE SECOND PART OF THE OLD TESTAMENT: HISTORICAL BOOKES' (Josue, leaf p.419)"
+        "content": "OT 'THE SECOND PART OF THE OLD TESTAMENT: HISTORICAL BOOKES' (Argument of Iosve; leaf printed p.419) — First-Tome divider fragment"
       },
       "identifying_text": "THE SECOND PART OF THE OLD TESTAMENT CONTAINING HISTORICAL BOOKES. THE ARGVMENT OF THE BOOKE OF IOSVE",
       "crop_image": "placement-crops/layout-02-ot_historical.png"
@@ -100,30 +122,30 @@
     {
       "order": 3,
       "section": "ot",
-      "tome": "Douay OT 1609/1610",
-      "part": "Fourth Part: Prophetical Bookes",
+      "tome": "Douay OT Second Tome (1635 Cousturier reissue)",
+      "part": "general title",
       "title_leaf": {
         "witness": "eebo_8ff9c022",
         "sha256": "7fd5a1c88ff7bc7edf645d90637cec279ef3d1fdd5a7dbceaa72e93607c9bf6f",
         "page": 1,
-        "content": "OT 'THE FOURTH PART OF THE OLD TESTAMENT: PROPHETICAL BOOKES'"
+        "content": "OT Second Tome general title 'THE SECOND TOME OF THE HOLIE BIBLE' — Rouen: Iohn Covsturier, 1635"
       },
-      "identifying_text": "THE FOVRTH PART OF THE OLD TESTAMENT CONTAINING PROPHETICAL BOOKES. The argument of Prophetical bookes in general",
-      "crop_image": "placement-crops/layout-03-ot_prophetical.png"
+      "identifying_text": "THE SECOND TOME OF THE HOLIE BIBLE FAITHFVLLY TRANSLATED INTO ENGLISH ... Rouen: Iohn Covsturier ... 1635",
+      "crop_image": "placement-crops/layout-03-ot_secondtome.png"
     },
     {
       "order": 4,
       "section": "ot",
-      "tome": "Douay OT Second Tome 1610",
-      "part": "general title",
+      "tome": "Douay OT Second Tome (1635 Cousturier)",
+      "part": "Fourth Part: Prophetical Bookes",
       "title_leaf": {
         "witness": "eebo_55c87902",
         "sha256": "6294605a04cfa1cc33d8f4d4aa22860a3107bc41699c059266bbd0383a11ca0d",
         "page": 1,
-        "content": "OT Second Tome 1610 — general title 'THE SECOND TOME OF THE HOLIE BIBLE' (partial)"
+        "content": "OT 'THE FOVRTH PART OF THE OLD TESTAMENT: PROPHETICAL BOOKES' (Argument of Prophetical bookes in general; leaf printed p.442)"
       },
-      "identifying_text": "THE SECOND TOME OF THE HOLIE BIBLE FAITHFVLLY TRANSLATED INTO ENGLISH ... At Doway ... 1610",
-      "crop_image": "placement-crops/layout-04-ot_secondtome.png"
+      "identifying_text": "THE FOVRTH PART OF THE OLD TESTAMENT CONTAINING PROPHETICAL BOOKES. The argument of Prophetical bookes in general (leaf printed p.442)",
+      "crop_image": "placement-crops/layout-04-ot_prophetical.png"
     }
   ],
   "apparatus_placements": [
@@ -138,11 +160,12 @@
       "tome_position": "front · OT",
       "status": "grounded",
       "source": {
+        "authority": "eebo",
         "witness": "eebo_c0ef3be2",
         "md5": "c0ef3be20b3fdc19c26debe03ef520de",
         "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
         "page": 1,
-        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+        "content": "OT First Tome general title 'THE HOLY BIBLE' — Rouen: Iohn Covsturier, 'Permissu Superiorum', M.DC.XXXV (1635 reissue of the 1609 Douay OT First Tome); front matter (Approbatio p.2, Preface p.3+) + Pentateuch"
       },
       "crop_image": "placement-crops/ot-title-page.png",
       "identifying_text": "THE HOLY BIBLE FAITHFVLLY TRANSLATED INTO ENGLISH OVT OF THE AVTHENTICAL LATIN, diligently conferred with the Hebrew, Greek, & other Editions in diuers languages",
@@ -162,11 +185,12 @@
       "tome_position": "front · OT",
       "status": "grounded",
       "source": {
+        "authority": "eebo",
         "witness": "eebo_c0ef3be2",
         "md5": "c0ef3be20b3fdc19c26debe03ef520de",
         "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
         "page": 2,
-        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+        "content": "OT First Tome general title 'THE HOLY BIBLE' — Rouen: Iohn Covsturier, 'Permissu Superiorum', M.DC.XXXV (1635 reissue of the 1609 Douay OT First Tome); front matter (Approbatio p.2, Preface p.3+) + Pentateuch"
       },
       "crop_image": "placement-crops/ot-approbatio.png",
       "identifying_text": "APPROBATIO. Nos infrascripti, in alma Duacensi vniuersitate Sacrae Theologiae professores ...",
@@ -186,11 +210,12 @@
       "tome_position": "front · OT",
       "status": "grounded",
       "source": {
+        "authority": "eebo",
         "witness": "eebo_c0ef3be2",
         "md5": "c0ef3be20b3fdc19c26debe03ef520de",
         "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
         "page": 3,
-        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+        "content": "OT First Tome general title 'THE HOLY BIBLE' — Rouen: Iohn Covsturier, 'Permissu Superiorum', M.DC.XXXV (1635 reissue of the 1609 Douay OT First Tome); front matter (Approbatio p.2, Preface p.3+) + Pentateuch"
       },
       "crop_image": "placement-crops/ot-preface.png",
       "identifying_text": "TO THE RIGHT WEL-BELOVED ENGLISH READER (running head: TO THE ENGLISH READER)",
@@ -208,15 +233,18 @@
       },
       "testament": "OT",
       "tome_position": "front · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "privilege",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
+      "status": "co-located",
+      "source": {
+        "authority": "eebo",
+        "witness": "eebo_c0ef3be2",
+        "md5": "c0ef3be20b3fdc19c26debe03ef520de",
+        "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
+        "page": 1,
+        "content": "OT First Tome general title 'THE HOLY BIBLE' — Rouen: Iohn Covsturier, 'Permissu Superiorum', M.DC.XXXV (1635 reissue of the 1609 Douay OT First Tome); front matter (Approbatio p.2, Preface p.3+) + Pentateuch"
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "crop_image": "placement-crops/ot-privilege.png",
+      "identifying_text": "PERMISSV SVPERIORVM. — Printed by IOHN COVSTVRIER. M.DC.XXXV (OT title-page foot). This 1635 Rouen edition prints the permission as the title-page imprint line; there is no separate French royal-privilege leaf.",
+      "note": "co-located on the OT First Tome title-page leaf (p.1 foot)"
     },
     {
       "slot": "ot-censura",
@@ -227,15 +255,18 @@
       },
       "testament": "OT",
       "tome_position": "front · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "censura",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
+      "status": "co-located",
+      "source": {
+        "authority": "eebo",
+        "witness": "eebo_c0ef3be2",
+        "md5": "c0ef3be20b3fdc19c26debe03ef520de",
+        "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
+        "page": 2,
+        "content": "OT First Tome general title 'THE HOLY BIBLE' — Rouen: Iohn Covsturier, 'Permissu Superiorum', M.DC.XXXV (1635 reissue of the 1609 Douay OT First Tome); front matter (Approbatio p.2, Preface p.3+) + Pentateuch"
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "crop_image": "placement-crops/ot-approbatio.png",
+      "identifying_text": "Censura / Approbatio co-located on one leaf (OT First Tome, p.2)",
+      "note": "the OT approval is printed as a single APPROBATIO leaf; no separate censura leaf"
     },
     {
       "slot": "ot-historical-table-age-1",
@@ -246,15 +277,21 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "historical table age 1",
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_ot2-1610",
+        "alias": "ot2-1610",
+        "sha256": "12d40023948756cf5fcf1e8f7884845774e4e8955eaac57e16b40d84779096ba",
+        "page": 1078,
+        "content": "Douay Old Testament Second Tome (archive.org) — carries the OT back-matter Historical Table + Particular Table of Principal Things"
+      },
+      "crop_image": "placement-crops/ot-historical-table-age-1.png",
+      "identifying_text": "AN HISTORICAL TABLE OF THE TIMES, SPECIAL PERSONS, MOST NOTABLE THINGES, AND CANONICAL BOOKES OF THE OLD TESTAMENT (opening; the table is subdivided into the six ages of the world)",
       "ocr_second_proof": {
         "witness": "ot2-1610",
-        "char_offset": 2910802,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+        "char_offset": 2910802
+      }
     },
     {
       "slot": "ot-historical-table-age-2",
@@ -265,15 +302,11 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "historical table age 2",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "status": "co-located",
+      "source": null,
+      "crop_image": "placement-crops/ot-historical-table-age-1.png",
+      "identifying_text": "Second Age — an internal division of the Historical Table of the Old Testament",
+      "note": "subdivision of the one Historical Table (grounded at historical-table-age-1); the First/Second/Third/Fifth-age headers are OCR-mangled in the dense table and are not separately cropped"
     },
     {
       "slot": "ot-historical-table-age-3",
@@ -284,15 +317,11 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "historical table age 3",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "status": "co-located",
+      "source": null,
+      "crop_image": "placement-crops/ot-historical-table-age-1.png",
+      "identifying_text": "Third Age — an internal division of the Historical Table of the Old Testament",
+      "note": "subdivision of the one Historical Table (grounded at historical-table-age-1)"
     },
     {
       "slot": "ot-historical-table-age-3b",
@@ -303,15 +332,11 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "historical table age 3b",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "status": "co-located",
+      "source": null,
+      "crop_image": "placement-crops/ot-historical-table-age-1.png",
+      "identifying_text": "Third Age (continued) — an internal division of the Historical Table of the OT",
+      "note": "subdivision of the one Historical Table (grounded at historical-table-age-1)"
     },
     {
       "slot": "ot-historical-table-age-4",
@@ -322,15 +347,21 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "historical table age 4",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_ot2-1610",
+        "alias": "ot2-1610",
+        "sha256": "12d40023948756cf5fcf1e8f7884845774e4e8955eaac57e16b40d84779096ba",
+        "page": 1086,
+        "content": "Douay Old Testament Second Tome (archive.org) — carries the OT back-matter Historical Table + Particular Table of Principal Things"
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "crop_image": "placement-crops/ot-historical-table-age-4.png",
+      "identifying_text": "THE BEGINNING OF THE FOVRTH AGE — a subsection of the Historical Table of the Old Testament",
+      "ocr_second_proof": {
+        "witness": "ot2-1610",
+        "char_offset": null
+      }
     },
     {
       "slot": "ot-historical-table-age-5",
@@ -341,15 +372,11 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "historical table age 5",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "status": "co-located",
+      "source": null,
+      "crop_image": "placement-crops/ot-historical-table-age-1.png",
+      "identifying_text": "Fifth Age — an internal division of the Historical Table of the Old Testament",
+      "note": "subdivision of the one Historical Table (grounded at historical-table-age-1); the Fourth (p.1086) and Sixth (p.1097) ages are separately grounded as anchors"
     },
     {
       "slot": "ot-historical-table-age-6",
@@ -360,15 +387,21 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "historical table age 6",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_ot2-1610",
+        "alias": "ot2-1610",
+        "sha256": "12d40023948756cf5fcf1e8f7884845774e4e8955eaac57e16b40d84779096ba",
+        "page": 1097,
+        "content": "Douay Old Testament Second Tome (archive.org) — carries the OT back-matter Historical Table + Particular Table of Principal Things"
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "crop_image": "placement-crops/ot-historical-table-age-6.png",
+      "identifying_text": "THE BEGINNING OF THE SIXTH AGE — a subsection of the Historical Table of the Old Testament",
+      "ocr_second_proof": {
+        "witness": "ot2-1610",
+        "char_offset": null
+      }
     },
     {
       "slot": "ot-glossary",
@@ -379,15 +412,21 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "glossary",
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_ot2-1610",
+        "alias": "ot2-1610",
+        "sha256": "12d40023948756cf5fcf1e8f7884845774e4e8955eaac57e16b40d84779096ba",
+        "page": 1102,
+        "content": "Douay Old Testament Second Tome (archive.org) — carries the OT back-matter Historical Table + Particular Table of Principal Things"
+      },
+      "crop_image": "placement-crops/ot-glossary.png",
+      "identifying_text": "A PARTICVLAR TABLE OF THE MOST PRINCIPAL THINGES CONTEINED IN THE OLD TESTAMENT (the OT back-matter reference index)",
       "ocr_second_proof": {
         "witness": "ot2-1610",
-        "char_offset": 2937683,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+        "char_offset": 2937683
+      }
     },
     {
       "slot": "ot-epistles-table",
@@ -398,15 +437,10 @@
       },
       "testament": "OT",
       "tome_position": "back · OT",
-      "status": "inventoried",
+      "status": "unlocatable",
       "crop_image": null,
       "identifying_text": "epistles table",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "note": "No 'table of Epistles & Gospels' is printed among the OT back matter: the archive.org ot2-1610 scan carries the Historical Table (p.~1077-1101) and the Particular Table of Principal Things (p.~1102-1126), then ends. This appears to be an NT-only apparatus item (see nt_back table-epistles-gospels) over-enumerated for the OT."
     },
     {
       "slot": "nt-title-page",
@@ -419,11 +453,12 @@
       "tome_position": "front · NT",
       "status": "grounded",
       "source": {
+        "authority": "eebo",
         "witness": "eebo_18c502ea",
         "md5": "18c502ead5119303881f2a8def094a5e",
         "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
         "page": 1,
-        "content": "Rheims New Testament 1582 — front matter + partial NT"
+        "content": "Rheims New Testament 1582 (Rhemes: Iohn Fogny, 'Cum priuilegio') — NT general title + front matter (Censure & Approbation p.2, Preface p.3) + partial NT"
       },
       "crop_image": "placement-crops/nt-title-page.png",
       "identifying_text": "THE NEVV TESTAMENT OF IESVS CHRIST, TRANSLATED FAITHFVLLY INTO ENGLISH out of the authentical Latin ... in the ENGLISH COLLEGE OF RHEMES ... 1582",
@@ -443,11 +478,12 @@
       "tome_position": "front · NT",
       "status": "grounded",
       "source": {
+        "authority": "eebo",
         "witness": "eebo_18c502ea",
         "md5": "18c502ead5119303881f2a8def094a5e",
         "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
         "page": 3,
-        "content": "Rheims New Testament 1582 — front matter + partial NT"
+        "content": "Rheims New Testament 1582 (Rhemes: Iohn Fogny, 'Cum priuilegio') — NT general title + front matter (Censure & Approbation p.2, Preface p.3) + partial NT"
       },
       "crop_image": "placement-crops/nt-preface.png",
       "identifying_text": "THE PREFACE TO THE READER TREATING OF THESE THREE POINTS ...",
@@ -465,15 +501,21 @@
       },
       "testament": "NT",
       "tome_position": "front · NT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "censure",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
+      "status": "grounded",
+      "source": {
+        "authority": "eebo",
+        "witness": "eebo_18c502ea",
+        "md5": "18c502ead5119303881f2a8def094a5e",
+        "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
+        "page": 2,
+        "content": "Rheims New Testament 1582 (Rhemes: Iohn Fogny, 'Cum priuilegio') — NT general title + front matter (Censure & Approbation p.2, Preface p.3) + partial NT"
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "crop_image": "placement-crops/nt-censure.png",
+      "identifying_text": "THE CENSVRE AND APPROBATION. V.M. huius versionis ac editionis authoritate ...",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": null
+      }
     },
     {
       "slot": "nt-explication-words",
@@ -484,15 +526,21 @@
       },
       "testament": "NT",
       "tome_position": "back · NT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "explication words",
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_nt-1582",
+        "alias": "nt-1582",
+        "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+        "page": 721,
+        "content": "full Rheims New Testament 1582 (archive.org) — carries the NT back-matter tables"
+      },
+      "crop_image": "placement-crops/nt-explication-words.png",
+      "identifying_text": "THE EXPLICATION OF CERTAINE WORDS IN THIS TRANSLATION, not familiar to the vulgar Reader, which might not conueniently be vttered otherwise",
       "ocr_second_proof": {
         "witness": "nt-1582",
-        "char_offset": 59605,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+        "char_offset": null
+      }
     },
     {
       "slot": "nt-table-peter",
@@ -503,15 +551,21 @@
       },
       "testament": "NT",
       "tome_position": "back · NT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "A TABLE OF S. PETER",
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_nt-1582",
+        "alias": "nt-1582",
+        "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+        "page": 361,
+        "content": "full Rheims New Testament 1582 (archive.org) — carries the NT back-matter tables"
+      },
+      "crop_image": "placement-crops/nt-table-peter.png",
+      "identifying_text": "A TABLE OF S. PETER — a summary of the acts of S. Peter, following the Actes of the Apostles",
       "ocr_second_proof": {
         "witness": "nt-1582",
-        "char_offset": 998445,
-        "quote": "A TABLE OF S. PETER"
-      },
-      "note": "attested in archive.org OCR; EEBO leaf not yet visually located (image crop pending)"
+        "char_offset": 998445
+      }
     },
     {
       "slot": "nt-table-paul",
@@ -522,15 +576,21 @@
       },
       "testament": "NT",
       "tome_position": "back · NT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "A TABLE OF S. PAVL",
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_nt-1582",
+        "alias": "nt-1582",
+        "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+        "page": 362,
+        "content": "full Rheims New Testament 1582 (archive.org) — carries the NT back-matter tables"
+      },
+      "crop_image": "placement-crops/nt-table-paul.png",
+      "identifying_text": "A TABLE OF S. PAVL — a summary of the acts of S. Paul",
       "ocr_second_proof": {
         "witness": "nt-1582",
-        "char_offset": 1002493,
-        "quote": "A TABLE OF S. PAVL"
-      },
-      "note": "attested in archive.org OCR; EEBO leaf not yet visually located (image crop pending)"
+        "char_offset": 1002493
+      }
     },
     {
       "slot": "nt-table-corruptions",
@@ -541,15 +601,21 @@
       },
       "testament": "NT",
       "tome_position": "back · NT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "table corruptions",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_nt-1582",
+        "alias": "nt-1582",
+        "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+        "page": 724,
+        "content": "full Rheims New Testament 1582 (archive.org) — carries the NT back-matter tables"
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "crop_image": "placement-crops/nt-table-corruptions.png",
+      "identifying_text": "A TABLE OF HERETICAL CORRVPTIONS (of the sacred text) in this later age of the Church",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": 2158711
+      }
     },
     {
       "slot": "nt-table-catholic-truths",
@@ -560,15 +626,21 @@
       },
       "testament": "NT",
       "tome_position": "back · NT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "table catholic truths",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_nt-1582",
+        "alias": "nt-1582",
+        "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+        "page": 737,
+        "content": "full Rheims New Testament 1582 (archive.org) — carries the NT back-matter tables"
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "crop_image": "placement-crops/nt-table-catholic-truths.png",
+      "identifying_text": "AN AMPLE AND PARTICVLAR TABLE DIRECTING THE READER TO THE CATHOLIKE TRVTHS ... (the Table of Controuersies)",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": 2179805
+      }
     },
     {
       "slot": "nt-table-epistles-gospels",
@@ -579,15 +651,21 @@
       },
       "testament": "NT",
       "tome_position": "back · NT",
-      "status": "inventoried",
-      "crop_image": null,
-      "identifying_text": "table epistles gospels",
-      "ocr_second_proof": {
-        "witness": null,
-        "char_offset": null,
-        "quote": null
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_nt-1582",
+        "alias": "nt-1582",
+        "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+        "page": 730,
+        "content": "full Rheims New Testament 1582 (archive.org) — carries the NT back-matter tables"
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "crop_image": "placement-crops/nt-table-epistles-gospels.png",
+      "identifying_text": "A TABLE OF THE EPISTLES AND GHOSPELS AFTER THE ROMANE VSE, vpon euerie Sunday and feast throughout the yeare",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": null
+      }
     },
     {
       "slot": "nt-apostles-creed",
@@ -598,15 +676,21 @@
       },
       "testament": "NT",
       "tome_position": "back · NT",
-      "status": "inventoried",
-      "crop_image": null,
+      "status": "grounded",
+      "source": {
+        "authority": "archive.org",
+        "witness": "ao_nt-1582",
+        "alias": "nt-1582",
+        "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+        "page": 363,
+        "content": "full Rheims New Testament 1582 (archive.org) — carries the NT back-matter tables"
+      },
+      "crop_image": "placement-crops/nt-apostles-creed.png",
       "identifying_text": "THE APOSTLES CREED; or SYMBOLVM APOSTOLORVM",
       "ocr_second_proof": {
         "witness": "nt-1582",
-        "char_offset": 1006256,
-        "quote": "THE APOSTLES CREED; or SYMBOLVM APOSTOLORVM"
-      },
-      "note": "attested in archive.org OCR; EEBO leaf not yet visually located (image crop pending)"
+        "char_offset": 1006256
+      }
     },
     {
       "slot": "nt-evangelical-history",
@@ -622,10 +706,9 @@
       "identifying_text": "evangelical history",
       "ocr_second_proof": {
         "witness": null,
-        "char_offset": null,
-        "quote": null
+        "char_offset": null
       },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+      "note": "no distinct printed header located in the nt-1582 back matter; the essay 'THE ACTES OF THE OTHER APOSTLES ... AFTER the Gospels' (nt-1582 p.363) is the nearest related text. Reference-set slot; not separately grounded."
     },
     {
       "slot": "nt-scripture-authority",
@@ -641,58 +724,17 @@
       "identifying_text": "scripture authority",
       "ocr_second_proof": {
         "witness": null,
-        "char_offset": null,
-        "quote": null
-      },
-      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
-    },
-    {
-      "slot": "ot-censura",
-      "apparatus_order_ref": {
-        "section": "ot_front",
-        "name": "censura"
-      },
-      "testament": "OT",
-      "tome_position": "front · OT",
-      "status": "co-located",
-      "source": {
-        "witness": "eebo_c0ef3be2",
-        "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
-        "page": 2,
-        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
-      },
-      "crop_image": "placement-crops/ot-approbatio.png",
-      "identifying_text": "Censura / Approbatio co-located on one leaf (OT First Tome, p.2)",
-      "note": "the OT approval is printed as a single APPROBATIO leaf; no separate censura leaf"
-    },
-    {
-      "slot": "nt-censure-approbation",
-      "apparatus_order_ref": {
-        "section": "nt_front"
-      },
-      "testament": "NT",
-      "tome_position": "front · NT",
-      "status": "grounded",
-      "source": {
-        "witness": "eebo_18c502ea",
-        "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
-        "page": 2,
-        "content": "Rheims New Testament 1582 — front matter + partial NT"
-      },
-      "crop_image": "placement-crops/nt-censure-approbation.png",
-      "identifying_text": "THE CENSVRE AND APPROBATION. V.M. huius versionis ac editionis authoritate ...",
-      "ocr_second_proof": {
-        "witness": "nt-1582",
         "char_offset": null
-      }
+      },
+      "note": "no distinct printed header located in the available NT scans. Reference-set slot; not separately grounded."
     }
   ],
   "summary": {
-    "apparatus_slots": 28,
-    "grounded": 6,
-    "co-located": 1,
-    "inventoried": 21,
-    "unlocatable": 0,
+    "apparatus_slots": 26,
+    "grounded": 17,
+    "co-located": 6,
+    "unlocatable": 1,
+    "inventoried": 2,
     "scripture_layout_leaves": 5
   }
 }
