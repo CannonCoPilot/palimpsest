@@ -1,0 +1,79 @@
+{
+  "artifact": "apparatus-gapfill",
+  "generated_by": "build_apparatus_gapfill.py",
+  "idx": 108,
+  "finding": "Apparatus coverage is near-complete. Sabates supplies apparatus for 1333/1334 chapters (99.925%) across four channels (argument, summary_notes, verse notes, cross_refs, marginal sidecar). The empty/absent marginal sidecars are NOT lost data: Madueke_B carries a comparable number of ANNOTATIONS blocks, corroborating that most chapters simply were not annotated marginally in the print.",
+  "sabates_coverage": {
+    "canonical_chapters": 1334,
+    "chapters_with_apparatus": 1333,
+    "chapters_with_apparatus_pct": 99.925,
+    "zero_apparatus_chapters": 1,
+    "sidecar_present": 390,
+    "sidecar_empty": 4,
+    "sidecar_missing": 940,
+    "channel_coverage": {
+      "argument": {
+        "chapters": 1220,
+        "pct": 91.45
+      },
+      "summary_notes": {
+        "chapters": 206,
+        "pct": 15.44
+      },
+      "verse_notes": {
+        "chapters": 1319,
+        "pct": 98.88
+      },
+      "cross_refs": {
+        "chapters": 608,
+        "pct": 45.58
+      },
+      "sidecar": {
+        "chapters": 390,
+        "pct": 29.24
+      }
+    }
+  },
+  "madueke_b_corroboration": {
+    "source": "core/.scratch/originaldr-project/sources/madueke-b/merged.txt",
+    "sha256": "45ece9024a67147957a5f7ea532947b3e4880ce3060437140bc147609556aea1",
+    "annotations_blocks": 406,
+    "argument_blocks": 57,
+    "sabates_sidecars_present": 390,
+    "annotation_parity": {
+      "madueke_b_annotation_blocks": 406,
+      "sabates_nonempty_sidecars": 390,
+      "interpretation": "near-parity => Sabates marginal-commentary coverage is faithful to the print, NOT truncated; the many chapters without a sidecar are chapters the print did not annotate marginally."
+    },
+    "appendix_corroboration": {
+      "prayer-of-manasses": {
+        "present": true,
+        "char_offset": 7228745
+      },
+      "3-esdras": {
+        "present": true,
+        "char_offset": 7231876
+      },
+      "4-esdras": {
+        "present": true,
+        "char_offset": 7306916
+      }
+    }
+  },
+  "appendix_now_two_witness": true,
+  "genuine_gaps": [
+    {
+      "book": "2-paralipomenon",
+      "chapter": 12,
+      "channels": {
+        "argument": false,
+        "summary_notes": 0,
+        "verse_notes": 0,
+        "cross_refs": 0,
+        "sidecar": 0
+      },
+      "note": "no apparatus in any Sabates channel",
+      "fill_status": "documented (not auto-fillable from column-flattened Madueke_B; faithful bare-heading chapter — no apparatus in any digital witness)"
+    }
+  ]
+}

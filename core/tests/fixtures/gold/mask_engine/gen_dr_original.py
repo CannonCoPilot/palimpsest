@@ -60,16 +60,40 @@ OUT_TXT = REPO / "imports/Scripture/Bibles/OriginalDR/OriginalDR-modern-1582-161
 IDX = 108
 
 # ── janvier-s reference apparatus, placed at the tome positions of the 1609/1610 print ──
-# Front matter precedes its testament; the study tables/glossary are back matter. Ordering
-# within OT-front follows the section-field numeric prefixes (01/02/03) then privilege/censura.
-OT_FRONT = ["title-page", "approbatio", "preface", "privilege", "censura"]
-OT_BACK = ["historical-table-age-1", "historical-table-age-2", "historical-table-age-3",
-           "historical-table-age-3b", "historical-table-age-4", "historical-table-age-5",
-           "historical-table-age-6", "glossary", "epistles-table"]
-NT_FRONT = ["title-page", "preface", "censure"]
-NT_BACK = ["explication-words", "table-peter", "table-paul", "table-corruptions",
-           "table-catholic-truths", "table-epistles-gospels", "apostles-creed",
-           "evangelical-history", "scripture-authority"]
+# The order is loaded from the committed scan-derived evidence file
+# originaldr_validation/apparatus-order.json, where every section's position is backed by explicit
+# evidence (section-field numeric prefix / OCR offset in the archive.org scan / manual-visual scan
+# confirmation / structural placement). The hard-coded lists below are the fallback used only if the
+# evidence file is absent — they encode the identical, verified order, so the emitted text is stable.
+_APPARATUS_ORDER_FILE = HERE / "originaldr_validation/apparatus-order.json"
+_APPARATUS_ORDER_FALLBACK = {
+    "ot_front": ["title-page", "approbatio", "preface", "privilege", "censura"],
+    "ot_back": ["historical-table-age-1", "historical-table-age-2", "historical-table-age-3",
+                "historical-table-age-3b", "historical-table-age-4", "historical-table-age-5",
+                "historical-table-age-6", "glossary", "epistles-table"],
+    "nt_front": ["title-page", "preface", "censure"],
+    "nt_back": ["explication-words", "table-peter", "table-paul", "table-corruptions",
+                "table-catholic-truths", "table-epistles-gospels", "apostles-creed",
+                "evangelical-history", "scripture-authority"],
+}
+
+
+def _load_apparatus_order() -> dict[str, list[str]]:
+    if not _APPARATUS_ORDER_FILE.exists():
+        return _APPARATUS_ORDER_FALLBACK
+    data = json.loads(_APPARATUS_ORDER_FILE.read_text())
+    order = {r: [e["name"] for e in data[r]] for r in _APPARATUS_ORDER_FALLBACK}
+    # guard: the evidence file must cover the same section set (order may be re-evidenced, not re-scoped)
+    for r, names in _APPARATUS_ORDER_FALLBACK.items():
+        assert set(order[r]) == set(names), f"apparatus-order.json {r} section set diverged from generator"
+    return order
+
+
+_APPARATUS_ORDER = _load_apparatus_order()
+OT_FRONT = _APPARATUS_ORDER["ot_front"]
+OT_BACK = _APPARATUS_ORDER["ot_back"]
+NT_FRONT = _APPARATUS_ORDER["nt_front"]
+NT_BACK = _APPARATUS_ORDER["nt_back"]
 
 # Books whose source carries a known spurious leading "chapter": a 1-verse duplicate holding
 # only a truncated fragment of the book's opening verse (an upstream parsing artifact). The
@@ -96,9 +120,14 @@ APOCRYPHA = ["prayer-of-manasses", "3-esdras", "4-esdras"]
 # lineage AND by independent OCR of the original print (0 substantive/genuine discrepancies).
 PROV_SCRIPTURE = {"provenance": "Madueke_A", "corroborated_by": ["Sabates_A", "OCR-original-scan"],
                   "confidence": "high", "coverage": "three-witness"}
-# Apocryphal appendix verse bodies: Madueke omits these books, so Sabates is the sole witness.
-PROV_APPENDIX = {"provenance": "Sabates_A", "corroborated_by": [],
-                 "confidence": "moderate", "coverage": "single-witness (Madueke omits appendix)"}
+# Apocryphal appendix verse bodies: Madueke_A omits these books, so Sabates supplies the text.
+# Madueke_B (merged.txt full edition) carries the Prayer of Manasses + 3 & 4 Esdras with clear book
+# headers (see originaldr_validation/apparatus-gapfill.json), corroborating the appendix's PRESENCE
+# and structure — so it is two-witness. Confidence stays moderate: Madueke_B is a column-flattened
+# dump that corroborates presence, not verbatim wording.
+PROV_APPENDIX = {"provenance": "Sabates_A", "corroborated_by": ["Madueke_B"],
+                 "confidence": "moderate",
+                 "coverage": "two-witness (Sabates_A text + Madueke_B corroborated; Madueke_A omits)"}
 # All editorial apparatus (arguments, chapter summaries, footnotes/annotations, reference docs):
 # Madueke carries none of it, so Sabates is authoritative and sole here.
 PROV_APPARATUS = {"provenance": "Sabates_A", "corroborated_by": [],

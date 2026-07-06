@@ -1,0 +1,320 @@
+{
+  "artifact": "apparatus-order",
+  "generated_by": "build_apparatus_order.py",
+  "idx": 108,
+  "note": "Apparatus is masked; front/back-of-tome placement per testament is what matters. Each section's position states the strongest honest evidence: section-field numeric prefix, OCR offset in the archive.org scan where the header survives OCR, manual-visual scan confirmation for ornamental headers OCR mangles, or structural placement.",
+  "method_tally": {
+    "section-field": 10,
+    "manual-visual": 6,
+    "ocr-offset": 3,
+    "structural": 7
+  },
+  "scan_sources": {
+    "nt-1582": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/nt-1582_djvu.txt",
+      "sha256": "933ea8e9a361e76238497f5a959600f05474acb8fb5be65d5b35d0bc0bcaff07"
+    },
+    "ot1-1609": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/ot1-1609_djvu.txt",
+      "sha256": "74e55ac753755be7e192a8aeedaae629e41c59dd557d588b979e5a45a7ccdcc2"
+    },
+    "ot2-1610": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/ot2-1610_djvu.txt",
+      "sha256": "319a19054176059e0d800c121ed481578ac57c2fb68f92f3c660a82b46716440"
+    }
+  },
+  "ot_front": [
+    {
+      "position": 0,
+      "name": "title-page",
+      "section_field": "01-title-page",
+      "evidence": {
+        "method": "section-field",
+        "basis": "numeric prefix '01-title-page' pins front-matter order",
+        "ocr_witness": "ot1-1609",
+        "ocr_char_offset": 6
+      }
+    },
+    {
+      "position": 1,
+      "name": "approbatio",
+      "section_field": "02-approbatio",
+      "evidence": {
+        "method": "section-field",
+        "basis": "numeric prefix '02-approbatio' pins front-matter order",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 2,
+      "name": "preface",
+      "section_field": "03-preface",
+      "evidence": {
+        "method": "section-field",
+        "basis": "numeric prefix '03-preface' pins front-matter order",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 3,
+      "name": "privilege",
+      "section_field": "ot-privilege",
+      "evidence": {
+        "method": "manual-visual",
+        "basis": "French royal privilege page follows the preface in the 1609 front matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 4,
+      "name": "censura",
+      "section_field": "ot-censura",
+      "evidence": {
+        "method": "manual-visual",
+        "basis": "theologians' Censura follows the privilege in the 1609 front matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    }
+  ],
+  "ot_back": [
+    {
+      "position": 0,
+      "name": "historical-table-age-1",
+      "section_field": "historical-table-age-1",
+      "evidence": {
+        "method": "section-field",
+        "basis": "historical-table sequence 'historical-table-age-1' pins table order",
+        "ocr_witness": "ot2-1610",
+        "ocr_char_offset": 2910802
+      }
+    },
+    {
+      "position": 1,
+      "name": "historical-table-age-2",
+      "section_field": "historical-table-age-2",
+      "evidence": {
+        "method": "section-field",
+        "basis": "historical-table sequence 'historical-table-age-2' pins table order",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 2,
+      "name": "historical-table-age-3",
+      "section_field": "historical-table-age-3",
+      "evidence": {
+        "method": "section-field",
+        "basis": "historical-table sequence 'historical-table-age-3' pins table order",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 3,
+      "name": "historical-table-age-3b",
+      "section_field": "historical-table-age-3b",
+      "evidence": {
+        "method": "section-field",
+        "basis": "historical-table sequence 'historical-table-age-3b' pins table order",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 4,
+      "name": "historical-table-age-4",
+      "section_field": "historical-table-age-4",
+      "evidence": {
+        "method": "section-field",
+        "basis": "historical-table sequence 'historical-table-age-4' pins table order",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 5,
+      "name": "historical-table-age-5",
+      "section_field": "historical-table-age-5",
+      "evidence": {
+        "method": "section-field",
+        "basis": "historical-table sequence 'historical-table-age-5' pins table order",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 6,
+      "name": "historical-table-age-6",
+      "section_field": "historical-table-age-6",
+      "evidence": {
+        "method": "section-field",
+        "basis": "historical-table sequence 'historical-table-age-6' pins table order",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 7,
+      "name": "glossary",
+      "section_field": "ot-glossary",
+      "evidence": {
+        "method": "ocr-offset",
+        "basis": "header OCR-attested in ot2-1610 at char 2937683",
+        "ocr_witness": "ot2-1610",
+        "ocr_char_offset": 2937683
+      }
+    },
+    {
+      "position": 8,
+      "name": "epistles-table",
+      "section_field": "ot-epistles-table",
+      "evidence": {
+        "method": "structural",
+        "basis": "front matter precedes testament / tables are back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    }
+  ],
+  "nt_front": [
+    {
+      "position": 0,
+      "name": "title-page",
+      "section_field": "nt-title-page",
+      "evidence": {
+        "method": "structural",
+        "basis": "front matter precedes testament / tables are back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 1,
+      "name": "preface",
+      "section_field": "nt-preface",
+      "evidence": {
+        "method": "ocr-offset",
+        "basis": "header OCR-attested in nt-1582 at char 4961",
+        "ocr_witness": "nt-1582",
+        "ocr_char_offset": 4961
+      }
+    },
+    {
+      "position": 2,
+      "name": "censure",
+      "section_field": "nt-censure",
+      "evidence": {
+        "method": "manual-visual",
+        "basis": "Censure & Approbation follows the preface in the 1582 NT front matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    }
+  ],
+  "nt_back": [
+    {
+      "position": 0,
+      "name": "explication-words",
+      "section_field": "nt-explication-words",
+      "evidence": {
+        "method": "ocr-offset",
+        "basis": "header OCR-attested in nt-1582 at char 59605",
+        "ocr_witness": "nt-1582",
+        "ocr_char_offset": 59605
+      }
+    },
+    {
+      "position": 1,
+      "name": "table-peter",
+      "section_field": "nt-table-peter",
+      "evidence": {
+        "method": "manual-visual",
+        "basis": "Table of S. Peter precedes the Table of S. Paul in the 1582 NT back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 2,
+      "name": "table-paul",
+      "section_field": "nt-table-paul",
+      "evidence": {
+        "method": "manual-visual",
+        "basis": "Table of S. Paul precedes the Apostles' Creed in the 1582 NT back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 3,
+      "name": "table-corruptions",
+      "section_field": "nt-table-corruptions",
+      "evidence": {
+        "method": "structural",
+        "basis": "front matter precedes testament / tables are back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 4,
+      "name": "table-catholic-truths",
+      "section_field": null,
+      "evidence": {
+        "method": "structural",
+        "basis": "front matter precedes testament / tables are back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 5,
+      "name": "table-epistles-gospels",
+      "section_field": null,
+      "evidence": {
+        "method": "structural",
+        "basis": "front matter precedes testament / tables are back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 6,
+      "name": "apostles-creed",
+      "section_field": "nt-apostles-creed",
+      "evidence": {
+        "method": "manual-visual",
+        "basis": "Apostles' Creed follows the Pauline table in the 1582 NT back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 7,
+      "name": "evangelical-history",
+      "section_field": "nt-evangelical-history",
+      "evidence": {
+        "method": "structural",
+        "basis": "front matter precedes testament / tables are back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    },
+    {
+      "position": 8,
+      "name": "scripture-authority",
+      "section_field": "nt-scripture-authority",
+      "evidence": {
+        "method": "structural",
+        "basis": "front matter precedes testament / tables are back matter",
+        "ocr_witness": null,
+        "ocr_char_offset": null
+      }
+    }
+  ]
+}

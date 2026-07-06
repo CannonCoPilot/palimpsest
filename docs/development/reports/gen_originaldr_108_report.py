@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 """Generate the OriginalDR (idx 108) reconstruction technical report — a self-contained
-HTML document with inline-SVG charts, computed entirely from the frozen gold map and the
-production Catholic oracle (no hardcoded figures, no external assets, no JS/CDN).
+HTML document with inline-SVG charts, computed entirely from the frozen gold map, the
+production Catholic oracle, and the four committed validation artifacts (no hardcoded
+figures, no external assets, no JS/CDN).
 
     .venv/bin/python docs/development/reports/gen_originaldr_108_report.py
 
@@ -12,6 +13,7 @@ from __future__ import annotations
 import hashlib
 import html
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
 
@@ -23,7 +25,12 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]  # docs/development/reports → repo root (palimpsest/)
 OUT = HERE / "originaldr-108-reconstruction-report.html"
 OUT_TXT = REPO / "imports/Scripture/Bibles/OriginalDR/OriginalDR-modern-1582-1610.txt"
-COLLATION = HERE / "collation-summary.json"  # committed distillation of the source-collation evidence
+# committed validation package — first-class evidence, each artifact pinned to source sha256s
+VALID = REPO / "core/tests/fixtures/gold/mask_engine/originaldr_validation"
+A_COLLATION = VALID / "collation-3way.json"      # leg1 exact + leg2 format-fidelity
+A_OCR = VALID / "ocr-validation.json"            # leg3 independent stratified print-OCR + bootstrap CI
+A_GAPFILL = VALID / "apparatus-gapfill.json"     # apparatus channel coverage + Madueke_B corroboration
+A_ORDER = VALID / "apparatus-order.json"         # scan-derived front/back-matter ordering evidence
 IDX = 108
 
 # ── palette ───────────────────────────────────────────────────────────────────
@@ -52,7 +59,6 @@ def svg_open(w: int, h: int, title: str) -> str:
 def donut(data: list[tuple[str, float, str]], total: float, w=660, h=300, title="") -> str:
     """data: (label, value, colour). Renders a donut with a legend."""
     cx, cy, r, rin = 150, 150, 120, 66
-    import math
     h = max(h, 40 + len(data) * 42 + 12)   # grow viewBox so the legend never clips
     out = [svg_open(w, h, title)]
     ang = -math.pi / 2
@@ -118,6 +124,81 @@ def hbar(rows: list[tuple[str, float]], w=760, rowh=26, title="", unit="", colou
         out.append(f'<rect x="{pad_l}" y="{y+3}" width="{bw:.2f}" height="{rowh-8}" rx="2" fill="{colour}"/>')
         out.append(f'<text x="{pad_l+bw+6:.2f}" y="{y+rowh/2+4}" font-size="11.5" fill="{MUTE}">'
                    f'{fmt(int(val))}{unit}</text>')
+        y += rowh
+    out.append("</svg>")
+    return "".join(out)
+
+
+def ci_whisker(rows: list[tuple], w=760, rowh=32, title="") -> str:
+    """Horizontal point-estimate + 95%-CI whiskers on a zoomed recall axis.
+
+    rows: (label, point_pct, ci_lo, ci_hi, sublabel, colour). The x-axis is zoomed to
+    [floor(min lo) − 1, 100] so the confidence intervals are actually resolvable rather
+    than crushed against a 0–100 scale.
+    """
+    pad_l, pad_r, top = 156, 150, 16
+    los = [r[2] for r in rows]
+    dmin = max(0, math.floor(min(los)) - 1)
+    dmax = 100
+    plotw = w - pad_l - pad_r
+    baseline = top + len(rows) * rowh
+
+    def X(v):
+        return pad_l + plotw * (v - dmin) / (dmax - dmin)
+
+    h = baseline + 30
+    out = [svg_open(w, h, title)]
+    # gridlines + axis ticks (every 5%)
+    t = dmin
+    while t <= dmax:
+        gx = X(t)
+        out.append(f'<line x1="{gx:.1f}" y1="{top-6}" x2="{gx:.1f}" y2="{baseline}" stroke="{LINE}"/>')
+        out.append(f'<text x="{gx:.1f}" y="{baseline+16}" font-size="10" fill="{MUTE}" '
+                   f'text-anchor="middle">{t}%</text>')
+        t += 5
+    y = top
+    for label, point, lo, hi, sub, col in rows:
+        cy = y + rowh / 2
+        xlo, xhi, xpt = X(lo), X(hi), X(point)
+        out.append(f'<line x1="{xlo:.1f}" y1="{cy:.1f}" x2="{xhi:.1f}" y2="{cy:.1f}" '
+                   f'stroke="{col}" stroke-width="2"/>')
+        for xc in (xlo, xhi):   # end caps
+            out.append(f'<line x1="{xc:.1f}" y1="{cy-5:.1f}" x2="{xc:.1f}" y2="{cy+5:.1f}" '
+                       f'stroke="{col}" stroke-width="2"/>')
+        out.append(f'<circle cx="{xpt:.1f}" cy="{cy:.1f}" r="4.5" fill="{col}">'
+                   f'<title>{esc(label)}: {point:.2f}% (95% CI {lo:.2f}–{hi:.2f})</title></circle>')
+        out.append(f'<text x="{pad_l-10}" y="{cy+4:.1f}" font-size="12" fill="{INK}" '
+                   f'text-anchor="end">{esc(label)}</text>')
+        out.append(f'<text x="{xhi+8:.1f}" y="{cy+4:.1f}" font-size="10.5" fill="{MUTE}">'
+                   f'{point:.2f}% · {esc(sub)}</text>')
+        y += rowh
+    out.append("</svg>")
+    return "".join(out)
+
+
+def coverage_bars(rows: list[tuple], w=760, rowh=30, title="") -> str:
+    """A channel-coverage matrix: one 0–100% bar per apparatus channel.
+
+    rows: (label, pct, count, total). Bars are colour-graded by coverage so the eye
+    reads completeness at a glance (green ≥90, blue ≥40, amber below).
+    """
+    pad_l, pad_r, top = 176, 168, 10
+    barw = w - pad_l - pad_r
+    h = top + len(rows) * rowh + 6
+    out = [svg_open(w, h, title)]
+    y = top
+    for label, pct, count, total in rows:
+        cy = y + rowh / 2
+        bw = barw * (pct / 100)
+        col = GOOD if pct >= 90 else (SCRIPTURE if pct >= 40 else APPARATUS)
+        out.append(f'<text x="{pad_l-8}" y="{cy+4:.1f}" font-size="12" fill="{INK}" '
+                   f'text-anchor="end">{esc(label)}</text>')
+        out.append(f'<rect x="{pad_l}" y="{y+4}" width="{barw}" height="{rowh-11}" rx="2" '
+                   f'fill="#fff" stroke="{LINE}"/>')
+        out.append(f'<rect x="{pad_l}" y="{y+4}" width="{bw:.1f}" height="{rowh-11}" rx="2" fill="{col}">'
+                   f'<title>{esc(label)}: {pct:.2f}%</title></rect>')
+        out.append(f'<text x="{pad_l+barw+8:.1f}" y="{cy+4:.1f}" font-size="10.5" fill="{MUTE}">'
+                   f'{pct:.2f}% · {fmt(count)}/{fmt(total)} ch</text>')
         y += rowh
     out.append("</svg>")
     return "".join(out)
@@ -276,8 +357,20 @@ def gather() -> dict:
     prov = sorted(([role, wit, conf, cov, v["chars"], v["count"]]
                    for (role, wit, conf, cov), v in prov_rows.items()), key=lambda r: -r[4])
 
-    # committed collation evidence (2-way digital + 3-way print-OCR); required, no silent fallback
-    collation = json.loads(COLLATION.read_text())
+    # committed validation package — first-class evidence, required (no silent fallback)
+    collation = json.loads(A_COLLATION.read_text())   # leg1 exact + leg2 format-fidelity
+    ocr = json.loads(A_OCR.read_text())               # leg3 independent stratified print-OCR + CI
+    gapfill = json.loads(A_GAPFILL.read_text())        # apparatus channel coverage + Madueke_B
+    order = json.loads(A_ORDER.read_text())            # scan-derived front/back-matter ordering
+
+    # flatten the apparatus-order sections and pull the OCR-anchored citations
+    order_sections = []
+    for grp, arr in (("OT front", order["ot_front"]), ("OT back", order["ot_back"]),
+                     ("NT front", order["nt_front"]), ("NT back", order["nt_back"])):
+        for s in arr:
+            ev = s["evidence"]
+            order_sections.append({"group": grp, "name": s["name"], **ev})
+    ocr_citations = [s for s in order_sections if s.get("ocr_char_offset") is not None]
 
     # reproduction check
     repro = None
@@ -288,7 +381,8 @@ def gather() -> dict:
     return dict(m=m, n=n, tc=tc, masked=masked, mi=mi, classes=classes, vol_split=vol_split,
                 generic_cov=generic_cov, specific_cov=specific_cov, books=books, ok=ok,
                 count_bad=count_bad, align_bad=align_bad, entry=entry, repro=repro,
-                prov=prov, by_witness=dict(by_witness), collation=collation,
+                prov=prov, by_witness=dict(by_witness), collation=collation, ocr=ocr,
+                gapfill=gapfill, order=order, ocr_citations=ocr_citations,
                 verify=verify_map(IDX))
 
 
@@ -304,16 +398,33 @@ def render(d: dict) -> str:
     verify_pass = not d["verify"]
     disc_books = ", ".join(sorted({str(r[1]).title() for r in count_bad}))
 
-    # collation evidence + provenance shares
-    col = d["collation"]
-    tw, th, gap = (col["two_way_digital_collation"], col["three_way_print_validation"],
-                   col["apparatus_gap"])
+    # ── validation artifacts ──
+    l1 = d["collation"]["leg1_exact_madueke_sabates"]
+    a1 = l1["aggregate"]
+    l2 = d["collation"]["leg2_format_fidelity_madueke_a_vs_b"]
+    tob = l1["structural"]["book_ct_mismatch"][0]
+    tob_str = f"Tobias — Madueke {tob['mad_n']} vs Sabates {tob['sab_n']}"
+
+    oc = d["ocr"]
+    oa = oc["aggregate"]
+    strata = oc["per_stratum"]
+
+    gf = d["gapfill"]
+    sc = gf["sabates_coverage"]
+    cc = sc["channel_coverage"]
+    mb = gf["madueke_b_corroboration"]
+    gap = gf["genuine_gaps"][0]
+    gap_book = gap["book"].replace("-", " ").title()
+
+    od = d["order"]
+    mt = od["method_tally"]
+
+    # provenance shares
     bw = d["by_witness"]
     mad_share = bw.get("Madueke_A", 0) / n * 100
     sab_share = bw.get("Sabates_A", 0) / n * 100
-    anno_cov_pct = tc["annotation"] / tc["chapter"] * 100   # chapters carrying Sabates apparatus
 
-    # provenance chain table (rows computed from map metadata)
+    # ── charts ──
     conf_cls = {"high": "ok", "moderate": "mod", "low": "no"}
 
     def prov_row(role, wit, conf, cov, chars, cnt) -> str:
@@ -324,15 +435,47 @@ def render(d: dict) -> str:
 
     prov_table = "".join(prov_row(*r) for r in d["prov"])
 
-    # 2-way collation breakdown bar (identical / ligature-only / case-punct / substantive)
+    # leg1 — 2-way collation breakdown (identical / ligature-only / case-punct / substantive)
     two_way_bar = stacked_bar(
-        [("Identical wording", tw["identical"], GOOD),
-         ("Ligature-only (ae/oe vs æ/œ)", tw["ligature_only"], SCRIPTURE),
-         ("Case / punctuation / spacing only", tw["case_punct_space_only"], APPARATUS),
-         ("Substantive wording differences", tw["substantive_wording_diffs"], FLAG)],
-        tw["verses_compared"], title="two-way verse collation")
-    ocr_rows = hbar([(s["label"].split("(")[0].strip(), s["recall_madueke_pct"]) for s in th["sample"]],
-                    title="print-OCR strict recall by sampled division", unit="%", colour=ACCENT)
+        [("Identical wording", a1["identical"], GOOD),
+         ("Ligature-only (ae/oe vs æ/œ)", a1["ligature_only"], SCRIPTURE),
+         ("Case / punctuation / spacing only", a1["punct_or_space_only"], APPARATUS),
+         ("Substantive wording differences", a1["substantive"], FLAG)],
+        a1["compared"], title="two-way verse collation")
+
+    # leg3 — stratified print-OCR recall, per-stratum point + 95% CI whiskers
+    stratum_order = ["OT-narrative", "OT-poetry", "OT-prophets",
+                     "NT-gospel", "NT-epistle", "apparatus-dense"]
+    ci_rows = []
+    for k in stratum_order:
+        s = strata[k]
+        ci_rows.append((k, s["recall_pct"], s["ci95"][0], s["ci95"][1],
+                        f"{s['n_chapters']} ch · {fmt(s['tokens'])} tok", ACCENT))
+    ci_rows.append((f"All {oa['n_chapters']} chapters", oa["recall_pct"], oa["ci95"][0], oa["ci95"][1],
+                    f"{oa['n_chapters']} ch · {fmt(oa['n_tokens'])} tok", INK))
+    ocr_ci_chart = ci_whisker(ci_rows, title="print-OCR recall by stratum with 95% CI")
+
+    # §6 — apparatus channel-coverage matrix
+    chan_labels = {"argument": "Book / chapter arguments", "summary_notes": "Chapter summary notes",
+                   "verse_notes": "Verse footnotes", "cross_refs": "Cross-references",
+                   "sidecar": "Marginal sidecar notes"}
+    chan_rows = sorted(((chan_labels[k], v["pct"], v["chapters"], sc["canonical_chapters"])
+                        for k, v in cc.items()), key=lambda r: -r[1])
+    channel_chart = coverage_bars(chan_rows, title="apparatus channel coverage")
+
+    # §7 — apparatus-ordering method tally
+    method_rows = sorted(((k, v) for k, v in mt.items()), key=lambda r: -r[1])
+    method_chart = hbar(method_rows, w=680, title="ordering evidence by method",
+                        unit=" sections", colour=ACCENT)
+    n_order = sum(mt.values())
+
+    # OCR-anchored ordering citations
+    def cite_row(s) -> str:
+        return (f'<tr><td>{esc(s["group"])}</td><td>{esc(s["name"])}</td>'
+                f'<td><code>{esc(s["ocr_witness"])}</code></td>'
+                f'<td class="n">{fmt(s["ocr_char_offset"])}</td>'
+                f'<td>{esc(s["method"])}</td></tr>')
+    cite_table = "".join(cite_row(s) for s in d["ocr_citations"])
 
     content_donut = donut(
         [(k, v, BAND[i % len(BAND)]) for i, (k, v) in enumerate(d["classes"].items()) if v > 0],
@@ -435,28 +578,30 @@ def render(d: dict) -> str:
 <strong>generated, not detected</strong>. The reference text and its masking map are born in a
 single pass over the sources, so every mask offset is exact by construction — there is no detection
 step that can mis-anchor. This rebuild goes further on <em>content</em>: the reader's scripture is
-no longer a single-source transcription but a <strong>three-witness reconstruction</strong> —
-authoritative Madueke text, collated verse-by-verse against the independent Sabates witness and
-spot-validated against our own OCR of the original 1582–1610 printed editions — and a Catholic
-versification oracle closes the structural-vs-correct gap at the chapter granularity.</p>
+collated across <strong>three witnesses</strong> — authoritative Madueke text, a verse-by-verse
+collation against the Sabates witness, and an <strong>independent third-party OCR</strong> of the
+original 1582–1610 print sampled by a stratified-random design with bootstrap confidence intervals —
+while the editorial apparatus is shown to be <strong>{sc['chapters_with_apparatus_pct']:.3f}%
+complete</strong> and corroborated against a second edition.</p>
 <div class="stats">
   {stat(f"{unmasked/n*100:.1f}%", "unmasked scripture prose")}
   {stat(f"{masked/n*100:.1f}%", "masked editorial apparatus")}
   {stat(f"{books_ok}/76", "books match Vulgate counts")}
-  {stat(str(tw["substantive_wording_diffs"]), f"substantive wording diffs across {fmt(tw['verses_compared'])} verses")}
-  {stat(str(th["genuine_scripture_discrepancies"]), "genuine discrepancies vs original print (OCR)")}
-  {stat("VERIFIED" if repro_ok else "MISMATCH", "byte-exact reproduction")}
+  {stat(str(a1["substantive"]), f"substantive wording diffs · {fmt(a1['compared'])} verses")}
+  {stat(str(oa["genuine_candidate_misses"]), f"genuine discrepancies vs print · {oa['n_chapters']} stratified chapters")}
+  {stat(f"{sc['chapters_with_apparatus_pct']:.3f}%", f"chapters with apparatus ({fmt(sc['chapters_with_apparatus'])}/{fmt(sc['canonical_chapters'])})")}
 </div>
 <div class="callout {'good' if (verify_pass and clean) else 'flag'}">
   <div class="h">Headline verdict</div>
   Reproduction: <strong>{'byte-identical' if repro_ok else 'DRIFT'}</strong>. Structure:
   <strong>{'all gates pass' if verify_pass else 'GATE FAILURE'}</strong>. Content:
   <strong>{books_ok} of 76</strong> books match the externally-established
-  Douay-Rheims/Clementine Vulgate chapter counts, and a verse-level collation of
-  <strong>{fmt(tw['verses_compared'])}</strong> verses against a second digital witness finds
-  <strong>{tw['substantive_wording_diffs']}</strong> substantive wording differences, with an
-  independent OCR pass over the original printed editions confirming
-  <strong>{th['genuine_scripture_discrepancies']}</strong> genuine discrepancies.
+  Douay-Rheims/Clementine Vulgate chapter counts; a verse-level collation of
+  <strong>{fmt(a1['compared'])}</strong> verses against a second digital witness finds
+  <strong>{a1['substantive']}</strong> substantive wording differences, and an independent OCR of the
+  original printed editions across <strong>{oa['n_chapters']}</strong> stratified-random chapters
+  (aggregate recall {oa['recall_pct']:.2f}%, 95% CI {oa['ci95'][0]:.2f}–{oa['ci95'][1]:.2f}) yields
+  <strong>{oa['genuine_candidate_misses']}</strong> genuine discrepancies.
   {'The reconstruction drops the spurious Tobias &ldquo;chapter&nbsp;1&rdquo; — an editorial Argument mis-captured as scripture upstream — restoring the canonical count with no remaining exceptions.' if clean else f'The remaining count discrepancy in {esc(disc_books)} is a documented upstream artifact, reproduced faithfully and flagged rather than silently blessed.'}
 </div>
 
@@ -474,17 +619,20 @@ recorded per element in the map so any consumer can see exactly what supplied a 
 canonical books.</li>
 <li><strong>Sabates_A</strong> — the <code>janvier-s/original-douay-rheims</code> CC0 JSON dataset —
 supplies everything Madueke omits: the <strong>editorial apparatus</strong> (per-book arguments,
-per-chapter arguments, the {fmt(tc['annotation'])} chapters' footnotes and marginal commentary, and
-the {fmt(tc['apparatus'])} front/back reference documents) and the <strong>three-book apocryphal
-appendix</strong> (Prayer of Manasses, 3 &amp; 4 Esdras).</li>
-<li><strong>OCR-original-scan</strong> — our own tesseract OCR of the original 1582/1609/1610 printed
-editions (Anna's Archive EEBO scans) — serves as an independent <strong>print witness</strong> used
-to validate the digital text (§5).</li>
+per-chapter arguments, the {fmt(tc['annotation'])} annotation blocks of footnotes and marginal
+commentary, and the {fmt(tc['apparatus'])} front/back reference documents) and the
+<strong>three-book apocryphal appendix</strong> (Prayer of Manasses, 3 &amp; 4 Esdras).</li>
+<li><strong>Madueke_B</strong> — the merged-edition PDF of the same olprint project — a second format
+of the Madueke edition, used to confirm the HTML extraction is faithful (§5.2) and to
+<strong>corroborate the apparatus</strong> and the appendix (§6).</li>
+<li><strong>OCR-original-scan</strong> — third-party archive.org djvu OCR of the original
+1582/1609/1610 printed editions — an <strong>independent print witness</strong> outside the
+Madueke/Sabates lineage, used to validate the digital text (§5.3).</li>
 </ul>
 <p>The reconstruction places the apparatus at its canonical front/back positions and folds the
 per-chapter footnotes and cross-references in as masked annotation blocks after each chapter body.
 Because Sabates in fact <em>derives</em> from Madueke, the two are not fully independent — which is
-exactly why the third, print-based witness matters (§5). That breadth of both text and apparatus is
+exactly why the third, print-based witness matters (§5.3). That breadth of both text and apparatus is
 what makes it a <em>comprehensive</em> gold rather than a bare scripture dump.</p>
 
 <h2>3 · The reconstruction process — generate, don't detect</h2>
@@ -531,63 +679,126 @@ Manasses, 3 &amp; 4 Esdras) is the smallest division.</figcaption></figure>
 
 <h2>5 · Source collation &amp; discrepancy analysis</h2>
 <p>Preferring one witness for the words is a provenance decision; proving the words are
-<em>right</em> needs collation. Two independent checks establish it — and the second exists precisely
-because Sabates derives from Madueke, so their agreement alone could inherit a shared transcription
-error.</p>
+<em>right</em> needs collation. Three legs establish it, and the design is honest about what each can
+and cannot prove: leg 1 (a lineage-related digital witness) measures <em>transcription</em> fidelity,
+leg 2 (a second format of the same edition) measures <em>extraction</em> fidelity, and only leg 3 —
+an OCR of the original print outside that lineage — is a genuinely <em>independent</em> corroboration.</p>
 
-<h3>5.1 · Two-way digital collation — Madueke vs Sabates</h3>
-<p>A verse-by-verse string collation over the shared {fmt(tw['verses_compared'])}-verse canon,
-folding away orthographic and typographic convention to isolate genuine wording differences.</p>
+<h3>5.1 · Two-way digital collation — Madueke vs Sabates (leg 1)</h3>
+<p>A verse-by-verse string collation over the shared {fmt(a1['compared'])}-verse canon, folding away
+orthographic and typographic convention to isolate genuine wording differences. Because Sabates
+derives from Madueke, this establishes transcription fidelity, not independence.</p>
 <figure><div class="ftitle">Figure 4 · Verse-by-verse agreement, by difference class</div>
 {two_way_bar}
-<figcaption>{fmt(tw['identical'])} of {fmt(tw['verses_compared'])} verses ({tw['identical_pct']}%) are
-byte-identical; {fmt(tw['ligature_only'])} differ only in ligature convention (Madueke
-<code>ae/oe</code> vs Sabates <code>æ/œ</code>); {fmt(tw['case_punct_space_only'])} differ only in
-case, punctuation or spacing; <strong>{tw['substantive_wording_diffs']} differ in actual wording</strong>.</figcaption></figure>
-<p>The only structural divergence is Tobias ({esc(tw['structural']['chapter_count_mismatches'][0])}):
-Sabates carries a spurious leading chapter that Madueke does not, independently confirming the Tobias
-correction of §8. No verses are missing or extra on either side.</p>
+<figcaption>{fmt(a1['identical'])} of {fmt(a1['compared'])} verses ({a1['identical_pct']:.2f}%) are
+byte-identical; {fmt(a1['ligature_only'])} differ only in ligature convention (Madueke
+<code>ae/oe</code> vs Sabates <code>æ/œ</code>); {fmt(a1['punct_or_space_only'])} differ only in
+case, punctuation or spacing; <strong>{a1['substantive']} differ in actual wording</strong>.</figcaption></figure>
+<p>The only structural divergence is {esc(tob_str)}: Sabates carries a spurious leading chapter that
+Madueke does not, independently confirming the Tobias correction of §10. No verses are missing or
+extra on either side.</p>
 
-<h3>5.2 · Three-way validation against the original print (independent OCR)</h3>
-<p>To break the shared-lineage risk, an <strong>independent tesseract OCR</strong> of the original
-1582/1609/1610 printed editions (Anna's Archive EEBO scans) was collated against both digital
-witnesses across {th['divisions_sampled']} canonical divisions — a Gospel, the Pentateuch, a
-historical book, a Psalm and a Prophet.</p>
-<figure><div class="ftitle">Figure 5 · Print-OCR strict scripture recall, by sampled division</div>
-{ocr_rows}
-<figcaption>Strict recall ranges {th['recall_range_pct'][0]:.0f}–{th['recall_range_pct'][1]:.0f}%
-(aggregate {th['strict_scripture_recall_pct']}%). The spread tracks <em>per-page apparatus density</em>,
-not fidelity: the annotation-dense Psalm 109 page OCRs the most non-scripture and so scores lowest.
-Crucially, Madueke and Sabates post <em>identical</em> recall on every page.</figcaption></figure>
+<h3>5.2 · Format-fidelity check — Madueke HTML vs merged PDF (leg 2)</h3>
+<p>Before trusting the HTML extraction, we confirm it against a second format of the <em>same</em>
+edition — the Madueke_B merged-edition PDF. This is an extraction-fidelity check, not independent
+corroboration.</p>
+<div class="callout"><div class="h">Extraction is faithful — 100% type recall</div>
+All <strong>{fmt(l2['madueke_a_scripture_types'])}</strong> distinct scripture word-types extracted
+from the Madueke_A HTML are attested in the {fmt(l2['madueke_b_edition_types'])}-type merged edition
+(<strong>{l2['type_recall_pct']:.1f}%</strong> type recall, {l2['token_weighted_recall_pct']:.1f}%
+token-weighted), with <strong>{l2['missing_type_count']}</strong> missing types. The HTML parse loses
+no vocabulary relative to the PDF of the same edition — the two formats agree, so the extraction
+introduced no drift.</div>
+
+<h3>5.3 · Independent print-OCR validation (leg 3)</h3>
+<p>To break the shared-lineage risk, the digital text is collated against a genuinely independent
+witness: third-party archive.org djvu OCR of the original 1582/1609/1610 printed editions — outside
+both the Madueke/Sabates digital lineage <em>and</em> our own OCR pipeline. Rather than a handful of
+spot-checks, the sample is <strong>stratified-random</strong>: {oa['n_chapters']} chapters
+(seed&nbsp;{oc['seed']}) drawn evenly across six text-type strata, with a
+{fmt(oc['n_bootstrap'])}-iteration chapter-resampled bootstrap giving a 95% confidence interval on
+recall.</p>
+<figure><div class="ftitle">Figure 5 · Print-OCR skeleton recall by stratum, with 95% confidence intervals</div>
+{ocr_ci_chart}
+<figcaption>Point estimates with bootstrap 95% CIs on a zoomed axis
+({max(0, math.floor(min(r[2] for r in ci_rows)) - 1)}–100%). Aggregate recall is
+<strong>{oa['recall_pct']:.2f}%</strong> (CI {oa['ci95'][0]:.2f}–{oa['ci95'][1]:.2f}) over
+{fmt(oa['n_tokens'])} tokens; OT-poetry is lowest and widest (short psalms, sparser token counts).
+Recall is a corroboration signal — the archaic-skeleton fold is deliberately lossy — so the genuine
+signal is the distinctive-content-word miss count below.</figcaption></figure>
 <div class="callout good"><div class="h">Zero genuine discrepancies</div>
-After triaging OCR noise and apparatus, {th['residual_candidate_tokens']} residual candidate tokens
-remain ({th['residual_candidate_pct']}% of scripture words). Manual decode of all of them found
-<strong>100% OCR garble or OCR-corrupted apparatus</strong> (e.g. <em>Hethachach</em> = &ldquo;he
-that hath&rdquo;, <em>tolofue</em> = &ldquo;to Josue&rdquo;, <em>fignitying</em> = &ldquo;signifying&rdquo;) —
-<strong>{th['genuine_scripture_discrepancies']} genuine scripture wording discrepancies</strong>. The
-printed original confirms both digital witnesses; shared-lineage agreement here is corroborated, not a
-shared error.</div>
+Of {fmt(oa['n_tokens'])} sampled tokens, {fmt(oa['content_word_misses'])} content words missed the
+skeleton-recall fold. After a second pass checking each against the whole print witness and the full
+merged edition, <strong>{oa['genuine_candidate_misses']} remain as genuine candidates</strong>
+({oa['genuine_candidate_pct']:.1f}%) — every miss is OCR garble or a word attested elsewhere in the
+print. The independent print confirms both digital witnesses; shared-lineage agreement here is
+corroborated, not a shared error. The genuine-candidate filter is non-vacuous (a committed test proves
+it flags a truly-absent word and demotes a present one).</div>
 
-<div class="callout flag"><div class="h">Apparatus completeness — one documented gap</div>
-Scripture fidelity is not the same as apparatus completeness. Of {fmt(tc['chapter'])} chapters,
-{fmt(tc['annotation'])} ({anno_cov_pct:.1f}%) carry Sabates annotation blocks. At least one absence is
-a genuine gap rather than a truly un-annotated chapter: {esc(gap['finding'])} Of
-{gap['psalm_annotation_files_present']} present psalm annotation files,
-{gap['psalm_annotation_files_populated']} are populated — Psalm 109's is present but empty. The
-Madueke_B merged edition carries the fuller apparatus and is the natural source for closing such gaps.</div>
+<h2>6 · Apparatus completeness</h2>
+<p>Scripture fidelity is not the same as apparatus completeness, so the two are measured separately.
+Across the {fmt(sc['canonical_chapters'])} canonical chapters, Sabates supplies apparatus for
+<strong>{fmt(sc['chapters_with_apparatus'])} ({sc['chapters_with_apparatus_pct']:.3f}%)</strong>
+through five channels — book/chapter arguments, chapter summary notes, verse footnotes,
+cross-references and marginal sidecar notes. A chapter counts as covered if <em>any</em> channel is
+present, which is why the headline figure is near-total even though individual channels vary widely.</p>
+<figure><div class="ftitle">Figure 6 · Apparatus coverage by channel (share of {fmt(sc['canonical_chapters'])} canonical chapters)</div>
+{channel_chart}
+<figcaption>Verse footnotes ({cc['verse_notes']['pct']:.2f}%) and arguments
+({cc['argument']['pct']:.2f}%) are near-universal; the marginal sidecar
+({cc['sidecar']['pct']:.2f}%) and summary notes ({cc['summary_notes']['pct']:.2f}%) are sparse by
+nature — most chapters simply were not annotated in those channels in the print.</figcaption></figure>
+<div class="callout good"><div class="h">The sidecars are faithful, not truncated — corrects the earlier &ldquo;Psalm&nbsp;109 gap&rdquo;</div>
+An earlier assessment read the empty marginal sidecars as lost transcription and singled out Psalm 109
+as a gap. That was a measurement artifact: Psalm 109 in fact carries a summary, its verse-notes and
+cross-references — only its <em>sidecar</em> channel is empty. Corroboration settles it at the corpus
+level: the Madueke_B merged edition carries <strong>{fmt(mb['annotations_blocks'])}</strong> annotation
+blocks against Sabates' <strong>{fmt(mb['sabates_sidecars_present'])}</strong> non-empty sidecars — a
+near-parity that shows Sabates' marginal coverage tracks the print, and the
+{fmt(sc['sidecar_missing'])} chapters without a sidecar are chapters the print did not annotate
+marginally, not data that was lost.</div>
+<div class="callout"><div class="h">The appendix is now two-witness</div>
+The three-book apocryphal appendix (Prayer of Manasses, 3 &amp; 4 Esdras) — previously Sabates-only —
+is located in the Madueke_B merged edition at recorded character offsets, so it is
+<strong>corroborated by a second witness</strong> rather than resting on a single source.</div>
+<div class="callout flag"><div class="h">One genuine gap — documented, not filled</div>
+Exactly {sc['zero_apparatus_chapters']} of {fmt(sc['canonical_chapters'])} chapters has no apparatus in
+any Sabates channel: <strong>{esc(gap_book)} {gap['chapter']}</strong>. It is a faithful bare-heading
+chapter — no apparatus appears in any digital witness — so it is documented rather than fabricated from
+the column-flattened Madueke_B (which cannot be reliably parsed at the sub-chapter level).</div>
 
-<h2>6 · Mask coverage &amp; structural integrity</h2>
+<h2>7 · Apparatus ordering — scan-derived evidence</h2>
+<p>The apparatus is masked, so what matters for the reader is its front/back-of-tome placement per
+testament. The generator sources the order of all <strong>{n_order}</strong> front/back-matter
+sections from a committed evidence file, where each position states the <em>strongest honest
+evidence</em> available for it — a numeric section-field prefix, an OCR offset in the archive.org scan
+where the header survives OCR, a manual-visual scan confirmation for ornamental headers that OCR
+mangles, or structural placement.</p>
+<figure><div class="ftitle">Figure 7 · Ordering evidence by method ({n_order} sections)</div>
+{method_chart}
+<figcaption>Most positions are pinned by an explicit section-field prefix; ornamental headers that OCR
+cannot read fall back to manual-visual confirmation against the scans; a handful are anchored directly
+to an OCR offset in the print (below); the remainder rest on structural placement (front matter
+precedes the testament; tables are back matter).</figcaption></figure>
+<p>The OCR-anchored positions cite the exact character offset in the archive.org scan where the header
+survives OCR — a reproducible pointer into the print witness:</p>
+<table>
+<tr><th>Section group</th><th>Header</th><th>Scan witness</th><th>Char offset</th><th>Method</th></tr>
+{cite_table}
+</table>
+
+<h2>8 · Mask coverage &amp; structural integrity</h2>
 <p>The map is a two-layer tiling: a GENERIC layer of structural containers (body → volume → book)
 and a SPECIFIC layer of leaf elements (headers, arguments, verse bodies). The GENERIC layer covers
 <strong>{d['generic_cov']/n*100:.2f}%</strong> of the text and the SPECIFIC leaves cover
 <strong>{d['specific_cov']/n*100:.2f}%</strong> — a gap of just {fmt(n - d['specific_cov'])}
 characters ({(n - d['specific_cov'])/n*100:.4f}%), the inter-paragraph separators that belong to no
 leaf element. Masking hides the apparatus so the reader sees only scripture.</p>
-<figure><div class="ftitle">Figure 6 · Mask coverage — reader's text vs hidden apparatus</div>
+<figure><div class="ftitle">Figure 8 · Mask coverage — reader's text vs hidden apparatus</div>
 {mask_bar}
 <figcaption>{fmt(unmasked)} characters of scripture remain visible; {fmt(masked)} characters of
 editorial apparatus are masked, across {fmt(len(d['mi']))} disjoint intervals.</figcaption></figure>
-<figure><div class="ftitle">Figure 7 · Element inventory ({fmt(m['element_count'])} elements, log-free scale)</div>
+<figure><div class="ftitle">Figure 9 · Element inventory ({fmt(m['element_count'])} elements, log-free scale)</div>
 {inv}
 <figcaption>Chapter/chapter_heading parity ({fmt(tc['chapter'])} = {fmt(tc['chapter_heading'])}) is a
 structural invariant: every chapter has exactly one heading. 76 books each carry one introduction.</figcaption></figure>
@@ -597,7 +808,7 @@ reconcile with the section list; the production loader/masker accepts the map an
 intervals are sorted, disjoint and in range; chapter/heading parity holds. Reproduction:
 {repro_line}.</div>
 
-<h2>7 · Content accuracy — the Catholic oracle</h2>
+<h2>9 · Content accuracy — the Catholic oracle</h2>
 <p>Structural soundness cannot prove <em>correctness</em>: a dropped chapter would still tile
 perfectly and self-report a consistent count, because the generator only ever checks the map against
 its own re-parsed markers. The existing oracle is Protestant-66 and cannot judge a Vulgate edition —
@@ -605,10 +816,10 @@ the canons genuinely diverge. So this work adds an <strong>ordered Douay-Rheims 
 oracle</strong> (<code>canon_chapters.json → catholic_dr</code>): 76 externally-established chapter
 counts in fixed canonical order, checked positionally against the map (identity confirmed by a label
 token, gated on the count). It is non-circular — the expected counts never touched the map.</p>
-<figure><div class="ftitle">Figure 8 · Per-book chapter counts vs the external Vulgate oracle</div>
+<figure><div class="ftitle">Figure 10 · Per-book chapter counts vs the external Vulgate oracle</div>
 {ch_chart}
 <figcaption>Every bar is a book in canonical order; height is its chapter count. All {books_ok}
-books sit exactly on their externally-expected Vulgate value{', including Tobias — now corrected to 14 chapters (see §8)' if clean else '; the red bar(s) mark the remaining discrepancy (see §8)'}.</figcaption></figure>
+books sit exactly on their externally-expected Vulgate value{', including Tobias — now corrected to 14 chapters (see §10)' if clean else '; the red bar(s) mark the remaining discrepancy (see §10)'}.</figcaption></figure>
 <p>The Vulgate distinctives are exactly why a Protestant oracle fails here, and all resolve correctly:</p>
 <table>
 <tr><th>Book</th><th>DR / Vulgate</th><th>Protestant</th><th>Why it differs</th></tr>
@@ -619,7 +830,7 @@ books sit exactly on their externally-expected Vulgate value{', including Tobias
 <tr><td>Appendix</td><td class="n">3 books</td><td>—</td><td>Prayer of Manasses, 3 &amp; 4 Esdras placed after the NT (Clementine)</td></tr>
 </table>
 
-<h2>8 · The Tobias correction</h2>
+<h2>10 · The Tobias correction</h2>
 <div class="callout good"><div class="h">Tobias — restored to 14 chapters</div>
 The upstream CC0 dataset carried a spurious leading &ldquo;chapter&nbsp;0&rdquo; for Tobias: a single
 verse holding only a truncated 8-word fragment of the book's opening line
@@ -631,16 +842,18 @@ source chapter 1 opens with that exact text in full (<em>&ldquo;…Nephthali, wh
 of Galilee…&rdquo;</em>) and runs a further 25 verses. Nothing is discarded — only a parsing artifact is
 removed. A scan of all 77 source books found Tobias to be the <strong>only</strong> book with this
 thin-leading-chapter signature, so the fix is a targeted one-book correction
-(<code>SPURIOUS_LEADING_CHAPTER</code> in the generator), not a systemic re-parse.</p>
+(<code>SPURIOUS_LEADING_CHAPTER</code> in the generator), not a systemic re-parse. The leg-1 collation
+(§5.1) independently confirms it: {esc(tob_str)}, with the extra chapter present only on the Sabates
+side.</p>
 <p>The 14-chapter count is independently corroborated by the book's own Argument (preserved as the
 masked introduction apparatus), which divides Tobias <em>&ldquo;The first four chapters… The eight
 following… In the two last chapters&rdquo;</em> — 4 + 8 + 2 = <strong>14</strong>. With the count
 restored, the sources manifest carries <strong>no</strong> <code>canon_exceptions</code> and the
 Catholic oracle passes all <strong>{books_ok}/76</strong> books with zero discrepancies.</p>
 
-<h2>9 · Confidence assessment</h2>
+<h2>11 · Confidence assessment</h2>
 <p>A single verdict would mislead; confidence splits across four independent axes — and this rebuild
-promotes the scripture axis that the single-source version could only rate MODERATE.</p>
+promotes both the scripture axis and the apparatus axis that the earlier assessment rated lower.</p>
 <div class="tier"><span class="badge b-high">HIGH</span><div class="body">
   <strong>Reproduction.</strong> The generated text is deterministic and normalization-stable; the
   regenerated sha is byte-identical to the committed map. Anyone holding the source witnesses can
@@ -650,54 +863,67 @@ promotes the scripture axis that the single-source version could only rate MODER
   layers are gap-free to the separator; all hermetic gates pass; chapter/heading parity is exact.</div></div>
 <div class="tier"><span class="badge b-high">HIGH</span><div class="body">
   <strong>Scripture content.</strong> Promoted from MODERATE. Beyond the chapter-level Vulgate oracle
-  ({books_ok}/76 books), the verse bodies are now corroborated at <em>verse</em> granularity: a
-  {fmt(tw['verses_compared'])}-verse collation against a second digital witness finds
-  {tw['substantive_wording_diffs']} substantive wording differences, and an independent OCR pass over
-  the original printed editions finds {th['genuine_scripture_discrepancies']} genuine discrepancies.
-  Two witnesses plus the print agree on the words.</div></div>
+  ({books_ok}/76 books), the verse bodies are corroborated at <em>verse</em> granularity: a
+  {fmt(a1['compared'])}-verse collation against a second digital witness finds {a1['substantive']}
+  substantive wording differences, a second-format check confirms the HTML extraction lost no
+  vocabulary ({l2['type_recall_pct']:.0f}% type recall), and an independent stratified-random OCR of
+  the original print ({oa['n_chapters']} chapters, bootstrap 95% CI {oa['ci95'][0]:.2f}–{oa['ci95'][1]:.2f}%)
+  finds {oa['genuine_candidate_misses']} genuine discrepancies. Two witnesses plus the print agree on
+  the words.</div></div>
 <div class="tier"><span class="badge b-mod">MODERATE</span><div class="body">
-  <strong>Apparatus content.</strong> The arguments, footnotes and reference documents rest on the
-  single Sabates witness (Madueke carries no apparatus), and it is demonstrably incomplete in places
-  (Psalm 109's annotation block is empty though the print is dense). The apocryphal appendix is
-  likewise Sabates-only. Apparatus fidelity is therefore rated below scripture.</div></div>
+  <strong>Apparatus content.</strong> Raised from the earlier single-witness assessment. Coverage is
+  now measured at <strong>{sc['chapters_with_apparatus_pct']:.3f}%</strong> of canonical chapters, the
+  marginal-note channel is corroborated at near-parity by the Madueke_B edition
+  ({fmt(mb['annotations_blocks'])} vs {fmt(mb['sabates_sidecars_present'])} blocks), and the appendix is
+  now two-witness. It stays below scripture because the apparatus <em>wording</em> still rests on a
+  single transcription (corroborated at the coverage/count level, not collated word-for-word), and one
+  chapter ({esc(gap_book)} {gap['chapter']}) is a genuine apparatus gap.</div></div>
 
-<h2>10 · Limitations &amp; what is not proven</h2>
+<h2>12 · Limitations &amp; what is not proven</h2>
 <ul>
-<li><strong>Apparatus is single-witness.</strong> Only the scripture is multiply attested. The
-editorial apparatus and the three-book appendix rest on Sabates alone, with at least one confirmed
-transcription gap (Psalm 109). Madueke_B (the merged PDF edition) is the natural second witness for a
-future apparatus pass.</li>
-<li><strong>Print validation is a sample.</strong> The independent OCR covered
-{th['divisions_sampled']} canonical divisions (one per major text type), not every chapter; it
-strongly corroborates the digital text but is not an exhaustive verse-by-verse print collation.</li>
+<li><strong>Apparatus wording is single-transcription.</strong> Coverage is near-complete
+({sc['chapters_with_apparatus_pct']:.3f}%) and corroborated by Madueke_B at the count level, and the
+appendix is two-witness — but the apparatus <em>text</em> itself is not yet collated word-for-word
+against a second witness the way scripture is. One chapter ({esc(gap_book)} {gap['chapter']}) carries
+no apparatus in any digital witness.</li>
+<li><strong>Print validation is a stratified sample.</strong> The independent OCR covered
+{oa['n_chapters']} chapters across six text-type strata with a bootstrap CI — enough to support a
+statistical claim, but not an exhaustive verse-by-verse print collation of all
+{fmt(sc['canonical_chapters'])} chapters. Recall is also a lossy skeleton-fold signal; the genuine
+guarantee is the {oa['genuine_candidate_misses']}-candidate distinctive-word miss count, not the recall
+percentage itself.</li>
 <li><strong>Chapter-granular oracle.</strong> The Catholic oracle checks book presence, order and
 chapter count — not verse counts or verse text. Vulgate verse divisions vary by edition, so verse
 counts are recorded, not gated.</li>
 <li><strong>One deliberate editorial correction.</strong> The reconstruction departs from raw-source
-WYSIWYG in exactly one place — the spurious Tobias chapter is dropped (§8), a fix independently
+WYSIWYG in exactly one place — the spurious Tobias chapter is dropped (§10), a fix independently
 confirmed by the Madueke witness, which never carried it.</li>
 </ul>
 
-<h2>11 · Recommendations</h2>
+<h2>13 · Recommendations</h2>
 <ul>
 <li><strong>Accept as gold.</strong> Reproduction + structure are HIGH and scripture content is now
-HIGH (three-witness), externally gated at {books_ok}/76 with no outstanding exceptions. This clears
-the Gold Set bar cleanly.</li>
-<li><strong>Enrich the apparatus from Madueke_B.</strong> The merged-edition PDF carries the fuller
-apparatus; folding it in would close documented Sabates gaps (e.g. Psalm 109) and lift the apparatus
-axis toward HIGH.</li>
+HIGH (three-witness, stratified-random print CI), externally gated at {books_ok}/76 with no
+outstanding exceptions. This clears the Gold Set bar cleanly.</li>
+<li><strong>Collate the apparatus wording against Madueke_B.</strong> Coverage is already
+{sc['chapters_with_apparatus_pct']:.3f}% and count-corroborated; a word-level collation of the
+argument/annotation text against the merged edition would lift the apparatus axis from MODERATE toward
+HIGH. The single genuine gap ({esc(gap_book)} {gap['chapter']}) needs no fill — it is a faithful
+bare-heading chapter.</li>
 <li><strong>Report the Tobias artifact upstream</strong> to the janvier-s (Sabates) dataset — the fix
 here is local to this reconstruction; the upstream CC0 JSON still carries the mis-captured Argument
 chapter.</li>
 <li><strong>For full verse-level print assurance</strong>, extend the independent OCR collation beyond
-the {th['divisions_sampled']}-division sample to the whole canon.</li>
+the {oa['n_chapters']}-chapter stratified sample toward the whole canon.</li>
 </ul>
 
 <footer>
 Generated by <code>docs/development/reports/gen_originaldr_108_report.py</code> from the frozen gold
 map <code>work-108.map.json</code>, the production Catholic oracle (<code>palimpsest.gold</code>), and
-the committed collation summary <code>collation-summary.json</code> (distilled from the two- and
-three-way source analyses). All figures computed at generation time — no hardcoded values. Reference
+the four committed validation artifacts under
+<code>core/tests/fixtures/gold/mask_engine/originaldr_validation/</code>
+(<code>collation-3way</code>, <code>ocr-validation</code>, <code>apparatus-gapfill</code>,
+<code>apparatus-order</code>). All figures computed at generation time — no hardcoded values. Reference
 sha <code>{esc(sha)}</code>.
 </footer>
 </div></body></html>"""

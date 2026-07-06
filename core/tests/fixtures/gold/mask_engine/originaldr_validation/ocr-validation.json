@@ -1,0 +1,976 @@
+{
+  "artifact": "ocr-validation",
+  "generated_by": "ocr_sample.py",
+  "idx": 108,
+  "seed": 1729,
+  "n_bootstrap": 10000,
+  "fuzz_threshold": 0.85,
+  "method": "Leg 3 independent print witness: archive.org djvu OCR of the 1582/1609/1610 EEBO scans (third-party OCR, outside the Madueke/Sabates lineage and our tesseract pipeline). Content-anchored chapter location; token-level Madueke->print skeleton recall; chapter-resampled bootstrap CI. Archaic skeleton fold is lossy, so recall is a corroboration signal and the distinctive-content-word miss count is the genuine-discrepancy signal.",
+  "sources": {
+    "holiebible-ot1": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/holiebible-ot1_djvu.txt",
+      "sha256": "5c9a0dcc63b7c201607217201b9a55aae8b1c83908c91a393e4cdca445334bab"
+    },
+    "holiebible-ot2": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/holiebible-ot2_djvu.txt",
+      "sha256": "5948834e25925bb842ecafe588024eb1e5d1fe8664e05bed4d6f93e334b88728"
+    },
+    "newtestament": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/newtestament_djvu.txt",
+      "sha256": "f15aca2f4e18a7142279a92c0ca7dc495e8ceaa88793c9f526f13e41f55e70eb"
+    },
+    "nt-1582": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/nt-1582_djvu.txt",
+      "sha256": "933ea8e9a361e76238497f5a959600f05474acb8fb5be65d5b35d0bc0bcaff07"
+    },
+    "ot1-1609": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/ot1-1609_djvu.txt",
+      "sha256": "74e55ac753755be7e192a8aeedaae629e41c59dd557d588b979e5a45a7ccdcc2"
+    },
+    "ot2-1610": {
+      "path": "core/.scratch/originaldr-project/sources/archive-org/ot2-1610_djvu.txt",
+      "sha256": "319a19054176059e0d800c121ed481578ac57c2fb68f92f3c660a82b46716440"
+    }
+  },
+  "coverage_resolution": {
+    "genesis": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 70.34
+    },
+    "exodus": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 65.27
+    },
+    "leviticus": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 64.66
+    },
+    "numbers": {
+      "witness": "ot1-1609",
+      "probe_recall_pct": 61.31
+    },
+    "deuteronomy": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 69.08
+    },
+    "josue": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 64.26
+    },
+    "judges": {
+      "witness": "ot1-1609",
+      "probe_recall_pct": 53.01
+    },
+    "ruth": {
+      "witness": "ot1-1609",
+      "probe_recall_pct": 66.5
+    },
+    "1-kings": {
+      "witness": "ot1-1609",
+      "probe_recall_pct": 58.53
+    },
+    "2-kings": {
+      "witness": "ot1-1609",
+      "probe_recall_pct": 66.46
+    },
+    "3-kings": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 72.96
+    },
+    "4-kings": {
+      "witness": "ot1-1609",
+      "probe_recall_pct": 64.35
+    },
+    "1-paralipomenon": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 59.56
+    },
+    "2-paralipomenon": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 51.85
+    },
+    "1-esdras": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 63.33
+    },
+    "2-esdras": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 63.42
+    },
+    "tobias": {
+      "witness": "ot1-1609",
+      "probe_recall_pct": 62.72
+    },
+    "judith": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 52.15
+    },
+    "esther": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 57.76
+    },
+    "job": {
+      "witness": "holiebible-ot1",
+      "probe_recall_pct": 52.31
+    },
+    "psalms": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 56.85
+    },
+    "proverbs": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 54.93
+    },
+    "ecclesiastes": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 66.53
+    },
+    "canticle-of-canticles": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 68.13
+    },
+    "wisdom": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 60.87
+    },
+    "ecclesiasticus": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 59.5
+    },
+    "isaie": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 65.79
+    },
+    "jeremie": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 74.05
+    },
+    "lamentations": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 57.43
+    },
+    "baruch": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 73.71
+    },
+    "ezechiel": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 74.05
+    },
+    "daniel": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 69.26
+    },
+    "osee": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 65.31
+    },
+    "joel": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 64.09
+    },
+    "amos": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 67.56
+    },
+    "abdias": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 63.36
+    },
+    "jonas": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 61.74
+    },
+    "micheas": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 68.36
+    },
+    "nahum": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 59.76
+    },
+    "habacuc": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 61.64
+    },
+    "sophonias": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 59.56
+    },
+    "aggeus": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 72.33
+    },
+    "zacharias": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 70.44
+    },
+    "malachie": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 59.59
+    },
+    "1-machabees": {
+      "witness": "ot2-1610",
+      "probe_recall_pct": 59.69
+    },
+    "2-machabees": {
+      "witness": "holiebible-ot2",
+      "probe_recall_pct": 62.5
+    },
+    "matthew": {
+      "witness": "newtestament",
+      "probe_recall_pct": 71.7
+    },
+    "mark": {
+      "witness": "newtestament",
+      "probe_recall_pct": 74.77
+    },
+    "luke": {
+      "witness": "newtestament",
+      "probe_recall_pct": 73.06
+    },
+    "john": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 75.17
+    },
+    "acts": {
+      "witness": "newtestament",
+      "probe_recall_pct": 69.28
+    },
+    "romans": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 69.53
+    },
+    "1-corinthians": {
+      "witness": "newtestament",
+      "probe_recall_pct": 70.33
+    },
+    "2-corinthians": {
+      "witness": "newtestament",
+      "probe_recall_pct": 71.7
+    },
+    "galatians": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 70.1
+    },
+    "ephesians": {
+      "witness": "newtestament",
+      "probe_recall_pct": 63.16
+    },
+    "philippians": {
+      "witness": "newtestament",
+      "probe_recall_pct": 66.48
+    },
+    "colossians": {
+      "witness": "newtestament",
+      "probe_recall_pct": 65.8
+    },
+    "1-thessalonians": {
+      "witness": "newtestament",
+      "probe_recall_pct": 63.41
+    },
+    "2-thessalonians": {
+      "witness": "newtestament",
+      "probe_recall_pct": 69.28
+    },
+    "1-timothy": {
+      "witness": "newtestament",
+      "probe_recall_pct": 52.55
+    },
+    "2-timothy": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 49.11
+    },
+    "titus": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 75.41
+    },
+    "philemon": {
+      "witness": "newtestament",
+      "probe_recall_pct": 57.8
+    },
+    "hebrews": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 67.74
+    },
+    "james": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 72.4
+    },
+    "1-peter": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 68.33
+    },
+    "2-peter": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 67.59
+    },
+    "1-john": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 72.73
+    },
+    "2-john": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 74.59
+    },
+    "3-john": {
+      "witness": "newtestament",
+      "probe_recall_pct": 76.22
+    },
+    "jude": {
+      "witness": "nt-1582",
+      "probe_recall_pct": 72.04
+    },
+    "apocalypse": {
+      "witness": "newtestament",
+      "probe_recall_pct": 70.31
+    }
+  },
+  "aggregate": {
+    "recall_pct": 92.41,
+    "ci95": [
+      91.28,
+      93.35
+    ],
+    "n_chapters": 36,
+    "n_tokens": 23386,
+    "content_word_misses": 1514,
+    "genuine_candidate_misses": 0,
+    "genuine_candidate_pct": 0.0,
+    "genuine_candidate_words": []
+  },
+  "per_stratum": {
+    "OT-narrative": {
+      "n_chapters": 6,
+      "recall_pct": 90.87,
+      "ci95": [
+        89.43,
+        92.7
+      ],
+      "tokens": 3932
+    },
+    "OT-poetry": {
+      "n_chapters": 6,
+      "recall_pct": 85.85,
+      "ci95": [
+        81.09,
+        88.37
+      ],
+      "tokens": 2049
+    },
+    "OT-prophets": {
+      "n_chapters": 6,
+      "recall_pct": 93.49,
+      "ci95": [
+        91.17,
+        94.79
+      ],
+      "tokens": 4330
+    },
+    "NT-gospel": {
+      "n_chapters": 6,
+      "recall_pct": 94.29,
+      "ci95": [
+        92.88,
+        95.48
+      ],
+      "tokens": 5465
+    },
+    "NT-epistle": {
+      "n_chapters": 6,
+      "recall_pct": 91.65,
+      "ci95": [
+        90.15,
+        93.47
+      ],
+      "tokens": 2921
+    },
+    "apparatus-dense": {
+      "n_chapters": 6,
+      "recall_pct": 93.84,
+      "ci95": [
+        92.13,
+        94.7
+      ],
+      "tokens": 4689
+    }
+  },
+  "per_sample": [
+    {
+      "stratum": "OT-narrative",
+      "book": "genesis",
+      "chapter": 16,
+      "witness": "holiebible-ot1",
+      "madueke_tokens": 377,
+      "attested": 349,
+      "recall_pct": 92.57,
+      "window_tokens": 565,
+      "misses": {
+        "total": 28,
+        "content": 24,
+        "print_attested_elsewhere": 24,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-narrative",
+      "book": "exodus",
+      "chapter": 35,
+      "witness": "holiebible-ot1",
+      "madueke_tokens": 692,
+      "attested": 652,
+      "recall_pct": 94.22,
+      "window_tokens": 1038,
+      "misses": {
+        "total": 40,
+        "content": 37,
+        "print_attested_elsewhere": 37,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-narrative",
+      "book": "numbers",
+      "chapter": 31,
+      "witness": "ot1-1609",
+      "madueke_tokens": 1024,
+      "attested": 930,
+      "recall_pct": 90.82,
+      "window_tokens": 1536,
+      "misses": {
+        "total": 94,
+        "content": 80,
+        "print_attested_elsewhere": 80,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-narrative",
+      "book": "deuteronomy",
+      "chapter": 26,
+      "witness": "holiebible-ot1",
+      "madueke_tokens": 565,
+      "attested": 504,
+      "recall_pct": 89.2,
+      "window_tokens": 847,
+      "misses": {
+        "total": 61,
+        "content": 56,
+        "print_attested_elsewhere": 56,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-narrative",
+      "book": "1-paralipomenon",
+      "chapter": 16,
+      "witness": "holiebible-ot1",
+      "madueke_tokens": 768,
+      "attested": 679,
+      "recall_pct": 88.41,
+      "window_tokens": 1152,
+      "misses": {
+        "total": 89,
+        "content": 78,
+        "print_attested_elsewhere": 78,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-narrative",
+      "book": "2-paralipomenon",
+      "chapter": 15,
+      "witness": "holiebible-ot1",
+      "madueke_tokens": 506,
+      "attested": 459,
+      "recall_pct": 90.71,
+      "window_tokens": 758,
+      "misses": {
+        "total": 47,
+        "content": 40,
+        "print_attested_elsewhere": 40,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-poetry",
+      "book": "job",
+      "chapter": 11,
+      "witness": "holiebible-ot1",
+      "madueke_tokens": 329,
+      "attested": 285,
+      "recall_pct": 86.63,
+      "window_tokens": 493,
+      "misses": {
+        "total": 44,
+        "content": 39,
+        "print_attested_elsewhere": 39,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-poetry",
+      "book": "psalms",
+      "chapter": 3,
+      "witness": "ot2-1610",
+      "madueke_tokens": 120,
+      "attested": 88,
+      "recall_pct": 73.33,
+      "window_tokens": 180,
+      "misses": {
+        "total": 32,
+        "content": 20,
+        "print_attested_elsewhere": 20,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-poetry",
+      "book": "psalms",
+      "chapter": 6,
+      "witness": "ot2-1610",
+      "madueke_tokens": 152,
+      "attested": 119,
+      "recall_pct": 78.29,
+      "window_tokens": 228,
+      "misses": {
+        "total": 33,
+        "content": 26,
+        "print_attested_elsewhere": 26,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-poetry",
+      "book": "psalms",
+      "chapter": 103,
+      "witness": "ot2-1610",
+      "madueke_tokens": 578,
+      "attested": 520,
+      "recall_pct": 89.97,
+      "window_tokens": 866,
+      "misses": {
+        "total": 58,
+        "content": 45,
+        "print_attested_elsewhere": 45,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-poetry",
+      "book": "psalms",
+      "chapter": 137,
+      "witness": "ot2-1610",
+      "madueke_tokens": 174,
+      "attested": 150,
+      "recall_pct": 86.21,
+      "window_tokens": 260,
+      "misses": {
+        "total": 24,
+        "content": 22,
+        "print_attested_elsewhere": 22,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-poetry",
+      "book": "ecclesiasticus",
+      "chapter": 39,
+      "witness": "ot2-1610",
+      "madueke_tokens": 696,
+      "attested": 597,
+      "recall_pct": 85.78,
+      "window_tokens": 1044,
+      "misses": {
+        "total": 99,
+        "content": 80,
+        "print_attested_elsewhere": 80,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-prophets",
+      "book": "isaie",
+      "chapter": 42,
+      "witness": "ot2-1610",
+      "madueke_tokens": 630,
+      "attested": 575,
+      "recall_pct": 91.27,
+      "window_tokens": 944,
+      "misses": {
+        "total": 55,
+        "content": 49,
+        "print_attested_elsewhere": 49,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-prophets",
+      "book": "isaie",
+      "chapter": 52,
+      "witness": "ot2-1610",
+      "madueke_tokens": 370,
+      "attested": 323,
+      "recall_pct": 87.3,
+      "window_tokens": 554,
+      "misses": {
+        "total": 47,
+        "content": 34,
+        "print_attested_elsewhere": 34,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-prophets",
+      "book": "jeremie",
+      "chapter": 2,
+      "witness": "ot2-1610",
+      "madueke_tokens": 995,
+      "attested": 937,
+      "recall_pct": 94.17,
+      "window_tokens": 1491,
+      "misses": {
+        "total": 58,
+        "content": 52,
+        "print_attested_elsewhere": 52,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-prophets",
+      "book": "jeremie",
+      "chapter": 28,
+      "witness": "ot2-1610",
+      "madueke_tokens": 519,
+      "attested": 485,
+      "recall_pct": 93.45,
+      "window_tokens": 777,
+      "misses": {
+        "total": 34,
+        "content": 26,
+        "print_attested_elsewhere": 26,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-prophets",
+      "book": "ezechiel",
+      "chapter": 23,
+      "witness": "ot2-1610",
+      "madueke_tokens": 1283,
+      "attested": 1226,
+      "recall_pct": 95.56,
+      "window_tokens": 1923,
+      "misses": {
+        "total": 57,
+        "content": 51,
+        "print_attested_elsewhere": 51,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "OT-prophets",
+      "book": "daniel",
+      "chapter": 1,
+      "witness": "ot2-1610",
+      "madueke_tokens": 533,
+      "attested": 502,
+      "recall_pct": 94.18,
+      "window_tokens": 799,
+      "misses": {
+        "total": 31,
+        "content": 28,
+        "print_attested_elsewhere": 28,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-gospel",
+      "book": "matthew",
+      "chapter": 16,
+      "witness": "newtestament",
+      "madueke_tokens": 618,
+      "attested": 577,
+      "recall_pct": 93.37,
+      "window_tokens": 926,
+      "misses": {
+        "total": 41,
+        "content": 32,
+        "print_attested_elsewhere": 32,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-gospel",
+      "book": "mark",
+      "chapter": 10,
+      "witness": "newtestament",
+      "madueke_tokens": 1059,
+      "attested": 1001,
+      "recall_pct": 94.52,
+      "window_tokens": 1587,
+      "misses": {
+        "total": 58,
+        "content": 51,
+        "print_attested_elsewhere": 51,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-gospel",
+      "book": "mark",
+      "chapter": 14,
+      "witness": "newtestament",
+      "madueke_tokens": 1433,
+      "attested": 1380,
+      "recall_pct": 96.3,
+      "window_tokens": 2149,
+      "misses": {
+        "total": 53,
+        "content": 49,
+        "print_attested_elsewhere": 49,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-gospel",
+      "book": "luke",
+      "chapter": 3,
+      "witness": "newtestament",
+      "madueke_tokens": 803,
+      "attested": 739,
+      "recall_pct": 92.03,
+      "window_tokens": 1203,
+      "misses": {
+        "total": 64,
+        "content": 47,
+        "print_attested_elsewhere": 47,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-gospel",
+      "book": "luke",
+      "chapter": 10,
+      "witness": "newtestament",
+      "madueke_tokens": 897,
+      "attested": 833,
+      "recall_pct": 92.87,
+      "window_tokens": 1345,
+      "misses": {
+        "total": 64,
+        "content": 56,
+        "print_attested_elsewhere": 56,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-gospel",
+      "book": "acts",
+      "chapter": 22,
+      "witness": "newtestament",
+      "madueke_tokens": 655,
+      "attested": 623,
+      "recall_pct": 95.11,
+      "window_tokens": 981,
+      "misses": {
+        "total": 32,
+        "content": 25,
+        "print_attested_elsewhere": 25,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-epistle",
+      "book": "1-corinthians",
+      "chapter": 16,
+      "witness": "newtestament",
+      "madueke_tokens": 395,
+      "attested": 361,
+      "recall_pct": 91.39,
+      "window_tokens": 591,
+      "misses": {
+        "total": 34,
+        "content": 26,
+        "print_attested_elsewhere": 26,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-epistle",
+      "book": "ephesians",
+      "chapter": 5,
+      "witness": "newtestament",
+      "madueke_tokens": 527,
+      "attested": 478,
+      "recall_pct": 90.7,
+      "window_tokens": 789,
+      "misses": {
+        "total": 49,
+        "content": 43,
+        "print_attested_elsewhere": 43,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-epistle",
+      "book": "hebrews",
+      "chapter": 10,
+      "witness": "nt-1582",
+      "madueke_tokens": 696,
+      "attested": 619,
+      "recall_pct": 88.94,
+      "window_tokens": 1044,
+      "misses": {
+        "total": 77,
+        "content": 68,
+        "print_attested_elsewhere": 68,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-epistle",
+      "book": "1-peter",
+      "chapter": 4,
+      "witness": "nt-1582",
+      "madueke_tokens": 413,
+      "attested": 392,
+      "recall_pct": 94.92,
+      "window_tokens": 619,
+      "misses": {
+        "total": 21,
+        "content": 18,
+        "print_attested_elsewhere": 18,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-epistle",
+      "book": "apocalypse",
+      "chapter": 10,
+      "witness": "newtestament",
+      "madueke_tokens": 325,
+      "attested": 305,
+      "recall_pct": 93.85,
+      "window_tokens": 487,
+      "misses": {
+        "total": 20,
+        "content": 17,
+        "print_attested_elsewhere": 17,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "NT-epistle",
+      "book": "apocalypse",
+      "chapter": 11,
+      "witness": "newtestament",
+      "madueke_tokens": 565,
+      "attested": 522,
+      "recall_pct": 92.39,
+      "window_tokens": 847,
+      "misses": {
+        "total": 43,
+        "content": 41,
+        "print_attested_elsewhere": 41,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "apparatus-dense",
+      "book": "matthew",
+      "chapter": 24,
+      "witness": "newtestament",
+      "madueke_tokens": 958,
+      "attested": 912,
+      "recall_pct": 95.2,
+      "window_tokens": 1436,
+      "misses": {
+        "total": 46,
+        "content": 43,
+        "print_attested_elsewhere": 43,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "apparatus-dense",
+      "book": "1-corinthians",
+      "chapter": 14,
+      "witness": "newtestament",
+      "madueke_tokens": 767,
+      "attested": 725,
+      "recall_pct": 94.52,
+      "window_tokens": 1149,
+      "misses": {
+        "total": 42,
+        "content": 31,
+        "print_attested_elsewhere": 31,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "apparatus-dense",
+      "book": "matthew",
+      "chapter": 19,
+      "witness": "newtestament",
+      "madueke_tokens": 651,
+      "attested": 604,
+      "recall_pct": 92.78,
+      "window_tokens": 975,
+      "misses": {
+        "total": 47,
+        "content": 44,
+        "print_attested_elsewhere": 44,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "apparatus-dense",
+      "book": "matthew",
+      "chapter": 3,
+      "witness": "newtestament",
+      "madueke_tokens": 344,
+      "attested": 301,
+      "recall_pct": 87.5,
+      "window_tokens": 516,
+      "misses": {
+        "total": 43,
+        "content": 35,
+        "print_attested_elsewhere": 35,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "apparatus-dense",
+      "book": "luke",
+      "chapter": 5,
+      "witness": "newtestament",
+      "madueke_tokens": 863,
+      "attested": 814,
+      "recall_pct": 94.32,
+      "window_tokens": 1293,
+      "misses": {
+        "total": 49,
+        "content": 42,
+        "print_attested_elsewhere": 42,
+        "genuine_candidates": []
+      }
+    },
+    {
+      "stratum": "apparatus-dense",
+      "book": "luke",
+      "chapter": 6,
+      "witness": "newtestament",
+      "madueke_tokens": 1106,
+      "attested": 1044,
+      "recall_pct": 94.39,
+      "window_tokens": 1658,
+      "misses": {
+        "total": 62,
+        "content": 59,
+        "print_attested_elsewhere": 59,
+        "genuine_candidates": []
+      }
+    }
+  ]
+}

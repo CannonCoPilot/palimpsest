@@ -1,0 +1,949 @@
+{
+  "artifact": "collation-3way",
+  "generated_by": "collate_witnesses.py",
+  "idx": 108,
+  "method": {
+    "leg1": "EXACT verse-by-verse string collation Madueke_A(HTML) <-> Sabates_A(JSON); lineage-related (fidelity, not independent).",
+    "leg2": "FORMAT-FIDELITY edition-global token-recall Madueke_A <-> Madueke_B(merged.txt); same edition, two formats (extraction fidelity, not independent).",
+    "leg3_note": "The independent print witness (OCR of the 1582/1609/1610 scans) is measured separately in ocr_sample.py -> ocr-validation.json."
+  },
+  "sources": {
+    "madueke_a": {
+      "path": "core/.scratch/originaldr-project/sources/madueke-a/books",
+      "n_files": 1334,
+      "digest_sha256": "c0855e8634410a5627dc7a78c522fb5e078c4ca4c574684193c7fff1eb981a44"
+    },
+    "sabates_a": {
+      "path": ".scratch/original-douay-rheims/bible/raw",
+      "n_files": 77,
+      "digest_sha256": "3c5c367800c0e97767ab4c042c35284a63a1b3fcf81e4a333ab8fb7f0805c8e8"
+    },
+    "madueke_b": {
+      "path": "core/.scratch/originaldr-project/sources/madueke-b/merged.txt",
+      "sha256": "45ece9024a67147957a5f7ea532947b3e4880ce3060437140bc147609556aea1",
+      "bytes": 11078161
+    }
+  },
+  "leg1_exact_madueke_sabates": {
+    "granularity": "verse",
+    "relationship": "lineage-related (Sabates_A derives from Madueke_A) -> transcription fidelity, NOT independent corroboration",
+    "aggregate": {
+      "compared": 35809,
+      "identical": 33400,
+      "ligature_only": 813,
+      "punct_or_space_only": 1596,
+      "substantive": 0,
+      "sab_verse_absent_in_madueke": 0,
+      "identical_pct": 93.2726,
+      "ligature_only_pct": 2.2704,
+      "punct_or_space_only_pct": 4.457,
+      "substantive_pct": 0.0
+    },
+    "per_book": [
+      {
+        "book": "genesis",
+        "compared": 1530,
+        "identical": 1432,
+        "ligature_only": 83,
+        "punct_or_space_only": 15,
+        "substantive": 0
+      },
+      {
+        "book": "exodus",
+        "compared": 1211,
+        "identical": 1053,
+        "ligature_only": 152,
+        "punct_or_space_only": 6,
+        "substantive": 0
+      },
+      {
+        "book": "leviticus",
+        "compared": 858,
+        "identical": 843,
+        "ligature_only": 12,
+        "punct_or_space_only": 3,
+        "substantive": 0
+      },
+      {
+        "book": "numbers",
+        "compared": 1288,
+        "identical": 1254,
+        "ligature_only": 29,
+        "punct_or_space_only": 5,
+        "substantive": 0
+      },
+      {
+        "book": "deuteronomy",
+        "compared": 959,
+        "identical": 901,
+        "ligature_only": 49,
+        "punct_or_space_only": 9,
+        "substantive": 0
+      },
+      {
+        "book": "josue",
+        "compared": 658,
+        "identical": 640,
+        "ligature_only": 16,
+        "punct_or_space_only": 2,
+        "substantive": 0
+      },
+      {
+        "book": "judges",
+        "compared": 618,
+        "identical": 608,
+        "ligature_only": 9,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "ruth",
+        "compared": 85,
+        "identical": 85,
+        "ligature_only": 0,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "1-kings",
+        "compared": 811,
+        "identical": 794,
+        "ligature_only": 13,
+        "punct_or_space_only": 4,
+        "substantive": 0
+      },
+      {
+        "book": "2-kings",
+        "compared": 695,
+        "identical": 689,
+        "ligature_only": 3,
+        "punct_or_space_only": 3,
+        "substantive": 0
+      },
+      {
+        "book": "3-kings",
+        "compared": 817,
+        "identical": 796,
+        "ligature_only": 21,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "4-kings",
+        "compared": 719,
+        "identical": 705,
+        "ligature_only": 13,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "1-paralipomenon",
+        "compared": 940,
+        "identical": 930,
+        "ligature_only": 8,
+        "punct_or_space_only": 2,
+        "substantive": 0
+      },
+      {
+        "book": "2-paralipomenon",
+        "compared": 822,
+        "identical": 800,
+        "ligature_only": 21,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "1-esdras",
+        "compared": 280,
+        "identical": 273,
+        "ligature_only": 7,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "2-esdras",
+        "compared": 404,
+        "identical": 394,
+        "ligature_only": 7,
+        "punct_or_space_only": 3,
+        "substantive": 0
+      },
+      {
+        "book": "tobias",
+        "compared": 298,
+        "identical": 296,
+        "ligature_only": 1,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "judith",
+        "compared": 346,
+        "identical": 340,
+        "ligature_only": 6,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "esther",
+        "compared": 275,
+        "identical": 269,
+        "ligature_only": 5,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "job",
+        "compared": 1070,
+        "identical": 1061,
+        "ligature_only": 1,
+        "punct_or_space_only": 8,
+        "substantive": 0
+      },
+      {
+        "book": "psalms",
+        "compared": 2527,
+        "identical": 2463,
+        "ligature_only": 22,
+        "punct_or_space_only": 42,
+        "substantive": 0
+      },
+      {
+        "book": "proverbs",
+        "compared": 915,
+        "identical": 837,
+        "ligature_only": 2,
+        "punct_or_space_only": 76,
+        "substantive": 0
+      },
+      {
+        "book": "ecclesiastes",
+        "compared": 222,
+        "identical": 201,
+        "ligature_only": 0,
+        "punct_or_space_only": 21,
+        "substantive": 0
+      },
+      {
+        "book": "canticle-of-canticles",
+        "compared": 116,
+        "identical": 110,
+        "ligature_only": 1,
+        "punct_or_space_only": 5,
+        "substantive": 0
+      },
+      {
+        "book": "wisdom",
+        "compared": 439,
+        "identical": 434,
+        "ligature_only": 0,
+        "punct_or_space_only": 5,
+        "substantive": 0
+      },
+      {
+        "book": "ecclesiasticus",
+        "compared": 1592,
+        "identical": 1520,
+        "ligature_only": 0,
+        "punct_or_space_only": 72,
+        "substantive": 0
+      },
+      {
+        "book": "isaie",
+        "compared": 1292,
+        "identical": 1238,
+        "ligature_only": 47,
+        "punct_or_space_only": 7,
+        "substantive": 0
+      },
+      {
+        "book": "jeremie",
+        "compared": 1363,
+        "identical": 1285,
+        "ligature_only": 67,
+        "punct_or_space_only": 11,
+        "substantive": 0
+      },
+      {
+        "book": "lamentations",
+        "compared": 154,
+        "identical": 152,
+        "ligature_only": 2,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "baruch",
+        "compared": 213,
+        "identical": 204,
+        "ligature_only": 3,
+        "punct_or_space_only": 6,
+        "substantive": 0
+      },
+      {
+        "book": "ezechiel",
+        "compared": 1272,
+        "identical": 1215,
+        "ligature_only": 51,
+        "punct_or_space_only": 6,
+        "substantive": 0
+      },
+      {
+        "book": "daniel",
+        "compared": 531,
+        "identical": 509,
+        "ligature_only": 7,
+        "punct_or_space_only": 15,
+        "substantive": 0
+      },
+      {
+        "book": "osee",
+        "compared": 198,
+        "identical": 184,
+        "ligature_only": 13,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "joel",
+        "compared": 73,
+        "identical": 70,
+        "ligature_only": 2,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "amos",
+        "compared": 147,
+        "identical": 138,
+        "ligature_only": 7,
+        "punct_or_space_only": 2,
+        "substantive": 0
+      },
+      {
+        "book": "abdias",
+        "compared": 21,
+        "identical": 21,
+        "ligature_only": 0,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "jonas",
+        "compared": 48,
+        "identical": 48,
+        "ligature_only": 0,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "micheas",
+        "compared": 104,
+        "identical": 101,
+        "ligature_only": 2,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "nahum",
+        "compared": 47,
+        "identical": 46,
+        "ligature_only": 1,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "habacuc",
+        "compared": 56,
+        "identical": 54,
+        "ligature_only": 1,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "sophonias",
+        "compared": 53,
+        "identical": 48,
+        "ligature_only": 2,
+        "punct_or_space_only": 3,
+        "substantive": 0
+      },
+      {
+        "book": "aggeus",
+        "compared": 38,
+        "identical": 35,
+        "ligature_only": 1,
+        "punct_or_space_only": 2,
+        "substantive": 0
+      },
+      {
+        "book": "zacharias",
+        "compared": 211,
+        "identical": 203,
+        "ligature_only": 4,
+        "punct_or_space_only": 4,
+        "substantive": 0
+      },
+      {
+        "book": "malachie",
+        "compared": 55,
+        "identical": 55,
+        "ligature_only": 0,
+        "punct_or_space_only": 0,
+        "substantive": 0
+      },
+      {
+        "book": "1-machabees",
+        "compared": 929,
+        "identical": 896,
+        "ligature_only": 18,
+        "punct_or_space_only": 15,
+        "substantive": 0
+      },
+      {
+        "book": "2-machabees",
+        "compared": 558,
+        "identical": 534,
+        "ligature_only": 19,
+        "punct_or_space_only": 5,
+        "substantive": 0
+      },
+      {
+        "book": "matthew",
+        "compared": 1070,
+        "identical": 877,
+        "ligature_only": 8,
+        "punct_or_space_only": 185,
+        "substantive": 0
+      },
+      {
+        "book": "mark",
+        "compared": 677,
+        "identical": 567,
+        "ligature_only": 8,
+        "punct_or_space_only": 102,
+        "substantive": 0
+      },
+      {
+        "book": "luke",
+        "compared": 1151,
+        "identical": 992,
+        "ligature_only": 11,
+        "punct_or_space_only": 148,
+        "substantive": 0
+      },
+      {
+        "book": "john",
+        "compared": 879,
+        "identical": 602,
+        "ligature_only": 5,
+        "punct_or_space_only": 272,
+        "substantive": 0
+      },
+      {
+        "book": "acts",
+        "compared": 1004,
+        "identical": 855,
+        "ligature_only": 42,
+        "punct_or_space_only": 107,
+        "substantive": 0
+      },
+      {
+        "book": "romans",
+        "compared": 433,
+        "identical": 374,
+        "ligature_only": 2,
+        "punct_or_space_only": 57,
+        "substantive": 0
+      },
+      {
+        "book": "1-corinthians",
+        "compared": 437,
+        "identical": 393,
+        "ligature_only": 0,
+        "punct_or_space_only": 44,
+        "substantive": 0
+      },
+      {
+        "book": "2-corinthians",
+        "compared": 255,
+        "identical": 226,
+        "ligature_only": 0,
+        "punct_or_space_only": 29,
+        "substantive": 0
+      },
+      {
+        "book": "galatians",
+        "compared": 149,
+        "identical": 127,
+        "ligature_only": 0,
+        "punct_or_space_only": 22,
+        "substantive": 0
+      },
+      {
+        "book": "ephesians",
+        "compared": 155,
+        "identical": 126,
+        "ligature_only": 0,
+        "punct_or_space_only": 29,
+        "substantive": 0
+      },
+      {
+        "book": "philippians",
+        "compared": 104,
+        "identical": 79,
+        "ligature_only": 1,
+        "punct_or_space_only": 24,
+        "substantive": 0
+      },
+      {
+        "book": "colossians",
+        "compared": 95,
+        "identical": 80,
+        "ligature_only": 0,
+        "punct_or_space_only": 15,
+        "substantive": 0
+      },
+      {
+        "book": "1-thessalonians",
+        "compared": 89,
+        "identical": 71,
+        "ligature_only": 0,
+        "punct_or_space_only": 18,
+        "substantive": 0
+      },
+      {
+        "book": "2-thessalonians",
+        "compared": 47,
+        "identical": 34,
+        "ligature_only": 0,
+        "punct_or_space_only": 13,
+        "substantive": 0
+      },
+      {
+        "book": "1-timothy",
+        "compared": 113,
+        "identical": 94,
+        "ligature_only": 1,
+        "punct_or_space_only": 18,
+        "substantive": 0
+      },
+      {
+        "book": "2-timothy",
+        "compared": 83,
+        "identical": 67,
+        "ligature_only": 1,
+        "punct_or_space_only": 15,
+        "substantive": 0
+      },
+      {
+        "book": "titus",
+        "compared": 46,
+        "identical": 39,
+        "ligature_only": 0,
+        "punct_or_space_only": 7,
+        "substantive": 0
+      },
+      {
+        "book": "philemon",
+        "compared": 25,
+        "identical": 17,
+        "ligature_only": 0,
+        "punct_or_space_only": 8,
+        "substantive": 0
+      },
+      {
+        "book": "hebrews",
+        "compared": 303,
+        "identical": 272,
+        "ligature_only": 5,
+        "punct_or_space_only": 26,
+        "substantive": 0
+      },
+      {
+        "book": "james",
+        "compared": 108,
+        "identical": 103,
+        "ligature_only": 0,
+        "punct_or_space_only": 5,
+        "substantive": 0
+      },
+      {
+        "book": "1-peter",
+        "compared": 105,
+        "identical": 90,
+        "ligature_only": 0,
+        "punct_or_space_only": 15,
+        "substantive": 0
+      },
+      {
+        "book": "2-peter",
+        "compared": 61,
+        "identical": 50,
+        "ligature_only": 0,
+        "punct_or_space_only": 11,
+        "substantive": 0
+      },
+      {
+        "book": "1-john",
+        "compared": 105,
+        "identical": 91,
+        "ligature_only": 0,
+        "punct_or_space_only": 14,
+        "substantive": 0
+      },
+      {
+        "book": "2-john",
+        "compared": 13,
+        "identical": 9,
+        "ligature_only": 0,
+        "punct_or_space_only": 4,
+        "substantive": 0
+      },
+      {
+        "book": "3-john",
+        "compared": 14,
+        "identical": 13,
+        "ligature_only": 0,
+        "punct_or_space_only": 1,
+        "substantive": 0
+      },
+      {
+        "book": "jude",
+        "compared": 25,
+        "identical": 18,
+        "ligature_only": 0,
+        "punct_or_space_only": 7,
+        "substantive": 0
+      },
+      {
+        "book": "apocalypse",
+        "compared": 405,
+        "identical": 370,
+        "ligature_only": 1,
+        "punct_or_space_only": 34,
+        "substantive": 0
+      }
+    ],
+    "structural": {
+      "book_ct_mismatch": [
+        {
+          "book": "tobias",
+          "mad_n": 14,
+          "sab_n": 15,
+          "madueke": [
+            1,
+            2,
+            3,
+            "...",
+            14
+          ],
+          "sabates": [
+            0,
+            1,
+            2,
+            "...",
+            14
+          ]
+        }
+      ],
+      "sab_chapters_absent_in_madueke": [
+        "tobias 0"
+      ],
+      "sab_verses_absent_in_madueke_count": 0,
+      "sab_verses_absent_in_madueke_sample": [],
+      "mad_verses_absent_in_sabates_count": 0,
+      "mad_verses_absent_in_sabates_sample": []
+    },
+    "substantive_samples": [],
+    "punct_or_space_samples": [
+      {
+        "ref": "genesis 12:3",
+        "madueke": "I will bless them that bless thee, and curse them that curse thee, and IN THEE shall all the kindreds of the earth be blessed. ",
+        "sabates": "I will bless them that bless thee, and curse them that curse thee, and IN Thee shall all the kindreds of the earth be blessed."
+      },
+      {
+        "ref": "genesis 18:10",
+        "madueke": "To whom he said: Returning I will come to thee at this time, life accompanying, and Sara thy wife shall have a son. Which when Sara heard, she laughed behind the door of the tent. ",
+        "sabates": "To whom he said: Returning I will come to thee at this time, life accompanying, and Sara thy wife shall have a son . Which when Sara heard, she laughed behind the door of the tent."
+      },
+      {
+        "ref": "genesis 18:18",
+        "madueke": "whereas he shall be into a Nation great, and very strong, and in him are TO BE BLESSED ALL THE NATIONS OF THE EARTH? ",
+        "sabates": "whereas he shall be into a Nation great, and very strong, and in him are TO BE Blessed All The Nations of The Earth?"
+      },
+      {
+        "ref": "genesis 22:18",
+        "madueke": "and IN THY SEED SHALL BE BLESSED ALL THE NATIONS OF THE EARTH, because thou hast obeyed my voice. ",
+        "sabates": "and IN Thy Seed Shall be Blessed All The Nations of The Earth, because thou hast obeyed my voice."
+      },
+      {
+        "ref": "genesis 24:54",
+        "madueke": "A banquet was made, and eating and drinking together they lodged there. And in the morning the servant arose, and said: Dismiss me, that I may go to my lord. ",
+        "sabates": "Abanquet was made, and eating and drinking together they lodged there. And in the morning the servant arose, and said: Dismiss me, that I may go to my lord."
+      },
+      {
+        "ref": "genesis 26:4",
+        "madueke": "And I will multiply thy seed as the stars of heaven: and I will give to thy posterity all these countries: and in thy seed SHALL BE BLESSED ALL THE NATIONS OF THE EARTH, ",
+        "sabates": "And I will multiply thy seed as the stars of heaven: and I will give to thy posterity all these countries: and in thy seed Shall be Blessed All The Nations of The Earth,"
+      },
+      {
+        "ref": "genesis 28:14",
+        "madueke": "And thy seed shall be as the dust of the earth: thou shalt be dilated to the West, and to the East, and to the North, and to the South: and IN THEE AND THY SEED ALL THE TRIBES OF THE EARTH SHALL BE BLESSED. ",
+        "sabates": "And thy seed shall be as the dust of the earth: thou shalt be dilated to the West, and to the East, and to the North, and to the South: and IN Thee And Thy Seed All The Tribes of The Earth Shall be Blessed."
+      },
+      {
+        "ref": "genesis 28:15",
+        "madueke": "And I will be thy keeper whither soever thou goest, and will bring thee back into this land: neither will I leave thee, till I shall have accomplished all things which I have said. ",
+        "sabates": "And Iwill be thy keeper whither soever thou goest, and will bring thee back into this land: neither will I leave thee, till I shall have accomplished all things which I have said."
+      },
+      {
+        "ref": "genesis 41:22",
+        "madueke": "I saw a dream: Seven ears of corn grew forth upon one stalk, full and very fair. ",
+        "sabates": "Isaw a dream: Seven ears of corn grew forth upon one stalk, full and very fair."
+      },
+      {
+        "ref": "genesis 43:9",
+        "madueke": "I take upon me the boy: require him of my hand, unless I bring him again, and restore him to thee, I will be guilty of sin against thee for ever. ",
+        "sabates": "Itake upon me the boy: require him of my hand, unless I bring him again, and restore him to thee, I will be guilty of sin against thee for ever."
+      },
+      {
+        "ref": "genesis 44:33",
+        "madueke": "I therefore thy servant will tarry instead of the child in the service of my lord, and let the child go up with his brethren. ",
+        "sabates": "Itherefore thy servant will tarry instead of the child in the service of my lord, and let the child go up with his brethren."
+      },
+      {
+        "ref": "genesis 47:24",
+        "madueke": "that you may have corn. The fifth part you shall give to the king: the other four I am content you shall have for seed, &amp; for food to your families &amp; your children. ",
+        "sabates": "that you may have corn. The fifth part you shall give to the king: the other four Iam content you shall have for seed, & for food to your families & your children."
+      },
+      {
+        "ref": "genesis 49:9",
+        "madueke": "A lion's whelp Judas: to the prey my son thou didst ascend: taking thy rest thou didst lie as a lion, and as it were a lioness, who shall raise him up? ",
+        "sabates": "Alion's whelp Judas: to the prey my son thou didst ascend: taking thy rest thou didst lie as a lion, and as it were a lioness, who shall raise him up?"
+      },
+      {
+        "ref": "genesis 49:10",
+        "madueke": "THE SCEPTRE SHALL NOT BE TAKEN AWAY FROM JUDAS, AND A DUKE OUT OF HIS THIGH, TILL HE DO COME THAT IS TO BE SENT, AND THE SAME SHALL BE THE EXPECTATION OF THE GENTILES. ",
+        "sabates": "The Sceptre Shall Not be Taken Away From Judas, And A duke Out of His Thigh, Till he do Come That is to be Sent, And The Same Shall be The Expectation of The Gentiles."
+      },
+      {
+        "ref": "genesis 49:18",
+        "madueke": "I will expect THY SALVATION o Lord. ",
+        "sabates": "I will expect Thy Salvation o Lord."
+      },
+      {
+        "ref": "exodus 3:14",
+        "madueke": "God said to Moyses: I AM WHICH AM. He said: Thus shalt thou say to the children of Israel: HE WHICH IS, hath sent me to you. ",
+        "sabates": "God said to Moyses: I am Which AM. He said: Thus shalt thou say to the children of Israel: HE Which IS, hath sent me to you."
+      },
+      {
+        "ref": "exodus 4:23",
+        "madueke": "I said to thee: dismiss my son that he may serve me, and thou wouldst not dismiss him: behold I will kill thy first-begotten son. ",
+        "sabates": "Isaid to thee: dismiss my son that he may serve me, and thou wouldst not dismiss him: behold I will kill thy first-begotten son."
+      },
+      {
+        "ref": "exodus 6:3",
+        "madueke": "that appeared to Abraham, to Isaac, and to Jacob, as God Almighty: and my name ADONAI I did not shew them. ",
+        "sabates": "that appeared to Abraham, to Isaac, and to Jacob, as God Almighty: and my name Adonai I did not shew them."
+      },
+      {
+        "ref": "exodus 22:22",
+        "madueke": "A widow and an orphan you shall not hurt. ",
+        "sabates": "Awidow and an orphan you shall not hurt."
+      },
+      {
+        "ref": "exodus 23:7",
+        "madueke": "A lie thou shalt avoid. The innocent and just person thou shalt not put to death: because I abhor the impious man. ",
+        "sabates": "Alie thou shalt avoid. The innocent and just person thou shalt not put to death: because I abhor the impious man."
+      },
+      {
+        "ref": "exodus 33:23",
+        "madueke": "and I will take away my hand, and thou shalt see my back-parts: but my face thou canst not see,",
+        "sabates": "and I will take away my hand, and thou shalt see my back-parts: but my face thou canst not see."
+      },
+      {
+        "ref": "leviticus 7:20",
+        "madueke": "A soul being polluted that eateth of the flesh of the host of pacifics, which is offered to our Lord, shall perish from his people. ",
+        "sabates": "Asoul being polluted that eateth of the flesh of the host of pacifics, which is offered to our Lord, shall perish from his people."
+      },
+      {
+        "ref": "leviticus 13:47",
+        "madueke": "A woollen or linen garment, that shall have the leprosy ",
+        "sabates": "Awoollen or linen garment, that shall have the leprosy"
+      },
+      {
+        "ref": "leviticus 21:7",
+        "madueke": "A whore and a vile strumpet he shall not take to wife, nor her, that is put away from her husband: because they are consecrated to their God, ",
+        "sabates": "Awhore and a vile strumpet he shall not take to wife, nor her, that is put away from her husband: because they are consecrated to their God,"
+      },
+      {
+        "ref": "numbers 12:3",
+        "madueke": "(For Moyses was the mildest man above all men that dwelt upon the earth) ",
+        "sabates": "( For Moyses was the mildest man above all men that dwelt upon the earth)"
+      },
+      {
+        "ref": "numbers 21:9",
+        "madueke": "Moyses therefore made A BRAZEN SERPENT, and set it for a sign: whom when they that were strucken looked on, they were healed. ",
+        "sabates": "Moyses therefore made A brazen Serpent, and set it for a sign: whom when they that were strucken looked on, they were healed."
+      },
+      {
+        "ref": "numbers 21:28",
+        "madueke": "<span class='allusion'>A fire went forth from Hesebon, a flame from the town of Sehon, &amp; devoured Ar of the Moabites, and the inhabitants of the high places of Arnon. ",
+        "sabates": "Afire went forth from Hesebon, a flame from the town of Sehon, & devoured Ar of the Moabites, and the inhabitants of the high places of Arnon."
+      },
+      {
+        "ref": "numbers 24:17",
+        "madueke": "I shall see him, but not now: I shall behold him but not near. A STAR SHALL RISE out of Jacob, and a rod shall arise from Israel: and shall strike the Dukes of Moab, and shall waste all the children of Seth. ",
+        "sabates": "I shall see him, but not now: I shall behold him but not near. A star Shall Rise out of Jacob, and a rod shall arise from Israel: and shall strike the Dukes of Moab, and shall waste all the children of Seth."
+      },
+      {
+        "ref": "numbers 28:15",
+        "madueke": "A buck goat also shall be offered to the Lord for sins an everlasting holocaust with his libaments. ",
+        "sabates": "Abuck goat also shall be offered to the Lord for sins an everlasting holocaust with his libaments."
+      },
+      {
+        "ref": "deuteronomy 1:20",
+        "madueke": "I said to you: You are come to the mountain of the Amorrhite, which the Lord our God will give to us. ",
+        "sabates": "Isaid to you: You are come to the mountain of the Amorrhite, which the Lord our God will give to us."
+      },
+      {
+        "ref": "deuteronomy 1:43",
+        "madueke": "I spake, and you heard not: But resisting the commandment of our Lord, and swelling with pride you went up into the mountain. ",
+        "sabates": "Ispake, and you heard not: But resisting the commandment of our Lord, and swelling with pride you went up into the mountain."
+      },
+      {
+        "ref": "deuteronomy 2:26",
+        "madueke": "I sent therefore messengers from the wilderness of Cademoth to Sehon the king of Hesebon with peaceable words, saying: ",
+        "sabates": "Isent therefore messengers from the wilderness of Cademoth to Sehon the king of Hesebon with peaceable words, saying:"
+      },
+      {
+        "ref": "deuteronomy 18:15",
+        "madueke": "A PROPHET of thy nation &amp; of thy brethren like unto me, will our Lord thy God raise up to thee: him thou shalt hear, ",
+        "sabates": "A prophet of thy nation & of thy brethren like unto me, will our Lord thy God raise up to thee: him thou shalt hear,"
+      },
+      {
+        "ref": "deuteronomy 22:5",
+        "madueke": "A woman shall not be clothed with man's apparel, neither shall a man use woman's apparel: for he is abominable before God that doeth these things. ",
+        "sabates": "Awoman shall not be clothed with man's apparel, neither shall a man use woman's apparel: for he is abominable before God that doeth these things."
+      },
+      {
+        "ref": "deuteronomy 30:18",
+        "madueke": "I foretell thee this day that thou shalt perish, &amp; abide a little time in the Land, which passing over Jordan, thou shalt enter to possess. ",
+        "sabates": "Iforetell thee this day that thou shalt perish, & abide a little time in the Land, which passing over Jordan, thou shalt enter to possess."
+      },
+      {
+        "ref": "deuteronomy 32:22",
+        "madueke": "A fire is kindled in my wrath, and shall burn even to the lowest parts of hell: and shall devour the earth with her spring, and shall burn the foundations of mountains. ",
+        "sabates": "Afire is kindled in my wrath, and shall burn even to the lowest parts of hell: and shall devour the earth with her spring, and shall burn the foundations of mountains."
+      },
+      {
+        "ref": "deuteronomy 32:26",
+        "madueke": "I said: Where are they? I will make their memory to cease from among man. ",
+        "sabates": "Isaid: Where are they? I will make their memory to cease from among man."
+      },
+      {
+        "ref": "deuteronomy 32:28",
+        "madueke": "A nation without counsel is it, and without wisdom. ",
+        "sabates": "Anation without counsel is it, and without wisdom."
+      },
+      {
+        "ref": "josue 8:33",
+        "madueke": "And all the people, and the ancients, and the Princes and judges stood on both sides of the ark, in the sight of the Priests that carried the ark of the covenant of our Lord, as well the stranger as also the man of the same country. The half part of them beside mount Garizim, and half beside mount Hebal, as Moyses the servant of our Lord had commanded. And first indeed he blessed the people of Israel. ",
+        "sabates": "And all the people, and the ancients, and the Princes and judges stood on both sides of the ark, in the sight of the Priests that carried the ark of the covenant of our Lord, as well the stranger as also the man of the same country. The half part of them beside mount Garizim and half beside mount Hebal, as Moyses the servant of our Lord had commanded. And first indeed he blessed the people of Israel."
+      },
+      {
+        "ref": "josue 24:3",
+        "madueke": "<span class='allusion'>I took therefore your father Abraham from the coasts of Mesopotamia, and brought him into the Land of Chanaan, and multiplied his seed, ",
+        "sabates": "Itook therefore your father Abraham from the coasts of Mesopotamia, and brought him into the Land of Chanaan, and multiplied his seed,"
+      }
+    ],
+    "book_map": {
+      "Genesis": "genesis",
+      "Exodus": "exodus",
+      "Leviticus": "leviticus",
+      "Numbers": "numbers",
+      "Deuteronomy": "deuteronomy",
+      "Josue": "josue",
+      "Judges": "judges",
+      "Ruth": "ruth",
+      "1 Kings": "1-kings",
+      "2 Kings": "2-kings",
+      "3 Kings": "3-kings",
+      "4 Kings": "4-kings",
+      "1 Paralipomenon": "1-paralipomenon",
+      "2 Paralipomenon": "2-paralipomenon",
+      "1 Esdras": "1-esdras",
+      "2 Esdras": "2-esdras",
+      "Tobias": "tobias",
+      "Judith": "judith",
+      "Esther": "esther",
+      "Job": "job",
+      "Psalms": "psalms",
+      "Proverbs": "proverbs",
+      "Ecclesiastes": "ecclesiastes",
+      "Canticle of Canticles": "canticle-of-canticles",
+      "Wisdom": "wisdom",
+      "Ecclesiasticus": "ecclesiasticus",
+      "Isaie": "isaie",
+      "Jeremie": "jeremie",
+      "Lamentations": "lamentations",
+      "Baruch": "baruch",
+      "Ezechiel": "ezechiel",
+      "Daniel": "daniel",
+      "Osee": "osee",
+      "Joel": "joel",
+      "Amos": "amos",
+      "Abdias": "abdias",
+      "Jonas": "jonas",
+      "Micheas": "micheas",
+      "Nahum": "nahum",
+      "Habacuc": "habacuc",
+      "Sophonias": "sophonias",
+      "Aggeus": "aggeus",
+      "Zacharias": "zacharias",
+      "Malachie": "malachie",
+      "1 Machabees": "1-machabees",
+      "2 Machabees": "2-machabees",
+      "Matthew": "matthew",
+      "Mark": "mark",
+      "Luke": "luke",
+      "John": "john",
+      "Acts": "acts",
+      "Romans": "romans",
+      "1 Corinthians": "1-corinthians",
+      "2 Corinthians": "2-corinthians",
+      "Galatians": "galatians",
+      "Ephesians": "ephesians",
+      "Philippians": "philippians",
+      "Colossians": "colossians",
+      "1 Thessalonians": "1-thessalonians",
+      "2 Thessalonians": "2-thessalonians",
+      "1 Timothy": "1-timothy",
+      "2 Timothy": "2-timothy",
+      "Titus": "titus",
+      "Philemon": "philemon",
+      "Hebrews": "hebrews",
+      "James": "james",
+      "1 Peter": "1-peter",
+      "2 Peter": "2-peter",
+      "1 John": "1-john",
+      "2 John": "2-john",
+      "3 John": "3-john",
+      "Jude": "jude",
+      "Apocalypse": "apocalypse"
+    }
+  },
+  "leg2_format_fidelity_madueke_a_vs_b": {
+    "granularity": "edition-global word-type recall",
+    "caveat": "Madueke_A and Madueke_B are the SAME edition in two formats; this confirms HTML-extraction fidelity, NOT independent corroboration. merged.txt is a column-flattened pdftotext dump and is not verse-parseable, so recall is measured at edition granularity, not per verse.",
+    "normalization": "light modern-spelling fold (lowercase, ae/oe ligature, letters-only); NO archaic skeleton fold",
+    "madueke_a_scripture_types": 14099,
+    "madueke_b_edition_types": 23310,
+    "types_attested_in_b": 14099,
+    "type_recall_pct": 100.0,
+    "token_weighted_recall_pct": 100.0,
+    "missing_type_count": 0,
+    "missing_type_sample": []
+  }
+}
