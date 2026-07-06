@@ -1,0 +1,3163 @@
+{
+  "scraped_on": "2026-07-05",
+  "base_url": "https://www.originaldouayrheims.com",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+  "book_count": 39,
+  "validation_method": "Verse-granularity comparison vs Madueke_A (modern-spelling, same edition). Both sides skeleton-folded (small-caps, long-s, ae/oe, u->v, i->j, y->i, vv->w, &->and, doubled-letter collapse, silent trailing -e) so archaic<->modern SPELLING does not count as a mismatch — only genuine WORDING differs. 'folded_agreement' is per-verse (penalized by versification differences); 'chapter_bag_agreement' is whole-chapter bag-of-words (versification-insensitive) — the gap between them isolates verse-boundary differences from text loss.",
+  "books": [
+    {
+      "book": "genesis",
+      "slug": "genesis",
+      "testament": "OT",
+      "landing_path": "/old/genesis",
+      "chapters": 50,
+      "verses_total": 1378,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis",
+          "sha256": "3b9f9a7d5134a6eb0838ae1d658e3d8317af530923ba2786d12f2b9a26eaa5d7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesisarg",
+          "sha256": "5a1dfbd5a5c782eb3e0fe85d3d345b767bb3357174bc0a4cd7baab7e02903021"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis2",
+          "sha256": "cf3149854e0d02d4940edcb1338b63c8b5c0da5c1a8685d48debcd67cfd1fcc7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis3",
+          "sha256": "31ad38a1cef53f977303b03d6482e8ec7f6a88494268a88e7104f85c927ba3b1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis4",
+          "sha256": "739dac11f16de8917e3aec42572b690bcad2fa63b655d7dfc151e61cc3c7fe3f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis5",
+          "sha256": "55d24e6f6a2238f1f63a84698b62e77a8bd695830102386312bbccf26a9ca381"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis6",
+          "sha256": "9deb0049844d7f7b44a434ecde46efad41eef2146d4cb333dee17275ecae9a91"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis7",
+          "sha256": "e57e3b31eab5a567c7e28528ea7745d8420a4fe69a9b6a3c1cb46e8d73a271fd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis8",
+          "sha256": "f4c5584e9835cf5382012211810567f695b2ef579c7873e9da03bef37f793997"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis9",
+          "sha256": "1de64f86a04d21506538da754c230edd002a86319c104492a53c5e0fd439a5d1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis10",
+          "sha256": "9bb656966a73279ed0464971625652cb57192c9bde4566c7e7cf4ae8e1f052ce"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis11",
+          "sha256": "183e4faa45afde4983a9d7d89bc7098afd2e5ee9d279d8117579bd54e32a4d4f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis12",
+          "sha256": "9409e378e8c10a67a86b293b5cfc601ed9a687eb75918bdf45ae9742dabc1a4b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis13",
+          "sha256": "5a0fa1a2c090fa3811d3f82694811c6bc4a1a9631f9479a732e9ef7e307d9146"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis14",
+          "sha256": "5acf877af0a24544507f6bf9e979e8dc784f203b77527f6b429c1d050d977e04"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis15",
+          "sha256": "5055c8c6bbfdc77b71932c1d86a3fd4155fd83b6cff370259a8d54ffbdf05d46"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis16",
+          "sha256": "e48b0904afae13050d4e78858473b6ae1836bb3dda7f04e297cc75f28b3ef7df"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis17",
+          "sha256": "cbe85c6693a11e52ef6010bef746a4a29f5779080a95c67799d4b8c3313b1a12"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis18",
+          "sha256": "dc76209f652157fe6a6d8d404981615cdddc0543261f3506903db6f54b77b602"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis19",
+          "sha256": "7ca1818299ff2423c6691d88bf98440fa49c47e35eebc5ed0a1b42e11c2a469e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis20",
+          "sha256": "f7db75c4c81bd7fe6802694906fd7e114d7cbcee1484b4a0a669107762e9f7bd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis21",
+          "sha256": "d183cfd7dab3b29b1cf1ae8142845c0071e2eeaa7fffcc243ee97486c15ce3b7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis22",
+          "sha256": "fbe774afe0eb76ce143c2f0ae000249ba011b47b0f2968c7d318a7464e6f045e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis23",
+          "sha256": "554b6950da1e9b73b943c7f5a7be5ab735f19741e6efc3396be6eceb3ecdd8c9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis24",
+          "sha256": "f77d20fc641196424e04eefc2bb8b374934d23dca89e5db9ce15177d19493090"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis25",
+          "sha256": "146063eb3c3e99ac9622a9cc78b04e6d723cdabf170d9a4cf0631837c9d5e45a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis26",
+          "sha256": "73dd030877da2b7e3f7821c6aad55c9809d463fb1ffe55d5fb32fed15aa8871c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis27",
+          "sha256": "77c74763464fc0a16beaf81d2d7c693cd11416e7347afe514c976c056609e875"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis28",
+          "sha256": "62fe397ccd8878093726a7521ed9079d7e69f5e9d38bb7b231d701a6dbc64cad"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis29",
+          "sha256": "0bf7cd74b2655d274bd65357e03018c1ac64fe3aa4ba789dbbd3896811b5d405"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis30",
+          "sha256": "f8b7c7eeeba7c908fed508535427ccdb5f92c427cbe1609dd932451c218b2302"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis31",
+          "sha256": "60aeccfeada5efaeaebdc3f809d86c09bc54ada267097bb4491564e6ba2c85ef"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis32",
+          "sha256": "26ca57d9a28a005ac25ab98a5cd54edb7b6f6d202a4bfdb8984b66ee8e30a542"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis33",
+          "sha256": "75d7f9e2b0e5dbf94efbbad7625414b3767230afbbba5aa714f76352c1f50018"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis34",
+          "sha256": "db1bd4fa86d43d336e8504fdf8cbb88f6b9e619489572110e793a6a16d3fab32"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis35",
+          "sha256": "add9668b48e2317532aeee88efd02f1419c9dcef503c844188db518db5386994"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis36",
+          "sha256": "49db0f5cdd5801b6f22226a80a1ca35a83b4db5c1db935fb1490524a40cebf98"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis37",
+          "sha256": "af5125f44505ddad14718a73bf310769de24d9b6a2c7e5ea8be1485c25c1640c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis38",
+          "sha256": "bf551398795ec8fbf9ec2a4e2b59e94ea8bd97497b1abd8306d886cffb44dde7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis39",
+          "sha256": "d6d19244d5cc880976ad2d906e119f9a92f755e74940f902ba8cc2811085aa5c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis40",
+          "sha256": "83aa990761b28ff66e33c8de34e28eee8f3156872abb1f84aa1169c377880c7e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis41",
+          "sha256": "2f8885b05a63dba2a5dbf833d67079ce2c93552cb0bc252044d58286b0c5c85e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis42",
+          "sha256": "f97d16b51d16f83dccccb7c0a521610745d335a10200f380df53ec1a7b4b4a02"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis43",
+          "sha256": "f70254cf5fc5f1b13d9ee9db9b1a86f10d470c5c00fa04f9025ce0418ef49680"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis44",
+          "sha256": "a9d52508598c5bc9c4314a65f8d1a9dd732d90616156ea31544dc6a91ef6c4c1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis45",
+          "sha256": "69a36f4fb0e0ee6aaa0b2d788c678c2c04283f5dab5a31e4eac8c74777c70841"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis46",
+          "sha256": "12bb087ec5e6f47e4d6a93529d993401696e9d7bea0436eed164d9da4de3de4f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis47",
+          "sha256": "f884205fad04a0380cfa1e54583282fb61a5f9aad82e76c1a9acac6c0ed36bfe"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis48",
+          "sha256": "be06e0a96e978749ea259557624ccf9a8a36866cebf59a139b8577b3fd48c71d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis49",
+          "sha256": "d864a318f6db451c6e18f49630348077d491c355f437d9cd0442b559b9350868"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/genesis/genesis50",
+          "sha256": "8c4ae94dd75a92a8c4a88d5de161b4a20b128f69b431af7c8b53348912f33520"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "genesis",
+        "overlap_chapters": 50,
+        "verse_count_match": "37/50",
+        "folded_agreement": 0.9292,
+        "chapter_bag_agreement": 0.8559
+      }
+    },
+    {
+      "book": "exodus",
+      "slug": "exo",
+      "testament": "OT",
+      "landing_path": "/old/exodus",
+      "chapters": 40,
+      "verses_total": 1163,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus",
+          "sha256": "978ceafe1e7c4b539b977da8d10575dd491d37920e3f3472348feddba653f736"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exodusarg",
+          "sha256": "6b2edb69425e4046cccb2c6070226257c5a98da1796073a7540c019a971faeac"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo2",
+          "sha256": "a33a6d02fe0e75154f96cf5bdc99fa413a63d0dcdbcc9981c9f1233c671f6d2f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo3",
+          "sha256": "fd5e5c0122ef2bf8c3b8f003af931369480ba1b082dd6b8328964858b86bc639"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo4",
+          "sha256": "d30d03f245c4d8c759ad6eac6be71c909422fc04d7ceef95ba8cd83a979552dc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo5",
+          "sha256": "a7803ed83c309e41b727ffab951f788ab5475a25dce63756c322a830d11df62e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo6",
+          "sha256": "2f5e53e0998e604068fc1186fcab2f1b374bd9934ce5e948de18836c1782ecd6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo7",
+          "sha256": "ba1a7f1af7b4ad99c16dc0e2cd63c1be2e395c214cb550c51ff357335293005f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo8",
+          "sha256": "76014b2f9a6e302a24164a7bc40c2b8f9a72921b9ca94d4729fb2c99521ac6eb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo9",
+          "sha256": "2379dc6fa62591d98e89aae928569f223a954b0549be60788e10ba876882ee10"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo10",
+          "sha256": "b8912644d7fefe36488253c599e3456b66a4dd7d76fb89f8cad83df8cd0ca1e1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo11",
+          "sha256": "63b6b5a23ab9e55d1f467c418b367ef89cd24b95038329cf5313b95c64b3c97c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo12",
+          "sha256": "7c68c995091c1a90c979876b4d564e91e94c3eb70874ead11ad4841e9da3c627"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo13",
+          "sha256": "a23c07fba18883f9d01dbec47cf8684e69add9aba80c70467fede38f5d171bda"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo14",
+          "sha256": "7260b9bd054271763c6b8e8ba8160bd2e93844ec5f902054710443b0ce4ee0b2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo15",
+          "sha256": "3b35698e6132b7557e3ac8a7eec70ea1ecd0c164014ee7a31d611f5cddb573a8"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo16",
+          "sha256": "6b0d253d6dbabec9eb2306577908269eb66f67196ce448c907a3938ea9d80d2e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo17",
+          "sha256": "d0da3d6ccbf6e867fd0f46c25dabeb74afcd29f08bcc18b9c5111a6d58f2e7f6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo18",
+          "sha256": "0c5a2aced023774ade4635270a6832c46000cd30c1efad7dae8e1672bbf5a0f7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo19",
+          "sha256": "5ee50cc2cea03ad3de86c9bfa6304370aeb45ee569a83d4d42f036d8c600b616"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo20",
+          "sha256": "0af775ff0d8485bb17cf7dfc305a97aa9860c98d805062efd3ab451c96e25971"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo21",
+          "sha256": "21cabbcf3ff16e6c74393c049e551124a3ff829f911ba6d2a0148ad92880dbbf"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo22",
+          "sha256": "0d3c7db981818854d7db23d7c15b62a560c55ac271da911523028a839ef49523"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo23",
+          "sha256": "0f3a67516fd7bb35a64af658612b0ad90b53bacd9d30b7c4134bb45628e76cad"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo24",
+          "sha256": "83896d33ea374ab3166ea8a649b6694eb98d4a23fbab2af1ff676e0703b39a5d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo25",
+          "sha256": "c28f3cec40daa421d34c351cc49062f301f2493f421f0675a72d7de9735d5af7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo26",
+          "sha256": "a83eb66b1c282bd6edc4912792b1263444bfd3da7b9a6d621bb542b0dc850fbc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo27",
+          "sha256": "f8d1f5ebc2cee8ed97a9c38f542b910005408530ad2ca66aa1ac11d5b7f473e6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo28",
+          "sha256": "82afdbfcb02db6723bc5546a32a6b159597d48dede18c16407a0acc240cb1b2d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo29",
+          "sha256": "3ccb82a505ae84b7e8135dd41f3a23f37053e42ef5c2292927324e9e2fb42cda"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo30",
+          "sha256": "fba78877b667ab858e179d5b12aea2e601542734624b7b78ac2f24f683329169"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo31",
+          "sha256": "3a8f7791c2d76c303d77c083f58c621000d7046cb0607af15d8588fcd3686ab1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo32",
+          "sha256": "97e8e5529ed7b9425cb20f51a8112043bf826caef96a87bdad80b4a85c7bbc19"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo33",
+          "sha256": "7a5d0835273b194bab4230b713e39fb0162b8c18e0811e8117bcfebbba684fb3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo34",
+          "sha256": "47f83577fb9cb294f742faf18fcc5d8b0d335efd6e8f877941012ccb5eb4d4ab"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo35",
+          "sha256": "73e11143645554f8ce51c34ad6d8c4192180a94d89e9db37fb289b9beb522ca5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo36",
+          "sha256": "8204207bdbf31a9c3ffefe5cd0e07f9567154016f8bd282652d4deb10b1bd7ae"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo37",
+          "sha256": "36b423571aaa6c8177dfe755889f1193a56729e9c99f9c452fd2b64674765973"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo38",
+          "sha256": "5f4e7203e9976c3d1f16afe672e9275bbd8a2665dc341ae0ec415a25571168f2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo39",
+          "sha256": "334d2dcfd26f10892bb6adb2daa5db8ca8cc0c68c95b47baca19ab9f869b533e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/exodus/exo40",
+          "sha256": "b43d4980894e7a28169370e839dcf272d244930e234d8dee14d4931a4bd26472"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "exodus",
+        "overlap_chapters": 40,
+        "verse_count_match": "32/40",
+        "folded_agreement": 0.9063,
+        "chapter_bag_agreement": 0.8948
+      }
+    },
+    {
+      "book": "ruth",
+      "slug": "ruth",
+      "testament": "OT",
+      "landing_path": "/old/ruth",
+      "chapters": 4,
+      "verses_total": 85,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/ruth",
+          "sha256": "dd352ab2583b0e90398aef2672af9fcc5224a2b7bf1d5937032d6f6fdcb38c8e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/ruth2",
+          "sha256": "6abe32d34c352edcf8331995ddb04f8a642ab85ab60b231579dca654934337a2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/ruth3",
+          "sha256": "557a22afbd8874fb811bea311c0ec1298fba89c16ff79c77b9634dbedf461a0e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/ruth4",
+          "sha256": "ccce11f6f8cfb597c470af75e40c1618f1f16f4503b4bd0a787cd6a6fdeed824"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "ruth",
+        "overlap_chapters": 4,
+        "verse_count_match": "4/4",
+        "folded_agreement": 0.9281,
+        "chapter_bag_agreement": 0.9299
+      }
+    },
+    {
+      "book": "psalms",
+      "slug": "psalms",
+      "testament": "OT",
+      "landing_path": "/old/psalms",
+      "chapters": 150,
+      "verses_total": 2500,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms",
+          "sha256": "701be4a9df39bb1e7cc34a9fe561b075c60c225e797ab0e46e0c0184a54d9d9d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms2",
+          "sha256": "7ed5ef17f13de5019c7e7b4b42082ba65fe162dbcf56b9ee1cb157725bcbbd50"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms3",
+          "sha256": "a8e39ca6541d009dd6c1e749c5e42d1e5cea81cc66fad403cbeb704e4f1fe35d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms4",
+          "sha256": "8c024357a102e5553edd77f3c9f4ff3f7a1dbb32e2ec22e86c278caa226d3cb7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms5",
+          "sha256": "d207cb0da600b2abd5c5ac235fee6a2235b28ff4cd3e8bd80be9cc87267c614b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms6",
+          "sha256": "6ba067f19a80eef46bf5c3d7aceff848865db68aa6ee9c737f77681f214e755d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms7",
+          "sha256": "b977626127658bb02e095266cf23b6b3ea1de6f5c5b917e0a53af9fd6193a3b7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms8",
+          "sha256": "d61f1c21e57b85b13e58a50f7c70d4d50b9fe12563f034f07895c122103f089c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms9",
+          "sha256": "9b4e8be4124a4ba413bb19c1c7796cb98f8af5f558a45f81d27491cac0af4dd7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms10",
+          "sha256": "cc6aacc387ce451f3f6696a7be974b9fa2646f004a2d57dfd2bac35a60d17f13"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms11",
+          "sha256": "146a7daa6c4e70de3a0d67ad05bc384df4e7d58f6469cc52ecafebb2e4c787b0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms12",
+          "sha256": "a49ca3c8dc1fd592af0b8946a42b18c3c6da55f14cbd33e088a0172b1e875211"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms13",
+          "sha256": "c75af1de5fb6242f38e8d11b45b56febe5bbba3b96c192479ef71b50be4ae04a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms14",
+          "sha256": "cb4a0f8360efea43b33ec0dc01d1a976f5e32dc74d6900759d625550345681cf"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms15",
+          "sha256": "51bce49980b4565b3687b9b3c8a420716eee482f9e7f9ed963a7c79673676723"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms16",
+          "sha256": "8171e090ee54177b1eed39e71f16c174b238fc3ba68ac6233598f32f8aabf441"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms17",
+          "sha256": "789961deea5c50ade86d7d5ba139b0c5e8dd13239a142ffcfd21343a6b5e7ad0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms18",
+          "sha256": "bcf86fbfe14b05ee63b4e4b90f1875c040ba202bca0a5504b250264c34e3c1df"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms19",
+          "sha256": "189cdb2d73ee7ef8ff7f4f31adedced1dfb83fa9c3629d50ec58584ca9394ede"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms20",
+          "sha256": "693882283be2e9b680903518267865f8f74910bde82184653fbb8e60a2537eed"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms21",
+          "sha256": "565c924a4327277cb0b5415be82b684491e7cb308e2ba7977cfc6d2393bb01ba"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms22",
+          "sha256": "cd001744d675c037ebdd5cb101a4f02ce7b3192389d2ab4196f511c9e72cc299"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms23",
+          "sha256": "d1f7897fadb76495c12842ff60e3b540d2a21a87133929e5032bd60d491320e5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms24",
+          "sha256": "4440d4f993dd087e1838b037e666c1609938f0712580d4d74bd694126a148378"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms25",
+          "sha256": "9c5303b139f78324c3827394298d58f4f0778a0890174587a5874a8e85f69f19"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms26",
+          "sha256": "641d0e39f74a7a8bedb817bfd3dfccd1fb9bd69884c2b914a79b3d64419dd589"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms27",
+          "sha256": "037f9b00acf11ba41725608c7c36fcf178a580d1ca240e642aad6b89a15b2d60"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms28",
+          "sha256": "4c86490878c9b11eeb2b93df6ea77bcb003b7d0f9e19ece5de3c828ca7a3aa68"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms29",
+          "sha256": "758c00ca3b1f35c88298fa8fb4d328e7dc2924ee36127de769be8cd23946776c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms30",
+          "sha256": "c6bbe8c5d9b17a4bed14b9fd23b8bf7e8529088a7a1eda02bbbc1c322876dea2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms31",
+          "sha256": "53e702c53638b32626a5a711952dc0e300dc1cd3632768f7864ac4aecd0200f5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms32",
+          "sha256": "71fd4bf3372d7805726a003e41aac58b67bc152fd87ba10d2c9b5cbd1e2452a2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms33",
+          "sha256": "fedaf9429b5293c570fcb2c9e2242ff980a302a7fbeafe6f80571e19d2dd654c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms34",
+          "sha256": "b7ea40a58f8970f1eb1c6904ef33e208c7d993f5f202dfa51f87408df178251f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms35",
+          "sha256": "bd61ade27d7363edec30d3603d96f10676e1d3a9ac148d7a85deeb910751c335"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms36",
+          "sha256": "20d22070c045a850d5f8e33286658c6ec16d9c8e066ddf641a5e637b89f775ce"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms37",
+          "sha256": "c7b9b31d99dc583435b73cb95193da4774e471912b2cc092474d8349ac007c41"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms38",
+          "sha256": "708129f03b7c0e0b3bbc775b45b5766f088f932ae93f75fc35e341120e118ffd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms39",
+          "sha256": "bf0ccbaaa97bd06c7d9ce0331d643f2c3b691430de597f4d065605c7f424b0f6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms40",
+          "sha256": "22defc8f1030a4f039a3a302044b923c6a8ae84d269e1d6a14ddd79a6302ca74"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms41",
+          "sha256": "c45e549359799ba7953a3f59f17bd3f781facabecb99520b2c42f076f3dda061"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms42",
+          "sha256": "5517c2a1e8208e3cfcde4408c34b9ecc65d0f1ea4c023f5a9d0d6069423726ee"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms43",
+          "sha256": "a1cb448b77f5f8cef1f620cb742f9c4b207ab84546c38a4a0ab2cdb737fc4a16"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms44",
+          "sha256": "d8c9b2bda166b6d6fa6835000bf1e968a8f83ba81a46aacbb36451cf6388adae"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms45",
+          "sha256": "c076d8d1aad6188e97c1215da2fb3a2d37ee896178c91174389204ad7181e111"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms46",
+          "sha256": "1307f526074e2bcfd7ccaca8267c0232ebdbf4c0b697abab8667126a7839d636"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms47",
+          "sha256": "90a02974e5f5a4305941723cc80f2d69c7cb49c72652edf5fe287724e4446889"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms48",
+          "sha256": "27c677ea51e00c1eb555fe2ac987868e74d08c6d6c8e5626fd3c6d881f8549ff"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms49",
+          "sha256": "1a98f28dca5cb18e719b313be0b2a94c90c0ac3683a71a9cbf1f2fa1e8c3a2a4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms50",
+          "sha256": "7309eb2b68974ba556092a0128feb1e2dd79d9dd2f52bb2c7ce13bb7e888518e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms51",
+          "sha256": "dd5cee6736b57473d32dd6ed54689a98c0fd4660ae9a12a7d9009183a2433ba9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms52",
+          "sha256": "ba45652eefa5fde85eb2c0714a6bbf033f64791ccc29d4f6622de814773bfae6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms53",
+          "sha256": "b298746f5b8fc7ba34638e82b0a50a370c375907b57547f98fed31a43d328adb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms54",
+          "sha256": "70d395d2fa0cdfb2feb7fa2d49bfbecce1952cce8801a61befbe9a7490f0429d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms55",
+          "sha256": "7b56eab0a2a117d681d14a8f3b51870b8b3d8ac37b0b0a489e92d5c4a3f8362d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms56",
+          "sha256": "8581d4fc4e7cfc24111faa468d3052cd4d80ed4bf0a6c7acc17c9b05293d4d8f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms57",
+          "sha256": "e1caa75c977840b5ad77e73c63c2129e9ad84ebfd0bba3dcc84b9f328f002d2d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms58",
+          "sha256": "b012384004903f8fe6be1758ee658b607ad61cf9fc16d960831d386a7fb0e90c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms59",
+          "sha256": "1d20a7cd1aa9d499d620993fede0870bcc62822e1f2ab201384d77b7a0357d78"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms60",
+          "sha256": "237b238615fe082d81250ea6b222664aaac1aae6db3e50c7b0712451e84336d6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms61",
+          "sha256": "b22a7411effcb25366f18dc15b8752ec966934fffd0c14474093ca172afbd5ec"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms62",
+          "sha256": "a079aeb5df32aee9c8dc18bdf30abfab3880131c3245f5369806d5473db82cd3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms63",
+          "sha256": "6027f4b024a2a2e95a41a2823892d0b7491dc9f9ce4891314e6fc41c3185dbc8"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms64",
+          "sha256": "599abdf4749b1bb13ce6aa89f0ddcb68c45116f51994842e4cd6bfdaf53ff4b3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms65",
+          "sha256": "26eb1ababf61582ffdbf89a4ccec7ab8e2f8a3d66b04b10e195fc17f49db1bb3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms66",
+          "sha256": "c8d7997cdb0add83a7ade00b4aa3916d37aeca79f37b360a9619c326cd225d5a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms67",
+          "sha256": "cc85a321a8daf61597cd32f34be43265b4cdf2c11dbaead7a50196117638135a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms68",
+          "sha256": "9987990a2355e3f839d1b7cf46b547ceeb2ae51cda4d820c36fe13a4c2fa4329"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms69",
+          "sha256": "486b4b3d8d9122ad28fc5b3be02751d26a13780b828b114c35629bf1d24d771b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms70",
+          "sha256": "a5ae80399eb1fca7e890fe89b5c68dde18d17f329ac0811a8b224b8407ba28a0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms71",
+          "sha256": "953b805280d779edf9c23eac9751175e88c10dc80702649ea61bf83ec39ae684"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms72",
+          "sha256": "8611bba98cc63cb811a633eaf998f7530a65d55eb6c23ac57f6bb4e3dad67b9d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms73",
+          "sha256": "49ad04ed9cff6388cc683be86e91ac4b3035647b102f98cdfea747f43837e283"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms74",
+          "sha256": "849b51e76ff0622b4dc8c4db7cf328632e47f8189346c2668eeef36e7011952a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms75",
+          "sha256": "b6dc26cfc971f95b938ce51bbfe59df08118a73bad2f4ea9afdd324cf496429a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms76",
+          "sha256": "1e31b8e1b016a719c0234161e71bef5714969fcaea3864e859b3eb359740a89d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms77",
+          "sha256": "c6a4eff4e8762f8e193728d36133c9ff69e11db912afd8a2071aa616918aef58"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms78",
+          "sha256": "99d0f6b67bfb568625d75c8622241bb2dd2fb66d8aa9cd83c73dc04bbde7564b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms79",
+          "sha256": "0630b714122b262f15ae8b24a09d07fdc9fd4e9b03e2eb698832308d10041e83"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms80",
+          "sha256": "c918a41de7d5d8436fa4dbd2fed9aca24b329b056dd6e1376636e826f8bb3e04"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms81",
+          "sha256": "75dd7bbc6e80796fa765a048478b22b7783bdae71f782e7712b162e14e6e0828"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms82",
+          "sha256": "2b5b13cf13e39b82c285a43d9bdedd05786353efafd2dc4545406f8b3e409f01"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms83",
+          "sha256": "3fd6a3cd956cf5506437fc81be41cf0c706237f25b6831b5067a5c01b6049e0a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms84",
+          "sha256": "a29d045c30c487b91c8ab7ee87d2409ff321092ad067d67a711164b5e1aeda0d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms85",
+          "sha256": "44aad3578f169cb1f920321133ca0334ed6c76eae79fd52b060decc93bc038e1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms86",
+          "sha256": "0dc0698f4e3434ba695399badbf9cd7c6a91b0a8d83f064e1e4127606194bccc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms87",
+          "sha256": "98b3e044932bc6a51f8ad4d5e5c7247632bfc006ebe0b80cb7292b404c43ef92"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms88",
+          "sha256": "bc602d8fa793faaf798a23aa30b22a8d6f6fa94f6c26193ab4042e43babae557"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms89",
+          "sha256": "6aac8c46fa0ddef5d4368f5eb4ff4894c76e49014cbd88afec988534bafaedfe"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms90",
+          "sha256": "9cc371946395fe219579e2c6165bbad161153ff9bcbe0b86794928326f8131d2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms91",
+          "sha256": "0c7f31ef8b4e2d31f797a8048249e18f8de71d2cc79ead98e273654f542c5ace"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms92",
+          "sha256": "d55d0cb05c847b7f1a928a8dab20806a0bb6da55b4ea46cd724d0bf0abb36297"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms93",
+          "sha256": "bfe873348680e9b68c304ceb00aa5aab773229f74dd008789cfa0a64c0f060b1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms94",
+          "sha256": "0cbf455d34e252b65258a507aaf681c6ebcfbf7e3c4ae26d59ce47b86211abae"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms95",
+          "sha256": "a759c88ff4149995211b88f4ad1e9bd3a2bddc210667f616a46b9c73bd2d2135"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms96",
+          "sha256": "e99312fa375b2f562e03333ff97b353fc077f5ed732018a307ca2112acf330ed"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms97",
+          "sha256": "e6fc1487818df239ab14bbdaec2ddba16aef096d0aeb656c6d8ddec4c0b15987"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms98",
+          "sha256": "ecde237edef17c878458e437f4782173aaaeac0014564baf1a82d05325aacf5b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms99",
+          "sha256": "e33aecadbd4836350e5c2190982afd692250ff61a788c94bcecccd6ae4c25bad"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms100",
+          "sha256": "99d1c940b35e63347831c212cb0d751e9a61e7e0bd589147914d77c00ca3668a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms101",
+          "sha256": "3405c3dd5e92c71f019a2fa4a5bae390c9da3a919825a0be91ff23a385f6cff2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms102",
+          "sha256": "814dac29c96e00eb5729a0cff1c8d37e5b37955d45a215e8c359f108ea9ab74a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms103",
+          "sha256": "86f6d714f76bfd7985b84562fd90eb06861fcb79882c72cf93985ffe3546e225"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms104",
+          "sha256": "def52ab27103ea64cb64215832c2f3149bb511a8f18f4b6d9790490245e4d4bb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms105",
+          "sha256": "4bae21dc9e49639d2c5897abd788eb862e0339875d0272a7f45560d5437e602b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms106",
+          "sha256": "3f851fa4b9c971c586fdab9015ce6a1a2c7c700a627dbd07c6fe0b8f0bd2a0f3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms107",
+          "sha256": "c04d3afc571c68e200b67a8d6087aadcc7b4a369dd5550d6921fbd62be15e688"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms108",
+          "sha256": "eac7f32ae73e15dd9c265875ddfaaeeaa212a9fccda447d19025461e7cbe04f4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms109",
+          "sha256": "8bd12b47cc2456d07e3faac9f6b46b3ca61a5ab95174e627c5730f2bf8690bbd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms110",
+          "sha256": "7415dbff41032ab3cff77e9a9f4e346b8aead28766b5a13013ea3734d4eb781d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms111",
+          "sha256": "6645786efcac7f305baadf9f693eb4661310379e212163254d1367e4160d3e08"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms112",
+          "sha256": "31f3455f0cc9e5c98fc07183fbd03af17ad8a9b36a9c04c0c3406584d3e70572"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms113",
+          "sha256": "40ab412a8b518301996666af524206b5d78eb0b4616c0259a4d8409c9ca0cccf"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms114",
+          "sha256": "2a993f5793d6fafacf4d0c1cbcd504ee710a26d19daec9c0dbb974633516e3c7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms115",
+          "sha256": "0cd9a91896919fc9c60dd38e74dd62b5695ca12d062605451acef73a83ecdcc1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms116",
+          "sha256": "0be63aed4fb690895aa0973b32c1c311c89e3cc4ba57f90a3c1528a5281cf90c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms117",
+          "sha256": "919ca56d6c0a9cbbb9978297134ccd7d875f11be84ef334a3cebaf1def6cd7ce"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms118",
+          "sha256": "2d0943e02a606d2292308e110a839eb6a764aa2d6b3594d524275044cafffa84"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms119",
+          "sha256": "00b202d777e257540ec8478bd11716ac7ac23fc9d6e1e5ec166055f61427b2a4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms120",
+          "sha256": "db24548abf1d7abc62da963bcfab830bdbedcbb9995c898fd6fbfb253a199c0c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms121",
+          "sha256": "e8ecb94e40c85995fd815b04408761e4ea249f72d0329a8e7b58c5e20ff9f0a4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms122",
+          "sha256": "2c23a8b47e010da109bb8b52694729479edbad6d8c4b2eed15f4190362238bd9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms123",
+          "sha256": "27d5d035632584df208567186a1f73121d0cc9b38ed332637625ce03aa3a45b9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms124",
+          "sha256": "da4c645764619549035e1645347991fedb167587ef48d02288afbc91fda0662b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms125",
+          "sha256": "e0b3b2aca148983a8e2238f6516c9146bd62cb24573f4b4b9a6c832b4589a0c9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms126",
+          "sha256": "127411d6ddcd1785ecfffa46a70b04cda90b904b33fc290476a414b7a4aa2860"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms127",
+          "sha256": "774754498cd2dce6b92c1b975016fbb4c70ae0f1eed4ce785412865604ec87d4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms128",
+          "sha256": "724331312d44092e0ec19ce25c1b6446c28e11edd6a83afebc44a7358e12472d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms129",
+          "sha256": "b9097e87202f73bd3f90f4db5e7327bb0ad124427a511bbfa3020dcfd1fa2e29"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms130",
+          "sha256": "5c24590d7d8a2b1810619badde49f31567e4376805fbfa68ee70be46becac87e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms131",
+          "sha256": "ed92725e9a10926979e997adbb321e4aa3d3657480a4403ed1637cbc2b992a88"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms132",
+          "sha256": "53a7bcd1e6559f7f99b6dd9d7a142cb24b7e9a70172b4a7ca91ab8727d7b58e2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms133",
+          "sha256": "d4765dab764ba3fa8daaf8c6d72038c6f76d9b80d0847e6a48bf660b410bb2c9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms134",
+          "sha256": "a6c93c59360803abe32ddb3c1bac8f79001840e6f8cc8cc4fa99af489cf79d35"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms135",
+          "sha256": "2c9ed699f16b5362f05a5fd36cb6b158c118c43dd942b4356b13055b2f6cdf4f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms136",
+          "sha256": "d8e926baf8a05aa7a18aa343a12525f913751b2b90d9c3cc3f72122f43f63fe4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms137",
+          "sha256": "b83b1816861bc6a9e9b463882c4d92a83210475d0153a6161dc36bfeda4a72b8"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms138",
+          "sha256": "ff8ae0e3176ef312c3392dcb89c751beeda54a7ae3c3afde542a391d341026de"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms139",
+          "sha256": "98455dfae5c523ade2c5973c47ea7c8d3dcdfc800d09efd9dcfafd11836a7d73"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms140",
+          "sha256": "5f99037d5105ab75ad145d2225c39633a4f96235e876a6ee8055cbcf3fc85206"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms141",
+          "sha256": "6a67f35e6e9a72f7f08ea8a8846fd92621778374c3cdbd2d0d068f06986bd242"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms142",
+          "sha256": "acd22ee89a29b421be745df8bb9f87eaf24f835d4ed651121fc0f632333901fe"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms143",
+          "sha256": "4dffa5bce0fc11c85d6e5067db19053fd912caa0c084b976d9a48c3bf4d3d621"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms144",
+          "sha256": "72870e166a1b1342c4f9ec252aabaa2aaef0bb70ee73f5ed94927104210020c8"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms145",
+          "sha256": "c96199effbad03f04d6f1b23e5ca1845dc7123c0fef28693c5465a7ea4290832"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms146",
+          "sha256": "8e24f009bb25b16553f56d825d176d7f4116e9e0d448a3f395cc22a6c39cb173"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms147",
+          "sha256": "561b100d69318aa17d68a359102f5030a2c218313d98d0efa68ee555056a4fee"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms148",
+          "sha256": "a8183b7fc55a9a85cef130e1fe89e668d9b7c0c16056eb55c5e68bd58342a7fd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms149",
+          "sha256": "dde1657b25fb9c07c7d50103ebb9b6e834df35306d749f16479badda8c66e4fe"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/psalms/psalms150",
+          "sha256": "bce46e8e911f17019452447123ded05f789fa960f289d54e40281ea09e34ca24"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "psalms",
+        "overlap_chapters": 150,
+        "verse_count_match": "124/150",
+        "folded_agreement": 0.9142,
+        "chapter_bag_agreement": 0.9442
+      }
+    },
+    {
+      "book": "wisdom",
+      "slug": "wisdom",
+      "testament": "OT",
+      "landing_path": "/old/wisdom",
+      "chapters": 19,
+      "verses_total": 439,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom",
+          "sha256": "ea0d5a848cd19be8716ad338d6f4f4558cdc855615a1b50c0536202344aa8446"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom2",
+          "sha256": "692555ed4f9dfa0047eea291698eecaac485344f0c1e0ddce0046c150230138b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom3",
+          "sha256": "31566c97d0e9142189268d1f1487277d537dfe22bc45db27052ed9dbbaf6e18b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom4",
+          "sha256": "adfe592a61b980133e9b69c396170b81d233e60afcc2148b8729d328a8605072"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom5",
+          "sha256": "2a0ce11432015fd6e55058c81e5caae7c00808e2542ff4739fbdd1300b118f4b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom6",
+          "sha256": "842a95c9fa66729f8df971174ed77cdbbe27f569bb81d4695c1e83ea9d683dde"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom7",
+          "sha256": "b943a1e569fe43775b884b1b7e41d02cd81918eed5bc9283e274dafa4d3b78b5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom8",
+          "sha256": "364b5fb314d445062a596097c8d1602246ad1e58d7e88909385aa6cf8edec094"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom9",
+          "sha256": "22d10da4b5cf77c09c9ccb5b399cbdb9de6393e65222e5f94c042d787ec5fafb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom10",
+          "sha256": "a616dda61eb3fd1843e7bbbd9dcb79a538f7e1cd315c378f0757cc39b0db1f68"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom11",
+          "sha256": "633179bb9851c49a9a8f4c57ea7bbc03f6d521d7d132d21d04526e057e8165e8"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom12",
+          "sha256": "0c2f8b6168bf04c0be2b61107c9b63096785e525523f621d245877e6b4cd8a16"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom13",
+          "sha256": "f69e30e3ba94581770560559a0ac7ea5a50c66dd25473d3d60a9aaf361e88a1b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom14",
+          "sha256": "e63649ce7de74d05f64dd0211a340f3e2631f5375a6fc0b488c112c9e8f1e7df"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom15",
+          "sha256": "d17ea649d1e0f0659d5703a1b5f2ed94564697cf4cbdc34187107c7f541054a4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom16",
+          "sha256": "07660f5487861d10ea73b1c2153adb636e55c075b6446d4959201387ce6a3c6f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom17",
+          "sha256": "c4bf26ba9d46fde7ff925643120893b37c5fa58f87ac4910608b90734f127882"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom18",
+          "sha256": "819ba07d3b05c97835c2ea1e3b89b120d16d583c289479c60cfc92119c12699a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/wisdom19",
+          "sha256": "dc47f9d5a0b6d190a71ddb2d6a956a119187e9c700494bb42bdc5a05a2cc1c66"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "wisdom",
+        "overlap_chapters": 19,
+        "verse_count_match": "19/19",
+        "folded_agreement": 0.9195,
+        "chapter_bag_agreement": 0.9244
+      }
+    },
+    {
+      "book": "lamentations",
+      "slug": "lamentations",
+      "testament": "OT",
+      "landing_path": "/old/lamentations",
+      "chapters": 5,
+      "verses_total": 154,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/lamentations",
+          "sha256": "5f9989e382e2c68371a4c7989d011924db3e36eb4997ebdb1c47d8e9c8e060f4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/lamentationsarg",
+          "sha256": "9abd8fd87ddf776b9d386aac147a5898ff59233af7d356621a3c93c1dc52755a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/lamentations2",
+          "sha256": "d5cc94123a197b1a9f068c8ae2fddc09ad5f12ac539fa15dd68224ab914de3a4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/lamentations3",
+          "sha256": "8e9df880278b825469247c48ccc7ddca2615ec5a67898b65ba9905b6756a5a86"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/lamentations4",
+          "sha256": "795e5fa9bf1fbb11625331a3237340b8d12a2aa3ebf8814619f57f6788ae6a7f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/lamentations5",
+          "sha256": "733401f3a8eee70f7100cb4772cc6205177e8735b8d45bf233b8bd15d865f456"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "lamentations",
+        "overlap_chapters": 5,
+        "verse_count_match": "5/5",
+        "folded_agreement": 0.9405,
+        "chapter_bag_agreement": 0.9414
+      }
+    },
+    {
+      "book": "baruch",
+      "slug": "baruch",
+      "testament": "OT",
+      "landing_path": "/old/baruch",
+      "chapters": 6,
+      "verses_total": 213,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/baruch",
+          "sha256": "04141e0217d1a2f2821e1e46c11b64881900461d88ebe04feaa27eca71a268d4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/baruch2",
+          "sha256": "d987d360c632405c90a1018d1ece3a905062c39a6a11f265cb4c07ee9e2ade29"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/baruch3",
+          "sha256": "0f57d6262179e2499822c5ff1176127cf7a3475607d3a178b18672b8627c3e88"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/baruch4",
+          "sha256": "a62dff5e92f0167ebdeb0c7cb06e08472c0e38d87dbd42879000ea784368eb6e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/baruch5",
+          "sha256": "45aaeeda581ee12598d297e8b525fdce2ba10ed539535a2e3fe01fb97a7386cb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/baruch6",
+          "sha256": "5925cf0746234f4552cc35ae83da1bfc32c2072da503f3d1c159534bea52026e"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "baruch",
+        "overlap_chapters": 6,
+        "verse_count_match": "6/6",
+        "folded_agreement": 0.9407,
+        "chapter_bag_agreement": 0.9418
+      }
+    },
+    {
+      "book": "daniel",
+      "slug": "daniel",
+      "testament": "OT",
+      "landing_path": "/old/daniel",
+      "chapters": 14,
+      "verses_total": 531,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel",
+          "sha256": "eb9d03e14edf87ad867dadc900cd805ab76553fdf7bff7b2972fab00ced542d7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel2",
+          "sha256": "547b9f047e57a83fb3c155e66e03330a87cc657906c8090abe73d4a469a381f4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel3",
+          "sha256": "2c748b44bc15668bef6c37befd0034e163a4e069691075c360b7b139c5229130"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel4",
+          "sha256": "1bdfaac67bcb83cead90be567a098d4b2861e7b22f1a279d369b262c87ea60b7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel5",
+          "sha256": "29302f28c9279414736e2f2c7364f7c1a1c9c8d1e3ab06c2bd7e8dec3ad8d39f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel6",
+          "sha256": "4ede2169795ce7d238e2c4869c6a451b7dc2282a15ee6c276bd8493f2ac28c5c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel7",
+          "sha256": "ca26fc50859288897f241fa2049d9d8f6723d02476895da4d847c98a1d3c8525"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel8",
+          "sha256": "273c46b809cc1f8f80eb76ddb9e45e52d1d4dd572e61a022d5d117eadeb0330f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel9",
+          "sha256": "009877e42c37bb93c81068e2bb65872a44f16fc60770b0d3a567c8ca6565a1af"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel10",
+          "sha256": "ffc643141735465b966b74eee169e421d2c3568713a1cc05379fb96d0299eb37"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel11",
+          "sha256": "fb18b56cbbbf942872d9460bccab223e14aa7b921a43847bf76b799528fde29d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel12",
+          "sha256": "c5710132cf1db93b7b3d04e0dd242edf135df719e3796020f8fbe3a26b9e8c59"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel13",
+          "sha256": "d0e58aadb1c0411ff571e329405d82129428c955a70e3dd91ce46137a465b462"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/daniel14",
+          "sha256": "38f0759bdef0b5094adeaa00cdd51d4ed12f0a9a9b458df8cbf867d7c3ae3ea6"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "daniel",
+        "overlap_chapters": 14,
+        "verse_count_match": "14/14",
+        "folded_agreement": 0.9407,
+        "chapter_bag_agreement": 0.9424
+      }
+    },
+    {
+      "book": "jonas",
+      "slug": "jonas",
+      "testament": "OT",
+      "landing_path": "/old/jonas",
+      "chapters": 4,
+      "verses_total": 48,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/jonas",
+          "sha256": "3b09666db0370fa93835c1c28e7c9a428956fd660975d3bee10dbb395e6c8450"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/jonas2",
+          "sha256": "87e4f006a49ee21a2539f01e3e7c5227a32f99b394c7a9d9af6e81543bc77ea4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/jonas3",
+          "sha256": "b8c7387d04d1ee4de88a877ee1dd355d65b3fcf8d2b3304d0af96b2e723a700b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/jonas4",
+          "sha256": "80aa3b3e8f88508628e79053ceff774a82872e0fc36c42de6600d922ef314ba8"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "jonas",
+        "overlap_chapters": 4,
+        "verse_count_match": "4/4",
+        "folded_agreement": 0.9654,
+        "chapter_bag_agreement": 0.9654
+      }
+    },
+    {
+      "book": "sophonias",
+      "slug": "sophonias",
+      "testament": "OT",
+      "landing_path": "/old/sophonias",
+      "chapters": 3,
+      "verses_total": 53,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/old/sophonias",
+          "sha256": "7df4ff6c99eb935047d9e5fe40bb99bf26e5c178f6aaab0efb9fde3b5112063c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/sophonias2",
+          "sha256": "8271e617ebed575e1464629ea6239ce58e262df45130cd3d4235ae6e84393c6d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/old/sophonias3",
+          "sha256": "5c4aa0b6a5f04009ca10c4e72eabdcaa03646bc04601bec98dc135a193e0bfa7"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "sophonias",
+        "overlap_chapters": 3,
+        "verse_count_match": "3/3",
+        "folded_agreement": 0.9568,
+        "chapter_bag_agreement": 0.9574
+      }
+    },
+    {
+      "book": "1-machabees",
+      "slug": "I Machabees",
+      "testament": "OT",
+      "landing_path": "/Old/I Machabees.html",
+      "chapters": 16,
+      "verses_total": 929,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees.html",
+          "sha256": "3a695018670016074d022ab674f451cb031e6849cef77842e3f3ef5442e46473"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees2.html",
+          "sha256": "b470a811be2b01b2863c37c4ddc50d149dd43df9b4c93acf5d8076b3fdbdd4fd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees3.html",
+          "sha256": "da9044a2aede8f030971babef1efe5a16329526cf46e6b4fd1d321e1fad00b57"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees4.html",
+          "sha256": "f12c741b441fc21aeee729b50620539448dd0cc1c69d17e7bf5654db8d9aa456"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees5.html",
+          "sha256": "72f57033d9131924ef537d2e39790c3d8aa5b41804b66c8bb665ee3ce36d8124"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees6.html",
+          "sha256": "afdbb0e178e428097486e7b3c5953338f7e2f55918816ac2689beb7188ff7b10"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees7.html",
+          "sha256": "494d9c5e2c150e587b13646cf21f31732f0d04001412336f999aed15a9036a6a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees8.html",
+          "sha256": "512c641ccdfda2367f93bf986f8bf6bf68e644ba9aea2514085bd1313becb491"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees9.html",
+          "sha256": "2c06c95828d1ad27dedfb0bcbd574779fe45182bbe5016a518e55134df6270ae"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees10.html",
+          "sha256": "a87b1061ff0efa52c7e3d05f68d55daf57c5ebe08f277cca2a268f55b1d517c2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees11.html",
+          "sha256": "a5335bb8ab690f5049003a5b31c237a4a09d76e5893c8bd8a202e9537100c0a5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees12.html",
+          "sha256": "3703b1808f9deee0d0e3c34c5e21a6e15bd50808f7d4dc2986a02370d5499eca"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees13.html",
+          "sha256": "2a693535198e3b333f08bb07ce88f9de32e8e04236f392a7cee7492de4cd9cc3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees14.html",
+          "sha256": "f6d0ce082e22a3515f4a1d9d33f897b9ed34f30f8b212354f72b57090e1ac250"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees15.html",
+          "sha256": "16d5ae206c265a49467bf798962ff6aeb3468758bd30d6fe36184d4a289df81c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/I Machabees16.html",
+          "sha256": "e15abfe080c0e92c8a27585ea1f55ae9d388c21cff70a1211a81c1fc7e618c5b"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "1-machabees",
+        "overlap_chapters": 16,
+        "verse_count_match": "16/16",
+        "folded_agreement": 0.995,
+        "chapter_bag_agreement": 0.9952
+      }
+    },
+    {
+      "book": "2-machabees",
+      "slug": "II Machabees",
+      "testament": "OT",
+      "landing_path": "/Old/II Machabees.html",
+      "chapters": 15,
+      "verses_total": 558,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees.html",
+          "sha256": "5c62e7ab3369ba8dde3b3e15a6683c02a4608ddce484f60e48e018cf96e097aa"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees2.html",
+          "sha256": "f5fb19efb5f5f99f3c2e460603618ef6e9570be19dd730534f583ab6dace92e4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees3.html",
+          "sha256": "2e4a948920a27376a9d84806f7c437ba6a2bb4ae6ea8a85c2839ff1bc0c2d1ca"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees4.html",
+          "sha256": "82d01e9eb9cdf584bf62bf8720dd7551e6cdb569c7e431aa602fb40cfd08b0b4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees5.html",
+          "sha256": "e1c71424305e245aa21205655fe506d95752037eb8c5d8f0fda6bbfc4b3b8163"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees6.html",
+          "sha256": "28e72a9442a563b0b4c99ab0db82df3b82ab36f8205508f31be684214caa53d2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees7.html",
+          "sha256": "62b56e460b63115b6b7fd112f6db84f76b1c9e007fd1be73283ca2013b870a41"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees8.html",
+          "sha256": "6a27c616c973ca2145b36d309e6849e4b7b152cb8e539a29f9b2d00ca158b7d4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees9.html",
+          "sha256": "f8e3ab422dcc4082cf3014180736c209b2269b82c0ec93fe6102556cf4d05834"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees10.html",
+          "sha256": "74c9fe223cb5f4ffc72f94302336b31f11bc60640ab2c0f51c80f4b0f3e06d3b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees11.html",
+          "sha256": "3bdf42cc81e6fe5e94a5d4aed6874720b946244664b6668cdff32200a7e4537f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees12.html",
+          "sha256": "a99f679718a156ceb7ffb4ef7441c3591acb2ea9bfa5dad663160af083dd36f9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees13.html",
+          "sha256": "64f2adc0bdbb3e3890ac6bce416ca46811b406fcd3f9ee9bfe0eafc970fde627"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees14.html",
+          "sha256": "4d494308f45339272c9726d25acc8e6994e9d3732831970f77180fe4de4b5d45"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/Old/II Machabees15.html",
+          "sha256": "0f3855e3a003fe8f2f25746b0d0693388212a0882ac4d02964787bd6e05ef38f"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "2-machabees",
+        "overlap_chapters": 15,
+        "verse_count_match": "15/15",
+        "folded_agreement": 0.9948,
+        "chapter_bag_agreement": 0.9952
+      }
+    },
+    {
+      "book": "matthew",
+      "slug": "mat",
+      "testament": "NT",
+      "landing_path": "/matthew",
+      "chapters": 28,
+      "verses_total": 1070,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/matthew",
+          "sha256": "de5cbcdad718b2a8afa234b65ea9b82801111ffc465b837451ff785bb4f852da"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/matarg",
+          "sha256": "22a9a3608b83012bba07b5415385d2d580b455540a981653ca6891a47c254f43"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat2",
+          "sha256": "f6a82e86fea154eda79cee487a39b1d3529ece23699d17a00cafd355975f5d49"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat3",
+          "sha256": "ba0a8f21ad217c89471d7193a3b060f5338553acd667c03132d9da358cec5e46"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat4",
+          "sha256": "48ae67d0c1f4c40ed8895a3778d71f042922260a645767ece40cae9cd944fa6d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat5",
+          "sha256": "233c15924361fd0f2fd22d64f76f9c5fa244984e190cbe8e4c9b7a42d83c6b1a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat6",
+          "sha256": "c50d4d0e01a92d40ffd62c342ed6846355ee966ef869ee3de813e9954f290220"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat7",
+          "sha256": "ec7d447d42935374fbfec5b7aad8fb42f4c5f45d87300eac162d7e1eff9c954a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat8",
+          "sha256": "4c558d242dee847042290641810fb43afea874789fc50c4dec9478f0405e9213"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat9",
+          "sha256": "93f5bfc230a71ba9c7735dc5e9381cc86710e4b110b04507eb7d4e1eea2d8078"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat10",
+          "sha256": "bff695342991778830052d8fe87ddd94c734934ef5e6f33c67dbcd141dde76ad"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat11",
+          "sha256": "f64ec50e93b629405bddcdce69263f67ed02400a8e5404718c7a0703c325aea6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat12",
+          "sha256": "71a41ec978c526dab1d28aac350d96954471521547030e7d89397d3c482d3226"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat13",
+          "sha256": "ae45825517cb93a1ecae5c12d70097c317272be9abdbd386fc15509d49f319b6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat14",
+          "sha256": "6192b57947878aac0983ab8bdbf552db5a81b644420e964101e59955d04c2543"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat15",
+          "sha256": "a1dc2c632669b51a9fae937f038792f6df82767fece07039fe8d837439de4ab5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat16",
+          "sha256": "b2c379670c002dfdc335ee0b498f19b3915d0ef01184b6043db01469f0c26778"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat17",
+          "sha256": "1e94541b4e0065ae0a8f4ae58f098da5893fbad096d6f8e701a22278bba2d1bb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat18",
+          "sha256": "71b349fadfd42e2e9c6530a4f460cb3c5c4e5738875c52e51afcdb8990be413a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat19",
+          "sha256": "7079bba033d06cf13bf1a1a76a583ac29f494e0c99a5c09a905e02b08238edb5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat20",
+          "sha256": "c94b35282f9939a98c26433387529d5aa3daf5e1c97f74b0842d5979db29c642"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat21",
+          "sha256": "e8e0c739a589ebcb506c8189c7ed49568e2abef57d6e7a65f9a16955e9ed24bf"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat22",
+          "sha256": "35613ef175b3a284fedb78aa8a6b02baad5bd13c3d1ba7523b7ec2b56032c843"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat23",
+          "sha256": "c33045f83b0cd324ff7c0c386d69f6d0c334c47a8a8b603edc09a5479087980a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat24",
+          "sha256": "b50447432fcc1a4dcc6ef51e97c44a3ea9ce2cb1788c579acb5e0f14cd55c740"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat25",
+          "sha256": "71db121b38a4ecaf5dee7807d71ced4cff46a08b5715a75f7b76a471e04b3033"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat26",
+          "sha256": "2570aeaf52c52c18776f7d0c375b459408d4c904d3875dc748a6b4d775f5a955"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat27",
+          "sha256": "fb4ed155609dc6a5384dab7dcd5d01bb1cc30d6431298b46056edce4c435a29e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mat28",
+          "sha256": "f87d3f67333840bde2a849a3d85374a469243c9597cee681184537f9940fd8bc"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "matthew",
+        "overlap_chapters": 28,
+        "verse_count_match": "25/28",
+        "folded_agreement": 0.9367,
+        "chapter_bag_agreement": 0.9558
+      }
+    },
+    {
+      "book": "mark",
+      "slug": "mark",
+      "testament": "NT",
+      "landing_path": "/mark",
+      "chapters": 16,
+      "verses_total": 676,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/mark",
+          "sha256": "3d372bc673bb58fd9c5ee7cbee99d6677d734cc9f9d5aed328e261c2981178b2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/markarg",
+          "sha256": "4d113b83de5e941944bffb7ce2eadc9f78e3ee113032b286743b9d96248c9dc3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark2",
+          "sha256": "316c7a244d7b97586b0d6993b5692a2a726b658509759484308799bbc20570a2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark3",
+          "sha256": "9dd1a567fbdf5eceaa60ae098b1c7935a2fc35dcd66330253c09b53b63b5a390"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark4",
+          "sha256": "82957f0723daace1f19eaa2eed11071d8f785165fd560d83df76dcd1979f9ffc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark5",
+          "sha256": "724b62c2ad633984c32a3ea560b98abe0523b038a8aa3e9fc76e14ea345a881f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark6",
+          "sha256": "bda129a8c88a41bb3d0993dcc3fa2b8f5697d9fedfbfc6ed0aab72bdaae48958"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark7",
+          "sha256": "07a6ca268a0fb418c2d29d48f6db7f772d1c7b28318e466fc52dfc1cb2c128de"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark8",
+          "sha256": "26832eb5e691041fcd1dfd1f092047b42d3af20caa5f176f463bc2add3cd93fa"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark9",
+          "sha256": "0c57192cfea1dfe52e4e89f17a0f47370a5c9c68e993694d17c8e7482ff353a0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark10",
+          "sha256": "0ddea4479812932a2fae2b7914f9b00fca6795f63c9b1a53b7ce9bde2e7ec43f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark11",
+          "sha256": "bec5aa799d253492c98907ba36d5fb2e7e2a8df3317a36252551c4264cc2bf71"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark12",
+          "sha256": "765862adcb08ff6db1de6ac177202e2f5767f1289c8cc78a56e64cb366165f33"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark13",
+          "sha256": "39f0c9b96b661cf910af6b44ea40a56b6e160b0687e4fbca89b00455dec511fb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark14",
+          "sha256": "d1fb2e5f280120c48623231df4974d7f10772aa1772a920aecdef2abe763f252"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark15",
+          "sha256": "341cc5cf8fdcc4561678359c750fefd3bc4dc761d5d5be20054623f82051ab66"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/mark16",
+          "sha256": "141703c8dcabbd3b3c041fd52b286e3cd0604acf1606209586e3af79582da4b7"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "mark",
+        "overlap_chapters": 16,
+        "verse_count_match": "13/16",
+        "folded_agreement": 0.8844,
+        "chapter_bag_agreement": 0.9556
+      }
+    },
+    {
+      "book": "luke",
+      "slug": "luke",
+      "testament": "NT",
+      "landing_path": "/luke",
+      "chapters": 24,
+      "verses_total": 1151,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/luke",
+          "sha256": "e69b41f9b76a616bae433415aa44ff52cd19c943fa135f6356ac0fdb71f8ab45"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/lukearg",
+          "sha256": "bde32a54ea6dae448e50f7dd8370c79098a38360d18c3a42d87ba693ba8df44f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke2",
+          "sha256": "b625153c35a0157d621cc41d2c4e608fb1292a71c9858e34f0ac2c8d035b963e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke3",
+          "sha256": "449f46cd4376a09510c48937852f277fa5a8502807e1c949f69b74e40a1354f2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke4",
+          "sha256": "e3fcc113cb5004ffcb8898de9215093e3bf3e471bb81f1920822bf921633adbb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke5",
+          "sha256": "ec8119072719116689210c86066b89a17ec3388bbd539963e5c185b7210c652f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke6",
+          "sha256": "81ff27d6ec577db141b948f9a5ce22bd33c91f02b029ecfbf16be416efe6a737"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke7",
+          "sha256": "41b115b8fd24f54a25b12856584048b2967cc9abe60d217271f0738496c20e8e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke8",
+          "sha256": "ea1f7352e11e14c4fa8a7bff6c1a0dfd012148a8d3702d89cb9d0858fbe4e35b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke9",
+          "sha256": "9b754b2b389ce7fc82805fe2bf602813a20571773f5d96fe840f8c7511ff03a5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke10",
+          "sha256": "4a3eab45195bedb99f1f2b4d6430f80ea826ab201edae11ae6e23088efc9d9c5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke11",
+          "sha256": "26fa60dbb53e9d8a3206f73692426073acfac92ec1d8a671e9e4920150018a2c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke12",
+          "sha256": "fe8c079dbd553f0781dc4e01981b1305d78ef830b062726ed06a5052acef3fac"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke13",
+          "sha256": "3dd840279e2b7c8ff7dbcdeccc9b26185c9539fd30910f3ff109ad7113604efa"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke14",
+          "sha256": "f110127077d7f9bcbc4cf1313b93cfb605c38487118755df31e2e26d89d640d7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke15",
+          "sha256": "f83bf23e5417720b6629a02cb0fc62fc6ff6f2f4e8d1daeea498019cc21b39da"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke16",
+          "sha256": "6141308e7f6c045f0969c02a32d5eabef7fefad5a3c772dbbde824460df3e46f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke17",
+          "sha256": "7518cf5726fc2c8b5b1615da20d839a1df7c28180ab8d0983189d4a689b8abeb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke18",
+          "sha256": "f8beb75a494d7d9cb062f309e3a4a53ba6323a9e7982907a37ad8384306cf165"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke19",
+          "sha256": "4caa7139c3189e46c5550bc5260692dc167704d2db3b0faa20ef767647e9b9dd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke20",
+          "sha256": "83fe205d2441158a940f60a3402443d6ad404be771fda0879a6b3df085b09ed2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke21",
+          "sha256": "2d373ce22d8f085544ae556d5cc9f6db375db000ac0455305ea8b68bcea93247"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke22",
+          "sha256": "7292678e3417bc3cdcf3a7e9b0b9cb8ff34f89ec7d79555ae21ce1ceba4e3806"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke23",
+          "sha256": "b77d026864e5d07a008d0d8760f8b40ab20c0bca5b6d717fdfcca1964ea2a1f4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/luke24",
+          "sha256": "c26d5a98b730ccdb5c28f0980c9eee2bc0880353336dc9f006d6c84428411184"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "luke",
+        "overlap_chapters": 24,
+        "verse_count_match": "24/24",
+        "folded_agreement": 0.9569,
+        "chapter_bag_agreement": 0.9597
+      }
+    },
+    {
+      "book": "john",
+      "slug": "john",
+      "testament": "NT",
+      "landing_path": "/john",
+      "chapters": 21,
+      "verses_total": 878,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/john",
+          "sha256": "406a3993b9f0b654d89475a27e97a51b0fcaad7410346e3a2229e748d9d6f7af"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/johnarg",
+          "sha256": "7c5b096778a613e58d9744361deb4a854fc7f981d26defdd4588e81dac42a0af"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john2",
+          "sha256": "0cbea4f72538488abd4b78a5277e82180f47f801aff9c5baba4308bc4a156a13"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john3",
+          "sha256": "9a0936d05c9a010c6c632476dbbafc452f0841d2e77faf8f2ace15ef18bd87c7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john4",
+          "sha256": "25f1756192c41377bdb529d654d260f3466c67ec9db737cd13e9abcd089cf92a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john5",
+          "sha256": "725cbaefd043b7d36620a86f3e5def14c590d459cd50dad7a65a52775c6ad607"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john6",
+          "sha256": "70419cf9f3d95c4898ccf6f3593f54026d716386fcc8146b4e31ca245651dfa2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john7",
+          "sha256": "2d2571553935edc20230c0c6580e1496cbc671af4297fa080e407f2eefd04344"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john8",
+          "sha256": "0ca1a7a49f15f6a6939bc9bca6b97a36ec9d3f44092e5a0685e1e5c51ff70795"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john9",
+          "sha256": "031de5c8a760f0abbdb6ef5011d4385792b609935bf6ae3089bec7f383332052"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john10",
+          "sha256": "93e19750356f79507774d2a82fed0c05c17d249c3f8dce9fb860e193ce11ad4e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john11",
+          "sha256": "3435a5c9d4001394496c3f0a0eb980598accc769e3abe71d5bdaa975e6282e45"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john12",
+          "sha256": "6e996ca27b2b3753c81ed81c74e723bd1d97a58375f909bd162313875a3b8af3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john13",
+          "sha256": "af7176868d83d0aa089f911137dc81ba63cc7b7c04d4576d69315a7ae1dfd35b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john14",
+          "sha256": "f40bd5f12735b4ccb2ee64d81ed0915bfa85927493f63a07604411677f0e8812"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john15",
+          "sha256": "ef72fe8b5bfc9a9aa930d9dea27eb687f5c5ca80813e622b04d13d9c5612debd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john16",
+          "sha256": "c8bdceeeeff5521242639b1a04bb15419ff000332ae24f37cfb416491064be92"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john17",
+          "sha256": "09aaf2051e7d0bcb2876010cec9f2c16fcb7c777e6d162d6925fa8e2cef097c0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john18",
+          "sha256": "32bb3f3d91d60bcd69ef00e7b23e1c07a5ec6854f6babdb5392b5f6b645ddf95"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john19",
+          "sha256": "1f60d02e89d5f4482d9c9f8dbc6b0daced8a0f071960a41b9021ab01c099376f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john20",
+          "sha256": "a402b681929790a7a1ee163336e11658f996b3327bc8cb7535e04867da3276b4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/john21",
+          "sha256": "ee8cb4f6ec1262bb3f0f92d25c749d4e7c3905c264d273bf1537ec5476a37422"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "john",
+        "overlap_chapters": 21,
+        "verse_count_match": "20/21",
+        "folded_agreement": 0.9291,
+        "chapter_bag_agreement": 0.9525
+      }
+    },
+    {
+      "book": "acts",
+      "slug": "acts",
+      "testament": "NT",
+      "landing_path": "/acts",
+      "chapters": 28,
+      "verses_total": 1006,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/acts",
+          "sha256": "c6af189aab4348e5dd9174228b636928d74305796934fbee21ad308b2c785aea"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/actsarg",
+          "sha256": "9ca7a5c282c6daf5efb8a6f6a1bd0a778b646d5958c9f28f75560b3f98b83ed5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts2",
+          "sha256": "ed593d8e3f5794c2753940adfba4a5e3fe8b5c703b841f147aeb54e2d3756236"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts3",
+          "sha256": "a6ec754f6fa8595a3cf16d9b4e53f457acdb36d1ff43b3ee03a8b937928dd06e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts4",
+          "sha256": "6658850a179349d1ef292503469092d9e3ba5cc53a6ac21d033973ad7c82e74d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts5",
+          "sha256": "7dd88acd197692ca8d582e5be6aebd7387ee97760736c349ca89bb1f2268cd14"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts6",
+          "sha256": "6665215c9c68d4d0c8fd198e4c0056223d18e3a030bb53cb04af76f3bc14a9cb"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts7",
+          "sha256": "39996f59849b860fc7f202a9392f7e4b746a35c5599f578b265b6c8d547c7b31"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts8",
+          "sha256": "b73b95d08c9bc79fe5ede3a6835e1deb9c9eab2b344da7ca2f4f801a35d1d0fc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts9",
+          "sha256": "13c1fc8c6182c5d5e00c3c7aecff3be4501c6d0082952c7d5e013b16bb19e47f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts10",
+          "sha256": "02f20be6f18a3f43705410307425cdc7f02bb93cb1ff6cd9d1c2ac66a4bf7152"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts11",
+          "sha256": "da7c6f3799cf9d7833322ae9650a214ed1c7e505f867bd7a8a2d437301228c96"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts12",
+          "sha256": "c751d34f35d7543310d7cd6a8e367a9bdc3cca51bf0ea90ad2b610f7526606ef"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts13",
+          "sha256": "38d7cf1c83804ac44277b392d3c58c832652ac9961807c427c59278e51c93655"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts14",
+          "sha256": "cdc2db5568c4006e97d9d1149dabd912639f9f4fba2a52d68a1d316c3cecf40c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts15",
+          "sha256": "4ff1724fe54d8ba64f24d73a4abb1a5ea32cc83e331aac71e088f611dc79789e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts16",
+          "sha256": "fd7819abc708b6a36394513cd0a1ba6d2485540057af5a17903a5a3a3628d46b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts17",
+          "sha256": "cb83287c093a2954cb5875ad67e3883b88d08042bd18208504fb72becf961aa6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts18",
+          "sha256": "1a371751dff0dec1722347fc320dbbdb09806cf932f0dae18e65f9b0a8bde836"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts19",
+          "sha256": "12a98c45626fcd39afbd5f3be0e9319b55facba3af4851f76734d0d0ad19552f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts20",
+          "sha256": "19db9636c07068a23506709677cfbd1332a7ff80b0038d69241db3b08bbbc4b3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts21",
+          "sha256": "a598e60fbc3e18e25c341acce5fc57b9bf8abd2a8f92b1118c96118fb62efc0d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts22",
+          "sha256": "63626d69daae80244589cf0f97118145750915117ccb446783d70353e03eacae"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts23",
+          "sha256": "50185e588ec111f2b7402e3b79cd206ac05587feb78e93056280169738c3a1e0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts24",
+          "sha256": "fe120b42a4035f2c976f783796135ddbff5849b852fb49dd87fdd76ab748fd4f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts25",
+          "sha256": "44142189c93761056c50c700dfa568b45cb57fc9516928133b727a533408361a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts26",
+          "sha256": "b766ebfc0145f6a7a9d74fc546089dad8ba638db939cbb3b18ceab37e559830c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts27",
+          "sha256": "8ed24262742cd2ad1d0b7a00dc58e6c0d266b46f4871f7d30496278629008734"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/acts28",
+          "sha256": "ea67c04b75d6fde5b924e054e4df171fae42b6843f154fdb36941b5ffabcc6b5"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "acts",
+        "overlap_chapters": 28,
+        "verse_count_match": "26/28",
+        "folded_agreement": 0.9239,
+        "chapter_bag_agreement": 0.9534
+      }
+    },
+    {
+      "book": "romans",
+      "slug": "romans",
+      "testament": "NT",
+      "landing_path": "/romans",
+      "chapters": 16,
+      "verses_total": 433,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/romans",
+          "sha256": "9aba9e000c6304765920bf54154eb1237dc7b20d29647954261b1961b98d14ed"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romansarg",
+          "sha256": "3c09f979f86562c35cd206a4217d8365d5044ac5cfa67a2e3459bf2a1f18ab54"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans2",
+          "sha256": "e91848937ad0a7ea11d768f212490d590de826a17266883d57a47e90ca87d3ab"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans3",
+          "sha256": "ff6a93039d382f812768de3bc8cd92aedff234993bcf2a842733884518361989"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans4",
+          "sha256": "9f12e6d1a40c2a763ba2be329181127e53cffa9485c359b0e97d37d951010dd2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans5",
+          "sha256": "3a663d8b2d42edda83ccead59249134ad6bfbf742a7c5ef80d7e0b03617816dd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans6",
+          "sha256": "036b1a01081080d865c1676ae9910e718c228cd46beb8af35216c1f1549cb934"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans7",
+          "sha256": "9f5c0efc0cdd8a969a97b0bf29dfd5eee46658d1df7c04c2555ae85b676e620b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans8",
+          "sha256": "c2e4cb68bae338963e7c6d2020c0b9987ea38a2f558b4bd7d9dabf58eec7927d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans9",
+          "sha256": "86fd85b7df2102f137dac371d8f3dff25428d751105ef86de285757b11ea2aca"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans10",
+          "sha256": "2731c2a35cff1eb2c08452002ffcf73fb5483889dc0074a3a9530c3aad174e10"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans11",
+          "sha256": "524be25dee34f8a642d6db4e63afd0ab978c4157b2b5ba75364a082dbfd68e97"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans12",
+          "sha256": "3198dcada237bfe83067eae0387d74f340f2ad22d00895e8d5be5a592711571f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans13",
+          "sha256": "d6238a477d56fa3c0a9c5fa18d66d6494b786dbf9be1d01e9160dc0a387bef7e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans14",
+          "sha256": "d061b72e24a042d3be9a28bbea04f4e9f82a475330dce3e01b8009381e7b059c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans15",
+          "sha256": "48fb02a2efa6b546ff0a5df1e1f194024f30bfabe88fb7ceeb941b72e8890efe"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/romans16",
+          "sha256": "38b4355b53e5d454ec74c38358b9dfe713a28012efddcfc0dfe6ef7003951b6a"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "romans",
+        "overlap_chapters": 16,
+        "verse_count_match": "16/16",
+        "folded_agreement": 0.9646,
+        "chapter_bag_agreement": 0.9647
+      }
+    },
+    {
+      "book": "1-corinthians",
+      "slug": "I Corinth",
+      "testament": "NT",
+      "landing_path": "/I Corinthians.html",
+      "chapters": 16,
+      "verses_total": 437,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinthians.html",
+          "sha256": "8d9f44fa0afd37805c49578d45ca7d7d5104b440af0289b5a35f33daf9dd616b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I CorinthArg.html",
+          "sha256": "29d49581bcd9643c9a9a72ec8655fc06c9ace211844b518b7fc6d79698151366"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth2.html",
+          "sha256": "9a44b1f916a7e30b7f0d65a7abb44805724dec9abe7f42e24fd4f17a50bf663d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth3.html",
+          "sha256": "b105bfb435d279554f4eade804d47690df523b48d93cb96abf4bcd952b4ace62"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth4.html",
+          "sha256": "87a31a17efa14ce979f45e317bfc1071c3f7c011c8f143de07765e2bc593b1e1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth5.html",
+          "sha256": "572514ea0c79c2e1ea72a6b0fe5e169aab50c791ea6fcf33fa06d0c45edba903"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth6.html",
+          "sha256": "472a21537769699059038968fc467335dcfe8337c31beae81090e255ac586cbd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth7.html",
+          "sha256": "701e6a8613268f850dec0f7f6c3c2e2c5f2f698b513c0a8c8ba0a18b1e3e3ece"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth8.html",
+          "sha256": "609e2bfbdbd82e6c221c001993fe6d4373a867a87c5797076b33093ba1b6ae72"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth9.html",
+          "sha256": "c4d5694cc9e905529f34c5ae1e3845ae975889b6c0ea9f09d840212d6b75f21c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth10.html",
+          "sha256": "b20664f8f6aede811d23a844b1cbb0e97c5b372a0a36970f7e8bc900c52331a8"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth11.html",
+          "sha256": "64d26dcdeff619c4260cd042640754d78d67027163b877d38a4f38d0a3e7a03f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth12.html",
+          "sha256": "bdf38b4d0ecb4a0c4beda646317b09b3edb586026a5ad309e2eff280abcf7e18"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth13.html",
+          "sha256": "3e921b35295faba9a15a8092cfa19e0ac0ea9398709f439ccbdc30d1ab51054f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth14.html",
+          "sha256": "047dfc7787a7a3cfa4c5a39372863c270b13a62ef9579876c110a65f725ec2da"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth15.html",
+          "sha256": "b70e619cb7444166f65ffa3bfabc92d3df6c50cc78cf4d75cff6ac01084b8668"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Corinth16.html",
+          "sha256": "b1792df27cb9953d530cba7a4865b85f67b236407d315779ec322210b56e5a2f"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "1-corinthians",
+        "overlap_chapters": 16,
+        "verse_count_match": "16/16",
+        "folded_agreement": 0.9682,
+        "chapter_bag_agreement": 0.9687
+      }
+    },
+    {
+      "book": "2-corinthians",
+      "slug": "II Corinth",
+      "testament": "NT",
+      "landing_path": "/II Corinthians.html",
+      "chapters": 13,
+      "verses_total": 258,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinthians.html",
+          "sha256": "ca6542456dcdec5c8527910d3193402143f909db12578306bebb72f43e18cf47"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II CorinthArg.html",
+          "sha256": "cad2611a143d90356f06b1942cea56fa7983e3f1ee84232cb504492f1daf4da3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth2.html",
+          "sha256": "7e676e8b2f67db8ea5daf970a5251ddc0c28909deb23954532b9aed602313be7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth3.html",
+          "sha256": "f6558d8b32a6b1257c5a1b45d7a78d90e9d46809d4f6d1855fb69e169682f6bc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth4.html",
+          "sha256": "bb5b1e78d955ae0122f3ee43a1ac70cfa474364faabcb908b9d4be2af7febea1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth5.html",
+          "sha256": "6456d92782ec66df76b7c4ffbbd64c02419d374c3198e0d67a19cfdc2773e136"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth6.html",
+          "sha256": "638d3c6d486cfd2d9a4e8a0d1feb86078064a80c268b8a6fd2993b77a4f591e1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth7.html",
+          "sha256": "d12431824f45b1719d9d2ccfe0345d45415431ff650822ed220ab20b938a5511"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth8.html",
+          "sha256": "090a4bbc55088bc545519854d404d11203fe67a9254258a61616f4344a72af32"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth9.html",
+          "sha256": "84e672e5360591ccca4c405a192cabd02caf7c53b00468c338c737bd9bfb6727"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth10.html",
+          "sha256": "f44c25214fd6ada27da679eb3b77cb399c86bb3adc3ed3a4491235280a187bf2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth11.html",
+          "sha256": "a35d05aec0c9f30c6d97f98d65f107807c0f6623df11551e050a1477c4893dfc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth12.html",
+          "sha256": "4b02896c1adb758b9acb4577a7f47c8431ed41f36a3f56f7ef0f1d496fd62d2a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Corinth13.html",
+          "sha256": "a2e9cfc3c077565f0266f5c81f8fa941ee56f35d7f98803ab41731d17a74392d"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "2-corinthians",
+        "overlap_chapters": 13,
+        "verse_count_match": "10/13",
+        "folded_agreement": 0.8942,
+        "chapter_bag_agreement": 0.9642
+      }
+    },
+    {
+      "book": "galatians",
+      "slug": "galatians",
+      "testament": "NT",
+      "landing_path": "/galatians",
+      "chapters": 6,
+      "verses_total": 149,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/galatians",
+          "sha256": "a9853193138e986971eea35b12e753475abae95e52ea6ca9c72a0932014f8455"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/galatiansarg",
+          "sha256": "34538cd99416e2107ba33de89cc99be2d1e5f5a851bbaff334a353cd1cc036c3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/galatians2",
+          "sha256": "8621547b9e1739ac017d2714002527b6640f48e1b133c9a21a0713ff8134ed46"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/galatians3",
+          "sha256": "401a827971e3fd5aa6bcd280f199a508475da1db0552ccad4be2280e7a5bcdec"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/galatians4",
+          "sha256": "6b7ab52caa92db0c7411b0f3ca32172e12d9907aec83fa116b60f6d96297b74a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/galatians5",
+          "sha256": "14d8ab856c9862c3f101840998e25c6a27c9ac926838a2fbb94030b764a2d7b1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/galatians6",
+          "sha256": "1a85082640a7cc559287adc7b3ef63786cc00f9e026e8548e4f1dc37ba976b58"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "galatians",
+        "overlap_chapters": 6,
+        "verse_count_match": "6/6",
+        "folded_agreement": 0.9634,
+        "chapter_bag_agreement": 0.9647
+      }
+    },
+    {
+      "book": "ephesians",
+      "slug": "ephesians",
+      "testament": "NT",
+      "landing_path": "/ephesians",
+      "chapters": 6,
+      "verses_total": 155,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/ephesians",
+          "sha256": "3f9da8defda178b39490b89311ac8fd4889a87bed3efb7dd3198e8aaa772b0cc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/epharg",
+          "sha256": "27880ff023e252c3ea4e9323b3e04c04e5d029fe6e108a06f68da7d984c5109e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/ephesians2",
+          "sha256": "c4d034458f543741c8d311889ea778f4da2937fbc057a58970336cc4659453e5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/ephesians3",
+          "sha256": "63b37c93b25e6312a8cfbd727aca11b1da3b96d2a1e13019da1f4054dc5d50a1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/ephesians4",
+          "sha256": "3c1103a8996041bd4c0383a5a830da7ea3911cc6b70df59523c0bbffe093aaa3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/ephesians5",
+          "sha256": "7ef39a80fd6ad8ea92a9103b653f95c0d99e26dc757f4fdd539acaf9a05f5078"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/ephesians6",
+          "sha256": "f5b0793f2b47c3f09859bcf8e38f226c8b89dfa6e6a90564284981a7f66281b6"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "ephesians",
+        "overlap_chapters": 6,
+        "verse_count_match": "6/6",
+        "folded_agreement": 0.9651,
+        "chapter_bag_agreement": 0.9654
+      }
+    },
+    {
+      "book": "philippians",
+      "slug": "philippians",
+      "testament": "NT",
+      "landing_path": "/philippians",
+      "chapters": 4,
+      "verses_total": 104,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/philippians",
+          "sha256": "2da1b155e2a519e032dd2aa001a0309ae2d6092a148d9a75e956f9bdf749466e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/philarg",
+          "sha256": "dc9e0007fcb8e230ac865b02bfe20b4bc66a72c4bb3c0dea811c571269ac11d2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/philippians2",
+          "sha256": "b40b60c445d87ebab78854cc28b561033682a35fefe9d636df33f860db1b8098"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/philippians3",
+          "sha256": "ec06d310b538606319f897df87be845222e8b06a9787bcc7ad077932ee08190f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/philippians4",
+          "sha256": "161e893dec8cd13757c658338eeff6637dd7e1deab7c8b5ab90750d00445ad8d"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "philippians",
+        "overlap_chapters": 4,
+        "verse_count_match": "4/4",
+        "folded_agreement": 0.9694,
+        "chapter_bag_agreement": 0.9704
+      }
+    },
+    {
+      "book": "colossians",
+      "slug": "colossians",
+      "testament": "NT",
+      "landing_path": "/colossians",
+      "chapters": 4,
+      "verses_total": 95,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/colossians",
+          "sha256": "44e2de77bd488003e1a0f6c63117ece7103e9cac264b37a5bd385e07f1ed31b3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/colarg",
+          "sha256": "e5d7a89711d909ecf43acd74054a8cfcb38d6982b0f4663ee3c1ce1a920cc11a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/colossians2",
+          "sha256": "a5b961110308f8f9a378ef126ef1fe5c9cfbd7fb6679e719c98a5baf5564b435"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/colossians3",
+          "sha256": "81d9c853213782a4b8bbb96779d178146ae6fa59fda21ebf49bd5029a6ab61f6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/colossians4",
+          "sha256": "16b42030ac3c58def749974ef18d86772f7a5b529442074b41ae301879ae4844"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "colossians",
+        "overlap_chapters": 4,
+        "verse_count_match": "4/4",
+        "folded_agreement": 0.9653,
+        "chapter_bag_agreement": 0.9658
+      }
+    },
+    {
+      "book": "1-thessalonians",
+      "slug": "I Thessalonians",
+      "testament": "NT",
+      "landing_path": "/I Thessalonians.html",
+      "chapters": 5,
+      "verses_total": 88,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/I Thessalonians.html",
+          "sha256": "2eae0ce642fced4173e17fd9c18167fe47de4768ece2884a96178cd0a4e909a9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I ThessArg.html",
+          "sha256": "65e9e4b246e53764362e7a8019c98662f0ef140f505e783f8c6ccb1bf75d3fe9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Thessalonians2.html",
+          "sha256": "0cf51454fec515b122a138a011250b6386d2e091721f57eb905725fa334e37a0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Thessalonians3.html",
+          "sha256": "58cebceeb479c3e51445a207d62600734c52bdcb10a07e9d49fc0060697a86d9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Thessalonians4.html",
+          "sha256": "73fc17aa3580a45c0cc2c8fb2805ad5ba6f2796a3a2b8c52f239020fbab39a73"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Thessalonians5.html",
+          "sha256": "007af52b5c4af5ee687218f3653f873623b29146f388ffa444499a4a6894b68c"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "1-thessalonians",
+        "overlap_chapters": 5,
+        "verse_count_match": "4/5",
+        "folded_agreement": 0.8438,
+        "chapter_bag_agreement": 0.9619
+      }
+    },
+    {
+      "book": "2-thessalonians",
+      "slug": "II Thessalonians",
+      "testament": "NT",
+      "landing_path": "/II Thessalonians.html",
+      "chapters": 3,
+      "verses_total": 47,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/II Thessalonians.html",
+          "sha256": "82911ff4c39af4df77d39d9df423b2352ba58a4c72439be324674202780dc2e6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II ThessArg.html",
+          "sha256": "93fb2f8c1640c4e041ad254aab95be1eca676953a6e65569f8a89e51871140f9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Thessalonians2.html",
+          "sha256": "32ec365265b64c55c7da7efe0e84537eba71b9c238b8dc3672bc19d976d897a9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Thessalonians3.html",
+          "sha256": "f90436d0ba719ab3832047ee6af5be1db16c117e10fa7dc59eb3dcb75aec7f08"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "2-thessalonians",
+        "overlap_chapters": 3,
+        "verse_count_match": "3/3",
+        "folded_agreement": 0.9686,
+        "chapter_bag_agreement": 0.9715
+      }
+    },
+    {
+      "book": "1-timothy",
+      "slug": "I Timothee",
+      "testament": "NT",
+      "landing_path": "/I Timothee.html",
+      "chapters": 6,
+      "verses_total": 113,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/I Timothee.html",
+          "sha256": "a099ee513c3f7e402684b3cfdcdb0a37d50307d142f941d772094704ca0948bc"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I TimArg.html",
+          "sha256": "1a824b7eb177cf0ce69911637523e8ac16a03aa71ab15e1ea4f99173a779a1e5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Timothee2.html",
+          "sha256": "ae870066be56d6d314572f733375bfb4f2313731cb411f77853b14c1d5377161"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Timothee3.html",
+          "sha256": "493e4e60642c2193506842942eb3a5d12413f55f8a1ceeee3ace2bdf78a585d5"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Timothee4.html",
+          "sha256": "d1b8bf3657b7b506cda4e18aab8f2bbbd90587738cdda1a466d01db2af4580ea"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Timothee5.html",
+          "sha256": "3c36374ff320573c41aa3012ed37d513f21c66d2d65d8c03e81670340afef9d6"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Timothee6.html",
+          "sha256": "a67e366fb822a1f4e34288b7160d4e3512d36a1b5a497b7db54da1f420dc3304"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "1-timothy",
+        "overlap_chapters": 6,
+        "verse_count_match": "6/6",
+        "folded_agreement": 0.9548,
+        "chapter_bag_agreement": 0.9552
+      }
+    },
+    {
+      "book": "2-timothy",
+      "slug": "II Timothee",
+      "testament": "NT",
+      "landing_path": "/II Timothee.html",
+      "chapters": 4,
+      "verses_total": 82,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/II Timothee.html",
+          "sha256": "29165bdc397a333ab9486296dfa58dc3df7109cde734174fab60f94564b709c1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrewsarg",
+          "sha256": "5a462376d459327a4d1b2aa512994e0ac57a8e9bcc2c3b1b44620cec6229039a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Timothee2.html",
+          "sha256": "4e2211c7130a1ecdbce4fc921f7a323915e184c45c6ed791c86b5895db8cb84a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Timothee3.html",
+          "sha256": "e6d24888123854fc9a9a0b99504039f8fe5b215baedbb5e465cda31a0a5ca987"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Timothee4.html",
+          "sha256": "0ffd7a8512a8084dc124b84111cd606b5090cc44624fc909ad2195c673f2dcb3"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "2-timothy",
+        "overlap_chapters": 4,
+        "verse_count_match": "3/4",
+        "folded_agreement": 0.9553,
+        "chapter_bag_agreement": 0.9635
+      }
+    },
+    {
+      "book": "titus",
+      "slug": "titus",
+      "testament": "NT",
+      "landing_path": "/titus",
+      "chapters": 3,
+      "verses_total": 46,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/titus",
+          "sha256": "6a98f06415c4fa50fa86a919e0df6e3f2c9ef043864ed9b9ba2cb5514fb6c15b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrewsarg",
+          "sha256": "5a462376d459327a4d1b2aa512994e0ac57a8e9bcc2c3b1b44620cec6229039a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/titus2",
+          "sha256": "796fd7fec27f0e69d90a6d83aab60fe58fc2a39005197aa135204967fdcbae58"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/titus3",
+          "sha256": "399246c3ff6f35f3d6e91b227f30a399ec793986d404b7af9b14cd4fd51d849b"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "titus",
+        "overlap_chapters": 3,
+        "verse_count_match": "3/3",
+        "folded_agreement": 0.9785,
+        "chapter_bag_agreement": 0.9785
+      }
+    },
+    {
+      "book": "philemon",
+      "slug": null,
+      "testament": "NT",
+      "landing_path": "/philemon",
+      "chapters": 1,
+      "verses_total": 25,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/philemon",
+          "sha256": "3a444a5e31f68afddd95ff86952eec549e6fa02a5b24f68f4c1b3dff5614def2"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "philemon",
+        "overlap_chapters": 1,
+        "verse_count_match": "1/1",
+        "folded_agreement": 0.9618,
+        "chapter_bag_agreement": 0.964
+      }
+    },
+    {
+      "book": "hebrews",
+      "slug": "hebrews",
+      "testament": "NT",
+      "landing_path": "/hebrews",
+      "chapters": 13,
+      "verses_total": 303,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews",
+          "sha256": "cfed62e82e3e859d00b3e5f21d51acdc5ce31f2a5928ccc326d6fc68bbd7023c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrewsarg",
+          "sha256": "5a462376d459327a4d1b2aa512994e0ac57a8e9bcc2c3b1b44620cec6229039a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews2",
+          "sha256": "b5b844068464915a0f2f5fbe14e500ba43a59ed496e9d8f8cb81bc6c5f8b1da8"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews3",
+          "sha256": "5f2306c5e921d12b2cf0469b69f03bbdf3ad072f6e257dc2f78afd4368e621e1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews4",
+          "sha256": "0bfd6aeb91a83f446e6913815fe79a0826243a623d6572d0c08011638cad9b6d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews5",
+          "sha256": "8472a4d5d4254eb6b407e9b7d4ff09d89aa3a8793d32d0922f56222c92c6b35d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews6",
+          "sha256": "46d39fd13f7cf32935011bb41e8184baad1341cbba9e7b0d63255b4279723ffd"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews7",
+          "sha256": "820c6a211dd8833a2b453e8b12f2ac06fd5feb839eefca581fd4032729aa8a0d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews8",
+          "sha256": "55df41c532f3a6b11e5fdedf09bb38cecd3622562eda52895052d993a4af2956"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews9",
+          "sha256": "ea171e427e2b11813c75b8cb8ef583e53dea577ac05c3c3d3eae3d677fd0d95a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews10",
+          "sha256": "ce34d419efc00e4dc1643d9eaf532f917c6702d958179f98521f6b7aecee7922"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews11",
+          "sha256": "55db0a3b406d80abf0eef859d9eaaa07d93baae201b149d7080bd11fe2745769"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews12",
+          "sha256": "46871c98c0910de75e288465085367dca10caea1c35aff7d5ded579891e9b7c7"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/hebrews13",
+          "sha256": "66b4125b95b0aae09672b163a5d69d69d1ccfdc1825091c4670cc26e7ba69a45"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "hebrews",
+        "overlap_chapters": 13,
+        "verse_count_match": "13/13",
+        "folded_agreement": 0.9561,
+        "chapter_bag_agreement": 0.9567
+      }
+    },
+    {
+      "book": "james",
+      "slug": "james",
+      "testament": "NT",
+      "landing_path": "/james",
+      "chapters": 5,
+      "verses_total": 108,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/james",
+          "sha256": "dbf7dac70d7916528259a9ec2571b0efab97f2e7c7d3018bfb053b97a29a99e4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/jamesarg",
+          "sha256": "1a9b7b666b0491193a4de9815cda9722d7ac542e74f2ab54a6ba9c5ad27956ff"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/james2",
+          "sha256": "d003a9b41fc551c07a8388e9935c18458925935ef9071233e79add946b8d27ae"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/james3",
+          "sha256": "5619a6c6016be083e55e75074ba5283fe68109ab1d470add8e19a122c26a6243"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/james4",
+          "sha256": "0039943fa3d0f895f8c9f9fce7a58dc0cf10f79632414023b1c8fb6c84e028c1"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/james5",
+          "sha256": "73c9d3b163c32f405aee39b7efb08c7317e181cb737c7f1afdf1661b09d23cba"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "james",
+        "overlap_chapters": 5,
+        "verse_count_match": "5/5",
+        "folded_agreement": 0.9556,
+        "chapter_bag_agreement": 0.9561
+      }
+    },
+    {
+      "book": "1-peter",
+      "slug": "I Peter",
+      "testament": "NT",
+      "landing_path": "/I Peter.html",
+      "chapters": 5,
+      "verses_total": 105,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/I Peter.html",
+          "sha256": "240151f1853f3889291489acb34eefdd3f1113015ac72495ac1492c54212eef9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I PeterArg.html",
+          "sha256": "6ad5154e4307ae1d6b08c8ad5cbd529184bbad9938e6e8ccdb2aacbb8bfe7a25"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Peter2.html",
+          "sha256": "aa5fe4032d9746f0d6aed5f1518a7b7c7735ddf00c5d198c4990c1264f41edbf"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Peter3.html",
+          "sha256": "0c0e4c1e2cdf13500c81b1b00d33d21601b61635fe58e4396d543cb80c2eef7a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Peter4.html",
+          "sha256": "9b362a3ff4dd552b65353a629cdde7f1d731c3b9497d7da323cacf5d3c3f24e2"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I Peter5.html",
+          "sha256": "1067c10d67f2eca70c1469744050ea8c64ab2f5595126cd9ac9b48fc7174342b"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "1-peter",
+        "overlap_chapters": 5,
+        "verse_count_match": "5/5",
+        "folded_agreement": 0.9522,
+        "chapter_bag_agreement": 0.953
+      }
+    },
+    {
+      "book": "2-peter",
+      "slug": "II Peter",
+      "testament": "NT",
+      "landing_path": "/II Peter.html",
+      "chapters": 3,
+      "verses_total": 61,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/II Peter.html",
+          "sha256": "90b2765440a17b70d89f23ecf7d3207c0f91850b000d5e68bf2960580447f43e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Peter2.html",
+          "sha256": "d0859f6f2ded05c5555e03e8326ffcbef24f525aa2d1c0cddbbe027f01152770"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/II Peter3.html",
+          "sha256": "1b95582fd3c4fe294382ef91e9609e6a9bc311bbfd1a98f03074183aa68f027c"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "2-peter",
+        "overlap_chapters": 3,
+        "verse_count_match": "3/3",
+        "folded_agreement": 0.9747,
+        "chapter_bag_agreement": 0.9747
+      }
+    },
+    {
+      "book": "1-john",
+      "slug": "I John",
+      "testament": "NT",
+      "landing_path": "/I John.html",
+      "chapters": 5,
+      "verses_total": 105,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/I John.html",
+          "sha256": "797158f17aa653d4337e4b881462a564582fbe5566840501a0f77cdc857a8a4c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I John2.html",
+          "sha256": "699fb703a5c452fa12ce9f0eae257940a5a450555605db651c9d3b6abe76405c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I John3.html",
+          "sha256": "59ca9650bc24b97e4f9351565c959e8184a9da9fedad05a7ba37f8339c6edced"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I John4.html",
+          "sha256": "33d19d98959496da7004ee2c115913683d417ad86af3ca89c8223235cd489124"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/I John5.html",
+          "sha256": "ded7fd861ce3f18a057b1610402caf7bb92963c26d6f34ab3abace52c80c4435"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "1-john",
+        "overlap_chapters": 5,
+        "verse_count_match": "5/5",
+        "folded_agreement": 0.9643,
+        "chapter_bag_agreement": 0.9647
+      }
+    },
+    {
+      "book": "2-john",
+      "slug": null,
+      "testament": "NT",
+      "landing_path": "/II John.html",
+      "chapters": 1,
+      "verses_total": 13,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/II John.html",
+          "sha256": "f927afeb38175c1b0b03075a70df514469ce3f3b47d54f099aa8c43bd7867294"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "2-john",
+        "overlap_chapters": 1,
+        "verse_count_match": "1/1",
+        "folded_agreement": 0.9668,
+        "chapter_bag_agreement": 0.9668
+      }
+    },
+    {
+      "book": "3-john",
+      "slug": null,
+      "testament": "NT",
+      "landing_path": "/III John.html",
+      "chapters": 1,
+      "verses_total": 14,
+      "has_argument": false,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/III John.html",
+          "sha256": "810468634b614719e6962c9be569b5280b8e5282820c0f88f433430bb2a24282"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "3-john",
+        "overlap_chapters": 1,
+        "verse_count_match": "1/1",
+        "folded_agreement": 0.9672,
+        "chapter_bag_agreement": 0.9672
+      }
+    },
+    {
+      "book": "jude",
+      "slug": null,
+      "testament": "NT",
+      "landing_path": "/jude",
+      "chapters": 1,
+      "verses_total": 25,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/jude",
+          "sha256": "651c79f6487c668bfa572b231e203b4eee20274e742b50153ffa5bd5fa55f51b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/judearg",
+          "sha256": "6279f5f5fc9735a1f2f690f644e02824da6c9cb629e329f13a08adc4100f8f1a"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "jude",
+        "overlap_chapters": 1,
+        "verse_count_match": "1/1",
+        "folded_agreement": 0.9648,
+        "chapter_bag_agreement": 0.9648
+      }
+    },
+    {
+      "book": "apocalypse",
+      "slug": "revelations",
+      "testament": "NT",
+      "landing_path": "/revelations",
+      "chapters": 22,
+      "verses_total": 405,
+      "has_argument": true,
+      "pages": [
+        {
+          "url": "https://www.originaldouayrheims.com/revelations",
+          "sha256": "416cdc2e1475ec2c514f8c86ad3960e8587b06a4248749b0122f138676fe12b4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelationsarg",
+          "sha256": "a8a1877c8160973513d3eba0114b6e1891645a11cf1edd3f02528d9e3fcb8c90"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations2",
+          "sha256": "e228d0dc68a4a08db3dde77946be52a39c1b115b8b2ac59aea73860126de2f6c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations3",
+          "sha256": "284331a80c7a2f69a70a2ab5665b5bf6e5865a2e57b44a65bb54dece4639841a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations4",
+          "sha256": "e2de74ab92c95d8f9a6697a1e3d4faf0ac92bd6684fc3e81f3c96dbdfbf782a4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations5",
+          "sha256": "e88cf436c2b20320ed778d3e33e13e4faac3631a2c1e76f12170010f76e15f73"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations6",
+          "sha256": "eabf084f661a991d92c024ce1d2649cf09ddc682e8544418af3abbde3fc1630b"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations7",
+          "sha256": "19ef48d84e839132cdd9ee32738baa62bd34a31c11c70d4c7b06aebf22215687"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations8",
+          "sha256": "cead55b96cad43434ff275d122ab93b1c64bd537df17b71ff66aa9687c3ce67e"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations9",
+          "sha256": "ce1dcb480b6adb252dddc349b90d955e4e19d76f3156c4ddfbee6feb9a0f1d57"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations10",
+          "sha256": "d22ff70cf7778b7ad4e5ff063d5641f1098541c5f87eabbc25240b4197ffa39f"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations11",
+          "sha256": "67854c1fd06775252ea2bfd5a4e73d9fe9220f1ad91a75e984c063c323cd42b9"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations12",
+          "sha256": "55b75cbf92c080faa5f6bdd63577804732a4e6be5501b3fff38b1c958e54459c"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations13",
+          "sha256": "f364a076e58f68140023cf00f3b9bf650446af1732cbfd5de598ee308345a4a4"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations14",
+          "sha256": "cc0e15a7bd8eb1656ce961766c06800bd764355f9400b8f542ca671b83cd516d"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations15",
+          "sha256": "8a805fd243a5848c418493d6141699d6cb4c7c75f2bfccabf3a6633e5ff3c6b0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations16",
+          "sha256": "4eb5609005e01ae217ee4565f09bc98d7721f7837cc677024dc70579f09379ed"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations17",
+          "sha256": "d714ecd5888d9e5d2dc25af6561a936c7a13849cb3c8b7c0058e5de815d14963"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations18",
+          "sha256": "cf3bc4ac9a05fa717518e7c6fe1e2a3955a2159236c42cc197e5f80da2d2ea51"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations19",
+          "sha256": "c5b0cb8d5840e8c7896432cdf6bfea15a9e3bef9da57c365021636816db443a3"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations20",
+          "sha256": "d31a647df877f4389a06f54f54edce4ad6a817724f876f3773171622bdcf0f5a"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations21",
+          "sha256": "3c673371da0f28fbb05e6014ae59aab402beba3dca1afd3a61ed133e3341cab0"
+        },
+        {
+          "url": "https://www.originaldouayrheims.com/revelations22",
+          "sha256": "88e72d6e706db63d69f0a0b6724272b34ce4d0c24284b9d42427c5699849586f"
+        }
+      ],
+      "madueke_validation": {
+        "madueke_key": "apocalypse",
+        "overlap_chapters": 22,
+        "verse_count_match": "22/22",
+        "folded_agreement": 0.9637,
+        "chapter_bag_agreement": 0.9641
+      }
+    }
+  ],
+  "totals": {
+    "books": 39,
+    "chapters": 586,
+    "verses": 16003,
+    "validated_books": 39,
+    "mean_folded_agreement": 0.9482,
+    "mean_chapter_bag_agreement": 0.9562
+  }
+}
