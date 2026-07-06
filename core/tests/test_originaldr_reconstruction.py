@@ -81,3 +81,24 @@ def test_redetection_gate_p1_passes_all_checks():
     assert g1["failure_count"] == 0
     assert g1["round_tripped"] == g1["elements"]        # 100% round-trip
     assert all(v == 0 for v in checks["G2_referential_integrity"]["orphans"].values())
+
+
+def test_p2a_modern_render_is_a_pure_basis_db_projection():
+    """P2a (plan §5.2): idx 108 is emitted as a projection of the basis DB — every modern verse
+    body sourced from a consensus render_modern surface, no render-time fallbacks — and the projected
+    reference text is byte-identical to the committed idx 108 gold map."""
+    r = _load("render-modern-report.json")
+    assert r["idx"] == 108 and r["artifact"] == "render-modern"
+    sp = r["scripture_projection"]
+    # the modern edition + the archaic-only coordinates partition the basis-db scripture set
+    assert sp["modern_surface_verses"] + sp["archaic_only_coordinates"] == sp["basis_db_verses"] == 37185
+    # every modern verse body came from the basis DB — a pure projection, zero render-time fallbacks
+    assert sp["verse_bodies_from_basis_db"] == sp["modern_surface_verses"] == 37130
+    assert sp["render_time_fallbacks"] == 0 and sp["pure_basis_db_projection"] is True
+    # the rendered verses' confidence tiers account for the whole modern edition
+    assert sum(sp["rendered_confidence_tiers"].values()) == sp["verse_bodies_from_basis_db"]
+    # the projected reference sha ties to the committed idx 108 gold map (identical text)
+    assert r["reference"]["matches_pinned_reference_sha"] is True
+    work108 = json.loads((REC.parent.parent / "maps" / "work-108.map.json").read_text())
+    assert work108["idx"] == 108
+    assert work108["reference_sha256"] == r["reference"]["sha256"]

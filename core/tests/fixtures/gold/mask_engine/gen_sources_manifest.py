@@ -65,7 +65,13 @@ PROVENANCE: dict[int, dict] = {
                   "external Vulgate chapter counts (Esther 16, Daniel 14, Baruch 6, 1 Esdras=Ezra=10, "
                   "3+4 Esdras appendix). The janvier-s dataset had captured Tobias's Argument as a "
                   "spurious 1-verse chapter 1; the reconstruction drops it, restoring the canonical "
-                  "14 chapters (the Argument itself divides the book 4+8+2)."},
+                  "14 chapters (the Argument itself divides the book 4+8+2). Likewise 3 Esdras 2:1 "
+                  "appeared twice in the janvier-s source (the second entry a leaked cross-reference "
+                  "list mis-captured as a repeat verse); a keep-first verse-number dedup restores the "
+                  "single canonical verse. idx 108 is emitted as a deterministic projection of the "
+                  "Phase-1 basis database (render_modern.py): verse bodies from the consensus modern "
+                  "surface under modern-standard.json, apparatus + structure from janvier-s at render "
+                  "time — the reference text is byte-identical to the direct-witness build."},
     201: {"translation": "Coverdale Bible", "year": 1535, "spelling": "archaic", "typeset": "modern",
           "canon": "protestant-66", "kind": "marker", "source_origin": "reconstructed-from-web-scrape",
           "accuracy_source": "canon-oracle"},

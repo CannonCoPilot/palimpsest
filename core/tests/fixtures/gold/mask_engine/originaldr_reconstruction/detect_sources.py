@@ -84,11 +84,15 @@ def detect_sabates_a() -> list[dict]:
         meta = json.loads(path.read_text())
         chapters = _drop_spurious(slug, meta.get("chapters", []))
         for n, ch in enumerate(chapters, 1):
+            seen_vns: set[int] = set()
             for v in ch.get("verses", []):
                 vn = gen._vnum(v.get("verse"))
                 txt = gen.clean(v.get("text", ""))
                 if vn is None or not txt:
                     continue
+                if vn in seen_vns:            # duplicate verse number (source artifact, e.g.
+                    continue                  # 3-Esdras 2:1 cross-ref leak) — keep the first,
+                seen_vns.add(vn)              # canonical occurrence (mirrors the 108 builder)
                 reads.append(read_record(
                     f"scripture/{slug}/{n}/{vn}", txt, "modern",
                     f"sabates raw/{slug}.json ch{n}", "json-parse", "high",

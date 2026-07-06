@@ -6,7 +6,7 @@
   "note": "Committed snapshot of the basis database. The queryable basis-db.sqlite is written to the gitignored scratch tree (regenerable from the consensus corpus it derives from, and comparable in size); this JSON carries the schema, table row counts, per-book verse + confidence distributions, and the full apparatus/structural/placement records — the diff-reviewable, CI-safe view. Scripture render surfaces are materialized in the DB (needed for P2a/P2b); chapter-level apparatus text is coverage-tracked (P1.5) and sourced at render time from the pinned witnesses.",
   "sqlite": {
     "path": "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite",
-    "sha256": "eb0e7247738ccff0cdc98cf16f7e8981177964efca62ab7203a718de0da29bf1",
+    "sha256": "eeef1f0a02f90ba28cfdc9d06ae4c4f08613c45a8ad996f42f0b300cdecbf9c1",
     "size_bytes": 94162944,
     "row_counts": {
       "elements": 37369,

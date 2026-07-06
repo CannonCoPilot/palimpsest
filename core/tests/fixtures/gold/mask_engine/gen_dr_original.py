@@ -339,7 +339,18 @@ def book_title_line(meta: dict, slug: str) -> str:
     return clean(raw) or humanize(slug)
 
 
-def build():
+def build(verse_override: dict[str, str] | None = None,
+          _override_hits: set[str] | None = None):
+    """Build the OriginalDR reference text + element list.
+
+    ``verse_override`` — optional ``{"scripture/<slug>/<ch>/<verse>": modern_surface}`` map. When
+    supplied, a verse body is taken from it instead of re-cleaning the Madueke witness. This is the
+    hook the Phase-2 basis-db renderer (``render_modern.py``) uses to source verse bodies from the
+    consensus-called ``render_modern`` surface — making idx 108 a projection of the basis DB rather
+    than a direct re-read (plan §5.2, "one basis, two renderings"). ``render_modern`` equals
+    ``clean_scripture(Madueke)`` where Madueke attests the verse and ``clean(Sabates)`` where it does
+    not, so the projected text is byte-identical to the direct-witness build. Defaults to ``None`` →
+    the original direct-witness behavior (unchanged; the standalone generator + all callers)."""
     B = Builder()
     warns: list[str] = []                       # collation gaps (Madueke verse absent), surfaced
 
@@ -413,12 +424,34 @@ def build():
             if ch.get("summary"):
                 B.para(clean(ch["summary"]))
             B.add("chapter_heading", h_s, B.pos, label=title, meta={**cmeta, **PROV_APPARATUS})
-            # verse bodies — Madueke authoritative (Sabates fallback only if a verse is absent)
+            # verse bodies — Madueke authoritative (Sabates fallback only if a verse is absent).
+            # A verse_override surface (basis-db render) wins when present: the body then comes from
+            # the consensus-called modern surface, not a re-read of the Madueke witness.
             body_s = B.pos
             mad_ch = (mad_book or {}).get(n, {})
             n_fallback = 0
+            seen_vns: set[int] = set()
             for v in ch["verses"]:
                 vn = _vnum(v.get("verse"))
+                # Drop a duplicate verse number within a chapter: a source artifact where a
+                # cross-reference block was mis-captured as a repeat of an earlier verse. Keep the
+                # first (canonical) occurrence. Corpus-wide this hits exactly one verse — 3-Esdras
+                # 2:1 — where the second "verse 1" is a leaked cross-ref list; dropping it restores
+                # a 1:1 verse-number↔skeleton-coordinate mapping (matches the basis-db, which is
+                # keyed by that coordinate).
+                if vn is not None:
+                    if vn in seen_vns:
+                        continue
+                    seen_vns.add(vn)
+                ov = eid = None
+                if verse_override is not None and vn is not None:
+                    eid = f"scripture/{slug}/{n}/{vn}"
+                    ov = verse_override.get(eid)
+                if ov:
+                    B.para(ov)
+                    if _override_hits is not None and eid is not None:
+                        _override_hits.add(eid)
+                    continue
                 mtext = mad_ch.get(vn) if (mad_book is not None and vn is not None) else None
                 if mtext is not None:
                     B.para(clean_scripture(mtext))
@@ -479,15 +512,23 @@ def build():
     return text, B.els, warns
 
 
-def main():
-    text, els, warns = build()
+_DEFAULT_GENERATED_FROM = ("mask_engine/gen_dr_original.py (Madueke_A olprint HTML scripture + "
+                           "janvier-s/original-douay-rheims apparatus)")
+
+
+def emit_outputs(text: str, els: list[dict], warns: list[str], *, idx: int = IDX,
+                 out_txt: Path = OUT_TXT, generated_from: str = _DEFAULT_GENERATED_FROM) -> str:
+    """Write the reference ``.txt`` + ``work-<idx>.map.json`` (generate-and-record-offsets, exact by
+    construction) and return the reference sha256. Shared by the direct-witness generator (``main``)
+    and the Phase-2 basis-db renderer (``render_modern.py``); ``idx``/``out_txt``/``generated_from``
+    are the only knobs, so both paths emit an identical schema."""
     # normalization-stability assert: the offsets are valid only if ingest won't move them
     from palimpsest.ingest.normalizer import normalize
     norm = normalize(text, strip_paratextual=False)
     assert norm == text, "generated text is NOT normalization-stable; offsets would drift"
 
-    OUT_TXT.parent.mkdir(parents=True, exist_ok=True)
-    OUT_TXT.write_text(text, encoding="utf-8")
+    out_txt.parent.mkdir(parents=True, exist_ok=True)
+    out_txt.write_text(text, encoding="utf-8")
     sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
 
     # body + section list
@@ -514,17 +555,16 @@ def main():
     types_present = sorted(per)
     mask_by_type = {t: (t not in _UNMASKED_TYPES) for t in types_present}
     m = {
-        "schema": "palimpsest.gold-map/v1", "idx": IDX,
-        "source_file": OUT_TXT.name, "import_source": OUT_TXT.name,
+        "schema": "palimpsest.gold-map/v1", "idx": idx,
+        "source_file": out_txt.name, "import_source": out_txt.name,
         "reference_sha256": sha, "text_len": n, "element_count": len(sections),
         "type_counts": dict(per),
-        "generated_from": "mask_engine/gen_dr_original.py (Madueke_A olprint HTML scripture + "
-                           "janvier-s/original-douay-rheims apparatus)",
+        "generated_from": generated_from,
         "applied": True, "extra_types": [], "mask_by_type": mask_by_type, "sections": sections,
     }
     MAPS.mkdir(parents=True, exist_ok=True)
-    (MAPS / f"work-{IDX}.map.json").write_text(json.dumps(m, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"work-{IDX}.map.json: {len(sections)} elements, {len(types_present)} types, "
+    (MAPS / f"work-{idx}.map.json").write_text(json.dumps(m, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"work-{idx}.map.json: {len(sections)} elements, {len(types_present)} types, "
           f"{n} chars, sha {sha[:12]}")
     print("by type:", dict(per))
     if warns:
@@ -533,6 +573,12 @@ def main():
             print(f"    {w}")
     else:
         print("scripture provenance: all canonical verses supplied by Madueke_A (0 fallbacks)")
+    return sha
+
+
+def main():
+    text, els, warns = build()
+    emit_outputs(text, els, warns)
 
 
 if __name__ == "__main__":

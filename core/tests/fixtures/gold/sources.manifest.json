@@ -100,8 +100,8 @@
       "source_file": "OriginalDR-modern-1582-1610.txt",
       "source_file_type": "txt",
       "source_present": true,
-      "source_sha256": "da451dc27ccfc57ac9b9ee9322770521bb20ae80b85df30e6bcbfcc6705a46c1",
-      "reference_sha256": "da451dc27ccfc57ac9b9ee9322770521bb20ae80b85df30e6bcbfcc6705a46c1",
+      "source_sha256": "4f8f52ee8c30d297915ab7c9d3344e365f1e0272e56df17de13d5dfa9b5ae3f6",
+      "reference_sha256": "4f8f52ee8c30d297915ab7c9d3344e365f1e0272e56df17de13d5dfa9b5ae3f6",
       "structure": {
         "books": 76,
         "chapters": 1360,
@@ -115,7 +115,7 @@
         "api": true,
         "ui": true
       },
-      "note": "Scripture text is authoritatively the Madueke_A olprint 'Augmented Bible' HTML edition (73 books); editorial apparatus (book/chapter arguments, footnotes, annotations, 26 front/back reference documents) and the three-book apocryphal appendix come from the janvier-s/original-douay-rheims CC0 dataset, which Madueke omits. The two witnesses share a transcription lineage, so a verse-by-verse collation (0 substantive wording differences) plus an INDEPENDENT tesseract OCR of the original 1582/1609/1610 printed scans (0 genuine wording discrepancies across five canonical divisions) confirm the scripture against the print — a three-witness provenance recorded per element. Catholic Vulgate canon, gated by the ordered Douay-Rheims/Clementine oracle (catholic_dr): all 76 books match the external Vulgate chapter counts (Esther 16, Daniel 14, Baruch 6, 1 Esdras=Ezra=10, 3+4 Esdras appendix). The janvier-s dataset had captured Tobias's Argument as a spurious 1-verse chapter 1; the reconstruction drops it, restoring the canonical 14 chapters (the Argument itself divides the book 4+8+2)."
+      "note": "Scripture text is authoritatively the Madueke_A olprint 'Augmented Bible' HTML edition (73 books); editorial apparatus (book/chapter arguments, footnotes, annotations, 26 front/back reference documents) and the three-book apocryphal appendix come from the janvier-s/original-douay-rheims CC0 dataset, which Madueke omits. The two witnesses share a transcription lineage, so a verse-by-verse collation (0 substantive wording differences) plus an INDEPENDENT tesseract OCR of the original 1582/1609/1610 printed scans (0 genuine wording discrepancies across five canonical divisions) confirm the scripture against the print — a three-witness provenance recorded per element. Catholic Vulgate canon, gated by the ordered Douay-Rheims/Clementine oracle (catholic_dr): all 76 books match the external Vulgate chapter counts (Esther 16, Daniel 14, Baruch 6, 1 Esdras=Ezra=10, 3+4 Esdras appendix). The janvier-s dataset had captured Tobias's Argument as a spurious 1-verse chapter 1; the reconstruction drops it, restoring the canonical 14 chapters (the Argument itself divides the book 4+8+2). Likewise 3 Esdras 2:1 appeared twice in the janvier-s source (the second entry a leaked cross-reference list mis-captured as a repeat verse); a keep-first verse-number dedup restores the single canonical verse. idx 108 is emitted as a deterministic projection of the Phase-1 basis database (render_modern.py): verse bodies from the consensus modern surface under modern-standard.json, apparatus + structure from janvier-s at render time — the reference text is byte-identical to the direct-witness build."
     },
     {
       "id": 201,

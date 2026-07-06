@@ -1,0 +1,45 @@
+{
+  "artifact": "render-modern",
+  "phase": "P2a",
+  "idx": 108,
+  "generated_by": "render_modern.py",
+  "note": "idx 108 rendered as a projection of the basis DB: verse bodies from the consensus render_modern surface (modern-standard.json), apparatus + structure from janvier-s at render time. The reference text is byte-identical to the committed direct-witness idx 108 (sha pinned below) — the basis DB is a faithful single source of truth. Verse render surfaces live in the gitignored basis-db.sqlite; this JSON is the diff-reviewable, CI-safe projection summary.",
+  "reference": {
+    "file": "imports/Scripture/Bibles/OriginalDR/OriginalDR-modern-1582-1610.txt",
+    "sha256": "4f8f52ee8c30d297915ab7c9d3344e365f1e0272e56df17de13d5dfa9b5ae3f6",
+    "text_len": 8377928,
+    "matches_pinned_reference_sha": true,
+    "expected_sha256": "4f8f52ee8c30d297915ab7c9d3344e365f1e0272e56df17de13d5dfa9b5ae3f6"
+  },
+  "modern_standard": "originaldr_reconstruction/modern-standard.json",
+  "scripture_projection": {
+    "basis_db_verses": 37185,
+    "modern_surface_verses": 37130,
+    "archaic_only_coordinates": 55,
+    "archaic_only_note": "positions in the 1582 archaic witnesses with no modern counterpart (versification divergence); rendered by idx 109, not idx 108",
+    "archaic_only_sample": [
+      "scripture/1-corinthians/7/41",
+      "scripture/1-corinthians/8/14",
+      "scripture/2-corinthians/1/24",
+      "scripture/2-corinthians/5/22",
+      "scripture/2-corinthians/9/16",
+      "scripture/2-kings/14/34",
+      "scripture/2-kings/18/34",
+      "scripture/3-kings/6/39"
+    ],
+    "verse_bodies_from_basis_db": 37130,
+    "render_time_fallbacks": 0,
+    "pure_basis_db_projection": true,
+    "rendered_confidence_tiers": {
+      "high": 30514,
+      "low": 199,
+      "moderate": 6417
+    },
+    "rendered_independent_depth": {
+      "1": 199,
+      "2": 8665,
+      "3": 15472,
+      "4": 12794
+    }
+  }
+}

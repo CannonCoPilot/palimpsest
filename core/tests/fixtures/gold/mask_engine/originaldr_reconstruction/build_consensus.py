@@ -159,7 +159,14 @@ def load_reads() -> dict[str, dict[str, dict]]:
         src = p.stem
         blob = json.loads(p.read_text())
         recs = blob if isinstance(blob, list) else blob.get("reads", [])
-        out[src] = {r["skeleton_id"]: r for r in recs if r.get("skeleton_id", "").startswith("scripture/")}
+        # First-wins on a repeated skeleton id: deterministic, and consistent with the generator +
+        # detectors, which keep the first (canonical) occurrence of a duplicated verse number.
+        d: dict[str, dict] = {}
+        for r in recs:
+            sid = r.get("skeleton_id", "")
+            if sid.startswith("scripture/") and sid not in d:
+                d[sid] = r
+        out[src] = d
     return out
 
 
