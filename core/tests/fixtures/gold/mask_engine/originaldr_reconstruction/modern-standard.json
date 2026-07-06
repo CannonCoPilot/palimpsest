@@ -1,0 +1,94 @@
+{
+  "artifact": "modern-standard",
+  "phase": "P2.0",
+  "purpose": "Reconciled Madueke_A↔Sabates_A modern spelling/typeset standard for rendering the modern OriginalDR (idx 108) from the basis DB.",
+  "authoritative_witness": "madueke_a",
+  "reconciliation_basis": {
+    "source_collation": "originaldr_validation/collation-3way.json",
+    "relationship": "Sabates_A derives from Madueke_A (lineage-related transcription).",
+    "compared_verses": 35809,
+    "identical": 33400,
+    "identical_pct": 93.2726,
+    "ligature_only": 813,
+    "ligature_only_pct": 2.2704,
+    "punct_or_space_only": 1596,
+    "punct_or_space_only_pct": 4.457,
+    "substantive": 0,
+    "interpretation": "0 substantive wording divergences → the witnesses agree on content. The standard is therefore a pure normalization spec; no wording arbitration is needed. Madueke_A is authoritative for surface; the rules below resolve orthographic/typographic differences."
+  },
+  "rules": [
+    {
+      "class": "wording",
+      "decision": "madueke_a authoritative",
+      "rationale": "0 substantive divergences vs Sabates_A; Madueke_A is the reference modern edition for idx 108."
+    },
+    {
+      "class": "ligatures",
+      "decision": "expand",
+      "mapping": {
+        "æ": "ae",
+        "Æ": "Ae",
+        "œ": "oe",
+        "Œ": "Oe"
+      },
+      "rationale": "Madueke_A convention and modern orthography; 813 verses differed on this alone.",
+      "examples": [
+        {
+          "ref": "scripture/genesis/10/15",
+          "sabates": "And Chanaan begat Sidon his first-begotten, Hethæus,",
+          "madueke": "And Chanaan begat Sidon his first-begotten, Hethaeus,",
+          "standard": "And Chanaan begat Sidon his first-begotten, Hethaeus,"
+        },
+        {
+          "ref": "scripture/genesis/10/16",
+          "sabates": "and Iebusæus, and Amorrhæus, and Gergesæus.",
+          "madueke": "and Iebusaeus, and Amorrhaeus, and Gergesaeus.",
+          "standard": "and Iebusaeus, and Amorrhaeus, and Gergesaeus."
+        },
+        {
+          "ref": "scripture/genesis/10/17",
+          "sabates": "Hevæus and Aracæus, Sinæus,",
+          "madueke": "Hevaeus and Aracaeus, Sinaeus,",
+          "standard": "Hevaeus and Aracaeus, Sinaeus,"
+        }
+      ]
+    },
+    {
+      "class": "divine_speech_capitalization",
+      "decision": "preserve Madueke_A majuscule",
+      "rationale": "The Douay tradition sets divine speech and messianic prophecy in ALL-CAPS; Madueke_A preserves this, Sabates_A title-cases it. The standard keeps the traditional majuscule (the dominant driver of the 1596 punct/space-class divergences).",
+      "examples": [
+        {
+          "ref": "genesis 12:3",
+          "madueke": "I will bless them that bless thee, and curse them that curse thee, and IN THEE shall all the kindreds of the earth be blessed.",
+          "sabates": "I will bless them that bless thee, and curse them that curse thee, and IN Thee shall all the kindreds of the earth be blessed.",
+          "standard": "I will bless them that bless thee, and curse them that curse thee, and IN THEE shall all the kindreds of the earth be blessed."
+        },
+        {
+          "ref": "genesis 18:18",
+          "madueke": "whereas he shall be into a Nation great, and very strong, and in him are TO BE BLESSED ALL THE NATIONS OF THE EARTH?",
+          "sabates": "whereas he shall be into a Nation great, and very strong, and in him are TO BE Blessed All The Nations of The Earth?",
+          "standard": "whereas he shall be into a Nation great, and very strong, and in him are TO BE BLESSED ALL THE NATIONS OF THE EARTH?"
+        },
+        {
+          "ref": "genesis 22:18",
+          "madueke": "and IN THY SEED SHALL BE BLESSED ALL THE NATIONS OF THE EARTH, because thou hast obeyed my voice.",
+          "sabates": "and IN Thy Seed Shall be Blessed All The Nations of The Earth, because thou hast obeyed my voice.",
+          "standard": "and IN THY SEED SHALL BE BLESSED ALL THE NATIONS OF THE EARTH, because thou hast obeyed my voice."
+        }
+      ]
+    },
+    {
+      "class": "whitespace",
+      "decision": "normalize",
+      "rule": "strip leading/trailing whitespace; collapse internal runs to a single space.",
+      "rationale": "Madueke_A HTML extraction leaves trailing spaces; normalized for stable rendering + diffing."
+    },
+    {
+      "class": "punctuation",
+      "decision": "prefer madueke_a",
+      "rationale": "Where punctuation differs (no substantive impact), follow the authoritative witness."
+    }
+  ],
+  "apparatus_note": "Sabates_A supplies the apparatus (arguments, verse-notes, cross-refs, annotations) and the 3-book apocryphal appendix Madueke_A omits; apparatus inclusion/placement is handled in P1.5 / P1.4, not here."
+}
