@@ -169,3 +169,39 @@ def test_p2_archaic_fidelity_validation_is_tiered_and_honest():
     assert sev["clean-diplomatic"] + sev["mixed"] >= 0.95 * st["count"]
     # Psalms tops the tail — the Vulgate convention of numbering the psalm title as verse 1
     assert next(iter(st["by_book_top"])) == "psalms"
+
+
+def test_p2_archaic_print_validation_bootstrap_cis_are_reproducible_and_honest():
+    """§6.3 (plan §6.3): the independent-print bootstrap-CI validation is seeded/reproducible, both
+    editions clear a high recall bar against the third-party archive.org print OCR with no genuine
+    content-word discrepancies, CIs are well-formed, and recall is reported per genre stratum and per
+    archaic-witness tier (with the ocr-only tier flagged partially self-referential)."""
+    d = _load("archaic-print-validation.json")
+    assert d["idx"] == 109 and d["seed"] == 1729 and d["n_bootstrap"] == 10000
+    # reuses the symmetric long-ſ/f PRINT fold (opposite of §6.2's fold_diplomatic, which keeps f≠s)
+    assert "skel" in d["fold"] and "symmetric" in d["fold"].lower()
+    assert "self-referential" in d["independence_note"].lower()
+    # six pinned djvu print witnesses, each with a sha256
+    assert len(d["sources"]) == 6
+    assert all(len(v["sha256"]) == 64 for v in d["sources"].values())
+
+    def _ci_ok(block: dict) -> bool:
+        lo, hi = block["ci95"]
+        return 0.0 <= lo <= block["recall_pct"] <= hi <= 100.0
+
+    agg = d["aggregate"]
+    # both editions strongly corroborated by the independent print; CIs well-formed
+    assert _ci_ok(agg["archaic"]) and _ci_ok(agg["modern"])
+    assert 80.0 <= agg["archaic"]["recall_pct"] <= 92.0
+    assert 85.0 <= agg["modern"]["recall_pct"] <= 95.0
+    # the genuine-discrepancy signal: zero distinctive content words absent from the independent print
+    assert agg["archaic_genuine_candidate_misses"] == 0
+    assert agg["archaic_genuine_candidate_words"] == []
+    # reported across all five genre strata and all three archaic-witness tiers, each with paired CIs
+    assert set(d["per_stratum"]) == {"OT-narrative", "OT-poetry", "OT-prophets", "NT-gospel", "NT-epistle"}
+    assert list(d["per_witness_tier"]) == ["clean-diplomatic", "mixed", "ocr-only-noisy"]
+    for tier in d["per_witness_tier"].values():
+        assert tier["archaic"]["n_chapters"] >= 1
+        assert _ci_ok(tier["archaic"]) and _ci_ok(tier["modern"])
+    # every sample carries a paired archaic + modern measurement
+    assert d["per_sample"] and all("archaic" in s and "modern" in s for s in d["per_sample"])
