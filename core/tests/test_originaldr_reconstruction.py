@@ -286,3 +286,39 @@ def test_p3_2_brief_data_is_consistent_and_powers_genome_browser_figures():
         assert label in out
     assert str(paths["brief_data"].relative_to(gen.REPO)) in out
     assert out.count("<svg") == out.count("</svg>") >= 7
+
+
+def test_p3_3_placement_map_contributor_heatmaps_and_glyph_extend_the_brief():
+    """P3.3 (plan §7.2): the brief carries the apparatus placement map (every slot grounded in the
+    scans by tome region), the two contributor heatmaps (book×source scripture, channel×source
+    apparatus) and the extended diplomatic-glyph inventory — all from committed artifacts, with a
+    representative header crop inlined as belt-and-suspenders proof. This completes Phase 3."""
+    gen = _load_module("gen_originaldr_brief")
+    layout = _load("layout-map.json")
+    appr = _load("apparatus-attestation.json")
+    A, paths = gen.load_artifacts()
+    out = gen.build_html(A, paths)
+
+    # placement map: every one of the 26 apparatus slots is named + carries a citation row
+    ap = layout["apparatus_placements"]
+    assert len(ap) == 26
+    assert all(p["slot"] in out for p in ap)
+    # honest grounding vocabulary + the single unlocatable slot are visible
+    for status in ("grounded", "co-located", "inventoried", "unlocatable"):
+        assert status in out
+    assert layout["summary"]["grounded"] == 17 and layout["summary"]["unlocatable"] == 1
+
+    # representative committed header crop inlined as belt-and-suspenders proof
+    assert "data:image/png;base64," in out and "ot-title-page" in out
+
+    # apparatus contributor heatmap: every apparatus channel is a labelled row
+    assert "Apparatus contributor heatmap" in out
+    assert all(ch in out for ch in appr["channels"])
+
+    # scripture contributor heatmap + extended glyph inventory (long-ſ now joined by æ and &)
+    assert "Contributor heatmap" in out
+    assert "Diplomatic-glyph inventory" in out and "æ and &" in out
+
+    # the finished Phase-3 brief carries all ten figures with balanced SVG, and is not stale
+    assert out.count("<svg") == out.count("</svg>") >= 10
+    assert gen.OUT.read_text(encoding="utf-8") == out

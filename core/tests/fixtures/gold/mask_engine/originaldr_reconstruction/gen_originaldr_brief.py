@@ -83,7 +83,7 @@ def _rect(x: float, y: float, w: float, h: float, fill: str, extra: str = "", ti
     return f"{r}><title>{_esc(title)}</title></rect>" if title else f"{r}/>"
 
 
-def _text(x: float, y: float, s: Any, size: int = 11, fill: str = "#222", anchor: str = "start",
+def _text(x: float, y: float, s: Any, size: float = 11, fill: str = "#222", anchor: str = "start",
           extra: str = "") -> str:
     return (f'<text x="{x:.1f}" y="{y:.1f}" font-size="{size}" fill="{fill}" '
             f'text-anchor="{anchor}" {extra}>{_esc(s)}</text>')
@@ -215,27 +215,42 @@ def fig_fidelity_print_ci(fidelity: dict, print_a: dict) -> str:
 
 
 def fig_glyph_chart(fidelity: dict, order: list[dict]) -> str:
-    """Per-book retained long-ſ count (log-ish bar) — evidence the archaic type is genuinely archaic.
-    Books with no long-ſ are the ocr-only tier (the ſ→f OCR misread ate their long-esses)."""
+    """Per-book diplomatic-glyph inventory: retained long-ſ (main bar, colored by witness tier) plus
+    æ and & (mini-bars, each normalized to its own maximum). Long-ſ evidences genuinely archaic type;
+    its absence marks the ocr-only books where OCR misread ſ→f."""
     pb = fidelity["per_book"]
     books = [b for b in order if b["slug"] in pb]
-    counts = [(b["slug"], pb[b["slug"]]["glyph_inventory"].get("long_s", 0),
-               pb[b["slug"]]["witness_tier"]) for b in books]
-    mx = max((c for _, c, _ in counts), default=1) or 1
-    rowh, x0, labelw, barw = 15, 12, 140, 640
-    H = 40 + rowh * len(counts) + 24
-    W = x0 + labelw + barw + 70
-    body = [_text(x0, 20, "Diplomatic-glyph inventory — retained long-ſ per book (bar ∝ count; "
-                  "empty bars = ocr-only books where OCR misread ſ→f)", 12, "#222")]
-    y = 34
-    for slug, c, tier in counts:
-        body.append(_text(x0, y + rowh - 4, slug, 10, "#333"))
-        w = barw * c / mx
-        body.append(_rect(x0 + labelw, y, w, rowh - 2, WITNESS_TIER_COLOR.get(tier, "#bbb"),
-                          title=f'{slug}: {c} long-ſ ({tier})'))
-        body.append(_text(x0 + labelw + w + 5, y + rowh - 4, c, 9, "#777"))
+    glyphs = [("long_s", "long-ſ", 356), ("ae_lower", "æ", 80), ("ampersand", "&", 80)]
+    gmax = {k: (max((pb[b["slug"]]["glyph_inventory"].get(k, 0) for b in books), default=1) or 1)
+            for k, _, _ in glyphs}
+    gcol = {"long_s": None, "ae_lower": "#762a83", "ampersand": "#4a90c2"}  # long_s colored by tier
+    rowh, x0, labelw, gap = 15, 12, 126, 42
+    H = 46 + rowh * len(books) + 24
+    xs: dict[str, float] = {}
+    x = float(x0 + labelw)
+    for k, _, w in glyphs:
+        xs[k] = x
+        x += w + gap
+    W = int(x + 10)
+    body = [_text(x0, 20, "Diplomatic-glyph inventory — long-ſ (bar ∝ count) + æ and & (each own "
+                  "scale); empty long-ſ = ocr-only (ſ→f misread)", 12, "#222")]
+    for k, lbl, _ in glyphs:
+        body.append(_text(xs[k], 38, lbl, 10, "#333", extra='font-weight="600"'))
+    y = 46.0
+    for b in books:
+        slug = b["slug"]
+        gi = pb[slug]["glyph_inventory"]
+        tier = pb[slug]["witness_tier"]
+        body.append(_text(x0, y + rowh - 4, slug, 8, "#333"))
+        for k, lbl, w in glyphs:
+            c = gi.get(k, 0)
+            bw = w * c / gmax[k]
+            col = WITNESS_TIER_COLOR.get(tier, "#bbb") if gcol[k] is None else gcol[k]
+            if bw > 0:
+                body.append(_rect(xs[k], y, bw, rowh - 2, col, title=f'{slug}: {c} {lbl} ({tier})'))
+            body.append(_text(xs[k] + w + 3, y + rowh - 4, c, 8, "#999"))
         y += rowh
-    return _svg(W, H, "".join(body), "Diplomatic-glyph inventory")
+    return _svg(W, int(H), "".join(body), "Diplomatic-glyph inventory")
 
 
 def _jac_color(j: float | None) -> str:
@@ -364,7 +379,132 @@ def fig_variant_pileups(bd: dict) -> str:
     return _svg(1120, int(y + 16), "".join(body), "Variant pileup panels")
 
 
+STATUS_COLOR = {"grounded": "#1a9850", "co-located": "#66bd63", "inventoried": "#fdae61",
+                "unlocatable": "#d7301f"}
+
+
+def _green(t: float) -> str:
+    """White→green ramp for coverage heatmaps."""
+    t = max(0.0, min(1.0, t))
+    a, b = (247, 252, 245), (0, 104, 55)
+    return "#" + "".join(f"{round(a[i] + (b[i] - a[i]) * t):02x}" for i in range(3))
+
+
+def fig_contributor_heatmap_scripture(bd: dict, order: list[dict]) -> str:
+    """Book × witness scripture-coverage heatmap: each cell is the share of a book's verses a witness
+    attests. The archaic diplomatic witnesses (s-dismas, odr-com) cover Genesis→Wisdom and fall to
+    zero (grey) across the prophets and appendix — the ocr-only stratum, resolved to the book."""
+    m = bd["book_source_matrix"]
+    sources = m["sources"]
+    books = [b for b in order if b["slug"] in m["books"]]
+    rowh, x0, labelw, cellw = 10, 12, 128, 74
+    H = 52 + rowh * len(books) + 34
+    W = x0 + labelw + cellw * len(sources) + 20
+    body = [_text(x0, 20, "Contributor heatmap — per-book scripture coverage by witness "
+                  "(grey = absent)", 12, "#222")]
+    for j, s in enumerate(sources):
+        body.append(_text(x0 + labelw + cellw * j + cellw / 2, 44, s, 8, "#333", "middle"))
+    y = 50.0
+    for b in books:
+        rec = m["books"][b["slug"]]
+        tot = rec["total"] or 1
+        body.append(_text(x0, y + rowh - 2, b["slug"], 7.5, "#333"))
+        for j, s in enumerate(sources):
+            c = rec["by_source"].get(s, 0)
+            frac = c / tot
+            body.append(_rect(x0 + labelw + cellw * j, y, cellw - 1, rowh - 1,
+                              "#f3f3f3" if c == 0 else _green(frac),
+                              title=f'{b["slug"]} × {s}: {c}/{tot} ({100 * frac:.0f}%)'))
+        y += rowh
+    ly = y + 10
+    body.append(_text(x0, ly + 9, "coverage", 9, "#555"))
+    for i in range(51):
+        body.append(_rect(x0 + 58 + i * 3, ly, 3, 10, _green(i / 50)))
+    body.append(_text(x0 + 58, ly + 22, "0%", 8, "#777"))
+    body.append(_text(x0 + 58 + 153, ly + 22, "100%", 8, "#777", "end"))
+    return _svg(W, H, "".join(body), "Scripture contributor heatmap")
+
+
+def fig_contributor_heatmap_apparatus(appr: dict) -> str:
+    """Apparatus channel × witness heatmap: books covered per apparatus channel by each contributing
+    witness. Sabates is the backbone across all five channels; odr-com supplements the book arguments
+    and sidecar notes only."""
+    channels = appr["channels"]
+    sources = ["sabates_a", "odr_com"]
+    nbooks = len(appr["book_channels"])
+    cnt = {ch: {s: 0 for s in sources} for ch in channels}
+    for bc in appr["book_channels"]:
+        for ch, perc in bc["per_channel"].items():
+            for s, info in perc.items():
+                if s in sources and info.get("present"):
+                    cnt[ch][s] += 1
+    x0, labelw, cellw, rowh, top = 12, 150, 150, 26, 54
+    W = x0 + labelw + cellw * len(sources) + 20
+    H = top + rowh * len(channels) + 20
+    body = [_text(x0, 20, f"Apparatus contributor heatmap — books per channel by witness "
+                  f"(of {nbooks})", 12, "#222")]
+    for j, s in enumerate(sources):
+        body.append(_text(x0 + labelw + cellw * j + cellw / 2, top - 8, s, 10, "#333", "middle"))
+    y = float(top)
+    for ch in channels:
+        body.append(_text(x0 + labelw - 6, y + rowh - 8, ch, 10, "#333", "end"))
+        for j, s in enumerate(sources):
+            c = cnt[ch][s]
+            frac = c / nbooks
+            body.append(_rect(x0 + labelw + cellw * j, y, cellw - 2, rowh - 2,
+                              "#f3f3f3" if c == 0 else _green(frac), title=f'{ch} × {s}: {c}/{nbooks}'))
+            body.append(_text(x0 + labelw + cellw * j + cellw / 2, y + rowh - 8,
+                              f"{c}" if c else "—", 10, "#fff" if frac >= 0.6 else "#111", "middle"))
+        y += rowh
+    return _svg(W, H, "".join(body), "Apparatus contributor heatmap")
+
+
+def fig_apparatus_placement(layout: dict) -> str:
+    """Apparatus placement map: every editorial apparatus slot located in the original print, grouped
+    by tome region (front/back matter × testament) and colored by grounding status — the visual proof
+    that each item's placement is anchored in the scans."""
+    ap = layout["apparatus_placements"]
+    groups = ["front · OT", "back · OT", "front · NT", "back · NT"]
+    x0, boxw, boxh, per_row, gapx, gapy = 12, 150, 40, 6, 6, 8
+    W = x0 + per_row * (boxw + gapx) + 10
+    body = [_text(x0, 20, "Apparatus placement map — every apparatus slot located in the original "
+                  "print by tome region (color = grounding status)", 12, "#222")]
+    y = 36.0
+    for g in groups:
+        slots = sorted([p for p in ap if p["tome_position"] == g],
+                       key=lambda p: p["apparatus_order_ref"]["position"])
+        body.append(_text(x0, y + 12, f"{g}  ({len(slots)})", 11, "#333", extra='font-weight="600"'))
+        y += 20
+        for i, p in enumerate(slots):
+            col = i % per_row
+            if col == 0 and i > 0:
+                y += boxh + gapy
+            bx = x0 + col * (boxw + gapx)
+            src = p.get("source") or {}
+            sc = STATUS_COLOR.get(p["status"], "#bbb")
+            name = p["slot"].split("-", 1)[-1] if "-" in p["slot"] else p["slot"]
+            page = src.get("page")
+            body.append(_rect(bx, y, boxw, boxh, "#fff",
+                              f'stroke="{sc}" stroke-width="1.5" rx="3"',
+                              title=f'{p["slot"]}: {p["status"]}' + (f', scan p.{page}' if page else '')))
+            body.append(_rect(bx, y, 5, boxh, sc))
+            body.append(_text(bx + 11, y + 16, name[:22], 9, "#111"))
+            body.append(_text(bx + 11, y + 31, f'{p["status"]} · {"p." + str(page) if page else "—"}', 8, "#666"))
+        y += boxh + gapy + 8
+    lx = x0
+    for st in ("grounded", "co-located", "inventoried", "unlocatable"):
+        body.append(_rect(lx, y, 12, 12, STATUS_COLOR[st]))
+        body.append(_text(lx + 16, y + 10, st, 9))
+        lx += 108
+    return _svg(W, int(y + 22), "".join(body), "Apparatus placement map")
+
+
 # --------------------------------------------------------------------------- HTML assembly
+def _data_uri(path: Path) -> str:
+    import base64
+    return "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode("ascii")
+
+
 def _table(headers: list[str], rows: list[list[Any]]) -> str:
     h = "".join(f"<th>{_esc(x)}</th>" for x in headers)
     body = "".join("<tr>" + "".join(f"<td>{_esc(c)}</td>" for c in r) + "</tr>" for r in rows)
@@ -401,7 +541,10 @@ def build_html(A: dict[str, Any], paths: dict[str, Path]) -> str:
         "depth": fig_coverage_depth(basis, order),
         "cov_hist": fig_coverage_histogram(bd),
         "track": fig_source_track(bd),
+        "contrib_scripture": fig_contributor_heatmap_scripture(bd, order),
         "pileups": fig_variant_pileups(bd),
+        "appar_heat": fig_contributor_heatmap_apparatus(appr),
+        "placement": fig_apparatus_placement(layout),
         "ci": fig_fidelity_print_ci(fid, pa),
         "glyph": fig_glyph_chart(fid, order),
     }
@@ -469,6 +612,21 @@ def build_html(A: dict[str, Any], paths: dict[str, Path]) -> str:
            "witness, never a lossy back-transform."),
         figs["ideogram"])
 
+    lsum = layout["summary"]
+    aplist = layout["apparatus_placements"]
+    rep = next(p for p in aplist if p["slot"] == "ot-title-page")
+    crop_html = (
+        f'<figure class="crop"><img alt="scan crop grounding {_esc(rep["slot"])}" '
+        f'src="{_data_uri(HERE / rep["crop_image"])}"/><figcaption>Representative grounding: the '
+        f'<b>{_esc(rep["slot"])}</b> slot located on scan page {rep["source"]["page"]} '
+        f'(“{_esc(rep["identifying_text"][:60])}…”). All {lsum["grounded"]} grounded slots carry a '
+        "committed header crop; every slot is cited below.</figcaption></figure>")
+    placement_rows = [[p["slot"], p["tome_position"], p["status"],
+                       (p.get("source") or {}).get("page", "—"),
+                       (p["crop_image"].split("/")[-1] if p.get("crop_image") else "—")]
+                      for p in sorted(aplist, key=lambda q: (q["testament"],
+                                                             q["apparatus_order_ref"]["position"]))]
+
     results = _section(
         "results", "Results",
         _p(f"<b>Coverage & confidence.</b> {high_pct:.1f}% of verses reach the high tier; independent "
@@ -484,6 +642,12 @@ def build_html(A: dict[str, Any], paths: dict[str, Path]) -> str:
            "carries all five witnesses, while an ocr-only prophetic book (Isaie 1) falls to the three "
            "witnesses whose lineages reach it — the read-depth collapse made visible."),
         figs["track"],
+        _p("<b>Per-book contribution.</b> Resolved to the book, the modern transcription backbone "
+           "(madueke_a), the apparatus backbone (sabates_a) and the fresh OCR span the whole canon, "
+           "while the archaic diplomatic witnesses (s-dismas, odr-com) cover Genesis through the "
+           "sapiential books and fall to zero across the prophets and appendix — the ocr-only "
+           "stratum, shown grey:"),
+        figs["contrib_scripture"],
         _p("<b>Consensus & variant structure.</b> Where witnesses disagree, the pileup lays each "
            "surface reading under the called consensus. The largest disagreements are not OCR noise "
            "but versification offsets: a witness numbering under the alternate Vulgate convention "
@@ -497,7 +661,18 @@ def build_html(A: dict[str, Any], paths: dict[str, Path]) -> str:
            f"{appr['summary']['reference_docs']['include']} of "
            f"{appr['summary']['reference_docs']['total']} reference documents are included "
            f"({appr['summary']['reference_docs']['exclude']} excluded, honestly flagged); all "
-           f"{appr['summary']['book_channels']['books']} books carry apparatus-channel attestation."),
+           f"{appr['summary']['book_channels']['books']} books carry apparatus-channel attestation. "
+           "Two witnesses supply the apparatus — Sabates as the backbone across all five channels, "
+           "odr-com supplementing the book arguments and sidecar notes:"),
+        figs["appar_heat"],
+        _p(f"<b>Scan-grounded placement.</b> Every apparatus slot is located in the original print: "
+           f"{lsum['grounded']} grounded with a committed header crop, {lsum['co-located']} "
+           f"co-located on a shared leaf, {lsum['inventoried']} inventoried (OCR-attested, leaf "
+           f"pending) and {lsum['unlocatable']} unlocatable (honestly excluded). The tome diagram "
+           "places each slot in its front/back-matter region:"),
+        figs["placement"],
+        crop_html,
+        _table(["slot", "tome region", "status", "scan page", "crop"], placement_rows),
         _p(f"<b>Rendering outcomes.</b> idx 108 (modern) reference sha "
            f"{rm['reference']['sha256'][:12]} ({rm['reference']['text_len']:,} chars); idx 109 "
            f"(archaic) sha {ra['reference']['sha256'][:12]} ({ra['reference']['text_len']:,} chars), "
@@ -581,6 +756,9 @@ def build_html(A: dict[str, Any], paths: dict[str, Path]) -> str:
       th{background:#f6f6f6}
       .fig{display:block;margin:14px 0;border:1px solid #eee;background:#fff;max-width:100%}
       .abstract{background:#f7f7fb;border-left:4px solid #762a83;padding:10px 16px;border-radius:4px}
+      figure.crop{margin:14px 0}
+      figure.crop img{max-width:100%;border:1px solid #ccc;border-radius:4px}
+      figure.crop figcaption{color:var(--mut);font-size:12px;margin-top:5px}
       footer{color:var(--mut);font-size:12px;margin-top:30px;border-top:1px solid var(--line);padding-top:10px}
     """
     return (
