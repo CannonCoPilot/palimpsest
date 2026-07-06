@@ -106,6 +106,30 @@ def from_archive() -> list[dict]:
     return out
 
 
+# Visually-verified EEBO volume→content mapping (P1.4, 2026-07-06). The Anna's-Archive
+# "vol_ N" filename tokens do NOT correspond to OT volumes — each scan's rendered title
+# leaf was inspected (pdftoppm). See layout-map.json scan_sources for the title-leaf
+# evidence. Prior filename inference ("OT volume N") was wrong (e.g. vol_1 is the NT).
+_EEBO_CONTENT = {
+    "18c502ead5119303881f2a8def094a5e":
+        ("Rheims New Testament 1582 — front matter + partial NT "
+         "(title / censure+approbation / preface)", True),
+    "c0ef3be20b3fdc19c26debe03ef520de":
+        ("OT First Tome 1609 — general title 'THE HOLY BIBLE', front matter "
+         "(approbatio, preface) + Pentateuch onward", True),
+    "2cfaea2cb717e2b87bcb00c803ec2479":
+        ("OT 'THE SECOND PART OF THE OLD TESTAMENT: HISTORICAL BOOKES' "
+         "(Josue onward; leaf p.419)", True),
+    "8ff9c0224c2dec4d8a7de4861ab3b38c":
+        ("OT 'THE FOURTH PART OF THE OLD TESTAMENT: PROPHETICAL BOOKES'", True),
+    "55c87902453884748a6069ea26bcf41b":
+        ("OT Second Tome 1610 — general title 'THE SECOND TOME OF THE HOLIE BIBLE' "
+         "(partial)", True),
+    "b7bca433de548ed960cba8616ec77c10":
+        ("New Testament — full Rheims NT 1582, incl. back-matter tables", True),
+}
+
+
 def from_original() -> list[dict]:
     """EEBO original image-scan PDFs (vol 1-5 + NT) — the layout/apparatus authority for P1.4.
     Only the canonical Anna's-Archive-named facsimiles are registered (their filename embeds
@@ -122,14 +146,7 @@ def from_original() -> list[dict]:
         if not md5 or md5 in seen:      # skip non-canonical (Madueke_B / partial) + duplicates
             continue
         seen.add(md5)
-        low = name.lower()
-        if "new testament" in low:
-            cov = "NT"
-        elif "vol_" in low:
-            vol = low.split("vol_", 1)[1].lstrip(" ")[:1]
-            cov = f"OT volume {vol}"
-        else:
-            cov = "OT/NT facsimile"
+        cov, verified = _EEBO_CONTENT.get(md5, ("OT/NT facsimile (unverified)", False))
         out.append({
             "id": "eebo_" + md5[:8],
             "family": "EEBO original image-scan PDF",
@@ -140,6 +157,7 @@ def from_original() -> list[dict]:
             "spelling": "archaic",
             "typeset": "archaic",
             "coverage": cov,
+            "layout_verified": verified,
             "lineage": "eebo-original",
             "independent": True,
             "role": "layout & apparatus placement authority (P1.4)",

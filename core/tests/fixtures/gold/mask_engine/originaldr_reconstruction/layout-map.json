@@ -1,0 +1,698 @@
+{
+  "artifact": "layout-map",
+  "phase": "P1.4",
+  "idx": 108,
+  "generated_by": "build_layout_map.py",
+  "note": "Scan-grounded layout & apparatus placement. EEBO facsimile PDFs = layout authority; each scripture-layout leaf and each grounded apparatus slot carries a committed header crop + transcribed identifying_text + source sha256, with an archive.org OCR offset as independent second proof. Slot statuses are honest: grounded / co-located / inventoried (crop pending) / unlocatable. The EEBO volume->content mapping was visually verified (filename 'vol_ N' tokens are NOT OT volume numbers; vol_1 is the 1582 Rheims NT).",
+  "scan_sources": {
+    "eebo_18c502ea": {
+      "key": "nt_partial",
+      "md5": "18c502ead5119303881f2a8def094a5e",
+      "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 1) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 18c502ead5119303881f2a8def094a5e -- Anna’s Archive.pdf",
+      "content_verified": "Rheims New Testament 1582 — front matter + partial NT",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+    },
+    "eebo_c0ef3be2": {
+      "key": "ot_holybible",
+      "md5": "c0ef3be20b3fdc19c26debe03ef520de",
+      "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 2) -- Martin, Gregory & Allen, William & Bristow, Richard & -- c0ef3be20b3fdc19c26debe03ef520de -- Anna’s Archive.pdf",
+      "content_verified": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+    },
+    "eebo_2cfaea2c": {
+      "key": "ot_historical",
+      "md5": "2cfaea2cb717e2b87bcb00c803ec2479",
+      "sha256": "4361bbc156e47a29db362cd57e7c3f0a4524920b59fa258617db9ce088128681",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 3) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 2cfaea2cb717e2b87bcb00c803ec2479 -- Anna’s Archive.pdf",
+      "content_verified": "OT 'THE SECOND PART OF THE OLD TESTAMENT: HISTORICAL BOOKES' (Josue, leaf p.419)",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+    },
+    "eebo_8ff9c022": {
+      "key": "ot_prophetical",
+      "md5": "8ff9c0224c2dec4d8a7de4861ab3b38c",
+      "sha256": "7fd5a1c88ff7bc7edf645d90637cec279ef3d1fdd5a7dbceaa72e93607c9bf6f",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 4) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 8ff9c0224c2dec4d8a7de4861ab3b38c -- Anna’s Archive.pdf",
+      "content_verified": "OT 'THE FOURTH PART OF THE OLD TESTAMENT: PROPHETICAL BOOKES'",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+    },
+    "eebo_55c87902": {
+      "key": "ot_secondtome",
+      "md5": "55c87902453884748a6069ea26bcf41b",
+      "sha256": "6294605a04cfa1cc33d8f4d4aa22860a3107bc41699c059266bbd0383a11ca0d",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 5) 1_0 -- Martin, Gregory & Allen, William & Bristow, Richard & -- 55c87902453884748a6069ea26bcf41b -- Anna’s Archive.pdf",
+      "content_verified": "OT Second Tome 1610 — general title 'THE SECOND TOME OF THE HOLIE BIBLE' (partial)",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+    },
+    "eebo_b7bca433": {
+      "key": "nt_full",
+      "md5": "b7bca433de548ed960cba8616ec77c10",
+      "sha256": "eef1f4be0e2e1fcd6a2ce555b405f164bdd96ef5a4986cea2cc7f4d0688b03a7",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (New Testament) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 2010 -- Eebo Editions, Proquest -- isbn13 9781171276302 -- b7bca433de548ed960cba8616ec77c10 -- Anna’s Archive.pdf",
+      "content_verified": "New Testament — full Rheims NT 1582, incl. back-matter tables",
+      "verified_via": "rendered title leaf (pdftoppm) — P1.4 visual inspection"
+    }
+  },
+  "scripture_layout": [
+    {
+      "order": 0,
+      "section": "nt",
+      "tome": "Rheims NT 1582",
+      "part": "New Testament",
+      "title_leaf": {
+        "witness": "eebo_18c502ea",
+        "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
+        "page": 1,
+        "content": "Rheims New Testament 1582 — front matter + partial NT"
+      },
+      "identifying_text": "THE NEVV TESTAMENT OF IESVS CHRIST ... ENGLISH COLLEGE OF RHEMES ... 1582",
+      "crop_image": "placement-crops/layout-00-nt_partial.png"
+    },
+    {
+      "order": 1,
+      "section": "ot",
+      "tome": "Douay OT First Tome 1609",
+      "part": "general title / Pentateuch",
+      "title_leaf": {
+        "witness": "eebo_c0ef3be2",
+        "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
+        "page": 1,
+        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+      },
+      "identifying_text": "THE HOLY BIBLE FAITHFVLLY TRANSLATED INTO ENGLISH ... 1609",
+      "crop_image": "placement-crops/layout-01-ot_holybible.png"
+    },
+    {
+      "order": 2,
+      "section": "ot",
+      "tome": "Douay OT First Tome 1609",
+      "part": "Second Part: Historical Bookes",
+      "title_leaf": {
+        "witness": "eebo_2cfaea2c",
+        "sha256": "4361bbc156e47a29db362cd57e7c3f0a4524920b59fa258617db9ce088128681",
+        "page": 1,
+        "content": "OT 'THE SECOND PART OF THE OLD TESTAMENT: HISTORICAL BOOKES' (Josue, leaf p.419)"
+      },
+      "identifying_text": "THE SECOND PART OF THE OLD TESTAMENT CONTAINING HISTORICAL BOOKES. THE ARGVMENT OF THE BOOKE OF IOSVE",
+      "crop_image": "placement-crops/layout-02-ot_historical.png"
+    },
+    {
+      "order": 3,
+      "section": "ot",
+      "tome": "Douay OT 1609/1610",
+      "part": "Fourth Part: Prophetical Bookes",
+      "title_leaf": {
+        "witness": "eebo_8ff9c022",
+        "sha256": "7fd5a1c88ff7bc7edf645d90637cec279ef3d1fdd5a7dbceaa72e93607c9bf6f",
+        "page": 1,
+        "content": "OT 'THE FOURTH PART OF THE OLD TESTAMENT: PROPHETICAL BOOKES'"
+      },
+      "identifying_text": "THE FOVRTH PART OF THE OLD TESTAMENT CONTAINING PROPHETICAL BOOKES. The argument of Prophetical bookes in general",
+      "crop_image": "placement-crops/layout-03-ot_prophetical.png"
+    },
+    {
+      "order": 4,
+      "section": "ot",
+      "tome": "Douay OT Second Tome 1610",
+      "part": "general title",
+      "title_leaf": {
+        "witness": "eebo_55c87902",
+        "sha256": "6294605a04cfa1cc33d8f4d4aa22860a3107bc41699c059266bbd0383a11ca0d",
+        "page": 1,
+        "content": "OT Second Tome 1610 — general title 'THE SECOND TOME OF THE HOLIE BIBLE' (partial)"
+      },
+      "identifying_text": "THE SECOND TOME OF THE HOLIE BIBLE FAITHFVLLY TRANSLATED INTO ENGLISH ... At Doway ... 1610",
+      "crop_image": "placement-crops/layout-04-ot_secondtome.png"
+    }
+  ],
+  "apparatus_placements": [
+    {
+      "slot": "ot-title-page",
+      "apparatus_order_ref": {
+        "section": "ot_front",
+        "position": 0,
+        "name": "title-page"
+      },
+      "testament": "OT",
+      "tome_position": "front · OT",
+      "status": "grounded",
+      "source": {
+        "witness": "eebo_c0ef3be2",
+        "md5": "c0ef3be20b3fdc19c26debe03ef520de",
+        "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
+        "page": 1,
+        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+      },
+      "crop_image": "placement-crops/ot-title-page.png",
+      "identifying_text": "THE HOLY BIBLE FAITHFVLLY TRANSLATED INTO ENGLISH OVT OF THE AVTHENTICAL LATIN, diligently conferred with the Hebrew, Greek, & other Editions in diuers languages",
+      "ocr_second_proof": {
+        "witness": "ot1-1609",
+        "char_offset": 6
+      }
+    },
+    {
+      "slot": "ot-approbatio",
+      "apparatus_order_ref": {
+        "section": "ot_front",
+        "position": 1,
+        "name": "approbatio"
+      },
+      "testament": "OT",
+      "tome_position": "front · OT",
+      "status": "grounded",
+      "source": {
+        "witness": "eebo_c0ef3be2",
+        "md5": "c0ef3be20b3fdc19c26debe03ef520de",
+        "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
+        "page": 2,
+        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+      },
+      "crop_image": "placement-crops/ot-approbatio.png",
+      "identifying_text": "APPROBATIO. Nos infrascripti, in alma Duacensi vniuersitate Sacrae Theologiae professores ...",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null
+      }
+    },
+    {
+      "slot": "ot-preface",
+      "apparatus_order_ref": {
+        "section": "ot_front",
+        "position": 2,
+        "name": "preface"
+      },
+      "testament": "OT",
+      "tome_position": "front · OT",
+      "status": "grounded",
+      "source": {
+        "witness": "eebo_c0ef3be2",
+        "md5": "c0ef3be20b3fdc19c26debe03ef520de",
+        "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
+        "page": 3,
+        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+      },
+      "crop_image": "placement-crops/ot-preface.png",
+      "identifying_text": "TO THE RIGHT WEL-BELOVED ENGLISH READER (running head: TO THE ENGLISH READER)",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null
+      }
+    },
+    {
+      "slot": "ot-privilege",
+      "apparatus_order_ref": {
+        "section": "ot_front",
+        "position": 3,
+        "name": "privilege"
+      },
+      "testament": "OT",
+      "tome_position": "front · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "privilege",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-censura",
+      "apparatus_order_ref": {
+        "section": "ot_front",
+        "position": 4,
+        "name": "censura"
+      },
+      "testament": "OT",
+      "tome_position": "front · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "censura",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-historical-table-age-1",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 0,
+        "name": "historical-table-age-1"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "historical table age 1",
+      "ocr_second_proof": {
+        "witness": "ot2-1610",
+        "char_offset": 2910802,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-historical-table-age-2",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 1,
+        "name": "historical-table-age-2"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "historical table age 2",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-historical-table-age-3",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 2,
+        "name": "historical-table-age-3"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "historical table age 3",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-historical-table-age-3b",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 3,
+        "name": "historical-table-age-3b"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "historical table age 3b",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-historical-table-age-4",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 4,
+        "name": "historical-table-age-4"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "historical table age 4",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-historical-table-age-5",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 5,
+        "name": "historical-table-age-5"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "historical table age 5",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-historical-table-age-6",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 6,
+        "name": "historical-table-age-6"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "historical table age 6",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-glossary",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 7,
+        "name": "glossary"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "glossary",
+      "ocr_second_proof": {
+        "witness": "ot2-1610",
+        "char_offset": 2937683,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-epistles-table",
+      "apparatus_order_ref": {
+        "section": "ot_back",
+        "position": 8,
+        "name": "epistles-table"
+      },
+      "testament": "OT",
+      "tome_position": "back · OT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "epistles table",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "nt-title-page",
+      "apparatus_order_ref": {
+        "section": "nt_front",
+        "position": 0,
+        "name": "title-page"
+      },
+      "testament": "NT",
+      "tome_position": "front · NT",
+      "status": "grounded",
+      "source": {
+        "witness": "eebo_18c502ea",
+        "md5": "18c502ead5119303881f2a8def094a5e",
+        "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
+        "page": 1,
+        "content": "Rheims New Testament 1582 — front matter + partial NT"
+      },
+      "crop_image": "placement-crops/nt-title-page.png",
+      "identifying_text": "THE NEVV TESTAMENT OF IESVS CHRIST, TRANSLATED FAITHFVLLY INTO ENGLISH out of the authentical Latin ... in the ENGLISH COLLEGE OF RHEMES ... 1582",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": null
+      }
+    },
+    {
+      "slot": "nt-preface",
+      "apparatus_order_ref": {
+        "section": "nt_front",
+        "position": 1,
+        "name": "preface"
+      },
+      "testament": "NT",
+      "tome_position": "front · NT",
+      "status": "grounded",
+      "source": {
+        "witness": "eebo_18c502ea",
+        "md5": "18c502ead5119303881f2a8def094a5e",
+        "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
+        "page": 3,
+        "content": "Rheims New Testament 1582 — front matter + partial NT"
+      },
+      "crop_image": "placement-crops/nt-preface.png",
+      "identifying_text": "THE PREFACE TO THE READER TREATING OF THESE THREE POINTS ...",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": 4961
+      }
+    },
+    {
+      "slot": "nt-censure",
+      "apparatus_order_ref": {
+        "section": "nt_front",
+        "position": 2,
+        "name": "censure"
+      },
+      "testament": "NT",
+      "tome_position": "front · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "censure",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "nt-explication-words",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 0,
+        "name": "explication-words"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "explication words",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": 59605,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "nt-table-peter",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 1,
+        "name": "table-peter"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "A TABLE OF S. PETER",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": 998445,
+        "quote": "A TABLE OF S. PETER"
+      },
+      "note": "attested in archive.org OCR; EEBO leaf not yet visually located (image crop pending)"
+    },
+    {
+      "slot": "nt-table-paul",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 2,
+        "name": "table-paul"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "A TABLE OF S. PAVL",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": 1002493,
+        "quote": "A TABLE OF S. PAVL"
+      },
+      "note": "attested in archive.org OCR; EEBO leaf not yet visually located (image crop pending)"
+    },
+    {
+      "slot": "nt-table-corruptions",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 3,
+        "name": "table-corruptions"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "table corruptions",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "nt-table-catholic-truths",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 4,
+        "name": "table-catholic-truths"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "table catholic truths",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "nt-table-epistles-gospels",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 5,
+        "name": "table-epistles-gospels"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "table epistles gospels",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "nt-apostles-creed",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 6,
+        "name": "apostles-creed"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "THE APOSTLES CREED; or SYMBOLVM APOSTOLORVM",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": 1006256,
+        "quote": "THE APOSTLES CREED; or SYMBOLVM APOSTOLORVM"
+      },
+      "note": "attested in archive.org OCR; EEBO leaf not yet visually located (image crop pending)"
+    },
+    {
+      "slot": "nt-evangelical-history",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 7,
+        "name": "evangelical-history"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "evangelical history",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "nt-scripture-authority",
+      "apparatus_order_ref": {
+        "section": "nt_back",
+        "position": 8,
+        "name": "scripture-authority"
+      },
+      "testament": "NT",
+      "tome_position": "back · NT",
+      "status": "inventoried",
+      "crop_image": null,
+      "identifying_text": "scripture authority",
+      "ocr_second_proof": {
+        "witness": null,
+        "char_offset": null,
+        "quote": null
+      },
+      "note": "apparatus-order slot; scan leaf not yet located (EEBO OT scans are partial; full grounding pending, incl. archive.org)"
+    },
+    {
+      "slot": "ot-censura",
+      "apparatus_order_ref": {
+        "section": "ot_front",
+        "name": "censura"
+      },
+      "testament": "OT",
+      "tome_position": "front · OT",
+      "status": "co-located",
+      "source": {
+        "witness": "eebo_c0ef3be2",
+        "sha256": "e80f31f423bad2a41740000d9d822111f115e9e5750de8776a754221ca993cfe",
+        "page": 2,
+        "content": "OT First Tome 1609 — general title 'THE HOLY BIBLE' + front matter + Pentateuch"
+      },
+      "crop_image": "placement-crops/ot-approbatio.png",
+      "identifying_text": "Censura / Approbatio co-located on one leaf (OT First Tome, p.2)",
+      "note": "the OT approval is printed as a single APPROBATIO leaf; no separate censura leaf"
+    },
+    {
+      "slot": "nt-censure-approbation",
+      "apparatus_order_ref": {
+        "section": "nt_front"
+      },
+      "testament": "NT",
+      "tome_position": "front · NT",
+      "status": "grounded",
+      "source": {
+        "witness": "eebo_18c502ea",
+        "sha256": "b01e91b4d798410d883e7a25e88c32a53ed4024a660f45259040f69cbac3bdf9",
+        "page": 2,
+        "content": "Rheims New Testament 1582 — front matter + partial NT"
+      },
+      "crop_image": "placement-crops/nt-censure-approbation.png",
+      "identifying_text": "THE CENSVRE AND APPROBATION. V.M. huius versionis ac editionis authoritate ...",
+      "ocr_second_proof": {
+        "witness": "nt-1582",
+        "char_offset": null
+      }
+    }
+  ],
+  "summary": {
+    "apparatus_slots": 28,
+    "grounded": 6,
+    "co-located": 1,
+    "inventoried": 21,
+    "unlocatable": 0,
+    "scripture_layout_leaves": 5
+  }
+}
