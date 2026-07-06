@@ -205,3 +205,29 @@ def test_p2_archaic_print_validation_bootstrap_cis_are_reproducible_and_honest()
         assert _ci_ok(tier["archaic"]) and _ci_ok(tier["modern"])
     # every sample carries a paired archaic + modern measurement
     assert d["per_sample"] and all("archaic" in s and "modern" in s for s in d["per_sample"])
+
+
+def test_p3_academic_brief_regenerates_and_traces_to_artifacts():
+    """P3.1 (plan §7): the academic brief regenerates deterministically from the committed artifacts
+    (no basis-db needed), carries the full section structure + genome-browser figures with balanced
+    SVG, every headline number traces to its source JSON, and the committed HTML is in sync."""
+    gen = _load_module("gen_originaldr_brief")
+    A, paths = gen.load_artifacts()
+    out = gen.build_html(A, paths)
+    # full academic structure + balanced, data-driven figures
+    for anchor in ("abstract", "intro", "sources", "methods", "results",
+                   "discussion", "limitations", "repro", "refs"):
+        assert f'id="{anchor}"' in out
+    assert out.count("<svg") == out.count("</svg>") >= 4
+    assert out.count("<rect") > 200 and out.count("<title>") > 100  # data-driven bars + tooltips
+    # traceability: headline numbers equal their source-artifact values
+    assert f'{A["basis"]["element_counts"]["scripture-verse"]:,}' in out
+    assert f'{A["fidelity"]["aggregate"]["mean_jaccard"]:.3f}' in out
+    assert str(A["print_archaic"]["aggregate"]["archaic"]["recall_pct"]) in out
+    assert str(A["print_archaic"]["aggregate"]["modern"]["recall_pct"]) in out
+    assert ("PASS" if A["redetection"]["gate_p1_pass"] else "FAIL") in out
+    # audit trail lists the backing artifacts (sample a few)
+    for key in ("basis", "fidelity", "print_archaic"):
+        assert str(paths[key].relative_to(gen.REPO)) in out
+    # the committed brief is not stale w.r.t. the generator + artifacts
+    assert gen.OUT.read_text(encoding="utf-8") == out
