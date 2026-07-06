@@ -1,0 +1,397 @@
+{
+  "_note": "P0.5 provenance registry — single source index for the OriginalDR reconstruction.",
+  "phase0_sealed": true,
+  "generated_from": [
+    "digital-witness-pins.json",
+    "archive-scans-manifest.json",
+    "odr-scrape-manifest.json",
+    "our-ocr-manifest.json",
+    "imports/.../DouayRheims_DR/Original/*.pdf"
+  ],
+  "witness_count": 18,
+  "independence_axes": {
+    "modern-madueke": [
+      "madueke_a",
+      "madueke_b",
+      "sabates_a"
+    ],
+    "odr-com": [
+      "odr_com"
+    ],
+    "s-dismas": [
+      "s_dismas"
+    ],
+    "archive-scans": [
+      "ot1_1609",
+      "ot2_1610",
+      "nt_1582",
+      "holiebible_ot1",
+      "holiebible_ot2",
+      "newtestament"
+    ],
+    "our-ocr": [
+      "ocr_consensus"
+    ],
+    "eebo-original": [
+      "eebo-*"
+    ],
+    "_note": "Lineage independence for §4.3 consensus weighting: the modern-Madueke family (Madueke_A/_B two formats + Madueke-derived Sabates_A) collapses to ONE independent axis; odr-com, s-dismas, our majority OCR, and each archive.org scan set are independent. Sabates is NOT independent of Madueke."
+  },
+  "witnesses": [
+    {
+      "id": "madueke_a",
+      "family": "codeberg",
+      "provenance": "codeberg olprint/Augmented-Bible",
+      "remote": "https://codeberg.org/olprint/Augmented-Bible",
+      "commit": "ca120d44815d8107639c85bb3858a48a6f46b260",
+      "acquisition_date": "2026-05-23T15:26:11+01:00",
+      "form": "1334 chapter HTML (books/<N>.html)",
+      "spelling": "modern",
+      "typeset": "modern",
+      "coverage": "full 73 books / 1334 chapters",
+      "lineage": "madueke",
+      "independent": false,
+      "detail_manifest": "digital-witness-pins.json"
+    },
+    {
+      "id": "madueke_b",
+      "family": "gitlab",
+      "provenance": "gitlab simple-gui/xml2gui-bible (PDFs; the 'New PDF' per Madueke_A README)",
+      "remote": "https://gitlab.com/simple-gui/xml2gui-bible",
+      "commit": "",
+      "acquisition_date": "2026-07-05",
+      "form": "2 PDFs (+ pdftotext merged/small)",
+      "spelling": "modern",
+      "typeset": "modern",
+      "coverage": "full + apparatus (arguments, annotations, tables; incl Manasses/3-4 Esdras appendix)",
+      "lineage": "madueke",
+      "independent": false,
+      "detail_manifest": "digital-witness-pins.json"
+    },
+    {
+      "id": "sabates_a",
+      "family": "github",
+      "provenance": "github janvier-s/original-douay-rheims",
+      "remote": "https://github.com/janvier-s/original-douay-rheims.git",
+      "commit": "0bf4218b9b46b5b00d29a703b5b74226051b97a5",
+      "acquisition_date": "2026-07-05",
+      "form": "structured JSON (bible, annotations, reference/{ot=14,nt=12}, usfm)",
+      "spelling": "modern",
+      "typeset": "modern",
+      "coverage": "full + apparatus + apocryphal appendix + 26 reference docs (front/back matter)",
+      "lineage": "sabates (derives from madueke)",
+      "independent": false,
+      "detail_manifest": "digital-witness-pins.json"
+    },
+    {
+      "id": "s_dismas",
+      "family": "github",
+      "provenance": "github s-dismas/Pdf (saint-dismas.com ConTeXt re-typeset, archaic)",
+      "remote": "https://github.com/s-dismas/Pdf.git",
+      "commit": "d6f3e94b6677f349469b38ed249aa9be905360a4",
+      "acquisition_date": "2024-04-13T17:33:35-05:00",
+      "form": "55 PDFs (frontmatter = scanned images) — NT/ 29, OT/ 26",
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "NT complete (Matthew..Apocalypse + front-matter + epistles-argument); OT Genesis..Wisdom (books 02-26) + front-matter. OT Ecclesiasticus..Machabees + prophets NOT typeset upstream.",
+      "lineage": "s-dismas",
+      "independent": true,
+      "detail_manifest": "digital-witness-pins.json"
+    },
+    {
+      "id": "odr_com",
+      "family": "originaldouayrheims.com",
+      "provenance": "originaldouayrheims.com web edition",
+      "remote": "https://www.originaldouayrheims.com",
+      "commit": "",
+      "acquisition_date": "2026-07-05",
+      "form": "HTML scrape (39 books, 586 chapters, 16003 verses)",
+      "spelling": "archaic",
+      "typeset": "modern",
+      "coverage": "12 OT + 27 NT; mean folded agreement 0.9482 vs Madueke_A",
+      "lineage": "odr-com",
+      "independent": true,
+      "detail_manifest": "odr-scrape-manifest.json"
+    },
+    {
+      "id": "ot1_1609",
+      "family": "archive.org (main)",
+      "provenance": "archive.org/details/1582DouaiRheimsDouayRheimsFirstEdition1Of31609OldTestament",
+      "remote": "https://archive.org/details/1582DouaiRheimsDouayRheimsFirstEdition1Of31609OldTestament",
+      "commit": "",
+      "acquisition_date": "2026-07-05",
+      "form": "page scans (jp2) + OCR layers (hocr, jp2, text)",
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT print scan",
+      "lineage": "archive-ot1-1609",
+      "independent": true,
+      "detail_manifest": "archive-scans-manifest.json",
+      "assets": [
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  1 of 3 1609 Old Testament_hocr.html",
+          "sha256": "295c5f2d1e9bfa026b86bc987b22a36f844edc43f234340426b380157d05396e",
+          "size": 92954897
+        },
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  1 of 3 1609 Old Testament_jp2.zip",
+          "sha256": "0afcb13d5308f01b4955abed6c68575cb51f8e9fcf0ae3dbb89a67a9a0c8b698",
+          "size": 951551561
+        },
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  1 of 3 1609 Old Testament_text.pdf",
+          "sha256": "a3beb9c46596ab282f998c8e1514ee85eece4bbed60ff7d9ffb77a7a33dfea77",
+          "size": 147982221
+        }
+      ]
+    },
+    {
+      "id": "ot2_1610",
+      "family": "archive.org (main)",
+      "provenance": "archive.org/details/1582DouaiRheimsDouayRheimsFirstEdition2Of31610OldTestament",
+      "remote": "https://archive.org/details/1582DouaiRheimsDouayRheimsFirstEdition2Of31610OldTestament",
+      "commit": "",
+      "acquisition_date": "2026-07-05",
+      "form": "page scans (jp2) + OCR layers (hocr, jp2, text)",
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT print scan",
+      "lineage": "archive-ot2-1610",
+      "independent": true,
+      "detail_manifest": "archive-scans-manifest.json",
+      "assets": [
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_hocr.html",
+          "sha256": "e08bf1cca2cc2b2c5d675a142c9d6fabeebc47eb2979c853534cb06e067bca3a",
+          "size": 77785896
+        },
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_jp2.zip",
+          "sha256": "aa41d1c083abc850b00d3fba4ca89eab2f91996152df255d8ae30c4bddc475a8",
+          "size": 916684509
+        },
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_text.pdf",
+          "sha256": "12d40023948756cf5fcf1e8f7884845774e4e8955eaac57e16b40d84779096ba",
+          "size": 167429068
+        }
+      ]
+    },
+    {
+      "id": "nt_1582",
+      "family": "archive.org (main)",
+      "provenance": "archive.org/details/1582DouaiRheimsDouayRheimsFirstEdition3Of31582NewTestament",
+      "remote": "https://archive.org/details/1582DouaiRheimsDouayRheimsFirstEdition3Of31582NewTestament",
+      "commit": "",
+      "acquisition_date": "2026-07-05",
+      "form": "page scans (jp2) + OCR layers (hocr, jp2, text)",
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "NT print scan",
+      "lineage": "archive-nt-1582",
+      "independent": true,
+      "detail_manifest": "archive-scans-manifest.json",
+      "assets": [
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  3 of 3 1582 New Testament_hocr.html",
+          "sha256": "0cc34a3466feec8420d739aac4f0bc6041a35b39416b4ee3e3712ca423ccd096",
+          "size": 54254225
+        },
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  3 of 3 1582 New Testament_jp2.zip",
+          "sha256": "73a888f4d771f1a38dfb46036b348a722f16cd7cb107d36f3aeae47abb86499d",
+          "size": 89493599
+        },
+        {
+          "name": "1582 Douai Rheims Douay Rheims First Edition  3 of 3 1582 New Testament_text.pdf",
+          "sha256": "8cb53ad25cb83bba195b2a1b2c6973d242c1894c53d4a7861f933f6c5e4dc248",
+          "size": 25056682
+        }
+      ]
+    },
+    {
+      "id": "newtestament",
+      "family": "archive.org (supplementary)",
+      "provenance": "archive.org/details/newtestamentofie00engl",
+      "remote": "https://archive.org/details/newtestamentofie00engl",
+      "commit": "",
+      "acquisition_date": "2026-07-05",
+      "form": "page scans (jp2) + OCR layers (hocr, jp2)",
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "NT print scan",
+      "lineage": "archive-newtestament",
+      "independent": true,
+      "detail_manifest": "archive-scans-manifest.json",
+      "assets": [
+        {
+          "name": "newtestamentofie00engl_hocr.html",
+          "sha256": "b3a8b25499b1b4006e5a35935671b0cab26b3c914adf840338c5d4a36ee0f176",
+          "size": 67827288
+        },
+        {
+          "name": "newtestamentofie00engl_jp2.zip",
+          "sha256": "1ed40820051d2f5f799148d02dec2805a3fbbc2a865c02e39e9229b24422666e",
+          "size": 478117721
+        }
+      ]
+    },
+    {
+      "id": "holiebible_ot1",
+      "family": "archive.org (supplementary)",
+      "provenance": "archive.org/details/holiebiblefaithf00mart_0",
+      "remote": "https://archive.org/details/holiebiblefaithf00mart_0",
+      "commit": "",
+      "acquisition_date": "2026-07-05",
+      "form": "page scans (jp2) + OCR layers (hocr, jp2)",
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT print scan",
+      "lineage": "archive-holiebible-ot1",
+      "independent": true,
+      "detail_manifest": "archive-scans-manifest.json",
+      "assets": [
+        {
+          "name": "holiebiblefaithf00mart_0_hocr.html",
+          "sha256": "9ec987aa5defe5a87fe9349c762e35ea05f90c405755234b07a3d2645a6339b5",
+          "size": 70438979
+        },
+        {
+          "name": "holiebiblefaithf00mart_0_jp2.zip",
+          "sha256": "ff34bb511065cacf72b06f27a7a328fb5d125455b4834a8b159c959f3de268da",
+          "size": 967045745
+        }
+      ]
+    },
+    {
+      "id": "holiebible_ot2",
+      "family": "archive.org (supplementary)",
+      "provenance": "archive.org/details/holiebiblefaithf00mart",
+      "remote": "https://archive.org/details/holiebiblefaithf00mart",
+      "commit": "",
+      "acquisition_date": "2026-07-05",
+      "form": "page scans (jp2) + OCR layers (hocr, jp2)",
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT print scan",
+      "lineage": "archive-holiebible-ot2",
+      "independent": true,
+      "detail_manifest": "archive-scans-manifest.json",
+      "assets": [
+        {
+          "name": "holiebiblefaithf00mart_hocr.html",
+          "sha256": "7e7782ca3731135d24a15102ec9e2c9c7af3bfb751fb1b3e193f50999b6bb744",
+          "size": 70478504
+        },
+        {
+          "name": "holiebiblefaithf00mart_jp2.zip",
+          "sha256": "1112e2b587d1dd6ee565edf03ec744cc6c0efcca86b44945fadd0f3e765def40",
+          "size": 988682442
+        }
+      ]
+    },
+    {
+      "id": "eebo_b7bca433",
+      "family": "EEBO original image-scan PDF",
+      "provenance": "Anna's Archive (EEBO Editions / ProQuest facsimile)",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (New Testament) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 2010 -- Eebo Editions, Proquest -- isbn13 9781171276302 -- b7bca433de548ed960cba8616ec77c10 -- Anna’s Archive.pdf",
+      "md5_annas": "b7bca433de548ed960cba8616ec77c10",
+      "size": 71321316,
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "NT",
+      "lineage": "eebo-original",
+      "independent": true,
+      "role": "layout & apparatus placement authority (P1.4)",
+      "detail_manifest": "(filename-embedded md5)"
+    },
+    {
+      "id": "eebo_18c502ea",
+      "family": "EEBO original image-scan PDF",
+      "provenance": "Anna's Archive (EEBO Editions / ProQuest facsimile)",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 1) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 18c502ead5119303881f2a8def094a5e -- Anna’s Archive.pdf",
+      "md5_annas": "18c502ead5119303881f2a8def094a5e",
+      "size": 9261157,
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT volume 1",
+      "lineage": "eebo-original",
+      "independent": true,
+      "role": "layout & apparatus placement authority (P1.4)",
+      "detail_manifest": "(filename-embedded md5)"
+    },
+    {
+      "id": "eebo_c0ef3be2",
+      "family": "EEBO original image-scan PDF",
+      "provenance": "Anna's Archive (EEBO Editions / ProQuest facsimile)",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 2) -- Martin, Gregory & Allen, William & Bristow, Richard & -- c0ef3be20b3fdc19c26debe03ef520de -- Anna’s Archive.pdf",
+      "md5_annas": "c0ef3be20b3fdc19c26debe03ef520de",
+      "size": 14460250,
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT volume 2",
+      "lineage": "eebo-original",
+      "independent": true,
+      "role": "layout & apparatus placement authority (P1.4)",
+      "detail_manifest": "(filename-embedded md5)"
+    },
+    {
+      "id": "eebo_2cfaea2c",
+      "family": "EEBO original image-scan PDF",
+      "provenance": "Anna's Archive (EEBO Editions / ProQuest facsimile)",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 3) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 2cfaea2cb717e2b87bcb00c803ec2479 -- Anna’s Archive.pdf",
+      "md5_annas": "2cfaea2cb717e2b87bcb00c803ec2479",
+      "size": 3767422,
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT volume 3",
+      "lineage": "eebo-original",
+      "independent": true,
+      "role": "layout & apparatus placement authority (P1.4)",
+      "detail_manifest": "(filename-embedded md5)"
+    },
+    {
+      "id": "eebo_8ff9c022",
+      "family": "EEBO original image-scan PDF",
+      "provenance": "Anna's Archive (EEBO Editions / ProQuest facsimile)",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 4) -- Martin, Gregory & Allen, William & Bristow, Richard & -- 8ff9c0224c2dec4d8a7de4861ab3b38c -- Anna’s Archive.pdf",
+      "md5_annas": "8ff9c0224c2dec4d8a7de4861ab3b38c",
+      "size": 20061785,
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT volume 4",
+      "lineage": "eebo-original",
+      "independent": true,
+      "role": "layout & apparatus placement authority (P1.4)",
+      "detail_manifest": "(filename-embedded md5)"
+    },
+    {
+      "id": "eebo_55c87902",
+      "family": "EEBO original image-scan PDF",
+      "provenance": "Anna's Archive (EEBO Editions / ProQuest facsimile)",
+      "file": "imports/Scripture/Bibles/DouayRheims_DR/Original/Original Douay-Rheims Bible (vol_ 5) 1_0 -- Martin, Gregory & Allen, William & Bristow, Richard & -- 55c87902453884748a6069ea26bcf41b -- Anna’s Archive.pdf",
+      "md5_annas": "55c87902453884748a6069ea26bcf41b",
+      "size": 8681235,
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "OT volume 5",
+      "lineage": "eebo-original",
+      "independent": true,
+      "role": "layout & apparatus placement authority (P1.4)",
+      "detail_manifest": "(filename-embedded md5)"
+    },
+    {
+      "id": "ocr_consensus",
+      "family": "our fresh OCR (tesseract 5.5.2, majority-consensus)",
+      "provenance": "derived: fresh tesseract of archive.org jp2 scans, fused with djvu + hOCR",
+      "status": "complete",
+      "form": "whole-tome page OCR (6116/6116 pages)",
+      "spelling": "archaic",
+      "typeset": "archaic",
+      "coverage": "all 6 archive.org scan sets (OT + NT)",
+      "lineage": "our-ocr",
+      "independent": true,
+      "detail_manifest": "our-ocr-manifest.json"
+    }
+  ]
+}

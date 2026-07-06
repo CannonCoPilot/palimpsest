@@ -1,6 +1,7 @@
 {
   "sources": [
     "madueke_a",
+    "ocr_consensus",
     "odr_com",
     "s_dismas",
     "sabates_a"
@@ -8,19 +9,21 @@
   "lineages_present": [
     "modern-madueke",
     "odr-com",
+    "our-ocr",
     "s-dismas"
   ],
   "elements": 37185,
   "books": 76,
   "confidence_tiers": {
-    "low": 8424,
-    "moderate": 4382,
-    "high": 24379
+    "high": 30522,
+    "moderate": 6424,
+    "low": 239
   },
   "independent_depth_hist": {
-    "1": 8424,
-    "2": 15782,
-    "3": 12979
+    "1": 239,
+    "2": 8680,
+    "3": 15472,
+    "4": 12794
   },
-  "mean_agreement": 0.904
+  "mean_agreement": 0.8102
 }

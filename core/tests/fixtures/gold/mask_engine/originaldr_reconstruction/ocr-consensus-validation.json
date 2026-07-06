@@ -1,0 +1,2664 @@
+{
+  "witness": "ocr_consensus (majority-consensus archaic OCR of the 1582/1609/1610 scans)",
+  "modern_anchor": "madueke_a (+ sabates_a for the 3 appendix books)",
+  "method": {
+    "approach": "content-anchored attestation — anchor on the modern text and corroborate each verse in OCR; NOT from-scratch OCR verse segmentation.",
+    "fold": "shared ocr_sample.skel: long-s / u-v / i-j / vv-w / ligature / silent-e / doubled-letter — bridges archaic PRINT spelling to modern anchor spelling.",
+    "products_fused": [
+      "our-ocr",
+      "djvu",
+      "hocr"
+    ],
+    "product_notes": {
+      "our-ocr": "our FRESH tesseract of the jp2 scans (independent 3rd OCR) — preferred for the stored consensus surface when it attests.",
+      "djvu": "archive.org whole-tome djvu OCR (one file per alias).",
+      "hocr": "archive.org positional hOCR — ocrx_word text extracted."
+    },
+    "windowing": "per book: empirically resolve the best-covering alias per product (mid-chapter probe recall); walk skeleton in canonical order; moving cursor per product; per-verse best_window over a bounded neighbourhood.",
+    "attest_threshold": 0.5,
+    "attest_threshold_rationale": "folded TYPE-recall >= 0.5 in the located window. The fold is intentionally lossy (archaic<->modern), and blackletter OCR drops/garbles ~20-40% of tokens, so an exact-match rate is unattainable; 0.5 means a majority of the verse's distinctive modern tokens are corroborated in the print OCR — strong evidence the verse is attested — while rejecting incidental windows. Corroboration DEPTH (how many of the 3 products independently clear 0.5) is the fusion signal.",
+    "consensus_surface": "raw OCR window text of the winning product (prefer our-ocr).",
+    "determinism": "no randomness; identical inputs → identical output."
+  },
+  "our_ocr_gate": {
+    "gated": true,
+    "status": "complete",
+    "waited_s": 0.0,
+    "complete": true,
+    "note": "finalised on complete tome"
+  },
+  "our_ocr_pages_present": {
+    "ot1-1609": 1135,
+    "ot2-1610": 1128,
+    "holiebible-ot1": 1160,
+    "holiebible-ot2": 1150,
+    "nt-1582": 765,
+    "newtestament": 778
+  },
+  "coverage": {
+    "books": 76,
+    "chapters": 1360,
+    "verses": 36266,
+    "out_of_grid": [],
+    "out_of_grid_count": 0
+  },
+  "aggregate": {
+    "books_with_anchor": 76,
+    "expected_verses": 37130,
+    "attested_verses": 36266,
+    "attestation_rate": 0.9767,
+    "corroboration_depth_hist": {
+      "0": 864,
+      "1": 3844,
+      "2": 1149,
+      "3": 31273
+    },
+    "corroboration_depth_note": "counts of anchor verses by how many of the 3 OCR products independently cleared the recall threshold. depth 0 = unattested (NOT emitted as a read); depths 1-3 are the emitted reads (depth 3 = all three OCR products corroborate the verse).",
+    "folded_agreement_vs_anchor": 0.6943,
+    "single_book_debug_run": false
+  },
+  "archaic_gap_ot": {
+    "expected_verses": 6469,
+    "attested_verses": 6344,
+    "attestation_rate": 0.9807,
+    "books_covered": [
+      "ecclesiasticus",
+      "isaie",
+      "jeremie",
+      "ezechiel",
+      "osee",
+      "joel",
+      "amos",
+      "abdias",
+      "micheas",
+      "nahum",
+      "habacuc",
+      "aggeus",
+      "zacharias",
+      "malachie"
+    ],
+    "books_missing": [],
+    "per_book": [
+      {
+        "book": "ecclesiasticus",
+        "expected": 1592,
+        "attested": 1542,
+        "attestation_rate": 0.9686,
+        "folded_agreement_vs_anchor": 0.6799
+      },
+      {
+        "book": "isaie",
+        "expected": 1292,
+        "attested": 1271,
+        "attestation_rate": 0.9837,
+        "folded_agreement_vs_anchor": 0.6896
+      },
+      {
+        "book": "jeremie",
+        "expected": 1363,
+        "attested": 1354,
+        "attestation_rate": 0.9934,
+        "folded_agreement_vs_anchor": 0.7237
+      },
+      {
+        "book": "ezechiel",
+        "expected": 1272,
+        "attested": 1260,
+        "attestation_rate": 0.9906,
+        "folded_agreement_vs_anchor": 0.681
+      },
+      {
+        "book": "osee",
+        "expected": 198,
+        "attested": 193,
+        "attestation_rate": 0.9747,
+        "folded_agreement_vs_anchor": 0.6784
+      },
+      {
+        "book": "joel",
+        "expected": 73,
+        "attested": 72,
+        "attestation_rate": 0.9863,
+        "folded_agreement_vs_anchor": 0.6913
+      },
+      {
+        "book": "amos",
+        "expected": 147,
+        "attested": 145,
+        "attestation_rate": 0.9864,
+        "folded_agreement_vs_anchor": 0.6359
+      },
+      {
+        "book": "abdias",
+        "expected": 21,
+        "attested": 19,
+        "attestation_rate": 0.9048,
+        "folded_agreement_vs_anchor": 0.6574
+      },
+      {
+        "book": "micheas",
+        "expected": 104,
+        "attested": 101,
+        "attestation_rate": 0.9712,
+        "folded_agreement_vs_anchor": 0.6296
+      },
+      {
+        "book": "nahum",
+        "expected": 47,
+        "attested": 46,
+        "attestation_rate": 0.9787,
+        "folded_agreement_vs_anchor": 0.681
+      },
+      {
+        "book": "habacuc",
+        "expected": 56,
+        "attested": 54,
+        "attestation_rate": 0.9643,
+        "folded_agreement_vs_anchor": 0.62
+      },
+      {
+        "book": "aggeus",
+        "expected": 38,
+        "attested": 37,
+        "attestation_rate": 0.9737,
+        "folded_agreement_vs_anchor": 0.7582
+      },
+      {
+        "book": "zacharias",
+        "expected": 211,
+        "attested": 195,
+        "attestation_rate": 0.9242,
+        "folded_agreement_vs_anchor": 0.6382
+      },
+      {
+        "book": "malachie",
+        "expected": 55,
+        "attested": 55,
+        "attestation_rate": 1.0,
+        "folded_agreement_vs_anchor": 0.6933
+      }
+    ]
+  },
+  "weak_books": [],
+  "caveats": [
+    "Recall is a CORROBORATION signal, not an exact-match rate: the archaic<->modern fold is lossy and blackletter OCR is noisy, so attestation confirms word-correspondence, not verbatim fidelity.",
+    "The stored archaic `surface` is a raw OCR window sliced by folded-token bounds; it may over/under-run the exact verse extent (OCR carries no verse boundaries) and can include adjacent apparatus/marginalia. It is a diplomatic attestation snippet, not a clean verse.",
+    "Verses whose modern anchor is short/function-word-heavy are harder to attest (few distinctive tokens) and may fall below threshold despite being present.",
+    "our-ocr coverage depends on the background ocr_fulltome job; if it was incomplete at finalisation (see our_ocr_gate/our_ocr_pages_present), affected aliases fall back to djvu+hocr corroboration only (depth capped at 2 there)."
+  ],
+  "per_book": [
+    {
+      "book": "genesis",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.7759
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7517
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7517
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1530,
+      "attested_verses": 1518,
+      "attestation_rate": 0.9922,
+      "corroboration_depth_hist": {
+        "0": 12,
+        "1": 45,
+        "2": 44,
+        "3": 1429
+      },
+      "folded_agreement_vs_anchor": 0.6901
+    },
+    {
+      "book": "exodus",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7866
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6653
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6653
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1211,
+      "attested_verses": 1205,
+      "attestation_rate": 0.995,
+      "corroboration_depth_hist": {
+        "0": 6,
+        "1": 117,
+        "2": 18,
+        "3": 1070
+      },
+      "folded_agreement_vs_anchor": 0.6997
+    },
+    {
+      "book": "leviticus",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.8021
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6749
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6749
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 858,
+      "attested_verses": 827,
+      "attestation_rate": 0.9639,
+      "corroboration_depth_hist": {
+        "0": 31,
+        "1": 124,
+        "2": 12,
+        "3": 691
+      },
+      "folded_agreement_vs_anchor": 0.6743
+    },
+    {
+      "book": "numbers",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7839
+        },
+        "djvu": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6834
+        },
+        "hocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6834
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1288,
+      "attested_verses": 1278,
+      "attestation_rate": 0.9922,
+      "corroboration_depth_hist": {
+        "0": 10,
+        "1": 85,
+        "2": 26,
+        "3": 1167
+      },
+      "folded_agreement_vs_anchor": 0.6949
+    },
+    {
+      "book": "deuteronomy",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7874
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.715
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.715
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 959,
+      "attested_verses": 947,
+      "attestation_rate": 0.9875,
+      "corroboration_depth_hist": {
+        "0": 12,
+        "1": 152,
+        "2": 24,
+        "3": 771
+      },
+      "folded_agreement_vs_anchor": 0.6993
+    },
+    {
+      "book": "josue",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7957
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6766
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6766
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 658,
+      "attested_verses": 639,
+      "attestation_rate": 0.9711,
+      "corroboration_depth_hist": {
+        "0": 19,
+        "1": 93,
+        "2": 10,
+        "3": 536
+      },
+      "folded_agreement_vs_anchor": 0.6852
+    },
+    {
+      "book": "judges",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6958
+        },
+        "djvu": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.5873
+        },
+        "hocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.5873
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 618,
+      "attested_verses": 612,
+      "attestation_rate": 0.9903,
+      "corroboration_depth_hist": {
+        "0": 6,
+        "1": 43,
+        "2": 5,
+        "3": 564
+      },
+      "folded_agreement_vs_anchor": 0.7032
+    },
+    {
+      "book": "ruth",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.7291
+        },
+        "djvu": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6847
+        },
+        "hocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6847
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 85,
+      "attested_verses": 85,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "1": 3,
+        "3": 82
+      },
+      "folded_agreement_vs_anchor": 0.6863
+    },
+    {
+      "book": "1-kings",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.788
+        },
+        "djvu": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6498
+        },
+        "hocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6498
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 811,
+      "attested_verses": 808,
+      "attestation_rate": 0.9963,
+      "corroboration_depth_hist": {
+        "0": 3,
+        "1": 66,
+        "2": 6,
+        "3": 736
+      },
+      "folded_agreement_vs_anchor": 0.7133
+    },
+    {
+      "book": "2-kings",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.768
+        },
+        "djvu": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.7022
+        },
+        "hocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.7022
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 695,
+      "attested_verses": 686,
+      "attestation_rate": 0.9871,
+      "corroboration_depth_hist": {
+        "0": 9,
+        "1": 41,
+        "2": 11,
+        "3": 634
+      },
+      "folded_agreement_vs_anchor": 0.7129
+    },
+    {
+      "book": "3-kings",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7593
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7556
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7556
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 817,
+      "attested_verses": 778,
+      "attestation_rate": 0.9523,
+      "corroboration_depth_hist": {
+        "0": 39,
+        "1": 132,
+        "2": 19,
+        "3": 627
+      },
+      "folded_agreement_vs_anchor": 0.6655
+    },
+    {
+      "book": "4-kings",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.7315
+        },
+        "djvu": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6852
+        },
+        "hocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6852
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 719,
+      "attested_verses": 708,
+      "attestation_rate": 0.9847,
+      "corroboration_depth_hist": {
+        "0": 11,
+        "1": 37,
+        "2": 14,
+        "3": 657
+      },
+      "folded_agreement_vs_anchor": 0.6883
+    },
+    {
+      "book": "1-paralipomenon",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7689
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6489
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6489
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 940,
+      "attested_verses": 922,
+      "attestation_rate": 0.9809,
+      "corroboration_depth_hist": {
+        "0": 18,
+        "1": 255,
+        "2": 7,
+        "3": 660
+      },
+      "folded_agreement_vs_anchor": 0.689
+    },
+    {
+      "book": "2-paralipomenon",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.7037
+        },
+        "djvu": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.5864
+        },
+        "hocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.5864
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 822,
+      "attested_verses": 816,
+      "attestation_rate": 0.9927,
+      "corroboration_depth_hist": {
+        "0": 6,
+        "1": 50,
+        "2": 26,
+        "3": 740
+      },
+      "folded_agreement_vs_anchor": 0.662
+    },
+    {
+      "book": "1-esdras",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7458
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6792
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6792
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 280,
+      "attested_verses": 277,
+      "attestation_rate": 0.9893,
+      "corroboration_depth_hist": {
+        "0": 3,
+        "1": 16,
+        "2": 3,
+        "3": 258
+      },
+      "folded_agreement_vs_anchor": 0.6928
+    },
+    {
+      "book": "2-esdras",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7852
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6711
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6711
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 404,
+      "attested_verses": 395,
+      "attestation_rate": 0.9777,
+      "corroboration_depth_hist": {
+        "0": 9,
+        "1": 70,
+        "2": 4,
+        "3": 321
+      },
+      "folded_agreement_vs_anchor": 0.6692
+    },
+    {
+      "book": "tobias",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7412
+        },
+        "djvu": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6754
+        },
+        "hocr": {
+          "alias": "ot1-1609",
+          "probe_recall": 0.6754
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 298,
+      "attested_verses": 282,
+      "attestation_rate": 0.9463,
+      "corroboration_depth_hist": {
+        "0": 16,
+        "1": 24,
+        "2": 31,
+        "3": 227
+      },
+      "folded_agreement_vs_anchor": 0.6743
+    },
+    {
+      "book": "judith",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7177
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.5646
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.5646
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 346,
+      "attested_verses": 334,
+      "attestation_rate": 0.9653,
+      "corroboration_depth_hist": {
+        "0": 12,
+        "1": 53,
+        "2": 6,
+        "3": 275
+      },
+      "folded_agreement_vs_anchor": 0.7012
+    },
+    {
+      "book": "esther",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.7081
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6149
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.6149
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 275,
+      "attested_verses": 268,
+      "attestation_rate": 0.9745,
+      "corroboration_depth_hist": {
+        "0": 7,
+        "1": 49,
+        "2": 5,
+        "3": 214
+      },
+      "folded_agreement_vs_anchor": 0.683
+    },
+    {
+      "book": "job",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.5833
+        },
+        "djvu": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.5833
+        },
+        "hocr": {
+          "alias": "holiebible-ot1",
+          "probe_recall": 0.5833
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1070,
+      "attested_verses": 1006,
+      "attestation_rate": 0.9402,
+      "corroboration_depth_hist": {
+        "0": 64,
+        "1": 169,
+        "2": 64,
+        "3": 773
+      },
+      "folded_agreement_vs_anchor": 0.6521
+    },
+    {
+      "book": "psalms",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.6849
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6575
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6575
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 2527,
+      "attested_verses": 2414,
+      "attestation_rate": 0.9553,
+      "corroboration_depth_hist": {
+        "0": 113,
+        "1": 320,
+        "2": 94,
+        "3": 2000
+      },
+      "folded_agreement_vs_anchor": 0.676
+    },
+    {
+      "book": "proverbs",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7183
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.615
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.615
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 915,
+      "attested_verses": 760,
+      "attestation_rate": 0.8306,
+      "corroboration_depth_hist": {
+        "0": 155,
+        "1": 53,
+        "2": 347,
+        "3": 360
+      },
+      "folded_agreement_vs_anchor": 0.6523
+    },
+    {
+      "book": "ecclesiastes",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7754
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7119
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7119
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 222,
+      "attested_verses": 216,
+      "attestation_rate": 0.973,
+      "corroboration_depth_hist": {
+        "0": 6,
+        "1": 25,
+        "2": 8,
+        "3": 183
+      },
+      "folded_agreement_vs_anchor": 0.6797
+    },
+    {
+      "book": "canticle-of-canticles",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7033
+        },
+        "djvu": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7473
+        },
+        "hocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7473
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 116,
+      "attested_verses": 113,
+      "attestation_rate": 0.9741,
+      "corroboration_depth_hist": {
+        "0": 3,
+        "1": 10,
+        "2": 5,
+        "3": 98
+      },
+      "folded_agreement_vs_anchor": 0.6707
+    },
+    {
+      "book": "wisdom",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.744
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6522
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6522
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 439,
+      "attested_verses": 433,
+      "attestation_rate": 0.9863,
+      "corroboration_depth_hist": {
+        "0": 6,
+        "1": 75,
+        "2": 6,
+        "3": 352
+      },
+      "folded_agreement_vs_anchor": 0.6934
+    },
+    {
+      "book": "ecclesiasticus",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.725
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.65
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.65
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1592,
+      "attested_verses": 1542,
+      "attestation_rate": 0.9686,
+      "corroboration_depth_hist": {
+        "0": 50,
+        "1": 234,
+        "2": 32,
+        "3": 1276
+      },
+      "folded_agreement_vs_anchor": 0.6799
+    },
+    {
+      "book": "isaie",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7368
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7158
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7158
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1292,
+      "attested_verses": 1271,
+      "attestation_rate": 0.9837,
+      "corroboration_depth_hist": {
+        "0": 21,
+        "1": 125,
+        "2": 29,
+        "3": 1117
+      },
+      "folded_agreement_vs_anchor": 0.6896
+    },
+    {
+      "book": "jeremie",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.8162
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7676
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7676
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1363,
+      "attested_verses": 1354,
+      "attestation_rate": 0.9934,
+      "corroboration_depth_hist": {
+        "0": 9,
+        "1": 181,
+        "2": 20,
+        "3": 1153
+      },
+      "folded_agreement_vs_anchor": 0.7237
+    },
+    {
+      "book": "lamentations",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7703
+        },
+        "djvu": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.652
+        },
+        "hocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.652
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 154,
+      "attested_verses": 153,
+      "attestation_rate": 0.9935,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "1": 8,
+        "2": 5,
+        "3": 140
+      },
+      "folded_agreement_vs_anchor": 0.7141
+    },
+    {
+      "book": "baruch",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7809
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7649
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7649
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 213,
+      "attested_verses": 208,
+      "attestation_rate": 0.9765,
+      "corroboration_depth_hist": {
+        "0": 5,
+        "1": 17,
+        "2": 11,
+        "3": 180
+      },
+      "folded_agreement_vs_anchor": 0.6767
+    },
+    {
+      "book": "ezechiel",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.8291
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7658
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7658
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1272,
+      "attested_verses": 1260,
+      "attestation_rate": 0.9906,
+      "corroboration_depth_hist": {
+        "0": 12,
+        "1": 102,
+        "2": 29,
+        "3": 1129
+      },
+      "folded_agreement_vs_anchor": 0.681
+    },
+    {
+      "book": "daniel",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7705
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7418
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7418
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 531,
+      "attested_verses": 523,
+      "attestation_rate": 0.9849,
+      "corroboration_depth_hist": {
+        "0": 8,
+        "1": 61,
+        "2": 18,
+        "3": 444
+      },
+      "folded_agreement_vs_anchor": 0.6807
+    },
+    {
+      "book": "osee",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7143
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6871
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6871
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 198,
+      "attested_verses": 193,
+      "attestation_rate": 0.9747,
+      "corroboration_depth_hist": {
+        "0": 5,
+        "1": 23,
+        "2": 3,
+        "3": 167
+      },
+      "folded_agreement_vs_anchor": 0.6784
+    },
+    {
+      "book": "joel",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7307
+        },
+        "djvu": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.6718
+        },
+        "hocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.6718
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 73,
+      "attested_verses": 72,
+      "attestation_rate": 0.9863,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 66
+      },
+      "folded_agreement_vs_anchor": 0.6913
+    },
+    {
+      "book": "amos",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7511
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6978
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6978
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 147,
+      "attested_verses": 145,
+      "attestation_rate": 0.9864,
+      "corroboration_depth_hist": {
+        "0": 2,
+        "1": 14,
+        "2": 10,
+        "3": 121
+      },
+      "folded_agreement_vs_anchor": 0.6359
+    },
+    {
+      "book": "abdias",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7155
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6724
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6724
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 21,
+      "attested_verses": 19,
+      "attestation_rate": 0.9048,
+      "corroboration_depth_hist": {
+        "0": 2,
+        "3": 19
+      },
+      "folded_agreement_vs_anchor": 0.6574
+    },
+    {
+      "book": "jonas",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.687
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6957
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6957
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 48,
+      "attested_verses": 47,
+      "attestation_rate": 0.9792,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "2": 1,
+        "3": 46
+      },
+      "folded_agreement_vs_anchor": 0.6161
+    },
+    {
+      "book": "micheas",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7232
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7175
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7175
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 104,
+      "attested_verses": 101,
+      "attestation_rate": 0.9712,
+      "corroboration_depth_hist": {
+        "0": 3,
+        "1": 4,
+        "2": 7,
+        "3": 90
+      },
+      "folded_agreement_vs_anchor": 0.6296
+    },
+    {
+      "book": "nahum",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7317
+        },
+        "djvu": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.6402
+        },
+        "hocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.6402
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 47,
+      "attested_verses": 46,
+      "attestation_rate": 0.9787,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "1": 4,
+        "2": 1,
+        "3": 41
+      },
+      "folded_agreement_vs_anchor": 0.681
+    },
+    {
+      "book": "habacuc",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7352
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7306
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7306
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 56,
+      "attested_verses": 54,
+      "attestation_rate": 0.9643,
+      "corroboration_depth_hist": {
+        "0": 2,
+        "1": 6,
+        "2": 5,
+        "3": 43
+      },
+      "folded_agreement_vs_anchor": 0.62
+    },
+    {
+      "book": "sophonias",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7158
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6612
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6612
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 53,
+      "attested_verses": 52,
+      "attestation_rate": 0.9811,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "1": 6,
+        "2": 3,
+        "3": 43
+      },
+      "folded_agreement_vs_anchor": 0.6103
+    },
+    {
+      "book": "aggeus",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.8447
+        },
+        "djvu": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7379
+        },
+        "hocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7379
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 38,
+      "attested_verses": 37,
+      "attestation_rate": 0.9737,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "3": 37
+      },
+      "folded_agreement_vs_anchor": 0.7582
+    },
+    {
+      "book": "zacharias",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7734
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7635
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7635
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 211,
+      "attested_verses": 195,
+      "attestation_rate": 0.9242,
+      "corroboration_depth_hist": {
+        "0": 16,
+        "1": 15,
+        "2": 3,
+        "3": 177
+      },
+      "folded_agreement_vs_anchor": 0.6382
+    },
+    {
+      "book": "malachie",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7513
+        },
+        "djvu": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.6269
+        },
+        "hocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.6269
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 55,
+      "attested_verses": 55,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "1": 3,
+        "3": 52
+      },
+      "folded_agreement_vs_anchor": 0.6933
+    },
+    {
+      "book": "1-machabees",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.707
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6784
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6784
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 929,
+      "attested_verses": 904,
+      "attestation_rate": 0.9731,
+      "corroboration_depth_hist": {
+        "0": 25,
+        "1": 128,
+        "2": 24,
+        "3": 752
+      },
+      "folded_agreement_vs_anchor": 0.6803
+    },
+    {
+      "book": "2-machabees",
+      "testament": "OT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7057
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6693
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.6693
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 558,
+      "attested_verses": 545,
+      "attestation_rate": 0.9767,
+      "corroboration_depth_hist": {
+        "0": 13,
+        "1": 53,
+        "2": 11,
+        "3": 481
+      },
+      "folded_agreement_vs_anchor": 0.6797
+    },
+    {
+      "book": "matthew",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8377
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.7585
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7585
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1070,
+      "attested_verses": 1068,
+      "attestation_rate": 0.9981,
+      "corroboration_depth_hist": {
+        "0": 2,
+        "1": 45,
+        "2": 16,
+        "3": 1007
+      },
+      "folded_agreement_vs_anchor": 0.7339
+    },
+    {
+      "book": "mark",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8277
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.7815
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7815
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 677,
+      "attested_verses": 677,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "1": 21,
+        "2": 3,
+        "3": 653
+      },
+      "folded_agreement_vs_anchor": 0.7449
+    },
+    {
+      "book": "luke",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8552
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7811
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7811
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1151,
+      "attested_verses": 1141,
+      "attestation_rate": 0.9913,
+      "corroboration_depth_hist": {
+        "0": 10,
+        "1": 223,
+        "2": 8,
+        "3": 910
+      },
+      "folded_agreement_vs_anchor": 0.7347
+    },
+    {
+      "book": "john",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8278
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.7748
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7748
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 879,
+      "attested_verses": 874,
+      "attestation_rate": 0.9943,
+      "corroboration_depth_hist": {
+        "0": 5,
+        "1": 31,
+        "2": 26,
+        "3": 817
+      },
+      "folded_agreement_vs_anchor": 0.7098
+    },
+    {
+      "book": "acts",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7908
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.732
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.732
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 1004,
+      "attested_verses": 1000,
+      "attestation_rate": 0.996,
+      "corroboration_depth_hist": {
+        "0": 4,
+        "1": 47,
+        "2": 9,
+        "3": 944
+      },
+      "folded_agreement_vs_anchor": 0.7473
+    },
+    {
+      "book": "romans",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8026
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7296
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7296
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 433,
+      "attested_verses": 429,
+      "attestation_rate": 0.9908,
+      "corroboration_depth_hist": {
+        "0": 4,
+        "1": 33,
+        "2": 2,
+        "3": 394
+      },
+      "folded_agreement_vs_anchor": 0.7179
+    },
+    {
+      "book": "1-corinthians",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8134
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.7416
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7416
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 437,
+      "attested_verses": 437,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "1": 15,
+        "2": 2,
+        "3": 420
+      },
+      "folded_agreement_vs_anchor": 0.7225
+    },
+    {
+      "book": "2-corinthians",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8491
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.7233
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7233
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 255,
+      "attested_verses": 252,
+      "attestation_rate": 0.9882,
+      "corroboration_depth_hist": {
+        "0": 3,
+        "1": 24,
+        "2": 2,
+        "3": 226
+      },
+      "folded_agreement_vs_anchor": 0.7215
+    },
+    {
+      "book": "galatians",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7941
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.75
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.75
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 149,
+      "attested_verses": 146,
+      "attestation_rate": 0.9799,
+      "corroboration_depth_hist": {
+        "0": 3,
+        "1": 46,
+        "3": 100
+      },
+      "folded_agreement_vs_anchor": 0.7039
+    },
+    {
+      "book": "ephesians",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7456
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.6842
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.6842
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 155,
+      "attested_verses": 150,
+      "attestation_rate": 0.9677,
+      "corroboration_depth_hist": {
+        "0": 5,
+        "1": 33,
+        "2": 5,
+        "3": 112
+      },
+      "folded_agreement_vs_anchor": 0.6931
+    },
+    {
+      "book": "philippians",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8011
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.75
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.75
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 104,
+      "attested_verses": 103,
+      "attestation_rate": 0.9904,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "1": 18,
+        "3": 85
+      },
+      "folded_agreement_vs_anchor": 0.7148
+    },
+    {
+      "book": "colossians",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7617
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.6632
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.6632
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 95,
+      "attested_verses": 94,
+      "attestation_rate": 0.9895,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "1": 7,
+        "2": 2,
+        "3": 85
+      },
+      "folded_agreement_vs_anchor": 0.701
+    },
+    {
+      "book": "1-thessalonians",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7724
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.6911
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.6911
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 89,
+      "attested_verses": 87,
+      "attestation_rate": 0.9775,
+      "corroboration_depth_hist": {
+        "0": 2,
+        "1": 7,
+        "2": 2,
+        "3": 78
+      },
+      "folded_agreement_vs_anchor": 0.6917
+    },
+    {
+      "book": "2-thessalonians",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8072
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.759
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.759
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 47,
+      "attested_verses": 47,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "3": 47
+      },
+      "folded_agreement_vs_anchor": 0.7138
+    },
+    {
+      "book": "1-timothy",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7153
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.5839
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.5839
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 113,
+      "attested_verses": 108,
+      "attestation_rate": 0.9558,
+      "corroboration_depth_hist": {
+        "0": 5,
+        "1": 25,
+        "2": 3,
+        "3": 80
+      },
+      "folded_agreement_vs_anchor": 0.6843
+    },
+    {
+      "book": "2-timothy",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7219
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.5385
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.5385
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 83,
+      "attested_verses": 81,
+      "attestation_rate": 0.9759,
+      "corroboration_depth_hist": {
+        "0": 2,
+        "1": 15,
+        "3": 66
+      },
+      "folded_agreement_vs_anchor": 0.6945
+    },
+    {
+      "book": "titus",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7951
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7951
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7951
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 46,
+      "attested_verses": 46,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "1": 2,
+        "3": 44
+      },
+      "folded_agreement_vs_anchor": 0.7435
+    },
+    {
+      "book": "philemon",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8266
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.6358
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.6358
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 25,
+      "attested_verses": 25,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "1": 7,
+        "3": 18
+      },
+      "folded_agreement_vs_anchor": 0.6787
+    },
+    {
+      "book": "hebrews",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8249
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7465
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7465
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 303,
+      "attested_verses": 297,
+      "attestation_rate": 0.9802,
+      "corroboration_depth_hist": {
+        "0": 6,
+        "1": 49,
+        "2": 4,
+        "3": 244
+      },
+      "folded_agreement_vs_anchor": 0.7008
+    },
+    {
+      "book": "james",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8385
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7708
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7708
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 108,
+      "attested_verses": 106,
+      "attestation_rate": 0.9815,
+      "corroboration_depth_hist": {
+        "0": 2,
+        "1": 3,
+        "2": 4,
+        "3": 99
+      },
+      "folded_agreement_vs_anchor": 0.7347
+    },
+    {
+      "book": "1-peter",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8235
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7466
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7466
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 105,
+      "attested_verses": 104,
+      "attestation_rate": 0.9905,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "1": 9,
+        "3": 95
+      },
+      "folded_agreement_vs_anchor": 0.6984
+    },
+    {
+      "book": "2-peter",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7945
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7431
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7431
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 61,
+      "attested_verses": 61,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "1": 1,
+        "3": 60
+      },
+      "folded_agreement_vs_anchor": 0.725
+    },
+    {
+      "book": "1-john",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8247
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7597
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7597
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 105,
+      "attested_verses": 105,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "2": 1,
+        "3": 104
+      },
+      "folded_agreement_vs_anchor": 0.7323
+    },
+    {
+      "book": "2-john",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8443
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.8033
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8033
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 13,
+      "attested_verses": 12,
+      "attestation_rate": 0.9231,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "3": 12
+      },
+      "folded_agreement_vs_anchor": 0.7778
+    },
+    {
+      "book": "3-john",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8252
+        },
+        "djvu": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7762
+        },
+        "hocr": {
+          "alias": "nt-1582",
+          "probe_recall": 0.7762
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 14,
+      "attested_verses": 13,
+      "attestation_rate": 0.9286,
+      "corroboration_depth_hist": {
+        "0": 1,
+        "3": 13
+      },
+      "folded_agreement_vs_anchor": 0.6885
+    },
+    {
+      "book": "jude",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8172
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.7778
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7778
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 25,
+      "attested_verses": 25,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "2": 1,
+        "3": 24
+      },
+      "folded_agreement_vs_anchor": 0.7198
+    },
+    {
+      "book": "apocalypse",
+      "testament": "NT",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.8125
+        },
+        "djvu": {
+          "alias": "newtestament",
+          "probe_recall": 0.7604
+        },
+        "hocr": {
+          "alias": "newtestament",
+          "probe_recall": 0.7604
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 405,
+      "attested_verses": 401,
+      "attestation_rate": 0.9901,
+      "corroboration_depth_hist": {
+        "0": 4,
+        "1": 13,
+        "2": 3,
+        "3": 385
+      },
+      "folded_agreement_vs_anchor": 0.7362
+    },
+    {
+      "book": "prayer-of-manasses",
+      "testament": "APPENDIX",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7673
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7673
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7673
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 15,
+      "attested_verses": 15,
+      "attestation_rate": 1.0,
+      "corroboration_depth_hist": {
+        "3": 15
+      },
+      "folded_agreement_vs_anchor": 0.7008
+    },
+    {
+      "book": "3-esdras",
+      "testament": "APPENDIX",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.768
+        },
+        "djvu": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7721
+        },
+        "hocr": {
+          "alias": "ot2-1610",
+          "probe_recall": 0.7721
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 450,
+      "attested_verses": 443,
+      "attestation_rate": 0.9844,
+      "corroboration_depth_hist": {
+        "0": 7,
+        "1": 26,
+        "2": 12,
+        "3": 405
+      },
+      "folded_agreement_vs_anchor": 0.725
+    },
+    {
+      "book": "4-esdras",
+      "testament": "APPENDIX",
+      "alias_resolution": {
+        "our-ocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7412
+        },
+        "djvu": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7059
+        },
+        "hocr": {
+          "alias": "holiebible-ot2",
+          "probe_recall": 0.7059
+        }
+      },
+      "active_products": [
+        "djvu",
+        "hocr",
+        "our-ocr"
+      ],
+      "expected_verses": 856,
+      "attested_verses": 816,
+      "attestation_rate": 0.9533,
+      "corroboration_depth_hist": {
+        "0": 40,
+        "1": 51,
+        "2": 33,
+        "3": 732
+      },
+      "folded_agreement_vs_anchor": 0.6857
+    }
+  ]
+}
