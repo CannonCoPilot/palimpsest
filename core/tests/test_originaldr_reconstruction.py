@@ -322,3 +322,47 @@ def test_p3_3_placement_map_contributor_heatmaps_and_glyph_extend_the_brief():
     # the finished Phase-3 brief carries all ten figures with balanced SVG, and is not stale
     assert out.count("<svg") == out.count("</svg>") >= 10
     assert gen.OUT.read_text(encoding="utf-8") == out
+
+
+def test_p3_followup_versification_adjudication_resolves_both_edge_sets():
+    """P3 follow-up (plan §5.3/§6): the two deferred edge sets from render-archaic-report.json are
+    resolved into an evidence-backed disposition in versification-adjudication.json.
+
+    The 55 archaic-only coords are each classified (shifted-duplicate / genuine-split /
+    single-witness-unresolved) by a fold-aware full-chapter duplicate search, and the 199
+    coverage-gap coords are confirmed to have zero archaic attestation with no clean archive.org
+    djvu recovery. Corpus-free: reads only the committed JSON, not the gitignored basis-db."""
+    adj = _load("versification-adjudication.json")
+
+    # archaic-only: 55 coords, fully classified into the documented 3-class scheme
+    ao = adj["archaic_only"]
+    classes = {"shifted-duplicate", "genuine-split", "single-witness-unresolved"}
+    assert ao["total"] == 55 == len(ao["coordinates"])
+    assert set(ao["classes"]) <= classes
+    assert sum(ao["classes"].values()) == 55
+    shift = ao["shift_threshold_fold_jaccard"]
+    for c in ao["coordinates"]:
+        assert c["class"] in classes
+        jac = c["best_chapter_match"]["fold_jaccard"]
+        assert isinstance(jac, (int, float))
+        # the classification is self-consistent with its own duplicate threshold
+        if c["class"] == "shifted-duplicate":
+            assert jac >= shift and c["best_chapter_match"]["verse"] is not None
+        else:
+            assert jac < shift
+    # the multi-witness genuine-splits (content-unique) include the skeleton-completeness candidate
+    splits = {c["coord"] for c in ao["coordinates"] if c["class"] == "genuine-split"}
+    assert "scripture/2-corinthians/1/24" in splits
+    assert ao["decision"].strip()
+
+    # coverage-gap: 199 verses, zero archaic attestation, no clean djvu recovery
+    cg = adj["coverage_gap"]
+    assert cg["total"] == 199 == len(cg["coordinates"])
+    assert cg["archaic_attestation_verified_zero"] is True
+    assert sum(cg["by_book"].values()) == 199
+    probe = cg["recoverability_probe"]
+    assert probe["n_sampled"] > 0
+    assert probe["n_clean_matches"] == 0
+    lo, hi = probe["overlap_range"]
+    assert 0.0 <= lo <= hi < probe["clean_match_threshold"]
+    assert cg["decision"].strip()

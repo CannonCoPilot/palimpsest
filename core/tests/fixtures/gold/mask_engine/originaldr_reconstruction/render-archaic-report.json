@@ -68,7 +68,7 @@
     "render_time_fallbacks": 0,
     "pure_basis_db_projection_over_attested": true,
     "archaic_coverage_gaps": 199,
-    "archaic_coverage_gap_note": "modern-present coords with NO archaic witness (books absent from s-dismas [Gen→Wisdom] and odr-com: Ecclesiasticus, 4-Esdras, prophets). Rendered from the attested modern surface and FLAGGED — not glyph-transformed (that would fabricate unattested diplomatic detail). idx 109 == idx 108 byte-for-byte on exactly these verses.",
+    "archaic_coverage_gap_note": "modern-present coords with NO archaic witness (books absent from s-dismas [Gen→Wisdom] and odr-com: Ecclesiasticus, 4-Esdras, prophets). Rendered from the attested modern surface and FLAGGED — not glyph-transformed (that would fabricate unattested diplomatic detail). idx 109 == idx 108 byte-for-byte on exactly these verses. ADJUDICATED in versification-adjudication.json: zero archaic attestation confirmed and the independent archive.org djvu OCR yields no clean recovery (same OCR family, §6.3), so the flag is the honest disposition — re-OCR fill would fabricate noise.",
     "archaic_coverage_gap_by_book": {
       "ecclesiasticus": 50,
       "4-esdras": 40,
@@ -105,7 +105,7 @@
       "scripture/3-esdras/4/11"
     ],
     "archaic_only_coordinates_deferred": 55,
-    "archaic_only_note": "positions absent from the modern edition; NOT injected — dominated by single-witness OCR artifacts (e.g. matthew/4/32 = Matthew 4:23 text; genesis/1/32 = Genesis 1:31). Versification-divergence adjudication set for a follow-up.",
+    "archaic_only_note": "positions absent from the modern edition; NOT injected (would break the idx108/idx109 shared-skeleton invariant §1.2). ADJUDICATED in versification-adjudication.json: 46 shifted-duplicate (OCR verse-number misparse — the content is already rendered at the matched modern coordinate, e.g. matthew/4/32 = Matthew 4:23), 6 single-witness-unresolved, 3 genuine-split (e.g. 2-corinthians/1/24, a skeleton-completeness candidate the modern skeleton lacks).",
     "archaic_only_sample": [
       "scripture/1-corinthians/7/41",
       "scripture/1-corinthians/8/14",

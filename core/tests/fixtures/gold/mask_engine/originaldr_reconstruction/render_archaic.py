@@ -263,14 +263,21 @@ def main() -> int:
                                          "4-Esdras, prophets). Rendered from the attested modern "
                                          "surface and FLAGGED — not glyph-transformed (that would "
                                          "fabricate unattested diplomatic detail). idx 109 == idx 108 "
-                                         "byte-for-byte on exactly these verses.",
+                                         "byte-for-byte on exactly these verses. ADJUDICATED in "
+                                         "versification-adjudication.json: zero archaic attestation "
+                                         "confirmed and the independent archive.org djvu OCR yields no "
+                                         "clean recovery (same OCR family, §6.3), so the flag is the "
+                                         "honest disposition — re-OCR fill would fabricate noise.",
             "archaic_coverage_gap_by_book": dict(sorted(gap_by_book.items(), key=lambda kv: (-kv[1], kv[0]))),
             "archaic_coverage_gap_sample": sorted(coverage_gap)[:8],
             "archaic_only_coordinates_deferred": len(archaic_only),
-            "archaic_only_note": "positions absent from the modern edition; NOT injected — dominated "
-                                 "by single-witness OCR artifacts (e.g. matthew/4/32 = Matthew 4:23 "
-                                 "text; genesis/1/32 = Genesis 1:31). Versification-divergence "
-                                 "adjudication set for a follow-up.",
+            "archaic_only_note": "positions absent from the modern edition; NOT injected (would break "
+                                 "the idx108/idx109 shared-skeleton invariant §1.2). ADJUDICATED in "
+                                 "versification-adjudication.json: 46 shifted-duplicate (OCR "
+                                 "verse-number misparse — the content is already rendered at the "
+                                 "matched modern coordinate, e.g. matthew/4/32 = Matthew 4:23), 6 "
+                                 "single-witness-unresolved, 3 genuine-split (e.g. 2-corinthians/1/24, "
+                                 "a skeleton-completeness candidate the modern skeleton lacks).",
             "archaic_only_sample": sorted(archaic_only)[:8],
             "rendered_confidence_tiers": dict(sorted(rendered_tiers.items())),
             "rendered_independent_depth": {str(k): v for k, v in sorted(rendered_depth.items())},

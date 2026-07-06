@@ -1,0 +1,1156 @@
+{
+  "artifact": "versification-adjudication.json",
+  "phase": "P3 follow-up",
+  "generated_by": "adjudicate_versification.py",
+  "note": "Resolves the two deferred edge sets from render-archaic-report.json into an evidence-backed disposition. CI-safe (this JSON is committed; the script reads the gitignored basis-db + archive.org djvu at build time).",
+  "archaic_only": {
+    "total": 55,
+    "classes": {
+      "genuine-split": 3,
+      "shifted-duplicate": 46,
+      "single-witness-unresolved": 6
+    },
+    "shift_threshold_fold_jaccard": 0.6,
+    "method": "fold-aware (spelling_glyph_model.fold_diplomatic) full-chapter duplicate search + independent-witness depth. Every archaic-only coord is a chapter-overflow verse (numbered beyond the chapter's last modern verse).",
+    "decision": "All 55 are correctly excluded from idx 109: injecting them would break the idx108/idx109 shared-skeleton invariant (§1.2). The shifted-duplicates re-render content already present at the matched modern coordinate (no loss); the content-unique remainder is single/low-witness or a partial split and is documented rather than bulk-injected on single-witness faith. A handful of multi-witness genuine-splits (e.g. 2-corinthians/1/24, which the modern skeleton lacks) are flagged as candidates for a future skeleton-completeness review.",
+    "coordinates": [
+      {
+        "coord": "scripture/1-corinthians/7/41",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 40,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/1-corinthians/8/14",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 13,
+          "fold_jaccard": 0.833
+        }
+      },
+      {
+        "coord": "scripture/2-corinthians/1/24",
+        "class": "genuine-split",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "high",
+        "best_chapter_match": {
+          "verse": 23,
+          "fold_jaccard": 0.533
+        }
+      },
+      {
+        "coord": "scripture/2-corinthians/5/22",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "high",
+        "best_chapter_match": {
+          "verse": 21,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/2-corinthians/9/16",
+        "class": "genuine-split",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "moderate",
+        "best_chapter_match": {
+          "verse": 15,
+          "fold_jaccard": 0.556
+        }
+      },
+      {
+        "coord": "scripture/2-kings/14/34",
+        "class": "single-witness-unresolved",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 33,
+          "fold_jaccard": 0.52
+        }
+      },
+      {
+        "coord": "scripture/2-kings/18/34",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 33,
+          "fold_jaccard": 0.871
+        }
+      },
+      {
+        "coord": "scripture/3-kings/6/39",
+        "class": "single-witness-unresolved",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 1,
+          "fold_jaccard": 0.016
+        }
+      },
+      {
+        "coord": "scripture/acts/10/49",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 48,
+          "fold_jaccard": 0.917
+        }
+      },
+      {
+        "coord": "scripture/acts/22/31",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "moderate",
+        "best_chapter_match": {
+          "verse": 30,
+          "fold_jaccard": 0.879
+        }
+      },
+      {
+        "coord": "scripture/acts/7/60",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 59,
+          "fold_jaccard": 0.964
+        }
+      },
+      {
+        "coord": "scripture/deuteronomy/1/47",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 46,
+          "fold_jaccard": 0.75
+        }
+      },
+      {
+        "coord": "scripture/deuteronomy/25/20",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 19,
+          "fold_jaccard": 0.833
+        }
+      },
+      {
+        "coord": "scripture/ecclesiastes/4/18",
+        "class": "single-witness-unresolved",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 17,
+          "fold_jaccard": 0.4
+        }
+      },
+      {
+        "coord": "scripture/exodus/27/22",
+        "class": "genuine-split",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "moderate",
+        "best_chapter_match": {
+          "verse": 21,
+          "fold_jaccard": 0.333
+        }
+      },
+      {
+        "coord": "scripture/exodus/3/29",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 20,
+          "fold_jaccard": 0.833
+        }
+      },
+      {
+        "coord": "scripture/genesis/1/32",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 31,
+          "fold_jaccard": 0.895
+        }
+      },
+      {
+        "coord": "scripture/genesis/39/24",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 23,
+          "fold_jaccard": 0.783
+        }
+      },
+      {
+        "coord": "scripture/leviticus/11/48",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 47,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/leviticus/2/17",
+        "class": "single-witness-unresolved",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 7,
+          "fold_jaccard": 0.107
+        }
+      },
+      {
+        "coord": "scripture/leviticus/6/31",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 30,
+          "fold_jaccard": 0.926
+        }
+      },
+      {
+        "coord": "scripture/leviticus/9/25",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 24,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/mark/11/34",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 33,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/mark/9/50",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "moderate",
+        "best_chapter_match": {
+          "verse": 49,
+          "fold_jaccard": 0.895
+        }
+      },
+      {
+        "coord": "scripture/matthew/17/27",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "moderate",
+        "best_chapter_match": {
+          "verse": 26,
+          "fold_jaccard": 0.944
+        }
+      },
+      {
+        "coord": "scripture/matthew/4/32",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 23,
+          "fold_jaccard": 0.909
+        }
+      },
+      {
+        "coord": "scripture/numbers/10/37",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 36,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/numbers/31/55",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 54,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/proverbs/21/32",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 31,
+          "fold_jaccard": 0.733
+        }
+      },
+      {
+        "coord": "scripture/proverbs/4/28",
+        "class": "single-witness-unresolved",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 27,
+          "fold_jaccard": 0.429
+        }
+      },
+      {
+        "coord": "scripture/proverbs/4/29",
+        "class": "single-witness-unresolved",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 27,
+          "fold_jaccard": 0.314
+        }
+      },
+      {
+        "coord": "scripture/psalms/1/7",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "high",
+        "best_chapter_match": {
+          "verse": 6,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/10/9",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 8,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/101/39",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 29,
+          "fold_jaccard": 0.857
+        }
+      },
+      {
+        "coord": "scripture/psalms/110/11",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "high",
+        "best_chapter_match": {
+          "verse": 10,
+          "fold_jaccard": 0.667
+        }
+      },
+      {
+        "coord": "scripture/psalms/111/11",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "moderate",
+        "best_chapter_match": {
+          "verse": 10,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/118/178",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 175,
+          "fold_jaccard": 0.818
+        }
+      },
+      {
+        "coord": "scripture/psalms/118/207",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 107,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/12/7",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 6,
+          "fold_jaccard": 0.655
+        }
+      },
+      {
+        "coord": "scripture/psalms/125/7",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "high",
+        "best_chapter_match": {
+          "verse": 6,
+          "fold_jaccard": 0.625
+        }
+      },
+      {
+        "coord": "scripture/psalms/13/8",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 7,
+          "fold_jaccard": 0.917
+        }
+      },
+      {
+        "coord": "scripture/psalms/144/22",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "high",
+        "best_chapter_match": {
+          "verse": 21,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/15/11",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 10,
+          "fold_jaccard": 0.842
+        }
+      },
+      {
+        "coord": "scripture/psalms/16/16",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 14,
+          "fold_jaccard": 0.818
+        }
+      },
+      {
+        "coord": "scripture/psalms/16/17",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 15,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/17/52",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 51,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/21/33",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "moderate",
+        "best_chapter_match": {
+          "verse": 31,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/21/34",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 32,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/42/6",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "high",
+        "best_chapter_match": {
+          "verse": 5,
+          "fold_jaccard": 0.609
+        }
+      },
+      {
+        "coord": "scripture/psalms/49/24",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 23,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/5/14",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "odr_com",
+          "s_dismas"
+        ],
+        "indep_depth": 2,
+        "tier": "high",
+        "best_chapter_match": {
+          "verse": 13,
+          "fold_jaccard": 0.706
+        }
+      },
+      {
+        "coord": "scripture/psalms/55/14",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 13,
+          "fold_jaccard": 1.0
+        }
+      },
+      {
+        "coord": "scripture/psalms/67/37",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 36,
+          "fold_jaccard": 0.7
+        }
+      },
+      {
+        "coord": "scripture/psalms/92/6",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 5,
+          "fold_jaccard": 0.867
+        }
+      },
+      {
+        "coord": "scripture/romans/12/22",
+        "class": "shifted-duplicate",
+        "witnesses": [
+          "s_dismas"
+        ],
+        "indep_depth": 1,
+        "tier": "low",
+        "best_chapter_match": {
+          "verse": 21,
+          "fold_jaccard": 1.0
+        }
+      }
+    ]
+  },
+  "coverage_gap": {
+    "total": 199,
+    "by_book": {
+      "ecclesiasticus": 50,
+      "4-esdras": 40,
+      "isaie": 21,
+      "zacharias": 16,
+      "proverbs": 13,
+      "ezechiel": 12,
+      "jeremie": 9,
+      "3-esdras": 7,
+      "osee": 5,
+      "3-kings": 4,
+      "1-paralipomenon": 3,
+      "job": 3,
+      "micheas": 3,
+      "abdias": 2,
+      "amos": 2,
+      "habacuc": 2,
+      "1-kings": 1,
+      "2-kings": 1,
+      "aggeus": 1,
+      "esther": 1,
+      "joel": 1,
+      "nahum": 1,
+      "psalms": 1
+    },
+    "archaic_attestation_verified_zero": true,
+    "recoverability_probe": {
+      "method": "best-window token-set overlap of each sampled gap verse's modern text against the independent archive.org djvu OCR witnesses (a clean recoverable reading would score >= 0.80).",
+      "djvu_witnesses": [
+        "holiebible-ot1",
+        "holiebible-ot2",
+        "newtestament",
+        "nt-1582",
+        "ot1-1609",
+        "ot2-1610"
+      ],
+      "n_sampled": 39,
+      "clean_match_threshold": 0.8,
+      "n_clean_matches": 0,
+      "overlap_range": [
+        0.25,
+        0.625
+      ],
+      "samples": [
+        {
+          "coord": "scripture/1-kings/14/29",
+          "best_djvu_overlap": 0.4
+        },
+        {
+          "coord": "scripture/1-paralipomenon/9/14",
+          "best_djvu_overlap": 0.364
+        },
+        {
+          "coord": "scripture/1-paralipomenon/9/16",
+          "best_djvu_overlap": 0.375
+        },
+        {
+          "coord": "scripture/2-kings/17/28",
+          "best_djvu_overlap": 0.25
+        },
+        {
+          "coord": "scripture/3-esdras/3/2",
+          "best_djvu_overlap": 0.333
+        },
+        {
+          "coord": "scripture/3-esdras/3/4",
+          "best_djvu_overlap": 0.444
+        },
+        {
+          "coord": "scripture/3-kings/10/11",
+          "best_djvu_overlap": 0.4
+        },
+        {
+          "coord": "scripture/3-kings/11/16",
+          "best_djvu_overlap": 0.438
+        },
+        {
+          "coord": "scripture/4-esdras/10/58",
+          "best_djvu_overlap": 0.571
+        },
+        {
+          "coord": "scripture/4-esdras/11/9",
+          "best_djvu_overlap": 0.625
+        },
+        {
+          "coord": "scripture/abdias/1/2",
+          "best_djvu_overlap": 0.533
+        },
+        {
+          "coord": "scripture/abdias/1/3",
+          "best_djvu_overlap": 0.609
+        },
+        {
+          "coord": "scripture/aggeus/1/4",
+          "best_djvu_overlap": 0.467
+        },
+        {
+          "coord": "scripture/amos/2/13",
+          "best_djvu_overlap": 0.385
+        },
+        {
+          "coord": "scripture/amos/8/8",
+          "best_djvu_overlap": 0.37
+        },
+        {
+          "coord": "scripture/ecclesiasticus/11/28",
+          "best_djvu_overlap": 0.444
+        },
+        {
+          "coord": "scripture/ecclesiasticus/11/33",
+          "best_djvu_overlap": 0.444
+        },
+        {
+          "coord": "scripture/esther/4/15",
+          "best_djvu_overlap": 0.444
+        },
+        {
+          "coord": "scripture/ezechiel/13/4",
+          "best_djvu_overlap": 0.6
+        },
+        {
+          "coord": "scripture/ezechiel/15/8",
+          "best_djvu_overlap": 0.412
+        },
+        {
+          "coord": "scripture/habacuc/1/10",
+          "best_djvu_overlap": 0.476
+        },
+        {
+          "coord": "scripture/habacuc/3/12",
+          "best_djvu_overlap": 0.455
+        },
+        {
+          "coord": "scripture/isaie/10/5",
+          "best_djvu_overlap": 0.438
+        },
+        {
+          "coord": "scripture/isaie/10/6",
+          "best_djvu_overlap": 0.406
+        },
+        {
+          "coord": "scripture/jeremie/12/9",
+          "best_djvu_overlap": 0.556
+        },
+        {
+          "coord": "scripture/jeremie/15/4",
+          "best_djvu_overlap": 0.423
+        },
+        {
+          "coord": "scripture/job/10/17",
+          "best_djvu_overlap": 0.357
+        },
+        {
+          "coord": "scripture/job/17/10",
+          "best_djvu_overlap": 0.467
+        },
+        {
+          "coord": "scripture/joel/1/17",
+          "best_djvu_overlap": 0.312
+        },
+        {
+          "coord": "scripture/micheas/6/10",
+          "best_djvu_overlap": 0.444
+        },
+        {
+          "coord": "scripture/micheas/7/1",
+          "best_djvu_overlap": 0.448
+        },
+        {
+          "coord": "scripture/nahum/1/8",
+          "best_djvu_overlap": 0.421
+        },
+        {
+          "coord": "scripture/osee/4/2",
+          "best_djvu_overlap": 0.273
+        },
+        {
+          "coord": "scripture/osee/4/8",
+          "best_djvu_overlap": 0.467
+        },
+        {
+          "coord": "scripture/proverbs/16/25",
+          "best_djvu_overlap": 0.625
+        },
+        {
+          "coord": "scripture/proverbs/25/13",
+          "best_djvu_overlap": 0.55
+        },
+        {
+          "coord": "scripture/psalms/127/6",
+          "best_djvu_overlap": 0.455
+        },
+        {
+          "coord": "scripture/zacharias/1/15",
+          "best_djvu_overlap": 0.55
+        },
+        {
+          "coord": "scripture/zacharias/1/19",
+          "best_djvu_overlap": 0.55
+        }
+      ]
+    },
+    "decision": "Genuine structural coverage gaps: zero archaic attestation, and the independent archive.org djvu OCR has no clean recoverable reading (these ocr-only books' fresh OCR derives from the same archive.org OCR family, per §6.3, so it is not a clean recovery source). The flagged modern-fallback is the honest disposition; re-OCR fill would fabricate low-confidence noisy readings worse than the flag (Fallbacks-Are-Failures). idx 109 == idx 108 byte-for-byte on exactly these 199.",
+    "coordinates": [
+      "scripture/1-kings/14/29",
+      "scripture/1-paralipomenon/9/14",
+      "scripture/1-paralipomenon/9/16",
+      "scripture/1-paralipomenon/9/17",
+      "scripture/2-kings/17/28",
+      "scripture/3-esdras/3/2",
+      "scripture/3-esdras/3/4",
+      "scripture/3-esdras/4/11",
+      "scripture/3-esdras/4/41",
+      "scripture/3-esdras/8/6",
+      "scripture/3-esdras/8/83",
+      "scripture/3-esdras/9/10",
+      "scripture/3-kings/10/11",
+      "scripture/3-kings/11/16",
+      "scripture/3-kings/20/40",
+      "scripture/3-kings/22/18",
+      "scripture/4-esdras/10/58",
+      "scripture/4-esdras/11/9",
+      "scripture/4-esdras/16/36",
+      "scripture/4-esdras/3/32",
+      "scripture/4-esdras/4/2",
+      "scripture/4-esdras/4/22",
+      "scripture/4-esdras/4/23",
+      "scripture/4-esdras/4/24",
+      "scripture/4-esdras/4/25",
+      "scripture/4-esdras/4/26",
+      "scripture/4-esdras/4/27",
+      "scripture/4-esdras/4/28",
+      "scripture/4-esdras/4/29",
+      "scripture/4-esdras/4/3",
+      "scripture/4-esdras/4/30",
+      "scripture/4-esdras/4/31",
+      "scripture/4-esdras/4/32",
+      "scripture/4-esdras/4/33",
+      "scripture/4-esdras/4/34",
+      "scripture/4-esdras/4/35",
+      "scripture/4-esdras/4/36",
+      "scripture/4-esdras/4/37",
+      "scripture/4-esdras/4/38",
+      "scripture/4-esdras/4/39",
+      "scripture/4-esdras/4/40",
+      "scripture/4-esdras/4/41",
+      "scripture/4-esdras/4/42",
+      "scripture/4-esdras/4/43",
+      "scripture/4-esdras/4/45",
+      "scripture/4-esdras/4/47",
+      "scripture/4-esdras/4/49",
+      "scripture/4-esdras/4/50",
+      "scripture/4-esdras/4/51",
+      "scripture/4-esdras/4/52",
+      "scripture/4-esdras/5/2",
+      "scripture/4-esdras/5/29",
+      "scripture/4-esdras/5/3",
+      "scripture/4-esdras/5/4",
+      "scripture/4-esdras/5/5",
+      "scripture/4-esdras/5/6",
+      "scripture/abdias/1/2",
+      "scripture/abdias/1/3",
+      "scripture/aggeus/1/4",
+      "scripture/amos/2/13",
+      "scripture/amos/8/8",
+      "scripture/ecclesiasticus/11/28",
+      "scripture/ecclesiasticus/11/33",
+      "scripture/ecclesiasticus/15/11",
+      "scripture/ecclesiasticus/18/10",
+      "scripture/ecclesiasticus/18/15",
+      "scripture/ecclesiasticus/20/15",
+      "scripture/ecclesiasticus/20/16",
+      "scripture/ecclesiasticus/21/2",
+      "scripture/ecclesiasticus/21/21",
+      "scripture/ecclesiasticus/21/22",
+      "scripture/ecclesiasticus/21/28",
+      "scripture/ecclesiasticus/22/22",
+      "scripture/ecclesiasticus/22/28",
+      "scripture/ecclesiasticus/23/5",
+      "scripture/ecclesiasticus/24/38",
+      "scripture/ecclesiasticus/27/6",
+      "scripture/ecclesiasticus/28/11",
+      "scripture/ecclesiasticus/29/16",
+      "scripture/ecclesiasticus/29/17",
+      "scripture/ecclesiasticus/29/29",
+      "scripture/ecclesiasticus/30/18",
+      "scripture/ecclesiasticus/30/8",
+      "scripture/ecclesiasticus/31/14",
+      "scripture/ecclesiasticus/31/24",
+      "scripture/ecclesiasticus/31/31",
+      "scripture/ecclesiasticus/32/27",
+      "scripture/ecclesiasticus/34/1",
+      "scripture/ecclesiasticus/34/6",
+      "scripture/ecclesiasticus/35/3",
+      "scripture/ecclesiasticus/35/4",
+      "scripture/ecclesiasticus/36/21",
+      "scripture/ecclesiasticus/36/22",
+      "scripture/ecclesiasticus/38/13",
+      "scripture/ecclesiasticus/39/15",
+      "scripture/ecclesiasticus/39/32",
+      "scripture/ecclesiasticus/39/39",
+      "scripture/ecclesiasticus/4/2",
+      "scripture/ecclesiasticus/4/3",
+      "scripture/ecclesiasticus/4/35",
+      "scripture/ecclesiasticus/41/27",
+      "scripture/ecclesiasticus/42/12",
+      "scripture/ecclesiasticus/42/7",
+      "scripture/ecclesiasticus/43/30",
+      "scripture/ecclesiasticus/46/14",
+      "scripture/ecclesiasticus/46/15",
+      "scripture/ecclesiasticus/51/21",
+      "scripture/ecclesiasticus/6/11",
+      "scripture/ecclesiasticus/6/7",
+      "scripture/ecclesiasticus/8/3",
+      "scripture/ecclesiasticus/8/5",
+      "scripture/esther/4/15",
+      "scripture/ezechiel/13/4",
+      "scripture/ezechiel/15/8",
+      "scripture/ezechiel/18/11",
+      "scripture/ezechiel/21/15",
+      "scripture/ezechiel/21/7",
+      "scripture/ezechiel/22/25",
+      "scripture/ezechiel/23/3",
+      "scripture/ezechiel/24/19",
+      "scripture/ezechiel/28/3",
+      "scripture/ezechiel/30/4",
+      "scripture/ezechiel/39/9",
+      "scripture/ezechiel/45/10",
+      "scripture/habacuc/1/10",
+      "scripture/habacuc/3/12",
+      "scripture/isaie/10/5",
+      "scripture/isaie/10/6",
+      "scripture/isaie/12/3",
+      "scripture/isaie/19/25",
+      "scripture/isaie/2/22",
+      "scripture/isaie/21/7",
+      "scripture/isaie/25/2",
+      "scripture/isaie/26/16",
+      "scripture/isaie/28/11",
+      "scripture/isaie/29/1",
+      "scripture/isaie/3/19",
+      "scripture/isaie/3/20",
+      "scripture/isaie/3/21",
+      "scripture/isaie/33/15",
+      "scripture/isaie/35/3",
+      "scripture/isaie/40/22",
+      "scripture/isaie/41/19",
+      "scripture/isaie/47/3",
+      "scripture/isaie/48/22",
+      "scripture/isaie/5/9",
+      "scripture/isaie/63/5",
+      "scripture/jeremie/12/9",
+      "scripture/jeremie/15/4",
+      "scripture/jeremie/32/25",
+      "scripture/jeremie/32/27",
+      "scripture/jeremie/32/41",
+      "scripture/jeremie/38/24",
+      "scripture/jeremie/46/20",
+      "scripture/jeremie/5/30",
+      "scripture/jeremie/7/5",
+      "scripture/job/10/17",
+      "scripture/job/17/10",
+      "scripture/job/4/3",
+      "scripture/joel/1/17",
+      "scripture/micheas/6/10",
+      "scripture/micheas/7/1",
+      "scripture/micheas/7/13",
+      "scripture/nahum/1/8",
+      "scripture/osee/4/2",
+      "scripture/osee/4/8",
+      "scripture/osee/5/15",
+      "scripture/osee/7/1",
+      "scripture/osee/8/1",
+      "scripture/proverbs/16/25",
+      "scripture/proverbs/25/13",
+      "scripture/proverbs/25/18",
+      "scripture/proverbs/25/2",
+      "scripture/proverbs/25/20",
+      "scripture/proverbs/25/24",
+      "scripture/proverbs/25/26",
+      "scripture/proverbs/25/27",
+      "scripture/proverbs/25/28",
+      "scripture/proverbs/25/3",
+      "scripture/proverbs/25/4",
+      "scripture/proverbs/25/7",
+      "scripture/proverbs/26/11",
+      "scripture/psalms/127/6",
+      "scripture/zacharias/1/15",
+      "scripture/zacharias/1/19",
+      "scripture/zacharias/10/1",
+      "scripture/zacharias/14/1",
+      "scripture/zacharias/3/9",
+      "scripture/zacharias/4/14",
+      "scripture/zacharias/6/2",
+      "scripture/zacharias/6/3",
+      "scripture/zacharias/6/4",
+      "scripture/zacharias/6/5",
+      "scripture/zacharias/7/3",
+      "scripture/zacharias/7/5",
+      "scripture/zacharias/7/9",
+      "scripture/zacharias/9/11",
+      "scripture/zacharias/9/2",
+      "scripture/zacharias/9/9"
+    ]
+  }
+}
