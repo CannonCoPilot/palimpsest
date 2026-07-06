@@ -1,0 +1,41 @@
+{
+  "artifact": "redetection-report",
+  "phase": "P1.7",
+  "idx": 108,
+  "generated_by": "redetect_basis_db.py",
+  "note": "Re-detection confirmation of the basis DB (plan §4.7). Every basis element is re-mapped to its skeleton coordinate and its child rows are checked for referential integrity, attestation/consensus completeness, placement grounding, and source validity. Gate P1 passes iff all five checks pass. Reads the scratch basis-db.sqlite (built by P1.6); this committed report is the CI-checked gate result.",
+  "gate_p1_pass": true,
+  "checks": {
+    "G1_coordinate_roundtrip": {
+      "pass": true,
+      "elements": 37369,
+      "round_tripped": 37369,
+      "failures": [],
+      "failure_count": 0
+    },
+    "G2_referential_integrity": {
+      "pass": true,
+      "orphans": {
+        "attestation": 0,
+        "consensus": 0,
+        "placement": 0
+      }
+    },
+    "G3_attestation_consensus": {
+      "pass": true,
+      "scripture_without_attestation": 0,
+      "scripture_without_consensus": 0,
+      "duplicate_consensus": 0,
+      "present_attestation_without_evidence_ptr": 0
+    },
+    "G4_placement_grounding": {
+      "pass": true,
+      "reference_docs_missing_placement": [],
+      "sections_missing_placement": []
+    },
+    "G5_source_validity": {
+      "pass": true,
+      "unknown_sources": []
+    }
+  }
+}
