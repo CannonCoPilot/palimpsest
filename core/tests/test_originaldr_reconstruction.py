@@ -231,3 +231,58 @@ def test_p3_academic_brief_regenerates_and_traces_to_artifacts():
         assert str(paths[key].relative_to(gen.REPO)) in out
     # the committed brief is not stale w.r.t. the generator + artifacts
     assert gen.OUT.read_text(encoding="utf-8") == out
+
+
+def test_p3_2_brief_data_is_consistent_and_powers_genome_browser_figures():
+    """P3.2 (plan §7.2): the committed brief-data.json — the sampled projection of the gitignored
+    basis DB that feeds the source-track browser, coverage histograms and variant pileups — is
+    internally consistent, reconciles with the basis-db snapshot, and renders those three figures in
+    the brief. Keeps the genome-browser figures CI-safe (no basis-db.sqlite at test time)."""
+    bd = _load("brief-data.json")
+    basis = _load("basis-db.json")
+    n = basis["element_counts"]["scripture-verse"]
+    assert bd["n_scripture_verses"] == n
+
+    # coverage histograms reconcile with the basis-db snapshot and partition all verses
+    dh = bd["depth_histograms"]
+    assert {int(k): v for k, v in dh["indep_depth"].items()} == \
+        {int(k): v for k, v in basis["scripture"]["indep_depth"].items()}
+    assert sum(dh["support_depth"].values()) == sum(dh["indep_depth"].values()) == n
+    # read depth reaches five sources; independent depth caps at four lineages (non-independence correction)
+    assert max(int(k) for k in dh["support_depth"]) == 5
+    assert max(int(k) for k in dh["indep_depth"]) == 4
+
+    # book×source matrix: 76 books, five scripture witnesses, per-source counts bounded by the book total
+    m = bd["book_source_matrix"]
+    assert len(m["books"]) == 76
+    assert m["sources"] == ["madueke_a", "sabates_a", "ocr_consensus", "s_dismas", "odr_com"]
+    assert sum(b["total"] for b in m["books"].values()) == n
+    assert all(0 <= c <= b["total"] for b in m["books"].values() for c in b["by_source"].values())
+
+    # source tracks: the ocr-only contrast — genesis carries all five witnesses, isaie only its three
+    tracks = {t["book"]: t for t in bd["source_tracks"]}
+    assert set(tracks) == {"genesis", "isaie"}
+    assert max(sum(v["present"].values()) for v in tracks["genesis"]["verses"]) == 5
+    isaie_present = {s for v in tracks["isaie"]["verses"] for s, p in v["present"].items() if p}
+    assert isaie_present == {"madueke_a", "sabates_a", "ocr_consensus"}
+
+    # variant pileups: each is a genuine disagreement (agreement < 1) with a called consensus + witness reads
+    assert len(bd["variant_pileups"]) >= 5
+    for p in bd["variant_pileups"]:
+        assert 0.0 <= p["agreement"] < 1.0 and p["called_modern"]
+        assert p["reads"] and all(r["surface"] and r["edition"] in ("modern", "archaic") for r in p["reads"])
+    # at least one pileup shows the versification-offset signature: a near-zero-Jaccard witness
+    # (reading the neighbouring verse) beside high-Jaccard witnesses at the same coordinate
+    assert any(
+        any(r["jaccard"] is not None and r["jaccard"] < 0.1 for r in p["reads"])
+        and any(r["jaccard"] is not None and r["jaccard"] >= 0.6 for r in p["reads"])
+        for p in bd["variant_pileups"])
+
+    # the brief renders the three P3.2 figures from this artifact and lists it in the audit trail
+    gen = _load_module("gen_originaldr_brief")
+    A, paths = gen.load_artifacts()
+    out = gen.build_html(A, paths)
+    for label in ("Source-track browser", "Coverage depth", "Variant pileups"):
+        assert label in out
+    assert str(paths["brief_data"].relative_to(gen.REPO)) in out
+    assert out.count("<svg") == out.count("</svg>") >= 7

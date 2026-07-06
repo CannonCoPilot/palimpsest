@@ -34,6 +34,9 @@ TIER_COLOR = {"high": "#2ca25f", "moderate": "#fdae61", "low": "#d7301f"}
 DEPTH_COLOR = {1: "#d7301f", 2: "#fdae61", 3: "#a6d96a", 4: "#1a9850"}
 WITNESS_TIER_COLOR = {"clean-diplomatic": "#1a9850", "mixed": "#4a90c2", "ocr-only-noisy": "#e08214", "none": "#bbb"}
 EDITION_COLOR = {"archaic": "#762a83", "modern": "#1b7837"}
+# per-source lane colors (modern lineage = blues, fresh OCR = orange, archaic diplomatic = purples)
+SOURCE_COLOR = {"madueke_a": "#2166ac", "sabates_a": "#4393c3", "ocr_consensus": "#e08214",
+                "s_dismas": "#762a83", "odr_com": "#9970ab"}
 
 
 # --------------------------------------------------------------------------- artifacts
@@ -60,6 +63,7 @@ def load_artifacts() -> tuple[dict[str, Any], dict[str, Path]]:
         "fidelity": HERE / "archaic-fidelity-validation.json",
         "print_archaic": HERE / "archaic-print-validation.json",
         "print_modern": VALID / "ocr-validation.json",
+        "brief_data": HERE / "brief-data.json",
     }
     return {k: _load(p) for k, p in paths.items()}, paths
 
@@ -234,6 +238,132 @@ def fig_glyph_chart(fidelity: dict, order: list[dict]) -> str:
     return _svg(W, H, "".join(body), "Diplomatic-glyph inventory")
 
 
+def _jac_color(j: float | None) -> str:
+    if j is None:
+        return "#c7e9c0"          # not flagged as a variant ⇒ matches the called consensus
+    if j >= 0.7:
+        return "#1a9850"
+    if j >= 0.4:
+        return "#fdae61"
+    return "#d7301f"
+
+
+def fig_coverage_histogram(bd: dict) -> str:
+    """Read-depth vs independent-depth histograms. Read depth = attesting sources (max 5);
+    independent depth = independent lineages (max 4). The one-step ceiling difference is the
+    non-independence correction: madueke_a and sabates_a share the Madueke lineage."""
+    dh = bd["depth_histograms"]
+    sup = {int(k): v for k, v in dh["support_depth"].items()}
+    ind = {int(k): v for k, v in dh["indep_depth"].items()}
+    depth_col = {1: "#d7301f", 2: "#fdae61", 3: "#a6d96a", 4: "#1a9850", 5: "#006837"}
+    mx = max(max(sup.values()), max(ind.values())) or 1
+    W, H, pad, top, baseh = 980, 220, 22, 44, 130
+    panel_w = (W - 3 * pad) / 2
+    body = [_text(10, 20, "Coverage depth — attesting sources (read depth) vs independent lineages "
+                  "(the ceiling gap is the non-independence correction)", 12, "#222")]
+
+    def panel(x0: float, title: str, hist: dict[int, int], kmax: int) -> list[str]:
+        out = [_text(x0, top - 8, title, 11, "#555")]
+        bw = panel_w / (kmax + 1)
+        for i, k in enumerate(range(1, kmax + 1)):
+            cnt = hist.get(k, 0)
+            hh = baseh * cnt / mx
+            bx = x0 + bw * (i + 0.5)
+            out.append(_rect(bx, top + baseh - hh, bw * 0.7, hh, depth_col.get(k, "#006837"),
+                             title=f"depth {k}: {cnt:,}"))
+            out.append(_text(bx + bw * 0.35, top + baseh - hh - 3, f"{cnt:,}", 9, "#333", "middle"))
+            out.append(_text(bx + bw * 0.35, top + baseh + 12, k, 10, "#555", "middle"))
+        out.append(_line(x0, top + baseh, x0 + panel_w, top + baseh, "#888", 1))
+        return out
+
+    body += panel(pad, "read depth — attesting sources (max 5)", sup, 5)
+    body += panel(2 * pad + panel_w, "independent depth — lineages (max 4)", ind, 4)
+    return _svg(W, H, "".join(body), "Coverage-depth histograms")
+
+
+def fig_source_track(bd: dict) -> str:
+    """Source-track browser: x = verse position within a chapter, one lane per witness, with a
+    consensus track banded by confidence tier on top. Present = source-colored cell, absent = empty.
+    Genesis 1 (all five witnesses) beside Isaie 1 (ocr-only, three) shows the read-depth collapse
+    in books the archaic diplomatic lineages never reach."""
+    tracks = bd["source_tracks"]
+    sources = bd["book_source_matrix"]["sources"]
+    x0, labelw, cellw, rowh, gap = 12, 120, 22, 15, 30
+    maxv = max(t["n_verses"] for t in tracks)
+    trackw = cellw * maxv
+    W = x0 + labelw + trackw + 20
+    panel_h = (len(sources) + 1) * rowh + gap + 8
+    H = 36 + panel_h * len(tracks) + 24
+    body = [_text(x0, 20, "Source-track browser — verse × witness lane; consensus track banded by "
+                  "confidence tier. Empty cell = witness absent (the read-depth view).", 12, "#222")]
+    y = 40.0
+    for t in tracks:
+        depth = f'{min(sum(v["present"].values()) for v in t["verses"])}–' \
+                f'{max(sum(v["present"].values()) for v in t["verses"])} witnesses'
+        body.append(_text(x0, y - 4, f'{t["book"]} {t["chapter"]} · {t["n_verses"]} verses · read depth {depth}',
+                          11, "#333"))
+        cy = y
+        body.append(_text(x0 + labelw - 6, cy + rowh - 4, "consensus", 9, "#111", "end"))
+        for v in t["verses"]:
+            cx = x0 + labelw + cellw * (v["verse"] - 1)
+            body.append(_rect(cx, cy, cellw - 1.5, rowh - 2, TIER_COLOR.get(v["tier"], "#bbb"),
+                              title=f'{v["ref"]}: {v["tier"]}, agreement {v["agreement"]}'))
+        cy += rowh + 3
+        for s in sources:
+            body.append(_text(x0 + labelw - 6, cy + rowh - 4, s, 9, "#333", "end"))
+            for v in t["verses"]:
+                cx = x0 + labelw + cellw * (v["verse"] - 1)
+                if v["present"].get(s):
+                    body.append(_rect(cx, cy, cellw - 1.5, rowh - 2, SOURCE_COLOR[s],
+                                      title=f'{v["ref"]}: {s} present'))
+                else:
+                    body.append(_rect(cx, cy, cellw - 1.5, rowh - 2, "#f4f4f4",
+                                      'stroke="#e2e2e2" stroke-width="0.5"'))
+            cy += rowh
+        for v in t["verses"]:
+            if v["verse"] % 5 == 0:
+                cx = x0 + labelw + cellw * (v["verse"] - 1) + (cellw - 1.5) / 2
+                body.append(_text(cx, cy + 10, v["verse"], 8, "#999", "middle"))
+        y += panel_h
+    return _svg(W, H, "".join(body), "Source-track browser")
+
+
+def fig_variant_pileups(bd: dict) -> str:
+    """Variant pileup panels: the lowest-agreement locus in each of several books, with each
+    witness's surface reading laid under the called consensus (the SNP-pileup analog). A low-Jaccard
+    read is either fresh-OCR garble or a versification offset — a witness reading the neighbouring
+    verse under the other Vulgate numbering."""
+    pileups = bd["variant_pileups"]
+    x0, labelw, jbar, rowh = 12, 150, 46, 15
+    txt_x = x0 + labelw + jbar + 12
+    mono = 'font-family="ui-monospace,Menlo,Consolas,monospace"'
+    body = [_text(x0, 20, "Variant pileups — witness readings at the top disagreement locus per book; "
+                  "consensus 'reference' on top, bar = Jaccard vs consensus.", 12, "#222")]
+    y = 38.0
+    for p in pileups:
+        body.append(_text(x0, y + 10, f'▸ {p["ref"]} · {p["tier"]} · agreement {p["agreement"]} · '
+                          f'depth {p["support_depth"]}/{p["indep_depth"]}', 11, "#111",
+                          extra='font-weight="600"'))
+        y += rowh + 4
+        body.append(_text(x0 + labelw + jbar + 6, y + 10, "consensus", 9, "#111", "end"))
+        body.append(_rect(x0 + labelw + 6, y + 2, jbar, rowh - 4, "#1a9850", title="called consensus"))
+        body.append(_text(txt_x, y + 10, p["called_modern"][:140], 10, "#0b3d0b", extra=mono))
+        y += rowh
+        for r in p["reads"]:
+            j = r["jaccard"]
+            body.append(_text(x0 + labelw, y + 10, f'{r["source"]}·{r["edition"][:3]}', 9, "#333", "end"))
+            body.append(_rect(x0 + labelw + 6, y + 2, jbar, rowh - 4, "#eee"))
+            fillw = jbar * (j if j is not None else 1.0)
+            body.append(_rect(x0 + labelw + 6, y + 2, fillw, rowh - 4, _jac_color(j),
+                              title=f'Jaccard {j if j is not None else "≈1 (matches consensus)"}'))
+            if j is not None:
+                body.append(_text(x0 + labelw + 6 + jbar + 2, y + 10, f"{j:.2f}", 8, "#777"))
+            body.append(_text(txt_x + 22, y + 9, r["surface"][:140], 9, "#333", extra=mono))
+            y += rowh
+        y += 8
+    return _svg(1120, int(y + 16), "".join(body), "Variant pileup panels")
+
+
 # --------------------------------------------------------------------------- HTML assembly
 def _table(headers: list[str], rows: list[list[Any]]) -> str:
     h = "".join(f"<th>{_esc(x)}</th>" for x in headers)
@@ -255,6 +385,7 @@ def build_html(A: dict[str, Any], paths: dict[str, Path]) -> str:
     appr, layout, redet = A["apparatus"], A["layout"], A["redetection"]
     rm, ra = A["render_modern"], A["render_archaic"]
     reg = A["sources_registry"]
+    bd = A["brief_data"]
     order = layout["scripture_order"]["canonical_order"]
 
     ec = basis["element_counts"]
@@ -268,6 +399,9 @@ def build_html(A: dict[str, Any], paths: dict[str, Path]) -> str:
     figs = {
         "ideogram": fig_confidence_ideogram(basis, order),
         "depth": fig_coverage_depth(basis, order),
+        "cov_hist": fig_coverage_histogram(bd),
+        "track": fig_source_track(bd),
+        "pileups": fig_variant_pileups(bd),
         "ci": fig_fidelity_print_ci(fid, pa),
         "glyph": fig_glyph_chart(fid, order),
     }
@@ -341,6 +475,24 @@ def build_html(A: dict[str, Any], paths: dict[str, Path]) -> str:
            f"depth distribution (verses corroborated by k independent lineages): "
            f"1={depth['1']:,}, 2={depth['2']:,}, 3={depth['3']:,}, 4={depth['4']:,}."),
         figs["depth"],
+        figs["cov_hist"],
+        _p("<b>Source coverage & read depth.</b> Read depth (attesting witnesses, up to five) and "
+           "independent depth (independent lineages, up to four) diverge by exactly one step because "
+           "the modern transcription backbone (madueke_a) and the apparatus backbone (sabates_a) "
+           "share the Madueke lineage; consensus weights by independent lineage so a witness family "
+           "never corroborates itself. The source-track browser reads position-by-position: Genesis 1 "
+           "carries all five witnesses, while an ocr-only prophetic book (Isaie 1) falls to the three "
+           "witnesses whose lineages reach it — the read-depth collapse made visible."),
+        figs["track"],
+        _p("<b>Consensus & variant structure.</b> Where witnesses disagree, the pileup lays each "
+           "surface reading under the called consensus. The largest disagreements are not OCR noise "
+           "but versification offsets: a witness numbering under the alternate Vulgate convention "
+           "reads the neighbouring verse (e.g. the odr-com and s-dismas witnesses at the Matthew "
+           "18:33 locus read verse 34), which the independence-weighted consensus resolves to the "
+           "majority-attested reading and records as a versification adjudication case (§6.2). "
+           "Genuine fresh-OCR garble (e.g. the ocr-only Isaie locus) surfaces as a single low-Jaccard "
+           "read against otherwise-agreeing witnesses."),
+        figs["pileups"],
         _p("<b>Apparatus inclusion.</b> "
            f"{appr['summary']['reference_docs']['include']} of "
            f"{appr['summary']['reference_docs']['total']} reference documents are included "

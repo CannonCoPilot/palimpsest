@@ -1,0 +1,1956 @@
+{
+  "artifact": "brief-data.json",
+  "phase": "P3.2",
+  "generated_by": "build_brief_data.py",
+  "note": "Sampled, committed projection of the gitignored basis-db.sqlite for the genome-browser figures (source-track browser, variant pileups, book×source matrix). Deterministic: fixed selection + ORDER BY, no timestamps.",
+  "source_of_truth": "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite (regenerable)",
+  "n_scripture_verses": 37185,
+  "book_source_matrix": {
+    "sources": [
+      "madueke_a",
+      "sabates_a",
+      "ocr_consensus",
+      "s_dismas",
+      "odr_com"
+    ],
+    "books": {
+      "1-corinthians": {
+        "total": 439,
+        "by_source": {
+          "madueke_a": 437,
+          "ocr_consensus": 437,
+          "odr_com": 437,
+          "s_dismas": 408,
+          "sabates_a": 437
+        }
+      },
+      "1-esdras": {
+        "total": 280,
+        "by_source": {
+          "madueke_a": 280,
+          "ocr_consensus": 277,
+          "s_dismas": 268,
+          "sabates_a": 280
+        }
+      },
+      "1-john": {
+        "total": 105,
+        "by_source": {
+          "madueke_a": 105,
+          "ocr_consensus": 105,
+          "odr_com": 105,
+          "s_dismas": 104,
+          "sabates_a": 105
+        }
+      },
+      "1-kings": {
+        "total": 811,
+        "by_source": {
+          "madueke_a": 811,
+          "ocr_consensus": 808,
+          "s_dismas": 759,
+          "sabates_a": 811
+        }
+      },
+      "1-machabees": {
+        "total": 929,
+        "by_source": {
+          "madueke_a": 929,
+          "ocr_consensus": 904,
+          "odr_com": 929,
+          "sabates_a": 929
+        }
+      },
+      "1-paralipomenon": {
+        "total": 940,
+        "by_source": {
+          "madueke_a": 940,
+          "ocr_consensus": 922,
+          "s_dismas": 866,
+          "sabates_a": 940
+        }
+      },
+      "1-peter": {
+        "total": 105,
+        "by_source": {
+          "madueke_a": 105,
+          "ocr_consensus": 104,
+          "odr_com": 105,
+          "s_dismas": 103,
+          "sabates_a": 105
+        }
+      },
+      "1-thessalonians": {
+        "total": 89,
+        "by_source": {
+          "madueke_a": 89,
+          "ocr_consensus": 87,
+          "odr_com": 88,
+          "s_dismas": 88,
+          "sabates_a": 89
+        }
+      },
+      "1-timothy": {
+        "total": 113,
+        "by_source": {
+          "madueke_a": 113,
+          "ocr_consensus": 108,
+          "odr_com": 113,
+          "s_dismas": 112,
+          "sabates_a": 113
+        }
+      },
+      "2-corinthians": {
+        "total": 258,
+        "by_source": {
+          "madueke_a": 255,
+          "ocr_consensus": 252,
+          "odr_com": 258,
+          "s_dismas": 253,
+          "sabates_a": 255
+        }
+      },
+      "2-esdras": {
+        "total": 404,
+        "by_source": {
+          "madueke_a": 404,
+          "ocr_consensus": 395,
+          "s_dismas": 346,
+          "sabates_a": 404
+        }
+      },
+      "2-john": {
+        "total": 13,
+        "by_source": {
+          "madueke_a": 13,
+          "ocr_consensus": 12,
+          "odr_com": 13,
+          "s_dismas": 13,
+          "sabates_a": 13
+        }
+      },
+      "2-kings": {
+        "total": 697,
+        "by_source": {
+          "madueke_a": 695,
+          "ocr_consensus": 686,
+          "s_dismas": 651,
+          "sabates_a": 695
+        }
+      },
+      "2-machabees": {
+        "total": 558,
+        "by_source": {
+          "madueke_a": 558,
+          "ocr_consensus": 545,
+          "odr_com": 558,
+          "sabates_a": 558
+        }
+      },
+      "2-paralipomenon": {
+        "total": 822,
+        "by_source": {
+          "madueke_a": 822,
+          "ocr_consensus": 816,
+          "s_dismas": 785,
+          "sabates_a": 822
+        }
+      },
+      "2-peter": {
+        "total": 61,
+        "by_source": {
+          "madueke_a": 61,
+          "ocr_consensus": 61,
+          "odr_com": 61,
+          "s_dismas": 61,
+          "sabates_a": 61
+        }
+      },
+      "2-thessalonians": {
+        "total": 47,
+        "by_source": {
+          "madueke_a": 47,
+          "ocr_consensus": 47,
+          "odr_com": 47,
+          "s_dismas": 43,
+          "sabates_a": 47
+        }
+      },
+      "2-timothy": {
+        "total": 83,
+        "by_source": {
+          "madueke_a": 83,
+          "ocr_consensus": 81,
+          "odr_com": 82,
+          "s_dismas": 81,
+          "sabates_a": 83
+        }
+      },
+      "3-esdras": {
+        "total": 450,
+        "by_source": {
+          "ocr_consensus": 443,
+          "sabates_a": 450
+        }
+      },
+      "3-john": {
+        "total": 14,
+        "by_source": {
+          "madueke_a": 14,
+          "ocr_consensus": 13,
+          "odr_com": 14,
+          "s_dismas": 14,
+          "sabates_a": 14
+        }
+      },
+      "3-kings": {
+        "total": 818,
+        "by_source": {
+          "madueke_a": 817,
+          "ocr_consensus": 778,
+          "s_dismas": 782,
+          "sabates_a": 817
+        }
+      },
+      "4-esdras": {
+        "total": 856,
+        "by_source": {
+          "ocr_consensus": 816,
+          "sabates_a": 856
+        }
+      },
+      "4-kings": {
+        "total": 719,
+        "by_source": {
+          "madueke_a": 719,
+          "ocr_consensus": 708,
+          "s_dismas": 699,
+          "sabates_a": 719
+        }
+      },
+      "abdias": {
+        "total": 21,
+        "by_source": {
+          "madueke_a": 21,
+          "ocr_consensus": 19,
+          "sabates_a": 21
+        }
+      },
+      "acts": {
+        "total": 1007,
+        "by_source": {
+          "madueke_a": 1004,
+          "ocr_consensus": 1000,
+          "odr_com": 1006,
+          "s_dismas": 933,
+          "sabates_a": 1004
+        }
+      },
+      "aggeus": {
+        "total": 38,
+        "by_source": {
+          "madueke_a": 38,
+          "ocr_consensus": 37,
+          "sabates_a": 38
+        }
+      },
+      "amos": {
+        "total": 147,
+        "by_source": {
+          "madueke_a": 147,
+          "ocr_consensus": 145,
+          "sabates_a": 147
+        }
+      },
+      "apocalypse": {
+        "total": 405,
+        "by_source": {
+          "madueke_a": 405,
+          "ocr_consensus": 401,
+          "odr_com": 405,
+          "s_dismas": 394,
+          "sabates_a": 405
+        }
+      },
+      "baruch": {
+        "total": 213,
+        "by_source": {
+          "madueke_a": 213,
+          "ocr_consensus": 208,
+          "odr_com": 213,
+          "sabates_a": 213
+        }
+      },
+      "canticle-of-canticles": {
+        "total": 116,
+        "by_source": {
+          "madueke_a": 116,
+          "ocr_consensus": 113,
+          "s_dismas": 114,
+          "sabates_a": 116
+        }
+      },
+      "colossians": {
+        "total": 95,
+        "by_source": {
+          "madueke_a": 95,
+          "ocr_consensus": 94,
+          "odr_com": 95,
+          "s_dismas": 95,
+          "sabates_a": 95
+        }
+      },
+      "daniel": {
+        "total": 531,
+        "by_source": {
+          "madueke_a": 531,
+          "ocr_consensus": 523,
+          "odr_com": 531,
+          "sabates_a": 531
+        }
+      },
+      "deuteronomy": {
+        "total": 961,
+        "by_source": {
+          "madueke_a": 959,
+          "ocr_consensus": 947,
+          "s_dismas": 960,
+          "sabates_a": 959
+        }
+      },
+      "ecclesiastes": {
+        "total": 223,
+        "by_source": {
+          "madueke_a": 222,
+          "ocr_consensus": 216,
+          "s_dismas": 211,
+          "sabates_a": 222
+        }
+      },
+      "ecclesiasticus": {
+        "total": 1592,
+        "by_source": {
+          "madueke_a": 1592,
+          "ocr_consensus": 1542,
+          "sabates_a": 1592
+        }
+      },
+      "ephesians": {
+        "total": 155,
+        "by_source": {
+          "madueke_a": 155,
+          "ocr_consensus": 150,
+          "odr_com": 155,
+          "s_dismas": 153,
+          "sabates_a": 155
+        }
+      },
+      "esther": {
+        "total": 275,
+        "by_source": {
+          "madueke_a": 275,
+          "ocr_consensus": 268,
+          "s_dismas": 264,
+          "sabates_a": 275
+        }
+      },
+      "exodus": {
+        "total": 1213,
+        "by_source": {
+          "madueke_a": 1211,
+          "ocr_consensus": 1205,
+          "odr_com": 1163,
+          "s_dismas": 1157,
+          "sabates_a": 1211
+        }
+      },
+      "ezechiel": {
+        "total": 1272,
+        "by_source": {
+          "madueke_a": 1272,
+          "ocr_consensus": 1260,
+          "sabates_a": 1272
+        }
+      },
+      "galatians": {
+        "total": 149,
+        "by_source": {
+          "madueke_a": 149,
+          "ocr_consensus": 146,
+          "odr_com": 149,
+          "s_dismas": 144,
+          "sabates_a": 149
+        }
+      },
+      "genesis": {
+        "total": 1532,
+        "by_source": {
+          "madueke_a": 1530,
+          "ocr_consensus": 1518,
+          "odr_com": 1378,
+          "s_dismas": 1437,
+          "sabates_a": 1530
+        }
+      },
+      "habacuc": {
+        "total": 56,
+        "by_source": {
+          "madueke_a": 56,
+          "ocr_consensus": 54,
+          "sabates_a": 56
+        }
+      },
+      "hebrews": {
+        "total": 303,
+        "by_source": {
+          "madueke_a": 303,
+          "ocr_consensus": 297,
+          "odr_com": 303,
+          "s_dismas": 287,
+          "sabates_a": 303
+        }
+      },
+      "isaie": {
+        "total": 1292,
+        "by_source": {
+          "madueke_a": 1292,
+          "ocr_consensus": 1271,
+          "sabates_a": 1292
+        }
+      },
+      "james": {
+        "total": 108,
+        "by_source": {
+          "madueke_a": 108,
+          "ocr_consensus": 106,
+          "odr_com": 108,
+          "s_dismas": 107,
+          "sabates_a": 108
+        }
+      },
+      "jeremie": {
+        "total": 1363,
+        "by_source": {
+          "madueke_a": 1363,
+          "ocr_consensus": 1354,
+          "sabates_a": 1363
+        }
+      },
+      "job": {
+        "total": 1070,
+        "by_source": {
+          "madueke_a": 1070,
+          "ocr_consensus": 1006,
+          "s_dismas": 1010,
+          "sabates_a": 1070
+        }
+      },
+      "joel": {
+        "total": 73,
+        "by_source": {
+          "madueke_a": 73,
+          "ocr_consensus": 72,
+          "sabates_a": 73
+        }
+      },
+      "john": {
+        "total": 879,
+        "by_source": {
+          "madueke_a": 879,
+          "ocr_consensus": 874,
+          "odr_com": 878,
+          "s_dismas": 870,
+          "sabates_a": 879
+        }
+      },
+      "jonas": {
+        "total": 48,
+        "by_source": {
+          "madueke_a": 48,
+          "ocr_consensus": 47,
+          "odr_com": 48,
+          "sabates_a": 48
+        }
+      },
+      "josue": {
+        "total": 658,
+        "by_source": {
+          "madueke_a": 658,
+          "ocr_consensus": 639,
+          "s_dismas": 657,
+          "sabates_a": 658
+        }
+      },
+      "jude": {
+        "total": 25,
+        "by_source": {
+          "madueke_a": 25,
+          "ocr_consensus": 25,
+          "odr_com": 25,
+          "s_dismas": 25,
+          "sabates_a": 25
+        }
+      },
+      "judges": {
+        "total": 618,
+        "by_source": {
+          "madueke_a": 618,
+          "ocr_consensus": 612,
+          "s_dismas": 607,
+          "sabates_a": 618
+        }
+      },
+      "judith": {
+        "total": 346,
+        "by_source": {
+          "madueke_a": 346,
+          "ocr_consensus": 334,
+          "s_dismas": 326,
+          "sabates_a": 346
+        }
+      },
+      "lamentations": {
+        "total": 154,
+        "by_source": {
+          "madueke_a": 154,
+          "ocr_consensus": 153,
+          "odr_com": 154,
+          "sabates_a": 154
+        }
+      },
+      "leviticus": {
+        "total": 862,
+        "by_source": {
+          "madueke_a": 858,
+          "ocr_consensus": 827,
+          "s_dismas": 832,
+          "sabates_a": 858
+        }
+      },
+      "luke": {
+        "total": 1151,
+        "by_source": {
+          "madueke_a": 1151,
+          "ocr_consensus": 1141,
+          "odr_com": 1151,
+          "s_dismas": 1085,
+          "sabates_a": 1151
+        }
+      },
+      "malachie": {
+        "total": 55,
+        "by_source": {
+          "madueke_a": 55,
+          "ocr_consensus": 55,
+          "sabates_a": 55
+        }
+      },
+      "mark": {
+        "total": 679,
+        "by_source": {
+          "madueke_a": 677,
+          "ocr_consensus": 677,
+          "odr_com": 676,
+          "s_dismas": 670,
+          "sabates_a": 677
+        }
+      },
+      "matthew": {
+        "total": 1072,
+        "by_source": {
+          "madueke_a": 1070,
+          "ocr_consensus": 1068,
+          "odr_com": 1070,
+          "s_dismas": 1063,
+          "sabates_a": 1070
+        }
+      },
+      "micheas": {
+        "total": 104,
+        "by_source": {
+          "madueke_a": 104,
+          "ocr_consensus": 101,
+          "sabates_a": 104
+        }
+      },
+      "nahum": {
+        "total": 47,
+        "by_source": {
+          "madueke_a": 47,
+          "ocr_consensus": 46,
+          "sabates_a": 47
+        }
+      },
+      "numbers": {
+        "total": 1290,
+        "by_source": {
+          "madueke_a": 1288,
+          "ocr_consensus": 1278,
+          "s_dismas": 1263,
+          "sabates_a": 1288
+        }
+      },
+      "osee": {
+        "total": 198,
+        "by_source": {
+          "madueke_a": 198,
+          "ocr_consensus": 193,
+          "sabates_a": 198
+        }
+      },
+      "philemon": {
+        "total": 25,
+        "by_source": {
+          "madueke_a": 25,
+          "ocr_consensus": 25,
+          "odr_com": 25,
+          "s_dismas": 25,
+          "sabates_a": 25
+        }
+      },
+      "philippians": {
+        "total": 104,
+        "by_source": {
+          "madueke_a": 104,
+          "ocr_consensus": 103,
+          "odr_com": 104,
+          "s_dismas": 103,
+          "sabates_a": 104
+        }
+      },
+      "prayer-of-manasses": {
+        "total": 15,
+        "by_source": {
+          "ocr_consensus": 15,
+          "sabates_a": 15
+        }
+      },
+      "proverbs": {
+        "total": 918,
+        "by_source": {
+          "madueke_a": 915,
+          "ocr_consensus": 760,
+          "s_dismas": 855,
+          "sabates_a": 915
+        }
+      },
+      "psalms": {
+        "total": 2550,
+        "by_source": {
+          "madueke_a": 2527,
+          "ocr_consensus": 2414,
+          "odr_com": 2500,
+          "s_dismas": 2438,
+          "sabates_a": 2527
+        }
+      },
+      "romans": {
+        "total": 434,
+        "by_source": {
+          "madueke_a": 433,
+          "ocr_consensus": 429,
+          "odr_com": 433,
+          "s_dismas": 425,
+          "sabates_a": 433
+        }
+      },
+      "ruth": {
+        "total": 85,
+        "by_source": {
+          "madueke_a": 85,
+          "ocr_consensus": 85,
+          "odr_com": 85,
+          "s_dismas": 78,
+          "sabates_a": 85
+        }
+      },
+      "sophonias": {
+        "total": 53,
+        "by_source": {
+          "madueke_a": 53,
+          "ocr_consensus": 52,
+          "odr_com": 53,
+          "sabates_a": 53
+        }
+      },
+      "titus": {
+        "total": 46,
+        "by_source": {
+          "madueke_a": 46,
+          "ocr_consensus": 46,
+          "odr_com": 46,
+          "s_dismas": 46,
+          "sabates_a": 46
+        }
+      },
+      "tobias": {
+        "total": 298,
+        "by_source": {
+          "madueke_a": 298,
+          "ocr_consensus": 282,
+          "s_dismas": 291,
+          "sabates_a": 298
+        }
+      },
+      "wisdom": {
+        "total": 439,
+        "by_source": {
+          "madueke_a": 439,
+          "ocr_consensus": 433,
+          "odr_com": 439,
+          "s_dismas": 431,
+          "sabates_a": 439
+        }
+      },
+      "zacharias": {
+        "total": 211,
+        "by_source": {
+          "madueke_a": 211,
+          "ocr_consensus": 195,
+          "sabates_a": 211
+        }
+      }
+    }
+  },
+  "depth_histograms": {
+    "support_depth": {
+      "1": 87,
+      "2": 1441,
+      "3": 7391,
+      "4": 15472,
+      "5": 12794
+    },
+    "indep_depth": {
+      "1": 239,
+      "2": 8680,
+      "3": 15472,
+      "4": 12794
+    },
+    "note": "support_depth = attesting sources (read depth, max 5); indep_depth = independent lineages (max 4). The gap is the non-independence correction (madueke_a & sabates_a share the Madueke lineage)."
+  },
+  "source_tracks": [
+    {
+      "book": "genesis",
+      "chapter": 1,
+      "n_verses": 32,
+      "verses": [
+        {
+          "ref": "genesis/1/1",
+          "verse": 1,
+          "agreement": 0.8667,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/2",
+          "verse": 2,
+          "agreement": 0.8111,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/3",
+          "verse": 3,
+          "agreement": 0.8338,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/4",
+          "verse": 4,
+          "agreement": 0.7941,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/5",
+          "verse": 5,
+          "agreement": 0.8467,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/6",
+          "verse": 6,
+          "agreement": 0.805,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/7",
+          "verse": 7,
+          "agreement": 0.8884,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/8",
+          "verse": 8,
+          "agreement": 0.9145,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/9",
+          "verse": 9,
+          "agreement": 0.8225,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/10",
+          "verse": 10,
+          "agreement": 0.8472,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/11",
+          "verse": 11,
+          "agreement": 0.7585,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/12",
+          "verse": 12,
+          "agreement": 0.8199,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/13",
+          "verse": 13,
+          "agreement": 0.9385,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/14",
+          "verse": 14,
+          "agreement": 0.7675,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/15",
+          "verse": 15,
+          "agreement": 0.8604,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/16",
+          "verse": 16,
+          "agreement": 0.8593,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/17",
+          "verse": 17,
+          "agreement": 0.8252,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/18",
+          "verse": 18,
+          "agreement": 0.84,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/19",
+          "verse": 19,
+          "agreement": 0.9143,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/20",
+          "verse": 20,
+          "agreement": 0.8789,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/21",
+          "verse": 21,
+          "agreement": 0.8365,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/22",
+          "verse": 22,
+          "agreement": 0.7367,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/23",
+          "verse": 23,
+          "agreement": 0.9385,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/24",
+          "verse": 24,
+          "agreement": 0.8457,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/25",
+          "verse": 25,
+          "agreement": 0.8078,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/26",
+          "verse": 26,
+          "agreement": 0.6513,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/27",
+          "verse": 27,
+          "agreement": 0.778,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/28",
+          "verse": 28,
+          "agreement": 0.644,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/29",
+          "verse": 29,
+          "agreement": 0.6826,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/30",
+          "verse": 30,
+          "agreement": 0.6619,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/31",
+          "verse": 31,
+          "agreement": 0.7521,
+          "support_depth": 5,
+          "indep_depth": 4,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": true,
+            "odr_com": true
+          }
+        },
+        {
+          "ref": "genesis/1/32",
+          "verse": 32,
+          "agreement": 1.0,
+          "support_depth": 1,
+          "indep_depth": 1,
+          "tier": "low",
+          "present": {
+            "madueke_a": false,
+            "sabates_a": false,
+            "ocr_consensus": false,
+            "s_dismas": true,
+            "odr_com": false
+          }
+        }
+      ]
+    },
+    {
+      "book": "isaie",
+      "chapter": 1,
+      "n_verses": 31,
+      "verses": [
+        {
+          "ref": "isaie/1/1",
+          "verse": 1,
+          "agreement": 0.859,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/2",
+          "verse": 2,
+          "agreement": 0.8214,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/3",
+          "verse": 3,
+          "agreement": 0.873,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/4",
+          "verse": 4,
+          "agreement": 0.8333,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/5",
+          "verse": 5,
+          "agreement": 0.8406,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/6",
+          "verse": 6,
+          "agreement": 0.8559,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/7",
+          "verse": 7,
+          "agreement": 0.8125,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/8",
+          "verse": 8,
+          "agreement": 0.8406,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/9",
+          "verse": 9,
+          "agreement": 0.9298,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/10",
+          "verse": 10,
+          "agreement": 0.9074,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/11",
+          "verse": 11,
+          "agreement": 0.8559,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/12",
+          "verse": 12,
+          "agreement": 0.7849,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/13",
+          "verse": 13,
+          "agreement": 0.8333,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/14",
+          "verse": 14,
+          "agreement": 0.8667,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/15",
+          "verse": 15,
+          "agreement": 0.8485,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/16",
+          "verse": 16,
+          "agreement": 0.963,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/17",
+          "verse": 17,
+          "agreement": 0.8704,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/18",
+          "verse": 18,
+          "agreement": 0.8333,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/19",
+          "verse": 19,
+          "agreement": 0.8627,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/20",
+          "verse": 20,
+          "agreement": 0.8667,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/21",
+          "verse": 21,
+          "agreement": 0.8841,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/22",
+          "verse": 22,
+          "agreement": 0.8095,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/23",
+          "verse": 23,
+          "agreement": 0.8333,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/24",
+          "verse": 24,
+          "agreement": 0.7838,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/25",
+          "verse": 25,
+          "agreement": 0.8025,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/26",
+          "verse": 26,
+          "agreement": 0.8621,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/27",
+          "verse": 27,
+          "agreement": 0.9444,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/28",
+          "verse": 28,
+          "agreement": 1.0,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/29",
+          "verse": 29,
+          "agreement": 0.9444,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/30",
+          "verse": 30,
+          "agreement": 0.9333,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "high",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        },
+        {
+          "ref": "isaie/1/31",
+          "verse": 31,
+          "agreement": 0.8111,
+          "support_depth": 3,
+          "indep_depth": 2,
+          "tier": "moderate",
+          "present": {
+            "madueke_a": true,
+            "sabates_a": true,
+            "ocr_consensus": true,
+            "s_dismas": false,
+            "odr_com": false
+          }
+        }
+      ]
+    }
+  ],
+  "variant_pileups": [
+    {
+      "ref": "genesis/39/7",
+      "book": "genesis",
+      "agreement": 0.4925,
+      "support_depth": 5,
+      "indep_depth": 4,
+      "tier": "moderate",
+      "called_modern": "After many days therefore his Mistress cast her eyes on Joseph, and said: Sleep with me.",
+      "reads": [
+        {
+          "source": "madueke_a",
+          "edition": "modern",
+          "surface": "After many days therefore his Mistress cast her eyes on Joseph, and said: Sleep with me.",
+          "jaccard": 0.733,
+          "confidence": null
+        },
+        {
+          "source": "ocr_consensus",
+          "edition": "archaic",
+          "surface": "Afcer manie dayes therfore his mailtefle caft her eyes on loleph and faid Sleepe with",
+          "jaccard": 0.529,
+          "confidence": null
+        },
+        {
+          "source": "odr_com",
+          "edition": "archaic",
+          "surface": "Neither knew he any other thing, but the bread which he did eate. And Ioseph was of beautiful countenance, and comely fauored to behold.",
+          "jaccard": 0.067,
+          "confidence": null
+        },
+        {
+          "source": "s_dismas",
+          "edition": "archaic",
+          "surface": "After manie dayes therfore his maiſtreſſe caſt her eyes on Ioſeph, and ſaid: Sleepe with me.",
+          "jaccard": 0.4,
+          "confidence": null
+        },
+        {
+          "source": "sabates_a",
+          "edition": "modern",
+          "surface": "After many days therefore his Mistress cast her eyes on Joseph, and said: Sleep with me.",
+          "jaccard": 0.733,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "ref": "matthew/18/33",
+      "book": "matthew",
+      "agreement": 0.4933,
+      "support_depth": 5,
+      "indep_depth": 4,
+      "tier": "moderate",
+      "called_modern": "oughtest not thou therefore also to have mercy upon thy fellow-servant, even as I had mercy upon thee?",
+      "reads": [
+        {
+          "source": "madueke_a",
+          "edition": "modern",
+          "surface": "oughtest not thou therefore also to have mercy upon thy fellow-servant, even as I had mercy upon thee?",
+          "jaccard": 0.812,
+          "confidence": null
+        },
+        {
+          "source": "ocr_consensus",
+          "edition": "archaic",
+          "surface": "befoughteft oughteft not thou therfore alfo to haue mercie vpon thy felowe feruant euen as had mercie vponthee",
+          "jaccard": 0.765,
+          "confidence": null
+        },
+        {
+          "source": "odr_com",
+          "edition": "archaic",
+          "surface": "And his Lord being angrie deliuered him to the tormenters, vntil he repayed al the debt.",
+          "jaccard": 0.038,
+          "confidence": null
+        },
+        {
+          "source": "s_dismas",
+          "edition": "archaic",
+          "surface": "And his Lord being angrie deliuered him to the tormenters, vntil he repayed al the debt.",
+          "jaccard": 0.038,
+          "confidence": null
+        },
+        {
+          "source": "sabates_a",
+          "edition": "modern",
+          "surface": "oughtest not thou therefore also to have mercy upon thy fellow-servant, even as I had mercy upon thee?",
+          "jaccard": 0.812,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "ref": "psalms/144/17",
+      "book": "psalms",
+      "agreement": 0.3424,
+      "support_depth": 5,
+      "indep_depth": 4,
+      "tier": "moderate",
+      "called_modern": "Our Lord is just in all his ways: and holy in all his works.",
+      "reads": [
+        {
+          "source": "madueke_a",
+          "edition": "modern",
+          "surface": "Our Lord is just in all his ways: and holy in all his works.",
+          "jaccard": 0.545,
+          "confidence": null
+        },
+        {
+          "source": "ocr_consensus",
+          "edition": "archaic",
+          "surface": "Our Tue BOoKe Our Lord is faithful inal his wordes and holicin al his",
+          "jaccard": 0.5,
+          "confidence": null
+        },
+        {
+          "source": "odr_com",
+          "edition": "archaic",
+          "surface": "Thou openest thy hand: and fillest euerie liuing creature with blessing.",
+          "jaccard": 0.062,
+          "confidence": null
+        },
+        {
+          "source": "s_dismas",
+          "edition": "archaic",
+          "surface": "Thou openeſt thy hand: and filleſt euerie liuing creature with bleſſing.",
+          "jaccard": 0.059,
+          "confidence": null
+        },
+        {
+          "source": "sabates_a",
+          "edition": "modern",
+          "surface": "Our Lord is just in all his ways: and holy in all his works.",
+          "jaccard": 0.545,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "ref": "1-corinthians/1/22",
+      "book": "1-corinthians",
+      "agreement": 0.5137,
+      "support_depth": 5,
+      "indep_depth": 4,
+      "tier": "moderate",
+      "called_modern": "For both the Jews ask signs, and the Greeks seek wisdom:",
+      "reads": [
+        {
+          "source": "madueke_a",
+          "edition": "modern",
+          "surface": "For both the Jews ask signs, and the Greeks seek wisdom:",
+          "jaccard": 0.7,
+          "confidence": null
+        },
+        {
+          "source": "ocr_consensus",
+          "edition": "archaic",
+          "surface": "fauethem that beleeue For both the lewes aske fignes andthe Grecks feeke",
+          "jaccard": 0.357,
+          "confidence": null
+        },
+        {
+          "source": "odr_com",
+          "edition": "archaic",
+          "surface": "For both the Iewes aske signes, and the Greeks seeke wisedom:",
+          "jaccard": 0.7,
+          "confidence": null
+        },
+        {
+          "source": "s_dismas",
+          "edition": "archaic",
+          "surface": "but we preach Chriſt crucified, to the Iewes certes a ſcandal, and to the Gentils, fooliſhnes:",
+          "jaccard": 0.111,
+          "confidence": null
+        },
+        {
+          "source": "sabates_a",
+          "edition": "modern",
+          "surface": "For both the Jews ask signs, and the Greeks seek wisdom:",
+          "jaccard": 0.7,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "ref": "john/12/39",
+      "book": "john",
+      "agreement": 0.3867,
+      "support_depth": 5,
+      "indep_depth": 4,
+      "tier": "moderate",
+      "called_modern": "Therefore they could not believe, because Esay said again:",
+      "reads": [
+        {
+          "source": "madueke_a",
+          "edition": "modern",
+          "surface": "Therefore they could not believe, because Esay said again:",
+          "jaccard": 0.667,
+          "confidence": null
+        },
+        {
+          "source": "ocr_consensus",
+          "edition": "archaic",
+          "surface": "Therfore they could not they would not beleeue becaufe Efay aid againe",
+          "jaccard": 0.6,
+          "confidence": null
+        },
+        {
+          "source": "odr_com",
+          "edition": "archaic",
+          "surface": "and the arme of our Lord to whom hath it beene reuealed?",
+          "jaccard": 0.0,
+          "confidence": null
+        },
+        {
+          "source": "s_dismas",
+          "edition": "archaic",
+          "surface": "and the arme of our Lord to whom hath it beene reuealed?",
+          "jaccard": 0.0,
+          "confidence": null
+        },
+        {
+          "source": "sabates_a",
+          "edition": "modern",
+          "surface": "Therefore they could not believe, because Esay said again:",
+          "jaccard": 0.667,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "ref": "isaie/13/12",
+      "book": "isaie",
+      "agreement": 0.713,
+      "support_depth": 3,
+      "indep_depth": 2,
+      "tier": "moderate",
+      "called_modern": "A man shall be more precious than gold, & man than pure fine gold.",
+      "reads": [
+        {
+          "source": "madueke_a",
+          "edition": "modern",
+          "surface": "A man shall be more precious than gold, & man than pure fine gold.",
+          "jaccard": null,
+          "confidence": null
+        },
+        {
+          "source": "ocr_consensus",
+          "edition": "archaic",
+          "surface": "ituftiee gancie of the trong man shalbe more precious then intheruine gold",
+          "jaccard": 0.25,
+          "confidence": null
+        },
+        {
+          "source": "sabates_a",
+          "edition": "modern",
+          "surface": "Aman shall be more precious than gold, & man than pure fine gold.",
+          "jaccard": 0.889,
+          "confidence": null
+        }
+      ]
+    }
+  ]
+}
