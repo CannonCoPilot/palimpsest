@@ -1,0 +1,54 @@
+{
+  "schema": "originaldr.spelling-glyph-model/v1",
+  "purpose": "Bidirectional archaic<->modern surface model for the OriginalDR reconstruction (plan §6.1). It documents the type-level glyph correspondences and the lexical period-spelling patterns that separate the 1582/1609-1610 Rheims-Douay archaic orthography (idx 109) from the modern rendering (idx 108). Its operational use is the FOLD: both renderings are reduced to a spelling/glyph-neutral skeleton so the §6.2 word-for-word correspondence check isolates genuine wording differences from expected orthographic variation. The rules are the same ones the archaic witnesses exhibit and the modern edition normalizes away.",
+  "glyph_rules": [
+    {"name": "long-s", "archaic": "ſ", "modern": "s", "reversible": true,
+     "note": "U+017F LATIN SMALL LETTER LONG S. NFKD-decomposes to 's', so the fold neutralizes it type-agnostically. Diplomatic rendering keeps ſ from the archaic witness; it is NOT introduced by transform."},
+    {"name": "ae-ligature", "archaic": "æ", "modern": "ae", "reversible": true,
+     "note": "Æ/æ -> AE/ae"},
+    {"name": "oe-ligature", "archaic": "œ", "modern": "oe", "reversible": true,
+     "note": "Œ/œ -> OE/oe"},
+    {"name": "double-v", "archaic": "vv", "modern": "w", "reversible": true,
+     "note": "archaic compositors set w as double-v"},
+    {"name": "ampersand", "archaic": "&", "modern": "and", "reversible": true,
+     "note": "ampersand / Tironian et; word-level substitution"},
+    {"name": "u-v-positional", "archaic": "v word-initial, u elsewhere", "modern": "by phonetic value", "reversible": false,
+     "note": "archaic uses v initially and u medially/finally regardless of sound (vpon/upon, haue/have, vnto/unto). Not a 1:1 map, so the fold collapses u and v to a single class for comparison; diplomatic rendering restores the positional form from the archaic witness."},
+    {"name": "i-j-positional", "archaic": "i for both i and j", "modern": "by phonetic value", "reversible": false,
+     "note": "archaic uses i for i and j (iustice/justice, Iesvs/Jesus). The fold collapses i and j; diplomatic rendering restores the archaic form from the witness."}
+  ],
+  "period_spelling_patterns": [
+    {"pattern": "trailing silent -e", "examples": [["olde", "old"], ["hadde", "had"], ["sonne", "son"]], "reversible": false},
+    {"pattern": "doubled consonant", "examples": [["al", "all"], ["shal", "shall"], ["wil", "will"]], "reversible": false},
+    {"pattern": "y for i", "examples": [["dayes", "days"], ["saluation", "salvation"], ["Sion", "Sion"]], "reversible": false,
+     "note": "archaic -aie-/-ie-/-y- variation; the fold maps y->i and is not a clean inverse"}
+  ],
+  "fold": {
+    "name": "fold_diplomatic",
+    "description": "Per-word archaic-and-modern -> neutral lower-case skeleton. Applied to both idx 108 and idx 109 surfaces before token comparison. Order matters.",
+    "steps": [
+      "NFKD normalise + drop combining marks (folds ſ->s and diacritics such as õ->o)",
+      "æ->ae, œ->oe (NFKD leaves these base letters intact)",
+      "vv->w",
+      "strip non-[a-z] characters",
+      "v->u and j->i (collapse the positional u/v and i/j classes)",
+      "y->i",
+      "strip a trailing 'e' (archaic silent -e)",
+      "collapse any run of a repeated letter to one (doubled consonants/vowels)"
+    ],
+    "excludes": "The OCR-tolerance SYMMETRIC f<->s of ocr_sample.skel is DELIBERATELY EXCLUDED. That rule was built to tolerate tesseract misreading long-ſ as 'f'; folding it here would MASK the fresh-OCR long-ſ->f defect as a match and hide a real diplomatic-fidelity problem in the OCR-only books (Isaie, Ecclesiasticus, the prophets). §6.2 must SEE that defect, so the fold keeps f and s distinct.",
+    "min_token_len": 2
+  },
+  "worked_examples": [
+    {"modern": "Blessed is the man", "archaic": "Bleſſed is the man", "fold": ["blesed", "is", "th", "man"],
+     "note": "long-ſ folds to s via NFKD; 'blessed' collapses doubled ss -> 'blesed'; 'the' loses its silent -e -> 'th'. Modern and archaic surfaces fold identically."},
+    {"modern": "In the beginning God created heaven and earth", "archaic": "In the beginning God created heauen and earth", "fold": ["in", "th", "begining", "god", "created", "heauen", "and", "earth"],
+     "note": "'beginning' collapses nn -> 'begining'; modern 'heaven' and archaic 'heauen' both fold to 'heauen' (v->u collapse)."},
+    {"modern": "have upon justice Jesus", "archaic": "haue vpon iustice Iesvs", "fold": ["hau", "upon", "iustic", "iesus"],
+     "note": "positional u/v and i/j classes collapse: have/haue->hau, upon/vpon->upon, justice/iustice->iustic, Jesus/Iesvs->iesus. Every modern/archaic pair folds to one skeleton."}
+  ],
+  "reversible_round_trip": [
+    ["ſ", "s"], ["æ", "ae"], ["œ", "oe"], ["vv", "w"], ["&", "and"]
+  ],
+  "non_reversible_note": "The positional u/v & i/j classes and the period-spelling patterns are LOSSY: the fold neutralises them for COMPARISON only. Archaic RENDERING (idx 109) restores every archaic surface form from the archaic witness itself (s-dismas / odr-com / OCR), never from a back-transform of the modern text — so no lossy inverse is applied to produce the gold text (plan §5.3, §6.1)."
+}

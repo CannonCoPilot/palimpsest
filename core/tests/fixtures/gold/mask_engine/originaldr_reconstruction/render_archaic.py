@@ -219,15 +219,30 @@ def main() -> int:
                 "note": "surfaced here rather than silently corrected; cataloguing and adjudicating "
                         "such residuals is the §6.2 deliverable below.",
             },
-            "validation_followup": "the rigorous §6.2 word-for-word correspondence check (archaic↔modern "
-                                   "post-fold; only residual wording diffs count) and §6.3 independent "
-                                   "print-validation bootstrap CIs are a documented NEXT increment: they "
-                                   "require the §6.1 bidirectional spelling-glyph model "
-                                   "(spelling-glyph-model.json — not yet built). A rough check with the "
-                                   "OCR-tolerance skel() fold confirms the archaic↔modern divergence is "
-                                   "spelling-dominated (alwaies/always, reioyc/reioice), so a proper §6.1 "
-                                   "fold is needed to separate genuine wording residuals from expected "
-                                   "orthographic variation; the fidelity CIs land with the P3 brief (§7.1).",
+            "validation": {
+                "status": "built (§6.1 spelling-glyph model + §6.2 word-correspondence validation)",
+                "model": "spelling-glyph-model.json",
+                "fold": "spelling_glyph_model.fold_diplomatic",
+                "report": "archaic-fidelity-validation.json",
+                "method": "per-verse token-set Jaccard of fold_diplomatic(render_modern) vs "
+                          "fold_diplomatic(render_archaic); the fold neutralises expected orthography "
+                          "(long-ſ, æ/œ, u/v, i/j, vv, &, period spellings) so only genuine WORDING "
+                          "divergence survives. It deliberately keeps f and s distinct (no symmetric "
+                          "f↔s), so the ocr-only books' fresh-OCR long-ſ→f misread shows up as a "
+                          "residual rather than being masked.",
+                "finding": "Fidelity is tiered by archaic-witness coverage: books s-dismas / odr-com "
+                           "attest fold nearly exactly onto the modern surface (a spelling-only delta), "
+                           "while the ocr-only books (Isaie, Ecclesiasticus, Zacharias, 4-Esdras, minor "
+                           "prophets) score far lower — a true, quantified fresh-OCR sourcing "
+                           "limitation, surfaced not hidden. The severe tail (Jaccard < 0.1) is "
+                           "dominated by verse-numbering divergence in the WELL-attested books (chiefly "
+                           "the Vulgate psalm-title-as-verse-1 offset), recorded as a versification "
+                           "adjudication set — not an OCR artifact and not a fold bug.",
+                "authoritative_numbers": "archaic-fidelity-validation.json (aggregate + by_witness_tier "
+                                         "+ per_book glyph inventory + severe_tail)",
+                "followups": "§6.3 independent-print bootstrap CIs (vs archive.org scans) and the "
+                             "versification-divergence adjudication land with the P3 brief (§7).",
+            },
         },
         "apparatus": {
             "source": "janvier-s (Sabates_A) modern apparatus, shared with idx 108",

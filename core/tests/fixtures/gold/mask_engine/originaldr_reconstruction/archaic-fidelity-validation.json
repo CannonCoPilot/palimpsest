@@ -1,0 +1,1296 @@
+{
+  "artifact": "archaic-fidelity-validation",
+  "phase": "P2 · §6.2",
+  "generated_by": "validate_archaic_fidelity.py",
+  "fold_model": "spelling-glyph-model.json",
+  "fold_function": "spelling_glyph_model.fold_diplomatic",
+  "note": "Post-fold word-for-word correspondence between the idx-108 modern and idx-109 archaic render surfaces. Both surfaces are reduced to the §6.1 spelling/glyph-neutral skeleton before comparison, so the residual Jaccard disagreement is genuine WORDING divergence, not orthographic noise. Fidelity is tiered by how many independent archaic witnesses attest each book (derived from the basis-db attestation, not recollection): clean-diplomatic books (s-dismas present) fold nearly exactly; ocr-only books carry the fresh-OCR long-ſ→f misread, which the fold intentionally does NOT mask, so their low fidelity is a true, quantified OCR-sourcing signal — a Phase-0 re-OCR follow-up, surfaced rather than hidden. Read surfaces live in the gitignored basis-db.sqlite; this JSON is the CI-safe, diff-reviewable summary.",
+  "method": {
+    "comparison": "token-set Jaccard of fold_diplomatic(render_modern) vs fold_diplomatic(render_archaic)",
+    "min_token_len": 2,
+    "scope": "scripture-verse coordinates with BOTH a modern and an archaic surface",
+    "excluded_coverage_gaps": 199,
+    "excluded_note": "modern-present / archaic-absent coords (no archaic witness) are excluded from the comparison and rendered from the modern surface in idx 109 (see render-archaic-report.json archaic_coverage_gaps)."
+  },
+  "aggregate": {
+    "verses_compared": 36931,
+    "mean_jaccard": 0.7593,
+    "median_jaccard": 0.8462,
+    "distribution": {
+      "exact_1.0": 9923,
+      "high_0.9_1.0": 3760,
+      "mid_0.5_0.9": 16502,
+      "low_0.1_0.5": 6074,
+      "severe_lt_0.1": 672
+    },
+    "distribution_pct": {
+      "exact_1.0": 26.87,
+      "high_0.9_1.0": 10.18,
+      "mid_0.5_0.9": 44.68,
+      "low_0.1_0.5": 16.45,
+      "severe_lt_0.1": 1.82
+    }
+  },
+  "by_witness_tier": {
+    "clean-diplomatic": {
+      "n_archaic_witnesses": 3,
+      "books": [
+        "1-corinthians",
+        "1-john",
+        "1-peter",
+        "1-thessalonians",
+        "1-timothy",
+        "2-corinthians",
+        "2-john",
+        "2-peter",
+        "2-thessalonians",
+        "2-timothy",
+        "3-john",
+        "acts",
+        "apocalypse",
+        "colossians",
+        "ephesians",
+        "exodus",
+        "galatians",
+        "genesis",
+        "hebrews",
+        "james",
+        "john",
+        "jude",
+        "luke",
+        "mark",
+        "matthew",
+        "philemon",
+        "philippians",
+        "psalms",
+        "romans",
+        "ruth",
+        "titus",
+        "wisdom"
+      ],
+      "verses_compared": 13742,
+      "mean_jaccard": 0.8235
+    },
+    "mixed": {
+      "n_archaic_witnesses": 2,
+      "books": [
+        "1-esdras",
+        "1-kings",
+        "1-machabees",
+        "1-paralipomenon",
+        "2-esdras",
+        "2-kings",
+        "2-machabees",
+        "2-paralipomenon",
+        "3-kings",
+        "4-kings",
+        "baruch",
+        "canticle-of-canticles",
+        "daniel",
+        "deuteronomy",
+        "ecclesiastes",
+        "esther",
+        "job",
+        "jonas",
+        "josue",
+        "judges",
+        "judith",
+        "lamentations",
+        "leviticus",
+        "numbers",
+        "proverbs",
+        "sophonias",
+        "tobias"
+      ],
+      "verses_compared": 15571,
+      "mean_jaccard": 0.8469
+    },
+    "ocr-only-noisy": {
+      "n_archaic_witnesses": 1,
+      "books": [
+        "3-esdras",
+        "4-esdras",
+        "abdias",
+        "aggeus",
+        "amos",
+        "ecclesiasticus",
+        "ezechiel",
+        "habacuc",
+        "isaie",
+        "jeremie",
+        "joel",
+        "malachie",
+        "micheas",
+        "nahum",
+        "osee",
+        "prayer-of-manasses",
+        "zacharias"
+      ],
+      "verses_compared": 7618,
+      "mean_jaccard": 0.4642
+    }
+  },
+  "tiered_finding": "Rendering fidelity is driven by archaic-witness coverage: books s-dismas transcribes fold nearly exactly onto the modern surface (spelling-only delta), while the ocr-only books (Isaie, Ecclesiasticus, Zacharias, 4-Esdras, minor prophets) score far lower because their raw fresh-OCR archaic surface carries the long-ſ→f misread and garbage bleed. This is a true OCR-sourcing limitation, quantified here rather than papered over.",
+  "severe_tail": {
+    "count": 672,
+    "definition": "Jaccard < 0.1 after fold — near-total token disagreement.",
+    "by_witness_tier": {
+      "clean-diplomatic": 552,
+      "mixed": 117,
+      "ocr-only-noisy": 3
+    },
+    "by_book_top": {
+      "psalms": 189,
+      "acts": 88,
+      "mark": 62,
+      "luke": 49,
+      "matthew": 40,
+      "romans": 33,
+      "numbers": 32,
+      "hebrews": 28,
+      "john": 21,
+      "wisdom": 17,
+      "1-paralipomenon": 13,
+      "2-esdras": 12
+    },
+    "sample": [
+      {
+        "coord": "scripture/1-corinthians/1/21",
+        "jaccard": 0.069
+      },
+      {
+        "coord": "scripture/1-corinthians/1/28",
+        "jaccard": 0.0417
+      },
+      {
+        "coord": "scripture/1-corinthians/1/29",
+        "jaccard": 0.0385
+      },
+      {
+        "coord": "scripture/1-corinthians/1/30",
+        "jaccard": 0.0714
+      },
+      {
+        "coord": "scripture/1-corinthians/15/56",
+        "jaccard": 0.0435
+      },
+      {
+        "coord": "scripture/1-corinthians/7/39",
+        "jaccard": 0.0256
+      },
+      {
+        "coord": "scripture/1-corinthians/8/10",
+        "jaccard": 0.0789
+      },
+      {
+        "coord": "scripture/1-corinthians/8/13",
+        "jaccard": 0.0
+      },
+      {
+        "coord": "scripture/1-corinthians/8/9",
+        "jaccard": 0.0
+      },
+      {
+        "coord": "scripture/1-corinthians/9/1",
+        "jaccard": 0.071
+      },
+      {
+        "coord": "scripture/1-kings/14/10",
+        "jaccard": 0.0588
+      },
+      {
+        "coord": "scripture/1-kings/19/16",
+        "jaccard": 0.0667
+      },
+      {
+        "coord": "scripture/1-kings/19/17",
+        "jaccard": 0.06
+      },
+      {
+        "coord": "scripture/1-kings/19/21",
+        "jaccard": 0.0816
+      },
+      {
+        "coord": "scripture/1-paralipomenon/11/1",
+        "jaccard": 0.08
+      }
+    ],
+    "interpretation": "Dominated by VERSE-NUMBERING divergence in the WELL-ATTESTED books (clean+mixed hold 669 of the 672; only 3 are ocr-only) — NOT by OCR noise. At these coordinates the archaic (Vulgate) and modern editions number the same text differently, so one skeleton coordinate carries two DIFFERENT verses (near-zero shared tokens). Chief cause: the Vulgate convention of numbering a psalm's title as verse 1, which offsets whole psalms (e.g. psalms/3/1 modern='The Psalm of David…' [title] vs archaic='Lord why are they multiplied…' [first body verse]) — hence Psalms tops the tail. The remainder are chapter-boundary off-by-ones (e.g. 1-corinthians/1/21 modern=1:21 vs archaic=1:22). OCR noise does NOT drive this bucket: it degrades ocr-only verses only moderately (depressing their MEAN to ~0.46 while keeping them in the 0.1–0.5 band). A verse-renumbering adjudication set for a focused follow-up, not a fold bug."
+  },
+  "per_book": {
+    "1-corinthians": {
+      "verses_compared": 437,
+      "mean_jaccard": 0.8737,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 2,
+        "ampersand": 36,
+        "long_s": 1095
+      }
+    },
+    "1-esdras": {
+      "verses_compared": 280,
+      "mean_jaccard": 0.8822,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_lower": 2,
+        "ae_upper": 2,
+        "ampersand": 25,
+        "long_s": 940
+      }
+    },
+    "1-john": {
+      "verses_compared": 105,
+      "mean_jaccard": 0.9172,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 8,
+        "long_s": 265
+      }
+    },
+    "1-kings": {
+      "verses_compared": 810,
+      "mean_jaccard": 0.8563,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 15,
+        "ampersand": 80,
+        "long_s": 3234
+      }
+    },
+    "1-machabees": {
+      "verses_compared": 929,
+      "mean_jaccard": 0.9926,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ampersand": 462
+      }
+    },
+    "1-paralipomenon": {
+      "verses_compared": 937,
+      "mean_jaccard": 0.7829,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 5,
+        "ampersand": 91,
+        "long_s": 3011
+      }
+    },
+    "1-peter": {
+      "verses_compared": 105,
+      "mean_jaccard": 0.8207,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 16,
+        "long_s": 346
+      }
+    },
+    "1-thessalonians": {
+      "verses_compared": 89,
+      "mean_jaccard": 0.8331,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 15,
+        "long_s": 210
+      }
+    },
+    "1-timothy": {
+      "verses_compared": 113,
+      "mean_jaccard": 0.9119,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ampersand": 10,
+        "long_s": 306
+      }
+    },
+    "2-corinthians": {
+      "verses_compared": 255,
+      "mean_jaccard": 0.8443,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 28,
+        "long_s": 767
+      }
+    },
+    "2-esdras": {
+      "verses_compared": 404,
+      "mean_jaccard": 0.7131,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ae_upper": 2,
+        "ampersand": 44,
+        "long_s": 1292
+      }
+    },
+    "2-john": {
+      "verses_compared": 13,
+      "mean_jaccard": 0.9171,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "long_s": 32
+      }
+    },
+    "2-kings": {
+      "verses_compared": 694,
+      "mean_jaccard": 0.8302,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 4,
+        "ampersand": 54,
+        "long_s": 2803
+      }
+    },
+    "2-machabees": {
+      "verses_compared": 558,
+      "mean_jaccard": 0.9918,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ampersand": 146
+      }
+    },
+    "2-paralipomenon": {
+      "verses_compared": 822,
+      "mean_jaccard": 0.805,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ae_upper": 21,
+        "ampersand": 117,
+        "long_s": 4219
+      }
+    },
+    "2-peter": {
+      "verses_compared": 61,
+      "mean_jaccard": 0.9372,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 6,
+        "long_s": 229
+      }
+    },
+    "2-thessalonians": {
+      "verses_compared": 47,
+      "mean_jaccard": 0.9219,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 6,
+        "long_s": 96
+      }
+    },
+    "2-timothy": {
+      "verses_compared": 83,
+      "mean_jaccard": 0.8897,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ampersand": 5,
+        "long_s": 258
+      }
+    },
+    "3-esdras": {
+      "verses_compared": 443,
+      "mean_jaccard": 0.485,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "3-john": {
+      "verses_compared": 14,
+      "mean_jaccard": 0.8735,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 1,
+        "long_s": 36
+      }
+    },
+    "3-kings": {
+      "verses_compared": 813,
+      "mean_jaccard": 0.8251,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 24,
+        "ampersand": 83,
+        "long_s": 2926
+      }
+    },
+    "4-esdras": {
+      "verses_compared": 816,
+      "mean_jaccard": 0.4579,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "4-kings": {
+      "verses_compared": 719,
+      "mean_jaccard": 0.8695,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 17,
+        "ampersand": 95,
+        "long_s": 2977
+      }
+    },
+    "abdias": {
+      "verses_compared": 19,
+      "mean_jaccard": 0.3905,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "acts": {
+      "verses_compared": 1004,
+      "mean_jaccard": 0.757,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 40,
+        "ae_upper": 23,
+        "ampersand": 159,
+        "long_s": 3272,
+        "oe_lower": 8
+      }
+    },
+    "aggeus": {
+      "verses_compared": 37,
+      "mean_jaccard": 0.5101,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "amos": {
+      "verses_compared": 145,
+      "mean_jaccard": 0.4064,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "apocalypse": {
+      "verses_compared": 405,
+      "mean_jaccard": 0.92,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_upper": 1,
+        "ampersand": 99,
+        "long_s": 1459
+      }
+    },
+    "baruch": {
+      "verses_compared": 213,
+      "mean_jaccard": 0.8851,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 3,
+        "ampersand": 18
+      }
+    },
+    "canticle-of-canticles": {
+      "verses_compared": 116,
+      "mean_jaccard": 0.8047,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ampersand": 8,
+        "long_s": 267
+      }
+    },
+    "colossians": {
+      "verses_compared": 95,
+      "mean_jaccard": 0.9257,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 10,
+        "long_s": 243
+      }
+    },
+    "daniel": {
+      "verses_compared": 531,
+      "mean_jaccard": 0.8772,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ae_upper": 6,
+        "ampersand": 211
+      }
+    },
+    "deuteronomy": {
+      "verses_compared": 959,
+      "mean_jaccard": 0.8729,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 52,
+        "ampersand": 31,
+        "long_s": 3196
+      }
+    },
+    "ecclesiastes": {
+      "verses_compared": 222,
+      "mean_jaccard": 0.8284,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ampersand": 24,
+        "long_s": 610
+      }
+    },
+    "ecclesiasticus": {
+      "verses_compared": 1542,
+      "mean_jaccard": 0.4698,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "ephesians": {
+      "verses_compared": 155,
+      "mean_jaccard": 0.9068,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 21,
+        "long_s": 379
+      }
+    },
+    "esther": {
+      "verses_compared": 274,
+      "mean_jaccard": 0.8258,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 4,
+        "ampersand": 16,
+        "long_s": 1072
+      }
+    },
+    "exodus": {
+      "verses_compared": 1211,
+      "mean_jaccard": 0.8548,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ae_upper": 174,
+        "ampersand": 97,
+        "long_s": 4055
+      }
+    },
+    "ezechiel": {
+      "verses_compared": 1260,
+      "mean_jaccard": 0.455,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "galatians": {
+      "verses_compared": 149,
+      "mean_jaccard": 0.909,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 2,
+        "long_s": 401
+      }
+    },
+    "genesis": {
+      "verses_compared": 1530,
+      "mean_jaccard": 0.8732,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 9,
+        "ae_upper": 93,
+        "ampersand": 155,
+        "long_s": 4775
+      }
+    },
+    "habacuc": {
+      "verses_compared": 54,
+      "mean_jaccard": 0.4083,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "hebrews": {
+      "verses_compared": 303,
+      "mean_jaccard": 0.7677,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_upper": 6,
+        "ampersand": 35,
+        "long_s": 1029
+      }
+    },
+    "isaie": {
+      "verses_compared": 1271,
+      "mean_jaccard": 0.467,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "james": {
+      "verses_compared": 108,
+      "mean_jaccard": 0.8876,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 14,
+        "long_s": 297
+      }
+    },
+    "jeremie": {
+      "verses_compared": 1354,
+      "mean_jaccard": 0.4811,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "job": {
+      "verses_compared": 1067,
+      "mean_jaccard": 0.8334,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 1,
+        "ampersand": 89,
+        "long_s": 2302
+      }
+    },
+    "joel": {
+      "verses_compared": 72,
+      "mean_jaccard": 0.449,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "john": {
+      "verses_compared": 879,
+      "mean_jaccard": 0.8449,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 6,
+        "ae_upper": 1,
+        "ampersand": 85,
+        "long_s": 2479
+      }
+    },
+    "jonas": {
+      "verses_compared": 48,
+      "mean_jaccard": 0.9257,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ampersand": 15
+      }
+    },
+    "josue": {
+      "verses_compared": 658,
+      "mean_jaccard": 0.8805,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ae_upper": 16,
+        "ampersand": 41,
+        "long_s": 2651
+      }
+    },
+    "jude": {
+      "verses_compared": 25,
+      "mean_jaccard": 0.929,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ae_upper": 1,
+        "ampersand": 2,
+        "long_s": 99
+      }
+    },
+    "judges": {
+      "verses_compared": 618,
+      "mean_jaccard": 0.8383,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 9,
+        "ampersand": 46,
+        "long_s": 2332
+      }
+    },
+    "judith": {
+      "verses_compared": 346,
+      "mean_jaccard": 0.8095,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 7,
+        "ampersand": 26,
+        "long_s": 1138
+      }
+    },
+    "lamentations": {
+      "verses_compared": 154,
+      "mean_jaccard": 0.8813,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 1,
+        "ampersand": 5
+      }
+    },
+    "leviticus": {
+      "verses_compared": 858,
+      "mean_jaccard": 0.8211,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 11,
+        "ampersand": 36,
+        "long_s": 2516
+      }
+    },
+    "luke": {
+      "verses_compared": 1151,
+      "mean_jaccard": 0.8337,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 19,
+        "ampersand": 67,
+        "long_s": 3526,
+        "oe_lower": 1
+      }
+    },
+    "malachie": {
+      "verses_compared": 55,
+      "mean_jaccard": 0.4696,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "mark": {
+      "verses_compared": 677,
+      "mean_jaccard": 0.7398,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 15,
+        "ampersand": 30,
+        "long_s": 1963
+      }
+    },
+    "matthew": {
+      "verses_compared": 1070,
+      "mean_jaccard": 0.8501,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 9,
+        "ae_upper": 4,
+        "ampersand": 136,
+        "long_s": 3207
+      }
+    },
+    "micheas": {
+      "verses_compared": 101,
+      "mean_jaccard": 0.4176,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "nahum": {
+      "verses_compared": 46,
+      "mean_jaccard": 0.4504,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "numbers": {
+      "verses_compared": 1288,
+      "mean_jaccard": 0.8244,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 31,
+        "ampersand": 34,
+        "long_s": 4109
+      }
+    },
+    "osee": {
+      "verses_compared": 193,
+      "mean_jaccard": 0.4616,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "philemon": {
+      "verses_compared": 25,
+      "mean_jaccard": 0.921,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 1,
+        "long_s": 55
+      }
+    },
+    "philippians": {
+      "verses_compared": 104,
+      "mean_jaccard": 0.9155,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "ampersand": 10,
+        "long_s": 313
+      }
+    },
+    "prayer-of-manasses": {
+      "verses_compared": 15,
+      "mean_jaccard": 0.4684,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    },
+    "proverbs": {
+      "verses_compared": 902,
+      "mean_jaccard": 0.78,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 1,
+        "ampersand": 71,
+        "long_s": 2184
+      }
+    },
+    "psalms": {
+      "verses_compared": 2526,
+      "mean_jaccard": 0.758,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 3,
+        "ae_upper": 21,
+        "ampersand": 89,
+        "long_s": 4967,
+        "oe_lower": 1
+      }
+    },
+    "romans": {
+      "verses_compared": 433,
+      "mean_jaccard": 0.7499,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 2,
+        "ampersand": 33,
+        "long_s": 1261,
+        "oe_lower": 1
+      }
+    },
+    "ruth": {
+      "verses_compared": 85,
+      "mean_jaccard": 0.8713,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 9,
+        "long_s": 298
+      }
+    },
+    "sophonias": {
+      "verses_compared": 53,
+      "mean_jaccard": 0.8995,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 2,
+        "ampersand": 12
+      }
+    },
+    "titus": {
+      "verses_compared": 46,
+      "mean_jaccard": 0.9368,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ae_lower": 1,
+        "long_s": 126
+      }
+    },
+    "tobias": {
+      "verses_compared": 298,
+      "mean_jaccard": 0.8592,
+      "n_archaic_witnesses": 2,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "s_dismas"
+      ],
+      "witness_tier": "mixed",
+      "glyph_inventory": {
+        "ae_upper": 1,
+        "ampersand": 38,
+        "long_s": 867
+      }
+    },
+    "wisdom": {
+      "verses_compared": 439,
+      "mean_jaccard": 0.8067,
+      "n_archaic_witnesses": 3,
+      "archaic_witnesses": [
+        "ocr_consensus",
+        "odr_com",
+        "s_dismas"
+      ],
+      "witness_tier": "clean-diplomatic",
+      "glyph_inventory": {
+        "ampersand": 41,
+        "long_s": 1379
+      }
+    },
+    "zacharias": {
+      "verses_compared": 195,
+      "mean_jaccard": 0.4148,
+      "n_archaic_witnesses": 1,
+      "archaic_witnesses": [
+        "ocr_consensus"
+      ],
+      "witness_tier": "ocr-only-noisy",
+      "glyph_inventory": {}
+    }
+  }
+}

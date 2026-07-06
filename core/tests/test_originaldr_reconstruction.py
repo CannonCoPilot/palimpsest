@@ -7,14 +7,25 @@ outputs and the Gate P1 result.
 """
 from __future__ import annotations
 
+import importlib.util
 import json
 from pathlib import Path
+from types import ModuleType
 
 REC = Path(__file__).parent / "fixtures/gold/mask_engine/originaldr_reconstruction"
 
 
 def _load(name: str) -> dict:
     return json.loads((REC / name).read_text())
+
+
+def _load_module(name: str) -> ModuleType:
+    """Load a recon-dir module by path (corpus-free: these modules import only stdlib)."""
+    spec = importlib.util.spec_from_file_location(name, REC / f"{name}.py")
+    assert spec and spec.loader
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
 
 def test_scripture_order_partitions_all_76_books_into_grounded_sections():
@@ -102,3 +113,59 @@ def test_p2a_modern_render_is_a_pure_basis_db_projection():
     work108 = json.loads((REC.parent.parent / "maps" / "work-108.map.json").read_text())
     assert work108["idx"] == 108
     assert work108["reference_sha256"] == r["reference"]["sha256"]
+
+
+def test_p2_spelling_glyph_model_fold_matches_worked_examples():
+    """§6.1 (plan §6.1): the documented archaic↔modern fold reduces every worked example's modern AND
+    archaic surface to one identical skeleton, and the stored fold arrays match the live algorithm —
+    so the spec cannot silently drift from spelling_glyph_model.fold_diplomatic."""
+    sgm = _load_module("spelling_glyph_model")
+    model = _load("spelling-glyph-model.json")
+    examples = model["worked_examples"]
+    assert len(examples) >= 3
+    for ex in examples:
+        fm, fa = sgm.fold_tokens(ex["modern"]), sgm.fold_tokens(ex["archaic"])
+        # modern and archaic fold identically (the whole point) AND match the documented fold
+        assert fm == fa == ex["fold"], f"fold drift for {ex['modern']!r}/{ex['archaic']!r}: {fm} vs {fa} vs {ex['fold']}"
+    # the reversible glyph pairs are exactly the type-level round-trip correspondences
+    assert model["reversible_round_trip"] == [["ſ", "s"], ["æ", "ae"], ["œ", "oe"], ["vv", "w"], ["&", "and"]]
+    # the OCR-tolerance symmetric f<->s of ocr_sample.skel is DELIBERATELY excluded so §6.2 SEES the ſ→f defect
+    assert "f<->s" in model["fold"]["excludes"] and "SYMMETRIC" in model["fold"]["excludes"].upper()
+    # a genuine long-ſ folds to s (type-agnostic), but a fresh-OCR ſ→f misread stays distinct — NOT masked
+    assert sgm.fold_diplomatic("Bleſſed") == sgm.fold_diplomatic("Blessed")
+    assert sgm.fold_diplomatic("vifion") != sgm.fold_diplomatic("vision")
+
+
+def test_p2_archaic_fidelity_validation_is_tiered_and_honest():
+    """§6.2 (plan §6.2): the post-fold word-correspondence validation is non-vacuous, its buckets
+    partition the compared verses, fidelity is tiered by archaic-witness coverage (well-attested
+    books fold far tighter than the ocr-only books), and the severe tail is the well-attested
+    versification-divergence set — not an OCR artifact."""
+    d = _load("archaic-fidelity-validation.json")
+    agg = d["aggregate"]
+    n = agg["verses_compared"]
+    assert n == 36931
+    # buckets partition the compared verses exactly (non-vacuity + completeness)
+    assert sum(agg["distribution"].values()) == n
+    assert 0.75 <= agg["mean_jaccard"] <= 0.77
+    # tiered finding: both well-attested tiers fold far tighter than the ocr-only tier
+    bt = d["by_witness_tier"]
+    clean, mixed, ocr = bt["clean-diplomatic"], bt["mixed"], bt["ocr-only-noisy"]
+    assert (clean["n_archaic_witnesses"], mixed["n_archaic_witnesses"], ocr["n_archaic_witnesses"]) == (3, 2, 1)
+    assert clean["mean_jaccard"] > 0.80 and mixed["mean_jaccard"] > 0.80
+    assert ocr["mean_jaccard"] < 0.55
+    assert min(clean["mean_jaccard"], mixed["mean_jaccard"]) - ocr["mean_jaccard"] > 0.25
+    # the ocr-only tier is exactly the single-witness books absent from s-dismas (Gen→Wisdom) + odr-com
+    assert set(ocr["books"]) == {
+        "3-esdras", "4-esdras", "abdias", "aggeus", "amos", "ecclesiasticus", "ezechiel", "habacuc",
+        "isaie", "jeremie", "joel", "malachie", "micheas", "nahum", "osee", "prayer-of-manasses", "zacharias"}
+    # every book is accounted for, each with a valid mean in [0, 1]
+    assert len(d["per_book"]) == 76
+    assert all(0.0 <= b["mean_jaccard"] <= 1.0 for b in d["per_book"].values())
+    # severe tail is dominated by the WELL-ATTESTED books (versification off-by-one), not OCR noise
+    st = d["severe_tail"]
+    sev = st["by_witness_tier"]
+    assert sev["ocr-only-noisy"] <= 5
+    assert sev["clean-diplomatic"] + sev["mixed"] >= 0.95 * st["count"]
+    # Psalms tops the tail — the Vulgate convention of numbering the psalm title as verse 1
+    assert next(iter(st["by_book_top"])) == "psalms"
