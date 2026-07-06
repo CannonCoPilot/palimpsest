@@ -1,0 +1,1088 @@
+{
+  "artifact": "basis-db",
+  "phase": "P1.6",
+  "idx": 108,
+  "generated_by": "build_basis_db.py",
+  "note": "Committed snapshot of the basis database. The queryable basis-db.sqlite is written to the gitignored scratch tree (regenerable from the consensus corpus it derives from, and comparable in size); this JSON carries the schema, table row counts, per-book verse + confidence distributions, and the full apparatus/structural/placement records — the diff-reviewable, CI-safe view. Scripture render surfaces are materialized in the DB (needed for P2a/P2b); chapter-level apparatus text is coverage-tracked (P1.5) and sourced at render time from the pinned witnesses.",
+  "sqlite": {
+    "path": "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite",
+    "sha256": "eb0e7247738ccff0cdc98cf16f7e8981177964efca62ab7203a718de0da29bf1",
+    "size_bytes": 94162944,
+    "row_counts": {
+      "elements": 37369,
+      "attestation": 151245,
+      "consensus": 37185,
+      "placement": 32
+    }
+  },
+  "schema": [
+    "CREATE TABLE elements(\n  id TEXT PRIMARY KEY, type TEXT NOT NULL, canonical_ref TEXT, book TEXT, section_id TEXT,\n  render_modern TEXT, render_archaic TEXT, meta TEXT)",
+    "CREATE TABLE attestation(\n  element_id TEXT NOT NULL, source TEXT NOT NULL, present INTEGER, surface_modern TEXT,\n  surface_archaic TEXT, locus TEXT, method TEXT, confidence REAL, evidence TEXT)",
+    "CREATE TABLE consensus(\n  element_id TEXT PRIMARY KEY, lemma TEXT, agreement REAL, support_depth INTEGER,\n  indep_depth INTEGER, tier TEXT, variant_pileup TEXT)",
+    "CREATE TABLE placement(\n  element_id TEXT PRIMARY KEY, tome_position TEXT, page INTEGER, crop TEXT, identifying_text TEXT,\n  ocr_offset INTEGER, sha256 TEXT)",
+    "CREATE INDEX ix_att_element ON attestation(element_id)",
+    "CREATE INDEX ix_att_source ON attestation(source)",
+    "CREATE INDEX ix_el_type ON elements(type)",
+    "CREATE INDEX ix_el_book ON elements(book)",
+    "CREATE INDEX ix_cons_tier ON consensus(tier);"
+  ],
+  "element_counts": {
+    "scripture-verse": 37185,
+    "apparatus-item": 102,
+    "structural-node": 82
+  },
+  "attestation_by_source": {
+    "archive_org": 26,
+    "madueke_a": 35809,
+    "madueke_b": 26,
+    "ocr_consensus": 36266,
+    "odr_com": 16068,
+    "s_dismas": 25818,
+    "sabates_a": 37232
+  },
+  "scripture": {
+    "elements": 37185,
+    "tiers": {
+      "high": 30522,
+      "low": 239,
+      "moderate": 6424
+    },
+    "indep_depth": {
+      "1": 239,
+      "2": 8680,
+      "3": 15472,
+      "4": 12794
+    },
+    "mean_agreement": 0.8102,
+    "per_book": {
+      "1-corinthians": {
+        "elements": 439,
+        "tiers": {
+          "high": 426,
+          "low": 2,
+          "moderate": 11
+        },
+        "indep_depth": {
+          "1": 2,
+          "3": 31,
+          "4": 406
+        }
+      },
+      "1-esdras": {
+        "elements": 280,
+        "tiers": {
+          "high": 266,
+          "moderate": 14
+        },
+        "indep_depth": {
+          "2": 15,
+          "3": 265
+        }
+      },
+      "1-john": {
+        "elements": 105,
+        "tiers": {
+          "high": 105
+        },
+        "indep_depth": {
+          "3": 1,
+          "4": 104
+        }
+      },
+      "1-kings": {
+        "elements": 811,
+        "tiers": {
+          "high": 771,
+          "low": 1,
+          "moderate": 39
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 53,
+          "3": 757
+        }
+      },
+      "1-machabees": {
+        "elements": 929,
+        "tiers": {
+          "high": 929
+        },
+        "indep_depth": {
+          "2": 25,
+          "3": 904
+        }
+      },
+      "1-paralipomenon": {
+        "elements": 940,
+        "tiers": {
+          "high": 825,
+          "low": 3,
+          "moderate": 112
+        },
+        "indep_depth": {
+          "1": 3,
+          "2": 86,
+          "3": 851
+        }
+      },
+      "1-peter": {
+        "elements": 105,
+        "tiers": {
+          "high": 103,
+          "moderate": 2
+        },
+        "indep_depth": {
+          "3": 3,
+          "4": 102
+        }
+      },
+      "1-thessalonians": {
+        "elements": 89,
+        "tiers": {
+          "high": 78,
+          "moderate": 11
+        },
+        "indep_depth": {
+          "2": 1,
+          "3": 2,
+          "4": 86
+        }
+      },
+      "1-timothy": {
+        "elements": 113,
+        "tiers": {
+          "high": 110,
+          "moderate": 3
+        },
+        "indep_depth": {
+          "3": 6,
+          "4": 107
+        }
+      },
+      "2-corinthians": {
+        "elements": 258,
+        "tiers": {
+          "high": 238,
+          "moderate": 20
+        },
+        "indep_depth": {
+          "2": 3,
+          "3": 8,
+          "4": 247
+        }
+      },
+      "2-esdras": {
+        "elements": 404,
+        "tiers": {
+          "high": 319,
+          "moderate": 85
+        },
+        "indep_depth": {
+          "2": 67,
+          "3": 337
+        }
+      },
+      "2-john": {
+        "elements": 13,
+        "tiers": {
+          "high": 13
+        },
+        "indep_depth": {
+          "3": 1,
+          "4": 12
+        }
+      },
+      "2-kings": {
+        "elements": 697,
+        "tiers": {
+          "high": 661,
+          "low": 3,
+          "moderate": 33
+        },
+        "indep_depth": {
+          "1": 3,
+          "2": 53,
+          "3": 641
+        }
+      },
+      "2-machabees": {
+        "elements": 558,
+        "tiers": {
+          "high": 558
+        },
+        "indep_depth": {
+          "2": 13,
+          "3": 545
+        }
+      },
+      "2-paralipomenon": {
+        "elements": 822,
+        "tiers": {
+          "high": 747,
+          "moderate": 75
+        },
+        "indep_depth": {
+          "2": 43,
+          "3": 779
+        }
+      },
+      "2-peter": {
+        "elements": 61,
+        "tiers": {
+          "high": 60,
+          "moderate": 1
+        },
+        "indep_depth": {
+          "4": 61
+        }
+      },
+      "2-thessalonians": {
+        "elements": 47,
+        "tiers": {
+          "high": 47
+        },
+        "indep_depth": {
+          "3": 4,
+          "4": 43
+        }
+      },
+      "2-timothy": {
+        "elements": 83,
+        "tiers": {
+          "high": 81,
+          "moderate": 2
+        },
+        "indep_depth": {
+          "2": 1,
+          "3": 3,
+          "4": 79
+        }
+      },
+      "3-esdras": {
+        "elements": 450,
+        "tiers": {
+          "high": 85,
+          "low": 7,
+          "moderate": 358
+        },
+        "indep_depth": {
+          "1": 7,
+          "2": 443
+        }
+      },
+      "3-john": {
+        "elements": 14,
+        "tiers": {
+          "high": 14
+        },
+        "indep_depth": {
+          "3": 1,
+          "4": 13
+        }
+      },
+      "3-kings": {
+        "elements": 818,
+        "tiers": {
+          "high": 750,
+          "low": 5,
+          "moderate": 63
+        },
+        "indep_depth": {
+          "1": 5,
+          "2": 67,
+          "3": 746
+        }
+      },
+      "4-esdras": {
+        "elements": 856,
+        "tiers": {
+          "high": 115,
+          "low": 40,
+          "moderate": 701
+        },
+        "indep_depth": {
+          "1": 40,
+          "2": 816
+        }
+      },
+      "4-kings": {
+        "elements": 719,
+        "tiers": {
+          "high": 696,
+          "moderate": 23
+        },
+        "indep_depth": {
+          "2": 31,
+          "3": 688
+        }
+      },
+      "abdias": {
+        "elements": 21,
+        "tiers": {
+          "high": 5,
+          "low": 2,
+          "moderate": 14
+        },
+        "indep_depth": {
+          "1": 2,
+          "2": 19
+        }
+      },
+      "acts": {
+        "elements": 1007,
+        "tiers": {
+          "high": 933,
+          "low": 2,
+          "moderate": 72
+        },
+        "indep_depth": {
+          "1": 2,
+          "2": 2,
+          "3": 75,
+          "4": 928
+        }
+      },
+      "aggeus": {
+        "elements": 38,
+        "tiers": {
+          "high": 25,
+          "low": 1,
+          "moderate": 12
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 37
+        }
+      },
+      "amos": {
+        "elements": 147,
+        "tiers": {
+          "high": 36,
+          "low": 2,
+          "moderate": 109
+        },
+        "indep_depth": {
+          "1": 2,
+          "2": 145
+        }
+      },
+      "apocalypse": {
+        "elements": 405,
+        "tiers": {
+          "high": 404,
+          "moderate": 1
+        },
+        "indep_depth": {
+          "3": 15,
+          "4": 390
+        }
+      },
+      "baruch": {
+        "elements": 213,
+        "tiers": {
+          "high": 212,
+          "moderate": 1
+        },
+        "indep_depth": {
+          "2": 5,
+          "3": 208
+        }
+      },
+      "canticle-of-canticles": {
+        "elements": 116,
+        "tiers": {
+          "high": 110,
+          "moderate": 6
+        },
+        "indep_depth": {
+          "2": 5,
+          "3": 111
+        }
+      },
+      "colossians": {
+        "elements": 95,
+        "tiers": {
+          "high": 95
+        },
+        "indep_depth": {
+          "3": 1,
+          "4": 94
+        }
+      },
+      "daniel": {
+        "elements": 531,
+        "tiers": {
+          "high": 530,
+          "moderate": 1
+        },
+        "indep_depth": {
+          "2": 8,
+          "3": 523
+        }
+      },
+      "deuteronomy": {
+        "elements": 961,
+        "tiers": {
+          "high": 941,
+          "low": 2,
+          "moderate": 18
+        },
+        "indep_depth": {
+          "1": 2,
+          "2": 13,
+          "3": 946
+        }
+      },
+      "ecclesiastes": {
+        "elements": 223,
+        "tiers": {
+          "high": 207,
+          "low": 1,
+          "moderate": 15
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 18,
+          "3": 204
+        }
+      },
+      "ecclesiasticus": {
+        "elements": 1592,
+        "tiers": {
+          "high": 657,
+          "low": 50,
+          "moderate": 885
+        },
+        "indep_depth": {
+          "1": 50,
+          "2": 1542
+        }
+      },
+      "ephesians": {
+        "elements": 155,
+        "tiers": {
+          "high": 150,
+          "moderate": 5
+        },
+        "indep_depth": {
+          "3": 7,
+          "4": 148
+        }
+      },
+      "esther": {
+        "elements": 275,
+        "tiers": {
+          "high": 258,
+          "low": 1,
+          "moderate": 16
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 16,
+          "3": 258
+        }
+      },
+      "exodus": {
+        "elements": 1213,
+        "tiers": {
+          "high": 1162,
+          "low": 1,
+          "moderate": 50
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 1,
+          "3": 111,
+          "4": 1100
+        }
+      },
+      "ezechiel": {
+        "elements": 1272,
+        "tiers": {
+          "high": 507,
+          "low": 12,
+          "moderate": 753
+        },
+        "indep_depth": {
+          "1": 12,
+          "2": 1260
+        }
+      },
+      "galatians": {
+        "elements": 149,
+        "tiers": {
+          "high": 147,
+          "moderate": 2
+        },
+        "indep_depth": {
+          "3": 8,
+          "4": 141
+        }
+      },
+      "genesis": {
+        "elements": 1532,
+        "tiers": {
+          "high": 1481,
+          "low": 2,
+          "moderate": 49
+        },
+        "indep_depth": {
+          "1": 2,
+          "2": 3,
+          "3": 253,
+          "4": 1274
+        }
+      },
+      "habacuc": {
+        "elements": 56,
+        "tiers": {
+          "high": 10,
+          "low": 2,
+          "moderate": 44
+        },
+        "indep_depth": {
+          "1": 2,
+          "2": 54
+        }
+      },
+      "hebrews": {
+        "elements": 303,
+        "tiers": {
+          "high": 287,
+          "moderate": 16
+        },
+        "indep_depth": {
+          "3": 22,
+          "4": 281
+        }
+      },
+      "isaie": {
+        "elements": 1292,
+        "tiers": {
+          "high": 515,
+          "low": 21,
+          "moderate": 756
+        },
+        "indep_depth": {
+          "1": 21,
+          "2": 1271
+        }
+      },
+      "james": {
+        "elements": 108,
+        "tiers": {
+          "high": 108
+        },
+        "indep_depth": {
+          "3": 3,
+          "4": 105
+        }
+      },
+      "jeremie": {
+        "elements": 1363,
+        "tiers": {
+          "high": 748,
+          "low": 9,
+          "moderate": 606
+        },
+        "indep_depth": {
+          "1": 9,
+          "2": 1354
+        }
+      },
+      "job": {
+        "elements": 1070,
+        "tiers": {
+          "high": 960,
+          "low": 3,
+          "moderate": 107
+        },
+        "indep_depth": {
+          "1": 3,
+          "2": 118,
+          "3": 949
+        }
+      },
+      "joel": {
+        "elements": 73,
+        "tiers": {
+          "high": 30,
+          "low": 1,
+          "moderate": 42
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 72
+        }
+      },
+      "john": {
+        "elements": 879,
+        "tiers": {
+          "high": 842,
+          "moderate": 37
+        },
+        "indep_depth": {
+          "2": 1,
+          "3": 13,
+          "4": 865
+        }
+      },
+      "jonas": {
+        "elements": 48,
+        "tiers": {
+          "high": 48
+        },
+        "indep_depth": {
+          "2": 1,
+          "3": 47
+        }
+      },
+      "josue": {
+        "elements": 658,
+        "tiers": {
+          "high": 635,
+          "moderate": 23
+        },
+        "indep_depth": {
+          "2": 20,
+          "3": 638
+        }
+      },
+      "jude": {
+        "elements": 25,
+        "tiers": {
+          "high": 24,
+          "moderate": 1
+        },
+        "indep_depth": {
+          "4": 25
+        }
+      },
+      "judges": {
+        "elements": 618,
+        "tiers": {
+          "high": 590,
+          "moderate": 28
+        },
+        "indep_depth": {
+          "2": 17,
+          "3": 601
+        }
+      },
+      "judith": {
+        "elements": 346,
+        "tiers": {
+          "high": 312,
+          "moderate": 34
+        },
+        "indep_depth": {
+          "2": 32,
+          "3": 314
+        }
+      },
+      "lamentations": {
+        "elements": 154,
+        "tiers": {
+          "high": 154
+        },
+        "indep_depth": {
+          "2": 1,
+          "3": 153
+        }
+      },
+      "leviticus": {
+        "elements": 862,
+        "tiers": {
+          "high": 797,
+          "low": 4,
+          "moderate": 61
+        },
+        "indep_depth": {
+          "1": 4,
+          "2": 61,
+          "3": 797
+        }
+      },
+      "luke": {
+        "elements": 1151,
+        "tiers": {
+          "high": 1133,
+          "moderate": 18
+        },
+        "indep_depth": {
+          "2": 1,
+          "3": 74,
+          "4": 1076
+        }
+      },
+      "malachie": {
+        "elements": 55,
+        "tiers": {
+          "high": 26,
+          "moderate": 29
+        },
+        "indep_depth": {
+          "2": 55
+        }
+      },
+      "mark": {
+        "elements": 679,
+        "tiers": {
+          "high": 613,
+          "low": 1,
+          "moderate": 65
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 3,
+          "3": 7,
+          "4": 668
+        }
+      },
+      "matthew": {
+        "elements": 1072,
+        "tiers": {
+          "high": 1039,
+          "low": 1,
+          "moderate": 32
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 2,
+          "3": 10,
+          "4": 1059
+        }
+      },
+      "micheas": {
+        "elements": 104,
+        "tiers": {
+          "high": 25,
+          "low": 3,
+          "moderate": 76
+        },
+        "indep_depth": {
+          "1": 3,
+          "2": 101
+        }
+      },
+      "nahum": {
+        "elements": 47,
+        "tiers": {
+          "high": 17,
+          "low": 1,
+          "moderate": 29
+        },
+        "indep_depth": {
+          "1": 1,
+          "2": 46
+        }
+      },
+      "numbers": {
+        "elements": 1290,
+        "tiers": {
+          "high": 1208,
+          "low": 2,
+          "moderate": 80
+        },
+        "indep_depth": {
+          "1": 2,
+          "2": 37,
+          "3": 1251
+        }
+      },
+      "osee": {
+        "elements": 198,
+        "tiers": {
+          "high": 76,
+          "low": 5,
+          "moderate": 117
+        },
+        "indep_depth": {
+          "1": 5,
+          "2": 193
+        }
+      },
+      "philemon": {
+        "elements": 25,
+        "tiers": {
+          "high": 25
+        },
+        "indep_depth": {
+          "4": 25
+        }
+      },
+      "philippians": {
+        "elements": 104,
+        "tiers": {
+          "high": 103,
+          "moderate": 1
+        },
+        "indep_depth": {
+          "3": 2,
+          "4": 102
+        }
+      },
+      "prayer-of-manasses": {
+        "elements": 15,
+        "tiers": {
+          "high": 1,
+          "moderate": 14
+        },
+        "indep_depth": {
+          "2": 15
+        }
+      },
+      "proverbs": {
+        "elements": 918,
+        "tiers": {
+          "high": 720,
+          "low": 16,
+          "moderate": 182
+        },
+        "indep_depth": {
+          "1": 16,
+          "2": 192,
+          "3": 710
+        }
+      },
+      "psalms": {
+        "elements": 2550,
+        "tiers": {
+          "high": 2290,
+          "low": 16,
+          "moderate": 244
+        },
+        "indep_depth": {
+          "1": 16,
+          "2": 23,
+          "3": 227,
+          "4": 2284
+        }
+      },
+      "romans": {
+        "elements": 434,
+        "tiers": {
+          "high": 409,
+          "low": 1,
+          "moderate": 24
+        },
+        "indep_depth": {
+          "1": 1,
+          "3": 13,
+          "4": 420
+        }
+      },
+      "ruth": {
+        "elements": 85,
+        "tiers": {
+          "high": 84,
+          "moderate": 1
+        },
+        "indep_depth": {
+          "3": 7,
+          "4": 78
+        }
+      },
+      "sophonias": {
+        "elements": 53,
+        "tiers": {
+          "high": 53
+        },
+        "indep_depth": {
+          "2": 1,
+          "3": 52
+        }
+      },
+      "titus": {
+        "elements": 46,
+        "tiers": {
+          "high": 45,
+          "moderate": 1
+        },
+        "indep_depth": {
+          "4": 46
+        }
+      },
+      "tobias": {
+        "elements": 298,
+        "tiers": {
+          "high": 282,
+          "moderate": 16
+        },
+        "indep_depth": {
+          "2": 23,
+          "3": 275
+        }
+      },
+      "wisdom": {
+        "elements": 439,
+        "tiers": {
+          "high": 410,
+          "moderate": 29
+        },
+        "indep_depth": {
+          "3": 14,
+          "4": 425
+        }
+      },
+      "zacharias": {
+        "elements": 211,
+        "tiers": {
+          "high": 46,
+          "low": 16,
+          "moderate": 149
+        },
+        "indep_depth": {
+          "1": 16,
+          "2": 195
+        }
+      }
+    }
+  },
+  "apparatus": {
+    "reference_docs": 26,
+    "book_arguments": 76,
+    "attestation_rows": 245
+  },
+  "structural": {
+    "sections": [
+      {
+        "section_id": "nt",
+        "tome_position": "Rheims New Testament (1582) · New Testament",
+        "books": 27
+      },
+      {
+        "section_id": "ot-tome1-pentateuch",
+        "tome_position": "Douay OT First Tome (1609) · First Part: the Pentateuch (Legal bookes)",
+        "books": 5
+      },
+      {
+        "section_id": "ot-tome1-historical",
+        "tome_position": "Douay OT First Tome (1609) · Second Part: Historical Bookes",
+        "books": 15
+      },
+      {
+        "section_id": "ot-tome2-sapiential",
+        "tome_position": "Douay OT Second Tome (1610) · Third Part: Sapiential Bookes (with the Psalter)",
+        "books": 6
+      },
+      {
+        "section_id": "ot-tome2-prophetical",
+        "tome_position": "Douay OT Second Tome (1610) · Fourth Part: Prophetical Bookes (with Machabees)",
+        "books": 20
+      },
+      {
+        "section_id": "ot-appendix",
+        "tome_position": "Douay OT (end of Second Tome) — appendix · Appendix: bookes not received as canonical",
+        "books": 3
+      }
+    ],
+    "books": 76
+  },
+  "reference_doc_decisions": [
+    {
+      "slot_id": "apparatus/ot-front/title-page",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-front/approbatio",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-front/preface",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-front/privilege",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-front/censura",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-1",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-2",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-3",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-3b",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-4",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-5",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-6",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/glossary",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/ot-back/epistles-table",
+      "include": false
+    },
+    {
+      "slot_id": "apparatus/nt-front/title-page",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-front/preface",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-front/censure",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/explication-words",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-peter",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-paul",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-corruptions",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-catholic-truths",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-epistles-gospels",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/apostles-creed",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/evangelical-history",
+      "include": true
+    },
+    {
+      "slot_id": "apparatus/nt-back/scripture-authority",
+      "include": true
+    }
+  ]
+}
