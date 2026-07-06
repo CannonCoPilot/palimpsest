@@ -1,0 +1,56 @@
+{
+  "_note": "P0.1 pins for the git/file digital witnesses. All git remotes confirmed UP TO DATE with upstream on 2026-07-05 (no re-pull churn). Archive.org scan assets are pinned separately in archive-scans-manifest.json (P0.3); odr-com in the scrape manifest (P0.2). Consolidated into sources-registry.json at P0.5.",
+  "pinned_on": "2026-07-05",
+  "witnesses": {
+    "madueke-a": {
+      "provenance": "codeberg olprint/Augmented-Bible",
+      "remote": "https://codeberg.org/olprint/Augmented-Bible",
+      "commit": "ca120d44815d8107639c85bb3858a48a6f46b260",
+      "commit_date": "2026-05-23T15:26:11+01:00",
+      "form": "1334 chapter HTML (books/<N>.html)",
+      "spelling": "modern", "typeset": "modern",
+      "coverage": "full 73 books / 1334 chapters",
+      "lineage": "madueke", "independent": false,
+      "role": "scripture backbone (verse-structured)",
+      "local_path": "core/.scratch/originaldr-project/sources/madueke-a"
+    },
+    "madueke-b": {
+      "provenance": "gitlab simple-gui/xml2gui-bible (PDFs; the 'New PDF' per Madueke_A README)",
+      "remote": "https://gitlab.com/simple-gui/xml2gui-bible",
+      "form": "2 PDFs (+ pdftotext merged/small)",
+      "spelling": "modern", "typeset": "modern",
+      "coverage": "full + apparatus (arguments, annotations, tables; incl Manasses/3-4 Esdras appendix)",
+      "lineage": "madueke", "independent": false,
+      "role": "scripture + apparatus (supersedes janvier release PDFs)",
+      "local_path": "core/.scratch/originaldr-project/sources/madueke-b",
+      "files": [
+        {"name": "Original-Douay-Rheims-Bible-Merged.pdf", "sha256": "030f7cad89cbf08affca659f114de2c5d28e605e8d7a5433e97533cbc8339a48"},
+        {"name": "Original-DouayRheims-Bible.pdf", "sha256": "7de3e7aa59d87bd585cce3b262feef6af6a8237bec1e266e6b036ae06c6d759f"}
+      ]
+    },
+    "sabates-a": {
+      "provenance": "github janvier-s/original-douay-rheims",
+      "remote": "https://github.com/janvier-s/original-douay-rheims.git",
+      "commit": "0bf4218b9b46b5b00d29a703b5b74226051b97a5",
+      "form": "structured JSON (bible, annotations, reference/{ot=14,nt=12}, usfm)",
+      "spelling": "modern", "typeset": "modern",
+      "coverage": "full + apparatus + apocryphal appendix + 26 reference docs (front/back matter)",
+      "lineage": "sabates (derives from madueke)", "independent": false,
+      "role": "apparatus (notes/xrefs/annotations) + front/back matter reference docs",
+      "local_path": ".scratch/original-douay-rheims (repo-root; identical copy at core/.scratch/bible-ingest/repos/original-douay-rheims)"
+    },
+    "s-dismas": {
+      "provenance": "github s-dismas/Pdf (saint-dismas.com ConTeXt re-typeset, archaic)",
+      "remote": "https://github.com/s-dismas/Pdf.git",
+      "commit": "d6f3e94b6677f349469b38ed249aa9be905360a4",
+      "commit_date": "2024-04-13T17:33:35-05:00",
+      "form": "55 PDFs (frontmatter = scanned images) — NT/ 29, OT/ 26",
+      "spelling": "archaic", "typeset": "archaic",
+      "coverage": "NT complete (Matthew..Apocalypse + front-matter + epistles-argument); OT Genesis..Wisdom (books 02-26) + front-matter. OT Ecclesiasticus..Machabees + prophets NOT typeset upstream.",
+      "lineage": "s-dismas", "independent": true,
+      "role": "archaic diplomatic backbone (type + spelling)",
+      "local_path": "core/.scratch/originaldr-project/sources/s-dismas",
+      "note": "55 PDFs IS the complete current upstream set at this commit; the earlier '57' figure was a mis-estimate."
+    }
+  }
+}

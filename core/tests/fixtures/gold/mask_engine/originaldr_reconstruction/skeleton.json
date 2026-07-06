@@ -1,0 +1,1075 @@
+{
+  "schema": "originaldr.skeleton/v1",
+  "generated_by": "originaldr_reconstruction/build_skeleton.py",
+  "canonical_authority": "book+chapter identity from catholic_dr oracle (canon_chapters.json); reference-doc slots from originaldr_validation/apparatus-order.json; book slugs + apparatus order from gen_dr_original.py",
+  "id_conventions": {
+    "scripture_chapter": "scripture/<book-slug>/<chapter>",
+    "scripture_verse": "scripture/<book-slug>/<chapter>/<verse>  (opened by detection; consensus-called)",
+    "book_argument": "apparatus/<book-slug>/argument",
+    "chapter_channel": "apparatus/<book-slug>/<chapter>/<channel>  (channel in {chapter_argument,verse_footnotes,cross_refs,sidecar_notes})",
+    "reference_doc": "apparatus/<ot|nt>-<front|back>/<name>",
+    "structural": "structure/<node>  (tome, testament/OT, testament/NT, appendix, matter/<region>)"
+  },
+  "structure": {
+    "tome": "originaldr",
+    "testaments": [
+      "OT",
+      "NT"
+    ],
+    "matter_regions": [
+      "ot_front",
+      "ot_back",
+      "nt_front",
+      "nt_back"
+    ],
+    "appendix": [
+      "prayer-of-manasses",
+      "3-esdras",
+      "4-esdras"
+    ]
+  },
+  "channels": {
+    "book_level": [
+      {
+        "name": "book_argument",
+        "masked": true,
+        "note": "book-level argument/introduction"
+      }
+    ],
+    "chapter_level": [
+      {
+        "name": "scripture_body",
+        "masked": false,
+        "note": "verse bodies; individual verses addressed scripture/<book>/<ch>/<v>"
+      },
+      {
+        "name": "chapter_argument",
+        "masked": true,
+        "note": "chapter summary/argument"
+      },
+      {
+        "name": "verse_footnotes",
+        "masked": true,
+        "note": "per-verse footnotes"
+      },
+      {
+        "name": "cross_refs",
+        "masked": true,
+        "note": "per-verse cross-references"
+      },
+      {
+        "name": "sidecar_notes",
+        "masked": true,
+        "note": "marginal commentary (annotations sidecar)"
+      }
+    ]
+  },
+  "books": [
+    {
+      "ordinal": 1,
+      "slug": "genesis",
+      "oracle_match": "genesis",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 50,
+      "scripture_id": "scripture/genesis",
+      "argument_id": "apparatus/genesis/argument"
+    },
+    {
+      "ordinal": 2,
+      "slug": "exodus",
+      "oracle_match": "exodus",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 40,
+      "scripture_id": "scripture/exodus",
+      "argument_id": "apparatus/exodus/argument"
+    },
+    {
+      "ordinal": 3,
+      "slug": "leviticus",
+      "oracle_match": "leviticus",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 27,
+      "scripture_id": "scripture/leviticus",
+      "argument_id": "apparatus/leviticus/argument"
+    },
+    {
+      "ordinal": 4,
+      "slug": "numbers",
+      "oracle_match": "numeri",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 36,
+      "scripture_id": "scripture/numbers",
+      "argument_id": "apparatus/numbers/argument"
+    },
+    {
+      "ordinal": 5,
+      "slug": "deuteronomy",
+      "oracle_match": "deuteronomy",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 34,
+      "scripture_id": "scripture/deuteronomy",
+      "argument_id": "apparatus/deuteronomy/argument"
+    },
+    {
+      "ordinal": 6,
+      "slug": "josue",
+      "oracle_match": "iosue",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 24,
+      "scripture_id": "scripture/josue",
+      "argument_id": "apparatus/josue/argument"
+    },
+    {
+      "ordinal": 7,
+      "slug": "judges",
+      "oracle_match": "judges",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 21,
+      "scripture_id": "scripture/judges",
+      "argument_id": "apparatus/judges/argument"
+    },
+    {
+      "ordinal": 8,
+      "slug": "ruth",
+      "oracle_match": "ruth",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 4,
+      "scripture_id": "scripture/ruth",
+      "argument_id": "apparatus/ruth/argument"
+    },
+    {
+      "ordinal": 9,
+      "slug": "1-kings",
+      "oracle_match": "samuel",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 31,
+      "scripture_id": "scripture/1-kings",
+      "argument_id": "apparatus/1-kings/argument"
+    },
+    {
+      "ordinal": 10,
+      "slug": "2-kings",
+      "oracle_match": "samuel",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 24,
+      "scripture_id": "scripture/2-kings",
+      "argument_id": "apparatus/2-kings/argument"
+    },
+    {
+      "ordinal": 11,
+      "slug": "3-kings",
+      "oracle_match": "third book of kings",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 22,
+      "scripture_id": "scripture/3-kings",
+      "argument_id": "apparatus/3-kings/argument"
+    },
+    {
+      "ordinal": 12,
+      "slug": "4-kings",
+      "oracle_match": "fourth book of kings",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 25,
+      "scripture_id": "scripture/4-kings",
+      "argument_id": "apparatus/4-kings/argument"
+    },
+    {
+      "ordinal": 13,
+      "slug": "1-paralipomenon",
+      "oracle_match": "first book of paralipomenon",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 29,
+      "scripture_id": "scripture/1-paralipomenon",
+      "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    {
+      "ordinal": 14,
+      "slug": "2-paralipomenon",
+      "oracle_match": "second book of paralipomenon",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 36,
+      "scripture_id": "scripture/2-paralipomenon",
+      "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    {
+      "ordinal": 15,
+      "slug": "1-esdras",
+      "oracle_match": "first book of esdras",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 10,
+      "scripture_id": "scripture/1-esdras",
+      "argument_id": "apparatus/1-esdras/argument"
+    },
+    {
+      "ordinal": 16,
+      "slug": "2-esdras",
+      "oracle_match": "nehemias",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 13,
+      "scripture_id": "scripture/2-esdras",
+      "argument_id": "apparatus/2-esdras/argument"
+    },
+    {
+      "ordinal": 17,
+      "slug": "tobias",
+      "oracle_match": "tobias",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 14,
+      "scripture_id": "scripture/tobias",
+      "argument_id": "apparatus/tobias/argument"
+    },
+    {
+      "ordinal": 18,
+      "slug": "judith",
+      "oracle_match": "judith",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 16,
+      "scripture_id": "scripture/judith",
+      "argument_id": "apparatus/judith/argument"
+    },
+    {
+      "ordinal": 19,
+      "slug": "esther",
+      "oracle_match": "esther",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 16,
+      "scripture_id": "scripture/esther",
+      "argument_id": "apparatus/esther/argument"
+    },
+    {
+      "ordinal": 20,
+      "slug": "job",
+      "oracle_match": "job",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 42,
+      "scripture_id": "scripture/job",
+      "argument_id": "apparatus/job/argument"
+    },
+    {
+      "ordinal": 21,
+      "slug": "psalms",
+      "oracle_match": "psalms",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 150,
+      "scripture_id": "scripture/psalms",
+      "argument_id": "apparatus/psalms/argument"
+    },
+    {
+      "ordinal": 22,
+      "slug": "proverbs",
+      "oracle_match": "proverbs",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 31,
+      "scripture_id": "scripture/proverbs",
+      "argument_id": "apparatus/proverbs/argument"
+    },
+    {
+      "ordinal": 23,
+      "slug": "ecclesiastes",
+      "oracle_match": "ecclesiastes",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 12,
+      "scripture_id": "scripture/ecclesiastes",
+      "argument_id": "apparatus/ecclesiastes/argument"
+    },
+    {
+      "ordinal": 24,
+      "slug": "canticle-of-canticles",
+      "oracle_match": "canticle",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 8,
+      "scripture_id": "scripture/canticle-of-canticles",
+      "argument_id": "apparatus/canticle-of-canticles/argument"
+    },
+    {
+      "ordinal": 25,
+      "slug": "wisdom",
+      "oracle_match": "wisdom",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 19,
+      "scripture_id": "scripture/wisdom",
+      "argument_id": "apparatus/wisdom/argument"
+    },
+    {
+      "ordinal": 26,
+      "slug": "ecclesiasticus",
+      "oracle_match": "ecclesiasticus",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 51,
+      "scripture_id": "scripture/ecclesiasticus",
+      "argument_id": "apparatus/ecclesiasticus/argument"
+    },
+    {
+      "ordinal": 27,
+      "slug": "isaie",
+      "oracle_match": "isaie",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 66,
+      "scripture_id": "scripture/isaie",
+      "argument_id": "apparatus/isaie/argument"
+    },
+    {
+      "ordinal": 28,
+      "slug": "jeremie",
+      "oracle_match": "jeremy",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 52,
+      "scripture_id": "scripture/jeremie",
+      "argument_id": "apparatus/jeremie/argument"
+    },
+    {
+      "ordinal": 29,
+      "slug": "lamentations",
+      "oracle_match": "lamentations",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 5,
+      "scripture_id": "scripture/lamentations",
+      "argument_id": "apparatus/lamentations/argument"
+    },
+    {
+      "ordinal": 30,
+      "slug": "baruch",
+      "oracle_match": "baruch",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 6,
+      "scripture_id": "scripture/baruch",
+      "argument_id": "apparatus/baruch/argument"
+    },
+    {
+      "ordinal": 31,
+      "slug": "ezechiel",
+      "oracle_match": "ezechiel",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 48,
+      "scripture_id": "scripture/ezechiel",
+      "argument_id": "apparatus/ezechiel/argument"
+    },
+    {
+      "ordinal": 32,
+      "slug": "daniel",
+      "oracle_match": "daniel",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 14,
+      "scripture_id": "scripture/daniel",
+      "argument_id": "apparatus/daniel/argument"
+    },
+    {
+      "ordinal": 33,
+      "slug": "osee",
+      "oracle_match": "osee",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 14,
+      "scripture_id": "scripture/osee",
+      "argument_id": "apparatus/osee/argument"
+    },
+    {
+      "ordinal": 34,
+      "slug": "joel",
+      "oracle_match": "joel",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 3,
+      "scripture_id": "scripture/joel",
+      "argument_id": "apparatus/joel/argument"
+    },
+    {
+      "ordinal": 35,
+      "slug": "amos",
+      "oracle_match": "amos",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 9,
+      "scripture_id": "scripture/amos",
+      "argument_id": "apparatus/amos/argument"
+    },
+    {
+      "ordinal": 36,
+      "slug": "abdias",
+      "oracle_match": "abdias",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 1,
+      "scripture_id": "scripture/abdias",
+      "argument_id": "apparatus/abdias/argument"
+    },
+    {
+      "ordinal": 37,
+      "slug": "jonas",
+      "oracle_match": "jonas",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 4,
+      "scripture_id": "scripture/jonas",
+      "argument_id": "apparatus/jonas/argument"
+    },
+    {
+      "ordinal": 38,
+      "slug": "micheas",
+      "oracle_match": "micheas",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 7,
+      "scripture_id": "scripture/micheas",
+      "argument_id": "apparatus/micheas/argument"
+    },
+    {
+      "ordinal": 39,
+      "slug": "nahum",
+      "oracle_match": "nahum",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 3,
+      "scripture_id": "scripture/nahum",
+      "argument_id": "apparatus/nahum/argument"
+    },
+    {
+      "ordinal": 40,
+      "slug": "habacuc",
+      "oracle_match": "habacuc",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 3,
+      "scripture_id": "scripture/habacuc",
+      "argument_id": "apparatus/habacuc/argument"
+    },
+    {
+      "ordinal": 41,
+      "slug": "sophonias",
+      "oracle_match": "sophonias",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 3,
+      "scripture_id": "scripture/sophonias",
+      "argument_id": "apparatus/sophonias/argument"
+    },
+    {
+      "ordinal": 42,
+      "slug": "aggeus",
+      "oracle_match": "aggeus",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 2,
+      "scripture_id": "scripture/aggeus",
+      "argument_id": "apparatus/aggeus/argument"
+    },
+    {
+      "ordinal": 43,
+      "slug": "zacharias",
+      "oracle_match": "zacharias",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 14,
+      "scripture_id": "scripture/zacharias",
+      "argument_id": "apparatus/zacharias/argument"
+    },
+    {
+      "ordinal": 44,
+      "slug": "malachie",
+      "oracle_match": "malachie",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 4,
+      "scripture_id": "scripture/malachie",
+      "argument_id": "apparatus/malachie/argument"
+    },
+    {
+      "ordinal": 45,
+      "slug": "1-machabees",
+      "oracle_match": "first book of machabees",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 16,
+      "scripture_id": "scripture/1-machabees",
+      "argument_id": "apparatus/1-machabees/argument"
+    },
+    {
+      "ordinal": 46,
+      "slug": "2-machabees",
+      "oracle_match": "second book of machabees",
+      "testament": "OT",
+      "is_appendix": false,
+      "chapters": 15,
+      "scripture_id": "scripture/2-machabees",
+      "argument_id": "apparatus/2-machabees/argument"
+    },
+    {
+      "ordinal": 47,
+      "slug": "matthew",
+      "oracle_match": "according to matthew",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 28,
+      "scripture_id": "scripture/matthew",
+      "argument_id": "apparatus/matthew/argument"
+    },
+    {
+      "ordinal": 48,
+      "slug": "mark",
+      "oracle_match": "according to mark",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 16,
+      "scripture_id": "scripture/mark",
+      "argument_id": "apparatus/mark/argument"
+    },
+    {
+      "ordinal": 49,
+      "slug": "luke",
+      "oracle_match": "according to luke",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 24,
+      "scripture_id": "scripture/luke",
+      "argument_id": "apparatus/luke/argument"
+    },
+    {
+      "ordinal": 50,
+      "slug": "john",
+      "oracle_match": "according to john",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 21,
+      "scripture_id": "scripture/john",
+      "argument_id": "apparatus/john/argument"
+    },
+    {
+      "ordinal": 51,
+      "slug": "acts",
+      "oracle_match": "acts of the apostles",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 28,
+      "scripture_id": "scripture/acts",
+      "argument_id": "apparatus/acts/argument"
+    },
+    {
+      "ordinal": 52,
+      "slug": "romans",
+      "oracle_match": "to the romans",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 16,
+      "scripture_id": "scripture/romans",
+      "argument_id": "apparatus/romans/argument"
+    },
+    {
+      "ordinal": 53,
+      "slug": "1-corinthians",
+      "oracle_match": "first epistle of paul to the corinthians",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 16,
+      "scripture_id": "scripture/1-corinthians",
+      "argument_id": "apparatus/1-corinthians/argument"
+    },
+    {
+      "ordinal": 54,
+      "slug": "2-corinthians",
+      "oracle_match": "second epistle of paul to the corinthians",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 13,
+      "scripture_id": "scripture/2-corinthians",
+      "argument_id": "apparatus/2-corinthians/argument"
+    },
+    {
+      "ordinal": 55,
+      "slug": "galatians",
+      "oracle_match": "galatians",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 6,
+      "scripture_id": "scripture/galatians",
+      "argument_id": "apparatus/galatians/argument"
+    },
+    {
+      "ordinal": 56,
+      "slug": "ephesians",
+      "oracle_match": "ephesians",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 6,
+      "scripture_id": "scripture/ephesians",
+      "argument_id": "apparatus/ephesians/argument"
+    },
+    {
+      "ordinal": 57,
+      "slug": "philippians",
+      "oracle_match": "philippians",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 4,
+      "scripture_id": "scripture/philippians",
+      "argument_id": "apparatus/philippians/argument"
+    },
+    {
+      "ordinal": 58,
+      "slug": "colossians",
+      "oracle_match": "colossians",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 4,
+      "scripture_id": "scripture/colossians",
+      "argument_id": "apparatus/colossians/argument"
+    },
+    {
+      "ordinal": 59,
+      "slug": "1-thessalonians",
+      "oracle_match": "first epistle of paul to the thessalonians",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 5,
+      "scripture_id": "scripture/1-thessalonians",
+      "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    {
+      "ordinal": 60,
+      "slug": "2-thessalonians",
+      "oracle_match": "second epistle of s. paul to the thessalonians",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 3,
+      "scripture_id": "scripture/2-thessalonians",
+      "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    {
+      "ordinal": 61,
+      "slug": "1-timothy",
+      "oracle_match": "first epistle of s. paul to timothee",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 6,
+      "scripture_id": "scripture/1-timothy",
+      "argument_id": "apparatus/1-timothy/argument"
+    },
+    {
+      "ordinal": 62,
+      "slug": "2-timothy",
+      "oracle_match": "second epistle of paul to timothee",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 4,
+      "scripture_id": "scripture/2-timothy",
+      "argument_id": "apparatus/2-timothy/argument"
+    },
+    {
+      "ordinal": 63,
+      "slug": "titus",
+      "oracle_match": "titus",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 3,
+      "scripture_id": "scripture/titus",
+      "argument_id": "apparatus/titus/argument"
+    },
+    {
+      "ordinal": 64,
+      "slug": "philemon",
+      "oracle_match": "philemon",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 1,
+      "scripture_id": "scripture/philemon",
+      "argument_id": "apparatus/philemon/argument"
+    },
+    {
+      "ordinal": 65,
+      "slug": "hebrews",
+      "oracle_match": "hebrews",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 13,
+      "scripture_id": "scripture/hebrews",
+      "argument_id": "apparatus/hebrews/argument"
+    },
+    {
+      "ordinal": 66,
+      "slug": "james",
+      "oracle_match": "james",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 5,
+      "scripture_id": "scripture/james",
+      "argument_id": "apparatus/james/argument"
+    },
+    {
+      "ordinal": 67,
+      "slug": "1-peter",
+      "oracle_match": "first epistle of peter",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 5,
+      "scripture_id": "scripture/1-peter",
+      "argument_id": "apparatus/1-peter/argument"
+    },
+    {
+      "ordinal": 68,
+      "slug": "2-peter",
+      "oracle_match": "second epistle of peter",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 3,
+      "scripture_id": "scripture/2-peter",
+      "argument_id": "apparatus/2-peter/argument"
+    },
+    {
+      "ordinal": 69,
+      "slug": "1-john",
+      "oracle_match": "first epistle of john",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 5,
+      "scripture_id": "scripture/1-john",
+      "argument_id": "apparatus/1-john/argument"
+    },
+    {
+      "ordinal": 70,
+      "slug": "2-john",
+      "oracle_match": "second epistle of john",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 1,
+      "scripture_id": "scripture/2-john",
+      "argument_id": "apparatus/2-john/argument"
+    },
+    {
+      "ordinal": 71,
+      "slug": "3-john",
+      "oracle_match": "third epistle of john",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 1,
+      "scripture_id": "scripture/3-john",
+      "argument_id": "apparatus/3-john/argument"
+    },
+    {
+      "ordinal": 72,
+      "slug": "jude",
+      "oracle_match": "jude",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 1,
+      "scripture_id": "scripture/jude",
+      "argument_id": "apparatus/jude/argument"
+    },
+    {
+      "ordinal": 73,
+      "slug": "apocalypse",
+      "oracle_match": "apocalypse",
+      "testament": "NT",
+      "is_appendix": false,
+      "chapters": 22,
+      "scripture_id": "scripture/apocalypse",
+      "argument_id": "apparatus/apocalypse/argument"
+    },
+    {
+      "ordinal": 74,
+      "slug": "prayer-of-manasses",
+      "oracle_match": "prayer of manasses",
+      "testament": "APPENDIX",
+      "is_appendix": true,
+      "chapters": 1,
+      "scripture_id": "scripture/prayer-of-manasses",
+      "argument_id": "apparatus/prayer-of-manasses/argument"
+    },
+    {
+      "ordinal": 75,
+      "slug": "3-esdras",
+      "oracle_match": "3 esdras",
+      "testament": "APPENDIX",
+      "is_appendix": true,
+      "chapters": 9,
+      "scripture_id": "scripture/3-esdras",
+      "argument_id": "apparatus/3-esdras/argument"
+    },
+    {
+      "ordinal": 76,
+      "slug": "4-esdras",
+      "oracle_match": "4 esdras",
+      "testament": "APPENDIX",
+      "is_appendix": true,
+      "chapters": 16,
+      "scripture_id": "scripture/4-esdras",
+      "argument_id": "apparatus/4-esdras/argument"
+    }
+  ],
+  "reference_docs": [
+    {
+      "slot_id": "apparatus/ot-front/title-page",
+      "region": "ot_front",
+      "testament": "OT",
+      "matter": "front",
+      "name": "title-page",
+      "position": 0,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-front/approbatio",
+      "region": "ot_front",
+      "testament": "OT",
+      "matter": "front",
+      "name": "approbatio",
+      "position": 1,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-front/preface",
+      "region": "ot_front",
+      "testament": "OT",
+      "matter": "front",
+      "name": "preface",
+      "position": 2,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-front/privilege",
+      "region": "ot_front",
+      "testament": "OT",
+      "matter": "front",
+      "name": "privilege",
+      "position": 3,
+      "evidence_method": "manual-visual"
+    },
+    {
+      "slot_id": "apparatus/ot-front/censura",
+      "region": "ot_front",
+      "testament": "OT",
+      "matter": "front",
+      "name": "censura",
+      "position": 4,
+      "evidence_method": "manual-visual"
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-1",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "historical-table-age-1",
+      "position": 0,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-2",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "historical-table-age-2",
+      "position": 1,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-3",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "historical-table-age-3",
+      "position": 2,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-3b",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "historical-table-age-3b",
+      "position": 3,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-4",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "historical-table-age-4",
+      "position": 4,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-5",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "historical-table-age-5",
+      "position": 5,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-back/historical-table-age-6",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "historical-table-age-6",
+      "position": 6,
+      "evidence_method": "section-field"
+    },
+    {
+      "slot_id": "apparatus/ot-back/glossary",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "glossary",
+      "position": 7,
+      "evidence_method": "ocr-offset"
+    },
+    {
+      "slot_id": "apparatus/ot-back/epistles-table",
+      "region": "ot_back",
+      "testament": "OT",
+      "matter": "back",
+      "name": "epistles-table",
+      "position": 8,
+      "evidence_method": "structural"
+    },
+    {
+      "slot_id": "apparatus/nt-front/title-page",
+      "region": "nt_front",
+      "testament": "NT",
+      "matter": "front",
+      "name": "title-page",
+      "position": 0,
+      "evidence_method": "structural"
+    },
+    {
+      "slot_id": "apparatus/nt-front/preface",
+      "region": "nt_front",
+      "testament": "NT",
+      "matter": "front",
+      "name": "preface",
+      "position": 1,
+      "evidence_method": "ocr-offset"
+    },
+    {
+      "slot_id": "apparatus/nt-front/censure",
+      "region": "nt_front",
+      "testament": "NT",
+      "matter": "front",
+      "name": "censure",
+      "position": 2,
+      "evidence_method": "manual-visual"
+    },
+    {
+      "slot_id": "apparatus/nt-back/explication-words",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "explication-words",
+      "position": 0,
+      "evidence_method": "ocr-offset"
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-peter",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "table-peter",
+      "position": 1,
+      "evidence_method": "manual-visual"
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-paul",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "table-paul",
+      "position": 2,
+      "evidence_method": "manual-visual"
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-corruptions",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "table-corruptions",
+      "position": 3,
+      "evidence_method": "structural"
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-catholic-truths",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "table-catholic-truths",
+      "position": 4,
+      "evidence_method": "structural"
+    },
+    {
+      "slot_id": "apparatus/nt-back/table-epistles-gospels",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "table-epistles-gospels",
+      "position": 5,
+      "evidence_method": "structural"
+    },
+    {
+      "slot_id": "apparatus/nt-back/apostles-creed",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "apostles-creed",
+      "position": 6,
+      "evidence_method": "manual-visual"
+    },
+    {
+      "slot_id": "apparatus/nt-back/evangelical-history",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "evangelical-history",
+      "position": 7,
+      "evidence_method": "structural"
+    },
+    {
+      "slot_id": "apparatus/nt-back/scripture-authority",
+      "region": "nt_back",
+      "testament": "NT",
+      "matter": "back",
+      "name": "scripture-authority",
+      "position": 8,
+      "evidence_method": "structural"
+    }
+  ],
+  "totals": {
+    "books": 76,
+    "canonical_books": 73,
+    "appendix_books": 3,
+    "chapters": 1360,
+    "reference_docs": 26,
+    "book_channels": 1,
+    "chapter_channels": 5
+  },
+  "integrity": "aggregate + anchor asserts pass; per-book identity oracle-validated downstream (classify_books_catholic 76/76 on the rendered map)"
+}

@@ -1,0 +1,33 @@
+{
+  "skeleton_chapters": 1360,
+  "sources": {
+    "madueke_a": {
+      "source": "madueke_a",
+      "lineage": "madueke",
+      "independent": false,
+      "spelling": "modern",
+      "count": 35809,
+      "coverage": {
+        "books": 73,
+        "chapters": 1334,
+        "verses": 35809,
+        "out_of_grid": [],
+        "out_of_grid_count": 0
+      }
+    },
+    "sabates_a": {
+      "source": "sabates_a",
+      "lineage": "sabates",
+      "independent": false,
+      "spelling": "modern",
+      "count": 37131,
+      "coverage": {
+        "books": 76,
+        "chapters": 1360,
+        "verses": 37131,
+        "out_of_grid": [],
+        "out_of_grid_count": 0
+      }
+    }
+  }
+}
