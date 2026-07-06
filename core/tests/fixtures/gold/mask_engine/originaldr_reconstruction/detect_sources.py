@@ -32,6 +32,7 @@ import gen_dr_original as gen  # type: ignore[import]  # noqa: E402
 
 SKELETON = json.loads((HERE / "skeleton.json").read_text())
 READS_DIR = gen.REPO / "core/.scratch/originaldr-project/reconstruction/reads"
+ODR_SCRAPE = gen.REPO / "core/.scratch/originaldr-project/sources/odr-com/scrape"
 
 # skeleton book -> chapter count, for grid validation
 _BOOK_CH = {b["slug"]: b["chapters"] for b in SKELETON["books"]}
@@ -95,11 +96,43 @@ def detect_sabates_a() -> list[dict]:
     return reads
 
 
+def detect_odr_com() -> list[dict]:
+    """originaldouayrheims.com scrape: ARCHAIC-spelling / modern-typeset scripture and an
+    INDEPENDENT archaic witness (not Madueke-derived). 39 books (12 OT + 27 NT); each
+    scrape file's stem is already the skeleton slug. Surfaces preserve the diplomatic
+    archaic spelling (heauen, vpon, voide & vacant …) verbatim — NOT modern-folded, since
+    the archaic reading is exactly what this witness contributes to the consensus."""
+    reads: list[dict] = []
+    for path in sorted(ODR_SCRAPE.glob("*.json")):
+        if path.name.endswith(".validation.json"):
+            continue
+        slug = path.stem
+        if slug not in _BOOK_CH:
+            continue
+        book = json.loads(path.read_text())
+        for ch in book.get("chapters", []):
+            cn = ch.get("chapter")
+            if cn is None:
+                continue
+            for vk, txt in ch.get("verses", {}).items():
+                vn = gen._vnum(vk)
+                surf = (txt or "").strip()
+                if vn is None or not surf:
+                    continue
+                reads.append(read_record(
+                    f"scripture/{slug}/{int(cn)}/{vn}", surf, "archaic",
+                    f"odr-com scrape/{slug}.json ch{cn}", "html-scrape", "high",
+                    f"odr_com:{slug}:{cn}:{vn}"))
+    return reads
+
+
 DETECTORS = {
     "madueke_a": {"fn": detect_madueke_a, "lineage": "madueke", "independent": False,
                   "spelling": "modern"},
     "sabates_a": {"fn": detect_sabates_a, "lineage": "sabates", "independent": False,
                   "spelling": "modern"},
+    "odr_com": {"fn": detect_odr_com, "lineage": "odr-com", "independent": True,
+                "spelling": "archaic"},
 }
 
 

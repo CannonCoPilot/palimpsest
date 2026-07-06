@@ -28,6 +28,20 @@
         "out_of_grid": [],
         "out_of_grid_count": 0
       }
+    },
+    "odr_com": {
+      "source": "odr_com",
+      "lineage": "odr-com",
+      "independent": true,
+      "spelling": "archaic",
+      "count": 16003,
+      "coverage": {
+        "books": 39,
+        "chapters": 586,
+        "verses": 16003,
+        "out_of_grid": [],
+        "out_of_grid_count": 0
+      }
     }
   }
 }
