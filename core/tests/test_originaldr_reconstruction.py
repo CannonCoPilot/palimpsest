@@ -366,3 +366,41 @@ def test_p3_followup_versification_adjudication_resolves_both_edge_sets():
     lo, hi = probe["overlap_range"]
     assert 0.0 <= lo <= hi < probe["clean_match_threshold"]
     assert cg["decision"].strip()
+
+
+def test_p3_followup_archaic_apparatus_sourcing_is_resolved_with_evidence():
+    """P3 follow-up (plan §5.3/§6): the archaic-apparatus sourcing question is answered with evidence
+    in archaic-apparatus-sourcing.json.
+
+    Confirms (a) apparatus prose was never stored in the basis DB or ingested from any witness; (b) the
+    current apparatus is the modern janvier-s source shared/masked across both editions; (c) an
+    archaic-spelling apparatus witness (odr-com) does exist on disk but is partial (~39/76 books) and
+    not diplomatic (long-ſ normalised). Corpus-free: reads only the committed JSON."""
+    a = _load("archaic-apparatus-sourcing.json")
+    cs = a["current_state"]
+
+    # apparatus prose is absent from the basis DB, and every witness read is scripture-only
+    bdb = cs["basis_db_apparatus"]
+    assert bdb["apparatus_item_elements"] == 102
+    assert bdb["with_render_archaic_prose"] == 0
+    assert bdb["with_render_modern_prose"] == 26 and bdb["render_modern_prose_are_reference_doc_titles"]
+    assert all(w["non_scripture_reads"] == 0 for w in cs["witness_reads"]["witnesses"].values())
+
+    # the current apparatus is the modern janvier-s source, and the masked-shared design is deliberate
+    assert cs["apparatus_prose_source"]["spelling"] == "modern-normalized"
+    assert cs["masked_shared_apparatus_is_deliberate"] is True
+
+    # an archaic apparatus witness (odr-com) exists but is partial and not diplomatic
+    odr = a["recoverable_archaic_material"]["odr_com"]
+    assert odr["available"] is True
+    assert odr["books_covered"] == 39 == len(odr["per_book"])
+    assert odr["book_arguments"] > 0 and odr["chapters_with_notes"] > 0 and odr["notes_chars"] > 0
+    assert odr["diplomatic_long_s"] is False and odr["spelling"].startswith("archaic")
+    # the same annotation exists in both orthographies (the apparatus analogue of the scripture delta)
+    modern_note = cs["apparatus_prose_source"]["sample_genesis_1_note"]
+    archaic_note = odr["sample_genesis_1_note"]
+    assert modern_note.strip() and archaic_note.strip() and modern_note != archaic_note
+
+    # coverage ceiling is honest (partial), and a recommendation + decision are recorded
+    assert a["coverage_ceiling"]["odr_com_books"] < a["coverage_ceiling"]["skeleton_books"] == 76
+    assert a["fidelity_caveats"] and a["recommendation"].strip() and a["decision"].strip()
