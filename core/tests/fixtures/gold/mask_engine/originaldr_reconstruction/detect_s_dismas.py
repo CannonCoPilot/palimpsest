@@ -199,15 +199,25 @@ def dropcap_index(lines: list[str]) -> int:
 def chapter_blocks(raw: str, slug: str) -> list[tuple[int, str]]:
     """Split raw pdftotext into (chapter_number, scripture_text) blocks.
 
-    Strategy: walk lines tracking a chapter counter. A "Chapter N"/"Psalme N"
-    heading opens a new chapter when N > cur AND it is CONFIRMED as a real heading
-    (a drop-cap capital or a run of verse numbers follows it within a window,
-    before the next heading/Annotations). Running-header repeats (N <= cur) and
-    premature future-chapter headers inside an Annotations block (no drop-cap
-    follows) are ignored. Gaps are tolerated (a MISSING heading — e.g. Genesis 26
-    whose heading didn't survive extraction — just merges into the prior chapter
-    rather than stalling the whole book). Scripture runs to the next confirmed
-    heading; the chapter argument before the drop-cap is dropped downstream.
+    DROP-CAP-ANCHORED (rewrite 2026-07-11, image-grounded). This edition's layout
+    convention — verified against the page scans (s-dismas Genesis p113/114,
+    Psalmes p138/139) — is that a unit's heading + argument are printed at the
+    BOTTOM of the previous page (amid the prior unit's Annotations/footnotes) and
+    its scripture begins at the TOP of the next page, with recto running headers
+    that LEAD BY ONE (page 139's header reads "Psalme 53" above Psalm 52's text).
+    Printed chapter numbers are therefore unreliable: they can be a stale duplicate
+    (Genesis 26 misprinted "Chapter 25") or a lead-by-one running header (the
+    "Psalme 53" sitting above Psalm 52's drop-cap). The reliable anchor is the
+    DROP-CAP — the decorated verse-1 initial — with the printed number used only as
+    a validation hint.
+
+    Algorithm: for each candidate heading, confirm it by locating its verse-1
+    drop-cap (`confirm_and_find_dropcap`), tolerating ONE intervening leading
+    running header across a page break. Skip any heading candidate that sits BEFORE
+    the current chapter's drop-cap (a leading/consumed running header cannot start
+    the next chapter). Number chapters by advancing the sequence: trust the printed
+    number only when it advances by one, else force cur+1 — so a mislabeled
+    duplicate or a forward jump self-corrects instead of dropping a chapter.
     """
     lines = raw.split("\n")
     hdrs = running_header_lines(lines)
@@ -217,50 +227,89 @@ def chapter_blocks(raw: str, slug: str) -> list[tuple[int, str]]:
             for i in range(len(lines))
             if (m := CH_HEAD.match(lines[i].strip()))]
 
-    def confirmed(idx: int, n: int) -> bool:
-        """A candidate heading is real (not a page-top running header) iff a drop-cap
-        capital — the decorated verse-1 initial — appears before the first inline
-        verse number and before the next DIFFERENT heading / Annotations (window ≤80).
+    def confirm_and_find_dropcap(idx: int, n: int) -> tuple[int, bool] | None:
+        """Return (line index of chapter n's verse-1 anchor, real_dropcap?) if `idx`
+        is a real heading, else None. `real_dropcap` is True when a genuine
+        lone-capital drop-cap was found, False when only the weaker verse-1-number
+        fallback applied — the duplicate-recovery exception below requires True.
 
-        A running header "Chapter N" printed at a page top sits ABOVE *continuing*
-        scripture, so the next verse number after it is mid-sequence (e.g. 10) with
-        NO intervening drop-cap; those are rejected. As a fallback, if the first
-        verse number encountered is small (<=2), accept (some verse-1 initials may
-        not survive extraction as a lone capital line).
-
-        NB: a running header repeating the SAME chapter number often sits between
-        the real heading and the drop-cap (page break inside the argument); such
-        same-number headers must NOT terminate the scan (else the real heading is
-        wrongly rejected and its whole chapter is lost — e.g. Luke 6, Acts 25)."""
+        A real heading is followed — within a window (≤80 lines), skipping
+        argument / footnote / page-number noise — by a drop-cap capital (the lone
+        uppercase verse-1 initial). Same-number running headers are skipped. ONE
+        different-numbered LEADING running header is tolerated (crossed once) before
+        the drop-cap, per the page-bottom-heading / next-page-scripture convention;
+        a SECOND different heading, or an Annotations section, ends the search (the
+        heading owns no scripture → not a real chapter). Fallback: if no lone
+        drop-cap survives extraction but the first line-initial verse number is <=2,
+        accept and anchor at that line (some verse-1 initials render as inline text,
+        e.g. Genesis 8 / Leviticus 3 / Acts 25)."""
+        crossed = False
+        first_verse: int | None = None
+        first_verse_pos: int | None = None
         for j in range(idx + 1, min(idx + 80, len(lines))):
             s = lines[j].strip()
             mh = CH_HEAD.match(s)
             if mh:
-                if int(mh.group(1)) == n:
+                mn = int(mh.group(1))
+                if mn == n:
                     continue                       # same-chapter running header → skip
-                break                              # a different chapter heading → stop
+                if not crossed and mn > n and first_verse is None:
+                    crossed = True                 # tolerate ONE higher-numbered LEADING
+                    continue                       # running header (leads by one across a
+                                                   # page break; Psalmes p139 "Psalme 53").
+                                                   # Only BEFORE continuing scripture: a real
+                                                   # heading has its argument+drop-cap next,
+                                                   # a running header sits above flowing verses.
+                break                              # different heading after scripture → stop
             if ANNOT_HEAD.match(s):
                 break
             if len(s) == 1 and s.isalpha() and s.isupper():
-                return True                        # drop-cap → real heading
+                return j, True                     # genuine lone-capital drop-cap
             mv = VERSE_LINE.match(s)
-            if mv:
-                # first inline verse number before any drop-cap:
-                return int(mv.group(1)) <= 2
-        return False
+            if mv and first_verse is None:
+                first_verse = int(mv.group(1))
+                first_verse_pos = j
+        if first_verse is not None and first_verse <= 2 and first_verse_pos is not None:
+            return first_verse_pos, False          # weaker verse-1-number fallback
+        return None
 
     single = slug in SINGLE_CHAPTER
-    boundaries: list[tuple[int, int]] = []  # (line_index, chapter_number)
-    cur = 0
-    for i, n in cand:
-        if n > cur and confirmed(i, n):
-            boundaries.append((i, n))
-            cur = n
-        # else: running-header repeat, out-of-order, or unconfirmed → ignore
-    if not boundaries:
-        # single-chapter book (philemon, jude, 2-john, 3-john, abdias, ...):
-        # whole file is chapter 1 scripture (still trimmed at Annotations + argument).
+    boundaries: list[tuple[int, int]] = []  # (line_index, ASSIGNED chapter number)
+    if single:
         boundaries = [(0, 1)]
+    else:
+        cur = 0
+        last_dc = -1                               # line index of the last chapter's drop-cap
+        for k, (i, n) in enumerate(cand):
+            if i <= last_dc:
+                continue                           # heading before the current chapter's
+                                                   # drop-cap = a leading/consumed running header
+            result = confirm_and_find_dropcap(i, n)
+            if result is None:
+                continue                           # running header above flowing scripture
+            dc, real = result
+            # Numbering: printed numbers drive (correct for ~48/50 chapters and
+            # self-limiting). One narrow, image-grounded exception recovers a chapter
+            # the printed number hides — see chapter_blocks docstring.
+            if n > cur:
+                assigned = n                       # normal: trust the printed number
+            elif n == cur and real and any(c[1] > cur for c in cand[k + 1:]):
+                # a duplicate of the current chapter, confirmed by a REAL drop-cap,
+                # WITH a higher-numbered chapter still to come = a mislabeled next
+                # chapter (Genesis 26 misprinted "Chapter 25", followed by ch27). A
+                # book-end duplicate has no successor, and a running header above the
+                # annotations has no real drop-cap — both are rejected.
+                assigned = cur + 1
+            else:
+                continue                           # running-header repeat / out-of-order
+            boundaries.append((i, assigned))
+            cur = assigned
+            last_dc = dc
+        if not boundaries:
+            # single-chapter book that lacked a heading, or a book whose headings
+            # never confirmed: whole file is chapter 1 (trimmed at Annotations +
+            # argument downstream).
+            boundaries = [(0, 1)]
 
     blocks: list[tuple[int, str]] = []
     for bi, (start, chnum) in enumerate(boundaries):

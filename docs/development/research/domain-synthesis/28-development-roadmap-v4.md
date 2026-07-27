@@ -124,6 +124,36 @@ gantt
 
 ---
 
+> **📌 DEFERRED FEATURE NOTE — Scan-to-OCR-to-Perfect Ingestion Pipeline (added 2026-07-12, not yet scheduled)**
+>
+> **Vision**: build the *entire* scan → OCR → human-correction → perfect-diplomatic-text pipeline into
+> Palimpsest as a first-class **pre-import stage**, so a user can bring an image-only scanned source
+> (early-modern print, manuscript, degraded PDF) all the way to an import-ready diplomatic transcription
+> inside the app — no external tooling.
+>
+> **The specific feature Sir wants captured**: a browser-based **manual OCR-correction workbench** — page
+> raster on one side, machine transcription on the other, per-line editable fields, an archaic-glyph
+> palette (ſ æ œ † ‖), and a structured save. The human-in-the-loop correction pass is what turns
+> "good OCR" into a *perfect* diplomatic reference; it is also the natural place to collect training data
+> for the recognizer.
+>
+> **Working prototype already exists** (built for the OriginalDR re-OCR QC harness, 2026-07-12):
+> `Projects/palimpsest/core/.scratch/originaldr-project/ocr-spike/gt_review_server.py` +
+> `gt_review.html` — a stdlib HTTP server that serves raster + machine transcription, lets a reviewer
+> correct any line, and writes structured corrections JSON back to disk. Productizing this (auth, multi-user,
+> collection integration, versioned corrections, apply-back-to-source) is the feature.
+>
+> **Backend already in flight**: the OCR-improvement ladder itself — layout-aware segmentation, typeface-tuned
+> and vision-LLM recognizers, multi-witness/multi-config consensus — is being built under the OriginalDR
+> re-OCR work (see the `AI_OCR` skill and `ocr-spike/`). That ladder is the recognizer half of this pipeline;
+> this note is the *ingestion-UX* half. Together they are the scan-to-perfect pipeline.
+>
+> **Status**: Sir asked to record this and circle back later. Slots into the ingestion layer (pre-M1 in the
+> data flow, but a substantial feature in its own right). Not scheduled; not scoped. Revisit when the
+> re-OCR ladder stabilizes.
+
+---
+
 ## Milestone 2: Interactive Workbench (5-6 weeks) *(NEW — was not in v3.0)*
 
 **Vision gate**: Open the TextHiC tab and zoom into a region of high self-similarity. Brush-select a cell → see the two passages side by side. Switch to the Characters tab and filter by "Hal Incandenza" → all mentions highlighted, co-occurrence matrix shows which characters Hal appears with most. Open Analysis tab → re-run sentiment with different parameters → see the track update in real time.

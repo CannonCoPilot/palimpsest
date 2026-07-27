@@ -46,6 +46,10 @@ sys.path.insert(0, str(RECON))
 import detect_our_ocr as D          # noqa: E402  # type: ignore[import-not-found]
 import char_identity as CI          # noqa: E402  # type: ignore[import-not-found]
 import long_s_rule as LS            # noqa: E402  # type: ignore[import-not-found]
+import verse_seg as VS              # noqa: E402  # janvier-cut re-segmentation (REPLACES align_coords 2026-07-22)
+import curated_sources as CS        # noqa: E402  # REP-1 allowlist guard (drop S2,S5,S7,S10-S15 leak)
+
+ALIGN_COORDS = os.environ.get("NO_ALIGN_COORDS") != "1"  # janvier-cut re-seg on by default; NO_ALIGN_COORDS=1 off
 
 MSL = HERE / "master-source-list.json"
 SRC_INDEX = HERE / "source-index.json"
@@ -53,9 +57,10 @@ SKELETON = RECON / "skeleton.json"
 OUT = HERE / "coverage-audit-verse.json"
 
 # Pilot scope: Psalms (columnar poster child) + Genesis (clean OT spine) + Matthew (richest NT, incl. the
-# S11 sampler) + Apocalypse (last NT book -> stresses end-of-volume localization). All four carry an
-# s_dismas archaic reference, so archaic-preeminent gating actually engages.
-PILOT_BOOKS = ["psalms", "genesis", "matthew", "apocalypse"]
+# S11 sampler) + John (2nd major NT gospel; discourse-heavy prose layout, distinct from Matthew's) +
+# Apocalypse (last NT book -> stresses end-of-volume localization). All five carry an s_dismas archaic
+# reference, so archaic-preeminent gating actually engages.
+PILOT_BOOKS = ["psalms", "genesis", "matthew", "john", "apocalypse"]
 
 UPSCALE = 2
 
@@ -219,6 +224,38 @@ def route_locus(book: str, verdict: dict[str, Any], floor_mod: float | None,
 
 
 # --------------------------------------------------------------------------------------------------
+def realign_vmap(vmap: dict[tuple[int, int], str], book: str) -> dict[tuple[int, int], str]:
+    """Coordinate rehabilitation via verse_seg (janvier-cut) — REPLACES align_coords (2026-07-22, §5 linchpin).
+
+    Re-cut the localized per-verse OCR to the JANVIER grid (sabates_a, the machine-precise interval authority),
+    so archaic_id/modern_id measure recognition fidelity, not verse-boundary spillover. This is the fix that
+    removes the boundary artifact align_coords produced (whole-chapter drift + circular s_dismas-as-ruler).
+    Coverage semantics preserved: verse_seg localizes to the source's covered span. `drop_apparatus` is OFF
+    here on purpose: the input is `detect_book`'s ALREADY verse-localized reads (not a raw page with
+    interleaved footnotes), so on noisy base OCR a run of garbled-but-real words could be mis-read as
+    apparatus and silently excised — the filter stays in the raw-page R2 stream where it is validated. No
+    Silent Degradation: on a no-locate the original per-verse read is kept (surfaced as-is), never dropped."""
+    by_ch: dict[int, dict[int, str]] = {}
+    for (ch, v), txt in vmap.items():
+        by_ch.setdefault(ch, {})[v] = txt
+    out: dict[tuple[int, int], str] = {}
+    for ch, vts in by_ch.items():
+        vs = sorted(vts)
+        janv = VS.chapter_verses(book, ch, VS.JANVIER)
+        if len(vs) < 2 or not janv:
+            for v in vs:
+                out[(ch, v)] = vts[v]
+            continue
+        seg = VS.segment(" ".join(vts[v] for v in vs), janv, drop_apparatus=False)
+        if not seg:                                     # no-locate -> keep original reads (never silent-drop)
+            for v in vs:
+                out[(ch, v)] = vts[v]
+            continue
+        for v, d in seg.items():
+            out[(ch, v)] = d["text"]
+    return out
+
+
 def main(argv: list[str]) -> int:
     # "all" sentinel expands to every skeleton book INSIDE python — robust against shell word-splitting
     # (zsh does not field-split unquoted $VAR, so a shell-joined slug list would arrive as one bad arg).
@@ -253,7 +290,9 @@ def main(argv: list[str]) -> int:
             continue
         ev_entry = loci_ev.get(book, {})
         E_v = ev_entry.get("E_v")
-        expected = ev_entry.get("expected_witnesses", [])
+        # REP-1: hard allowlist filter — a banned source (e.g. S14) must never enter the audit via
+        # expected_witnesses. filter_curated keeps only S1/S3/S4/S6/S8/S9 (No Silent Degradation on curation).
+        expected = CS.filter_curated(ev_entry.get("expected_witnesses", []))
         testament = binfo["testament"]
         anchor_ch = anchor_bb.get(book, {})
 
@@ -281,13 +320,15 @@ def main(argv: list[str]) -> int:
                 if stm is None:
                     continue
                 streams = {ocr_dir: stm}
-                reads, _app, meta = D.detect_book(book, anchor_ch, wid, streams)
+                reads, _, meta = D.detect_book(book, anchor_ch, wid, streams)
                 if not meta.get("covered"):
                     continue
                 if best is None or (meta.get("probe_recall") or 0) > (best["meta"].get("probe_recall") or 0):
                     best = {"meta": meta, "vmap": verse_texts_from_reads(reads, book), "ocr_dir": ocr_dir}
             if best is None:
                 continue
+            if ALIGN_COORDS:
+                best["vmap"] = realign_vmap(best["vmap"], book)   # rehabilitate boundaries pre-scoring
             probe_recall = best["meta"].get("probe_recall")
             for (ch, v), ocr_text in best["vmap"].items():
                 locus = f"scripture/{book}/{ch}/{v}"
