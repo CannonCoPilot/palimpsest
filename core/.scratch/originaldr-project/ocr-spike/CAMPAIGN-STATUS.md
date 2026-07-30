@@ -7,8 +7,9 @@ source (S1, S3, S6, S9) matching **each** of the four references at **>=0.90**, 
 
 | | |
 |---|---|
-| cells >=0.90 against the ACHIEVABLE set | **4,104 / 5,284 = 0.7767** (from 0.7237 at first measurement, **+280 cells**) |
-| cells >=0.90 against the raw total | 4,104 / 6,120 = 0.6706 |
+| cells >=0.90 against the ACHIEVABLE set | **4,156 / 5,284 = 0.7865** (from 0.7237 at first measurement, **+332 cells**) |
+| cells >=0.90 against the raw total | 4,156 / 6,120 = 0.6791 |
+| reference-complete chapters only | **3,379 / 4,196 = 0.8053** over 33 chapters |
 | **chapters CLOSED** (references complete AND every cell >=0.90) | **2** — chapters 1 and 16 |
 | chapters within 4 cells of closing | 0 |
 | cells UNREACHABLE (a verse missing a reference) | **836, over 17 chapters** |
@@ -62,8 +63,8 @@ The only thing that touches this residual is R3 re-reading the printed crop.
 
 ## BREADTH HAS REACHED ITS CEILING — MEASURED
 
-R3 ran on 31 chapters with zero crashes and the achievable rate rose 0.7237 -> 0.7767. It is now done as a
-breadth instrument: **the closest reachable chapters plateau 12-16 cells short of closing**, and none is within a
+R3 ran on **every reachable chapter — the queue is drained** — with **zero crashes**, and the achievable rate rose
+0.7237 -> **0.7865** (+332 cells). It is now finished as a breadth instrument: **the closest reachable chapters plateau 12-16 cells short of closing**, and none is within a
 few cells.
 
     ch22 84/96 (short 12)   ch33 68/80 (12)   ch7 83/96 (13)   ch48 75/88 (13)
