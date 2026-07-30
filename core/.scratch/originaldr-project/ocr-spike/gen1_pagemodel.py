@@ -116,6 +116,21 @@ _DERIVED_CACHE: dict | None = None
 
 def _derived() -> dict:
     global _DERIVED_CACHE
+    # MEASURED AND REJECTED — DEFAULT OFF (2026-07-30). Deriving `CHAPTER_MODEL` for all 48 un-worked chapters
+    # looked like the campaign's central lever: the table existed only for chapters 1 and 16, so every other
+    # chapter leaked its title block, italic argument and engraved initial into verse 1 (`ch42 v3` returned the
+    # chapter ARGUMENT in all four witnesses). The derivation is real and it does fix that. It is still net
+    # NEGATIVE, measured per chapter across all 49:
+    #
+    #     derived ON  3,827 passing cells      HELPS 4 chapters (7, 21, 28, 29; +5 cells)
+    #     derived OFF 3,834 passing cells      HURTS 7 chapters (2, 14, 27, 32, 33, 36, 49; -12 cells)
+    #
+    # The gain on verse 1 is smaller than the damage an imperfect opening-leaf cut does elsewhere on the leaf.
+    # Kept wired-but-off with the table and the tool, as with every other pinned negative here, because the
+    # DERIVATION is sound and a better opening-leaf rule should start from it rather than rebuild it. Per-chapter
+    # cherry-picking was rejected too: the differences are 1-3 cells, which is noise to fit.
+    if os.environ.get("ODR_DERIVED_CM", "0") == "0":
+        return {}
     if _DERIVED_CACHE is None:
         try:
             _DERIVED_CACHE = json.loads(_DERIVED_PATH.read_text())

@@ -128,7 +128,16 @@ def derive_one(od: str, chapter: int, wb: dict, janv: dict, verbose: bool = Fals
     # SANITY GUARD. A chapter_open_y that cuts most of a leaf is almost certainly a verse-1 match against an
     # ANNOTATION quoting the verse rather than the verse itself. Flagged, not silently applied — `jp2-S06` ch2
     # derives 0.793 with 42 rows above and no printed heading, which is exactly that shape.
-    c["suspect"] = bool(c["chapter_open_y"] > 0.60 or c["rows_above"] > 25)
+    # SUSPECT MEANS "THE VERSE-1 MATCH IS PROBABLY WRONG", NOT "THE CUT IS DEEP" (recalibrated 2026-07-30).
+    # Genesis's chapters run CONTINUOUSLY, so a chapter opening three quarters of the way down a leaf is the
+    # ordinary case and a deep `chapter_open_y` is correct — the leaf above it belongs to the PREVIOUS chapter and
+    # must be cut. The first threshold (>0.60 of the leaf) assumed chapter 1's layout, where the chapter opens
+    # near the top after a title block, and it withheld 64 of 162 derivations for doing exactly the right thing.
+    #
+    # The real risk is a verse-1 match against an ANNOTATION quoting the verse. That is what is tested now: a
+    # derivation is suspect when the leaf shows no printed `CHAP.` heading AND the verse-1 token overlap is weak.
+    # The rows_above cap stays, far looser, purely as a backstop against a match near a leaf's very bottom.
+    c["suspect"] = bool((not c["has_chap_heading"] and c["v1_hit"] < 0.70) or c["rows_above"] > 45)
     if verbose:
         print(f"    {od:<24} p{c['open_page']:<5} open_y={c['chapter_open_y']:.4f} "
               f"rows_above={c['rows_above']:<3} chap_heading={c['has_chap_heading']} "
