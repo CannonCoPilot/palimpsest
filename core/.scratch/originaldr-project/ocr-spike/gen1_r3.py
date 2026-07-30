@@ -734,6 +734,7 @@ def main() -> int:
             t["r3_verse"] = merged
         arb = s_arbiter.transfer(t["old_text"], t["r3_verse"])
         readings = dict(VISUAL_READINGS.get(f"{t['src']}:{v}") or {})
+        lex_ix: set[int] = set()
         by_tok = VISUAL_READINGS_BY_TOKEN.get(f"{t['src']}:{v}") or {}
         if by_tok:
             for i, tok in enumerate(t["r3_verse"].split()):
@@ -742,6 +743,7 @@ def main() -> int:
         # Only tokens the arbiter actually holds OPEN can be arbitrated — it raises on anything else, and
         # rightly: a reading offered for an already-attested token would be overriding an observation with
         # another observation, silently. `transfer` may resolve a token this table also covers.
+        unres_ix = {u["i"] for u in (arb.get("unresolved") or []) if isinstance(u, dict) and "i" in u}
         # ATTESTED-LEXICON CLOSURE (§13 Q40, 2026-07-29). Where R2 dropped or badly misread a word, R3's token
         # has no observation to inherit and the cell stayed OPEN — on genesis 2 that held 19 of 25 verses with
         # debts like `2 unresolved: therefore, seventh`. `s_lexicon` answers such a token from the HUMAN ground
@@ -756,7 +758,7 @@ def main() -> int:
             if ed:
                 lex_hits = {}
                 for i, tok in enumerate(t["r3_verse"].split()):
-                    if i in readings:
+                    if i in readings or i not in unres_ix:
                         continue
                     core = tok.strip(" \t.,;:·†‡*()[]?!")
                     if not core or ("s" not in core.lower() and "ſ" not in core):
@@ -766,11 +768,15 @@ def main() -> int:
                         lex_hits[i] = tok.replace(core, form)
                 if lex_hits:
                     readings.update(lex_hits)
+                    lex_ix |= set(lex_hits)
                     t["lexicon_readings"] = {str(k): x for k, x in lex_hits.items()}
-        unres_ix = {u["i"] for u in (arb.get("unresolved") or []) if isinstance(u, dict) and "i" in u}
-        if not unres_ix:
-            unres_ix = set(range(len(arb.get("text", "").split())))
-        readings = {i: w for i, w in readings.items() if i in unres_ix}
+        # The fallback below is for HAND-SET readings only, whose indices are absolute. It must NOT widen the
+        # window for lexicon hits: `arbitrate` raises on a token that is not open, and with the fallback in place
+        # a verse with NOTHING unresolved accepted lexicon readings and aborted the whole chapter's R3 with
+        # `KeyError: token 1 is not unresolved` (genesis 33, rc=1 — every adoption in that run lost).
+        wide = unres_ix or set(range(len(arb.get("text", "").split())))
+        readings = {i: w for i, w in readings.items()
+                    if i in (unres_ix if i in lex_ix else wide)}
         if readings:
             arb = s_arbiter.arbitrate(arb, readings)
             t["visual_readings"] = {str(k): x for k, x in readings.items()}

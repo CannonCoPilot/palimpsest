@@ -140,7 +140,30 @@ def measure(ch: int, use_r3: bool = True) -> dict:
             "n_open": len(open_cells), "open": open_cells[:60]}
 
 
+def ref_coverage(ch: int) -> dict:
+    """How many verses each reference actually HAS for this chapter, against janvier's verse count.
+
+    §13 Q41. A reference that has no text for a verse cannot be matched at >=0.90, so a chapter with a reference
+    gap CANNOT meet the standard however good its OCR is — and the matrix scores the absence as 0.000, which
+    reads as a catastrophic OCR failure. Measured across Genesis: `odr_com` covers 2-9 verses of chapters 4, 6,
+    9, 11, 13 and 49; `s_dismas` covers ONE verse of chapters 8 and 46, and that one entry holds Gen 8:6's text
+    under the key 8/1. It is an acquisition defect in `reconstruction/reads`, upstream of every OCR stage."""
+    import ref_renumber as RR
+    import verse_seg as VS
+    jn = len(VS.chapter_verses("genesis", ch, VS.JANVIER) or {})
+    out = {}
+    for r in ("s_dismas", "odr_com", "sabates_a", "madueke_b"):
+        d = RR.load_corrected(r)
+        n = sum(1 for k, v in d.items()
+                if k.startswith(f"scripture/genesis/{ch}/") and (v or "").strip())
+        out[r] = n
+    return {"janvier": jn, "have": out,
+            "gaps": [r for r, n in out.items() if jn and n < 0.5 * jn]}
+
+
 def triage(m: dict) -> str:
+    if m.get("ref_gaps"):
+        return "REF-GAP"
     if m.get("error") == "no-leaves":
         return "NO-LEAVES"
     if m["n_cells"] == 0:
@@ -176,6 +199,12 @@ def run_measure(chapters: list[int]) -> None:
         except Exception as e:                                    # noqa: BLE001
             m = {"chapter": ch, "error": f"{type(e).__name__}: {e}", "n_cells": 0, "n_pass": 0,
                  "n_verses": 0, "n_all_fail": 0, "n_open": 0, "ref_means": {}, "src_rates": {}}
+        try:
+            rc = ref_coverage(ch)
+            m["ref_coverage"] = rc
+            m["ref_gaps"] = rc["gaps"]
+        except Exception as e:                                    # noqa: BLE001
+            m["ref_coverage_error"] = str(e)
         m["triage"] = triage(m)
         m["secs"] = round(time.time() - t0, 1)
         f.write_text(json.dumps(m, ensure_ascii=False, indent=1))
@@ -206,6 +235,20 @@ def report() -> None:
     tot_p = sum(r["n_pass"] for r in rows)
     print(f"\nTOTAL {tot_p}/{tot_c} = {tot_p/max(1,tot_c):.4f} of cells at >=0.90 across "
           f"{len(rows)} measured chapters")
+    # TWO TRACKS, REPORTED APART. A chapter missing a reference cannot meet a standard defined as ">=0.90
+    # against EACH of four references, so counting its cells as OCR failures misattributes an acquisition defect
+    # to the recogniser. Both still BLOCK — nothing is passed silently — but the remedy differs.
+    gap_rows = [r for r in rows if r.get("ref_gaps")]
+    ok_rows = [r for r in rows if not r.get("ref_gaps")]
+    gc = sum(r["n_cells"] for r in gap_rows); gp = sum(r["n_pass"] for r in gap_rows)
+    oc = sum(r["n_cells"] for r in ok_rows); op = sum(r["n_pass"] for r in ok_rows)
+    print(f"  REACHABLE (all four references present): {op}/{oc} = {op/max(1,oc):.4f} "
+          f"over {len(ok_rows)} chapters")
+    print(f"  BLOCKED BY A REFERENCE GAP: {gp}/{gc} over {len(gap_rows)} chapters "
+          f"{[r['chapter'] for r in gap_rows]}")
+    for r in gap_rows:
+        cov = r.get("ref_coverage") or {}
+        print(f"    ch {r['chapter']:>2}: janvier {cov.get('janvier')} verses, have {cov.get('have')}")
 
 
 def main() -> int:
