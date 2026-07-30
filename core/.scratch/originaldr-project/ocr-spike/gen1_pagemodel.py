@@ -53,7 +53,14 @@ SOURCE_MODEL = {
     # title block and argument like the 1609 leaves do, but cutting them by y changes nothing (0.548 and 0.0
     # score identically, 59/62). They never win a span because the argument does not anchor to janvier. The
     # leaf still needs `open_page` set, for the drop-cap rules — see DROP_CAP and PAGE_OVERRIDE.
-    "jp2-S06":                {"body": (0.215, 0.825), "edition": 2, "head_frac": 0.075},
+    # S6's LEFT BOUND IS SWEPT, NOT GUESSED (2026-07-29). Word-start histogram over 21 S6 leaves shows two
+    # clusters: the LEFT ANNOTATION column starting at 0.16-0.17 and the BODY at 0.23-0.24. A bound of 0.215
+    # admits the annotation tail, which is why S6 is the worst source in every chapter measured — all ten open
+    # cells of genesis 12 were S6 carrying intruders (`and trie`, `borne of`, `dicated on`, `pron bencfits.`).
+    # ODR_S6_LEFT overrides it for the sweep; the adopted value is whatever the sweep measured best without
+    # regressing chapters 1 and 16.
+    "jp2-S06":                {"body": (float(os.environ.get("ODR_S6_LEFT", "0.215")), 0.825),
+                               "edition": 2, "head_frac": 0.075},
 }
 
 # THE CHAPTER-SPECIFIC PART, KEYED (ocr_dir, chapter). `SOURCE_MODEL` above holds what is true of a WITNESS
@@ -194,6 +201,10 @@ DROP_CAP_ORPHAN_GAP = 4.0
 # chapters' residual. Wired via `MARGIN_ORPHANS` so the effect is measured before it is trusted.
 MARGIN_ORPHAN_GAP = 4.0
 MARGIN_ORPHANS = os.environ.get("ODR_MARGIN_ORPHANS", "0") != "0"
+
+
+def _row_interrupt_on() -> bool:
+    return os.environ.get("ODR_ROW_INTERRUPT", "0") != "0"
 
 # Per-leaf body left edge — see `_trim_left_margin`. The tolerance is a fraction of page width, wide enough
 # to absorb a justified line's own variation and the indent of a paragraph opening.
@@ -656,6 +667,15 @@ def row_tokens(ocr_dir: str, page_index: int, page: dict,
     out = []
     for ts, r in zip(toks, rows):
         ts = clean_tokens(ts)
+        # CONTENT-AND-SEQUENCE APPARATUS STRIP (§13 Q43, default OFF under ODR_ROW_INTERRUPT). Seven geometric
+        # attempts have failed to separate the left annotation column from the body once kraken has merged both
+        # into one y-band row; `row_interrupt` does it on the chapter's ARCHAIC reference instead — a leading run
+        # is dropped only when what REMAINS matches an n-gram the chapter actually sets.
+        if ts and _row_interrupt_on():
+            import row_interrupt as RI
+            ts2, removed = RI.strip_row(ts, "genesis", CHAPTER)
+            if removed:
+                ts = ts2
         if ts and r:
             out.append((ts, r))
     return out

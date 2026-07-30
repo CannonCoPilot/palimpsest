@@ -151,6 +151,28 @@ def test_margin_orphan_gap_test_stays_default_off():
     assert PM._strip_margin_orphans([list(r) for r in real], W)[0][0]["t"] == "of"
 
 
+def test_row_interrupt_filter_stays_default_off():
+    """PINNED NEGATIVE RESULT — the EIGHTH failed attempt at this apparatus, and the first on the content axis.
+
+    `row_interrupt` drops a leading run of row tokens when what REMAINS matches an n-gram of the chapter's
+    ARCHAIC reference. On hand-picked failing rows it looks excellent (`and trie and out of thy kindred` ->
+    `and out of thy kindred`). On the whole population it DELETES SCRIPTURE:
+
+        chapter    1     16    12     2     38    17
+        OFF      124/124 64/64 43/80 84/100 84/120 88/108
+        ON       107/124 60/64 35/80 76/100 62/120 68/108
+
+    Cause: the criterion is satisfied by shifting past a MISREAD word — k=0 finds no n-gram because the first
+    token is an OCR error, k=1 does, so the error is deleted along with real text. A diplomatic transcription
+    must keep a misread for a later rung to correct.
+
+    Method note worth as much as the result: its three passing examples were all drawn from failing cells, i.e.
+    exactly where stripping helps. Chapters 1 and 16 are sentinels on every measurement for this reason."""
+    import row_interrupt as RI
+    assert RI.ENABLED is False
+    assert PM._row_interrupt_on() is False, "the content filter must not be on by default"
+
+
 def test_left_margin_trim_stays_unwired():
     """PINNED NEGATIVE RESULT — do not wire `_trim_left_margin` into `body_rows`.
 
