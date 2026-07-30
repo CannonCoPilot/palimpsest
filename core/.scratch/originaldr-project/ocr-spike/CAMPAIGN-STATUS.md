@@ -7,8 +7,8 @@ source (S1, S3, S6, S9) matching **each** of the four references at **>=0.90**, 
 
 | | |
 |---|---|
-| cells >=0.90 against the ACHIEVABLE set | **4,027 / 5,284 = 0.7621** (from 0.7237 at first measurement, **+203 cells**) |
-| cells >=0.90 against the raw total | 4,027 / 6,120 = 0.6580 |
+| cells >=0.90 against the ACHIEVABLE set | **4,104 / 5,284 = 0.7767** (from 0.7237 at first measurement, **+280 cells**) |
+| cells >=0.90 against the raw total | 4,104 / 6,120 = 0.6706 |
 | **chapters CLOSED** (references complete AND every cell >=0.90) | **2** — chapters 1 and 16 |
 | chapters within 4 cells of closing | 0 |
 | cells UNREACHABLE (a verse missing a reference) | **836, over 17 chapters** |
@@ -59,6 +59,21 @@ The only thing that touches this residual is R3 re-reading the printed crop.
   on every measurement and they caught two regressions tonight.
 * Ledger `.campaign/r3-ledger.txt`; per-chapter matrices `.campaign/matrix-genesis-N.json`;
   `chapter_campaign.py --report` reproduces every number above.
+
+## BREADTH HAS REACHED ITS CEILING — MEASURED
+
+R3 ran on 31 chapters with zero crashes and the achievable rate rose 0.7237 -> 0.7767. It is now done as a
+breadth instrument: **the closest reachable chapters plateau 12-16 cells short of closing**, and none is within a
+few cells.
+
+    ch22 84/96 (short 12)   ch33 68/80 (12)   ch7 83/96 (13)   ch48 75/88 (13)
+    ch25 122/136 (14)       ch45 98/112 (14)  ch17 93/108 (15) ch2 84/100 (16)
+
+Those remaining cells are the classes R3 cannot reach: interleaved annotation words, unlocalized verses, and
+edition divergence. Closing a chapter therefore needs the hand-work chapters 1 and 16 received — per-leaf
+`PAGE_OVERRIDE`, drop-cap entries, visual readings, a reference audit — which historically is on the order of a
+session per chapter. **That is the honest cost of "every chapter to the Genesis 1 standard": it is not a pipeline
+run away, and no amount of R3 changes that.**
 
 ## THE NEXT THREE ACTIONS, IN THE ORDER THE EVIDENCE SUPPORTS
 1. **Repair the reference data** (836 cells, 17 chapters). Nothing else unblocks them.
