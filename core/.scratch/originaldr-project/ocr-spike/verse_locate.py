@@ -52,6 +52,34 @@ import verse_geom  # noqa: E402
 
 _VNUM = re.compile(r"\d{1,3}\.?")
 
+# §13 Q30/Q36. DEFAULT OFF — built, wired and measurable, not yet validated against all-pass 799 /
+# pass_rate_archaic 0.6381 / verse_cover_rate 0.8627.
+#
+# TWO SITES, SEPARATELY SWITCHED, because the first A/B showed they do not behave alike. `ODR_PARTIAL_FIT`
+# accepts a comma list of site names, or `1`/`all` for both:
+#
+#   spans  — `best_spans`'s arm selection (the 33.7% silent coin flip)
+#   better — `corpus_localize._better`'s cross-page arbitration (the 7.8% decided by the length proxy)
+#
+# WHY THEY HAD TO BE SPLIT. On `archive-ot1-1609` the both-sites arm moved 37 verses, and while several are
+# plainly better (`genesis/11/6` and `18/2` change from a neighbouring verse's text to the right one), it also
+# moved `genesis/1/1` to page 4 — the volume's FRONT MATTER (`in banisliment. The Slauonians and Gothes`). That
+# is precisely the failure `_better`'s length-sanity rule exists to prevent, and F1 can lose to it because a
+# SHORT front-matter fragment can out-score a long, badly-garbled reading of the real page. So the cross-page
+# site needs a recall/length guard of its own, and it must not be adopted on the intra-page site's evidence.
+# Read at call time, not import time, so one process can measure several arms.
+_PARTIAL_SITES = ("spans", "better")
+
+
+def _rescue_partial(site: str = "spans") -> bool:
+    import os
+    v = os.environ.get("ODR_PARTIAL_FIT", "0")
+    if v in ("0", "", "off"):
+        return False
+    if v in ("1", "all"):
+        return True
+    return site in {s.strip() for s in v.split(",")}
+
 
 # --------------------------------------------------------------------------- #
 # token stream with geometry
@@ -348,6 +376,51 @@ def janvier_fit(span: str, janvier_verse: str) -> float:
     return evaluate_locus(span, janvier_verse, janvier_verse)["archaic_id"]
 
 
+_FIT_STRIP = " \t.,;:·†‡*()[]"
+
+
+def _fit_tokens(text: str) -> list[str]:
+    """Bare lowercase word tokens for the partial-tolerant fits below.
+
+    This duplicates `gen1_pagemodel._bare` rather than importing it, deliberately: the page model is STANDALONE
+    (the live corpus pipeline does not import it, which is what lets two chapters be tuned aggressively without
+    touching production), and `verse_locate` IS in the live path. A four-line fold is a smaller price than that
+    coupling. Kept character-identical to `_bare` so a span scored here and a span scored there agree."""
+    return [t for t in ((w or "").strip(_FIT_STRIP).lower().replace("ſ", "s") for w in (text or "").split()) if t]
+
+
+def partial_fit(span: str, janvier_verse: str) -> tuple[float, float, float]:
+    """(precision, recall, F1) of a span against the janvier verse it claims to be — PARTIAL-TOLERANT.
+
+    WHY THIS EXISTS (§13 Q30, measured 2026-07-29). `janvier_fit` returns **0.000 for any partial span**
+    because it delegates to `evaluate_locus`, which compares a WHOLE verse to its reference. Measured on the
+    live localize loop (`selector_corpus_probe.py`, archive-ot1-1609, psalms/genesis/matthew/john/apocalypse):
+
+        arms DIFFER (the selector actually decides)     91.1% of verse-spans
+        selector DEAD (both arms janvier_fit 0.000)     42.5%
+        DEAD *and* the arms differ — a SILENT COIN FLIP 42.1%   (46% of all real decisions)
+
+    On every one of those the comparison is `0.0 > 0.0`, so `best_spans` takes the aligner arm without
+    recording that nothing was compared. That is not a scoring nicety: `fit` is carried downstream as evidence
+    (`corpus_localize._better`, `xsrc_gate`), and a constant 0.0 is evidence of nothing.
+
+    `precision` is `gen1_r3.span_fit` — the fraction of the SPAN's tokens appearing in order in the verse. It
+    is what a partial needs, and alone it is NOT safe: a ONE-TOKEN span scores 1.000, and in cross-page
+    arbitration that pathology fired for real (`genesis/3/13`: a 1-token span at precision 1.00 beating a
+    12-token one at 0.58). `recall` is the mirror — the fraction of the VERSE's tokens the span covers — which
+    is what `janvier_fit`'s length-awareness was providing. F1 keeps both, so a partial is not penalised for
+    the part it lacks any more than a fragment is rewarded for it.
+
+    UNWIRED ON PURPOSE. Nothing in production calls this yet; adoption is gated on the corpus measurement
+    (all-pass 799 / pass_rate_archaic 0.6381 / verse_cover_rate 0.8627, report v045)."""
+    a, b = _fit_tokens(span), _fit_tokens(janvier_verse)
+    if not a or not b:
+        return 0.0, 0.0, 0.0
+    m = sum(bl.size for bl in difflib.SequenceMatcher(a=a, b=b, autojunk=False).get_matching_blocks())
+    p, r = m / len(a), m / len(b)
+    return p, r, (0.0 if p + r == 0 else 2 * p * r / (p + r))
+
+
 def anchored_spans(page_result: dict, book: str, chapter: int, anchors: dict[int, int]) -> dict[int, dict]:
     """Spans derived DIRECTLY from recovered printed verse numbers — the self-labelling path.
 
@@ -453,16 +526,50 @@ def best_spans(page_result: dict, book: str, chapter: int, *, switch_margin: flo
         wtxt = (walk.get(v) or {}).get("text", "")
         atxt = (align.get(v) or {}).get("text", "")
         wf, af = janvier_fit(wtxt, jv), janvier_fit(atxt, jv)
+        # §13 Q30 RESCUE (2026-07-29, DEFAULT OFF pending the corpus A/B). Where BOTH arms are partial, both
+        # `janvier_fit`s are 0.000, the comparison below is `0.0 > 0.0`, and the aligner wins by default without
+        # anything having been compared — measured over 11 witnesses / 2,767 pages / 36,833 verse-spans
+        # (`selector_corpus_probe.py`) at **33.7% of live verse-spans**, i.e. 40.7% of every decision where the
+        # arms actually differ. `partial_fit` separates 84.7% of those pairs and prefers the WALK on ~4,470 of
+        # them, so this null is not a cosmetic tie.
+        #
+        # NOTE ON `switch_margin`: it is compared against whichever score decided, and the two are not on the
+        # same scale (a janvier_fit and an F1). Production passes 0.0 at every call site, so this is inert today;
+        # a future sweep must calibrate the margin per selector rather than assume one number serves both.
+        #
+        # It rescues ONLY the dead rows. Replacing the selector outright was measured on the 14 gold pages and
+        # is NET NEGATIVE — `span_fit` alone changed 18 verses and lost all 18; `partial_fit` alone changed 16
+        # and lost 16. The incumbent is right wherever it can see; it is blind, not wrong.
+        selector = "janvier_fit"
+        if _rescue_partial() and wf <= 1e-9 and af <= 1e-9:
+            pw, pa = partial_fit(wtxt, jv)[2], partial_fit(atxt, jv)[2]
+            if pw > pa + 1e-9 or pa > pw + 1e-9:
+                # Decide on the partial-tolerant score, but do NOT overwrite `fit`: downstream consumers
+                # (`corpus_localize._better`, `xsrc_gate`) compare `fit` values across pages and mixing two
+                # metrics into one field would make those comparisons meaningless. The partial scores are
+                # published alongside, under their own names, so the substitution stays auditable.
+                wf_eff, af_eff = pw, pa
+                selector = "partial_fit-rescue"
+            else:
+                wf_eff, af_eff = wf, af
+            pfit_w, pfit_a = pw, pa
+        else:
+            wf_eff, af_eff = wf, af
+            pfit_w = pfit_a = None
         # `switch_margin` makes the incumbent aligner the DEFAULT and requires the walk to beat it by a margin
         # before the span is switched — the obvious remedy for the selector's honest cost (verses the aligner
         # already read near-perfectly that a marginally-better janvier fit moved). Whether it helps is an
         # empirical question, answered by the sweep in verse_locate_eval (see the pinned result in the tests).
-        if wf > af + switch_margin:
+        if wf_eff > af_eff + switch_margin:
             d = dict(walk.get(v) or {})
             d.update(source="walk", fit=round(wf, 4), alt_fit=round(af, 4))
         else:
             d = dict(align.get(v) or {})
             d.update(source="align", fit=round(af, 4), alt_fit=round(wf, 4))
+        d["selector"] = selector
+        if pfit_w is not None and pfit_a is not None:
+            d["pfit"], d["alt_pfit"] = (round(pfit_w, 4), round(pfit_a, 4)) if d["source"] == "walk" \
+                else (round(pfit_a, 4), round(pfit_w, 4))
         lo, hi = d.get("tok_lo"), d.get("tok_hi")
         if lo is None or hi is None:
             d["lines"] = []

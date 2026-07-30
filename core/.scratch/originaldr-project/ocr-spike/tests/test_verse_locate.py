@@ -190,6 +190,67 @@ def test_janvier_fit_is_gold_free_and_detects_a_misplaced_span():
 
 
 # --------------------------------------------------------------------------- #
+# §13 Q30/Q36 — the selector is BLIND on partial spans, and the rescue is bounded (2026-07-29)
+# --------------------------------------------------------------------------- #
+def test_janvier_fit_is_dead_on_any_partial_span():
+    """PINNED DEFECT, not a bug to fix in place. `janvier_fit` delegates to `evaluate_locus`, which compares a
+    WHOLE verse to its reference, so a head-only or tail-only span scores 0.000 however correct it is. This is
+    the mechanism behind 33.7% of live verse-spans being decided by `0.0 > 0.0` (Q36). The function keeps this
+    behaviour deliberately — it is a whole-verse identity measure and is correct as one; what changed is that
+    nothing may SELECT with it on a partial."""
+    cv = _janv("psalms", 118)
+    toks = cv[9].split()
+    head, tail = " ".join(toks[:len(toks) // 2]), " ".join(toks[len(toks) // 2:])
+    assert verse_locate.janvier_fit(cv[9], cv[9]) > 0.9
+    assert verse_locate.janvier_fit(head, cv[9]) == 0.0, "a correct HEAD partial must be the pinned 0.000"
+    assert verse_locate.janvier_fit(tail, cv[9]) == 0.0, "a correct TAIL partial must be the pinned 0.000"
+
+
+def test_partial_fit_sees_what_janvier_fit_cannot_and_still_rejects_a_fragment():
+    """The replacement must clear BOTH bars, because each was failed by a different candidate metric:
+    partial-tolerant (which `janvier_fit` is not) and fragment-proof (which `gen1_r3.span_fit` alone is not —
+    a one-token span scores precision 1.000, and that pathology chose spans in cross-page arbitration)."""
+    cv = _janv("psalms", 118)
+    toks = cv[9].split()
+    head = " ".join(toks[:len(toks) // 2])
+    p, r, f1 = verse_locate.partial_fit(head, cv[9])
+    assert p > 0.9, "a correct partial's tokens are all in the verse — precision must be high"
+    assert 0.3 < f1 < p, "F1 must credit the partial while still recording what it lacks"
+    frag_p, _frag_r, frag_f1 = verse_locate.partial_fit(toks[0], cv[9])
+    assert frag_p == 1.0, "precision alone rewards a one-token fragment — the documented pathology"
+    assert frag_f1 < 0.3, "F1 must reject it"
+    assert frag_f1 < f1, "a fragment must never outscore a genuine partial"
+    assert verse_locate.partial_fit("", cv[9]) == (0.0, 0.0, 0.0)
+
+
+def test_partial_fit_rescue_is_default_off(monkeypatch):
+    """PINNED: the rescue is measured but NOT adopted. Adoption is gated on the corpus A/B (all-pass 799 /
+    pass_rate_archaic 0.6381 / verse_cover_rate 0.8627), and a later session must not find it silently on."""
+    monkeypatch.delenv("ODR_PARTIAL_FIT", raising=False)
+    assert verse_locate._rescue_partial() is False
+    monkeypatch.setenv("ODR_PARTIAL_FIT", "1")
+    assert verse_locate._rescue_partial() is True
+
+
+def test_rescue_never_touches_a_span_the_incumbent_selector_can_see(monkeypatch):
+    """The bound that makes the change safe: replacing the selector outright LOST 18 of 18 changed verses on
+    the gold pages. So where either arm has a live `janvier_fit`, the flag must change nothing at all — the
+    only spans it may touch are the ones where the incumbent compares 0.0 with 0.0."""
+    cv = _janv("psalms", 118)
+    page = _page([cv[v] for v in (9, 10, 11)])
+    monkeypatch.delenv("ODR_PARTIAL_FIT", raising=False)
+    off = verse_locate.best_spans(page, "psalms", 118)
+    monkeypatch.setenv("ODR_PARTIAL_FIT", "1")
+    on = verse_locate.best_spans(page, "psalms", 118)
+    assert set(off) == set(on)
+    for v in off:
+        if off[v].get("fit", 0.0) > 0.0 or off[v].get("alt_fit", 0.0) > 0.0:
+            assert on[v]["text"] == off[v]["text"], f"v{v}: rescue moved a span the incumbent could already see"
+            assert on[v]["source"] == off[v]["source"]
+            assert on[v]["selector"] == "janvier_fit"
+
+
+# --------------------------------------------------------------------------- #
 # emission contract: verbatim surface + one shared coordinate system (2026-07-27, wiring prerequisites)
 # --------------------------------------------------------------------------- #
 def test_located_text_is_the_verbatim_page_surface_not_the_alignment_fold():
