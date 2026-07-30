@@ -269,8 +269,20 @@ def report() -> None:
     print(f"  ACHIEVABLE cells (a verse with all four references): {ach}/{tot_c}; "
           f"BLOCKED by an absent reference: {blk}")
     print(f"  against the achievable set: {tot_p}/{ach} = {tot_p/max(1,ach):.4f}")
-    closed = [r["chapter"] for r in rows if r["n_pass"] and r["n_pass"] >= r.get("achievable", 10**9)]
-    print(f"  chapters at 100% OF ACHIEVABLE: {len(closed)} -> {closed}")
+    # TWO DIFFERENT CLAIMS, AND ONLY THE FIRST IS "THE CHAPTER IS DONE". `100% of achievable` on a chapter whose
+    # references cover 2 of 32 verses is 8 cells out of 128 and reads as a triumph — precisely the laundering
+    # this project forbids (genesis 49 does exactly that). So a chapter counts as CLOSED only when its references
+    # are COMPLETE and every cell passes; anything else is reported with its achievable fraction in view.
+    closed = [r["chapter"] for r in rows
+              if r["n_cells"] and r.get("achievable") == r["n_cells"] and r["n_pass"] == r["n_cells"]]
+    partial = [(r["chapter"], r["n_pass"], r.get("achievable"), r["n_cells"]) for r in rows
+               if r["n_cells"] and r.get("achievable", r["n_cells"]) < r["n_cells"]
+               and r["n_pass"] >= r.get("achievable", 10**9)]
+    print(f"  CHAPTERS CLOSED (references complete AND every cell >=0.90): {len(closed)} -> {closed}")
+    if partial:
+        print(f"  chapters at 100% of a REDUCED achievable set (not closed — the gap still blocks):")
+        for ch, np_, ach, nc in partial:
+            print(f"    ch {ch:>2}: {np_}/{ach} achievable, but achievable is only {ach}/{nc} of the chapter")
     print(f"  REACHABLE (all four references present): {op}/{oc} = {op/max(1,oc):.4f} "
           f"over {len(ok_rows)} chapters")
     print(f"  BLOCKED BY A REFERENCE GAP: {gp}/{gc} over {len(gap_rows)} chapters "
