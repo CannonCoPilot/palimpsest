@@ -814,7 +814,31 @@ def main() -> int:
         if skipped:
             t["readings_already_settled"] = sorted(skipped)
         if readings:
-            arb = s_arbiter.arbitrate(arb, readings)
+            # ONE BAD READING MUST NOT COST A CHAPTER. `arbitrate` refuses a reading that changes content or sets
+            # a word-final ſ, and those refusals are correct — but raising took the entire chapter's R3 down with
+            # rc=1 and discarded every adoption already made in the run (genesis 18 and 33 both lost that way).
+            # A refused reading is dropped, recorded, and the rest are applied; the cell then closes on the
+            # readings that ARE admissible, or stays open, which is the honest outcome either way.
+            refused: dict[str, str] = {}
+            while readings:
+                try:
+                    arb = s_arbiter.arbitrate(arb, readings)
+                    break
+                except (ValueError, KeyError) as e:              # noqa: PERF203
+                    msg = str(e)
+                    bad = None
+                    for tok_i in list(readings):
+                        if f"token {tok_i}" in msg:
+                            bad = tok_i
+                            break
+                    if bad is None:
+                        refused["*"] = msg
+                        readings = {}
+                        break
+                    refused[str(bad)] = msg
+                    readings.pop(bad, None)
+            if refused:
+                t["refused_readings"] = refused
             t["visual_readings"] = {str(k): x for k, x in readings.items()}
         t["new_text"] = arb["text"]
         t["s_unresolved"] = [u.get("token") if isinstance(u, dict) else u

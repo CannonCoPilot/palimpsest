@@ -148,9 +148,14 @@ def decide(table: dict, edition: int, word: str, *, which: str = "table") -> tup
         return None, {**ev, "reason": f"only {total} observations (need {MIN_OBS})"}
     if n / total < MIN_AGREE:
         return None, {**ev, "reason": f"forms disagree ({n}/{total})"}
-    # PRESERVE THE QUERY'S OWN CASE: the lexicon answers where the ſ goes, not whether a word is capitalised.
+    # MATCH THE QUERY'S CASE IN BOTH DIRECTIONS. The lexicon answers where the ſ goes, not whether a word is
+    # capitalised, and `s_arbiter._skeleton` is case-SENSITIVE — so returning the attested `Likewise` for the
+    # token `likewise` is a CONTENT edit and `arbitrate` rightly refused it, aborting a whole chapter's R3
+    # (genesis 18, rc=1). Upper-casing to match was already handled; lower-casing was not.
     if word[:1].isupper():
         form = form[:1].upper() + form[1:]
+    elif word[:1].islower():
+        form = form[:1].lower() + form[1:]
     return form, ev
 
 

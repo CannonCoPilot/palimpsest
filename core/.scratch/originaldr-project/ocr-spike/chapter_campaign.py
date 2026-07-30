@@ -141,28 +141,48 @@ def measure(ch: int, use_r3: bool = True) -> dict:
 
 
 def ref_coverage(ch: int) -> dict:
-    """How many verses each reference actually HAS for this chapter, against janvier's verse count.
+    """Per-VERSE reference completeness — the chapter's true ceiling (§13 Q41).
 
-    §13 Q41. A reference that has no text for a verse cannot be matched at >=0.90, so a chapter with a reference
-    gap CANNOT meet the standard however good its OCR is — and the matrix scores the absence as 0.000, which
-    reads as a catastrophic OCR failure. Measured across Genesis: `odr_com` covers 2-9 verses of chapters 4, 6,
-    9, 11, 13 and 49; `s_dismas` covers ONE verse of chapters 8 and 46, and that one entry holds Gen 8:6's text
-    under the key 8/1. It is an acquisition defect in `reconstruction/reads`, upstream of every OCR stage."""
+    THE STANDARD IS ">=0.90 AGAINST EACH OF FOUR REFERENCES", so a verse missing any one of them cannot produce a
+    passing cell however good the OCR is, and the matrix scores the absence as 0.000 — which reads as a
+    catastrophic recogniser failure. Measured over Genesis: **836 of 6,120 cells (13.7%) sit on a verse missing at
+    least one reference**, and only **33 of 50 chapters** have all four present for every verse.
+
+    An earlier version of this function used a <50%-of-chapter threshold and so missed the partial cases entirely
+    — genesis 12 has `odr_com` for 13 of 20 verses, passed the threshold, and quietly carried 28 unreachable
+    cells that were being read as an S6 layout problem. The threshold was the bug: for THIS standard, one missing
+    verse matters.
+
+    Reported per chapter as `blocked_cells`, so `achievable = n_cells - blocked_cells` is what the campaign can
+    actually close. The gaps still BLOCK and are never passed silently; they are simply attributed to acquisition
+    rather than to the recognizer."""
     import ref_renumber as RR
     import verse_seg as VS
-    jn = len(VS.chapter_verses("genesis", ch, VS.JANVIER) or {})
-    out = {}
-    for r in ("s_dismas", "odr_com", "sabates_a", "madueke_b"):
-        d = RR.load_corrected(r)
-        n = sum(1 for k, v in d.items()
-                if k.startswith(f"scripture/genesis/{ch}/") and (v or "").strip())
-        out[r] = n
-    return {"janvier": jn, "have": out,
-            "gaps": [r for r, n in out.items() if jn and n < 0.5 * jn]}
+    names = ("s_dismas", "odr_com", "sabates_a", "madueke_b")
+    janv = VS.chapter_verses("genesis", ch, VS.JANVIER) or {}
+    have = {r: RR.load_corrected(r) for r in names}
+    per_ref = {r: 0 for r in names}
+    incomplete = []
+    for v in janv:
+        absent = [r for r in names
+                  if not (have[r].get(f"scripture/genesis/{ch}/{v}") or "").strip()]
+        for r in names:
+            if r not in absent:
+                per_ref[r] += 1
+        if absent:
+            incomplete.append({"verse": v, "absent": absent})
+    return {"janvier": len(janv), "have": per_ref,
+            "n_incomplete_verses": len(incomplete), "incomplete": incomplete[:40],
+            "blocked_cells": len(incomplete) * 4,
+            "gaps": [r for r, n in per_ref.items() if janv and n < len(janv)]}
 
 
 def triage(m: dict) -> str:
-    if m.get("ref_gaps"):
+    # REF-GAP is reported when the reference gap is what dominates the chapter; a chapter with one incomplete
+    # verse is still an OCR story and is triaged as one, with its blocked cells reported beside the rate.
+    cov = m.get("ref_coverage") or {}
+    if cov.get("blocked_cells") and m.get("n_cells") and \
+            cov["blocked_cells"] >= 0.15 * m["n_cells"]:
         return "REF-GAP"
     if m.get("error") == "no-leaves":
         return "NO-LEAVES"
@@ -205,6 +225,8 @@ def run_measure(chapters: list[int]) -> None:
             m["ref_gaps"] = rc["gaps"]
         except Exception as e:                                    # noqa: BLE001
             m["ref_coverage_error"] = str(e)
+        m["blocked_cells"] = (m.get("ref_coverage") or {}).get("blocked_cells", 0)
+        m["achievable"] = max(0, m["n_cells"] - m["blocked_cells"])
         m["triage"] = triage(m)
         m["secs"] = round(time.time() - t0, 1)
         f.write_text(json.dumps(m, ensure_ascii=False, indent=1))
@@ -242,6 +264,13 @@ def report() -> None:
     ok_rows = [r for r in rows if not r.get("ref_gaps")]
     gc = sum(r["n_cells"] for r in gap_rows); gp = sum(r["n_pass"] for r in gap_rows)
     oc = sum(r["n_cells"] for r in ok_rows); op = sum(r["n_pass"] for r in ok_rows)
+    ach = sum(r.get("achievable", r["n_cells"]) for r in rows)
+    blk = sum(r.get("blocked_cells", 0) for r in rows)
+    print(f"  ACHIEVABLE cells (a verse with all four references): {ach}/{tot_c}; "
+          f"BLOCKED by an absent reference: {blk}")
+    print(f"  against the achievable set: {tot_p}/{ach} = {tot_p/max(1,ach):.4f}")
+    closed = [r["chapter"] for r in rows if r["n_pass"] and r["n_pass"] >= r.get("achievable", 10**9)]
+    print(f"  chapters at 100% OF ACHIEVABLE: {len(closed)} -> {closed}")
     print(f"  REACHABLE (all four references present): {op}/{oc} = {op/max(1,oc):.4f} "
           f"over {len(ok_rows)} chapters")
     print(f"  BLOCKED BY A REFERENCE GAP: {gp}/{gc} over {len(gap_rows)} chapters "
