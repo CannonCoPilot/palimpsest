@@ -173,6 +173,26 @@ def test_row_interrupt_filter_stays_default_off():
     assert PM._row_interrupt_on() is False, "the content filter must not be on by default"
 
 
+def test_split_glued_stays_default_off():
+    """PINNED NEGATIVE RESULT — and the one whose METRIC lesson matters most.
+
+    `split_glued` is the mirror of the accepted hyphen JOIN: split `oflife` into `of life` when the glued form is
+    absent from the book's lexicon and both fragments are present. On the scoreboard it was the session's only
+    systemic win — 50 chapters, HELPS 8, HURTS 1, net +8 cells, sentinels unmoved.
+
+    Counting the TEXT it changes rather than the verdicts it flips: **1,356 tokens split across Genesis**, the
+    commonest being real words torn into morphemes — `lawful` -> `law ful` (28x), `earthlie` -> `earth lie` (18x),
+    `prayeth` -> `pray eth` (17x), `faithful` -> `faith ful` (14x). A +8 net concealed 1,356 corruptions, nearly
+    all invisible because score-neutral or inside cells that already failed.
+
+    Edit distance cannot separate the classes either: at 2 edits the garble `hofore` is correctly refused, but so
+    are `oflife` and `pleasantto`, which is the only thing the rule existed to do."""
+    assert PM.os.environ.get("ODR_SPLIT_GLUED", "0") == "0", "the glued-token split must stay off by default"
+    lex = {"law", "ful", "of", "life"}
+    assert PM.split_glued(["lawful"], lex) == ["law", "ful"], \
+        "documenting the defect: a real word IS torn apart, which is why this stays off"
+
+
 def test_left_margin_trim_stays_unwired():
     """PINNED NEGATIVE RESULT — do not wire `_trim_left_margin` into `body_rows`.
 

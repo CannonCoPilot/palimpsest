@@ -585,6 +585,111 @@ _LONE_LETTER = _re.compile(r"^[A-Za-z]$")
 _REAL_ONE_LETTER = {"a", "A", "O", "o", "I"}
 
 
+def _near_a_word(low: str, lex: set[str], max_edits: int = 1) -> bool:
+    """Is this token within `max_edits` of a single lexicon word — i.e. a GARBLE rather than a glue?
+
+    Only same-length substitutions and single insert/delete are tested, and only against words of comparable
+    length, which keeps it cheap over a 3,421-word lexicon."""
+    n = len(low)
+    for w in lex:
+        if abs(len(w) - n) > max_edits or not (n - 2 <= len(w) <= n + 2):
+            continue
+        if len(w) == n:
+            if sum(1 for a, b in zip(w, low) if a != b) <= max_edits:
+                return True
+        else:
+            short, long = (w, low) if len(w) < len(low) else (low, w)
+            i = j = 0
+            skips = 0
+            while i < len(short) and j < len(long):
+                if short[i] == long[j]:
+                    i += 1
+                    j += 1
+                else:
+                    skips += 1
+                    j += 1
+                    if skips > max_edits:
+                        break
+            if skips <= max_edits and i >= len(short) - max_edits:
+                return True
+    return False
+
+
+def split_glued(toks: list[str], lex: set[str] | None) -> list[str]:
+    """Split a token the recognizer ran together, on the SAME lexicon evidence the hyphen JOIN already uses.
+
+    THE MIRROR OF `rejoin_break`. That rule joins `hea` + `uen` when neither fragment is a word of the book and
+    their concatenation is; this one splits `oflife` into `of life` when the GLUED FORM is not a word of the book
+    and both fragments are. Measured across the campaign's open cells: **67 cells carry such a token** —
+    `oflife` for `of life` (genesis 2 S1 v7), `pleasantto` for `pleasant to` (2 S1/S9 v9), `to thee` (31),
+    `weeping and` (50), `be mindful` (50).
+
+    THE GUARD IS THE GLUED FORM'S OWN ABSENCE, and it is doing real work: `indeed` splits into `in` + `deed`,
+    both of which are words, so a rule without that guard would break a legitimate token in half. It only fires
+    where the book itself never uses the joined form — the same asymmetry that lets the join rule refuse to glue
+    `was` to `voide`.
+
+    MEASURED AND REJECTED — DEFAULT OFF, AND THE NUMBERS ARE WHY IT MUST STAY OFF.
+
+    On the campaign scoreboard it looked like the one systemic win of the session:
+
+        50 chapters: HELPS 8, HURTS 1, net +8 cells. Chapters 1 and 16 unmoved.
+
+    Then I counted what it actually CHANGES rather than what it scores: **1,356 tokens split across Genesis**, and
+    the commonest are REAL WORDS torn into morphemes that happen to be lexicon entries —
+
+        lawful -> law ful (28x)      earthlie -> earth lie (18x)    prayeth -> pray eth (17x)
+        faithful -> faith ful (14x)  delight -> de light (13x)      offereth -> offer eth (15x)
+
+    The guard on the glued form's own absence cannot save it: `lawful` is not in the lexicon (the book sets
+    `lawfull`), while `law` and `ful` both are. Nor can edit distance separate the classes — at max_edits=2
+    `hofore` (garbled `before`) is correctly refused but `oflife` and `pleasantto` are refused too, so the rule
+    stops doing the only thing it was for.
+
+    **THE LESSON IS ABOUT THE METRIC, NOT THE RULE.** A +8 net on the scoreboard concealed 1,356 alterations to the
+    transcription, nearly all invisible because they were score-neutral or fell in cells that already failed. A
+    rule is not measured by the verdicts it flips; it is measured by the TEXT it changes. I nearly adopted this on
+    the strength of "HELPS 8 HURTS 1".
+
+    Kept wired-but-off with its figures, like every other pinned negative here."""
+    if not lex:
+        return toks
+    out: list[str] = []
+    for t in toks:
+        core = t.strip(_STRIP)
+        low = core.lower()
+        if len(low) < 6 or low in lex or not low.isalpha():
+            out.append(t)
+            continue
+        # DISPLAY CAPITALS ARE SET AS A UNIT, never glued words: `SHALBEBLESSED` on `pdf-S03a` p100 is a display
+        # line, and splitting it invents word boundaries the printer did not set.
+        if not any(c.islower() for c in core):
+            out.append(t)
+            continue
+        # A GARBLE IS ONE EDIT FROM A REAL WORD; A GLUE IS FAR FROM EVERY WORD. This is what separates `oflife`
+        # (no single word resembles it) from `thinas`/`hegotten`/`vpeuen` — garbled `things`, `begotten`, `vp
+        # euen` that happen to split into two lexicon words and cost genesis 23 a cell. Without this test the
+        # rule tidies away recognizer errors, which a diplomatic transcription must preserve for a later rung.
+        if _near_a_word(low, lex):
+            out.append(t)
+            continue
+        cut = None
+        for i in range(2, len(low) - 1):
+            a, b = low[:i], low[i:]
+            if a in lex and b in lex:
+                cut = i
+                break
+        if cut is None:
+            out.append(t)
+            continue
+        # preserve the token's own case and any trailing punctuation the strip removed
+        head, tail = core[:cut], core[cut:]
+        suffix = t[t.index(core) + len(core):] if core in t else ""
+        prefix = t[:t.index(core)] if core in t else ""
+        out += [prefix + head, tail + suffix]
+    return out
+
+
 def is_apparatus_mark(t: str) -> bool:
     """A token that is an apparatus marker rather than a word of the text.
 
@@ -686,6 +791,8 @@ def row_tokens(ocr_dir: str, page_index: int, page: dict,
         # attempts have failed to separate the left annotation column from the body once kraken has merged both
         # into one y-band row; `row_interrupt` does it on the chapter's ARCHAIC reference instead — a leading run
         # is dropped only when what REMAINS matches an n-gram the chapter actually sets.
+        if ts and os.environ.get("ODR_SPLIT_GLUED", "0") != "0":
+            ts = split_glued(ts, lex)
         if ts and _row_interrupt_on():
             import row_interrupt as RI
             ts2, removed = RI.strip_row(ts, "genesis", CHAPTER)
