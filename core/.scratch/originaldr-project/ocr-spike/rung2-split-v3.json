@@ -1,0 +1,25 @@
+{
+ "table_like_excluded": [
+  "matter-nt-explication-of-certaine-words",
+  "matter-nt-table-of-certaine-places",
+  "matter-nt-table-of-epistles",
+  "matter-nt-title",
+  "matter-ot1-argument-of-genesis",
+  "matter-ot1-summe-of-old-testament",
+  "matter-ot2-historical-table",
+  "matter-ot2-particular-table",
+  "scripture-abdias-01",
+  "scripture-psalms-074-p138"
+ ],
+ "val_slugs": [
+  "scripture-2esdras-07",
+  "scripture-genesis-16-p082",
+  "scripture-proverbs-16",
+  "scripture-psalms-115-116"
+ ],
+ "counts": {
+  "v3_val_scripture": 145,
+  "v3_train_scripture": 219,
+  "v3_train_matter_prose": 733
+ }
+}
