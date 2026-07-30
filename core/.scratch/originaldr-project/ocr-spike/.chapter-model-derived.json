@@ -1,0 +1,179 @@
+{
+ "archive-holiebible-ot1|2": {
+  "open_page": 36,
+  "chapter_open_y": 0.3523,
+  "row_index": 14,
+  "has_chap_heading": true,
+  "v1_hit": 0.75,
+  "first_token": "HE",
+  "rows_above": 14,
+  "y0_px": 1076,
+  "page_h": 2954,
+  "drop_cap_candidate": {
+   "glued": "HE",
+   "why": "missing head: janvier v1 opens 'The'"
+  },
+  "suspect": false
+ },
+ "archive-ot1-1609|2": {
+  "open_page": 26,
+  "chapter_open_y": 0.3514,
+  "row_index": 14,
+  "has_chap_heading": true,
+  "v1_hit": 0.625,
+  "first_token": "HEheauens",
+  "rows_above": 14,
+  "y0_px": 1123,
+  "page_h": 3090,
+  "drop_cap_candidate": null,
+  "suspect": false
+ },
+ "jp2-S06|2": {
+  "open_page": 22,
+  "chapter_open_y": 0.7934,
+  "row_index": 42,
+  "has_chap_heading": false,
+  "v1_hit": 0.75,
+  "first_token": "HE",
+  "rows_above": 42,
+  "y0_px": 2293,
+  "page_h": 2847,
+  "drop_cap_candidate": {
+   "glued": "HE",
+   "why": "missing head: janvier v1 opens 'The'"
+  },
+  "suspect": true
+ },
+ "pdf-S03a|2": {
+  "open_page": 30,
+  "chapter_open_y": 0.3474,
+  "row_index": 14,
+  "has_chap_heading": true,
+  "v1_hit": 0.75,
+  "first_token": "HE",
+  "rows_above": 14,
+  "y0_px": 1089,
+  "page_h": 3030,
+  "drop_cap_candidate": {
+   "glued": "HE",
+   "why": "missing head: janvier v1 opens 'The'"
+  },
+  "suspect": false
+ },
+ "archive-holiebible-ot1|14": {
+  "open_page": 84,
+  "chapter_open_y": 0.2104,
+  "row_index": 5,
+  "has_chap_heading": false,
+  "v1_hit": 0.75,
+  "first_token": "ND",
+  "rows_above": 5,
+  "y0_px": 665,
+  "page_h": 2990,
+  "drop_cap_candidate": {
+   "glued": "ND",
+   "why": "missing head: janvier v1 opens 'And'"
+  },
+  "suspect": false
+ },
+ "archive-ot1-1609|14": {
+  "open_page": 74,
+  "chapter_open_y": 0.2178,
+  "row_index": 5,
+  "has_chap_heading": false,
+  "v1_hit": 0.75,
+  "first_token": "No",
+  "rows_above": 5,
+  "y0_px": 710,
+  "page_h": 3090,
+  "drop_cap_candidate": null,
+  "suspect": false
+ },
+ "jp2-S06|14": {
+  "open_page": 69,
+  "chapter_open_y": 0.3094,
+  "row_index": 5,
+  "has_chap_heading": false,
+  "v1_hit": 0.625,
+  "first_token": "NDit",
+  "rows_above": 5,
+  "y0_px": 915,
+  "page_h": 2847,
+  "drop_cap_candidate": null,
+  "suspect": false
+ },
+ "pdf-S03a|14": {
+  "open_page": 78,
+  "chapter_open_y": 0.2088,
+  "row_index": 5,
+  "has_chap_heading": false,
+  "v1_hit": 0.75,
+  "first_token": "ND",
+  "rows_above": 5,
+  "y0_px": 669,
+  "page_h": 3030,
+  "drop_cap_candidate": {
+   "glued": "ND",
+   "why": "missing head: janvier v1 opens 'And'"
+  },
+  "suspect": false
+ },
+ "archive-holiebible-ot1|38": {
+  "open_page": 151,
+  "chapter_open_y": 0.2144,
+  "row_index": 4,
+  "has_chap_heading": false,
+  "v1_hit": 0.625,
+  "first_token": "THE:ſame",
+  "rows_above": 4,
+  "y0_px": 687,
+  "page_h": 3035,
+  "drop_cap_candidate": {
+   "glued": "THE:ſame",
+   "why": "display line run together around 'The'"
+  },
+  "suspect": false
+ },
+ "archive-ot1-1609|38": {
+  "open_page": 139,
+  "chapter_open_y": 0.2233,
+  "row_index": 4,
+  "has_chap_heading": false,
+  "v1_hit": 0.625,
+  "first_token": "HIſame",
+  "rows_above": 4,
+  "y0_px": 727,
+  "page_h": 3090,
+  "drop_cap_candidate": null,
+  "suspect": false
+ },
+ "jp2-S06|38": {
+  "open_page": 128,
+  "chapter_open_y": 0.2939,
+  "row_index": 6,
+  "has_chap_heading": true,
+  "v1_hit": 0.625,
+  "first_token": "yſame",
+  "rows_above": 6,
+  "y0_px": 871,
+  "page_h": 2847,
+  "drop_cap_candidate": null,
+  "suspect": false
+ },
+ "pdf-S03a|38": {
+  "open_page": 143,
+  "chapter_open_y": 0.2078,
+  "row_index": 4,
+  "has_chap_heading": false,
+  "v1_hit": 0.75,
+  "first_token": "HE:",
+  "rows_above": 4,
+  "y0_px": 666,
+  "page_h": 3030,
+  "drop_cap_candidate": {
+   "glued": "HE:",
+   "why": "missing head: janvier v1 opens 'The'"
+  },
+  "suspect": false
+ }
+}

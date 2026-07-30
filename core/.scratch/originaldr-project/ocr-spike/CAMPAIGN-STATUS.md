@@ -27,4 +27,9 @@ with every ſ-surface CLOSED. Agent-read GT is APPROVED as a ground-truth source
 | R2 challengers | arm A `dr_v3_armA` val **0.9739** (219 verified scripture lines) · arm B training |
 
 ## LOG
-- 2026-07-29 21:xx — campaign opened. Item 2 (R2) arms A/B running; driver being built.
+- 2026-07-29 21:0x — campaign opened. Item 2 (R2) arms A/B running; `chapter_campaign.py` built and validated
+  (reproduces ch16 as CLEAN 64/64).
+- 2026-07-29 21:1x — 4 commits staged (Genesis 16 closure · Q36 selector · Q37-Q39 R2 harvest + agent-read GT ·
+  docs). Nothing pushed.
+- 2026-07-29 21:2x — breadth measurement launched, 4 parallel workers over chapters 2-13, 14/15/17-25, 26-37,
+  38-50. Heartbeat monitor armed (15-min progress events).

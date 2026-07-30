@@ -31,6 +31,7 @@ generalize, they are meant to be right for these four witnesses in Genesis, and 
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -96,8 +97,40 @@ CHAPTER_MODEL: dict[tuple[str, int], dict] = {
 CHAPTER = 1
 
 
+# DERIVED ENTRIES (`chapter_model_derive.py`) sit UNDER the hand-set table above. `CHAPTER_MODEL` was hand-set
+# for chapters 1 and 16 and for no others, so every other chapter ran with `open_page=None` and leaked its title
+# block, italic argument and engraved initial into verse 1 — `ch38 S1 v1` arrived as
+# `and Zara. HIſame time Iudas going downe from his brethren`. The derived table fixes that mechanically for all
+# 48 remaining chapters; it is a JSON side file so any single entry can be audited or removed without a code
+# change, and a hand-set entry ALWAYS wins.
+_DERIVED_PATH = HERE / ".chapter-model-derived.json"
+_DERIVED_CACHE: dict | None = None
+
+
+def _derived() -> dict:
+    global _DERIVED_CACHE
+    if _DERIVED_CACHE is None:
+        try:
+            _DERIVED_CACHE = json.loads(_DERIVED_PATH.read_text())
+        except Exception:                                        # noqa: BLE001
+            _DERIVED_CACHE = {}
+    return _DERIVED_CACHE
+
+
 def chapter_model(ocr_dir: str, chapter: int | None = None) -> dict:
-    return CHAPTER_MODEL.get((ocr_dir, chapter if chapter is not None else CHAPTER), {})
+    ch = chapter if chapter is not None else CHAPTER
+    hand = CHAPTER_MODEL.get((ocr_dir, ch))
+    if hand is not None:
+        return hand
+    d = _derived().get(f"{ocr_dir}|{ch}")
+    if not d or d.get("suspect"):
+        # A SUSPECT derivation is not applied. Cutting most of a leaf on a bad verse-1 match would delete
+        # scripture to tidy a number, and a chapter that keeps its argument text merely fails visibly.
+        return {}
+    out = {"open_page": d["open_page"], "chapter_open_y": d["chapter_open_y"], "derived": True}
+    if d.get("drop_cap_applied"):
+        out["drop_cap"] = tuple(d["drop_cap_applied"])
+    return out
 
 # PER-LEAF OVERRIDES. A witness's band is one constant for its ORDINARY leaves, and the leaf that opens a
 # chapter is not an ordinary leaf — it carries a title block, an argument and an engraved initial, and on the
@@ -157,6 +190,10 @@ ROW_MAX_DRIFT = 0.8
 # row's typical inter-word gap, within that block, is the engraving and not a word.
 DROP_CAP_ROWS = 6
 DROP_CAP_ORPHAN_GAP = 4.0
+# The same gap evidence applied to EVERY row, for the left-column intruders that dominate the un-worked
+# chapters' residual. Wired via `MARGIN_ORPHANS` so the effect is measured before it is trusted.
+MARGIN_ORPHAN_GAP = 4.0
+MARGIN_ORPHANS = os.environ.get("ODR_MARGIN_ORPHANS", "0") != "0"
 
 # Per-leaf body left edge — see `_trim_left_margin`. The tolerance is a fraction of page width, wide enough
 # to absorb a justified line's own variation and the indent of a paragraph opening.
@@ -247,8 +284,19 @@ def body_rows(ocr_dir: str, page_index: int, page: dict) -> list[list[dict]]:
     rows = [sorted(r, key=lambda w: w["x0"]) for r in rows]
     if rows and _is_annotation_leaf(rows):
         return []
-    if is_open:
+    # ORPHAN REMOVAL IS A DROP-CAP REMEDY, so it fires only where a drop cap is ATTESTED (2026-07-29). Setting
+    # `open_page` from a DERIVED chapter model used to switch it on wholesale, and on a leaf whose opening rows
+    # are not indented around an engraving it deletes real words: `genesis 2` S9 v8 lost `God` from
+    # `And our Lord God` and fell to 0.000, S3 v9 to 0.871. A hand-set entry keeps the old behaviour (chapters 1
+    # and 16 were verified by eye, including the witnesses whose entry carries no `drop_cap`); a derived entry
+    # must earn it by having a confirmed `drop_cap`.
+    orphan_ok = is_open and (not cm.get("derived") or cm.get("drop_cap"))
+    if orphan_ok:
         rows = _drop_cap_orphans(rows, W)
+    elif is_open:
+        # a derived opening leaf with no attested drop cap: still strip furniture as on an ordinary leaf
+        while rows and _is_running_head(rows[0]):
+            rows = rows[1:]
     else:
         # Drop leading rows that lie in the head zone AND look like furniture. Two shapes qualify, and nothing
         # else does: a running head (`62 GENESIS.`, `GENESIS. Creation.`) and a BARE FOLIO NUMBER, which
@@ -265,6 +313,8 @@ def body_rows(ocr_dir: str, page_index: int, page: dict) -> list[list[dict]]:
             rows = rows[1:]
     if len(rows) > 2 and _is_foot_line(rows[-1], W, lo, hi):
         rows = rows[:-1]
+    if MARGIN_ORPHANS:
+        rows = _strip_margin_orphans(rows, W)
     return rows
 
 
@@ -412,6 +462,48 @@ def _drop_cap_orphans(rows: list[list[dict]], W: float) -> list[list[dict]]:
             break
         rows[i] = r
     return [r for r in rows if r]
+
+
+def _strip_margin_orphans(rows: list[list[dict]], W: float, gap_mult: float = MARGIN_ORPHAN_GAP
+                          ) -> list[list[dict]]:
+    """Drop a LEADING token that is separated from its row by a gap many times the row's typical word gap.
+
+    THE DEFECT THIS ADDRESSES is the dominant residual across the un-worked chapters. On
+    `archive-holiebible-ot1` p36 (genesis 2) the left cross-reference column sits just inside the witness's body
+    band, so its words join body rows:
+
+        `I and al the furniture of them.`      `kind 4 de ſeuenth day, from al woorke`
+        `li, lit. bleſſed the ſeuenth day`     `by cod heauen, and the earth.`
+        `ſub- fore it ſhot vp in the earth`    `extant became a liuing ſoule.`
+
+    WHY THIS IS NOT THE REJECTED `_trim_left_margin`. That rule derived ONE per-leaf left edge from the median row
+    start and stripped anything left of it, which cost 40 real first words across the four witnesses (odr_com
+    0.928 -> 0.907) — a single threshold against a ragged edge, the failure this project has now met five times.
+    This test is RELATIVE TO THE ROW'S OWN TYPOGRAPHY: a body row's first word sits one word-space from its
+    second, while a margin intruder is separated by a chasm. It is the SAME evidence `_drop_cap_orphans` already
+    uses and trusts for the engraved initial — applied to every row rather than only the first six of an opening
+    leaf, which is the only reason it was not already doing this work.
+
+    A capped loop, not a while-True: at most two leading tokens can go, because a third would mean the row is
+    something other than body text and deleting scripture to tidy a number is the one thing forbidden here."""
+    out = []
+    for r in rows:
+        for _ in range(2):
+            if len(r) < 3:
+                break
+            gaps = [b["x0"] - a["x1"] for a, b in zip(r, r[1:])]
+            rest = sorted(g for g in gaps[1:] if g > 0)
+            if not rest:
+                break
+            typical = rest[len(rest) // 2]
+            if typical <= 0:
+                break
+            if gaps[0] > max(gap_mult * typical, 0.045 * W):
+                r = r[1:]
+                continue
+            break
+        out.append(r)
+    return [r for r in out if r]
 
 
 def body_words(ocr_dir: str, page_index: int, page: dict) -> list[dict]:

@@ -121,6 +121,36 @@ def test_lost_hyphen_is_rejoined_only_on_lexicon_evidence():
 
 # --- a rule that was measured and rejected ------------------------------------------------------------------
 
+def test_margin_orphan_gap_test_stays_default_off():
+    """PINNED NEGATIVE RESULT — the SIXTH geometric attempt at apparatus separation, and it fails the same way.
+
+    The left cross-reference column of `archive-holiebible-ot1` p36 (genesis 2) sits inside the witness's body
+    band, so its words join body rows: `I and al the furniture of them.`, `kind 4 de ſeuenth day`,
+    `li, lit. bleſſed the ſeuenth day`, `ſoule † Theſe are the generations`. The idea was to reuse the evidence
+    `_drop_cap_orphans` already trusts — a leading token separated from its row by a gap many times the typical
+    word gap — on every row rather than the first six of an opening leaf.
+
+    MEASURED ON THE ACTUAL ROWS, and the evidence is simply not there:
+
+        row2 `I and al …`            lead/typical 1.73   <- intruder
+        row3 `of God ended his …`    lead/typical 1.62   <- REAL BODY TEXT
+        row4 `kind 4 de ſeuenth …`   lead/typical -1.17  <- intruder, boxes OVERLAP
+        row7 `ſoule † Theſe are …`   lead/typical 2.45   <- intruder
+
+    A multiplier low enough to catch `kind` deletes `of God ended`, and x cannot separate them either (an
+    intruder at 0.153 of page width against real body text at 0.162). At the default 4.0 the rule fires NOWHERE:
+    chapters 1, 16, 2, 14 and 38 all score identically with `ODR_MARGIN_ORPHANS` on and off.
+
+    The remedy the evidence points to is CONTENT AND SEQUENCE — a monotone alignment over the token stream, the
+    way `verse_locate` anchors verses — not another geometric threshold. Kept wired-but-off with its numbers so a
+    later session does not spend the same day rediscovering that geometry cannot do this."""
+    assert PM.MARGIN_ORPHANS is False, "the margin-orphan strip must not be on by default"
+    W = 2200
+    # the measured shape: a real first word one word-space from its neighbour is NEVER stripped
+    real = [[_w("of", 357, 400, 100), _w("God", 440, 520, 100), _w("ended", 560, 700, 100)]]
+    assert PM._strip_margin_orphans([list(r) for r in real], W)[0][0]["t"] == "of"
+
+
 def test_left_margin_trim_stays_unwired():
     """PINNED NEGATIVE RESULT — do not wire `_trim_left_margin` into `body_rows`.
 
