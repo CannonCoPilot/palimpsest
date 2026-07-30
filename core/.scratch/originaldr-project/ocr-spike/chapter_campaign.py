@@ -140,6 +140,50 @@ def measure(ch: int, use_r3: bool = True) -> dict:
             "n_open": len(open_cells), "open": open_cells[:60]}
 
 
+def stale_adoptions(ch: int) -> list[dict]:
+    """R3 adoptions that no longer beat the page model's own reading (§13 Q44).
+
+    An adoption is gated on beating the incumbent AT THE TIME IT WAS MADE, and the store records what was
+    adopted but never what it beat. So every improvement to the page model silently ages every prior adoption:
+    tonight's catchword and `head_frac` fixes made the incumbent better, and three cells in the HAND-WORKED
+    chapters now publish an R3 reading inferior to the page model's (ch16 S9 v9 0.978 -> 0.919; ch1 S3/S9 v23
+    0.930 -> 0.926). They still clear the bar, so nothing else reports them.
+
+    RE-RUNNING R3 DOES NOT CLEAR THESE, and that is the mechanism worth recording: the adoption store is
+    APPEND-ONLY. `gen1_r3` adds an adoption when the gate passes and never retires one, so a decision made
+    against a worse incumbent survives every later run — chapters 1 and 16 were re-run under the current page
+    model and all three stale cells remained.
+
+    THEY ARE STILL NOT AUTO-REVERTED, on the standard's own terms. A cell must clear 0.90 on CONTENT and have a
+    CLOSED ſ surface. The adopted text carries a surface every glyph of which is attested; the page model's text
+    scores better on content but has no surface verification at all. Dropping the adoption would trade a
+    verified transcription for a better number — the exact trade this project forbids — so the honest state is
+    to KEEP the adoption and REPORT the content regression, which is what this function does. All three cells
+    clear the bar, so the deliverable is intact; what is owed is a surface verification of the page-model
+    reading, after which the better content could be adopted with its surface closed."""
+    import gen1_matrix as MX
+    import gen1_pagemodel_eval as EV
+    store = HERE / (".gen1-r3-adopted.json" if ch == 1 else f".r3-adopted-genesis-{ch}.json")
+    if not store.exists():
+        return []
+    EV.set_locus("genesis", ch)
+    with_r3 = MX.build(use_r3=True)["cells"]
+    no_r3 = MX.build(use_r3=False)["cells"]
+    refs = list(MX.REFS)
+    out = []
+    for key in json.loads(store.read_text()):
+        s_, v = key.split(":")
+        v = int(v)
+        a = (with_r3.get((s_, v)) or {}).get("score") or {}
+        b = (no_r3.get((s_, v)) or {}).get("score") or {}
+        va = [a[r] for r in refs if a.get(r) is not None]
+        vb = [b[r] for r in refs if b.get(r) is not None]
+        if va and vb and min(va) < min(vb) - 1e-9:
+            out.append({"src": s_, "verse": v, "page_model": round(min(vb), 3),
+                        "adopted": round(min(va), 3)})
+    return out
+
+
 def ref_coverage(ch: int) -> dict:
     """Per-VERSE reference completeness — the chapter's true ceiling (§13 Q41).
 
