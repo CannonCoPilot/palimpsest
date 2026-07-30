@@ -777,10 +777,24 @@ def main() -> int:
                     if i in readings or i not in unres_ix:
                         continue
                     core = tok.strip(" \t.,;:·†‡*()[]?!")
-                    if not core or ("s" not in core.lower() and "ſ" not in core):
+                    if not core:
                         continue
-                    form, _ev = s_lexicon.decide(_s_lex_table(), ed, core)
-                    if form and form != core:
+                    lc = core.lower()
+                    form = None
+                    if "s" in lc or "ſ" in core:
+                        form, _ev = s_lexicon.decide(_s_lex_table(), ed, core)
+                    if form is None and ("f" in lc or "ſ" in core):
+                        # THE f QUESTION, which is what most debts actually ask. olmOCR renders ſ as `f` too, so
+                        # every f is a place a ſ might hide: of the 107 surface debts outstanding across the
+                        # chapters processed tonight the commonest tokens are `therefore` (25), `perfect` (8),
+                        # `often` (5), `before` (5), `from` (5), `life` (4) — words with no s at all. A
+                        # CONFIRMATION is a real answer here: where the edition's hand-transcribed evidence says
+                        # the printed form is this token exactly, the observation "this f is genuine" closes the
+                        # debt without changing a letter. Validated 657/657 = 1.0000 on held-out GT while
+                        # refusing 54.6% — and the refusals matter, because the f-collapse merges genuinely
+                        # different words (`wife`/`wiſe` 10/5, `found`/`ſound` 4/1) and those must stay open.
+                        form, _ev = s_lexicon.decide(_s_lex_table(), ed, core, which="ftable")
+                    if form:
                         lex_hits[i] = tok.replace(core, form)
                 if lex_hits:
                     readings.update(lex_hits)
