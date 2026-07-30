@@ -75,6 +75,36 @@ edition divergence. Closing a chapter therefore needs the hand-work chapters 1 a
 session per chapter. **That is the honest cost of "every chapter to the Genesis 1 standard": it is not a pipeline
 run away, and no amount of R3 changes that.**
 
+## WHAT "THE S6 RESIDUAL" ACTUALLY IS — measured on ch22, and it is not one problem
+
+An attempt to hand-close genesis 22 (12 cells short, 11 of them S6 from ONE leaf, p88) was expected to need a
+per-leaf `PAGE_OVERRIDE`. It does not, and the reason matters more than the chapter:
+
+* p88's ROW STARTS cluster at 0.22-0.24, identical to its sibling leaves. **The band is not wrong.**
+* Reading the rows word by word shows they are **entirely ANNOTATION PROSE spanning the full measure** —
+  `the freewoman afflicted the handmaid, and the Apoſtle calleth it not Heretikes`, `Againe, he ſayth of Sara,
+  Illuſionem vidit...` — plus a **right marginal column** (`Heretikes`, `other`, `ſword` at x>0.765) appended to
+  every row.
+* So p88 is an annotation-heavy leaf carrying commentary that competes for verse spans, and the intrusions
+  inside words (`thy only begot-for ten-ſonne`, `into the Maſſe on Laud ot vilion` for `land of vision`) are that
+  commentary interleaved by the recognizer, not a band error.
+
+`_is_annotation_leaf` already excludes a WHOLE leaf that is nothing but notes (it caught `jp2-S06` p77 in
+Genesis 16 on the printed `NNOTATION` heading). p88 is not that case: it carries both scripture and commentary,
+so whole-leaf exclusion would delete real verses.
+
+**Therefore "S6 is the weakest source" is at least THREE unrelated problems wearing one label:**
+
+| cause | example | remedy class |
+|---|---|---|
+| annotation prose sharing rows with scripture on a mixed leaf | ch22 p88, ch12 | column/region separation within a leaf — UNBUILT |
+| missing leaves and unlocalized verses | ch44 (8 verses with NO span; 4 leaves vs 5 elsewhere) | localizer coverage, upstream |
+| edition divergence (1635 against 1609 references) | documented in CHAPTER-WORKFLOW | collation judgement; no recogniser closes it |
+
+Every one of the eight pinned separation attempts was aimed at the AVERAGE of these three. That is why each
+looked convincing on its chosen examples and failed on the population. **Sizing them separately is the
+prerequisite for a ninth attempt, and it is fresh work rather than a patch.**
+
 ## THE NEXT THREE ACTIONS, IN THE ORDER THE EVIDENCE SUPPORTS
 1. **Repair the reference data** (836 cells, 17 chapters). Nothing else unblocks them.
 2. **A ninth approach to the S6 interleaved apparatus** — informed by eight documented failures. R3-on-crop is
