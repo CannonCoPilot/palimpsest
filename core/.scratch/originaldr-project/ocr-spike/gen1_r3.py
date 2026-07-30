@@ -88,6 +88,10 @@ def residual_path() -> Path:
 # draft stored them — but an index shifts whenever the localizer trims a word, so the entry silently starts
 # pointing at a different token. A reading is an observation about a WORD on a leaf; storing it that way makes
 # it re-checkable and stable. Indices are resolved at apply time.
+# Legacy unprefixed keys (`SRC:verse`) belong to the chapters they were read on. See the chapter-blindness note
+# in `main`. New entries should be chapter-qualified (`16:S1:13`).
+LEGACY_VISUAL_CHAPTERS = (1, 16)
+
 VISUAL_READINGS_BY_TOKEN: dict[str, dict[str, str]] = {
     # --- archive-ot1-1609 (S1) p82, read 2026-07-29 ---
     # The leaf shows `shalt bring forth a ſonne`, `his hand shal be againſt al men`, `And she called the name
@@ -733,9 +737,21 @@ def main() -> int:
             t["used_merge"] = True
             t["r3_verse"] = merged
         arb = s_arbiter.transfer(t["old_text"], t["r3_verse"])
-        readings = dict(VISUAL_READINGS.get(f"{t['src']}:{v}") or {})
+        # THE VISUAL TABLES ARE CHAPTER-BLIND, and across 50 chapters that is a CORRECTNESS bug, not just an
+        # inconvenience (§13 Q42). Their keys are `SRC:verse` — `"S1:13"` — and every existing entry was read off
+        # a Genesis 1 or Genesis 16 leaf. Running chapter 33 verse 13 on S1 therefore matched Genesis 16's
+        # hand-read tokens and applied ANOTHER CHAPTER'S observed spelling to this verse; the visible symptom was
+        # `arbitrate` raising `KeyError: token 2 is not unresolved` on a verse whose surface was already CLOSED,
+        # but the silent case would have published a surface nobody observed on this page. Legacy unprefixed keys
+        # are therefore honoured ONLY for the chapters they were written for; anything else must use a
+        # chapter-qualified key (`16:S1:13`).
+        _legacy_ok = EV.CHAPTER in LEGACY_VISUAL_CHAPTERS
+        _qk = f"{EV.CHAPTER}:{t['src']}:{v}"
+        _lk = f"{t['src']}:{v}"
+        readings = dict(VISUAL_READINGS.get(_qk) or (VISUAL_READINGS.get(_lk) if _legacy_ok else None) or {})
         lex_ix: set[int] = set()
-        by_tok = VISUAL_READINGS_BY_TOKEN.get(f"{t['src']}:{v}") or {}
+        by_tok = (VISUAL_READINGS_BY_TOKEN.get(_qk)
+                  or (VISUAL_READINGS_BY_TOKEN.get(_lk) if _legacy_ok else None) or {})
         if by_tok:
             for i, tok in enumerate(t["r3_verse"].split()):
                 if tok in by_tok:
@@ -774,9 +790,15 @@ def main() -> int:
         # window for lexicon hits: `arbitrate` raises on a token that is not open, and with the fallback in place
         # a verse with NOTHING unresolved accepted lexicon readings and aborted the whole chapter's R3 with
         # `KeyError: token 1 is not unresolved` (genesis 33, rc=1 — every adoption in that run lost).
-        wide = unres_ix or set(range(len(arb.get("text", "").split())))
-        readings = {i: w for i, w in readings.items()
-                    if i in (unres_ix if i in lex_ix else wide)}
+        # ONLY GENUINELY OPEN TOKENS ARE ARBITRATED. The previous fallback widened the window to every index when
+        # `unresolved` was empty, which let a reading be offered for an already-attested token — `arbitrate`
+        # raises on that, and rightly, but the raise took the whole chapter's R3 down with rc=1 and lost every
+        # adoption in the run. A reading that transfer has already settled is DROPPED (the observation it would
+        # have supplied is already there); a cell that then stays open fails visibly, which is the safe direction.
+        skipped = {i for i in readings if i not in unres_ix}
+        readings = {i: w for i, w in readings.items() if i in unres_ix}
+        if skipped:
+            t["readings_already_settled"] = sorted(skipped)
         if readings:
             arb = s_arbiter.arbitrate(arb, readings)
             t["visual_readings"] = {str(k): x for k, x in readings.items()}
