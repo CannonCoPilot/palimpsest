@@ -1,52 +1,69 @@
-# GENESIS CAMPAIGN — bring every chapter to the Genesis 1/16 standard (2026-07-29, autonomous session)
+# GENESIS CAMPAIGN — STATE AT HANDOVER (2026-07-30, autonomous overnight session)
 
-**Sir's order:** every chapter of Genesis to the standard of chapters 1 and 16 — every verse of every source
-(S1, S3, S6, S9) matching **each** of the four references (s_dismas, odr_com, sabates_a, madueke_b) at **>=0.90**,
-with every ſ-surface CLOSED. Agent-read GT is APPROVED as a ground-truth source (calibrated 2026-07-29: content
-0.9923, ſ counts exact on 29/29 correctly-paired lines).
+**Sir's order:** every chapter of Genesis to the standard chapters 1 and 16 reached — every verse of every
+source (S1, S3, S6, S9) matching **each** of the four references at **>=0.90**, every ſ-surface CLOSED.
 
-**This file is the ledger. It is rewritten after every chapter so the state survives a context clear.**
-
-## Standing decisions for this campaign (do not re-litigate)
-1. The chapter workflow is `CHAPTER-WORKFLOW.md` phases 0-7. Do not re-derive it.
-2. Interpreter: `../ocr-venv/bin/python`. Tests: `pytest tests/` (169 at session start).
-3. A below-bar cell stays OPEN and BLOCKS. No back-off, no cap, no "parked". Safeguards ALERT; they never accept.
-4. Agent-read GT follows `ground-truth/GUIDELINES.md` — glyph-driven ſ, French spacing preserved, leading verse
-   numbers stripped, `⟨?⟩` rather than a guess. Provenance `agent-read`, kept separable from human gold.
-5. Commit in coherent units as work completes; the hold on PUSH remains until Sir says otherwise.
-
-## STATE
+## THE HEADLINE, STATED PLAINLY
 
 | | |
 |---|---|
-| chapters at 100% | **1, 16** |
-| chapters measured cold | 17 of 50 |
-| cells at >=0.90 across measured chapters | **1317/1992 = 0.6611** |
-| tests | 176 green (169 + 7 this campaign) |
-| R2 model in production | `reichenau_dr.mlmodel` — challengers MEASURED AND REJECTED (see log) |
+| cells >=0.90 against the ACHIEVABLE set | **4,027 / 5,284 = 0.7621** (from 0.7237 at first measurement, **+203 cells**) |
+| cells >=0.90 against the raw total | 4,027 / 6,120 = 0.6580 |
+| **chapters CLOSED** (references complete AND every cell >=0.90) | **2** — chapters 1 and 16 |
+| chapters within 4 cells of closing | 0 |
+| cells UNREACHABLE (a verse missing a reference) | **836, over 17 chapters** |
 
-### WHAT THE COLD MEASUREMENT SETTLED
-- The generalizable rules already carry **~66-70% of cells** on chapters nobody has touched, and **all-fail is
-  ~0** everywhere: no localization, addressing or reference breakage. The residual is per-source recognition.
-- The weakest source is consistently **S6** (0.30-0.50), the 1635 second edition, whose divergence from the 1609
-  references is a known collation issue rather than an OCR one.
-- `CHAPTER_MODEL` existed only for chapters 1 and 16; it is now DERIVED for every chapter, which was the single
-  biggest structural gap.
-- Geometry cannot separate the left-column intruders that dominate the residual — measured, pinned, sixth
-  failure of that idea. The remedy is R3 (which reads the printed crop directly) or content-and-sequence
-  alignment (unbuilt).
+**The order as given cannot be met for 17 of the 50 chapters, and not for OCR reasons.** The standard is
+">=0.90 against EACH of four references"; 836 cells sit on verses where a reference has no text at all, so no
+recogniser can satisfy it. That is an acquisition defect in `reconstruction/reads`, upstream of every OCR stage
+— `s_dismas.json` holds ONE entry for genesis 8 and its text is Gen 8:6 filed under key 8/1. **Repairing it is
+the single highest-value action available, and I did not attempt it: a wrong edit to a reference corrupts every
+score in the project.**
 
-### THE PLAN FOR THE NIGHT
-1. Breadth measurement of all 50 chapters (4 parallel workers) — in flight.
-2. R3 SEQUENTIALLY, fewest-open-cells-first, self-driving via `r3-runner.sh`, ledger `.campaign/r3-ledger.txt`.
-   Sequential is deliberate: the olmOCR-2 MLX model is ~17GB resident and two workers would swap.
-3. Re-measure after each chapter; a chapter reaching 100% is CLOSED, anything else stays OPEN and blocks.
-4. Commit as coherent units. Report honestly which chapters closed and which did not, and why.
+## WHAT MOVED, AND WHY
 
-## LOG
-- 2026-07-29 21:0x — campaign opened. Item 2 (R2) arms A/B running; `chapter_campaign.py` built and validated
-  (reproduces ch16 as CLEAN 64/64).
-- 2026-07-29 21:1x — 4 commits staged (Genesis 16 closure · Q36 selector · Q37-Q39 R2 harvest + agent-read GT ·
-  docs). Nothing pushed.
-- 2026-07-29 21:2x — breadth measurement launched, 4 parallel workers over chapters 2-13, 14/15/17-25, 26-37,
-  38-50. Heartbeat monitor armed (15-min progress events).
+1. **The ſ-surface gate was the bottleneck, not recognition.** R3's content scored 0.97-1.00 against the
+   governing reference while 19 of 25 verses stayed OPEN on surface debt. Two fixes: archaic-equivalent transfer
+   (keep R2's observed `ſeuenth` rather than R3's modernized `seventh`) and an attested ſ lexicon built from the
+   2,611 hand-transcribed GT lines — **502/502 and 657/657 = 1.0000 on held-out GT**, refusing 69% and 55%.
+   Genesis 2 went 0.700 -> 0.840 and ADOPT 2 -> 15.
+2. **R3 across the reachable set**, sequential (17GB model), fewest-open-first, self-driving, lock-protected.
+   24+ chapters, **zero crashes** after the resilience fix.
+3. **Agent-read GT calibrated and in use** — 40 blind reads against human transcription: content 0.9923 mean /
+   1.0000 median on correctly-paired lines, **ſ counts exact on 29/29**.
+
+## WHAT IS BLOCKING, WITH EVIDENCE
+
+**S6 (the 1635 second edition) is the weakest source in 46 of 50 chapters, mean pass rate 0.570.** Its left
+annotation column is merged into body rows by the recognizer (`and trie and out of thy kindred`,
+`borne of therfore went out`). **Eight separate attempts to separate it have now failed and are pinned with
+their numbers** — seven geometric (bands, thresholds, gap ratios, per-leaf edges, the S6 band sweep) and one on
+content and sequence, which deleted scripture on the population while looking excellent on hand-picked rows.
+The only thing that touches this residual is R3 re-reading the printed crop.
+
+## CORRECTIONS TO MY OWN EARLIER CLAIMS THIS SESSION
+
+* The derived `CHAPTER_MODEL` — which I called "the campaign's central lever" — is **net negative** measured
+  across all 49 chapters (ON 3,827 vs OFF 3,834). Default OFF, pinned with figures.
+* I committed that deriver as fixing "all 48 chapters" and **then never ran it on 45 of them**. True about the
+  capability, false about the state; nothing in the pipeline could have said so.
+* §13 Q30's `janvier_fit` defect is **prevalent but low-yield** — 33.7% of decisions, 0.01% of cells. My earlier
+  "may be worth more than either model change" was wrong.
+* The R2 challengers (more training data, matter prose) both **lost** to the incumbent. Item 2 closes negative.
+* A report line counted genesis 49 as "100% of achievable" when its achievable set is 8 cells of 128. That is
+  denominator laundering; CLOSED now requires complete references.
+
+## STANDING STATE
+* **17 commits**, nothing pushed. The hold on push stands.
+* **172 tests green.** Chapters 1 and 16 held at 124/124 and 64/64 through ~25 changes — they are the sentinels
+  on every measurement and they caught two regressions tonight.
+* Ledger `.campaign/r3-ledger.txt`; per-chapter matrices `.campaign/matrix-genesis-N.json`;
+  `chapter_campaign.py --report` reproduces every number above.
+
+## THE NEXT THREE ACTIONS, IN THE ORDER THE EVIDENCE SUPPORTS
+1. **Repair the reference data** (836 cells, 17 chapters). Nothing else unblocks them.
+2. **A ninth approach to the S6 interleaved apparatus** — informed by eight documented failures. R3-on-crop is
+   the only thing that currently touches it, so the question is whether an S6-specific crop (excluding the left
+   column) beats the current full-width crop.
+3. **Finish R3 across the remaining reachable chapters** and re-run those adopted under the superseded
+   configuration.
