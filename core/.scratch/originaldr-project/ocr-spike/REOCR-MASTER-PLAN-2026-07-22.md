@@ -1185,6 +1185,40 @@ excluded from the denominator as unreachable were now measured.** Read the two n
 populations, not as progress and regress. The campaign's rate is only comparable across revisions in which the
 achievable set is the same; **quote the achievable count beside the ratio, always.**
 
+**Q50 (2026-07-31, RESOLVED — AND IT REDIRECTS THE WORK). The three S6 causes, sized separately at last.**
+`s6_causes.py` classifies every open cell by the SHAPE of its alignment against the archaic reference, checks
+each against an independent attribution (does the cell contain a word that appears in that chapter's apparatus
+and in none of its verses?), and cuts the population a third way that needs no classifier at all.
+
+| | S6 | S1 | S3 | S9 |
+|---|---|---|---|---|
+| open cells | **568** | 242 | 211 | 174 |
+| INTERLEAVE | 100 (17.6%) | 25 (10.3%) | 14 (6.6%) | 35 (20.1%) |
+| MISREAD | **255 (44.9%)** | 96 | 73 | 41 |
+| DIVERGE | 198 | 119 | 114 | 90 |
+| NO-TEXT | 14 | 2 | 10 | 8 |
+| fails in this source ALONE | **399** | 40 | — | 46 |
+| fails in ALL FOUR | 40 | 40 | 40 | 40 |
+
+**EDITION DIVERGENCE IS CAPPED AT 40 CELLS, 0.65% of the book.** It is a property of the page all four sources
+photographed, so it cannot fail in one source alone — the all-four-fail set is its ceiling, and no classifier
+is needed to bound it. It has been carried as one of three co-equal causes since the S6 work began.
+
+**S6's excess is source-specific reading quality, not apparatus.** 399 cells fail in S6 alone against 40 and 46
+for S1 and S9; the excess sits in MISREAD, and S6's INTERLEAVE share (17.6%) is *below* S9's (20.1%). **A ninth
+apparatus-separation attempt would target at most a fifth of S6's failures — a share S6 does not even lead.**
+
+**THE FIRST VERSION OF THE CLASSIFIER RETURNED THE OPPOSITE ANSWER AND WAS ENTIRELY CONVINCING.** Classifying
+on aggregate overlap (high recall, low precision => interleaved) it reported 4 interleaved cells against 414
+divergent — because two words of marginal text pushed into a twelve-word verse move neither ratio: `the heauens
+therfore the earth were fully finiſhed, and 17conſeruins al the furniture of them` scores recall 0.93 AND
+precision 0.93. **A summary table is not evidence about the thing it summarises unless someone reads its
+examples**; printing three per bucket is what exposed it, and the tool now says so in its own docstring.
+
+Two caveats stand, both measured: INTERLEAVE is a LOWER BOUND (23% of DIVERGE cells also carry an attributable
+apparatus word, vs 46% of INTERLEAVE and 10% of MISREAD), and DIVERGE cannot mean *edition* divergence for any
+cell failing in one source alone.
+
 **Q13 (2026-07-28, RESOLVED). Why did 659 scan-verses leave scope?** `corpus_localize._line_range` took only
 the FIRST `printed-heading` pin (defect #8). A chapter owns TWO pin segments whenever its heading falls
 mid-page — a `carry-in` run before it and a `printed-heading` run after — so **3,006 pages were truncated to

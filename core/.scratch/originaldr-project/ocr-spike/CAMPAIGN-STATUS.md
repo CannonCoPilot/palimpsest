@@ -75,16 +75,37 @@ recognizer said. Four of this session's five wins were reference repairs, and th
 
 ## NEXT STEPS, IN ORDER — THIS IS THE RESUME PLAN
 
-1. **SIZE THE THREE S6 CAUSES SEPARATELY** — still not done, and the prerequisite for any ninth apparatus
-   attempt. S6 is now plainly the dominant weakness: 0.1471 (ch44), 0.2258 (ch47), 0.25 (ch23), 0.2727 (ch6),
-   0.3333 (ch13), 0.381 (ch15) against S9 at 0.7-1.0 in the same chapters.
-   | cause | example | remedy class |
-   |---|---|---|
-   | annotation prose sharing rows with scripture on a MIXED leaf | ch22 p88, ch12 | within-leaf column separation — UNBUILT |
-   | missing leaves / unlocalized verses | ch44 (8 verses with NO span; 4 leaves vs 5 elsewhere) | localizer coverage, upstream |
-   | edition divergence 1635 vs 1609 references | CHAPTER-WORKFLOW | collation judgement; no recognizer closes it |
-   Every one of the EIGHT pinned separation attempts was aimed at the AVERAGE of these three, which is why each
-   convinced on its examples and failed on the population.
+1. ~~SIZE THE THREE S6 CAUSES SEPARATELY~~ **DONE 2026-07-31 — `s6_causes.py`, and the answer redirects the
+   work.** The three causes are NOT co-equal, and the one eight attempts were aimed at is not the big one.
+
+   | | S6 | S1 | S3 | S9 |
+   |---|---|---|---|---|
+   | open cells | **568** | 242 | 211 | 174 |
+   | INTERLEAVE (apparatus in the row) | 100 (17.6%) | 25 (10.3%) | 14 (6.6%) | 35 (20.1%) |
+   | MISREAD (letters wrong) | **255 (44.9%)** | 96 | 73 | 41 |
+   | DIVERGE | 198 | 119 | 114 | 90 |
+   | NO-TEXT (never localized) | 14 | 2 | 10 | 8 |
+   | **fail in this source ALONE** | **399** | 40 | — | 46 |
+   | fail in ALL FOUR (the same cells) | 40 | 40 | 40 | 40 |
+
+   **EDITION DIVERGENCE IS CAPPED AT 40 CELLS — 0.65% of the book — and needs no classifier to bound.** It is a
+   property of the page all four sources photographed, so it CANNOT fail in one source alone; the cells failing
+   in all four are its ceiling. It was carried as one of three co-equal causes and it is an order of magnitude
+   smaller than that.
+
+   **S6's excess is source-specific reading quality.** It fails alone on 399 cells against 40 and 46 for S1 and
+   S9 — a nine-fold excess — and its excess over the other sources is concentrated in MISREAD, not INTERLEAVE
+   (its interleave share, 17.6%, is *below* S9's 20.1%). **A ninth apparatus-separation attempt would be aimed
+   at at most a fifth of S6's failures, and at a share S6 does not even lead on.** The lever is R2/R3 recognizer
+   quality on S6's leaves.
+
+   Two caveats to carry, both measured rather than asserted: the INTERLEAVE count is a **lower bound** (23% of
+   DIVERGE-labelled cells also carry a word attributable to that chapter's apparatus, against 46% of INTERLEAVE
+   ones and 10% of MISREAD ones), and the DIVERGE bucket cannot mean *edition* divergence for any cell that
+   fails in one source alone — those are misreadings the character-similarity test judged too unlike to be one.
+   **Read `s6_causes.py --examples 3` before quoting its table**; its first version reported the opposite
+   answer, cleanly, and the examples are what exposed it.
+
 2. **DEPTH-FIRST CHAPTER WORK.** Closest to closure now, cells short: **ch8 (7)**, ch12 (10), ch20 (11),
    ch22 (12), ch33 (12), ch18 (13), ch48 (13), ch25 (14), ch45 (14), ch2 (15). Follow CHAPTER-WORKFLOW phases
    0-7. After each chapter closes, **re-measure all 50** (`chapter_campaign.py --chapters 1-50 --phase measure`,
