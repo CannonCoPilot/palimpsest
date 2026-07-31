@@ -124,7 +124,14 @@ def measure(ch: int, use_r3: bool = True) -> dict:
             else:
                 vfail += 1
                 open_cells.append({"src": s, "verse": v, "worst": round(min(vals), 3),
-                                   "from": c.get("from"), "text": (c.get("text") or "")[:120]})
+                                   # THE FULL TEXT, not a 120-character preview. The truncation was invisible
+                                   # in a log line and actively misleading anywhere else: reading genesis
+                                   # 8:1/S3 and 8:13/S3 off the matrix, both looked like SPANS CUT SHORT
+                                   # mid-sentence (`...cleane minished vpo`) — a structural geometry defect
+                                   # worth chasing — when the spans are complete and the cut was this slice.
+                                   # A diagnostic field that silently shortens the evidence is worse than
+                                   # absent, because it fabricates a symptom.
+                                   "from": c.get("from"), "text": c.get("text") or ""})
         if vfail == len(MX.WITS):
             all_fail.append(v)
     n_cells = sum(1 for v in verses for s in MX.WITS)

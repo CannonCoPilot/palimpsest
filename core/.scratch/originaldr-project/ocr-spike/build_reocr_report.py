@@ -112,7 +112,9 @@ def campaign_block(note: str = "") -> dict[str, Any]:
             for s in ("S1", "S3", "S6", "S9"):
                 c = open_by.get((v, s))
                 row["cells"].append({"s": s, "ok": c is None, "worst": (c or {}).get("worst"),
-                                     "page": (c or {}).get("from"), "text": ((c or {}).get("text") or "")[:400]})
+                                     # the FULL text: a preview that silently shortens the evidence fabricates symptoms
+                                     # (a complete span read as "cut short mid-sentence" off a 120-char slice)
+                                     "page": (c or {}).get("from"), "text": (c or {}).get("text") or ""})
             grid.append(row)
         closed = m.get("triage") == "CLEAN" and not m.get("blocked_cells")
         chapters.append({"ch": ch, "verses": nv, "cells": m.get("n_cells", 0), "pass": m.get("n_pass", 0),

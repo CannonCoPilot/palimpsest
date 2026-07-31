@@ -97,6 +97,28 @@ CHAPTER_MODEL: dict[tuple[str, int], dict] = {
                                     "drop_cap": ("ſmaelSARAI", "SARAI")},
     ("pdf-S03a", 16):              {"open_page": 85, "chapter_open_y": 0.400},
     ("archive-holiebible-ot1", 16): {"open_page": 91, "chapter_open_y": 0.400},
+    # GENESIS 8, read off the leaves (2026-07-31). Chapter 8 had NO entry, so it ran with `open_page=None` and
+    # every source leaked its argument and engraved initial into verse 1 — exactly the failure the derived-table
+    # comment below describes. The three sources that open the chapter mid-leaf show the same three facts:
+    #
+    #   S1 `archive-ot1-1609` p56 (h 3090): argument y 379-521, body opens y 629 `part ND God remembred Noc`
+    #   S3 `pdf-S03a`         p60 (h 3030): argument y 345-473, body opens y 596 `part Np God remembred Noe`
+    #   S6 `jp2-S06`          p50 (h 2847): argument y 2026-2127, body opens y 2283 `ND God remembred Noe`
+    #
+    # `part` is the tail of the right-hand side-note (`The third part of this booke`) merged into the body row
+    # by the row reader; the drop-cap rule deletes everything before the display line, which removes it.
+    # The engraved A is invisible to the recognizer, so `AND` arrives as `ND` (S1, S6) or `Np` (S3).
+    #
+    # WHY THIS MATTERS MORE THAN IT LOOKS: with no entry, S3's verse 1 was taken from the CHAPTER STREAM
+    # instead of the leaf, because the leaf candidate opened with `part Np` and lost the janvier-fit contest.
+    # The chapter stream's copy is missing `remembred` altogether — so the selector preferred a reading with a
+    # word MISSING over one with two junk tokens in front. Leaf 0.9133 vs chapter-stream 0.8733.
+    ("archive-ot1-1609", 8):       {"open_page": 56, "chapter_open_y": 0.185,
+                                    "drop_cap": ("ND", "AND")},
+    ("pdf-S03a", 8):               {"open_page": 60, "chapter_open_y": 0.180,
+                                    "drop_cap": ("Np", "AND")},
+    ("jp2-S06", 8):                {"open_page": 50, "chapter_open_y": 0.775,
+                                    "drop_cap": ("ND", "AND")},
 }
 
 # The chapter the model is currently reading. Set by the entry points (`--chapter`); the opening-leaf and
@@ -182,6 +204,36 @@ def chapter_model(ocr_dir: str, chapter: int | None = None) -> dict:
 # p19's body runs out to x 1775 (0.807) — which is the whole justification for overriding per leaf.
 PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ("jp2-S06", 18): {"body": (0.165, 0.765)},
+    # GENESIS 8 ON S6, and the SAME argument one leaf apart — which is why this is a per-leaf table and not a
+    # per-witness one. Chapter 8 opens at the foot of p50 and runs down p51, and the two leaves want opposite
+    # things:
+    #
+    #   p50 carries the right-hand side-note column. Its chapter-8 body rows end at x<=1638 and the note begins
+    #       at x>=1677 (`The third`, `of ths beo`, `Of the new`, `tiplication`, `vord.` — the running note `The
+    #       third part of this booke. Of the new increaſe & multiplication of the world`). Bound 1660/2200.
+    #   p51 has NO right column at all: its body genuinely runs to x 1784, and `the`(x7), `of`(x3), `which`,
+    #       `were`(x3), `ſeauen`(x2) all start beyond 1660. The p50 bound applied here would delete scripture
+    #       from thirty-nine tokens of ordinary text.
+    #
+    # p51's own defect is at the TOP instead: the running head arrives as `GENES I Noe.` — the head SPLIT into
+    # two tokens, so `_PROSE_HEADS` (which matches whole capitalised words) cannot see it, plus the marginal
+    # `Noe.`. It sits at y 251 of 2847 = 0.088, just under S6's witness head band of 0.075. Widening the band
+    # for this leaf alone drops the whole row and takes the marginal with it.
+    ("jp2-S06", 50): {"body": (0.215, 0.754)},
+    ("jp2-S06", 51): {"head_frac": 0.10},
+    # S3 p60 — the same lesson on the LEFT, and on a witness whose bound is right for its other leaves.
+    # `pdf-S03a`'s body starts at 0.14 (x 308), and on its ANNOTATION leaves that is correct: p59 and p61 have
+    # 27 of 41 and 31 of 42 rows genuinely starting at x 309-331. On the SCRIPTURE leaves the body starts at
+    # x 410-427 and everything to the left of it is a marginal column. Every token this bound drops on p60 was
+    # checked one by one, and all nine are intruders:
+    #
+    #   x347 `of`   x320 `not`  x337 `He`   x329 `go-`  x362 `v-`  x313 `mo-`  x347 `ſo`  x326 `and`  x336 `12.`
+    #
+    # Two of them were doing visible damage inside verse 13: `ſo` sits between the halves of a word broken at
+    # the measure, so `mo-`/`neth` came out as `mo ſo neth` instead of rejoining to `moneth`, and `and` turned
+    # `the roofe of the arke` into `of and arke`. The bound is 0.17 (x 374) — above the highest intruder (362)
+    # and below the lowest real body row (402).
+    ("pdf-S03a", 60): {"body": (0.17, 0.815)},
 }
 
 
@@ -726,7 +778,12 @@ def is_apparatus_mark(t: str) -> bool:
 
 # Running heads and section headings as they appear in PROSE (an R3 crop transcript, where there are no rows to
 # test the shape of). A multi-leaf crop join walks straight over a leaf's top, so `GENESIS.` lands mid-verse.
-_PROSE_HEADS = {"genesis", "creation", "annotations", "annotation"}
+_PROSE_HEADS = {"genesis", "creation", "annotations", "annotation",
+                # THE HEAD IS NOT ALWAYS ONE TOKEN. `jp2-S06` p51 returns it as `GENES I` — split in two, so a
+                # whole-word test cannot see either half, and `GENES I Noe.` walked into genesis 8:3. Counted
+                # over all 50 chapters: `GENES` 35, `GENESI` 34, `ENESIS` 1, and not one of the 70 is a word.
+                # The `isupper()` guard in `clean_tokens` still applies, so ordinary prose is untouched.
+                "genes", "genesi", "enesis"}
 
 
 def clean_tokens(toks: list[str]) -> list[str]:
