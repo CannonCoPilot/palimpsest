@@ -433,6 +433,15 @@ def body_rows(ocr_dir: str, page_index: int, page: dict) -> list[list[dict]]:
     rows = [sorted(r, key=lambda w: w["x0"]) for r in rows]
     if rows and _is_annotation_leaf(rows):
         return []
+    # ONE ROW, ONE PRINTED LINE. The grouping above is on vertical overlap, and on a leaf scanned askew two
+    # consecutive printed lines overlap in y while their BASELINES stay ~35px apart — so they merge, and the
+    # x-sort then interleaves them word by word into something that reads exactly like two columns. Applied
+    # AFTER `_is_annotation_leaf` on purpose: that test reads the leading rows, and it must go on seeing the
+    # same rows it was calibrated against. See `line_split.py` for the measurement that showed this is skew
+    # and not columns — a recursive XY-cut of the same leaf finds no gutter, because there is none.
+    if os.environ.get("ODR_LINE_SPLIT", "1") != "0":
+        import line_split
+        rows = line_split.split_rows(rows)
     # ORPHAN REMOVAL IS A DROP-CAP REMEDY, so it fires only where a drop cap is ATTESTED (2026-07-29). Setting
     # `open_page` from a DERIVED chapter model used to switch it on wholesale, and on a leaf whose opening rows
     # are not indented around an engraving it deletes real words: `genesis 2` S9 v8 lost `God` from
