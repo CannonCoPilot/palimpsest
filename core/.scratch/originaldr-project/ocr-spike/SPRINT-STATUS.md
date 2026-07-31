@@ -1,34 +1,48 @@
 # OriginalDR reOCR — Full-Completion Sprint Tracker
 
-> **RESUME (state 2026-07-30, after the overnight autonomous campaign).**
+> **RESUME (state 2026-07-31, after the reference-gap session).**
 >
 > ## ⚠ READ `CAMPAIGN-STATUS.md` FIRST — it is the operational resume plan
 > State table, next steps in order, tools, and the nine pinned negatives. Then `CHAPTER-WORKFLOW.md` for the
-> per-chapter process, and `REOCR-MASTER-PLAN-2026-07-22.md` §13 (Q1-Q48) for the findings.
+> per-chapter process, and `REOCR-MASTER-PLAN-2026-07-22.md` §13 (Q1-Q49) for the findings.
 > **Do not re-derive the approach.**
 >
 > **⚠ TWO INTERPRETERS.** Everything runs on `../ocr-venv/bin/python`; MLX needs
-> `PYTORCH_ENABLE_MPS_FALLBACK=1`. Tests: `pytest tests/` -> **173 passed**.
+> `PYTORCH_ENABLE_MPS_FALLBACK=1`. Tests: `pytest tests/` -> **188 passed**.
 >
 > ### THE GOVERNING LESSON OF THIS CAMPAIGN (§13 Q47)
 > **A rule is measured by the TEXT IT CHANGES, not by the verdicts it flips.** `split_glued` scored +8 cells
 > across 50 chapters and alters **1,356 tokens**, tearing real words apart (`lawful` -> `law ful` 28x). Run
-> `faithfulness_audit.py` before adopting anything that edits text.
+> `faithfulness_audit.py` before adopting anything that edits text — **including your own fixes**: the audit
+> caught a note-anchor pattern of mine matching `a ſonne` and deleting a page of scripture, in a commit whose
+> scoreboard showed a gain.
+>
+> ### AND THE ONE FROM THIS SESSION (§13 Q48/Q49)
+> **Before blaming the recognizer, interrogate the reference.** Four of five wins here were reference repairs,
+> not OCR work. `odr_com` had lost 196 verses to an optional quote in a regex; the acquisition manifest
+> recorded the loss in July (`verse_count_match: 37/50`) and nothing ever read it. **A fidelity figure that no
+> gate fails on is a comment.**
 >
 > ### STATE
 > | | |
 > |---|---|
-> | cells >=0.90 / ACHIEVABLE | **4,273 / 5,416 = 0.7890** |
+> | cells >=0.90 / ACHIEVABLE | **4,853 / 6,116 = 0.7935** |
 > | CHAPTERS CLOSED | **2** (1, 16) — sentinels, re-measured on every change |
-> | blocked by an absent reference | **704 cells / 16 chapters** (genesis 46 recovered this session) |
-> | commits | 23 this session, **nothing pushed** |
+> | blocked by an absent reference | **4 cells / 1 chapter** (was 704 / 16; the REF-GAP class is gone) |
+> | commits | 28, **nothing pushed** |
+>
+> **⚠ THE RATIO IS NOT COMPARABLE ACROSS THIS SESSION.** It fell 0.7916 -> 0.7884 at the moment 596 blocked
+> cells were recovered, because they entered the denominator. Quote the ACHIEVABLE COUNT beside the rate.
 >
 > ### NEXT, IN ORDER (Sir's stance: DEPTH-FIRST, re-measuring all 50 after each chapter closes)
-> 1. Genesis 8 renumbering via `ref_renumber.CORRECTIONS` — corroborated split, 88 cells.
-> 2. `odr_com` gaps: chapters 4, 6, 9, 11, 13, 49 (616 cells); different source (`html-scrape`).
-> 3. Size the three S6 causes separately — annotation-on-mixed-leaf / missing leaves / edition divergence.
-> 4. Depth-first chapter closure: ch22, ch33 (12 short), ch7, ch48 (13), ch25, ch45 (14), ch17 (15), ch2 (16).
-
+> 1. Size the three S6 causes separately — annotation-on-mixed-leaf / missing leaves / edition divergence.
+>    S6 is now plainly dominant: 0.15 (ch44), 0.23 (ch47), 0.25 (ch23) against S9 at 0.7-1.0 in the same chapters.
+> 2. Depth-first chapter closure: ch8 (7 short), ch12 (10), ch20 (11), ch22, ch33 (12), ch18, ch48 (13).
+> 3. The s_dismas re-parser still fails 8 chapters it should reproduce (2, 16, 19, 26, 31, 35, 36, 44) — each
+>    failure is a parse defect the SHIPPED reads may also carry, and chapter 30 proved those are invisible to a
+>    count test.
+> 4. odr_com genesis 23:20 — an ACQUISITION task. The site prints 19 verses where the DR has 20. Report, do not
+>    patch: the 4 cells stay open and block chapter 23.
 
 ## ⏳ M39 ITEM 2 (IMPROVE R2) — the chapter-harvest premise is DEAD; the real lever is 88% of unused GT (2026-07-29)
 

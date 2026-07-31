@@ -1146,6 +1146,45 @@ is FAITHFUL to its source; the source disagrees with the other three witnesses. 
 `ref_renumber.CORRECTIONS` **split**, not a parser fix — NEXT ACTION, and papering over it in the parser would
 hide an editorial fact behind a code change.
 
+**Q48 (2026-07-31, RESOLVED). The reference-gap class is gone: 704 blocked cells -> 4.** Genesis 8 was blocked
+TWICE OVER, by faults of different kinds that the count test could not tell apart, and the second only became
+visible once the first was fixed — a pattern that then repeated at chapters 46, 30 and 44.
+
+* **PARSE faults, which are ours to fix.** A page-foot note block spliced into the MIDDLE of a verse (two
+  marginal notes, the page number, and the facing page's running head `Genesis`, between `...cogitation of`
+  and `mans hart are prone to euil`) — not a suffix, so no end-of-verse trimmer could reach it. And a chapter's
+  TAIL emitted behind the NEXT chapter's running head: genesis 30's verses 39–43 sit after the line
+  `Chapter 31`, land in block 31, and are correctly discarded there as pre-verse-1 matter.
+* **NOT parse faults.** The edition merges DR 15+16 under a printed `15` and numbers the rest one lower. The
+  parse is faithful to the page; the correction is a corroborated `ref_renumber` split.
+* **A HOLE IN A NEARLY-FULL CHAPTER IS INVISIBLE TO A COUNT.** Genesis 30 held 42 of janvier's 43 and passed
+  `h >= 0.9 * jn` while its verse 6 read `...geuing me againe Bala conceauing bare an other`. The repair
+  criterion is now "the re-parse carries verses the stored reads LACK", judged by the cross-reference gate.
+* **A MERGE LEAVES ONE OF TWO WOUNDS.** Either the source renumbered everything after it one lower (genesis 8),
+  or it left a HOLE and carried on correctly (odr_com genesis 34 prints verse 29 as `28`, then a correct 30 and
+  31). `split` renumbered unconditionally and gave chapter 34 a verse 32 that no edition has. The reference
+  says which without judgement: **if a+1 is absent, there is nothing after the merge to move.**
+
+**Q49 (2026-07-31, RESOLVED — AND THE MOST EXPENSIVE ONE). `odr_com` lost 196 verses to one optional quote,
+and the loss had been MEASURED at acquisition and never read.** The apparatus boundary was matched with
+`id\s*=\s*['"]?Annotations['"]?[^>]*>`, whose optional closing quote also matches the PREFIX of
+`id="Annotations2"` — and that id is not apparatus. On this site it is a STYLE whose meaning is positional:
+after the ANNOTATIONS. header it wraps annotation prose, before it, plain scripture (genesis 4 carries verses
+8–15 and 16–26 in two such spans). Every chapter using it was cut at its first occurrence: genesis 4, 6, 9 at
+verse 7, 11 at 9, 13 at 4, 49 at 2. **Nine Genesis chapters classed REF-GAP, 596 cells outside the achievable
+set, for a year of campaign work.**
+
+The scrape manifest had recorded `verse_count_match: 37/50` for genesis and a chapter-bag agreement (0.8559)
+far below the per-verse agreement (0.9292) — a gap the manifest's OWN documentation defines as isolating
+"text loss". **The number was written down in July and nothing consumed it.** A measurement that no gate reads
+is not a safeguard; it is a comment. Where an acquisition step reports a fidelity figure, something must FAIL
+on it.
+
+**AND THE HEADLINE RATIO FELL WHILE THIS WAS FIXED — 0.7916 -> 0.7884 — because 596 cells that had been
+excluded from the denominator as unreachable were now measured.** Read the two numbers as rates over different
+populations, not as progress and regress. The campaign's rate is only comparable across revisions in which the
+achievable set is the same; **quote the achievable count beside the ratio, always.**
+
 **Q13 (2026-07-28, RESOLVED). Why did 659 scan-verses leave scope?** `corpus_localize._line_range` took only
 the FIRST `printed-heading` pin (defect #8). A chapter owns TWO pin segments whenever its heading falls
 mid-page — a `carry-in` run before it and a `printed-heading` run after — so **3,006 pages were truncated to

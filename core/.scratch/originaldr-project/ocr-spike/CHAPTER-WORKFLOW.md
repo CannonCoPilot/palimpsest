@@ -215,6 +215,31 @@ already failed.
 full audit (413,814 tokens) cleared every rule that is ON — `clean_tokens` 1.92%, `rejoin_break` 0.57%,
 `s_arbiter` archaic-equivalence 0.03%, `s_lexicon` 0.23% — and isolated the one that was not.
 
+**RUN IT ON YOUR OWN FIXES TOO (2026-07-31).** Widening the s_dismas page-foot note scan, the note-anchor class
+was written `[A-ZſVI]` — meaning to admit a note opening on a long-s word. `ſ` is LOWERCASE, so the pattern
+matched the commonest phrase in the book: `a ſonne`. It ate genesis 30's verse-6 tail, and when the line
+`a ſonne, 11 she ſaid:` was read as an anchor it took the whole page beneath it, verses 11 to 26. **The
+scoreboard would have shown a GAIN**, because the same commit repaired a real defect in that chapter. The audit
+showed removals jumping 875 -> 2,462 tokens, and reading them showed sixteen spans of plain scripture. The
+author of a rule is the last person its score will warn.
+
+## BEFORE BLAMING THE RECOGNIZER, INTERROGATE THE REFERENCE (2026-07-31, §13 Q48/Q49)
+
+Four of the five wins in the reference-gap session were repairs to the REFERENCES, not to the OCR — 700 blocked
+cells reduced to 4. A chapter that will not come up is at least as likely to be measured against a broken
+instrument as to be badly read. Check, in this order:
+
+1. **Does the reference have the verse at all?** `chapter_campaign.py --report` lists per-chapter reference
+   counts against janvier. A truncation shows as a contiguous 1..N run — that is a PARSE failure, never a
+   witness that "only has seven verses".
+2. **Does it have the RIGHT verse there?** Compare token counts across the four. `len(a) ≈ len(a)+len(a+1)` in
+   the others is a merge; a persistent +1/-1 offset is a numbering shift. Both belong in
+   `ref_renumber.CORRECTIONS`, corroborated, with the source file untouched.
+3. **Is a nearly-full chapter actually whole?** A count test cannot see a hole. Genesis 30 held 42 of 43 and
+   passed every gate while carrying a verse with its middle cut out.
+4. **Did the acquisition step already tell you?** The odr-com manifest recorded the exact defect in July —
+   `verse_count_match: 37/50` — and nothing read it. **A fidelity figure that no gate fails on is a comment.**
+
 ## The standing traps
 
 - **A DEAD METRIC IS NOT A TIE — AND IT IS INSIDE A PRODUCTION SELECTOR ON A THIRD OF THE CORPUS (§13 Q36).**
