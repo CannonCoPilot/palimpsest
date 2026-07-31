@@ -54,6 +54,10 @@ BOOK = "genesis"
 _CHAP = re.compile(r"^Chapter (\d+)$")
 _VNUM = re.compile(r"(?<!\S)(\d{1,3})\s+(?=[A-Za-zſ&])")
 _PAGENO = re.compile(r"^\d{1,4}$")
+# A marginal note opens with its anchor letter and a capitalised sentence: `a The crowe returned not...`,
+# `a That is, she bare their fathers in Meſopotamia.` Body prose starting with a bare `a`/`b` and a capital
+# does not occur in Genesis, and the pattern is only consulted at a page foot (see `_strip_page_furniture`).
+_NOTE_ANCHOR = re.compile(r"^[a-f]\s+[A-ZſVI]")
 
 
 def _fold_word(w: str) -> str:
@@ -93,6 +97,67 @@ def chapter_blocks(lines: list[str]) -> dict[int, list[str]]:
     return blocks
 
 
+def _strip_page_furniture(block: list[str], title: str) -> list[str]:
+    """Delete the apparatus that sits at a PAGE FOOT, which `pdftotext` emits in the middle of a verse.
+
+    THE DEFECT. Chapter 8's printed verse 20 comes out of the parser as
+
+        ... for the ſenſe and cogitation of | a The crowe returned not into the arke, but (as appeareth by the
+        Hebrew text) ... | b They entred into the arke the 17. day ... | 51 | Genesis | mans hart are prone to euil
+
+    — two marginal notes, the page number and the facing page's running head `Genesis`, spliced into the middle
+    of the scripture. Genesis 46:25 carries exactly the same wound (`a That is, she bare their fathers in
+    Meſopotamia. in Gen. S. Aug. q. 151. Genesis`). It is not a suffix, so no trimmer at the end of a verse can
+    reach it, and both chapters are ones this module repairs — so the note block travels with the repair.
+
+    THE SHAPE IT IS RECOGNISED BY, which is structural rather than lexical. The page number is the anchor: it is
+    unambiguous and already detected. Above it sit the notes — each a blank-separated ONE-LINE group, because
+    the PDF lays them out as separate text objects, while body prose runs many lines with no blank between. The
+    note's FIRST line is the exception: it abuts the last body line, and is identified by its anchor letter.
+    Below the page number sits the running head of the facing page, the book's name on its own line — the same
+    fault `chapter_blocks` already handles for `Chapter N`, and the reason `Genesis` ended up inside a verse.
+
+    WHAT IT DELIBERATELY DOES NOT TOUCH. A lone capital on its own line is the engraved DROP CAPITAL, which also
+    falls next to a page number (chapter 8 line `A`, chapter 46 line `A`); the backward scan stops dead at it so
+    `verses` can still put it back on the front of verse 1."""
+    n = len(block)
+    drop: set[int] = set()
+    for i, ln in enumerate(block):
+        if not _PAGENO.fullmatch(ln.strip()):
+            continue
+        drop.add(i)
+        j = i + 1                                       # forward: the facing page's running head
+        while j < n and (not block[j].strip() or block[j].strip() == title):
+            if block[j].strip() == title:
+                drop.add(j)
+            j += 1
+        j, run = i - 1, []                              # backward: the marginal-note run
+        while j >= 0 and len(run) < 8:
+            s = block[j].strip()
+            if not s:
+                j -= 1
+                continue
+            if len(s) == 1 and s.isalpha() and s.isupper():
+                break                                   # the drop capital — leave it for `verses`
+            isolated = (j == 0 or not block[j - 1].strip()) and (j + 1 >= n or not block[j + 1].strip())
+            if isolated and len(s) <= 120:
+                run.append(j)
+                j -= 1
+                continue
+            if _NOTE_ANCHOR.match(s):                   # the note's first line, abutting the body
+                run.append(j)
+            break
+        # THE GUARD, and the reason the run is committed as a whole rather than line by line. `isolated` alone
+        # is a layout accident: a page whose body happens to contribute one line above the number would be read
+        # as a note and DELETED — a synthetic block of exactly that shape lost its scripture in test. A note run
+        # always carries its anchor letter somewhere (`a The crowe...`, `a That is...`), and the bare marginal
+        # citations (`in Gen.`, `S. Aug. q. 151.`) only ever appear alongside one. No anchor, no deletion: the
+        # page number goes and the text stays.
+        if any(_NOTE_ANCHOR.match(block[k].strip()) for k in run):
+            drop.update(run)
+    return [ln for k, ln in enumerate(block) if k not in drop]
+
+
 def verses(block: list[str], v1_anchor: str = "") -> dict[int, str]:
     """Split one chapter block into verses on its printed numerals.
 
@@ -107,6 +172,7 @@ def verses(block: list[str], v1_anchor: str = "") -> dict[int, str]:
         if ln.strip().lower() in ("annotations", "annotation"):
             block = block[:i]
             break
+    block = _strip_page_furniture(block, BOOK.capitalize())
     keep: list[str] = []
     dropcap = None
     for ln in block:
@@ -159,6 +225,19 @@ def verses(block: list[str], v1_anchor: str = "") -> dict[int, str]:
     return out
 
 
+def QC_load(name: str) -> dict[str, str]:
+    import qc_audit as QC
+    return QC.load_reads_verse(name)
+
+
+def _renumbered(RR, ch: int, parsed_ch: dict[int, str], raw_others: list[dict[str, str]]) -> dict[int, str]:
+    """`parsed_ch` with this chapter's `ref_renumber` correction applied, so the gate scores what the loader
+    will see. A chapter with no correction entry comes back unchanged."""
+    keyed = {f"scripture/{BOOK}/{ch}/{v}": t for v, t in parsed_ch.items()}
+    fixed = RR.apply("s_dismas", keyed, others=raw_others)
+    return {int(k.rsplit("/", 1)[1]): t for k, t in fixed.items()}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--verify", action="store_true")
@@ -172,10 +251,17 @@ def main() -> int:
     parsed = {ch: verses(b, janv_v1.get(ch, "")) for ch, b in sorted(blocks.items())}
     cur = json.loads(READS.read_text())
     have: dict[int, dict[int, str]] = {}
+    # A chapter this module has ALREADY written is always a candidate again: it came out of this parser, so a
+    # parser that has since been corrected supersedes it. Genesis 46 was repaired before the page-foot note
+    # block was understood, and its verse 25 still carries `a That is, she bare their fathers in Meſopotamia.
+    # in Gen. S. Aug. q. 151. Genesis` — a full-count chapter that the count test can no longer reach.
+    prior: set[int] = set()
     for r in cur["reads"]:
         sk = r.get("skeleton_id", "").split("/")
         if len(sk) == 4 and sk[1] == BOOK:
             have.setdefault(int(sk[2]), {})[int(sk[3])] = r.get("surface", "")
+            if r.get("method") == "pdftotext-parse-repaired":
+                prior.add(int(sk[2]))
 
     print(f"{'ch':>3} {'janvier':>8} {'existing':>9} {'parsed':>7}   verdict")
     reproduce_ok = reproduce_bad = 0
@@ -184,7 +270,10 @@ def main() -> int:
         jn = len(VS.chapter_verses(BOOK, ch, VS.JANVIER) or {})
         h, p = len(have.get(ch, {})), len(parsed.get(ch, {}))
         verdict = ""
-        if h >= 0.9 * jn:
+        if ch in prior:
+            repair.append(ch)
+            verdict = "  <-- REPARSE (written by this module before)"
+        elif h >= 0.9 * jn:
             # a chapter s_dismas already has: the parser MUST reproduce it
             if p >= 0.9 * jn:
                 reproduce_ok += 1
@@ -205,12 +294,17 @@ def main() -> int:
     # scored against the three references that DO have the chapter, on the content fold. A verse that agrees with
     # all three is not a guess — it is the same text arriving by an independent route.
     import ref_renumber as RR
-    from char_identity import fold_modern, edit_ratio
     others = {n: RR.load_corrected(n) for n in ("odr_com", "sabates_a", "madueke_b")}
+    raw_others = [QC_load(n) for n in RR.OTHERS["s_dismas"]]
     ok_repair = []
     for ch in repair:
         sims = []
-        for v, surf in sorted(parsed[ch].items()):
+        # SCORE THE NUMBERING THE LOADER WILL ACTUALLY USE. Chapter 8's page prints DR verses 15 and 16 merged
+        # under `15` and numbers the rest one lower; the parse is faithful to the page and `ref_renumber` puts
+        # the numbering right at load time. Gating the RAW parse instead scored it at 0.665 with 7 verses under
+        # 0.70 — a correct transcription rejected for an edition's numbering, which is exactly the fault
+        # `ref_renumber` exists to separate out.
+        for v, surf in sorted(_renumbered(RR, ch, parsed[ch], raw_others).items()):
             for n, d in others.items():
                 ref = d.get(f"scripture/{BOOK}/{ch}/{v}")
                 if ref and n == "odr_com":
