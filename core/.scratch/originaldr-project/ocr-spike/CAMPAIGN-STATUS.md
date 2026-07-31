@@ -31,10 +31,10 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 > concluding anything. `ps aux | grep r3-runner` to see them; they are doing useful work, leave them unless the
 > machine is under memory pressure.
 
-| | (snapshot 2026-07-31 23:05) |
+| | (snapshot 2026-07-31 18:30 UTC) |
 |---|---|
-| cells >=0.90 / ACHIEVABLE | **4,884 / 6,116 = 0.7986** |
-| cells >=0.90 / raw total | 4,884 / 6,120 = 0.7980 |
+| cells >=0.90 / ACHIEVABLE | **4,963 / 6,116 = 0.8115** |
+| cells >=0.90 / raw total | 4,963 / 6,120 = 0.8109 |
 | **CHAPTERS CLOSED** | **2** — chapters 1 and 16 (sentinels; re-measure them on EVERY change) |
 | cells blocked by an absent reference | **4**, in one chapter (was 704 over 16 chapters) |
 | tests | **188 green** (`../ocr-venv/bin/python -m pytest tests/`) |
@@ -54,6 +54,8 @@ as everyone else's), and it is simply absent from that witness. **That is an acq
 | after the five merges | 6,112 | 4,832 | 0.7906 | 8 |
 | after genesis 30 | 6,116 | 4,853 | 0.7935 | 4 |
 | + R3 running in the background | 6,116 | 4,884 | 0.7986 | 4 |
+| R3 breadth exhausted (runner idle) | 6,116 | 4,960 | 0.8110 | 4 |
+| + ch8 depth-first work | 6,116 | 4,963 | 0.8115 | 4 |
 
 The ratio **fell** at the third row while 596 cells were unblocked. That is the true direction: the old
 denominator excluded the hardest 700 cells because we did not hold the references for them. **Do not read the
@@ -115,16 +117,43 @@ recognizer said. Four of this session's five wins were reference repairs, and th
    **Read `s6_causes.py --examples 3` before quoting its table**; its first version reported the opposite
    answer, cleanly, and the examples are what exposed it.
 
-2. **DEPTH-FIRST CHAPTER WORK.** Closest to closure now, cells short: **ch8 (7)**, ch12 (10), ch20 (11),
+2. **DEPTH-FIRST CHAPTER WORK — ch8 IN PROGRESS, 83/88, NOT CLOSED.** Three attributed steps took it 81 -> 83:
+   the R3 overlay's apparatus filter, a `CHAPTER_MODEL` entry for the opening leaf, and three per-leaf
+   `PAGE_OVERRIDE`s. **The five cells still open are RECOGNITION, not geometry** — `foudgates`/`ha enwere`/
+   `ravne troni` (S6 v2), `commins`/`beran`/`atter`/`tittie` (S6 v3), `vet uen` for `yet seauen` (S3 v10),
+   `warers`/`minished` and a missing `Therfore` (S3 v13), and S6 v14's `month`/`twentieth` against
+   `moneth`/`twentyth`, which is a collation question rather than a misreading.
+   **R3 IS EXHAUSTED ON THIS CHAPTER**: run three times at `--improve-below 0.95`, it returns 81/88 every time.
+   Closing ch8 needs either a better recognizer on those leaves (R2 fine-tune territory) or a visual read of
+   the crops via `gen1_r3.VISUAL_CONTENT`. **`r3-runner.sh` is now IDLE — it has done every chapter and reports
+   `no chapter ready`.** Breadth is finished; what remains is depth, per chapter, by hand.
+
+3. **DEPTH-FIRST, NEXT CHAPTERS.** Closest to closure now, cells short: **ch8 (7)**, ch12 (10), ch20 (11),
    ch22 (12), ch33 (12), ch18 (13), ch48 (13), ch25 (14), ch45 (14), ch2 (15). Follow CHAPTER-WORKFLOW phases
    0-7. After each chapter closes, **re-measure all 50** (`chapter_campaign.py --chapters 1-50 --phase measure`,
    ~5 min) to capture knock-on gains — Sir's explicit instruction.
-3. **The s_dismas re-parser still fails 8 chapters it ought to reproduce** (2, 16, 19, 26, 31, 35, 36, 44 —
+4. **The s_dismas re-parser still fails 8 chapters it ought to reproduce** (2, 16, 19, 26, 31, 35, 36, 44 —
    chapter 44 now reaches 28 of 34, chapter 31 only 6 of 55). Each failure is a parse defect the SHIPPED reads
    may also carry, and chapter 30 proved those are invisible to the count test. Fixing them lets the re-parser
    supersede the original parser wherever it validates. **Use the `HOLE:` criterion already in `--verify`.**
-4. **odr_com genesis 23:20 — ACQUISITION.** Report it; do not patch it. If a second odr-com surface exists
+5. **odr_com genesis 23:20 — ACQUISITION.** Report it; do not patch it. If a second odr-com surface exists
    (a print edition, a different page), that is the route.
+
+## THE LIVE BOARD, VISUALLY — `reocr-report-pilot.html`
+
+```
+../ocr-venv/bin/python build_reocr_report.py --campaign-note "what this step was"
+```
+
+The report's **first section** is the campaign board, and it is the ONLY section that moves when a chapter is
+worked — everything below it renders `coverage-audit-verse.json`, the 5-book P3 pilot audit, a different
+pipeline at a different grain. The board reads `.campaign/matrix-genesis-N.json` directly: four headline cards,
+50 chapter tiles (click for the verse grid), every verse x every source as pass / fail-with-score / blocked,
+and a click on any failing cell shows exactly what that source produced and which leaf it came from.
+
+`--campaign-note` labels the point on the progression sparkline; a snapshot is appended to
+`.campaign/progression.jsonl` **only when the totals actually change**, so rebuilding to look at it does not
+manufacture history. Open it as a `file://` URL — it is fully self-contained.
 
 ## TOOLS (all in `ocr-spike/`, all chapter-parameterized)
 
