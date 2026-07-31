@@ -583,6 +583,22 @@ _PAREN_LETTER = _re.compile(r"^\(\s*[A-Za-z]\s*\)[.,;:]?$")
 _ABBREV_LETTER = _re.compile(r"^[A-Za-z]\.$")
 _LONE_LETTER = _re.compile(r"^[A-Za-z]$")
 _REAL_ONE_LETTER = {"a", "A", "O", "o", "I"}
+# A token made only of reference marks. MEASURED before adoption (2026-07-31, all 50 chapters, 406,116 tokens
+# surviving the existing filter): 7,414 hits, of which 7,406 are `†` — and reading them in context shows what
+# it is. The dagger falls at VERSE BOUNDARIES and nowhere else (`and earth. † And the earth was`,
+# `darkenes. † And he called`), in three sources at once: it is the printed verse marker that the recognizer
+# could not resolve into a digit. None of the four references carries it.
+# SCORE EFFECT: NONE — `char_identity` already strips punctuation, so all 7,406 are score-neutral. This is
+# adopted for the TEXT, not the number: Phase 7's exit criterion 3 is "no apparatus tokens in any verse text",
+# and 7,406 of them were sitting in the deliverable.
+_MARK_ONLY = _re.compile(r"^[†‡*¶§·•]+$")
+# A roman numeral used as a marginal cross-reference (`ii:` in `In ii: the ſecond moneth`, from an R3 crop).
+# LOWERCASE and at least two characters, deliberately: the corpus probe found `I,` twelve times and it is the
+# PRONOUN — `I, euen I wil bring` — so a pattern admitting a single character or an uppercase one would delete
+# real scripture. `il,` (8x, a misreading of `it,`) is excluded by requiring the trailing mark to be `.` or `:`.
+# The uppercase class (`XXI.`, `XLV.`, ~400 tokens, chapter headings and citation numerals) is NOT included
+# here — it is a larger population and belongs in its own attributed step, not smuggled in with this one.
+_ROMAN_REF = _re.compile(r"^[ivxl]{2,6}[.:]$")
 
 
 def _near_a_word(low: str, lex: set[str], max_edits: int = 1) -> bool:
@@ -700,6 +716,10 @@ def is_apparatus_mark(t: str) -> bool:
     if _PAREN_LETTER.fullmatch(t):
         return True
     if _ABBREV_LETTER.fullmatch(t):
+        return True
+    if _MARK_ONLY.fullmatch(t):
+        return True
+    if _ROMAN_REF.fullmatch(t):
         return True
     return bool(_LONE_LETTER.fullmatch(t)) and t not in _REAL_ONE_LETTER
 
