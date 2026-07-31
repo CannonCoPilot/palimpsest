@@ -85,6 +85,49 @@ CORRECTIONS: dict[tuple[str, str, int], dict] = {
                     "(v21 is a separate parse defect, the page-foot note block, fixed in ref_repair_s_dismas), "
                     "and all four references then carry 22 verses.",
     },
+    # ---------------------------------------------------------------------------------------------------
+    # THE LAST SIX REFERENCE GAPS IN GENESIS, each a single verse, found together once the odr_com
+    # truncation was repaired and the board could be read without 600 cells of noise in front of it. Five are
+    # merges and are corrected here; the sixth (odr_com genesis 23:20) is NOT — the site's page simply lacks
+    # the verse, and inventing it is not available to us. See CAMPAIGN-STATUS.
+    ("s_dismas", "genesis", 20): {
+        "split": (17,),
+        "evidence": "s_dismas v17 is 33 tokens and reads `...and they bare children: for our Lord had cloſed "
+                    "vp euerie matrice...`, which is DR 17 followed verbatim by DR 18; sabates_a and "
+                    "madueke_b carry 16 at v17 and 17 at v18 (16+17=33) and run the chapter to 18. odr_com "
+                    "MERGES IT THE SAME WAY (see below) — both are 1609/1610-typeset witnesses, so this is "
+                    "the edition's versification, not an accident of either transcription.",
+    },
+    ("odr_com", "genesis", 20): {
+        "split": (17,),
+        "evidence": "The same merge as s_dismas above, in the same place, word for word: odr_com v17 is 33 "
+                    "tokens ending `...for Sara Abrahams wife.` where sabates_a/madueke_b carry 16 at v17 and "
+                    "17 at v18. Two independent lineages attest the merge; two attest the split.",
+    },
+    ("odr_com", "genesis", 34): {
+        "split": (28,),
+        "evidence": "The SITE'S OWN MARKERS repeat: the chapter's `<b>N. </b>` sequence runs "
+                    "...26, 27, 28, 28, 30, 31 — verse 29 is printed with the number 28, so the scrape "
+                    "faithfully concatenates the two blocks. The result is 28 tokens where s_dismas, "
+                    "sabates_a and madueke_b carry 17 at v28 and 11 at v29 (17+11=28), and the text is their "
+                    "v28 followed by their v29 verbatim.",
+    },
+    ("s_dismas", "genesis", 40): {
+        "split": (1,),
+        "evidence": "s_dismas v1 is 42 tokens, ending `...And Pharao being wrath againſt them (for the one "
+                    "was chiefe of the cupbearers, the other chiefe baker)` — DR 1 plus DR 2 entire. The "
+                    "other three carry 24 at v1 and 18 at v2 (24+18=42) and run the chapter to 23; s_dismas "
+                    "runs to 22.",
+    },
+    ("s_dismas", "genesis", 41): {
+        "split": (45,),
+        "evidence": "s_dismas v45 is 64 tokens and swallows v46: `...went forth to the land of Ægypt (46 and "
+                    "he was thirtie yeares old...`. The other three carry 40 at v45 and 23 at v46. NOTE the "
+                    "printed `46` survives INSIDE the text — the marker sits after an opening parenthesis, "
+                    "which the pdftotext verse-number split does not recognise, so the tail begins `(46 and`. "
+                    "That is a parse residue, recorded here rather than edited away: this module re-keys "
+                    "verses, it does not rewrite their words.",
+    },
 }
 
 _KEY = re.compile(r"scripture/([^/]+)/(\d+)/(\d+)")
@@ -133,17 +176,29 @@ def apply(name: str, reads: dict[str, str], *, others: list[dict[str, str]] | No
                 toks = txt.split()
                 if not (0 < cut < len(toks)):
                     continue
+                # A MERGE LEAVES ONE OF TWO WOUNDS, and they need opposite repairs. Either the source went on
+                # to number every LATER verse one lower — s_dismas genesis 8 prints DR 22 as `21` — and the
+                # tail verses must all move up by one; or it kept the later numbering and simply left a HOLE
+                # where the swallowed verse should be, as odr_com genesis 34 does (its markers run 27, 28, 28,
+                # 30, 31 — verse 29 is printed `28`, and 30 and 31 are already right). Renumbering the second
+                # kind pushes correct verses off the end: it gave odr_com 34 a verse 32 and s_dismas 40 a
+                # verse 24 that no edition has.
+                #
+                # The reference itself says which it is, with no judgement required: if a+1 is ABSENT, the
+                # merge left a hole and there is nothing after it to move.
+                shift_tail = f"scripture/{book}/{ch}/{a + 1}" in reads
                 src = {int(_KEY.fullmatch(k2).group(3)): t2 for k2, t2 in list(reads.items())
                        if (m := _KEY.fullmatch(k2)) and m.group(1) == book and int(m.group(2)) == ch}
                 out2 = {k2: t2 for k2, t2 in reads.items()
                         if not ((m := _KEY.fullmatch(k2)) and m.group(1) == book and int(m.group(2)) == ch)}
                 for vn in sorted(src, reverse=True):
-                    out2[f"scripture/{book}/{ch}/{vn + 1 if vn > a else vn}"] = src[vn]
+                    out2[f"scripture/{book}/{ch}/{vn + 1 if (shift_tail and vn > a) else vn}"] = src[vn]
                 out2[f"scripture/{book}/{ch}/{a}"] = " ".join(toks[:cut])
                 out2[f"scripture/{book}/{ch}/{a + 1}"] = " ".join(toks[cut:])
                 reads = out2
                 if log:
-                    log(f"ref_renumber: {name} {book} {ch}: split v{a} at token {cut}, renumbered after")
+                    log(f"ref_renumber: {name} {book} {ch}: split v{a} at token {cut}, "
+                        + ("renumbered after" if shift_tail else "filled the hole at a+1"))
     todo = {k: v for k, v in todo.items() if "merge" in v}
     if not todo:
         return reads

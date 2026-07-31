@@ -132,3 +132,37 @@ def test_split_restores_the_dr_numbering_without_inventing_text():
 def test_a_chapter_without_a_correction_passes_through_unchanged():
     parsed = {1: "And God remembred Noe.", 2: "And the fountaines of the depth."}
     assert R._renumbered(RR, 7, parsed, [{}, {}, {}]) == parsed
+
+
+# ---------------------------------------------------------------- 3. hole vs shift
+
+def _chapter(ch: int, verses: dict[int, str]) -> dict[str, str]:
+    return {f"scripture/genesis/{ch}/{v}": t for v, t in verses.items()}
+
+
+def test_a_merge_that_shifted_the_rest_renumbers_upward():
+    """s_dismas genesis 8's kind: the source numbered every later verse one lower, so the tail must move."""
+    reads = _chapter(8, {15: "aa bb cc dd", 16: "ee ff", 17: "gg hh"})
+    others = [_chapter(8, {15: "aa bb", 16: "cc dd", 17: "ee ff"}) for _ in range(3)]
+    out = RR.apply("s_dismas", reads, others=others)
+    got = {int(k.rsplit("/", 1)[1]): v for k, v in out.items()}
+    assert got == {15: "aa bb", 16: "cc dd", 17: "ee ff", 18: "gg hh"}
+
+
+def test_a_merge_that_left_a_hole_does_not_renumber():
+    """odr_com genesis 34's kind: the markers run 28, 28, 30, 31 — verses 30 and 31 are already right.
+
+    Renumbering them gave the chapter a verse 32 that no edition has, and pushed a correct verse past the end
+    of the reference. The hole at a+1 is the tell, and it is read off the reference itself."""
+    reads = _chapter(34, {28: "aa bb cc dd", 30: "ee ff", 31: "gg hh"})     # note: no 29
+    others = [_chapter(34, {28: "aa bb", 29: "cc dd", 30: "ee ff", 31: "gg hh"}) for _ in range(3)]
+    out = RR.apply("odr_com", reads, others=others)
+    got = {int(k.rsplit("/", 1)[1]): v for k, v in out.items()}
+    assert got == {28: "aa bb", 29: "cc dd", 30: "ee ff", 31: "gg hh"}
+    assert 32 not in got, "a correct verse was pushed off the end of the chapter"
+
+
+def test_every_correction_carries_its_corroboration():
+    for key, entry in RR.CORRECTIONS.items():
+        assert entry.get("evidence"), f"{key} has no evidence — not adoptable"
+        assert {"merge", "split", "shift"} & set(entry), f"{key} declares no operation"
