@@ -203,6 +203,18 @@ scoring each reference on its own arm (`archaic_id` for s_dismas/odr_com, `moder
 **Per leaf:** `PAGE_OVERRIDE[(ocr_dir, page)]`.
 **Per locus:** `ref_renumber.CORRECTIONS`, `VISUAL_CONTENT`, `VISUAL_READINGS`.
 
+## THE RULE THAT GOVERNS EVERY RULE (2026-07-30, §13 Q47)
+
+**A rule is measured by the TEXT IT CHANGES, not by the verdicts it flips.** `split_glued` measured HELPS 8 /
+HURTS 1 / net **+8 cells** across all 50 chapters with chapters 1 and 16 unmoved — and alters **1,356 tokens**,
+tearing real words into morphemes (`lawful` -> `law ful` 28x, `faithful` -> `faith ful` 14x, `prayeth` ->
+`pray eth` 17x). The matrix could not see it because the corruptions were score-neutral or fell in cells that
+already failed.
+
+**So before adopting anything that edits text, run `faithfulness_audit.py`** and read what it changes. The first
+full audit (413,814 tokens) cleared every rule that is ON — `clean_tokens` 1.92%, `rejoin_break` 0.57%,
+`s_arbiter` archaic-equivalence 0.03%, `s_lexicon` 0.23% — and isolated the one that was not.
+
 ## The standing traps
 
 - **A DEAD METRIC IS NOT A TIE — AND IT IS INSIDE A PRODUCTION SELECTOR ON A THIRD OF THE CORPUS (§13 Q36).**

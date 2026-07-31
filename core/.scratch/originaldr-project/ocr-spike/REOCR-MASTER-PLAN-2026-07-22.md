@@ -1094,6 +1094,58 @@ permanently and neither could ever be paired again. Cropping now happens once pe
 candidate generation, so a failed crop costs only itself. Effect on the harvest that was supposedly already
 working: the scripture-only yield went **311 -> 364+ pairs with no change to the matching rule at all.**
 
+**Q47 (2026-07-30, RESOLVED — THE GOVERNING LESSON OF THE CAMPAIGN). A rule is measured by the TEXT IT CHANGES,
+not by the verdicts it flips.** `split_glued` — the mirror of the accepted hyphen join, splitting `oflife` into
+`of life` when the glued form is absent from the book's lexicon and both fragments are present — measured across
+50 chapters as **HELPS 8 / HURTS 1, net +8 cells, sentinels unmoved**. It was minutes from adoption. Counting the
+TOKENS it altered instead: **1,356 splits**, the commonest being real words torn into morphemes —
+
+    lawful -> law ful (28x)   earthlie -> earth lie (18x)   prayeth -> pray eth (17x)
+    faithful -> faith ful (14x)   offereth -> offer eth (15x)   delight -> de light (13x)
+
+A +8 net concealed 1,356 corruptions, invisible because they were score-neutral or fell in cells that already
+failed. Neither guard could save it: `lawful` is genuinely absent from the lexicon (the book sets `lawfull`), and
+edit distance cannot separate the classes — at 2 edits the garble `hofore` is refused but so are `oflife` and
+`pleasantto`, the only cases the rule existed for.
+
+**`faithfulness_audit.py` makes this a standing instrument.** First full audit (50 chapters, 931 leaves, 413,814
+tokens): every ON-by-default rule is faithful and the rejected one was the outlier —
+
+| rule | tokens changed | commonest | verdict |
+|---|---|---|---|
+| `clean_tokens` | 7,954 (1.92%) | verse numbers, `S.`, `c.` | faithful |
+| `rejoin_break` | 2,363 (0.57%) | `therfore`, `Iacob`, `proſtrate` | faithful |
+| `s_arbiter` archaic-equivalence | **16 (0.03%)** | `sonnes`->`ſonnes`, `lif`->`life` | faithful |
+| `s_lexicon` ſ/f closure | 104 (0.23%) | `Isaac`->`Iſaac`, `fo`->`ſo`, `vſ`->`vs` | faithful |
+| `split_glued` REJECTED | **1,356** | `lawful` -> `law ful` | CORRUPTING |
+
+*A correction this produced.* The archaic-equivalence fix was reported as the change that unblocked the surface
+gate. It alters SIXTEEN tokens in 2,162 verse pairs — its effect is on DEBT ATTRIBUTION, not on text, so the
+reported gain came from the lexicon closures. Recorded so the credit sits in the right place.
+
+**Q48 (2026-07-30, PARTLY RESOLVED). The reference gaps are a PARSE failure, and genesis 46 is recovered.**
+`s_dismas` is built from `02-genesis.pdf` by pdftotext-parse and produced ONE verse each for genesis 8 and 46
+instead of 22 and 34 — so both scored 0/88 and 0/136, read all campaign as catastrophic OCR failure. Three
+causes, each read off the extracted text:
+
+1. **Running heads.** The PDF repeats `Chapter 8` at every page break; treating it as a chapter restart discards
+   everything before it. 49 of 50 chapters carry such heads.
+2. **The ARGUMENT carries verse numbers** (`6. Noe ſendeth forth a crow, 8. after him a doue, 18. laſtly...`), so
+   splitting on numerals makes the argument verse 1 and its phrases verses 6, 8, 18. The body's start is now
+   found by matching janvier verse 1 — content anchor, never a spelling oracle.
+3. **The ANNOTATIONS cite verses** (`19 Built an Altar.) Noe without expreſſe commandment...`), injecting
+   commentary AND shifting every later verse. The PDF marks the boundary with a literal `Annotations` line.
+
+**The validation gate was wrong before the parser was** — it compared the re-parse to the MODERN references by
+character ratio and scored a CORRECT parse at 0.69 (`fourtie` vs `forty`, `paſſed` vs `passed`). Under the
+project's own archaic arm genesis 46 scores **0.9696**, and is applied: **0/136 -> 107/136, no longer REF-GAP.**
+
+**GENESIS 8 IS WITHHELD.** The PDF itself is mis-numbered there: it prints `15 And God ſpake to Noe, ſaying: Goe
+forth of the arke ... with thee. 16 Al cattle...`, merging DR 15 and 16 under 15 and shifting the rest. The parse
+is FAITHFUL to its source; the source disagrees with the other three witnesses. That is a corroborated
+`ref_renumber.CORRECTIONS` **split**, not a parser fix — NEXT ACTION, and papering over it in the parser would
+hide an editorial fact behind a code change.
+
 **Q13 (2026-07-28, RESOLVED). Why did 659 scan-verses leave scope?** `corpus_localize._line_range` took only
 the FIRST `printed-heading` pin (defect #8). A chapter owns TWO pin segments whenever its heading falls
 mid-page — a `carry-in` run before it and a `printed-heading` run after — so **3,006 pages were truncated to

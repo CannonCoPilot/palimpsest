@@ -1,85 +1,34 @@
 # OriginalDR reOCR — Full-Completion Sprint Tracker
 
-> **RESUME (state as of 2026-07-29, end of session).**
+> **RESUME (state 2026-07-30, after the overnight autonomous campaign).**
 >
-> ## ⚠ READ `CHAPTER-WORKFLOW.md` FIRST
-> It is the distilled per-chapter process (7 phases), what generalizes vs what is per-chapter / per-leaf /
-> per-locus, the standing traps, and the carried open items. **Do not re-derive the approach** — two chapters
-> of hard-won findings are in it.
+> ## ⚠ READ `CAMPAIGN-STATUS.md` FIRST — it is the operational resume plan
+> State table, next steps in order, tools, and the nine pinned negatives. Then `CHAPTER-WORKFLOW.md` for the
+> per-chapter process, and `REOCR-MASTER-PLAN-2026-07-22.md` §13 (Q1-Q48) for the findings.
+> **Do not re-derive the approach.**
 >
-> **⚠ TWO INTERPRETERS.** Everything in `ocr-spike/` runs on **`../ocr-venv/bin/python`**; the other venv
-> (`../../../.venv/bin/python`) cannot import kraken and fails confusingly.
-> Tests: `../ocr-venv/bin/python -m pytest tests/` -> **167 passed** (159 + 8 new: 4 pinning §13 Q34's
-> two junction fixes, 4 pinning §13 Q36's partial-fit selector and its bound).
-> (Module names keep a historical `gen1_` prefix; they are all chapter-parameterized via `--chapter`.)
+> **⚠ TWO INTERPRETERS.** Everything runs on `../ocr-venv/bin/python`; MLX needs
+> `PYTORCH_ENABLE_MPS_FALLBACK=1`. Tests: `pytest tests/` -> **173 passed**.
 >
-> ### WHERE THE TWO WORKED CHAPTERS STAND
-> | | cells >=0.90 | S1 | S3 | S9 | S6 | means (sd/oc/sa/mb) |
-> |---|---|---|---|---|---|---|
-> | **Genesis 1** | **496/496 = 100%** | 31/31 | 31/31 | 31/31 | 31/31 | 0.982 / 0.981 / 0.968 / 0.968 |
-> | **Genesis 16** | **256/256 = 100%** | 16/16 | 16/16 | 16/16 | 16/16 | 0.990 / 0.990 / 0.984 / 0.984 |
+> ### THE GOVERNING LESSON OF THIS CAMPAIGN (§13 Q47)
+> **A rule is measured by the TEXT IT CHANGES, not by the verdicts it flips.** `split_glued` scored +8 cells
+> across 50 chapters and alters **1,356 tokens**, tearing real words apart (`lawful` -> `law ful` 28x). Run
+> `faithfulness_audit.py` before adopting anything that edits text.
 >
-> **BOTH WORKED CHAPTERS ARE NOW CLOSED.** Genesis 16's last verse (S3 16:9) closed with NO model call — it was
-> two page-model geometry bugs at one leaf junction (§13 Q34): a catchword shielded from `_is_foot_line` by the
-> binder's signature on the same row, and a body row deleted by the `head_frac` y-cut. Genesis 1 unchanged.
+> ### STATE
+> | | |
+> |---|---|
+> | cells >=0.90 / ACHIEVABLE | **4,273 / 5,416 = 0.7890** |
+> | CHAPTERS CLOSED | **2** (1, 16) — sentinels, re-measured on every change |
+> | blocked by an absent reference | **704 cells / 16 chapters** (genesis 46 recovered this session) |
+> | commits | 23 this session, **nothing pushed** |
 >
-> Re-measure: `gen1_matrix.py [--chapter N]` · ablate Rung 3: `--no-r3` · R3 pass:
-> `gen1_r3.py --chapter N --improve-below 0.95` (ALWAYS pass `--improve-below 0.95`).
-> Genesis 16 cold-started at **189/256 = 73.8% with ZERO chapter-specific tuning** — that number is the
-> evidence that the generalizable rules carry the load.
->
-> **LIVE CORPUS PIPELINE UNCHANGED.** The page model is still standalone: Genesis all-pass 799,
-> `pass_rate_archaic` 0.6381, `verse_cover_rate` 0.8627, report v045. **NOTHING COMMITTED — the hold stands.**
->
-> ### NEXT ORDER — the user's four-part plan, item 1 DONE, items 2-4 NOT STARTED
-> 1. ~~Fix the span-edge faults~~ **DONE** (§13 Q30-Q34, Q36; Genesis 16 244 -> **256/256**).
-> 2. **Improve R2** — `reichenau_dr` is already ſ-faithful; cheap `ketos` loop; training data exists free in
->    `s_arbiter`'s `R2-observed` provenance tags. **Highest return per unit effort.** NOT STARTED.
-> 3. **Survey other open VLMs** — cheap, `r3_transcribe` is backend-pluggable. `qwen3-vl:8b` RETIRED
->    (thinking-lock). NOT STARTED.
-> 4. **LoRA fine-tune olmOCR-2-7B** on ſ-faithful pairs (weights already cached). NOT STARTED.
->
-> ### ⚠⚠ §13 Q30 IS NOW MEASURED CORPUS-WIDE, AND IT IS THE BIGGEST OPEN ITEM (§13 Q36)
-> `verse_locate.janvier_fit` returns **0.000 for any PARTIAL span**, and `best_spans` selects with it. Measured
-> over **all 11 witnesses / 2,767 pages / 36,833 verse-spans** of the live localize loop:
->
-> * **33.7% of spans are a SILENT COIN FLIP** — both arms 0.000, the arms differ, and the aligner wins by
->   default because `0.0 > 0.0` is false. That is **40.7% of every decision the hybrid actually makes.**
-> * `verse_locate.partial_fit` (precision/recall/F1 over ordered token matches) separates **84.7%** of them and
->   would move ~4,470 to the walk arm.
-> * The second selection site has it too: `corpus_localize._better`'s length-ratio tiebreak — not the selector —
->   decides **7.8%** of contested verses, and it keeps `matthew/19/9` at F1 0.20 over a candidate at 0.51.
->   **`archive-holiebible-ot1` genesis/16/9 is in that list**, which is the same wrong leaf Q31 found by hand:
->   Q31 and this are ONE mechanism.
-> * **Not `span_fit` alone** — precision-only rewards a 1-token fragment at 1.000, and that fired for real.
-> * **Rescue only, never replace.** On the 14 gold pages replacing the selector loses 18/18 changed verses;
->   rescuing only the dead rows changes 0. The gold set cannot validate the GAIN — it is whole-verse pages by
->   construction (1/165 dead rows vs 34.7% corpus-wide), so **the gold set does not exercise the failure it was
->   being used to rule out.**
->
-> Wired at both sites behind **`ODR_PARTIAL_FIT`, DEFAULT OFF**. Corpus A/B against all-pass 799 in flight;
-> baseline re-derived and reproduces 799 / all-fail 104 exactly. Probes: `selector_probe.py` (gold pages, two
-> judges), `selector_corpus_probe.py` (live loop, writes nothing).
->
-> ### TRAPS — tested and rejected, do NOT re-propose
-> **A DEAD METRIC READS AS A VERDICT — this bit FIVE times this sprint**, always from one cause:
-> `evaluate_locus` compares a verse to ITS OWN reference and nothing else. (1) kraken seg-type probe 0.000 both
-> arms = "tie"; (2) R3 crops 0.000 on six GOOD re-reads; (3) matrix read `archaic_id` for modern-spelling refs
-> (~0.05/cell); (4) leaf-vs-chapter; (5) `janvier_fit` on partial spans. **Check the metric MOVES before
-> believing a null.**
-> **One threshold cannot serve a ragged edge** — four dead incarnations of geometric apparatus separation:
-> word-x threshold (42-46% recall for 17-19% scripture lost), intra-line gap ratios, widest-gap right edge
-> (36.5% of S6 psalms lines), per-leaf median left edge (odr_com 0.928 -> 0.907, pinned by
-> `test_left_margin_trim_stays_unwired`). **Per-source x-BANDS work; single thresholds never will.**
-> **Never pick a leaf by fit** (chose Genesis 15 leaves twice) · **never fix a kraken model via
-> `TorchVGSLModel.save_model`** (writes `model_type: 'r'`; `load_any` then refuses the file) · **never
-> `long_s_rule.restore_long_s`** (~90.4% = 1 invented glyph in 10) · **do NOT lower `apparatus_min` against
-> janvier** (modern-spelling) · `ODR_STRIP_SUFFIX` stays 0 · do NOT raise `ARCHAIC_VALID_FLOOR` · **never
-> delete a span to raise a rate** · **duplicate keys in a dict literal silently drop readings** (guarded by
-> `gen1_r3._assert_no_duplicate_readings`).
->
-> **AND A VALIDATION THAT MEASURED ITSELF, KILLED TWICE.** Honest held-out is **86.95% (3,357/3,861)**; the old
-> **94.4% (2,238/2,372)** is SUPERSEDED — computed on an easy-biased half of the evidence.
+> ### NEXT, IN ORDER (Sir's stance: DEPTH-FIRST, re-measuring all 50 after each chapter closes)
+> 1. Genesis 8 renumbering via `ref_renumber.CORRECTIONS` — corroborated split, 88 cells.
+> 2. `odr_com` gaps: chapters 4, 6, 9, 11, 13, 49 (616 cells); different source (`html-scrape`).
+> 3. Size the three S6 causes separately — annotation-on-mixed-leaf / missing leaves / edition divergence.
+> 4. Depth-first chapter closure: ch22, ch33 (12 short), ch7, ch48 (13), ch25, ch45 (14), ch17 (15), ch2 (16).
+
 
 ## ⏳ M39 ITEM 2 (IMPROVE R2) — the chapter-harvest premise is DEAD; the real lever is 88% of unused GT (2026-07-29)
 
