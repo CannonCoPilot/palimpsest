@@ -103,6 +103,18 @@ VISUAL_READINGS_BY_TOKEN: dict[str, dict[str, str]] = {
     "S3:12": {"shal": "shal"},
     "S3:13": {"she": "she", "said:": "ſaid:", "fene": "ſene"},
 
+    # --- jp2-S06 (S6) p50, genesis 8, read 2026-07-31 ---
+    # `floud-gates` is an open ſ-decision only because `decision_positions` treats every `f` as a possible
+    # misread ſ. The leaf settles it: the glyph carries a full CROSSBAR, so it is a true `f`, and the word is
+    # `floud-gates` — not `ſloud`. Confirming it with the same spelling is what closes the surface honestly;
+    # the `floud`/`flood` correction is a CONTENT matter and lives in VISUAL_CONTENT_BY_TOKEN, applied first.
+    "8:S6:2": {"floud-gates": "floud-gates"},
+    # `fittie` opens an ſ-decision for the same reason and is settled the same way: at 2600px the first glyph
+    # carries the `f` HOOK and a crossbar, and what follows is `ittie`. R2 read `tittie` and so attested
+    # nothing here, which is why the arbiter held it open — correctly. The word is the compositor's own
+    # setting for `fiftie`, preserved as printed (see the content entry for the same verse).
+    "8:S6:3": {"fittie": "fittie"},
+
     # --- jp2-S06 (S6) p76, read 2026-07-29 — AND IT SETS ſhe/ſhal WITH LONG-ſ, unlike the 1609 leaves above.
     # `3. ſhe toke Agar the Ægyptian`, `but ſhe (a) perceiuing that ſhe was with child, deſpiſed her miſtreſſe`,
     # `Thou doeſt vniuſtly againſt me`, `making anſwer`, `as it pleaſeth thee`, `who anſwered : From the face of
@@ -154,7 +166,9 @@ def _assert_no_duplicate_readings() -> None:
     for table in ("VISUAL_READINGS_BY_TOKEN", "VISUAL_CONTENT_BY_TOKEN"):
         i = src.index(table + ":")
         body = src[i:src.index("\n}", i)]
-        keys = _re.findall(r'^\s*"([A-Z0-9]+:\d+)":', body, _re.M)
+        # The pattern must cover CHAPTER-QUALIFIED keys too (`8:S6:2`), or the guard silently stops
+        # checking exactly the keys the chapter fix introduced.
+        keys = _re.findall(r'^\s*"((?:\d+:)?[A-Z0-9]+:\d+)":', body, _re.M)
         dupes = [k for k, c in collections.Counter(keys).items() if c > 1]
         if dupes:
             raise AssertionError(f"{table} has duplicate keys (later ones silently win): {dupes}")
@@ -203,6 +217,27 @@ VISUAL_CONTENT_BY_TOKEN: dict[str, dict[str, str]] = {
     # table because `s_arbiter` classifies it as CONTENT, not surface: its fold is ſ-only and case-sensitive, so
     # `ſhe` and `She` are not fold-equal and no ſ decision is ever opened. p76 prints `3. ſhe toke Agar`.
     "S6:3":  {'husband"': "huſband", "She": "ſhe"},
+    # GENESIS 8, `jp2-S06` p50, read 2026-07-31 at the line `h and the floud-gates of hea-`. The plate prints
+    # `floud-gates`: a true `f` with its crossbar, `u` and not `oo`, and hyphenated as one compound. R3 read
+    # `flood-gates` — it modernizes more than the ſ, which is exactly what this table is for. R3's content was
+    # otherwise right where both recognizers had failed (`foudgates | flood-gates`, `ha enwere | heauen were`,
+    # `ravne troni heauen | rayne from heaven`), and the leaf confirms `rayne from heauen` on the next line.
+    "8:S6:2": {"flood-gates": "floud-gates", "heaven": "heauen"},
+    # GENESIS 8:3, `jp2-S06` p50 foot into p51 head, read 2026-07-31 at 2600px. The verse runs
+    # `3. And the waters returned from the earth going & comming:` (p50, last line) `and they began to
+    # decreaſe atter an hundred fittie dayes.` (p51, first body line).
+    #
+    # `Noe.` is the RIGHT-HAND RUNNING GLOSS of p51, whose head reads `34   G E N E S I S.   Noe.` — the same
+    # head whose letterspacing produced the `GENES I` fragments. The crop spans the leaf junction, so it walks
+    # straight through the head and the gloss lands mid-verse. It is apparatus, and Phase 7's third exit
+    # criterion is that no apparatus token appears in any verse text — this cell PASSED at 0.911 while
+    # carrying it, which is precisely why the criterion is not the score.
+    #
+    # `began` and `fittie`: read off the plate. The `g` of `began` is unmistakable at 2600px. `fittie` opens
+    # with a hooked `f` and continues `ittie` — the compositor's own setting, which is why it is transcribed
+    # as printed rather than corrected to `fiftie`; the same line sets `atter` for `after`, and diplomatic
+    # fidelity includes the printer's errors (ground-truth/GUIDELINES.md §typos).
+    "8:S6:3": {"Noe.": "", "beran": "began", "tittie": "fittie", "commins.": "comming:"},
 }
 
 VISUAL_CONTENT: dict[str, dict[int, str]] = {
@@ -226,10 +261,27 @@ def _localizer_leaf(ocr_dir: str, verse: int) -> int | None:
 
 
 def _chapter_leaves(ocr_dir: str) -> set[int]:
-    """Every leaf the corpus localizer credits with a verse of THIS chapter, for this witness."""
+    """Every leaf the corpus localizer credits with a verse of THIS chapter, for this witness — PLUS the
+    opening leaf the page model was hand-set to, when the localizer has missed it.
+
+    THE LOCALIZER CAN OMIT A LEAF ENTIRELY, not just misattribute one. For `jp2-S06` genesis 8 it credits
+    leaves {51, 52, 54} and never mentions p50 — yet p50 is where the chapter OPENS, carrying its argument,
+    its engraved capital and verses 1 to 3. (It also puts verse 2 on leaf 54, four leaves away.) Because the
+    straddle rule may only reach for `anchor - 1` if that leaf is in this set, verse 3 — which begins at the
+    foot of p50 and finishes at the head of p51 — could never be cropped at all, and R3 skipped it with `no
+    crop geometry` on every run.
+
+    `CHAPTER_MODEL[(ocr_dir, chapter)]["open_page"]` is not another guess: it is set by hand from reading the
+    leaf, which is stronger evidence than the localizer's statistical attribution, and the docstring above
+    already establishes that the attribution is unreliable at chapter boundaries. Adding it is additive — the
+    fit floor still has to be cleared before any leaf is used."""
     _localizer_leaf(ocr_dir, 1)                      # prime the cache
-    return {rec["page"] for k, rec in _LOC_CACHE.get(ocr_dir, {}).items()
-            if k.startswith(f"{EV.BOOK}/{EV.CHAPTER}/") and isinstance(rec, dict) and rec.get("page")}
+    out = {rec["page"] for k, rec in _LOC_CACHE.get(ocr_dir, {}).items()
+           if k.startswith(f"{EV.BOOK}/{EV.CHAPTER}/") and isinstance(rec, dict) and rec.get("page")}
+    open_page = (PM.CHAPTER_MODEL.get((ocr_dir, EV.CHAPTER)) or {}).get("open_page")
+    if open_page is not None:
+        out.add(int(open_page))
+    return out
 
 
 def widen_to_measure(box, ocr_dir: str, page_index: int, margin: float = 0.06):
@@ -716,8 +768,17 @@ def main() -> int:
         # OBSERVED spelling wherever the two agree modulo the ſ-fold: R2 (kraken + reichenau_lat) is itself a
         # ſ-faithful visual recognizer, so those glyphs are attested, not invented. Tokens where R3 genuinely
         # CORRECTED R2 have no attested ſ and are itemised as `unresolved` for a visual read — never guessed.
-        content = dict(VISUAL_CONTENT.get(f"{t['src']}:{v}") or {})
-        by_tok_c = VISUAL_CONTENT_BY_TOKEN.get(f"{t['src']}:{v}") or {}
+        # THE CONTENT TABLES WERE STILL CHAPTER-BLIND. §13 Q42 caught this for the READINGS tables and fixed
+        # them; the two CONTENT tables kept the bare `SRC:verse` key, so a Genesis 16 hand-read would have been
+        # applied to chapter 33's verse of the same number — silently, as a content change, which is worse than
+        # the readings case because it rewrites words rather than glyphs. Same remedy: chapter-qualified keys,
+        # with the legacy unprefixed ones honoured only for the chapters they were actually read on.
+        _legacy_ok0 = EV.CHAPTER in LEGACY_VISUAL_CHAPTERS
+        _qk0, _lk0 = f"{EV.CHAPTER}:{t['src']}:{v}", f"{t['src']}:{v}"
+        content = dict(VISUAL_CONTENT.get(_qk0)
+                       or (VISUAL_CONTENT.get(_lk0) if _legacy_ok0 else None) or {})
+        by_tok_c = (VISUAL_CONTENT_BY_TOKEN.get(_qk0)
+                    or (VISUAL_CONTENT_BY_TOKEN.get(_lk0) if _legacy_ok0 else None) or {})
         if by_tok_c:
             for i, tok in enumerate(t["r3_verse"].split()):
                 if tok in by_tok_c:
@@ -736,6 +797,17 @@ def main() -> int:
         if _governing(_score(merged, refs, v)) > _governing(_score(t["r3_verse"], refs, v)):
             t["used_merge"] = True
             t["r3_verse"] = merged
+        # AND AGAIN AFTER THE MERGE, because the merge can put back exactly what the observation removed. The
+        # merge draws from the INCUMBENT arm as well as R3's, so genesis 8:3 came out of it carrying `Noe.`
+        # (p51's running gloss), `beran` and `tittie` — the page-model tokens — even though those had just
+        # been corrected on R3's side. A visual reading is an observation of the plate; it must outrank a
+        # reconciliation of two recognizers, whichever arm the token arrived on.
+        if by_tok_c:
+            toks = t["r3_verse"].split()
+            for i, tok in enumerate(toks):
+                if tok in by_tok_c:
+                    toks[i] = by_tok_c[tok]
+            t["r3_verse"] = " ".join(x for x in toks if x)
         arb = s_arbiter.transfer(t["old_text"], t["r3_verse"])
         # THE VISUAL TABLES ARE CHAPTER-BLIND, and across 50 chapters that is a CORRECTNESS bug, not just an
         # inconvenience (§13 Q42). Their keys are `SRC:verse` — `"S1:13"` — and every existing entry was read off

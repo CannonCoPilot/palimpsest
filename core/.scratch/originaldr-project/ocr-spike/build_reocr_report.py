@@ -142,7 +142,14 @@ def campaign_block(note: str = "") -> dict[str, Any]:
         hist.append(entry)
     elif note and hist:
         hist[-1]["note"] = hist[-1].get("note") or note
-    return {"chapters": chapters, "totals": totals, "history": hist}
+    # COLLATION FLAGS — cells that fail because the witness and the reference are different EDITIONS. They
+    # are still counted as failing above; this only carries the evidence so a reader can check the claim
+    # instead of trusting the word "divergence".
+    flags = []
+    fp = HERE / "collation-flags.json"
+    if fp.exists():
+        flags = json.loads(fp.read_text()).get("flags", [])
+    return {"chapters": chapters, "totals": totals, "history": hist, "collation_flags": flags}
 
 
 def load_book_testament() -> dict[str, str]:
@@ -921,6 +928,7 @@ svg text{fill:var(--ink)}
   <div class="figtitle" style="margin-top:18px"><h3>Chapters &mdash; click one for its verse grid</h3></div>
   <div id="cg-board"></div>
   <div id="cg-detail"></div>
+  <div id="cg-flags"></div>
 </section>
 
 
@@ -1165,7 +1173,23 @@ function cgCell(ch,v,src){
      <div class="cg-txt">${(cell.text||'(no text — this verse was never localized on this source)')
        .replace(/&/g,'&amp;').replace(/</g,'&lt;')}</div></div>`;
 }
-function cgRender(){ cgCards(); cgProg(); cgBoard(); cgDetail(); }
+function cgFlags(){
+  const f = CG.collation_flags || [];
+  const box = document.getElementById('cg-flags');
+  if(!f.length){ box.innerHTML=''; return; }
+  box.innerHTML = `<div class="figtitle" style="margin-top:18px"><h3>Collation flags &mdash; ${f.length} cell(s)
+    failing because the witness and the reference are different EDITIONS</h3></div>
+    <div class="note"><b>These cells are still counted as failing.</b> Nothing here is subtracted from any
+    denominator &mdash; the register carries the evidence so the claim can be checked rather than trusted.</div>`
+    + f.map(x=>`<div class="callout"><b>${x.locus} &mdash; ${x.source}</b> worst ${fmt(x.worst_score)},
+       leaf ${x.leaf}
+       <div class="cg-txt">${x.our_text}</div>
+       <div class="note" style="margin-top:8px"><b>Read off the leaf:</b> ${x.visual_read}</div>
+       <div class="note"><b>The split:</b> ${x.the_divergence}</div>
+       <div class="note"><b>Why no recognizer closes it:</b> ${x.why_no_recognizer_closes_it}</div>
+       <div class="note"><b>What would resolve it:</b> ${x.what_would_resolve_it}</div></div>`).join('');
+}
+function cgRender(){ cgCards(); cgProg(); cgBoard(); cgDetail(); cgFlags(); }
 function booksInScope(){return DATA.scope_books?DATA.scope_books:DATA.meta.scope_books;}
 function scopeBooks(){return DATA.meta.scope_books.filter(b=>BOOK==='__all__'||b===BOOK);}
 

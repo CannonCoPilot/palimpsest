@@ -219,7 +219,14 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     # two tokens, so `_PROSE_HEADS` (which matches whole capitalised words) cannot see it, plus the marginal
     # `Noe.`. It sits at y 251 of 2847 = 0.088, just under S6's witness head band of 0.075. Widening the band
     # for this leaf alone drops the whole row and takes the marginal with it.
-    ("jp2-S06", 50): {"body": (0.215, 0.754)},
+    # ...and p50's body has TWO left edges, the same shape p18 already documents. The rows set beside the
+    # engraved ornamental `A` begin at x 610-628; the first full-measure line below it begins at x 353, and
+    # S6's swept left bound of 0.215 (x 473) cuts it. That line carries `ſtayd.` — the last word of verse 2 —
+    # and it was the only real word below the bound in the whole chapter-8 body (the one other token, a
+    # zero-width `M` at x 433, is a fragment of the ornament and is removed as a lone capital anyway).
+    # Everything above `chapter_open_y` is already excluded, so lowering the bound here cannot readmit the
+    # previous chapter's annotation column.
+    ("jp2-S06", 50): {"body": (0.15, 0.754)},
     ("jp2-S06", 51): {"head_frac": 0.10},
     # S3 p60 — the same lesson on the LEFT, and on a witness whose bound is right for its other leaves.
     # `pdf-S03a`'s body starts at 0.14 (x 308), and on its ANNOTATION leaves that is correct: p59 and p61 have
@@ -233,7 +240,16 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     # the measure, so `mo-`/`neth` came out as `mo ſo neth` instead of rejoining to `moneth`, and `and` turned
     # `the roofe of the arke` into `of and arke`. The bound is 0.17 (x 374) — above the highest intruder (362)
     # and below the lowest real body row (402).
-    ("pdf-S03a", 60): {"body": (0.17, 0.815)},
+    # ...and its RIGHT bound was two pixels too tight. The band test admits a word whose CENTRE is inside the
+    # measure, and on this leaf the body legitimately overhangs: `arke.` centres at 1795 against a bound of
+    # 1793 and was dropped, taking the last word of genesis 8:10 with it. Measured over every word below the
+    # argument, the two columns do not overlap at all —
+    #     body     x0 1741-1807, centres up to 1845   (`him.`, `ſea-`, `arke.`, `di-`, `mo`, `an`)
+    #     VERSE NUMBERS  x0 1888-1915, centres from 1901   (`2`, `3`, `14`, `15`)
+    # — so any bound between them is right by the layout rather than by tuning. 0.851 (x 1872) sits in the
+    # middle of a 56px gutter. This recovered `him.` to verse 12, `arke.` to verse 10, and the `ſea-` that
+    # rejoins `uen` into `ſeauen`.
+    ("pdf-S03a", 60): {"body": (0.17, 0.851)},
 }
 
 
@@ -651,6 +667,23 @@ _MARK_ONLY = _re.compile(r"^[†‡*¶§·•]+$")
 # The uppercase class (`XXI.`, `XLV.`, ~400 tokens, chapter headings and citation numerals) is NOT included
 # here — it is a larger population and belongs in its own attributed step, not smuggled in with this one.
 _ROMAN_REF = _re.compile(r"^[ivxl]{2,6}[.:]$")
+
+# ── PINNED NEGATIVE (2026-07-31): SPLITTING A WORD BOX THAT CROSSES THE GUTTER. NOT WIRED. ──────────────
+# Genesis 8:13 on `pdf-S03a` p60 loses the word `Therfore` in a way no bound can fix: the recognizer merged the
+# marginal note's last word with the body's first into ONE box, `theTherfore` spanning x 274-660 across a
+# gutter at 374. Dropping the margin therefore drops a word of scripture, and the obvious remedy — split a
+# box that begins outside the body and ends inside it, keep the body part — looked narrow and geometric.
+#
+# MEASURED FIRST, and it is neither. Across all 50 chapters and 931 leaves, **12,859 boxes cross the left
+# gutter**, and the commonest are ordinary words: `the` 350, `and` 200, `of` 173, `that` 99, `was` 80. A rule
+# firing on twelve thousand boxes and splitting them on a proportional character estimate is `split_glued`
+# again — the rule this project already pinned for trading 1,356 real corruptions (`lawful` -> `law ful`) for
+# a net +8 cells. The gutter crossing is not the rare signal it appears to be from one example.
+#
+# `Therfore` is therefore left LOST in the page-model text and recovered, correctly, by the rung that exists
+# for exactly this (R3 re-read the crop and returned it). One example is not a population, and the measurement
+# is what said so — before the rule was written rather than after it was adopted.
+# ────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
 def _near_a_word(low: str, lex: set[str], max_edits: int = 1) -> bool:
