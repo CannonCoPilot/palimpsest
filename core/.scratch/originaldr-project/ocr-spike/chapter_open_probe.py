@@ -104,11 +104,20 @@ def probe(ch: int, brief: bool) -> None:
                 fold = [_fold(x) for x in s.split()]
                 if not anchor or len(fold) < 2:
                     continue
+                # THE ANCHOR MUST SLIDE TOO, because the ENGRAVED INITIAL WORD is the one the recognizer
+                # loses. Genesis 44 on `archive-ot1-1609` opens `Ioſeph commanded the ſteward of his houſe`
+                # — janvier's `And` is set as the engraving and simply is not in the word boxes, so matching
+                # janvier's tokens from their start scores ZERO on the correct line. Dropping up to two
+                # leading anchor tokens is the same allowance the drop-cap rules make everywhere else.
                 best_hit, best_at = 0.0, None
-                for i in range(min(4, max(1, len(fold) - 1))):
-                    hit = sum(1 for a, b in zip(fold[i:i + len(anchor)], anchor) if a == b) / len(anchor)
-                    if hit > best_hit:
-                        best_hit, best_at = hit, i
+                for j in range(3):
+                    sub = anchor[j:]
+                    if len(sub) < 3:
+                        break
+                    for i in range(min(4, max(1, len(fold) - 1))):
+                        hit = sum(1 for a, b in zip(fold[i:i + len(sub)], sub) if a == b) / len(sub)
+                        if hit > best_hit:
+                            best_hit, best_at = hit, i
                 if best_hit >= 0.6 and best_at is not None:
                     v1_y, v1_txt = y, s
                     break
