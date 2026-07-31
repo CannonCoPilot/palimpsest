@@ -38,7 +38,7 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 | **CHAPTERS CLOSED** | **2** — chapters 1 and 16 (sentinels; re-measure them on EVERY change) |
 | cells blocked by an absent reference | **4**, in one chapter (was 704 over 16 chapters) |
 | tests | **188 green** (`../ocr-venv/bin/python -m pytest tests/`) |
-| commits | 28, **nothing pushed** — the hold stands |
+| commits | 29 unpushed — **the hold stands** |
 
 **REF-GAP as a class is GONE.** The only remaining gap is `odr_com` genesis **23:20**, and it stays open: the
 site prints 19 verses where the DR has 20, the verse is not merged into a neighbour (its v19 is the same length
