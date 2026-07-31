@@ -1,5 +1,5 @@
 {
-  "scraped_on": "2026-07-05",
+  "scraped_on": "2026-07-30",
   "base_url": "https://www.originaldouayrheims.com",
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
   "book_count": 39,
@@ -11,7 +11,7 @@
       "testament": "OT",
       "landing_path": "/old/genesis",
       "chapters": 50,
-      "verses_total": 1378,
+      "verses_total": 1527,
       "has_argument": true,
       "pages": [
         {
@@ -219,7 +219,11 @@
           "sha256": "8c4ae94dd75a92a8c4a88d5de161b4a20b128f69b431af7c8b53348912f33520"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "genesis",
         "overlap_chapters": 50,
         "verse_count_match": "37/50",
@@ -233,7 +237,7 @@
       "testament": "OT",
       "landing_path": "/old/exodus",
       "chapters": 40,
-      "verses_total": 1163,
+      "verses_total": 1210,
       "has_argument": true,
       "pages": [
         {
@@ -401,7 +405,11 @@
           "sha256": "b43d4980894e7a28169370e839dcf272d244930e234d8dee14d4931a4bd26472"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "exodus",
         "overlap_chapters": 40,
         "verse_count_match": "32/40",
@@ -435,7 +443,11 @@
           "sha256": "ccce11f6f8cfb597c470af75e40c1618f1f16f4503b4bd0a787cd6a6fdeed824"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "ruth",
         "overlap_chapters": 4,
         "verse_count_match": "4/4",
@@ -1053,7 +1065,11 @@
           "sha256": "bce46e8e911f17019452447123ded05f789fa960f289d54e40281ea09e34ca24"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "psalms",
         "overlap_chapters": 150,
         "verse_count_match": "124/150",
@@ -1147,7 +1163,11 @@
           "sha256": "dc47f9d5a0b6d190a71ddb2d6a956a119187e9c700494bb42bdc5a05a2cc1c66"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "wisdom",
         "overlap_chapters": 19,
         "verse_count_match": "19/19",
@@ -1189,7 +1209,11 @@
           "sha256": "733401f3a8eee70f7100cb4772cc6205177e8735b8d45bf233b8bd15d865f456"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "lamentations",
         "overlap_chapters": 5,
         "verse_count_match": "5/5",
@@ -1231,7 +1255,11 @@
           "sha256": "5925cf0746234f4552cc35ae83da1bfc32c2072da503f3d1c159534bea52026e"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "baruch",
         "overlap_chapters": 6,
         "verse_count_match": "6/6",
@@ -1305,7 +1333,11 @@
           "sha256": "38f0759bdef0b5094adeaa00cdd51d4ed12f0a9a9b458df8cbf867d7c3ae3ea6"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "daniel",
         "overlap_chapters": 14,
         "verse_count_match": "14/14",
@@ -1339,7 +1371,11 @@
           "sha256": "80aa3b3e8f88508628e79053ceff774a82872e0fc36c42de6600d922ef314ba8"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "jonas",
         "overlap_chapters": 4,
         "verse_count_match": "4/4",
@@ -1369,7 +1405,11 @@
           "sha256": "5c4aa0b6a5f04009ca10c4e72eabdcaa03646bc04601bec98dc135a193e0bfa7"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "sophonias",
         "overlap_chapters": 3,
         "verse_count_match": "3/3",
@@ -1451,7 +1491,11 @@
           "sha256": "e15abfe080c0e92c8a27585ea1f55ae9d388c21cff70a1211a81c1fc7e618c5b"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "1-machabees",
         "overlap_chapters": 16,
         "verse_count_match": "16/16",
@@ -1529,7 +1573,11 @@
           "sha256": "0f3855e3a003fe8f2f25746b0d0693388212a0882ac4d02964787bd6e05ef38f"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "2-machabees",
         "overlap_chapters": 15,
         "verse_count_match": "15/15",
@@ -1663,7 +1711,11 @@
           "sha256": "f87d3f67333840bde2a849a3d85374a469243c9597cee681184537f9940fd8bc"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "matthew",
         "overlap_chapters": 28,
         "verse_count_match": "25/28",
@@ -1749,7 +1801,11 @@
           "sha256": "141703c8dcabbd3b3c041fd52b286e3cd0604acf1606209586e3af79582da4b7"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "mark",
         "overlap_chapters": 16,
         "verse_count_match": "13/16",
@@ -1867,7 +1923,11 @@
           "sha256": "c26d5a98b730ccdb5c28f0980c9eee2bc0880353336dc9f006d6c84428411184"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "luke",
         "overlap_chapters": 24,
         "verse_count_match": "24/24",
@@ -1973,7 +2033,11 @@
           "sha256": "ee8cb4f6ec1262bb3f0f92d25c749d4e7c3905c264d273bf1537ec5476a37422"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "john",
         "overlap_chapters": 21,
         "verse_count_match": "20/21",
@@ -2107,7 +2171,11 @@
           "sha256": "ea67c04b75d6fde5b924e054e4df171fae42b6843f154fdb36941b5ffabcc6b5"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "acts",
         "overlap_chapters": 28,
         "verse_count_match": "26/28",
@@ -2193,7 +2261,11 @@
           "sha256": "38b4355b53e5d454ec74c38358b9dfe713a28012efddcfc0dfe6ef7003951b6a"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "romans",
         "overlap_chapters": 16,
         "verse_count_match": "16/16",
@@ -2279,7 +2351,11 @@
           "sha256": "b1792df27cb9953d530cba7a4865b85f67b236407d315779ec322210b56e5a2f"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "1-corinthians",
         "overlap_chapters": 16,
         "verse_count_match": "16/16",
@@ -2353,7 +2429,11 @@
           "sha256": "a2e9cfc3c077565f0266f5c81f8fa941ee56f35d7f98803ab41731d17a74392d"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "2-corinthians",
         "overlap_chapters": 13,
         "verse_count_match": "10/13",
@@ -2399,7 +2479,11 @@
           "sha256": "1a85082640a7cc559287adc7b3ef63786cc00f9e026e8548e4f1dc37ba976b58"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "galatians",
         "overlap_chapters": 6,
         "verse_count_match": "6/6",
@@ -2445,7 +2529,11 @@
           "sha256": "f5b0793f2b47c3f09859bcf8e38f226c8b89dfa6e6a90564284981a7f66281b6"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "ephesians",
         "overlap_chapters": 6,
         "verse_count_match": "6/6",
@@ -2483,7 +2571,11 @@
           "sha256": "161e893dec8cd13757c658338eeff6637dd7e1deab7c8b5ab90750d00445ad8d"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "philippians",
         "overlap_chapters": 4,
         "verse_count_match": "4/4",
@@ -2521,7 +2613,11 @@
           "sha256": "16b42030ac3c58def749974ef18d86772f7a5b529442074b41ae301879ae4844"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "colossians",
         "overlap_chapters": 4,
         "verse_count_match": "4/4",
@@ -2563,7 +2659,11 @@
           "sha256": "007af52b5c4af5ee687218f3653f873623b29146f388ffa444499a4a6894b68c"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "1-thessalonians",
         "overlap_chapters": 5,
         "verse_count_match": "4/5",
@@ -2597,7 +2697,11 @@
           "sha256": "f90436d0ba719ab3832047ee6af5be1db16c117e10fa7dc59eb3dcb75aec7f08"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "2-thessalonians",
         "overlap_chapters": 3,
         "verse_count_match": "3/3",
@@ -2643,7 +2747,11 @@
           "sha256": "a67e366fb822a1f4e34288b7160d4e3512d36a1b5a497b7db54da1f420dc3304"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "1-timothy",
         "overlap_chapters": 6,
         "verse_count_match": "6/6",
@@ -2681,7 +2789,11 @@
           "sha256": "0ffd7a8512a8084dc124b84111cd606b5090cc44624fc909ad2195c673f2dcb3"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "2-timothy",
         "overlap_chapters": 4,
         "verse_count_match": "3/4",
@@ -2715,7 +2827,11 @@
           "sha256": "399246c3ff6f35f3d6e91b227f30a399ec793986d404b7af9b14cd4fd51d849b"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "titus",
         "overlap_chapters": 3,
         "verse_count_match": "3/3",
@@ -2737,7 +2853,11 @@
           "sha256": "3a444a5e31f68afddd95ff86952eec549e6fa02a5b24f68f4c1b3dff5614def2"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "philemon",
         "overlap_chapters": 1,
         "verse_count_match": "1/1",
@@ -2811,7 +2931,11 @@
           "sha256": "66b4125b95b0aae09672b163a5d69d69d1ccfdc1825091c4670cc26e7ba69a45"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "hebrews",
         "overlap_chapters": 13,
         "verse_count_match": "13/13",
@@ -2853,7 +2977,11 @@
           "sha256": "73c9d3b163c32f405aee39b7efb08c7317e181cb737c7f1afdf1661b09d23cba"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "james",
         "overlap_chapters": 5,
         "verse_count_match": "5/5",
@@ -2895,7 +3023,11 @@
           "sha256": "1067c10d67f2eca70c1469744050ea8c64ab2f5595126cd9ac9b48fc7174342b"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "1-peter",
         "overlap_chapters": 5,
         "verse_count_match": "5/5",
@@ -2925,7 +3057,11 @@
           "sha256": "1b95582fd3c4fe294382ef91e9609e6a9bc311bbfd1a98f03074183aa68f027c"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "2-peter",
         "overlap_chapters": 3,
         "verse_count_match": "3/3",
@@ -2963,7 +3099,11 @@
           "sha256": "ded7fd861ce3f18a057b1610402caf7bb92963c26d6f34ab3abace52c80c4435"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "1-john",
         "overlap_chapters": 5,
         "verse_count_match": "5/5",
@@ -2985,7 +3125,11 @@
           "sha256": "f927afeb38175c1b0b03075a70df514469ce3f3b47d54f099aa8c43bd7867294"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "2-john",
         "overlap_chapters": 1,
         "verse_count_match": "1/1",
@@ -3007,7 +3151,11 @@
           "sha256": "810468634b614719e6962c9be569b5280b8e5282820c0f88f433430bb2a24282"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "3-john",
         "overlap_chapters": 1,
         "verse_count_match": "1/1",
@@ -3033,7 +3181,11 @@
           "sha256": "6279f5f5fc9735a1f2f690f644e02824da6c9cb629e329f13a08adc4100f8f1a"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "jude",
         "overlap_chapters": 1,
         "verse_count_match": "1/1",
@@ -3143,7 +3295,11 @@
           "sha256": "88e72d6e706db63d69f0a0b6724272b34ce4d0c24284b9d42427c5699849586f"
         }
       ],
-      "madueke_validation": {
+      "madueke_validation": null,
+      "madueke_validation_stale": {
+        "measured_on": "2026-07-05",
+        "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+        "superseded": "these figures describe the PREVIOUS scrape, not this one",
         "madueke_key": "apocalypse",
         "overlap_chapters": 22,
         "verse_count_match": "22/22",
@@ -3155,9 +3311,50 @@
   "totals": {
     "books": 39,
     "chapters": 586,
-    "verses": 16003,
-    "validated_books": 39,
-    "mean_folded_agreement": 0.9482,
-    "mean_chapter_bag_agreement": 0.9562
-  }
+    "verses": 16199,
+    "validated_books": 0,
+    "mean_folded_agreement": null,
+    "mean_chapter_bag_agreement": null
+  },
+  "books_rescraped": [
+    "1-corinthians",
+    "1-john",
+    "1-machabees",
+    "1-peter",
+    "1-thessalonians",
+    "1-timothy",
+    "2-corinthians",
+    "2-john",
+    "2-machabees",
+    "2-peter",
+    "2-thessalonians",
+    "2-timothy",
+    "3-john",
+    "acts",
+    "apocalypse",
+    "baruch",
+    "colossians",
+    "daniel",
+    "ephesians",
+    "exodus",
+    "galatians",
+    "genesis",
+    "hebrews",
+    "james",
+    "john",
+    "jonas",
+    "jude",
+    "lamentations",
+    "luke",
+    "mark",
+    "matthew",
+    "philemon",
+    "philippians",
+    "psalms",
+    "romans",
+    "ruth",
+    "sophonias",
+    "titus",
+    "wisdom"
+  ]
 }

@@ -313,7 +313,15 @@ def _strip_containers(block: str) -> str:
     return block
 
 
-_ANNOT_HDR_MARK = re.compile(r"<span\s+[^>]*id\s*=\s*['\"]?Annotations['\"]?[^>]*>", re.I)
+# THE ID MUST MATCH EXACTLY, and the optional quotes are why it did not. `['\"]?Annotations['\"]?` also
+# matches the PREFIX of `id="Annotations2"` — the closing quote is optional, and `[^>]*` then swallows the
+# trailing `2">`. So the scripture stream was cut at the first `Annotations2` span rather than at the real
+# ANNOTATIONS. header, and `Annotations2` is a span the site uses INSIDE the scripture (see `parse_chapter`).
+# That single character of slack silently truncated 13 of Genesis's 50 chapters — genesis 4, 6 and 9 at verse
+# 7, genesis 13 at verse 4, genesis 49 at verse 2 — 155 verses of scripture, recorded in the manifest as
+# `verse_count_match: 37/50` and never read.
+_ANNOT_HDR_MARK = re.compile(r"<span\s+[^>]*id\s*=\s*(?:\"Annotations\"|'Annotations'|Annotations(?=[\s>]))"
+                             r"[^>]*>", re.I)
 
 
 def parse_chapter(page_html: str, _chapter_num: int) -> tuple[dict[str, str], list[str]]:
@@ -350,13 +358,25 @@ def parse_chapter(page_html: str, _chapter_num: int) -> tuple[dict[str, str], li
         if appar_txt:
             notes.append(appar_txt)
 
-    # 3) capture marginal/header notes still inside the scripture region, then remove them
+    # 3) capture marginal/header notes still inside the scripture region, then remove them.
+    #
+    #    `Annotations2` IS NOT A KIND OF CONTENT, IT IS A STYLE, and its meaning is positional: after the
+    #    ANNOTATIONS. header it wraps annotation prose (`1. <i>In the beginning.</i>] The Church had only
+    #    Traditions...`), but BEFORE it the site uses the very same id to wrap plain scripture — genesis 4
+    #    carries verses 8-15 and 16-26 in two such spans, genesis 13 verses 5-9 and 10-18. Deleting them from
+    #    the scripture region as apparatus would throw away the verses that the header fix has just recovered.
+    #
+    #    The two are told apart by what they contain, not by where the writer of this parser expected them:
+    #    scripture spans carry `<b>N. </b>` verse markers, annotation spans number their notes in plain text.
+    _has_verse_marker = re.compile(r"<b>\s*\d+\s*\.?\s*</b>", re.I)
     for rx in (_SIDE_RE, _HEADERNOTE_RE, _ANNOT2_RE):
         for m in rx.finditer(body):
+            if rx is _ANNOT2_RE and _has_verse_marker.search(m.group(1)):
+                continue                       # scripture in an annotation-styled span — leave it in `body`
             txt = _clean_text(_strip_containers(m.group(1)))
             if txt:
                 notes.append(txt)
-    body = _ANNOT2_RE.sub(" ", body)
+    body = _ANNOT2_RE.sub(lambda m: m.group(0) if _has_verse_marker.search(m.group(1)) else " ", body)
     body = _SIDE_RE.sub(" ", body)
     body = _HEADERNOTE_RE.sub(" ", body)
 
@@ -776,6 +796,36 @@ def main() -> int:
             "mean_chapter_bag_agreement": mean(c_agrees),
         },
     }
+    # MERGE, NEVER REPLACE. `--books genesis` used to write a manifest containing genesis alone, deleting the
+    # other 38 books' records outright; and with the Madueke_A source tree no longer on disk the validation
+    # cannot be recomputed, so a re-scrape would also have erased the acquisition-time agreement figures — the
+    # very figures (`verse_count_match: 37/50`) that recorded the truncation this run repairs. A record that a
+    # later run cannot reproduce is still evidence: it is carried forward, marked with the date it was measured
+    # and the reason it was not recomputed, never silently dropped and never silently presented as current.
+    prior = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {"books": []}
+    prior_by_book = {b["book"]: b for b in prior.get("books", [])}
+    for b in manifest_books:
+        old = prior_by_book.get(b["book"], {})
+        if not b["madueke_validation"] and old.get("madueke_validation"):
+            b["madueke_validation"] = None
+            b["madueke_validation_stale"] = {
+                "measured_on": prior.get("scraped_on"),
+                "not_recomputed_because": "the Madueke_A source tree is absent from scratch at this re-scrape",
+                "superseded": "these figures describe the PREVIOUS scrape, not this one",
+                **old["madueke_validation"],
+            }
+        elif old.get("madueke_validation_stale") and not b["madueke_validation"]:
+            b["madueke_validation_stale"] = old["madueke_validation_stale"]
+        prior_by_book[b["book"]] = b
+    order = [b["book"] for b in prior.get("books", [])]
+    order += [b["book"] for b in manifest_books if b["book"] not in order]
+    manifest["books"] = [prior_by_book[k] for k in order]
+    manifest["book_count"] = len(manifest["books"])
+    manifest["books_rescraped"] = sorted(b["book"] for b in manifest_books)
+    manifest["totals"]["books"] = len(manifest["books"])
+    manifest["totals"]["chapters"] = sum(b["chapters"] for b in manifest["books"])
+    manifest["totals"]["verses"] = sum(b["verses_total"] for b in manifest["books"])
+    manifest["totals"]["validated_books"] = sum(1 for b in manifest["books"] if b.get("madueke_validation"))
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print(f"\n=== scrape complete ===", file=sys.stderr)
