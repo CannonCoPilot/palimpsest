@@ -55,9 +55,14 @@ _CHAP = re.compile(r"^Chapter (\d+)$")
 _VNUM = re.compile(r"(?<!\S)(\d{1,3})\s+(?=[A-Za-zſ&])")
 _PAGENO = re.compile(r"^\d{1,4}$")
 # A marginal note opens with its anchor letter and a capitalised sentence: `a The crowe returned not...`,
-# `a That is, she bare their fathers in Meſopotamia.` Body prose starting with a bare `a`/`b` and a capital
-# does not occur in Genesis, and the pattern is only consulted at a page foot (see `_strip_page_furniture`).
-_NOTE_ANCHOR = re.compile(r"^[a-f]\s+[A-ZſVI]")
+# `a That is, she bare their fathers in Meſopotamia.`, `b Of pluralitie of wiues ſee pag. xxx`.
+#
+# THE CAPITAL MUST BE A REAL CAPITAL. A first version wrote the class as `[A-ZſVI]`, meaning to admit a note
+# opening on a long-s word — and `ſ` is a LOWERCASE letter, so the pattern then matched the commonest phrase
+# in the book: `a ſonne`. Genesis 30 lost verse 6's tail (`a ſonne, and therfore she called his name, Dan.`)
+# and then, when a line beginning `a ſonne, 11 she ſaid:` was read as a note anchor, the whole page under it
+# — verses 11 to 26 — with it. Every genuine anchor in the volume is followed by an ASCII capital.
+_NOTE_ANCHOR = re.compile(r"^[a-f]\s+[A-Z]")
 
 
 def _fold_word(w: str) -> str:
@@ -132,20 +137,43 @@ def _strip_page_furniture(block: list[str], title: str) -> list[str]:
                 drop.add(j)
             j += 1
         j, run = i - 1, []                              # backward: the marginal-note run
-        while j >= 0 and len(run) < 8:
+        while j >= 0 and len(run) < 10:
             s = block[j].strip()
             if not s:
                 j -= 1
                 continue
             if len(s) == 1 and s.isalpha() and s.isupper():
                 break                                   # the drop capital — leave it for `verses`
-            isolated = (j == 0 or not block[j - 1].strip()) and (j + 1 >= n or not block[j + 1].strip())
-            if isolated and len(s) <= 120:
-                run.append(j)
-                j -= 1
+            # A note is laid out as its own text object, so it forms a SHORT blank-separated group; body prose
+            # runs the whole page without a blank. One line is the common case (`in Gen.`, `S. Aug. q. 151.`)
+            # but not the only one — genesis 30's note wraps onto two adjacent lines (`held frõ him, being due
+            # for the dowrie of his wiues, and recompence` / `for his ſeruice. Rupert. li. 7. c. 39. in Gen.`),
+            # and requiring a single line left that block inside verse 38.
+            start = j
+            while start > 0 and block[start - 1].strip():
+                start -= 1
+            end = j
+            while end + 1 < n and block[end + 1].strip():
+                end += 1
+            # THE ANCHOR BOUNDS THE DELETION, it does not merely license it. Taking a whole short group because
+            # it contained an anchor ate the body line above the anchor — the last line of scripture on the
+            # page — which is exactly what the synthetic block in test asserts must survive. Where an anchor is
+            # present the note starts THERE and everything above it is body, so the scan takes the anchor
+            # onward and stops.
+            anchor = next((k for k in range(start, end + 1) if _NOTE_ANCHOR.match(block[k].strip())), None)
+            if anchor is not None and (anchor > start or end - start + 1 <= 4):
+                # The length bound is the blast radius of a wrong anchor. A standalone note group is a few
+                # lines; a page of scripture is twenty. Without it, one false positive took a whole page.
+                run.extend(range(anchor, end + 1))
+                if anchor > start:
+                    break                               # body prose sits above the anchor — stop here
+                j = start - 1                           # a standalone note: keep going, `a` sits above `b`
                 continue
-            if _NOTE_ANCHOR.match(s):                   # the note's first line, abutting the body
-                run.append(j)
+            if end == j and (end - start + 1) <= 3 and all(len(block[k].strip()) <= 120
+                                                           for k in range(start, end + 1)):
+                run.extend(range(start, end + 1))       # a note continuation: its own short text object
+                j = start - 1
+                continue
             break
         # THE GUARD, and the reason the run is committed as a whole rather than line by line. `isolated` alone
         # is a layout accident: a page whose body happens to contribute one line above the number would be read
@@ -156,6 +184,107 @@ def _strip_page_furniture(block: list[str], title: str) -> list[str]:
         if any(_NOTE_ANCHOR.match(block[k].strip()) for k in run):
             drop.update(run)
     return [ln for k, ln in enumerate(block) if k not in drop]
+
+
+def _anchor_index(text: str, v1_anchor: str) -> int:
+    """Word offset in `text` where the chapter's verse 1 begins, per janvier; 0 if not confidently located.
+
+    Janvier says WHERE the verse begins, never how it is spelled — the same content-anchor use that
+    `verse_locate` and the chapter-model deriver already make of it."""
+    if not v1_anchor:
+        return 0
+    toks = [t for t in _fold_words(v1_anchor)[:6] if t]
+    if not toks:
+        return 0
+    fold = [_fold_word(w) for w in text.split()]
+    best, best_hit = 0, 0.0
+    for i in range(len(fold) - len(toks)):
+        hit = sum(1 for a, b in zip(fold[i:i + len(toks)], toks) if a == b) / len(toks)
+        if hit > best_hit:
+            best, best_hit = i, hit
+    return best if best_hit >= 0.5 else 0
+
+
+def chapter_text(block: list[str]) -> str:
+    """The chapter block reduced to one clean line of body prose — annotations, page furniture and the
+    engraved capital all removed. Split out of `verses` so the tail-recovery pass can read a block's text
+    without committing to its verse numbering."""
+    for i, ln in enumerate(block):
+        if ln.strip().lower() in ("annotations", "annotation"):
+            block = block[:i]
+            break
+    block = _strip_page_furniture(block, BOOK.capitalize())
+    keep = []
+    for ln in block:
+        s = ln.strip()
+        if not s or _PAGENO.fullmatch(s) or (len(s) == 1 and s.isalpha() and s.isupper()):
+            continue
+        keep.append(s)
+    return " ".join(keep)
+
+
+def recover_tails(parsed: dict[int, dict[int, str]], blocks: dict[int, list[str]],
+                  janv_v1: dict[int, str], janv_n: dict[int, int], log=None) -> dict[int, dict[int, str]]:
+    """Give a chapter back the verses that the NEXT chapter's running head stole from it.
+
+    THE DEFECT. `pdftotext` emits genesis 30's last six verses AFTER the line `Chapter 31`:
+
+        ...by this meanes the colour was made diuers. 38 And he put them in the troughes, where the water
+        was poured   <- page foot, page 130
+        Chapter 31
+        out: that when the flockes should come to drinke ... 39 And it came to paſſe ... 43 And the man was
+        enriched beyond meaſure ...
+
+    The head belongs to the chapter that BEGINS lower down that page; the top of the page is still chapter 30.
+    `chapter_blocks` opens block 31 at the head, so those verses land in chapter 31 — where the verse-1 anchor
+    then correctly discards them as pre-verse-1 matter. Chapter 31 parses fine and chapter 30 loses six verses;
+    that is how genesis 30:6 came to read `...geuing me againe Bala conceauing bare an other` in the shipped
+    reads, with `a ſonne, and therfore she called his name, Dan.` gone.
+
+    THE TEST, WHICH IS ARITHMETIC AND NOT JUDGEMENT. The tail is recognised by the VERSE NUMBERS THEMSELVES,
+    not by locating where the next chapter starts — chapter 31's opening diverges too far from janvier's
+    wording for the verse-1 anchor to find it, and a recovery that depended on that anchor recovered nothing.
+    Three things must hold: the chapter is SHORT of the count janvier attests; the next block opens with verse
+    markers; and the first of them is exactly one past the short chapter's last verse. Markers are then taken
+    only while they keep ascending by one and stay within janvier's count for the chapter.
+
+    A prefix that is really the next chapter's ARGUMENT also carries numerals — `6. Noe ſendeth forth a crow,
+    8. after him a doue, thriſe: 18. laſtly goeth forth` — and fails the test at its first number, which does
+    not continue the previous chapter's sequence."""
+    out = {ch: dict(v) for ch, v in parsed.items()}
+    for ch in sorted(out):
+        nxt = ch + 1
+        if nxt not in blocks or not out.get(ch):
+            continue
+        if len(out[ch]) >= janv_n.get(ch, 0):
+            continue                                     # not short: nothing was taken
+        parts = _VNUM.split(chapter_text(blocks[nxt]))
+        if len(parts) < 3:
+            continue                                     # no verse markers at all
+        last = max(out[ch])
+        want = last + 1
+        run: list[tuple[int, str]] = []
+        for i in range(1, len(parts) - 1, 2):
+            try:
+                n = int(parts[i])
+            except ValueError:
+                break
+            if n != want or n > janv_n.get(ch, 0):
+                break                                    # sequence broken: chapter nxt has begun
+            run.append((n, parts[i + 1].strip()))
+            want += 1
+        if not run:
+            continue
+        head = parts[0].strip()                          # the tail of `last`, carried over the page break
+        if head:
+            out[ch][last] = (out[ch][last] + " " + head).strip()
+        for n, body in run:
+            if body and n not in out[ch]:
+                out[ch][n] = body
+        if log:
+            log(f"ref_repair: genesis {ch}: recovered v{run[0][0]}-v{run[-1][0]} from behind the "
+                f"`Chapter {nxt}` running head")
+    return out
 
 
 def verses(block: list[str], v1_anchor: str = "") -> dict[int, str]:
@@ -194,18 +323,9 @@ def verses(block: list[str], v1_anchor: str = "") -> dict[int, str]:
     # only 0.694. The body's start is located by matching janvier's verse 1, the same content-anchor use
     # `verse_locate` and the chapter-model deriver already make of it: janvier says WHERE the verse begins, never
     # how it is spelled.
-    if v1_anchor:
-        toks = [t for t in _fold_words(v1_anchor)[:6] if t]
-        if toks:
-            words = text.split()
-            fold = [_fold_word(w) for w in words]
-            best, best_hit = None, 0.0
-            for i in range(len(fold) - len(toks)):
-                hit = sum(1 for a, b in zip(fold[i:i + len(toks)], toks) if a == b) / len(toks)
-                if hit > best_hit:
-                    best, best_hit = i, hit
-            if best is not None and best_hit >= 0.5:
-                text = " ".join(words[best:])
+    best = _anchor_index(text, v1_anchor)
+    if best:
+        text = " ".join(text.split()[best:])
     parts = _VNUM.split(text)
     out: dict[int, str] = {}
     if parts:
@@ -248,7 +368,9 @@ def main() -> int:
     lines = pdf_lines()
     blocks = chapter_blocks(lines)
     janv_v1 = {ch: (VS.chapter_verses(BOOK, ch, VS.JANVIER) or {}).get(1, "") for ch in range(1, 51)}
+    janv_n = {ch: len(VS.chapter_verses(BOOK, ch, VS.JANVIER) or {}) for ch in range(1, 51)}
     parsed = {ch: verses(b, janv_v1.get(ch, "")) for ch, b in sorted(blocks.items())}
+    parsed = recover_tails(parsed, blocks, janv_v1, janv_n, log=lambda m: print(f"  {m}", file=sys.stderr))
     cur = json.loads(READS.read_text())
     have: dict[int, dict[int, str]] = {}
     # A chapter this module has ALREADY written is always a candidate again: it came out of this parser, so a
@@ -270,9 +392,18 @@ def main() -> int:
         jn = len(VS.chapter_verses(BOOK, ch, VS.JANVIER) or {})
         h, p = len(have.get(ch, {})), len(parsed.get(ch, {}))
         verdict = ""
+        gained = sorted(set(parsed.get(ch, {})) - set(have.get(ch, {})))
         if ch in prior:
             repair.append(ch)
             verdict = "  <-- REPARSE (written by this module before)"
+        elif gained and h < jn:
+            # A COUNT TEST CANNOT SEE A HOLE IN A NEARLY-FULL CHAPTER. Genesis 30 holds 42 of janvier's 43 and
+            # sails past `h >= 0.9 * jn`, but its verse 6 reads `...geuing me againe Bala conceauing bare an
+            # other` — the words `a ſonne, and therfore she called his name, Dan.` were lost at a page foot and
+            # verse 7 with them. The re-parse has the verses the stored reads lack; whether it is RIGHT is then
+            # decided by the same cross-reference gate as every other repair, below.
+            repair.append(ch)
+            verdict = f"  <-- HOLE: reparse carries v{gained} which the reads lack"
         elif h >= 0.9 * jn:
             # a chapter s_dismas already has: the parser MUST reproduce it
             if p >= 0.9 * jn:

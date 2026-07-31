@@ -166,3 +166,34 @@ def test_every_correction_carries_its_corroboration():
     for key, entry in RR.CORRECTIONS.items():
         assert entry.get("evidence"), f"{key} has no evidence — not adoptable"
         assert {"merge", "split", "shift"} & set(entry), f"{key} declares no operation"
+
+
+def test_a_sonne_is_not_a_note_anchor():
+    """`a ſonne` is the commonest phrase in Genesis, and it opened a hole in the note-anchor pattern.
+
+    Writing the class as `[A-ZſVI]` — meaning to admit a note that opens on a long-s word — admitted `ſ`,
+    which is LOWERCASE. Genesis 30 then lost verse 6's tail, and when the line `a ſonne, 11 she ſaid:` was
+    read as an anchor, the whole page beneath it went too: verses 11 through 26."""
+    block = [
+        "hath iudged for me, and hath heard my voice, geuing me",
+        "a ſonne, and therfore she called his name, Dan. 7 And",
+        "a Not properly enuie, but griefe & lawful emulation. S. Aug. li. 22.",
+        "",
+        "c. 54. cont. Fauſt.",
+        "",
+        "128",
+        "",
+        "againe Bala conceauing bare an other, 8 for whom Rachel",
+    ]
+    out = " ".join(ln for ln in R._strip_page_furniture(block, "Genesis") if ln.strip())
+    assert "a ſonne, and therfore she called his name, Dan." in out, "scripture eaten by a false anchor"
+    assert "Not properly enuie" not in out, "the real note survived"
+    assert "128" not in out
+
+
+def test_a_false_anchor_cannot_take_a_whole_page():
+    """The blast radius, bounded independently of the pattern: a long group is never consumed wholesale."""
+    page = [f"line {i} of ordinary scripture running down the page" for i in range(20)]
+    block = ["a Ruben going forth in the time of wheat harueſt"] + page + ["", "129", ""]
+    out = R._strip_page_furniture(block, "Genesis")
+    assert len([ln for ln in out if ln.strip()]) >= 20, "a page of scripture was consumed"
