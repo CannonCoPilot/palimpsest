@@ -31,10 +31,10 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 > concluding anything. `ps aux | grep r3-runner` to see them; they are doing useful work, leave them unless the
 > machine is under memory pressure.
 
-| | (snapshot 2026-07-31 18:30 UTC) |
+| | (snapshot 2026-07-31 20:30 UTC) |
 |---|---|
-| cells >=0.90 / ACHIEVABLE | **4,963 / 6,116 = 0.8115** |
-| cells >=0.90 / raw total | 4,963 / 6,120 = 0.8109 |
+| cells >=0.90 / ACHIEVABLE | **4,967 / 6,116 = 0.8121** |
+| cells >=0.90 / raw total | 4,967 / 6,120 = 0.8116 |
 | **CHAPTERS CLOSED** | **2** — chapters 1 and 16 (sentinels; re-measure them on EVERY change) |
 | cells blocked by an absent reference | **4**, in one chapter (was 704 over 16 chapters) |
 | tests | **188 green** (`../ocr-venv/bin/python -m pytest tests/`) |
@@ -56,6 +56,7 @@ as everyone else's), and it is simply absent from that witness. **That is an acq
 | + R3 running in the background | 6,116 | 4,884 | 0.7986 | 4 |
 | R3 breadth exhausted (runner idle) | 6,116 | 4,960 | 0.8110 | 4 |
 | + ch8 depth-first work | 6,116 | 4,963 | 0.8115 | 4 |
+| + ch8 visual reads (87/88) | 6,116 | 4,967 | 0.8121 | 4 |
 
 The ratio **fell** at the third row while 596 cells were unblocked. That is the true direction: the old
 denominator excluded the hardest 700 cells because we did not hold the references for them. **Do not read the
@@ -117,16 +118,18 @@ recognizer said. Four of this session's five wins were reference repairs, and th
    **Read `s6_causes.py --examples 3` before quoting its table**; its first version reported the opposite
    answer, cleanly, and the examples are what exposed it.
 
-2. **DEPTH-FIRST CHAPTER WORK — ch8 IN PROGRESS, 83/88, NOT CLOSED.** Three attributed steps took it 81 -> 83:
-   the R3 overlay's apparatus filter, a `CHAPTER_MODEL` entry for the opening leaf, and three per-leaf
-   `PAGE_OVERRIDE`s. **The five cells still open are RECOGNITION, not geometry** — `foudgates`/`ha enwere`/
-   `ravne troni` (S6 v2), `commins`/`beran`/`atter`/`tittie` (S6 v3), `vet uen` for `yet seauen` (S3 v10),
-   `warers`/`minished` and a missing `Therfore` (S3 v13), and S6 v14's `month`/`twentieth` against
-   `moneth`/`twentyth`, which is a collation question rather than a misreading.
-   **R3 IS EXHAUSTED ON THIS CHAPTER**: run three times at `--improve-below 0.95`, it returns 81/88 every time.
-   Closing ch8 needs either a better recognizer on those leaves (R2 fine-tune territory) or a visual read of
-   the crops via `gen1_r3.VISUAL_CONTENT`. **`r3-runner.sh` is now IDLE — it has done every chapter and reports
-   `no chapter ready`.** Breadth is finished; what remains is depth, per chapter, by hand.
+2. **ch8 IS AT 87/88 AND THE LAST CELL IS A COLLATION QUESTION, NOT AN OCR DEFECT.** S1, S3 and S9 all reach
+   1.000; S6 is 21/22. All 18 R3 adoptions have a CLOSED ſ-surface with zero unresolved tokens.
+   **8:14/S6 stays OPEN and blocks.** The plate prints `In (b) the ſecond month , the ſeauen and twentieth day
+   of the month the earth was dried` — our transcription is CORRECT, read at 2600px. The scores split exactly
+   along the edition line: MODERN references agree (sabates_a/madueke_b 0.9877), 1609 ARCHAIC ones do not
+   (s_dismas 0.8765, odr_com 0.8889), because S6 is the 1635 SECOND edition. R3 moves it 0.876 -> 0.864, AWAY
+   from the bar. **No reading of those pixels satisfies both editions.** This is §13 Q21's first verified
+   instance; the evidence is in `collation-flags.json` and the report surfaces it. **The cell is still counted
+   as failing in every denominator — the register explains a failure, it never excuses one.**
+   What would resolve it is a policy decision, Sir's not the pipeline's: either a 1635-edition witness gets a
+   1635-edition governing reference, or the standard admits an edition-divergence verdict distinct from a
+   transcription failure.
 
 3. **DEPTH-FIRST, NEXT CHAPTERS.** Closest to closure now, cells short: **ch8 (7)**, ch12 (10), ch20 (11),
    ch22 (12), ch33 (12), ch18 (13), ch48 (13), ch25 (14), ch45 (14), ch2 (15). Follow CHAPTER-WORKFLOW phases
