@@ -23,10 +23,18 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 
 ## STATE
 
-| | |
+> **⚠ THE BOARD IS LIVE. `r3-runner.sh` is RUNNING** — five wrapper shells from the previous session, serialized
+> behind the atomic `mkdir` lock (one `gen1_r3.py` at a time, as designed), working chapters fewest-open-cells
+> first and re-measuring each as it finishes. **Every figure below is a SNAPSHOT, and it climbs while you read
+> it**: 4,853 at 22:40, 4,873 at 23:00, 4,884 at 23:05. A total that fails to reproduce is not necessarily
+> non-determinism — check `.campaign/r3-ledger.txt` for a `START ch` line newer than your measure run before
+> concluding anything. `ps aux | grep r3-runner` to see them; they are doing useful work, leave them unless the
+> machine is under memory pressure.
+
+| | (snapshot 2026-07-31 23:05) |
 |---|---|
-| cells >=0.90 / ACHIEVABLE | **4,853 / 6,116 = 0.7935** |
-| cells >=0.90 / raw total | 4,853 / 6,120 = 0.7930 |
+| cells >=0.90 / ACHIEVABLE | **4,884 / 6,116 = 0.7986** |
+| cells >=0.90 / raw total | 4,884 / 6,120 = 0.7980 |
 | **CHAPTERS CLOSED** | **2** — chapters 1 and 16 (sentinels; re-measure them on EVERY change) |
 | cells blocked by an absent reference | **4**, in one chapter (was 704 over 16 chapters) |
 | tests | **188 green** (`../ocr-venv/bin/python -m pytest tests/`) |
@@ -45,6 +53,7 @@ as everyone else's), and it is simply absent from that witness. **That is an acq
 | after the odr_com repair | 6,096 | 4,806 | **0.7884** | 24 |
 | after the five merges | 6,112 | 4,832 | 0.7906 | 8 |
 | after genesis 30 | 6,116 | 4,853 | 0.7935 | 4 |
+| + R3 running in the background | 6,116 | 4,884 | 0.7986 | 4 |
 
 The ratio **fell** at the third row while 596 cells were unblocked. That is the true direction: the old
 denominator excluded the hardest 700 cells because we did not hold the references for them. **Do not read the
