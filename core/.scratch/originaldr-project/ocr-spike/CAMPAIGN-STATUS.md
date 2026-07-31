@@ -31,10 +31,12 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 > concluding anything. `ps aux | grep r3-runner` to see them; they are doing useful work, leave them unless the
 > machine is under memory pressure.
 
-| | (snapshot 2026-07-31 20:30 UTC) |
+| | (snapshot 2026-07-31 21:45 UTC) |
 |---|---|
-| cells >=0.90 / ACHIEVABLE | **4,967 / 6,116 = 0.8121** |
-| cells >=0.90 / raw total | 4,967 / 6,120 = 0.8116 |
+| cells >=0.90 / ACHIEVABLE | **5,014 / 6,116 = 0.8198** |
+| cells >=0.90 / raw total | 5,014 / 6,120 = 0.8193 |
+| chapters by band | <0.70: **3** · 0.70-0.80: 14 · 0.80-0.90: 29 · 0.90-0.95: 1 · >=0.95: **3** |
+| cells with NO TEXT anywhere | **0** (was 26) |
 | **CHAPTERS CLOSED** | **2** — chapters 1 and 16 (sentinels; re-measure them on EVERY change) |
 | cells blocked by an absent reference | **4**, in one chapter (was 704 over 16 chapters) |
 | tests | **188 green** (`../ocr-venv/bin/python -m pytest tests/`) |
@@ -57,6 +59,7 @@ as everyone else's), and it is simply absent from that witness. **That is an acq
 | R3 breadth exhausted (runner idle) | 6,116 | 4,960 | 0.8110 | 4 |
 | + ch8 depth-first work | 6,116 | 4,963 | 0.8115 | 4 |
 | + ch8 visual reads (87/88) | 6,116 | 4,967 | 0.8121 | 4 |
+| + mixed-leaf fix, worst-first | 6,116 | 5,014 | 0.8198 | 4 |
 
 The ratio **fell** at the third row while 596 cells were unblocked. That is the true direction: the old
 denominator excluded the hardest 700 cells because we did not hold the references for them. **Do not read the
@@ -141,6 +144,31 @@ recognizer said. Four of this session's five wins were reference repairs, and th
    supersede the original parser wherever it validates. **Use the `HOLE:` criterion already in `--verify`.**
 5. **odr_com genesis 23:20 — ACQUISITION.** Report it; do not patch it. If a second odr-com surface exists
    (a print edition, a different page), that is the route.
+
+## WORST-FIRST (Sir, 2026-07-31): work up the bands until every chapter is >= 0.95
+
+**The order is worst-scoring first, re-measuring all 50 after each band for knock-on gains.** Three tools make
+this tractable and they should be the first thing a resumed session reaches for:
+
+| tool | the question it answers |
+|---|---|
+| `leaf_diag.py --chapter N --source SX` | why is THIS source collapsing in THIS chapter — leaves, the band in force, the tokens it drops on each side, the open cells |
+| `chapter_open_probe.py --chapters N` | where the chapter OPENS on each witness: printed heading, italic argument, verse 1 located by janvier's wording — and whether it is a MIXED LEAF |
+| `s6_causes.py --source SX --examples 3` | the cause mix of a source's open cells (INTERLEAVE / MISREAD / DIVERGE / TRUNCATED / NO-TEXT) |
+
+**THE DIAGNOSTIC THAT FINDS THE BIG ONES.** A source scoring 0.90 across the book and 0.23 in one chapter has
+a LEAF defect, not a recognition problem. Rank `(chapter, source)` pairs by how far the source sits below its
+own median — every one of this session's large wins came off the top of that list.
+
+**What the remaining work is made of** (measured, not guessed — `s6_causes.py`):
+* **MISREAD ~45%** — recognizer quality. R3/R2 territory; `r3-runner.sh` works it autonomously.
+* **DIVERGE ~35%** — but a cell failing in ONE source cannot be edition divergence, so most of these are
+  misreads the character-similarity test judged too unlike. Edition divergence proper is capped at **40 cells
+  book-wide** (§13 Q50) — it must fail in all four sources, being a property of the page.
+* **INTERLEAVE ~18%** — annotation prose sharing rows with scripture. **This is the 8-times-failed problem**,
+  and chapter 5's S9 leaves show why: the x-histogram is FLAT from x100 to x1900, so there is no gutter to cut
+  on. Whole printed lines from different columns share a y-band and the row grouper merges them. Closing the
+  worst chapters needs row-level column assignment, which is a BUILD, not a tuning.
 
 ## THE LIVE BOARD, VISUALLY — `reocr-report-pilot.html`
 
