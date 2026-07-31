@@ -119,6 +119,25 @@ CHAPTER_MODEL: dict[tuple[str, int], dict] = {
                                     "drop_cap": ("Np", "AND")},
     ("jp2-S06", 8):                {"open_page": 50, "chapter_open_y": 0.775,
                                     "drop_cap": ("ND", "AND")},
+    # GENESIS 39, located with `chapter_open_probe.py` and confirmed line by line (2026-07-31). Two of these
+    # four are MIXED LEAVES — chapter 38's ANNOTATIONS at the top, chapter 39's opening below — and
+    # `_is_annotation_leaf` excludes such a leaf WHOLE. That rule is right for a pure commentary leaf and
+    # catastrophic here: genesis 39:1-8 was thrown away on S3 and S9 at once and scored as sixteen cells with
+    # NO TEXT AT ALL, which is why this chapter was the worst in the book at 0.554.
+    #
+    # No change to that rule is needed. `chapter_open_y` filters WORDS before the rows are grouped, so cutting
+    # the annotations away leaves a leaf that no longer declares itself an annotation leaf.
+    #
+    #   S3 p145  `CHAP. XXXVIII` annotations y 320 · `CHAP. XXXIX` y 920 · argument to y 1280 · v1 y 1400
+    #   S9 p153  `CHAP. XXXVIII.` y 360 · `CHAP. XXXIX.` y 960 · argument to y 1240 · v1 y 1360
+    #   S1 p141  heading y 1000 · v1 y 1640          S6 p130  heading y 480 · v1 y 1040
+    #
+    # Verse 1 on all four is `THERFORE Ioſeph was brought into Egypt`. The cut sits just above it: everything
+    # over verse 1 — running head, annotations, chapter heading, italic argument — is matter, not scripture.
+    ("archive-ot1-1609", 39):      {"open_page": 141, "chapter_open_y": 0.524},
+    ("pdf-S03a", 39):              {"open_page": 145, "chapter_open_y": 0.455},
+    ("jp2-S06", 39):               {"open_page": 130, "chapter_open_y": 0.358},
+    ("archive-holiebible-ot1", 39): {"open_page": 153, "chapter_open_y": 0.441},
 }
 
 # The chapter the model is currently reading. Set by the entry points (`--chapter`); the opening-leaf and
@@ -161,11 +180,47 @@ def _derived() -> dict:
     return _DERIVED_CACHE
 
 
+_PROBE_PATH = HERE / ".chapter-open-probe.json"
+_PROBE_CACHE: dict | None = None
+
+
+def _probed() -> dict:
+    """Openings located by `chapter_open_probe.py`: the leaf and the y JUST ABOVE VERSE 1.
+
+    DISTINCT FROM THE PINNED DERIVER, and in the one way that matters. Both fill the same gap — `CHAPTER_MODEL`
+    was hand-set for three chapters and every other chapter leaked its title block, italic argument and
+    engraved initial into verse 1. The deriver is net NEGATIVE (re-verified 2026-07-31: -6 cells, helping 4
+    chapters and hurting 8) because its cut was chosen some other way and took scripture with it further down
+    the leaf. This table's cut has no judgement left in it: verse 1 is located by JANVIER'S OWN WORDING, and
+    everything above verse 1 — running head, a previous chapter's annotations, the heading, the argument — is
+    matter by definition. Where the probe cannot locate verse 1 it emits nothing rather than guessing.
+
+    It also reaches a defect the deriver could not. `_is_annotation_leaf` excludes a whole leaf whose head
+    declares ANNOTATIONS; on a MIXED leaf — chapter 38's annotations above, chapter 39's opening below — that
+    threw away genesis 39:1-8 on two witnesses at once, sixteen cells with no text at all, and made 39 the
+    worst chapter in the book. Because `chapter_open_y` filters WORDS before the rows are grouped, cutting the
+    annotations away leaves a leaf that no longer declares itself an annotation leaf. 16 such leaves exist.
+
+    ODR_PROBE_CM=0 ablates it."""
+    global _PROBE_CACHE
+    if os.environ.get("ODR_PROBE_CM", "1") == "0":
+        return {}
+    if _PROBE_CACHE is None:
+        try:
+            _PROBE_CACHE = json.loads(_PROBE_PATH.read_text())
+        except Exception:                                        # noqa: BLE001
+            _PROBE_CACHE = {}
+    return _PROBE_CACHE
+
+
 def chapter_model(ocr_dir: str, chapter: int | None = None) -> dict:
     ch = chapter if chapter is not None else CHAPTER
     hand = CHAPTER_MODEL.get((ocr_dir, ch))
     if hand is not None:
         return hand
+    pr = _probed().get(f"{ocr_dir}|{ch}")
+    if pr:
+        return {"open_page": pr["open_page"], "chapter_open_y": pr["chapter_open_y"], "probed": True}
     d = _derived().get(f"{ocr_dir}|{ch}")
     if not d or d.get("suspect"):
         # A SUSPECT derivation is not applied. Cutting most of a leaf on a bad verse-1 match would delete
