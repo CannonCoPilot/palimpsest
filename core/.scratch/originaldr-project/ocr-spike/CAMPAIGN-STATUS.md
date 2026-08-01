@@ -170,6 +170,30 @@ own median — every one of this session's large wins came off the top of that l
   on. Whole printed lines from different columns share a y-band and the row grouper merges them. Closing the
   worst chapters needs row-level column assignment, which is a BUILD, not a tuning.
 
+## THE SUB-80% CHAPTERS, PARTITIONED BY WHAT IS ACTUALLY WRONG (Sir's two sets, tested 2026-07-31)
+
+Sir proposed two sets — "S6 is the culprit" (3, 6, 15, 23, 47) and "other patterns" (5, 21, 24, 26, 28, 35,
+37, 39, 41, 49) — and asked whether they are two problems worth reducing separately. **Measured, the split
+does not fall where the sets do: S6 is the worst source in 12 of the 15**, including 7 of the 10 in the
+"other" group (21, 24, 26, 28, 37, 39, 49). The partition that the data does support:
+
+| group | chapters | worst source | dominant cause | what it needs |
+|---|---|---|---|---|
+| **S6 chronic — interleave** | 3, 6, 15 | S6 0.38-0.59 | INTERLEAVE 4-6 per chapter | per-leaf bounds; S6's swept band is right for its ordinary leaves and wrong for its annotated ones |
+| **S6 chronic — misread** | 23, 47, 21, 24, 26, 28, 37, 39, 49 | S6 0.23-0.68 | MISREAD 3-16 | R2/R3. No geometry reaches it |
+| **A GOOD SOURCE COLLAPSING** | 5 (S9 0.58), 35 (S1 0.52), 41 (S1 0.53) | not S6 | see below | diagnosed individually |
+
+**The third group is the one that used to pay, and this time it does not.** A source at 0.88-0.93 across the
+book dropping to 0.52 in one chapter was the signature that produced +15 on genesis 39 and +29 on genesis 44 —
+a leaf the model was never told about. `leaf_diag` on genesis 41/S1 shows something different: the rows read
+`tlare ſprang alto orher eates a many, the andwno` and `vith adulon, deuou ng al the beaue of the`. That is
+DEGRADED RECOGNITION on those leaves, not layout, and no band, bound or chapter model reaches it. Genesis 5/S9
+is the skew case `line_split` already addresses.
+
+**So the whole sub-80% band reduces to two problems, and only one of them is geometry.** The interleave three
+are worth per-leaf work on S6's annotated leaves; everything else is recognizer quality, which is what the R2
+attestation pass and the R3 runner are for. Both are running.
+
 ## THE R2/R3 FINDING — where the remaining ~1,100 cells actually are (2026-07-31)
 
 **1,142 cells are ones R3 HAS ALREADY READ CORRECTLY.** Counted across every `r3-residual-genesis-*.json`:
