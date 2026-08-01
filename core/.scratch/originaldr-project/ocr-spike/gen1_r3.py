@@ -883,6 +883,30 @@ def main() -> int:
         # have supplied is already there); a cell that then stays open fails visibly, which is the safe direction.
         skipped = {i for i in readings if i not in unres_ix}
         readings = {i: w for i, w in readings.items() if i in unres_ix}
+        # THE R2 ATTESTING ARM. `transfer` could only close a token the INCUMBENT text observed, and the
+        # incumbent is the stored corpus OCR — so wherever that OCR dropped or mangled a word, a perfectly good
+        # R3 reading stayed OPEN. Measured: `CONTENT OK, ſ-SURFACE OPEN` 1,158 times against 1,133 ADOPT, and
+        # 1,142 of those cells already pass all four references. `r2_attest` re-reads the LEAF with the
+        # ſ-faithful fine-tune and reports what it saw, refusing any word the leaf sets two ways.
+        # Validated against the human diplomatic GT before being wired: 4,239 of 4,257 ſ-patterns agree,
+        # **0.9958**, with 3,805 refusals. It is provenanced apart from a human reading and ODR_R2_ATTEST=0
+        # ablates it — but note what it replaces: the arm it supplements has never been measured for ſ
+        # fidelity at all.
+        try:
+            import r2_attest
+            if r2_attest.ENABLED and pi is not None:
+                pages = sorted({p for p, _ in parts} | {pi})
+                toks_now = arb["text"].split() if arb.get("text") else t["r3_verse"].split()
+                for u in arb.get("unresolved", []):
+                    i = u["i"]
+                    if i in readings or not (0 <= i < len(toks_now)):
+                        continue
+                    obs = r2_attest.attest(od, pages, toks_now[i])
+                    if obs and obs != toks_now[i]:
+                        readings[i] = obs
+                        t.setdefault("r2_attested", {})[str(i)] = obs
+        except Exception as e:                                   # noqa: BLE001
+            t["r2_attest_error"] = f"{type(e).__name__}: {e}"
         if skipped:
             t["readings_already_settled"] = sorted(skipped)
         if readings:
