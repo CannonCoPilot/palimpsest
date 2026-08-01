@@ -48,16 +48,21 @@ from xsrc_gate import archaic_cut, verse_xsrc, anchor_disagreement  # noqa: E402
 
 GT = HERE / "ground-truth"
 _VTAG = re.compile(r"^(\d+):(\d+)([a-c])?$")
-LOCI = {
-    "scripture-genesis-24": "genesis", "scripture-genesis-16-p081": "genesis",
-    "scripture-genesis-16-p082": "genesis", "scripture-psalms-001": "psalms",
-    "scripture-psalms-074-p137": "psalms", "scripture-psalms-074-p138": "psalms",
-    "scripture-psalms-115-116": "psalms", "scripture-psalms-118": "psalms",
-    "scripture-psalms-150-p265": "psalms", "scripture-psalms-150-p266": "psalms",
-    "scripture-matthew-28-p102": "matthew", "scripture-proverbs-16": "proverbs",
-    "scripture-2esdras-07": "2-esdras",  # colossians-3 excluded: flagged §4/§11 confound (see §13 Q5)
-    "scripture-abdias-01": "abdias",     # GT-3 archaic-gap page (no s_dismas/odr_com) → exercises the
-}                                        # modern-fallback xsrc axis on REAL data (τx=0.92)
+# LOCI comes from gt_registry (the GT files' own `locus` field), never a hand-typed literal. The literal that
+# stood here had drifted: it omitted scripture-2john entirely and, separately, colossians-3.
+#
+# EXCLUSIONS ARE NOW DECLARED, NOT ABSENT. A page dropped by omission is invisible in the output and reads as
+# a page that passed; a page dropped by DECLARATION is printed with its reason every run. colossians-3 stays
+# out of the CALIBRATION arithmetic (a known §4-addressing / §11-layout confound would corrupt a threshold
+# fitted on it) but it is reported in its own bucket, which is the difference between an exclusion and a
+# disappearance.
+import gt_registry as _REG  # noqa: E402
+CALIB_EXCLUDE = {
+    "scripture-colossians-3": "FLAGGED §4 ADDR / §11 greek-margins confound (§13 Q5) — would corrupt a fitted "
+                              "threshold; reported separately, never silently dropped",
+}
+LOCI = {k: v for k, v in _REG.loci("scripture").items() if k not in CALIB_EXCLUDE}
+LOCI_EXCLUDED = {k: (_REG.loci("scripture").get(k), why) for k, why in CALIB_EXCLUDE.items()}
 
 
 def gold_by_chapter(gt: dict) -> dict[int, str]:

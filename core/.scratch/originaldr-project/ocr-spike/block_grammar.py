@@ -214,10 +214,70 @@ def detect_regime(page_result: dict, anchors: dict | None = None) -> dict:
             "why": "markers present but no grammar accounts for them — reported, not forced", "evidence": ev}
 
 
-_ROMAN = {"I": 1, "II": 2, "III": 3, "IIII": 4, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9,
-          "X": 10, "XI": 11, "XII": 12, "XIII": 13, "XIV": 14, "XV": 15, "XVI": 16, "XVII": 17,
-          "XVIII": 18, "XIX": 19, "XX": 20}
-CHAP_HEAD = re.compile(r"^\s*(?:CHAP(?:TER)?\.?|PSALME?\.?)\s*([IVXLC]+|\d{1,3})\b", re.I)
+_RVAL = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+
+
+def roman(tok: str):
+    """Subtractive roman -> int, tolerant of internal spaces and periods. None if not a roman numeral.
+
+    THE ONE roman parser. It previously existed twice — a hand-typed `_ROMAN` lookup here, capped at XX, and a
+    subtractive parser in `page_address` — which is the sixth instance of this project's recurring defect: one
+    hand-maintained rule silently disagreeing with another copy of itself. Any heading above chapter XX read as
+    `None` through this path while reading correctly through the other. The lookup is deleted rather than
+    extended, because extending it would only move the cap."""
+    t = re.sub(r"[\s.]", "", (tok or "").upper())
+    if not t or any(c not in _RVAL for c in t):
+        return None
+    total, prev = 0, 0
+    for c in reversed(t):
+        v = _RVAL[c]
+        total = total - v if v < prev else total + v
+        prev = max(prev, v)
+    return total or None
+
+
+# A chapter heading as the DR ACTUALLY PRINTS IT, which is not how the old pattern assumed.
+#
+# MEASURED DEFECT. The old pattern was `CHAP(?:TER)?\.?|PSALME?\.?` with `re.I`, and it saw 2,372 of the
+# corpus's 4,640 heading-bearing pages — 51%. Three print/recognition facts defeated it, none of them rare:
+#   1. Headings are set LETTER-SPACED, so the recognizer returns `C H A P. I.`, `CH A P. II.`, `C H A. I.`.
+#   2. The 1582/1610 New Testaments abbreviate to `CHA.`, not `CHAP.` — so `archive-nt-1582` yielded SIX
+#      readable headings in 762 pages, and its Matthew was addressed from chapter 2 onward with chapter 1
+#      never used at all.
+#   3. Display capitals are misrecognised in a small, stable set: `Cη`/`CN`/`CИ` for CH, `O`/`G`/`0` for C.
+# The miss was not random — it fell on exactly the letter-spaced and degraded pages, i.e. the hard ones. Since
+# printed headings are BOTH the DP's pin evidence and the held-out validation label, the honest accuracy figure
+# was being computed on an easy-biased half of the available evidence.
+#
+# The numeral is deliberately CASE-SENSITIVE (headings are set in caps) while the stem is not: with `re.I` on
+# the numeral, the marginal note `Cη. Ad` parsed as roman D = chapter 500.
+_CHAP_STEM = r"[CGO0][\s.]*[HNИηΗΝ][\s.]*A(?:[\s.]*P(?:[\s.]*T[\s.]*E[\s.]*R)?)?"
+# Psalms are NOT handled here. `page_address._PSALM_HEAD` owns them, and it tolerates the long-ſ forms
+# (`Pſalme`) that a literal-S stem would silently drop. A second psalm rule here would be this same recurring
+# defect a seventh time, so the psalm branch the old pattern carried is deliberately not reproduced.
+# Anchored to end of line: a heading IS the whole display line. The old `\b` tail let running text in.
+CHAP_HEAD = re.compile(r"^\W*" + _CHAP_STEM + r"[\s.]*([IVXLCDM]+|\d{1,3})\s*\.?\W*$")
+
+
+def display_words(text: str) -> list[str]:
+    """Word count of a line, with letter-spaced display runs collapsed back into single words.
+
+    `C H A P. I.` is one word and a numeral, not five words. The naive `len(text.split()) > 4` display-line
+    test therefore REJECTED the most heavily letter-spaced headings — the same pages the pattern above was
+    already missing, so the two defects compounded rather than merely coexisted."""
+    out: list[str] = []
+    buf: list[str] = []
+    for w in (text or "").split():
+        if len(w.strip(".")) <= 1:
+            buf.append(w)
+            continue
+        if buf:
+            out.append("".join(buf))
+            buf = []
+        out.append(w)
+    if buf:
+        out.append("".join(buf))
+    return out
 
 
 def chapter_ranges(page_result: dict) -> list[dict]:
@@ -238,7 +298,7 @@ def chapter_ranges(page_result: dict) -> list[dict]:
         if not m:
             continue
         tok = m.group(1).upper()
-        ch = _ROMAN.get(tok) if not tok.isdigit() else int(tok)
+        ch = int(tok) if tok.isdigit() else roman(tok)
         heads.append((i, ch))
     if not heads:
         return [{"chapter": None, "lo": 0, "hi": len(lines)}]

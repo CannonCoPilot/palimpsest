@@ -365,7 +365,241 @@ promotes both the scripture axis and the apparatus axis that the earlier assessm
   single transcription (corroborated at the coverage/count level, not collated word-for-word), and one
   chapter (2 Paralipomenon 12) is a genuine apparatus gap.</div></div>
 
-<h2>12 · Limitations &amp; what is not proven</h2>
+<h2>12 · Re-OCR stack validation — book-grain cross-witness audit</h2>
+
+<p class="lead">The reconstruction above is built from digital witnesses. This section audits the
+<em>re-OCR</em> pipeline that reads the page images themselves, book by book, with every witness of a
+book examined together rather than one source chased at a time.</p>
+
+<p>The method is a control design. Holding the <strong>book</strong> fixed and varying the
+<strong>witness</strong> makes the witnesses controls for one another, and a single question then separates
+two entirely different classes of defect:</p>
+
+<div class="callout">
+<p><strong>If every witness of a book fails the same verse, no witness's recognizer is at fault</strong> —
+the defect is <em>vertical</em> (addressing, pinning, segmentation, reference, gating). <strong>If one
+witness fails a verse its siblings read correctly</strong>, the defect is <em>horizontal</em> — that
+volume's scan, layout or recognizer head.</p>
+</div>
+
+<p>This was learned the expensive way. Two defects found in July 2026 — a chapter-range truncation and a
+line of page furniture read as a chapter heading — both presented as recognition problems and were neither.
+A sibling witness reading the same verse correctly is what exposed them.</p>
+
+<h3>12.1 · The operational vertical stack</h3>
+
+<p>Every defect is attributed to exactly one layer, and to the <em>lowest</em> layer that can explain it.
+Attributing a truncated span to "recognition" is precisely how one defect survived three rounds of
+investigation. The layer names the module to open.</p>
+
+<table>
+<thead><tr><th>Layer</th><th>Owns</th><th>Modules</th><th>Characteristic fault</th></tr></thead>
+<tbody>
+<tr><td><strong>V0</strong></td><td>Source inventory</td><td><code>witness_inventory</code>,
+<code>master-source-list.json</code></td><td>A book attested by a volume that cannot contain it; an
+admitted volume that is a duplicate rendering.</td></tr>
+<tr><td><strong>V1</strong></td><td>Page addressing</td><td><code>page_address</code> (monotone DP),
+<code>page_address_eval</code></td><td>A chapter with no page; a page on the wrong chapter. The DP is
+<em>monotone</em>, so one false heading does not mislabel one page — it makes every chapter between the true
+and false position unreachable.</td></tr>
+<tr><td><strong>V2</strong></td><td>Tome map</td><td><code>build_tome_map_v2</code></td><td>Divergence from
+V1. It is <em>derived</em> from addressing and so can never be fed back as a prior.</td></tr>
+<tr><td><strong>V3</strong></td><td>Pinning / body isolation</td><td><code>pin_carry_chain</code>,
+<code>_line_range</code>, <code>build_body_tokmap</code></td><td>A chapter's line range truncated or
+over-offered; marginal-column apparatus concatenated <em>into</em> a body line by the line builder, where no
+downstream role filter can reach it.</td></tr>
+<tr><td><strong>V4</strong></td><td>Verse localization</td><td><code>verse_locate.best_spans</code>,
+<code>verse_seg.segment</code></td><td>No span for a verse that is on the page; a span that stops short or
+swallows its neighbour.</td></tr>
+<tr><td><strong>V5</strong></td><td>Recognition</td><td><code>reocr_core</code> (kraken base/R1/R2),
+<code>r3_route</code> (olmOCR)</td><td>Substituted tokens. The <em>only</em> layer a better recognizer can
+fix — which is why every layer above it must be excluded first.</td></tr>
+<tr><td><strong>V6</strong></td><td>Reference</td><td>s_dismas (archaic, preeminent), odr_com (backfill),
+janvier/sabates_a (modern grid)</td><td>A locus the reference does not carry; a versification offset.</td></tr>
+<tr><td><strong>V7</strong></td><td>Gating / scoring</td><td><code>qc_audit</code>,
+<code>xsrc_gate</code></td><td>A metric that consults a set the label helped build; any rule that converts a
+below-bar unit into an accepted one.</td></tr>
+<tr><td><strong>V8</strong></td><td>Reporting / versioning</td><td><code>build_reocr_report</code>,
+<code>version_compare</code></td><td>A stale or circular figure persisted where a later reader will quote
+it.</td></tr>
+</tbody>
+</table>
+
+<h3>12.2 · Genesis — the first book audited</h3>
+
+<p>Genesis is carried by four witnesses. S4 and S8 are New Testament volumes and must not attest it at all;
+that they do not is itself the V0 check passing.</p>
+
+<div class="stats">
+  <div class="stat"><div class="v">4</div><div class="l">witnesses carrying Genesis (S1, S3, S9, S6)</div></div>
+  <div class="stat"><div class="v">1,530</div><div class="l">verses · 50 chapters</div></div>
+  <div class="stat"><div class="v">99.6%</div><div class="l">mean verse localization across witnesses</div></div>
+  <div class="stat"><div class="v">15.1 pts</div><div class="l">parity spread, best to worst witness</div></div>
+  <div class="stat"><div class="v">9.0%</div><div class="l">verses no witness can read — the vertical residue</div></div>
+  <div class="stat"><div class="v">0</div><div class="l">V0 alien attestations · 0 V1 chapter gaps</div></div>
+</div>
+
+<p><strong>Horizontal — parity across witnesses.</strong> Failures are decomposed by the shape of the diff
+against the archaic reference, and each mode points at a layer.</p>
+
+<table>
+<thead><tr><th>Witness</th><th>Volume</th><th>Localized</th><th>Passed</th><th>Pass rate</th>
+<th>A · extra <span class="chip">V3</span></th><th>B · missing <span class="chip">V4</span></th>
+<th>C · substituted <span class="chip">V5</span></th><th>D · near-miss <span class="chip">V5</span></th>
+<th>Misses <span class="chip">V4</span></th></tr></thead>
+<tbody>
+<tr><td><strong>S6</strong></td><td>jp2-S06 (1635 facsimile)</td><td>1530/1530</td><td>1170</td>
+<td><strong>76.5%</strong></td><td>10</td><td>17</td><td>221</td><td>112</td><td>0</td></tr>
+<tr><td><strong>S3</strong></td><td>pdf-S03a</td><td>1526/1530</td><td>1051</td><td>68.9%</td>
+<td>45</td><td>37</td><td>148</td><td>245</td><td>4</td></tr>
+<tr><td><strong>S9</strong></td><td>archive-holiebible-ot1</td><td>1530/1530</td><td>1041</td><td>68.0%</td>
+<td>51</td><td>50</td><td>103</td><td>285</td><td>0</td></tr>
+<tr><td><strong>S1</strong></td><td>archive-ot1-1609</td><td>1521/1530</td><td>933</td>
+<td><strong>61.3%</strong></td><td>33</td><td>38</td><td>314</td><td>203</td><td>9</td></tr>
+</tbody>
+</table>
+
+<p>The profiles differ in kind, not just in level. <strong>S1</strong>'s deficit is more than half
+substituted tokens (314 of 588 failures) — a V5 recognition problem specific to that volume.
+<strong>S9</strong>'s is dominated by near-misses (285 of 489), accumulated glyph noise rather than a
+structural fault. <strong>S6</strong> leads despite carrying the corpus's worst page-addressing accuracy,
+because the 1635 facsimile's wider setting produces the fewest interleaving and truncation errors (A+B = 27,
+against S9's 101). Scan layout and recognition quality are independent axes.</p>
+
+<p><strong>Cross-witness verdict</strong> over all 1,530 verses: <strong>723 (47.3%)</strong> pass in every
+witness, <strong>669 (43.7%)</strong> split — some witnesses pass, some do not, which is the horizontal
+working set — and <strong>138 (9.0%)</strong> fail in every witness. That last figure is the honest size of
+the vertical problem in Genesis: no recognizer improvement can reach those verses.</p>
+
+<h3>12.3 · What the audit found and what it cost</h3>
+
+<p>Four defects were found and fixed in the course of bringing the instrument to the point where this table
+could be trusted. Each was invisible until something unrelated looked wrong.</p>
+
+<table>
+<thead><tr><th>#</th><th>Layer</th><th>Defect</th><th>Scale</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>6</td><td><span class="chip">V1</span></td><td>The chapter-heading pattern did not match how the
+Douay-Rheims prints headings: letter-spaced (<code>C H A P. I.</code>), the New Testament's
+<code>CHA.</code> abbreviation, and a stable set of display-capital misreads.</td><td>Saw 2,372 of 4,640
+heading-bearing pages — <strong>51%</strong>. One volume yielded six readable headings in 762
+pages.</td><td>Fixed</td></tr>
+<tr><td>7</td><td><span class="chip">V7</span></td><td>The persisted held-out accuracy consulted a set the
+heading itself helped build.</td><td>Read exactly <strong>1.0</strong> on all eleven volumes, in both
+modes.</td><td>Fixed</td></tr>
+<tr><td>8</td><td><span class="chip">V3</span></td><td>A chapter's line range took only the first
+printed-heading pin, discarding everything above a mid-page heading.</td><td><strong>3,006 pages,
+67,284 body lines</strong> discarded; 275 further pages over-offered.</td><td>Fixed</td></tr>
+<tr><td>9</td><td><span class="chip">V1</span></td><td>Page furniture read as a chapter heading — a
+<code>Pſal. 30</code> below the last body line, beside the next leaf's header.</td><td>Erased
+<strong>three whole psalms</strong>; 68 of 4,085 headings (1.7%) are of this kind.</td><td>Fixed</td></tr>
+</tbody>
+</table>
+
+<p>A fifth candidate was investigated and <em>rejected</em>, which is worth recording because it is the
+trap this method exists to avoid. The tokens that most often fail to anchor to the modern grid —
+<code>sone</code>, <code>therfore</code>, <code>daies</code>, <code>citie</code>, <code>geue</code>,
+<code>betwene</code>, <code>darkenes</code>, <code>uho</code> — are shared across three or four independent
+witnesses, and they are not apparatus and not noise: they are <strong>correct archaic spellings</strong>
+that a modern-spelling reference cannot match. Widening the apparatus filter to excise them would have
+deleted scripture in order to raise a score.</p>
+
+<h3>12.4 · Open at this layer</h3>
+
+<ul>
+<li><strong>Genesis parity spread of 15.1 points is not accepted.</strong> S1 at 61.3% against S6 at 76.5%
+on the same 1,530 verses is a per-volume V5 problem with a concrete profile (314 substituted-token
+failures), not a diffuse quality gap.</li>
+<li><strong>138 all-witness failures in Genesis (9.0%)</strong> are vertical and remain open. They are the
+correct target for the next round, because they are the verses no recognizer work can reach.</li>
+<li><strong>One volume, jp2-S06, sits at 52.15% held-out addressing accuracy</strong> against roughly 87%
+for the next worst. Its heading-vs-addressing disagreement is 4.77% against about 1% elsewhere.</li>
+</ul>
+
+
+<h3>12.5 · Four-way validation of the Genesis witnesses</h3>
+
+<p>Before analysing failures, the four Genesis volumes were cross-checked against one another. Structure is
+sound — every witness localizes 99.4–100% of the 1,530 verses, no witness attests a book its tome cannot hold,
+and no chapter is unreachable in any volume. Four defects surfaced, of which one was substantial.</p>
+
+<table>
+<thead><tr><th>Layer</th><th>Finding</th><th>Scale</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><span class="chip">V6</span></td><td><strong>The archaic reference shifts part-way through a
+chapter.</strong> Genesis 1 is aligned for 25 verses then shifted by one for verses 26–31; Genesis 26 is
+shifted for 32 verses, the offset itself growing from −1 to −2. The existing realigner fits <em>one</em> offset
+per chapter, so an aligned head averages a shifted tail away and the chapter is declared sound.</td>
+<td>65 chapters corpus-wide; 474 loci inside the five audited books</td><td>Fixed — piecewise
+alignment</td></tr>
+<tr><td><span class="chip">V6</span></td><td><strong>A one-verse reference stub overrides a complete
+one.</strong> <code>s_dismas</code> carries exactly one verse for Genesis 8, and its text is Genesis 8:6–7;
+because s_dismas is preeminent it displaces <code>odr_com</code>'s correct 8:1. Genesis 46 has the same
+shape.</td><td>2 verses × 4 witnesses</td><td>Detected; caught by the same alignment pass</td></tr>
+<tr><td><span class="chip">V1</span></td><td><strong>Volume front matter is addressed as Genesis 1.</strong>
+The <em>Approbatio</em>, the <em>Epistle to the Reader</em> and the <em>Proemial Annotations</em> land on
+chapter 1 — 24 pages in S1, 26 in S3, 27 in S9, 8 in S6.</td><td>Contained: the localizer's better-fit rule
+keeps 29–30 of 31 verses on real pages in S1/S3, but S9 and S6 lose 12 and 11</td><td><strong>Open</strong> —
+see below</td></tr>
+<tr><td><span class="chip">V1</span></td><td>The running head is set letter-spaced, so
+<code>G E N E S 1 5.</code> folded to five single letters and never matched the book name.</td><td>Book-name
+match 26% → 46% of scripture pages</td><td>Fixed — corpus-neutral</td></tr>
+</tbody>
+</table>
+
+<p>The front-matter defect could not be fixed honestly, and the reason is worth recording. Three discriminators
+were tested and all three failed: <strong>vocabulary</strong> (front matter scores 0.32–0.51 against Genesis 1
+because the Epistle and Annotations are largely <em>about</em> Genesis), <strong>verse-number density</strong>
+(keeping 90% of real pages also keeps 51% of front matter), and <strong>peakedness</strong> of the chapter-fit
+distribution (a threshold that removes 89% of front matter also discards 57% of real scripture). The structural
+fix is to give matter its own address, which is an already-open item — front matter is being forced into
+chapter 1 because the address space has nowhere else to put it.</p>
+
+<h3>12.6 · Anatomy of the all-fail verses</h3>
+
+<p>137 Genesis verses fail in every witness. Each was measured against the 724 that pass in every witness —
+same book, same pipeline, same references — so an axis on which the two agree rules a cause <em>out</em>.</p>
+
+<table>
+<thead><tr><th>Group</th><th>Axis</th><th>All-fail</th><th>Control</th><th>Ratio</th><th>Implicates</th></tr></thead>
+<tbody>
+<tr><td>PLACEMENT</td><td><strong>verse 1 of its chapter</strong></td><td>0.080</td><td>0.017</td>
+<td><strong>4.8×</strong></td><td><span class="chip">V3</span></td></tr>
+<tr><td>LINE-SPLIT</td><td><strong>neighbour verse on another page</strong></td><td>0.167</td><td>0.062</td>
+<td><strong>2.7×</strong></td><td><span class="chip">V4</span></td></tr>
+<tr><td>PLACEMENT</td><td>last verse of its chapter</td><td>0.058</td><td>0.026</td><td>2.2×</td>
+<td><span class="chip">V3</span></td></tr>
+<tr><td>PLACEMENT</td><td>verse closes the page body</td><td>0.114</td><td>0.064</td><td>1.8×</td>
+<td><span class="chip">V3</span></td></tr>
+<tr><td>TYPESETTING</td><td>soft-hyphen breaks in the span</td><td>0.420</td><td>0.237</td><td>1.8×</td>
+<td><span class="chip">V5</span></td></tr>
+<tr><td>PLACEMENT</td><td>verse opens the page body</td><td>0.156</td><td>0.110</td><td>1.4×</td>
+<td><span class="chip">V3</span></td></tr>
+<tr><td>CONTENT</td><td>reference length</td><td>28.0 tok</td><td>23.7 tok</td><td>1.2×</td><td>—</td></tr>
+<tr><td>LAYOUT</td><td>marginalia share of page lines</td><td>0.186</td><td>0.163</td><td>1.1×</td><td>—</td></tr>
+<tr><td>LAYOUT</td><td>distinct body x-starts (columns)</td><td>3.18</td><td>2.81</td><td>1.1×</td><td>—</td></tr>
+<tr><td>VOCABULARY</td><td>capitalised tokens (proper names)</td><td>0.127</td><td>0.144</td><td>0.9×</td><td>—</td></tr>
+<tr><td>CONTENT</td><td>mean token length</td><td>4.32</td><td>4.33</td><td>1.0×</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div class="callout">
+<p><strong>The all-fail verse is a boundary verse, not a hard verse.</strong> Every axis that separates the two
+groups is positional — opening a chapter, closing a page, straddling a page break. Every axis that measures
+<em>difficulty</em> — vocabulary, proper-name density, token length, marginal-apparatus load, column count —
+is flat. Genesis's residual failures are structural, and no recognizer improvement addresses them.</p>
+</div>
+
+<p>Reading the pages confirms the mechanism, and there are three of them, all at chapter openings. The
+<strong>drop capital</strong> is detached and lost: Genesis 3:1 reads <em>"But the serpent"</em> in the
+reference, and every witness returns <em>"but the serpent … beasts <strong>D</strong> of the earth"</em> —
+the large initial emitted as a stray glyph mid-line while the verse begins lowercase. The <strong>marginal
+note is spliced into the body</strong>: Genesis 9:1 returns <em>"And he said to <strong>Ofthis com. IL</strong>
+them::: Increase … the earth. <strong>mandment, or I</strong>"</em>, the note broken across two insertion
+points. And the <strong>chapter argument bleeds in</strong>: two witnesses open Genesis 8:1 with
+<em>"and offereth sacrifice"</em>, the tail of the chapter summary rather than scripture.</p>
+
+<h2>13 · Limitations &amp; what is not proven</h2>
 <ul>
 <li><strong>Apparatus wording is single-transcription.</strong> Coverage is near-complete
 (99.925%) and corroborated by Madueke_B at the count level, and the
@@ -386,7 +620,7 @@ WYSIWYG in exactly one place — the spurious Tobias chapter is dropped (§10), 
 confirmed by the Madueke witness, which never carried it.</li>
 </ul>
 
-<h2>13 · Recommendations</h2>
+<h2>14 · Recommendations</h2>
 <ul>
 <li><strong>Accept as gold.</strong> Reproduction + structure are HIGH and scripture content is now
 HIGH (three-witness, stratified-random print CI), externally gated at 76/76 with no

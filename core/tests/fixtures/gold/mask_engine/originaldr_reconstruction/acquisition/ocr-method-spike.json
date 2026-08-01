@@ -1,0 +1,44 @@
+{
+  "spike": "P4.1 diplomatic-OCR method selection",
+  "date": "2026-07-06",
+  "goal": "Select an OCR method that preserves long-ſ (U+017F), æ, œ, u/v, i/j diplomatically for the DR 1582/1609/1610 Roman/Antiqua scans, replacing the ſ→f stock-tesseract 'ocr_consensus' scaffold (§6.2/6.3 defect).",
+  "ground_truth": {
+    "page": "nt-1582 jp2_idx 0028 = Matthew 1 (verses 1–15 on this leaf; ends catchword 'Mathan')",
+    "reference": "s-dismas render_archaic surfaces (ſ-preserving transcription, independent of the archive.org scan) for scripture/matthew/1/1–15",
+    "gt_stats": {"verses": 14, "fold_tokens": 68, "long_s_words": 11, "long_s_glyphs": 25}
+  },
+  "source_resolution_finding": {
+    "archive_org_jp2": "800x1124 @ 70 dpi (hOCR scan_res 70 70) — low-res derivative",
+    "annas_eebo_pdf": "1024x1385 @ 72 dpi — EEBO microfilm-derived, only ~1.28x archive.org",
+    "implication": "Both scan lines are inherently ~70–72 dpi. Word-accuracy ceiling ~0.8 fold even for SOTA models is a SOURCE property, not a model failure. Honest per-region/per-book confidence variation (aim #4, the canonical error map) is therefore a genuine deliverable, not a defect to hide."
+  },
+  "design_constraint": {
+    "rule": "spelling_glyph_model.py §6.1: archaic forms must be restored from the WITNESS, never from a lossy inverse of the modern text.",
+    "consequence": "Rule-based ſ re-insertion onto a ſ-normalized reading (e.g. CATMuS output) is FORBIDDEN — it fabricates orthography. For the 199 gap-book verses (no archaic transcription witness), the ONLY ſ witness is the scan glyph itself, so the method MUST natively preserve ſ. This disqualifies ſ-normalizing models (CATMuS, script/Latin) for gap-book rendering."
+  },
+  "candidates_scored": {
+    "note": "Comparative on the SAME page vs GT v1–15. fold=word-accuracy (ſ→s folded); dipl=diplomatic-form recall (unfolded); ls_word=fraction of GT ſ-words read VERBATIM with ſ; ls=count of ſ emitted. Input=2x Lanczos unless noted.",
+    "results": [
+      {"model": "tesseract stock eng (baseline / the defect)", "engine": "tesseract", "fold": 0.33, "dipl": 0.323, "ls_word": 0.0, "ls": 0, "verdict": "ſ→f garbage; the §6.2 defect quantified"},
+      {"model": "tesseract script/Latin (tessdata_best)", "engine": "tesseract --oem1 --psm6", "fold": 0.765, "dipl": 0.750, "ls_word": 0.0, "ls": 0, "verdict": "good words but LSTM normalizes ſ→s/f even with dawgs off; NOT diplomatic"},
+      {"model": "tesseract script/Fraktur (tessdata_best)", "engine": "tesseract --oem1 --psm6", "fold": 0.721, "dipl": 0.721, "ls_word": 0.818, "ls": 25, "verdict": "ſ-preserving (positive control) but Fraktur letterform bias caps Roman-type word accuracy"},
+      {"model": "rescribe lat (Tesseract 3.x)", "engine": "tesseract --oem0", "fold": 0.074, "dipl": 0.074, "ls_word": 0.091, "ls": 17, "verdict": "legacy engine collapsed on this 70dpi scan; unusable"},
+      {"model": "CATMuS-Print Large (zenodo 10592716, fondue)", "engine": "kraken -bl", "fold": 0.809, "dipl": 0.676, "ls_word": 0.0, "ls": 0, "verdict": "BEST raw word reading + reads ſ as CORRECT s (not f) + emits period abbrevs (ꝯ,¬), but NORMALIZES ſ→s — disqualified by design constraint for gap books"},
+      {"model": "german_print (zenodo 10519596, antiqua)", "engine": "kraken -bl", "fold": 0.706, "dipl": 0.706, "ls_word": 0.364, "ls": 23, "verdict": "partial ſ; weaker reading"},
+      {"model": "reichenau_lat_cat (zenodo 11113737, Latin Incunabula/Early Prints)", "engine": "kraken -bl", "fold": 0.779, "dipl": 0.779, "ls_word": 0.727, "ls": 47, "verdict": "WINNER — near-top word accuracy AND native ſ preservation (dipl==fold: ſ in correct positions, no penalty); u/v preserved; design-compliant"}
+    ]
+  },
+  "winner": {
+    "model": "reichenau_lat_cat_099218.mlmodel",
+    "doi": "10.5281/zenodo.11113737",
+    "engine": "kraken 7.0.2 (baseline segmentation -bl)",
+    "input_scale": "2x Lanczos upscale of the 70dpi scan (fold 0.779; 1x=0.750/ls_word 0.909, 3x=0.779/ls_word 0.818 — scale within noise, 2x fastest)",
+    "throughput": "~14–32 s/page single-threaded on CPU (segmentation-dominated) — full-tome run is multi-hour; parallelize + resumable-cache like ocr_fulltome.py",
+    "rationale": "Best BALANCE of word accuracy (0.78, ~tied CATMuS 0.81, above Fraktur 0.72) and native diplomatic ſ (0.73–0.91 ls_word). A CATMuS-family Latin model that KEEPS the long-s. Qualitative body read genuinely diplomatic: 'the ſonne of Dauid', 'Iſaac', 'Naaſſon', 'Tranſmigration', u/v preserved. Errors are proper-noun confusions at 70dpi + right-margin annotation bleed (a region-typing job for P4.2)."
+  },
+  "next": [
+    "Build ocr_pipeline.py: kraken reichenau_lat + hOCR/marginalia-geometry region-typing (body scripture x[0.10-0.90] vs marginal bands = apparatus), over BOTH scan lines (archive.org jp2 + annas EEBO via pdftoppm), scripture + apparatus, resumable/detached.",
+    "Fuse the two independent ~70dpi scan lines (consensus) to lift accuracy + reach >=2x depth.",
+    "OPTIONAL refinement if §6.4 accuracy bar unmet: fine-tune reichenau_lat on s-dismas-witness-aligned line GT (design-compliant: native glyph reading, not rule-inversion)."
+  ]
+}

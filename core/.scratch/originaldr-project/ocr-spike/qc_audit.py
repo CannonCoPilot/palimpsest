@@ -48,6 +48,32 @@ import char_identity as CI          # noqa: E402  # type: ignore[import-not-foun
 import long_s_rule as LS            # noqa: E402  # type: ignore[import-not-found]
 import verse_seg as VS              # noqa: E402  # janvier-cut re-segmentation (REPLACES align_coords 2026-07-22)
 import curated_sources as CS        # noqa: E402  # REP-1 allowlist guard (drop S2,S5,S7,S10-S15 leak)
+import corpus_localize as CL       # noqa: E402  # STAGE 1: the hybrid localizer's corpus vmap
+
+# WHICH LOCALIZER PRODUCES THE VERSE MAP THE AUDIT SCORES.
+#   "detect" — legacy `detect_our_ocr.detect_book`; the operating point every report before v019 measured.
+#   "hybrid" — `page_address` + `verse_locate.best_spans` over the SAME stored stream (STAGE 1). No page is
+#              re-recognised; the pages already on disk are addressed and localized properly.
+# Kept switchable because the whole point of Stage 1 is a BEFORE/AFTER on identical inputs. Measured on gold
+# (corpus_wire_probe): base mean 0.7213 / 40% pass -> hybrid 0.8724 / 60% pass = 74% of the full live-R2 lift,
+# with zero re-recognition.
+LOCALIZER = os.environ.get("ODR_LOCALIZER", "hybrid")
+
+# Realign the archaic reference's verse indexing to janvier before scoring (see build_refs).
+REALIGN_ARCHAIC = os.environ.get("ODR_REALIGN_ARCHAIC", "1") != "0"
+
+# THE PREDICATE BEHIND THE DAY-1 RULE. `char_identity.evaluate_locus` already implements Sir's policy — the
+# archaic witness governs where it has text, the modern witness governs otherwise — but its predicate is
+# "the archaic slot holds a NON-EMPTY STRING", which is not the same as "the archaic witness has text OF ITS
+# OWN for this verse". A slot holding the neighbouring verse satisfies the string test and then governs, and
+# fails, a verse the OCR read correctly.
+#
+# CALIBRATED, NOT PICKED (floor_modern = archaic-ref vs modern-ref, no OCR involved):
+#     archaic_id > 0.9 (reference demonstrably right)   floor_modern < 0.5 on     0 / 4714
+#     archaic<0.2 & modern<0.2 (OCR at fault)           floor_modern < 0.5 on   104 /  998
+#     archaic<0.2 & modern>0.9 (reference at fault)     floor_modern < 0.5 on   504 /  517
+# 0.50 therefore excludes essentially no sound reference and catches 97% of the demonstrably wrong ones.
+ARCHAIC_VALID_FLOOR = float(os.environ.get("ODR_ARCHAIC_FLOOR", "0.50"))
 
 ALIGN_COORDS = os.environ.get("NO_ALIGN_COORDS") != "1"  # janvier-cut re-seg on by default; NO_ALIGN_COORDS=1 off
 
@@ -97,6 +123,29 @@ def build_refs() -> tuple[dict[str, str], dict[str, str], dict[str, str], dict[s
     modern.update(sa)                       # sabates_a preeminent, madueke_b backfills
     archaic_src = {k: ("s_dismas" if k in sd else "odr_com") for k in archaic}
     modern_src = {k: ("sabates_a" if k in sa else "madueke_b") for k in modern}
+
+    # REALIGN THE ARCHAIC REFERENCE BEFORE IT IS USED. s_dismas does not count the Psalm superscription as
+    # verse 1 where janvier does, so every verse of such a psalm is indexed one behind; 27 chapters across 13
+    # books are shifted this way (see archaic_ref_align.py — the offset profiles peak sharply at one shift and
+    # sit at 0.0 at every other, which is what distinguishes a shift from a genuine textual divergence).
+    # Uncorrected, those verses fail the archaic gate while the OCR agrees with janvier above 0.9, i.e. a
+    # REFERENCE indexing artifact reported as an OCR failure. Realigning RECOVERS the diplomatic reference
+    # rather than discarding it, which is what a project about the archaic surface actually needs.
+    if REALIGN_ARCHAIC:
+        import archaic_ref_align as ARA
+        shifts = ARA.detect(archaic, modern)
+        if shifts:
+            archaic, archaic_src = ARA.apply(archaic, archaic_src, shifts)
+        # SECOND PASS — the shift that begins MID-CHAPTER, which the whole-chapter fit above cannot see.
+        # `detect` scores one offset across every verse of a chapter, so an aligned head averages a shifted
+        # tail away: Genesis 1 is aligned for 25 verses and shifted for 6, and was therefore declared sound
+        # while those 6 were scored against the neighbouring verse. Genesis 26 is 32 verses shifted, with the
+        # offset itself growing from -1 to -2 part-way down. Found by the book-grain cross-witness audit —
+        # all four witnesses failing the SAME verses is the signature of a reference defect, never a
+        # recognizer one. Still scored on archaic-vs-modern only, so no OCR can influence the alignment.
+        pieces = ARA.detect_piecewise(archaic, modern)
+        if pieces:
+            archaic, archaic_src = ARA.apply_piecewise(archaic, archaic_src, pieces)
     return archaic, modern, archaic_src, modern_src
 
 
@@ -191,14 +240,22 @@ CHRONIC_DIVERGENT = {"acts", "2-paralipomenon", "2-esdras", "romans", "mark", "p
 
 
 def route_locus(book: str, verdict: dict[str, Any], floor_mod: float | None,
-                ls_suspect: dict[str, Any]) -> dict[str, Any]:
+                ls_suspect: dict[str, Any], archaic_valid: bool = True) -> dict[str, Any]:
     """§1.4 scoped re-OCR routing for one scan record — which instrument GATES this locus and whether re-OCR
     should fire. The archaic (in-edition) gate is the real quality bar; the modern gate is used only where it
     is a VALID yardstick (floor_modern >= 0.90 and the book is not chronically divergent). Never accepts a
     locus on an invalid modern number, never burns re-OCR chasing one (No Silent Degradation)."""
     aid, mid = verdict["archaic_id"], verdict["modern_id"]
     aref, mref = verdict["archaic_ref_exists"], verdict["modern_ref_exists"]
-    modern_valid = (floor_mod is None) or (floor_mod >= CI.THRESHOLD)   # unassessable -> don't invalidate
+    # `floor_modern` compares the ARCHAIC reference to the MODERN one, so a low value can mean either
+    # "the modern edition diverges from the print" (invalidating modern) OR "the archaic entry is not this
+    # verse" (invalidating archaic). It cannot mean both at the same locus. Once the archaic reference has
+    # been WITHDRAWN as not-this-verse, the comparison it came from is void and cannot also condemn modern —
+    # otherwise the verse ends up with no valid yardstick at all and can never pass, which is precisely what
+    # happened when the predicate fix landed: 1752 records fell to `needs-in-family-reference` while only 16
+    # reached the modern gate. Sir's policy is explicit that where the archaic witness has gaps, janvier and
+    # madueke ARE primary for content and surface.
+    modern_valid = (not archaic_valid) or (floor_mod is None) or (floor_mod >= CI.THRESHOLD)
     susp = ls_suspect["suspected_long_s_as_f"]
     if aref:
         fire = (aid is None) or (aid < CI.THRESHOLD)
@@ -315,20 +372,35 @@ def main(argv: list[str]) -> int:
             if not w or w.get("kind") != "scan":
                 continue
             best: dict[str, Any] | None = None
-            for ocr_dir in scan_ocr_dirs(w):
-                stm = stream_for(ocr_dir)
-                if stm is None:
+            if LOCALIZER == "hybrid":
+                # The volume was addressed page-by-page (page_address, 100% coverage / 1251-of-1251 held-out)
+                # and localized with best_spans; pick the volume that actually attests the most of this book.
+                for ocr_dir in scan_ocr_dirs(w):
+                    vm = CL.load(ocr_dir)
+                    vmap = {(ch, v): t for (b, ch, v), t in vm.items() if b == book}
+                    if not vmap:
+                        continue
+                    if best is None or len(vmap) > len(best["vmap"]):
+                        best = {"meta": {"probe_recall": None}, "vmap": vmap, "ocr_dir": ocr_dir}
+                if best is None:
                     continue
-                streams = {ocr_dir: stm}
-                reads, _, meta = D.detect_book(book, anchor_ch, wid, streams)
-                if not meta.get("covered"):
+                # NO realign_vmap here: best_spans already cut these spans with verse_seg/the anchor walk, and
+                # re-segmenting the result would discard exactly the localization Stage 1 exists to deliver.
+            else:
+                for ocr_dir in scan_ocr_dirs(w):
+                    stm = stream_for(ocr_dir)
+                    if stm is None:
+                        continue
+                    streams = {ocr_dir: stm}
+                    reads, _, meta = D.detect_book(book, anchor_ch, wid, streams)
+                    if not meta.get("covered"):
+                        continue
+                    if best is None or (meta.get("probe_recall") or 0) > (best["meta"].get("probe_recall") or 0):
+                        best = {"meta": meta, "vmap": verse_texts_from_reads(reads, book), "ocr_dir": ocr_dir}
+                if best is None:
                     continue
-                if best is None or (meta.get("probe_recall") or 0) > (best["meta"].get("probe_recall") or 0):
-                    best = {"meta": meta, "vmap": verse_texts_from_reads(reads, book), "ocr_dir": ocr_dir}
-            if best is None:
-                continue
-            if ALIGN_COORDS:
-                best["vmap"] = realign_vmap(best["vmap"], book)   # rehabilitate boundaries pre-scoring
+                if ALIGN_COORDS:
+                    best["vmap"] = realign_vmap(best["vmap"], book)   # rehabilitate boundaries pre-scoring
             probe_recall = best["meta"].get("probe_recall")
             for (ch, v), ocr_text in best["vmap"].items():
                 locus = f"scripture/{book}/{ch}/{v}"
@@ -336,11 +408,19 @@ def main(argv: list[str]) -> int:
                     per_locus[locus] = {}
                 m_ref = modern_ref.get(locus)
                 a_ref = archaic_ref.get(locus)
-                verdict = CI.evaluate_locus(ocr_text, m_ref, a_ref)
+                # The archaic witness is primary ONLY where it carries this verse's own text. Where its
+                # entry disagrees with the modern reference below the calibrated floor, it is not a valid
+                # yardstick for this locus and the modern witness governs (Sir's stated policy, with the
+                # predicate corrected). The verdict still REPORTS both scores; only the gate changes.
+                _fm = CI.floor_modern(a_ref, m_ref)
+                _archaic_valid = (_fm is None) or (_fm >= ARCHAIC_VALID_FLOOR)
+                verdict = CI.evaluate_locus(ocr_text, m_ref, a_ref if _archaic_valid else None)
+                verdict["archaic_id"] = CI.archaic_identity(ocr_text, a_ref) if (a_ref or "").strip() else None
+                verdict["archaic_reference_invalid_here"] = not _archaic_valid
                 rule_pass = LS.rule_pass(ocr_text) if not verdict["archaic_ref_exists"] else None
                 floor_mod = CI.floor_modern(a_ref, m_ref)
                 ls_suspect = CI.suspected_long_s_as_f(ocr_text, a_ref)
-                routing = route_locus(book, verdict, floor_mod, ls_suspect)
+                routing = route_locus(book, verdict, floor_mod, ls_suspect, archaic_valid=_archaic_valid)
                 # backward gate counts a scan only on a VALID pass: a modern pass on an invalid yardstick
                 # (needs-in-family-reference / needs-reference) does not count (§1.4 sub-rules 2-3).
                 passed_eff = bool(verdict["passed"]

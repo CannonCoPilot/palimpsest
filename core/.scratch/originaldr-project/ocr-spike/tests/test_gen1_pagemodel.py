@@ -387,3 +387,49 @@ def test_r3_adoption_requires_clearing_the_bar():
     incumbent = {"s_dismas": 0.85, "odr_com": 0.85}
     assert gen1_r3._governing(better_but_short) > gen1_r3._governing(incumbent)
     assert gen1_r3._governing(better_but_short) < 0.90, "so the ADOPT test below must fail it"
+
+
+# --- GENESIS 15 / 3 / 6: the chapter models added 2026-07-31, and the one that was rejected ------------------
+
+def test_genesis_15_s6_leaf_bound_is_the_swept_value():
+    """`jp2-S06` p74 is the first leaf on which an annotation column was separated GEOMETRICALLY, and it is
+    per-leaf for the p50/p51 reason: p75 has no right column and its body runs out to x1803.
+
+    Swept over ch15's cells (baseline 64/84): 0.825->64, 0.780->65, 0.765->66, 0.755->66, 0.746->66,
+    0.740->66, 0.735->65, 0.730->65. The plateau is 0.740-0.765 and 0.746 is the MEASURED GUTTER MIDPOINT
+    (body line-ends x1<=1647, margin column x0>=1673), so the bound is right for the reason it is right."""
+    ov = PM.PAGE_OVERRIDE.get(("jp2-S06", 74))
+    assert ov is not None, "the ch15 p74 bound must stay wired"
+    lo, hi = ov["body"]
+    assert 0.740 <= hi <= 0.765, "the right bound must stay inside the swept plateau"
+    assert ("jp2-S06", 75) not in PM.PAGE_OVERRIDE, \
+        "p75 must NOT inherit p74's bound — it has no right column and would lose scripture"
+
+
+def test_genesis_15_opens_on_a_mixed_leaf_on_three_witnesses():
+    """p74 carries the TAIL OF CHAPTER 14'S ANNOTATIONS above `CHAP. XV.` — a continuation leaf with no
+    ANNOTATIONS heading, so `_is_annotation_leaf` cannot see it. `chapter_open_y` filters words before the rows
+    are grouped, which removes it without touching that rule. Verified by reading the removed tokens: 636
+    across the three witnesses, all annotation or argument, no scripture, and one word RESTORED (`excee-` +
+    `ding` -> `exceeding`, which the intruding margin had been splitting)."""
+    for od, page in [("archive-ot1-1609", 79), ("jp2-S06", 74), ("archive-holiebible-ot1", 89)]:
+        cm = PM.CHAPTER_MODEL[(od, 15)]
+        assert cm["open_page"] == page
+        assert 0.0 < cm["chapter_open_y"] < 1.0
+    assert ("pdf-S03a", 15) not in PM.CHAPTER_MODEL, \
+        "S3's chapter-15 leaf is NOT located by the probe; a guessed open_page may not be encoded"
+
+
+def test_genesis_6_s3_chapter_model_stays_rejected():
+    """PINNED NEGATIVE RESULT (2026-07-31). Naming S3's opening leaf for genesis 6 costs one cell —
+    ch6 69/88 -> 68/88, S3 0.8636 -> 0.8182, S1/S6/S9 unmoved — and the cell it loses is VERSE 1 itself.
+
+    `open_page` does not merely ADD the leaf as a candidate, it PREFERS it over the chapter stream. This
+    leaf's verse 1 reads `afterthat men began to be multiplied vpon Nearth` (0.862) against the stream's
+    passing copy: the opening `AND` is gone AND the engraved initial is glued to the next word, so no
+    `drop_cap` can recover it. Genesis 8 recorded the same selector from the other side, where the leaf was
+    better and the stream had a word missing. Measure per witness before adding an entry."""
+    assert ("pdf-S03a", 6) not in PM.CHAPTER_MODEL, \
+        "the genesis-6 S3 entry is a measured regression and must stay out"
+    for od in ("archive-ot1-1609", "jp2-S06", "archive-holiebible-ot1"):
+        assert (od, 6) in PM.CHAPTER_MODEL, "the other three witnesses take the entry harmlessly"
