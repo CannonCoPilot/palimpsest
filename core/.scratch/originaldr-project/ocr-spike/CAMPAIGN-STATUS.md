@@ -170,6 +170,49 @@ own median — every one of this session's large wins came off the top of that l
   on. Whole printed lines from different columns share a y-band and the row grouper merges them. Closing the
   worst chapters needs row-level column assignment, which is a BUILD, not a tuning.
 
+## THE R2/R3 FINDING — where the remaining ~1,100 cells actually are (2026-07-31)
+
+**1,142 cells are ones R3 HAS ALREADY READ CORRECTLY.** Counted across every `r3-residual-genesis-*.json`:
+R3's reading passes **all four references at >=0.90**, and the adoption is refused for one reason only —
+`CONTENT OK, ſ-SURFACE OPEN`. That verdict appears **1,158** times against 1,133 `ADOPT`. The remaining gap on
+the board is ~1,080 cells. **These are the same cells.** The recognizer is not the binding constraint; the
+ſ-surface attestation is.
+
+**THE ATTESTING ARM IS THE BASE SCAN OCR, NOT THE FINE-TUNED RECOGNIZER.** `s_arbiter.transfer(r2_text,
+r3_text)` closes a surface only where the attesting arm OBSERVED the glyph, and `gen1_r3` passes
+`t["old_text"]` — the incumbent page-model text, which comes from the stored corpus OCR. Meanwhile
+`reocr_core` defines `R2_MODEL = models/reichenau_dr.mlmodel`, the ſ-faithful DR fine-tune (val 0.9396), and
+`models/dr_v3_armA/best_0.9739.mlmodel` scores better still — and **grep finds no reference to any of them in
+`gen1_*.py`, `s_arbiter.py` or `chapter_campaign.py`.** The trained ſ-faithful recognizer is not in the path
+that needs it.
+
+**THIS IS THE NEXT BUILD, and it is the one that unlocks the campaign**: recognize each leaf with the
+fine-tuned R2 model, align its output to the verse spans, and give `s_arbiter` a genuinely ſ-faithful arm to
+attest from. Every closure it produces is an OBSERVATION, which is the only kind this project accepts.
+
+**WHAT MAY NOT BE DONE INSTEAD.** `s_lexicon` refuses about three quarters of what it is asked, and that
+strictness is exactly why it validates at 1.0000 on held-out GT. Loosening it to close these cells would be
+inventing glyphs — `long_s_rule.restore_long_s` was rejected at ~90.4% for precisely that, about one invented
+glyph in ten published as the printed surface.
+
+**Composition of the 1,726 unresolved token-occurrences** (measured, and the measurement corrected twice —
+see below):
+* **324 are f-decisions the lexicon can settle**: folding the `f` to `s` yields a non-word (`slocks`, `slesh`,
+  `sield`, `sormed`), so the `f` is a true `f`. **Caveat, stated because it is real:** the book lexicon is
+  Genesis-only, so `found`->`sound` counts as decidable here while the wider book has `ſound`. Scope any such
+  closure to the lexicon that justifies it.
+* **84 must never be guessed**: folding gives a REAL word — `wife`/`wise`, `foule`/`soule`, `feed`/`seed`,
+  `fold`/`sold`. These are the refusals that make the instrument trustworthy.
+* **1,318 are s-decisions and the remainder** — an attesting recognizer or an eye, nothing else.
+
+**TWO MEASUREMENTS OF MINE WERE WRONG BEFORE THEY WERE RIGHT, both worth remembering.** The first concluded
+"0 of 1,726 unresolved tokens are in the ſ-lexicon" — the lookup was against the edition keys rather than the
+words, and the lexicon in fact holds `ſonne` (31 obs), `alſo` (40). The second tested decidability by folding
+`f`->`ſ` and asking whether the result was a book word: **the book lexicon contains zero long-ſ characters**,
+so that test can never be true and called all 403 hits decidable, including `wife`/`wiſe` — the project's own
+canonical example of a load-bearing refusal. Check what a lexicon actually contains before asking it a
+question.
+
 ## THE LIVE BOARD, VISUALLY — `reocr-report-pilot.html`
 
 ```
