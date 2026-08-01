@@ -23,8 +23,22 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 
 ## STATE
 
-> **⚠ TWO BACKGROUND PASSES ARE RUNNING. DO NOT START A THIRD, AND DO NOT DUPLICATE THEM.**
-> `ps aux | grep -E "r3-runner|r2-pass"` before doing anything. Both were started 2026-07-31 ~21:45.
+> **✅ BOTH PASSES FINISHED (2026-08-01). The board below is STABLE, not a moving snapshot.**
+>
+> * **`r2-pass.sh` COMPLETE** — `R2 PASS COMPLETE` in `.campaign/r2-attest-ledger.txt` at 23:15 on 07-31;
+>   **594 leaves** in `.r2-attest/`. Note this is 594, not the ~931 leaves the pass was scoped against — the
+>   difference is leaves no chapter credits, but if a later chapter needs one, re-run `r2_attest.py` for it.
+> * **`r3-runner` COMPLETE for this round** — 47 chapters in `.campaign/r3-ledger.txt`, **every one `rc=0`**.
+>   Since 02:44 it has logged only `no chapter ready` every 5 min: its selector skips chapters already in the
+>   ledger, so the round is genuinely exhausted, not stalled.
+>
+> **⚠ ONE v1 RUNNER IS STILL ALIVE AND IDLE — pid 85490, started 07-29 23:13.** It is harmless (asleep in the
+> 300s wait loop, holding `.campaign/r3-runner.lock` legitimately) and it will auto-resume R3 if a chapter
+> becomes eligible again. But it is the **v1** script, so `kill` cannot stop it — **`kill -9` is required**, and
+> then `rm -rf .campaign/r3-runner.lock`. Clear the ledger before starting a v2 round or it will find nothing
+> to do.
+>
+> `ps aux | grep -E "r3-runner|r2-pass"` before doing anything. Both passes were started 2026-07-31 ~21:45.
 >
 > * **`r3-runner.sh`** — R3 over every chapter, fewest-open-cells-first, WITH the new R2 attesting arm.
 >   Serialized behind the atomic `mkdir` lock `.campaign/r3-runner.lock` (one 17GB olmOCR at a time). Progress:
@@ -36,17 +50,36 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 > **The board therefore CLIMBS WHILE YOU READ IT.** Every figure below is a snapshot. A total that fails to
 > reproduce is not necessarily non-determinism — check both ledgers for activity newer than your measure run
 > before concluding anything.
+>
+> ### ⚠⚠ `r3-runner.sh` v1 IS UNKILLABLE AND RELEASES ITS OWN LOCK. USE `r3-runner-v2.sh`. (2026-07-31)
+>
+> A resumed session found **SIX** `r3-runner.sh` processes alive with **NO lock directory present**, serialized
+> only by the in-loop `pgrep` — the exact check-then-act race the lock was added to eliminate. Six 17GB olmOCR
+> models on a 128GB machine was one chapter-completion away.
+>
+> The cause is one line: `trap 'rmdir "$LOCK" 2>/dev/null' EXIT INT TERM`. **A TERM handler that does not exit
+> makes the script SURVIVE SIGTERM** — the body runs, control returns to the loop, and the runner keeps going.
+> So every attempt to stop a runner did exactly one thing: released the mutex and left the runner running. The
+> failure compounds itself, because each "stop" frees the lock that would have refused the next runner.
+>
+> * **A `mkdir` lock is atomic on ACQUIRE and says nothing about RELEASE.** With no owner token inside it, any
+>   party's `rmdir` frees another party's lock. `r3-runner-v2.sh` writes `owner.pid` into the lock, releases
+>   only a lock it owns, reclaims a lock whose owner is dead, and exits on INT/TERM.
+> * **`kill` will not stop a v1 runner — use `kill -9`**, which no trap can intercept. Check the count with
+>   `ps -eo pid,command | grep r3-runner` and expect exactly ONE.
+> * **Do not edit a running `.sh` in place.** zsh reads scripts incrementally, so an edit can resume the live
+>   shell at a wrong byte offset. v2 was written as a NEW file for this reason.
 
-| | (snapshot 2026-07-31 22:00 UTC, and rising) |
+| | (snapshot 2026-08-01 17:30 UTC — **BOTH PASSES ARE FINISHED**; this figure is stable) |
 |---|---|
-| cells >=0.90 / ACHIEVABLE | **5,076 / 6,116 = 0.8300** |
-| cells >=0.90 / raw total | 5,076 / 6,120 = 0.8294 |
-| chapters by band | <0.70: **3** · 0.70-0.80: 14 · 0.80-0.90: 29 · 0.90-0.95: 1 · >=0.95: **3** |
+| cells >=0.90 / ACHIEVABLE | **5,225 / 6,116 = 0.8543** |
+| cells >=0.90 / raw total | 5,225 / 6,120 = 0.8538 |
+| chapters by band | <0.70: **1** · 0.70-0.80: 6 · 0.80-0.90: 31 · 0.90-0.95: 9 · >=0.95: **3** |
 | cells with NO TEXT anywhere | **0** (was 26) |
 | **CHAPTERS CLOSED** | **2** — chapters 1 and 16 (sentinels; re-measure them on EVERY change) |
 | cells blocked by an absent reference | **4**, in one chapter (was 704 over 16 chapters) |
-| tests | **188 green** (`../ocr-venv/bin/python -m pytest tests/`) |
-| commits | 29 unpushed — **the hold stands** |
+| tests | **202 green** (`../ocr-venv/bin/python -m pytest tests/`) |
+| commits | 44 unpushed, plus this session's work UNCOMMITTED — **the hold stands** |
 
 **REF-GAP as a class is GONE.** The only remaining gap is `odr_com` genesis **23:20**, and it stays open: the
 site prints 19 verses where the DR has 20, the verse is not merged into a neighbour (its v19 is the same length
@@ -66,11 +99,47 @@ as everyone else's), and it is simply absent from that witness. **That is an acq
 | + ch8 depth-first work | 6,116 | 4,963 | 0.8115 | 4 |
 | + ch8 visual reads (87/88) | 6,116 | 4,967 | 0.8121 | 4 |
 | + mixed-leaf fix, worst-first | 6,116 | 5,014 | 0.8198 | 4 |
+| + R2/R3 passes + ch15 leaf bound + 3 swept leaves | 6,116 | 5,085 | 0.8314 | 4 |
+| **both passes FINISHED, full re-measure of all 50** | 6,116 | 5,224 | **0.8541** | 4 |
+| + ch41 margin column, 8 leaves (3 witnesses) | 6,116 | 5,225 | 0.8543 | 4 |
+
+**The two passes were worth +139 cells**, and hand-attributed geometry work in the same session was worth +3.
+That ratio is the argument for letting a pass run to completion before opening a new seam by hand.
+
+> **COUNT `n_pass`, NEVER `n_cells - n_open` (2026-08-01).** They differ, and the difference is silent. ch23
+> carries 4 BLOCKED cells (the `odr_com` gap): blocked cells are in neither `n_pass` nor `open`, so subtracting
+> `open` from `n_cells` credits them **as passing** and overstates the board. It cost this session a headline
+> figure — 5,228 was reported before `build_reocr_report.py` disagreed with it at 5,225. The report was right.
+> `n_pass` is the authoritative field, and `rate` is `n_pass / n_cells`.
 
 The ratio **fell** at the third row while 596 cells were unblocked. That is the true direction: the old
 denominator excluded the hardest 700 cells because we did not hold the references for them. **Do not read the
 0.7890 -> 0.7935 move as +0.0045 of progress — the two numbers are rates over different populations, and the
 new one is a rate over 99.9% of the book.**
+
+## THE WORST-FIRST QUEUE AFTER THE PASSES (2026-08-01, re-measured)
+
+The distribution has **compressed**: the worst chapter is now only 0.045 clear of the second worst, so there is
+no dominant hole left to attack. Depth-first still applies, but expect single cells, not tens.
+
+| ch | rate (`n_pass`/`n_cells`) | note |
+|---|---|---|
+| **41** | 159/228 = 0.697 | S1 **0.5439** — recognizer damage, established by elimination (see PAGE_OVERRIDE) |
+| 23 | 56/80 = 0.700 | **4 BLOCKED (`ref_gaps: odr_com`)** — CANNOT close by OCR. The R3 runner correctly skips it |
+| 35 | 86/116 = 0.741 | |
+| 26 | 109/140 = 0.779 | |
+| 47 | 97/124 = 0.782 | |
+| 39 | 72/92 = 0.783 | |
+| 37 | 115/144 = 0.799 | |
+
+**Do not confuse "unreachable" with "hard".** ch23 is second-worst on the board and no amount of OCR work will
+move it — its 4 blocked cells are the campaign's only remaining reference gap (genesis 23:20 absent from
+`odr_com`). Skip it and go to ch35.
+
+**The seam that is now closed:** geometry. ch3, ch6 and ch41 were all carried as column/interleave problems and
+all three turned out not to be — ch3/ch6 lacked a chapter model, ch41 had a real but nearly score-free margin
+merge. Every leaf-bound lever swept so far has been worked out. What is left in the worst chapters is
+**recognition**, which means R3 (vision-LLM) or a better Rung-2 recognizer, not another bound.
 
 ## WHAT WAS FIXED THIS SESSION, AND WHAT IT TELLS YOU
 
@@ -185,7 +254,53 @@ does not fall where the sets do: S6 is the worst source in 12 of the 15**, inclu
 
 | group | chapters | worst source | dominant cause | what it needs |
 |---|---|---|---|---|
-| **S6 chronic — interleave** | 3, 6, 15 | S6 0.38-0.59 | INTERLEAVE 4-6 per chapter | per-leaf bounds; S6's swept band is right for its ordinary leaves and wrong for its annotated ones |
+| **S6 chronic — interleave** | ~~3, 6,~~ 15 | S6 0.38-0.59 | INTERLEAVE 4-6 per chapter | **DONE for ch15; ch3 and ch6 MOVED OUT — see below** |
+
+### THE INTERLEAVE THREE ARE NOT THREE. Measured 2026-07-31 with `gutter_probe.py`, which is now the test.
+
+**Only ch15 was ever reachable by geometry, and it is done.** `jp2-S06` p74's two columns are genuinely
+disjoint — body line-ends at `x1<=1647`, margin column starting `x0>=1673`, a real 26px gutter — so a per-leaf
+bound separates them. Swept (baseline 64/84): `0.825->64  0.780->65  0.765->66  0.755->66  0.746->66
+0.740->66  0.735->65  0.730->65`. Adopted **0.746**, the MIDPOINT OF THE MEASURED GUTTER, so the bound is
+right for the reason it is right rather than by tying on the scoreboard. **ch15 64 -> 66, S6 0.381 -> 0.476.**
+
+The token diff is the reason to believe it: 65 tokens removed, every one traceable to the side-note glossing
+15:13 (`Iſraelites`, `should be three`, `generations in`, `a ſtrange land`, `of Chanaan.`) or to the patristic
+citations (`Theod.`, `S. Aug. Pſal 52`, `Greg. ho.`) — **and ONE TOKEN ADDED, `exceeding`.** The intruding
+margin word had been sitting between `excee-` and `ding` and defeating `rejoin_break`. A bound that only
+deleted could not have produced a word; the fix restored scripture as well as removing apparatus.
+
+**ch3 AND ch6 ARE NOT A GEOMETRY PROBLEM AT ALL, and no bound can help them.** `gutter_probe` reports OVERLAP
+on every one of their eight leaves, and the offending rows say why:
+
+    ch3 p26   gaueſt me to be my fellow companion, gaue me of the tree, & I did eate. the diuel that
+    ch6 p36   Noe: The eud of al fleſh is come before me, the earthis repleniſhed ratos God re-
+
+These rows come from `pg["lines"]` — **kraken's OWN line segmentation, upstream of the page model's row
+grouper.** On p74 kraken emitted the margin as 40 separate lines; on ch3/ch6 it merged margin text into the
+body line itself. **No x-threshold can split words that arrived inside one line object.** This is the
+"row-level column assignment is a BUILD, not a tuning" conclusion reached from the other end, and it moves
+ch3 and ch6 into the R2/R3 bucket with the rest.
+
+What ch3 and ch6 *did* lack was a chapter model at all (`chapter_model()` returned `{}` on every witness).
+Those are now added and are **score-neutral**: ch3 76/96 unchanged, ch6 69/88 unchanged. Recorded as neutral,
+not as a win.
+
+### `gutter_probe.py` SWEPT ALL 914 CREDITED LEAVES — the separable set is small and now harvested
+
+32 leaves report SEPARABLE. Most are useless: their recommended bound sits ABOVE the witness band's right edge
+(S6 0.825), so wiring them would LOOSEN the band, not tighten it. **Check that before wiring any probe output.**
+Four were genuine tightenings; `PAGE_OVERRIDE` is keyed by LEAF, so each serves every chapter that leaf carries:
+
+| leaf | chapters | tokens removed | what they are | result |
+|---|---|---|---|---|
+| p128 | 37, 38 | 30 | the note on Iudas and Thamar's genealogy | **ch38 100 -> 101** |
+| p156 | 49, 50 | 20 | `(4) Iacob ... hertofore mentioned`, `Aug. Gen.` | neutral, kept |
+| p150 | 47, 48 | 19 | `The Septuagint ... contrarie ... Hebre[w] Latin text` | neutral, kept |
+| p138 | 42 | **0 of 0** | the leaf contributes nothing to the body | **REJECTED** |
+
+p138 is the one to learn from: a bound there changes no token, so it is an unevidenced entry and was removed
+rather than carried. **The separable-leaf seam is now essentially worked out — do not expect more from it.**
 | **S6 chronic — misread** | 23, 47, 21, 24, 26, 28, 37, 39, 49 | S6 0.23-0.68 | MISREAD 3-16 | R2/R3. No geometry reaches it |
 | **A GOOD SOURCE COLLAPSING** | 5 (S9 0.58), 35 (S1 0.52), 41 (S1 0.53) | not S6 | see below | diagnosed individually |
 
@@ -264,6 +379,7 @@ manufacture history. Open it as a `file://` URL — it is fully self-contained.
 | tool | what it answers |
 |---|---|
 | `chapter_campaign.py --report` | the whole board: per-chapter rate, triage, achievable vs blocked, closed set |
+| `gutter_probe.py --chapter N --source SX` | **does this LEAF have a separable margin column, and where** — SEPARABLE only when body and margin are actually disjoint, OVERLAP (with the offending rows) otherwise. A detector, not a separator: it refuses rather than guesses |
 | `faithfulness_audit.py` | **what each rule CHANGES in the text** — run before adopting any text-editing rule |
 | `ref_repair_s_dismas.py --verify` | re-parse of the s_dismas PDF; reports REPARSE / HOLE / still-short per chapter |
 | `ref_renumber.CORRECTIONS` | every reference numbering fault, with its corroboration; reversible, source untouched |

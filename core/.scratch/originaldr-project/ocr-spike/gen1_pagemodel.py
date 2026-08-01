@@ -138,6 +138,67 @@ CHAPTER_MODEL: dict[tuple[str, int], dict] = {
     ("pdf-S03a", 39):              {"open_page": 145, "chapter_open_y": 0.455},
     ("jp2-S06", 39):               {"open_page": 130, "chapter_open_y": 0.358},
     ("archive-holiebible-ot1", 39): {"open_page": 153, "chapter_open_y": 0.441},
+    # GENESIS 15, located with `chapter_open_probe.py` and read off the leaves (2026-07-31). Chapter 15 had NO
+    # model on ANY witness — `chapter_model()` returned `{}` for all four — so the title block, the italic
+    # argument and the engraved initial all leaked into verse 1 on every source at once.
+    #
+    #   S1 `archive-ot1-1609` p79 (h 3090): `CHAP. XV.` y 1480 · argument y 1600-1800 · v1 y 1920
+    #   S6 `jp2-S06`          p74 (h 2847): `CHAP. XV.` y  600 · argument y  680- 920 · v1 y  960
+    #   S9 `archive-holiebible-ot1` p89 (h 2988): `CHAP. XV.` y 1440 · argument y 1560-1760 · v1 y 1840
+    #
+    # S6's p74 IS A MIXED LEAF of the genesis-39 kind, and it is the reason this chapter sat at S6 0.38-0.59:
+    # its top four rows are the TAIL OF CHAPTER 14'S ANNOTATIONS (`that Chriſts Prieſthood is greatter then the
+    # Leuitical`, `ot tithes by Abraham heweth the antiquitie of this :radition`), which the localizer credits
+    # to chapter 15 and whose prose then competes for chapter 15's verse spans. `_is_annotation_leaf` cannot
+    # see it — the leaf carries no ANNOTATIONS heading, only a continuation — but no change to that rule is
+    # needed here either: `chapter_open_y` filters WORDS before the rows are grouped, so the annotation tail is
+    # gone before anything can match against it.
+    #
+    # The cut sits just above verse 1 on each witness. Everything over it — running head, the previous
+    # chapter's annotation tail, the chapter heading, the italic argument, and the two short marginal notes S6
+    # sets between the argument and the body (`kinds of beaſts` y 880, `& two of birds` y 920) — is matter,
+    # not scripture.
+    ("archive-ot1-1609", 15):      {"open_page": 79, "chapter_open_y": 0.610},
+    ("jp2-S06", 15):               {"open_page": 74, "chapter_open_y": 0.330},
+    ("archive-holiebible-ot1", 15): {"open_page": 89, "chapter_open_y": 0.605},
+    # `pdf-S03a` is deliberately absent: the probe does NOT locate chapter 15's opening on any of its credited
+    # leaves ['82','83','84','85']. An open_page guessed rather than read is the one thing this table may not
+    # carry, so S3 stays unconfigured until its leaf is found. (Its own diagnosis is a separate item.)
+    #
+    # GENESIS 3 and GENESIS 6 (2026-07-31). Both were carried as "S6-interleave" chapters needing per-leaf
+    # bounds; `gutter_probe.py` says otherwise — see the note under PAGE_OVERRIDE — and what they ACTUALLY
+    # lacked, on every witness, was a chapter model at all. Located with `chapter_open_probe.py`; the cut sits
+    # just above verse 1 in each case, and the argument it removes is the long one these chapters both carry
+    # (`By the craft of the Diuel ſpeaking in a ſerpent, our firſt parents tranſgreſſed...`, eight display
+    # lines on the 1609 witnesses).
+    ("archive-ot1-1609", 3):       {"open_page": 29, "chapter_open_y": 0.810},
+    ("pdf-S03a", 3):               {"open_page": 33, "chapter_open_y": 0.812},
+    ("jp2-S06", 3):                {"open_page": 26, "chapter_open_y": 0.260},
+    ("archive-holiebible-ot1", 3): {"open_page": 39, "chapter_open_y": 0.806},
+    ("archive-ot1-1609", 6):       {"open_page": 40, "chapter_open_y": 0.770},
+    ("jp2-S06", 6):                {"open_page": 36, "chapter_open_y": 0.275},
+    ("archive-holiebible-ot1", 6): {"open_page": 50, "chapter_open_y": 0.778},
+    # ("pdf-S03a", 6): {"open_page": 44, "chapter_open_y": 0.785}  — MEASURED AND REJECTED (2026-07-31).
+    #
+    # NEGATIVE RESULT, PINNED. Naming S3's opening leaf for chapter 6 costs exactly one cell: ch6 goes 69/88 ->
+    # 68/88 and S3 0.8636 -> 0.8182, with S1, S6 and S9 unmoved. The cell it loses is VERSE 1 — the very verse
+    # the entry exists to repair — and the mechanism is the GENESIS 8 finding running in reverse.
+    #
+    # With no `open_page`, S3's verse 1 is taken from the CHAPTER STREAM and clears the bar. Naming the leaf
+    # makes the leaf authoritative, and this leaf's verse 1 is doubly damaged:
+    #
+    #     leaf   : `afterthat men began to be multiplied vpon Nearth, & had procreation of daughters:`  0.862
+    #     ODR    : `AND after that men began to be multiplied vpon the earth, & had procreation of daughters:`
+    #
+    # the opening `AND` is missing (engraved A, and the recognizer's `N` is not where a drop-cap rule can take
+    # it) AND that same `N` has been glued onto the following word — `vpon Nearth` for `vpon the earth`. A
+    # `drop_cap` cannot fix the second fault, and fixing only the first still leaves the cell short.
+    #
+    # THE GENERAL POINT, worth more than the cell: `open_page` is not free. It does not merely ADD the leaf as
+    # a candidate, it PREFERS it, so on a leaf whose verse 1 is worse than the chapter stream's the entry is a
+    # regression. Genesis 8 recorded the case where the leaf was better and the stream had a word missing; this
+    # is the same selector seen from the other side. Measure before adding one, per witness — the other three
+    # witnesses of this same chapter take the entry harmlessly.
 }
 
 # The chapter the model is currently reading. Set by the entry points (`--chapter`); the opening-leaf and
@@ -304,7 +365,103 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     # — so any bound between them is right by the layout rather than by tuning. 0.851 (x 1872) sits in the
     # middle of a 56px gutter. This recovered `him.` to verse 12, `arke.` to verse 10, and the `ſea-` that
     # rejoins `uen` into `ſeauen`.
+    # GENESIS 15 ON S6 p74 — a THIRD instance of "the unit that owns a layout is the LEAF", and the one that
+    # finally separates an annotation column geometrically. Four earlier apparatus splits are pinned dead
+    # (§13 Q50) because they sought ONE threshold across a ragged edge; this is a per-leaf bound on a leaf whose
+    # two columns genuinely do not overlap, measured word by word below the chapter cut:
+    #
+    #     body   — every line's rightmost word ENDS at x1 <= 1647 (`hin:` 1647, `(c)as` 1643, `ſerue,` 1641)
+    #     margin — every annotation line STARTS at x0 >= 1673 (`ſignifie` 1673, `Iſraelites` 1680, `(b` 1678)
+    #
+    # so there is a real gutter at x 1647-1673 and the witness bound (0.825 = x1815) sits INSIDE the margin
+    # column. That is what put `ſignifie`, `Iſraelites`, `should be three`, `generations in` into verses 1-4 —
+    # the continuous side-note glossing 15:13 (`Abraham & his ſeed were in a ſtrange land ... 400 yeares`).
+    #
+    # SWEPT, not guessed (ch15 cells, baseline 64/84):
+    #     0.825 -> 64   0.780 -> 65   0.765 -> 66   0.755 -> 66   0.746 -> 66   0.740 -> 66   0.735 -> 65   0.730 -> 65
+    #
+    # The plateau is 0.740-0.765 and 0.746 is taken because it is the MIDPOINT OF THE MEASURED GUTTER
+    # (1642/2200) — right for the reason it is right, not by tying on the scoreboard. Below 0.740 the bound
+    # starts eating the body's own line ends; above 0.780 it re-admits the note.
+    #
+    # PER-LEAF AND NOT PER-WITNESS, for the p50/p51 reason exactly: p75 has NO right column (its body runs out
+    # to x1803) and this bound applied there would delete scripture from every line.
+    ("jp2-S06", 74): {"body": (0.215, 0.746)},
+    # THREE MORE ANNOTATION COLUMNS, found by sweeping `gutter_probe.py` over all 914 credited leaves and kept
+    # only where the removed tokens are apparatus (2026-07-31). PAGE_OVERRIDE is keyed by LEAF, so each entry
+    # serves every chapter that leaf carries — which is why two of the three pay off in a pair of chapters.
+    #
+    #   p128 (ch37, ch38)  removes 30 tokens: the note on Iudas and Thamar's genealogy (`Moyſes ... ſerteth of
+    #                      this gencalogie`, `Mat.`, `mariage`).           ch38 100/120 -> 101/120
+    #   p156 (ch49, ch50)  removes 20: `(4) Iacob ... hertofore mentioned`, `Aug. Gen.`       score-neutral
+    #   p150 (ch47, ch48)  removes 19: `The Septuagint ... contrarie ... Hebre[w] Latin text`, `Adoration`
+    #                                                                                        score-neutral
+    #
+    # The two neutral bounds are KEPT because they are correct about the page and remove only apparatus — but
+    # they are recorded as NEUTRAL, not as wins (CHAPTER-WORKFLOW Phase 4: a correct rule that changes no score
+    # is not a win). A fourth candidate, p138 (ch42), was REJECTED: it changes 0 tokens of 0, i.e. that leaf
+    # contributes nothing to the body at all, so a bound there is an unevidenced entry and was removed.
+    ("jp2-S06", 128): {"body": (0.215, 0.7544)},
+    ("jp2-S06", 156): {"body": (0.215, 0.7497)},
+    ("jp2-S06", 150): {"body": (0.215, 0.746)},
     ("pdf-S03a", 60): {"body": (0.17, 0.851)},
+    # ── GENESIS 41's MARGIN COLUMN, ON THE THREE 1609 WITNESSES (2026-08-01). CANDIDATE — see the delta note. ──
+    #
+    # ch41 was carried as "S1 is a recognizer problem" (S1 0.5439, the worst source on the worst chapter). It is
+    # not. S1's open cells are DROPPED AND INTRUDED WORDS, not mis-read glyphs — `vpon banke of the riuer`,
+    # `Behold there ſbal ſeuen yeares`, `Landof` twice — and the leaf dump shows why: the patristic margin is
+    # merged into the body rows (`...he ſent to al | e ben ad`, `...and they | II. S Gieg. I.`).
+    #
+    # `gutter_probe.py` says OVERLAP on every one of these leaves, and it is right AT ROW GRANULARITY: a merged
+    # row's centre lies in the margin, so no row-level bound is safe. But the word filter in `_page_words` has
+    # always cut PER WORD, so the row verdict never settled the question. Measured per word instead:
+    #
+    #   body words end   x1 <= 1735       margin words begin x0 >= 1775        (S1 p145, 35 rows in band)
+    #
+    # an empty column strip, found by x-coverage profile rather than by the largest intra-line gap — the biggest
+    # gap on those rows is MID-BODY (67px at x=1003) and smaller than the column break, so gap-ranking picks the
+    # wrong seam. Column separation here is an absolute-x fact, not a relative-spacing one.
+    #
+    # REFUSAL CRITERION, and it is not a knob: a cut counts only where it separates something — rows lying WHOLLY
+    # right of it (a column exists) AND rows CROSSING it (the merge to repair). That test rejects every jp2-S06
+    # leaf of this chapter and p144/146/148/150/152/158/160 outright, where the minimum-coverage search merely
+    # finds the page's right-hand whitespace (rows_cut=0, margin_only=0).
+    #
+    # The tokens the column holds are apparatus without exception — `S. Greg. li.`, `9. de Gen. ad lit.` (S1's
+    # clipped `Aug1` + `e ben ad` are fragments of that same Augustine note), `the 70. & Philo`, `the Chaldey
+    # paraphraſis`, `and Ioſephus`. Three INDEPENDENT witnesses of the same opening (S1 p143 / S3 p147 / S9 p155)
+    # derived cuts separately from their own pixels — 1749 / 1753 / 1733 — and remove the SAME three fragments
+    # (`: Death`, `the croſſe was`, `moſt cruel, &`). Independent derivation converging on identical content is
+    # not a fit to noise.
+    #
+    # THE DELTA IS THE ONLY THING THAT COUNTS, and it is small. Against the base bound already in force (0.815 =
+    # x1793, tested on the word CENTRE) these bounds newly remove just 18 tokens across the eight leaves; the
+    # first audit credited work the base bound was already doing. Of those 18, six are plainly apparatus (`::`,
+    # `ro.`, `lit.`, `9.`, `11.`, `c.`) and the rest are ORDINARY WORDS — `the`, `him`, `came`, `moſt`, `gift` —
+    # which is exactly the population the PINNED NEGATIVE below (word boxes crossing the gutter) warns about.
+    # Read back against the note text they are note-INITIAL words (`the croſſe was`, `moſt cruel, &`, `came ro
+    # paſſe`, `gift to inter-`), and the re-measure confirms it: nothing was amputated.
+    #
+    # MEASURED (all 50 chapters, before/after): ch41 158/228 -> 159/228, and NO other chapter moves in either
+    # direction — board 5224 -> 5225 of 6116 achievable. The single cell is S3's (0.6667 -> 0.6842). KEPT on the p156 /
+    # p150 precedent: correct about the page, removes only apparatus, recorded as very nearly NEUTRAL and NOT as
+    # a win.
+    #
+    # WHAT THIS RULES OUT, which is worth more than the cell. S1 DID NOT MOVE — 0.5439 before and after — so the
+    # margin merge is NOT what holds ch41's worst source down. S1's residue is genuine recognizer damage on
+    # these particular scans: `Seuon cares` (eares), `blaſled vith adulon` (blaſted with aduſtion), `tlare
+    # ſprang alto orher eates` (there ſprang alſo other eares), `thu:ne` (thinne), `wimn` (wiſe men), `Egp`
+    # (Ægypt). Those are mis-read glyphs, not misplaced words, and no bound of any kind reaches them. ch41/S1 is
+    # therefore a RECOGNIZER problem after all — but for a reason now established by elimination rather than
+    # assumed, and with the marginalia defect that was masking the diagnosis removed.
+    ("archive-ot1-1609", 143): {"body": (0.140, 0.7950)},
+    ("archive-ot1-1609", 145): {"body": (0.140, 0.7995)},
+    ("archive-ot1-1609", 147): {"body": (0.140, 0.8032)},
+    ("pdf-S03a", 147): {"body": (0.140, 0.7968)},
+    ("pdf-S03a", 149): {"body": (0.140, 0.8018)},
+    ("pdf-S03a", 151): {"body": (0.140, 0.8041)},
+    ("archive-holiebible-ot1", 155): {"body": (0.140, 0.7877)},
+    ("archive-holiebible-ot1", 157): {"body": (0.140, 0.7941)},
 }
 
 
