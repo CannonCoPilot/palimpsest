@@ -23,18 +23,24 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 
 ## STATE
 
-> **⚠ THE BOARD IS LIVE. `r3-runner.sh` is RUNNING** — five wrapper shells from the previous session, serialized
-> behind the atomic `mkdir` lock (one `gen1_r3.py` at a time, as designed), working chapters fewest-open-cells
-> first and re-measuring each as it finishes. **Every figure below is a SNAPSHOT, and it climbs while you read
-> it**: 4,853 at 22:40, 4,873 at 23:00, 4,884 at 23:05. A total that fails to reproduce is not necessarily
-> non-determinism — check `.campaign/r3-ledger.txt` for a `START ch` line newer than your measure run before
-> concluding anything. `ps aux | grep r3-runner` to see them; they are doing useful work, leave them unless the
-> machine is under memory pressure.
+> **⚠ TWO BACKGROUND PASSES ARE RUNNING. DO NOT START A THIRD, AND DO NOT DUPLICATE THEM.**
+> `ps aux | grep -E "r3-runner|r2-pass"` before doing anything. Both were started 2026-07-31 ~21:45.
+>
+> * **`r3-runner.sh`** — R3 over every chapter, fewest-open-cells-first, WITH the new R2 attesting arm.
+>   Serialized behind the atomic `mkdir` lock `.campaign/r3-runner.lock` (one 17GB olmOCR at a time). Progress:
+>   `.campaign/r3-ledger.txt`. **To run R3 yourself you must take that lock** (`mkdir .campaign/r3-runner.lock`,
+>   `rmdir` after) — or stop the runner first.
+> * **`r2-pass.sh`** — ſ-faithful kraken recognition of every leaf, chapter by chapter, feeding `.r2-attest/`.
+>   ~14s per leaf, ~931 leaves total. Progress: `.campaign/r2-attest-ledger.txt` and `ls .r2-attest | wc -l`.
+>
+> **The board therefore CLIMBS WHILE YOU READ IT.** Every figure below is a snapshot. A total that fails to
+> reproduce is not necessarily non-determinism — check both ledgers for activity newer than your measure run
+> before concluding anything.
 
-| | (snapshot 2026-07-31 21:45 UTC) |
+| | (snapshot 2026-07-31 22:00 UTC, and rising) |
 |---|---|
-| cells >=0.90 / ACHIEVABLE | **5,014 / 6,116 = 0.8198** |
-| cells >=0.90 / raw total | 5,014 / 6,120 = 0.8193 |
+| cells >=0.90 / ACHIEVABLE | **5,076 / 6,116 = 0.8300** |
+| cells >=0.90 / raw total | 5,076 / 6,120 = 0.8294 |
 | chapters by band | <0.70: **3** · 0.70-0.80: 14 · 0.80-0.90: 29 · 0.90-0.95: 1 · >=0.95: **3** |
 | cells with NO TEXT anywhere | **0** (was 26) |
 | **CHAPTERS CLOSED** | **2** — chapters 1 and 16 (sentinels; re-measure them on EVERY change) |
