@@ -209,10 +209,19 @@ recognizer said. Four of this session's five wins were reference repairs, and th
    1635-edition governing reference, or the standard admits an edition-divergence verdict distinct from a
    transcription failure.
 
-3. **DEPTH-FIRST, NEXT CHAPTERS.** Closest to closure now, cells short: **ch8 (7)**, ch12 (10), ch20 (11),
-   ch22 (12), ch33 (12), ch18 (13), ch48 (13), ch25 (14), ch45 (14), ch2 (15). Follow CHAPTER-WORKFLOW phases
-   0-7. After each chapter closes, **re-measure all 50** (`chapter_campaign.py --chapters 1-50 --phase measure`,
-   ~5 min) to capture knock-on gains — Sir's explicit instruction.
+3. **THE NEXT ROUND — USE `CHAPTER-WORKFLOW.md` § THE ROUND TEMPLATE (rewritten 2026-08-01).** It is the
+   synthesis of how the ten chapters above 0.90 actually got there, and it changes where a round's hours go:
+   autonomous passes bought **69%** of the +265 cells, systemic defect fixes **25%**, and per-chapter hand work
+   **6%** for the largest share of the hours. Hand-work is still essential — every systemic fix was DISCOVERED
+   by it — but its return is **the generalizable defect it exposes, not the cells it closes.** So hand-work ONE
+   chapter per round as reconnaissance, scope whatever it finds to its defect class, then let the pass run.
+
+   **Do NOT walk the 0.85-0.90 band chapter by chapter.** S6 is the worst source in **15 of those 16**
+   chapters, and ch12 is the shape of the whole band: S1/S3/S9 at 1.000, S6 at 0.500. That is one problem
+   wearing sixteen chapter numbers — route it through the router's signal 5 (recognition), not signal 4.
+
+   After each round, **re-measure all 50** (`chapter_campaign.py --chapters 1-50 --phase measure`, ~9 min) to
+   capture knock-on gains — Sir's explicit instruction.
 4. **The s_dismas re-parser still fails 8 chapters it ought to reproduce** (2, 16, 19, 26, 31, 35, 36, 44 —
    chapter 44 now reaches 28 of 34, chapter 31 only 6 of 55). Each failure is a parse defect the SHIPPED reads
    may also carry, and chapter 30 proved those are invisible to the count test. Fixing them lets the re-parser

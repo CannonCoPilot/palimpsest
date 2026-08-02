@@ -1,11 +1,149 @@
-# THE CHAPTER WORKFLOW — bringing one chapter of the DR to standard, distilled from Genesis 1 and 16
+# THE CHAPTER WORKFLOW — bringing chapters of the DR to standard
+### Phases 0-7 distilled from Genesis 1 and 16. **THE ROUND TEMPLATE below is distilled from the ten chapters that crossed 0.90 after them**, and it is the part that decides where a round's hours go.
+
+> **READ THE ROUND TEMPLATE FIRST.** Phases 0-7 describe how to hand-build ONE cold chapter to 100%, which is
+> how chapters 1 and 16 were closed. That is the most expensive tool in the kit — measured at **6% of the
+> campaign's cells for the largest share of its hours**. It is still the right tool, but for one chapter per
+> round and for a specific reason (below), not as the default loop.
+
+---
+
+# THE ROUND TEMPLATE — how to spend a round (2026-08-01, from the 0.7865 -> 0.8543 climb)
+
+## 1. The economics, measured — `.campaign/progression.jsonl`
+
+Ten recorded steps, 4,960 -> 5,225 cells (+265). Attributed by class:
+
+| class | cells | share | what it costs |
+|---|---|---|---|
+| **Autonomous recognizer passes** (R2 attest arm, R2 + R3 sweeps) | **+183** | **69%** | unattended machine hours; near-zero attention |
+| **Systemic defect fixes** (mixed leaf, verse-1 anchor, `line_split`/skew, R3 apparatus filter) | **+67** | 25% | hours of diagnosis, then minutes to apply |
+| **Per-chapter and per-leaf hand work** (CHAPTER_MODEL, PAGE_OVERRIDE, visual reads, gutter sweeps) | **+16** | **6%** | by far the most expensive per cell |
+
+**The naive conclusion — "just run the passes" — is wrong, and the ledger says why.** Every one of the +67
+systemic fixes was DISCOVERED by hand-working a single worst chapter. ch39 was being worked depth-first when
+`leaf_diag.py` showed `rows kept 0` on a leaf, which exposed `_is_annotation_leaf` deleting mixed leaves whole;
+that one defect was worth **+38 across the book** and 3 cells in the chapter that found it.
+
+> **THE RULE THAT SETS THE LOOP: hand-work's return is the GENERALIZABLE DEFECT IT EXPOSES, not the cells it
+> closes in the chapter you are working.** Budget hand-work as reconnaissance, and judge it by whether it
+> produced a rule — not by whether the chapter closed.
+
+## 2. The round loop
+
+```
+0. MEASURE ALL 50           chapter_campaign.py --chapters 1-50 --phase measure     (~9 min)
+1. TRIAGE BY SIGNAL         the router in §3 — NOT by score order
+2. HAND-WORK EXACTLY ONE    the worst chapter that is not ref-blocked. Phases 0-7.
+                            Treat every defect found as a CANDIDATE SYSTEMIC FIX.
+3. SCOPE THE FIX            measure it BOTH scoped to its defect class AND applied globally (§4)
+4. RUN THE PASS             r3-runner-v2.sh, and r2_attest.py for any leaf it lacks
+5. RE-MEASURE ALL 50        knock-on gains are the point — Sir's standing instruction
+6. RE-RANK, and stop the round when step 2 stops producing rules
+```
+
+**Do not run steps 2 and 4 in series when you can overlap them.** The passes are unattended and serialized
+behind their own lock; hand-work in step 2 is attention-bound. Start the pass first, then diagnose while it
+runs. The one hard constraint is memory: **one 17GB olmOCR at a time** — take `.campaign/r3-runner.lock`.
+
+## 3. THE ROUTER — triage by SIGNAL, not by score
+
+**A chapter's score tells you how much is wrong, never what is wrong.** Every large win in this campaign came
+from a signal, and the signals have very different yields. Check in this order:
+
+| # | signal | what it means | tool | action | historical yield |
+|---|---|---|---|---|---|
+| 1 | `ref_gaps` non-empty | **UNREACHABLE.** The reference lacks the verse | `chapter_campaign.py --report` | **SKIP THE CHAPTER.** Acquisition, not OCR | ch23 sits 2nd-worst and cannot move |
+| 2 | cells with **NO TEXT** | leaf discarded or never localized | `leaf_diag.py`, `chapter_open_probe.py` | mixed leaf -> `chapter_open_y`; check `_is_annotation_leaf` | **+38, zero regressions** — the campaign's best single fix |
+| 3 | **one reference's mean far below the other three** | the INSTRUMENT is broken, not the OCR | `ref_alignment_audit.py` | `ref_renumber.CORRECTIONS`, corroborated | 700 blocked cells -> 4 |
+| 4 | one source far below **its own median** in this chapter | a LEAF defect | `leaf_diag.py` | `PAGE_OVERRIDE` / `CHAPTER_MODEL` | ch39 0.554->0.717, ch44 0.61->0.824 |
+| 5 | a source low **everywhere** | recognition quality | `s6_causes.py --source SX --examples 3` | R2/R3 — do not look for geometry | the +183 |
+| 6 | **all four sources fail the same verse** | edition divergence ceiling | — | flag as collation; **still counts as failing** | capped at 33 cells book-wide |
+
+**Signal 6 is a ceiling, not a bucket.** Edition divergence is a property of the page all four witnesses
+photographed, so it CANNOT fail in one source alone — the all-four count bounds it. It was carried as one of
+three co-equal S6 causes and is an order of magnitude smaller. Never chase it.
+
+**Signal 4 is the one that finds the big ones.** Rank `(chapter, source)` pairs by how far the source sits
+below its OWN book-wide median. A source at 0.90 across the book and 0.23 in one chapter has a leaf defect;
+a source at 0.72 everywhere has a recognizer. Every large win came off the top of that list.
+
+## 4. SCOPE EVERY FIX TO ITS DEFECT CLASS — and measure both ways
+
+The mixed-leaf fix, measured two ways on the same day:
+
+| | cells | regressions |
+|---|---|---|
+| applied to **every** chapter | **+41** | **9 chapters, 1-4 each** |
+| applied only to its **defect class** (a `(source, chapter)` whose cells have NO TEXT) | +38 | **ZERO** |
+
+**The scoped version scores lower and is the right one.** The same shape got `chapter_model_derive` pinned OFF
+(re-verified: still net -6). A global rule that nets positive is still wrong if it regresses chapters that had
+nothing wrong with them — those regressions are text it is corrupting, and the board is averaging them away.
+
+This is the §13 Q47 rule at round scale: **a rule is measured by the text it changes, not the verdicts it
+flips.** Run `faithfulness_audit.py` before adopting anything that edits text, *including your own fixes.*
+
+## 5. WHAT THE ROUND SHOULD EXPECT TO FIND — the residue has hardened
+
+`s6_causes.py --source S6`, before and after the two passes:
+
+| bucket | before | after | change |
+|---|---|---|---|
+| MISREAD | 255 (44.9%) | **219 (51.5%)** | **-14% only** |
+| DIVERGE | 198 | 126 | -36% |
+| INTERLEAVE | 100 | 79 | -21% |
+| NO-TEXT | 14 | 1 | gone |
+| **S6 open, total** | 568 | **425** | -25% |
+
+**The passes cut DIVERGE and INTERLEAVE hardest and MISREAD least, so the remainder is now MORE concentrated in
+exactly what the passes are for.** Re-running the same passes is the intuitive next move and the low-yield one.
+
+And MISREAD is not random noise — it is a **confusion set**, visible in every example:
+
+```
+truit / ot        f -> t          .he              t -> .
+vou / aud / ihal  u<->v, n->u, s->i
+openod / hundrod  e -> o          Muthuſula        a -> u
+commanthat        `commanded vs` collapsed — a DROPOUT, not a misread
+```
+
+That is recognizer-targeted work (confusion-aware post-correction, or an R2 fine-tune weighted to these pairs),
+not another sweep. See "The R3 model question" at the foot of this document — option 1, improve R2, is the
+best return per unit effort and this measurement is the evidence for it.
+
+## 6. WHAT IS ALREADY EXHAUSTED — do not re-open these
+
+- **GEOMETRY.** ch3, ch6 and ch41 were all carried as column/interleave chapters and none of them were: ch3/ch6
+  lacked a chapter model, ch41 had a real margin merge worth +1 cell. Nine apparatus-separation attempts are
+  pinned dead with their numbers. **Per-source x-BANDS work; single thresholds never will.**
+- **A ninth geometric apparatus separation.** It would target at most a fifth of S6's failures, in a category
+  S6 does not even lead on (its INTERLEAVE share, 17.6%, is *below* S9's 20.1%).
+- **`chapter_model_derive` globally**, `split_glued`, `_trim_left_margin`, `restore_long_s`. All pinned with
+  tests asserting they stay off.
+
+## 7. THE NEXT BATCH IS ONE PROBLEM WEARING SIXTEEN CHAPTER NUMBERS
+
+The 0.85-0.90 band: **S6 is the worst source in 15 of 16 chapters.** The extreme case is ch12 — S1, S3 and S9
+all at **1.000**, S6 at **0.500**; the entire chapter deficit is one witness. ch45 (S6 0.607), ch19 (0.605),
+ch44 (0.618), ch46 (0.676) are the same shape.
+
+**So do not work these sixteen chapters as sixteen chapters.** Route them through signal 5, work S6's
+recognizer quality once, and re-measure all 50. A chapter-by-chapter pass over this band would be the single
+most expensive way to buy the same cells.
+
+---
+
 
 **The standard.** Every verse of every source's OCR matches the corresponding verse in **each** of the four
 reference witnesses at **≥0.90**, with the best approaching 1.000, and every ſ-surface **CLOSED**. That is
 `verses × 4 sources × 4 references` cells (Genesis 1: 496; Genesis 16: 256) plus a surface verdict per rescued
 cell. A cell below the bar stays **OPEN** and blocks — it is never reclassified as acceptable.
 
-**Results so far — BOTH WORKED CHAPTERS ARE CLOSED.** Genesis 1: **496/496 = 100%**, all ſ-surfaces closed,
+**Board (2026-08-01): 5,225 / 6,116 achievable = 0.8543.** 2 chapters CLOSED, 12 at >=0.90, 1 below 0.70.
+See `CAMPAIGN-STATUS.md` for the live state and the worst-first queue; this document is the method.
+
+**Results from the two hand-built chapters — BOTH CLOSED.** Genesis 1: **496/496 = 100%**, all ſ-surfaces closed,
 means 0.982/0.981/0.968/0.968. Genesis 16: **256/256 = 100%** from a 73.8% cold start, means
 0.990/0.990/0.984/0.984. The figure passed *through* 87.5% when surface-gated adoption was turned on — it fell
 because the standard rose, then went past the old number as the span-edge defects were fixed. **The last verse
@@ -14,7 +152,7 @@ commissioning a training run on a residual, exhaust the geometry.
 
 > **⚠ TWO INTERPRETERS.** Everything here runs on `../ocr-venv/bin/python`. The other venv
 > (`../../../.venv/bin/python`) cannot import kraken and will fail confusingly.
-> Tests: `../ocr-venv/bin/python -m pytest tests/` → 167 passed.
+> Tests: `../ocr-venv/bin/python -m pytest tests/` → **202 passed** (2026-08-01).
 > (Module names keep a historical `gen1_` prefix; they are all chapter-parameterized via `--chapter`.)
 
 ---
