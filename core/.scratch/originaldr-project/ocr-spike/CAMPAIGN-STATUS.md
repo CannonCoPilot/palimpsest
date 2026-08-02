@@ -72,9 +72,9 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 
 | | (snapshot 2026-08-01 17:30 UTC — **BOTH PASSES ARE FINISHED**; this figure is stable) |
 |---|---|
-| cells >=0.90 / ACHIEVABLE | **5,225 / 6,116 = 0.8543** |
-| cells >=0.90 / raw total | 5,225 / 6,120 = 0.8538 |
-| chapters by band | <0.70: **1** · 0.70-0.80: 6 · 0.80-0.90: 31 · 0.90-0.95: 9 · >=0.95: **3** |
+| cells >=0.90 / ACHIEVABLE | **5,245 / 6,116 = 0.8576** |
+| cells >=0.90 / raw total | 5,245 / 6,120 = 0.8570 |
+| chapters by band | <0.70: **0** · 0.70-0.80: 5 · 0.80-0.90: 32 · 0.90-0.95: 10 · >=0.95: **3** |
 | cells with NO TEXT anywhere | **0** (was 26) |
 | **CHAPTERS CLOSED** | **2** — chapters 1 and 16 (sentinels; re-measure them on EVERY change) |
 | cells blocked by an absent reference | **4**, in one chapter (was 704 over 16 chapters) |
@@ -102,6 +102,11 @@ as everyone else's), and it is simply absent from that witness. **That is an acq
 | + R2/R3 passes + ch15 leaf bound + 3 swept leaves | 6,116 | 5,085 | 0.8314 | 4 |
 | **both passes FINISHED, full re-measure of all 50** | 6,116 | 5,224 | **0.8541** | 4 |
 | + ch41 margin column, 8 leaves (3 witnesses) | 6,116 | 5,225 | 0.8543 | 4 |
+| **+ 5 infixed-apparatus excisions in s_dismas** | 6,116 | **5,245** | **0.8576** | 4 |
+
+**NO CHAPTER IS BELOW 0.70 ANY MORE**, and the worst chapter on the board is now ch23 at 0.700 — the one that
+CANNOT MOVE (`ref_gaps: odr_com`). Read that as the grading in CHAPTER-WORKFLOW §6b B2 doing its job: the
+board's floor is now set by an acquisition task, not by a reading failure.
 
 **The two passes were worth +139 cells**, and hand-attributed geometry work in the same session was worth +3.
 That ratio is the argument for letting a pass run to completion before opening a new seam by hand.
@@ -122,15 +127,18 @@ new one is a rate over 99.9% of the book.**
 The distribution has **compressed**: the worst chapter is now only 0.045 clear of the second worst, so there is
 no dominant hole left to attack. Depth-first still applies, but expect single cells, not tens.
 
+Re-ranked after the five excisions (2026-08-01). **ch26 and ch47 left this list entirely.**
+
 | ch | rate (`n_pass`/`n_cells`) | note |
 |---|---|---|
-| **41** | 159/228 = 0.697 | S1 **0.5439** — recognizer damage, established by elimination (see PAGE_OVERRIDE) |
-| 23 | 56/80 = 0.700 | **4 BLOCKED (`ref_gaps: odr_com`)** — CANNOT close by OCR. The R3 runner correctly skips it |
+| 23 | 56/80 = 0.700 | **4 BLOCKED (`ref_gaps: odr_com`)** — CANNOT close by OCR. Skip; the R3 runner already does |
+| **41** | 163/228 = 0.715 | S1 **0.5439** — recognizer damage, established by elimination (see PAGE_OVERRIDE) |
 | 35 | 86/116 = 0.741 | |
-| 26 | 109/140 = 0.779 | |
-| 47 | 97/124 = 0.782 | |
 | 39 | 72/92 = 0.783 | |
 | 37 | 115/144 = 0.799 | |
+| 10 | 103/128 = 0.805 | |
+| 49 | 103/128 = 0.805 | |
+| 28 | 71/88 = 0.807 | |
 
 **Do not confuse "unreachable" with "hard".** ch23 is second-worst on the board and no amount of OCR work will
 move it — its 4 blocked cells are the campaign's only remaining reference gap (genesis 23:20 absent from

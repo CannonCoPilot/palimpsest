@@ -132,6 +132,106 @@ CORRECTIONS: dict[tuple[str, str, int], dict] = {
 
 _KEY = re.compile(r"scripture/([^/]+)/(\d+)/(\d+)")
 
+
+# ── APPARATUS SPLICED INTO THE MIDDLE OF A VERSE — the class `trim_apparatus` CANNOT express (2026-08-01) ──
+#
+# HOW THEY WERE FOUND, because the finding method matters more than the five loci. A verse that fails in ALL
+# FOUR sources was being read as "edition divergence, a ceiling, never chase". It has TWO causes, and the split
+# test separates them:
+#
+#     For each reference, does EVERY source fail against it? If exactly ONE reference binds and all four
+#     sources PASS the other three, the fault is in the REFERENCE, not in the reading.
+#
+# Run over the 34 all-fail verses of Genesis that returned five loci, every one `s_dismas`, and 20 cells. The
+# remaining 7 (where all four references bind) are the true divergence ceiling.
+#
+# WHY `trim_apparatus` MISSES THEM, and it is not a tuning problem — it is a class its model cannot represent:
+#
+#   1. IT IS SUFFIX-ONLY. It cuts at the end of the last matching block, so the kept text is a PREFIX. Every
+#      one of these notes is INFIXED: `of the [Fruitful or] ſecond`, `no graſſe [A difficultie how manie...]
+#      for thy ſeruantes flockes`. There is no prefix cut that removes them.
+#   2. THE LENGTH RATIO CANNOT SEE THEM. It requires >1.4x the others' median; 29:15 is 1.10x, 41:52 1.14x,
+#      33:10 1.22x. A short marginal gloss is invisible to a length test — which is the same lesson genesis 30
+#      taught about holes (`a count test cannot see a hole`), running in the other direction.
+#
+# So they are enumerated, not detected. That is deliberate: `trim_apparatus`'s first version was general and
+# UNDER-GUARDED, and it fired 149 times destroying real scripture. A rule that excises text from the governing
+# reference is the most dangerous kind in this project, and five corroborated loci do not justify one. The
+# DETECTOR (the split test) is safe and belongs in `ref_alignment_audit`; the EXCISION stays enumerated.
+#
+# EVERY ENTRY IS CORROBORATED TWICE, arithmetically and textually, and the numbers are reproducible:
+# removing exactly the listed phrases yields EXACTLY the token count the other three witnesses carry, and the
+# residue reads continuously and matches `odr_com` word for word modulo archaic spelling.
+#
+#     locus            s_dismas -> after    odr_com / sabates_a / madueke_b
+#     genesis 26:2       62 -> 23           23 / 23 / 23
+#     genesis 29:15      23 -> 21           21 / 21 / 21
+#     genesis 33:10      56 -> 46           46 / 46 / 45
+#     genesis 41:52      25 -> 22           22 / 22 / 22
+#     genesis 47:4       63 -> 44           44 / 44 / 44
+#
+# TWO OF THE FIVE CARRY THE NOTE AT **TWO** ANCHOR POINTS, because the marginal note wraps across two printed
+# lines and each line is spliced where it sits: 29:15's `VVithout vvages?` and 41:52's `Fruitful or Grovving.`
+# That is corroboration in itself — the fragments reassemble into one coherent note, which no OCR failure and
+# no genuine variant reading would do.
+#
+# AND NONE OF THE REMOVED TEXT IS SCRIPTURE. They are doctrinal notes (the covenant, election and reprobation),
+# rhetorical heads (`Confidence. Meeknes.`), a Hebrew name gloss (Ephraim = fruitful / growing — which is
+# exactly why it sits at `of the ___ ſecond`), and a chronological difficulty. No transcription of the printed
+# verse could ever match them.
+#
+# This module RE-KEYS verses; here it also removes matter that is not verse. Nothing is written to the source
+# file — deleting an entry restores the previous behaviour exactly — and `LAST_EXCISIONS` reports every hit.
+APPARATUS_EXCISIONS: dict[tuple[str, str, int, int], list[str]] = {
+    ("s_dismas", "genesis", 26, 2): [
+        "The couenant made to Abraham pertained only to Iſaac, and Iacob, not to the reſt of his iſſue. "
+        "Gods mere mercie in electing anie, his iuſtice to the reprobate. Iacob lawfully bought but Eſau "
+        "ſinned in ſelling the firſt-birthright.",
+    ],
+    ("s_dismas", "genesis", 29, 15): ["VVithout", "vvages?"],
+    ("s_dismas", "genesis", 33, 10): [
+        "Confidence. Meeknes. Iacob wreſtled with an Angel corporally & ſpiritually.",
+    ],
+    ("s_dismas", "genesis", 41, 52): ["Fruitful or", "Grovving."],
+    ("s_dismas", "genesis", 47, 4): [
+        "A difficultie how manie Iſraelites came at firſt into Ægypt. Numbers myſtical, ſometimes not "
+        "explicable in the literal ſenſe.",
+    ],
+}
+
+# Populated by `excise_apparatus`. A phrase that is NOT FOUND is recorded as MISSING and logged — never
+# skipped quietly. If the upstream read changes, the test suite fails rather than the correction evaporating.
+LAST_EXCISIONS: dict[str, list[dict]] = {}
+
+
+def excise_apparatus(name: str, reads: dict[str, str], *, log=None) -> dict[str, str]:
+    """Remove enumerated, corroborated marginal apparatus spliced INSIDE a verse. Input is not mutated."""
+    todo = {(b, c, v): ph for (n, b, c, v), ph in APPARATUS_EXCISIONS.items() if n == name}
+    if not todo:
+        return reads
+    out = dict(reads)
+    found: list[dict] = []
+    for (book, ch, vn), phrases in todo.items():
+        k = f"scripture/{book}/{ch}/{vn}"
+        txt = out.get(k)
+        if not txt:
+            found.append({"locus": k, "MISSING": "no such verse in this reference"})
+            continue
+        removed, before = [], len(txt.split())
+        for p in phrases:
+            if p not in txt:
+                found.append({"locus": k, "MISSING": p[:80]})
+                continue
+            txt = txt.replace(p, "", 1)
+            removed.append(p)
+        out[k] = " ".join(txt.split())
+        found.append({"locus": k, "len_before": before, "len_after": len(out[k].split()),
+                      "removed": " | ".join(r[:80] for r in removed)})
+        if log:
+            log(f"ref_renumber: {name} {k}: excised {before - len(out[k].split())} apparatus tokens")
+    LAST_EXCISIONS[name] = found
+    return out
+
 # Who corroborates whom. A trim needs at least two independent witnesses to the shorter reading.
 _ALL = ("s_dismas", "odr_com", "sabates_a", "madueke_b")
 OTHERS = {n: [m for m in _ALL if m != n] for n in _ALL}
@@ -332,6 +432,12 @@ def load_corrected(name: str, loader=None, *, trim: tuple[str, int] | None = Non
         loader = QC.load_reads_verse
     raw_others = [loader(n) for n in (OTHERS.get(name) or [])]
     reads = apply(name, loader(name), others=raw_others)
+    # ENUMERATED AND UNCONDITIONAL, unlike `trim`. These five loci are corroborated per-locus excisions of
+    # matter that is not verse, not a general rule over the corpus, so there is nothing for a caller to opt
+    # into. It runs BEFORE `trim_apparatus` so the two can never process the same contamination twice — the
+    # trimmer then sees the corrected length and correctly declines to fire.
+    reads = excise_apparatus(name, reads)
+    raw_others = [excise_apparatus(n, o) for n, o in zip(OTHERS.get(name) or [], raw_others)]
     # OPT-IN AND SCOPED, deliberately. `trim` defaults to None (off): the first version defaulted ON and
     # silently rewrote 149 loci across the whole corpus, several of them real scripture. Pass an explicit
     # (book, chapter) to trim, and read the findings in LAST_TRIMS.
