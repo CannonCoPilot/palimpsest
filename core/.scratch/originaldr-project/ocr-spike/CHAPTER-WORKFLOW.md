@@ -39,7 +39,10 @@ that one defect was worth **+38 across the book** and 3 cells in the chapter tha
 3. SCOPE THE FIX            measure it BOTH scoped to its defect class AND applied globally (§4)
 4. RUN THE PASS             r3-runner-v2.sh, and r2_attest.py for any leaf it lacks
 5. RE-MEASURE ALL 50        knock-on gains are the point — Sir's standing instruction
-6. RE-RANK, and stop the round when step 2 stops producing rules
+                            AND check the ſ-surfaces: the board counts CONTENT only (§6b B4)
+6. RE-RANK, and list open POLICY items beside open cells (§6b B8).
+   If step 2 produced NO rule, that is an ALERT to redesign the approach (§6b B7) —
+   it is NEVER a stopping point and never makes a short chapter done (§6b B5).
 ```
 
 **Do not run steps 2 and 4 in series when you can overlap them.** The passes are unattended and serialized
@@ -58,11 +61,48 @@ from a signal, and the signals have very different yields. Check in this order:
 | 3 | **one reference's mean far below the other three** | the INSTRUMENT is broken, not the OCR | `ref_alignment_audit.py` | `ref_renumber.CORRECTIONS`, corroborated | 700 blocked cells -> 4 |
 | 4 | one source far below **its own median** in this chapter | a LEAF defect | `leaf_diag.py` | `PAGE_OVERRIDE` / `CHAPTER_MODEL` | ch39 0.554->0.717, ch44 0.61->0.824 |
 | 5 | a source low **everywhere** | recognition quality | `s6_causes.py --source SX --examples 3` | R2/R3 — do not look for geometry | the +183 |
-| 6 | **all four sources fail the same verse** | edition divergence ceiling | — | flag as collation; **still counts as failing** | capped at 33 cells book-wide |
+| 6 | **all four sources fail the same verse** | **TWO CAUSES — split them.** A REFERENCE defect, or a true divergence | the split test below | if one reference binds and the others pass -> `ref_renumber` | **20 cells recovered, 2026-08-01** |
 
-**Signal 6 is a ceiling, not a bucket.** Edition divergence is a property of the page all four witnesses
-photographed, so it CANNOT fail in one source alone — the all-four count bounds it. It was carried as one of
-three co-equal S6 causes and is an order of magnitude smaller. Never chase it.
+**SIGNAL 6 WAS MIS-SPECIFIED IN THE FIRST DRAFT OF THIS TEMPLATE, AND THE ERROR COST 20 CELLS.** It was written
+as "edition divergence, a ceiling, never chase". Two things were wrong:
+
+* **The reasoning.** "Divergence is a property of the page all four photographed, so it cannot fail in one
+  source alone" is false for S6 — S6 is the **1635 second edition** and the archaic references are 1609, so it
+  is a DIFFERENT PAGE. Its divergence can and does fail alone. Measured: the arm gap
+  (`min(modern refs) - min(archaic refs)`) is median **-0.0110 for S1, S3 and S9 alike** — identical to four
+  decimals, as three witnesses of one edition should be — and **+0.0000 median / +0.0115 mean for S6**. A real
+  +0.024 shift, in the predicted direction, with the metric artifact controlled out by the 1609 witnesses.
+* **The instruction.** "Never chase it" sent the whole bucket to the bin, and **five of the 34 all-fail verses
+  are REFERENCE DEFECTS worth 20 cells**, three of them in the worst-seven chapters.
+
+**THE SPLIT TEST — run it on every all-fail verse:**
+
+> For each reference, does **every** source fail against it? If exactly ONE reference binds and all four sources
+> **pass** the other three, it is a **reference defect, not a reading failure.** Corroborate on word count.
+
+All five found this way are `s_dismas`, and every one is an outlier-high word count — the apparatus
+contamination of Phase 1, occurring at **verse** scale where no chapter-level mean can see it:
+
+| verse | s_dismas | the other three | what s_dismas spliced in |
+|---|---|---|---|
+| genesis 26:2 | **62** | 23 / 23 / 23 | |
+| genesis 29:15 | **23** | 21 / 21 / 21 | |
+| genesis 33:10 | **56** | 46 / 46 / 45 | |
+| genesis 41:52 | **25** | 22 / 22 / 22 | the name gloss `Fruitful or` / `Grovving.`, and the tail `in the land of my pouertie` lost |
+| genesis 47:4 | **63** | 44 / 44 / 44 | |
+
+genesis 41:52 is the archetype: all four sources read it nearly perfectly — **S6 scores 0.99 against three
+references** — and every one fails on s_dismas alone at 0.811-0.835.
+
+**What remains after the split is 7 verses where all four references bind.** THAT is the true divergence /
+bad-read ceiling, and it is the number to quote — not 33, and not 34.
+
+**Do not chase divergence either, but for a measured reason, not the one first given.** The ch8 signature
+(modern arm passes, archaic arm fails) is **not enriched in S6**: S6 8.4% of open cells, S1 7.2%, S3 8.3%,
+**S9 12.9% — the highest**. `modern_id` is simply a looser fold. The signature is not a divergence detector,
+and the examples confirm it: S6 gen 5:25 `Muthuſula ... hundrod` is a plain misread the modern fold forgives.
+**A real divergence detector is §13 Q21 and is STILL UNBUILT.** Until it exists, "edition divergence" is a
+hypothesis about a cell, never a classification of one.
 
 **Signal 4 is the one that finds the big ones.** Rank `(chapter, source)` pairs by how far the source sits
 below its OWN book-wide median. A source at 0.90 across the book and 0.23 in one chapter has a leaf defect;
@@ -121,6 +161,74 @@ best return per unit effort and this measurement is the evidence for it.
   S6 does not even lead on (its INTERLEAVE share, 17.6%, is *below* S9's 20.1%).
 - **`chapter_model_derive` globally**, `split_glued`, `_trim_left_margin`, `restore_long_s`. All pinned with
   tests asserting they stay off.
+
+## 6b. WHAT THIS LOOP IS BLIND TO — adversarial review of the template itself (2026-08-01)
+
+Written by asking what the loop cannot see. Each item is measured, not speculated; the two that turned out to
+be false are kept **because a pinned negative is what stops the next session paying for it again.**
+
+**B1. THERE IS NO PER-VERSE REFERENCE-DEFECT DETECTOR, and the loop assumes there is.** `ref_gaps` sees only an
+ABSENT verse (4 cells, ch23). Signal 3 sees only chapter-scale means. Genesis 30 already proved a reference can
+be PRESENT BUT HOLED and pass every count test. So a single corrupted reference verse is **indistinguishable
+from an OCR failure** — except through signal 6, which the first draft told you to ignore. B1 and the signal-6
+error compound: the one place the defect is visible was the one place declared out of bounds.
+**Build it:** the split test above is the detector, and it needs no new instrument — run
+`ref_alignment_audit`'s contamination test PER VERSE over the all-fail set, not per chapter.
+
+**B2. "REF-BLOCKED" IS UNDER-DEFINED — it names only the absent-verse case.** A chapter can be blocked by
+degree as well as by absence. Grade it: **ABSENT** (`ref_gaps`; ch23 — skip, acquisition) · **CONTAMINATED**
+(B1's five — repair, cheap, 20 cells) · **DIVERGENT** (the 7 all-refs-bind verses — needs a policy decision,
+below). Only the first is genuinely unreachable, and the first draft's "SKIP" collapsed all three into it.
+
+**B3. RESOLUTION IS NOT THE CEILING — TESTED, NEGATIVE, PINNED.** `reocr_core.MAXW = 2200` hard-downsamples
+every page before the recognizer sees it, and the natives are far larger (`archive-holiebible-ot1` 3224x4329,
+`jp2-S06` **5100x6601** — a 81% areal discard). It is the one constant in this project that was never swept,
+and MISREAD (51.5% of S6's residue) is made of exactly the fine-stroke confusions a downsample should destroy
+(`truit`/`fruite`, `vou`/`you`, `aud`/`and`, `ihal`/`shal`, `openod`/`opened` — f/t, u/v, n/u, s/i, e/o).
+**Measured at MAXW 2200 vs 3400, tokens found in the reference vocabulary:**
+
+    jp2-S06 p26              59.3%  ->  59.6%      (+0.3pp)
+    archive-holiebible-ot1 p39   40.5%  ->  41.3%      (+0.8pp)
+
+Flat. **The mechanism is that kraken normalises every line to the model's fixed input height**, and
+`reichenau_dr` was fine-tuned at that scale, so page-level resolution barely matters above a threshold. Raising
+MAXW costs time and buys nothing. **Do not spend a session on this.**
+
+**B4. THE ROUND LOOP DROPS HALF THE STANDARD.** The standing order is "every verse >= 0.90 **and every ſ-surface
+CLOSED**". The board counts content cells ONLY, so a round can raise the board while leaving surfaces open, and
+nothing in the loop notices. Phase 7 criterion 2 exists; the round template never invokes it. **Add a surface
+check to step 5**, and note the known cost: 2.9% of adopted tokens need a human eye — on the order of a
+thousand hand-reads across Genesis. That number does not scale and the loop currently hides it.
+
+**B5. THE EXIT CONDITION IS A SILENT-DEGRADATION TRAP.** "Stop the round when step 2 stops producing rules"
+reads as a terminal state and is exactly the parked/unreachable acceptance the project forbids. **Correct
+form:** when hand-work stops producing rules, that is an **ALERT that the APPROACH needs redesign** — escalate
+via B7 — never a stopping point, and never a reason to call a below-threshold chapter done.
+
+**B6. THE TEMPLATE IS GENESIS-ONLY, but the aim is chapters AND BOOKS.** Everything is Genesis-fitted:
+`SOURCE_MODEL` bands, the four-reference set, the janvier grid, the book lexicon, `CHAPTER_MODEL`. Nothing
+states the cold-start cost of a new book, what transfers, or what must be re-derived. And this document's own
+warning applies with full force — *"book-level results disguise layout-specific heuristics every time."*
+**Before the next book, measure which of the generalizable rules survive on ONE chapter of it.** Expect the
+reference set to be the expensive part: Genesis took 700 blocked cells down to 4, and that work is per book.
+
+**B7. WHEN THE SIGNALS ARE EXHAUSTED, THE LEVER MOVES UP A LEVEL — the loop has no ladder, so add one.** The
+router only ever asks "how do we read the page better". Escalate in this order, and note that each rung is a
+different KIND of work:
+
+  1. **Read the page better** — recognizer. R2 fine-tune on the confusion set. (Where we are.)
+  2. **Measure against the right instrument** — B1's detector; **acquire a 1635 reference so S6 is scored
+     against its own edition.** This is the single highest-leverage unbuilt thing: S6 is the worst source in
+     15 of the next 16 chapters and is currently graded against a text it does not print.
+  3. **Acquire a better page** — a further witness for ch23's absent verse; a cleaner scan of a bad leaf.
+     Note B3: more PIXELS of the same scan is not this rung.
+  4. **Change the standard** — Sir's call, never the pipeline's.
+
+**B8. POLICY QUESTIONS HAVE NO ESCALATION PATH AND SILENTLY BECOME PERMANENT.** ch8/8:14 has been open since
+2026-07-31: the transcription is CORRECT, and no reading of those pixels can satisfy both a 1609 and a 1635
+reference. It needs a decision (an edition-appropriate reference, or a divergence verdict distinct from a
+transcription failure). It is not a cell anyone can win, and it has sat unasked through three sessions because
+the loop has no step that surfaces it. **Step 6 of the round must list open POLICY items alongside open cells.**
 
 ## 7. THE NEXT BATCH IS ONE PROBLEM WEARING SIXTEEN CHAPTER NUMBERS
 
