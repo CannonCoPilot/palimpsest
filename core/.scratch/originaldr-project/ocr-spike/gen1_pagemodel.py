@@ -371,6 +371,19 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('jp2-S06', 60): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
     ('jp2-S06', 66): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
     ('jp2-S06', 68): {"body": (0.17, 0.755)},   # was (0.215, 0.825)
+
+    # SEVEN HOLES IN THE PARITY SWEEP (ch10 walk, 2026-08-03). Every other EVEN leaf from 22 to 158 carries a
+    # right bound at 0.745-0.765 — the gloss column this edition puts on the recto side of an even leaf. These
+    # seven were skipped and sat on the SOURCE default 0.825, which reaches into the column. Rule C in its
+    # purest form: the axis was not measured and found correct, it was never varied. RIGHT ONLY here; the left
+    # bound is a separate axis and is tested separately (bounds_probe declines p56's left at 61 cont / 21 note).
+    ('jp2-S06', 20): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 40): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 46): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 48): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 56): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 62): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 64): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
     ('jp2-S06', 70): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
     ('jp2-S06', 72): {"body": (0.14, 0.755)},   # was (0.215, 0.825)
     ('jp2-S06', 74): {"body": (0.15, 0.746)},   # was (0.215, 0.746)

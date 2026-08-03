@@ -2,19 +2,19 @@
  "chapter": 10,
  "n_verses": 32,
  "n_cells": 128,
- "n_pass": 106,
- "rate": 0.8281,
+ "n_pass": 109,
+ "rate": 0.8516,
  "ref_means": {
-  "s_dismas": 0.9325,
-  "odr_com": 0.9622,
-  "sabates_a": 0.9474,
-  "madueke_b": 0.9474
+  "s_dismas": 0.9431,
+  "odr_com": 0.9727,
+  "sabates_a": 0.9531,
+  "madueke_b": 0.9531
  },
  "src_rates": {
   "S1": 0.875,
   "S3": 0.875,
   "S9": 0.875,
-  "S6": 0.6875
+  "S6": 0.7812
  },
  "n_all_fail": 3,
  "all_fail": [
@@ -22,7 +22,7 @@
   2,
   6
  ],
- "n_open": 22,
+ "n_open": 19,
  "open": [
   {
    "src": "S1",
@@ -132,16 +132,16 @@
   {
    "src": "S6",
    "verse": 14,
-   "worst": 0.0,
+   "worst": 0.881,
    "from": "chapter",
-   "text": "and the the Caſſuims: of whom eame forth the Philiſtims the"
+   "text": "and the Sem. Phetruſims, the Caſſuims: of whom eame forth the Philiſtims the Caphtorims."
   },
   {
    "src": "S6",
    "verse": 15,
-   "worst": 0.804,
+   "worst": 0.863,
    "from": "p56",
-   "text": "And Canaan begat Sidon his ſirſt-begotten, Hetheus Iebuſeus,"
+   "text": "And Canaan begat Sidon his ſirſt-begotten, Hetheus 16.and"
   },
   {
    "src": "S6",
@@ -152,31 +152,10 @@
   },
   {
    "src": "S6",
-   "verse": 18,
-   "worst": 0.813,
-   "from": "p56",
-   "text": "and Aradius, Samaraus, and Hamathaus: and were ſpred the peoploof the Chananites."
-  },
-  {
-   "src": "S6",
-   "verse": 21,
-   "worst": 0.862,
-   "from": "p56",
-   "text": "Of Sem tather of al the children of Heber, the elder brother ot Ia- Hence were borne"
-  },
-  {
-   "src": "S6",
-   "verse": 30,
-   "worst": 0.782,
-   "from": "p56",
-   "text": "And their dwellino diuided from Meſſa as we goe on as farre asSophar a mountaine in hi"
-  },
-  {
-   "src": "S6",
    "verse": 32,
-   "worst": 0.787,
-   "from": "p56",
-   "text": "Thcie are the tamS..1. Noe, according to their peoplos and nation. Ot theſevere the 11.ct diuided on the earth atter the fioud."
+   "worst": 0.827,
+   "from": "chapter",
+   "text": "are the lios of Noe, according to their peoplos and nation. Ot theſevere the nations diuided on the earth atter the fioud."
   }
  ],
  "cellgrid": {
@@ -758,13 +737,13 @@
     }
    },
    "S6": {
-    "text": "and the the Caſſuims: of whom eame forth the Philiſtims the",
+    "text": "and the Sem. Phetruſims, the Caſſuims: of whom eame forth the Philiſtims the Caphtorims.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.0,
-     "odr_com": 0.0,
-     "sabates_a": 0.68,
-     "madueke_b": 0.68
+     "s_dismas": 0.881,
+     "odr_com": 0.881,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
     }
    }
   },
@@ -800,13 +779,13 @@
     }
    },
    "S6": {
-    "text": "And Canaan begat Sidon his ſirſt-begotten, Hetheus Iebuſeus,",
+    "text": "And Canaan begat Sidon his ſirſt-begotten, Hetheus 16.and",
     "from": "p56",
     "score": {
-     "s_dismas": 0.807,
-     "odr_com": 0.807,
-     "sabates_a": 0.804,
-     "madueke_b": 0.804
+     "s_dismas": 0.865,
+     "odr_com": 0.865,
+     "sabates_a": 0.863,
+     "madueke_b": 0.863
     }
    }
   },
@@ -926,13 +905,13 @@
     }
    },
    "S6": {
-    "text": "and Aradius, Samaraus, and Hamathaus: and were ſpred the peoploof the Chananites.",
+    "text": "and Aradius, Samaraus, and Hamathaus: and atterwards were ſpred the peoploof the Chananites.",
     "from": "p56",
     "score": {
-     "s_dismas": 0.813,
-     "odr_com": 0.813,
-     "sabates_a": 0.83,
-     "madueke_b": 0.83
+     "s_dismas": 0.923,
+     "odr_com": 0.923,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
     }
    }
   },
@@ -1052,13 +1031,13 @@
     }
    },
    "S6": {
-    "text": "Of Sem tather of al the children of Heber, the elder brother ot Ia- Hence were borne",
+    "text": "Of Sem alſo tather of al the children of Heber, the elder brother ot Iapheth were borne",
     "from": "p56",
     "score": {
-     "s_dismas": 0.872,
-     "odr_com": 0.862,
-     "sabates_a": 0.878,
-     "madueke_b": 0.878
+     "s_dismas": 0.977,
+     "odr_com": 0.966,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    }
   },
@@ -1430,13 +1409,13 @@
     }
    },
    "S6": {
-    "text": "And their dwellino diuided from Meſſa as we goe on as farre asSophar a mountaine in hi",
+    "text": "And their dwellino was from Meſſa as we goe on as farre asSophar a mountaine in the eaſt.",
     "from": "p56",
     "score": {
-     "s_dismas": 0.782,
-     "odr_com": 0.782,
-     "sabates_a": 0.79,
-     "madueke_b": 0.79
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
     }
    }
   },
@@ -1514,13 +1493,13 @@
     }
    },
    "S6": {
-    "text": "Thcie are the tamS..1. Noe, according to their peoplos and nation. Ot theſevere the 11.ct diuided on the earth atter the fioud.",
-    "from": "p56",
+    "text": "are the lios of Noe, according to their peoplos and nation. Ot theſevere the nations diuided on the earth atter the fioud.",
+    "from": "chapter",
     "score": {
-     "s_dismas": 0.787,
-     "odr_com": 0.787,
-     "sabates_a": 0.8,
-     "madueke_b": 0.8
+     "s_dismas": 0.827,
+     "odr_com": 0.827,
+     "sabates_a": 0.85,
+     "madueke_b": 0.85
     }
    }
   }
@@ -1769,6 +1748,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 128,
- "triage": "SOURCE-SKEW",
- "secs": 4.3
+ "triage": "R3-READY",
+ "secs": 5.0
 }

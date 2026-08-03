@@ -103,7 +103,29 @@
      "notes": "ch5 103->105/124. S9 0.613->0.677; the p48 interleaving is gone. Board 5725->5727/6116 = 0.9364 (the fix is local; p48 carries no other chapter). 216 tests pass. Residue on p48 ('hundred28', 'our fiue') sits INSIDE the body band - verse numerals set in the measure, not a bounds problem. S6 p34 right-bound sweep (0.775/0.785/0.80) moved ZERO cells; not adopted, a third-decimal ref-mean gain is not a reason to churn a probe-derived bound. TOOLING DEFECT FOUND INCIDENTALLY: chapter_campaign.py reported 'NO-VERSES 0/0 = 0.000' three times against a gen1_pagemodel.py that FAILED TO IMPORT (a syntax error from a zsh word-splitting slip - zsh does not word-split unquoted parameters). A config that cannot be parsed must fail loudly; reporting it as a measurement of zero is exactly the silent-degradation shape. VALIDITY, NOT YIELD - apparatus inside PASSING cells, which the board cannot see: ch3 v7 S9 'made thems. Chrisclues aprons' (= 'made themselues aprons') scores 0.918-0.928 on all four references and passes. ch21 v8 S9 'The child therfore signifieth grewe' is contaminated but already open. The tightened apparatus-vocabulary scan is worth re-running after every bound change."
     }
    ]
+  },
+  "10": {
+   "passes": [
+    {
+     "at": "2026-08-03T06:33Z",
+     "pass_before": 106,
+     "pass_after": 109,
+     "achievable": 128,
+     "delta": 3,
+     "signals": [
+      "4:S6 far below its own median (0.6875 vs 0.875); 6:all four witnesses fail v2/v6/v7 identically; 1:s_dismas gen 10:1 is apparatus-contaminated"
+     ],
+     "diagnostics": [
+      "triage.py --detail; bounds_probe.py --source jp2-S06 --examples 4; PAGE_OVERRIDE read as a table (parity audit); reference length-divergence scan s_dismas vs odr_com over all 50 chapters; left-bound plateau sweep 0.13-0.18; before/after verse diff on all 7 changed S6 cells"
+     ],
+     "rule": "SEVEN HOLES IN THE PARITY SWEEP. Every EVEN jp2-S06 leaf from 22 to 158 carries a right bound 0.745-0.765 and many a left bound 0.10-0.17 \u2014 except leaves 20,40,46,48,56,62,64, which sat untouched on the SOURCE default (0.215,0.825). Rule C at file scope: the sweep's own output convicts it when read as a table. p56 -> (0.16,0.755) is +3 in ch10 on a flat plateau 0.13-0.16 (0.17 = +2, 0.18 = 0); the other six leaves' chapters are in the R3 queue and are unmeasured.",
+     "alert": "THE BOARD APPLIES A STRICTER GATE THAN THE STANDARD SIR APPROVED, AND IT IS MISDIRECTING THE CAMPAIGN. char_identity.evaluate_locus documents an archaic-preeminent gate ('a faithful 1582 OCR must not fail for diverging from a modern edition'; modern_id is a recorded signal that does NOT gate). chapter_campaign passes a cell only if min over ALL FOUR references >= 0.90, so the two modern references gate too. 158 of 383 open cells fail on a clean reference-family split, and 46 of those score >=0.98 against the family they belong to \u2014 gen 10:2 is transcribed EXACTLY by all four witnesses (1.000 vs s_dismas/odr_com) and fails only because sabates_a/madueke_b print Japheth/Javan/Tubal where the scans print Iapheth/Iauan/Thubal. Under the documented governing gate the board reads 5859/6120 = 0.9574, +122. NOT ADOPTED \u2014 this changes what 100% of Genesis means and is Sir's call, not mine. It also means campaign effort is being spent on cells that are already faithful.",
+     "changed_text": true,
+     "audited": true,
+     "notes": "ch10 106->109/128. Residual: 12 cells edition-split (v2,v6,v7 x4 witnesses, all EDITION-EXACT); 4 cells blocked by a CONTAMINATED s_dismas 10:1 ('and children were q. 57. in Gen. ho. 29. Moral. c. 18. Tradit. Hebra.' \u2014 the apparatus is spliced in and the verse tail is lost); 6 genuine S6 p55/p56 defects remain (v14,15,16,32 + v1). A book-wide s_dismas-vs-odr_com length scan found only 4 divergent verses, so the contamination is NOT systemic: ch10:1 and ch48:3 are spliced apparatus, ch11:32 and ch21:31 are legitimate. The widened p56 bound admits one apparatus token 'Sem.' into v14 at the same depth as body text (not separable by the bound, same class as ch23 p90's running head); v14 does not pass, so no PASSING cell carries the fabrication."
+    }
+   ]
   }
  },
- "updated": "2026-08-03T00:50Z"
+ "updated": "2026-08-03T06:33Z"
 }
