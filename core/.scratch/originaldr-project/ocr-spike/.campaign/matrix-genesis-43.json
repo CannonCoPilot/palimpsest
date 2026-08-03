@@ -5,10 +5,10 @@
  "n_pass": 126,
  "rate": 0.9265,
  "ref_means": {
-  "s_dismas": 0.9763,
-  "odr_com": 0.9779,
-  "sabates_a": 0.9676,
-  "madueke_b": 0.9674
+  "s_dismas": 0.9768,
+  "odr_com": 0.9785,
+  "sabates_a": 0.9681,
+  "madueke_b": 0.9679
  },
  "src_rates": {
   "S1": 0.9412,
@@ -578,7 +578,7 @@
     }
    },
    "S9": {
-    "text": "Duble money alſo carie with you: of to and recarie that you founde in your ſackes, leſt perhaps it was done by an errour :",
+    "text": "Duble money alſo carie with you: : of to and recarie that you founde in your ſackes, leſt perhaps it was done by an errour :",
     "from": "r3",
     "score": {
      "s_dismas": 0.949,
@@ -1512,13 +1512,13 @@
     }
    },
    "S6": {
-    "text": "taking the portions that thev receiued ot him: and the greater porto ca Beniamin, ſo that it exceededby fiue pattes. And they dranke aud Were in chriated with him.",
-    "from": "p140",
+    "text": "taking the portions that they receiued of him: and the greater portion came to Beniamin, ſo that it exceeded by fiue partes. And they dranke and Were in cbriated with him.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.91,
-     "odr_com": 0.916,
-     "sabates_a": 0.905,
-     "madueke_b": 0.905
+     "s_dismas": 0.988,
+     "odr_com": 0.994,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    }
   }
@@ -1782,5 +1782,5 @@
  "blocked_cells": 0,
  "achievable": 136,
  "triage": "SOURCE-SKEW",
- "secs": 8.3
+ "secs": 8.6
 }

@@ -5,10 +5,10 @@
  "n_pass": 117,
  "rate": 0.9435,
  "ref_means": {
-  "s_dismas": 0.9783,
-  "odr_com": 0.9788,
-  "sabates_a": 0.9612,
-  "madueke_b": 0.9614
+  "s_dismas": 0.9787,
+  "odr_com": 0.9791,
+  "sabates_a": 0.9616,
+  "madueke_b": 0.9618
  },
  "src_rates": {
   "S1": 0.9355,
@@ -609,13 +609,13 @@
     }
    },
    "S6": {
-    "text": "For in the whole world there wautod bread, & famine oppreſſed the land, eſpecially of Egypt and Chanaan.",
-    "from": "p148",
+    "text": "For in the whole world there wanted bread, & famine oppreſſed the land, eſpecially of Ægypt and Chanaan.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.933,
-     "odr_com": 0.933,
-     "sabates_a": 0.967,
-     "madueke_b": 0.967
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    }
   },
@@ -777,13 +777,13 @@
     }
    },
    "S6": {
-    "text": "Which when they had brought, he gaue them ſuſtenance tor horſes, &ſheep, and oxen, and aſſes: and he ſuſtained them that veare for the exchange of the cattel.",
-    "from": "p148",
+    "text": "Which when they had brought, he gaue them ſuſtenance for horſes, & &ſheep, and oxen, and aſſes: and he ſuſtained them that yeare for the exchange of the cattel.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.949,
-     "odr_com": 0.949,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
     }
    }
   },
@@ -1614,5 +1614,5 @@
  "blocked_cells": 0,
  "achievable": 124,
  "triage": "R3-READY",
- "secs": 8.1
+ "secs": 8.0
 }

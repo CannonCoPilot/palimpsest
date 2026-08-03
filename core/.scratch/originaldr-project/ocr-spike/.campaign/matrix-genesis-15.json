@@ -5,10 +5,10 @@
  "n_pass": 76,
  "rate": 0.9048,
  "ref_means": {
-  "s_dismas": 0.979,
-  "odr_com": 0.9795,
-  "sabates_a": 0.9652,
-  "madueke_b": 0.9652
+  "s_dismas": 0.9786,
+  "odr_com": 0.9791,
+  "sabates_a": 0.9648,
+  "madueke_b": 0.9648
  },
  "src_rates": {
   "S1": 0.9048,
@@ -53,9 +53,9 @@
   {
    "src": "S1",
    "verse": 21,
-   "worst": 0.833,
+   "worst": 0.809,
    "from": "p80",
-   "text": "and the Amorreans the Cananites, and the Gargaſites, and in the Iebuſites."
+   "text": "and the Amorreans the Cananites, and the Gargaſites, and a in the Iebuſites."
   },
   {
    "src": "S3",
@@ -154,13 +154,13 @@
     }
    },
    "S6": {
-    "text": "And Abram ſaid: Lord God, what wilt thou giue me? I ſhal goe without children:and the ſonne of the ſteward of my houſe is this Damaſcus Eliezer.",
+    "text": "And Abram ſaid: Lord God, what wilt thou giue me? I thal goe without children:and the ſonne of the ſteward of my houſe is this Damaſcus Eliezer.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.971,
-     "odr_com": 0.971,
-     "sabates_a": 1.0,
-     "madueke_b": 1.0
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
     }
    }
   },
@@ -196,13 +196,13 @@
     }
    },
    "S6": {
-    "text": ".And Abram added: But to me thou haſt not giuen ſeed : and loe my ſcruant borne inmy houſe ſhal be mine heire.",
-    "from": "p74",
+    "text": ".And Abram added: But to me thou haſt not giuen ſeed and loe my ſcruant borne in my houſe ſhal be mine heire.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.943,
-     "odr_com": 0.943,
-     "sabates_a": 0.979,
-     "madueke_b": 0.979
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    }
   },
@@ -586,13 +586,13 @@
   },
   "13": {
    "S1": {
-    "text": "And it was ſaid vnto him Know and foreand know that a pilgrime shal thy ſeede be in a land nor their owne (and they shal bring them vnder bondage, and afflict them) foure hundred yeares.",
+    "text": "And it was ſaid vnto him Know and fore- and know that a pilgrime shal thy ſeede be in a land nor their owne (and they shal bring them vnder bondage, and afflict them) foure hundred yeares.",
     "from": "p80",
     "score": {
-     "s_dismas": 0.973,
-     "odr_com": 0.973,
-     "sabates_a": 0.966,
-     "madueke_b": 0.966
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
     }
    },
    "S3": {
@@ -722,13 +722,13 @@
     }
    },
    "S3": {
-    "text": "But in the fourth genethe ration they shal returne hither : for : as yet the iniquities the the Amorrheanes are not at the ful vntil this preſent time.",
+    "text": "But in the fourth genethe ration they shal returne hither : for : as yet the iniquities of the the Amorrheanes are not at the ful vntil this preſent time.",
     "from": "p84",
     "score": {
-     "s_dismas": 0.952,
-     "odr_com": 0.952,
-     "sabates_a": 0.956,
-     "madueke_b": 0.956
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
     }
    },
    "S9": {
@@ -922,13 +922,13 @@
   },
   "21": {
    "S1": {
-    "text": "and the Amorreans the Cananites, and the Gargaſites, and in the Iebuſites.",
+    "text": "and the Amorreans the Cananites, and the Gargaſites, and a in the Iebuſites.",
     "from": "p80",
     "score": {
-     "s_dismas": 0.958,
-     "odr_com": 0.958,
-     "sabates_a": 0.833,
-     "madueke_b": 0.833
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.809,
+     "madueke_b": 0.809
     }
    },
    "S3": {
@@ -1131,5 +1131,5 @@
  "blocked_cells": 0,
  "achievable": 84,
  "triage": "R3-READY",
- "secs": 4.9
+ "secs": 5.2
 }

@@ -2,23 +2,23 @@
  "chapter": 5,
  "n_verses": 31,
  "n_cells": 124,
- "n_pass": 103,
- "rate": 0.8306,
+ "n_pass": 105,
+ "rate": 0.8468,
  "ref_means": {
-  "s_dismas": 0.9656,
-  "odr_com": 0.9682,
-  "sabates_a": 0.9363,
-  "madueke_b": 0.9363
+  "s_dismas": 0.9687,
+  "odr_com": 0.9713,
+  "sabates_a": 0.9397,
+  "madueke_b": 0.9397
  },
  "src_rates": {
   "S1": 0.9032,
   "S3": 0.9677,
-  "S9": 0.6129,
+  "S9": 0.6774,
   "S6": 0.8387
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 21,
+ "n_open": 19,
  "open": [
   {
    "src": "S9",
@@ -65,30 +65,23 @@
   {
    "src": "S9",
    "verse": 11,
-   "worst": 0.787,
+   "worst": 0.84,
    "from": "p48",
-   "text": "And al the dayes of Enos came to alſo livvith nine hundredand fiue yeares, and heldied."
+   "text": "And al the dayes of Enos came to alſo linine hundredand fiue yeares, and heldied."
   },
   {
    "src": "S9",
    "verse": 13,
-   "worst": 0.802,
+   "worst": 0.833,
    "from": "p48",
-   "text": "And Cainan liued liued pleaſed after he begat Malaleel, eight hundred fourtie yeares, and begat ſonnes daughters."
+   "text": "And Cainan liued after he begat Malaleel, eight hundred & fourtie yeares, of Cainan and begat ſonnes & daughters."
   },
   {
    "src": "S9",
-   "verse": 16,
-   "worst": 0.821,
+   "verse": 14,
+   "worst": 0.779,
    "from": "p48",
-   "text": "And MaGod him laleel liued after he begat Iared, cight hundred and thirtie doth yeares, and begat ſonnes and daughters."
-  },
-  {
-   "src": "S9",
-   "verse": 18,
-   "worst": 0.767,
-   "from": "p48",
-   "text": "And Iared liued a hundred ſixtie two yeares, and berecited life of gat Enoch."
+   "text": "And al the dayes died. And came to nine hundred and ten yeares, and he"
   },
   {
    "src": "S3",
@@ -103,13 +96,6 @@
    "worst": 0.893,
    "from": "p38",
    "text": "Moreouer Enoch liued ſixtie ſiue yeares, & begat Mathuſala."
-  },
-  {
-   "src": "S9",
-   "verse": 21,
-   "worst": 0.814,
-   "from": "p48",
-   "text": "Moreouer Enoch liued ſixtie fiue yeares, & begat of bo. Mathuſala."
   },
   {
    "src": "S9",
@@ -128,9 +114,9 @@
   {
    "src": "S9",
    "verse": 27,
-   "worst": 0.774,
+   "worst": 0.823,
    "from": "p48",
-   "text": "And al the dayes of Mathuſala came to : nyne hundred hundred28 from ſixtie nine yeares, & he died."
+   "text": "And al the dayes of Mathuſala came to : nyne hundred hundred28 ſixtie nine yeares, & he died."
   },
   {
    "src": "S6",
@@ -149,9 +135,9 @@
   {
    "src": "S9",
    "verse": 29,
-   "worst": 0.824,
+   "worst": 0.895,
    "from": "p48",
-   "text": "and he called Adam li- ame Noe, ſaying This ſonne ſhal comfort vs from the mans, workes labours of our handes on theſearth, which our fiue by 2r. Lord curſed."
+   "text": "and he called ame Noe, ſaying : This ſonne ſhal comfort vs from the workes labours of our handes on theſearth, which our fiue Lord curſed."
   },
   {
    "src": "S6",
@@ -611,13 +597,13 @@
     }
    },
    "S9": {
-    "text": "And al the dayes of Enos came to alſo livvith nine hundredand fiue yeares, and heldied.",
+    "text": "And al the dayes of Enos came to alſo linine hundredand fiue yeares, and heldied.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.833,
-     "odr_com": 0.833,
-     "sabates_a": 0.787,
-     "madueke_b": 0.787
+     "s_dismas": 0.886,
+     "odr_com": 0.886,
+     "sabates_a": 0.84,
+     "madueke_b": 0.84
     }
    },
    "S6": {
@@ -695,13 +681,13 @@
     }
    },
    "S9": {
-    "text": "And Cainan liued liued pleaſed after he begat Malaleel, eight hundred fourtie yeares, and begat ſonnes daughters.",
+    "text": "And Cainan liued after he begat Malaleel, eight hundred & fourtie yeares, of Cainan and begat ſonnes & daughters.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.873,
-     "odr_com": 0.873,
-     "sabates_a": 0.802,
-     "madueke_b": 0.802
+     "s_dismas": 0.906,
+     "odr_com": 0.906,
+     "sabates_a": 0.833,
+     "madueke_b": 0.833
     }
    },
    "S6": {
@@ -737,13 +723,13 @@
     }
    },
    "S9": {
-    "text": "And al the dayes of Cainan came to nine hundred and ten yeares, and he died.",
+    "text": "And al the dayes died. And came to nine hundred and ten yeares, and he",
     "from": "p48",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.971,
-     "madueke_b": 0.971
+     "s_dismas": 0.824,
+     "odr_com": 0.824,
+     "sabates_a": 0.779,
+     "madueke_b": 0.779
     }
    },
    "S6": {
@@ -779,13 +765,13 @@
     }
    },
    "S9": {
-    "text": "And Malaleel liued ſixtie fiue yeares, and begat Iared.",
+    "text": "And MaMalaleel liued ſixtie fiue yeares, and begat Iared.",
     "from": "p48",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.98,
-     "madueke_b": 0.98
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
     }
    },
    "S6": {
@@ -821,13 +807,13 @@
     }
    },
    "S9": {
-    "text": "And MaGod him laleel liued after he begat Iared, cight hundred and thirtie doth yeares, and begat ſonnes and daughters.",
+    "text": "and laleel liued after he begat Iared, cight hundred thirtie yeares, and begat ſonnes and daughters.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.879,
-     "odr_com": 0.879,
-     "sabates_a": 0.821,
-     "madueke_b": 0.821
+     "s_dismas": 0.932,
+     "odr_com": 0.932,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
     }
    },
    "S6": {
@@ -905,13 +891,13 @@
     }
    },
    "S9": {
-    "text": "And Iared liued a hundred ſixtie two yeares, and berecited life of gat Enoch.",
+    "text": "And Iared liued a hundred ſixtie two yeares, and begat Enoch.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.787,
-     "odr_com": 0.787,
-     "sabates_a": 0.767,
-     "madueke_b": 0.767
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
     }
    },
    "S6": {
@@ -1031,13 +1017,13 @@
     }
    },
    "S9": {
-    "text": "Moreouer Enoch liued ſixtie fiue yeares, & begat of bo. Mathuſala.",
+    "text": "Moreouer Enoch liued ſixtie fiue yeares, & begat Mathuſala.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.814,
-     "madueke_b": 0.814
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.911,
+     "madueke_b": 0.911
     }
    },
    "S6": {
@@ -1241,13 +1227,13 @@
     }
    },
    "S9": {
-    "text": "And Mathuſala liued, after he be gat Lamech, ſeuen begot dred eightie two yeares, and begat ſonnes and daughters.",
+    "text": "And Mathuſala liued, after he be gat Lamech, ſeuen dred eightie two yeares, and begat ſonnes and daughters.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.936,
-     "odr_com": 0.936,
-     "sabates_a": 0.914,
-     "madueke_b": 0.914
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
     }
    },
    "S6": {
@@ -1283,13 +1269,13 @@
     }
    },
    "S9": {
-    "text": "And al the dayes of Mathuſala came to : nyne hundred hundred28 from ſixtie nine yeares, & he died.",
+    "text": "And al the dayes of Mathuſala came to : nyne hundred hundred28 ſixtie nine yeares, & he died.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.856,
-     "odr_com": 0.856,
-     "sabates_a": 0.774,
-     "madueke_b": 0.774
+     "s_dismas": 0.906,
+     "odr_com": 0.906,
+     "sabates_a": 0.823,
+     "madueke_b": 0.823
     }
    },
    "S6": {
@@ -1367,13 +1353,13 @@
     }
    },
    "S9": {
-    "text": "and he called Adam li- ame Noe, ſaying This ſonne ſhal comfort vs from the mans, workes labours of our handes on theſearth, which our fiue by 2r. Lord curſed.",
+    "text": "and he called ame Noe, ſaying : This ſonne ſhal comfort vs from the workes labours of our handes on theſearth, which our fiue Lord curſed.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.848,
-     "odr_com": 0.848,
-     "sabates_a": 0.824,
-     "madueke_b": 0.824
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
     }
    },
    "S6": {
@@ -1710,5 +1696,5 @@
  "blocked_cells": 0,
  "achievable": 124,
  "triage": "SOURCE-SKEW",
- "secs": 5.2
+ "secs": 4.7
 }

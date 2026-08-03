@@ -5,10 +5,10 @@
  "n_pass": 115,
  "rate": 0.8984,
  "ref_means": {
-  "s_dismas": 0.978,
-  "odr_com": 0.9784,
-  "sabates_a": 0.9668,
-  "madueke_b": 0.9668
+  "s_dismas": 0.9774,
+  "odr_com": 0.9778,
+  "sabates_a": 0.9661,
+  "madueke_b": 0.9661
  },
  "src_rates": {
   "S1": 0.9062,
@@ -1240,13 +1240,13 @@
     }
    },
    "S6": {
-    "text": "He therefore ſaid: What is thy name He anſwered: Iacob.",
+    "text": "He therefore ſaid: What is thy name He anſwered: Iacab.8.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.981,
-     "odr_com": 0.981,
-     "sabates_a": 1.0,
-     "madueke_b": 1.0
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    }
   },
@@ -1378,13 +1378,13 @@
   },
   "31": {
    "S1": {
-    "text": "And immediatly the ſunne roſe to him, after that he was paſt Phanuel; but he halted on his foote.",
+    "text": "And immediatly the ſunne roſe to him, after that he was paſt Phanuel; but he halted halted on his foote.",
     "from": "r3",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.988,
-     "madueke_b": 0.988
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
     }
    },
    "S3": {
@@ -1706,5 +1706,5 @@
  "blocked_cells": 0,
  "achievable": 128,
  "triage": "SOURCE-SKEW",
- "secs": 7.2
+ "secs": 7.0
 }

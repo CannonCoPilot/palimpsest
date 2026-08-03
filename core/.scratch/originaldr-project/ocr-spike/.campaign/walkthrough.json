@@ -76,7 +76,34 @@
      "notes": "ch41 194->205/228. Book 5619->5725/6116 = 0.9361, +106 cells, zero regressions, 216 tests pass. THE INSTRUMENT THAT CONFIRMED MY HYPOTHESIS WAS THE ONE KNOWN TO FAIL THAT WAY: line-membership scored the right strip as 'continuation' on five of six leaves, but reading the tokens showed annotation PROSE ('Death the crosse was most cruel', 'Iosephus ... this Putiphar was both') - full-width annotation blocks straddle the bound exactly as ch23 p89 did on the left. Geometry could not settle it; measurement did, and overturned my caution in the direction of MORE gain - widening p144/p148 added exactly two tokens, 'vp' and 'foule,', both genuine scripture (Gen 41:2-3). READING THE PAGE TELLS YOU WHAT IS THERE; ONLY MEASURING TELLS YOU WHAT THE PIPELINE DOES WITH IT. Then the bulk emit REGRESSED ch41 by 11 because it overwrote measured entries with estimates - it reset p146 to 0.705, a proposal already refused by eye AND by measurement, and reverted p144 to the clipping default. I had built that guard for the left axis and let the right-axis emitter walk through it. Restricting the emit to WIDENING ONLY restored 205. Bound value chosen off a flat plateau (0.84-0.89 all +6), taking 0.86 where ref means peak and below the verse-numeral column at 0.875. OPEN, PRE-EXISTING, NOT THIS ROUND: an apparatus-vocabulary scan over all 50 chapters found one contamination - ch3 v7 S9 reads 'made thems. Chrisclues aprons' ('made themselues aprons' with 'S. Chris' spliced in) - on p40, a leaf this round did not touch. It is a PASSING cell, so the board cannot see it; validity, not yield."
     }
    ]
+  },
+  "5": {
+   "passes": [
+    {
+     "at": "2026-08-03T00:50Z",
+     "pass_before": 103,
+     "pass_after": 105,
+     "achievable": 124,
+     "delta": 2,
+     "signals": [
+      "4"
+     ],
+     "diagnostics": [
+      "leaf_diag.py",
+      "x0 histogram census",
+      "bound sweep via chapter_campaign",
+      "left-column detector (built+refuted)",
+      "faithfulness_audit.py",
+      "apparatus-vocabulary scan"
+     ],
+     "rule": "A THIRD VARIANT OF THE BOUNDS DEFECT: a left bound too WIDE, admitting the note column. ch23/ch39 were bounds too narrow (clipping scripture OUT); ch41 a right bound too tight; this one lets apparatus IN. archive-holiebible-ot1 p48 sets its notes 0.08-0.20 with body from 0.21 while the band began at 0.14, so the column's right half counted as scripture: 'And Ma[God him]laleel liued', 'and be[recited life of]gat Enoch', '& begat [of bo.] Mathusala'. A verse is the concatenation of several lines, so a gloss admitted at each LINE END lands in the MIDDLE of the assembled verse - interleaving, not a tail. NEITHER EXISTING PROBE CAN SEE THIS: left_strip_probe only ever asks whether the body is CLIPPED, and bounds_probe holds the left bound unless it is. Neither has any way to say 'the bound admits too much'. Measured fix p48 (0.14,0.855)->(0.205,0.845), +2.",
+     "alert": "THE GENERALIZATION WAS BUILT AND REFUTED BY MEASUREMENT, so the APPROACH needs redesign and the sub-100% chapters stay OPEN. Detector: a note column is a tall stack inside the band with the body's own margin stack still AHEAD of it (a body margin has nothing comparable after it). First cut flagged 408 leaves - it was firing on each source's own body margin. Refined to 81. Applied to the 73 leaves of the three 1609 witnesses it cost ch5 TWENTY-FOUR CELLS (105->81): the false positives clip scripture. Reverted; only the measured per-leaf fix stands. A detector for 'admits too much' has no orthogonal corroborator the way 'clipped' has line-membership, and until one exists this class must be found per-leaf from the failing TEXT, not swept.",
+     "changed_text": true,
+     "audited": true,
+     "notes": "ch5 103->105/124. S9 0.613->0.677; the p48 interleaving is gone. Board 5725->5727/6116 = 0.9364 (the fix is local; p48 carries no other chapter). 216 tests pass. Residue on p48 ('hundred28', 'our fiue') sits INSIDE the body band - verse numerals set in the measure, not a bounds problem. S6 p34 right-bound sweep (0.775/0.785/0.80) moved ZERO cells; not adopted, a third-decimal ref-mean gain is not a reason to churn a probe-derived bound. TOOLING DEFECT FOUND INCIDENTALLY: chapter_campaign.py reported 'NO-VERSES 0/0 = 0.000' three times against a gen1_pagemodel.py that FAILED TO IMPORT (a syntax error from a zsh word-splitting slip - zsh does not word-split unquoted parameters). A config that cannot be parsed must fail loudly; reporting it as a measurement of zero is exactly the silent-degradation shape. VALIDITY, NOT YIELD - apparatus inside PASSING cells, which the board cannot see: ch3 v7 S9 'made thems. Chrisclues aprons' (= 'made themselues aprons') scores 0.918-0.928 on all four references and passes. ch21 v8 S9 'The child therfore signifieth grewe' is contaminated but already open. The tightened apparatus-vocabulary scan is worth re-running after every bound change."
+    }
+   ]
   }
  },
- "updated": "2026-08-03T00:26Z"
+ "updated": "2026-08-03T00:50Z"
 }

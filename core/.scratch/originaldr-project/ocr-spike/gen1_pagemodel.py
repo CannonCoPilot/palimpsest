@@ -360,7 +360,7 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('jp2-S06', 28): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
     ('jp2-S06', 30): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
     ('jp2-S06', 32): {"body": (0.215, 0.765)},   # was (0.215, 0.825)
-    ('jp2-S06', 34): {"body": (0.215, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 34): {"body": (0.215, 0.765)},   # was (0.215, 0.825)   # was (0.215, 0.825)
     ('jp2-S06', 36): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
     ('jp2-S06', 38): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
     ('jp2-S06', 42): {"body": (0.1, 0.765)},   # was (0.215, 0.825)
@@ -685,7 +685,7 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('archive-holiebible-ot1', 42): {"body": (0.14, 0.885)},
     ('archive-holiebible-ot1', 43): {"body": (0.109, 0.835)},
     ('archive-holiebible-ot1', 46): {"body": (0.14, 0.885)},
-    ('archive-holiebible-ot1', 48): {"body": (0.14, 0.855)},
+    ('archive-holiebible-ot1', 48): {"body": (0.205, 0.845)},
     ('archive-holiebible-ot1', 50): {"body": (0.14, 0.875)},
     ('archive-holiebible-ot1', 52): {"body": (0.109, 0.885)},
     ('archive-holiebible-ot1', 58): {"body": (0.14, 0.875)},
