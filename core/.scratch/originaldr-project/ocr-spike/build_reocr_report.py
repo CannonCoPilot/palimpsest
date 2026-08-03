@@ -82,6 +82,79 @@ CAMPAIGN_DIR = HERE / ".campaign"
 PROGRESSION = CAMPAIGN_DIR / "progression.jsonl"
 
 
+def pipeline_provenance() -> dict[str, Any]:
+    """WHICH PANELS MOVE WHEN A CHAPTER IS WORKED, AND WHICH CANNOT — with the dates, not a promise.
+
+    Campaign work IS re-OCR work: fixing a page-model bound is "read the page better", the same rung as a
+    recognizer fine-tune, and a reader is right to expect the whole report to reflect it. It does not, and the
+    reason is mechanical rather than conceptual. Two pipelines produce this page and only one of them can see
+    a campaign fix:
+
+      * `.campaign/matrix-genesis-N.json`  <- `chapter_campaign.py` -> `gen1_matrix` -> `gen1_pagemodel`
+        This is the live board. Every geometry fix, PAGE_OVERRIDE, R2 attestation and R3 adoption lands here.
+
+      * `coverage-audit-verse.json`        <- `qc_audit.py` -> `detect_our_ocr` -> `reconstruction/reads`
+        This is EVERYTHING ELSE on the page. It carries its own layout model (`marginalia-geometry.json`,
+        `skeleton.json`) and imports nothing from `gen1_pagemodel` — verified by grep across the whole
+        reconstruction module set. No campaign fix can reach it, and rebuilding this report will not change
+        a single figure below the board no matter how much the board moves.
+
+    So the honest thing a renderer can do is DATE both inputs and say which is which. A report that showed a
+    rising board above a frozen corpus figure, with no note, would invite exactly the false inference this
+    project has already had to correct once — that a gain measured at one grain has been realised at another."""
+    def stamp(p: Path) -> dict[str, Any]:
+        if not p.exists():
+            return {"path": p.name, "exists": False}
+        return {"path": p.name, "exists": True,
+                "mtime": datetime.fromtimestamp(p.stat().st_mtime, timezone.utc).strftime("%Y-%m-%d %H:%M"),
+                "mb": round(p.stat().st_size / 1e6, 1)}
+    mats = sorted(CAMPAIGN_DIR.glob("matrix-genesis-*.json"), key=lambda p: p.stat().st_mtime)
+    return {
+        "board": {**(stamp(mats[-1]) if mats else {"exists": False}),
+                  "label": "campaign matrices", "n": len(mats),
+                  "chain": "chapter_campaign.py -> gen1_matrix -> gen1_pagemodel"},
+        "rest": {**stamp(VERSE), "label": "pilot verse audit",
+                 "chain": "qc_audit.py -> detect_our_ocr -> reconstruction/reads"},
+    }
+
+
+def campaign_books() -> list[dict[str, Any]]:
+    """Every Douay-Rheims division the campaign COULD cover, whether or not it has a board yet.
+
+    The list is read from `skeleton.json` (76 scripture books, the canonical authority for order and chapter
+    counts) plus `matter-scoring-summary.json` (30 front- and back-matter sections, which this project scores
+    as first-class divisions rather than as trimmings). It is NOT the list of books with data.
+
+    EVERY ENTRY CARRIES `has_board`, AND MOST ARE FALSE. Genesis is the only division with campaign matrices.
+    A picker that silently listed only Genesis would misrepresent the campaign as nearly complete; one that
+    listed all 106 without marking which are empty would misrepresent it as far more advanced than it is. So
+    the entry states which it is, and the panel says "no board yet" rather than drawing an empty grid — an
+    empty grid reads as "measured and found perfect", which is the opposite of the truth."""
+    out: list[dict[str, Any]] = []
+    have = {int(p.stem.split("-")[-2]) if False else p.stem.split("-")[1]
+            for p in CAMPAIGN_DIR.glob("matrix-*-*.json")}
+    try:
+        sk = json.loads((RECON / "skeleton.json").read_text())
+        for b in sk.get("books", []):
+            out.append({"slug": b["slug"], "label": b["slug"].replace("-", " ").title(),
+                        "kind": "appendix" if b.get("is_appendix") else b.get("testament", "OT"),
+                        "chapters": b.get("chapters", 0), "has_board": b["slug"] in have})
+    except Exception as e:                                    # a missing skeleton must not kill the report
+        out.append({"slug": "genesis", "label": "Genesis", "kind": "OT", "chapters": 50,
+                    "has_board": "genesis" in have, "note": f"skeleton unread: {e}"})
+    try:
+        mb = json.loads(MATTER.read_text()).get("books", [])
+        for b in (mb if isinstance(mb, list) else list(mb.values())):
+            slug = b.get("book") or b.get("slug")
+            if not slug:
+                continue
+            out.append({"slug": slug, "kind": "matter", "chapters": 0, "has_board": slug in have,
+                        "label": slug.replace("matter-", "").replace("-", " ").title()})
+    except Exception:
+        pass
+    return out
+
+
 def campaign_block(note: str = "") -> dict[str, Any]:
     """The LIVE Genesis campaign board, verse by verse and cell by cell, plus its history.
 
@@ -123,7 +196,13 @@ def campaign_block(note: str = "") -> dict[str, Any]:
                          "blocked": m.get("blocked_cells", 0), "achievable": m.get("achievable", 0),
                          "src_rates": m.get("src_rates", {}), "ref_gaps": m.get("ref_gaps", []),
                          "closed": closed, "short": max(0, m.get("achievable", 0) - m.get("n_pass", 0)),
-                         "grid": grid})
+                         "grid": grid,
+                         # The stacked verse view needs the text of PASSING cells too, which `open` never
+                         # holds. Absent on any matrix written before 2026-08-01; the panel says so rather
+                         # than rendering an empty stack that looks like "this verse has no witnesses".
+                         "cellgrid": m.get("cellgrid") or {},
+                         "refs_by_verse": m.get("refs_by_verse") or {},
+                         "janvier_by_verse": m.get("janvier_by_verse") or {}})
         totals["cells"] += m.get("n_cells", 0)
         totals["pass"] += m.get("n_pass", 0)
         totals["achievable"] += m.get("achievable", 0)
@@ -550,6 +629,8 @@ def build_data(version: int = 0, stamp: str | None = None) -> dict[str, Any]:
 
     return {
         "campaign": campaign_block(CAMPAIGN_NOTE),
+        "campaign_books": campaign_books(),
+        "pipelines": pipeline_provenance(),
         "meta": {
             "generated_at": stamp or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "stage": STAGE, "version": version,
@@ -846,6 +927,25 @@ select{background:#fff;color:var(--ink);border:1px solid var(--rule);border-radi
 .cg-f:hover{outline:1px solid var(--fail)}
 .cg-b{background:#f3f0fa;color:#6a5aa0}
 .cg-txt{font-family:Georgia,serif;margin-top:6px;line-height:1.45}
+/* The grid and the stacked verse view sit side by side: the grid says WHICH cell is short, the stack says
+   what each witness actually printed. Reading them together is the whole diagnostic act, so they must not be
+   separated by a scroll. `minmax(0,1fr)` (not `1fr`) keeps a long verse from forcing the grid off-screen. */
+.cg-split{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:start}
+@media(max-width:900px){.cg-split{grid-template-columns:1fr}}
+.cg-stack{position:sticky;top:12px;border-left:3px solid var(--accent);padding-left:14px}
+.cg-row{margin:0 0 11px}
+.cg-row .who{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+.cg-row .who b{color:var(--ink);letter-spacing:0}
+.cg-row .t{font-family:Georgia,serif;line-height:1.45;margin-top:2px}
+.cg-row.ref .t{color:#334}
+.cg-row.jan .t{color:#555;font-style:italic}
+.cg-sep{border-top:1px dashed #ccc;margin:13px 0 11px;font-size:.72rem;color:var(--mut);
+        letter-spacing:.04em;text-transform:uppercase;padding-top:9px}
+.cg-v{cursor:pointer}
+.cg-v:hover{text-decoration:underline}
+.cg-v.sel{font-weight:700;color:var(--ink)}
+.cg-sc{font-size:.7rem;color:var(--mut);font-weight:400;letter-spacing:0;text-transform:none}
+.cg-bad{color:#a11}
 table{border-collapse:collapse;width:100%;font-size:.83rem}
 th,td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
@@ -914,7 +1014,12 @@ svg text{fill:var(--ink)}
 
 
 <section id="s-campaign">
-  <div class="figtitle"><h2>Genesis campaign &mdash; the live board, chapter by chapter and verse by verse</h2></div>
+  <div class="figtitle" style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+    <h2>The Live Board: chapter by chapter and verse by verse</h2>
+    <span style="font-size:13px;color:#555">Book
+      <select id="cg-book" onchange="cgBook(this.value)" style="font-size:13px;padding:2px 6px"></select>
+    </span>
+  </div>
   <div class="note"><b>This section is the only one on this page that moves when a chapter is worked.</b>
   Everything below it renders the 5-book P3 pilot audit (<code>coverage-audit-verse.json</code>), a different
   pipeline at a different grain, which does not change when a Genesis chapter closes. This one reads
@@ -923,9 +1028,10 @@ svg text{fill:var(--ink)}
   &ge;&thinsp;0.90 against <b>each</b> of them. <span class="cg-b">Blocked</span> means a reference is absent
   for that verse, so no recognizer can close it &mdash; it is excluded from the achievable denominator and
   stays open.</div>
+  <div id="cg-prov"></div>
   <div class="cards" id="cg-cards"></div>
   <div id="cg-prog"></div>
-  <div class="figtitle" style="margin-top:18px"><h3>Chapters &mdash; click one for its verse grid</h3></div>
+  <div class="figtitle" style="margin-top:18px" id="cg-boardhdr"><h3>Chapters &mdash; click one for its verse grid</h3></div>
   <div id="cg-board"></div>
   <div id="cg-detail"></div>
   <div id="cg-flags"></div>
@@ -1140,7 +1246,37 @@ function cgBoard(){
       <div class="cg-s">${c.closed?'CLOSED':(c.short+' short')}</div></div>`;
   }).join('') + '</div>';
 }
-function cgPick(ch){ CGSEL = (CGSEL===ch? null : ch); cgBoard(); cgDetail(); }
+function cgPick(ch){ CGSEL = (CGSEL===ch? null : ch); CGVERSE = null; cgBoard(); cgDetail(); }
+/* ---- book picker ------------------------------------------------------------------------------------
+   All 106 divisions the campaign could cover — 76 scripture books from `skeleton.json` plus the 30 matter
+   sections this project scores as first-class rather than as trimmings. Only Genesis has matrices, and the
+   picker SAYS SO on every other entry instead of drawing an empty board. An empty grid reads as "measured
+   and found perfect"; the truth is "not measured", and those must never look alike.                     */
+let CGBOOK = 'genesis';
+function cgBookList(){
+  const bs = DATA.campaign_books || [];
+  const sel = document.getElementById('cg-book'); if(!sel) return;
+  const groups = [['OT','Old Testament'],['NT','New Testament'],['appendix','Appendix'],['matter','Front &amp; back matter']];
+  sel.innerHTML = groups.map(([k,lbl])=>{
+    const items = bs.filter(b=>b.kind===k);
+    if(!items.length) return '';
+    return `<optgroup label="${lbl}">` + items.map(b=>
+      `<option value="${b.slug}"${b.slug===CGBOOK?' selected':''}>${b.label}${b.has_board?'':' — no board yet'}</option>`
+    ).join('') + '</optgroup>';
+  }).join('');
+}
+function cgBook(slug){ CGBOOK = slug; CGSEL = null; CGVERSE = null; cgRender(); }
+function cgNoBoard(){
+  const b = (DATA.campaign_books||[]).find(x=>x.slug===CGBOOK) || {label:CGBOOK};
+  return `<div class="callout"><b>${b.label} has no campaign board yet.</b>
+    The campaign has produced matrices for <b>Genesis only</b>; nothing has been measured at cell grain for
+    this division, so there is nothing to show. This is a statement about the WORK, not about the text —
+    ${b.label} is not passing, failing, or blocked here, it is <b>unmeasured</b>.
+    ${b.chapters?`It has ${b.chapters} chapters awaiting a board.`:''}
+    <div class="note" style="margin-top:8px">To open one:
+    <code>chapter_campaign.py --chapters 1-${b.chapters||1} --phase measure</code> against
+    <code>${b.slug}</code>.</div></div>`;
+}
 function cgDetail(){
   const box = document.getElementById('cg-detail');
   if(CGSEL==null){ box.innerHTML=''; return; }
@@ -1150,10 +1286,13 @@ function cgDetail(){
   let s = `<div class="figtitle" style="margin-top:16px"><h3>Genesis ${c.ch} &mdash; ${c.pass}/${c.cells} cells,
     ${c.short} short of the bar${c.blocked?`, ${c.blocked} blocked (${(c.ref_gaps||[]).join(', ')} absent)`:''}</h3></div>`;
   s += `<div class="note">Per source: ` + srcs.map(k=>`<b>${k}</b> ${((c.src_rates||{})[k]!=null)?(100*c.src_rates[k]).toFixed(0)+'%':'—'}`).join(' &nbsp;·&nbsp; ')
-     + `. Click a failing cell to read what that source produced.</div>`;
+     + `. Click a <b>verse number</b> for every witness stacked beside the references; click a failing cell for
+        that one source.</div>`;
+  s += '<div class="cg-split"><div>';
   s += '<table class="cg-tab"><thead><tr><th>v</th>' + srcs.map(k=>`<th>${k}</th>`).join('') + '</tr></thead><tbody>';
   for(const row of c.grid){
-    s += `<tr><td class="cg-v">${row.v}</td>`;
+    s += `<tr><td class="cg-v${CGVERSE===row.v?' sel':''}" onclick="cgVerse(${row.v})"
+             title="click for all witnesses of this verse">${row.v}</td>`;
     for(const cell of row.cells){
       if(row.blocked) s += `<td class="cg-c cg-b" title="a reference is absent for this verse">blk</td>`;
       else if(cell.ok) s += `<td class="cg-c cg-p">&#10003;</td>`;
@@ -1161,8 +1300,60 @@ function cgDetail(){
     }
     s += '</tr>';
   }
-  s += '</tbody></table><div id="cg-cell"></div>';
+  s += '</tbody></table></div><div id="cg-stack" class="cg-stack"></div></div><div id="cg-cell"></div>';
   box.innerHTML = s;
+  cgStack();
+}
+/* ---- the stacked verse view -------------------------------------------------------------------------
+   All four witnesses, then the segmentation the matrix is cut on, then the references, for ONE verse. The
+   order is deliberate: what the scans say, then what cut them, then what they are judged against. Reading
+   the judgement first is how a reference defect gets mistaken for a reading failure — the error that cost
+   this campaign 20 cells before the signal-6 correction.
+   Passing cells are shown too. A view that hid them would answer "why did this fail" but never "is the one
+   that PASSED actually right", and those are the same question asked of different cells.                */
+let CGVERSE = null;
+function cgVerse(v){ CGVERSE = (CGVERSE===v ? null : v); cgDetail(); }
+function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function cgStack(){
+  const box=document.getElementById('cg-stack'); if(!box) return;
+  if(CGVERSE==null){
+    box.innerHTML = `<div class="note" style="margin:34px 0 0">Select a <b>verse number</b> in the left column
+      to stack every contributing source here beside the Janvier segmentation and the archaic references.</div>`;
+    return;
+  }
+  const c=(CG.chapters||[]).find(x=>x.ch===CGSEL); if(!c) return;
+  const key=String(CGVERSE);
+  const cg=(c.cellgrid||{})[key], rf=(c.refs_by_verse||{})[key], jn=(c.janvier_by_verse||{})[key];
+  if(!cg){
+    box.innerHTML = `<div class="note" style="margin:34px 0 0"><b>This chapter's matrix predates the stacked
+      view.</b> It was written before the per-cell text was stored, so the passing cells' readings are not in
+      the artifact — re-run <code>chapter_campaign.py --chapters ${c.ch} --phase measure</code> to populate it.
+      Nothing is inferred here; an empty stack would read as "no witnesses", which is not what this means.</div>`;
+    return;
+  }
+  const row=(c.grid||[]).find(r=>r.v===CGVERSE)||{};
+  let s=`<div class="figtitle" style="margin:0 0 10px"><h3>Genesis ${c.ch}:${CGVERSE}</h3></div>`;
+  if(row.blocked) s+=`<div class="note"><b>Blocked</b> — a reference is absent for this verse, so no
+     recognizer can close it. It stays open and is out of the achievable denominator.</div>`;
+  for(const k of ['S1','S3','S6','S9']){
+    const d=cg[k]; if(!d) continue;
+    const sc=d.score||{}; const vals=Object.values(sc).filter(x=>x!=null);
+    const worst=vals.length?Math.min(...vals):null;
+    const bad=(worst!=null&&worst<0.90);
+    s+=`<div class="cg-row"><div class="who"><b>${k}</b>${d.from?` &middot; ${esc(d.from)}`:''}
+        <span class="cg-sc${bad?' cg-bad':''}">${worst!=null?('worst '+worst.toFixed(3)):'no score'}</span></div>
+        <div class="t">${esc(d.text)||'<span class="sub">(not localized on this source)</span>'}</div></div>`;
+  }
+  s+=`<div class="cg-sep">Janvier &mdash; the segmentation this matrix is cut on, not a reference</div>`;
+  s+=`<div class="cg-row jan"><div class="t">${esc(jn)||'<span class="sub">(absent)</span>'}</div></div>`;
+  s+=`<div class="cg-sep">References &mdash; archaic governs the gate; modern is signal only</div>`;
+  for(const k of ['s_dismas','odr_com','sabates_a','madueke_b']){
+    const t=(rf||{})[k];
+    s+=`<div class="cg-row ref"><div class="who"><b>${k}</b> <span class="cg-sc">${
+        (k==='s_dismas'||k==='odr_com')?'archaic':'modern'}</span></div>
+        <div class="t">${esc(t)||'<span class="sub">(absent for this verse)</span>'}</div></div>`;
+  }
+  box.innerHTML=s;
 }
 function cgCell(ch,v,src){
   const c=(CG.chapters||[]).find(x=>x.ch===ch); const row=c.grid.find(r=>r.v===v);
@@ -1189,7 +1380,43 @@ function cgFlags(){
        <div class="note"><b>Why no recognizer closes it:</b> ${x.why_no_recognizer_closes_it}</div>
        <div class="note"><b>What would resolve it:</b> ${x.what_would_resolve_it}</div></div>`).join('');
 }
-function cgRender(){ cgCards(); cgProg(); cgBoard(); cgDetail(); cgFlags(); }
+function cgProv(){
+  const p=DATA.pipelines||{}, b=p.board||{}, r=p.rest||{};
+  const box=document.getElementById('cg-prov'); if(!box) return;
+  box.innerHTML = `<div class="callout" style="border-left:3px solid var(--accent)">
+    <b>Campaign work is re-OCR work &mdash; but only this panel can show it.</b>
+    Fixing a page-model bound is &ldquo;read the page better&rdquo;, the same rung as a recognizer fine-tune.
+    Two pipelines render this document and only one of them can see such a fix.
+    <div class="note" style="margin-top:8px">
+      <b>This panel</b> &mdash; ${b.n||0} campaign matrices, newest
+      <b>${b.mtime||'—'}</b> &middot; <code>${b.chain||''}</code><br>
+      <b>Everything below</b> &mdash; <code>${r.path||'coverage-audit-verse.json'}</code>${r.mb?` (${r.mb} MB)`:''},
+      built <b>${r.mtime||'—'}</b> &middot; <code>${r.chain||''}</code>
+    </div>
+    <div class="note" style="margin-top:8px">The second pipeline carries its OWN layout model
+    (<code>marginalia-geometry.json</code>, <code>skeleton.json</code>) and imports nothing from
+    <code>gen1_pagemodel</code>. <b>No campaign fix reaches it</b>, and rebuilding this report will not move a
+    single figure below the board however far the board rises. Propagating campaign gains report-wide requires
+    re-running <code>qc_audit.py</code> over reads regenerated <i>through</i> the campaign page model &mdash; a
+    path that does not exist today. The dates above are printed so the gap is visible rather than assumed.</div>
+  </div>`;
+}
+function cgRender(){
+  cgBookList(); cgProv();
+  if(CGBOOK!=='genesis'){
+    // Blank the live panels rather than leaving Genesis's numbers under another book's name — the worst
+    // failure mode here is a board that looks like it belongs to the book named above it.
+    document.getElementById('cg-cards').innerHTML='';
+    document.getElementById('cg-prog').innerHTML='';
+    document.getElementById('cg-boardhdr').style.display='none';
+    document.getElementById('cg-board').innerHTML=cgNoBoard();
+    document.getElementById('cg-detail').innerHTML='';
+    document.getElementById('cg-flags').innerHTML='';
+    return;
+  }
+  document.getElementById('cg-boardhdr').style.display='';
+  cgCards(); cgProg(); cgBoard(); cgDetail(); cgFlags();
+}
 function booksInScope(){return DATA.scope_books?DATA.scope_books:DATA.meta.scope_books;}
 function scopeBooks(){return DATA.meta.scope_books.filter(b=>BOOK==='__all__'||b===BOOK);}
 

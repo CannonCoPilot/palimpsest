@@ -59,7 +59,16 @@ from a signal, and the signals have very different yields. Check in this order:
 | 1 | `ref_gaps` non-empty | **UNREACHABLE.** The reference lacks the verse | `chapter_campaign.py --report` | **SKIP THE CHAPTER.** Acquisition, not OCR | ch23 sits 2nd-worst and cannot move |
 | 2 | cells with **NO TEXT** | leaf discarded or never localized | `leaf_diag.py`, `chapter_open_probe.py` | mixed leaf -> `chapter_open_y`; check `_is_annotation_leaf` | **+38, zero regressions** — the campaign's best single fix |
 | 3 | **one reference's mean far below the other three** | the INSTRUMENT is broken, not the OCR | `ref_alignment_audit.py` | `ref_renumber.CORRECTIONS`, corroborated | 700 blocked cells -> 4 |
-| 4 | one source far below **its own median** in this chapter | a LEAF defect | `leaf_diag.py` | `PAGE_OVERRIDE` / `CHAPTER_MODEL` | ch39 0.554->0.717, ch44 0.61->0.824 |
+| 4 | one source far below **its own median** in this chapter | a LEAF defect | `leaf_diag.py`, then **`left_strip_probe.py`** | `PAGE_OVERRIDE` / `CHAPTER_MODEL` | ch39 0.554->0.717, ch44 0.61->0.824, **+57 book-wide 08-01** |
+
+**SWEEP BOTH EDGES. `gutter_probe.py` ONLY SWEEPS THE GUTTER, AND FOR MONTHS NOBODY SWEPT THE OTHER SIDE.**
+Every 1609 `PAGE_OVERRIDE` entry read `(0.140, 0.7995)` — a right bound tuned to four decimals beside the
+untouched default left bound, identical on all ten. **When every row of a table varies on one axis and is
+constant on another, the constant axis was never tested.** The left bound cut THROUGH the body column on 194
+leaves; fixing 162 of them was worth **+57 cells with zero regressions**, in chapters this workflow had
+already reclassified as recognizer problems (ch41 163->182, ch35 86->97). Use `left_strip_probe.py`: a strip
+token whose LINE also has >=2 tokens in the band is a clipped body head, one whose line lies wholly in the
+strip is a note. Per leaf, never as a default — the strip is body on 194 leaves and a real note column on 167.
 | 5 | a source low **everywhere** | recognition quality | `s6_causes.py --source SX --examples 3` | R2/R3 — do not look for geometry | the +183 |
 | 6 | **all four sources fail the same verse** | **TWO CAUSES — split them.** A REFERENCE defect, or a true divergence | the split test below | if one reference binds and the others pass -> `ref_renumber` | **20 cells recovered, 2026-08-01** |
 
@@ -218,8 +227,23 @@ different KIND of work:
 
   1. **Read the page better** — recognizer. R2 fine-tune on the confusion set. (Where we are.)
   2. **Measure against the right instrument** — B1's detector; **acquire a 1635 reference so S6 is scored
-     against its own edition.** This is the single highest-leverage unbuilt thing: S6 is the worst source in
-     15 of the next 16 chapters and is currently graded against a text it does not print.
+     against its own edition.** S6 is the worst source in 15 of the next 16 chapters and is graded against a
+     text it does not print. **THIS RUNG WAS FIRST WRITTEN AS "the single highest-leverage unbuilt thing" AND
+     THAT WAS WRONG — SIZED 2026-08-01 OVER ALL 6,116 CELLS, IT IS WORTH ~22 CELLS.** The full-board dump
+     (`band-cells.json`, every cell × every reference, passing cells included — which the matrices discard)
+     confirms the edition effect exactly: arm gap median **-0.0110 for S1, S3 and S9 alike**, **+0.0000 median
+     / +0.0099 mean for S6**. But cells a correct-edition reference could actually cross the bar — worst score
+     currently set by an archaic ref, both modern refs already ≥0.90 — number **31 for S6 against a control
+     mean of 9**. That is a CEILING, not an estimate: it assumes the 1635 reference scores S6 as well as the
+     modern refs do, which no reference achieves. S6's real mass is the **369 cells below 0.876** (four times
+     the control), which is MISREAD and no reference swap reaches it; in the band `[0.876,0.999)` S6 has
+     **fewer** cells than any 1609 source (1,041 vs ~1,220).
+     **THE RUNG IS REAL, BUT IT IS A VALIDITY BUILD, NOT A YIELD BUILD.** Above the bar, S6 carries ~507
+     archaic-limited cells against a control of ~80 — **~430 cells whose HEADROOM is compressed by a reference
+     printing a different text.** They do not move the board today; they MASK the rungs. A cell at 0.94 held
+     down by a genuine 1635/1609 variant cannot rise when R2 reads the page better, because the residual
+     disagreement is not a misread. That cost compounds with every rung added, which is the argument that
+     survives. **Sequence it alongside rung 1, not after it — and never justify it by cell yield.**
   3. **Acquire a better page** — a further witness for ch23's absent verse; a cleaner scan of a bad leaf.
      Note B3: more PIXELS of the same scan is not this rung.
   4. **Change the standard** — Sir's call, never the pipeline's.
@@ -260,7 +284,7 @@ commissioning a training run on a residual, exhaust the geometry.
 
 > **⚠ TWO INTERPRETERS.** Everything here runs on `../ocr-venv/bin/python`. The other venv
 > (`../../../.venv/bin/python`) cannot import kraken and will fail confusingly.
-> Tests: `../ocr-venv/bin/python -m pytest tests/` → **202 passed** (2026-08-01).
+> Tests: `../ocr-venv/bin/python -m pytest tests/` → **216 passed** (2026-08-01, after the left-bound work; the 202 figure predated it).
 > (Module names keep a historical `gen1_` prefix; they are all chapter-parameterized via `--chapter`.)
 
 ---

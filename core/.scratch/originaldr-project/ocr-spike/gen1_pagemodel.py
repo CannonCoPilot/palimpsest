@@ -950,6 +950,45 @@ _SIGNATURE_RE = re.compile(r"^(?:[A-Z][a-z]?\d?|\d{1,2})$")
 _VNUM_ONLY = re.compile(r"^\d{1,4}[.,]?$")
 
 
+_DESKEW_CACHE: dict[tuple[str, int, int], dict] = {}
+
+
+def _DESKEW_MODE() -> str:
+    """`off` | `untuned` (default) | `all`.
+
+    MEASURED, AND THE DEFAULT IS THE RESULT. Straightening every leaf costs 5 cells book-wide and deriving
+    bounds fresh on straightened leaves costs 25, even though the deskew demonstrably works (S9's line-start
+    spread falls 0.0157 -> 0.0043, and all four witnesses converge on the same ~0.004 floor of hand-set
+    type). Both facts are true because THE HAND-TUNED BOUNDS WERE FITTED IN THE SKEWED FRAME: rotating the
+    page upright moves it out from under its own tuning. So the two changes are each right and mutually
+    destructive, and the gate follows from that — straighten the leaves that carry no measured override, and
+    leave every hand-fitted leaf in the frame it was fitted in. A leaf earns its way out of the deskew by
+    having been measured, not by being straight.
+    """
+    # DEFAULT `off`, AND THAT IS A MEASURED RESULT, NOT A PREFERENCE. Book-wide, against a 5733 baseline:
+    #     off 5733  ·  untuned 5724 (-9)  ·  all 5728 (-5)  ·  all + bounds re-derived on deskewed 5708 (-25)
+    # The deskew itself is sound — S9's line-start spread falls 0.0157 -> 0.0043 and all four witnesses
+    # converge on the same ~0.004 floor of hand-set type. It loses cells anyway because EVERY calibrated
+    # constant in this stack was fitted in the skewed frame: not only the 364 per-leaf overrides but the
+    # SOURCE defaults (chosen "generous enough for every leaf" across skewed leaves), R3's 6% crop margin,
+    # and the head/foot tests. Rotating the page upright moves it out from under all of them at once, which
+    # is why even gating to untuned leaves still loses. Deskew cannot be retrofitted incrementally; it is
+    # adoptable only together with a re-derivation of the whole geometry, and a re-derivation must beat 364
+    # hand-measurements — which the heuristic probe does not (-25). That is the argument for replacing the
+    # fractional-bound model with a trained region segmenter rather than adding constants to it.
+    return os.environ.get("ODR_DESKEW", "off")
+
+
+def _deskewed(ocr_dir: str, page_index: int, page: dict) -> dict:
+    """This leaf's boxes, rotated upright. Cached — the estimator sweeps 100 angles over every word."""
+    key = (ocr_dir, page_index, len(page.get("lines") or ()))
+    hit = _DESKEW_CACHE.get(key)
+    if hit is None:
+        import deskew as _dk
+        hit = _DESKEW_CACHE[key] = _dk.deskew(page)
+    return hit
+
+
 def body_rows(ocr_dir: str, page_index: int, page: dict) -> list[list[dict]]:
     """The words of one page that lie inside this SOURCE's body column, in reading order.
 
@@ -957,6 +996,16 @@ def body_rows(ocr_dir: str, page_index: int, page: dict) -> list[list[dict]]:
     interleaves the columns: on `archive-holiebible-ot1` p31 the annotation lines at y=4713 and y=4862 are
     emitted BETWEEN the body lines at y=4694 and y=4877. Sorting the surviving body words by (y-band, x) puts
     the scripture back in the order it is printed."""
+    # DESKEW FIRST, BECAUSE A FRACTIONAL BOUND ONLY MEANS ANYTHING ON A LEAF WHOSE COLUMNS ARE VERTICAL.
+    # `archive-holiebible-ot1` p48 leans -0.03: its body's left edge migrates 0.212 -> 0.226 down the leaf
+    # while the note column's right edge falls 0.210 -> 0.192, so at the head of that page the channel between
+    # apparatus and scripture is four pixels wide and no single fraction can sit in it. The transform is on
+    # COORDINATES only — x' = x + theta*(y - y_centre), y untouched — so every row-grouping and line-splitting
+    # decision downstream is bit-identical and any change in the board is attributable to the bounds alone.
+    # See `deskew.py` for the estimator and why the median line slope is not it.
+    _dm = _DESKEW_MODE()
+    if _dm != "off" and not (_dm == "untuned" and "body" in PAGE_OVERRIDE.get((ocr_dir, page_index), {})):
+        page = _deskewed(ocr_dir, page_index, page)
     cm = chapter_model(ocr_dir)
     m = {**SOURCE_MODEL[ocr_dir], **cm, **PAGE_OVERRIDE.get((ocr_dir, page_index), {})}
     W, H = page["page_px"]

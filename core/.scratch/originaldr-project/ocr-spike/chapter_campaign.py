@@ -140,11 +140,38 @@ def measure(ch: int, use_r3: bool = True) -> dict:
                      and min(sc[r] for r in refs) >= 0.90)((cells.get((s, v)) or {}).get("score")))
     ref_means = {r: (round(mean(v), 4) if v else None) for r, v in per_ref.items()}
     src_rates = {s: (round(d["pass"] / d["n"], 4) if d["n"] else None) for s, d in per_src.items()}
+
+    # EVERY CELL, WITH ITS TEXT AND ITS FOUR SCORES — not only the open ones. The `open` list answers "what is
+    # failing"; it cannot answer "what did each source actually print for this verse", because a PASSING cell
+    # appears nowhere in it. Any reader that wants the four witnesses stacked beside the references has to have
+    # the passing text too, and re-deriving it means rebuilding the board, so it is stored once here.
+    #
+    # The references and the Janvier segmentation are stored PER VERSE for the same reason. Janvier is the cut
+    # the matrix is built on, not a fifth reference, and is labelled as such so nothing downstream scores it.
+    janv = board.get("janvier") or {}
+    refs_by_verse = {}
+    for v in verses:
+        loc = f"scripture/genesis/{ch}/{v}"
+        refs_by_verse[str(v)] = {r: (board["refs"][r].get(loc) or "") for r in refs}
+    cellgrid = {}
+    for v in verses:
+        cellgrid[str(v)] = {s: {"text": (cells.get((s, v)) or {}).get("text") or "",
+                                "from": (cells.get((s, v)) or {}).get("from"),
+                                "score": (cells.get((s, v)) or {}).get("score") or {}}
+                            for s in MX.WITS}
+
     return {"chapter": ch, "n_verses": len(verses), "n_cells": n_cells, "n_pass": n_pass,
             "rate": round(n_pass / n_cells, 4) if n_cells else 0.0,
             "ref_means": ref_means, "src_rates": src_rates,
             "n_all_fail": len(all_fail), "all_fail": all_fail[:40],
-            "n_open": len(open_cells), "open": open_cells[:60]}
+            # NOT TRUNCATED ANY MORE. `open[:60]` silently dropped the tail on exactly the chapters that need
+            # it most: ch41 reported n_open 65 and listed 60, so anything reconstructing the grid from this
+            # file — the report's board does precisely that, treating "not named here" as a pass — rendered
+            # five FAILING cells as passing. The same reasoning as the `text` field above: a diagnostic that
+            # silently shortens the evidence is worse than absent, because it fabricates a clean result.
+            "n_open": len(open_cells), "open": open_cells,
+            "cellgrid": cellgrid, "refs_by_verse": refs_by_verse,
+            "janvier_by_verse": {str(v): (janv.get(v) or "") for v in verses}}
 
 
 def stale_adoptions(ch: int) -> list[dict]:

@@ -188,6 +188,11 @@ def main(argv=None):
     ap.add_argument("--source", default=DEFAULT_OD, help="ocr_dir to probe")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--emit", action="store_true", help="print PAGE_OVERRIDE entries for leaves that differ")
+    ap.add_argument("--fresh", action="store_true",
+                    help="derive from the SOURCE default, ignoring accumulated per-leaf tuning — "
+                         "so the proposal is independent of the campaign's history")
+    ap.add_argument("--deskew", action="store_true",
+                    help="rotate each leaf upright before measuring it (see deskew.py). A fractional\n                          bound only means anything on a leaf whose columns are vertical.")
     ap.add_argument("--right-only", action="store_true",
                     help="propose the RIGHT bound alone, holding each leaf's left bound as it stands")
     ap.add_argument("--examples", type=int, default=0, help="show N tokens either side of each proposed bound")
@@ -214,6 +219,9 @@ def main(argv=None):
             continue
         for p, rec in d.get(od, {}).items():
             p = int(p)
+            if a.deskew:
+                import deskew as _dk
+                rec = _dk.deskew(rec)
             merged.setdefault(p, collections.Counter()).update(hist(rec))
             recs.setdefault(p, []).append(rec)
             # AT THE DEFAULT BOUND, NOT THIS LEAF'S CURRENT ONE. "Is this leaf set in two columns?" is a fact
@@ -229,8 +237,8 @@ def main(argv=None):
     rows, changed = [], []
     for p in sorted(merged):
         h = merged[p]
-        explicit = "body" in PM.PAGE_OVERRIDE.get((od, p), {})
-        cur = PM.PAGE_OVERRIDE.get((od, p), {}).get("body", dfl)
+        explicit = (not a.fresh) and "body" in PM.PAGE_OVERRIDE.get((od, p), {})
+        cur = dfl if a.fresh else PM.PAGE_OVERRIDE.get((od, p), {}).get("body", dfl)
         nc, nn = verdict[p]
         clipped = nc >= 3 * max(nn, 1) and nc >= 3
         if clipped:

@@ -2,17 +2,17 @@
  "chapter": 10,
  "n_verses": 32,
  "n_cells": 128,
- "n_pass": 105,
- "rate": 0.8203,
+ "n_pass": 106,
+ "rate": 0.8281,
  "ref_means": {
-  "s_dismas": 0.9317,
-  "odr_com": 0.9614,
-  "sabates_a": 0.9467,
-  "madueke_b": 0.9467
+  "s_dismas": 0.9325,
+  "odr_com": 0.9622,
+  "sabates_a": 0.9474,
+  "madueke_b": 0.9474
  },
  "src_rates": {
   "S1": 0.875,
-  "S3": 0.8438,
+  "S3": 0.875,
   "S9": 0.875,
   "S6": 0.6875
  },
@@ -22,7 +22,7 @@
   2,
   6
  ],
- "n_open": 23,
+ "n_open": 22,
  "open": [
   {
    "src": "S1",
@@ -128,13 +128,6 @@
    "worst": 0.856,
    "from": "p71",
    "text": "And the ſonnes of Chus: Saba, and Heuila, &Sabatha, and Regma, Sabathaca. The ſonnes of Regma: Saba, and Dadan."
-  },
-  {
-   "src": "S3",
-   "verse": 11,
-   "worst": 0.893,
-   "from": "p65",
-   "text": "Out of that land came forth Aſfur, and builded Niniue, and the ſtreets of the citie, and Chale."
   },
   {
    "src": "S6",
@@ -545,13 +538,13 @@
     }
    },
    "S9": {
-    "text": "and he was a valiaunt hunter before our Lord. Therof roſe a prouerbe As it were in Nemrod the valiaunt hunter before our Lord.",
-    "from": "p71",
+    "text": "and he was a valiaunt hunter :: before our Lord. Therof roſe a prouerbe As it were Nemrod the valiaunt hunter before our Lord.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.976,
-     "odr_com": 0.976,
-     "sabates_a": 0.949,
-     "madueke_b": 0.949
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S6": {
@@ -619,13 +612,13 @@
     }
    },
    "S3": {
-    "text": "Out of that land came forth Aſfur, and builded Niniue, and the ſtreets of the citie, and Chale.",
-    "from": "p65",
+    "text": "Out of that land came forth Aſſur, and builded Niniue, and the ſtreets of the citie, and Chale.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.989,
-     "odr_com": 0.989,
-     "sabates_a": 0.893,
-     "madueke_b": 0.893
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
     }
    },
    "S9": {
@@ -1365,13 +1358,13 @@
   },
   "29": {
    "S1": {
-    "text": "and Ophir, and Heuila, and Iobab. al theſe were the chil- li dren of Iectan.",
-    "from": "p62",
+    "text": "and Ophir, and Heuila, and Iobab. al theſe were the chil- dren of Ie̲ctan.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.944,
-     "odr_com": 0.944,
-     "sabates_a": 0.941,
-     "madueke_b": 0.941
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
     }
    },
    "S3": {
@@ -1385,13 +1378,13 @@
     }
    },
    "S9": {
-    "text": "and Ophir, and Heuila, and Iobab. al theſe were the chil- dren of Ieconan.",
+    "text": "and Ophir, and Heuila, and Iobab. al theſe were the chil- dren of Iectan.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.957,
-     "odr_com": 0.957,
-     "sabates_a": 0.955,
-     "madueke_b": 0.955
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S6": {
@@ -1777,5 +1770,5 @@
  "blocked_cells": 0,
  "achievable": 128,
  "triage": "SOURCE-SKEW",
- "secs": 5.0
+ "secs": 4.3
 }

@@ -38,6 +38,13 @@ them showed sixteen spans of plain scripture. **Run the audit on your own fixes,
 > then `rm -rf .campaign/r3-runner.lock`. Clear the ledger before starting a v2 round or it will find nothing
 > to do.
 >
+> **RESOLVED 2026-08-01 21:20 — the paragraph above is OBSOLETE, kept only so the next reader does not go
+> hunting for a process that is gone.** pid 85490 is not running and `.campaign/r3-runner.lock` does not
+> exist; the "unkillable v1" problem ended without intervention. `r3-runner-v2.sh` IS NOT ON DISK either — the
+> whole `ocr-spike` tree is untracked scratch, so there is no history to recover it from. Its replacement is
+> **`r3-runner-v3.sh`**, which takes an explicit chapter list instead of polling. The v1 ledger recovered from
+> HEAD shows why that matters: **297 consecutive `no chapter ready — waiting for the breadth measurement`
+> lines, 18:04 to 19:39.** A watcher whose only output is "not yet" cannot be told apart from a broken one.
 > `ps aux | grep -E "r3-runner|r2-pass"` before doing anything. Both passes were started 2026-07-31 ~21:45.
 >
 > * **`r3-runner.sh`** — R3 over every chapter, fewest-open-cells-first, WITH the new R2 attesting arm.
@@ -148,6 +155,50 @@ move it — its 4 blocked cells are the campaign's only remaining reference gap 
 all three turned out not to be — ch3/ch6 lacked a chapter model, ch41 had a real but nearly score-free margin
 merge. Every leaf-bound lever swept so far has been worked out. What is left in the worst chapters is
 **recognition**, which means R3 (vision-LLM) or a better Rung-2 recognizer, not another bound.
+
+> ## ⚠ THE PARAGRAPH ABOVE WAS WRONG, AND HOW IT WAS WRONG IS THE MOST REUSABLE THING IN THIS FILE
+>
+> **"Every leaf-bound lever swept so far has been worked out" was true of the RIGHT bound only.** Swept
+> 2026-08-01: **+57 cells, 0.8576 -> 0.8669, no chapter down.** ch41 163/228 -> 182/228 and ch35 86 -> 97, both
+> from geometry, in the two chapters this file had just reclassified as recognizer problems.
+>
+> **THE FINGERPRINT, and it is checkable in ten seconds.** Every 1609 entry in `PAGE_OVERRIDE` read
+> `(0.140, 0.7995)` — a right bound tuned to four decimals beside a left bound that is the untouched default,
+> identical on all ten. That is the signature of `gutter_probe.py`, which sweeps the GUTTER and has no opinion
+> about the fore-edge. **When every entry in a table varies on one axis and is constant on another, the
+> constant axis was never tested — it was not measured and found correct.**
+>
+> On `archive-ot1-1609` p145 the bound cut THROUGH the body column. The word boxes hold, at x0/W 0.118-0.136
+> and so outside the band: `[Seuon] + cares of corne...` (v5, scored **0.000**), `[faire:]`, `[blaſled]`,
+> `[morning]`. The prior note quoted `Seuon cares` and `blaſled vith adulon` as PROOF the residue was misread
+> glyphs. They are the tokens the bound was dropping. **v5 scored 0.000 because its head was ABSENT, not
+> because a glyph was wrong — one bad glyph costs hundredths.** An elimination that varies one bound can only
+> ever return the cause it did not test; this is the Two-Cause pattern (§13 Q46) at a new site.
+>
+> **THE SPLITTING TEST — `left_strip_probe.py`, and it needs no classifier.** Word boxes carry line
+> membership. A strip token whose LINE also has >=2 tokens inside the band is a body line with its head cut
+> off; a strip token whose line lies wholly in the strip is a marginal note. On ch41 it separates them on the
+> SAME page set: p145/p143 and S03a p149/p147 are pure continuation (39/0, 23/1, 39/0, 31/0) while p144 and
+> holiebible p156 are notes (2/9, 5/8).
+>
+> **THE DEFAULT WAS NOT MOVED, AND MUST NOT BE.** Book-wide the strip 0.109 <= x0/W < 0.140 holds ~8,200
+> tokens on 404 leaves: 194 continuation, **167 genuine note columns** (`1.Idals. called idols.`), 29 mixed.
+> Lowering `SOURCE_MODEL` would pull apparatus into scripture on a third of them. 162 leaves were emitted
+> per-leaf on the probe's verdict, requiring continuation >= 3x notes in EVERY chapter's cache — which is why
+> 194 candidates became 162. The 29 mixed leaves are LEFT at 0.140 pending an eye.
+>
+> **THE ONE REGRESSION IS WORTH MORE THAN THE GAINS.** ch50 came back -1: S1 v11 0.954 -> 0.898 because
+> `...was called, The mourning of Egypt.` became `...was called, The amammcm The mourning of`. `amammcm` is one
+> of **63 occurrences of a single mark — `fatimamovement` x9, `atmamom` x6, 17 spelling variants — ALL on
+> `archive-ot1-1609` and on no other witness.** Something is written or stamped down that COPY's fore-edge. It
+> is neither scripture nor apparatus; it is a property of one physical book. Filtered on its stem, scoped to
+> that witness inside the strip; the stem was checked against every token in every 1609 cache and all 63 hits
+> are the mark. **18 of the 63 already sat INSIDE the band and were left alone on purpose** — a pre-existing
+> contamination that owes nothing to this fix, and folding it in would let this fix take credit for work it did
+> not do (the error the ch41 right-margin audit made and had to correct in its own note).
+>
+> **RESIDUAL, recorded rather than hidden:** the strip floor is 0.109, so body text starting left of that is
+> still clipped and nothing measures it today.
 
 ## WHAT WAS FIXED THIS SESSION, AND WHAT IT TELLS YOU
 
@@ -391,6 +442,32 @@ and a click on any failing cell shows exactly what that source produced and whic
 `.campaign/progression.jsonl` **only when the totals actually change**, so rebuilding to look at it does not
 manufacture history. Open it as a `file://` URL — it is fully self-contained.
 
+**ADDED 2026-08-01 (Sir).** The panel is titled **"The Live Board"** and now carries:
+
+* a **book picker** over all **106 divisions** — 76 scripture books from `skeleton.json` plus the 30 matter
+  sections. Only Genesis has matrices, so every other entry reads **"— no board yet"** and selecting it blanks
+  the cards and says the division is **unmeasured**. A blank grid under a book's name reads as "measured and
+  found perfect", which is the opposite of the truth, so the empty state is loud on purpose.
+* **click a VERSE NUMBER** (not just a failing cell) for all four witnesses stacked in the right-hand column
+  with provenance leaf and worst-of-four, then Janvier, then all four references. Ordered *what the scans say
+  -> what cut them -> what they are judged against*: reading the judgement first is how a reference defect gets
+  mistaken for a reading failure, the error that cost 20 cells before the signal-6 correction. Passing cells
+  are shown too — "is the one that PASSED actually right" is the same question asked of a different cell.
+* a **provenance callout** dating both pipelines, because campaign work IS re-OCR work but only this panel can
+  show it. `qc_audit.py -> detect_our_ocr -> reconstruction/reads` carries its OWN layout model and imports
+  nothing from `gen1_pagemodel` (verified by grep over the whole reconstruction module set). **No campaign fix
+  reaches the rest of the report.** The 2026-08-01 rebuild proved it: `+57` cells on the board, and the
+  version-compare printed `NO EMPIRICAL CHANGE (PRESENTATION-ONLY) — scripture: frozen`. Propagating campaign
+  gains report-wide needs `qc_audit.py` re-run over reads regenerated THROUGH the campaign page model, and
+  **that path does not exist today**. It is an unbuilt item, not a rendering option.
+
+This needed two data changes. `measure()` now writes `cellgrid`, `refs_by_verse` and `janvier_by_verse` — the
+text of PASSING cells, which `open` never held (+104 KB/chapter). And **`open` is no longer truncated to 60**:
+the report reconstructs its grid by treating "not named in `open`" as a pass, so ch41 reported `n_open` 65,
+listed 60, and **five failing cells rendered as green ticks**.
+
+The extension blocks `file://`, so for browser automation serve it: `python -m http.server 8111`.
+
 ## TOOLS (all in `ocr-spike/`, all chapter-parameterized)
 
 | tool | what it answers |
@@ -398,6 +475,9 @@ manufacture history. Open it as a `file://` URL — it is fully self-contained.
 | `chapter_campaign.py --report` | the whole board: per-chapter rate, triage, achievable vs blocked, closed set |
 | `gutter_probe.py --chapter N --source SX` | **does this LEAF have a separable margin column, and where** — SEPARABLE only when body and margin are actually disjoint, OVERLAP (with the offending rows) otherwise. A detector, not a separator: it refuses rather than guesses |
 | `faithfulness_audit.py` | **what each rule CHANGES in the text** — run before adopting any text-editing rule |
+| `left_strip_probe.py --chapter N [--verify\|--emit]` | **the OTHER edge `gutter_probe.py` never sweeps.** Is the strip left of the body bound clipped BODY or a note column? Splits on line membership, per leaf, no classifier. `--verify` prints the reconstructed heads for an eye; `--emit` writes `PAGE_OVERRIDE` entries for MOVE leaves only, preserving any tuned right bound |
+| `band_sizing.py` | every cell x every reference INCLUDING passing ones (`.campaign/band-cells.json`) — the matrices keep scores only for failures. Sized B7 rung 2 at ~22 cells |
+| `r3-runner-v3.sh 31 13 20 ...` | the R3 pass over an EXPLICIT chapter list, sequential behind an owner-token lock. Replaces the polling v2 (not on disk; its ledger showed 297 straight `no chapter ready` lines) |
 | `ref_repair_s_dismas.py --verify` | re-parse of the s_dismas PDF; reports REPARSE / HOLE / still-short per chapter |
 | `ref_renumber.CORRECTIONS` | every reference numbering fault, with its corroboration; reversible, source untouched |
 | `scrape_odr_com.py` (in `core/tests/fixtures/.../acquisition/`) | the odr-com witness; manifest write MERGES |

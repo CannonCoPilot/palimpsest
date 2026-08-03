@@ -1204,6 +1204,27 @@ and in none of its verses?), and cuts the population a third way that needs no c
 photographed, so it cannot fail in one source alone — the all-four-fail set is its ceiling, and no classifier
 is needed to bound it. It has been carried as one of three co-equal causes since the S6 work began.
 
+> **CORRECTION (2026-08-01). THE 40-CELL CAP IS VALID FOR S1, S3 AND S9 AND IS FALSE FOR S6. DO NOT CITE THE
+> PARAGRAPH ABOVE WITHOUT THIS ONE.** Its reasoning — "a property of the page all four photographed, so it
+> cannot fail in one source alone" — assumes the four sources photographed the SAME page. **S6 is the 1635
+> second edition and both archaic references are 1609, so for S6 it is a DIFFERENT PAGE and its divergence can
+> and does fail alone.** See `CHAPTER-WORKFLOW.md` B7 rung 2 and the signal-6 correction in its §3 router,
+> where the same error cost 20 cells at the routing layer.
+>
+> Sized board-wide 2026-08-01 over all 6,116 cells with per-reference scores (`band-cells.json`): the arm gap
+> `min(MODERN) − min(ARCHAIC)` is **-0.0110 median for S1, S3 and S9 alike** — the metric artifact, identical
+> to four decimals, which is what makes the 1609 trio a clean control — and **+0.0000 median / +0.0099 mean
+> for S6**. Cells an edition-correct reference could carry across the bar: **31 for S6 vs a control mean of 9**
+> ⇒ **~22 cells of real edition divergence for S6, on top of the 40 all-four cells.** Above the bar a further
+> **~430 S6 cells** are archaic-limited in excess of control — not board-visible, but their headroom is
+> compressed by the wrong instrument.
+>
+> **This correction cuts both ways and a future session can be misled in either direction.** The cap is too
+> LOW for S6 (it is not 0, it is ~22 board cells and ~430 masked ones), and the corrected figure is far too
+> SMALL to justify a reference-acquisition push on yield grounds. **The paragraph below — "S6's excess is
+> source-specific reading quality, not apparatus" — is UNAFFECTED and still holds:** 369 S6 cells sit below
+> 0.876 against ~90 for each 1609 source, and no reference swap reaches them.
+
 **S6's excess is source-specific reading quality, not apparatus.** 399 cells fail in S6 alone against 40 and 46
 for S1 and S9; the excess sits in MISREAD, and S6's INTERLEAVE share (17.6%) is *below* S9's (20.1%). **A ninth
 apparatus-separation attempt would target at most a fifth of S6's failures — a share S6 does not even lead.**

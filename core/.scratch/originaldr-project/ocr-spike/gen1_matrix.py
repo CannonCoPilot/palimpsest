@@ -86,7 +86,10 @@ def build(use_r3: bool = True) -> dict:
                 ref = refs[r].get(f"scripture/{EV.BOOK}/{EV.CHAPTER}/{v}")
                 sc[r] = round(evaluate_locus(t, ref, ref)[ARM[r]], 3) if (t and ref) else None
             cells[(s, v)] = {"text": t, "score": sc, "from": sp.get("from"), "fit": sp.get("fit")}
-    return {"cells": cells, "refs": refs, "verses": sorted(janv)}
+    # `janvier` is returned as well as `refs` because it is the SEGMENTATION the whole matrix is cut on (the
+    # verse set is `sorted(janv)`), so anything rendering a verse beside its sources needs the text the cut
+    # came from. It is not a fifth reference and must never be scored as one.
+    return {"cells": cells, "refs": refs, "verses": sorted(janv), "janvier": janv}
 
 
 def word_diff(got: str, ref: str, limit: int = 12) -> str:
