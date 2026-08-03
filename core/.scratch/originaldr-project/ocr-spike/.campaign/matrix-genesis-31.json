@@ -2,23 +2,23 @@
  "chapter": 31,
  "n_verses": 55,
  "n_cells": 220,
- "n_pass": 201,
- "rate": 0.9136,
+ "n_pass": 211,
+ "rate": 0.9591,
  "ref_means": {
-  "s_dismas": 0.9751,
-  "odr_com": 0.9772,
-  "sabates_a": 0.9656,
-  "madueke_b": 0.9656
+  "s_dismas": 0.9814,
+  "odr_com": 0.9836,
+  "sabates_a": 0.9716,
+  "madueke_b": 0.9716
  },
  "src_rates": {
-  "S1": 0.8364,
-  "S3": 0.8909,
+  "S1": 0.9273,
+  "S3": 0.9818,
   "S9": 1.0,
   "S6": 0.9273
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 19,
+ "n_open": 9,
  "open": [
   {
    "src": "S1",
@@ -49,62 +49,6 @@
    "text": "At that time Laban was gone to ſheare his ſheep, and Rachel ſtole the idols of her father,"
   },
   {
-   "src": "S1",
-   "verse": 33,
-   "worst": 0.871,
-   "from": "p122",
-   "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of the hand maides, found them not. And when he was into Rachels rent,"
-  },
-  {
-   "src": "S3",
-   "verse": 33,
-   "worst": 0.879,
-   "from": "p126",
-   "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of the hand-maides, found them not. And when he was into Rachels tent,"
-  },
-  {
-   "src": "S1",
-   "verse": 36,
-   "worst": 0.876,
-   "from": "p122",
-   "text": "And this being angrie ſaid in chiding maner: For what fault of and for what offence of my part haſt thou ſo chaffed an- me,"
-  },
-  {
-   "src": "S3",
-   "verse": 36,
-   "worst": 0.876,
-   "from": "p126",
-   "text": "And this being :: angrie ſaid in chiding maner: For what fault of and for what offence of my part haſt thou ſo chaffed an- me,"
-  },
-  {
-   "src": "S1",
-   "verse": 37,
-   "worst": 0.891,
-   "from": "p122",
-   "text": "and ſearched al my houshould ſtuffe? What haſt found of al the ſabſtance of thy houſe? lay it here . my brethren, and thy brethren, and let them iudge betwen me & thee."
-  },
-  {
-   "src": "S3",
-   "verse": 37,
-   "worst": 0.891,
-   "from": "p126",
-   "text": "and ſearched al my houshould ſtuffe? What haſt found of al the ſabſtance of thy houſe lay it here my brethren, and thy brethren, and let them iudge betwen me & thee."
-  },
-  {
-   "src": "S1",
-   "verse": 38,
-   "worst": 0.892,
-   "from": "p122",
-   "text": "Haue I therfore bene with thee twentie thy ewes and goates were not barren, the wethers of flocke I did not eate :"
-  },
-  {
-   "src": "S3",
-   "verse": 38,
-   "worst": 0.892,
-   "from": "p126",
-   "text": "Haue I therfore bene with thee twentie thy ewes and goates were not barren, the wethers of flocke I did not eate:"
-  },
-  {
    "src": "S6",
    "verse": 38,
    "worst": 0.884,
@@ -112,25 +56,11 @@
    "text": "Haue I theretore been with thee twentie yeares thy ewes and goats were not barren, the wethers of thy flock I did uot eate: ncyther"
   },
   {
-   "src": "S3",
-   "verse": 39,
-   "worst": 0.893,
-   "from": "p126",
-   "text": "neyther that which the beaſt caught did I shew to thee, I made good al the whatſoeuer periihed by theft, thou dideſt exact it of"
-  },
-  {
    "src": "S6",
    "verse": 39,
    "worst": 0.871,
    "from": "chapter",
    "text": "that which the beaſt had caught did I ſhew o thee, I made good al the damage: Iacob. whatſoeuer periſned by theft thou dideſt exact it of me"
-  },
-  {
-   "src": "S1",
-   "verse": 40,
-   "worst": 0.835,
-   "from": "p122",
-   "text": "night was I parched with heate, and with and ſleepe did flye from myne eyes."
   },
   {
    "src": "S1",
@@ -335,13 +265,13 @@
     }
    },
    "S3": {
-    "text": "and ſaid to them: I ſee your fathers countenance that it is not towards me as yeſterday and the other and the God of my father hath bene with me.",
+    "text": "and ſaid to them: I ſee your fathers countenance that it is not towards me as yeſterday and the other day: and the God of my father hath bene with me.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.973,
-     "odr_com": 0.973,
-     "sabates_a": 0.965,
-     "madueke_b": 0.965
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
     }
    },
    "S9": {
@@ -377,13 +307,13 @@
     }
    },
    "S3": {
-    "text": "And ſelues knowerthat I haue ſerued your father to the vttermoſt of my power.",
+    "text": "And your ſelues knowerthat I haue ſerued your father to the vttermoſt of my power.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.926,
-     "odr_com": 0.926,
-     "sabates_a": 0.921,
-     "madueke_b": 0.921
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
     }
    },
    "S9": {
@@ -419,13 +349,13 @@
     }
    },
    "S3": {
-    "text": "Yea your father alfo hath circumuented me, and hath changed my wages tenne times yet God hath not ſuffred him to hurt me.",
+    "text": "Yea your father alfo hath circumuented me, and hath changed my wages tenne times and yet God hath not ſuffred him to hurt me.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.959,
-     "odr_com": 0.959,
-     "sabates_a": 0.95,
-     "madueke_b": 0.95
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S9": {
@@ -461,23 +391,23 @@
     }
    },
    "S3": {
-    "text": "If at auy he ſaid: They of diuers colours ſhal be thy wages: al ſheepe brought forth young of diuers colours, but when he ſaid contrarie Thou shalt take al the white ones for wages al the flockes brought forth white ones.",
+    "text": "If at auy time he ſaid: They of diuers colours ſhal be thy wages: al the ſheepe brought forth young of diuers colours, but when he ſaid contrarie Thou shalt take al the white ones for thy wages al the flockes brought forth white ones.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.939,
-     "odr_com": 0.939,
-     "sabates_a": 0.94,
-     "madueke_b": 0.94
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S9": {
-    "text": "If at any time he ſaid: They of diuers colours ſhal be thy wages al the ſheepe brought forth young of diuers colours, but when he ſaid contrarie Thou shalt take al the white ones for wages al the flockes brought forth white ones.",
+    "text": "If at any time he ſaid: They of diuers colours ſhal be thy wages al the ſheepe brought forth young of diuers colours, but when he ſaid contrarie Thou shalt take al the white ones for thy wages al the flockes brought forth white ones.",
     "from": "p130",
     "score": {
-     "s_dismas": 0.983,
-     "odr_com": 0.983,
-     "sabates_a": 0.977,
-     "madueke_b": 0.977
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
     }
    },
    "S6": {
@@ -545,13 +475,13 @@
     }
    },
    "S3": {
-    "text": "For after the time cameof the cwes conceauing, I lifted vp mine eyes, and ſawe in my ſſeepe the males aſcending vpon the females of diuers colours, and the ſpotted, the ſpeckled.",
+    "text": "For after the time cameof the cwes conceauing, I lifted vp mine eyes, and ſawe in my ſſeepe the males aſcending vpon the females of diuers colours, and the ſpotted, and the ſpeckled.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.961,
-     "odr_com": 0.961,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S9": {
@@ -1501,23 +1431,23 @@
   },
   "33": {
    "S1": {
-    "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of the hand maides, found them not. And when he was into Rachels rent,",
+    "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of both the hand maides, found them not. And when he was entred into Rachels rent,",
     "from": "p122",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.871,
-     "madueke_b": 0.871
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
     }
    },
    "S3": {
-    "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of the hand-maides, found them not. And when he was into Rachels tent,",
+    "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of both the hand-maides, found them not. And when he was entred into Rachels tent,",
     "from": "p126",
     "score": {
-     "s_dismas": 0.916,
-     "odr_com": 0.916,
-     "sabates_a": 0.879,
-     "madueke_b": 0.879
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
     }
    },
    "S9": {
@@ -1627,23 +1557,23 @@
   },
   "36": {
    "S1": {
-    "text": "And this being angrie ſaid in chiding maner: For what fault of and for what offence of my part haſt thou ſo chaffed an- me,",
+    "text": "And Iacob this being angrie ſaid in chiding maner: For what fault of myne, and for what offence of my part haſt thou ſo chaffed afrer an- me,",
     "from": "p122",
     "score": {
-     "s_dismas": 0.876,
-     "odr_com": 0.891,
-     "sabates_a": 0.886,
-     "madueke_b": 0.886
+     "s_dismas": 0.92,
+     "odr_com": 0.934,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
     }
    },
    "S3": {
-    "text": "And this being :: angrie ſaid in chiding maner: For what fault of and for what offence of my part haſt thou ſo chaffed an- me,",
+    "text": "And Iacob this being :: angrie ſaid in chiding maner: For what fault of myne, and for what offence of my part haſt thou ſo chaffed after an- me,",
     "from": "p126",
     "score": {
-     "s_dismas": 0.876,
-     "odr_com": 0.891,
-     "sabates_a": 0.886,
-     "madueke_b": 0.886
+     "s_dismas": 0.927,
+     "odr_com": 0.942,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
     }
    },
    "S9": {
@@ -1669,23 +1599,23 @@
   },
   "37": {
    "S1": {
-    "text": "and ſearched al my houshould ſtuffe? What haſt found of al the ſabſtance of thy houſe? lay it here . my brethren, and thy brethren, and let them iudge betwen me & thee.",
+    "text": "and ſearched al my houshould ſtuffe? What haſt thou found of al the ſabſtance of thy houſe? lay it here before. my brethren, and thy brethren, and let them iudge betwen me & thee.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.924,
-     "odr_com": 0.93,
-     "sabates_a": 0.891,
-     "madueke_b": 0.891
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
     }
    },
    "S3": {
-    "text": "and ſearched al my houshould ſtuffe? What haſt found of al the ſabſtance of thy houſe lay it here my brethren, and thy brethren, and let them iudge betwen me & thee.",
+    "text": "and ſearched al my houshould ſtuffe? What haſt thou found of al the ſabſtance of thy houſe lay it here before4. my brethren, and thy brethren, and let them iudge betwen me & thee.",
     "from": "p126",
     "score": {
-     "s_dismas": 0.924,
-     "odr_com": 0.93,
-     "sabates_a": 0.891,
-     "madueke_b": 0.891
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
     }
    },
    "S9": {
@@ -1711,23 +1641,23 @@
   },
   "38": {
    "S1": {
-    "text": "Haue I therfore bene with thee twentie thy ewes and goates were not barren, the wethers of flocke I did not eate :",
+    "text": "Haue I therfore bene with thee twentie yeares thy ewes and goates were not barren, the wethers of thy flocke I did not eate :",
     "from": "p122",
     "score": {
-     "s_dismas": 0.91,
-     "odr_com": 0.91,
-     "sabates_a": 0.892,
-     "madueke_b": 0.892
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
     }
    },
    "S3": {
-    "text": "Haue I therfore bene with thee twentie thy ewes and goates were not barren, the wethers of flocke I did not eate:",
+    "text": "Haue I therfore bene with thee twentie yeares thy ewes and goates were not barren, the wethers of thy flocke I did not eate:",
     "from": "p126",
     "score": {
-     "s_dismas": 0.91,
-     "odr_com": 0.91,
-     "sabates_a": 0.892,
-     "madueke_b": 0.892
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
     }
    },
    "S9": {
@@ -1753,23 +1683,23 @@
   },
   "39": {
    "S1": {
-    "text": "neyther that which the beaſt caught did I shew to thee, I made good al the damage: whatſoeuer periihed by theft, thou dideſt exact it of dayand",
+    "text": "neyther that which the beaſt had caught did I shew to thee, I made good al the damage: whatſoeuer periihed by theft, thou dideſt exact it of me:",
     "from": "p122",
     "score": {
-     "s_dismas": 0.921,
-     "odr_com": 0.921,
-     "sabates_a": 0.91,
-     "madueke_b": 0.91
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S3": {
-    "text": "neyther that which the beaſt caught did I shew to thee, I made good al the whatſoeuer periihed by theft, thou dideſt exact it of",
+    "text": "neyther that which the beaſt had caught did I shew to thee, I made good al the damage: whatſoeuer periihed by theft, thou dideſt exact it of me:",
     "from": "p126",
     "score": {
-     "s_dismas": 0.893,
-     "odr_com": 0.893,
-     "sabates_a": 0.894,
-     "madueke_b": 0.894
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S9": {
@@ -1795,13 +1725,13 @@
   },
   "40": {
    "S1": {
-    "text": "night was I parched with heate, and with and ſleepe did flye from myne eyes.",
+    "text": "dayand night was I parched with heate, and with froſt, and ſleepe did flye from myne eyes.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.841,
-     "odr_com": 0.841,
-     "sabates_a": 0.835,
-     "madueke_b": 0.835
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
     }
    },
    "S3": {
@@ -1899,13 +1829,13 @@
     }
    },
    "S9": {
-    "text": "Vnles the God of my father Abraham, and the feare of Iſaac had holpe me, peraduenture now thou haddeſt ſent me away naked: God beheld affliction and the laboure of my hands, and rebuked thee yeſterday.",
+    "text": "Vnles the God of my father Abraham, and the feare of Iſaac had holpe me, peraduenture now thou haddeſt ſent me away naked: God beheld my affliction and the laboure of my hands, and rebuked thee yeſterday.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.985,
-     "odr_com": 0.985,
-     "sabates_a": 0.968,
-     "madueke_b": 0.968
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S6": {
@@ -1941,13 +1871,13 @@
     }
    },
    "S9": {
-    "text": "Laban anſwered him : The daughters are mine and the children, and thy flockes, and al things that thou ſeeſt are mine : what can I do to my daughters, and phews",
+    "text": "Laban anſwered him : The daughters are mine and the children, and thy flockes, and al things that thou ſeeſt are mine : what can I do to my daughters, and nephews",
     "from": "p132",
     "score": {
-     "s_dismas": 0.987,
-     "odr_com": 0.987,
-     "sabates_a": 0.98,
-     "madueke_b": 0.98
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
     }
    },
    "S6": {
@@ -1963,33 +1893,33 @@
   },
   "44": {
    "S1": {
-    "text": "Come therfore, let vs enter in league : that may be for a teſtimonie betwen me and thee.",
+    "text": "Come therfore, let vs enter in league : that it may be for a teſtimonie betwen me and thee.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.966,
-     "odr_com": 0.966,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S3": {
-    "text": "Come therfore, let vs enter in league : that may be for a teſtimonie betwen me and thee.",
+    "text": "Come therfore, let vs enter in league : that it may be for a teſtimonie betwen me and thee.",
     "from": "p126",
     "score": {
-     "s_dismas": 0.966,
-     "odr_com": 0.966,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S9": {
-    "text": "Come therfore, let vs enter in league : that may be for a teſtimonie betwen me and thee.",
+    "text": "Come therfore, let vs enter in league : that it may be for a teſtimonie betwen me and thee.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.966,
-     "odr_com": 0.966,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S6": {
@@ -2005,23 +1935,23 @@
   },
   "45": {
    "S1": {
-    "text": "Iacob fore tooke a ſtone, and erected it for a title:",
+    "text": "Iacob therfore tooke a ſtone, and erected it for a title:",
     "from": "p122",
     "score": {
-     "s_dismas": 0.927,
-     "odr_com": 0.927,
-     "sabates_a": 0.902,
-     "madueke_b": 0.902
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
     }
    },
    "S3": {
-    "text": "Iacob fore tooke a ſtone, and erected it for a title :",
+    "text": "Iacob therfore tooke a ſtone, and erected it for a title :",
     "from": "p126",
     "score": {
-     "s_dismas": 0.927,
-     "odr_com": 0.927,
-     "sabates_a": 0.902,
-     "madueke_b": 0.902
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
     }
    },
    "S9": {
@@ -2871,6 +2801,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 220,
- "triage": "SOURCE-SKEW",
- "secs": 10.6
+ "triage": "R3-READY",
+ "secs": 10.7
 }

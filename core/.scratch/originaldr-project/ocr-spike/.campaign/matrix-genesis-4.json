@@ -5,15 +5,15 @@
  "n_pass": 89,
  "rate": 0.8558,
  "ref_means": {
-  "s_dismas": 0.962,
-  "odr_com": 0.962,
-  "sabates_a": 0.949,
-  "madueke_b": 0.949
+  "s_dismas": 0.9625,
+  "odr_com": 0.9624,
+  "sabates_a": 0.9494,
+  "madueke_b": 0.9494
  },
  "src_rates": {
   "S1": 0.8846,
-  "S3": 0.8846,
-  "S9": 0.8846,
+  "S3": 0.9231,
+  "S9": 0.8462,
   "S6": 0.7692
  },
  "n_all_fail": 1,
@@ -23,18 +23,18 @@
  "n_open": 15,
  "open": [
   {
+   "src": "S9",
+   "verse": 11,
+   "worst": 0.883,
+   "from": "p43",
+   "text": "Now therfore curſed ſhalt thoube one vpon the earth, which hath opened her mouth, receiued ſinnes erie the bloud of thy brother at thy hand."
+  },
+  {
    "src": "S1",
    "verse": 14,
    "worst": 0.876,
    "from": "p34",
    "text": "thou doeſt caſt me our this day from the face of earth, and from thy face ſhal I be hid, and I ſhal be a bound fugitiue on the earth: euerie one therfore that de th me, fhal kil me."
-  },
-  {
-   "src": "S3",
-   "verse": 14,
-   "worst": 0.888,
-   "from": "p38",
-   "text": "thou doeſt caſt me out this day from the face of earth, and from thy face ſhal I be hid, and I ſhal be a bound fugitiue on the earth: euerie one therfore that deth me, fhal kil me."
   },
   {
    "src": "S9",
@@ -67,9 +67,9 @@
   {
    "src": "S3",
    "verse": 23,
-   "worst": 0.87,
+   "worst": 0.889,
    "from": "p38",
-   "text": "And a mech ſaid to his wiues Ada and Sella: Heare my voice a wiues of Lamech, harken to my talke: for I haue ſlaine a to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould"
+   "text": "And Laa mech ſaid to his wiues Ada and Sella: Heare my voice ye a wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould"
   },
   {
    "src": "S6",
@@ -88,9 +88,9 @@
   {
    "src": "S3",
    "verse": 24,
-   "worst": 0.823,
+   "worst": 0.848,
    "from": "p38",
-   "text": "vengeance shal be ken of Cain: but of Lamech ſeuentie times ſeuen fould."
+   "text": "vengeance shal be taken of Cain: but of Lamech ſeuentie times ſeuen fould."
   },
   {
    "src": "S9",
@@ -277,13 +277,13 @@
     }
    },
    "S9": {
-    "text": "Abel alſo offred of the firſt begotten of his flocke, and of their fat: and our the Lord had reſpect to Abel, to his giftes.",
+    "text": "Abel alſo offred A of the firſt begotten of his flocke, and of their fat: and our the Lord had reſpect to Abel, to his giftes.",
     "from": "p43",
     "score": {
-     "s_dismas": 0.967,
-     "odr_com": 0.967,
-     "sabates_a": 0.939,
-     "madueke_b": 0.939
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
     }
    },
    "S6": {
@@ -529,13 +529,13 @@
     }
    },
    "S9": {
-    "text": "And he ſaid to him What haſt thou done:: the voice of thy brothers bloud crieth to me out of the earth.",
+    "text": "And he ſaid to him What haſt thou done:: the voice of thy brothers bloud crieth to murther me out of the earth.",
     "from": "p43",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.979,
-     "madueke_b": 0.979
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
     }
    },
    "S6": {
@@ -571,13 +571,13 @@
     }
    },
    "S9": {
-    "text": "Now therfore curſed ſhalt thoube one vpon the earth, which hath opened her mouth, receiued erie the bloud of thy brother at thy hand.",
+    "text": "Now therfore curſed ſhalt thoube one vpon the earth, which hath opened her mouth, receiued ſinnes erie the bloud of thy brother at thy hand.",
     "from": "p43",
     "score": {
-     "s_dismas": 0.931,
-     "odr_com": 0.931,
-     "sabates_a": 0.927,
-     "madueke_b": 0.927
+     "s_dismas": 0.883,
+     "odr_com": 0.883,
+     "sabates_a": 0.885,
+     "madueke_b": 0.885
     }
    },
    "S6": {
@@ -645,7 +645,7 @@
     }
    },
    "S3": {
-    "text": "And Cain ſaid to our Lord Myne iniquitie is greater, then that I may deſerue pardon.",
+    "text": "And Cain ſaid to our Lord : Myne iniquitie is greater, then that I may deſerue pardon.",
     "from": "p38",
     "score": {
      "s_dismas": 1.0,
@@ -687,13 +687,13 @@
     }
    },
    "S3": {
-    "text": "thou doeſt caſt me out this day from the face of earth, and from thy face ſhal I be hid, and I ſhal be a bound fugitiue on the earth: euerie one therfore that deth me, fhal kil me.",
+    "text": "thou doeſt caſt me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound fugitiue on the earth: euerie one therfore that findeth me, fhal kil me.",
     "from": "p38",
     "score": {
-     "s_dismas": 0.916,
-     "odr_com": 0.916,
-     "sabates_a": 0.888,
-     "madueke_b": 0.888
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
     }
    },
    "S9": {
@@ -729,13 +729,13 @@
     }
    },
    "S3": {
-    "text": "And our Lord ſaid to him: No, it in not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished fould. And our Lord put a marke on Cain, that ſoeuer found him should not kil him.",
+    "text": "And our Lord ſaid to him: No, it ſhal in not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished ſeafould. And our Lord put a marke on Cain, that whoſoeuer found him should not kil him.",
     "from": "p38",
     "score": {
-     "s_dismas": 0.917,
-     "odr_com": 0.922,
-     "sabates_a": 0.914,
-     "madueke_b": 0.914
+     "s_dismas": 0.956,
+     "odr_com": 0.961,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
     }
    },
    "S9": {
@@ -939,13 +939,13 @@
     }
    },
    "S3": {
-    "text": "And Ada brought forth Iabel, who was it father of them that dwel in tents, and of heardſmen.",
+    "text": "And Ada brought forth Iabel, who was the. it father of them that dwel in tents, and of heardſmen.",
     "from": "p38",
     "score": {
-     "s_dismas": 0.967,
-     "odr_com": 0.967,
-     "sabates_a": 0.966,
-     "madueke_b": 0.966
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
     }
    },
    "S9": {
@@ -1065,13 +1065,13 @@
     }
    },
    "S3": {
-    "text": "And a mech ſaid to his wiues Ada and Sella: Heare my voice a wiues of Lamech, harken to my talke: for I haue ſlaine a to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould",
+    "text": "And Laa mech ſaid to his wiues Ada and Sella: Heare my voice ye a wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould",
     "from": "p38",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.892,
-     "sabates_a": 0.87,
-     "madueke_b": 0.87
+     "s_dismas": 0.915,
+     "odr_com": 0.905,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
     }
    },
    "S9": {
@@ -1107,13 +1107,13 @@
     }
    },
    "S3": {
-    "text": "vengeance shal be ken of Cain: but of Lamech ſeuentie times ſeuen fould.",
+    "text": "vengeance shal be taken of Cain: but of Lamech ſeuentie times ſeuen fould.",
     "from": "p38",
     "score": {
-     "s_dismas": 0.843,
-     "odr_com": 0.843,
-     "sabates_a": 0.823,
-     "madueke_b": 0.823
+     "s_dismas": 0.868,
+     "odr_com": 0.868,
+     "sabates_a": 0.848,
+     "madueke_b": 0.848
     }
    },
    "S9": {
@@ -1191,13 +1191,13 @@
     }
    },
    "S3": {
-    "text": "But to Seth was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord.",
+    "text": "But to Seth alſo was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord.",
     "from": "p38",
     "score": {
-     "s_dismas": 0.951,
-     "odr_com": 0.951,
-     "sabates_a": 0.947,
-     "madueke_b": 0.947
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {

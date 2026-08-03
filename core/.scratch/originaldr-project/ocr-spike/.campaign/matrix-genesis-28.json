@@ -2,37 +2,30 @@
  "chapter": 28,
  "n_verses": 22,
  "n_cells": 88,
- "n_pass": 81,
- "rate": 0.9205,
+ "n_pass": 82,
+ "rate": 0.9318,
  "ref_means": {
-  "s_dismas": 0.9696,
-  "odr_com": 0.9735,
-  "sabates_a": 0.9656,
-  "madueke_b": 0.9659
+  "s_dismas": 0.9712,
+  "odr_com": 0.9751,
+  "sabates_a": 0.9671,
+  "madueke_b": 0.9674
  },
  "src_rates": {
-  "S1": 0.9091,
+  "S1": 0.9545,
   "S3": 0.9545,
   "S9": 0.9091,
   "S6": 0.9091
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 7,
+ "n_open": 6,
  "open": [
-  {
-   "src": "S1",
-   "verse": 1,
-   "worst": 0.849,
-   "from": "p112",
-   "text": "Iſaac called Iacob, and bleſſed him, and comI manded him ſaying Take not a wife of the ſtocke Chanaan"
-  },
   {
    "src": "S3",
    "verse": 1,
-   "worst": 0.859,
+   "worst": 0.889,
    "from": "p116",
-   "text": "Iſaac called Iacob, and bleſſed him, and Imanded him ſaying Take not a wife of the ſtocke Chanaan:"
+   "text": "Iſaac called Iacob, and bleſſed him, and comImanded him ſaying Take not a wife of the ſtocke of Chanaan:"
   },
   {
    "src": "S9",
@@ -73,23 +66,23 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "Iſaac called Iacob, and bleſſed him, and comI manded him ſaying Take not a wife of the ſtocke Chanaan",
+    "text": "vow. SAAO therfore called Iacob, and bleſſed him, and comI manded him ſaying : Take not a wife of the ſtocke of Chanaan :",
     "from": "p112",
     "score": {
-     "s_dismas": 0.872,
-     "odr_com": 0.872,
-     "sabates_a": 0.849,
-     "madueke_b": 0.849
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
     }
    },
    "S3": {
-    "text": "Iſaac called Iacob, and bleſſed him, and Imanded him ſaying Take not a wife of the ſtocke Chanaan:",
+    "text": "Iſaac called Iacob, and bleſſed him, and comImanded him ſaying Take not a wife of the ſtocke of Chanaan:",
     "from": "p116",
     "score": {
-     "s_dismas": 0.862,
-     "odr_com": 0.862,
-     "sabates_a": 0.859,
-     "madueke_b": 0.859
+     "s_dismas": 0.908,
+     "odr_com": 0.908,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
     }
    },
    "S9": {
@@ -125,13 +118,13 @@
     }
    },
    "S3": {
-    "text": "but goe, and make a iourney into Meſopotamia of Svria, to the houſe of Bathuel thy mothers father, and take thee a wife thence of the daughters of Laban vncle.",
+    "text": "but goe, and make a iourney into Meſopotamia of Svria, to the houſe of Bathuel thy mothers father, and take thee a wife thence of the daughters of Laban thin vncle.",
     "from": "p116",
     "score": {
-     "s_dismas": 0.963,
-     "odr_com": 0.963,
-     "sabates_a": 0.954,
-     "madueke_b": 0.954
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    },
    "S9": {
@@ -1171,5 +1164,5 @@
  "blocked_cells": 0,
  "achievable": 88,
  "triage": "R3-READY",
- "secs": 6.2
+ "secs": 6.1
 }

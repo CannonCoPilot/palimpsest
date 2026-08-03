@@ -48,7 +48,35 @@
      "notes": "ch39 72->81/92. Book 5349->5547/6116 = 0.9070, +198 cells over 38 chapters, ZERO regressions; the 10 chapters in R3's live queue (41,49,26,21,15,47,10,43,32,5) are NOT yet re-measured, so more knock-on is outstanding. 216 tests pass. THREE PROBE DEFECTS CAUGHT BY CROSS-CHECKING AGAINST LEAVES ALREADY READ BY HAND: (1) a histogram cannot tell a clipped body from a full-width note BLOCK - it proposed importing all 88 of ch23 p89's note tokens into scripture, and only line-membership refuses that; (2) taking the FIRST dip-then-spike caught a ripple in the taper of body line-ends (p132 at 0.73) instead of the 22-token column at 0.76 - a column is the TALLEST thing on its side of a leaf; (3) corroboration measured at a leaf's CURRENT bound is a fact about the campaign's history, not the page - p90/p92 scored 0/0 because they were fixed yesterday, and the leaves that motivated the probe read as uncorroborated. Cutting scripture is not symmetric with keeping a gloss, so an uncorroborated right bound moves only on an unmistakable spike: p35 (a real citation column) and p79 (body) BOTH spike exactly 12, so 12 discriminates nothing - the bar sits above both and p35 is carried as a hand-verified entry with its reason. p105 and p159 rejected by eye. p92's right bound confirms the prediction that yesterday's left-only fix was half a fix."
     }
    ]
+  },
+  "41": {
+   "passes": [
+    {
+     "at": "2026-08-03T00:26Z",
+     "pass_before": 194,
+     "pass_after": 205,
+     "achievable": 228,
+     "delta": 11,
+     "signals": [
+      "4",
+      "6"
+     ],
+     "diagnostics": [
+      "leaf_diag.py",
+      "bounds_probe.py(generalized from s6_bounds_probe)",
+      "right-strip census",
+      "bound sweep via chapter_campaign",
+      "faithfulness_audit.py",
+      "apparatus-vocabulary scan"
+     ],
+     "rule": "The 1609 witnesses' RIGHT bound is the axis nobody ever varied for them, and it was CLIPPING WORDS OFF THE ENDS OF BODY LINES: 'He said [ther]fore', 'a dreame [per]teining', 'shal not be [con]sumed'. S1/S3/S9 failing the SAME verses with the SAME words gone is geometry, not recognition. Parity runs OPPOSITE to jp2-S06: here the ODD leaves carry the right column and had been tuned tight, correctly (widening them costs -7 in ch41 alone), while the EVEN leaves have no column and sat on a default that clipped them. bounds_probe.py --right-only, WIDENING ONLY, 121 leaves across the three witnesses.",
+     "alert": "",
+     "changed_text": true,
+     "audited": true,
+     "notes": "ch41 194->205/228. Book 5619->5725/6116 = 0.9361, +106 cells, zero regressions, 216 tests pass. THE INSTRUMENT THAT CONFIRMED MY HYPOTHESIS WAS THE ONE KNOWN TO FAIL THAT WAY: line-membership scored the right strip as 'continuation' on five of six leaves, but reading the tokens showed annotation PROSE ('Death the crosse was most cruel', 'Iosephus ... this Putiphar was both') - full-width annotation blocks straddle the bound exactly as ch23 p89 did on the left. Geometry could not settle it; measurement did, and overturned my caution in the direction of MORE gain - widening p144/p148 added exactly two tokens, 'vp' and 'foule,', both genuine scripture (Gen 41:2-3). READING THE PAGE TELLS YOU WHAT IS THERE; ONLY MEASURING TELLS YOU WHAT THE PIPELINE DOES WITH IT. Then the bulk emit REGRESSED ch41 by 11 because it overwrote measured entries with estimates - it reset p146 to 0.705, a proposal already refused by eye AND by measurement, and reverted p144 to the clipping default. I had built that guard for the left axis and let the right-axis emitter walk through it. Restricting the emit to WIDENING ONLY restored 205. Bound value chosen off a flat plateau (0.84-0.89 all +6), taking 0.86 where ref means peak and below the verse-numeral column at 0.875. OPEN, PRE-EXISTING, NOT THIS ROUND: an apparatus-vocabulary scan over all 50 chapters found one contamination - ch3 v7 S9 reads 'made thems. Chrisclues aprons' ('made themselues aprons' with 'S. Chris' spliced in) - on p40, a leaf this round did not touch. It is a PASSING cell, so the board cannot see it; validity, not yield."
+    }
+   ]
   }
  },
- "updated": "2026-08-03T00:04Z"
+ "updated": "2026-08-03T00:26Z"
 }

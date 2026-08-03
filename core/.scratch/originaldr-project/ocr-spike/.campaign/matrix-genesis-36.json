@@ -2,23 +2,23 @@
  "chapter": 36,
  "n_verses": 43,
  "n_cells": 172,
- "n_pass": 162,
- "rate": 0.9419,
+ "n_pass": 166,
+ "rate": 0.9651,
  "ref_means": {
-  "s_dismas": 0.9551,
-  "odr_com": 0.9572,
-  "sabates_a": 0.9472,
-  "madueke_b": 0.9472
+  "s_dismas": 0.9587,
+  "odr_com": 0.9608,
+  "sabates_a": 0.9507,
+  "madueke_b": 0.9507
  },
  "src_rates": {
-  "S1": 0.9302,
-  "S3": 0.9767,
+  "S1": 1.0,
+  "S3": 1.0,
   "S9": 0.907,
   "S6": 0.9535
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 10,
+ "n_open": 6,
  "open": [
   {
    "src": "S9",
@@ -61,34 +61,6 @@
    "worst": 0.0,
    "from": "p147",
    "text": "and"
-  },
-  {
-   "src": "S1",
-   "verse": 26,
-   "worst": 0.871,
-   "from": "p134",
-   "text": "theſe were the ſonnes of Diſon Hamdan, and Eſeban, Iethram, and Charan."
-  },
-  {
-   "src": "S1",
-   "verse": 30,
-   "worst": 0.866,
-   "from": "p134",
-   "text": "Diſon, duke Eſer, duke Diſan theſe were dukes of Horreites that ruled in the Land Seir."
-  },
-  {
-   "src": "S3",
-   "verse": 30,
-   "worst": 0.866,
-   "from": "p138",
-   "text": "Diſon, duke Eſer, duke Diſan theſe were dukes of Horreites that ruled in the Land Seir."
-  },
-  {
-   "src": "S1",
-   "verse": 40,
-   "worst": 0.889,
-   "from": "p134",
-   "text": "therfore be the names of the dukes of Eſau in their kinreds, and places, and callines: duke Thamna, duke duke Ietheth,"
   }
  ],
  "cellgrid": {
@@ -1028,13 +1000,13 @@
     }
    },
    "S3": {
-    "text": "And theſe were the ſonnes of Sobal: Aluan and Manahat, and Ebal, Sepho and Onam.",
+    "text": "And theſe were the ſonnes of Sobal: Aluan and Manahat, and Ebal, and Sepho and Onam.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.95,
-     "odr_com": 0.95,
-     "sabates_a": 0.933,
-     "madueke_b": 0.933
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    },
    "S9": {
@@ -1060,23 +1032,23 @@
   },
   "24": {
    "S1": {
-    "text": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in wildernes, when he fed the aſſes of Sebeon his father",
+    "text": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wildernes, when he fed the aſſes of Sebeon his father",
     "from": "p134",
     "score": {
-     "s_dismas": 0.972,
-     "odr_com": 0.972,
-     "sabates_a": 0.97,
-     "madueke_b": 0.97
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
     }
    },
    "S3": {
-    "text": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in wildernes, when he fed the aſſes of Sebeon his father",
+    "text": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wildernes, when he fed the aſſes of Sebeon his father :",
     "from": "p138",
     "score": {
-     "s_dismas": 0.972,
-     "odr_com": 0.972,
-     "sabates_a": 0.97,
-     "madueke_b": 0.97
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
     }
    },
    "S9": {
@@ -1144,13 +1116,13 @@
   },
   "26": {
    "S1": {
-    "text": "theſe were the ſonnes of Diſon Hamdan, and Eſeban, Iethram, and Charan.",
+    "text": "And6 theſe were the ſonnes of Diſon : Hamdan, and Eſeban, and Iethram, and Charan.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.88,
-     "odr_com": 0.893,
-     "sabates_a": 0.871,
-     "madueke_b": 0.871
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S3": {
@@ -1228,7 +1200,7 @@
   },
   "28": {
    "S1": {
-    "text": "And Diſan had ſonnes Hus, and Aram.",
+    "text": "And Diſan had ſonnes :8 Hus, and Aram.",
     "from": "p134",
     "score": {
      "s_dismas": 1.0,
@@ -1248,7 +1220,7 @@
     }
    },
    "S9": {
-    "text": "And Diſan had ſonnes Hus, and Aram.",
+    "text": "And Diſan had ſonnes :8 Hus, and Aram.",
     "from": "p146",
     "score": {
      "s_dismas": 1.0,
@@ -1312,33 +1284,33 @@
   },
   "30": {
    "S1": {
-    "text": "Diſon, duke Eſer, duke Diſan theſe were dukes of Horreites that ruled in the Land Seir.",
-    "from": "p134",
-    "score": {
-     "s_dismas": 0.866,
-     "odr_com": 0.903,
-     "sabates_a": 0.918,
-     "madueke_b": 0.918
-    }
-   },
-   "S3": {
-    "text": "Diſon, duke Eſer, duke Diſan theſe were dukes of Horreites that ruled in the Land Seir.",
-    "from": "p138",
-    "score": {
-     "s_dismas": 0.866,
-     "odr_com": 0.903,
-     "sabates_a": 0.918,
-     "madueke_b": 0.918
-    }
-   },
-   "S9": {
     "text": "duke Diſon, duke Eſer, duke Diſan theſe were dukes of the Horreites that ruled in the Land Seir.",
-    "from": "p146",
+    "from": "p134",
     "score": {
      "s_dismas": 0.959,
      "odr_com": 1.0,
      "sabates_a": 1.0,
      "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "duke Diſon, duke Eſer, duke Diſan theſe were dukes of the Horreites that ruled in the Land Seir.",
+    "from": "p138",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "duke zo Diſon, duke Eſer, duke Diſan theſe were dukes of the Horreites that ruled in the Land Seir.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.928,
+     "odr_com": 0.969,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
     }
    },
    "S6": {
@@ -1438,13 +1410,13 @@
   },
   "33": {
    "S1": {
-    "text": "And Bela died, and Iobab anl ſonnne of Zara of Boſra reigned in his ſteed.",
+    "text": "And Bela died, and Iobab the anl ſonnne of Zara of Boſra reigned in his ſteed.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.944,
-     "odr_com": 0.958,
-     "sabates_a": 0.941,
-     "madueke_b": 0.941
+     "s_dismas": 0.934,
+     "odr_com": 0.947,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
     }
    },
    "S3": {
@@ -1522,23 +1494,23 @@
   },
   "35": {
    "S1": {
-    "text": "He alſo being dead, there reigned in his Adad the ſonne of Badad, that ſtroke Madian in the to trie of Moab: and the name of his citie was Auith.",
+    "text": "He alſo being dead, there reigned in his ſteed Adad the ſonne of Badad, that ſtroke Madian in the counto trie of Moab: and the name of his citie was Auith.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.932,
-     "odr_com": 0.939,
-     "sabates_a": 0.92,
-     "madueke_b": 0.92
+     "s_dismas": 0.974,
+     "odr_com": 0.98,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
     }
    },
    "S3": {
-    "text": "He alſo being dead, there reigned in his Adad the ſonne of Badad, that ſtroke Madian in the to trie of Moab: and the name of his citie was Auith.",
+    "text": "He alſo being dead, there reigned in his ſteed Adad the ſonne of Badad, that ſtroke Madian in the counto trie of Moab: and the name of his citie was Auith.",
     "from": "p138",
     "score": {
-     "s_dismas": 0.932,
-     "odr_com": 0.939,
-     "sabates_a": 0.92,
-     "madueke_b": 0.92
+     "s_dismas": 0.974,
+     "odr_com": 0.98,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
     }
    },
    "S9": {
@@ -1564,23 +1536,23 @@
   },
   "36": {
    "S1": {
-    "text": "a- when Adad was dead, there reigned for him Semla of reca.",
+    "text": "And he- a- when Adad was dead, there reigned for him Semla of Maſreca.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.918,
-     "odr_com": 0.918,
-     "sabates_a": 0.917,
-     "madueke_b": 0.917
+     "s_dismas": 0.924,
+     "odr_com": 0.924,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
     }
    },
    "S3": {
-    "text": "a- when Adad was dead, there reigned for him Semla of reca.",
+    "text": "And he- a- when Adad was dead, there reigned for him Semla of Maſreca.",
     "from": "p138",
     "score": {
-     "s_dismas": 0.918,
-     "odr_com": 0.918,
-     "sabates_a": 0.917,
-     "madueke_b": 0.917
+     "s_dismas": 0.924,
+     "odr_com": 0.924,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
     }
    },
    "S9": {
@@ -1732,23 +1704,23 @@
   },
   "40": {
    "S1": {
-    "text": "therfore be the names of the dukes of Eſau in their kinreds, and places, and callines: duke Thamna, duke duke Ietheth,",
+    "text": "Theſe therfore be the names of the dukes of Eſau in their kinreds, and places, and callines: duke Thamna, duke Alua, duke Ietheth,",
     "from": "p134",
     "score": {
-     "s_dismas": 0.903,
-     "odr_com": 0.903,
-     "sabates_a": 0.889,
-     "madueke_b": 0.889
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S3": {
-    "text": "†Theſe therfore be the names of the dukes of Eſau in their kinreds, and places, and callings: duke Thamna, duke duke Ietheth,",
+    "text": "†Theſe therfore be the names of the dukes of Eſau in their kinreds, and places, and callings: duke Thamna, duke Alua, duke Ietheth,",
     "from": "p138",
     "score": {
-     "s_dismas": 0.96,
-     "odr_com": 0.96,
-     "sabates_a": 0.94,
-     "madueke_b": 0.94
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S9": {
@@ -1878,13 +1850,13 @@
     }
    },
    "S9": {
-    "text": "duke Magdiel, duke Hiram : theſe are the dukes of Edom dwelling, in the land of their empire, the ſame is Eſau father of the Idumeians.",
+    "text": "duke Magdiel, duke Hiram : theſe are the dukes of Edom dwelling, in the land of their empire, the ſame is Eſau the father of the Idumeians.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.97,
-     "odr_com": 0.97,
-     "sabates_a": 0.967,
-     "madueke_b": 0.967
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
     }
    },
    "S6": {
@@ -2221,5 +2193,5 @@
  "blocked_cells": 0,
  "achievable": 172,
  "triage": "R3-READY",
- "secs": 6.8
+ "secs": 7.2
 }

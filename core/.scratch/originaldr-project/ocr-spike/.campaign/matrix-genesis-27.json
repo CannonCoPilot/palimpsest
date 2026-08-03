@@ -2,23 +2,23 @@
  "chapter": 27,
  "n_verses": 46,
  "n_cells": 184,
- "n_pass": 176,
- "rate": 0.9565,
+ "n_pass": 181,
+ "rate": 0.9837,
  "ref_means": {
-  "s_dismas": 0.9819,
-  "odr_com": 0.9821,
-  "sabates_a": 0.9748,
-  "madueke_b": 0.9748
+  "s_dismas": 0.986,
+  "odr_com": 0.9862,
+  "sabates_a": 0.9787,
+  "madueke_b": 0.9787
  },
  "src_rates": {
-  "S1": 0.8913,
-  "S3": 0.9565,
+  "S1": 0.9783,
+  "S3": 0.9783,
   "S9": 0.9783,
   "S6": 1.0
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 8,
+ "n_open": 3,
  "open": [
   {
    "src": "S1",
@@ -40,41 +40,6 @@
    "worst": 0.878,
    "from": "chapter",
    "text": "if my father his me, perceaue it, I feare leſt he wil thinke I would and haue deluded him, and I ſhal bring vpon me a curſe for a bleſſing."
-  },
-  {
-   "src": "S1",
-   "verse": 33,
-   "worst": 0.894,
-   "from": "p110",
-   "text": "Iſaac was amazed and nied exceadingly: and marueling more then a man beleue, ſaid : Who is he then that euen now brought veniſon that he had taken, and I did eate of al thinges thou cameſt? and I haue bleſſed him, and he ſhal be itto ſed."
-  },
-  {
-   "src": "S3",
-   "verse": 33,
-   "worst": 0.881,
-   "from": "p114",
-   "text": "Iſaac was amazed and nied cxceadingly : and marueling more then a man beleue, ſaid : Who is he then that euen now brought veniſon that he had taken, and I did eate of al thinges thou cameſt? and I haue bleſſed him, : and he ſhal be it"
-  },
-  {
-   "src": "S1",
-   "verse": 40,
-   "worst": 0.89,
-   "from": "p110",
-   "text": "ſhal thy bleſſing be. Thou ſhalt liue by the and ſhalt ſerue thy brother : and : the time ſhal come, ſub- thou ſhalt shake of, and looſe his yoake ſrom thy king"
-  },
-  {
-   "src": "S1",
-   "verse": 43,
-   "worst": 0.872,
-   "from": "p110",
-   "text": "Now therfore, were my ſonne, heare my voice, and get thee vp and flye to my brother into Haran :"
-  },
-  {
-   "src": "S1",
-   "verse": 45,
-   "worst": 0.897,
-   "from": "p110",
-   "text": "his indignation ceaſe, and he forger thoſe things, which haſt done to him: after ward I wil ſend, and bring thee thence hither. Why ſhal I be depriued of both ſonnes in in day"
   }
  ],
  "cellgrid": {
@@ -1350,13 +1315,13 @@
     }
    },
    "S3": {
-    "text": "and brought in to his father meates made of his hunting, ſaying Ariſe my father, and eate of ſonnes hunting that thy ſoule may bleſſe me.",
+    "text": "and brought in to his father meates made of his hunting, ſaying Ariſe my father, and eate of thy ſonnes hunting that thy ſoule may bleſſe me.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.971,
-     "odr_com": 0.971,
-     "sabates_a": 0.953,
-     "madueke_b": 0.953
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S9": {
@@ -1424,33 +1389,33 @@
   },
   "33": {
    "S1": {
-    "text": "Iſaac was amazed and nied exceadingly: and marueling more then a man beleue, ſaid : Who is he then that euen now brought veniſon that he had taken, and I did eate of al thinges thou cameſt? and I haue bleſſed him, and he ſhal be itto ſed.",
+    "text": "Iſaac was amazed and aſtonied exceadingly: and marueling more then a man can beleue, ſaid : Who is he then that euen now brought me veniſon that he had taken, and I did eate of al thinges before thou cameſt? and I haue bleſſed him, and he ſhal be bleſitto",
     "from": "p110",
-    "score": {
-     "s_dismas": 0.907,
-     "odr_com": 0.907,
-     "sabates_a": 0.894,
-     "madueke_b": 0.894
-    }
-   },
-   "S3": {
-    "text": "Iſaac was amazed and nied cxceadingly : and marueling more then a man beleue, ſaid : Who is he then that euen now brought veniſon that he had taken, and I did eate of al thinges thou cameſt? and I haue bleſſed him, : and he ſhal be it",
-    "from": "p114",
-    "score": {
-     "s_dismas": 0.895,
-     "odr_com": 0.895,
-     "sabates_a": 0.881,
-     "madueke_b": 0.881
-    }
-   },
-   "S9": {
-    "text": "Iſaac was amazed and aſtonied cxceadingly : and marueling more then a man can beleue, ſaid : Who is he then that euen now brought me veniſon that he had taken, and I did eate of al thinges before thou cameſt and I haue bleſſed him, : and he ſhal be bleſto ſed.",
-    "from": "p120",
     "score": {
      "s_dismas": 0.984,
      "odr_com": 0.984,
-     "sabates_a": 0.954,
-     "madueke_b": 0.954
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S3": {
+    "text": "Iſaac was amazed and aſtonied cxceadingly : and marueling more then a man can beleue, ſaid : Who is he then that euen now brought me veniſon that he had taken, and I did eate of al thinges before thou cameſt? and I haue bleſſed him, : and he ſhal be bleſit",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "Iſaac was amazed and aſto- nied cxceadingly : and marueling more then a man can beleue, ſaid : Who is he then that euen now brought me veniſon that he had taken, and I did eate of al thinges before thou cameſt and I haue bleſſed him, : and he ſhal be bleſto ſed.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
     }
    },
    "S6": {
@@ -1466,23 +1431,23 @@
   },
   "34": {
    "S1": {
-    "text": "Eſau hauing heard his fathers wordes, roared out wil, a great crye : and being diſmaied, ſaid : Bleſſe me alſo, my ther.",
+    "text": "Eſau hauing heard his fathers wordes, roared out with wil, a great crye : and being diſmaied, ſaid : Bleſſe me alſo, my father.",
     "from": "p110",
     "score": {
-     "s_dismas": 0.965,
-     "odr_com": 0.965,
-     "sabates_a": 0.946,
-     "madueke_b": 0.946
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
     }
    },
    "S3": {
-    "text": "Eſau hauing heard his fathers wordes, roared out a great crye : and being diſmaied, ſaid : Bleſſe me alſo, my ther.",
+    "text": "Eſau hauing heard his fathers wordes, roared out with a great crye : and being diſmaied, ſaid : Bleſſe me alſo, my father.",
     "from": "p114",
     "score": {
-     "s_dismas": 0.939,
-     "odr_com": 0.939,
-     "sabates_a": 0.918,
-     "madueke_b": 0.918
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
     }
    },
    "S9": {
@@ -1550,13 +1515,13 @@
   },
   "36": {
    "S1": {
-    "text": "But he ſaid again : Rightly is his name Iacob: for he hath ſupplanted me loe the ſecond time firſt. birth right he tooke before, and now the ſecond he hath ſtollen my bleſſing. And againe to his father he Haſt thou not reſerued me alſo a bleſſing",
+    "text": "But he ſaid again : Rightly is his name called Iacob: for he hath ſupplanted me loe the ſecond time : my firſt. birth right he tooke before, and now the ſecond time he hath ſtollen my bleſſing. And againe to his father he ſaid: Haſt thou not reſerued me alſo a bleſſing",
     "from": "p110",
     "score": {
-     "s_dismas": 0.91,
-     "odr_com": 0.915,
-     "sabates_a": 0.924,
-     "madueke_b": 0.924
+     "s_dismas": 0.989,
+     "odr_com": 0.992,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
@@ -1592,23 +1557,23 @@
   },
   "37": {
    "S1": {
-    "text": "Iſaac anſwered I haue appointed him thy Lord, and al his brethren I made ſubiect to his ſeruice : with corne and wine I haue bliſhed him, and for thee, my ſonne, what ſhal I doe after this",
+    "text": "Iſaac anſwered : I haue appointed him thy Lord, and al his brethren I haue made ſubiect to his ſeruice : with corne and wine I haue eſtabliſhed him, and for thee, my ſonne, what ſhal I doe more after this",
     "from": "p110",
     "score": {
-     "s_dismas": 0.929,
-     "odr_com": 0.929,
-     "sabates_a": 0.934,
-     "madueke_b": 0.934
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
-    "text": "Iſaac anſwered I haue appointed him thy Lord, and al his brethren I made ſubiect to his ſeruice : with corne and wine I haue bli ſhed him, and for thee, my ſonne, what ſhal I doe after this",
+    "text": "Iſaac anſwered : I haue appointed him thy Lord, and al his brethren I haue made ſubiect to his ſeruice : with corne and wine I haue eſtabli ſhed him, and for thee, my ſonne, what ſhal I doe more after this",
     "from": "p114",
     "score": {
-     "s_dismas": 0.923,
-     "odr_com": 0.923,
-     "sabates_a": 0.929,
-     "madueke_b": 0.929
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
     }
    },
    "S9": {
@@ -1718,13 +1683,13 @@
   },
   "40": {
    "S1": {
-    "text": "ſhal thy bleſſing be. Thou ſhalt liue by the and ſhalt ſerue thy brother : and : the time ſhal come, ſub- thou ſhalt shake of, and looſe his yoake ſrom thy king",
+    "text": "ſhal thy bleſſing be. Thou ſhalt liue by the ſworde, and ſhalt ſerue thy brother : and : the time ſhal come, when ſub- thou ſhalt shake of, and looſe his yoake ſrom thy necke.",
     "from": "p110",
     "score": {
-     "s_dismas": 0.894,
-     "odr_com": 0.894,
-     "sabates_a": 0.89,
-     "madueke_b": 0.89
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
     }
    },
    "S3": {
@@ -1760,23 +1725,23 @@
   },
   "41": {
    "S1": {
-    "text": "Eſau therfore alwaies hated Iacob for the bleſſing with his father had bleſſed him : and he ſaid in his hart : Io- daies wil come of the mourning of my father, and I wil had Iacob my brother.",
+    "text": "Eſau therfore alwaies hated Iacob for the bleſſing wherwith his father had bleſſed him : and he ſaid in his hart : The Io- daies wil come of the mourning of my father, and I wil kil had Iacob my brother.",
     "from": "p110",
     "score": {
-     "s_dismas": 0.947,
-     "odr_com": 0.947,
-     "sabates_a": 0.923,
-     "madueke_b": 0.923
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
     }
    },
    "S3": {
-    "text": "Eſau therfore alwaies hated Iacob for the bleſſing Reg. with his father had bleſſed him : and he ſaid in his hart : daies wil come of the mourning of my father, and I wil had Io- Iacob mybrother.",
+    "text": "Eſau therfore alwaies hated Iacob for the bleſſing wherReg. with his father had bleſſed him : and he ſaid in his hart : The daies wil come of the mourning of my father, and I wil kil had Io- Iacob mybrother.",
     "from": "p114",
     "score": {
-     "s_dismas": 0.926,
-     "odr_com": 0.926,
-     "sabates_a": 0.907,
-     "madueke_b": 0.907
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
     }
    },
    "S9": {
@@ -1844,13 +1809,13 @@
   },
   "43": {
    "S1": {
-    "text": "Now therfore, were my ſonne, heare my voice, and get thee vp and flye to my brother into Haran :",
+    "text": "Now therfore, were my ſonne, heare my voice, and get thee vp and flye to Laban my brother into Haran :",
     "from": "p110",
     "score": {
-     "s_dismas": 0.88,
-     "odr_com": 0.88,
-     "sabates_a": 0.872,
-     "madueke_b": 0.872
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
     }
    },
    "S3": {
@@ -1886,23 +1851,23 @@
   },
   "44": {
    "S1": {
-    "text": "and thou ſhalt dwel with Io- few daies, til the furie of thy brother be aſſwaged,",
+    "text": "and thou ſhalt dwel with hima Io- few daies, til the furie of thy brother be aſſwaged,",
     "from": "p110",
     "score": {
-     "s_dismas": 0.951,
-     "odr_com": 0.951,
-     "sabates_a": 0.921,
-     "madueke_b": 0.921
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
     }
    },
    "S3": {
-    "text": "and thou ſhalt dwel with Io- few daies, til the furie of thy brother be aſſwaged,",
+    "text": "and thou ſhalt dwel with hima Io- few daies, til the furie of thy brother be aſſwaged,",
     "from": "p114",
     "score": {
-     "s_dismas": 0.951,
-     "odr_com": 0.951,
-     "sabates_a": 0.921,
-     "madueke_b": 0.921
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
     }
    },
    "S9": {
@@ -1928,13 +1893,13 @@
   },
   "45": {
    "S1": {
-    "text": "his indignation ceaſe, and he forger thoſe things, which haſt done to him: after ward I wil ſend, and bring thee thence hither. Why ſhal I be depriued of both ſonnes in in day",
+    "text": "and his indignation ceaſe, and he forger thoſe things, which thou haſt done to him: after ward I wil ſend, and bring thee from thence hither. Why ſhal I be depriued of both ſonnes in one in day",
     "from": "p110",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.897,
-     "madueke_b": 0.897
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
     }
    },
    "S3": {
@@ -2353,6 +2318,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 184,
- "triage": "SOURCE-SKEW",
- "secs": 9.0
+ "triage": "R3-READY",
+ "secs": 9.3
 }

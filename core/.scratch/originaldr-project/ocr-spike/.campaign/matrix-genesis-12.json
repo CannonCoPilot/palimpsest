@@ -5,10 +5,10 @@
  "n_pass": 79,
  "rate": 0.9875,
  "ref_means": {
-  "s_dismas": 0.9851,
-  "odr_com": 0.9859,
-  "sabates_a": 0.978,
-  "madueke_b": 0.978
+  "s_dismas": 0.985,
+  "odr_com": 0.9858,
+  "sabates_a": 0.9779,
+  "madueke_b": 0.9779
  },
  "src_rates": {
   "S1": 1.0,
@@ -545,7 +545,7 @@
     }
    },
    "S3": {
-    "text": "Say therfore, I pray thee, that thou art my ſiſter that I may be wel vſed for thee, and that my ſoule may liue for thy ſake.",
+    "text": "Say therfore, I pray thee, that thou art my ſiſter : that I may be wel vſed for thee, and that my ſoule may liue for thy ſake.",
     "from": "p76",
     "score": {
      "s_dismas": 1.0,
@@ -703,13 +703,13 @@
   },
   "17": {
    "S1": {
-    "text": "But our Lord ſcourged Pharao with very ſore plagues, and his houſe for Sarai Abrams wife.",
+    "text": "But our Lord ſcourged Pha- rao with very ſore plagues, and his houſe for Sarai Abrams wife.",
     "from": "p72",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.953,
-     "madueke_b": 0.953
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
     }
    },
    "S3": {
@@ -1031,5 +1031,5 @@
  "blocked_cells": 0,
  "achievable": 80,
  "triage": "R3-READY",
- "secs": 5.6
+ "secs": 5.8
 }

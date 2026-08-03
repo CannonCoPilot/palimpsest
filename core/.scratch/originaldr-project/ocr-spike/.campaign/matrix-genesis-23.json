@@ -5,10 +5,10 @@
  "n_pass": 73,
  "rate": 0.9125,
  "ref_means": {
-  "s_dismas": 0.9812,
+  "s_dismas": 0.9822,
   "odr_com": 0.9816,
-  "sabates_a": 0.9746,
-  "madueke_b": 0.9746
+  "sabates_a": 0.9755,
+  "madueke_b": 0.9755
  },
  "src_rates": {
   "S1": 0.95,
@@ -23,9 +23,9 @@
   {
    "src": "S1",
    "verse": 2,
-   "worst": 0.833,
+   "worst": 0.83,
    "from": "chapter",
-   "text": "And ſhe died in the cirie of Arbee which Hebron mamoamant com Hebron, in the land of Chanaan And Abraham came to mourne, and weepe for her."
+   "text": "And ſhe died in the cirie of Arbee which is Hebron mamoamant com Hebron, in the land of Chanaan And Abraham came to mourne, and weepe for her."
   },
   {
    "src": "S6",
@@ -87,13 +87,13 @@
   },
   "2": {
    "S1": {
-    "text": "And ſhe died in the cirie of Arbee which Hebron mamoamant com Hebron, in the land of Chanaan And Abraham came to mourne, and weepe for her.",
+    "text": "And ſhe died in the cirie of Arbee which is Hebron mamoamant com Hebron, in the land of Chanaan And Abraham came to mourne, and weepe for her.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.846,
-     "odr_com": 0.846,
-     "sabates_a": 0.833,
-     "madueke_b": 0.833
+     "s_dismas": 0.842,
+     "odr_com": 0.842,
+     "sabates_a": 0.83,
+     "madueke_b": 0.83
     }
    },
    "S3": {
@@ -843,23 +843,23 @@
   },
   "20": {
    "S1": {
-    "text": "And the field was made ſure to Abraham, and the that was in it, for a poſſeſſion to burie in, of the Children of Heth.",
+    "text": "And the field was made ſure to Abraham, and the caue, that was in it, for a poſſeſſion to burie in, of the Children of Heth.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.958,
+     "s_dismas": 1.0,
      "odr_com": null,
-     "sabates_a": 0.964,
-     "madueke_b": 0.964
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
-    "text": "And the field was made ſure to Abraham, and the that was in it, for a poſſeſſion to burie in, of the Children of Heth.",
+    "text": "And the field was made ſure to Abraham, and the caue, that was in it, for a poſſeſſion to burie in, of the Children of Heth.",
     "from": "p102",
     "score": {
-     "s_dismas": 0.958,
+     "s_dismas": 1.0,
      "odr_com": null,
-     "sabates_a": 0.964,
-     "madueke_b": 0.964
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -1056,5 +1056,5 @@
  "blocked_cells": 4,
  "achievable": 76,
  "triage": "R3-READY",
- "secs": 5.3
+ "secs": 5.4
 }

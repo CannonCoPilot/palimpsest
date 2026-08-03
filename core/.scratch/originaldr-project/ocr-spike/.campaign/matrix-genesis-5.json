@@ -5,10 +5,10 @@
  "n_pass": 103,
  "rate": 0.8306,
  "ref_means": {
-  "s_dismas": 0.9583,
-  "odr_com": 0.9609,
-  "sabates_a": 0.9299,
-  "madueke_b": 0.9299
+  "s_dismas": 0.9656,
+  "odr_com": 0.9682,
+  "sabates_a": 0.9363,
+  "madueke_b": 0.9363
  },
  "src_rates": {
   "S1": 0.9032,
@@ -23,9 +23,9 @@
   {
    "src": "S9",
    "verse": 1,
-   "worst": 0.839,
-   "from": "p47",
-   "text": "this the direction of the generation of Adam. In the Ioday, when God breatedman to: the likenes ſof God made he him."
+   "worst": 0.883,
+   "from": "chapter",
+   "text": "this is the of the generation of Adam. In the Ioday, when God breatedman to: the likenes ſof God made he him."
   },
   {
    "src": "S6",
@@ -58,44 +58,44 @@
   {
    "src": "S1",
    "verse": 6,
-   "worst": 0.82,
+   "worst": 0.88,
    "from": "p38",
-   "text": "Se th liued a hundred fiue ycares, and begat Enos."
-  },
-  {
-   "src": "S3",
-   "verse": 6,
-   "worst": 0.86,
-   "from": "p42",
-   "text": "Seth liued a hundred fiue yeares, and begat Enos."
+   "text": "th alſo liued a hundred fiue ycares, and begat Enos."
   },
   {
    "src": "S9",
    "verse": 11,
-   "worst": 0.0,
+   "worst": 0.787,
    "from": "p48",
-   "text": "And al the dayes of Enos came"
+   "text": "And al the dayes of Enos came to alſo livvith nine hundredand fiue yeares, and heldied."
   },
   {
    "src": "S9",
    "verse": 13,
-   "worst": 0.828,
+   "worst": 0.802,
    "from": "p48",
-   "text": "And liued pleaſed after he begat Malaleel, eight hundred fourtie yeares, and begat ſonnes daughters."
+   "text": "And Cainan liued liued pleaſed after he begat Malaleel, eight hundred fourtie yeares, and begat ſonnes daughters."
   },
   {
    "src": "S9",
    "verse": 16,
-   "worst": 0.827,
+   "worst": 0.821,
    "from": "p48",
-   "text": "And God him laleel liued after he begat Iared, cight hundred and thirtie doth yeares, and begat ſonnes and daughters."
+   "text": "And MaGod him laleel liued after he begat Iared, cight hundred and thirtie doth yeares, and begat ſonnes and daughters."
   },
   {
    "src": "S9",
    "verse": 18,
-   "worst": 0.775,
+   "worst": 0.767,
    "from": "p48",
-   "text": "And Iared liued a hundred ſixtie two yeares, and recited life of gat Enoch."
+   "text": "And Iared liued a hundred ſixtie two yeares, and berecited life of gat Enoch."
+  },
+  {
+   "src": "S3",
+   "verse": 20,
+   "worst": 0.89,
+   "from": "p42",
+   "text": "And alo A- the dayes of Iared came to nine hundred ſixtie two yeares, & bo- he died."
   },
   {
    "src": "S1",
@@ -107,9 +107,9 @@
   {
    "src": "S9",
    "verse": 21,
-   "worst": 0.857,
+   "worst": 0.814,
    "from": "p48",
-   "text": "Moreouer Enoch liued ſixtie fiue yeares, & of bo. Mathuſala."
+   "text": "Moreouer Enoch liued ſixtie fiue yeares, & begat of bo. Mathuſala."
   },
   {
    "src": "S9",
@@ -128,16 +128,16 @@
   {
    "src": "S9",
    "verse": 27,
-   "worst": 0.855,
+   "worst": 0.774,
    "from": "p48",
-   "text": "And al the dayes of Mathuſala came to : nyne hundred from ſixtie nine yeares, & he died."
+   "text": "And al the dayes of Mathuſala came to : nyne hundred hundred28 from ſixtie nine yeares, & he died."
   },
   {
    "src": "S6",
    "verse": 27,
-   "worst": 0.753,
+   "worst": 0.792,
    "from": "p34",
-   "text": "And al the dayes ot al here But if we came to nine hundred ſixtie nine veares, and he died."
+   "text": "And al the dayes ot came to nine hundred ſixtie nine veares, and he died."
   },
   {
    "src": "S9",
@@ -149,23 +149,23 @@
   {
    "src": "S9",
    "verse": 29,
-   "worst": 0.863,
+   "worst": 0.824,
    "from": "p48",
-   "text": "and he called Adam li- ame Noe, ſaying This ſonne ſhal comfort vs from mans, workes labours of our handes on theſearth, which by 2r. Lord curſed."
+   "text": "and he called Adam li- ame Noe, ſaying This ſonne ſhal comfort vs from the mans, workes labours of our handes on theſearth, which our fiue by 2r. Lord curſed."
   },
   {
    "src": "S6",
    "verse": 30,
-   "worst": 0.778,
+   "worst": 0.747,
    "from": "p34",
-   "text": "he Aud Lamoch liued, after he begat Noe, fiue hundred nintie ated, as , and begat ſounes aud daughters. And al"
+   "text": "Lamoch liued, after he begat Noe, fiue hundred nintie , and begat ſounes aud daughters. And"
   },
   {
    "src": "S6",
    "verse": 31,
-   "worst": 0.799,
+   "worst": 0.831,
    "from": "p34",
-   "text": "And al the dayes of others the age came to ſeueu hundred ſeuentie ſeuen yeares, and ho diod. And veares when he was fiue hundred veares old, begat Sem, Cham, and"
+   "text": "And al the dayes of came to ſeueu hundred ſeuentie ſeuen yeares, and ho diod. And when he was fiue hundred veares old, begat Sem, Cham, and"
   }
  ],
  "cellgrid": {
@@ -191,13 +191,13 @@
     }
    },
    "S9": {
-    "text": "this the direction of the generation of Adam. In the Ioday, when God breatedman to: the likenes ſof God made he him.",
-    "from": "p47",
+    "text": "this is the of the generation of Adam. In the Ioday, when God breatedman to: the likenes ſof God made he him.",
+    "from": "chapter",
     "score": {
-     "s_dismas": 0.839,
-     "odr_com": 0.857,
-     "sabates_a": 0.859,
-     "madueke_b": 0.859
+     "s_dismas": 0.883,
+     "odr_com": 0.899,
+     "sabates_a": 0.911,
+     "madueke_b": 0.911
     }
    },
    "S6": {
@@ -381,23 +381,23 @@
   },
   "6": {
    "S1": {
-    "text": "Se th liued a hundred fiue ycares, and begat Enos.",
+    "text": "th alſo liued a hundred fiue ycares, and begat Enos.",
     "from": "p38",
     "score": {
-     "s_dismas": 0.865,
-     "odr_com": 0.865,
-     "sabates_a": 0.82,
-     "madueke_b": 0.82
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.88,
+     "madueke_b": 0.88
     }
    },
    "S3": {
-    "text": "Seth liued a hundred fiue yeares, and begat Enos.",
+    "text": "Seth alſo liued a hundred fiue yeares, and begat Enos.",
     "from": "p42",
     "score": {
-     "s_dismas": 0.904,
-     "odr_com": 0.904,
-     "sabates_a": 0.86,
-     "madueke_b": 0.86
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
     }
    },
    "S9": {
@@ -611,13 +611,13 @@
     }
    },
    "S9": {
-    "text": "And al the dayes of Enos came",
+    "text": "And al the dayes of Enos came to alſo livvith nine hundredand fiue yeares, and heldied.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.0,
-     "odr_com": 0.0,
-     "sabates_a": 0.0,
-     "madueke_b": 0.0
+     "s_dismas": 0.833,
+     "odr_com": 0.833,
+     "sabates_a": 0.787,
+     "madueke_b": 0.787
     }
    },
    "S6": {
@@ -633,13 +633,13 @@
   },
   "12": {
    "S1": {
-    "text": "Cainan alſo ued ſeuentie yeares, & begat Malaleel.",
+    "text": "Cainan alſo liued ſeuentie yeares, & begat Malaleel.",
     "from": "p38",
     "score": {
-     "s_dismas": 0.936,
-     "odr_com": 0.958,
-     "sabates_a": 0.933,
-     "madueke_b": 0.933
+     "s_dismas": 0.979,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    },
    "S3": {
@@ -695,13 +695,13 @@
     }
    },
    "S9": {
-    "text": "And liued pleaſed after he begat Malaleel, eight hundred fourtie yeares, and begat ſonnes daughters.",
+    "text": "And Cainan liued liued pleaſed after he begat Malaleel, eight hundred fourtie yeares, and begat ſonnes daughters.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.907,
-     "odr_com": 0.907,
-     "sabates_a": 0.828,
-     "madueke_b": 0.828
+     "s_dismas": 0.873,
+     "odr_com": 0.873,
+     "sabates_a": 0.802,
+     "madueke_b": 0.802
     }
    },
    "S6": {
@@ -821,13 +821,13 @@
     }
    },
    "S9": {
-    "text": "And God him laleel liued after he begat Iared, cight hundred and thirtie doth yeares, and begat ſonnes and daughters.",
+    "text": "And MaGod him laleel liued after he begat Iared, cight hundred and thirtie doth yeares, and begat ſonnes and daughters.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.886,
-     "odr_com": 0.886,
-     "sabates_a": 0.827,
-     "madueke_b": 0.827
+     "s_dismas": 0.879,
+     "odr_com": 0.879,
+     "sabates_a": 0.821,
+     "madueke_b": 0.821
     }
    },
    "S6": {
@@ -905,13 +905,13 @@
     }
    },
    "S9": {
-    "text": "And Iared liued a hundred ſixtie two yeares, and recited life of gat Enoch.",
+    "text": "And Iared liued a hundred ſixtie two yeares, and berecited life of gat Enoch.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.794,
-     "odr_com": 0.794,
-     "sabates_a": 0.775,
-     "madueke_b": 0.775
+     "s_dismas": 0.787,
+     "odr_com": 0.787,
+     "sabates_a": 0.767,
+     "madueke_b": 0.767
     }
    },
    "S6": {
@@ -979,13 +979,13 @@
     }
    },
    "S3": {
-    "text": "And A- the dayes of Iared came to nine hundred ſixtie two yeares, bo- he died.",
+    "text": "And alo A- the dayes of Iared came to nine hundred ſixtie two yeares, & bo- he died.",
     "from": "p42",
     "score": {
-     "s_dismas": 0.946,
-     "odr_com": 0.946,
-     "sabates_a": 0.913,
-     "madueke_b": 0.913
+     "s_dismas": 0.923,
+     "odr_com": 0.923,
+     "sabates_a": 0.89,
+     "madueke_b": 0.89
     }
    },
    "S9": {
@@ -1031,13 +1031,13 @@
     }
    },
    "S9": {
-    "text": "Moreouer Enoch liued ſixtie fiue yeares, & of bo. Mathuſala.",
+    "text": "Moreouer Enoch liued ſixtie fiue yeares, & begat of bo. Mathuſala.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.909,
-     "odr_com": 0.909,
-     "sabates_a": 0.857,
-     "madueke_b": 0.857
+     "s_dismas": 0.902,
+     "odr_com": 0.902,
+     "sabates_a": 0.814,
+     "madueke_b": 0.814
     }
    },
    "S6": {
@@ -1283,23 +1283,23 @@
     }
    },
    "S9": {
-    "text": "And al the dayes of Mathuſala came to : nyne hundred from ſixtie nine yeares, & he died.",
+    "text": "And al the dayes of Mathuſala came to : nyne hundred hundred28 from ſixtie nine yeares, & he died.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.939,
-     "odr_com": 0.939,
-     "sabates_a": 0.855,
-     "madueke_b": 0.855
+     "s_dismas": 0.856,
+     "odr_com": 0.856,
+     "sabates_a": 0.774,
+     "madueke_b": 0.774
     }
    },
    "S6": {
-    "text": "And al the dayes ot al here But if we came to nine hundred ſixtie nine veares, and he died.",
+    "text": "And al the dayes ot came to nine hundred ſixtie nine veares, and he died.",
     "from": "p34",
     "score": {
-     "s_dismas": 0.753,
-     "odr_com": 0.753,
-     "sabates_a": 0.79,
-     "madueke_b": 0.79
+     "s_dismas": 0.792,
+     "odr_com": 0.792,
+     "sabates_a": 0.822,
+     "madueke_b": 0.822
     }
    }
   },
@@ -1367,13 +1367,13 @@
     }
    },
    "S9": {
-    "text": "and he called Adam li- ame Noe, ſaying This ſonne ſhal comfort vs from mans, workes labours of our handes on theſearth, which by 2r. Lord curſed.",
+    "text": "and he called Adam li- ame Noe, ſaying This ſonne ſhal comfort vs from the mans, workes labours of our handes on theſearth, which our fiue by 2r. Lord curſed.",
     "from": "p48",
     "score": {
-     "s_dismas": 0.891,
-     "odr_com": 0.891,
-     "sabates_a": 0.863,
-     "madueke_b": 0.863
+     "s_dismas": 0.848,
+     "odr_com": 0.848,
+     "sabates_a": 0.824,
+     "madueke_b": 0.824
     }
    },
    "S6": {
@@ -1389,13 +1389,13 @@
   },
   "30": {
    "S1": {
-    "text": "And I.amech liued, after he begat Noe, fiue hundred nintie fiue yeares, and begat ſonnes and daughters.",
+    "text": "And I.amech liued, after he begat Noe, fiue zo hundred nintie fiue yeares, and begat ſonnes and daughters.",
     "from": "p38",
     "score": {
-     "s_dismas": 0.99,
-     "odr_com": 0.99,
-     "sabates_a": 0.946,
-     "madueke_b": 0.946
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
     }
    },
    "S3": {
@@ -1419,13 +1419,13 @@
     }
    },
    "S6": {
-    "text": "he Aud Lamoch liued, after he begat Noe, fiue hundred nintie ated, as , and begat ſounes aud daughters. And al",
+    "text": "Lamoch liued, after he begat Noe, fiue hundred nintie , and begat ſounes aud daughters. And",
     "from": "p34",
     "score": {
-     "s_dismas": 0.788,
-     "odr_com": 0.788,
-     "sabates_a": 0.778,
-     "madueke_b": 0.778
+     "s_dismas": 0.765,
+     "odr_com": 0.765,
+     "sabates_a": 0.747,
+     "madueke_b": 0.747
     }
    }
   },
@@ -1461,13 +1461,13 @@
     }
    },
    "S6": {
-    "text": "And al the dayes of others the age came to ſeueu hundred ſeuentie ſeuen yeares, and ho diod. And veares when he was fiue hundred veares old, begat Sem, Cham, and",
+    "text": "And al the dayes of came to ſeueu hundred ſeuentie ſeuen yeares, and ho diod. And when he was fiue hundred veares old, begat Sem, Cham, and",
     "from": "p34",
     "score": {
-     "s_dismas": 0.814,
-     "odr_com": 0.814,
-     "sabates_a": 0.799,
-     "madueke_b": 0.799
+     "s_dismas": 0.85,
+     "odr_com": 0.85,
+     "sabates_a": 0.831,
+     "madueke_b": 0.831
     }
    }
   }
@@ -1710,5 +1710,5 @@
  "blocked_cells": 0,
  "achievable": 124,
  "triage": "SOURCE-SKEW",
- "secs": 4.4
+ "secs": 5.2
 }

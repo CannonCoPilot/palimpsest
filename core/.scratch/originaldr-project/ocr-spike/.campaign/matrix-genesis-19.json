@@ -2,23 +2,23 @@
  "chapter": 19,
  "n_verses": 38,
  "n_cells": 152,
- "n_pass": 145,
- "rate": 0.9539,
+ "n_pass": 147,
+ "rate": 0.9671,
  "ref_means": {
-  "s_dismas": 0.9793,
-  "odr_com": 0.9823,
-  "sabates_a": 0.9756,
-  "madueke_b": 0.9756
+  "s_dismas": 0.9825,
+  "odr_com": 0.9856,
+  "sabates_a": 0.9789,
+  "madueke_b": 0.9789
  },
  "src_rates": {
-  "S1": 0.9737,
-  "S3": 0.9474,
+  "S1": 1.0,
+  "S3": 0.9737,
   "S9": 0.9474,
   "S6": 0.9474
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 7,
+ "n_open": 5,
  "open": [
   {
    "src": "S6",
@@ -28,25 +28,11 @@
    "text": "And when it was morning. the Ang vged him, ſaying: Ariſe, take thy wite, and the two Abraham. GENE SIS. daug hters which thou haſt: leaſt thou alſo perish withal in the wickednes ot the citie."
   },
   {
-   "src": "S1",
-   "verse": 22,
-   "worst": 0.857,
-   "from": "p90",
-   "text": "Make haſt, and be ſaued there : becauſe I can not doe thing til thou enter in thither. Therfore the name of citie was called. Segor."
-  },
-  {
-   "src": "S3",
-   "verse": 22,
-   "worst": 0.857,
-   "from": "p94",
-   "text": "Make haſt, and be ſaued there : becauſe I can not doe thing til thou enter in thither. Therfore the name of citie was called Segor."
-  },
-  {
    "src": "S3",
    "verse": 23,
-   "worst": 0.842,
+   "worst": 0.895,
    "from": "p94",
-   "text": "The funne was riſen vpon earth, & Lot entred into Segor."
+   "text": "The funne was riſen vpon the earth, & Lot entred into Segor."
   },
   {
    "src": "S6",
@@ -58,16 +44,16 @@
   {
    "src": "S9",
    "verse": 32,
-   "worst": 0.891,
+   "worst": 0.883,
    "from": "p100",
-   "text": "Come, let vs make him with wine, and let vs lie with him, that we may preſerue to of our father."
+   "text": "Come, let vs make him drunke ſeed with wine, and let vs lie with him, that we may preſerue to drinke of our father."
   },
   {
    "src": "S9",
    "verse": 33,
    "worst": 0.856,
    "from": "p100",
-   "text": "They therfore made their father with her wine that night: and the elder went in, and lay ther : but he perceaued not, neyther when his daughter downe, nor when ſhe roſe vp."
+   "text": "They therfore made their father with her fawine that night: and the elder went in, and lay lay ther : but he perceaued not, neyther when his daughter downe, nor when ſhe roſe vp."
   }
  ],
  "cellgrid": {
@@ -765,13 +751,13 @@
     }
    },
    "S9": {
-    "text": "And they led him forth, and ſet him without the citie: and there they ſpake to him, ſaying : Saue thy life: looke not backe, neither ſtay thou in al the countrie about : but ſaue thy ſelfe the mountaine, leſt thou alſo periſh withal.",
+    "text": "And they led him forth, and ſet him without the citie: and there they ſpake to him, ſaying : Saue thy life: looke not backe, neither ſtay thou in al the countrie about : but ſaue thy ſelfe in the mountaine, leſt thou alſo periſh withal.",
     "from": "p100",
     "score": {
-     "s_dismas": 0.987,
-     "odr_com": 0.987,
-     "sabates_a": 0.981,
-     "madueke_b": 0.981
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
     }
    },
    "S6": {
@@ -829,23 +815,23 @@
   },
   "19": {
    "S1": {
-    "text": "becauſe thy ſeruant hath fonnd grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt haps the euil catch me, and I dye.",
+    "text": "becauſe thy ſeruant hath fonnd grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
     "from": "p90",
     "score": {
-     "s_dismas": 0.983,
-     "odr_com": 0.987,
-     "sabates_a": 0.972,
-     "madueke_b": 0.972
+     "s_dismas": 0.996,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S3": {
-    "text": "becauſe thy ſeruant fonnd grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt haps the euil catch me, and I dye.",
+    "text": "becauſe thy ſeruant hath fonnd grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.961,
-     "odr_com": 0.965,
-     "sabates_a": 0.948,
-     "madueke_b": 0.948
+     "s_dismas": 0.996,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S9": {
@@ -871,33 +857,33 @@
   },
   "20": {
    "S1": {
-    "text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ihalbe ſafe it : is it not a little one, and my life ſhalbe ſaued",
+    "text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ihalbe ſafe in it : is it not a little one, and my life ſhalbe ſaued",
     "from": "p90",
     "score": {
-     "s_dismas": 0.942,
-     "odr_com": 0.971,
-     "sabates_a": 0.93,
-     "madueke_b": 0.93
+     "s_dismas": 0.964,
+     "odr_com": 0.993,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
     }
    },
    "S3": {
-    "text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe ſafe it: is it not a little one, and my life ſhalbe ſaued",
+    "text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe ſafe in it: is it not a little one, and my life ſhalbe ſaued",
     "from": "p94",
     "score": {
-     "s_dismas": 0.95,
-     "odr_com": 0.978,
-     "sabates_a": 0.938,
-     "madueke_b": 0.938
+     "s_dismas": 0.971,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
     }
    },
    "S9": {
-    "text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe ſafe at: is it not alittle one, and my life ſhalbe ſaued",
+    "text": "There is this citie hereby 2o at hand, wherunto I may flee, a little one, and I ſhalbe ſafe in at: is it not alittle one, and my life ſhalbe ſaued",
     "from": "p100",
     "score": {
-     "s_dismas": 0.935,
-     "odr_com": 0.964,
-     "sabates_a": 0.922,
-     "madueke_b": 0.922
+     "s_dismas": 0.943,
+     "odr_com": 0.971,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
     }
    },
    "S6": {
@@ -913,13 +899,13 @@
   },
   "21": {
    "S1": {
-    "text": "And ſaid to him : Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+    "text": "And he ſaid to him : Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
     "from": "p90",
     "score": {
-     "s_dismas": 0.976,
-     "odr_com": 0.976,
-     "sabates_a": 0.983,
-     "madueke_b": 0.983
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
@@ -955,23 +941,23 @@
   },
   "22": {
    "S1": {
-    "text": "Make haſt, and be ſaued there : becauſe I can not doe thing til thou enter in thither. Therfore the name of citie was called. Segor.",
+    "text": "Make haſt, and be ſaued there : becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called. Segor.",
     "from": "p90",
     "score": {
-     "s_dismas": 0.857,
-     "odr_com": 0.933,
-     "sabates_a": 0.903,
-     "madueke_b": 0.903
+     "s_dismas": 0.918,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S3": {
-    "text": "Make haſt, and be ſaued there : becauſe I can not doe thing til thou enter in thither. Therfore the name of citie was called Segor.",
+    "text": "Make haſt, and be ſaued there : becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.857,
-     "odr_com": 0.933,
-     "sabates_a": 0.903,
-     "madueke_b": 0.903
+     "s_dismas": 0.918,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S9": {
@@ -1007,13 +993,13 @@
     }
    },
    "S3": {
-    "text": "The funne was riſen vpon earth, & Lot entred into Segor.",
+    "text": "The funne was riſen vpon the earth, & Lot entred into Segor.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.911,
-     "odr_com": 0.911,
-     "sabates_a": 0.842,
-     "madueke_b": 0.842
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
     }
    },
    "S9": {
@@ -1123,23 +1109,23 @@
   },
   "26": {
    "S1": {
-    "text": "And his wife : looking behind nor was turned into a ſtatua of ſalt.",
+    "text": "And his wife : looking behind her, nor was turned into a ſtatua of ſalt.",
     "from": "p90",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.969,
-     "sabates_a": 0.968,
-     "madueke_b": 0.968
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
     }
    },
    "S3": {
-    "text": "And his wife : looking behind not was turned into a ſtatua of ſalt.",
+    "text": "And his wife : looking behind her, not was turned into a ſtatua of ſalt.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.953,
-     "odr_com": 0.953,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
     }
    },
    "S9": {
@@ -1175,13 +1161,13 @@
     }
    },
    "S3": {
-    "text": "And Abraham getting early in the morning, there where before he had ſtood with our Lord,",
+    "text": "And Abraham getting vp early in the morning, there where before he had ſtood with our Lord,",
     "from": "p94",
     "score": {
-     "s_dismas": 0.966,
-     "odr_com": 0.966,
-     "sabates_a": 0.963,
-     "madueke_b": 0.963
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -1311,13 +1297,13 @@
     }
    },
    "S9": {
-    "text": "And Lot aſcended out of and abode in the mountaine, his two daughters alſo with for he was afraid to abide in Segor) and he abode in a Aug. him ſelfe, and his two daughters with him.",
+    "text": "And Lot aſcended out of Segor, and abode in the mountaine, his two daughters alſo with him for he was afraid to abide in Segor) and he abode in a caue Aug. him ſelfe, and his two daughters with him.",
     "from": "p100",
     "score": {
-     "s_dismas": 0.936,
-     "odr_com": 0.936,
-     "sabates_a": 0.927,
-     "madueke_b": 0.927
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
     }
    },
    "S6": {
@@ -1333,13 +1319,13 @@
   },
   "31": {
    "S1": {
-    "text": "And the elder ſaid to the younger : Our father is old, and there is no man left on the earth, that may companie with vs after the ner of the whole earth.",
+    "text": "And the elder ſaid to the younger : Our father is old, and there is no man left on the earth, that may companie with vs after the maner of the whole earth.",
     "from": "p90",
     "score": {
-     "s_dismas": 0.987,
-     "odr_com": 0.987,
-     "sabates_a": 0.986,
-     "madueke_b": 0.986
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
@@ -1395,13 +1381,13 @@
     }
    },
    "S9": {
-    "text": "Come, let vs make him with wine, and let vs lie with him, that we may preſerue to of our father.",
+    "text": "Come, let vs make him drunke ſeed with wine, and let vs lie with him, that we may preſerue to drinke of our father.",
     "from": "p100",
     "score": {
-     "s_dismas": 0.891,
-     "odr_com": 0.891,
-     "sabates_a": 0.903,
-     "madueke_b": 0.903
+     "s_dismas": 0.883,
+     "odr_com": 0.883,
+     "sabates_a": 0.892,
+     "madueke_b": 0.892
     }
    },
    "S6": {
@@ -1417,27 +1403,27 @@
   },
   "33": {
    "S1": {
-    "text": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her ther : but ke perceaued not, neyther when his daughter downe, nor when ſne roſe vp.",
+    "text": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her father : but ke perceaued not, neyther when his daughter lay downe, nor when ſne roſe vp.",
     "from": "p90",
     "score": {
-     "s_dismas": 0.956,
-     "odr_com": 0.956,
-     "sabates_a": 0.942,
-     "madueke_b": 0.942
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
     }
    },
    "S3": {
-    "text": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her ther : but he perceaued not, neyther when his daughter downe, nor whon ſheroſe vp.",
+    "text": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her father : but he perceaued not, neyther when his daughter lay downe, nor whon ſheroſe vp.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.956,
-     "odr_com": 0.956,
-     "sabates_a": 0.942,
-     "madueke_b": 0.942
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
     }
    },
    "S9": {
-    "text": "They therfore made their father with her wine that night: and the elder went in, and lay ther : but he perceaued not, neyther when his daughter downe, nor when ſhe roſe vp.",
+    "text": "They therfore made their father with her fawine that night: and the elder went in, and lay lay ther : but he perceaued not, neyther when his daughter downe, nor when ſhe roſe vp.",
     "from": "p100",
     "score": {
      "s_dismas": 0.867,
@@ -1459,33 +1445,33 @@
   },
   "34": {
    "S1": {
-    "text": "The next day alſo the elder ſaid mcm ſaid to the younger Bchold I lay yeſternight with my father, let vs make him drinke winealſo this night, and thou ialt lye with him, that we may ſaue ſeed of our ſather.",
+    "text": "The next day alſo the elder ſaid to mcm ſaid to the younger Bchold I lay yeſternight with my father, let vs make him drinke winealſo this night, and thou ialt lye with him, that we may ſaue ſeed of our ſather.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.931,
-     "odr_com": 0.931,
-     "sabates_a": 0.927,
-     "madueke_b": 0.927
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
     }
    },
    "S3": {
-    "text": "The next day alſo the ſaid to the younger Bchold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may ſaue ſeed of our father.",
+    "text": "The next day alſo the elder ſaid to the younger Bchold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may ſaue ſeed of our father.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.964,
-     "odr_com": 0.964,
-     "sabates_a": 0.962,
-     "madueke_b": 0.962
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
     }
    },
    "S9": {
-    "text": "The next day alſo the ſaid to the younger Behold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may ſaue ſeed of our father.",
+    "text": "The next day alſo the elder ſaid to the younger Behold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may ſaue ſeed of our father.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.969,
-     "sabates_a": 0.968,
-     "madueke_b": 0.968
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S6": {
@@ -1955,5 +1941,5 @@
  "blocked_cells": 0,
  "achievable": 152,
  "triage": "R3-READY",
- "secs": 9.3
+ "secs": 9.1
 }

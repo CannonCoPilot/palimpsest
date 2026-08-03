@@ -2,88 +2,32 @@
  "chapter": 15,
  "n_verses": 21,
  "n_cells": 84,
- "n_pass": 68,
- "rate": 0.8095,
+ "n_pass": 76,
+ "rate": 0.9048,
  "ref_means": {
-  "s_dismas": 0.9668,
-  "odr_com": 0.9673,
-  "sabates_a": 0.9531,
-  "madueke_b": 0.9531
+  "s_dismas": 0.979,
+  "odr_com": 0.9795,
+  "sabates_a": 0.9652,
+  "madueke_b": 0.9652
  },
  "src_rates": {
   "S1": 0.9048,
   "S3": 0.9048,
   "S9": 0.8571,
-  "S6": 0.5714
+  "S6": 0.9524
  },
  "n_all_fail": 1,
  "all_fail": [
   21
  ],
- "n_open": 16,
+ "n_open": 8,
  "open": [
-  {
-   "src": "S6",
-   "verse": 3,
-   "worst": 0.84,
-   "from": "p74",
-   "text": "Abram added: But to me thou haſt not giuen ſeed : and loe my borne inmy houſe ſhal be mine heire."
-  },
-  {
-   "src": "S6",
-   "verse": 5,
-   "worst": 0.789,
-   "from": "p74",
-   "text": "he brought him torth abroad, and laid to hn: Look vp to and number the ſtarres, it thou cantt. Aud he ſaid to him : So ſeed be."
-  },
   {
    "src": "S9",
    "verse": 6,
    "worst": 0.839,
    "from": "chapter",
    "text": "Abram beleued God, and it was reputed to brought be- iuſtice."
-  },
-  {
-   "src": "S6",
-   "verse": 6,
-   "worst": 0.75,
-   "from": "p74",
-   "text": "Abram belieued God, and it was reputed to him"
-  },
-  {
-   "src": "S6",
-   "verse": 7,
-   "worst": 0.846,
-   "from": "p74",
-   "text": "And he ſaid to him: I am the Lord that brought thee Vr ot the Chaldees tor to giue thee this land, and that thou poſſeſſe it."
-  },
-  {
-   "src": "S6",
-   "verse": 8,
-   "worst": 0.818,
-   "from": "p74",
-   "text": "But he ſaid : Lord God, how may Iknow that poſſaſſeit"
-  },
-  {
-   "src": "S6",
-   "verse": 11,
-   "worst": 0.839,
-   "from": "p74",
-   "text": "And the toules vpon the carcaſſes, and Abram droue them away."
-  },
-  {
-   "src": "S6",
-   "verse": 13,
-   "worst": 0.888,
-   "from": "p74",
-   "text": "And it was ſaid vnto hin: and toreknow that a pilgrime ſhal thy ſeed be in a land not theit (and they ſhal bring them vnder bondage, and afflict them) hundredyeares."
-  },
-  {
-   "src": "S6",
-   "verse": 16,
-   "worst": 0.879,
-   "from": "p74",
-   "text": "But in the fourth generation they ſhal returne hither: tor (c)as iniquities of the Amorrheans are not at the tul vntil this preſent"
   },
   {
    "src": "S1",
@@ -252,13 +196,13 @@
     }
    },
    "S6": {
-    "text": "Abram added: But to me thou haſt not giuen ſeed : and loe my borne inmy houſe ſhal be mine heire.",
+    "text": ".And Abram added: But to me thou haſt not giuen ſeed : and loe my ſcruant borne inmy houſe ſhal be mine heire.",
     "from": "p74",
     "score": {
-     "s_dismas": 0.84,
-     "odr_com": 0.84,
-     "sabates_a": 0.866,
-     "madueke_b": 0.866
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    }
   },
@@ -336,13 +280,13 @@
     }
    },
    "S6": {
-    "text": "he brought him torth abroad, and laid to hn: Look vp to and number the ſtarres, it thou cantt. Aud he ſaid to him : So ſeed be.",
+    "text": "And he brought him torth abroad, and laid to hn: Look vp to heauen, and number the ſtarres, it thou cantt. Aud he ſaid to him : So ſhal thy ſeed be.",
     "from": "p74",
     "score": {
-     "s_dismas": 0.803,
-     "odr_com": 0.803,
-     "sabates_a": 0.789,
-     "madueke_b": 0.789
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
     }
    }
   },
@@ -378,13 +322,13 @@
     }
    },
    "S6": {
-    "text": "Abram belieued God, and it was reputed to him",
+    "text": "Abram belieued God, and it was reputed to him vnto iuſtice.7.",
     "from": "p74",
     "score": {
-     "s_dismas": 0.75,
-     "odr_com": 0.75,
-     "sabates_a": 0.786,
-     "madueke_b": 0.786
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    }
   },
@@ -420,13 +364,13 @@
     }
    },
    "S6": {
-    "text": "And he ſaid to him: I am the Lord that brought thee Vr ot the Chaldees tor to giue thee this land, and that thou poſſeſſe it.",
+    "text": "And he ſaid to him: I am the Lord that brought thee out trom Vr ot the Chaldees tor to giue thee this land, and that thou mightoſt poſſeſſe it.",
     "from": "p74",
     "score": {
-     "s_dismas": 0.857,
-     "odr_com": 0.857,
-     "sabates_a": 0.846,
-     "madueke_b": 0.846
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
     }
    }
   },
@@ -462,13 +406,13 @@
     }
    },
    "S6": {
-    "text": "But he ſaid : Lord God, how may Iknow that poſſaſſeit",
+    "text": "But he ſaid : Lord God, how may Iknow that I Ihal poſſaſſeit",
     "from": "p74",
     "score": {
-     "s_dismas": 0.831,
-     "odr_com": 0.831,
-     "sabates_a": 0.818,
-     "madueke_b": 0.818
+     "s_dismas": 0.932,
+     "odr_com": 0.932,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
     }
    }
   },
@@ -588,13 +532,13 @@
     }
    },
    "S6": {
-    "text": "And the toules vpon the carcaſſes, and Abram droue them away.",
+    "text": "And the toules lighted vpon the carcaſſes, and Abram droue them away.",
     "from": "p74",
     "score": {
-     "s_dismas": 0.866,
-     "odr_com": 0.866,
-     "sabates_a": 0.839,
-     "madueke_b": 0.839
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
     }
    }
   },
@@ -672,13 +616,13 @@
     }
    },
    "S6": {
-    "text": "And it was ſaid vnto hin: and toreknow that a pilgrime ſhal thy ſeed be in a land not theit (and they ſhal bring them vnder bondage, and afflict them) hundredyeares.",
+    "text": "And it was ſaid vnto hin: Know and toreknow that a pilgrime ſhal thy ſeed be in a land not theit owne (and they ſhal bring them vnder bondage, and afflict them) toure hundredyeares.",
     "from": "p74",
     "score": {
-     "s_dismas": 0.888,
-     "odr_com": 0.888,
-     "sabates_a": 0.893,
-     "madueke_b": 0.893
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
     }
    }
   },
@@ -714,13 +658,13 @@
     }
    },
    "S6": {
-    "text": "But the Nation, whom they ſhal ſerue, iudge: and after this they ſhal goe torth with great ſubſtance.",
+    "text": "But the Nation, whom they ſhal ſerue, I wil iudge: and after this they ſhal goe torth with great ſubſtance.",
     "from": "p74",
     "score": {
-     "s_dismas": 0.923,
-     "odr_com": 0.932,
-     "sabates_a": 0.929,
-     "madueke_b": 0.929
+     "s_dismas": 0.981,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    }
   },
@@ -798,13 +742,13 @@
     }
    },
    "S6": {
-    "text": "But in the fourth generation they ſhal returne hither: tor (c)as iniquities of the Amorrheans are not at the tul vntil this preſent",
+    "text": "But in the fourth generation they ſhal returne hither: tor (c)as yet the iniquities of the Amorrheans are not at the tul vntil this preſent te.",
     "from": "p74",
     "score": {
-     "s_dismas": 0.879,
-     "odr_com": 0.879,
-     "sabates_a": 0.894,
-     "madueke_b": 0.894
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
     }
    }
   },
@@ -1186,6 +1130,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 84,
- "triage": "SOURCE-SKEW",
- "secs": 4.4
+ "triage": "R3-READY",
+ "secs": 4.9
 }

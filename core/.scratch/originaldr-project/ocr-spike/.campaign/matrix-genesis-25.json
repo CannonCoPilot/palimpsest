@@ -2,23 +2,23 @@
  "chapter": 25,
  "n_verses": 34,
  "n_cells": 136,
- "n_pass": 131,
- "rate": 0.9632,
+ "n_pass": 133,
+ "rate": 0.9779,
  "ref_means": {
-  "s_dismas": 0.9816,
-  "odr_com": 0.9819,
-  "sabates_a": 0.9762,
-  "madueke_b": 0.9762
+  "s_dismas": 0.9826,
+  "odr_com": 0.983,
+  "sabates_a": 0.9772,
+  "madueke_b": 0.9772
  },
  "src_rates": {
   "S1": 0.9412,
-  "S3": 0.9412,
+  "S3": 1.0,
   "S9": 0.9706,
   "S6": 1.0
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 5,
+ "n_open": 3,
  "open": [
   {
    "src": "S1",
@@ -26,13 +26,6 @@
    "worst": 0.849,
    "from": "p104",
    "text": "Now her was come to be deliuered, and behold twinnes were in her wombe."
-  },
-  {
-   "src": "S3",
-   "verse": 24,
-   "worst": 0.822,
-   "from": "p108",
-   "text": "Now her went was come to be deliuered, and behold twinnes were in her wonibe."
   },
   {
    "src": "S1",
@@ -47,13 +40,6 @@
    "worst": 0.857,
    "from": "p114",
    "text": "Iacob leſt boyled broth to whom Eſau being come faynt out of the ſield,"
-  },
-  {
-   "src": "S3",
-   "verse": 33,
-   "worst": 0.885,
-   "from": "p108",
-   "text": "Iacob ſaid Sweare therfore to me. Eſau to him, and ſould his firſtbirthtright."
   }
  ],
  "cellgrid": {
@@ -1035,13 +1021,13 @@
     }
    },
    "S3": {
-    "text": "Now her went was come to be deliuered, and behold twinnes were in her wonibe.",
+    "text": "Now her time went was come to be deliuered, and behold twinnes were found in her wonibe.",
     "from": "p108",
     "score": {
-     "s_dismas": 0.85,
-     "odr_com": 0.85,
-     "sabates_a": 0.822,
-     "madueke_b": 0.822
+     "s_dismas": 0.919,
+     "odr_com": 0.919,
+     "sabates_a": 0.9,
+     "madueke_b": 0.9
     }
    },
    "S9": {
@@ -1413,13 +1399,13 @@
     }
    },
    "S3": {
-    "text": "Iacob ſaid Sweare therfore to me. Eſau to him, and ſould his firſtbirthtright.",
+    "text": "Iacob ſaid Sweare therfore to me. Eſau ſware to him, and ſould his firſtbirthtright.",
     "from": "p108",
     "score": {
-     "s_dismas": 0.912,
-     "odr_com": 0.912,
-     "sabates_a": 0.885,
-     "madueke_b": 0.885
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
     }
    },
    "S9": {
@@ -1745,5 +1731,5 @@
  "blocked_cells": 0,
  "achievable": 136,
  "triage": "R3-READY",
- "secs": 5.8
+ "secs": 5.9
 }

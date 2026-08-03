@@ -2,23 +2,23 @@
  "chapter": 3,
  "n_verses": 24,
  "n_cells": 96,
- "n_pass": 88,
- "rate": 0.9167,
+ "n_pass": 89,
+ "rate": 0.9271,
  "ref_means": {
-  "s_dismas": 0.976,
-  "odr_com": 0.9761,
-  "sabates_a": 0.9636,
-  "madueke_b": 0.9636
+  "s_dismas": 0.9773,
+  "odr_com": 0.9774,
+  "sabates_a": 0.9651,
+  "madueke_b": 0.9651
  },
  "src_rates": {
   "S1": 0.9583,
-  "S3": 0.9167,
+  "S3": 0.9583,
   "S9": 0.875,
   "S6": 0.9167
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 8,
+ "n_open": 7,
  "open": [
   {
    "src": "S1",
@@ -29,17 +29,10 @@
   },
   {
    "src": "S3",
-   "verse": 6,
-   "worst": 0.864,
-   "from": "p34",
-   "text": "The woman therfore ſawe that the tree was good eate, and fayre to the cyes, and delectable to behold : ſhe tooke of the fruite therof, and did eate, and gaue to huſband, who did eate."
-  },
-  {
-   "src": "S3",
    "verse": 15,
-   "worst": 0.872,
+   "worst": 0.865,
    "from": "p34",
-   "text": "I wil ſer- enmyties betwen thee & the woman, and thy ſeed yet the ſeed of her: ſhe ſhal bruiſe thy head in peeces, & thou ſhalt lye in waite: of her heele."
+   "text": "I wil put ſer- enmyties betwen thee & the woman, and thy ſeed and yet the ſeed of her: ſhe ſhal bruiſe thy head in peeces, & thou ſhalt lye in waite: of her heele."
   },
   {
    "src": "S9",
@@ -132,13 +125,13 @@
     }
    },
    "S3": {
-    "text": "To whom : ſo the woman anſwered: Of the fruite of the trees that in paradiſe, we doe eate :",
+    "text": "To whom : ſo the woman anſwered: Of the fruite of the trees that are in paradiſe, we doe eate :",
     "from": "p34",
     "score": {
-     "s_dismas": 0.919,
-     "odr_com": 0.919,
-     "sabates_a": 0.921,
-     "madueke_b": 0.921
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
     }
    },
    "S9": {
@@ -216,7 +209,7 @@
     }
    },
    "S3": {
-    "text": "And the ſerpent ſaid to the woman No you ſhal not dye the death.",
+    "text": "And the ſerpent ſaid to the woman : No you ſhal not dye the death.",
     "from": "p34",
     "score": {
      "s_dismas": 1.0,
@@ -258,13 +251,13 @@
     }
    },
    "S3": {
-    "text": "For God doth know that what day ſoeuer you ſhal eate therof, your eyes ſhal be ned : and you ſbal be as gods, knowing good & euil.",
+    "text": "For God doth know that in what day ſoeuer you ſhal eate therof, your eyes ſhal be opened : and you ſbal be as gods, knowing good & euil.",
     "from": "p34",
     "score": {
-     "s_dismas": 0.946,
-     "odr_com": 0.946,
-     "sabates_a": 0.908,
-     "madueke_b": 0.908
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
     }
    },
    "S9": {
@@ -300,13 +293,13 @@
     }
    },
    "S3": {
-    "text": "The woman therfore ſawe that the tree was good eate, and fayre to the cyes, and delectable to behold : ſhe tooke of the fruite therof, and did eate, and gaue to huſband, who did eate.",
+    "text": "The woman therfore ſawe that the tree was good to eate, and fayre to the cyes, and delectable to behold : and ſhe tooke of the fruite therof, and did eate, and gaue to her huſband, who did eate.",
     "from": "p34",
     "score": {
-     "s_dismas": 0.935,
-     "odr_com": 0.935,
-     "sabates_a": 0.864,
-     "madueke_b": 0.864
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
     }
    },
    "S9": {
@@ -384,13 +377,13 @@
     }
    },
    "S3": {
-    "text": "And hearing the voice of our Lord God walking paradiſe at the after none ayre: Adam hid himſelfe and to did his wife from the face of our Lord God, ainidſt that trees of paradiſe.",
+    "text": "And hearing the voice of our Lord God walking in paradiſe at the after none ayre: Adam hid himſelfe and ſo to did his wife from the face of our Lord God, ainidſt the that trees of paradiſe.",
     "from": "p34",
     "score": {
-     "s_dismas": 0.955,
-     "odr_com": 0.955,
-     "sabates_a": 0.945,
-     "madueke_b": 0.945
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
     }
    },
    "S9": {
@@ -594,13 +587,13 @@
     }
    },
    "S3": {
-    "text": "And our Lord God ſaid to the woman : Why haſt thou done this who anſwered : The ſerpent deceiued me, & re- did eate.",
+    "text": "And our Lord God ſaid to the woman : Why haſt thou done this who anſwered : The ſerpent deceiued me, & I re- did eate.",
     "from": "p34",
     "score": {
-     "s_dismas": 0.981,
-     "odr_com": 0.981,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
     }
    },
    "S9": {
@@ -678,13 +671,13 @@
     }
    },
    "S3": {
-    "text": "I wil ſer- enmyties betwen thee & the woman, and thy ſeed yet the ſeed of her: ſhe ſhal bruiſe thy head in peeces, & thou ſhalt lye in waite: of her heele.",
+    "text": "I wil put ſer- enmyties betwen thee & the woman, and thy ſeed and yet the ſeed of her: ſhe ſhal bruiſe thy head in peeces, & thou ſhalt lye in waite: of her heele.",
     "from": "p34",
     "score": {
-     "s_dismas": 0.959,
-     "odr_com": 0.959,
-     "sabates_a": 0.872,
-     "madueke_b": 0.872
+     "s_dismas": 0.948,
+     "odr_com": 0.948,
+     "sabates_a": 0.865,
+     "madueke_b": 0.865
     }
    },
    "S9": {
@@ -1276,5 +1269,5 @@
  "blocked_cells": 0,
  "achievable": 96,
  "triage": "R3-READY",
- "secs": 6.9
+ "secs": 7.1
 }

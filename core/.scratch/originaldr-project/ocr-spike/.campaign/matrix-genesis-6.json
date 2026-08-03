@@ -2,23 +2,23 @@
  "chapter": 6,
  "n_verses": 22,
  "n_cells": 88,
- "n_pass": 78,
- "rate": 0.8864,
+ "n_pass": 80,
+ "rate": 0.9091,
  "ref_means": {
-  "s_dismas": 0.9774,
-  "odr_com": 0.9778,
-  "sabates_a": 0.9579,
-  "madueke_b": 0.9579
+  "s_dismas": 0.979,
+  "odr_com": 0.9793,
+  "sabates_a": 0.9594,
+  "madueke_b": 0.9594
  },
  "src_rates": {
-  "S1": 0.8182,
-  "S3": 0.8636,
+  "S1": 0.8636,
+  "S3": 0.9091,
   "S9": 0.8636,
   "S6": 1.0
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 10,
+ "n_open": 8,
  "open": [
   {
    "src": "S1",
@@ -65,9 +65,9 @@
   {
    "src": "S1",
    "verse": 21,
-   "worst": 0.887,
+   "worst": 0.854,
    "from": "p42",
-   "text": "Thou ſhalt take therfore with thee of al meates, right may be eaten, and thou ſhalt lay them vp with thee of a iuft they ſhal be meate for thee and them."
+   "text": "Thou ſhalt take therfore with thee of al meates, that right may be eaten, and thou ſhalt lay them vp with thee and of a iuft they ſhal be meate for thee and them."
   },
   {
    "src": "S9",
@@ -75,20 +75,6 @@
    "worst": 0.846,
    "from": "p52",
    "text": "Thou ſhalt take therfore with thee of al meates, that rght may be eaten, and thou ſhalt lay them vp wit thee: and of a iuſt they fhal be meate for thee and them."
-  },
-  {
-   "src": "S1",
-   "verse": 22,
-   "worst": 0.875,
-   "from": "p42",
-   "text": "Noe therfore al thinges, which God commanded him"
-  },
-  {
-   "src": "S3",
-   "verse": 22,
-   "worst": 0.875,
-   "from": "p46",
-   "text": "Noe therfore al thinges, which God commanded him"
   }
  ],
  "cellgrid": {
@@ -104,13 +90,13 @@
     }
    },
    "S3": {
-    "text": "and after that men began to be multiplied vpon Nearth, had procreation of daughters:",
+    "text": "and after that men began to be multiplied vpon the Nearth, had procreation of daughters:",
     "from": "p44",
     "score": {
-     "s_dismas": 0.953,
-     "odr_com": 0.953,
-     "sabates_a": 0.919,
-     "madueke_b": 0.919
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
     }
    },
    "S9": {
@@ -892,13 +878,13 @@
   },
   "20": {
    "S1": {
-    "text": "Of foules according to their kind, and of beaſtes in their kind, of al that creepeth on the earth according to their kind: payres of al ſortes ſbal enter in with thee, that they liue.",
+    "text": "Of foules according to their kind, and of beaſtes in their kind, of al that creepeth on the earth according to their kind: payres of al ſortes ſbal enter in with thee, that they may liue.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.973,
-     "odr_com": 0.973,
-     "sabates_a": 0.902,
-     "madueke_b": 0.902
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
     }
    },
    "S3": {
@@ -934,13 +920,13 @@
   },
   "21": {
    "S1": {
-    "text": "Thou ſhalt take therfore with thee of al meates, right may be eaten, and thou ſhalt lay them vp with thee of a iuft they ſhal be meate for thee and them.",
+    "text": "Thou ſhalt take therfore with thee of al meates, that right may be eaten, and thou ſhalt lay them vp with thee and of a iuft they ſhal be meate for thee and them.",
     "from": "p42",
     "score": {
-     "s_dismas": 0.92,
-     "odr_com": 0.92,
-     "sabates_a": 0.887,
-     "madueke_b": 0.887
+     "s_dismas": 0.899,
+     "odr_com": 0.899,
+     "sabates_a": 0.854,
+     "madueke_b": 0.854
     }
    },
    "S3": {
@@ -976,33 +962,33 @@
   },
   "22": {
    "S1": {
-    "text": "Noe therfore al thinges, which God commanded him",
-    "from": "p42",
-    "score": {
-     "s_dismas": 0.922,
-     "odr_com": 0.922,
-     "sabates_a": 0.875,
-     "madueke_b": 0.875
-    }
-   },
-   "S3": {
-    "text": "Noe therfore al thinges, which God commanded him",
-    "from": "p46",
-    "score": {
-     "s_dismas": 0.922,
-     "odr_com": 0.922,
-     "sabates_a": 0.875,
-     "madueke_b": 0.875
-    }
-   },
-   "S9": {
     "text": "Noe therfore did al thinges, which God commanded him",
-    "from": "p52",
+    "from": "p42",
     "score": {
      "s_dismas": 1.0,
      "odr_com": 1.0,
      "sabates_a": 0.958,
      "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "Noe therfore did al thinges, which God commanded him",
+    "from": "p46",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "Noe therfore did Hb al thinges, which God commanded him",
+    "from": "p52",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
     }
    },
    "S6": {

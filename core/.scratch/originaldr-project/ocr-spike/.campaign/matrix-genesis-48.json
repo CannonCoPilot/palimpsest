@@ -2,16 +2,16 @@
  "chapter": 48,
  "n_verses": 22,
  "n_cells": 88,
- "n_pass": 81,
- "rate": 0.9205,
+ "n_pass": 82,
+ "rate": 0.9318,
  "ref_means": {
-  "s_dismas": 0.9332,
-  "odr_com": 0.9765,
-  "sabates_a": 0.9674,
-  "madueke_b": 0.9674
+  "s_dismas": 0.934,
+  "odr_com": 0.9773,
+  "sabates_a": 0.9681,
+  "madueke_b": 0.9681
  },
  "src_rates": {
-  "S1": 0.8636,
+  "S1": 0.9091,
   "S3": 0.9545,
   "S9": 0.9091,
   "S6": 0.9545
@@ -20,7 +20,7 @@
  "all_fail": [
   3
  ],
- "n_open": 7,
+ "n_open": 6,
  "open": [
   {
    "src": "S1",
@@ -63,13 +63,6 @@
    "worst": 0.0,
    "from": "p150",
    "text": "And Ioſeph being entred in to him, he ſaid: God Almightie appeared to me in Lura, which is in the Land ot Chanaan and he bleſſed me,"
-  },
-  {
-   "src": "S1",
-   "verse": 21,
-   "worst": 0.883,
-   "from": "p166",
-   "text": "And ſaid Ioſeph his ſonne: Behold I dye, and God wil with vou, and wil bring vou backe into the land of your fathers."
   }
  ],
  "cellgrid": {
@@ -841,13 +834,13 @@
     }
    },
    "S3": {
-    "text": "Wno refuſing, ſaid : I know my ſonne, I know: and this ſame in dede hal be into peoples, and ſhal be multi- plied : but his younger brother ſhal be greater then he : and his ſede ſhal growe into nattous.",
+    "text": "Wno refuſing, ſaid : I know my ſonne, I know: and this ſame in dede hal be into peoples, and ſhal be multi- I46 I plied : but his younger brother ſhal be greater then he : and his ſede ſhal growe into nattous.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.974,
-     "odr_com": 0.974,
-     "sabates_a": 0.961,
-     "madueke_b": 0.961
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
     }
    },
    "S9": {
@@ -873,13 +866,13 @@
   },
   "20": {
    "S1": {
-    "text": "And he bleſſed them thar time, ſaying In thee ihal Iſrael be bleſſed, and it ſhalbe ſaid God do vnto thee as vnto Ephraim, and as vnto Manaſſes. And he ſerte Ephraim before Manaſſes.",
+    "text": "And he bleſſed them at thar time, ſaying In thee ihal Iſrael be bleſſed, and it ſhalbe ſaid God do vnto thee as vnto Ephraim, and as vnto Manaſſes. And he ſerte Ephraim before Manaſſes.",
     "from": "p166",
     "score": {
-     "s_dismas": 0.961,
-     "odr_com": 0.967,
-     "sabates_a": 0.932,
-     "madueke_b": 0.932
+     "s_dismas": 0.978,
+     "odr_com": 0.983,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
     }
    },
    "S3": {
@@ -915,13 +908,13 @@
   },
   "21": {
    "S1": {
-    "text": "And ſaid Ioſeph his ſonne: Behold I dye, and God wil with vou, and wil bring vou backe into the land of your fathers.",
+    "text": "And he ſaid Ioſeph his ſonne: Behold I dye, and God wil be with vou, and wil bring vou backe into the land of your fathers.",
     "from": "p166",
     "score": {
-     "s_dismas": 0.91,
-     "odr_com": 0.91,
-     "sabates_a": 0.883,
-     "madueke_b": 0.883
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.92,
+     "madueke_b": 0.92
     }
    },
    "S3": {
@@ -967,13 +960,13 @@
     }
    },
    "S3": {
-    "text": "I doe geue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrhean with ſword and bowe.",
+    "text": "I doe geue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrhean with my ſword and bowe.",
     "from": "p170",
     "score": {
-     "s_dismas": 0.974,
-     "odr_com": 0.974,
-     "sabates_a": 0.962,
-     "madueke_b": 0.962
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S9": {
@@ -1173,5 +1166,5 @@
  "blocked_cells": 0,
  "achievable": 88,
  "triage": "R3-READY",
- "secs": 6.6
+ "secs": 6.7
 }

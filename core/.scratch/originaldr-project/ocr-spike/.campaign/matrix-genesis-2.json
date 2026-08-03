@@ -2,23 +2,23 @@
  "chapter": 2,
  "n_verses": 25,
  "n_cells": 100,
- "n_pass": 96,
- "rate": 0.96,
+ "n_pass": 97,
+ "rate": 0.97,
  "ref_means": {
-  "s_dismas": 0.9817,
-  "odr_com": 0.9817,
-  "sabates_a": 0.9704,
-  "madueke_b": 0.9704
+  "s_dismas": 0.9828,
+  "odr_com": 0.9828,
+  "sabates_a": 0.9712,
+  "madueke_b": 0.9712
  },
  "src_rates": {
   "S1": 0.92,
   "S3": 0.96,
-  "S9": 0.96,
+  "S9": 1.0,
   "S6": 1.0
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 4,
+ "n_open": 3,
  "open": [
   {
    "src": "S1",
@@ -36,13 +36,6 @@
   },
   {
    "src": "S3",
-   "verse": 12,
-   "worst": 0.893,
-   "from": "chapter",
-   "text": "And the gold of that land is very there is found bdelium, the ſtone onyx."
-  },
-  {
-   "src": "S9",
    "verse": 12,
    "worst": 0.893,
    "from": "chapter",
@@ -198,13 +191,13 @@
     }
    },
    "S9": {
-    "text": "Theſe are the generations of heauen earth, when they were created in the day, when our Lord God made by cod heauen, and the earth.",
+    "text": "Theſe are the generations of heauen earth, when they were created in the day, when our Lord God made the by cod heauen, and the earth.",
     "from": "p36",
     "score": {
-     "s_dismas": 0.952,
-     "odr_com": 0.952,
-     "sabates_a": 0.95,
-     "madueke_b": 0.95
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
     }
    },
    "S6": {
@@ -240,13 +233,13 @@
     }
    },
    "S9": {
-    "text": "And euery plant of the filde, ſub- fore it ſhot vp in the earth. And euerie herbe of the ground the before it ſprang for our Lord God had not rayned vpon earth and man was not to til the earth",
+    "text": "And euery plant of the filde, be-5 ſub- fore it ſhot vp in the earth. And euerie herbe of the ground the before it ſprang for our Lord God had not rayned vpon the earth and man was not to til the earth",
     "from": "p36",
     "score": {
-     "s_dismas": 0.942,
-     "odr_com": 0.942,
-     "sabates_a": 0.944,
-     "madueke_b": 0.944
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
     }
    },
    "S6": {
@@ -324,13 +317,13 @@
     }
    },
    "S9": {
-    "text": "Our Lord God therfore formed man of the ſlyme of earth : and : breathed into his face the breath of life, & man became a liuing ſoule.",
+    "text": "Our Lord God therfore formed man of the ſlyme of the earth : and : breathed into his face the breath of life, & man became a liuing ſoule.",
     "from": "p36",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.969,
-     "sabates_a": 0.967,
-     "madueke_b": 0.967
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
     }
    },
    "S6": {
@@ -534,13 +527,13 @@
     }
    },
    "S9": {
-    "text": "And the gold of that land is very there is found bdelium, the ſtone onyx.",
+    "text": "And the gold of that land is very good: there is found bdelium, the ſtone onyx.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.934,
-     "odr_com": 0.934,
-     "sabates_a": 0.893,
-     "madueke_b": 0.893
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
     }
    },
    "S6": {
@@ -1297,5 +1290,5 @@
  "blocked_cells": 0,
  "achievable": 100,
  "triage": "R3-READY",
- "secs": 5.9
+ "secs": 5.7
 }

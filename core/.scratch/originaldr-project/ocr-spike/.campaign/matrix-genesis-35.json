@@ -2,17 +2,17 @@
  "chapter": 35,
  "n_verses": 29,
  "n_cells": 116,
- "n_pass": 99,
- "rate": 0.8534,
+ "n_pass": 105,
+ "rate": 0.9052,
  "ref_means": {
-  "s_dismas": 0.9724,
-  "odr_com": 0.9755,
-  "sabates_a": 0.9647,
-  "madueke_b": 0.9647
+  "s_dismas": 0.9777,
+  "odr_com": 0.9809,
+  "sabates_a": 0.9698,
+  "madueke_b": 0.9698
  },
  "src_rates": {
-  "S1": 0.7931,
-  "S3": 0.8276,
+  "S1": 0.8966,
+  "S3": 0.931,
   "S9": 0.8276,
   "S6": 0.9655
  },
@@ -20,22 +20,8 @@
  "all_fail": [
   4
  ],
- "n_open": 17,
+ "n_open": 11,
  "open": [
-  {
-   "src": "S1",
-   "verse": 1,
-   "worst": 0.885,
-   "from": "p130",
-   "text": "in the time God ſpake to Iacob Ariſe, and Ivp to Bethel, and dwel there, and make an altar to that appeared ro thee when thou diddeſt flie from Eſau brother."
-  },
-  {
-   "src": "S3",
-   "verse": 1,
-   "worst": 0.898,
-   "from": "p134",
-   "text": "in the time God ſpake to Iacob Ariſe, and I vp to Bethel, and dwel there, and make an altar to that appeared to thee when thou diddeſt flie from Eſau brother."
-  },
   {
    "src": "S9",
    "verse": 1,
@@ -46,16 +32,16 @@
   {
    "src": "S1",
    "verse": 4,
-   "worst": 0.868,
+   "worst": 0.898,
    "from": "p130",
-   "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets were in their eares: but he buried them vnder thes terebinth, that is behind the citie of Sichem."
+   "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder thes terebinth, that is behind the citie of Sichem."
   },
   {
    "src": "S3",
    "verse": 4,
-   "worst": 0.858,
+   "worst": 0.888,
    "from": "p134",
-   "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets were in their eares: but he buried them vnder thex terebinth, when that is behind the citie of Sichem."
+   "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder thex terebinth, when that is behind the citie of Sichem."
   },
   {
    "src": "S9",
@@ -72,32 +58,11 @@
    "text": "They gaue to him theretore al the ſtrange Gods that they had, and the earclets which were in their eares:but he bured them vnder the terebnth that is behnd the citie of Sichem."
   },
   {
-   "src": "S1",
-   "verse": 5,
-   "worst": 0.836,
-   "from": "p130",
-   "text": "And when they departed, the terror of God inuaded al the cities about, and they durſt nor purſew them goingaway. then"
-  },
-  {
-   "src": "S3",
-   "verse": 5,
-   "worst": 0.897,
-   "from": "p134",
-   "text": "And when they departed, : the terror of God inuaded al the cities about, and they durſt not purſew them going away."
-  },
-  {
    "src": "S9",
    "verse": 5,
    "worst": 0.883,
    "from": "p142",
    "text": "And when they departed, : the terror of God inuaded al the oities rounde maketh about, and they durſt not purſew them going away."
-  },
-  {
-   "src": "S1",
-   "verse": 6,
-   "worst": 0.89,
-   "from": "p130",
-   "text": "Iacob came to Lura, which is in the land of Chanaan, named Bethel: he and al the people that was with more"
   },
   {
    "src": "S9",
@@ -108,17 +73,10 @@
   },
   {
    "src": "S1",
-   "verse": 8,
-   "worst": 0.892,
-   "from": "p130",
-   "text": "The ſame time Debora the nurſe of Rebecca, and was buried at the of Bethel vnder an oke: and the name of that place called, The oke of weeping."
-  },
-  {
-   "src": "S3",
-   "verse": 8,
-   "worst": 0.899,
-   "from": "p134",
-   "text": "The ſame time I2 in Debora the nurſe of Rebecca, and was buried at the of Bethel vnder an oke and the name of that place called, The oke of weeping."
+   "verse": 9,
+   "worst": 0.861,
+   "from": "chapter",
+   "text": "And God appeared agaiu to Iatamm com to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,"
   },
   {
    "src": "S9",
@@ -145,23 +103,23 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "in the time God ſpake to Iacob Ariſe, and Ivp to Bethel, and dwel there, and make an altar to that appeared ro thee when thou diddeſt flie from Eſau brother.",
+    "text": "in the time God ſpake to Iacob Ariſe, and goe Ivp to Bethel, and dwel there, and make an altar to God that appeared ro thee when thou diddeſt flie from Eſau thy brother.",
     "from": "p130",
     "score": {
-     "s_dismas": 0.888,
-     "odr_com": 0.888,
-     "sabates_a": 0.885,
-     "madueke_b": 0.885
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
     }
    },
    "S3": {
-    "text": "in the time God ſpake to Iacob Ariſe, and I vp to Bethel, and dwel there, and make an altar to that appeared to thee when thou diddeſt flie from Eſau brother.",
+    "text": "in the time God ſpake to Iacob Ariſe, and goe I vp to Bethel, and dwel there, and make an altar to God that appeared to thee when thou diddeſt flie from Eſau thy brother.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.9,
-     "odr_com": 0.9,
-     "sabates_a": 0.898,
-     "madueke_b": 0.898
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
     }
    },
    "S9": {
@@ -271,23 +229,23 @@
   },
   "4": {
    "S1": {
-    "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets were in their eares: but he buried them vnder thes terebinth, that is behind the citie of Sichem.",
+    "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder thes terebinth, that is behind the citie of Sichem.",
     "from": "p130",
     "score": {
-     "s_dismas": 0.868,
-     "odr_com": 0.961,
-     "sabates_a": 0.927,
-     "madueke_b": 0.927
+     "s_dismas": 0.898,
+     "odr_com": 0.994,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
     }
    },
    "S3": {
-    "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets were in their eares: but he buried them vnder thex terebinth, when that is behind the citie of Sichem.",
+    "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder thex terebinth, when that is behind the citie of Sichem.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.858,
-     "odr_com": 0.933,
-     "sabates_a": 0.899,
-     "madueke_b": 0.899
+     "s_dismas": 0.888,
+     "odr_com": 0.967,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
     }
    },
    "S9": {
@@ -313,23 +271,23 @@
   },
   "5": {
    "S1": {
-    "text": "And when they departed, the terror of God inuaded al the cities about, and they durſt nor purſew them goingaway. then",
+    "text": "And when they were departed, the terror of God inuaded al the cities rounde about, and they durſt nor purſew them goingaway.",
     "from": "p130",
     "score": {
-     "s_dismas": 0.844,
-     "odr_com": 0.844,
-     "sabates_a": 0.836,
-     "madueke_b": 0.836
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
     }
    },
    "S3": {
-    "text": "And when they departed, : the terror of God inuaded al the cities about, and they durſt not purſew them going away.",
+    "text": "And when they were departed, the terror of God inuaded al the cities rounde about, and they durſt not purſew them going away.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.897,
-     "madueke_b": 0.897
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S9": {
@@ -355,23 +313,23 @@
   },
   "6": {
    "S1": {
-    "text": "Iacob came to Lura, which is in the land of Chanaan, named Bethel: he and al the people that was with more",
+    "text": "And then Iacob came to Lura, which is in the land of Chanaan, furnamed Bethel: he and al the people that was with him",
     "from": "p130",
     "score": {
-     "s_dismas": 0.89,
-     "odr_com": 0.89,
-     "sabates_a": 0.893,
-     "madueke_b": 0.893
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
     }
    },
    "S3": {
-    "text": "Iacob came to Lura, which is in the land of Chanaan, named Bethel he and al the people that was with him",
+    "text": "And then Iacob came to Lura, which is in the land of Chanaan, ſurnamed Bethel he and al the people that was with him",
     "from": "p134",
     "score": {
-     "s_dismas": 0.927,
-     "odr_com": 0.927,
-     "sabates_a": 0.922,
-     "madueke_b": 0.922
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
     }
    },
    "S9": {
@@ -407,13 +365,13 @@
     }
    },
    "S3": {
-    "text": "And he builded there an altar, and called the name of then ChIi. place, The houſe of God for there God appeared to when he fed from his brother.",
+    "text": "And he builded there an altar, and called the name of that then ChIi. place, The houſe of God for there God appeared to him when he fed from his brother.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.914,
-     "odr_com": 0.914,
-     "sabates_a": 0.915,
-     "madueke_b": 0.915
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
     }
    },
    "S9": {
@@ -439,23 +397,23 @@
   },
   "8": {
    "S1": {
-    "text": "The ſame time Debora the nurſe of Rebecca, and was buried at the of Bethel vnder an oke: and the name of that place called, The oke of weeping.",
+    "text": "The ſame time died Debora the nurſe of Rebecca, and was buried at the foote of Bethel vnder an oke: and the name of that place was called, The oke of weeping.",
     "from": "p130",
     "score": {
-     "s_dismas": 0.903,
-     "odr_com": 0.903,
-     "sabates_a": 0.892,
-     "madueke_b": 0.892
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S3": {
-    "text": "The ſame time I2 in Debora the nurſe of Rebecca, and was buried at the of Bethel vnder an oke and the name of that place called, The oke of weeping.",
+    "text": "The ſame time died8 I2 in Debora the nurſe of Rebecca, and was buried at the foote of Bethel vnder an oke and the name of that place was called, The oke of weeping.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.909,
-     "odr_com": 0.909,
-     "sabates_a": 0.899,
-     "madueke_b": 0.899
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
     }
    },
    "S9": {
@@ -481,13 +439,13 @@
   },
   "9": {
    "S1": {
-    "text": "And God appeared to tamm com to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,",
+    "text": "And God appeared agaiu to Iatamm com to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.9,
-     "odr_com": 0.9,
-     "sabates_a": 0.905,
-     "madueke_b": 0.905
+     "s_dismas": 0.861,
+     "odr_com": 0.861,
+     "sabates_a": 0.864,
+     "madueke_b": 0.864
     }
    },
    "S3": {
@@ -1586,5 +1544,5 @@
  "blocked_cells": 0,
  "achievable": 116,
  "triage": "SOURCE-SKEW",
- "secs": 6.1
+ "secs": 6.4
 }

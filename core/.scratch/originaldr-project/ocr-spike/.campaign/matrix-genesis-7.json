@@ -2,23 +2,23 @@
  "chapter": 7,
  "n_verses": 24,
  "n_cells": 96,
- "n_pass": 85,
- "rate": 0.8854,
+ "n_pass": 86,
+ "rate": 0.8958,
  "ref_means": {
-  "s_dismas": 0.9729,
-  "odr_com": 0.9732,
-  "sabates_a": 0.9509,
-  "madueke_b": 0.9509
+  "s_dismas": 0.9772,
+  "odr_com": 0.9776,
+  "sabates_a": 0.9549,
+  "madueke_b": 0.9549
  },
  "src_rates": {
-  "S1": 0.7917,
+  "S1": 0.8333,
   "S3": 0.8333,
   "S9": 1.0,
   "S6": 0.9167
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 11,
+ "n_open": 10,
  "open": [
   {
    "src": "S6",
@@ -30,9 +30,9 @@
   {
    "src": "S1",
    "verse": 3,
-   "worst": 0.85,
+   "worst": 0.891,
    "from": "p46",
-   "text": "of the beaſts that are vncleane two and two, male female. of Yea and of the foules alſo of the ayre ſeauen ſeauen, and female that ſeede may be ſaued vpon the face of whole earth."
+   "text": "but tra- of the beaſts that are vncleane two and two, male female. of Yea and of the foules alſo of the ayre ſeauen ſeauen, male and female that ſeede may be ſaued vpon the face of the whole earth."
   },
   {
    "src": "S3",
@@ -42,13 +42,6 @@
    "text": "of the beaſts that are vncleane two and two, male female. Yea and of the foules alſo of the ayre ſeauen ſeauen, and female that ſeede may be ſaued vpon the face of whole earth."
   },
   {
-   "src": "S1",
-   "verse": 6,
-   "worst": 0.859,
-   "from": "p46",
-   "text": "And he was ſix hundred old, when the waters of the floud flowed ouer the more"
-  },
-  {
    "src": "S3",
    "verse": 6,
    "worst": 0.859,
@@ -57,10 +50,10 @@
   },
   {
    "src": "S1",
-   "verse": 10,
-   "worst": 0.84,
+   "verse": 7,
+   "worst": 0.893,
    "from": "p46",
-   "text": "And after the ſeauen were paſſed, the waters of the floud flowed ouer the in"
+   "text": "And Noe enrred and his ſonnes, his wife and the wiues of ſince of his ſonnes with him into the arke, becauſe of the waters of the floud."
   },
   {
    "src": "S3",
@@ -72,9 +65,9 @@
   {
    "src": "S1",
    "verse": 13,
-   "worst": 0.851,
-   "from": "chapter",
-   "text": "In the verie of that day entred Noe, and Sem, and Cham, Iapheth Chr. ſonnes: and his wife, and the three wiues of his ſonues Gen. them into the arke"
+   "worst": 0.891,
+   "from": "p46",
+   "text": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his Chr. ſonnes: and his wife, and the three wiues of his ſonues with Gen. them into the arke :"
   },
   {
    "src": "S1",
@@ -101,13 +94,13 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "and our Lord ſaid to him Ger thee in, thou and A thy houſe into the arke for I haue ſene thee iuſt my ſighe in this generation.",
+    "text": "and our Lord ſaid to him Ger thee in, thou and al A thy houſe into the arke for I haue ſene thee iuſt in my ſighe in this generation.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.954,
-     "odr_com": 0.954,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
     }
    },
    "S3": {
@@ -185,13 +178,13 @@
   },
   "3": {
    "S1": {
-    "text": "of the beaſts that are vncleane two and two, male female. of Yea and of the foules alſo of the ayre ſeauen ſeauen, and female that ſeede may be ſaued vpon the face of whole earth.",
+    "text": "but tra- of the beaſts that are vncleane two and two, male female. of Yea and of the foules alſo of the ayre ſeauen ſeauen, male and female that ſeede may be ſaued vpon the face of the whole earth.",
     "from": "p46",
     "score": {
-     "s_dismas": 0.913,
-     "odr_com": 0.913,
-     "sabates_a": 0.85,
-     "madueke_b": 0.85
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.891,
+     "madueke_b": 0.891
     }
    },
    "S3": {
@@ -227,13 +220,13 @@
   },
   "4": {
    "S1": {
-    "text": "For yer a while, and after ſeauen dayes, I rayne vpon the earth fourtie dayes and fourtie nights: and of wil cleane deſtroy al ſubſtance, that I haue made, from face of the earth.",
+    "text": "For yer a while, and after ſeauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I of wil cleane deſtroy al ſubſtance, that I haue made, from the face of the earth.",
     "from": "p46",
     "score": {
-     "s_dismas": 0.939,
-     "odr_com": 0.939,
-     "sabates_a": 0.908,
-     "madueke_b": 0.908
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
     }
    },
    "S3": {
@@ -311,13 +304,13 @@
   },
   "6": {
    "S1": {
-    "text": "And he was ſix hundred old, when the waters of the floud flowed ouer the more",
+    "text": "And he was ſix hundred yeares old, when the waters of the floud flowed ouer the earth.",
     "from": "p46",
     "score": {
-     "s_dismas": 0.869,
-     "odr_com": 0.869,
-     "sabates_a": 0.859,
-     "madueke_b": 0.859
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
     }
    },
    "S3": {
@@ -353,13 +346,13 @@
   },
   "7": {
    "S1": {
-    "text": "And Noe enrred and his ſonnes, his wife and the wiues ſince of his ſonnes with him into the arke, becauſe of the waters of the floud.",
+    "text": "And Noe enrred and his ſonnes, his wife and the wiues of ſince of his ſonnes with him into the arke, becauſe of the waters of the floud.",
     "from": "p46",
     "score": {
-     "s_dismas": 0.946,
-     "odr_com": 0.954,
-     "sabates_a": 0.915,
-     "madueke_b": 0.915
+     "s_dismas": 0.925,
+     "odr_com": 0.947,
+     "sabates_a": 0.893,
+     "madueke_b": 0.893
     }
    },
    "S3": {
@@ -479,13 +472,13 @@
   },
   "10": {
    "S1": {
-    "text": "And after the ſeauen were paſſed, the waters of the floud flowed ouer the in",
+    "text": "And after the ſeauen dayes were paſſed, the waters of the floud flowed ouer the earth.",
     "from": "p46",
     "score": {
-     "s_dismas": 0.869,
-     "odr_com": 0.869,
-     "sabates_a": 0.84,
-     "madueke_b": 0.84
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
     }
    },
    "S3": {
@@ -521,13 +514,13 @@
   },
   "11": {
    "S1": {
-    "text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh dav of the moneth, al the cal taines of the greate deapth were broken vp, and the gates of heauen were opened",
+    "text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh dav of the moneth, al the founcal taines of the : greate deapth were broken vp, and the floud gates of heauen were opened :",
     "from": "p46",
     "score": {
-     "s_dismas": 0.944,
-     "odr_com": 0.944,
-     "sabates_a": 0.915,
-     "madueke_b": 0.915
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
     }
    },
    "S3": {
@@ -605,13 +598,13 @@
   },
   "13": {
    "S1": {
-    "text": "In the verie of that day entred Noe, and Sem, and Cham, Iapheth Chr. ſonnes: and his wife, and the three wiues of his ſonues Gen. them into the arke",
-    "from": "chapter",
+    "text": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his Chr. ſonnes: and his wife, and the three wiues of his ſonues with Gen. them into the arke :",
+    "from": "p46",
     "score": {
-     "s_dismas": 0.905,
-     "odr_com": 0.905,
-     "sabates_a": 0.851,
-     "madueke_b": 0.851
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.891,
+     "madueke_b": 0.891
     }
    },
    "S3": {
@@ -1297,5 +1290,5 @@
  "blocked_cells": 0,
  "achievable": 96,
  "triage": "SOURCE-SKEW",
- "secs": 6.1
+ "secs": 6.2
 }

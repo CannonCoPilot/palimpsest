@@ -2,31 +2,24 @@
  "chapter": 45,
  "n_verses": 28,
  "n_cells": 112,
- "n_pass": 110,
- "rate": 0.9821,
+ "n_pass": 111,
+ "rate": 0.9911,
  "ref_means": {
-  "s_dismas": 0.9768,
-  "odr_com": 0.9766,
-  "sabates_a": 0.9686,
-  "madueke_b": 0.9686
+  "s_dismas": 0.9794,
+  "odr_com": 0.9793,
+  "sabates_a": 0.9714,
+  "madueke_b": 0.9714
  },
  "src_rates": {
   "S1": 1.0,
-  "S3": 0.9643,
+  "S3": 1.0,
   "S9": 0.9643,
   "S6": 1.0
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 2,
+ "n_open": 1,
  "open": [
-  {
-   "src": "S3",
-   "verse": 4,
-   "worst": 0.874,
-   "from": "p160",
-   "text": "To whom gently he Come hither to me. And when they were come nere I am, quoth he, Ioſeph, your brother, whom you ſolde Agypt."
-  },
   {
    "src": "S9",
    "verse": 20,
@@ -38,23 +31,23 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "Ioſeph could no longer refrayne manie ſtanding by I preſence: wherupon he commanded that al ſhould goe forth, and no ſtranger ſhould be preſent at their acknowledging one of another.",
+    "text": "Ioſeph could no longer refrayne manie ſtanding by in I preſence: wherupon he commanded that al ſhould goe forth, and no ſtranger ſhould be preſent at their acknowledging one of another.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.994,
-     "odr_com": 0.994,
-     "sabates_a": 0.988,
-     "madueke_b": 0.988
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S3": {
-    "text": "Ioſeph could no longer refrayne manie ſtanding by I preſence wherupon he commanded that al ſhould forth, and no ſtranger ſhould be preſent at their acknowledging one of another.",
+    "text": "Ioſeph could no longer refrayne manie ſtanding by in I preſence wherupon he commanded that al ſhould goe forth, and no ſtranger ſhould be preſent at their acknowledging one of another.",
     "from": "p160",
     "score": {
-     "s_dismas": 0.972,
-     "odr_com": 0.972,
-     "sabates_a": 0.971,
-     "madueke_b": 0.971
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S9": {
@@ -80,23 +73,23 @@
   },
   "2": {
    "S1": {
-    "text": "And he lifted vp his voice with weeping, which the Egyptians heard, and al the houſe Pharao.",
+    "text": "And he lifted vp his voice with weeping, which the Egyptians heard, and al the houſe of Pharao.",
     "from": "p156",
     "score": {
-     "s_dismas": 0.957,
-     "odr_com": 0.957,
-     "sabates_a": 0.954,
-     "madueke_b": 0.954
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
     }
    },
    "S3": {
-    "text": "And he lifted vp his voice with weeping, which the Agyptians heard, and al the houſe Pharao.",
+    "text": "And he lifted vp his voice with weeping, which the Agyptians heard, and al the houſe of Pharao.",
     "from": "p160",
     "score": {
-     "s_dismas": 0.957,
-     "odr_com": 0.957,
-     "sabates_a": 0.954,
-     "madueke_b": 0.954
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
     }
    },
    "S9": {
@@ -174,13 +167,13 @@
     }
    },
    "S3": {
-    "text": "To whom gently he Come hither to me. And when they were come nere I am, quoth he, Ioſeph, your brother, whom you ſolde Agypt.",
+    "text": "To whom gently he ſaid: Come hither to me. And when they were come nere him, I am, quoth he, Ioſeph, your brother, whom you ſolde into Agypt.",
     "from": "p160",
     "score": {
-     "s_dismas": 0.888,
-     "odr_com": 0.888,
-     "sabates_a": 0.874,
-     "madueke_b": 0.874
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S9": {
@@ -216,13 +209,13 @@
     }
    },
    "S3": {
-    "text": "Be not affraid, neither let it ſeeme to you a hard dea that you did ſel me into theſe countries: for God ſent the before you into Egypt for your preſeruation.",
+    "text": "Be not affraid, neither let it ſeeme to you a hard caſe dea that you did ſel me into theſe countries: for God ſent me the before you into Egypt for your preſeruation.",
     "from": "p160",
     "score": {
-     "s_dismas": 0.955,
-     "odr_com": 0.955,
-     "sabates_a": 0.959,
-     "madueke_b": 0.959
+     "s_dismas": 0.945,
+     "odr_com": 0.945,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
     }
    },
    "S9": {
@@ -248,23 +241,23 @@
   },
   "6": {
    "S1": {
-    "text": "For it two yeares ſince the famin begain to be vpon the earth, yet fiue yeares remaine, wherin there can be neither earing nor reaping.",
+    "text": "For it is two yeares ſince the famin begain to be vpon the earth, and yet fiue yeares remaine, wherin there can be neither earing nor reaping.",
     "from": "p156",
     "score": {
-     "s_dismas": 0.943,
-     "odr_com": 0.942,
-     "sabates_a": 0.915,
-     "madueke_b": 0.915
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    },
    "S3": {
-    "text": "For it two yeares ſince the famin begain to be vpon the earth, yet fue yeares remaine, wherin there can be neither earing nor reaping.",
+    "text": "For it is two yeares ſince the famin begain to be vpon the earth, and yet fue yeares remaine, wherin there can be neither earing nor reaping.",
     "from": "p160",
     "score": {
-     "s_dismas": 0.936,
-     "odr_com": 0.935,
-     "sabates_a": 0.907,
-     "madueke_b": 0.907
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
     }
    },
    "S9": {
@@ -300,13 +293,13 @@
     }
    },
    "S3": {
-    "text": "And God ſent me before, that you may be ferue dvpon the earth, and may haue victuals to liue.",
+    "text": "And God ſent me before, that you may be pre- ferue dvpon the earth, and may haue victuals to liue.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.935,
-     "odr_com": 0.935,
-     "sabates_a": 0.931,
-     "madueke_b": 0.931
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
     }
    },
    "S9": {
@@ -1430,5 +1423,5 @@
  "blocked_cells": 0,
  "achievable": 112,
  "triage": "R3-READY",
- "secs": 6.9
+ "secs": 7.0
 }

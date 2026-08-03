@@ -2,25 +2,23 @@
  "chapter": 49,
  "n_verses": 32,
  "n_cells": 128,
- "n_pass": 103,
- "rate": 0.8047,
+ "n_pass": 114,
+ "rate": 0.8906,
  "ref_means": {
-  "s_dismas": 0.9575,
-  "odr_com": 0.958,
-  "sabates_a": 0.9459,
-  "madueke_b": 0.9457
+  "s_dismas": 0.9739,
+  "odr_com": 0.9744,
+  "sabates_a": 0.9587,
+  "madueke_b": 0.9585
  },
  "src_rates": {
   "S1": 0.8125,
   "S3": 0.875,
   "S9": 0.875,
-  "S6": 0.6562
+  "S6": 1.0
  },
- "n_all_fail": 1,
- "all_fail": [
-  21
- ],
- "n_open": 25,
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 14,
  "open": [
   {
    "src": "S1",
@@ -93,20 +91,6 @@
    "text": "I wil expect ruv sAIVATON o Lord."
   },
   {
-   "src": "S6",
-   "verse": 19,
-   "worst": 0.778,
-   "from": "p154",
-   "text": "I the girded ſhal fight betore him: and himſelt ſhal be gyr- al which"
-  },
-  {
-   "src": "S6",
-   "verse": 20,
-   "worst": 0.864,
-   "from": "p154",
-   "text": "ancient his bread is fat, aud he ſhal giue daynties to Kings."
-  },
-  {
    "src": "S1",
    "verse": 21,
    "worst": 0.855,
@@ -128,74 +112,11 @@
    "text": "Nepthali, a hart let forth, & geuing ſpeaches of beautie."
   },
   {
-   "src": "S6",
-   "verse": 21,
-   "worst": 0.0,
-   "from": "p154",
-   "text": "a hart let forth, and giuing ſpeaches ot beautie. written"
-  },
-  {
-   "src": "S6",
-   "verse": 22,
-   "worst": 0.8,
-   "from": "p154",
-   "text": "a child encreaſing, encreaſing and comelie to behold: comentaries, courſed to and tro vpon the wal.3."
-  },
-  {
    "src": "S1",
    "verse": 24,
    "worst": 0.896,
    "from": "p168",
    "text": "His bowe ſate vpon the ſtrong, & the bands of his armes and his handes were diſſolued, by the handes the mightie of lacob: thence came forth a paſtour, the ſtone of Hracl"
-  },
-  {
-   "src": "S6",
-   "verse": 24,
-   "worst": 0.798,
-   "from": "p154",
-   "text": "His bow ſate ſtrong, and the bands of his armes and his hands were diſſolthe hands of the Mightie of Iacob: thence came torth a paſtone ot Iſrael."
-  },
-  {
-   "src": "S6",
-   "verse": 25,
-   "worst": 0.861,
-   "from": "p154",
-   "text": "The God of thy tather ſhal be thy helper, Almightie ſhal bleſſe thee with the bleſſines of heauen ttom with the bleſſings of the depth that lieth beneath with the ot the paps and of the womb."
-  },
-  {
-   "src": "S6",
-   "verse": 26,
-   "worst": 0.85,
-   "from": "p154",
-   "text": "The bleſſings ot thy taſtrengthned with the bleſſings of his fathers: vntil the dethe eternal hils came: be they vpon the head of Ioſeph, and crowne of the Nararite among his brethren."
-  },
-  {
-   "src": "S6",
-   "verse": 28,
-   "worst": 0.863,
-   "from": "p154",
-   "text": "phecie theſe in the tribes ot Iſrael twelue: theſe thines ſpake their guſtin them, and he bleſſed euerie one, with their proper bleſfings."
-  },
-  {
-   "src": "S6",
-   "verse": 29,
-   "worst": 0.86,
-   "from": "p154",
-   "text": "Paul, he commanded theni, ſaying: I am gathered vnto my peo- tribe of you me with my fathers in the double caue, which is in the min, who Ephron the Hethite,"
-  },
-  {
-   "src": "S6",
-   "verse": 31,
-   "worst": 0.805,
-   "from": "p154",
-   "text": "There they buried him and an Apoſtle wite: there was Iſaac buried with Rebeoca his wife: there Chriſt. Sauctis. doth lie buried."
-  },
-  {
-   "src": "S6",
-   "verse": 32,
-   "worst": 0.848,
-   "from": "p154",
-   "text": "And when he had finiſhed the precepts he inſtructed his ſonnes, he plucked vp his teet vpon the bed, and he was put vnto his people."
   }
  ],
  "cellgrid": {
@@ -285,13 +206,13 @@
   },
   "3": {
    "S1": {
-    "text": "Ruben my firſt begotten, thou art my ſtrength, and the begining of my ſorow: former in giftes, greater empyre",
-    "from": "p167",
+    "text": "Ruben my firſt begotten, thou art my ſtrength, and the begining of my ſorow: former in giftes, greater in empyre",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.972,
-     "odr_com": 0.972,
-     "sabates_a": 0.922,
-     "madueke_b": 0.922
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
     }
    },
    "S3": {
@@ -327,7 +248,7 @@
   },
   "4": {
    "S1": {
-    "text": "Thou art poured out as water, encreaſe thou not:\" becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his couth.",
+    "text": "Thou art poured out as water, encreaſe thou not: \" becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his couth.",
     "from": "r3",
     "score": {
      "s_dismas": 0.992,
@@ -347,13 +268,13 @@
     }
    },
    "S9": {
-    "text": "Thou art poured out as water, encreaſe thou not: becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his couth.",
+    "text": "Thou art poured out as water, : encreaſe thou uot no becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his couth.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.992,
-     "odr_com": 0.992,
-     "sabates_a": 0.956,
-     "madueke_b": 0.956
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
     }
    },
    "S6": {
@@ -987,13 +908,13 @@
     }
    },
    "S6": {
-    "text": "I the girded ſhal fight betore him: and himſelt ſhal be gyr- al which",
+    "text": "Gad, the girded ſhal fight betore him: and himſelt ſhal be gyrded backward.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.778,
-     "odr_com": 0.778,
-     "sabates_a": 0.783,
-     "madueke_b": 0.783
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
     }
    }
   },
@@ -1029,13 +950,13 @@
     }
    },
    "S6": {
-    "text": "ancient his bread is fat, aud he ſhal giue daynties to Kings.",
+    "text": "Aſer, his bread is fat, aud he ſhal giue daynties to Kings.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.864,
-     "odr_com": 0.864,
-     "sabates_a": 0.895,
-     "madueke_b": 0.895
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
     }
    }
   },
@@ -1071,13 +992,13 @@
     }
    },
    "S6": {
-    "text": "a hart let forth, and giuing ſpeaches ot beautie. written",
-    "from": "p154",
+    "text": "Nepthali, a hart let forth, and giuing ſpeaches of beautie.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.0,
-     "odr_com": 0.0,
-     "sabates_a": 0.654,
-     "madueke_b": 0.654
+     "s_dismas": 0.911,
+     "odr_com": 0.911,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
     }
    }
   },
@@ -1113,13 +1034,13 @@
     }
    },
    "S6": {
-    "text": "a child encreaſing, encreaſing and comelie to behold: comentaries, courſed to and tro vpon the wal.3.",
+    "text": "Ioſeph a child encreaſing, encreaſing and comelie to behold: the daughters courſed to and tro vpon the wal.3.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.819,
-     "odr_com": 0.8,
-     "sabates_a": 0.802,
-     "madueke_b": 0.802
+     "s_dismas": 0.981,
+     "odr_com": 0.962,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    }
   },
@@ -1197,13 +1118,13 @@
     }
    },
    "S6": {
-    "text": "His bow ſate ſtrong, and the bands of his armes and his hands were diſſolthe hands of the Mightie of Iacob: thence came torth a paſtone ot Iſrael.",
+    "text": "His bow ſate vpon the ſtrong, and the bands of his armes and his hands were diſſolued, by the hands of the Mightie of Iacob: thence came torth a paſtour, the ſtone ot Iſrael.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.802,
-     "odr_com": 0.798,
-     "sabates_a": 0.838,
-     "madueke_b": 0.838
+     "s_dismas": 0.953,
+     "odr_com": 0.947,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
     }
    }
   },
@@ -1239,13 +1160,13 @@
     }
    },
    "S6": {
-    "text": "The God of thy tather ſhal be thy helper, Almightie ſhal bleſſe thee with the bleſſines of heauen ttom with the bleſſings of the depth that lieth beneath with the ot the paps and of the womb.",
+    "text": "The God of thy tather ſhal be thy helper, and the Almightie ſhal bleſſe thee with the bleſſines of heauen ttom aboue, with the bleſſings of the depth that lieth beneath with the bleſſings ot the paps and of the womb.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.861,
-     "odr_com": 0.861,
-     "sabates_a": 0.867,
-     "madueke_b": 0.867
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
     }
    }
   },
@@ -1281,13 +1202,13 @@
     }
    },
    "S6": {
-    "text": "The bleſſings ot thy taſtrengthned with the bleſſings of his fathers: vntil the dethe eternal hils came: be they vpon the head of Ioſeph, and crowne of the Nararite among his brethren.",
+    "text": "The bleſſings ot thy tather were ſtrengthned with the bleſſings of his fathers: vntil the deſire of the eternal hils came: be they vpon the head of Ioſeph, and vpon the crowne of the Nararite among his brethren.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.85,
-     "odr_com": 0.85,
-     "sabates_a": 0.855,
-     "madueke_b": 0.855
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    }
   },
@@ -1365,13 +1286,13 @@
     }
    },
    "S6": {
-    "text": "phecie theſe in the tribes ot Iſrael twelue: theſe thines ſpake their guſtin them, and he bleſſed euerie one, with their proper bleſfings.",
+    "text": "Al theſe in the tribes ot Iſrael twelue: theſe thines ſpake their father to them, and he bleſſed euerie one, with their proper bleſfings.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.866,
-     "odr_com": 0.866,
-     "sabates_a": 0.863,
-     "madueke_b": 0.863
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    }
   },
@@ -1407,13 +1328,13 @@
     }
    },
    "S6": {
-    "text": "Paul, he commanded theni, ſaying: I am gathered vnto my peo- tribe of you me with my fathers in the double caue, which is in the min, who Ephron the Hethite,",
+    "text": "And he commanded theni, ſaying: I am gathered vnto my people: burie you me with my fathers in the double caue, which is in the field ot Ephron the Hethite,",
     "from": "p154",
     "score": {
-     "s_dismas": 0.86,
-     "odr_com": 0.86,
-     "sabates_a": 0.871,
-     "madueke_b": 0.871
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    }
   },
@@ -1449,13 +1370,13 @@
     }
    },
    "S6": {
-    "text": "againſt Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hehite for a poſſeſſion to burie in.",
+    "text": "againſt Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hethite for a poſſeſſion to burie in.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.992,
-     "odr_com": 0.992,
-     "sabates_a": 0.991,
-     "madueke_b": 0.991
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    }
   },
@@ -1491,13 +1412,13 @@
     }
    },
    "S6": {
-    "text": "There they buried him and an Apoſtle wite: there was Iſaac buried with Rebeoca his wife: there Chriſt. Sauctis. doth lie buried.",
+    "text": "There they buried him and Sara his wite: there was Iſaac buried with Rebeoca his wife: there alſo Lia doth lie buried.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.805,
-     "odr_com": 0.805,
-     "sabates_a": 0.817,
-     "madueke_b": 0.817
+     "s_dismas": 0.948,
+     "odr_com": 0.948,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
     }
    }
   },
@@ -1533,13 +1454,13 @@
     }
    },
    "S6": {
-    "text": "And when he had finiſhed the precepts he inſtructed his ſonnes, he plucked vp his teet vpon the bed, and he was put vnto his people.",
+    "text": "And when he had finiſhed the precepts wherwith he inſtructed his ſonnes, he plucked vp his teet vpon the bed, and died and he was put vnto his people.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.895,
-     "odr_com": 0.895,
-     "sabates_a": 0.848,
-     "madueke_b": 0.848
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    }
   }
@@ -1789,5 +1710,5 @@
  "blocked_cells": 0,
  "achievable": 128,
  "triage": "SOURCE-SKEW",
- "secs": 6.4
+ "secs": 6.9
 }

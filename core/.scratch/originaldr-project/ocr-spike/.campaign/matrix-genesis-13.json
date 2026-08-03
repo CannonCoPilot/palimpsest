@@ -5,10 +5,10 @@
  "n_pass": 70,
  "rate": 0.9722,
  "ref_means": {
-  "s_dismas": 0.9688,
-  "odr_com": 0.9693,
-  "sabates_a": 0.96,
-  "madueke_b": 0.96
+  "s_dismas": 0.9687,
+  "odr_com": 0.9692,
+  "sabates_a": 0.9599,
+  "madueke_b": 0.9599
  },
  "src_rates": {
   "S1": 1.0,
@@ -38,7 +38,7 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "to BRAM therfore aſcended out of Egypt, he and his Awife, and al that he had, and Lot with him to the ſouth coaſt.",
+    "text": "Gad. BRAM therfore aſcended out of Egypt, he and his Awife, and al that he had, and Lot with him to the ſouth coaſt.",
     "from": "chapter",
     "score": {
      "s_dismas": 0.955,
@@ -48,13 +48,13 @@
     }
    },
    "S3": {
-    "text": "to BRAM therfore aſcended out of Egypt, he and his wife, and al that he had, and Lot with him to the ſouth coaſt.",
+    "text": "God. BRAM therfore aſcended out of Egypt, he and his wife, and al that he had, and Lot with him to the ſouth coaſt.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.963,
-     "odr_com": 0.963,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
     }
    },
    "S9": {
@@ -940,5 +940,5 @@
  "blocked_cells": 0,
  "achievable": 72,
  "triage": "SOURCE-SKEW",
- "secs": 5.3
+ "secs": 5.4
 }

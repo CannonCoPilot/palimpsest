@@ -5,10 +5,10 @@
  "n_pass": 115,
  "rate": 0.8984,
  "ref_means": {
-  "s_dismas": 0.9661,
-  "odr_com": 0.9795,
-  "sabates_a": 0.959,
-  "madueke_b": 0.959
+  "s_dismas": 0.9675,
+  "odr_com": 0.981,
+  "sabates_a": 0.9603,
+  "madueke_b": 0.9603
  },
  "src_rates": {
   "S1": 0.875,
@@ -338,13 +338,13 @@
     }
    },
    "S3": {
-    "text": "and he ſaid: Behold, it is one people, and one tongue is to al: and they haue begunne to doe this, neyther wil they leaue from their determinations, til they accomplish them indede.",
+    "text": "and he ſaid: Behold, it is one people, and one tongue is to al: and they haue begunne to doe this, neyther wil they leaue of from their determinations, til they accomplish them indede.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.983,
-     "odr_com": 0.983,
-     "sabates_a": 0.982,
-     "madueke_b": 0.982
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -422,13 +422,13 @@
     }
    },
    "S3": {
-    "text": "And ſo our Lord diſperſed them from that place into Iands, and they ceaſed to build the citie.",
+    "text": "And ſo our Lord diſperſed them from that place into al Iands, and they ceaſed to build the citie.",
     "from": "p68",
     "score": {
-     "s_dismas": 0.958,
-     "odr_com": 0.958,
-     "sabates_a": 0.957,
-     "madueke_b": 0.957
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
     }
    },
    "S9": {
@@ -506,13 +506,13 @@
     }
    },
    "S3": {
-    "text": "Theſe are:: the generations of Sem: Sem was an hundred yeares old when he begat Arphaxad, two ycares after of floud.",
+    "text": "Theſe are:: the generations of Sem: Sem was an hundred yeares old when he begat Arphaxad, two ycares after the of floud.",
     "from": "p68",
     "score": {
-     "s_dismas": 0.964,
-     "odr_com": 0.964,
-     "sabates_a": 0.944,
-     "madueke_b": 0.944
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
     }
    },
    "S9": {
@@ -1262,13 +1262,13 @@
     }
    },
    "S3": {
-    "text": "And Aran died before Thare father, in the land of his natiuitie in : Vr of the Chaldees.",
+    "text": "And Aran died before Thare his father, in the land of his natiuitie in : Vr of the Chaldees.",
     "from": "p68",
     "score": {
-     "s_dismas": 0.955,
-     "odr_com": 0.955,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -1346,13 +1346,13 @@
     }
    },
    "S3": {
-    "text": "And Sarai was barren, neither had children.",
+    "text": "And Sarai was barren, neither had ſhe children.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.911,
-     "odr_com": 0.911,
-     "sabates_a": 0.93,
-     "madueke_b": 0.93
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -1706,5 +1706,5 @@
  "blocked_cells": 0,
  "achievable": 128,
  "triage": "R3-READY",
- "secs": 6.3
+ "secs": 6.2
 }

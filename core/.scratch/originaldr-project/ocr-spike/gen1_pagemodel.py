@@ -582,9 +582,146 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     # Only the five leaves the probe calls MOVE are changed here. The four it calls `mixed` (S03a p151/p150/p152,
     # holiebible p159/p160) are DELIBERATELY LEFT AT 0.140 pending an eye — kraken merges a note into a body
     # line's own line object often enough (the ch3/ch6 overlap) that a straddling line is not by itself proof.
+    # ---- RIGHT BOUNDS FOR THE THREE 1609 WITNESSES, WIDENING ONLY (`bounds_probe.py --right-only`)
+    # Their LEFT bound was measured book-wide by `left_strip_probe --emit` and adopted at +57 cells; their
+    # RIGHT bound is the axis nobody ever varied for them, and ch41 was losing whole words off the ends of
+    # body lines to it: `He ſaid [ther]fore`, `a dreame [per]teining`, `shal not be [con]ſumed`.
+    #
+    # WIDENING ONLY, AND THE RESTRICTION WAS LEARNED THE HARD WAY. Applied in both directions this emit
+    # cost ch41 eleven cells: it reset p146 to 0.705 -- a proposal already refused by the eye (it cuts `the
+    # dreame came vp after ... Which shal come`) and by measurement -- and reverted p144 to the clipping
+    # default. An estimate does not overturn a measurement on this axis either. Every gain here came from
+    # widening; the parity runs OPPOSITE to `jp2-S06`, the ODD leaves carrying the right column and already
+    # tuned tight, correctly, since widening those costs -7 in ch41 alone.
+    ('archive-ot1-1609', 28): {"body": (0.14, 0.905)},
+    ('archive-ot1-1609', 32): {"body": (0.109, 0.895)},
+    ('archive-ot1-1609', 36): {"body": (0.14, 0.905)},
+    ('archive-ot1-1609', 37): {"body": (0.109, 0.825)},
+    ('archive-ot1-1609', 38): {"body": (0.14, 0.855)},
+    ('archive-ot1-1609', 40): {"body": (0.14, 0.895)},
+    ('archive-ot1-1609', 42): {"body": (0.109, 0.895)},
+    ('archive-ot1-1609', 46): {"body": (0.14, 0.865)},
+    ('archive-ot1-1609', 48): {"body": (0.14, 0.905)},
+    ('archive-ot1-1609', 58): {"body": (0.14, 0.845)},
+    ('archive-ot1-1609', 60): {"body": (0.109, 0.905)},
+    ('archive-ot1-1609', 62): {"body": (0.14, 0.885)},
+    ('archive-ot1-1609', 66): {"body": (0.14, 0.895)},
+    ('archive-ot1-1609', 72): {"body": (0.14, 0.905)},
+    ('archive-ot1-1609', 74): {"body": (0.14, 0.845)},
+    ('archive-ot1-1609', 80): {"body": (0.14, 0.895)},
+    ('archive-ot1-1609', 82): {"body": (0.14, 0.895)},
+    ('archive-ot1-1609', 84): {"body": (0.14, 0.855)},
+    ('archive-ot1-1609', 88): {"body": (0.109, 0.855)},
+    ('archive-ot1-1609', 90): {"body": (0.14, 0.855)},
+    ('archive-ot1-1609', 94): {"body": (0.14, 0.855)},
+    ('archive-ot1-1609', 96): {"body": (0.14, 0.895)},
+    ('archive-ot1-1609', 98): {"body": (0.14, 0.855)},
+    ('archive-ot1-1609', 106): {"body": (0.14, 0.875)},
+    ('archive-ot1-1609', 110): {"body": (0.14, 0.875)},
+    ('archive-ot1-1609', 112): {"body": (0.14, 0.905)},
+    ('archive-ot1-1609', 116): {"body": (0.14, 0.865)},
+    ('archive-ot1-1609', 118): {"body": (0.14, 0.845)},
+    ('archive-ot1-1609', 122): {"body": (0.14, 0.865)},
+    ('archive-ot1-1609', 124): {"body": (0.14, 0.875)},
+    ('archive-ot1-1609', 126): {"body": (0.109, 0.905)},
+    ('archive-ot1-1609', 128): {"body": (0.14, 0.875)},
+    ('archive-ot1-1609', 130): {"body": (0.14, 0.865)},
+    ('archive-ot1-1609', 134): {"body": (0.14, 0.875)},
+    ('archive-ot1-1609', 138): {"body": (0.14, 0.905)},
+    ('archive-ot1-1609', 140): {"body": (0.14, 0.865)},
+    ('archive-ot1-1609', 142): {"body": (0.14, 0.875)},
+    ('archive-ot1-1609', 151): {"body": (0.109, 0.845)},
+    ('archive-ot1-1609', 154): {"body": (0.14, 0.855)},
+    ('archive-ot1-1609', 156): {"body": (0.14, 0.835)},
+    ('archive-ot1-1609', 166): {"body": (0.109, 0.905)},
+    ('pdf-S03a', 32): {"body": (0.14, 0.915)},
+    ('pdf-S03a', 34): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 36): {"body": (0.14, 0.895)},
+    ('pdf-S03a', 38): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 40): {"body": (0.14, 0.905)},
+    ('pdf-S03a', 41): {"body": (0.109, 0.825)},
+    ('pdf-S03a', 42): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 44): {"body": (0.14, 0.905)},
+    ('pdf-S03a', 46): {"body": (0.109, 0.905)},
+    ('pdf-S03a', 52): {"body": (0.14, 0.905)},
+    ('pdf-S03a', 62): {"body": (0.14, 0.845)},
+    ('pdf-S03a', 64): {"body": (0.14, 0.915)},
+    ('pdf-S03a', 66): {"body": (0.14, 0.885)},
+    ('pdf-S03a', 68): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 70): {"body": (0.14, 0.905)},
+    ('pdf-S03a', 76): {"body": (0.14, 0.845)},
+    ('pdf-S03a', 78): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 80): {"body": (0.14, 0.915)},
+    ('pdf-S03a', 84): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 86): {"body": (0.14, 0.865)},
+    ('pdf-S03a', 88): {"body": (0.14, 0.865)},
+    ('pdf-S03a', 94): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 98): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 102): {"body": (0.14, 0.875)},
+    ('pdf-S03a', 104): {"body": (0.14, 0.885)},
+    ('pdf-S03a', 108): {"body": (0.14, 0.835)},
+    ('pdf-S03a', 110): {"body": (0.14, 0.875)},
+    ('pdf-S03a', 114): {"body": (0.14, 0.875)},
+    ('pdf-S03a', 116): {"body": (0.14, 0.905)},
+    ('pdf-S03a', 120): {"body": (0.14, 0.875)},
+    ('pdf-S03a', 122): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 124): {"body": (0.14, 0.865)},
+    ('pdf-S03a', 126): {"body": (0.14, 0.875)},
+    ('pdf-S03a', 130): {"body": (0.109, 0.905)},
+    ('pdf-S03a', 132): {"body": (0.14, 0.875)},
+    ('pdf-S03a', 134): {"body": (0.14, 0.865)},
+    ('pdf-S03a', 138): {"body": (0.14, 0.865)},
+    ('pdf-S03a', 142): {"body": (0.14, 0.905)},
+    ('pdf-S03a', 144): {"body": (0.14, 0.875)},
+    ('pdf-S03a', 146): {"body": (0.14, 0.865)},
+    ('pdf-S03a', 158): {"body": (0.14, 0.845)},
+    ('pdf-S03a', 160): {"body": (0.14, 0.855)},
+    ('pdf-S03a', 166): {"body": (0.14, 0.835)},
+    ('pdf-S03a', 170): {"body": (0.109, 0.905)},
+    ('pdf-S03a', 174): {"body": (0.14, 0.905)},
+    ('pdf-S03a', 176): {"body": (0.109, 0.865)},
+    ('archive-holiebible-ot1', 36): {"body": (0.14, 0.895)},
+    ('archive-holiebible-ot1', 38): {"body": (0.14, 0.915)},
+    ('archive-holiebible-ot1', 42): {"body": (0.14, 0.885)},
+    ('archive-holiebible-ot1', 43): {"body": (0.109, 0.835)},
+    ('archive-holiebible-ot1', 46): {"body": (0.14, 0.885)},
+    ('archive-holiebible-ot1', 48): {"body": (0.14, 0.855)},
+    ('archive-holiebible-ot1', 50): {"body": (0.14, 0.875)},
+    ('archive-holiebible-ot1', 52): {"body": (0.109, 0.885)},
+    ('archive-holiebible-ot1', 58): {"body": (0.14, 0.875)},
+    ('archive-holiebible-ot1', 70): {"body": (0.109, 0.885)},
+    ('archive-holiebible-ot1', 72): {"body": (0.14, 0.875)},
+    ('archive-holiebible-ot1', 76): {"body": (0.14, 0.865)},
+    ('archive-holiebible-ot1', 90): {"body": (0.14, 0.835)},
+    ('archive-holiebible-ot1', 91): {"body": (0.109, 0.835)},
+    ('archive-holiebible-ot1', 92): {"body": (0.14, 0.875)},
+    ('archive-holiebible-ot1', 94): {"body": (0.14, 0.835)},
+    ('archive-holiebible-ot1', 100): {"body": (0.14, 0.855)},
+    ('archive-holiebible-ot1', 102): {"body": (0.14, 0.835)},
+    ('archive-holiebible-ot1', 104): {"body": (0.14, 0.895)},
+    ('archive-holiebible-ot1', 118): {"body": (0.14, 0.835)},
+    ('archive-holiebible-ot1', 120): {"body": (0.14, 0.825)},
+    ('archive-holiebible-ot1', 122): {"body": (0.14, 0.875)},
+    ('archive-holiebible-ot1', 128): {"body": (0.14, 0.855)},
+    ('archive-holiebible-ot1', 130): {"body": (0.14, 0.845)},
+    ('archive-holiebible-ot1', 132): {"body": (0.14, 0.845)},
+    ('archive-holiebible-ot1', 146): {"body": (0.14, 0.845)},
+    ('archive-holiebible-ot1', 150): {"body": (0.14, 0.885)},
+    ('archive-holiebible-ot1', 152): {"body": (0.14, 0.845)},
+    ('archive-holiebible-ot1', 154): {"body": (0.14, 0.845)},
+    ('archive-holiebible-ot1', 164): {"body": (0.14, 0.855)},
+    ('archive-holiebible-ot1', 166): {"body": (0.14, 0.835)},
+    ('archive-holiebible-ot1', 178): {"body": (0.14, 0.875)},
+    ('archive-holiebible-ot1', 182): {"body": (0.14, 0.885)},
+    ('archive-holiebible-ot1', 184): {"body": (0.14, 0.835)},
     ("archive-ot1-1609", 143): {"body": (0.109, 0.7950)},
     ("archive-ot1-1609", 145): {"body": (0.109, 0.7995)},
     ("archive-ot1-1609", 147): {"body": (0.109, 0.8032)},
+    ("archive-ot1-1609", 146): {"body": (0.14, 0.86)},
+    ("pdf-S03a", 150): {"body": (0.14, 0.885)},
+    ("archive-holiebible-ot1", 159): {"body": (0.14, 0.795)},
+    ("archive-ot1-1609", 144): {"body": (0.14, 0.86)},
+    ("archive-ot1-1609", 148): {"body": (0.14, 0.86)},
     ("pdf-S03a", 147): {"body": (0.109, 0.7968)},
     ("pdf-S03a", 149): {"body": (0.109, 0.8018)},
     ("pdf-S03a", 151): {"body": (0.140, 0.8041)},
@@ -614,26 +751,22 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('archive-holiebible-ot1', 37): {"body": (0.109, 0.815)},   # +7 body, 2 note
     ('archive-holiebible-ot1', 39): {"body": (0.109, 0.815)},   # +37 body, 0 note
     ('archive-holiebible-ot1', 41): {"body": (0.109, 0.815)},   # +20 body, 0 note
-    ('archive-holiebible-ot1', 43): {"body": (0.109, 0.815)},   # +11 body, 0 note
     ('archive-holiebible-ot1', 45): {"body": (0.109, 0.815)},   # +46 body, 1 note
     ('archive-holiebible-ot1', 47): {"body": (0.109, 0.815)},   # +33 body, 0 note
     ('archive-holiebible-ot1', 49): {"body": (0.109, 0.815)},   # +43 body, 0 note
     ('archive-holiebible-ot1', 51): {"body": (0.109, 0.815)},   # +4 body, 0 note
-    ('archive-holiebible-ot1', 52): {"body": (0.109, 0.815)},   # +12 body, 1 note
     ('archive-holiebible-ot1', 53): {"body": (0.109, 0.815)},   # +49 body, 0 note
     ('archive-holiebible-ot1', 55): {"body": (0.109, 0.815)},   # +49 body, 1 note
     ('archive-holiebible-ot1', 57): {"body": (0.109, 0.815)},   # +6 body, 1 note
     ('archive-holiebible-ot1', 65): {"body": (0.109, 0.815)},   # +19 body, 0 note
     ('archive-holiebible-ot1', 67): {"body": (0.109, 0.815)},   # +25 body, 0 note
     ('archive-holiebible-ot1', 69): {"body": (0.109, 0.815)},   # +11 body, 0 note
-    ('archive-holiebible-ot1', 70): {"body": (0.109, 0.815)},   # +12 body, 4 note
     ('archive-holiebible-ot1', 71): {"body": (0.109, 0.815)},   # +6 body, 0 note
     ('archive-holiebible-ot1', 73): {"body": (0.109, 0.815)},   # +28 body, 0 note
     ('archive-holiebible-ot1', 75): {"body": (0.109, 0.815)},   # +32 body, 0 note
     ('archive-holiebible-ot1', 81): {"body": (0.109, 0.815)},   # +5 body, 0 note
     ('archive-holiebible-ot1', 85): {"body": (0.109, 0.815)},   # +9 body, 0 note
     ('archive-holiebible-ot1', 89): {"body": (0.109, 0.815)},   # +28 body, 1 note
-    ('archive-holiebible-ot1', 91): {"body": (0.109, 0.815)},   # +14 body, 0 note
     ('archive-holiebible-ot1', 93): {"body": (0.109, 0.815)},   # +21 body, 0 note
     ('archive-holiebible-ot1', 95): {"body": (0.109, 0.815)},   # +42 body, 1 note
     ('archive-holiebible-ot1', 96): {"body": (0.109, 0.815)},   # +7 body, 0 note
@@ -663,20 +796,16 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('archive-ot1-1609', 27): {"body": (0.109, 0.815)},   # +10 body, 1 note
     ('archive-ot1-1609', 29): {"body": (0.109, 0.815)},   # +17 body, 0 note
     ('archive-ot1-1609', 31): {"body": (0.109, 0.815)},   # +19 body, 0 note
-    ('archive-ot1-1609', 32): {"body": (0.109, 0.815)},   # +10 body, 3 note
     ('archive-ot1-1609', 33): {"body": (0.109, 0.815)},   # +5 body, 0 note
     ('archive-ot1-1609', 35): {"body": (0.109, 0.815)},   # +27 body, 1 note
-    ('archive-ot1-1609', 37): {"body": (0.109, 0.815)},   # +24 body, 0 note
     ('archive-ot1-1609', 39): {"body": (0.109, 0.815)},   # +18 body, 0 note
     ('archive-ot1-1609', 41): {"body": (0.109, 0.815)},   # +4 body, 0 note
-    ('archive-ot1-1609', 42): {"body": (0.109, 0.815)},   # +7 body, 2 note
     ('archive-ot1-1609', 43): {"body": (0.109, 0.815)},   # +28 body, 0 note
     ('archive-ot1-1609', 45): {"body": (0.109, 0.815)},   # +10 body, 1 note
     ('archive-ot1-1609', 47): {"body": (0.109, 0.815)},   # +9 body, 1 note
     ('archive-ot1-1609', 55): {"body": (0.109, 0.815)},   # +34 body, 0 note
     ('archive-ot1-1609', 57): {"body": (0.109, 0.815)},   # +7 body, 1 note
     ('archive-ot1-1609', 59): {"body": (0.109, 0.815)},   # +8 body, 0 note
-    ('archive-ot1-1609', 60): {"body": (0.109, 0.815)},   # +10 body, 3 note
     ('archive-ot1-1609', 61): {"body": (0.109, 0.815)},   # +3 body, 0 note
     ('archive-ot1-1609', 63): {"body": (0.109, 0.815)},   # +32 body, 0 note
     ('archive-ot1-1609', 65): {"body": (0.109, 0.815)},   # +27 body, 0 note
@@ -687,7 +816,6 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('archive-ot1-1609', 83): {"body": (0.109, 0.815)},   # +12 body, 0 note
     ('archive-ot1-1609', 85): {"body": (0.109, 0.815)},   # +13 body, 1 note
     ('archive-ot1-1609', 86): {"body": (0.109, 0.815)},   # +6 body, 1 note
-    ('archive-ot1-1609', 88): {"body": (0.109, 0.815)},   # +6 body, 0 note
     ('archive-ot1-1609', 95): {"body": (0.109, 0.815)},   # +4 body, 1 note
     ('archive-ot1-1609', 105): {"body": (0.109, 0.815)},   # +21 body, 2 note
     ('archive-ot1-1609', 107): {"body": (0.109, 0.815)},   # +3 body, 1 note
@@ -696,7 +824,6 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('archive-ot1-1609', 115): {"body": (0.109, 0.815)},   # +13 body, 2 note
     ('archive-ot1-1609', 117): {"body": (0.109, 0.815)},   # +11 body, 3 note
     ('archive-ot1-1609', 123): {"body": (0.109, 0.815)},   # +26 body, 0 note
-    ('archive-ot1-1609', 126): {"body": (0.109, 0.815)},   # +6 body, 1 note
     ('archive-ot1-1609', 127): {"body": (0.109, 0.815)},   # +7 body, 1 note
     ('archive-ot1-1609', 131): {"body": (0.109, 0.815)},   # +38 body, 0 note
     ('archive-ot1-1609', 132): {"body": (0.109, 0.815)},   # +6 body, 2 note
@@ -704,9 +831,7 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('archive-ot1-1609', 137): {"body": (0.109, 0.815)},   # +36 body, 1 note
     ('archive-ot1-1609', 139): {"body": (0.109, 0.815)},   # +21 body, 0 note
     ('archive-ot1-1609', 141): {"body": (0.109, 0.815)},   # +7 body, 0 note
-    ('archive-ot1-1609', 151): {"body": (0.109, 0.815)},   # +27 body, 3 note
     ('archive-ot1-1609', 163): {"body": (0.109, 0.815)},   # +33 body, 0 note
-    ('archive-ot1-1609', 166): {"body": (0.109, 0.815)},   # +7 body, 0 note
     ('archive-ot1-1609', 167): {"body": (0.109, 0.815)},   # +28 body, 0 note
     ('archive-ot1-1609', 169): {"body": (0.109, 0.815)},   # +16 body, 0 note
     ('archive-ot1-1609', 171): {"body": (0.109, 0.815)},   # +5 body, 1 note
@@ -717,10 +842,8 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('pdf-S03a', 35): {"body": (0.109, 0.815)},   # +16 body, 0 note
     ('pdf-S03a', 37): {"body": (0.109, 0.815)},   # +6 body, 1 note
     ('pdf-S03a', 39): {"body": (0.109, 0.815)},   # +20 body, 0 note
-    ('pdf-S03a', 41): {"body": (0.109, 0.815)},   # +24 body, 0 note
     ('pdf-S03a', 43): {"body": (0.109, 0.815)},   # +19 body, 0 note
     ('pdf-S03a', 45): {"body": (0.109, 0.815)},   # +5 body, 0 note
-    ('pdf-S03a', 46): {"body": (0.109, 0.815)},   # +6 body, 2 note
     ('pdf-S03a', 47): {"body": (0.109, 0.815)},   # +28 body, 0 note
     ('pdf-S03a', 49): {"body": (0.109, 0.815)},   # +12 body, 0 note
     ('pdf-S03a', 51): {"body": (0.109, 0.815)},   # +8 body, 0 note
@@ -749,7 +872,6 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('pdf-S03a', 119): {"body": (0.109, 0.815)},   # +17 body, 2 note
     ('pdf-S03a', 121): {"body": (0.109, 0.815)},   # +7 body, 2 note
     ('pdf-S03a', 127): {"body": (0.109, 0.815)},   # +26 body, 0 note
-    ('pdf-S03a', 130): {"body": (0.109, 0.815)},   # +6 body, 0 note
     ('pdf-S03a', 131): {"body": (0.109, 0.815)},   # +10 body, 0 note
     ('pdf-S03a', 135): {"body": (0.109, 0.815)},   # +38 body, 0 note
     ('pdf-S03a', 139): {"body": (0.109, 0.815)},   # +15 body, 0 note
@@ -761,11 +883,9 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     ('pdf-S03a', 163): {"body": (0.109, 0.815)},   # +3 body, 0 note
     ('pdf-S03a', 165): {"body": (0.109, 0.815)},   # +6 body, 2 note
     ('pdf-S03a', 167): {"body": (0.109, 0.815)},   # +32 body, 0 note
-    ('pdf-S03a', 170): {"body": (0.109, 0.815)},   # +7 body, 1 note
     ('pdf-S03a', 171): {"body": (0.109, 0.815)},   # +29 body, 0 note
     ('pdf-S03a', 173): {"body": (0.109, 0.815)},   # +18 body, 0 note
     ('pdf-S03a', 175): {"body": (0.109, 0.815)},   # +5 body, 0 note
-    ('pdf-S03a', 176): {"body": (0.109, 0.815)},   # +6 body, 2 note
     ('pdf-S03a', 177): {"body": (0.109, 0.815)},   # +3 body, 0 note
 
 }

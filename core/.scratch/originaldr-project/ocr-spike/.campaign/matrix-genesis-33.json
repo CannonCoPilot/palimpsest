@@ -2,23 +2,23 @@
  "chapter": 33,
  "n_verses": 20,
  "n_cells": 80,
- "n_pass": 77,
- "rate": 0.9625,
+ "n_pass": 79,
+ "rate": 0.9875,
  "ref_means": {
-  "s_dismas": 0.9823,
-  "odr_com": 0.9827,
-  "sabates_a": 0.9765,
-  "madueke_b": 0.976
+  "s_dismas": 0.9887,
+  "odr_com": 0.989,
+  "sabates_a": 0.983,
+  "madueke_b": 0.9825
  },
  "src_rates": {
-  "S1": 0.95,
-  "S3": 0.95,
+  "S1": 1.0,
+  "S3": 1.0,
   "S9": 1.0,
   "S6": 0.95
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 3,
+ "n_open": 1,
  "open": [
   {
    "src": "S6",
@@ -26,20 +26,6 @@
    "worst": 0.891,
    "from": "p117",
    "text": "Eut he ſaid: I haue plentie, my brother, be thy things to thy"
-  },
-  {
-   "src": "S1",
-   "verse": 16,
-   "worst": 0.841,
-   "from": "p128",
-   "text": "Eſau fore returned that day the ſame way, that he came into"
-  },
-  {
-   "src": "S3",
-   "verse": 16,
-   "worst": 0.841,
-   "from": "p132",
-   "text": "Eſau fore returned that day the ſame way, that he came into"
   }
  ],
  "cellgrid": {
@@ -633,23 +619,23 @@
   },
   "15": {
    "S1": {
-    "text": "Eſau red I beſech thee, that of my people at the leaſtwiſe, is with me, there may remaine ſome to accompanie thee the way. It is not needful, ſaid he, this only I haue nede that I may finde grace (my lord) in thy ſight.",
+    "text": "Eſau anſwered I beſech thee, that of my people at the leaſtwiſe, which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue nede of, that I may finde grace (my lord) in thy ſight.",
     "from": "p128",
     "score": {
-     "s_dismas": 0.925,
-     "odr_com": 0.925,
-     "sabates_a": 0.919,
-     "madueke_b": 0.919
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
-    "text": "Eſau red Ibeſech thee, that of my people at the leaſtwiſe, is with me, there may remaine ſome to accompanie thee the way. It is not needful, ſaid he, this only I haue nede that I may finde grace (my lord) in thy ſight.",
+    "text": "Eſau anſwes red Ibeſech thee, that of my people at the leaſtwiſe, which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue nede of, that I may finde grace (my lord) in thy ſight.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.921,
-     "odr_com": 0.921,
-     "sabates_a": 0.914,
-     "madueke_b": 0.914
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S9": {
@@ -675,23 +661,23 @@
   },
   "16": {
    "S1": {
-    "text": "Eſau fore returned that day the ſame way, that he came into",
+    "text": "Eſau therfore returned that day the ſame way, that he came into Seir.",
     "from": "p128",
     "score": {
-     "s_dismas": 0.866,
-     "odr_com": 0.866,
-     "sabates_a": 0.841,
-     "madueke_b": 0.841
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S3": {
-    "text": "Eſau fore returned that day the ſame way, that he came into",
+    "text": "Eſau therfore returned that day the ſame way, that he came into Seir.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.866,
-     "odr_com": 0.866,
-     "sabates_a": 0.841,
-     "madueke_b": 0.841
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S9": {
@@ -843,23 +829,23 @@
   },
   "20": {
    "S1": {
-    "text": "And erecting an altar there, on it he called vpon moſt mightie God of Iſrael.",
+    "text": "And erecting an altar there, on it he called vpon the moſt mightie God of Iſrael.",
     "from": "p128",
     "score": {
-     "s_dismas": 0.949,
-     "odr_com": 0.949,
-     "sabates_a": 0.96,
-     "madueke_b": 0.96
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
-    "text": "And erecting an altar there, on it he called vpon moſt mightie God of Iſrael.",
+    "text": "And erecting an altar there, on it he called vpon the moſt mightie God of Iſrael.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.949,
-     "odr_com": 0.949,
-     "sabates_a": 0.96,
-     "madueke_b": 0.96
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -1045,5 +1031,5 @@
  "blocked_cells": 0,
  "achievable": 80,
  "triage": "R3-READY",
- "secs": 5.6
+ "secs": 5.8
 }

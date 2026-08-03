@@ -2,23 +2,23 @@
  "chapter": 42,
  "n_verses": 38,
  "n_cells": 152,
- "n_pass": 142,
- "rate": 0.9342,
+ "n_pass": 143,
+ "rate": 0.9408,
  "ref_means": {
-  "s_dismas": 0.9756,
-  "odr_com": 0.976,
-  "sabates_a": 0.9668,
-  "madueke_b": 0.9668
+  "s_dismas": 0.978,
+  "odr_com": 0.9783,
+  "sabates_a": 0.9692,
+  "madueke_b": 0.9692
  },
  "src_rates": {
-  "S1": 0.9474,
+  "S1": 0.9737,
   "S3": 0.9211,
   "S9": 0.9474,
   "S6": 0.9211
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 10,
+ "n_open": 9,
  "open": [
   {
    "src": "S6",
@@ -26,13 +26,6 @@
    "worst": 0.832,
    "from": "p136",
    "text": "Ioſeph. I9 CHA LI Iacob hearing that victuals were ſold in AEgypt, he ſaid to his ſonnes Why neglectye"
-  },
-  {
-   "src": "S1",
-   "verse": 3,
-   "worst": 0.791,
-   "from": "p148",
-   "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,"
   },
   {
    "src": "S3",
@@ -49,18 +42,18 @@
    "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,"
   },
   {
-   "src": "S1",
-   "verse": 8,
-   "worst": 0.828,
-   "from": "p148",
-   "text": "yet himſclfe knowing his brethren, was not krowen them."
-  },
-  {
    "src": "S3",
    "verse": 8,
    "worst": 0.845,
    "from": "p152",
    "text": "yet himſdlfe knowing his brethren, was not knowen them."
+  },
+  {
+   "src": "S1",
+   "verse": 9,
+   "worst": 0.889,
+   "from": "chapter",
+   "text": "And remembrine the dreames, which ſome times he had ſeene, he ſaid to them You are ſpies to view the weaher com weaker parts of the land you are come."
   },
   {
    "src": "S3",
@@ -136,13 +129,13 @@
   },
   "2": {
    "S1": {
-    "text": "I haue heard that wheat is ſold in Egvpt : Goe ye downe, and bye vs ceſſaries, that we may liue, and not be conſumed with lacke.",
+    "text": "I haue heard that wheat is ſold in Egvpt : Goe ye downe, and bye vs neceſſaries, that we may liue, and not be conſumed with lacke.",
     "from": "p148",
     "score": {
-     "s_dismas": 0.968,
-     "odr_com": 0.968,
-     "sabates_a": 0.957,
-     "madueke_b": 0.957
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S3": {
@@ -178,13 +171,13 @@
   },
   "3": {
    "S1": {
-    "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,",
+    "text": "Therfore the tenne brethren of Ioſeph going downe, to bye corne in Egypt,",
     "from": "p148",
     "score": {
-     "s_dismas": 0.819,
-     "odr_com": 0.819,
-     "sabates_a": 0.791,
-     "madueke_b": 0.791
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
     }
    },
    "S3": {
@@ -304,13 +297,13 @@
   },
   "6": {
    "S1": {
-    "text": "And Ioſeph was prince in the land of and at his pleaſure corne was ſold to the people. And when his brethren had adored him,",
+    "text": "And Ioſeph was prince in the land of gypt, and at his pleaſure corne was ſold to the people. And when his brethren had adored him,",
     "from": "p148",
     "score": {
-     "s_dismas": 0.946,
-     "odr_com": 0.946,
-     "sabates_a": 0.943,
-     "madueke_b": 0.943
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S3": {
@@ -346,13 +339,13 @@
   },
   "7": {
    "S1": {
-    "text": "and he knewe them, ſpake as it were to ſtrangers ſomewhat roughlv, asking them: From whence came you? wno anſwered: From Land of chanaan, that we may bye neceſlaries to liue.",
+    "text": "and he knewe them, he7 ſpake as it were to ſtrangers ſomewhat roughlv, asking them: From whence came you? wno anſwered: From the Land of chanaan, that we may bye neceſlaries to liue.",
     "from": "p148",
     "score": {
-     "s_dismas": 0.943,
-     "odr_com": 0.943,
-     "sabates_a": 0.944,
-     "madueke_b": 0.944
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
     }
    },
    "S3": {
@@ -388,13 +381,13 @@
   },
   "8": {
    "S1": {
-    "text": "yet himſclfe knowing his brethren, was not krowen them.",
+    "text": "And8 yet himſclfe knowing his brethren, was not krowen of them.",
     "from": "p148",
     "score": {
-     "s_dismas": 0.85,
-     "odr_com": 0.85,
-     "sabates_a": 0.828,
-     "madueke_b": 0.828
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
     }
    },
    "S3": {
@@ -430,13 +423,13 @@
   },
   "9": {
    "S1": {
-    "text": "And remembrine the dreames, which ſome times he had ſeene, he ſaid to them You are ſpies to view weaher com weaker parts of the land you are come.",
+    "text": "And remembrine the dreames, which ſome times he had ſeene, he ſaid to them You are ſpies to view the weaher com weaker parts of the land you are come.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.937,
-     "odr_com": 0.937,
-     "sabates_a": 0.901,
-     "madueke_b": 0.901
+     "s_dismas": 0.918,
+     "odr_com": 0.918,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
     }
    },
    "S3": {
@@ -1976,5 +1969,5 @@
  "blocked_cells": 0,
  "achievable": 152,
  "triage": "R3-READY",
- "secs": 8.0
+ "secs": 8.3
 }

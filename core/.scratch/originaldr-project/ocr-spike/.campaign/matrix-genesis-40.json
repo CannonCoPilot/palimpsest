@@ -2,38 +2,24 @@
  "chapter": 40,
  "n_verses": 23,
  "n_cells": 92,
- "n_pass": 88,
- "rate": 0.9565,
+ "n_pass": 90,
+ "rate": 0.9783,
  "ref_means": {
-  "s_dismas": 0.981,
-  "odr_com": 0.981,
-  "sabates_a": 0.9716,
-  "madueke_b": 0.9716
+  "s_dismas": 0.9826,
+  "odr_com": 0.9826,
+  "sabates_a": 0.9733,
+  "madueke_b": 0.9733
  },
  "src_rates": {
-  "S1": 0.9565,
+  "S1": 1.0,
   "S3": 1.0,
-  "S9": 0.9565,
+  "S9": 1.0,
   "S6": 0.913
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 4,
+ "n_open": 2,
  "open": [
-  {
-   "src": "S1",
-   "verse": 1,
-   "worst": 0.898,
-   "from": "p142",
-   "text": "theſe things being ſo done, it chanced that IEunuches, the cupbearer of the king of Egpt, his baker, offended aguinſt their lord."
-  },
-  {
-   "src": "S9",
-   "verse": 1,
-   "worst": 0.898,
-   "from": "chapter",
-   "text": "theſe things being ſo done, it chanced that Eunuches, the cupbearer of the kingof Egpt, his baker, offended againſt their lord."
-  },
   {
    "src": "S6",
    "verse": 1,
@@ -52,33 +38,33 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "theſe things being ſo done, it chanced that IEunuches, the cupbearer of the king of Egpt, his baker, offended aguinſt their lord.",
+    "text": "theſe things being ſo done, it chanced that wo IEunuches, the cupbearer of the king of Egpt, and his baker, offended aguinſt their lord.",
     "from": "p142",
     "score": {
-     "s_dismas": 0.91,
-     "odr_com": 0.91,
-     "sabates_a": 0.898,
-     "madueke_b": 0.898
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.945,
+     "madueke_b": 0.945
     }
    },
    "S3": {
-    "text": "theſe things being ſo done, it chanced that Eunuches, the cupbearer of the king of Egypt, his baker, offended againſt their lord.",
+    "text": "theſe things being ſo done, it chanced that two Eunuches, the cupbearer of the king of Egypt, and his baker, offended againſt their lord.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.925,
-     "odr_com": 0.925,
-     "sabates_a": 0.914,
-     "madueke_b": 0.914
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
     }
    },
    "S9": {
-    "text": "theſe things being ſo done, it chanced that Eunuches, the cupbearer of the kingof Egpt, his baker, offended againſt their lord.",
+    "text": "theſe things being ſo done, it chanced that wor Eunuches, the cupbearer of the kingof Egpt, and his baker, offended againſt their lord.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.91,
-     "odr_com": 0.91,
-     "sabates_a": 0.898,
-     "madueke_b": 0.898
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.945,
+     "madueke_b": 0.945
     }
    },
    "S6": {
@@ -1199,5 +1185,5 @@
  "blocked_cells": 0,
  "achievable": 92,
  "triage": "R3-READY",
- "secs": 5.1
+ "secs": 5.4
 }

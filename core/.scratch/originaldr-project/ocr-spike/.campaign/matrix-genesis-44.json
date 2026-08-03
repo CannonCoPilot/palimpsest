@@ -2,23 +2,23 @@
  "chapter": 44,
  "n_verses": 34,
  "n_cells": 136,
- "n_pass": 127,
- "rate": 0.9338,
+ "n_pass": 129,
+ "rate": 0.9485,
  "ref_means": {
-  "s_dismas": 0.9747,
-  "odr_com": 0.975,
-  "sabates_a": 0.9645,
-  "madueke_b": 0.9643
+  "s_dismas": 0.9787,
+  "odr_com": 0.979,
+  "sabates_a": 0.968,
+  "madueke_b": 0.9679
  },
  "src_rates": {
-  "S1": 0.9412,
+  "S1": 1.0,
   "S3": 0.9706,
   "S9": 0.9118,
   "S6": 0.9118
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 9,
+ "n_open": 7,
  "open": [
   {
    "src": "S9",
@@ -56,20 +56,6 @@
    "text": "he anſwered: You know that my wife bare me two."
   },
   {
-   "src": "S1",
-   "verse": 29,
-   "worst": 0.895,
-   "from": "p156",
-   "text": "If you take this alſo, and oughtibefal him in the way, shal bring downe : my hoare hayres with ſorow vnto Therfore"
-  },
-  {
-   "src": "S1",
-   "verse": 33,
-   "worst": 0.819,
-   "from": "p156",
-   "text": "ſeruant wil rary in ſteed of the childe the ſeruice of my lord, and let the childe goe vp with his brethren."
-  },
-  {
    "src": "S3",
    "verse": 33,
    "worst": 0.888,
@@ -87,33 +73,33 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "and Ioſeph commanded the ſteward of his houſe, ſaing Fil their ſackes with corne, as much as they hold: and put the money of euerie one in the top of Io- ſack.",
+    "text": "and Ioſeph commanded the ſteward of his houſe, ſaing Fil their ſackes with corne, as much as they can hold: and put the money of euerie one in the top of his Io- ſack.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.962,
-     "odr_com": 0.962,
-     "sabates_a": 0.953,
-     "madueke_b": 0.953
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S3": {
-    "text": "and Ioſeph commanded the ſteward of his houſe, ſaing Fil their ſackes with corne, as much as they hold and put the money of euerie one in the top of Io- ſack.",
+    "text": "and Ioſeph commanded the ſteward of his houſe, ſaing Fil their ſackes with corne, as much as they can hold and put the money of euerie one in the top of his Io- ſack.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.962,
-     "odr_com": 0.962,
-     "sabates_a": 0.953,
-     "madueke_b": 0.953
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S9": {
-    "text": "and Ioſeph commanded the ſteward of his houſe, ſaing Fil their ſackes with corne, as much as they hold: and put the money of euerie one in the top of Io- ſack.",
+    "text": "and Ioſeph commanded the ſteward of his houſe, ſaing Fil their ſackes with corne, as much as they can hold: and put the money of euerie one in the top of his Io- ſack.",
     "from": "p166",
     "score": {
-     "s_dismas": 0.962,
-     "odr_com": 0.962,
-     "sabates_a": 0.953,
-     "madueke_b": 0.953
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S6": {
@@ -139,23 +125,23 @@
     }
    },
    "S3": {
-    "text": "And in the ſackes mouth: of the younger put his ſiluer cup, and the price which he gaue for the wheat. it was ſo done.",
+    "text": "And in the ſackes mouth: of the younger put my his ſiluer cup, and the price which he gaue for the wheat. And it was ſo done.",
     "from": "p158",
     "score": {
-     "s_dismas": 0.94,
-     "odr_com": 0.94,
-     "sabates_a": 0.936,
-     "madueke_b": 0.936
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
     }
    },
    "S9": {
-    "text": "And in the ſackes mouth of the younger put his ſiluer cup, and the price which he gaue for the wheat. And it was ſo done.",
+    "text": "And in the ſackes mouth of the younger put my his ſiluer cup, and the price which he gaue for the wheat. And it was ſo done.",
     "from": "p166",
     "score": {
-     "s_dismas": 0.975,
-     "odr_com": 0.975,
-     "sabates_a": 0.973,
-     "madueke_b": 0.973
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
     }
    },
    "S6": {
@@ -213,13 +199,13 @@
   },
   "4": {
    "S1": {
-    "text": "And they were now departed they of the citie, and had gone forward a lirtle way then Ioſeph ſending for the ſteward of his houſe, ſaid Ariſe, quoth him and purſew the men: and ouertaking them ſay to them: haue you rendred euil for good?",
+    "text": "And they were now departed out they of the citie, and had gone forward a lirtle way then Ioſeph ſending for the ſteward of his houſe, ſaid Ariſe, quoth he, him and purſew the men: and ouertaking them ſay to them: Why haue you rendred euil for good?",
     "from": "p154",
     "score": {
-     "s_dismas": 0.952,
-     "odr_com": 0.953,
-     "sabates_a": 0.931,
-     "madueke_b": 0.931
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
     }
    },
    "S3": {
@@ -233,13 +219,13 @@
     }
    },
    "S9": {
-    "text": "And they were now departed they of the citie, and had gone forward a little way then Ioſeph intrete ſending for the ſteward of his houſe, ſaid Ariſe, quoth him and purſew the mon: and ouertaking them ſay to them: Why haue you rendred euil for good",
+    "text": "And they were now departed out they of the citie, and had gone forward a little way then Ioſeph intrete ſending for the ſteward of his houſe, ſaid Ariſe, quoth he, him and purſew the mon: and ouertaking them ſay to them: Why haue you rendred euil for good",
     "from": "p166",
     "score": {
-     "s_dismas": 0.934,
-     "odr_com": 0.938,
-     "sabates_a": 0.921,
-     "madueke_b": 0.921
+     "s_dismas": 0.924,
+     "odr_com": 0.928,
+     "sabates_a": 0.911,
+     "madueke_b": 0.911
     }
    },
    "S6": {
@@ -255,23 +241,23 @@
   },
   "5": {
    "S1": {
-    "text": "The cup which him be haue ſtollen, is that wherin my lord doth drinke, and wherin he is wont to diuine you haue done a verie euil thing.",
+    "text": "The cup which you him be haue ſtollen, is that wherin my lord doth drinke, and wherin he is wont to diuine : you haue done a verie euil thing.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.955,
-     "odr_com": 0.955,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
     }
    },
    "S3": {
-    "text": "The cup which him be haue ſtollen, is that wherin my lord doth drinke, and wherin he is wont to diuine: you haue done a verie euil thing.",
+    "text": "The cup which you him be haue ſtollen, is that wherin my lord doth drinke, and wherin he is wont to diuine: you haue done a verie euil thing.",
     "from": "p158",
     "score": {
-     "s_dismas": 0.955,
-     "odr_com": 0.955,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
     }
    },
    "S9": {
@@ -307,13 +293,13 @@
     }
    },
    "S3": {
-    "text": "did as he had commanded. And hauing ouertaken them, he ſpake to them in the ſame order.",
+    "text": "He did as he had commanded. And hauing ouertaken them, he ſpake to them in the ſame order.",
     "from": "p158",
     "score": {
-     "s_dismas": 0.966,
-     "odr_com": 0.966,
-     "sabates_a": 0.975,
-     "madueke_b": 0.975
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -391,13 +377,13 @@
     }
    },
    "S3": {
-    "text": "The money, that we found the top of our ſackes, we recaried to thee from the land Chanaan: aud how foloweth it, that we haue ſtollen out thy lordes houſe, gold or ſiluer",
+    "text": "The money, that we found in the top of our ſackes, we recaried to thee from the land of Chanaan: aud how foloweth it, that we haue ſtollen out of thy lordes houſe, gold or ſiluer",
     "from": "p158",
     "score": {
-     "s_dismas": 0.942,
-     "odr_com": 0.942,
-     "sabates_a": 0.904,
-     "madueke_b": 0.904
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
     }
    },
    "S9": {
@@ -423,13 +409,13 @@
   },
   "9": {
    "S1": {
-    "text": "With whom ſoeuer thy ſeruantes that shal be found, which thou ſeekeſt him die, and we wil be the bondmen of our lord.",
+    "text": "With whom ſoeuer of thy ſeruantes that shal be found, which thou ſeekeſt let him die, and we wil be the bondmen of our lord.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.942,
-     "odr_com": 0.942,
-     "sabates_a": 0.93,
-     "madueke_b": 0.93
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S3": {
@@ -443,13 +429,13 @@
     }
    },
    "S9": {
-    "text": "With whom ſoeuer thy ſeruantes that shal be found, which thou ſeekeſt, him die, and we wil be the bondmen of our lord.",
+    "text": "With whom ſoeuer of thy ſeruantes that shal be found, which thou ſeekeſt, let him die, and we wil be the bondmen of our lord.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.942,
-     "odr_com": 0.942,
-     "sabates_a": 0.93,
-     "madueke_b": 0.93
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S6": {
@@ -1263,23 +1249,23 @@
   },
   "29": {
    "S1": {
-    "text": "If you take this alſo, and oughtibefal him in the way, shal bring downe : my hoare hayres with ſorow vnto Therfore",
+    "text": "If you take this alſo, and oughtibefal him in the way, shal bring downe : my hoare hayres with ſorow vnto hel.",
     "from": "p156",
     "score": {
-     "s_dismas": 0.9,
-     "odr_com": 0.9,
-     "sabates_a": 0.895,
-     "madueke_b": 0.895
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
     }
    },
    "S3": {
-    "text": "If you take this alſo, and oughtibefal him in the way, you shal bring downe :: my hoare hayres with ſorow vnto Therfore",
+    "text": "If you take this alſo, and oughtibefal him in the way, you shal bring downe :: my hoare hayres with ſorow vnto hel.",
     "from": "p160",
     "score": {
-     "s_dismas": 0.939,
-     "odr_com": 0.939,
-     "sabates_a": 0.936,
-     "madueke_b": 0.936
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S9": {
@@ -1431,13 +1417,13 @@
   },
   "33": {
    "S1": {
-    "text": "ſeruant wil rary in ſteed of the childe the ſeruice of my lord, and let the childe goe vp with his brethren.",
+    "text": "I therfore rhy ſeruant wil rary in ſteed of the childe in the ſeruice of my lord, and let the childe goe vp with his brethren.",
     "from": "p156",
     "score": {
-     "s_dismas": 0.847,
-     "odr_com": 0.847,
-     "sabates_a": 0.826,
-     "madueke_b": 0.819
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.948,
+     "madueke_b": 0.957
     }
    },
    "S3": {
@@ -1473,23 +1459,23 @@
   },
   "34": {
    "S1": {
-    "text": "For I can not returne to my father, the childe being abſent leſt I ſtand by a witnes of the calamitie, that ſhal preſſe my father.",
+    "text": "For I can not returne to my father, the childe being abſent leſt I ſtand by a witnes of the calamitie, that ſhal oppreſſe my father.",
     "from": "p156",
     "score": {
-     "s_dismas": 0.985,
-     "odr_com": 0.985,
-     "sabates_a": 0.975,
-     "madueke_b": 0.975
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S3": {
-    "text": "For I can not returne to my father, the childe being abſent leſt I ſtand by a witnes of the calamitie, that ſhal preſſe my father.",
+    "text": "For I can not returne to my father, the childe being abſent leſt I ſtand by a witnes of the calamitie, that ſhal oppreſſe my father.",
     "from": "p160",
     "score": {
-     "s_dismas": 0.985,
-     "odr_com": 0.985,
-     "sabates_a": 0.975,
-     "madueke_b": 0.975
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S9": {

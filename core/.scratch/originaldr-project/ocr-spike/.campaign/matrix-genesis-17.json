@@ -5,10 +5,10 @@
  "n_pass": 105,
  "rate": 0.9722,
  "ref_means": {
-  "s_dismas": 0.9782,
-  "odr_com": 0.9776,
-  "sabates_a": 0.973,
-  "madueke_b": 0.973
+  "s_dismas": 0.984,
+  "odr_com": 0.9834,
+  "sabates_a": 0.9785,
+  "madueke_b": 0.9785
  },
  "src_rates": {
   "S1": 0.963,
@@ -37,9 +37,9 @@
   {
    "src": "S1",
    "verse": 10,
-   "worst": 0.849,
+   "worst": 0.874,
    "from": "chapter",
-   "text": "This is my couenant which you thal obſerue betwen me and vou, and amomn com and thy ſeede after thee: Al the malekind of you shal be cumciſed"
+   "text": "This is my couenant which you thal obſerue betwen me and vou, and amomn com and thy ſeede after thee: Al the malekind of you shal be circumciſed"
   }
  ],
  "cellgrid": {
@@ -423,23 +423,23 @@
   },
   "10": {
    "S1": {
-    "text": "This is my couenant which you thal obſerue betwen me and vou, and amomn com and thy ſeede after thee: Al the malekind of you shal be cumciſed",
+    "text": "This is my couenant which you thal obſerue betwen me and vou, and amomn com and thy ſeede after thee: Al the malekind of you shal be circumciſed",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.863,
-     "odr_com": 0.863,
-     "sabates_a": 0.849,
-     "madueke_b": 0.849
+     "s_dismas": 0.887,
+     "odr_com": 0.887,
+     "sabates_a": 0.874,
+     "madueke_b": 0.874
     }
    },
    "S3": {
-    "text": "This is my couenant which you ſhal obſerue betwen me and you, and thy ſeede after thee: Al the malekind of you shal be cumciſed",
+    "text": "This is my couenant which you ſhal obſerue betwen me and you, and thy ſeede after thee: Al the malekind of you shal be circumciſed",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.977,
-     "odr_com": 0.977,
-     "sabates_a": 0.967,
-     "madueke_b": 0.967
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
     }
    },
    "S9": {
@@ -465,23 +465,23 @@
   },
   "11": {
    "S1": {
-    "text": "and you shal circumciſe the fleſh of your puce, that it may be for a ſigne of the couenant betwen ſi- and you.",
+    "text": "and you shal circumciſe the fleſh of your prepuce, that it may be for a ſigne of the couenant betwen me ſi- and you.",
     "from": "p84",
     "score": {
-     "s_dismas": 0.955,
-     "odr_com": 0.955,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
     }
    },
    "S3": {
-    "text": "and you shal circumciſe the flesh of your puce, that it may be for a ſigne of the couenant betwen ſi- and you.",
+    "text": "and you shal circumciſe the flesh of your prepuce, that it may be for a ſigne of the couenant betwen ſi- and you.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.955,
-     "odr_com": 0.955,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S9": {
@@ -507,13 +507,13 @@
   },
   "12": {
    "S1": {
-    "text": "An infant of eight daies shalbe circumciſed mong you, al malekind in your generations : aſwel homebred shal be circumciſed, as the bought ſeruant whoſoeuer he is, not of your ſtocke:",
+    "text": "An infant of eight daies shalbe circumciſed a1 mong you, al malekind in your generations : aſwel the homebred shal be circumciſed, as the bought ſeruant of whoſoeuer he is, not of your ſtocke:",
     "from": "p84",
     "score": {
-     "s_dismas": 0.946,
-     "odr_com": 0.957,
-     "sabates_a": 0.939,
-     "madueke_b": 0.939
+     "s_dismas": 0.984,
+     "odr_com": 0.995,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
     }
    },
    "S3": {
@@ -549,23 +549,23 @@
   },
   "13": {
    "S1": {
-    "text": "and my couenant be in your flesh for a perpetual couenant.",
+    "text": "and my couenant shal be in your flesh for a perpetual couenant.",
     "from": "p84",
     "score": {
-     "s_dismas": 0.919,
-     "odr_com": 0.919,
-     "sabates_a": 0.918,
-     "madueke_b": 0.918
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
-    "text": "and my couenant be in your flesh for a perpetual couenant.",
+    "text": "and my couenant shal13 be in your flesh for a perpetual couenant.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.919,
-     "odr_com": 0.919,
-     "sabates_a": 0.918,
-     "madueke_b": 0.918
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -633,23 +633,23 @@
   },
   "15": {
    "S1": {
-    "text": "God ſaid alſo to Abraham: Sarai thy thou shalt not cal Sarai, but Sara.",
+    "text": "God ſaid alſo to Abraham: Sarai thy wife thou shalt not cal Sarai, but Sara.",
     "from": "p84",
     "score": {
-     "s_dismas": 0.931,
-     "odr_com": 0.931,
-     "sabates_a": 0.944,
-     "madueke_b": 0.944
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
-    "text": "God ſaid alſo to Abraham : Sarai thy thou shalt not cal Sarai, but Sara.",
+    "text": "God ſaid alſo to Abraham : Sarai thy wife thou shalt not cal Sarai, but Sara.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.931,
-     "odr_com": 0.931,
-     "sabates_a": 0.944,
-     "madueke_b": 0.944
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -717,23 +717,23 @@
   },
   "17": {
    "S1": {
-    "text": "Abraham fel vpon his face, & : laughed, ſaying in his hart de Shal troweſt thou to him that is an hundred yeare olda ſonne be borne ? and Sara that is nyntie yeares old shal beare?",
+    "text": "Abraham fel vpon his face, & : laughed, ſaying in his hart : de Shal troweſt thou to him that is an hundred yeare olda ſonne be borne ? and Sara that is nyntie yeares old shal she beare?",
     "from": "p84",
     "score": {
-     "s_dismas": 0.954,
-     "odr_com": 0.954,
-     "sabates_a": 0.923,
-     "madueke_b": 0.923
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
     }
    },
    "S3": {
-    "text": "Abraham fel vpon his face, & : laughed, ſaying in his hart Shal troweſt thou to him that is an hundred yeare old de ſonne be borne and Sara that is nyntie yeares old shal . beare",
+    "text": "Abraham fel vpon his face, & : laughed, ſaying in his hart : de Shal troweſt thou to him that is an hundred yeare old a ſonne be borne and Sara that is nyntie yeares old shal she . beare",
     "from": "p88",
     "score": {
-     "s_dismas": 0.965,
-     "odr_com": 0.965,
-     "sabates_a": 0.934,
-     "madueke_b": 0.934
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
     }
    },
    "S9": {
@@ -801,23 +801,23 @@
   },
   "19": {
    "S1": {
-    "text": "And God ſaid to Abraham : Sara thy shal beare thee a ſonne, and thou shalr cal his name Iſaac, I wil eſtabliſh my couenant to him for a perpetual couenant, and to his ſeed after him.",
+    "text": "And God ſaid to Abraham : Sara thy wife shal beare thee a ſonne, and thou shalr cal his name Iſaac, and I wil eſtabliſh my couenant to him for a perpetual couenant, and to his ſeed after him.",
     "from": "p84",
     "score": {
-     "s_dismas": 0.946,
-     "odr_com": 0.946,
-     "sabates_a": 0.949,
-     "madueke_b": 0.949
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
     }
    },
    "S3": {
-    "text": "And God ſaid to Abraham : Sara thy shal beare thee a ſonne, and thou shalt cal his name Iſaac, I wil eſtablish my couenant to him for a perpetual nant, and to his ſeed after him.",
+    "text": "And God ſaid to Abraham : Sara thy wife shal beare thee a ſonne, and thou shalt cal his name Iſaac, and I wil eſtablish my couenant to him for a perpetual couenant, and to his ſeed after him.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.93,
-     "odr_com": 0.93,
-     "sabates_a": 0.932,
-     "madueke_b": 0.932
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -937,13 +937,13 @@
     }
    },
    "S3": {
-    "text": "And when he had leaft of and king with him, God aſcended from Abraham.",
+    "text": "And when he had leaft of ſpea and king with him, God aſcended from Abraham.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.941,
-     "odr_com": 0.941,
-     "sabates_a": 0.925,
-     "madueke_b": 0.925
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
     }
    },
    "S9": {
@@ -969,13 +969,13 @@
   },
   "23": {
    "S1": {
-    "text": "And their braham tooke Iſmael his ſonne, and al the homebred of houſe : and al whom he had bought, al the males of al men of his houſe : and he circumciſed the flesh of their puce forth with the very ſame day, as God had commanded him.",
+    "text": "And A their braham tooke Iſmael his ſonne, and al the homebred of his houſe : and al whom he had bought, al the males of al the men of his houſe : and he circumciſed the flesh of their prepuce forth with the very ſame day, as God had commanded him.",
     "from": "p84",
     "score": {
-     "s_dismas": 0.922,
-     "odr_com": 0.922,
-     "sabates_a": 0.921,
-     "madueke_b": 0.921
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
     }
    },
    "S3": {
@@ -1388,5 +1388,5 @@
  "blocked_cells": 0,
  "achievable": 108,
  "triage": "R3-READY",
- "secs": 6.1
+ "secs": 6.6
 }

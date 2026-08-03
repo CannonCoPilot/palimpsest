@@ -5,10 +5,10 @@
  "n_pass": 92,
  "rate": 0.9583,
  "ref_means": {
-  "s_dismas": 0.9773,
-  "odr_com": 0.9775,
-  "sabates_a": 0.9699,
-  "madueke_b": 0.9699
+  "s_dismas": 0.9782,
+  "odr_com": 0.9784,
+  "sabates_a": 0.9708,
+  "madueke_b": 0.9708
  },
  "src_rates": {
   "S1": 1.0,
@@ -724,13 +724,13 @@
   },
   "17": {
    "S1": {
-    "text": "I wil bleſſe thee, and wil multiplie thy ſede as the ſtarres of heauen, and as. ſand that is by the ſea ihore thy ſede ſhal poſſeſſe the gates of his enemies,",
+    "text": "I wil bleſſe thee, and I17 wil multiplie thy ſede as the ſtarres of heauen, and as. the ſand that is by the ſea ihore thy ſede ſhal poſſeſſe the gates of his enemies,",
     "from": "p96",
     "score": {
-     "s_dismas": 0.956,
-     "odr_com": 0.956,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S3": {
@@ -808,13 +808,13 @@
   },
   "19": {
    "S1": {
-    "text": "Abraham returned to his young. men, and they. went Berſabee together, and he dwelt there.",
+    "text": "Abraham returned to his young. men, and they. went ro Berſabee together, and he dwelt there.",
     "from": "p96",
     "score": {
-     "s_dismas": 0.966,
-     "odr_com": 0.966,
-     "sabates_a": 0.964,
-     "madueke_b": 0.964
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S3": {
@@ -850,13 +850,13 @@
   },
   "20": {
    "S1": {
-    "text": "Theſe things being done, it was told Abraham thar Melca alſo had borne children to Nachor his brother,",
+    "text": "Theſe things ſo being done, it was told Abraham thar Melca alſo had borne children to Nachor his brother,",
     "from": "p96",
     "score": {
-     "s_dismas": 0.961,
-     "odr_com": 0.961,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
     }
    },
    "S3": {
@@ -1248,5 +1248,5 @@
  "blocked_cells": 0,
  "achievable": 96,
  "triage": "SOURCE-SKEW",
- "secs": 5.7
+ "secs": 6.1
 }

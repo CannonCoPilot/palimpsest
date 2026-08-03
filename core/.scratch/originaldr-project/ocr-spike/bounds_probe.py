@@ -55,7 +55,12 @@ import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-OD = "jp2-S06"
+DEFAULT_OD = "jp2-S06"
+# NAMED FOR ONE WITNESS UNTIL 2026-08-02 (ch41). It was written to escape exactly the failure it then
+# embodied: `left_strip_probe` could only see the 1609 layout, reported "no defect" on `jp2-S06` and was
+# believed; this probe could only see `jp2-S06`, and ch41's S1/S3/S9 were losing whole words off the ENDS of
+# body lines -- `He ſaid [ther]fore`, `a dreame [per]teining`, `shal not be [con]ſumed` -- to a right bound
+# tuned tight against their annotation column, on the one axis nobody had varied for those sources.
 
 BIN = 0.01
 EDGE = 0.02          # below this is page edge / bleed, never a column
@@ -85,6 +90,9 @@ MIN_SPIKE = 6
 # probe declines the pair, and any leaf the EYE confirms is carried in `PAGE_OVERRIDE` with its reason —
 # rather than tuning a constant until it happens to admit the example that motivated it.
 STANDALONE_SPIKE = 18
+# `left_strip_probe`'s BAND_MIN, reused so the mirrored right-edge test uses the same definition of "a line
+# that lives in the band" as the left one does.
+LSP_BAND_MIN = 2
 
 
 def hist(rec: dict) -> collections.Counter:
@@ -150,16 +158,44 @@ def right_bound(h: collections.Counter, default: float) -> tuple[float, str]:
     return round((b - 0.5) * BIN, 3), f"spike {n} at {b*BIN:.2f} over trough {trough}"
 
 
+def right_strip_verdict(recs: list[dict], lo: float, hi: float) -> tuple[int, int]:
+    """`left_strip_probe`'s line-membership test, mirrored onto the right edge.
+
+    A token in the strip (lo, hi] is CONTINUATION if its line carries body inside the band — the bound
+    clipped the tail off a body line — and NOTE if the line lies wholly outside. Merged across every cache
+    that holds this leaf, worst-case note and best-case continuation, as `--emit` does on the left.
+    """
+    cont = note = 0
+    for rec in recs:
+        W = rec["page_px"][0]
+        c = n = 0
+        for L in rec["lines"]:
+            ws = L["words"]
+            strip = [w for w in ws if lo < w["x0"] / W <= hi]
+            if not strip:
+                continue
+            if len([w for w in ws if w["x0"] / W <= lo]) >= LSP_BAND_MIN:
+                c += len(strip)
+            else:
+                n += len(strip)
+        cont, note = max(cont, c), max(note, n)
+    return cont, note
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--chapter", type=int)
+    ap.add_argument("--source", default=DEFAULT_OD, help="ocr_dir to probe")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--emit", action="store_true", help="print PAGE_OVERRIDE entries for leaves that differ")
+    ap.add_argument("--right-only", action="store_true",
+                    help="propose the RIGHT bound alone, holding each leaf's left bound as it stands")
     ap.add_argument("--examples", type=int, default=0, help="show N tokens either side of each proposed bound")
     a = ap.parse_args(argv)
 
     import gen1_pagemodel as PM
-    dfl = PM.SOURCE_MODEL[OD]["body"]
+    od = a.source
+    dfl = PM.SOURCE_MODEL[od]["body"]
 
     files = (sorted(glob.glob(str(HERE / ".wordboxes-genesis-*.json"))) if a.all
              else [str(HERE / f".wordboxes-genesis-{a.chapter}.json")])
@@ -169,17 +205,17 @@ def main(argv=None):
     import left_strip_probe as LSP
 
     merged: dict[int, collections.Counter] = {}
-    recs: dict[int, dict] = {}
+    recs: dict[int, list] = {}
     verdict: dict[int, tuple[int, int]] = {}
     for f in files:
         try:
             d = json.load(open(f))
         except FileNotFoundError:
             continue
-        for p, rec in d.get(OD, {}).items():
+        for p, rec in d.get(od, {}).items():
             p = int(p)
             merged.setdefault(p, collections.Counter()).update(hist(rec))
-            recs.setdefault(p, rec)
+            recs.setdefault(p, []).append(rec)
             # AT THE DEFAULT BOUND, NOT THIS LEAF'S CURRENT ONE. "Is this leaf set in two columns?" is a fact
             # about the page; asking it at the current override makes it a fact about the campaign's history
             # instead. p90 and p92 were moved to 0.14 yesterday, so at their current bound nothing lies in the
@@ -193,8 +229,8 @@ def main(argv=None):
     rows, changed = [], []
     for p in sorted(merged):
         h = merged[p]
-        explicit = "body" in PM.PAGE_OVERRIDE.get((OD, p), {})
-        cur = PM.PAGE_OVERRIDE.get((OD, p), {}).get("body", dfl)
+        explicit = "body" in PM.PAGE_OVERRIDE.get((od, p), {})
+        cur = PM.PAGE_OVERRIDE.get((od, p), {}).get("body", dfl)
         nc, nn = verdict[p]
         clipped = nc >= 3 * max(nn, 1) and nc >= 3
         if clipped:
@@ -210,12 +246,25 @@ def main(argv=None):
             # line membership says the strip is apparatus, or that nothing is being cut. Do not move a left
             # bound on a histogram alone — see the p89 note in the docstring.
             lb, lwhy = cur[0], f"held ({nc} cont / {nn} note)"
+        if a.right_only:
+            # THE 1609 WITNESSES' LEFT BOUND WAS ALREADY MEASURED BOOK-WIDE by `left_strip_probe
+            # --emit`, and adopted at +57 cells. "Dense mass begins at 0.10" is a weaker claim than
+            # that, so on those sources this probe changes only the axis nobody ever varied.
+            lb, lwhy = cur[0], f"right-only; {lwhy}"
         rb, rwhy = right_bound(h, dfl[1])
         if rb > cur[1]:
-            # A right bound never WIDENS. p25's column stands at 0.84, outside the band already; taking the
-            # trough before it would admit the 0.825-0.835 strip that the model is right to refuse. This
-            # probe exists to find columns the band swallows, not to hand it new ones.
-            rb, rwhy = cur[1], f"held; {rwhy} — already outside the band"
+            # WIDENING IS SOMETIMES THE WHOLE FIX, so this cannot simply be refused — ch41's S1/S3/S9 lose
+            # `[ther]fore`, `[per]teining`, `[con]ſumed` off the ENDS of body lines to a right bound tuned
+            # tight against their annotation column. But it must not be granted on the histogram alone
+            # either: p25's column stands outside the band already, and taking the trough before it would
+            # hand the band a strip it is right to refuse. Same instrument as the left, mirrored — the
+            # strip between the current bound and the proposal is CLIPPED BODY if its tokens sit on lines
+            # that continue back inside the band, and APPARATUS if those lines lie wholly outside it.
+            rc, rn = right_strip_verdict(recs[p], cur[1], rb)
+            if not (rc >= 3 * max(rn, 1) and rc >= 3):
+                rb, rwhy = cur[1], f"held; {rwhy} — strip is apparatus ({rc} cont / {rn} note)"
+            else:
+                rwhy = f"WIDENED ({rc} cont / {rn} note); {rwhy}"
         if rb != dfl[1]:
             n = int(rwhy.split()[1]) if rwhy.startswith("spike") else STANDALONE_SPIKE
             if n < STANDALONE_SPIKE and not clipped:
@@ -227,9 +276,9 @@ def main(argv=None):
 
     if a.emit:
         for p, cur, new in changed:
-            extra = {k: v for k, v in PM.PAGE_OVERRIDE.get((OD, p), {}).items() if k != "body"}
+            extra = {k: v for k, v in PM.PAGE_OVERRIDE.get((od, p), {}).items() if k != "body"}
             tail = "".join(f", {k!r}: {v!r}" for k, v in extra.items())
-            print(f'    ({OD!r}, {p}): {{"body": ({new[0]}, {new[1]}){tail}}},   # was {cur}')
+            print(f'    ({od!r}, {p}): {{"body": ({new[0]}, {new[1]}){tail}}},   # was {cur}')
         print(f"    # {len(changed)} leaves differ, of {len(rows)} measured")
         return
 
@@ -238,7 +287,7 @@ def main(argv=None):
         mark = ("L" if moved[0] else ".") + ("R" if moved[1] else ".")
         print(f"{p:>5} ({cur[0]:.3f},{cur[1]:.3f}) ({new[0]:.3f},{new[1]:.3f}) {mark}  {lwhy}  |  {rwhy}")
         if a.examples and any(moved):
-            rec = recs[p]
+            rec = recs[p][0]
             W = rec["page_px"][0]
             # what the PROPOSAL changes, in both directions: tokens the new left admits that the old
             # refused, and tokens the new right refuses that the old admitted.

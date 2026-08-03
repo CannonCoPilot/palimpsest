@@ -2,33 +2,30 @@
  "chapter": 26,
  "n_verses": 35,
  "n_cells": 140,
- "n_pass": 113,
- "rate": 0.8071,
+ "n_pass": 132,
+ "rate": 0.9429,
  "ref_means": {
-  "s_dismas": 0.9531,
-  "odr_com": 0.9623,
-  "sabates_a": 0.9484,
-  "madueke_b": 0.9484
+  "s_dismas": 0.9734,
+  "odr_com": 0.9825,
+  "sabates_a": 0.9687,
+  "madueke_b": 0.9687
  },
  "src_rates": {
-  "S1": 0.8571,
-  "S3": 0.8857,
+  "S1": 0.9429,
+  "S3": 0.9429,
   "S9": 0.9429,
-  "S6": 0.5429
+  "S6": 0.9429
  },
- "n_all_fail": 2,
- "all_fail": [
-  5,
-  6
- ],
- "n_open": 27,
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 8,
  "open": [
   {
    "src": "S6",
    "verse": 4,
-   "worst": 0.842,
+   "worst": 0.898,
    "from": "chapter",
-   "text": "And I wil multiplie thy ſeedas the ſtarres of heauen: and I wil giue to thy poſteritie al theſe countries: and in thy ſeed SHAL BEBLESSED I tor"
+   "text": "And I wil multiplie thy ſeedas the ſtarres of heauen: and I wil giue to thy poſteritie al theſe countries: and in thy ſeed SHAL BEBLESSED Iſaac. I THENATIONSOFTHEEARTH, tor"
   },
   {
    "src": "S1",
@@ -52,13 +49,6 @@
    "text": "for becauſe Abraham obeyed my voice, and kept my preceptes and commandements, and obſerued my ceremonies lawes. Therfore"
   },
   {
-   "src": "S6",
-   "verse": 5,
-   "worst": 0.704,
-   "from": "p98",
-   "text": "tor becauſe obeved my voice, & kept my precepts and commandements, my ceremonies and lawes."
-  },
-  {
    "src": "S1",
    "verse": 6,
    "worst": 0.679,
@@ -81,136 +71,10 @@
   },
   {
    "src": "S6",
-   "verse": 6,
-   "worst": 0.714,
-   "from": "p98",
-   "text": "Therfore Iſaac abode in"
-  },
-  {
-   "src": "S1",
-   "verse": 7,
-   "worst": 0.897,
-   "from": "p106",
-   "text": "Who when was asked by the men of that place, concerning his She is- my ſiſter. for he was afruid to confeſſe that ſhe was married to him, thinking leſt peraduenture they would kil him becauſe of her beautie."
-  },
-  {
-   "src": "S6",
-   "verse": 7,
-   "worst": 0.879,
-   "from": "p98",
-   "text": "Who when he was asked by the men of that place concerwife, anſwered : She is my ſiſter : for he was afraid to (ee that ſhe was married to him, thinking leſt paraduenture they kil him becauſe of her beautie."
-  },
-  {
-   "src": "S6",
-   "verse": 8,
-   "worst": 0.812,
-   "from": "p98",
-   "text": "And when verie manie dayes & he abode there Abimelech the Ring of the Paleſtines forth through a window ſaw him ſporting with Rebecca his"
-  },
-  {
-   "src": "S1",
-   "verse": 9,
-   "worst": 0.882,
-   "from": "p106",
-   "text": "calling ſor him, he ſaid : It is euident that ſke is thy why dideſt thou faine her to be thy ſiſter? He anſwered feared leſt I ibould die for her."
-  },
-  {
-   "src": "S6",
-   "verse": 9,
-   "worst": 0.847,
-   "from": "p98",
-   "text": "And calling for him, he laid : It is euident that ſhe is thy wite: thou faine her to be thy ſiſter He anſwered : I feared leſt die for her."
-  },
-  {
-   "src": "S6",
-   "verse": 10,
-   "worst": 0.843,
-   "from": "p98",
-   "text": "And Abimelech ſaid: Why haſt thou deceaued man of the people might haue lyen with thy wite, aud thou brought vpon vs a great ſinne. And he commanded al the Adulterie ſaying :"
-  },
-  {
-   "src": "S1",
-   "verse": 12,
-   "worst": 0.862,
-   "from": "p106",
-   "text": "And Iſaac in that land, and he found that ſame veare an hundred and our Lord bleſſed him."
-  },
-  {
-   "src": "S3",
-   "verse": 12,
-   "worst": 0.862,
-   "from": "p110",
-   "text": "And Iſaac in that land, and he found that ſame veare an hundred and our Lord bleſſed him."
-  },
-  {
-   "src": "S6",
-   "verse": 12,
-   "worst": 0.83,
-   "from": "p98",
-   "text": "a great ſowed in that land, and he found that ſame yeare an hun- alſo among : and our Lord bleſſed him."
-  },
-  {
-   "src": "S6",
-   "verse": 14,
-   "worst": 0.864,
-   "from": "p98",
-   "text": "and he had alſo poſſeſſions of ſheep and of heards, and a verie For this the Paleſtines enuying him,"
-  },
-  {
-   "src": "S6",
-   "verse": 15,
-   "worst": 0.817,
-   "from": "p98",
-   "text": "1ſtopped at that the wels, that the ſeruants of his tather Abraham had digged, them vp with water :"
-  },
-  {
-   "src": "S6",
-   "verse": 16,
-   "worst": 0.821,
-   "from": "p98",
-   "text": "16n ſo much that Abimelech himſelte Iſaac : Depart from vs, becauſe thou art become mightier then deale."
-  },
-  {
-   "src": "S6",
-   "verse": 18,
-   "worst": 0.821,
-   "from": "p98",
-   "text": "againe he digged other wels, which the ſeruants father Abraha had digged, and which after his death the Philiſtopped vpof old : & he called the by the ſame names which before had called the."
-  },
-  {
-   "src": "S6",
-   "verse": 19,
-   "worst": 0.8,
-   "from": "p98",
-   "text": "And they digged in the Torrent, The liuins water :"
-  },
-  {
-   "src": "S3",
    "verse": 21,
-   "worst": 0.809,
-   "from": "p110",
-   "text": "And theydigged alſo an other : & for that they likewiſe, and he called the name of it, Enmitie."
-  },
-  {
-   "src": "S6",
-   "verse": 21,
-   "worst": 0.798,
+   "worst": 0.871,
    "from": "p98",
-   "text": "And they digged alſo an other : and tor runneth, brawled likewiſe, and he called the name of it, Enmitie."
-  },
-  {
-   "src": "S6",
-   "verse": 22,
-   "worst": 0.756,
-   "from": "p98",
-   "text": "forward from thence he digged an other wel, for which not : therfore he called the name therof Latitude, Now hath our Lord dilated vs, and made vs to encreaſe earth."
-  },
-  {
-   "src": "S6",
-   "verse": 26,
-   "worst": 0.775,
-   "from": "p98",
-   "text": "To the which place when there were Gerara Abimelech, and Ocorath his treind, & Phicol chiefe of his foldiers,"
+   "text": "And they digged alſo an other : and tor that they brawled likewiſe, and he called the name of it, Enmitie."
   }
  ],
  "cellgrid": {
@@ -372,13 +236,13 @@
     }
    },
    "S6": {
-    "text": "And I wil multiplie thy ſeedas the ſtarres of heauen: and I wil giue to thy poſteritie al theſe countries: and in thy ſeed SHAL BEBLESSED I tor",
+    "text": "And I wil multiplie thy ſeedas the ſtarres of heauen: and I wil giue to thy poſteritie al theſe countries: and in thy ſeed SHAL BEBLESSED Iſaac. I THENATIONSOFTHEEARTH, tor",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.842,
-     "odr_com": 0.842,
-     "sabates_a": 0.842,
-     "madueke_b": 0.842
+     "s_dismas": 0.899,
+     "odr_com": 0.899,
+     "sabates_a": 0.898,
+     "madueke_b": 0.898
     }
    }
   },
@@ -414,13 +278,13 @@
     }
    },
    "S6": {
-    "text": "tor becauſe obeved my voice, & kept my precepts and commandements, my ceremonies and lawes.",
-    "from": "p98",
+    "text": "for becauſe Abraham obeyed my voice, & kept my precepts and commandements, and obſerued my ceremonies and lawes.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.704,
-     "odr_com": 0.704,
-     "sabates_a": 0.755,
-     "madueke_b": 0.755
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    }
   },
@@ -456,35 +320,35 @@
     }
    },
    "S6": {
-    "text": "Therfore Iſaac abode in",
+    "text": "Therfore Iſaac abode in Gerara.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.767,
-     "odr_com": 0.767,
-     "sabates_a": 0.714,
-     "madueke_b": 0.714
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
     }
    }
   },
   "7": {
    "S1": {
-    "text": "Who when was asked by the men of that place, concerning his She is- my ſiſter. for he was afruid to confeſſe that ſhe was married to him, thinking leſt peraduenture they would kil him becauſe of her beautie.",
+    "text": "Who when he was asked by the men of that place, concerning his wife, She is- my ſiſter. for he was afruid to confeſſe that ſhe was married to him, thinking leſt peraduenture they would kil him becauſe of her beautie.",
     "from": "p106",
     "score": {
-     "s_dismas": 0.897,
-     "odr_com": 0.918,
-     "sabates_a": 0.922,
-     "madueke_b": 0.922
+     "s_dismas": 0.933,
+     "odr_com": 0.954,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
     }
    },
    "S3": {
-    "text": "Who when was asked by the men of that place, concerning his anſwered : She is:: my ſiſter. for he was afraid to confeſſe that ſhe was married to him, thinking leſt peraduenture they would kil him becauſe of her beautie.",
+    "text": "Who when he was asked by the men of that place, concerning his wife, anſwered : She is:: my ſiſter. for he was afraid to confeſſe that ſhe was married to him, thinking leſt peraduenture they would kil him becauſe of her beautie.",
     "from": "p110",
     "score": {
-     "s_dismas": 0.942,
-     "odr_com": 0.964,
-     "sabates_a": 0.971,
-     "madueke_b": 0.971
+     "s_dismas": 0.978,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -498,13 +362,13 @@
     }
    },
    "S6": {
-    "text": "Who when he was asked by the men of that place concerwife, anſwered : She is my ſiſter : for he was afraid to (ee that ſhe was married to him, thinking leſt paraduenture they kil him becauſe of her beautie.",
+    "text": "Who when he was asked by the men of that place concerning his wife, anſwered : She is my ſiſter : for he was afraid to confeſſe that ſhe was married to him, thinking leſt paraduenture they would kil him becauſe of her beautie.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.879,
-     "odr_com": 0.899,
-     "sabates_a": 0.898,
-     "madueke_b": 0.898
+     "s_dismas": 0.973,
+     "odr_com": 0.995,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
     }
    }
   },
@@ -540,35 +404,35 @@
     }
    },
    "S6": {
-    "text": "And when verie manie dayes & he abode there Abimelech the Ring of the Paleſtines forth through a window ſaw him ſporting with Rebecca his",
-    "from": "p98",
+    "text": "And when verie manie dayes were paſſed, & he abode there Abimelech the King of the Paleſtines looking forth through a window ſaw him ſporting with Rebecca his wife.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.812,
-     "odr_com": 0.812,
-     "sabates_a": 0.857,
-     "madueke_b": 0.857
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
     }
    }
   },
   "9": {
    "S1": {
-    "text": "calling ſor him, he ſaid : It is euident that ſke is thy why dideſt thou faine her to be thy ſiſter? He anſwered feared leſt I ibould die for her.",
+    "text": "And calling ſor him, he ſaid : It is euident that ſke is thy wife: why dideſt thou faine her to be thy ſiſter? He anſwered : I feared leſt I ibould die for her.",
     "from": "p106",
     "score": {
-     "s_dismas": 0.901,
-     "odr_com": 0.901,
-     "sabates_a": 0.882,
-     "madueke_b": 0.882
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
     }
    },
    "S3": {
-    "text": "calling for him, he ſaid : It is euident that ſhe is thy why dideſt thou faine her to be thy ſiſter? He anſwered feared leſt I ſhould die for her.",
+    "text": "And calling for him, he ſaid : It is euident that ſhe is thy wife: why dideſt thou faine her to be thy ſiſter? He anſwered : I feared leſt I ſhould die for her.",
     "from": "p110",
     "score": {
-     "s_dismas": 0.928,
-     "odr_com": 0.928,
-     "sabates_a": 0.91,
-     "madueke_b": 0.91
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    },
    "S9": {
@@ -582,13 +446,13 @@
     }
    },
    "S6": {
-    "text": "And calling for him, he laid : It is euident that ſhe is thy wite: thou faine her to be thy ſiſter He anſwered : I feared leſt die for her.",
+    "text": "And calling for him, he laid : It is euident that ſhe is thy wite: why dideſt thou faine her to be thy ſiſter He anſwered : I feared leſt ſhould die for her.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.855,
-     "odr_com": 0.855,
-     "sabates_a": 0.847,
-     "madueke_b": 0.847
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
     }
    }
   },
@@ -624,13 +488,13 @@
     }
    },
    "S6": {
-    "text": "And Abimelech ſaid: Why haſt thou deceaued man of the people might haue lyen with thy wite, aud thou brought vpon vs a great ſinne. And he commanded al the Adulterie ſaying :",
+    "text": "And Abimelech ſaid: Why haſt thou deceaued vs ſome man of the people might haue lyen with thy wite, aud thou haddeſt brought vpon vs a great ſinne. And he commanded al the people, ſaying :",
     "from": "p98",
     "score": {
-     "s_dismas": 0.843,
-     "odr_com": 0.843,
-     "sabates_a": 0.857,
-     "madueke_b": 0.857
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    }
   },
@@ -678,23 +542,23 @@
   },
   "12": {
    "S1": {
-    "text": "And Iſaac in that land, and he found that ſame veare an hundred and our Lord bleſſed him.",
+    "text": "And Iſaac ſowed in that land, and he found that ſame veare an hundred fold: and our Lord bleſſed him.",
     "from": "p106",
     "score": {
-     "s_dismas": 0.866,
-     "odr_com": 0.878,
-     "sabates_a": 0.862,
-     "madueke_b": 0.862
+     "s_dismas": 0.98,
+     "odr_com": 0.99,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    },
    "S3": {
-    "text": "And Iſaac in that land, and he found that ſame veare an hundred and our Lord bleſſed him.",
+    "text": "And Iſaac ſowed in that land, and he found that ſame veare an hundred fold : and our Lord bleſſed him.",
     "from": "p110",
     "score": {
-     "s_dismas": 0.866,
-     "odr_com": 0.878,
-     "sabates_a": 0.862,
-     "madueke_b": 0.862
+     "s_dismas": 0.98,
+     "odr_com": 0.99,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    },
    "S9": {
@@ -708,13 +572,13 @@
     }
    },
    "S6": {
-    "text": "a great ſowed in that land, and he found that ſame yeare an hun- alſo among : and our Lord bleſſed him.",
+    "text": "And Iſaae ſowed in that land, and he found that ſame yeare an hundred fold : and our Lord bleſſed him.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.837,
-     "odr_com": 0.847,
-     "sabates_a": 0.83,
-     "madueke_b": 0.83
+     "s_dismas": 0.98,
+     "odr_com": 0.99,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    }
   },
@@ -772,13 +636,13 @@
     }
    },
    "S3": {
-    "text": "and he had alſo poſſeſſions of ſheep of heards, and a verie great familie. For this the Paleſtines enuying him,",
+    "text": "and he had alſo poſſeſſions of ſheep and of heards, and a verie great familie. For this the Paleſtines enuying him,",
     "from": "p110",
     "score": {
-     "s_dismas": 0.964,
-     "odr_com": 0.964,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    },
    "S9": {
@@ -792,13 +656,13 @@
     }
    },
    "S6": {
-    "text": "and he had alſo poſſeſſions of ſheep and of heards, and a verie For this the Paleſtines enuying him,",
+    "text": "and he had alſo poſſeſſions of ſheep and of heards, and a verie great familie. For this the Paleſtines enuying him,",
     "from": "p98",
     "score": {
-     "s_dismas": 0.875,
-     "odr_com": 0.875,
-     "sabates_a": 0.864,
-     "madueke_b": 0.864
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    }
   },
@@ -834,13 +698,13 @@
     }
    },
    "S6": {
-    "text": "1ſtopped at that the wels, that the ſeruants of his tather Abraham had digged, them vp with water :",
+    "text": "1ſtopped at that time al the wels, that the ſeruants of his tather Abraham had digged, fillins them vp with water :",
     "from": "p98",
     "score": {
-     "s_dismas": 0.83,
-     "odr_com": 0.83,
-     "sabates_a": 0.817,
-     "madueke_b": 0.817
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
     }
    }
   },
@@ -876,13 +740,13 @@
     }
    },
    "S6": {
-    "text": "16n ſo much that Abimelech himſelte Iſaac : Depart from vs, becauſe thou art become mightier then deale.",
+    "text": "16n ſo much that Abimelech himſelte ſaid to Iſaac : Depart from vs, becauſe thou art become mightier then we a great deale.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.822,
-     "odr_com": 0.822,
-     "sabates_a": 0.821,
-     "madueke_b": 0.821
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
     }
    }
   },
@@ -960,13 +824,13 @@
     }
    },
    "S6": {
-    "text": "againe he digged other wels, which the ſeruants father Abraha had digged, and which after his death the Philiſtopped vpof old : & he called the by the ſame names which before had called the.",
+    "text": "againe he digged other wels, which the ſeruants of his father Abraha had digged, and which after his death the Philiſtines had ſtopped vpof old : & he called the by the ſame names which his father before had called the.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.821,
-     "odr_com": 0.824,
-     "sabates_a": 0.828,
-     "madueke_b": 0.828
+     "s_dismas": 0.951,
+     "odr_com": 0.955,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    }
   },
@@ -1002,13 +866,13 @@
     }
    },
    "S6": {
-    "text": "And they digged in the Torrent, The liuins water :",
+    "text": "And they digged in the Torrent, and tound liuins water :",
     "from": "p98",
     "score": {
-     "s_dismas": 0.811,
-     "odr_com": 0.811,
-     "sabates_a": 0.8,
-     "madueke_b": 0.8
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
     }
    }
   },
@@ -1066,13 +930,13 @@
     }
    },
    "S3": {
-    "text": "And theydigged alſo an other : & for that they likewiſe, and he called the name of it, Enmitie.",
+    "text": "And theydigged alſo an other : & for that they brawled likewiſe, and he called the name of it, Enmitie.",
     "from": "p110",
     "score": {
-     "s_dismas": 0.809,
-     "odr_com": 0.907,
-     "sabates_a": 0.85,
-     "madueke_b": 0.85
+     "s_dismas": 0.906,
+     "odr_com": 0.99,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
     }
    },
    "S9": {
@@ -1086,13 +950,13 @@
     }
    },
    "S6": {
-    "text": "And they digged alſo an other : and tor runneth, brawled likewiſe, and he called the name of it, Enmitie.",
+    "text": "And they digged alſo an other : and tor that they brawled likewiſe, and he called the name of it, Enmitie.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.798,
-     "odr_com": 0.879,
-     "sabates_a": 0.903,
-     "madueke_b": 0.903
+     "s_dismas": 0.871,
+     "odr_com": 0.951,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    }
   },
@@ -1108,13 +972,13 @@
     }
    },
    "S3": {
-    "text": "foreward from thence he digged an other wel, for which they contended not: therfore he called the name therof, Latitude, ſaying Now hath our Lord dilated vs, and made vs to encreaſe vpon the earth.",
-    "from": "p111",
+    "text": "Going foreward from thence he digged an other wel, for which they contended not: therfore he called the name therof, Latitude, ſaying Now hath our Lord dilated vs, and made vs to encreaſe vpon the earth.",
+    "from": "chapter",
     "score": {
-     "s_dismas": 0.912,
-     "odr_com": 0.97,
-     "sabates_a": 0.94,
-     "madueke_b": 0.94
+     "s_dismas": 0.942,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
     }
    },
    "S9": {
@@ -1128,13 +992,13 @@
     }
    },
    "S6": {
-    "text": "forward from thence he digged an other wel, for which not : therfore he called the name therof Latitude, Now hath our Lord dilated vs, and made vs to encreaſe earth.",
+    "text": "Going forward from thence he digged an other wel, for which they contended not : therfore he called the name therof Latitude, ſaying: Now hath our Lord dilated vs, and made vs to encreaſe vpon the earth.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.756,
-     "odr_com": 0.807,
-     "sabates_a": 0.788,
-     "madueke_b": 0.788
+     "s_dismas": 0.937,
+     "odr_com": 0.995,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    }
   },
@@ -1296,13 +1160,13 @@
     }
    },
    "S6": {
-    "text": "To the which place when there were Gerara Abimelech, and Ocorath his treind, & Phicol chiefe of his foldiers,",
+    "text": "To the which place when there were come from Gerara Abimelech, and Ocorath his treind, & Phicol chiefe Captaine of his foldiers,",
     "from": "p98",
     "score": {
-     "s_dismas": 0.775,
-     "odr_com": 0.783,
-     "sabates_a": 0.81,
-     "madueke_b": 0.81
+     "s_dismas": 0.922,
+     "odr_com": 0.93,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
     }
    }
   },
@@ -1950,6 +1814,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 140,
- "triage": "SOURCE-SKEW",
- "secs": 7.1
+ "triage": "R3-READY",
+ "secs": 8.1
 }

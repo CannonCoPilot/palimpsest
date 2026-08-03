@@ -5,10 +5,10 @@
  "n_pass": 128,
  "rate": 0.9697,
  "ref_means": {
-  "s_dismas": 0.9729,
-  "odr_com": 0.9738,
-  "sabates_a": 0.9664,
-  "madueke_b": 0.9664
+  "s_dismas": 0.9733,
+  "odr_com": 0.9742,
+  "sabates_a": 0.9667,
+  "madueke_b": 0.9667
  },
  "src_rates": {
   "S1": 0.9394,
@@ -892,13 +892,13 @@
   },
   "21": {
    "S1": {
-    "text": "I wil deſcend, and ſee whether they haue in acte accompliſhed the crye that is come ro me or whether it not ſo, that I may know.",
+    "text": "I wil deſcend, and ſee whether they haue in acte accompliſhed the crye that is come ro me or whether it be not ſo, that I may know.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.969,
-     "sabates_a": 0.975,
-     "madueke_b": 0.975
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
     }
    },
    "S3": {
@@ -1102,13 +1102,13 @@
   },
   "26": {
    "S1": {
-    "text": "And our Lord ſaid to him If I ſhal find in Sodome fiftie iuſt perſons within the citie, I wil ſpare the whole place their ſake.",
+    "text": "And our Lord ſaid to him If I ſhal find in Sodome fiftie for iuſt perſons within the citie, I wil ſpare the whole place their ſake.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.969,
-     "sabates_a": 0.967,
-     "madueke_b": 0.967
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
     }
    },
    "S3": {
@@ -1144,13 +1144,13 @@
   },
   "27": {
    "S1": {
-    "text": "And Abrahanr anſwered, and ſaid Becauſe haue once begunne, I wil ſpeake to my Lord, wheras I am duſt and aſhes.",
+    "text": "And Abrahanr anſwered, and ſaid Becauſe I haue once begunne, I wil ſpeake to my Lord, wheras I am duſt and aſhes.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.963,
-     "odr_com": 0.963,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
     }
    },
    "S3": {
@@ -1312,13 +1312,13 @@
   },
   "31": {
    "S1": {
-    "text": "Becauſe, ſaith he, I haue once begunne, wil ſpeake to my Lord: What if twentie shalbe founde there? He ſaid I wil not deſtroy it for twenties ſake.",
+    "text": "Becauſe, ſaith he, I haue once begunne, I wil ſpeake to my Lord: What if twentie shalbe founde there? He ſaid I wil not deſtroy it for twenties ſake.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.979,
-     "odr_com": 0.986,
-     "sabates_a": 0.97,
-     "madueke_b": 0.97
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S3": {
@@ -1396,13 +1396,13 @@
   },
   "33": {
    "S1": {
-    "text": "And our Lord departed after that he ceaſed to ſpeake vnto Abraham and Abraham turned into his place.",
+    "text": "And our Lord departed after that he ceaſed to ſpeake vnto Abraham and Abraham returned into his place.",
     "from": "p88",
     "score": {
-     "s_dismas": 0.98,
-     "odr_com": 0.98,
-     "sabates_a": 0.98,
-     "madueke_b": 0.98
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
@@ -1689,5 +1689,5 @@
  "blocked_cells": 0,
  "achievable": 132,
  "triage": "R3-READY",
- "secs": 7.4
+ "secs": 7.7
 }

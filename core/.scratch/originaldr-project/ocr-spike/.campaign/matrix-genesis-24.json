@@ -2,17 +2,17 @@
  "chapter": 24,
  "n_verses": 67,
  "n_cells": 268,
- "n_pass": 238,
- "rate": 0.8881,
+ "n_pass": 243,
+ "rate": 0.9067,
  "ref_means": {
-  "s_dismas": 0.966,
-  "odr_com": 0.9664,
-  "sabates_a": 0.9645,
-  "madueke_b": 0.9644
+  "s_dismas": 0.9695,
+  "odr_com": 0.9698,
+  "sabates_a": 0.9678,
+  "madueke_b": 0.9677
  },
  "src_rates": {
-  "S1": 0.8806,
-  "S3": 0.9104,
+  "S1": 0.8955,
+  "S3": 0.9701,
   "S9": 0.8358,
   "S6": 0.9254
  },
@@ -21,7 +21,7 @@
   45,
   46
  ],
- "n_open": 30,
+ "n_open": 25,
  "open": [
   {
    "src": "S6",
@@ -29,20 +29,6 @@
    "worst": 0.826,
    "from": "p91",
    "text": "his mothtr. NDAbraham was old, and ofmanie dayes, and our Lord had bleſſed him in al thines."
-  },
-  {
-   "src": "S1",
-   "verse": 3,
-   "worst": 0.88,
-   "from": "p98",
-   "text": "that I may thee by our Lord, God of heauen and earth, that thou and not a wiſe for my ſonne, of the daughters of the Cananites, faith among whom I dwel:"
-  },
-  {
-   "src": "S3",
-   "verse": 9,
-   "worst": 0.898,
-   "from": "p102",
-   "text": "The ſeruant therfore put his hand vnder the of Abraham his lord, and ſware to him vpon this And"
   },
   {
    "src": "S1",
@@ -73,13 +59,6 @@
    "text": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, hands, and had heard al her words reporting Theſe ſpake the man vnto me: he cameo the man which beſide the camels, and nighe to the fountaine of"
   },
   {
-   "src": "S3",
-   "verse": 30,
-   "worst": 0.895,
-   "from": "chapter",
-   "text": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, and had heard al her words reporting Thele ſpake the man vnto me: he cameto the man which beſide the camels, and nighe to the fountaine of"
-  },
-  {
    "src": "S6",
    "verse": 30,
    "worst": 0.899,
@@ -94,24 +73,10 @@
    "text": "and our Lord hath bleſſed my lord fully, and he is magnified : and ke hath geuen him and oxen, ſiluer and gold, men ſeruants and wemen camels, and aſſes."
   },
   {
-   "src": "S3",
-   "verse": 35,
-   "worst": 0.85,
-   "from": "p104",
-   "text": "and our Lord hath bleſſed my lord fully, and he is magnified: and he bath geuen him and oxen, ſiluer and gold, men ſeruants and wemen camels, and aſſes."
-  },
-  {
    "src": "S1",
    "verse": 42,
    "worst": 0.873,
    "from": "p100",
-   "text": "I came therfore to the wel of water, and ſaid : O Lord God of my lord if thou haſt directed my way, wherin I now walke,"
-  },
-  {
-   "src": "S3",
-   "verse": 42,
-   "worst": 0.873,
-   "from": "p104",
    "text": "I came therfore to the wel of water, and ſaid : O Lord God of my lord if thou haſt directed my way, wherin I now walke,"
   },
   {
@@ -131,9 +96,9 @@
   {
    "src": "S3",
    "verse": 45,
-   "worst": 0.723,
+   "worst": 0.804,
    "from": "p104",
-   "text": "And whileſt I theſe things ſecretly with my ſelfe, Rebecca appeared ming with a tankard, which she caried vpon her shoulder and she went downe to the fountaine, & drew"
+   "text": "And whileſt I pondered theſe things ſecretly with my ſelfe, Rebecca appeared comming with a tankard, which she caried vpon her shoulder : and she went downe to the fountaine, & drew water."
   },
   {
    "src": "S9",
@@ -159,9 +124,9 @@
   {
    "src": "S3",
    "verse": 46,
-   "worst": 0.678,
+   "worst": 0.777,
    "from": "chapter",
-   "text": "And I ſaid to her Geue me a litle to drinke. Who delie let downe the tankard from her shoulder, and me Drinke both thou, and to thy camels I wil geue I dranke, and ſhe watered the cammels."
+   "text": "And I ſaid to her Geue me a litle to drinke. Who ſpe-6 delie let downe the tankard from her shoulder, and ſaid to me Drinke both thou, and to thy camels I wil geue drinke. I dranke, and ſhe watered the cammels."
   },
   {
    "src": "S9",
@@ -237,23 +202,23 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "And Abraham was old, and of manie dayes: and Lord had bleſſed him in al things.",
+    "text": "And Abraham was old, and of manie dayes: and our Lord had bleſſed him in al things.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.95,
-     "odr_com": 0.95,
-     "sabates_a": 0.935,
-     "madueke_b": 0.935
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    },
    "S3": {
-    "text": "And Abraham was old, and of manie daves and A Lord had bleſſed him in al things.",
+    "text": "And Abraham was old, and of manie daves and our A Lord had bleſſed him in al things.",
     "from": "p102",
     "score": {
-     "s_dismas": 0.95,
-     "odr_com": 0.95,
-     "sabates_a": 0.935,
-     "madueke_b": 0.935
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
     }
    },
    "S9": {
@@ -321,13 +286,13 @@
   },
   "3": {
    "S1": {
-    "text": "that I may thee by our Lord, God of heauen and earth, that thou and not a wiſe for my ſonne, of the daughters of the Cananites, faith among whom I dwel:",
+    "text": "that I may adiure thee by our Lord, God of heauen and earth, that thou rake and not a wiſe for my ſonne, of the daughters of the Cananites, faith among whom I dwel:",
     "from": "p98",
     "score": {
-     "s_dismas": 0.886,
-     "odr_com": 0.886,
-     "sabates_a": 0.88,
-     "madueke_b": 0.88
+     "s_dismas": 0.924,
+     "odr_com": 0.924,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
     }
    },
    "S3": {
@@ -447,23 +412,23 @@
   },
   "6": {
    "S1": {
-    "text": "And Abraham ſaid Beware thou neuer bring de. ſonne backe againe thither.",
+    "text": "And Abraham ſaid Beware thou neuer bring my de. ſonne backe againe thither.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.971,
-     "odr_com": 0.971,
-     "sabates_a": 0.969,
-     "madueke_b": 0.969
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    },
    "S3": {
-    "text": "And Abraham ſaid Beware thou neuer bring de. ſonne backe againe thither.",
+    "text": "And Abraham ſaid Beware thou neuer bring my de. ſonne backe againe thither.",
     "from": "p102",
     "score": {
-     "s_dismas": 0.971,
-     "odr_com": 0.971,
-     "sabates_a": 0.969,
-     "madueke_b": 0.969
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    },
    "S9": {
@@ -489,23 +454,23 @@
   },
   "7": {
    "S1": {
-    "text": "Our Lord God of heauen, Chri. which tooke me out of my fathers houſe, and out of in natiue countrie, which ſpake to me, and ſware to me, To thy ſede wil I geue this land he ſhal ſend his angel fore thee, and thou ſhalt rake from thence a wife for ſonne",
+    "text": "Our Lord God of heauen, Chri. which tooke me out of my fathers houſe, and out of my in natiue countrie, which ſpake to me, and ſware to me, ſaying: To thy ſede wil I geue this land he ſhal ſend his angel before thee, and thou ſhalt rake from thence a wife for my ſonne",
     "from": "p98",
     "score": {
-     "s_dismas": 0.921,
-     "odr_com": 0.921,
-     "sabates_a": 0.905,
-     "madueke_b": 0.905
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
     }
    },
    "S3": {
-    "text": "Our Lord God of heauen, which tooke me out of my fathers houſe, and out of in natiue countrie, which ſpake to me, and ſware to me, To thy ſede wil I geue this land he ſhal ſend his angel fore thee, and thou ſhalt take from thence a wife for ſonne",
+    "text": "Our Lord God of heauen, which tooke me out of my fathers houſe, and out of my in natiue countrie, which ſpake to me, and ſware to me, ſaying: To thy ſede wil I geue this land he ſhal ſend his angel before thee, and thou ſhalt take from thence a wife for my ſonne",
     "from": "p102",
     "score": {
-     "s_dismas": 0.944,
-     "odr_com": 0.944,
-     "sabates_a": 0.931,
-     "madueke_b": 0.931
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S9": {
@@ -573,23 +538,23 @@
   },
   "9": {
    "S1": {
-    "text": "The ſeruant therfore put his hand vnder the of Abraham his lord, and ſware to him vpon this worde.",
+    "text": "The ſeruant therfore put his hand vnder the thigh of Abraham his lord, and ſware to him vpon this worde.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.941,
-     "odr_com": 0.941,
-     "sabates_a": 0.929,
-     "madueke_b": 0.929
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    },
    "S3": {
-    "text": "The ſeruant therfore put his hand vnder the of Abraham his lord, and ſware to him vpon this And",
+    "text": "The ſeruant therfore put his hand vnder the thigh of Abraham his lord, and ſware to him vpon this worde.",
     "from": "p102",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.898,
-     "madueke_b": 0.898
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    },
    "S9": {
@@ -709,13 +674,13 @@
     }
    },
    "S3": {
-    "text": "O Lord God of my lord Abraham, mete me to I beſeech thee, and doe mercifully with my maiſter Abra ham.",
+    "text": "O Lord God of my lord Abraham, mete me to day, I beſeech thee, and doe mercifully with my maiſter Abra ham.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.951,
-     "odr_com": 0.951,
-     "sabates_a": 0.947,
-     "madueke_b": 0.947
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
     }
    },
    "S9": {
@@ -1465,13 +1430,13 @@
     }
    },
    "S3": {
-    "text": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, and had heard al her words reporting Thele ſpake the man vnto me: he cameto the man which beſide the camels, and nighe to the fountaine of",
+    "text": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, and had heard al her words reporting Thele words ſpake the man vnto me: he cameto the man which ſtoode beſide the camels, and nighe to the fountaine of water:",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.908,
-     "odr_com": 0.908,
-     "sabates_a": 0.895,
-     "madueke_b": 0.895
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S9": {
@@ -1675,13 +1640,13 @@
     }
    },
    "S3": {
-    "text": "and our Lord hath bleſſed my lord fully, and he is magnified: and he bath geuen him and oxen, ſiluer and gold, men ſeruants and wemen camels, and aſſes.",
+    "text": "and our Lord hath bleſſed my lord wonderfully, and he is magnified: and he bath geuen him sheepe, and oxen, ſiluer and gold, men ſeruants and wemen ſeruants, camels, and aſſes.",
     "from": "p104",
     "score": {
-     "s_dismas": 0.863,
-     "odr_com": 0.863,
-     "sabates_a": 0.85,
-     "madueke_b": 0.85
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
     }
    },
    "S9": {
@@ -1969,13 +1934,13 @@
     }
    },
    "S3": {
-    "text": "I came therfore to the wel of water, and ſaid : O Lord God of my lord if thou haſt directed my way, wherin I now walke,",
+    "text": "I came therfore to day to the wel of water, and ſaid : O Lord God of my lord Abraham, if thou haſt directed my way, wherin I now walke,",
     "from": "p104",
     "score": {
-     "s_dismas": 0.884,
-     "odr_com": 0.884,
-     "sabates_a": 0.873,
-     "madueke_b": 0.873
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S9": {
@@ -2011,13 +1976,13 @@
     }
    },
    "S3": {
-    "text": "hold I ſtand beſides the wel of water, and the virgin, shal come forth to drawe water, when ſhe fhal heare ſay: Geue me a litle water to drinke of thy tankard:",
+    "text": "behold I ſtand beſides the wel of water, and the virgin, that shal come forth to drawe water, when ſhe fhal heare me ſay: Geue me a litle water to drinke of thy tankard:",
     "from": "p104",
     "score": {
-     "s_dismas": 0.933,
-     "odr_com": 0.933,
-     "sabates_a": 0.928,
-     "madueke_b": 0.928
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    },
    "S9": {
@@ -2095,13 +2060,13 @@
     }
    },
    "S3": {
-    "text": "And whileſt I theſe things ſecretly with my ſelfe, Rebecca appeared ming with a tankard, which she caried vpon her shoulder and she went downe to the fountaine, & drew",
+    "text": "And whileſt I pondered theſe things ſecretly with my ſelfe, Rebecca appeared comming with a tankard, which she caried vpon her shoulder : and she went downe to the fountaine, & drew water.",
     "from": "p104",
     "score": {
-     "s_dismas": 0.723,
-     "odr_com": 0.723,
-     "sabates_a": 0.86,
-     "madueke_b": 0.86
+     "s_dismas": 0.804,
+     "odr_com": 0.804,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
     }
    },
    "S9": {
@@ -2137,13 +2102,13 @@
     }
    },
    "S3": {
-    "text": "And I ſaid to her Geue me a litle to drinke. Who delie let downe the tankard from her shoulder, and me Drinke both thou, and to thy camels I wil geue I dranke, and ſhe watered the cammels.",
+    "text": "And I ſaid to her Geue me a litle to drinke. Who ſpe-6 delie let downe the tankard from her shoulder, and ſaid to me Drinke both thou, and to thy camels I wil geue drinke. I dranke, and ſhe watered the cammels.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.678,
-     "odr_com": 0.678,
-     "sabates_a": 0.892,
-     "madueke_b": 0.892
+     "s_dismas": 0.777,
+     "odr_com": 0.777,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    },
    "S9": {
@@ -3539,6 +3504,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 268,
- "triage": "R3-READY",
- "secs": 13.4
+ "triage": "SOURCE-SKEW",
+ "secs": 13.3
 }

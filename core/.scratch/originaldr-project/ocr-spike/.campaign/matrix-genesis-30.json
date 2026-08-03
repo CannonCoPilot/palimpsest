@@ -2,17 +2,17 @@
  "chapter": 30,
  "n_verses": 43,
  "n_cells": 172,
- "n_pass": 163,
- "rate": 0.9477,
+ "n_pass": 165,
+ "rate": 0.9593,
  "ref_means": {
-  "s_dismas": 0.9724,
-  "odr_com": 0.9744,
-  "sabates_a": 0.9613,
-  "madueke_b": 0.9613
+  "s_dismas": 0.9772,
+  "odr_com": 0.9792,
+  "sabates_a": 0.9663,
+  "madueke_b": 0.9663
  },
  "src_rates": {
   "S1": 0.9535,
-  "S3": 0.9302,
+  "S3": 0.9767,
   "S9": 0.9535,
   "S6": 0.9535
  },
@@ -20,7 +20,7 @@
  "all_fail": [
   19
  ],
- "n_open": 9,
+ "n_open": 7,
  "open": [
   {
    "src": "S6",
@@ -35,13 +35,6 @@
    "worst": 0.863,
    "from": "chapter",
    "text": "And Rachel ſaid Ous ef Lord hath iudged for me, and hath heard my voice, geumg amom com me a ſonne and therfore she called his name, Dan"
-  },
-  {
-   "src": "S3",
-   "verse": 9,
-   "worst": 0.893,
-   "from": "p122",
-   "text": "Lia ceauing that che had left bearing, deliuered Zelpha handmaid to her huſband."
   },
   {
    "src": "S1",
@@ -70,13 +63,6 @@
    "worst": 0.895,
    "from": "p109",
    "text": "Againe Lia conceauing. bare the ſixt ſonne, 2o. &"
-  },
-  {
-   "src": "S3",
-   "verse": 28,
-   "worst": 0.784,
-   "from": "p122",
-   "text": "appoint thee wages Ishal geue thee."
   },
   {
    "src": "S9",
@@ -383,13 +369,13 @@
   },
   "8": {
    "S1": {
-    "text": "for whom Rachel ſaid: God hath compared me with my ſiſter, I haue preuailed: and she called him Nepthali.",
+    "text": "for whom Rachel ſaid: God hath compared me with my ſiſter, and I haue preuailed: and she called him Nepthali.",
     "from": "p118",
     "score": {
-     "s_dismas": 0.962,
-     "odr_com": 0.962,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    },
    "S3": {
@@ -425,23 +411,23 @@
   },
   "9": {
    "S1": {
-    "text": "Lia ceauing that she had left bearing, deliuered Zelpha handmaid to her huſband.",
+    "text": "Lia perceauing that she had left bearing, deliuered Zelpha her handmaid to her huſband.",
     "from": "p118",
     "score": {
-     "s_dismas": 0.918,
-     "odr_com": 0.918,
-     "sabates_a": 0.905,
-     "madueke_b": 0.905
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S3": {
-    "text": "Lia ceauing that che had left bearing, deliuered Zelpha handmaid to her huſband.",
+    "text": "Lia perceauing that che had left bearing, deliuered Zelpha her handmaid to her huſband.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.906,
-     "odr_com": 0.906,
-     "sabates_a": 0.893,
-     "madueke_b": 0.893
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S9": {
@@ -487,13 +473,13 @@
     }
    },
    "S9": {
-    "text": "Who conceauing and bringing forth a ſonne,",
+    "text": "Who conceauing and brin- ging forth a ſonne,",
     "from": "p128",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.974,
-     "madueke_b": 0.974
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
     }
    },
    "S6": {
@@ -593,13 +579,13 @@
   },
   "13": {
    "S1": {
-    "text": "And Lia ſaid : This is for my bleſſednes : for wemen cal me bleſſed. Therfore she called him, Aſer.",
+    "text": "And Lia ſaid : This is for my bleſſednes : for wemen wil3 cal me bleſſed. Therfore she called him, Aſer.",
     "from": "p118",
     "score": {
-     "s_dismas": 0.958,
-     "odr_com": 0.958,
-     "sabates_a": 0.934,
-     "madueke_b": 0.934
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    },
    "S3": {
@@ -645,13 +631,13 @@
     }
    },
    "S3": {
-    "text": "And Ruben going forth in the time of wheat harueſt into the field, found mandragores: which he brought to his mother Lia. Rachel ſaid: Geue me part of thy ſonnes : mandragores.",
+    "text": "And Ruben going forth in the time of wheat harueſt into the field, found mandragores: which he brought to his mother Lia. And Rachel ſaid: Geue me part of thy ſonnes : mandragores.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.971,
-     "odr_com": 0.977,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S9": {
@@ -677,23 +663,23 @@
   },
   "15": {
    "S1": {
-    "text": "She anſwered : Doeſt thou thinkeit a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take my ſonnes mandragores? Rachel ſaid : For thy ſonnes mandragores ler him ſleepe with thee this night.",
+    "text": "She anſwered : Doeſt thou thinkeit a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take alſo my ſonnes mandragores? Rachel ſaid : For thy ſonnes mandragores ler him ſleepe with thee this night.",
     "from": "p118",
     "score": {
-     "s_dismas": 0.966,
-     "odr_com": 0.966,
-     "sabates_a": 0.938,
-     "madueke_b": 0.938
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
     }
    },
    "S3": {
-    "text": "She anſwered : Doeſt thou thinke it a ſmal matter, thou haſt taken my huſband from me, vnleſſe thou take my ſonnes mandragores? Rachel ſaid: For thy ſonnes mandragores let him ſleepe with thee this night.",
+    "text": "She anſwered : Doeſt thou thinke it a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take alſo my ſonnes mandragores? Rachel ſaid: For thy ſonnes mandragores let him ſleepe with thee this night.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.952,
-     "odr_com": 0.952,
-     "sabates_a": 0.923,
-     "madueke_b": 0.923
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S9": {
@@ -719,13 +705,13 @@
   },
   "16": {
    "S1": {
-    "text": "And when to Iacob returned at euen from the ſield, Lia went out meete him, and ſaid: Companie with me, becauſe with Wages I haue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
+    "text": "And when to Iacob returned at euen from the ſield, Lia went out fo meete him, and ſaid: Companie with me, becauſe with Wages I haue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
     "from": "p118",
     "score": {
-     "s_dismas": 0.964,
-     "odr_com": 0.964,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
     }
    },
    "S3": {
@@ -761,7 +747,7 @@
   },
   "17": {
    "S1": {
-    "text": "And God heard her prayers and she conceaued and bare the fifth ſonne,",
+    "text": "And God heard her prayers : and she conceaued and bare the fifth ſonne,",
     "from": "p118",
     "score": {
      "s_dismas": 1.0,
@@ -771,7 +757,7 @@
     }
    },
    "S3": {
-    "text": "And God heard her prayers and she conceaued and bare the fifth ſonne,",
+    "text": "And God heard her prayers : and she conceaued and bare the fifth ſonne,",
     "from": "p122",
     "score": {
      "s_dismas": 1.0,
@@ -803,23 +789,23 @@
   },
   "18": {
    "S1": {
-    "text": "and ſaid : God hath geuen me a reward, becauſe I gaue my handmaid my huſband. And she called his name Iſſachar.",
+    "text": "and ſaid : God hath geuen me a reward, becauſe I gaue my handmaid to my huſband. And she called his name Iſſachar.",
     "from": "p118",
     "score": {
-     "s_dismas": 0.973,
-     "odr_com": 0.973,
-     "sabates_a": 0.961,
-     "madueke_b": 0.961
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    },
    "S3": {
-    "text": "and ſaid : God hath geuen me a reward, becauſe I gaue my handmaid my huſband. And she called his name Iſſachar.",
+    "text": "and ſaid : God hath geuen me a reward, becauſe I gaue my handmaid to my huſband. And she called his name Iſſachar.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.973,
-     "odr_com": 0.973,
-     "sabates_a": 0.961,
-     "madueke_b": 0.961
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    },
    "S9": {
@@ -897,13 +883,13 @@
     }
    },
    "S3": {
-    "text": "ſaid : God hath endowed me with a good dowrie : this turne alſo my band wil be with me, for becauſe I haue borne him ſonnes, and therfore ſbe called his name, Zabulon.",
+    "text": "ſaid : God hath endowed me with a good dowrie : this turne alſo my huſband wil be with me, for becauſe I haue borne him ſix ſonnes, and therfore ſbe called his name, Zabulon.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.929,
-     "odr_com": 0.929,
-     "sabates_a": 0.934,
-     "madueke_b": 0.934
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
     }
    },
    "S9": {
@@ -1117,13 +1103,13 @@
     }
    },
    "S9": {
-    "text": "And when Ioſeph was borne, Iacob ſaid to his father in lawe : Diſmiſſe me that I may returne into my countrie, and to my Geue",
+    "text": "And when Ioſeph was borne, Iacob ſaid to his father in lawe : Diſmiſſe me that I may returne into my countrie, and to my land.",
     "from": "p128",
     "score": {
-     "s_dismas": 0.967,
-     "odr_com": 0.967,
-     "sabates_a": 0.965,
-     "madueke_b": 0.965
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S6": {
@@ -1149,13 +1135,13 @@
     }
    },
    "S3": {
-    "text": "Geue me my wiues, and my children, for whom I ſerued thee, that I may depart : thou knoweſt the ſeruice that I haue ſerued thee.",
+    "text": "Geue me my wiues, and my children, for whom I haue2 ſerued thee, that I may depart : thou knoweſt the ſeruice that I haue ſerued thee.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.961,
-     "odr_com": 0.961,
-     "sabates_a": 0.958,
-     "madueke_b": 0.958
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
     }
    },
    "S9": {
@@ -1201,13 +1187,13 @@
     }
    },
    "S9": {
-    "text": "Laban ſaid to him: Let me grace in thy ſight : I haue learned by experience, that hath bleſſed me for thy ſake :",
+    "text": "Laban ſaid to him: Let me finde grace in thy ſight : I haue learned by experience, that God hath bleſſed me for thy ſake :",
     "from": "p128",
     "score": {
-     "s_dismas": 0.914,
-     "odr_com": 0.914,
-     "sabates_a": 0.917,
-     "madueke_b": 0.917
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S6": {
@@ -1233,13 +1219,13 @@
     }
    },
    "S3": {
-    "text": "appoint thee wages Ishal geue thee.",
+    "text": "appoint thee wages which8 Ishal geue thee.",
     "from": "p122",
     "score": {
-     "s_dismas": 0.829,
-     "odr_com": 0.829,
-     "sabates_a": 0.784,
-     "madueke_b": 0.784
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
     }
    },
    "S9": {
@@ -1265,33 +1251,33 @@
   },
   "29": {
    "S1": {
-    "text": "But he anſwered Thou knoweſt how haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
+    "text": "But he anſwered Thou knoweſt how I haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.981,
-     "odr_com": 0.981,
-     "sabates_a": 0.979,
-     "madueke_b": 0.979
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
-    "text": "But he anſwered: Thou knoweſt how haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
+    "text": "But he anſwered: Thou knoweſt how I27 haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.981,
-     "odr_com": 0.981,
-     "sabates_a": 0.979,
-     "madueke_b": 0.979
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
-    "text": "But he anſwered Thou knoweſt how haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
+    "text": "But he anſwered Thou knoweſt how I haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.981,
-     "odr_com": 0.981,
-     "sabates_a": 0.979,
-     "madueke_b": 0.979
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S6": {
@@ -1863,13 +1849,13 @@
     }
    },
    "S3": {
-    "text": "And the man was ched beyond meaſure, and he had manie flockes, wemen ſeruantes and men ſeruants, camels and aſſes",
+    "text": "And the man was enriched beyond meaſure, and he had manie flockes, wemen ſeruantes and men ſeruants, camels and aſſes",
     "from": "p124",
     "score": {
-     "s_dismas": 0.965,
-     "odr_com": 0.965,
-     "sabates_a": 0.924,
-     "madueke_b": 0.924
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
     }
    },
    "S9": {
@@ -2216,5 +2202,5 @@
  "blocked_cells": 0,
  "achievable": 172,
  "triage": "R3-READY",
- "secs": 9.2
+ "secs": 9.4
 }

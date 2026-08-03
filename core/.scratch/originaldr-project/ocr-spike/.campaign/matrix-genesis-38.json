@@ -2,23 +2,23 @@
  "chapter": 38,
  "n_verses": 30,
  "n_cells": 120,
- "n_pass": 110,
- "rate": 0.9167,
+ "n_pass": 114,
+ "rate": 0.95,
  "ref_means": {
-  "s_dismas": 0.9736,
-  "odr_com": 0.9745,
-  "sabates_a": 0.9676,
-  "madueke_b": 0.9676
+  "s_dismas": 0.9822,
+  "odr_com": 0.983,
+  "sabates_a": 0.9757,
+  "madueke_b": 0.9757
  },
  "src_rates": {
-  "S1": 0.8333,
-  "S3": 0.9667,
+  "S1": 0.9333,
+  "S3": 1.0,
   "S9": 1.0,
   "S6": 0.8667
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 10,
+ "n_open": 6,
  "open": [
   {
    "src": "S1",
@@ -44,9 +44,9 @@
   {
    "src": "S1",
    "verse": 15,
-   "worst": 0.796,
+   "worst": 0.879,
    "from": "chapter",
-   "text": "Whom when Iudas had ſeene. mamo com ſeene, he ſuppoſed her to be an harlot for she had her face, leſt she should be knowen."
+   "text": "Whom when Iudas had ſeene. mamo com ſeene, he ſuppoſed her to be an harlot for she had couered her face, leſt she should be knowen."
   },
   {
    "src": "S6",
@@ -61,34 +61,6 @@
    "worst": 0.887,
    "from": "chapter",
    "text": "He ſaid I wil ſend thee a kid out ot the flockes. Andwhen ie ſaid againe I wil ſuffer that thou wilt, it thou giue ine a plodge, til thou II2 Toſeph. ſend that which thou doeſt promiſe"
-  },
-  {
-   "src": "S1",
-   "verse": 19,
-   "worst": 0.894,
-   "from": "p140",
-   "text": "and riſing ihe went her way: putring of the apparel which ine had taken, put on the ments of her widowhood."
-  },
-  {
-   "src": "S1",
-   "verse": 20,
-   "worst": 0.887,
-   "from": "p140",
-   "text": "And Iudas ſent kid by shephard the Odolamite, that he might receiue the againe, which he had geuen to the woman : who when had not found her,"
-  },
-  {
-   "src": "S1",
-   "verse": 22,
-   "worst": 0.875,
-   "from": "p140",
-   "text": "He returned to and ſaid to him : I haue not found her: yea the men of that place ſaid vnto me, that there neuer ſate harlot"
-  },
-  {
-   "src": "S3",
-   "verse": 22,
-   "worst": 0.875,
-   "from": "p144",
-   "text": "He returned to and ſaid to him: I haue not found her: yea the men of that place ſaid vnto me, that there neuer ſate harlot"
   }
  ],
  "cellgrid": {
@@ -682,23 +654,23 @@
   },
   "15": {
    "S1": {
-    "text": "Whom when Iudas had ſeene. mamo com ſeene, he ſuppoſed her to be an harlot for she had her face, leſt she should be knowen.",
+    "text": "Whom when Iudas had ſeene. mamo com ſeene, he ſuppoſed her to be an harlot for she had couered her face, leſt she should be knowen.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.807,
-     "odr_com": 0.807,
-     "sabates_a": 0.796,
-     "madueke_b": 0.796
+     "s_dismas": 0.882,
+     "odr_com": 0.882,
+     "sabates_a": 0.879,
+     "madueke_b": 0.879
     }
    },
    "S3": {
-    "text": "Whom when Iudas had ſeene, he ſuppoſed her to be an harlot for she had har- her face, leſt she should be knowen.",
+    "text": "Whom when Iudas had ſeene, he ſuppoſed her to be an harlot for she had couered har- her face, leſt she should be knowen.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.946,
-     "odr_com": 0.946,
-     "sabates_a": 0.931,
-     "madueke_b": 0.931
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
     }
    },
    "S9": {
@@ -786,13 +758,13 @@
     }
    },
    "S9": {
-    "text": "He ſaid : I wil ſend thee a kid out of the flockes. And when ſhe ſaid againe : I wil ſuffer that thou wilt, if thou geue me pledge, til thou ſend that which thou doeſt promiſe:",
+    "text": "He ſaid : I wil ſend thee a kid out of the flockes. And when ſhe ſaid againe : I wil ſuffer that thou wilt, if thou geue me a pledge, til thou ſend that which thou doeſt promiſe:",
     "from": "p152",
     "score": {
-     "s_dismas": 0.988,
-     "odr_com": 0.988,
-     "sabates_a": 0.968,
-     "madueke_b": 0.968
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S6": {
@@ -808,23 +780,23 @@
   },
   "18": {
    "S1": {
-    "text": "Iudas ſaid : What wilt thou to be geuen thee for a pledge? She anſwered : Thy ring, and bracelet, and ſtaffe thou holdeſt in thy hand. The woman therfore by companying conceaued,",
+    "text": "Iudas ſaid : What wilt thou to be geuen thee for a pledge? She anſwered : Thy ring, and bracelet, and ſtaffe which thou holdeſt in thy hand. The woman therfore by once companying conceaued,",
     "from": "p140",
     "score": {
-     "s_dismas": 0.939,
-     "odr_com": 0.939,
-     "sabates_a": 0.924,
-     "madueke_b": 0.924
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S3": {
-    "text": "Iudas ſaid : What wilt thou to be geuen thee for a pledge She anſwered : Thy ring, and bracelet, and ſtaffe thou holdeſt in thy hand. The woman therfore by companying conceaued,",
+    "text": "Iudas ſaid : What wilt thou to be geuen thee for a pledge She anſwered : Thy ring, and bracelet, and ſtaffe which thou holdeſt in thy hand. The woman therfore by once companying conceaued,",
     "from": "p144",
     "score": {
-     "s_dismas": 0.939,
-     "odr_com": 0.939,
-     "sabates_a": 0.924,
-     "madueke_b": 0.924
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S9": {
@@ -850,23 +822,23 @@
   },
   "19": {
    "S1": {
-    "text": "and riſing ihe went her way: putring of the apparel which ine had taken, put on the ments of her widowhood.",
+    "text": "and riſing ihe went her way: and putring of the apparel which ine had taken, put on the garments of her widowhood.",
     "from": "p140",
     "score": {
-     "s_dismas": 0.901,
-     "odr_com": 0.901,
-     "sabates_a": 0.894,
-     "madueke_b": 0.894
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
     }
    },
    "S3": {
-    "text": "and riſing ſhe went her way : putting of the apparel which ine had taken, put on the ments of her widowhood.",
+    "text": "and riſing ſhe went her way : and putting of the apparel which ine had taken, put on the garments of her widowhood.",
     "from": "p144",
     "score": {
-     "s_dismas": 0.919,
-     "odr_com": 0.919,
-     "sabates_a": 0.913,
-     "madueke_b": 0.913
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S9": {
@@ -892,33 +864,33 @@
   },
   "20": {
    "S1": {
-    "text": "And Iudas ſent kid by shephard the Odolamite, that he might receiue the againe, which he had geuen to the woman : who when had not found her,",
+    "text": "And Iudas ſent kid by his shephard the Odolamite, that he might receiue the pledge againe, which he had geuen to the woman : who when he had not found her,",
     "from": "p140",
     "score": {
-     "s_dismas": 0.895,
-     "odr_com": 0.895,
-     "sabates_a": 0.887,
-     "madueke_b": 0.887
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
     }
    },
    "S3": {
-    "text": "And Iudas ſent a kid by shephard the Odolamite, that he might receiue the againe, which he had geuen to the woman : who when had not found her,",
+    "text": "And Iudas ſent a kid by his shephard the Odolamite, that he might receiue the pledge againe, which he had geuen to the woman : who when he had not found her,",
     "from": "p144",
     "score": {
-     "s_dismas": 0.908,
-     "odr_com": 0.908,
-     "sabates_a": 0.901,
-     "madueke_b": 0.901
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S9": {
-    "text": "And Iudas ſent a kid by his shephard the Odolamite, that he might receiue the pledge againe, which he had geuen to the woman : who when had not found her,",
+    "text": "And Iudas ſent a kid by his shephard the Odolamite, that he might receiue the pledge againe, which he had geuen to the woman : who when he had not found her,",
     "from": "p152",
     "score": {
-     "s_dismas": 0.98,
-     "odr_com": 0.98,
-     "sabates_a": 0.972,
-     "madueke_b": 0.972
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S6": {
@@ -944,13 +916,13 @@
     }
    },
    "S3": {
-    "text": "he asked the men of that place: is the woman that ſate in the croſſe way? Al making anſwere: There was no harlot in this place.",
+    "text": "he asked the men of that place: Where is the woman that ſate in the croſſe way? Al making anſwere: There was no harlot in this place.",
     "from": "p144",
     "score": {
-     "s_dismas": 0.954,
-     "odr_com": 0.954,
-     "sabates_a": 0.957,
-     "madueke_b": 0.957
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -976,23 +948,23 @@
   },
   "22": {
    "S1": {
-    "text": "He returned to and ſaid to him : I haue not found her: yea the men of that place ſaid vnto me, that there neuer ſate harlot",
+    "text": "He returned to Iudas, and ſaid to him : I haue not found her: yea the men aho of that place ſaid vnto me, that there neuer ſate harlot there.",
     "from": "p140",
     "score": {
-     "s_dismas": 0.875,
-     "odr_com": 0.875,
-     "sabates_a": 0.875,
-     "madueke_b": 0.875
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S3": {
-    "text": "He returned to and ſaid to him: I haue not found her: yea the men of that place ſaid vnto me, that there neuer ſate harlot",
+    "text": "He returned to Iudas, and ſaid to him: I haue not found her: yea the men aho of that place ſaid vnto me, that there neuer ſate harlot there.",
     "from": "p144",
     "score": {
-     "s_dismas": 0.875,
-     "odr_com": 0.875,
-     "sabates_a": 0.875,
-     "madueke_b": 0.875
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
     }
    },
    "S9": {
@@ -1102,27 +1074,27 @@
   },
   "25": {
    "S1": {
-    "text": "who when was led to execution, she ſent to her ſather in law, ſaying: the By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the ſtaffe.",
+    "text": "who when she was led to execution, she ſent to her ſather in law, ſaying: the By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the ſtaffe.",
     "from": "p140",
     "score": {
-     "s_dismas": 0.949,
-     "odr_com": 0.949,
-     "sabates_a": 0.951,
-     "madueke_b": 0.951
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    },
    "S3": {
-    "text": "Who when was led to execution, she ſent to her father in law, ſaying the By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the",
+    "text": "Who when she was led to execution, she ſent to her father in law, ſaying : the By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the ſtaffe.",
     "from": "p144",
     "score": {
-     "s_dismas": 0.916,
-     "odr_com": 0.916,
-     "sabates_a": 0.926,
-     "madueke_b": 0.926
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S9": {
-    "text": "Who when she was led to execution, she ſent to her father in law, ſaying the By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the ſtaffe",
+    "text": "Who when she was led to execution, she ſent to her father in law, ſaying : the By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the ſtaffe",
     "from": "p152",
     "score": {
      "s_dismas": 0.978,
@@ -1206,13 +1178,13 @@
     }
    },
    "S9": {
-    "text": "And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deliuerie of the infants, one put forth the hand, wherin midwife tyed a ſkarlet ſtring, ſaying :",
+    "text": "And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deliuerie of the infants, one put forth the hand, wherin the midwife tyed a ſkarlet ſtring, ſaying :",
     "from": "p152",
     "score": {
-     "s_dismas": 0.979,
-     "odr_com": 0.979,
-     "sabates_a": 0.966,
-     "madueke_b": 0.966
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S6": {
@@ -1270,7 +1242,7 @@
   },
   "29": {
    "S1": {
-    "text": "But he drawing backe his hand, the ther came forth: and the woman ſaid : why is the partition diuided for thee? and for this cauſe ca led his name Phares.",
+    "text": "But he drawing backe his hand, the o29 ther came forth: and the woman ſaid : why is the partition diuided for thee? and for this cauſe ca led his name Phares.",
     "from": "p140",
     "score": {
      "s_dismas": 0.987,
@@ -1280,7 +1252,7 @@
     }
    },
    "S3": {
-    "text": "But he drawing backe his hand, the ther came forth: and the woman ſaid : Why is the partition diuided for thee? and for this cauſe called his name Phares.",
+    "text": "But he drawing backe his hand, the o ther came forth: and the woman ſaid : Why is the partition diuided for thee? and for this cauſe called his name Phares.",
     "from": "p144",
     "score": {
      "s_dismas": 0.993,
@@ -1290,7 +1262,7 @@
     }
    },
    "S9": {
-    "text": "But he drawing backe his hand, the ther came forth: and the woman ſaid : Why is the partition diuided for thee? and for this cauſe called his name Phares.",
+    "text": "But he drawing backe his hand, the o29 ther came forth: and the woman ſaid : Why is the partition diuided for thee? and for this cauſe called his name Phares.",
     "from": "p152",
     "score": {
      "s_dismas": 0.993,
@@ -1312,23 +1284,23 @@
   },
   "30": {
    "S1": {
-    "text": "Afterward his brother came forth, in whoſe hand was ſkarelet ſtring : whom she called Zara.",
+    "text": "Afterward his brother came forth, in whoſe hand was the ſkarelet ſtring : whom she called Zara.",
     "from": "p140",
     "score": {
-     "s_dismas": 0.944,
-     "odr_com": 0.956,
-     "sabates_a": 0.941,
-     "madueke_b": 0.941
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
     }
    },
    "S3": {
-    "text": "Afterward his brother came forth, in whoſe hand was ſkar eler ſtring : whom she called Zara.",
+    "text": "Afterward his brother came forth, in whoſe hand was the ſkar eler ſtring : whom she called Zara.",
     "from": "p144",
     "score": {
-     "s_dismas": 0.922,
-     "odr_com": 0.934,
-     "sabates_a": 0.918,
-     "madueke_b": 0.918
+     "s_dismas": 0.967,
+     "odr_com": 0.978,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
     }
    },
    "S9": {

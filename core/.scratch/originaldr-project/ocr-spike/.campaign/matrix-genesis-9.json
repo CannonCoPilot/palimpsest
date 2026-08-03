@@ -2,23 +2,23 @@
  "chapter": 9,
  "n_verses": 29,
  "n_cells": 116,
- "n_pass": 106,
- "rate": 0.9138,
+ "n_pass": 108,
+ "rate": 0.931,
  "ref_means": {
-  "s_dismas": 0.9685,
-  "odr_com": 0.9687,
-  "sabates_a": 0.9556,
-  "madueke_b": 0.9556
+  "s_dismas": 0.9708,
+  "odr_com": 0.971,
+  "sabates_a": 0.9581,
+  "madueke_b": 0.9581
  },
  "src_rates": {
-  "S1": 0.8966,
+  "S1": 0.9655,
   "S3": 0.9655,
   "S9": 0.8621,
   "S6": 0.931
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 10,
+ "n_open": 8,
  "open": [
   {
    "src": "S9",
@@ -35,18 +35,11 @@
    "text": "Sauing that fleſh with bloud not eate."
   },
   {
-   "src": "S1",
-   "verse": 6,
-   "worst": 0.871,
-   "from": "p58",
-   "text": "Who ſoeuer ſheed mans bloud, his bloud ſhal be ibed : for to the image of God man was made."
-  },
-  {
    "src": "S3",
    "verse": 6,
-   "worst": 0.835,
+   "worst": 0.871,
    "from": "p62",
-   "text": "Who ſoeuer ſheed mans bloud, his bloud ſhal be ibed : for to the image God man was made."
+   "text": "ſoeuer ſhal ſheed mans bloud, his bloud ſhal be ibed : for to the image God man was made."
   },
   {
    "src": "S9",
@@ -77,13 +70,6 @@
    "text": "and I ſhal remember my couenant with you, and in more with euerie liuing ſoule floud, that beareth flesh: and there ſhal no be warers of a to diſtroy al flesh."
   },
   {
-   "src": "S1",
-   "verse": 16,
-   "worst": 0.891,
-   "from": "chapter",
-   "text": "And bowe ſhal be in the cloudes, and I ſhal ſee it, and ſhal memher the euerlaſting couenant, that was made berwen God, com God and euerie liuing ſoule of al fleth which is vpon the: earth."
-  },
-  {
    "src": "S6",
    "verse": 29,
    "worst": 0.892,
@@ -94,23 +80,23 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "and God bleſſed Noe and his ſonnes. And he ſaid A them: Increaſe, multiplie, and replenish the earth. or",
+    "text": "and God bleſſed Noe and his ſonnes. And he ſaid to A them: Increaſe, multiplie, and replenish the earth. or",
     "from": "p58",
     "score": {
-     "s_dismas": 0.95,
-     "odr_com": 0.95,
-     "sabates_a": 0.935,
-     "madueke_b": 0.935
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
     }
    },
    "S3": {
-    "text": "and God bleſſed Noe and his ſonnes. And he ſaid A them: Increaſe, multiplie, and replenish the earth. or",
+    "text": "and God bleſſed Noe and his ſonnes. And he ſaid to A them: Increaſe, multiplie, and replenish the earth. or",
     "from": "p62",
     "score": {
-     "s_dismas": 0.95,
-     "odr_com": 0.95,
-     "sabates_a": 0.935,
-     "madueke_b": 0.935
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
     }
    },
    "S9": {
@@ -136,13 +122,13 @@
   },
   "2": {
    "S1": {
-    "text": "And your terror and dread be it vpon al the beaſts of earth, and vpon al the foules of the ayre, with al that moue vpon the earth al the fishes of the ſea are deliuered to your hand.",
+    "text": "And your terror and dread be it vpon al the beaſts of the earth, and vpon al the foules of the ayre, with al that moue vpon the earth al the fishes of the ſea are deliuered to your hand.",
     "from": "p58",
     "score": {
-     "s_dismas": 0.978,
-     "odr_com": 0.978,
-     "sabates_a": 0.971,
-     "madueke_b": 0.971
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S3": {
@@ -188,13 +174,13 @@
     }
    },
    "S3": {
-    "text": "And al that moueth, and liueth ſhal be yours meat euen as the grene herbes haue I deliuered al to you.",
+    "text": "And al that moueth, and liueth ſhal be yours for meat euen as the grene herbes haue I deliuered al to you.",
     "from": "p62",
     "score": {
-     "s_dismas": 0.962,
-     "odr_com": 0.962,
-     "sabates_a": 0.95,
-     "madueke_b": 0.95
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    },
    "S9": {
@@ -304,23 +290,23 @@
   },
   "6": {
    "S1": {
-    "text": "Who ſoeuer ſheed mans bloud, his bloud ſhal be ibed : for to the image of God man was made.",
+    "text": "Who ſoeuer ſhal6 ſheed mans bloud, his bloud ſhal be ibed : for to the image of God man was made.",
     "from": "p58",
     "score": {
-     "s_dismas": 0.924,
-     "odr_com": 0.924,
-     "sabates_a": 0.871,
-     "madueke_b": 0.871
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
     }
    },
    "S3": {
-    "text": "Who ſoeuer ſheed mans bloud, his bloud ſhal be ibed : for to the image God man was made.",
+    "text": "ſoeuer ſhal ſheed mans bloud, his bloud ſhal be ibed : for to the image God man was made.",
     "from": "p62",
     "score": {
-     "s_dismas": 0.891,
-     "odr_com": 0.891,
-     "sabates_a": 0.835,
-     "madueke_b": 0.835
+     "s_dismas": 0.902,
+     "odr_com": 0.902,
+     "sabates_a": 0.871,
+     "madueke_b": 0.871
     }
    },
    "S9": {
@@ -472,23 +458,23 @@
   },
   "10": {
    "S1": {
-    "text": "and with euerie liuing ſoule, that with you, as wel in al foules as in cattle heaſts of the earth that are come forth our of the arke, and in al beaſts of earth.",
+    "text": "and with euerie liuing ſoule, that iso with you, as wel in al foules as in cattle heaſts of the earth that are come forth our of the arke, and in al beaſts of the earth.",
     "from": "p58",
     "score": {
-     "s_dismas": 0.945,
-     "odr_com": 0.945,
-     "sabates_a": 0.935,
-     "madueke_b": 0.935
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
     }
    },
    "S3": {
-    "text": "and with euerie liuing ſoule, that with you, as wel in al foules as in cattle beaſts of the earth that are come forth out of the arke, and in al beaſts of earth.",
+    "text": "and with euerie liuing ſoule, that is with you, as wel in al foules as in cattle beaſts of the earth that are come forth out of the arke, and in al beaſts of the earth.",
     "from": "p62",
     "score": {
-     "s_dismas": 0.957,
-     "odr_com": 0.957,
-     "sabates_a": 0.948,
-     "madueke_b": 0.948
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    },
    "S9": {
@@ -566,13 +552,13 @@
     }
    },
    "S3": {
-    "text": "And God ſaid This is the ſigno of the couenant which geue betwen me and you, and betwen euerie liuing ſoule, as that is with you, for perpetual generations",
+    "text": "And God ſaid This is the ſigno of the couenant which I geue betwen me and you, and betwen euerie liuing ſoule, as that is with you, for perpetual generations",
     "from": "p62",
     "score": {
-     "s_dismas": 0.961,
-     "odr_com": 0.961,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
     }
    },
    "S9": {
@@ -692,13 +678,13 @@
     }
    },
    "S3": {
-    "text": "and I ſhal remember my oouenant with you, with euerie liuing ſoule that beareth flesh and there ſhal no in more be waters of a floud, to diſtroy al flesh.",
+    "text": "and I ſhal remember my oouenant with you, andry with euerie liuing ſoule that beareth flesh and there ſhal no in more be waters of a floud, to diſtroy al flesh.",
     "from": "p62",
     "score": {
-     "s_dismas": 0.947,
-     "odr_com": 0.947,
-     "sabates_a": 0.931,
-     "madueke_b": 0.931
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
     }
    },
    "S9": {
@@ -724,13 +710,13 @@
   },
   "16": {
    "S1": {
-    "text": "And bowe ſhal be in the cloudes, and I ſhal ſee it, and ſhal memher the euerlaſting couenant, that was made berwen God, com God and euerie liuing ſoule of al fleth which is vpon the: earth.",
+    "text": "And my. bowe ſhal be in the cloudes, and I ſhal ſee it, and ſhal rememher the euerlaſting couenant, that was made berwen God, com God and euerie liuing ſoule of al fleth which is vpon the: earth.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.891,
-     "madueke_b": 0.891
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.922,
+     "madueke_b": 0.922
     }
    },
    "S3": {
@@ -1535,5 +1521,5 @@
  "blocked_cells": 0,
  "achievable": 116,
  "triage": "SOURCE-SKEW",
- "secs": 6.0
+ "secs": 5.9
 }

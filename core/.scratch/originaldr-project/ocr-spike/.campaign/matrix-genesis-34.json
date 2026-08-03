@@ -2,65 +2,37 @@
  "chapter": 34,
  "n_verses": 31,
  "n_cells": 124,
- "n_pass": 114,
- "rate": 0.9194,
+ "n_pass": 118,
+ "rate": 0.9516,
  "ref_means": {
-  "s_dismas": 0.9764,
-  "odr_com": 0.9773,
-  "sabates_a": 0.9664,
-  "madueke_b": 0.966
+  "s_dismas": 0.9815,
+  "odr_com": 0.9823,
+  "sabates_a": 0.9711,
+  "madueke_b": 0.9707
  },
  "src_rates": {
-  "S1": 0.871,
-  "S3": 0.871,
+  "S1": 0.9355,
+  "S3": 0.9355,
   "S9": 1.0,
   "S6": 0.9355
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 10,
+ "n_open": 6,
  "open": [
   {
    "src": "S1",
    "verse": 3,
-   "worst": 0.833,
+   "worst": 0.866,
    "from": "p128",
-   "text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes."
+   "text": "And his ſoule humi- de was faſt kint vnto her, and wheras ine was ſad, he comforted her with ſweete wordes."
   },
   {
    "src": "S3",
    "verse": 3,
-   "worst": 0.833,
+   "worst": 0.866,
    "from": "p132",
-   "text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes."
-  },
-  {
-   "src": "S1",
-   "verse": 7,
-   "worst": 0.869,
-   "from": "p128",
-   "text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and committed an vnlavful ſact, in rauiſhing Iacobs ter"
-  },
-  {
-   "src": "S3",
-   "verse": 7,
-   "worst": 0.869,
-   "from": "p132",
-   "text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and commitred an vnlawful fact, in raui ſhing Iacobs ter."
-  },
-  {
-   "src": "S1",
-   "verse": 8,
-   "worst": 0.886,
-   "from": "chapter",
-   "text": "Hemor therfore ſpake to them: The ſoule of my Sichem is faſtued to your daughter Geue her vnto him mammc wife:"
-  },
-  {
-   "src": "S3",
-   "verse": 8,
-   "worst": 0.895,
-   "from": "chapter",
-   "text": "Hemor therfore ſpake to them: The ſoule of my Sichem is ſaſtned to your daughter Geue her vnto him wife:"
+   "text": "And his ſoule humi- de was faſt kint vnto her, and wheras ine was ſad, he comforted her with ſweete wordes."
   },
   {
    "src": "S6",
@@ -94,23 +66,23 @@
  "cellgrid": {
   "1": {
    "S1": {
-    "text": "And Dina the daughter of Lia went forth to ſee A wemen of that countrie.",
+    "text": "And Dina the daughter of Lia went forth to ſee the A wemen of that countrie.",
     "from": "p128",
     "score": {
-     "s_dismas": 0.959,
-     "odr_com": 0.959,
-     "sabates_a": 0.957,
-     "madueke_b": 0.957
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
     }
    },
    "S3": {
-    "text": "And Dina the daughter of Lia went forth to ſee A wemen of that countrie.",
+    "text": "And Dina the daughter of Lia went forth to ſee the A wemen of that countrie.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.959,
-     "odr_com": 0.959,
-     "sabates_a": 0.957,
-     "madueke_b": 0.957
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
     }
    },
    "S9": {
@@ -136,13 +108,13 @@
   },
   "2": {
    "S1": {
-    "text": "Whom when Sichem ſee ſeene the ſonne of Hemor the Heuite, the prince of ofa land, he was in loue with her and he tooke her away, Iay with her, by force raui ſhing the virgin.",
+    "text": "Whom when Sichem had ſee ſeene the ſonne of Hemor the Heuite, the prince of that ofa land, he was in loue with her and he tooke her away, and Iay with her, by force raui ſhing the virgin.",
     "from": "p128",
     "score": {
-     "s_dismas": 0.931,
-     "odr_com": 0.931,
-     "sabates_a": 0.924,
-     "madueke_b": 0.912
+     "s_dismas": 0.945,
+     "odr_com": 0.945,
+     "sabates_a": 0.946,
+     "madueke_b": 0.933
     }
    },
    "S3": {
@@ -178,23 +150,23 @@
   },
   "3": {
    "S1": {
-    "text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes.",
+    "text": "And his ſoule humi- de was faſt kint vnto her, and wheras ine was ſad, he comforted her with ſweete wordes.",
     "from": "p128",
     "score": {
-     "s_dismas": 0.863,
-     "odr_com": 0.884,
-     "sabates_a": 0.833,
-     "madueke_b": 0.833
+     "s_dismas": 0.883,
+     "odr_com": 0.903,
+     "sabates_a": 0.866,
+     "madueke_b": 0.866
     }
    },
    "S3": {
-    "text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes.",
+    "text": "And his ſoule humi- de was faſt kint vnto her, and wheras ine was ſad, he comforted her with ſweete wordes.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.863,
-     "odr_com": 0.884,
-     "sabates_a": 0.833,
-     "madueke_b": 0.833
+     "s_dismas": 0.883,
+     "odr_com": 0.903,
+     "sabates_a": 0.866,
+     "madueke_b": 0.866
     }
    },
    "S9": {
@@ -262,23 +234,23 @@
   },
   "5": {
    "S1": {
-    "text": "Which when Iacob had heard, his ſonnes beingabſent, and occupied in feeding of the cattle, he held his peace they returned.",
+    "text": "Which when Iacob had heard, his ſonnes beingabſent, and occupied in feeding of the cattle, he held his peace til they returned.",
     "from": "p128",
     "score": {
-     "s_dismas": 0.96,
-     "odr_com": 0.96,
-     "sabates_a": 0.948,
-     "madueke_b": 0.948
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S3": {
-    "text": "Which when Iacob had heard, his ſonnes beingabſent, and occupied in feeding of the cattle, he held his peace they returned.",
+    "text": "Which when Iacob had heard, his ſonnes beingabſent, and occupied in feeding of the cattle, he held his peace til they returned.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.96,
-     "odr_com": 0.96,
-     "sabates_a": 0.948,
-     "madueke_b": 0.948
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S9": {
@@ -346,23 +318,23 @@
   },
   "7": {
    "S1": {
-    "text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and committed an vnlavful ſact, in rauiſhing Iacobs ter",
+    "text": "behold his ſonnes came out of the field: and hearing what had paſſed, they were paſſing wrath, becauſe he had done a foule thing in Iſrael, and committed an vnlavful ſact, in rauiſhing Iacobs daughter",
     "from": "p128",
     "score": {
-     "s_dismas": 0.877,
-     "odr_com": 0.877,
-     "sabates_a": 0.869,
-     "madueke_b": 0.869
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    },
    "S3": {
-    "text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and commitred an vnlawful fact, in raui ſhing Iacobs ter.",
+    "text": "behold his ſonnes came out of the field: and hearing what had paſſed, they were paſſing wrath, becauſe he had done a foule thing in Iſrael, and commitred an vnlawful fact, in raui ſhing Iacobs daughter.",
     "from": "p132",
     "score": {
-     "s_dismas": 0.877,
-     "odr_com": 0.877,
-     "sabates_a": 0.869,
-     "madueke_b": 0.869
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    },
    "S9": {
@@ -388,23 +360,23 @@
   },
   "8": {
    "S1": {
-    "text": "Hemor therfore ſpake to them: The ſoule of my Sichem is faſtued to your daughter Geue her vnto him mammc wife:",
-    "from": "chapter",
+    "text": "Hemor therfore ſpake to them: The ſoule of my ſonne Sichem is faſtued to your daughter : Geue her vnto him o wife:",
+    "from": "p128",
     "score": {
-     "s_dismas": 0.892,
-     "odr_com": 0.892,
-     "sabates_a": 0.886,
-     "madueke_b": 0.886
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
     }
    },
    "S3": {
-    "text": "Hemor therfore ſpake to them: The ſoule of my Sichem is ſaſtned to your daughter Geue her vnto him wife:",
+    "text": "Hemor therfore ſpake to them: The ſoule of my ſonne Sichem is ſaſtned to your daughter Geue her vnto him to wife:",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.91,
-     "odr_com": 0.91,
-     "sabates_a": 0.895,
-     "madueke_b": 0.895
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
     }
    },
    "S9": {
@@ -1364,13 +1336,13 @@
     }
    },
    "S3": {
-    "text": "They anſwered What ſhould abuſe our ſiſter as a ſtrumpet?",
+    "text": "They anſwered What ſhould they abuſe our ſiſter as a ſtrumpet?",
     "from": "p134",
     "score": {
-     "s_dismas": 0.918,
-     "odr_com": 0.918,
-     "sabates_a": 0.917,
-     "madueke_b": 0.917
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -1632,6 +1604,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 124,
- "triage": "SOURCE-SKEW",
- "secs": 6.5
+ "triage": "R3-READY",
+ "secs": 6.6
 }

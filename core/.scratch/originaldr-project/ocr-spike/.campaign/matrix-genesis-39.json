@@ -2,23 +2,23 @@
  "chapter": 39,
  "n_verses": 23,
  "n_cells": 92,
- "n_pass": 81,
- "rate": 0.8804,
+ "n_pass": 86,
+ "rate": 0.9348,
  "ref_means": {
-  "s_dismas": 0.9598,
-  "odr_com": 0.96,
-  "sabates_a": 0.9502,
-  "madueke_b": 0.9502
+  "s_dismas": 0.9676,
+  "odr_com": 0.9678,
+  "sabates_a": 0.957,
+  "madueke_b": 0.957
  },
  "src_rates": {
-  "S1": 0.7826,
-  "S3": 0.8696,
+  "S1": 0.8696,
+  "S3": 1.0,
   "S9": 0.913,
   "S6": 0.9565
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 11,
+ "n_open": 6,
  "open": [
   {
    "src": "S1",
@@ -30,9 +30,9 @@
   {
    "src": "S1",
    "verse": 9,
-   "worst": 0.851,
+   "worst": 0.897,
    "from": "chapter",
-   "text": "is there any thing which acm which is not in my power, or that he hath not deliuered me, beſide thee, that art his wife how therfore can this wicked thing, and ſinne againſt my God"
+   "text": "is there any thing which acm which is not in my power, or that he hath not deliuered to me, beſide thee, that art his wife how therfore can I do this wicked thing, and ſinne againſt my God"
   },
   {
    "src": "S9",
@@ -40,27 +40,6 @@
    "worst": 0.782,
    "from": "chapter",
    "text": "neither is there any thing hath deliuered to which is not in my power, or that he not I do me, beſide thee, that art his wife how therfore can this wicked thing, and ſinne againſt my God"
-  },
-  {
-   "src": "S3",
-   "verse": 12,
-   "worst": 0.897,
-   "from": "p146",
-   "text": "and ſhe catching the ſkirte of his garment, Sleepe with me. who Ieauing the cloke in her hand, and went forth abroad."
-  },
-  {
-   "src": "S1",
-   "verse": 16,
-   "worst": 0.897,
-   "from": "p142",
-   "text": "an argument therfore of her credite, ſhe reſerued the and ſhewed it to her, huſband returning home,"
-  },
-  {
-   "src": "S3",
-   "verse": 16,
-   "worst": 0.897,
-   "from": "p146",
-   "text": "an argument therfore of her credite, ſhe reſerued the and ſhewed it to her huſband returning home,"
   },
   {
    "src": "S6",
@@ -72,30 +51,16 @@
   {
    "src": "S1",
    "verse": 21,
-   "worst": 0.899,
+   "worst": 0.871,
    "from": "p142",
-   "text": "And our Lord was wirh ioſeph, witb in hauing mercie vponhim gaue him grace in the ſight of then chiefe of the priſon."
+   "text": "And our Lord was wirh ioſeph, and witb in hauing mercie vponhim gaue him grace in the ſight of the then chiefe of the priſon."
   },
   {
    "src": "S9",
    "verse": 21,
-   "worst": 0.899,
+   "worst": 0.871,
    "from": "p154",
-   "text": "And our Lord was with loſeph, with hauing mercie vpon him gaue him grace in the ſight of in then chiefe of the prion."
-  },
-  {
-   "src": "S1",
-   "verse": 23,
-   "worst": 0.897,
-   "from": "p142",
-   "text": "Neyther did himſelſe knowe any hauing committed al things to him : for our Lord was him, and directed al his workes."
-  },
-  {
-   "src": "S3",
-   "verse": 23,
-   "worst": 0.897,
-   "from": "p146",
-   "text": "Neyther did himſelſe knowe any hauing committed al things to him: for our Lord was him, and directed al his workes."
+   "text": "And our Lord was with loſeph, and with hauing mercie vpon him gaue him grace in the ſight of the in then chiefe of the prion."
   }
  ],
  "cellgrid": {
@@ -437,23 +402,23 @@
   },
   "9": {
    "S1": {
-    "text": "is there any thing which acm which is not in my power, or that he hath not deliuered me, beſide thee, that art his wife how therfore can this wicked thing, and ſinne againſt my God",
+    "text": "is there any thing which acm which is not in my power, or that he hath not deliuered to me, beſide thee, that art his wife how therfore can I do this wicked thing, and ſinne againſt my God",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.857,
-     "odr_com": 0.857,
-     "sabates_a": 0.851,
-     "madueke_b": 0.851
+     "s_dismas": 0.902,
+     "odr_com": 0.902,
+     "sabates_a": 0.897,
+     "madueke_b": 0.897
     }
    },
    "S3": {
-    "text": "is there any thing which is not in my power, or that he hath not deliuered me, beſide thee, that art his wife how therfore can this wicked thing, and ſinne againſt my God",
+    "text": "is there any thing which is not in my power, or that he hath not deliuered to. me, beſide thee, that art his wife how therfore can I do this wicked thing, and ſinne againſt my God",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.912,
-     "odr_com": 0.912,
-     "sabates_a": 0.902,
-     "madueke_b": 0.902
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
     }
    },
    "S9": {
@@ -563,23 +528,23 @@
   },
   "12": {
    "S1": {
-    "text": "and ſhe catching the ſkirte of his garment, Sleepe with me. who leauing the cloke in her hand, and went forth abroad.",
+    "text": "and ſhe catching the ſkirte of his garment, ſaid: Sleepe with me. who leauing the cloke in her hand, fled, and went forth abroad.",
     "from": "p142",
     "score": {
-     "s_dismas": 0.919,
-     "odr_com": 0.919,
-     "sabates_a": 0.905,
-     "madueke_b": 0.905
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S3": {
-    "text": "and ſhe catching the ſkirte of his garment, Sleepe with me. who Ieauing the cloke in her hand, and went forth abroad.",
+    "text": "and ſhe catching the ſkirte of his garment, ſaid Sleepe with me. who Ieauing the cloke in her hand, fled, and went forth abroad.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.911,
-     "odr_com": 0.911,
-     "sabates_a": 0.897,
-     "madueke_b": 0.897
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    },
    "S9": {
@@ -731,33 +696,33 @@
   },
   "16": {
    "S1": {
-    "text": "an argument therfore of her credite, ſhe reſerued the and ſhewed it to her, huſband returning home,",
+    "text": "For an argument therfore of her credite, ſhe reſerued the cloake, and ſhewed it to her, huſband returning home,",
     "from": "p142",
     "score": {
-     "s_dismas": 0.897,
-     "odr_com": 0.897,
-     "sabates_a": 0.898,
-     "madueke_b": 0.898
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
     }
    },
    "S3": {
-    "text": "an argument therfore of her credite, ſhe reſerued the and ſhewed it to her huſband returning home,",
+    "text": "For an argument therfore of her credite, ſhe reſerued the cloake, and ſhewed it to her huſband returning home,",
     "from": "p146",
     "score": {
-     "s_dismas": 0.897,
-     "odr_com": 0.897,
-     "sabates_a": 0.898,
-     "madueke_b": 0.898
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
     }
    },
    "S9": {
-    "text": "an argument therfore of her credite, ſhe reſerued the cloake, and ſhewed it to her huſband returning home,",
+    "text": "For an argument therfore of her credite, ſhe reſerued the cloake, and ſhewed it to her huſband returning home,",
     "from": "p154",
     "score": {
-     "s_dismas": 0.963,
-     "odr_com": 0.963,
-     "sabates_a": 0.908,
-     "madueke_b": 0.908
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
     }
    },
    "S6": {
@@ -815,33 +780,33 @@
   },
   "18": {
    "S1": {
-    "text": "and when he heard crie, he left the cloke which I held, and fled forth.",
+    "text": "and when he heard me crie, he left the cloke which I held, and fled forth.",
     "from": "p142",
     "score": {
-     "s_dismas": 0.958,
-     "odr_com": 0.958,
-     "sabates_a": 0.955,
-     "madueke_b": 0.955
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S3": {
-    "text": "and when he heard crie, he left the cloke which I held, and fled forth.",
+    "text": "and when he heard me crie, he left the cloke which I held, and fled forth.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.958,
-     "odr_com": 0.958,
-     "sabates_a": 0.955,
-     "madueke_b": 0.955
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S9": {
-    "text": "and when he heard crie, he left the cloke which I held, and fled forth.",
+    "text": "and when he heard me crie, he left the cloke which I held, and fled forth.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.958,
-     "odr_com": 0.958,
-     "sabates_a": 0.955,
-     "madueke_b": 0.955
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S6": {
@@ -899,33 +864,33 @@
   },
   "20": {
    "S1": {
-    "text": "and deliuered Ioſeph into priſon, where the kinges priſoners were kept, and more was there ſhut vp.",
+    "text": "and deliuered Ioſeph into priſon, where the kinges priſoners were kept, and he more was there ſhut vp.",
     "from": "p142",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.969,
-     "sabates_a": 0.956,
-     "madueke_b": 0.956
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
     }
    },
    "S3": {
-    "text": "and deliuered Ioſeph into priſon, where the kinges priſoners were kept, and more was there ſhut vp.",
+    "text": "and deliuered Ioſeph into priſon, where the kinges priſoners were kept, and he more was there ſhut vp.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.969,
-     "sabates_a": 0.956,
-     "madueke_b": 0.956
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
     }
    },
    "S9": {
-    "text": "†and deliuered Ioſeph into priſon, where the kinges priſoners were kept, and more was there ſhut vp.",
+    "text": "†and deliuered Ioſeph into priſon, where the kinges priſoners were kept, and he more was there ſhut vp.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.969,
-     "sabates_a": 0.956,
-     "madueke_b": 0.956
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
     }
    },
    "S6": {
@@ -941,13 +906,13 @@
   },
   "21": {
    "S1": {
-    "text": "And our Lord was wirh ioſeph, witb in hauing mercie vponhim gaue him grace in the ſight of then chiefe of the priſon.",
+    "text": "And our Lord was wirh ioſeph, and witb in hauing mercie vponhim gaue him grace in the ſight of the then chiefe of the priſon.",
     "from": "p142",
     "score": {
-     "s_dismas": 0.913,
-     "odr_com": 0.913,
-     "sabates_a": 0.899,
-     "madueke_b": 0.899
+     "s_dismas": 0.878,
+     "odr_com": 0.878,
+     "sabates_a": 0.871,
+     "madueke_b": 0.871
     }
    },
    "S3": {
@@ -961,13 +926,13 @@
     }
    },
    "S9": {
-    "text": "And our Lord was with loſeph, with hauing mercie vpon him gaue him grace in the ſight of in then chiefe of the prion.",
+    "text": "And our Lord was with loſeph, and with hauing mercie vpon him gaue him grace in the ſight of the in then chiefe of the prion.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.913,
-     "odr_com": 0.913,
-     "sabates_a": 0.899,
-     "madueke_b": 0.899
+     "s_dismas": 0.878,
+     "odr_com": 0.878,
+     "sabates_a": 0.871,
+     "madueke_b": 0.871
     }
    },
    "S6": {
@@ -993,23 +958,23 @@
     }
    },
    "S3": {
-    "text": "Who deliuered in his hand al the ſoners that were kept in cuſtodie: and whatſoeuer was de was vnder him.",
+    "text": "Who deliuered in his hand al the priſoners that were kept in cuſtodie: and whatſoeuer was done, de was vnder him.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.953,
-     "odr_com": 0.953,
-     "sabates_a": 0.952,
-     "madueke_b": 0.952
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S9": {
-    "text": "Who deliuered in his hand al the ſoners that were kept in cuſtodie: and whatſoeuer was done, Ii. de was vnder him.",
+    "text": "Who deliuered in his hand al the pri-22 ſoners that were kept in cuſtodie: and whatſoeuer was done, Ii. de was vnder him.",
     "from": "p154",
     "score": {
-     "s_dismas": 0.918,
-     "odr_com": 0.918,
-     "sabates_a": 0.933,
-     "madueke_b": 0.933
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
     }
    },
    "S6": {
@@ -1025,23 +990,23 @@
   },
   "23": {
    "S1": {
-    "text": "Neyther did himſelſe knowe any hauing committed al things to him : for our Lord was him, and directed al his workes.",
+    "text": "Neyther did himſelſe knowe any thing, hauing committed al things to him : for our Lord was with him, and directed al his workes.",
     "from": "p142",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.897,
-     "madueke_b": 0.897
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
     }
    },
    "S3": {
-    "text": "Neyther did himſelſe knowe any hauing committed al things to him: for our Lord was him, and directed al his workes.",
+    "text": "Neyther did himſelſe knowe any thing, hauing committed al things to him: for our Lord was with him, and directed al his workes.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.897,
-     "madueke_b": 0.897
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
     }
    },
    "S9": {
@@ -1248,5 +1213,5 @@
  "blocked_cells": 0,
  "achievable": 92,
  "triage": "SOURCE-SKEW",
- "secs": 5.2
+ "secs": 5.4
 }

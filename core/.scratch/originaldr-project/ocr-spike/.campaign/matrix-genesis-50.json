@@ -5,10 +5,10 @@
  "n_pass": 91,
  "rate": 0.91,
  "ref_means": {
-  "s_dismas": 0.9723,
-  "odr_com": 0.973,
-  "sabates_a": 0.9553,
-  "madueke_b": 0.9528
+  "s_dismas": 0.9726,
+  "odr_com": 0.9733,
+  "sabates_a": 0.9556,
+  "madueke_b": 0.9531
  },
  "src_rates": {
   "S1": 0.76,
@@ -58,9 +58,9 @@
   {
    "src": "S3",
    "verse": 18,
-   "worst": 0.842,
+   "worst": 0.815,
    "from": "p176",
-   "text": "And his brethren came to him word often adoring proſtrato on the ground they ſaid Weare thy Scrip- uantes."
+   "text": "And his brethren came to him and word often adoring proſtrato on the ground they ſaid Weare thy ſerScrip- uantes."
   },
   {
    "src": "S1",
@@ -769,13 +769,13 @@
     }
    },
    "S3": {
-    "text": "we ſhould ſay thus much to thee in his wordes I beſech that thou forget the wicked fact of thy brethren, and ſinne malice which they haue exerciſed againſt thee: we alſo deſire thee, that to the ſeruaurs of the God ofthy father thou remit this iniquitie. Whom when Ioſeph heard he wept.",
+    "text": "that we ſhould ſay thus much to thee in his wordes I beſech that thou forget the wicked fact of thy brethren, and the ſinne malice which they haue exerciſed againſt thee: we alſo deſire thee, that to the ſeruaurs of the God ofthy father thou remit this iniquitie. Whom when Ioſeph had heard he wept.",
     "from": "p176",
     "score": {
-     "s_dismas": 0.946,
-     "odr_com": 0.946,
-     "sabates_a": 0.929,
-     "madueke_b": 0.929
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
     }
    },
    "S9": {
@@ -811,13 +811,13 @@
     }
    },
    "S3": {
-    "text": "And his brethren came to him word often adoring proſtrato on the ground they ſaid Weare thy Scrip- uantes.",
+    "text": "And his brethren came to him and word often adoring proſtrato on the ground they ſaid Weare thy ſerScrip- uantes.",
     "from": "p176",
     "score": {
-     "s_dismas": 0.856,
-     "odr_com": 0.856,
-     "sabates_a": 0.842,
-     "madueke_b": 0.842
+     "s_dismas": 0.829,
+     "odr_com": 0.829,
+     "sabates_a": 0.815,
+     "madueke_b": 0.815
     }
    },
    "S9": {
@@ -989,13 +989,13 @@
     }
    },
    "S9": {
-    "text": "And he dwelt in Egypt, with his fathers houſe: and liued an hundred and tenne yeares. And he ſawe the children of Ephraim vnto the third generation. Alſo the children of Machir the ſonne of Manaſſes were borne in Ioſephs knees.",
+    "text": "And he dwelt in Egypt, with al2 his fathers houſe: and liued an hundred and tenne yeares. And he ſawe the children of Ephraim vnto the third generation. Alſo the children of Machir the ſonne of Manaſſes were borne in Ioſephs knees.",
     "from": "p184",
     "score": {
-     "s_dismas": 0.982,
-     "odr_com": 0.978,
-     "sabates_a": 0.962,
-     "madueke_b": 0.962
+     "s_dismas": 0.996,
+     "odr_com": 0.991,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S6": {
@@ -1332,5 +1332,5 @@
  "blocked_cells": 0,
  "achievable": 100,
  "triage": "SOURCE-SKEW",
- "secs": 6.5
+ "secs": 6.6
 }

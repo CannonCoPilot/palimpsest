@@ -2,17 +2,17 @@
  "chapter": 29,
  "n_verses": 35,
  "n_cells": 140,
- "n_pass": 128,
- "rate": 0.9143,
+ "n_pass": 133,
+ "rate": 0.95,
  "ref_means": {
-  "s_dismas": 0.9767,
-  "odr_com": 0.9769,
-  "sabates_a": 0.9632,
-  "madueke_b": 0.9632
+  "s_dismas": 0.9813,
+  "odr_com": 0.9815,
+  "sabates_a": 0.9677,
+  "madueke_b": 0.9677
  },
  "src_rates": {
-  "S1": 0.8571,
-  "S3": 0.8857,
+  "S1": 0.9143,
+  "S3": 0.9714,
   "S9": 0.9714,
   "S6": 0.9429
  },
@@ -20,7 +20,7 @@
  "all_fail": [
   1
  ],
- "n_open": 12,
+ "n_open": 7,
  "open": [
   {
    "src": "S1",
@@ -58,20 +58,6 @@
    "text": "Is he in hea th? quoth he: He is in health, ſay they And behold Rach: I his daughter cometh with com"
   },
   {
-   "src": "S1",
-   "verse": 9,
-   "worst": 0.849,
-   "from": "p116",
-   "text": "They yet ſpeaking, and behold Rachel came with her ſheepe : for ſhe fed the flocke."
-  },
-  {
-   "src": "S3",
-   "verse": 9,
-   "worst": 0.849,
-   "from": "p120",
-   "text": "They yet ſpeaking, and behold Rachel came with her ſheepe: for ſhe fed the flocke."
-  },
-  {
    "src": "S6",
    "verse": 17,
    "worst": 0.889,
@@ -80,31 +66,10 @@
   },
   {
    "src": "S1",
-   "verse": 20,
-   "worst": 0.883,
-   "from": "p116",
-   "text": "Iacob therfore ſerued for ſeuen yeares: and they ſemed a few days becauſe of greatnes of his loue."
-  },
-  {
-   "src": "S3",
-   "verse": 20,
-   "worst": 0.874,
-   "from": "p120",
-   "text": "Iacob therfore ſerued for ſeuen yeares : and they ſemed a few dayas becauſe of greatnes of his loue."
-  },
-  {
-   "src": "S1",
    "verse": 27,
-   "worst": 0.809,
+   "worst": 0.769,
    "from": "chapter",
-   "text": "Make vp the wecke of of oaman com of this match and. I wil geue che this ſame alſo, fof rhe worke that thour shalt ſerue nre other ſeauen yeares. Iſo"
-  },
-  {
-   "src": "S3",
-   "verse": 27,
-   "worst": 0.867,
-   "from": "chapter",
-   "text": "Make vp the wecke of ofthis march: and I wil geus the this ſame alſo, fbr the worke that thou lshaltrſerue me other ſeauen yeares."
+   "text": "Make vp the wecke of daves of this oaman com of this match and. I wil geue che this ſame alſo, fof rhe worke that thour shalt ſerue nre other ſeauen yeares. Iſo"
   }
  ],
  "cellgrid": {
@@ -372,13 +337,13 @@
     }
    },
    "S3": {
-    "text": "And Iacob ſaid There is yet much remaining, neither is it time to bring the flockes into foulds againe firſt geue the sheep drinke, and ſo bring backe to feede.",
-    "from": "chapter",
+    "text": "And Iacob ſaid : There is yet much day remaining, neither is it time to bring the flockes into the foulds againe : firſt geue the sheep drinke, and ſo bring them backe to feede.",
+    "from": "p120",
     "score": {
-     "s_dismas": 0.923,
-     "odr_com": 0.923,
-     "sabates_a": 0.904,
-     "madueke_b": 0.904
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S9": {
@@ -446,23 +411,23 @@
   },
   "9": {
    "S1": {
-    "text": "They yet ſpeaking, and behold Rachel came with her ſheepe : for ſhe fed the flocke.",
+    "text": "They were yet ſpeaking, and behold Rachel came with her fatheis ſheepe : for ſhe fed the flocke.",
     "from": "p116",
     "score": {
-     "s_dismas": 0.859,
-     "odr_com": 0.859,
-     "sabates_a": 0.849,
-     "madueke_b": 0.849
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
     }
    },
    "S3": {
-    "text": "They yet ſpeaking, and behold Rachel came with her ſheepe: for ſhe fed the flocke.",
+    "text": "They were yet ſpeaking, and behold Rachel came with her fathers ſheepe: for ſhe fed the flocke.",
     "from": "p120",
     "score": {
-     "s_dismas": 0.859,
-     "odr_com": 0.859,
-     "sabates_a": 0.849,
-     "madueke_b": 0.849
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S9": {
@@ -530,13 +495,13 @@
   },
   "11": {
    "S1": {
-    "text": "And hauing watered Gen) flocke, he :: kiſſed hec: and lifting vp his voice wept,",
+    "text": "And hauing watered the Gen) flocke, he :: kiſſed hec: and lifting vp his voice wept,",
     "from": "p116",
     "score": {
-     "s_dismas": 0.945,
-     "odr_com": 0.945,
-     "sabates_a": 0.942,
-     "madueke_b": 0.942
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
     }
    },
    "S3": {
@@ -698,23 +663,23 @@
   },
   "15": {
    "S1": {
-    "text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages thou take.",
+    "text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages wilt thou take.",
     "from": "p116",
     "score": {
-     "s_dismas": 0.951,
-     "odr_com": 0.951,
-     "sabates_a": 0.948,
-     "madueke_b": 0.948
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S3": {
-    "text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages thou take.",
+    "text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages wilt thou take.",
     "from": "p120",
     "score": {
-     "s_dismas": 0.951,
-     "odr_com": 0.951,
-     "sabates_a": 0.948,
-     "madueke_b": 0.948
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -908,23 +873,23 @@
   },
   "20": {
    "S1": {
-    "text": "Iacob therfore ſerued for ſeuen yeares: and they ſemed a few days becauſe of greatnes of his loue.",
+    "text": "Iacob therfore ſerued for Rachel ſeuen yeares: and they ſemed a few days becauſe of the greatnes of his loue.",
     "from": "p116",
     "score": {
-     "s_dismas": 0.889,
-     "odr_com": 0.889,
-     "sabates_a": 0.883,
-     "madueke_b": 0.883
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S3": {
-    "text": "Iacob therfore ſerued for ſeuen yeares : and they ſemed a few dayas becauſe of greatnes of his loue.",
+    "text": "Iacob therfore ſerued for Rachel ſeuen yeares : and they ſemed a few dayas becauſe of the greatnes of his loue.",
     "from": "p120",
     "score": {
-     "s_dismas": 0.889,
-     "odr_com": 0.889,
-     "sabates_a": 0.874,
-     "madueke_b": 0.874
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
     }
    },
    "S9": {
@@ -1170,13 +1135,13 @@
     }
    },
    "S3": {
-    "text": "Laban anſwered It is not the. cuſtome in this place, that we beſtowe hadyounger in mariage firſt.",
+    "text": "Laban anſwered :26 It is not the. cuſtome in this place, that we beſtowe the hadyounger in mariage firſt.",
     "from": "p120",
     "score": {
-     "s_dismas": 0.968,
-     "odr_com": 0.968,
-     "sabates_a": 0.966,
-     "madueke_b": 0.966
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
     }
    },
    "S9": {
@@ -1202,23 +1167,23 @@
   },
   "27": {
    "S1": {
-    "text": "Make vp the wecke of of oaman com of this match and. I wil geue che this ſame alſo, fof rhe worke that thour shalt ſerue nre other ſeauen yeares. Iſo",
+    "text": "Make vp the wecke of daves of this oaman com of this match and. I wil geue che this ſame alſo, fof rhe worke that thour shalt ſerue nre other ſeauen yeares. Iſo",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.843,
-     "odr_com": 0.849,
-     "sabates_a": 0.809,
-     "madueke_b": 0.809
+     "s_dismas": 0.802,
+     "odr_com": 0.809,
+     "sabates_a": 0.769,
+     "madueke_b": 0.769
     }
    },
    "S3": {
-    "text": "Make vp the wecke of ofthis march: and I wil geus the this ſame alſo, fbr the worke that thou lshaltrſerue me other ſeauen yeares.",
+    "text": "Make vp the wecke of dayes ofthis march: and I wil geus the this ſame alſo, fbr the worke that thou lshaltrſerue me other ſeauen yeares.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.895,
-     "odr_com": 0.902,
-     "sabates_a": 0.867,
-     "madueke_b": 0.867
+     "s_dismas": 0.94,
+     "odr_com": 0.947,
+     "sabates_a": 0.903,
+     "madueke_b": 0.903
     }
    },
    "S9": {
@@ -1844,6 +1809,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 140,
- "triage": "SOURCE-SKEW",
+ "triage": "R3-READY",
  "secs": 6.8
 }

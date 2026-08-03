@@ -2,27 +2,25 @@
  "chapter": 41,
  "n_verses": 57,
  "n_cells": 228,
- "n_pass": 182,
- "rate": 0.7982,
+ "n_pass": 205,
+ "rate": 0.8991,
  "ref_means": {
-  "s_dismas": 0.9392,
-  "odr_com": 0.94,
-  "sabates_a": 0.9326,
-  "madueke_b": 0.9324
+  "s_dismas": 0.9573,
+  "odr_com": 0.9581,
+  "sabates_a": 0.9475,
+  "madueke_b": 0.9473
  },
  "src_rates": {
-  "S1": 0.7544,
-  "S3": 0.8421,
+  "S1": 0.8772,
+  "S3": 0.9123,
   "S9": 0.8596,
-  "S6": 0.7368
+  "S6": 0.9474
  },
- "n_all_fail": 3,
+ "n_all_fail": 1,
  "all_fail": [
-  1,
-  36,
-  39
+  1
  ],
- "n_open": 46,
+ "n_open": 23,
  "open": [
   {
    "src": "S1",
@@ -53,13 +51,6 @@
    "text": "two Pharao ſaw a dreame. He thought he ſtood vpon a tiuer,"
   },
   {
-   "src": "S1",
-   "verse": 2,
-   "worst": 0.872,
-   "from": "p144",
-   "text": "out of the which came ſeuen kine, faire and fat exceedingly and they fed in marith"
-  },
-  {
    "src": "S3",
    "verse": 2,
    "worst": 0.848,
@@ -69,9 +60,9 @@
   {
    "src": "S1",
    "verse": 3,
-   "worst": 0.733,
+   "worst": 0.802,
    "from": "p144",
-   "text": "ſeuen alſocamvou of the riuer, and van leane: audthefe on the verv banke of riuer, in grene plades:"
+   "text": "ſeuen alſocamvou of the riuer, foule, and van leane: audthefe on the verv banke of the riuer, in grene plades:"
   },
   {
    "src": "S3",
@@ -111,9 +102,9 @@
   {
    "src": "S6",
    "verse": 21,
-   "worst": 0.82,
+   "worst": 0.792,
    "from": "chapter",
-   "text": "gaue no token of their fulnes but with the like leauenes deformitie I II heauily. Awak ing, and fallen againe into a deepſſeep, I ſaw"
+   "text": "gaue no token of their fulnes but with the like leauenes deformitie Ioſeph. I II looked heauily. Awak ing, and fallen againe into a deepſſeep, I ſaw"
   },
   {
    "src": "S9",
@@ -123,13 +114,6 @@
    "text": "ſawe a dreame : Seuen eares of corne grew forth vpon one ſtalke, ful and verie with adufaire."
   },
   {
-   "src": "S6",
-   "verse": 22,
-   "worst": 0.0,
-   "from": "chapter",
-   "text": "Seuen eares of corne grew forth vpon one ſtalke, ful and"
-  },
-  {
    "src": "S9",
    "verse": 23,
    "worst": 0.879,
@@ -137,18 +121,11 @@
    "text": "Other ſeuen alſo thinne and blasted, ſtion, ſprang of the ſtalke:"
   },
   {
-   "src": "S6",
-   "verse": 23,
-   "worst": 0.849,
-   "from": "p134",
-   "text": "Other ſeuen alſo thinne and blaſted with aduſtion, the ſtalke"
-  },
-  {
    "src": "S1",
    "verse": 26,
-   "worst": 0.746,
+   "worst": 0.786,
    "from": "chapter",
-   "text": "The ſeuen ſaire kine, and by the mamomcm the ſeuen ful eares: be ſeuen yeres of plentifulnes: (or contene the ſefe ſam meann of the dreame"
+   "text": "The ſeuen ſaire kine, and by the mamomcm the ſeuen ful eares: be ſeuen yeres of plentifulnes: and (or contene the ſefe ſam meann of the dreame"
   },
   {
    "src": "S9",
@@ -158,123 +135,11 @@
    "text": "The ſeuen faire kine, andby proui- the ſeuen ful eares: be ſeuen yeres of plentifulnes: and both conteine the ſelfe ſame meaning of the dreame (or"
   },
   {
-   "src": "S6",
-   "verse": 26,
-   "worst": 0.848,
-   "from": "p134",
-   "text": "The ſeuen faire came to the ſeuen ful eares, be ſeuen veares of plentitulnes: and bothb Gods the ſelte.ſame meaning of the dreame."
-  },
-  {
-   "src": "S1",
-   "verse": 29,
-   "worst": 0.818,
-   "from": "p146",
-   "text": "Behold there ſbal ſeuen yeares of great fertilitie in the whole Landof"
-  },
-  {
-   "src": "S6",
-   "verse": 29,
-   "worst": 0.824,
-   "from": "p134",
-   "text": "Behold there cauſeda mine vpan ſeuen yeares of great fertilitie in the whole Land of Egypt:"
-  },
-  {
-   "src": "S6",
-   "verse": 30,
-   "worst": 0.829,
-   "from": "p134",
-   "text": "which ſhal folow other ſeuen yeares ot ſo great ſterilitie the aboundance before ſhal be forgotten for the famine shal al the land,"
-  },
-  {
-   "src": "S1",
-   "verse": 32,
-   "worst": 0.874,
-   "from": "p146",
-   "text": "And in that thou dideſt ſee the ſecond time a dreame teining to the ſame thing: it is a token of the certeintie, that the worde of God shal come topaſſe, and be ſpedely."
-  },
-  {
-   "src": "S3",
-   "verse": 32,
-   "worst": 0.874,
-   "from": "p150",
-   "text": "And in that thou dideſt ſee the ſecond time a dreame teining to the ſame thing: it is a token of the certeintie, that the worde of God shal come topaſſe, and be ſpedely."
-  },
-  {
-   "src": "S1",
-   "verse": 33,
-   "worst": 0.819,
-   "from": "p146",
-   "text": "Now therfore let the king prouide a wiſe man induſtrious, and make him ruler ouer the Landof"
-  },
-  {
-   "src": "S6",
-   "verse": 33,
-   "worst": 0.709,
-   "from": "p134",
-   "text": "let the king prouide a wife man and induſtrious, Ruler ouer the Lad ot Egypt:"
-  },
-  {
-   "src": "S6",
-   "verse": 34,
-   "worst": 0.839,
-   "from": "p134",
-   "text": "that he may appoint oueral countries: and gathet into barnes the fifth part of the truits, the ſeuen yeares of the fertilitie,"
-  },
-  {
-   "src": "S6",
-   "verse": 35,
-   "worst": 0.818,
-   "from": "p134",
-   "text": "that now preſently ſhal and let al the corne be laid vp vndet Phataoes hands, and let it in the cities."
-  },
-  {
-   "src": "S1",
-   "verse": 36,
-   "worst": 0.874,
-   "from": "p146",
-   "text": "And let in a readines, againſt the famine of ſeuen yeares to which shal oppreſſe Egypt, and the land shal not be ſumed with ſcarſitier"
-  },
-  {
-   "src": "S3",
-   "verse": 36,
-   "worst": 0.889,
-   "from": "p150",
-   "text": "And let in a readines, againſt the famine of ſeuen yeares to which shal oppreſſe Agypt, and the land shal not be ſumed with ſcarſitie."
-  },
-  {
    "src": "S9",
    "verse": 36,
    "worst": 0.896,
    "from": "p158",
    "text": "And let it in a readines, againſt the faminet of ſeuen yeares to which shal oppreſſe Agypt, and the land shal not be ſumed with ſcarſitie"
-  },
-  {
-   "src": "S6",
-   "verse": 36,
-   "worst": 0.859,
-   "from": "p134",
-   "text": "And let it be in a readines againſt the of ſeuen yeares to come, which ſhal oppreſſe gypt, and the not be conſumed with ſcarcitie."
-  },
-  {
-   "src": "S6",
-   "verse": 37,
-   "worst": 0.778,
-   "from": "p134",
-   "text": "The counſel pleafed Phaal his ſeruants:"
-  },
-  {
-   "src": "S1",
-   "verse": 39,
-   "worst": 0.886,
-   "from": "p146",
-   "text": "He ſaid fore to Ioſeph: Becauſe God hath shewed thee al things thou haſt ſpoken, can I find a wiſer and one like vnto"
-  },
-  {
-   "src": "S3",
-   "verse": 39,
-   "worst": 0.886,
-   "from": "p150",
-   "text": "He ſaid fore to Ioſeph: Becauſe God hath shewed thee al things thou haſt ſpoken, can I find a wiſer and one like vnto"
   },
   {
    "src": "S9",
@@ -284,39 +149,11 @@
    "text": "He ſaid fore to Ioſeph : Becauſe God hath shewed thee al things thou haſt ſpoken, can Ifind a wifer and one like vnto"
   },
   {
-   "src": "S6",
-   "verse": 39,
-   "worst": 0.813,
-   "from": "p134",
-   "text": "He ſaid therfore to IoGod hath ſhewed thee al things that thou haſt ſpoken, can wiſet and one like vnto thee?40."
-  },
-  {
-   "src": "S1",
-   "verse": 44,
-   "worst": 0.874,
-   "from": "p146",
-   "text": "And the king ſaid to I am Pharao : withour thy commandment no man shal hand or ſoote in al the land of Egypt."
-  },
-  {
-   "src": "S3",
-   "verse": 44,
-   "worst": 0.874,
-   "from": "p150",
-   "text": "And the king ſaid to I am Pharao : withour thy commandment no man shal hand or ſoote in al the land of Egypt"
-  },
-  {
    "src": "S9",
    "verse": 44,
    "worst": 0.899,
    "from": "p158",
    "text": "And the king ſaid to Ioſ I am Pharao : without thy commandnent no man shal hand or foore in al the laud of Egypt."
-  },
-  {
-   "src": "S6",
-   "verse": 45,
-   "worst": 0.783,
-   "from": "p134",
-   "text": "And he turned his name, called him in the gyptian tong wherby it ot the world. And he gaue him to wite Aſeneth the daugh- probable ()Prieſt of Heliopolis. Ioſeph thertore went torth to the this was botha Egypt (46."
   },
   {
    "src": "S1",
@@ -392,13 +229,13 @@
   },
   "2": {
    "S1": {
-    "text": "out of the which came ſeuen kine, faire and fat exceedingly and they fed in marith",
+    "text": "out of the which came vp ſeuen kine, faire and fat exceedingly and they fed in marith",
     "from": "p144",
     "score": {
-     "s_dismas": 0.879,
-     "odr_com": 0.879,
-     "sabates_a": 0.872,
-     "madueke_b": 0.872
+     "s_dismas": 0.912,
+     "odr_com": 0.912,
+     "sabates_a": 0.907,
+     "madueke_b": 0.907
     }
    },
    "S3": {
@@ -434,13 +271,13 @@
   },
   "3": {
    "S1": {
-    "text": "ſeuen alſocamvou of the riuer, and van leane: audthefe on the verv banke of riuer, in grene plades:",
+    "text": "ſeuen alſocamvou of the riuer, foule, and van leane: audthefe on the verv banke of the riuer, in grene plades:",
     "from": "p144",
     "score": {
-     "s_dismas": 0.734,
-     "odr_com": 0.734,
-     "sabates_a": 0.733,
-     "madueke_b": 0.733
+     "s_dismas": 0.815,
+     "odr_com": 0.815,
+     "sabates_a": 0.802,
+     "madueke_b": 0.802
     }
    },
    "S3": {
@@ -612,13 +449,13 @@
     }
    },
    "S3": {
-    "text": "douounng al the beaute of the former. Pharao awaking vp atter his roſt,",
-    "from": "p149",
+    "text": "devouring al the beautie of the former. Pharao awaking vp after his reſt,",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.915,
-     "odr_com": 0.915,
-     "sabates_a": 0.912,
-     "madueke_b": 0.912
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    },
    "S9": {
@@ -1220,13 +1057,13 @@
     }
    },
    "S6": {
-    "text": "gaue no token of their fulnes but with the like leauenes deformitie I II heauily. Awak ing, and fallen againe into a deepſſeep, I ſaw",
+    "text": "gaue no token of their fulnes but with the like leauenes deformitie Ioſeph. I II looked heauily. Awak ing, and fallen againe into a deepſſeep, I ſaw",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.82,
-     "odr_com": 0.82,
-     "sabates_a": 0.867,
-     "madueke_b": 0.867
+     "s_dismas": 0.792,
+     "odr_com": 0.792,
+     "sabates_a": 0.835,
+     "madueke_b": 0.835
     }
    }
   },
@@ -1262,13 +1099,13 @@
     }
    },
    "S6": {
-    "text": "Seuen eares of corne grew forth vpon one ſtalke, ful and",
-    "from": "chapter",
+    "text": "a dreame : Seuen eares of corne grew forth vpon one ſtalke, ful and verie faire.",
+    "from": "p134",
     "score": {
-     "s_dismas": 0.0,
-     "odr_com": 0.0,
-     "sabates_a": 0.676,
-     "madueke_b": 0.667
+     "s_dismas": 0.916,
+     "odr_com": 0.916,
+     "sabates_a": 0.919,
+     "madueke_b": 0.907
     }
    }
   },
@@ -1304,13 +1141,13 @@
     }
    },
    "S6": {
-    "text": "Other ſeuen alſo thinne and blaſted with aduſtion, the ſtalke",
+    "text": "Other ſeuen alſo thinne and blaſted with aduſtion, ſptans of the ſtalke",
     "from": "p134",
     "score": {
-     "s_dismas": 0.857,
-     "odr_com": 0.857,
-     "sabates_a": 0.849,
-     "madueke_b": 0.849
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    }
   },
@@ -1400,13 +1237,13 @@
   },
   "26": {
    "S1": {
-    "text": "The ſeuen ſaire kine, and by the mamomcm the ſeuen ful eares: be ſeuen yeres of plentifulnes: (or contene the ſefe ſam meann of the dreame",
+    "text": "The ſeuen ſaire kine, and by the mamomcm the ſeuen ful eares: be ſeuen yeres of plentifulnes: and (or contene the ſefe ſam meann of the dreame",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.791,
-     "odr_com": 0.791,
-     "sabates_a": 0.746,
-     "madueke_b": 0.746
+     "s_dismas": 0.826,
+     "odr_com": 0.826,
+     "sabates_a": 0.786,
+     "madueke_b": 0.786
     }
    },
    "S3": {
@@ -1430,13 +1267,13 @@
     }
    },
    "S6": {
-    "text": "The ſeuen faire came to the ſeuen ful eares, be ſeuen veares of plentitulnes: and bothb Gods the ſelte.ſame meaning of the dreame.",
+    "text": "The ſeuen faire Rine, and the ſeuen ful eares, be ſeuen veares of plentitulnes: and bothb conteine the ſelte.ſame meaning of the dreame.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.854,
-     "odr_com": 0.854,
-     "sabates_a": 0.848,
-     "madueke_b": 0.848
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
     }
    }
   },
@@ -1526,13 +1363,13 @@
   },
   "29": {
    "S1": {
-    "text": "Behold there ſbal ſeuen yeares of great fertilitie in the whole Landof",
+    "text": "Behold there ſbal come ſeuen yeares of great fertilitie in the whole Landof Egypt:",
     "from": "p146",
     "score": {
-     "s_dismas": 0.831,
-     "odr_com": 0.831,
-     "sabates_a": 0.818,
-     "madueke_b": 0.818
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
     }
    },
    "S3": {
@@ -1556,35 +1393,35 @@
     }
    },
    "S6": {
-    "text": "Behold there cauſeda mine vpan ſeuen yeares of great fertilitie in the whole Land of Egypt:",
+    "text": "Behold there ſhal come ſeuen yeares of great fertilitie in the whole Land of Egypt:",
     "from": "p134",
     "score": {
-     "s_dismas": 0.833,
-     "odr_com": 0.833,
-     "sabates_a": 0.824,
-     "madueke_b": 0.824
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    }
   },
   "30": {
    "S1": {
-    "text": "after which ſhal folowe other ſeuen yeares of ſo ſterilitie, that al the abundance before ſhal be forgotten: for the famine shal conſume al the land,",
+    "text": "after which ſhal folowe other ſeuen yeares of ſo great ſterilitie, that al the abundance before ſhal be forgotten: for the famine shal conſume al the land,",
     "from": "p146",
     "score": {
-     "s_dismas": 0.961,
-     "odr_com": 0.961,
-     "sabates_a": 0.95,
-     "madueke_b": 0.95
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
     }
    },
    "S3": {
-    "text": "after which ſhal folowe other ſeuen yeares of ſo ſterilitie, that al the abundance before ſhal be forgotten: for the famine shal conſume al the land,",
+    "text": "after which ſhal folowe other ſeuen yeares of ſo great ſterilitie, that al the abundance before ſhal be forgotten: for the famine shal conſume al the land,",
     "from": "p150",
     "score": {
-     "s_dismas": 0.961,
-     "odr_com": 0.961,
-     "sabates_a": 0.95,
-     "madueke_b": 0.95
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
     }
    },
    "S9": {
@@ -1598,13 +1435,13 @@
     }
    },
    "S6": {
-    "text": "which ſhal folow other ſeuen yeares ot ſo great ſterilitie the aboundance before ſhal be forgotten for the famine shal al the land,",
+    "text": "after which ſhal folow other ſeuen yeares ot ſo great ſterilitie that al the aboundance before ſhal be forgotten for the famine shal conſume al the land,",
     "from": "p134",
     "score": {
-     "s_dismas": 0.836,
-     "odr_com": 0.836,
-     "sabates_a": 0.829,
-     "madueke_b": 0.829
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
     }
    }
   },
@@ -1652,23 +1489,23 @@
   },
   "32": {
    "S1": {
-    "text": "And in that thou dideſt ſee the ſecond time a dreame teining to the ſame thing: it is a token of the certeintie, that the worde of God shal come topaſſe, and be ſpedely.",
+    "text": "And in that thou dideſt ſee the ſecond time a dreame perteining to the ſame thing: it is a token of the certeintie, for that the worde of God shal come topaſſe, and be fulfilled ſpedely.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.874,
-     "madueke_b": 0.874
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    },
    "S3": {
-    "text": "And in that thou dideſt ſee the ſecond time a dreame teining to the ſame thing: it is a token of the certeintie, that the worde of God shal come topaſſe, and be ſpedely.",
+    "text": "And in that thou dideſt ſee the ſecond time a dreame perteining to the ſame thing: it is a token of the certeintie, for that the worde of God shal come topaſſe, and be fulfilled ſpedely.",
     "from": "p150",
     "score": {
-     "s_dismas": 0.902,
-     "odr_com": 0.902,
-     "sabates_a": 0.874,
-     "madueke_b": 0.874
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    },
    "S9": {
@@ -1694,13 +1531,13 @@
   },
   "33": {
    "S1": {
-    "text": "Now therfore let the king prouide a wiſe man induſtrious, and make him ruler ouer the Landof",
+    "text": "Now therfore let the king prouide a wiſe man and induſtrious, and make him ruler ouer the Landof Egypt:",
     "from": "p146",
     "score": {
-     "s_dismas": 0.883,
-     "odr_com": 0.883,
-     "sabates_a": 0.819,
-     "madueke_b": 0.819
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
     }
    },
    "S3": {
@@ -1724,35 +1561,35 @@
     }
    },
    "S6": {
-    "text": "let the king prouide a wife man and induſtrious, Ruler ouer the Lad ot Egypt:",
+    "text": "Now thertore let the king prouide a wife man and induſtrious, make him Ruler ouer the Lad ot Egypt:",
     "from": "p134",
     "score": {
-     "s_dismas": 0.709,
-     "odr_com": 0.709,
-     "sabates_a": 0.734,
-     "madueke_b": 0.734
+     "s_dismas": 0.913,
+     "odr_com": 0.913,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
     }
    }
   },
   "34": {
    "S1": {
-    "text": "that he may appointe ouerſeers ouer al countries : gether into barnes the fifth part of the fruires, during ſeuen yeares of the fertilitie,",
+    "text": "that he may appointe ouerſeers ouer al countries : and gether into barnes the fifth part of the fruires, during the ſeuen yeares of the fertilitie,",
     "from": "p146",
     "score": {
-     "s_dismas": 0.937,
-     "odr_com": 0.937,
-     "sabates_a": 0.908,
-     "madueke_b": 0.908
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
     }
    },
    "S3": {
-    "text": "†that he may appointe ouerſeers ouer al countries: gether into barnes the fifth part of the fruites, during ſeuen yeares of the fertilitie,",
+    "text": "†that he may appointe ouerſeers ouer al countries: and gether into barnes the fifth part of the fruites, during the ſeuen yeares of the fertilitie,",
     "from": "p150",
     "score": {
-     "s_dismas": 0.944,
-     "odr_com": 0.944,
-     "sabates_a": 0.916,
-     "madueke_b": 0.916
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    },
    "S9": {
@@ -1766,35 +1603,35 @@
     }
    },
    "S6": {
-    "text": "that he may appoint oueral countries: and gathet into barnes the fifth part of the truits, the ſeuen yeares of the fertilitie,",
+    "text": "that he may appoint ouerſeers ouer al countries: and gathet into barnes the fifth part of the truits, duriug the ſeuen yeares of the fertilitie,",
     "from": "p134",
     "score": {
-     "s_dismas": 0.839,
-     "odr_com": 0.839,
-     "sabates_a": 0.84,
-     "madueke_b": 0.84
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
     }
    }
   },
   "35": {
    "S1": {
-    "text": "that now preſently enſewe: and. let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
+    "text": "that now preſently shal enſewe: and. let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.959,
-     "odr_com": 0.959,
-     "sabates_a": 0.92,
-     "madueke_b": 0.92
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
     }
    },
    "S3": {
-    "text": "that now preſently enſewe : and let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
+    "text": "that now preſently shal enſewe : and let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
     "from": "p150",
     "score": {
-     "s_dismas": 0.959,
-     "odr_com": 0.959,
-     "sabates_a": 0.92,
-     "madueke_b": 0.92
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
     }
    },
    "S9": {
@@ -1808,35 +1645,35 @@
     }
    },
    "S6": {
-    "text": "that now preſently ſhal and let al the corne be laid vp vndet Phataoes hands, and let it in the cities.",
+    "text": "that now preſently ſhal enſue: and let al the corne be laid vp vndet Phataoes hands, and let it be reſerued in the cities.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.818,
-     "odr_com": 0.818,
-     "sabates_a": 0.832,
-     "madueke_b": 0.832
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    }
   },
   "36": {
    "S1": {
-    "text": "And let in a readines, againſt the famine of ſeuen yeares to which shal oppreſſe Egypt, and the land shal not be ſumed with ſcarſitier",
+    "text": "And let it be in a readines, againſt the famine of ſeuen yeares to come, which shal oppreſſe Egypt, and the land shal not be conſumed with ſcarſitier",
     "from": "p146",
     "score": {
-     "s_dismas": 0.89,
-     "odr_com": 0.89,
-     "sabates_a": 0.874,
-     "madueke_b": 0.874
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
     }
    },
    "S3": {
-    "text": "And let in a readines, againſt the famine of ſeuen yeares to which shal oppreſſe Agypt, and the land shal not be ſumed with ſcarſitie.",
+    "text": "And let it be in a readines, againſt the famine of ſeuen yeares to come, which shal oppreſſe Agypt, and the land shal not be conſumed with ſcarſitie.",
     "from": "p150",
     "score": {
-     "s_dismas": 0.897,
-     "odr_com": 0.897,
-     "sabates_a": 0.889,
-     "madueke_b": 0.889
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    },
    "S9": {
@@ -1850,13 +1687,13 @@
     }
    },
    "S6": {
-    "text": "And let it be in a readines againſt the of ſeuen yeares to come, which ſhal oppreſſe gypt, and the not be conſumed with ſcarcitie.",
+    "text": "And let it be in a readines againſt the famine of ſeuen yeares to come, which ſhal oppreſſe gypt, and the land ſhal not be conſumed with ſcarcitie.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.863,
-     "odr_com": 0.863,
-     "sabates_a": 0.859,
-     "madueke_b": 0.859
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    }
   },
@@ -1892,35 +1729,35 @@
     }
    },
    "S6": {
-    "text": "The counſel pleafed Phaal his ſeruants:",
+    "text": "The counſel pleafed Pharao, and al his ſeruants:",
     "from": "p134",
     "score": {
-     "s_dismas": 0.804,
-     "odr_com": 0.804,
-     "sabates_a": 0.778,
-     "madueke_b": 0.778
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
     }
    }
   },
   "38": {
    "S1": {
-    "text": "and he ſpake to them : Can we find ſuch other man, that is ful of the ſpirite of God",
+    "text": "and he ſpake to them : Can we find ſuch an other man, that is ful of the ſpirite of God",
     "from": "p146",
     "score": {
-     "s_dismas": 0.964,
-     "odr_com": 0.964,
-     "sabates_a": 0.974,
-     "madueke_b": 0.974
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    },
    "S3": {
-    "text": "and he ſpake to them : Can we find ſuch other man, that is ful of the ſpirite of God",
+    "text": "and he ſpake to them : Can we find ſuch an other man, that is ful of the ſpirite of God",
     "from": "p150",
     "score": {
-     "s_dismas": 0.964,
-     "odr_com": 0.964,
-     "sabates_a": 0.974,
-     "madueke_b": 0.974
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    },
    "S9": {
@@ -1946,23 +1783,23 @@
   },
   "39": {
    "S1": {
-    "text": "He ſaid fore to Ioſeph: Becauſe God hath shewed thee al things thou haſt ſpoken, can I find a wiſer and one like vnto",
+    "text": "He ſaid therfore to Ioſeph: Becauſe God hath shewed thee al things that thou haſt ſpoken, can I find a wiſer and one like vnto thee?",
     "from": "p146",
     "score": {
-     "s_dismas": 0.891,
-     "odr_com": 0.891,
-     "sabates_a": 0.886,
-     "madueke_b": 0.886
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
     }
    },
    "S3": {
-    "text": "He ſaid fore to Ioſeph: Becauſe God hath shewed thee al things thou haſt ſpoken, can I find a wiſer and one like vnto",
+    "text": "He ſaid therfore to Ioſeph: Becauſe God hath shewed thee al things that thou haſt ſpoken, can I find a wiſer and one like vnto thee?",
     "from": "p150",
     "score": {
-     "s_dismas": 0.891,
-     "odr_com": 0.891,
-     "sabates_a": 0.886,
-     "madueke_b": 0.886
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
     }
    },
    "S9": {
@@ -1976,13 +1813,13 @@
     }
    },
    "S6": {
-    "text": "He ſaid therfore to IoGod hath ſhewed thee al things that thou haſt ſpoken, can wiſet and one like vnto thee?40.",
+    "text": "He ſaid therfore to Ioſeph: Becauſe God hath ſhewed thee al things that thou haſt ſpoken, can I tind a wiſet and one like vnto thee?40.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.822,
-     "odr_com": 0.822,
-     "sabates_a": 0.813,
-     "madueke_b": 0.813
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    }
   },
@@ -2156,23 +1993,23 @@
   },
   "44": {
    "S1": {
-    "text": "And the king ſaid to I am Pharao : withour thy commandment no man shal hand or ſoote in al the land of Egypt.",
+    "text": "And the king ſaid to Ioſeph: I am Pharao : withour thy commandment no man shal moue hand or ſoote in al the land of Egypt.",
     "from": "p146",
     "score": {
-     "s_dismas": 0.874,
-     "odr_com": 0.874,
-     "sabates_a": 0.876,
-     "madueke_b": 0.876
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S3": {
-    "text": "And the king ſaid to I am Pharao : withour thy commandment no man shal hand or ſoote in al the land of Egypt",
+    "text": "And the king ſaid to Ioſeph : I am Pharao : withour thy commandment no man shal moue hand or ſoote in al the land of Egypt",
     "from": "p150",
     "score": {
-     "s_dismas": 0.874,
-     "odr_com": 0.874,
-     "sabates_a": 0.876,
-     "madueke_b": 0.876
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S9": {
@@ -2198,23 +2035,23 @@
   },
   "45": {
    "S1": {
-    "text": "And he turned aant com name, and called him in the Agyptian togue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar prieſt of Heliopolis. Ioſeph therfore went forth: to the land of Egypt",
+    "text": "And he turned his name, aant com name, and called him in the Agyptian togue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar prieſt of Heliopolis. Ioſeph therfore went forth: to the land of Egypt",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.949,
-     "odr_com": 0.954,
-     "sabates_a": 0.925,
-     "madueke_b": 0.925
+     "s_dismas": 0.924,
+     "odr_com": 0.929,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
     }
    },
    "S3": {
-    "text": "And he turned name, and called him in the Agyptian togue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar prieſt of Heliopolis. Ioſeph therfore went forth:: to the landof Egypt",
+    "text": "And he turned his name, and called him in the Agyptian togue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar prieſt of Heliopolis. Ioſeph therfore went forth:: to the landof Egypt",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.962,
-     "odr_com": 0.967,
-     "sabates_a": 0.944,
-     "madueke_b": 0.944
+     "s_dismas": 0.981,
+     "odr_com": 0.986,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
     }
    },
    "S9": {
@@ -2228,13 +2065,13 @@
     }
    },
    "S6": {
-    "text": "And he turned his name, called him in the gyptian tong wherby it ot the world. And he gaue him to wite Aſeneth the daugh- probable ()Prieſt of Heliopolis. Ioſeph thertore went torth to the this was botha Egypt (46.",
+    "text": "And he turned his name, called him in the gyptian tong the Sauiour ot the world. And he gaue him to wite Aſeneth the daughter of Putiphar ()Prieſt of Heliopolis. Ioſeph thertore went torth to the land of Egypt (46.",
     "from": "p134",
     "score": {
-     "s_dismas": 0.789,
-     "odr_com": 0.783,
-     "sabates_a": 0.792,
-     "madueke_b": 0.792
+     "s_dismas": 0.939,
+     "odr_com": 0.934,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
     }
    }
   },
@@ -2324,11 +2161,11 @@
   },
   "48": {
    "S1": {
-    "text": "Al the abundance alſo of graine was laid vp in euery citie.",
+    "text": "Al the abundance alſo of graine was laid vp in euerie citie.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.966,
-     "odr_com": 0.966,
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
      "sabates_a": 1.0,
      "madueke_b": 1.0
     }
@@ -2386,13 +2223,13 @@
     }
    },
    "S9": {
-    "text": "And thero was ſo great abundance of wheat, that it became equalto the ſand of the ſea, and the plentie exceeded the meaſure.",
+    "text": "And thero was ſo great abundance of wheat, that it became equalto the ſand of the ſea, and the plentie exceeded meaſure.",
     "from": "p159",
     "score": {
-     "s_dismas": 0.95,
-     "odr_com": 0.95,
-     "sabates_a": 0.955,
-     "madueke_b": 0.955
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
     }
    },
    "S6": {
@@ -3162,6 +2999,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 228,
- "triage": "SOURCE-SKEW",
- "secs": 9.2
+ "triage": "R3-READY",
+ "secs": 9.8
 }

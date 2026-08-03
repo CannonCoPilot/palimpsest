@@ -2,34 +2,27 @@
  "chapter": 21,
  "n_verses": 34,
  "n_cells": 136,
- "n_pass": 110,
- "rate": 0.8088,
+ "n_pass": 117,
+ "rate": 0.8603,
  "ref_means": {
-  "s_dismas": 0.9348,
-  "odr_com": 0.9389,
-  "sabates_a": 0.9359,
-  "madueke_b": 0.9359
+  "s_dismas": 0.9652,
+  "odr_com": 0.9694,
+  "sabates_a": 0.961,
+  "madueke_b": 0.961
  },
  "src_rates": {
   "S1": 0.8824,
   "S3": 0.9118,
   "S9": 0.8235,
-  "S6": 0.6176
+  "S6": 0.8235
  },
  "n_all_fail": 2,
  "all_fail": [
   31,
   34
  ],
- "n_open": 26,
+ "n_open": 19,
  "open": [
-  {
-   "src": "S6",
-   "verse": 1,
-   "worst": 0.856,
-   "from": "p86",
-   "text": "and our Lord viſited Sata, as he had promiſed and nie andother fulfilled the things which he ſpake."
-  },
   {
    "src": "S1",
    "verse": 2,
@@ -47,16 +40,9 @@
   {
    "src": "S6",
    "verse": 4,
-   "worst": 0.0,
+   "worst": 0.814,
    "from": "p86",
-   "text": "and he (4) Abraha runciſed the eht day, as God had comman- (he Sara laughed admiring,"
-  },
-  {
-   "src": "S6",
-   "verse": 5,
-   "worst": 0.863,
-   "from": "p86",
-   "text": "when he was an hundred yeares old: for at this age of his ſhe doubting was Iſaac borne."
+   "text": "and he runciſed the eht day, as God had commanded him,"
   },
   {
    "src": "S1",
@@ -80,13 +66,6 @@
    "text": "The child therfore ſignifieth grewe, and was weined : and Abraham made a great feaſt in aughter. the day of his weining."
   },
   {
-   "src": "S6",
-   "verse": 8,
-   "worst": 0.0,
-   "from": "p86",
-   "text": "The led Iſaac, grew and was weaned: and Abranam made a great feaſt which ot his weaning.."
-  },
-  {
    "src": "S9",
    "verse": 9,
    "worst": 0.852,
@@ -96,16 +75,16 @@
   {
    "src": "S6",
    "verse": 10,
-   "worst": 0.75,
+   "worst": 0.877,
    "from": "p86",
-   "text": "ug.l1.16 out this handmaid, & her ſonne: for the ſonne ofthe handmaid be heire with my ſonne Iſaae. Abraha"
+   "text": "Caſt out this handmaid, & her ſonne: for the ſonne ofthe handmaid shal not be heire with my ſonne Iſaae. Abraha"
   },
   {
    "src": "S6",
    "verse": 11,
-   "worst": 0.0,
+   "worst": 0.786,
    "from": "p86",
-   "text": "this grieuouſly"
+   "text": "tooke this grieuouſly for his ſonne."
   },
   {
    "src": "S3",
@@ -113,34 +92,6 @@
    "worst": 0.0,
    "from": "p95",
    "text": "and our he And the elder bare a ſonne and ſhe bare a in the her. And the and he he ſay to me of it with me, and I permitted not that ſhal pray for thee, not and al things that"
-  },
-  {
-   "src": "S6",
-   "verse": 13,
-   "worst": 0.753,
-   "from": "p86",
-   "text": "But the See ot the handmaid I wil make into a great nation, becauſe he"
-  },
-  {
-   "src": "S6",
-   "verse": 14,
-   "worst": 0.811,
-   "from": "p86",
-   "text": "Abraham therrore roſe vp in the morning, and takiug a bottle ot water, put it vpon her shoulder, and deliuered the diſmiſt her. Who went away, and wandred in the wilderneſſe"
-  },
-  {
-   "src": "S6",
-   "verse": 16,
-   "worst": 0.805,
-   "from": "chapter",
-   "text": "And she went her ſate ouer againſt a great wav off as tarre as a bow can caſt, tor Iwil no ſee the child dying. And ſitting ouer againſt, she lifted and wept."
-  },
-  {
-   "src": "S6",
-   "verse": 17,
-   "worst": 0.803,
-   "from": "chapter",
-   "text": "Aud God heard the voice ot the boy: and of God called Agar from heauen, ſaying : What doeſt thou not: for God hath heard the voice of the boy, from the he is."
   },
   {
    "src": "S6",
@@ -152,16 +103,16 @@
   {
    "src": "S1",
    "verse": 31,
-   "worst": 0.775,
+   "worst": 0.825,
    "from": "p94",
-   "text": "Therfor thar lace called Berſabee : becauſe there both did ſweare."
+   "text": "Therfor was thar lace called Berſabee : becauſe there both did ſweare."
   },
   {
    "src": "S3",
    "verse": 31,
-   "worst": 0.787,
+   "worst": 0.838,
    "from": "p98",
-   "text": "Therfor that place calledx Berſabee: becauſe there both did ſweare."
+   "text": "Therfor was that place calledx Berſabee: becauſe there both did ſweare."
   },
   {
    "src": "S9",
@@ -180,16 +131,16 @@
   {
    "src": "S1",
    "verse": 34,
-   "worst": 0.82,
+   "worst": 0.875,
    "from": "p94",
-   "text": "And he was a ſeiorner in the land of Paleſtines manie dayes. CHAP."
+   "text": "And he was a ſeiorner in the land of the Paleſtines manie dayes. CHAP."
   },
   {
    "src": "S3",
    "verse": 34,
-   "worst": 0.82,
+   "worst": 0.875,
    "from": "p98",
-   "text": "And he was a ſeiorner in the land of Paleſtines manie dayes. CHAP."
+   "text": "And he was a ſeiorner in the land of the Paleſtines manie dayes. CHAP."
   },
   {
    "src": "S9",
@@ -239,13 +190,13 @@
     }
    },
    "S6": {
-    "text": "and our Lord viſited Sata, as he had promiſed and nie andother fulfilled the things which he ſpake.",
+    "text": "and our Lord viſited Sata, as he had promiſed and fulfilled the things which he ſpake.",
     "from": "p86",
     "score": {
-     "s_dismas": 0.856,
-     "odr_com": 0.856,
-     "sabates_a": 0.857,
-     "madueke_b": 0.857
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    }
   },
@@ -281,7 +232,7 @@
     }
    },
    "S6": {
-    "text": "And she conceived & bare a ſonne in her old age, at the time that God had foretold her.",
+    "text": "And she conceiued & bare a ſonne in her old age, at the time that God had foretold her.",
     "from": "r3",
     "score": {
      "s_dismas": 0.943,
@@ -365,13 +316,13 @@
     }
    },
    "S6": {
-    "text": "and he (4) Abraha runciſed the eht day, as God had comman- (he Sara laughed admiring,",
+    "text": "and he runciſed the eht day, as God had commanded him,",
     "from": "p86",
     "score": {
-     "s_dismas": 0.0,
-     "odr_com": 0.0,
-     "sabates_a": 0.0,
-     "madueke_b": 0.0
+     "s_dismas": 0.836,
+     "odr_com": 0.836,
+     "sabates_a": 0.814,
+     "madueke_b": 0.814
     }
    }
   },
@@ -407,13 +358,13 @@
     }
    },
    "S6": {
-    "text": "when he was an hundred yeares old: for at this age of his ſhe doubting was Iſaac borne.",
+    "text": "when he was an hundred yeares old: for at this age of his father, was Iſaac borne.",
     "from": "p86",
     "score": {
-     "s_dismas": 0.871,
-     "odr_com": 0.871,
-     "sabates_a": 0.863,
-     "madueke_b": 0.863
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
     }
    }
   },
@@ -533,13 +484,13 @@
     }
    },
    "S6": {
-    "text": "The led Iſaac, grew and was weaned: and Abranam made a great feaſt which ot his weaning..",
+    "text": "The child thertore grew and was weaned: and Abranam made a great feaſt in the day ot his weaning..",
     "from": "p86",
     "score": {
-     "s_dismas": 0.0,
-     "odr_com": 0.0,
-     "sabates_a": 0.761,
-     "madueke_b": 0.761
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
     }
    }
   },
@@ -617,13 +568,13 @@
     }
    },
    "S6": {
-    "text": "ug.l1.16 out this handmaid, & her ſonne: for the ſonne ofthe handmaid be heire with my ſonne Iſaae. Abraha",
+    "text": "Caſt out this handmaid, & her ſonne: for the ſonne ofthe handmaid shal not be heire with my ſonne Iſaae. Abraha",
     "from": "p86",
     "score": {
-     "s_dismas": 0.75,
-     "odr_com": 0.75,
-     "sabates_a": 0.764,
-     "madueke_b": 0.764
+     "s_dismas": 0.877,
+     "odr_com": 0.877,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
     }
    }
   },
@@ -659,13 +610,13 @@
     }
    },
    "S6": {
-    "text": "this grieuouſly",
+    "text": "tooke this grieuouſly for his ſonne.",
     "from": "p86",
     "score": {
-     "s_dismas": 0.0,
-     "odr_com": 0.0,
-     "sabates_a": 0.0,
-     "madueke_b": 0.0
+     "s_dismas": 0.786,
+     "odr_com": 0.786,
+     "sabates_a": 0.795,
+     "madueke_b": 0.795
     }
    }
   },
@@ -743,13 +694,13 @@
     }
    },
    "S6": {
-    "text": "But the See ot the handmaid I wil make into a great nation, becauſe he",
+    "text": "But the ſonne alſo ot the handmaid I wil make into a great nation, becauſe he is thy ſeed.",
     "from": "p86",
     "score": {
-     "s_dismas": 0.753,
-     "odr_com": 0.753,
-     "sabates_a": 0.762,
-     "madueke_b": 0.762
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    }
   },
@@ -785,13 +736,13 @@
     }
    },
    "S6": {
-    "text": "Abraham therrore roſe vp in the morning, and takiug a bottle ot water, put it vpon her shoulder, and deliuered the diſmiſt her. Who went away, and wandred in the wilderneſſe",
+    "text": "Abraham therrore roſe vp in the morning, and takiug bread and a bottle ot water, put it vpon her shoulder, and deliuered the boy, and diſmiſt her. Who went away, and wandred in the wilderneſſe ot Berſabee.",
     "from": "p86",
     "score": {
-     "s_dismas": 0.833,
-     "odr_com": 0.833,
-     "sabates_a": 0.811,
-     "madueke_b": 0.811
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
     }
    }
   },
@@ -869,13 +820,13 @@
     }
    },
    "S6": {
-    "text": "And she went her ſate ouer againſt a great wav off as tarre as a bow can caſt, tor Iwil no ſee the child dying. And ſitting ouer againſt, she lifted and wept.",
-    "from": "chapter",
+    "text": "And she went her way, and ſate ouer againſt a great wav off as tarre as a bow can caſt, tor she ſaid: Iwil no ſee the child dying. And ſitting ouer againſt, she lifted vp hex voice and wept.",
+    "from": "p86",
     "score": {
-     "s_dismas": 0.805,
-     "odr_com": 0.805,
-     "sabates_a": 0.815,
-     "madueke_b": 0.815
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
     }
    }
   },
@@ -911,13 +862,13 @@
     }
    },
    "S6": {
-    "text": "Aud God heard the voice ot the boy: and of God called Agar from heauen, ſaying : What doeſt thou not: for God hath heard the voice of the boy, from the he is.",
-    "from": "chapter",
+    "text": "Aud God heard the voice ot the boy: and an Angel of God called Agar from heauen, ſaying : What doeſt thou Agar feare not: for God hath heard the voice of the boy, from the place wherin he is.",
+    "from": "p86",
     "score": {
-     "s_dismas": 0.81,
-     "odr_com": 0.81,
-     "sabates_a": 0.803,
-     "madueke_b": 0.803
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    }
   },
@@ -1227,16 +1178,6 @@
     }
    },
    "S3": {
-    "text": "And he rebuked Abimelech for the wel of water, which his ſeruants had taken away by",
-    "from": "chapter",
-    "score": {
-     "s_dismas": 0.932,
-     "odr_com": 0.932,
-     "sabates_a": 0.941,
-     "madueke_b": 0.941
-    }
-   },
-   "S9": {
     "text": "And he rebuked Abimelech for the wel of water, which his ſeruants had taken away by force.",
     "from": "chapter",
     "score": {
@@ -1244,6 +1185,16 @@
      "odr_com": 1.0,
      "sabates_a": 1.0,
      "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he rebuked Abimelech for the Abraham wel of water, which his ſeruants had taken away by force.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
     }
    },
    "S6": {
@@ -1269,13 +1220,13 @@
     }
    },
    "S3": {
-    "text": "And Abimelech anſwered: Iknew not who did this thing: yea and thy ſelfe dideſt not tel me, and I heard not of it to day.",
+    "text": "And Abimelech anſwered: Iknew not who did this thing: yea and thy ſelfe dideſt not tel me, and I heard not of it but to day.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.959,
-     "odr_com": 0.959,
-     "sabates_a": 0.931,
-     "madueke_b": 0.931
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
     }
    },
    "S9": {
@@ -1301,23 +1252,23 @@
   },
   "27": {
    "S1": {
-    "text": "Abraham therfore tooke ſheepe and oxen, gaue to Abimelech: and both of them made a league.",
+    "text": "Abraham therfore tooke ſheepe and oxen, and7 gaue to Abimelech: and both of them made a league.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.956,
-     "odr_com": 0.956,
-     "sabates_a": 0.941,
-     "madueke_b": 0.941
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S3": {
-    "text": "Abraham therfore tooke ſheepe and oxen, gaue to Abimelech: and both of them made a league.",
+    "text": "Abraham therfore tooke ſheepe and oxen, and gaue to Abimelech: and both of them made a league.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.956,
-     "odr_com": 0.956,
-     "sabates_a": 0.941,
-     "madueke_b": 0.941
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    },
    "S9": {
@@ -1385,33 +1336,33 @@
   },
   "29": {
    "S1": {
-    "text": "whom Abimelech ſaid What meane theſe ſeuen ewe lambes, which thou haſt made to ſtand apart",
+    "text": "To9 whom Abimelech ſaid : What meane theſe ſeuen ewe lambes, which thou haſt made to ſtand apart",
     "from": "p94",
     "score": {
-     "s_dismas": 0.967,
-     "odr_com": 0.967,
-     "sabates_a": 0.954,
-     "madueke_b": 0.954
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
     }
    },
    "S3": {
-    "text": "whom Abimelech ſaid What meane theſe ſeuen ewe lambes, which thou haſt made to ſtand apart",
+    "text": "To29 whom Abimelech ſaid : What meane theſe ſeuen ewe lambes, which thou haſt made to ſtand apart",
     "from": "p98",
     "score": {
-     "s_dismas": 0.967,
-     "odr_com": 0.967,
-     "sabates_a": 0.954,
-     "madueke_b": 0.954
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
     }
    },
    "S9": {
-    "text": "whom Abimelech ſaid What meane theſe ſeuen ewe lambes, which thou haſt made to ſtand apart?",
+    "text": "To9 whom Abimelech ſaid : What meane theſe ſeuen ewe lambes, which thou haſt made to ſtand apart?",
     "from": "p104",
     "score": {
-     "s_dismas": 0.967,
-     "odr_com": 0.967,
-     "sabates_a": 0.954,
-     "madueke_b": 0.954
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
     }
    },
    "S6": {
@@ -1427,33 +1378,33 @@
   },
   "30": {
    "S1": {
-    "text": "But he ſaid : Seuen ewe lambes ſhalt thou take at my hand : that they may be teſtimonie for me, that I digged this wel.",
+    "text": "But he ſaid : Seuen ewe lambes ſhalt thou take at my hand : that they may be a teſtimonie for me, that I digged this wel.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.983,
-     "odr_com": 0.983,
-     "sabates_a": 0.972,
-     "madueke_b": 0.972
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S3": {
-    "text": "But he ſaid : Seuen ewe lambes ſhalt thou take at my hand: that they may be teſtimonie for me, that I digged this wel.",
+    "text": "But he ſaid : Seuen ewe lambes ſhalt thou take at my hand: that they may be a teſtimonie for me, that I digged this wel.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.983,
-     "odr_com": 0.983,
-     "sabates_a": 0.972,
-     "madueke_b": 0.972
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S9": {
-    "text": "But he ſaid : Seuen ewe lambes ſhalt thou take at my hand : that they may. be teſtimonie for me, that I digged this wel.",
+    "text": "But he ſaid : Seuen ewe lambes ſhalt thou take at my hand : that they may. be a teſtimonie for me, that I digged this wel.",
     "from": "p104",
     "score": {
-     "s_dismas": 0.983,
-     "odr_com": 0.983,
-     "sabates_a": 0.972,
-     "madueke_b": 0.972
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S6": {
@@ -1469,23 +1420,23 @@
   },
   "31": {
    "S1": {
-    "text": "Therfor thar lace called Berſabee : becauſe there both did ſweare.",
+    "text": "Therfor was thar lace called Berſabee : becauſe there both did ſweare.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.775,
-     "odr_com": 0.899,
-     "sabates_a": 0.889,
-     "madueke_b": 0.889
+     "s_dismas": 0.825,
+     "odr_com": 0.957,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
     }
    },
    "S3": {
-    "text": "Therfor that place calledx Berſabee: becauſe there both did ſweare.",
+    "text": "Therfor was that place calledx Berſabee: becauſe there both did ſweare.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.787,
-     "odr_com": 0.913,
-     "sabates_a": 0.905,
-     "madueke_b": 0.905
+     "s_dismas": 0.838,
+     "odr_com": 0.971,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
     }
    },
    "S9": {
@@ -1573,13 +1524,13 @@
     }
    },
    "S9": {
-    "text": "And Abimelech aroſe, and Phicol the general of his armie, and they returned to the land of the Paleſtines. But Abraham planted a groue in Berſabee, and called therupon the name of our Lord God eternal.",
+    "text": "And Abi- 3233 melech aroſe, and Phicol the general of his armie, and they returned to the land of the Paleſtines. But Abraham planted a groue in Berſabee, and called therupon the name of our Lord God eternal.",
     "from": "p104",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.995,
-     "madueke_b": 0.995
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
     }
    },
    "S6": {
@@ -1595,23 +1546,23 @@
   },
   "34": {
    "S1": {
-    "text": "And he was a ſeiorner in the land of Paleſtines manie dayes. CHAP.",
+    "text": "And he was a ſeiorner in the land of the Paleſtines manie dayes. CHAP.",
     "from": "p94",
     "score": {
-     "s_dismas": 0.859,
-     "odr_com": 0.859,
-     "sabates_a": 0.82,
-     "madueke_b": 0.82
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.875,
+     "madueke_b": 0.875
     }
    },
    "S3": {
-    "text": "And he was a ſeiorner in the land of Paleſtines manie dayes. CHAP.",
+    "text": "And he was a ſeiorner in the land of the Paleſtines manie dayes. CHAP.",
     "from": "p98",
     "score": {
-     "s_dismas": 0.859,
-     "odr_com": 0.859,
-     "sabates_a": 0.82,
-     "madueke_b": 0.82
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.875,
+     "madueke_b": 0.875
     }
    },
    "S9": {
@@ -1894,6 +1845,6 @@
  "ref_gaps": [],
  "blocked_cells": 0,
  "achievable": 136,
- "triage": "SOURCE-SKEW",
- "secs": 5.7
+ "triage": "R3-READY",
+ "secs": 6.7
 }

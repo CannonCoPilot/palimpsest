@@ -2,41 +2,27 @@
  "chapter": 32,
  "n_verses": 32,
  "n_cells": 128,
- "n_pass": 106,
- "rate": 0.8281,
+ "n_pass": 115,
+ "rate": 0.8984,
  "ref_means": {
-  "s_dismas": 0.9706,
-  "odr_com": 0.9709,
-  "sabates_a": 0.959,
-  "madueke_b": 0.959
+  "s_dismas": 0.978,
+  "odr_com": 0.9784,
+  "sabates_a": 0.9668,
+  "madueke_b": 0.9668
  },
  "src_rates": {
-  "S1": 0.8125,
+  "S1": 0.9062,
   "S3": 0.8125,
   "S9": 0.9375,
-  "S6": 0.75
+  "S6": 0.9375
  },
  "n_all_fail": 2,
  "all_fail": [
   5,
   15
  ],
- "n_open": 22,
+ "n_open": 13,
  "open": [
-  {
-   "src": "S6",
-   "verse": 3,
-   "worst": 0.89,
-   "from": "p114",
-   "text": "And he fent alſo meſfengers betore him to Eſau his brother into the Seir, into the countrie of Edom :"
-  },
-  {
-   "src": "S6",
-   "verse": 4,
-   "worst": 0.89,
-   "from": "chapter",
-   "text": "and he commanded thei, Thus ſpeake ye vnto my Lord Eſau This ſaith thy brother Iacob. Iacob I haue ſeiourned, aud haue beeu with Laban vntil this preſent day."
-  },
   {
    "src": "S1",
    "verse": 5,
@@ -73,13 +59,6 @@
    "text": "fcared exceedingly : & being ſore affraid diuided the that was with him, the flockes alſo and the ſhepe and oxen, and thercamels, into two troupes,"
   },
   {
-   "src": "S1",
-   "verse": 8,
-   "worst": 0.855,
-   "from": "p124",
-   "text": "ſaying If come to one troupe, and ſtrike it, the other troupe remaineth, ſhal be ſaued."
-  },
-  {
    "src": "S3",
    "verse": 8,
    "worst": 0.843,
@@ -87,25 +66,11 @@
    "text": "ſaying If come to one froupe, and ſtrike it, the other troupe remaineth, ſhal be ſaued."
   },
   {
-   "src": "S1",
-   "verse": 10,
-   "worst": 0.885,
-   "from": "p124",
-   "text": "I am inferiourto al thymarcies, and thy truth that thou haſt fulfilled to ſeruant. with my ſtaſre I paſſed ouer this Iordain and wita two troupes I doe returne."
-  },
-  {
    "src": "S3",
    "verse": 10,
    "worst": 0.809,
    "from": "p128",
    "text": "al thymercies, and thy truth that thou haſt fulfilled to ſeruant. With my ſtaffe I paſſed ouer this Iordain and with two troupes I doereturne."
-  },
-  {
-   "src": "S1",
-   "verse": 11,
-   "worst": 0.89,
-   "from": "p124",
-   "text": "Deliuer me from nand of my btother Eſau, becauſe I am ſore affraidof leſt perhaps he come, And ſtrike the mother with the dren."
   },
   {
    "src": "S3",
@@ -148,34 +113,6 @@
    "worst": 0.897,
    "from": "p115",
    "text": "milch camels with their colts fourtie kine, and twentie buls twentie ſhe aſſes and their foles ten."
-  },
-  {
-   "src": "S6",
-   "verse": 29,
-   "worst": 0.853,
-   "from": "p116",
-   "text": "Iacob asked him: ging of name by what name art thoucalled He anſwered: Why doeſt thou promiſed, name and bleſſed him in the ſame place."
-  },
-  {
-   "src": "S6",
-   "verse": 30,
-   "worst": 0.838,
-   "from": "p116",
-   "text": "And Iacob cal- preformed name of the place Phanuel, ſaying : I haue ſeen God face to face, chap. ſoule was made ſate."
-  },
-  {
-   "src": "S6",
-   "verse": 31,
-   "worst": 0.888,
-   "from": "p116",
-   "text": "Aud immediately the ſunne roſe Hicvom Heb. after that he was paſt Phanuel : but he halted on his toot."
-  },
-  {
-   "src": "S6",
-   "verse": 32,
-   "worst": 0.828,
-   "from": "p116",
-   "text": "For cauſe the children of Iſrael eate not the ſinow, that ſhrunke in thigh, vnto this preſent day: becauſe he touched the ſinow of and it ſhrunke."
   }
  ],
  "cellgrid": {
@@ -265,13 +202,13 @@
   },
   "3": {
    "S1": {
-    "text": "he ſent alſo meſſengers before him to Eſau his brother the land of Seir, into the countrie of Edom:",
+    "text": "And he ſent alſo meſſengers before him to Eſau his brother imo the land of Seir, into the countrie of Edom:",
     "from": "p124",
     "score": {
-     "s_dismas": 0.915,
-     "odr_com": 0.915,
-     "sabates_a": 0.91,
-     "madueke_b": 0.91
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
     }
    },
    "S3": {
@@ -295,25 +232,25 @@
     }
    },
    "S6": {
-    "text": "And he fent alſo meſfengers betore him to Eſau his brother into the Seir, into the countrie of Edom :",
+    "text": "And he fent alſo meſfengers betore him to Eſau his brother into the land of Seir, into the countrie of Edom :",
     "from": "p114",
     "score": {
-     "s_dismas": 0.896,
-     "odr_com": 0.896,
-     "sabates_a": 0.89,
-     "madueke_b": 0.89
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
     }
    }
   },
   "4": {
    "S1": {
-    "text": "and he manded them, ſaying Thus ſpeake ye vnto my lord This ſaith thy brother Iacob haue ſoiourned, and bene with Laban vntil this preſent day.",
+    "text": "and he commanded them, ſaying Thus ſpeake ye vnto my lord EſauThis ſaith thy brother Iacob haue ſoiourned, and haue bene with Laban vntil this preſent day.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.903,
-     "odr_com": 0.903,
-     "sabates_a": 0.912,
-     "madueke_b": 0.912
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
     }
    },
    "S3": {
@@ -337,13 +274,13 @@
     }
    },
    "S6": {
-    "text": "and he commanded thei, Thus ſpeake ye vnto my Lord Eſau This ſaith thy brother Iacob. Iacob I haue ſeiourned, aud haue beeu with Laban vntil this preſent day.",
+    "text": "and he commanded thei, ſaving Thus ſpeake ye vnto my Lord Eſau This ſaith thy brother Iacob. Iacob I haue ſeiourned, aud haue beeu with Laban vntil this preſent day.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.89,
-     "odr_com": 0.89,
-     "sabates_a": 0.898,
-     "madueke_b": 0.898
+     "s_dismas": 0.925,
+     "odr_com": 0.925,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
     }
    }
   },
@@ -475,13 +412,13 @@
   },
   "8": {
    "S1": {
-    "text": "ſaying If come to one troupe, and ſtrike it, the other troupe remaineth, ſhal be ſaued.",
+    "text": "ſaying If Eſau come to one troupe, and ſtrike it, the other troupe that remaineth, ſhal be ſaued.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.892,
-     "odr_com": 0.892,
-     "sabates_a": 0.855,
-     "madueke_b": 0.855
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
     }
    },
    "S3": {
@@ -559,13 +496,13 @@
   },
   "10": {
    "S1": {
-    "text": "I am inferiourto al thymarcies, and thy truth that thou haſt fulfilled to ſeruant. with my ſtaſre I paſſed ouer this Iordain and wita two troupes I doe returne.",
+    "text": "I am inferiourto al thymarcies, and thy truth that thou haſt fulfilled to thy ſeruant. with my ſtaſre I paſſed ouer this Iordain and now wita two troupes I doe returne.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.916,
-     "odr_com": 0.916,
-     "sabates_a": 0.885,
-     "madueke_b": 0.885
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
     }
    },
    "S3": {
@@ -601,13 +538,13 @@
   },
   "11": {
    "S1": {
-    "text": "Deliuer me from nand of my btother Eſau, becauſe I am ſore affraidof leſt perhaps he come, And ſtrike the mother with the dren.",
+    "text": "Deliuer me from the nand of my btother Eſau, becauſe I am ſore affraidof him: leſt perhaps he come, And ſtrike the mother with the children.",
     "from": "p124",
     "score": {
-     "s_dismas": 0.89,
-     "odr_com": 0.89,
-     "sabates_a": 0.89,
-     "madueke_b": 0.89
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
     }
    },
    "S3": {
@@ -643,13 +580,13 @@
   },
   "12": {
    "S1": {
-    "text": "Thou di leſt ſay that thou wouldeſt do good to and dilate my ſeed as the ſand of the ſea, which for multitude can hot be numbred.",
+    "text": "Thou di leſt ſay that thou wouldeſt do good to me, and and dilate my ſeed as the ſand of the ſea, which for multitude can hot be numbred.",
     "from": "chapter",
     "score": {
-     "s_dismas": 0.954,
-     "odr_com": 0.954,
-     "sabates_a": 0.925,
-     "madueke_b": 0.925
+     "s_dismas": 0.948,
+     "odr_com": 0.948,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
     }
    },
    "S3": {
@@ -1387,13 +1324,13 @@
     }
    },
    "S6": {
-    "text": "Iacob asked him: ging of name by what name art thoucalled He anſwered: Why doeſt thou promiſed, name and bleſſed him in the ſame place.",
+    "text": "Iacob asked him: Tel me by what name art thoucalled He anſwered: Why doeſt thou aske my name and bleſſed him in the ſame place.",
     "from": "p116",
     "score": {
-     "s_dismas": 0.863,
-     "odr_com": 0.863,
-     "sabates_a": 0.853,
-     "madueke_b": 0.853
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
     }
    }
   },
@@ -1429,13 +1366,13 @@
     }
    },
    "S6": {
-    "text": "And Iacob cal- preformed name of the place Phanuel, ſaying : I haue ſeen God face to face, chap. ſoule was made ſate.",
+    "text": "And Iacob called the name of the place Phanuel, ſaying : I haue ſeen God face to face, and my ſoule was made ſate.",
     "from": "p116",
     "score": {
-     "s_dismas": 0.846,
-     "odr_com": 0.846,
-     "sabates_a": 0.838,
-     "madueke_b": 0.838
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    }
   },
@@ -1471,13 +1408,13 @@
     }
    },
    "S6": {
-    "text": "Aud immediately the ſunne roſe Hicvom Heb. after that he was paſt Phanuel : but he halted on his toot.",
+    "text": "Aud immediately the ſunne roſe to him, after that he was paſt Phanuel : but he halted on his toot.",
     "from": "p116",
     "score": {
-     "s_dismas": 0.888,
-     "odr_com": 0.888,
-     "sabates_a": 0.9,
-     "madueke_b": 0.9
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
     }
    }
   },
@@ -1513,13 +1450,13 @@
     }
    },
    "S6": {
-    "text": "For cauſe the children of Iſrael eate not the ſinow, that ſhrunke in thigh, vnto this preſent day: becauſe he touched the ſinow of and it ſhrunke.",
+    "text": "For which cauſe the children of Iſrael eate not the ſinow, that ſhrunke in Iacobes thigh, vnto this preſent day: becauſe he touched the ſinow of his thigh, and it ſhrunke.",
     "from": "p116",
     "score": {
-     "s_dismas": 0.84,
-     "odr_com": 0.828,
-     "sabates_a": 0.834,
-     "madueke_b": 0.834
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    }
   }
@@ -1769,5 +1706,5 @@
  "blocked_cells": 0,
  "achievable": 128,
  "triage": "SOURCE-SKEW",
- "secs": 6.5
+ "secs": 7.2
 }
