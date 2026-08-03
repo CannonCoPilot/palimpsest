@@ -1,0 +1,1749 @@
+{
+ "chapter": 25,
+ "n_verses": 34,
+ "n_cells": 136,
+ "n_pass": 131,
+ "rate": 0.9632,
+ "ref_means": {
+  "s_dismas": 0.9816,
+  "odr_com": 0.9819,
+  "sabates_a": 0.9762,
+  "madueke_b": 0.9762
+ },
+ "src_rates": {
+  "S1": 0.9412,
+  "S3": 0.9412,
+  "S9": 0.9706,
+  "S6": 1.0
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 5,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 24,
+   "worst": 0.849,
+   "from": "p104",
+   "text": "Now her was come to be deliuered, and behold twinnes were in her wombe."
+  },
+  {
+   "src": "S3",
+   "verse": 24,
+   "worst": 0.822,
+   "from": "p108",
+   "text": "Now her went was come to be deliuered, and behold twinnes were in her wonibe."
+  },
+  {
+   "src": "S1",
+   "verse": 29,
+   "worst": 0.812,
+   "from": "p104",
+   "text": "Iacob leſt boyled broth to whom Eſau being come faynt out of field,"
+  },
+  {
+   "src": "S9",
+   "verse": 29,
+   "worst": 0.857,
+   "from": "p114",
+   "text": "Iacob leſt boyled broth to whom Eſau being come faynt out of the ſield,"
+  },
+  {
+   "src": "S3",
+   "verse": 33,
+   "worst": 0.885,
+   "from": "p108",
+   "text": "Iacob ſaid Sweare therfore to me. Eſau to him, and ſould his firſtbirthtright."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "And Abraham maried an other wife named Cethura: +",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "AND Abraham maried an other wife named Cethura:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "AND Abraham maried an other wife named Cethura:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "and Abraham maried another wite named Cetura",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.935,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "which bare him Zamran, and Iecſan, and Madan, and Madian, and Ieſboc, and Sue.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "which bare him Zamran, and Iecſan, and Madan, and Madian, and Ieſboc, and Sue.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "which bare him Zamran, and Iecſan, and Madan, and Madian, and Ieſboc, and Sue.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "which bare him Zamran, and Ieeſan, and Madan, and Madian, and Ieſboc, and Sue.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "Iecſan alſo begat Saba and Dadan. The Children of Dadan were Aſſurim, and Latuſim, and Loomim.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "Iecſan alſo begat Saba and Dadan. The Children of Dadan were Aſſurim, and Latuſim, and Loomim.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S9": {
+    "text": "Iecſan alſo begat Saba and Dadan. The Children of Dadan were Aſfurim, and Latuſim, and Loomim.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S6": {
+    "text": "Iecſan alfo begat Saba Padan. The Children of Dadan were. Aſfurtm and Latuſim, and Loomim.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.911,
+     "odr_com": 0.911,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "But alſo of Madian was borne Epha, and Opher, and Henoch, and Abida, and Eldaa : al theſe were the children of Cetura.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "But alſo of Madian was borne Epha, and Opher, and Henoch, and Abida, and Eldaa : al theſe were the children of Cetura.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But alſo of Madian was borne Epha, and Opher, and Henoch, and Abida, and Eldaa: al theſe were the children of Cetura.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "But alſo of Madian was borne Epha, and Opher, and Henoch, and Abida, and Eldaa: al theſe were the children of Cetura.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And Abraham gaue al his poſſeſſions to Iſaac:",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Abraham gaue al his poſſeſſions to Iſaac :",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Abraham gaue al his poſſeſſions to Iſaac:",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Abraham gaue al his poſſeſſious to Ifaac:",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "and to the children of his concubines he gaue gifts, and ſeparated them from Iſaac his ſonne, whileſt himſelfe yer liued, to the eaſt countrie.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "and to the children of his concubines he gaue gifts, and ſeparated them from Iſaac his ſonne, whileſt himſelfe yet liued, to the eaſt countrie.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "and to the children of his concubines he gaue gifts, and ſeparated them from Iſaac his ſonne, whileſt himſelfe yet liued, to the eaſt countrie.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "and to the children of his concubines he gaue guitts, and ſeparated them from Iſaac his ſonne, whileſt himſelte yet liued, to the eaſt countrie..",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And the days of Abrahams life were a hundred ſeuentie and fiue yeares.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "And the days of Abrahams life were a hundred ſeuentie and fiue yeares.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S9": {
+    "text": "And the days of Abrahams life were a hundred ſeuentie and fiue yeares.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S6": {
+    "text": "And the dayes of Abrahams life were an hundred ſeuentie and fiue yeares.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And decaying dyed in : a good old age, and hauing liued a great time, and being ful of days : and was gethered to his people.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "And decaying dyed in : a good old age, and hauing liued a great time, and being ful of days : and was gethered to his people.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "And decaying dyed in : a good old age, :: and hauing liued a great time, and being ful of days : and the was gethered to his people.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "And decayins dyed in a good old age, and hauino liued a great time, and being tul of dayes: and was gathered to his people.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And there buried him Iſaac and Iſmael his ſonnes in the duble caue, which was ſituated in the field of Ephron the ſonne of Seor the Hethite, ouer againſt Mambre,",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "And there buried him Iſaac and Iſmael his ſonnes in the duble caue, which was ſituated in the field of Ephron the ſoune of Seor the Hethite, ouer againſt Mambre,",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And there buried him Iſaac and Iſmael his ſonnes in the duble caue, which was ſituated in the field of Ephron the ſonne of Seor the Hethite, ouer againſt Mambre,",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And there buried him Iiaac and Iſmael his ſonnes in the double caue whch was ſituated in the feldof Ephron the ſoune ot Seor the Hethite, ouer againſt Mambre,",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "which he had bought of the children of Heth : there was he buried, and Sara his wife.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "which he had bought of the children of Heth : there was he buried, and Sara his wife.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "which he had bought ot the childrenof Heth: there was he butied, and Sara his wite.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And after his death God bleſſed Iſaac his ſonne, who dwelled beſide the wel of the Liuing and ſeing ſo named.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S3": {
+    "text": "And after his death God bleſſed Iſaac his ſonne, who dwelled beſide the wel of the Liuing and ſeing ſo named.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S9": {
+    "text": "And after his death God bleſſed Iſaac his ſonne, who dwelled beſide the wel of the Liuing and ſeing ſo named.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "And after his death God bleſſed Iſaac his ſonne, who dwelled beſide the wel of the Liuing & Seeing, ſo named.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Theſe are the generations of Iſmael the ſonne of Abraham, whom Agar the Egyptian bare him, Saraes ſeruant:",
+    "from": "p103",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "Theſe are the generations of Iſmael the ſonne of Abraham, whom Agar the Ægyptian bare him, Saraes ſeruant",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "Theſe are the generations of Iſmael the ſonne of Abraham, whom Agar the Ægyptian bare him, Saraes ſeruant",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "Theſe are the generations of Iſmael the ſonne of Abraham, who Agar the Egyptian bare him, Saraes ſeruant &",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "theſe are the names of his children according to their calling and generations. The firſt begotten of Iſmael Nabaioth, then Cedar; and Adbeel, and Mabſam,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "theſe are the names of his children according to their callingand generations. The firſt begotten of Iſmael Nabaioth, then Cedar, and Adbeel, and Mabſam,",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "theſe are the names of his children according to their calling and generations. The firſt begotten of Iſmael Nabaioth, then Cedar, and Adbeel, and Mabſam,",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "theſe are the names of his children according to their calling and generations. The firſt begotten of Iſmael Nabaioth, then Cedar, and Adbeel, and Mabſam,",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Maſma alſo, and Duma, and Maſſa,",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Maſma alſo, and Duma, and Maſſa,",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Maſma alſo, and Duma, and Maſſa,",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Maſma alſo, and Duma, and Maſſa,",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Hadar, and Thema, and Iethur, and Naphis, and Cedma.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Hadar, and Thema, and Iethur, and Naphis, and Cedma.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Hadar, and Thema, and Iethur, and Naphis, and Cedma.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Hadar, and Thema, and Iethut, and Naphis, and Cedma.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "Theſe are the ſonnes of Iſmael: and theſe are their names by their caſtles and townes, twelue princes of their tribes.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "Theſe are the ſonnes of Iſmael: and theſe are their names by their caſtles and townes, twelue princes of their tribes.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "Theſe are the ſonnes of Iſmael : and theſe are their names by their caſtles and townes, twelue princes of their tribes.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "Theſe are the ſonnes of Iſmael: and theſe are their names by their caſtles and townes, twelue Princes of their tribes.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And the yeares of Iſmaels life came to an hundred thirtie ſeauen, and decaying died, and was put vnto his people.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "And the yeares of Iſmaels life came to an hundred thirtie ſeauen, and decaying died, and was put vnto his people.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And the yeares of Iſmaels life came to an hundred thirtie ſeauen, and decaying died, and was put vnto his people.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "And the veares of Iſmaels life came to an hundred thirtie ſeauen, and decaying died, and was put vnto his people.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And he dwelt from Heuila euen to Sur, which looketh towards gypt, as they enter to the Aſſirians, before the face of al his bretheren died he.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And he dwelt from Heuila euen to Sur, which looketh towards Egypt, as they enter to the Aſſirians, before the face of al his bretheren died he.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And he dwelt from Heuila euen to Sur, which looketh towards Egypt, as they enter to the Aſſirians, before the face of al his bretheren died he.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And he dwelt from Heuila euen to Sur, which Iooketh towards Egypt, as they enter to the Aſſitians, before the tace of al his brethren died he.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Theſe alſo are the generations of Iſaac the ſonne of Abraham: Abraham begat Iſaac :",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Theſe alſo are the generations of Iſaac the ſonne of Abraham Abraham begat Iſaac :",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Theſe alſo are the generations of Iſaac the ſonne of Abraham: Abraham begat Iſaac :",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Theſe alſo are the generations of Iſaac the fohne ot Abraham: Abraham begat Iſaac:",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "who when he was fortie yeares old, tooke to wife Rebecca the daughter of Bathuel the Syrian of Meſopotamia, ſiſter to Laban.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "who when he was fortie yeares old, tooke to wife Rebecca the daughter of Bathuel the Syrian of Meſopotamia, ſiſter to Laban.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "who when he was fortie yeares old, tooke to wife Rebecca the daughter of Bathuel the Syrian of Meſopotamia, ſiſter to Laban.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "20.who when he was tourtie veares old tooke to wife Rebecca the daughter of Bathuel the Sytian of Meſopotamia, ſiſter to Laban.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And Iſaac beſought our Lord for his wife, becauſe ſhe was barren : who heard him, and made Rebecca to conceaue.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And Iſaac beſought our Lord for his wife, becauſe ſhe was barren : who heard him, and made Rebecca to conceaue.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And Iſaac beſought our Lord for his wife, becauſe ſhe was barren : who heard him, and made Rebecca to conceaue.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "And Iſaac beſought our Lord for his wite, becauſe ſhe was barren: who heard him, and made braham. Rebecca to conceaue.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "But the little ones ſtrugledin her wombe who ſaid If it ſhould be ſo with me, whar nede was there to conceaue And ſhe went to conſult our Lord.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "But the little ones ſtrugled in her wombe who ſaid If it ſhould be with me, what nede was there to conceaue And ſe went to conſult our Lord.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "But the Iittle ones ſtrugled in her wombe who ſaid If it ſhould be ſo with me, what nede was there to conceaue And ſhe went to conſult our Lord.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "But the litle ones ſtrugied in her womb: who ſaid : If it ſhould be ſo with me what need was there to conceaue And ſhe went to conſult our Lord.",
+    "from": "p96",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "Who anſwering ſaid: Two nations are in thy wombe, and two peoples ſhal be diuided out of thy wombe, and one people ſhal ouercome the other, and the elder ſhal ſerue the younger.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Who anſwering ſaid Two nations are in thy wombe, and two peoples ſhal be diuided out of thy wombe, and one people ſhal ouercome the other; and the elder ſhal ſerue the younger.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Who anſwering ſaid Two nations are in thy wombe, and two peoples ſhal be diuided but de- out of thy wombe, and one people ſhal ouercome the other, and the elder ſhal ſerue the younger.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "Who anſwering ſaid Two tious are in thy womb, aud two peoples thal be diuided out of thy womb, and one people thal ouercome ther other, and the elder ſhal ferue the yonger.",
+    "from": "p96",
+    "score": {
+     "s_dismas": 0.936,
+     "odr_com": 0.936,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "Now her was come to be deliuered, and behold twinnes were in her wombe.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.863,
+     "odr_com": 0.863,
+     "sabates_a": 0.849,
+     "madueke_b": 0.849
+    }
+   },
+   "S3": {
+    "text": "Now her went was come to be deliuered, and behold twinnes were in her wonibe.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.85,
+     "odr_com": 0.85,
+     "sabates_a": 0.822,
+     "madueke_b": 0.822
+    }
+   },
+   "S9": {
+    "text": "Now her time was come to be deliuered, and behold twinnes were found in her wombe.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "Now her time was come to be deliuered and behold twinnes were found in her womb.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "He that came forth firſt, was read, and al hearie in manner of. a skinne and his name was called Eſau. Immediatly the other coming forth, held his brothers plant in his hand and therfore he called him Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "He that came forth firſt, was read, and al hearie in manner of a skinne: and his name was called Eſau. Immediatly the other coming forth, held his brothers plant in his hand and therfore he called him Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "He that came forth firſt, was read, and al hearie in manner of a skinne and his name was called Eſau. Immediatly the other coming forth, held his brothers plant in his hand and therfore he called him Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "He that came forth firſt was red and al hairie in manner of a skinne: and his name was called Eſau. Immediatcly the other commins torth, held his brothers plant in his hand: and thertore he called him Iacob.",
+    "from": "p96",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "Threeſcore yeares old was Iſaac, when the litle ones were borne vnto him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "Threeſcore yeares old was Iſaac, when the litle ones were borne vnto him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "Threeſcore yeares old was Iſaac, when the litle ones were borne vnto him.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "Threeſcore yeares old was Iſaac, when the litle ones were borne vnto him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "who being growne vp, Eſau became a man cunning in hunting, and a huſband man but Iacob :: a plaine man dwelled in tents.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "Who being growne vp, Eſau became a man cunning in hunting, and a huſband man but Iacob :: a plaine man dwelled in tents.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S9": {
+    "text": "Who being growne vp, Eſau became a man cunning in hunting, and a huſband man bur Iacob a plaine man dwelled in tents.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S6": {
+    "text": "Who being growne vp, Eſau became a man cunning in hunting, & a huſband man: but Iacob a plaine man dwelled intents.:8.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "Iſaac loued Eſau, becauſe he did eate of his hunting: and Rebecca loued Iacob. And",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S3": {
+    "text": "Iſaac loued Eſau, becauſe he did eate of his hunting and Rebecca loued Iacob. And",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S9": {
+    "text": "Iſaac loued Eſau, becauſe he did eate of his hunting : and Rebecca loued Iacob.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Iſaac loued Eſau; becauſe he did eate of his hunting: and Rebecca loued Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "Iacob leſt boyled broth to whom Eſau being come faynt out of field,",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.812,
+     "odr_com": 0.812,
+     "sabates_a": 0.877,
+     "madueke_b": 0.877
+    }
+   },
+   "S3": {
+    "text": "Iacob boyled broth to whom Eſau being come faynt out of the field,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Iacob leſt boyled broth to whom Eſau being come faynt out of the ſield,",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.857,
+     "odr_com": 0.857,
+     "sabates_a": 0.912,
+     "madueke_b": 0.912
+    }
+   },
+   "S6": {
+    "text": "Iacob boyled broth: to whom Eſau being come faynt out of the field,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "ſaid Geue me of this read broth, becauſe I am ex-ceeding faint. For which cauſe his name was called Edom.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "ſaid Geue me of this read broth, becauſe I am ex-ceeding faint. For which cauſe his name was called Edom.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "ſaid : Geue me of this read broth, becauſe I am exbe ceding faint. For which cauſe his name was called Edom.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "ſaid : Giue me of this red broth, , becauſe I am exceeding faint. For which cauſe his name was called Edom.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "To whom Iacob ſaid: Sel me thy firſt-birth-right.\"",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "To whom Iacob ſaid Sel me thy firſt birthrright.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "To whom Iacob ſaid: Sel me thy firſt birthtright",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "To whom Iacob ſaid: Sel me thy firſt-birth-right.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "He anſwered, Loe I dye, what wil che firſt birth right. auaile me",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "He anſwered, Loe I dye, what wil the firſt birth right auaile me",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "He anſwered, Loe I dye, what wil the firſt birth right auaile me",
+    "from": "p114",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "He anſwered, Loe I dye, what wilt the firſt-birth-right auaile me",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "Iacob ſaid Sweare therfore to me. Eſau ſware to him, and ſould his firſt.birth right.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "Iacob ſaid Sweare therfore to me. Eſau to him, and ſould his firſtbirthtright.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.912,
+     "odr_com": 0.912,
+     "sabates_a": 0.885,
+     "madueke_b": 0.885
+    }
+   },
+   "S9": {
+    "text": "Iacob ſaid Sweare therfore to me. Eſau ſware to him, and ſould his firſt-birthtright.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "Iacob ſaid: Sweare ther tore to me. Eſau ſware to him, and ſold his firſt.birtheright.",
+    "from": "p96",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "And ſo taking bread, and the rice broth, did eate, and drinke, and went his way little eſteeming that he had ſold his firſt birth right..",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And ſo taking bread and the rice broth, did eate, and drinke, and went his way little eſteeming that he had ſold his firſt birth right.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And ſo taking bread and the rice broth, did eate, and drinke, and went his way little eſteeming that he had ſold his firſt birth right.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And ſo taking bread and the rice broth, did eate, and drinke, and went his way; litle eſteeming that he had ſold his firſt-birth-right.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Abraham maried an other wife named Cetura:",
+   "odr_com": "AND Abraham maried an other wife named Cethura:",
+   "sabates_a": "And Abraham married another wife named Cetura:",
+   "madueke_b": "And Abraham married another wife named Cetura:"
+  },
+  "2": {
+   "s_dismas": "which bare him Zamran, and Iecſan, and Madan, and Madian, and Ieſboc, and Sue.",
+   "odr_com": "which bare him Zamran, and Iecsan, and Madan, and Madian, and Iesboc, and Sue.",
+   "sabates_a": "Which bare him Zamran, and Jecsan, and Madan, and Madian, and Jesboc, and Sue.",
+   "madueke_b": "Which bare him Zamran, and Jecsan, and Madan, and Madian, and Jesboc, and Sue."
+  },
+  "3": {
+   "s_dismas": "Iecſan alſo begat Saba and Dadan. The Children of Dadan were Aſſurim, and Latuſim, and Loomim.",
+   "odr_com": "Iecsan also begat Saba and Dadan. The Children of Dadan were Assurim, and Latusim, and Loomim.",
+   "sabates_a": "Jecsan also begat Saba & Dadan. The Children of Dadan were Assurim, and Latusim, and Loomim.",
+   "madueke_b": "Jecsan also begat Saba & Dadan. The Children of Dadan were Assurim, and Latusim, and Loomim."
+  },
+  "4": {
+   "s_dismas": "But alſo of Madian was borne Epha, and Opher, and Henoch, and Abida, and Eldaa: al theſe were the children of Cetura.",
+   "odr_com": "But also of Madian was borne Epha, and Opher, and Henoch, and Abida, and Eldaa: al these were the children of Cetura.",
+   "sabates_a": "But also of Madian was born Epha, and Opher, and Henoch, and Abida, and Eldaa: all these were the children of Cetura.",
+   "madueke_b": "But also of Madian was born Epha, and Opher, and Henoch, and Abida, and Eldaa: all these were the children of Cetura."
+  },
+  "5": {
+   "s_dismas": "And Abraham gaue al his poſſeſſions to Iſaac:",
+   "odr_com": "And Abraham gaue al his possessions to Isaac:",
+   "sabates_a": "And Abraham gave all his possessions to Isaac:",
+   "madueke_b": "And Abraham gave all his possessions to Isaac:"
+  },
+  "6": {
+   "s_dismas": "and to the children of his concubines he gaue gifts, and ſeparated them from Iſaac his ſonne, whileſt himſelfe yet liued, to the eaſt countrie.",
+   "odr_com": "and to the children of his concubines he gaue gifts, and separated them from Isaac his sonne, whilest himselfe yet liued, to the east countrie.",
+   "sabates_a": "and to the children of his concubines he gave gifts, and separated them from Isaac his son, whilst himself yet lived, to the east country.",
+   "madueke_b": "and to the children of his concubines he gave gifts, and separated them from Isaac his son, whilst himself yet lived, to the east country."
+  },
+  "7": {
+   "s_dismas": "And the days of Abrahams life were a hundred ſeuentie and fiue yeares.",
+   "odr_com": "And the days of Abrahams life were a hundred seuentie and fiue yeares.",
+   "sabates_a": "And the days of Abraham's life were an hundred seventy and five years.",
+   "madueke_b": "And the days of Abraham's life were an hundred seventy and five years."
+  },
+  "8": {
+   "s_dismas": "And decaying dyed in a good old age, and hauing liued a great time, and being ful of days: and was gethered to his people.",
+   "odr_com": "And decaying dyed in a good old age, and hauing liued a great time, and being ful of days: and was gethered to his people.",
+   "sabates_a": "And decaying died in a good old age, and having lived a great time, and being full of days and was gathered to his people.",
+   "madueke_b": "And decaying died in a good old age, and having lived a great time, and being full of days and was gathered to his people."
+  },
+  "9": {
+   "s_dismas": "And there buried him Iſaac and Iſmael his ſonnes in the duble caue, which was ſituated in the field of Ephron the ſonne of Seor the Hethite, ouer againſt Mambre,",
+   "odr_com": "And there buried him Isaac and Ismael his sonnes in the duble caue, which was situated in the field of Ephron the sonne of Seor the Hethite, ouer against Mambre,",
+   "sabates_a": "And there buried him Isaac and Ismael his sons in the double cave, which was situated in the field of Ephron the son of Seor the Hethite, over-against Mambre,",
+   "madueke_b": "And there buried him Isaac and Ismael his sons in the double cave, which was situated in the field of Ephron the son of Seor the Hethite, over-against Mambre,"
+  },
+  "10": {
+   "s_dismas": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+   "odr_com": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+   "sabates_a": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+   "madueke_b": "which he had bought of the children of Heth: there was he buried, and Sara his wife."
+  },
+  "11": {
+   "s_dismas": "And after his death God bleſſed Iſaac his ſonne, who dwelled beſide the wel of the Liuing and ſeing ſo named.",
+   "odr_com": "And after his death God blessed Isaac his sonne, who dwelled beside the wel of the Liuing and seing so named.",
+   "sabates_a": "And after his death God blessed Isaac his son, who dwelled beside the well of the Living & Seeing, so named.",
+   "madueke_b": "And after his death God blessed Isaac his son, who dwelled beside the well of the Living & Seeing, so named."
+  },
+  "12": {
+   "s_dismas": "Theſe are the generations of Iſmael the ſonne of Abraham, whom Agar the Ægyptian bare him, Saraes ſeruant: and",
+   "odr_com": "These are the generations of Ismael the sonne of Abraham, whom Agar the Ægyptian bare him, Saraes seruant: and",
+   "sabates_a": "These are the generations of Ismael the son of Abraham, whom Agar the Ægyptian bare him, Sara's servant: &",
+   "madueke_b": "These are the generations of Ismael the son of Abraham, whom Agar the Aegyptian bare him, Sara's servant: &"
+  },
+  "13": {
+   "s_dismas": "theſe are the names of his children according to their calling and generations. The firſt begotten of Iſmael Nabaioth, then Cedar, and Adbeel, and Mabſam,",
+   "odr_com": "these are the names of his children according to their calling and generations. The first begotten of Ismael Nabaioth, then Cedar, and Adbeel, and Mabsam,",
+   "sabates_a": "These are the names of his children according to their calling and generations. The first begotten of Ishmael Nabajoth, then Cedar, and Adbeel, and Mabsam,",
+   "madueke_b": "These are the names of his children according to their calling and generations. The first begotten of Ishmael Nabajoth, then Cedar, and Adbeel, and Mabsam,"
+  },
+  "14": {
+   "s_dismas": "Maſma alſo, and Duma, and Maſſa,",
+   "odr_com": "Masma also, and Duma, and Massa,",
+   "sabates_a": "Masma also, and Duma, and Massa,",
+   "madueke_b": "Masma also, and Duma, and Massa,"
+  },
+  "15": {
+   "s_dismas": "Hadar, and Thema, and Iethur, and Naphis, and Cedma.",
+   "odr_com": "Hadar, and Thema, and Iethur, and Naphis, and Cedma.",
+   "sabates_a": "Hadar, and Thema, and Iethur, and Naphis, and Cedma.",
+   "madueke_b": "Hadar, and Thema, and Iethur, and Naphis, and Cedma."
+  },
+  "16": {
+   "s_dismas": "Theſe are the ſonnes of Iſmael: and theſe are their names by their caſtles and townes, twelue princes of their tribes.",
+   "odr_com": "These are the sonnes of Ismael: and these are their names by their castles and townes, twelue princes of their tribes.",
+   "sabates_a": "These are the sons of Ismael: and these are their names by their castles and towns, twelve Princes of their tribes.",
+   "madueke_b": "These are the sons of Ismael: and these are their names by their castles and towns, twelve Princes of their tribes."
+  },
+  "17": {
+   "s_dismas": "And the yeares of Iſmaels life came to an hundred thirtie ſeauen, and decaying died, and was put vnto his people.",
+   "odr_com": "And the yeares of Ismaels life came to an hundred thirtie seauen, and decaying died, and was put vnto his people.",
+   "sabates_a": "And the years of Ismael's life came to an hundred thirty seven, and decaying died, and was put unto his people.",
+   "madueke_b": "And the years of Ismael's life came to an hundred thirty seven, and decaying died, and was put unto his people."
+  },
+  "18": {
+   "s_dismas": "And he dwelt from Heuila euen to Sur, which looketh towards Ægypt, as they enter to the Aſſirians, before the face of al his bretheren died he.",
+   "odr_com": "And he dwelt from Heuila euen to Sur, which looketh towards Ægypt, as they enter to the Assirians, before the face of al his bretheren died he.",
+   "sabates_a": "And he dwelt from Hevila even to Sur, which looketh towards Ægypt, as they enter to the Assyrians, before the face of all his brethren died he.",
+   "madueke_b": "And he dwelt from Hevila even to Sur, which looketh towards Aegypt, as they enter to the Assyrians, before the face of all his brethren died he."
+  },
+  "19": {
+   "s_dismas": "Theſe alſo are the generations of Iſaac the ſonne of Abraham: Abraham begat Iſaac:",
+   "odr_com": "These also are the generations of Isaac the sonne of Abraham: Abraham begat Isaac:",
+   "sabates_a": "These also are the generations of Isaac the son of Abraham: Abraham begat Isaac:",
+   "madueke_b": "These also are the generations of Isaac the son of Abraham: Abraham begat Isaac:"
+  },
+  "20": {
+   "s_dismas": "who when he was fortie yeares old, tooke to wife Rebecca the daughter of Bathuel the Syrian of Meſopotamia, ſiſter to Laban.",
+   "odr_com": "who when he was fortie yeares old, tooke to wife Rebecca the daughter of Bathuel the Syrian of Mesopotamia, sister to Laban.",
+   "sabates_a": "Who when he was forty years old, took to wife Rebecca the daughter of Bathuel the Syrian of Mesopotamia, sister to Laban.",
+   "madueke_b": "Who when he was forty years old, took to wife Rebecca the daughter of Bathuel the Syrian of Mesopotamia, sister to Laban."
+  },
+  "21": {
+   "s_dismas": "And Iſaac beſought our Lord for his wife, becauſe ſhe was barren: who heard him, and made Rebecca to conceaue.",
+   "odr_com": "And Isaac besought our Lord for his wife, because she was barren: who heard him, and made Rebecca to conceaue.",
+   "sabates_a": "And Isaac besought our Lord for his wife, because she was barren: who heard him, and made Rebecca to conceive.",
+   "madueke_b": "And Isaac besought our Lord for his wife, because she was barren: who heard him, and made Rebecca to conceive."
+  },
+  "22": {
+   "s_dismas": "But the little ones ſtrugled in her wombe; who ſaid: If it ſhould be ſo with me, what nede was there to conceaue? And ſhe went to conſult our Lord.",
+   "odr_com": "But the little ones strugled in her wombe; who said: If it should be so with me, what nede was there to conceaue? And she went to consult our Lord.",
+   "sabates_a": "But the little ones struggled in her womb; who said: If it should be so with me, what need was there to conceive? And she went to consult our Lord.",
+   "madueke_b": "But the little ones struggled in her womb; who said: If it should be so with me, what need was there to conceive? And she went to consult our Lord."
+  },
+  "23": {
+   "s_dismas": "Who anſwering ſaid: Two nations are in thy wombe, and two peoples ſhal be diuided out of thy wombe, and one people ſhal ouercome the other, and the elder ſhal ſerue the younger.",
+   "odr_com": "Who answering said: Two nations are in thy wombe, and two peoples shal be diuided out of thy wombe, and one people shal ouercome the other, and the elder shal serue the younger.",
+   "sabates_a": "Who answering said: Two nations are in thy womb, and two peoples shall be divided out of thy womb, and one people shall overcome the other, and the elder shall serve the younger.",
+   "madueke_b": "Who answering said: Two nations are in thy womb, and two peoples shall be divided out of thy womb, and one people shall overcome the other, and the elder shall serve the younger."
+  },
+  "24": {
+   "s_dismas": "Now her time was come to be deliuered, and behold twinnes were found in her wombe.",
+   "odr_com": "Now her time was come to be deliuered, and behold twinnes were found in her wombe.",
+   "sabates_a": "Now her time was come to be delivered, and behold twins were found in her womb.",
+   "madueke_b": "Now her time was come to be delivered, and behold twins were found in her womb."
+  },
+  "25": {
+   "s_dismas": "He that came forth firſt, was read, and al hearie in manner of a skinne: and his name was called Eſau. Immediatly the other coming forth, held his brothers plant in his hand: and therfore he called him Iacob.",
+   "odr_com": "He that came forth first, was read, and al hearie in manner of a skinne: and his name was called Esau. Immediatly the other coming forth, held his brothers plant in his hand: and therfore he called him Iacob.",
+   "sabates_a": "He that came forth first, was red, and all hairy in manner of a skin: and his name was called Esau. Immediately the other coming forth, held his brother's plant in his hand: and therefore he called him Jacob.",
+   "madueke_b": "He that came forth first, was red, and all hairy in manner of a skin: and his name was called Esau. Immediately the other coming forth, held his brother's plant in his hand: and therefore he called him Jacob."
+  },
+  "26": {
+   "s_dismas": "Threeſcore yeares old was Iſaac, when the litle ones were borne vnto him.",
+   "odr_com": "Threescore yeares old was Isaac, when the litle ones were borne vnto him.",
+   "sabates_a": "Threescore years old was Isaac, when the little ones were born unto him.",
+   "madueke_b": "Threescore years old was Isaac, when the little ones were born unto him."
+  },
+  "27": {
+   "s_dismas": "Who being growne vp, Eſau became a man cunning in hunting, and a huſband man: but Iacob a plaine man dwelled in tents.",
+   "odr_com": "Who being growne vp, Esau became a man cunning in hunting, and a husband man: but Iacob a plaine man dwelled in tents.",
+   "sabates_a": "Who being grown up, Esau became a man cunning in hunting, & a husband man: but Jacob a plain man dwelled in tents:",
+   "madueke_b": "Who being grown up, Esau became a man cunning in hunting, & a husband man: but Jacob a plain man dwelled in tents:"
+  },
+  "28": {
+   "s_dismas": "Iſaac loued Eſau, becauſe he did eate of his hunting: and Rebecca loued Iacob.",
+   "odr_com": "Isaac loued Esau, because he did eate of his hunting: and Rebecca loued Iacob.",
+   "sabates_a": "Isaac loved Esau, because he did eat of his hunting: and Rebecca loved Jacob.",
+   "madueke_b": "Isaac loved Esau, because he did eat of his hunting: and Rebecca loved Jacob."
+  },
+  "29": {
+   "s_dismas": "And Iacob boyled broth: to whom Eſau being come faynt out of the field,",
+   "odr_com": "And Iacob boyled broth: to whom Esau being come faynt out of the field,",
+   "sabates_a": "& Jacob boiled broth: to whom Esau being come faint out of the field,",
+   "madueke_b": "& Jacob boiled broth: to whom Esau being come faint out of the field,"
+  },
+  "30": {
+   "s_dismas": "ſaid: Geue me of this read broth, becauſe I am exceding faint. For which cauſe his name was called Edom.",
+   "odr_com": "said: Geue me of this read broth, because I am exceding faint. For which cause his name was called Edom.",
+   "sabates_a": "said: Give me of this red broth, because I am exceeding faint. For which cause his name was called Edom.",
+   "madueke_b": "said: Give me of this red broth, because I am exceeding faint. For which cause his name was called Edom."
+  },
+  "31": {
+   "s_dismas": "To whom Iacob ſaid: Sel me thy firſt-birthright.",
+   "odr_com": "To whom Iacob said: Sel me thy first-birth-right.",
+   "sabates_a": "To whom Jacob said: sell me thy first-birth-right.",
+   "madueke_b": "To whom Jacob said: sell me thy first-birth-right."
+  },
+  "32": {
+   "s_dismas": "He anſwered, Loe I dye, what wil the firſt birth right auaile me?",
+   "odr_com": "He answered, Loe I dye, what wil the first birth right auaile me?",
+   "sabates_a": "He answered, Lo I die, what will the first-birth-right avail me?",
+   "madueke_b": "He answered, Lo I die, what will the first-birth-right avail me?"
+  },
+  "33": {
+   "s_dismas": "Iacob ſaid: Sweare therfore to me. Eſau ſware to him, and ſould his firſt-birth-right.",
+   "odr_com": "Iacob said: Sweare therfore to me. Esau sware to him, and sould his first-birth-right.",
+   "sabates_a": "Jacob said: Swear therefore to me. Esau sware to him, and sold his first-birth-right.",
+   "madueke_b": "Jacob said: Swear therefore to me. Esau sware to him, and sold his first-birth-right."
+  },
+  "34": {
+   "s_dismas": "And ſo taking bread and the rice broth, did eate, and drinke, and went his way; little eſteeming that he had ſold his firſt birth right.",
+   "odr_com": "And so taking bread and the rice broth, did eate, and drinke, and went his way; little esteeming that he had sold his first birth right.",
+   "sabates_a": "And so taking bread and the rice broth, did eat, and drink, and went his way; little esteeming that he had sold his first-birth-right.",
+   "madueke_b": "And so taking bread and the rice broth, did eat, and drink, and went his way; little esteeming that he had sold his first-birth-right."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Abraham married another wife named Cetura:",
+  "2": "Which bare him Zamran, and Jecsan, and Madan, and Madian, and Jesboc, and Sue.",
+  "3": "Jecsan also begat Saba & Dadan. The Children of Dadan were Assurim, and Latusim, and Loomim.",
+  "4": "But also of Madian was born Epha, and Opher, and Henoch, and Abida, and Eldaa: all these were the children of Cetura.",
+  "5": "And Abraham gave all his possessions to Isaac:",
+  "6": "and to the children of his concubines he gave gifts, and separated them from Isaac his son, whilst himself yet lived, to the east country.",
+  "7": "And the days of Abraham's life were an hundred seventy and five years.",
+  "8": "And decaying died in a good old age, and having lived a great time, and being full of days and was gathered to his people.",
+  "9": "And there buried him Isaac and Ismael his sons in the double cave, which was situated in the field of Ephron the son of Seor the Hethite, over-against Mambre,",
+  "10": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+  "11": "And after his death God blessed Isaac his son, who dwelled beside the well of the Living & Seeing, so named.",
+  "12": "These are the generations of Ismael the son of Abraham, whom Agar the Ægyptian bare him, Sara's servant: &",
+  "13": "These are the names of his children according to their calling and generations. The first begotten of Ishmael Nabajoth, then Cedar, and Adbeel, and Mabsam,",
+  "14": "Masma also, and Duma, and Massa,",
+  "15": "Hadar, and Thema, and Iethur, and Naphis, and Cedma.",
+  "16": "These are the sons of Ismael: and these are their names by their castles and towns, twelve Princes of their tribes.",
+  "17": "And the years of Ismael's life came to an hundred thirty seven, and decaying died, and was put unto his people.",
+  "18": "And he dwelt from Hevila even to Sur, which looketh towards Ægypt, as they enter to the Assyrians, before the face of all his brethren died he.",
+  "19": "These also are the generations of Isaac the son of Abraham: Abraham begat Isaac:",
+  "20": "Who when he was forty years old, took to wife Rebecca the daughter of Bathuel the Syrian of Mesopotamia, sister to Laban.",
+  "21": "And Isaac besought our Lord for his wife, because she was barren: who heard him, and made Rebecca to conceive.",
+  "22": "But the little ones struggled in her womb; who said: If it should be so with me, what need was there to conceive? And she went to consult our Lord.",
+  "23": "Who answering said: Two nations are in thy womb, and two peoples shall be divided out of thy womb, and one people shall overcome the other, and the elder shall serve the younger.",
+  "24": "Now her time was come to be delivered, and behold twins were found in her womb.",
+  "25": "He that came forth first, was red, and all hairy in manner of a skin: and his name was called Esau. Immediately the other coming forth, held his brother's plant in his hand: and therefore he called him Jacob.",
+  "26": "Threescore years old was Isaac, when the little ones were born unto him.",
+  "27": "Who being grown up, Esau became a man cunning in hunting, & a husband man: but Jacob a plain man dwelled in tents:",
+  "28": "Isaac loved Esau, because he did eat of his hunting: and Rebecca loved Jacob.",
+  "29": "& Jacob boiled broth: to whom Esau being come faint out of the field,",
+  "30": "said: Give me of this red broth, because I am exceeding faint. For which cause his name was called Edom.",
+  "31": "To whom Jacob said: sell me thy first-birth-right.",
+  "32": "He answered, Lo I die, what will the first-birth-right avail me?",
+  "33": "Jacob said: Swear therefore to me. Esau sware to him, and sold his first-birth-right.",
+  "34": "And so taking bread and the rice broth, did eat, and drink, and went his way; little esteeming that he had sold his first-birth-right."
+ },
+ "ref_coverage": {
+  "janvier": 34,
+  "have": {
+   "s_dismas": 34,
+   "odr_com": 34,
+   "sabates_a": 34,
+   "madueke_b": 34
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 136,
+ "triage": "R3-READY",
+ "secs": 5.8
+}

@@ -1,0 +1,2220 @@
+{
+ "chapter": 30,
+ "n_verses": 43,
+ "n_cells": 172,
+ "n_pass": 163,
+ "rate": 0.9477,
+ "ref_means": {
+  "s_dismas": 0.9724,
+  "odr_com": 0.9744,
+  "sabates_a": 0.9613,
+  "madueke_b": 0.9613
+ },
+ "src_rates": {
+  "S1": 0.9535,
+  "S3": 0.9302,
+  "S9": 0.9535,
+  "S6": 0.9535
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  19
+ ],
+ "n_open": 9,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 3,
+   "worst": 0.891,
+   "from": "chapter",
+   "text": "But ſhe ſaid I haue here my feruant Bala: Conpanie with her, that ihe may beare vpcu myknees, Iacob. and I may haue children of het."
+  },
+  {
+   "src": "S1",
+   "verse": 6,
+   "worst": 0.863,
+   "from": "chapter",
+   "text": "And Rachel ſaid Ous ef Lord hath iudged for me, and hath heard my voice, geumg amom com me a ſonne and therfore she called his name, Dan"
+  },
+  {
+   "src": "S3",
+   "verse": 9,
+   "worst": 0.893,
+   "from": "p122",
+   "text": "Lia ceauing that che had left bearing, deliuered Zelpha handmaid to her huſband."
+  },
+  {
+   "src": "S1",
+   "verse": 19,
+   "worst": 0.0,
+   "from": "p118",
+   "text": "Lia conceauing, bare che ſixt ſonne, andſaid :"
+  },
+  {
+   "src": "S3",
+   "verse": 19,
+   "worst": 0.85,
+   "from": "p122",
+   "text": "Againe Lia conceauing, bare the ſixt ſonne, and"
+  },
+  {
+   "src": "S9",
+   "verse": 19,
+   "worst": 0.85,
+   "from": "p128",
+   "text": "Againe Lia conceauing, bare the ſixt ſonne, and"
+  },
+  {
+   "src": "S6",
+   "verse": 19,
+   "worst": 0.895,
+   "from": "p109",
+   "text": "Againe Lia conceauing. bare the ſixt ſonne, 2o. &"
+  },
+  {
+   "src": "S3",
+   "verse": 28,
+   "worst": 0.784,
+   "from": "p122",
+   "text": "appoint thee wages Ishal geue thee."
+  },
+  {
+   "src": "S9",
+   "verse": 37,
+   "worst": 0.889,
+   "from": "p129",
+   "text": "Ia-: cob therfore : takinggrene roddes of the poplare, and of iuſtly the almond, and of the plaine trees, in part pilled them : and when the barkes were taken of, in the parts that were couer which pilled, there appeared whitnes: but the parts that were whole, remayned grene : and by this meanes the colour was him, made diuers."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "No Rachel ſeing ſhe was vnfruitful, enuief her ſiſter, and ſaid to her huſband : Geue me children, otherwiſe Iy I ſhal dye.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.949,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S3": {
+    "text": "No Rachel ſeing ſhe was vnfruitful, :: enuied her ſiſter, and ſaid to her huſband : Geue me children, otherwiſe ly I ſhal dye.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.957,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S9": {
+    "text": "No Rachel ſeing ſhe was vnfruitful, : enuied her ſiſter, :: Xand ſaid to her huſband : Geue me children, otherwiſe ly I ſhal dye.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.949,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S6": {
+    "text": "and Rachel ſeeing ſhe was vnfruitful, (4) enuied her iſter, and ſaid to her huſband: Giue me children, otherwiſe Tihal dye.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.948,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "with whom Iacob being angrie anſwered: Am I as God, who hath depriued thee of the fruite of thy ful",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "With whom Iacob being angrie anſwered : Am Tas God, who hath depriued thee of the fruite of thy ful",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S9": {
+    "text": "With whom Iacob being angrie anſwered: Am I as God, who hath depriued thee of the fruite of thy ful",
+    "from": "p127",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "With whom Iacob being angrie anſwered: Am I as God, who hath depriued thee of the fruit of thy womb ;",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "But he ſaid I haue here my ſeruant Bala Company with her, that she may beare vpon my knees, and I may haue children of her.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "But ſhe ſaid Ihaue here my ſeruant Bala Com panie with her, that she may beare vpon my knees, and I may haue children of her.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "But ſhe ſaid I haue here my ſeruant Bala Com- c.54. panie with her, that she may beare vpon my knees, and I may haue children of her.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "But ſhe ſaid I haue here my feruant Bala: Conpanie with her, that ihe may beare vpcu myknees, Iacob. and I may haue children of het.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.898,
+     "odr_com": 0.898,
+     "sabates_a": 0.891,
+     "madueke_b": 0.891
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And she gaue him Bala vnto matiage who,",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.974,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "And she gaue him Bala vnto mariage who,",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And she gaue him Bala vnto mariage who,",
+    "from": "p127",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And she gaue him Bala vnto mariage: who,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "when her huſband ſad compained with her, conceaued and bare a ſonne.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.985,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S3": {
+    "text": "when her huſband had complained with her, conceaued and bare a ſonne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.985,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S9": {
+    "text": "when her huſband had compained with her, conceaued and bare a ſonne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 1.0,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S6": {
+    "text": "when her huſband had companied with her, conceaued and bare a ſone.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.955,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And Rachel ſaid Ous ef Lord hath iudged for me, and hath heard my voice, geumg amom com me a ſonne and therfore she called his name, Dan",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.887,
+     "odr_com": 0.887,
+     "sabates_a": 0.863,
+     "madueke_b": 0.863
+    }
+   },
+   "S3": {
+    "text": "And Rachel ſaid Our Lord hath iudged for me, and hath heard my voice, geuing me a ſonne. and therfore she called his name, Dan.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "And Rachel ſaid Our of Lord hath iudged for me, and hath heard my voice, geuing pag. me a ſonneand therfore she called his name, Dan.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S6": {
+    "text": "And Rachel ſaid Our our Lord hat iudged for me and hath heard my voice, giuing me a ſonne, and therfore she called his name, Dan.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And againe Bala conceauing bare an other,",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "And againe Bala conceauing bare an other,",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "And againe Bala conceauing bare an other,",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "And againe Bala conceauing bare another,",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "for whom Rachel ſaid: God hath compared me with my ſiſter, I haue preuailed: and she called him Nepthali.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S3": {
+    "text": "for whom Rachel ſaid: God hath compared me with my ſiſter, and I haue preuailed and she called him Nepthali.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "for whom Rachel ſaid : God hath compared me with my ſiſter, and I haue preuailed : and she called him Nepthali.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "for whom Rachel ſaid: God hath compared me with my ſiſter, and I haue preuailed: and she called him Nepthali.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "Lia ceauing that she had left bearing, deliuered Zelpha handmaid to her huſband.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 0.918,
+     "sabates_a": 0.905,
+     "madueke_b": 0.905
+    }
+   },
+   "S3": {
+    "text": "Lia ceauing that che had left bearing, deliuered Zelpha handmaid to her huſband.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.906,
+     "odr_com": 0.906,
+     "sabates_a": 0.893,
+     "madueke_b": 0.893
+    }
+   },
+   "S9": {
+    "text": "Lia per ceauing that she had left bearing, deliuered Zelpha her handmaid to her huſband.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "Lia perceauing that she had left bearing, deliuered Zelpha her handmaid to her huſband.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "Who conceauing and bringing forth a ſonne,",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "Who conceauing and bringing forth a ſonne,",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "Who conceauing and bringing forth a ſonne,",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "Who conceauing and bringing torth. a ſonne,",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "she iaid : Happely. And therfore called his name Gad",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S3": {
+    "text": "she iaid : Happely. And therfore called his name Gad",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S9": {
+    "text": "†she ſaid : Happely. And therfore called his name Gad.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "she ſaid : Happily. And therfore called his name Gad.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Zelpha alſo bare an other.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "Zelpha alſo bare an other.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "Zelpha alſo bare an other.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "Zelpha alſo bare another.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And Lia ſaid : This is for my bleſſednes : for wemen cal me bleſſed. Therfore she called him, Aſer.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   },
+   "S3": {
+    "text": "And Lia ſaid This is for my bleſſednes for wemen wil cal me bleſſed. Therfore she called him, Aſer.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And Lia ſaid : This is for my bleſſednes : for wemen wil cal me bleſſed. Therfore she called him, Aſer.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And Lia ſaid : This is for my bleſſednes: for women wil cal me bleſſed. Therefore she ealled him Aſer.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And Ruben going forth in the time of wheat harueſt into the field, found mandragores: which he brought to his mother Lia. And Rachel ſaid : Geue me part of thy ſonnes : mandragores.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "And Ruben going forth in the time of wheat harueſt into the field, found mandragores: which he brought to his mother Lia. Rachel ſaid: Geue me part of thy ſonnes : mandragores.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.977,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "And Ruben going forth in the time of wheat harueſt into the field, found mandragores: which he brought to his mother Lia. And Rachel ſaid: Geue me part of thy ſonnes : mandragores.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "And Ruben going forth in the timeof wheat hatueſt into the field, found mādragotes: which he brought to his mother Lia. And Rachel ſaid: Giue me part of thy ſonnes () mandragores.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.965,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "She anſwered : Doeſt thou thinkeit a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take my ſonnes mandragores? Rachel ſaid : For thy ſonnes mandragores ler him ſleepe with thee this night.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S3": {
+    "text": "She anſwered : Doeſt thou thinke it a ſmal matter, thou haſt taken my huſband from me, vnleſſe thou take my ſonnes mandragores? Rachel ſaid: For thy ſonnes mandragores let him ſleepe with thee this night.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   },
+   "S9": {
+    "text": "She anſwered : Doeſt thou thinke it a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take alſo wo- my ſonnes mandragores ? Rachel ſaid : For thy fonnes mandragores let him ſleepe with thee this night.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S6": {
+    "text": "She anſwered : Doeſt thou thinke it a ſmnal matter that thou haſt taken my huſband from me, leſſe thou take alſo ſornes mandragoes Rachel ſaid: For thy ſonnes mandragores let him ſleep with thee this night.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And when to Iacob returned at euen from the ſield, Lia went out meete him, and ſaid: Companie with me, becauſe with Wages I haue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S3": {
+    "text": "And when Iacob returned at eu'en from the field, Lia went out to meete him, and ſaid: Companie with me, becauſe with wages I haue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And when Iacob returned at euen from the field, Lia went out to meete him, and ſaid: Companie with me, becauſe with wages I haue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And when Iacob retur ned at euen from the field, Lia went out to meet him, aud ſaid: Companie with me, becauſe with wages I haue hired thee for my ſonnes mandragores. Anche ſlept with her that night.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And God heard her prayers and she conceaued and bare the fifth ſonne,",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And God heard her prayers and she conceaued and bare the fifth ſonne,",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And God heard her prayers and she conceaued and bare the fifth ſonne,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "Aud God heard her ptayers : and she conceaued and bare the fifth ſonne,",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "and ſaid : God hath geuen me a reward, becauſe I gaue my handmaid my huſband. And she called his name Iſſachar.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S3": {
+    "text": "and ſaid : God hath geuen me a reward, becauſe I gaue my handmaid my huſband. And she called his name Iſſachar.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S9": {
+    "text": "and ſaid God hath geuen me a reward, becauſe I gaue my handmaid to my huſband. And she called his name Iſſachar.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "and ſaid : God hath giuen me a reward, becauſe I gaue my handmaid to my huſband. And she called his name Iſſachar.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Lia conceauing, bare che ſixt ſonne, andſaid :",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   },
+   "S3": {
+    "text": "Againe Lia conceauing, bare the ſixt ſonne, and",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.911,
+     "odr_com": 0.911,
+     "sabates_a": 0.85,
+     "madueke_b": 0.85
+    }
+   },
+   "S9": {
+    "text": "Againe Lia conceauing, bare the ſixt ſonne, and",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.911,
+     "odr_com": 0.911,
+     "sabates_a": 0.85,
+     "madueke_b": 0.85
+    }
+   },
+   "S6": {
+    "text": "Againe Lia conceauing. bare the ſixt ſonne, 2o. &",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "ſaid: God hath endowed me with a good dowrie this turne alſo my huſband wil be with me, for becauſe I haue borne him ſix ſonnes, and therfore ſhe called his name, Zabulon.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "ſaid : God hath endowed me with a good dowrie : this turne alſo my band wil be with me, for becauſe I haue borne him ſonnes, and therfore ſbe called his name, Zabulon.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   },
+   "S9": {
+    "text": "ſaid God hath endowed me with a good dowrie this turne alſo my huſband wil be with me, for becauſe I haue borne him ſix ſonnes, and therfore ſhe called his name, Zabulon.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "ſaid: God. hath endowed me with a good dowrie: this tutne alſo my huſband wil be with me, for becauſe I haue borue him ſig ſonnes, and thertore ſhe called his name, Zabulon.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "After whom ſhe bare a daughter, named Dina.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "After whom ſhe bare a daughter, named Dina.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "After whom ſhe bare a daughter, named Dina.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "After whom ſhe bare a daughter named Dina.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "Our Lord alſo remembring Rachel, heard her, and opened her wombe.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "Our Lord alſo remembring Rachel, heard her, and opened her wombe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "Our Lord alſo remembring Rachel, heard her, and opened her wombe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "Our Lord alſo xemembring Rachel heard her, and opened her womb.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "Who conceaued, and bare a ſonne, ſaying : God hath taken away my reproch.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "Who conceaued, and bare a ſonne, ſaying : God hath taken away my reproch.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "Who conceaued, and bare a ſonne, ſaying : God hath taken away my reproch.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "Who conceaued and bare a ſonne, ſaying : God hath taken away my reproach.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And she called his name, Ioſeph, ſaying : Our Lord adde to me an other ſonne.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And she called his name, Ioſeph, ſaying : Our Lord adde to me an other ſonne.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And she called his name, Ioſeph, ſaying : Our Lord adde to me an other ſonne.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "And she called his name, Ioſeph, ſaying : Our Lord adde to me an other fonne.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And when Ioſeph was borne, Iacob ſaid to his father in lawe : Diſmiſſe me that I may returne into my countrie, and to my land.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And when Ioſeph was borne, Iacob ſaid to his father in lawe : Diſmiſſe me that I may returne into my countrie, and to my land.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And when Ioſeph was borne, Iacob ſaid to his father in lawe : Diſmiſſe me that I may returne into my countrie, and to my Geue",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "And when Ioſephwas borne, Iacob ſaid to his father in law: Diſmiſſe me that I may returne into my countrie, and to my land.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "†Geue me my wiues, and my children, for whom I haue ſerued thee, that I may depart: thou knoweſt the ſeruice that I haue ſerued thee.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "Geue me my wiues, and my children, for whom I ſerued thee, that I may depart : thou knoweſt the ſeruice that I haue ſerued thee.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "me my wiues, and my children, for whom I haue ſerued thee, that I may depart thou knoweſt the ſeruice that I haue ſerued thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "Giue me my wiues, and my children, for whom I haue ſerued thee, that I may depart: thou knoweſt the ſeruice that I haue ſexued thee.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "Laban ſaid ro him: Let me finde grace in thy ſight : I haue learned by experience, that God hath bleſſed me for thy ſake:",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "Laban ſaid to him: Let me finde grace in thy ſight : I haue learned by experience, that God hath bleſſed me for thy ſake :",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Laban ſaid to him: Let me grace in thy ſight : I haue learned by experience, that hath bleſſed me for thy ſake :",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.914,
+     "odr_com": 0.914,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S6": {
+    "text": "Laban ſaid to him : Let me find grace in thy ſight : I haue learned by experience that God hath bleſſed me for thy ſake :28",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "appoint thee wages which28 I shal geue thee.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "appoint thee wages Ishal geue thee.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.829,
+     "odr_com": 0.829,
+     "sabates_a": 0.784,
+     "madueke_b": 0.784
+    }
+   },
+   "S9": {
+    "text": "appoint thee wages which I shal geue thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "appoint thee wages which I shal giue thee.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "But he anſwered Thou knoweſt how haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "But he anſwered: Thou knoweſt how haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "But he anſwered Thou knoweſt how haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "But he anſwered: Thou knoweſt how I haue ſerued thee, and how great thy poſſeſſion hath been in my hands.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "Thou hadeſt a ſmal thing before I came to thee, and now thou art made rich: and our Lord hath bleſſed thee at my comming in. Ir is reaſon therfore that once I prouide alſo for iine owne houſe.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "Thou hadeſt a ſmal thing before I came to thee, and now thou art made rich: and our Lord hath bleſſed thee at my comming in. It is reaſon therfore that once I prouide alſo for mine owne houſe.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "Thou hadeſt a ſmal thing before I came to thee, and now thou art made rich : and our Lord hath bleſſed thee at my comming in. It is reaſon therfore that once I prouide alſo for mine owne houſe.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "Thou hadeſt a ſmal thing betore I came to thee, and now tou art made rich: and our Lord hath bleſſed thee at my comming in. It is reaſon thertore that once I prouide alſo for mine owne houſe.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "And Laban ſaid : What ſhal I geue thee? But he ſaid : I wil nothing: but if thou wilt doe that which I demande, I wil fede, and kepe thy sheepe again.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "And Laban ſaid : What ſhal I geue thee? But he ſaid : I wil nothing: but if thou wilt doe that which I demande, I wil fede, and kepe thy sheepe again.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "And Laban ſaid : What ſhal I geue thee But he ſaid : I wil nothing : but if thou wilt doe that which I demande, I wil fede, and kepe thy sheepe again.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And Laban ſaid : What ſhal I giue thee But he ſaid : I wil nothing : but it thou wilt doe that which I demand, I wil feod and keep thy sheep again.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "Goe round about al thy flockes, and ſeparate al the ſhepe of diuers colours, of ſpeckled flyſe: and what ſoeuer shal be ruſſet and ſpotred, and of diuers colours, aſwel in che shepe, as in the goates, shal be my wages.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.991,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S3": {
+    "text": "Goe round about al thy flockes, and ſeparate al the ſhepe of diuers colours, of ſpeckled flyſe: and what ſoeuer shal be ruſſet and ſpotted, and of diuers colours, aſwel in the shepe, as in the goates, shal be my wages.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "Goe round about al thy flockes, and ſeparate al the ſhepe of diuers colours, of ſpeckled flyſe : and what ſoeuer shal be ruſſet and ſpotted, and of diuers colours, aſwel in the shepe, as in the goates, shal be my wages.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "Goe round aboue al thy flockes, aud ſeparate al the ſheep of diuers colours, of ſpeckled flyſe : and what ſoeuer shal be ruſſet and ſpotted, and of diuers coloursas wel in the sheep as in the goats, shal be my wages.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.957,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "And my iuſtice shal anſwer for me to morowe, before thee when the time of the bargaine shal come : and al that shal not be of diuers colours, and ſpotted, and ruſſet, aſwel in the shepe as in the goates, shal accuſe me of theft.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "And my iuſtice shal anſwer for me to morowe, before thee when the time of the bargaine shal come : and al that shal not be of diuers colours, and ſpotted, and ruſſet, aſwel in the shepe as in the goates, shal accuſe me of theft.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And my iuſtice shal anſwer for me to morowe, before thee when the time of the bargaine shal come : and al that shal not be of diuers colours, and ſpotted, and ruſſet, aſwel in the shepe as in the goates, shal accuſe me of theft.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And my iuſtice shal anſwer tor me to morow betore thee, when the time of the batgaine I shal come: aud al that shal not be of diuers colours, and ſpotted, and ruſſet, as wel in the sheep as in the goats, shal accuſe me of theft.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "And Laban ſaid : I like wel that thou demandeſt.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Laban ſaid : I like wel that thou demandeſt.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Laban ſaid : I like wel that thou demandeſt.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Laban ſaid I like wel that thou demandeſt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "35": {
+   "S1": {
+    "text": "And he ſeparated the ſame day the shee goates, and tke shepe, and the he goates, and the rammes of diuers colours, and ſpotted: and al the flocke of one coloure, thatis of white and blacke flyſe, he deliuered in the hand of his ſonnes.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "And he ſeparated the ſame day the shee goates, and tke shepe, and the he goates, and the rammes of diuers colours, and ſpotted: and al the flocke of one coloure, that is of white and blacke flyſe, he deliuered in the hand of his ſonnes.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S9": {
+    "text": "And he ſeparated the ſame day the shee goates, and the shepe, and the he goates, and the rammes of diuers colours, and ſpotted: and al the flocke of one coloure, that is of white and blacke flyſe, he deliuered in the hand of his ſonnes.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "And he ſeparated the ſame day the she goats, and the sheep, and the he goats, aud the rammes of diuers colours, and ſpotted: and al the flocke of one colour, that is ot white aud blacke flyſe, he deliuered in the hand of his ſounes.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "36": {
+   "S1": {
+    "text": "And he put a ſpace of three dayes iourney betwixt him and his ſonne in lawe, who fed the reſt of his flocke.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And he put a ſpace of three dayes iourney betwixt him and his ſonne in lawe, who fed the reſt of his flocke.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And he put a ſpace of three dayes iourney betwixt him and his ſonne in lawe, who fed the reſt of his flocke.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "And he put a ſpace of three dayes iourney betwixt him and his ſonne in law, who fed the reſt of his flock.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "37": {
+   "S1": {
+    "text": "Iacob therfore takinggrene roddes of the poplare, and of the almond, and of the plaine trees, in part pilled them: and when the barkes were taken of, in the parts that were pilled, there appeared whitnes: but the parts that were whole, remayned grene : and by this meanes the colour was made diuers.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.997,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "Iacob therfore : taking grene roddes of the poplare, and of the almond, and of the plaine trees, in part pilled them : and when the barkes were taken of, in the parts that were pilled, there appeared whitnes : but the parts that were whole, remayned grene : and by this meanes the colour was made diuers.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.997,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "Ia-: cob therfore : takinggrene roddes of the poplare, and of iuſtly the almond, and of the plaine trees, in part pilled them : and when the barkes were taken of, in the parts that were couer which pilled, there appeared whitnes: but the parts that were whole, remayned grene : and by this meanes the colour was him, made diuers.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.92,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
+    }
+   },
+   "S6": {
+    "text": "Iacob therfore (4) takiug green rods of the poplar, and of the almond, and ot the plane trees, in part pilled them: and when the barkes were taken off, in the parts thatere pilled there appeared whitues: but the patts that were whole remayned green: and by this meanes the colour was made diuers.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.945,
+     "odr_com": 0.948,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "38": {
+   "S1": {
+    "text": "And he put them in the troughes, where the water was poured out : that when the flockes should come to drinke, they miglit haue the roddes before their eyes, and in the ſight of them conceaue.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "And he put them in the troughes, where the water was poured out : that when the flockes should come to drinke, they might haue the roddes before their eyes, and in the ſight of them conceaue.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "And he put them in the troughes, where the water was poured out that when the flockes should come to drinke, they might haue the roddes before their eyes, and in the ſight of them conceaue.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "And he put them in the troughs, where the water was poured out : that when the flockes should come to driuke, they might haue the rods betore their eyes, and in the ſightot them conceaue.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "39": {
+   "S1": {
+    "text": "And it came to paſſe that in the verie heate of the ramming, the shepe beheld the roddes, and brought forth ſpot ted, and of diuers colours, and ſpeckled.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And it came to paſſe that in the verie heate of the rammng, the shepe beheld the roddes, and brought forth ſpotted, and of diuers colours, and ſpeckled.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And it came to paſſe that in the verie heate of the ramming, the shepe beheld the roddes, and brought forth ſpotted, and of diuers colours, and ſpeckled.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "And it came to paſſe that in the verie heat of the ramming, the sheep beheld the tods, and brought torth ſpotted, and of diuers colours, and ſpeckled.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "40": {
+   "S1": {
+    "text": "And Iacob diuided the flocke, and put the roddes in the troughes before the eyes of the rammes : and al the white and the blacke were Labans : and the reſt, Iacobs, when the flockes were ſeparated one from the other.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "And Iacob diuided the flocke, and put the roddes in the troughes before the eyes of the rammes: and al the white and the blacke were Labans: and the reſt, Iacobs, when the flockes were ſeparated one from the other.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "And Iacob diuided the flocke, and put the roddes in the troughes before the eyes of the rammes: and al the white and the blacke were Labans: and the reſt, Iacobs, when the flockes were ſeparated one from the other.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And Iacob divided the flock, and put the rods in the troughs before the eyes of the rammes: and al the white and the blacke were Labans, and the reſt, Jacobs, when the flockes were ſeparated one from the other. Therfore",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   }
+  },
+  "41": {
+   "S1": {
+    "text": "Therfore when the ewes went to ramme, in the prime time, Iacob put the roddes in the troughes of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue:",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "Therfore when the ewes went to ramme, in the prime time , Iacob put the roddes in the troughes of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue :",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Therfore when the ewes went to ramme, in the prime time, Iacob put the roddes in the troughes of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue :",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "when the ewes went to ramme, in the prime time Iacob put the rods in the troughs of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   }
+  },
+  "42": {
+   "S1": {
+    "text": "bur when the later comming was, and the laſt conceauing, he did not put them. And thoſe that were late warde, becauue Labans: and they of the prime time, Iacobs.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "but when the later comming was, and the laſt conceauing, he did not put them. And thoſe that were late warde, became Labans: and they of the prime time, Iacobs†",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S9": {
+    "text": "but when the later comming was, and the laſt conceauing, he did not put them. And thoſe that were late warde, became Labans: and they of the prime time, Iacobs.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S6": {
+    "text": "but when the later comming was, and the laſt conceauing, he did not put them. And thoſe that were lateward became Labans: and they of the prime time, Iacobs.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "43": {
+   "S1": {
+    "text": "And the man was enriched beyond meaſure, and he had manie flockes, wemen ſeruantes and men ſernants, camels and aſſes",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "And the man was ched beyond meaſure, and he had manie flockes, wemen ſeruantes and men ſeruants, camels and aſſes",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   },
+   "S9": {
+    "text": "And the man was enriched beyond meaſure, and he had manie flockes, wemen ſeruantes and men ſeruants, camels and aſſes.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "And the man was enriched beyond teaſure, and he had mauie flockes, women ſeruants and men ſeruants, camels aud aſſes.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Rachel ſeing ſhe was vnfruitful, a)enuied her ſiſter, and ſaid to her huſband: Geue me children, otherwiſe I ſhal dye.",
+   "odr_com": "AND Rachel seing she was vnfruitful, enuied her sister, and said to her husband: Geue me children, otherwise I shal dye.",
+   "sabates_a": "And Rachel seeing she was unfruitful, envied her sister, and said to her husband: Give me children, otherwise I shall die.",
+   "madueke_b": "And Rachel seeing she was unfruitful, envied her sister, and said to her husband: Give me children, otherwise I shall die."
+  },
+  "2": {
+   "s_dismas": "With whom Iacob being angrie anſwered: Am I as God, who hath depriued thee of the fruite of thy wombe?",
+   "odr_com": "With whom Iacob being angrie answered: Am I as God, who hath depriued thee of the fruite of thy wombe?",
+   "sabates_a": "With whom Jacob being angry answered: Am I as God, who hath deprived thee of the fruit of thy womb?",
+   "madueke_b": "With whom Jacob being angry answered: Am I as God, who hath deprived thee of the fruit of thy womb?"
+  },
+  "3": {
+   "s_dismas": "But ſhe ſaid: I haue here my ſeruant Bala: Companie with her, that she may beare vpon my knees, and I may haue children of her.",
+   "odr_com": "But she said: I haue here my seruant Bala: Companie with her, that she may beare vpon my knees, and I may haue children of her.",
+   "sabates_a": "But she said: I have here my servant Bala: Company with her, that she may bear upon my knees, and I may have children of her.",
+   "madueke_b": "But she said: I have here my servant Bala: Company with her, that she may bear upon my knees, and I may have children of her."
+  },
+  "4": {
+   "s_dismas": "And she gaue him Bala vnto b)mariage: who,",
+   "odr_com": "And she gaue him Bala vnto mariage: who,",
+   "sabates_a": "And she gave him Bala unto marriage: who,",
+   "madueke_b": "And she gave him Bala unto marriage: who,"
+  },
+  "5": {
+   "s_dismas": "when her huſband had companied with her, conceaued and bare a ſonne.",
+   "odr_com": "when her husband had compained with her, conceaued and bare a sonne.",
+   "sabates_a": "When her husband had companied with her, conceived and bare a son.",
+   "madueke_b": "When her husband had companied with her, conceived and bare a son."
+  },
+  "6": {
+   "s_dismas": "And Rachel ſaid: Our Lord hath iudged for me, and hath heard my voice, geuing me a ſonne, and therfore she called his name, Dan.",
+   "odr_com": "And Rachel said: Our Lord hath iudged for me, and hath heard my voice, geuing me a sonne. and therfore she called his name, Dan.",
+   "sabates_a": "And Rachel said: Our Lord hath judged for me and hath heard my voice, giving me a son, and therefore she called his name, Dan.",
+   "madueke_b": "And Rachel said: Our Lord hath judged for me and hath heard my voice, giving me a son, and therefore she called his name, Dan."
+  },
+  "7": {
+   "s_dismas": "And againe Bala conceauing bare an other,",
+   "odr_com": "And againe Bala conceauing bare an other,",
+   "sabates_a": "And again Bala conceiving bare another,",
+   "madueke_b": "And again Bala conceiving bare another,"
+  },
+  "8": {
+   "s_dismas": "for whom Rachel ſaid: God hath compared me with my ſiſter, and I haue preuailed: and she called him Nepthali.",
+   "odr_com": "for whom Rachel said: God hath compared me with my sister, and I haue preuailed: and she called him Nepthali.",
+   "sabates_a": "for whom Rachel said: God hath compared me with my sister, and I have prevailed: and she called him Nephthali.",
+   "madueke_b": "for whom Rachel said: God hath compared me with my sister, and I have prevailed: and she called him Nephthali."
+  },
+  "9": {
+   "s_dismas": "Lia perceauing that she had left bearing, deliuered Zelpha her handmaid to her huſband.",
+   "odr_com": "Lia perceauing that she had left bearing, deliuered Zelpha her handmaid to her husband.",
+   "sabates_a": "Lia perceiving that she had left bearing, delivered Zelpha her handmaid to her husband.",
+   "madueke_b": "Lia perceiving that she had left bearing, delivered Zelpha her handmaid to her husband."
+  },
+  "10": {
+   "s_dismas": "Who conceauing and bringing forth a ſonne,",
+   "odr_com": "Who conceauing and bringing forth a sonne,",
+   "sabates_a": "Who conceiving and bringing forth a son,",
+   "madueke_b": "Who conceiving and bringing forth a son,"
+  },
+  "11": {
+   "s_dismas": "she ſaid: Happely. And therfore called his name Gad.",
+   "odr_com": "she said: Happely. And therfore called his name Gad.",
+   "sabates_a": "she said: Happily. And therefore called his name Gad.",
+   "madueke_b": "she said: Happily. And therefore called his name Gad."
+  },
+  "12": {
+   "s_dismas": "Zelpha alſo bare an other.",
+   "odr_com": "Zelpha also bare an other.",
+   "sabates_a": "Zelpha also bare another.",
+   "madueke_b": "Zelpha also bare another."
+  },
+  "13": {
+   "s_dismas": "And Lia ſaid: This is for my bleſſednes: for wemen wil cal me bleſſed. Therfore she called him, Aſer.",
+   "odr_com": "And Lia said: This is for my blessednes: for wemen wil cal me blessed. Therfore she called him, Aser.",
+   "sabates_a": "And Lia said: This is for my blessedness: for women will call me blessed. Therefore she called him Aser.",
+   "madueke_b": "And Lia said: This is for my blessedness: for women will call me blessed. Therefore she called him Aser."
+  },
+  "14": {
+   "s_dismas": "And Ruben going forth in the time of wheat harueſt into the field, found mandragores: which he brought to his mother Lia. And Rachel ſaid: Geue me part of thy ſonnes a)mandragores.",
+   "odr_com": "And Ruben going forth in the time of wheat haruest into the field, found mandragores: which he brought to his mother Lia. And Rachel said: Geue me part of thy sonnes mandragores.",
+   "sabates_a": "And Ruben, going forth in the time of wheat harvest into the field, found mandragoras: which he brought to his mother Lia. And Rachel said: Give me part of thy son's mandragoras.",
+   "madueke_b": "And Ruben, going forth in the time of wheat harvest into the field, found mandragoras: which he brought to his mother Lia. And Rachel said: Give me part of thy son's mandragoras."
+  },
+  "15": {
+   "s_dismas": "She anſwered: Doeſt thou thinke it a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take alſo my ſonnes mandragores? Rachel ſaid: For thy ſonnes mandragores let him ſleepe with thee this night.",
+   "odr_com": "She answered: Doest thou thinke it a smal matter, that thou hast taken my husband from me, vnlesse thou take also my sonnes mandragores? Rachel said: For thy sonnes mandragores let him sleepe with thee this night.",
+   "sabates_a": "She answered: Dost thou think it a small matter that thou hast taken my husband from me, unless thou take also my son's mandragoras? Rachel said: For thy son's mandragoras let him sleep with thee this night.",
+   "madueke_b": "She answered: Dost thou think it a small matter that thou hast taken my husband from me, unless thou take also my son's mandragoras? Rachel said: For thy son's mandragoras let him sleep with thee this night."
+  },
+  "16": {
+   "s_dismas": "And when Iacob returned at euen from the field, Lia went out to meete him, and ſaid: Companie with me, becauſe with wages I haue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
+   "odr_com": "And when Iacob returned at euen from the field, Lia went out to meete him, and said: Companie with me, because with wages I haue hired thee for my sonnes mandragores. And he slept with her that night.",
+   "sabates_a": "And when Jacob returned at even from the field, Lia went out to meet him, and said: Company with me, because with wages I have hired thee for my son's mandragoras. And he slept with her that night.",
+   "madueke_b": "And when Jacob returned at even from the field, Lia went out to meet him, and said: Company with me, because with wages I have hired thee for my son's mandragoras. And he slept with her that night."
+  },
+  "17": {
+   "s_dismas": "And God heard her prayers: and she conceaued and bare the fifth ſonne,",
+   "odr_com": "And God heard her prayers: and she conceaued and bare the fifth sonne,",
+   "sabates_a": "And God heard her prayers: and she conceived and bare the fifth son,",
+   "madueke_b": "And God heard her prayers: and she conceived and bare the fifth son,"
+  },
+  "18": {
+   "s_dismas": "and ſaid: God hath geuen me a reward, becauſe I gaue my handmaid to my huſband. And she called his name Iſſachar.",
+   "odr_com": "and said: God hath geuen me a reward, because I gaue my handmaid to my husband. And she called his name Issachar.",
+   "sabates_a": "And said: God hath given me a reward, because I gave my handmaid to my husband. And she called his name Issachar.",
+   "madueke_b": "And said: God hath given me a reward, because I gave my handmaid to my husband. And she called his name Issachar."
+  },
+  "19": {
+   "s_dismas": "Againe Lia conceauing, bare the ſixt ſonne,",
+   "odr_com": "Againe Lia conceauing, bare the sixt sonne,",
+   "sabates_a": "Again Lia conceiving, bare the sixth son,",
+   "madueke_b": "Again Lia conceiving, bare the sixth son,"
+  },
+  "20": {
+   "s_dismas": "and ſaid: God hath endowed me with a good dowrie: this turne alſo my huſband wil be with me, for becauſe I haue borne him ſix ſonnes, and therfore ſhe called his name, Zabulon.",
+   "odr_com": "and said: God hath endowed me with a good dowrie: this turne also my husband wil be with me, for because I haue borne him six sonnes, and therfore she called his name, Zabulon.",
+   "sabates_a": "& said: God hath endowed me with a good dowry: this turn also my husband will be with me, for because I have born him six sons, and therefore she called his name, Zabulon.",
+   "madueke_b": "& said: God hath endowed me with a good dowry: this turn also my husband will be with me, for because I have born him six sons, and therefore she called his name, Zabulon."
+  },
+  "21": {
+   "s_dismas": "After whom ſhe bare a daughter, name Dina.",
+   "odr_com": "After whom she bare a daughter, named Dina.",
+   "sabates_a": "After whom she bare a daughter named Dina.",
+   "madueke_b": "After whom she bare a daughter named Dina."
+  },
+  "22": {
+   "s_dismas": "Our Lord alſo remembring Rachel, heard her, and opened her wombe.",
+   "odr_com": "Our Lord also remembring Rachel, heard her, and opened her wombe.",
+   "sabates_a": "Our Lord also remembering Rachel, heard her, and opened her womb.",
+   "madueke_b": "Our Lord also remembering Rachel, heard her, and opened her womb."
+  },
+  "23": {
+   "s_dismas": "Who conceaued, and bare a ſonne, ſaying: God hath taken away my reproch.",
+   "odr_com": "Who conceaued, and bare a sonne, saying: God hath taken away my reproch.",
+   "sabates_a": "Who conceived and bare a son, saying: God hath taken away my reproach.",
+   "madueke_b": "Who conceived and bare a son, saying: God hath taken away my reproach."
+  },
+  "24": {
+   "s_dismas": "And she called his name, Ioſeph, ſaying: Our Lord adde to me an other ſonne.",
+   "odr_com": "And she called his name, Ioseph, saying: Our Lord adde to me an other sonne.",
+   "sabates_a": "And she called his name, Joseph, saying: Our Lord add to me another son.",
+   "madueke_b": "And she called his name, Joseph, saying: Our Lord add to me another son."
+  },
+  "25": {
+   "s_dismas": "And when Ioſeph was borne, Iacob ſaid to his father in lawe: Diſmiſſe me that I may returne into my countrie, and to my land.",
+   "odr_com": "And when Ioseph was borne, Iacob said to his father in lawe: Dismisse me that I may returne into my countrie, and to my land.",
+   "sabates_a": "And when Joseph was born, Jacob said to his father in law: Dismiss me that I may return into my country, and to my land.",
+   "madueke_b": "And when Joseph was born, Jacob said to his father in law: Dismiss me that I may return into my country, and to my land."
+  },
+  "26": {
+   "s_dismas": "Geue me my wiues, and my children, for whom I haue ſerued thee, that I may depart: thou knoweſt the ſeruice that I haue ſerued thee.",
+   "odr_com": "Geue me my wiues, and my children, for whom I haue serued thee, that I may depart: thou knowest the seruice that I haue serued thee.",
+   "sabates_a": "Give me my wives, and my children, for whom I have served thee, that I may depart: thou knowest the service that I have served thee.",
+   "madueke_b": "Give me my wives, and my children, for whom I have served thee, that I may depart: thou knowest the service that I have served thee."
+  },
+  "27": {
+   "s_dismas": "Laban ſaid to him: Let me finde grace in thy ſight: I haue learned by experience, that God hath bleſſed me for thy ſake:",
+   "odr_com": "Laban said to him: Let me finde grace in thy sight: I haue learned by experience, that God hath blessed me for thy sake:",
+   "sabates_a": "Laban said to him: Let me find grace in thy sight: I have learned by experience that God hath blessed me for thy sake:",
+   "madueke_b": "Laban said to him: Let me find grace in thy sight: I have learned by experience that God hath blessed me for thy sake:"
+  },
+  "28": {
+   "s_dismas": "appoint thee wages which I shal geue thee.",
+   "odr_com": "appoint thee wages which I shal geue thee.",
+   "sabates_a": "appoint thee wages which I shall give thee.",
+   "madueke_b": "appoint thee wages which I shall give thee."
+  },
+  "29": {
+   "s_dismas": "But he anſwered: Thou knoweſt how I haue ſerued thee, and how great thy poſſeſſion hath benne in my hands.",
+   "odr_com": "But he answered: Thou knowest how I haue serued thee, and how great thy possession hath benne in my hands.",
+   "sabates_a": "But he answered: Thou knowest how I have served thee, and how great thy possession hath been in my hands.",
+   "madueke_b": "But he answered: Thou knowest how I have served thee, and how great thy possession hath been in my hands."
+  },
+  "30": {
+   "s_dismas": "Thou hadeſt a ſmal thing before I came to thee, and now thou art made rich: and our Lord hath bleſſed thee at my comming in. It is reaſon therfore that once I prouide alſo for mine owne houſe.",
+   "odr_com": "Thou hadest a smal thing before I came to thee, and now thou art made rich: and our Lord hath blessed thee at my comming in. It is reason therfore that once I prouide also for mine owne house.",
+   "sabates_a": "Thou hadest a small thing before I came to thee, and now thou art made rich: and our Lord hath blessed thee at my coming in. It is reason therefore that once I provide also for mine own house.",
+   "madueke_b": "Thou hadest a small thing before I came to thee, and now thou art made rich: and our Lord hath blessed thee at my coming in. It is reason therefore that once I provide also for mine own house."
+  },
+  "31": {
+   "s_dismas": "And Laban ſaid: What ſhal I geue thee? But he ſaid: I wil nothing: but if thou wilt doe that which I demande, I wil fede, and kepe thy sheepe again.",
+   "odr_com": "And Laban said: What shal I geue thee? But he said: I wil nothing: but if thou wilt doe that which I demande, I wil fede, and kepe thy sheepe again.",
+   "sabates_a": "And Laban said: What shall I give thee? But he said: I will nothing: but if thou wilt do that which I demand, I will feed and keep thy sheep again.",
+   "madueke_b": "And Laban said: What shall I give thee? But he said: I will nothing: but if thou wilt do that which I demand, I will feed and keep thy sheep again."
+  },
+  "32": {
+   "s_dismas": "Goe round about al thy flockes, and ſeparate al the ſhepe of diuers colours, of ſpeckled flyſe: and whatſoeuer shal be ruſſet and ſpotted, and of diuers colours, aſwel in the shepe, as in the goates, shal be my wages.",
+   "odr_com": "Goe round about al thy flockes, and separate al the shepe of diuers colours, of speckled flyse: and what soeuer shal be russet and spotted, and of diuers colours, aswel in the shepe, as in the goates, shal be my wages.",
+   "sabates_a": "Go round about all the flocks, and separate all the sheep of diverse colours, of speckled fleece: and what-soever shall be russet and spotted, and of diverse colours, as well in the sheep as in the goats, shall be my wages.",
+   "madueke_b": "Go round about all the flocks, and separate all the sheep of diverse colours, of speckled fleece: and what-soever shall be russet and spotted, and of diverse colours, as well in the sheep as in the goats, shall be my wages."
+  },
+  "33": {
+   "s_dismas": "And my iuſtice shal anſwer for me to morowe, before thee when the time of the bargaine shal come: and al that shal not be of diuers colours, and ſpotted, and ruſſet, aſwel in the shepe as in the goates, shal accuſe me of theft.",
+   "odr_com": "And my iustice shal answer for me to morowe, before thee when the time of the bargaine shal come: and al that shal not be of diuers colours, and spotted, and russet, aswel in the shepe as in the goates, shal accuse me of theft.",
+   "sabates_a": "And my justice shall answer for me tomorrow before thee, when the time of the bargain shall come: and all that shall not be of diverse colours, and spotted, and russet, as well in the sheep as in the goats, shall accuse me of theft.",
+   "madueke_b": "And my justice shall answer for me tomorrow before thee, when the time of the bargain shall come: and all that shall not be of diverse colours, and spotted, and russet, as well in the sheep as in the goats, shall accuse me of theft."
+  },
+  "34": {
+   "s_dismas": "And Laban ſaid: I like wel that thou demandeſt.",
+   "odr_com": "And Laban said: I like wel that thou demandest.",
+   "sabates_a": "And Laban said: I like well that thou demandest.",
+   "madueke_b": "And Laban said: I like well that thou demandest."
+  },
+  "35": {
+   "s_dismas": "And he ſeparated the ſame day the shee goates, and the shepe, and the he goates, and the rammes of diuers colours, and ſpotted: and al the flocke of one coloure, that is of white and blacke flyſe, he deliuered in the hand of his ſonnes.",
+   "odr_com": "And he separated the same day the shee goates, and the shepe, and the he goates, and the rammes of diuers colours, and spotted: and al the flocke of one coloure, that is of white and blacke flyse, he deliuered in the hand of his sonnes.",
+   "sabates_a": "And he separated the same day the she goats, and the sheep, and the he goats, and the rams of diverse colours, and spotted: and all the flock of one colour, that is of white and black fleece, he delivered in the hand of his sons.",
+   "madueke_b": "And he separated the same day the she goats, and the sheep, and the he goats, and the rams of diverse colours, and spotted: and all the flock of one colour, that is of white and black fleece, he delivered in the hand of his sons."
+  },
+  "36": {
+   "s_dismas": "And he put a ſpace of three dayes iourney betwixt him and his ſonne in lawe, who fed the reſt of his flocke.",
+   "odr_com": "And he put a space of three dayes iourney betwixt him and his sonne in lawe, who fed the rest of his flocke.",
+   "sabates_a": "And he put a space of three days' journey betwixt him and his son in law, who fed the rest of his flock.",
+   "madueke_b": "And he put a space of three days' journey betwixt him and his son in law, who fed the rest of his flock."
+  },
+  "37": {
+   "s_dismas": "Iacob therfore a)taking grene roddes of the poplare, and of the almond, and of the plaine trees, in part pilled them: and when the barkes were taken of, in the parts that were pilled, there appeared whitnes: but the parts that were whole, remayned grene: and by this meanes the colour was made diuers.",
+   "odr_com": "Iacob therfore taking grene roddes of the poplare, and of the almond, and of the plaine trees, in part pilled them: and when the barkes were taken of, in the parts that were pilled, there appeared whitnes: but the parts that were whole, remayned grene: and by this meanes the colour was made diuers.",
+   "sabates_a": "Jacob therefore taking green rods of the poplar, and of the almond, and of the plane-trees, in part pilled them: and when the barks were taken off, in the parts that were pilled there appeared whiteness: but the parts that were whole remained green: and by this means the colour was made diverse.",
+   "madueke_b": "Jacob therefore taking green rods of the poplar, and of the almond, and of the plane-trees, in part pilled them: and when the barks were taken off, in the parts that were pilled there appeared whiteness: but the parts that were whole remained green: and by this means the colour was made diverse."
+  },
+  "38": {
+   "s_dismas": "And he put them in the troughes, where the water was poured out: that when the flockes should come to drinke, they might haue the roddes before their eyes, and in the ſight of them conceaue.",
+   "odr_com": "And he put them in the troughes, where the water was poured out: that when the flockes should come to drinke, they might haue the roddes before their eyes, and in the sight of them conceaue.",
+   "sabates_a": "And he put them in the troughs, where the water was poured out: that when the flocks should come to drink, they might have the rods before their eyes, and in the sight of them conceive.",
+   "madueke_b": "And he put them in the troughs, where the water was poured out: that when the flocks should come to drink, they might have the rods before their eyes, and in the sight of them conceive."
+  },
+  "39": {
+   "s_dismas": "And it came to paſſe that in the verie heate of the ramming, the shepe beheld the roddes, and brought forth ſpotted, and of diuers colours, and ſpeckled.",
+   "odr_com": "And it came to passe that in the verie heate of the ramming, the shepe beheld the roddes, and brought forth spotted, and of diuers colours, and speckled.",
+   "sabates_a": "And it came to pass that in the very heat of the ramming, the sheep beheld the rods, and brought forth spotted, and of diverse colours, and speckled.",
+   "madueke_b": "And it came to pass that in the very heat of the ramming, the sheep beheld the rods, and brought forth spotted, and of diverse colours, and speckled."
+  },
+  "40": {
+   "s_dismas": "And Iacob diuided the flocke, and put the roddes in the troughes before the eyes of the rammes: and al the white and the blacke were Labans: and the reſt, Iacobs, when the flockes were ſeparated one from the other.",
+   "odr_com": "And Iacob diuided the flocke, and put the roddes in the troughes before the eyes of the rammes: and al the white and the blacke were Labans: and the rest, Iacobs, when the flockes were separated one from the other.",
+   "sabates_a": "And Jacob divided the flock, and put the rods in the troughs before the eyes of the rams: and all the white and the black were Laban's, and the rest, Jacob's, when the flocks were separated one from the other.",
+   "madueke_b": "And Jacob divided the flock, and put the rods in the troughs before the eyes of the rams: and all the white and the black were Laban's, and the rest, Jacob's, when the flocks were separated one from the other."
+  },
+  "41": {
+   "s_dismas": "Therfore when the ewes went to ramme, in the prime time, Iacob put the roddes in the troughes of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue:",
+   "odr_com": "Therfore when the ewes went to ramme, in the prime time, Iacob put the roddes in the troughes of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue:",
+   "sabates_a": "Therefore when the ewes went to ram, in the prime time Jacob put the rods in the troughs of water before the eyes of the rams, and of the ewes, that in looking upon them they might conceive:",
+   "madueke_b": "Therefore when the ewes went to ram, in the prime time Jacob put the rods in the troughs of water before the eyes of the rams, and of the ewes, that in looking upon them they might conceive:"
+  },
+  "42": {
+   "s_dismas": "but when the later comming was, and the laſt conceauing, he did not put them. And thoſe that were late warde, became Labans: and they of the prime time, Iacobs.",
+   "odr_com": "but when the later comming was, and the last conceauing, he did not put them. And those that were late warde, became Labans: and they of the prime time, Iacobs.",
+   "sabates_a": "but when the later coming was, and the last conceiving, he did not put them. And those that were lateward became Laban's: and they of the prime time, Jacob's.",
+   "madueke_b": "but when the later coming was, and the last conceiving, he did not put them. And those that were lateward became Laban's: and they of the prime time, Jacob's."
+  },
+  "43": {
+   "s_dismas": "And the man was enriched beyond meaſure, and he had manie flockes, wemen ſeruantes and men ſeruants, camels and aſſes.",
+   "odr_com": "And the man was enriched beyond measure, and he had manie flockes, wemen seruantes and men seruants, camels and asses.",
+   "sabates_a": "And the man was enriched beyond measure, and he had many flock, women servants and men servants, camels and asses.",
+   "madueke_b": "And the man was enriched beyond measure, and he had many flock, women servants and men servants, camels and asses."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Rachel seeing she was unfruitful, envied her sister, and said to her husband: Give me children, otherwise I shall die.",
+  "2": "With whom Jacob being angry answered: Am I as God, who hath deprived thee of the fruit of thy womb?",
+  "3": "But she said: I have here my servant Bala: Company with her, that she may bear upon my knees, and I may have children of her.",
+  "4": "And she gave him Bala unto marriage: who,",
+  "5": "When her husband had companied with her, conceived and bare a son.",
+  "6": "And Rachel said: Our Lord hath judged for me and hath heard my voice, giving me a son, and therefore she called his name, Dan.",
+  "7": "And again Bala conceiving bare another,",
+  "8": "for whom Rachel said: God hath compared me with my sister, and I have prevailed: and she called him Nephthali.",
+  "9": "Lia perceiving that she had left bearing, delivered Zelpha her handmaid to her husband.",
+  "10": "Who conceiving and bringing forth a son,",
+  "11": "she said: Happily. And therefore called his name Gad.",
+  "12": "Zelpha also bare another.",
+  "13": "And Lia said: This is for my blessedness: for women will call me blessed. Therefore she called him Aser.",
+  "14": "And Ruben, going forth in the time of wheat harvest into the field, found mandragoras: which he brought to his mother Lia. And Rachel said: Give me part of thy son's mandragoras.",
+  "15": "She answered: Dost thou think it a small matter that thou hast taken my husband from me, unless thou take also my son's mandragoras? Rachel said: For thy son's mandragoras let him sleep with thee this night.",
+  "16": "And when Jacob returned at even from the field, Lia went out to meet him, and said: Company with me, because with wages I have hired thee for my son's mandragoras. And he slept with her that night.",
+  "17": "And God heard her prayers: and she conceived and bare the fifth son,",
+  "18": "And said: God hath given me a reward, because I gave my handmaid to my husband. And she called his name Issachar.",
+  "19": "Again Lia conceiving, bare the sixth son,",
+  "20": "& said: God hath endowed me with a good dowry: this turn also my husband will be with me, for because I have born him six sons, and therefore she called his name, Zabulon.",
+  "21": "After whom she bare a daughter named Dina.",
+  "22": "Our Lord also remembering Rachel, heard her, and opened her womb.",
+  "23": "Who conceived and bare a son, saying: God hath taken away my reproach.",
+  "24": "And she called his name, Joseph, saying: Our Lord add to me another son.",
+  "25": "And when Joseph was born, Jacob said to his father in law: Dismiss me that I may return into my country, and to my land.",
+  "26": "Give me my wives, and my children, for whom I have served thee, that I may depart: thou knowest the service that I have served thee.",
+  "27": "Laban said to him: Let me find grace in thy sight: I have learned by experience that God hath blessed me for thy sake:",
+  "28": "appoint thee wages which I shall give thee.",
+  "29": "But he answered: Thou knowest how I have served thee, and how great thy possession hath been in my hands.",
+  "30": "Thou hadest a small thing before I came to thee, and now thou art made rich: and our Lord hath blessed thee at my coming in. It is reason therefore that once I provide also for mine own house.",
+  "31": "And Laban said: What shall I give thee? But he said: I will nothing: but if thou wilt do that which I demand, I will feed and keep thy sheep again.",
+  "32": "Go round about all the flocks, and separate all the sheep of diverse colours, of speckled fleece: and what-soever shall be russet and spotted, and of diverse colours, as well in the sheep as in the goats, shall be my wages.",
+  "33": "And my justice shall answer for me tomorrow before thee, when the time of the bargain shall come: and all that shall not be of diverse colours, and spotted, and russet, as well in the sheep as in the goats, shall accuse me of theft.",
+  "34": "And Laban said: I like well that thou demandest.",
+  "35": "And he separated the same day the she goats, and the sheep, and the he goats, and the rams of diverse colours, and spotted: and all the flock of one colour, that is of white and black fleece, he delivered in the hand of his sons.",
+  "36": "And he put a space of three days' journey betwixt him and his son in law, who fed the rest of his flock.",
+  "37": "Jacob therefore taking green rods of the poplar, and of the almond, and of the plane-trees, in part pilled them: and when the barks were taken off, in the parts that were pilled there appeared whiteness: but the parts that were whole remained green: and by this means the colour was made diverse.",
+  "38": "And he put them in the troughs, where the water was poured out: that when the flocks should come to drink, they might have the rods before their eyes, and in the sight of them conceive.",
+  "39": "And it came to pass that in the very heat of the ramming, the sheep beheld the rods, and brought forth spotted, and of diverse colours, and speckled.",
+  "40": "And Jacob divided the flock, and put the rods in the troughs before the eyes of the rams: and all the white and the black were Laban's, and the rest, Jacob's, when the flocks were separated one from the other.",
+  "41": "Therefore when the ewes went to ram, in the prime time Jacob put the rods in the troughs of water before the eyes of the rams, and of the ewes, that in looking upon them they might conceive:",
+  "42": "but when the later coming was, and the last conceiving, he did not put them. And those that were lateward became Laban's: and they of the prime time, Jacob's.",
+  "43": "And the man was enriched beyond measure, and he had many flock, women servants and men servants, camels and asses."
+ },
+ "ref_coverage": {
+  "janvier": 43,
+  "have": {
+   "s_dismas": 43,
+   "odr_com": 43,
+   "sabates_a": 43,
+   "madueke_b": 43
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 172,
+ "triage": "R3-READY",
+ "secs": 9.2
+}

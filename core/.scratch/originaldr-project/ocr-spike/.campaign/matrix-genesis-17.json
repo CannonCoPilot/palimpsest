@@ -1,0 +1,1392 @@
+{
+ "chapter": 17,
+ "n_verses": 27,
+ "n_cells": 108,
+ "n_pass": 105,
+ "rate": 0.9722,
+ "ref_means": {
+  "s_dismas": 0.9782,
+  "odr_com": 0.9776,
+  "sabates_a": 0.973,
+  "madueke_b": 0.973
+ },
+ "src_rates": {
+  "S1": 0.963,
+  "S3": 1.0,
+  "S9": 0.9259,
+  "S6": 1.0
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 3,
+ "open": [
+  {
+   "src": "S9",
+   "verse": 2,
+   "worst": 0.894,
+   "from": "p93",
+   "text": "And I wil make my couenant betwen me and thee and in this I wil multiplie thee exceadingly."
+  },
+  {
+   "src": "S9",
+   "verse": 8,
+   "worst": 0.897,
+   "from": "p93",
+   "text": "And I wil geue to thee, and to thy ſeed perfect. Cæ the land of thy peregrination, al the land of Chanaan for a See perpetual poſſeſſion, and I wil be their God."
+  },
+  {
+   "src": "S1",
+   "verse": 10,
+   "worst": 0.849,
+   "from": "chapter",
+   "text": "This is my couenant which you thal obſerue betwen me and vou, and amomn com and thy ſeede after thee: Al the malekind of you shal be cumciſed"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and after that he beganne to be nyntie and nyne yeares A old, our Lord appeared vnto him: and ſaid vnto him: I am the God almightie walke hefore me, and be perfect.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.95,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S3": {
+    "text": "and after that he beganne to be nyntie and nyne yeares Aold our Lord appeared vnto him: and ſaid vnto him: I am the God almightie walke before me, and be perfect.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.962,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "ND after that he beganne to be nyntie and nyne yeares old our Lord appeared vnto him : and ſaid vnto him : I am the God almightie : walke before me, and be : perfect.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.962,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "And after that he began to be nyntie and uyne yeares old, our Lord appeared vnto him, and ſaid vnto him: I am the God Almiohtie: walke before me, and be (4) perfect.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.942,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And I wil make my couenant betwen me and thee and in I wil multiplie thee exceadingly.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S3": {
+    "text": "And I wil make my couenant betwen me and thee and in I wil multiplie thee exceadingly.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S9": {
+    "text": "And I wil make my couenant betwen me and thee and in this I wil multiplie thee exceadingly.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.911,
+     "odr_com": 0.911,
+     "sabates_a": 0.894,
+     "madueke_b": 0.894
+    }
+   },
+   "S6": {
+    "text": "And I wil make my couenant between me and thee and I wil multiplie thee exceedingly.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "Abram fel flat on his face.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Abram fel flat on his face.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Abram fel flat on his face.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Abram fel flat on his face.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And God ſaid to him: I am, and my couenant is with thee, thou shalt be a father of manie nations.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And God ſaid to him: I am, and my couenant is with thee, thou shalt be a father of manie nations.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "And God ſaid to him: I am, and my couenant is with thee, & thou shalt be a father of manie nations.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "And God ſaid to him: I am, and my couenant is with thee, and thou ſhalt be a father of manie Naions.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.948,
+     "odr_com": 0.948,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Neyther ſhal thy name be called any more Abram: but thou shalt be called Abraham becauſe a father of many nations I haue made thee.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Neyther ſhal thy name be called any more Abram: but thou shalt be called Abraham: becauſe a father of many nations I haue made thee.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Neyther ſhal thy name be called any more Abram but thou shalt be called Abraham: becauſe a father of many nations I haue made thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Neither that thy name be called any more Abram but thou ſhalt be called Abraham: becauſe a father of many Nations I haue made thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And I wil make thee encreaſe excedingly, and I wil make thee into nations, and kinges shal come forth of thee.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And I wil make thee encreaſe exceding. ly, and I wil make thee into nations, and kinges shal come forth of thee.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And I wil make thee encreaſe exceedingly, and I wil make thee into nations, and kinges shal come forth of thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And I wil make thee encreaſe exceedingly, and I wil make thee into Nations, and Kings ſhal come forth of thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And I wil eſtabliſh my couenant betwen to me and thee, and betwen thy ſeede after thee in their generations by a perpetual couenant to be thy God, and thy ſedes after thee.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "And I wil eſtablish my couenant betwen to me and thee, and betwen thy ſeede after thee in their generations by a perpetual couenant to be thy God, and thy ſedes after thee.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "And I wil eſtablish my couenant betwen me and thee, and betwen thy ſeede after thee in their generations by a perpetual couenant to be thy God, and thy ſedes after thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "And I will eſtabliſh my couenant between me and thee, and between thy ſeed after thee in their generations by a perpetual couenant to be thy God, and thy ſeeds after thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And I wil geue to thee, and to thy ſeed the land of thy peregrination, al the land of Chanaan for a see perpetual poſſeſſion, and I wil be their God.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "And I wil geue to thee, and to thy ſeed the land of thy peregrination, al the land of Chanaan for a See perpetual poſſeſſion, and I wil be their God.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And I wil geue to thee, and to thy ſeed perfect. Cæ the land of thy peregrination, al the land of Chanaan for a See perpetual poſſeſſion, and I wil be their God.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.898,
+     "odr_com": 0.898,
+     "sabates_a": 0.897,
+     "madueke_b": 0.897
+    }
+   },
+   "S6": {
+    "text": "And I wil giue to thee, and to thy ſeed the land of thy peregrination, al the land of Chanaan for a perpetual poſſeſſion, and I will be their God.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "Againe God ſaid to Abraham : And thou therfore shalt keepe my couenant, and thy ſeed after thee in their generations.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "Againe God ſaid to Abraham : And thou therfore shalt keepe my couenant, and thy ſeed after thee in their generations.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "Againe God ſaid to Abraham : And thou therfore shalt keepe my couenant, and thy ſeed after thee in their generations.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "Againe God ſaid to Abraham: And thou therfore ſhalt keep my couenant, and thy ſeed after thee in their generations.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "This is my couenant which you thal obſerue betwen me and vou, and amomn com and thy ſeede after thee: Al the malekind of you shal be cumciſed",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.863,
+     "odr_com": 0.863,
+     "sabates_a": 0.849,
+     "madueke_b": 0.849
+    }
+   },
+   "S3": {
+    "text": "This is my couenant which you ſhal obſerue betwen me and you, and thy ſeede after thee: Al the malekind of you shal be cumciſed",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "This is my couenant which you shal obſerue betwen me and you, and thy ſeede after thee: Al the malekind of you shal be circumciſed",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "This is my couenant which vou ſhal obſerue between me and vou, and thy ſeed after thee: Al the malekindot vou ſhal be circumciſed:",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.945,
+     "odr_com": 0.945,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "and you shal circumciſe the fleſh of your puce, that it may be for a ſigne of the couenant betwen ſi- and you.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S3": {
+    "text": "and you shal circumciſe the flesh of your puce, that it may be for a ſigne of the couenant betwen ſi- and you.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "and you shal circumciſe the flesh of your prepuce, that it may be for a ſigne of the couenant betwen me ſi- and you.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S6": {
+    "text": "1and vou ſhal circumciſe the fleſh ot your prepuce, that it may be tor a ſigne ot the couenant between me and you.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "An infant of eight daies shalbe circumciſed mong you, al malekind in your generations : aſwel homebred shal be circumciſed, as the bought ſeruant whoſoeuer he is, not of your ſtocke:",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.957,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S3": {
+    "text": "An infant of :: eight daies shalbe circumciſed among you, al malekind in your generations aſwel the homebred shal be circumciſed, as the bought ſeruant of whoſoeuer he is, not of your ſtocke:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "An infant of : eight daies shalbe circumciſed among you, al malekind in your generations: aſwel the of homebred shal be circumciſed, as the bought ſeruant of whoſoeuer he is, not of your ſtocke:",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.984,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S6": {
+    "text": "An infant ot eight dayes ſhal be circumciſed among you, al male-kind in your generations: as wel the homebred ſhal be circumciſed, as the bought ſeruant of whoſoeuer he is, not of your ſtocke",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "and my couenant be in your flesh for a perpetual couenant.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.919,
+     "odr_com": 0.919,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S3": {
+    "text": "and my couenant be in your flesh for a perpetual couenant.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.919,
+     "odr_com": 0.919,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S9": {
+    "text": "and my couenant shal be in your flesh for a perpetual couenant.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and my couenant ſhal be in your fleſh for a perpetual couenant.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "The male, whoſe flesh of his prepuc shal not be circumciſed, that ſoule shalbe deſtroied out of his people becauſe he hath broken my couenant.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "The male, whoſe flesh of his prepuce shal not be circumciſed, that ſoule shalbe deſtroied out of his people becauſe he hath broken my couenant.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "The male, whoſe flesh of his prepuce shal not be circumciſed, that ſoule shalbe deſtroied out of his people becauſe he hath broken my couenant.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "The male, whoſe fleſh ot his prepuce ſhal not be circumciſed, that ſoule ſhal be deſtroied out ot his people becauſe he hath broken my couenant.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.979,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "God ſaid alſo to Abraham: Sarai thy thou shalt not cal Sarai, but Sara.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S3": {
+    "text": "God ſaid alſo to Abraham : Sarai thy thou shalt not cal Sarai, but Sara.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S9": {
+    "text": "God ſaid alſo to Abraham : Sarai thy wife thou shalt not cal Sarai, but Sara.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "God ſaid alſo to Abraham: Sarai thy wife thou ſhalt not cal Sarai, but Sara.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And I wil bleſſe her, and of her I wil giue thee a ſonne, whom I wil bleſſe, and he shalbe into nations, and kings of peoples shal ſpring of him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "And I wil bleſſe her, and of her I wil giue thee a ſonne, whom I wil bleſſe, and he shalbe into nations, and kings of peoples shal ſpring of him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "And I wil bleſſe her, and of her I wil giue thee a ſonne, whom I wil bleſſe, and he shalbe into nations, and kings of peoples shal ſpring of him.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And I wil bleſſe her, and of her I wil giue thee a ſonne, whom I wil bleſſe, and he ſhal be into Nations, and Kings of peoples that ſpring of him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.979,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Abraham fel vpon his face, & : laughed, ſaying in his hart de Shal troweſt thou to him that is an hundred yeare olda ſonne be borne ? and Sara that is nyntie yeares old shal beare?",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   },
+   "S3": {
+    "text": "Abraham fel vpon his face, & : laughed, ſaying in his hart Shal troweſt thou to him that is an hundred yeare old de ſonne be borne and Sara that is nyntie yeares old shal . beare",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   },
+   "S9": {
+    "text": "Abraham fel vpon his face, & :: laughed, ſaying in his hart Shal troweſt thou to him that is an hundred yeare old a ſonne be borne? and Sara that is nyntie yeares old shal she beare?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "Abraham fel vpon his face, and laughed ſaying in his hart: Shal troweſt thou to him that is an hundred yeare old a ſonne be borne and Sara that is nyntic yeares old ſhal ſhe beare?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And he ſaid to God I would that Iſmael may liue before thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to God I would that Iſmael may liue before thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to God : I would that Iſmael may liue before thee.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to God: I would that Iſmael may liue before thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "And God ſaid to Abraham : Sara thy shal beare thee a ſonne, and thou shalr cal his name Iſaac, I wil eſtabliſh my couenant to him for a perpetual couenant, and to his ſeed after him.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S3": {
+    "text": "And God ſaid to Abraham : Sara thy shal beare thee a ſonne, and thou shalt cal his name Iſaac, I wil eſtablish my couenant to him for a perpetual nant, and to his ſeed after him.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.93,
+     "odr_com": 0.93,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   },
+   "S9": {
+    "text": "And God ſaid to Abraham : Sara thy wife shal beare thee a ſonne, and thou shalt cal his name Iſaac, and I wil eſtablish my couenant to him for a perpetual couenant, and to his ſeed after him.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And God ſaid to Abraham Sara thy wite ſhal beare thee Abraham ſonne, and thou ſhalt cal his name Iſaac, and I wil eſtabliſh my couenant to him tor a perpetual couenant, and to his ſeed after him.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "Concerning Iſmael alſo I haue heard thee. behold, I wil bleſſe him, and encreaſe, and multiplie him exceedingly: twelue dukes shal he beget, and I wil make him into a great nation.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "Concerning Iſmael alſo I haue heard thee. behold, I wil bleſſe him, and encreaſe, and multiplie him exceedingly: twelue dukes shal he beget, and I wil make him into a great nation.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "Concerning Iſmael alſo I haue heard thee. behold, I wil bleſſe him, and encreaſe, and multiplie him exceedingly: twelue dukes shal he beget, and I wil make him into a great nation.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "Concerning Iſmael alſo I haue heard thee. Behold, I wil bleſſe him, and encreaſe and multiplie him exceedingry twelue Dukes ſhal he beget, and I wil make him into a great Nation.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "But my couenant I wil eſtabliſh with :: Iſaac, whom Sara shal bring forth to thee at this time an other yeare.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "But my couenant I wil eſtabliſh with :: Iſaac, whom Sara shal bring forth to thee at this time an other yeare.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "But my couenant I wil eſtabliſh with :: Iſaac, whom Sara shal bring forth to thee at this time an other yeare.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "But my couenant I wil eſtabliſh with(Iſaac, whom Sata fhal bring forth to thee at this time an other veare.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And when he had leaft ofſpea. and king with him, God aſcended from Abraham.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.901,
+     "madueke_b": 0.901
+    }
+   },
+   "S3": {
+    "text": "And when he had leaft of and king with him, God aſcended from Abraham.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S9": {
+    "text": "And when he had leaft of ſpea. and king with him, God aſcended from Abraham.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S6": {
+    "text": "And when he had left off ſpeaking with him, God aſcended from Abtaham.2.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And their braham tooke Iſmael his ſonne, and al the homebred of houſe : and al whom he had bought, al the males of al men of his houſe : and he circumciſed the flesh of their puce forth with the very ſame day, as God had commanded him.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.922,
+     "odr_com": 0.922,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S3": {
+    "text": "And Abraham tooke Iſmael his ſonne, and al the homebred of his houſe: and al whom he had bought, al the males of al the men of his houſe: and he circumciſed the flesh of their prepuce forthwith the very ſame day, as God had commanded him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Atheir braham tooke Iſmael his ſonne, and al the homebred of his houſe : and al whom he had bought, al the males of al the men of his houſe : and he circumciſed the flesh of their prepuce forthwith the very ſame day, as God had commanded him.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "And Abraham tooke Iſmael his ſonne and al the homebred of his houſe: and al whom he had bought, al the males of al the men of his bouſe: and he circuced the fleſh of their prepuce forthwith the vary ſame day as God had commanded him.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "Abraham was nyntie and nyne yeares old, when he circumciſed the flesh of his prepuce.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "Abraham was nyntie and nyne yeares old, when he circumciſed the flesh of his preuce.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "Abraham was nyntie and nyne yeares old, when he circumciſed the flesh of his prepuce.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "Abraham was nyntie and nyne yeares old, when he circumciſed the fleſh of his prepuce.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And Iſmael his ſonne was ful thirtene yeares old at the time of his circumciſion.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And Iſmael his ſonne was ful thirtene yeares old at the time of his circumciſion.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And Iſmael his ſonne was ful thirtene yeares old at the time of his circumciſion.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And Iſmael his ſonne was ful thirteen yeares old at the time of his circumciſion.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "The ſelfſame day was Abraham circumciſed and Iſmael his ſonne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "The ſelfſame day was Abraham circumciſed and Iſmael his ſonne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "The ſelf ſame day was Abraham circumciſed and Iſmael his ſonne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "The ſelt. ſame day was Abraham circumciſed and Iſmael his ſonne.7.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "And al the men of his houſe, as wel the homein bred, as the bought ſeruantes and ſtrangers were circumciſed togeather.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S3": {
+    "text": "And al the men of his houſe, as wel the home-bred, as the bought ſeruantes and ſtrangers were circumciſed togeather.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S9": {
+    "text": "And : al the men of his houſe, as wel the homein bred, as the bought ſeruantes and ſtrangers were circumciſed togeather.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S6": {
+    "text": "And al the men of his houſe, as wel the homebred as the bought ſeruauts and ſtrangers were circumciſed together.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And after that he beganne to be nyntie and nyne yeares old, our Lord appeared vnto him: and ſaid vnto him: I am the God almightie: walke before me, and be perfect.",
+   "odr_com": "AND after he beganne to be nyntie and nyne yeares old, our Lord appeared vnto him: and said vnto him: I am the God almightie: walke before me, and be perfect.",
+   "sabates_a": "And after that he began to be ninety and nine years old, our Lord appeared unto him, and said unto him: I am the God almighty: walk before me, and be perfect.",
+   "madueke_b": "And after that he began to be ninety and nine years old, our Lord appeared unto him, and said unto him: I am the God almighty: walk before me, and be perfect."
+  },
+  "2": {
+   "s_dismas": "And I wil make my couenant betwen me and thee: and I wil multiplie thee exceadingly.",
+   "odr_com": "And I wil make my couenant betwen me and thee: and I wil multiplie thee exceadingly.",
+   "sabates_a": "And I will make my covenant between me and thee: and I will multiply thee exceedingly.",
+   "madueke_b": "And I will make my covenant between me and thee: and I will multiply thee exceedingly."
+  },
+  "3": {
+   "s_dismas": "Abram fel flat on his face.",
+   "odr_com": "Abram fel flat on his face.",
+   "sabates_a": "Abram fell flat on his face.",
+   "madueke_b": "Abram fell flat on his face."
+  },
+  "4": {
+   "s_dismas": "And God ſaid to him: I am, and my couenant is with thee, & thou shalt be a father of manie nations.",
+   "odr_com": "And God said to him: I am, and my couenant is with thee, & thou shalt be a father of manie nations.",
+   "sabates_a": "And God said to him: I am, and my covenant is with thee, and thou shalt be a father of many Nations.",
+   "madueke_b": "And God said to him: I am, and my covenant is with thee, and thou shalt be a father of many Nations."
+  },
+  "5": {
+   "s_dismas": "Neyther ſhal thy name be called any more Abram: but thou shalt be called Abraham: becauſe a father of many nations I haue made thee.",
+   "odr_com": "Neyther shal thy name be called any more Abram: but thou shalt be called Abraham: because a father of many nations I haue made thee.",
+   "sabates_a": "Neither shall thy name be called any more Abram; but thou shalt be called Abraham: because a father of many Nations I have made thee.",
+   "madueke_b": "Neither shall thy name be called any more Abram; but thou shalt be called Abraham: because a father of many Nations I have made thee."
+  },
+  "6": {
+   "s_dismas": "And I wil make thee encreaſe excedingly, and I wil make thee into nations, and kinges shal come forth of thee.",
+   "odr_com": "And I wil make thee encrease excedingly, and I wil make thee into nations, and kinges shal come forth of thee.",
+   "sabates_a": "And I will make thee increase exceedingly, and I will make thee into Nations, and kings shall come forth of thee.",
+   "madueke_b": "And I will make thee increase exceedingly, and I will make thee into Nations, and kings shall come forth of thee."
+  },
+  "7": {
+   "s_dismas": "And I wil eſtablish my couenant betwen me and thee, and betwen thy ſeede after thee in their generations by a perpetual couenant: to be thy God, and thy ſedes after thee.",
+   "odr_com": "And I wil establish my couenant betwen me and thee, and betwen thy seede after thee in their generations by a perpetual couenant: to be thy God, and thy sedes after thee.",
+   "sabates_a": "And I will establish my covenant between me and thee, and between thy seed after thee in their generations by a perpetual covenant: to be thy God, and thy seeds after thee.",
+   "madueke_b": "And I will establish my covenant between me and thee, and between thy seed after thee in their generations by a perpetual covenant: to be thy God, and thy seeds after thee."
+  },
+  "8": {
+   "s_dismas": "And I wil geue to thee, and to thy ſeed the land of thy peregrination, al the land of Chanaan for a perpetual poſſeſſion, and I wil be their God.",
+   "odr_com": "And I wil geue to thee, and to thy seed the land of thy peregrination, al the land of Chanaan for a perpetual possession, and I wil be their God.",
+   "sabates_a": "And I will give to thee, and to thy seed the land of thy peregrination, all the land of Chanaan for a perpetual possession, and I will be their God.",
+   "madueke_b": "And I will give to thee, and to thy seed the land of thy peregrination, all the land of Chanaan for a perpetual possession, and I will be their God."
+  },
+  "9": {
+   "s_dismas": "Againe God ſaid to Abraham: And thou therfore shalt keepe my couenant, and thy ſeed after thee in their generations.",
+   "odr_com": "Againe God said to Abraham: And thou therfore shalt keepe my couenant, and thy seed after thee in their generations.",
+   "sabates_a": "Again God said to Abraham: And thou therefore shalt keep my covenant, and thy seed after thee in their generations.",
+   "madueke_b": "Again God said to Abraham: And thou therefore shalt keep my covenant, and thy seed after thee in their generations."
+  },
+  "10": {
+   "s_dismas": "This is my couenant which you shal obſerue betwen me and you, and thy ſeede after thee: Al the malekind of you shal be circumciſed:",
+   "odr_com": "This is my couenant which you shal obserue betwen me and you, and thy seede after thee: Al the malekind of you shal be circumcised:",
+   "sabates_a": "This is my covenant which you shall observe between me and you, and thy seed after thee: All the male kind of you shall be circumcised:",
+   "madueke_b": "This is my covenant which you shall observe between me and you, and thy seed after thee: All the male kind of you shall be circumcised:"
+  },
+  "11": {
+   "s_dismas": "and you shal circumciſe the flesh of your prepuce, that it may be for a ſigne of the couenant betwen me and you.",
+   "odr_com": "and you shal circumcise the flesh of your prepuce, that it may be for a signe of the couenant betwen me and you.",
+   "sabates_a": "and you shall circumcise the flesh of your prepuce, that it may be for a sign of the covenant between me and you.",
+   "madueke_b": "and you shall circumcise the flesh of your prepuce, that it may be for a sign of the covenant between me and you."
+  },
+  "12": {
+   "s_dismas": "And infant of eight daies shal be circumciſed among you, al malekind in your generations: aſwel the homebred shal be circumciſed, as the bought ſeruant of whoſoeuer he is, not of your ſtocke:",
+   "odr_com": "An infant of eight daies shalbe circumcised among you, al malekind in your generations: aswel the homebred shal be circumcised, as the bought seruant of whosoeuer he is, not of your stocke:",
+   "sabates_a": "An infant of eight days shall be circumcised among you, all male-kind in your generations: as well the homebred shall be circumcised, as the bought servant of whosoever he is, not of your stock:",
+   "madueke_b": "An infant of eight days shall be circumcised among you, all male-kind in your generations: as well the homebred shall be circumcised, as the bought servant of whosoever he is, not of your stock:"
+  },
+  "13": {
+   "s_dismas": "and my couenant shal be in your flesh for a perpetual couenant.",
+   "odr_com": "and my couenant shal be in your flesh for a perpetual couenant.",
+   "sabates_a": "and my covenant shall be in your flesh for a perpetual covenant.",
+   "madueke_b": "and my covenant shall be in your flesh for a perpetual covenant."
+  },
+  "14": {
+   "s_dismas": "The male, whoſe flesh of his prepuce shal not be circumciſed, that ſoule shal be deſtroied out of his people: becauſe he hath broken my couenant.",
+   "odr_com": "The male, whose flesh of his prepuce shal not be circumcised, that soule shalbe destroied out of his people: because he hath broken my couenant.",
+   "sabates_a": "The male, whose flesh of his prepuce shall not be circumcised, that soul shall be destroyed out of his people: because he hath broken my covenant.",
+   "madueke_b": "The male, whose flesh of his prepuce shall not be circumcised, that soul shall be destroyed out of his people: because he hath broken my covenant."
+  },
+  "15": {
+   "s_dismas": "God ſaid alſo to Abraham: Sarai thy wife thou shalt not cal Sarai, but Sara.",
+   "odr_com": "God said also to Abraham: Sarai thy wife thou shalt not cal Sarai, but Sara.",
+   "sabates_a": "God said also to Abraham: Sarai thy wife thou shalt not call Sarai, but Sara.",
+   "madueke_b": "God said also to Abraham: Sarai thy wife thou shalt not call Sarai, but Sara."
+  },
+  "16": {
+   "s_dismas": "And I wil bleſſe her, and of her I wil giue thee a ſonne, whom I wil bleſſe, and he shal be into nations, and kings of peoples shal ſpring of him.",
+   "odr_com": "And I wil blesse her, and of her I wil giue thee a sonne, whom I wil blesse, and he shalbe into nations, and kings of peoples shal spring of him.",
+   "sabates_a": "And I will bless her, and of her I will give thee a son, whom I will bless, and he shall be into Nations, and kings of peoples shall spring of him.",
+   "madueke_b": "And I will bless her, and of her I will give thee a son, whom I will bless, and he shall be into Nations, and kings of peoples shall spring of him."
+  },
+  "17": {
+   "s_dismas": "Abraham fel vpon his face, & laughed, ſaying in his hart: Shal troweſt thou to him that is an hundred yeare old a ſonne be borne? and Sara that is nyntie yeares old shal she beare?",
+   "odr_com": "Abraham fel vpon his face, & laughed, saying in his hart: Shal trowest thou to him that is an hundred yeare old a sonne be borne? and Sara that is nyntie yeares old shal she beare?",
+   "sabates_a": "Abraham fell upon his face, and laughed, saying in his heart: Shall trowest thou to him that is an hundred year old a son be born? And Sara that is ninety years old shall she bear?",
+   "madueke_b": "Abraham fell upon his face, and laughed, saying in his heart: Shall trowest thou to him that is an hundred year old a son be born? And Sara that is ninety years old shall she bear?"
+  },
+  "18": {
+   "s_dismas": "And he ſaid to God: I would that Iſmael may liue before thee.",
+   "odr_com": "And he said to God: I would that Ismael may liue before thee.",
+   "sabates_a": "And he said to God: I would that Ismael may live before thee.",
+   "madueke_b": "And he said to God: I would that Ismael may live before thee."
+  },
+  "19": {
+   "s_dismas": "And God ſaid to Abraham: Sara thy wife shal beare thee a ſonne, and thou shalt cal his name Iſaac, and I wil eſtablish my couenant to him for a perpetual couenant, and to his ſeed after him.",
+   "odr_com": "And God said to Abraham: Sara thy wife shal beare thee a sonne, and thou shalt cal his name Isaac, and I wil establish my couenant to him for a perpetual couenant, and to his seed after him.",
+   "sabates_a": "And God said to Abraham: Sara thy wife shall bear thee a son, and thou shalt call his name Isaac, and I will establish my covenant to him for a perpetual covenant, and to his seed after him.",
+   "madueke_b": "And God said to Abraham: Sara thy wife shall bear thee a son, and thou shalt call his name Isaac, and I will establish my covenant to him for a perpetual covenant, and to his seed after him."
+  },
+  "20": {
+   "s_dismas": "Concerning Iſmael alſo I haue heard thee. Behold, I wil bleſſe him, and encreaſe, and multiplie him exceadingly: twelue dukes shal he beget, and I wil make him into a great nation.",
+   "odr_com": "Concerning Ismael also I haue heard thee. behold, I wil blesse him, and encrease, and multiplie him exceadingly: twelue dukes shal he beget, and I wil make him into a great nation.",
+   "sabates_a": "Concerning Ismael also I have heard thee. Behold, I will bless him, and increase and multiply him exceedingly: twelve Dukes shall he beget, and I will make him into a great Nation.",
+   "madueke_b": "Concerning Ismael also I have heard thee. Behold, I will bless him, and increase and multiply him exceedingly: twelve Dukes shall he beget, and I will make him into a great Nation."
+  },
+  "21": {
+   "s_dismas": "But my couenant I wil eſtablish with Iſaac, whom Sara shal bring forth to thee at this time an other yeare.",
+   "odr_com": "But my couenant I wil establish with Isaac, whom Sara shal bring forth to thee at this time an other yeare.",
+   "sabates_a": "But my covenant I will establish with Isaac, whom Sara shall bring forth to thee at this time another year.",
+   "madueke_b": "But my covenant I will establish with Isaac, whom Sara shall bring forth to thee at this time another year."
+  },
+  "22": {
+   "s_dismas": "And when he had leaft of ſpeaking with him, God aſcended from Abraham.",
+   "odr_com": "And when he had leaft of speaking with him, God ascended from Abraham.",
+   "sabates_a": "And when he had left off speaking with him, God ascended from Abraham.",
+   "madueke_b": "And when he had left off speaking with him, God ascended from Abraham."
+  },
+  "23": {
+   "s_dismas": "And Abraham tooke Iſmael his ſonne, and al the homebred of his houſe: and al whom he had bought, al the males of al the men of his houſe: and he circumciſed the flesh of their prepuce forthwith the very ſame day, as God had commanded him.",
+   "odr_com": "And Abraham tooke Ismael his sonne, and al the homebred of his house: and al whom he had bought, al the males of al the men of his house: and he circumcised the flesh of their prepuce forthwith the very same day, as God had commanded him.",
+   "sabates_a": "And Abraham took Ismael his son, and all the homebred of his house: and all whom he had bought, all the males of all the men of his house: and he circumcised the flesh of their prepuce forthwith the very same day, as God had commanded him.",
+   "madueke_b": "And Abraham took Ismael his son, and all the homebred of his house: and all whom he had bought, all the males of all the men of his house: and he circumcised the flesh of their prepuce forthwith the very same day, as God had commanded him."
+  },
+  "24": {
+   "s_dismas": "Abraham was nyntie and nyne yeares old, when he circumciſed the flesh of his prepuce.",
+   "odr_com": "Abraham was nyntie and nyne yeares old, when he circumcised the flesh of his prepuce.",
+   "sabates_a": "Abraham was ninety and nine years old, when he circumcised the flesh of his prepuce.",
+   "madueke_b": "Abraham was ninety and nine years old, when he circumcised the flesh of his prepuce."
+  },
+  "25": {
+   "s_dismas": "And Iſmael his ſonne was ful thirtene yeares old at the time of his circumciſion.",
+   "odr_com": "And Ismael his sonne was ful thirtene yeares old at the time of his circumcision.",
+   "sabates_a": "And Ismael his son was full thirteen years old at the time of his circumcision.",
+   "madueke_b": "And Ismael his son was full thirteen years old at the time of his circumcision."
+  },
+  "26": {
+   "s_dismas": "The ſelfsame day was Abraham circumciſed and Iſmael his ſonne.",
+   "odr_com": "The selfsame day was Abraham circumcised and Ismael his sonne.",
+   "sabates_a": "The self-same day was Abraham circumcised and Ismael his son.",
+   "madueke_b": "The self-same day was Abraham circumcised and Ismael his son."
+  },
+  "27": {
+   "s_dismas": "And al the men of his houſe, as wel the homebred, as the bought ſeruantes and ſtrangers were circumciſed togeather.",
+   "odr_com": "And al the men of his house, as wel the homebred, as the bought seruantes and strangers were circumcised togeather.",
+   "sabates_a": "And all the men of his house, as well the homebred as the bought servants and strangers were circumcised together.",
+   "madueke_b": "And all the men of his house, as well the homebred as the bought servants and strangers were circumcised together."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And after that he began to be ninety and nine years old, our Lord appeared unto him, and said unto him: I am the God almighty: walk before me, and be perfect.",
+  "2": "And I will make my covenant between me and thee: and I will multiply thee exceedingly.",
+  "3": "Abram fell flat on his face.",
+  "4": "And God said to him: I am, and my covenant is with thee, and thou shalt be a father of many Nations.",
+  "5": "Neither shall thy name be called any more Abram; but thou shalt be called Abraham: because a father of many Nations I have made thee.",
+  "6": "And I will make thee increase exceedingly, and I will make thee into Nations, and kings shall come forth of thee.",
+  "7": "And I will establish my covenant between me and thee, and between thy seed after thee in their generations by a perpetual covenant: to be thy God, and thy seeds after thee.",
+  "8": "And I will give to thee, and to thy seed the land of thy peregrination, all the land of Chanaan for a perpetual possession, and I will be their God.",
+  "9": "Again God said to Abraham: And thou therefore shalt keep my covenant, and thy seed after thee in their generations.",
+  "10": "This is my covenant which you shall observe between me and you, and thy seed after thee: All the male kind of you shall be circumcised:",
+  "11": "and you shall circumcise the flesh of your prepuce, that it may be for a sign of the covenant between me and you.",
+  "12": "An infant of eight days shall be circumcised among you, all male-kind in your generations: as well the homebred shall be circumcised, as the bought servant of whosoever he is, not of your stock:",
+  "13": "and my covenant shall be in your flesh for a perpetual covenant.",
+  "14": "The male, whose flesh of his prepuce shall not be circumcised, that soul shall be destroyed out of his people: because he hath broken my covenant.",
+  "15": "God said also to Abraham: Sarai thy wife thou shalt not call Sarai, but Sara.",
+  "16": "And I will bless her, and of her I will give thee a son, whom I will bless, and he shall be into Nations, and kings of peoples shall spring of him.",
+  "17": "Abraham fell upon his face, and laughed, saying in his heart: Shall trowest thou to him that is an hundred year old a son be born? And Sara that is ninety years old shall she bear?",
+  "18": "And he said to God: I would that Ismael may live before thee.",
+  "19": "And God said to Abraham: Sara thy wife shall bear thee a son, and thou shalt call his name Isaac, and I will establish my covenant to him for a perpetual covenant, and to his seed after him.",
+  "20": "Concerning Ismael also I have heard thee. Behold, I will bless him, and increase and multiply him exceedingly: twelve Dukes shall he beget, and I will make him into a great Nation.",
+  "21": "But my covenant I will establish with Isaac, whom Sara shall bring forth to thee at this time another year.",
+  "22": "And when he had left off speaking with him, God ascended from Abraham.",
+  "23": "And Abraham took Ismael his son, and all the homebred of his house: and all whom he had bought, all the males of all the men of his house: and he circumcised the flesh of their prepuce forthwith the very same day, as God had commanded him.",
+  "24": "Abraham was ninety and nine years old, when he circumcised the flesh of his prepuce.",
+  "25": "And Ismael his son was full thirteen years old at the time of his circumcision.",
+  "26": "The self-same day was Abraham circumcised and Ismael his son.",
+  "27": "And all the men of his house, as well the homebred as the bought servants and strangers were circumcised together."
+ },
+ "ref_coverage": {
+  "janvier": 27,
+  "have": {
+   "s_dismas": 27,
+   "odr_com": 27,
+   "sabates_a": 27,
+   "madueke_b": 27
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 108,
+ "triage": "R3-READY",
+ "secs": 6.1
+}

@@ -344,6 +344,84 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     # previous chapter's annotation column.
     ("jp2-S06", 50): {"body": (0.15, 0.754)},
     ("jp2-S06", 51): {"head_frac": 0.10},
+    # ---- TWO-AXIS BOUNDS FOR `jp2-S06`, from `s6_bounds_probe.py` (ch39 walk, 2026-08-02) ----------------
+    # This edition ALTERNATES its margin by leaf parity, and the entries above were each produced by a hunt
+    # for one defect that varied the axis it was hunting and left the other at its default: p74/p128/p150/
+    # p156 carried four-decimal RIGHT bounds beside an untouched default left, p90/p92 a tuned LEFT beside
+    # an untouched default right. Both halves were real; each entry was half-done. Measured across every
+    # wordbox cache, 62 of 127 leaves differ from the model and EVERY ONE IS EVEN: even leaves set their
+    # glosses in a RIGHT column at 0.745-0.765 and run their body left to 0.13-0.16; odd leaves set them on
+    # the LEFT at 0.10-0.21 and run the body right to 0.825. The left bound comes from `left_strip_probe`'s
+    # line-membership test (a histogram cannot tell a clipped body from a full-width note block -- see p89);
+    # the right from the dip-then-spike in the leaf's own token histogram.
+    ('jp2-S06', 22): {"body": (0.14, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 24): {"body": (0.13, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 26): {"body": (0.14, 0.745)},   # was (0.215, 0.825)
+    ('jp2-S06', 28): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 30): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 32): {"body": (0.215, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 34): {"body": (0.215, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 36): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 38): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 42): {"body": (0.1, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 44): {"body": (0.17, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 52): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 54): {"body": (0.215, 0.745)},   # was (0.215, 0.825)
+    ('jp2-S06', 58): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 60): {"body": (0.215, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 66): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 68): {"body": (0.17, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 70): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 72): {"body": (0.14, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 74): {"body": (0.15, 0.746)},   # was (0.215, 0.746)
+    ('jp2-S06', 76): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 78): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 80): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 82): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 84): {"body": (0.12, 0.735)},   # was (0.215, 0.825)
+    ('jp2-S06', 86): {"body": (0.14, 0.745)},   # was (0.215, 0.825)
+    ('jp2-S06', 88): {"body": (0.12, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 90): {"body": (0.14, 0.745)},   # was (0.14, 0.825)
+    ('jp2-S06', 92): {"body": (0.14, 0.755)},   # was (0.14, 0.825)
+    ('jp2-S06', 94): {"body": (0.14, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 96): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 98): {"body": (0.14, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 100): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 102): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 104): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 106): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 108): {"body": (0.16, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 110): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 112): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 114): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 116): {"body": (0.14, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 118): {"body": (0.16, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 120): {"body": (0.14, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 122): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 124): {"body": (0.14, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 126): {"body": (0.16, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 128): {"body": (0.16, 0.7544)},   # was (0.215, 0.7544)
+    ('jp2-S06', 130): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 132): {"body": (0.13, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 134): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 136): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 138): {"body": (0.15, 0.765)},   # was (0.215, 0.825)
+    ('jp2-S06', 140): {"body": (0.14, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 142): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 144): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 146): {"body": (0.16, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 148): {"body": (0.15, 0.745)},   # was (0.215, 0.825)
+    ('jp2-S06', 150): {"body": (0.13, 0.745)},   # was (0.215, 0.746)
+    ('jp2-S06', 152): {"body": (0.13, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 154): {"body": (0.15, 0.755)},   # was (0.215, 0.825)
+    ('jp2-S06', 156): {"body": (0.14, 0.7497)},   # was (0.215, 0.7497)
+    ('jp2-S06', 158): {"body": (0.215, 0.765)},   # was (0.215, 0.825)
+    # HAND-VERIFIED, WHERE THE PROBE DECLINES. p35 is an ODD leaf, so nothing corroborates its histogram,
+    # and its spike of 12 is the same height as p79's -- where the eye finds body (`derogateth Baptiſme`),
+    # not apparatus. Here the eye finds an unmistakable citation column, `Gen. S.Chriſ. Theod. Moral.
+    # Exech. Heb. lib.`, running 0.82-0.87 with the body ending at 0.80. The probe stays conservative and
+    # the exception is recorded with its reason, rather than a constant tuned until it admits its example.
+    ("jp2-S06", 35): {"body": (0.215, 0.815)},
     # S3 p60 — the same lesson on the LEFT, and on a witness whose bound is right for its other leaves.
     # `pdf-S03a`'s body starts at 0.14 (x 308), and on its ANNOTATION leaves that is correct: p59 and p61 have
     # 27 of 41 and 31 of 42 rows genuinely starting at x 309-331. On the SCRIPTURE leaves the body starts at
@@ -386,7 +464,6 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     #
     # PER-LEAF AND NOT PER-WITNESS, for the p50/p51 reason exactly: p75 has NO right column (its body runs out
     # to x1803) and this bound applied there would delete scripture from every line.
-    ("jp2-S06", 74): {"body": (0.215, 0.746)},
     # THREE MORE ANNOTATION COLUMNS, found by sweeping `gutter_probe.py` over all 914 credited leaves and kept
     # only where the removed tokens are apparatus (2026-07-31). PAGE_OVERRIDE is keyed by LEAF, so each entry
     # serves every chapter that leaf carries — which is why two of the three pay off in a pair of chapters.
@@ -401,10 +478,27 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     # they are recorded as NEUTRAL, not as wins (CHAPTER-WORKFLOW Phase 4: a correct rule that changes no score
     # is not a win). A fourth candidate, p138 (ch42), was REJECTED: it changes 0 tokens of 0, i.e. that leaf
     # contributes nothing to the body at all, so a bound there is an unevidenced entry and was removed.
-    ("jp2-S06", 128): {"body": (0.215, 0.7544)},
-    ("jp2-S06", 156): {"body": (0.215, 0.7497)},
-    ("jp2-S06", 150): {"body": (0.215, 0.746)},
     ("pdf-S03a", 60): {"body": (0.17, 0.851)},
+    # ── THE SAME LEFT-BOUND DEFECT ON THE 1635 WITNESS (ch23, 2026-08-02) ────────────────────────────────
+    #
+    # `jp2-S06` carries its ANNOTATION COLUMN ON THE LEFT (0.09-0.215) where the 1609 witnesses put theirs on
+    # the right, so its body bound is 0.215. On p90 and p92 that column IS NOT THERE and the bound eats
+    # scripture: ch23 S6 scored **0.25**, 15 of its 20 open cells on p90 alone, every row starting mid-phrase
+    # — `right ot a ſepulchre with vou` (no `Giue me the`), `children of Heth auſwered` (no `The`), `a Prince
+    # of God amons vs` (no `thou art`).
+    #
+    # THE FOUR LEAVES OF ONE CHAPTER GIVE TWO OPPOSITE ANSWERS, which is the whole case for keying by LEAF:
+    #
+    #   p89  0 continuation / 88 note    p91  0 / 43     -> a REAL note column, left alone
+    #   p90 58 continuation /  1 note    p92 77 /  2     -> body, clipped
+    #
+    # The token histogram says the same thing without the classifier. p89/p91 are dense from 0.11 to 0.21 and
+    # plainly apparatus (`Chriſoſt.`, `Gen.`, `S. 48.`, `ho.`, `Amb.`, `li.`); p90/p92 hold **nothing at all
+    # below 0.15** and their body starts at 0.155. 0.14 is taken because it is clear of the body start on both
+    # leaves and there is no column on them for it to re-admit — not because it tied on the scoreboard.
+    #
+    # This was invisible until `left_strip_probe.py` was generalized off the hardcoded 1609 bound. A probe that
+    # can only see one edition's layout reports "no defect" on the other and is believed.
     # ── GENESIS 41's MARGIN COLUMN, ON THE THREE 1609 WITNESSES (2026-08-01). CANDIDATE — see the delta note. ──
     #
     # ch41 was carried as "S1 is a recognizer problem" (S1 0.5439, the worst source on the worst chapter). It is
@@ -454,14 +548,226 @@ PAGE_OVERRIDE: dict[tuple[str, int], dict] = {
     # (Ægypt). Those are mis-read glyphs, not misplaced words, and no bound of any kind reaches them. ch41/S1 is
     # therefore a RECOGNIZER problem after all — but for a reason now established by elimination rather than
     # assumed, and with the marginalia defect that was masking the diagnosis removed.
-    ("archive-ot1-1609", 143): {"body": (0.140, 0.7950)},
-    ("archive-ot1-1609", 145): {"body": (0.140, 0.7995)},
-    ("archive-ot1-1609", 147): {"body": (0.140, 0.8032)},
-    ("pdf-S03a", 147): {"body": (0.140, 0.7968)},
-    ("pdf-S03a", 149): {"body": (0.140, 0.8018)},
+    # ── AND THE SAME LEAVES' LEFT EDGE, WHICH THE ELIMINATION ABOVE NEVER VARIED (2026-08-01). ──
+    #
+    # THE CONCLUSION ABOVE — "ch41/S1 is therefore a RECOGNIZER problem after all, established by elimination" —
+    # IS WRONG, AND THE WAY IT WENT WRONG IS THE REUSABLE PART. It varied the RIGHT bound, saw S1 unmoved, and
+    # attributed the whole residue to the recognizer. The LEFT bound was never varied: every 1609 entry in this
+    # table carries a right bound tuned to four decimals beside the untouched default 0.140, which is the
+    # fingerprint of `gutter_probe.py` — a tool that sweeps the GUTTER and has no opinion about the fore-edge.
+    #
+    # The very tokens quoted there as proof of misread glyphs are tokens this bound was DROPPING. On S1 p145 the
+    # word boxes hold, at x0/W 0.118-0.136 and so outside the band, exactly:
+    #
+    #     [Seuon] + `cares of corne grew forth vpon one ſtalke ful and`      (v5, scored 0.000)
+    #     [faire:] + `tlare ſprang alto orher eates a many`                  (v6, scored 0.000)
+    #     [blaſled] + `vith adulon, deuou ng al the beaue of the`            (v7)
+    #     [morning] + `was come, being fighted with feare`                   (v8)
+    #
+    # `Seuon` IS a misread of `Seuen`, and it is ALSO clipped. Both causes are live at one site, and v5 scores
+    # 0.000 because its head is ABSENT, not because one glyph is wrong — a single bad glyph costs hundredths.
+    # An elimination that varies one bound can only ever return the cause it did not test.
+    #
+    # THE SPLITTING TEST IS `left_strip_probe.py`, and it needs no classifier. Word boxes carry line membership:
+    # a strip token whose LINE also has >=2 tokens inside the band is a body line with its head cut off; a strip
+    # token whose line lies wholly in the strip is a marginal note. On this chapter it separates the two cleanly
+    # on the SAME page set — p145/p143 and S03a p149/p147 are pure continuation (39/0, 23/1, 39/0, 31/0), while
+    # p144, S03a p148 and holiebible p156 are notes (2/9, 3/7, 5/8) and are left alone.
+    #
+    # THE STRIP IS MIXED ACROSS THE BOOK, SO THE DEFAULT MUST NOT MOVE. Book-wide the band 0.109 <= x0/W < 0.140
+    # holds ~8,200 tokens on 404 leaves: 194 leaves are continuation, 167 are genuine note columns
+    # (`1.Idals. called idols.`) and 29 are mixed. Lowering `SOURCE_MODEL` would pull apparatus into scripture on
+    # a third of them. Per-leaf, on the probe's verdict, or not at all.
+    #
+    # Only the five leaves the probe calls MOVE are changed here. The four it calls `mixed` (S03a p151/p150/p152,
+    # holiebible p159/p160) are DELIBERATELY LEFT AT 0.140 pending an eye — kraken merges a note into a body
+    # line's own line object often enough (the ch3/ch6 overlap) that a straddling line is not by itself proof.
+    ("archive-ot1-1609", 143): {"body": (0.109, 0.7950)},
+    ("archive-ot1-1609", 145): {"body": (0.109, 0.7995)},
+    ("archive-ot1-1609", 147): {"body": (0.109, 0.8032)},
+    ("pdf-S03a", 147): {"body": (0.109, 0.7968)},
+    ("pdf-S03a", 149): {"body": (0.109, 0.8018)},
     ("pdf-S03a", 151): {"body": (0.140, 0.8041)},
     ("archive-holiebible-ot1", 155): {"body": (0.140, 0.7877)},
     ("archive-holiebible-ot1", 157): {"body": (0.140, 0.7941)},
+    # ══ THE LEFT BOUND, APPLIED BOOK-WIDE BY PROBE VERDICT (2026-08-01) ══════════════════════════════
+    # Generated by `left_strip_probe.py --emit`; regenerate, never hand-edit. The defect and the splitting
+    # test are documented at the ch41 block above -- these are the same finding at book scale.
+    #
+    # WHY NOT LOWER `SOURCE_MODEL` INSTEAD, which would be one line. The strip 0.109 <= x0/W < 0.140 holds
+    # ~8,200 tokens on 404 leaves and it is MIXED: 194 leaves are clipped body, 167 are genuine note columns
+    # (`1.Idals. called idols.`), 29 are mixed. A default change would pull apparatus into scripture on a
+    # third of them -- the contamination this table's nine pinned negatives exist to prevent.
+    #
+    # THE EMIT RULE IS DELIBERATELY CONSERVATIVE, and it is why 194 candidate leaves became 162 entries. A
+    # leaf is carried by several chapters and each chapter's word-box cache holds its OWN recognition of it;
+    # the emitter takes the worst-case note count and requires continuation >= 3x notes in EVERY cache. A
+    # leaf any cache reads as a note column is left alone.
+    #
+    # NOT INCLUDED, and left at 0.140 on purpose: the 29 `mixed` leaves. kraken merges a marginal note into a
+    # body line's own line object often enough (the ch3/ch6 overlap, which no x-threshold ever fixed) that a
+    # straddling line is not by itself proof of a clipped head. Those need an eye, not a threshold.
+    #
+    # RESIDUAL, recorded rather than hidden: the strip's floor is 0.109, so body text starting left of that is
+    # still clipped and this probe cannot see it. Nothing measures that today.
+    ('archive-holiebible-ot1', 35): {"body": (0.109, 0.815)},   # +47 body, 1 note
+    ('archive-holiebible-ot1', 37): {"body": (0.109, 0.815)},   # +7 body, 2 note
+    ('archive-holiebible-ot1', 39): {"body": (0.109, 0.815)},   # +37 body, 0 note
+    ('archive-holiebible-ot1', 41): {"body": (0.109, 0.815)},   # +20 body, 0 note
+    ('archive-holiebible-ot1', 43): {"body": (0.109, 0.815)},   # +11 body, 0 note
+    ('archive-holiebible-ot1', 45): {"body": (0.109, 0.815)},   # +46 body, 1 note
+    ('archive-holiebible-ot1', 47): {"body": (0.109, 0.815)},   # +33 body, 0 note
+    ('archive-holiebible-ot1', 49): {"body": (0.109, 0.815)},   # +43 body, 0 note
+    ('archive-holiebible-ot1', 51): {"body": (0.109, 0.815)},   # +4 body, 0 note
+    ('archive-holiebible-ot1', 52): {"body": (0.109, 0.815)},   # +12 body, 1 note
+    ('archive-holiebible-ot1', 53): {"body": (0.109, 0.815)},   # +49 body, 0 note
+    ('archive-holiebible-ot1', 55): {"body": (0.109, 0.815)},   # +49 body, 1 note
+    ('archive-holiebible-ot1', 57): {"body": (0.109, 0.815)},   # +6 body, 1 note
+    ('archive-holiebible-ot1', 65): {"body": (0.109, 0.815)},   # +19 body, 0 note
+    ('archive-holiebible-ot1', 67): {"body": (0.109, 0.815)},   # +25 body, 0 note
+    ('archive-holiebible-ot1', 69): {"body": (0.109, 0.815)},   # +11 body, 0 note
+    ('archive-holiebible-ot1', 70): {"body": (0.109, 0.815)},   # +12 body, 4 note
+    ('archive-holiebible-ot1', 71): {"body": (0.109, 0.815)},   # +6 body, 0 note
+    ('archive-holiebible-ot1', 73): {"body": (0.109, 0.815)},   # +28 body, 0 note
+    ('archive-holiebible-ot1', 75): {"body": (0.109, 0.815)},   # +32 body, 0 note
+    ('archive-holiebible-ot1', 81): {"body": (0.109, 0.815)},   # +5 body, 0 note
+    ('archive-holiebible-ot1', 85): {"body": (0.109, 0.815)},   # +9 body, 0 note
+    ('archive-holiebible-ot1', 89): {"body": (0.109, 0.815)},   # +28 body, 1 note
+    ('archive-holiebible-ot1', 91): {"body": (0.109, 0.815)},   # +14 body, 0 note
+    ('archive-holiebible-ot1', 93): {"body": (0.109, 0.815)},   # +21 body, 0 note
+    ('archive-holiebible-ot1', 95): {"body": (0.109, 0.815)},   # +42 body, 1 note
+    ('archive-holiebible-ot1', 96): {"body": (0.109, 0.815)},   # +7 body, 0 note
+    ('archive-holiebible-ot1', 99): {"body": (0.109, 0.815)},   # +11 body, 0 note
+    ('archive-holiebible-ot1', 101): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('archive-holiebible-ot1', 113): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('archive-holiebible-ot1', 115): {"body": (0.109, 0.815)},   # +28 body, 0 note
+    ('archive-holiebible-ot1', 121): {"body": (0.109, 0.815)},   # +40 body, 0 note
+    ('archive-holiebible-ot1', 125): {"body": (0.109, 0.815)},   # +21 body, 0 note
+    ('archive-holiebible-ot1', 127): {"body": (0.109, 0.815)},   # +3 body, 1 note
+    ('archive-holiebible-ot1', 133): {"body": (0.109, 0.815)},   # +20 body, 0 note
+    ('archive-holiebible-ot1', 136): {"body": (0.109, 0.815)},   # +7 body, 1 note
+    ('archive-holiebible-ot1', 138): {"body": (0.109, 0.815)},   # +6 body, 1 note
+    ('archive-holiebible-ot1', 143): {"body": (0.109, 0.815)},   # +3 body, 1 note
+    ('archive-holiebible-ot1', 145): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('archive-holiebible-ot1', 147): {"body": (0.109, 0.815)},   # +32 body, 1 note
+    ('archive-holiebible-ot1', 151): {"body": (0.109, 0.815)},   # +6 body, 0 note
+    ('archive-holiebible-ot1', 153): {"body": (0.109, 0.815)},   # +8 body, 0 note
+    ('archive-holiebible-ot1', 163): {"body": (0.109, 0.815)},   # +35 body, 2 note
+    ('archive-holiebible-ot1', 171): {"body": (0.109, 0.815)},   # +8 body, 0 note
+    ('archive-holiebible-ot1', 175): {"body": (0.109, 0.815)},   # +17 body, 0 note
+    ('archive-holiebible-ot1', 179): {"body": (0.109, 0.815)},   # +26 body, 1 note
+    ('archive-holiebible-ot1', 181): {"body": (0.109, 0.815)},   # +17 body, 0 note
+    ('archive-holiebible-ot1', 183): {"body": (0.109, 0.815)},   # +7 body, 0 note
+    ('archive-holiebible-ot1', 185): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('archive-ot1-1609', 25): {"body": (0.109, 0.815)},   # +15 body, 1 note
+    ('archive-ot1-1609', 27): {"body": (0.109, 0.815)},   # +10 body, 1 note
+    ('archive-ot1-1609', 29): {"body": (0.109, 0.815)},   # +17 body, 0 note
+    ('archive-ot1-1609', 31): {"body": (0.109, 0.815)},   # +19 body, 0 note
+    ('archive-ot1-1609', 32): {"body": (0.109, 0.815)},   # +10 body, 3 note
+    ('archive-ot1-1609', 33): {"body": (0.109, 0.815)},   # +5 body, 0 note
+    ('archive-ot1-1609', 35): {"body": (0.109, 0.815)},   # +27 body, 1 note
+    ('archive-ot1-1609', 37): {"body": (0.109, 0.815)},   # +24 body, 0 note
+    ('archive-ot1-1609', 39): {"body": (0.109, 0.815)},   # +18 body, 0 note
+    ('archive-ot1-1609', 41): {"body": (0.109, 0.815)},   # +4 body, 0 note
+    ('archive-ot1-1609', 42): {"body": (0.109, 0.815)},   # +7 body, 2 note
+    ('archive-ot1-1609', 43): {"body": (0.109, 0.815)},   # +28 body, 0 note
+    ('archive-ot1-1609', 45): {"body": (0.109, 0.815)},   # +10 body, 1 note
+    ('archive-ot1-1609', 47): {"body": (0.109, 0.815)},   # +9 body, 1 note
+    ('archive-ot1-1609', 55): {"body": (0.109, 0.815)},   # +34 body, 0 note
+    ('archive-ot1-1609', 57): {"body": (0.109, 0.815)},   # +7 body, 1 note
+    ('archive-ot1-1609', 59): {"body": (0.109, 0.815)},   # +8 body, 0 note
+    ('archive-ot1-1609', 60): {"body": (0.109, 0.815)},   # +10 body, 3 note
+    ('archive-ot1-1609', 61): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('archive-ot1-1609', 63): {"body": (0.109, 0.815)},   # +32 body, 0 note
+    ('archive-ot1-1609', 65): {"body": (0.109, 0.815)},   # +27 body, 0 note
+    ('archive-ot1-1609', 71): {"body": (0.109, 0.815)},   # +5 body, 1 note
+    ('archive-ot1-1609', 75): {"body": (0.109, 0.815)},   # +6 body, 0 note
+    ('archive-ot1-1609', 79): {"body": (0.109, 0.815)},   # +15 body, 1 note
+    ('archive-ot1-1609', 81): {"body": (0.109, 0.815)},   # +6 body, 2 note
+    ('archive-ot1-1609', 83): {"body": (0.109, 0.815)},   # +12 body, 0 note
+    ('archive-ot1-1609', 85): {"body": (0.109, 0.815)},   # +13 body, 1 note
+    ('archive-ot1-1609', 86): {"body": (0.109, 0.815)},   # +6 body, 1 note
+    ('archive-ot1-1609', 88): {"body": (0.109, 0.815)},   # +6 body, 0 note
+    ('archive-ot1-1609', 95): {"body": (0.109, 0.815)},   # +4 body, 1 note
+    ('archive-ot1-1609', 105): {"body": (0.109, 0.815)},   # +21 body, 2 note
+    ('archive-ot1-1609', 107): {"body": (0.109, 0.815)},   # +3 body, 1 note
+    ('archive-ot1-1609', 111): {"body": (0.109, 0.815)},   # +27 body, 0 note
+    ('archive-ot1-1609', 113): {"body": (0.109, 0.815)},   # +18 body, 0 note
+    ('archive-ot1-1609', 115): {"body": (0.109, 0.815)},   # +13 body, 2 note
+    ('archive-ot1-1609', 117): {"body": (0.109, 0.815)},   # +11 body, 3 note
+    ('archive-ot1-1609', 123): {"body": (0.109, 0.815)},   # +26 body, 0 note
+    ('archive-ot1-1609', 126): {"body": (0.109, 0.815)},   # +6 body, 1 note
+    ('archive-ot1-1609', 127): {"body": (0.109, 0.815)},   # +7 body, 1 note
+    ('archive-ot1-1609', 131): {"body": (0.109, 0.815)},   # +38 body, 0 note
+    ('archive-ot1-1609', 132): {"body": (0.109, 0.815)},   # +6 body, 2 note
+    ('archive-ot1-1609', 135): {"body": (0.109, 0.815)},   # +10 body, 0 note
+    ('archive-ot1-1609', 137): {"body": (0.109, 0.815)},   # +36 body, 1 note
+    ('archive-ot1-1609', 139): {"body": (0.109, 0.815)},   # +21 body, 0 note
+    ('archive-ot1-1609', 141): {"body": (0.109, 0.815)},   # +7 body, 0 note
+    ('archive-ot1-1609', 151): {"body": (0.109, 0.815)},   # +27 body, 3 note
+    ('archive-ot1-1609', 163): {"body": (0.109, 0.815)},   # +33 body, 0 note
+    ('archive-ot1-1609', 166): {"body": (0.109, 0.815)},   # +7 body, 0 note
+    ('archive-ot1-1609', 167): {"body": (0.109, 0.815)},   # +28 body, 0 note
+    ('archive-ot1-1609', 169): {"body": (0.109, 0.815)},   # +16 body, 0 note
+    ('archive-ot1-1609', 171): {"body": (0.109, 0.815)},   # +5 body, 1 note
+    ('archive-ot1-1609', 172): {"body": (0.109, 0.815)},   # +6 body, 2 note
+    ('archive-ot1-1609', 173): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('pdf-S03a', 29): {"body": (0.109, 0.815)},   # +22 body, 0 note
+    ('pdf-S03a', 33): {"body": (0.109, 0.815)},   # +17 body, 1 note
+    ('pdf-S03a', 35): {"body": (0.109, 0.815)},   # +16 body, 0 note
+    ('pdf-S03a', 37): {"body": (0.109, 0.815)},   # +6 body, 1 note
+    ('pdf-S03a', 39): {"body": (0.109, 0.815)},   # +20 body, 0 note
+    ('pdf-S03a', 41): {"body": (0.109, 0.815)},   # +24 body, 0 note
+    ('pdf-S03a', 43): {"body": (0.109, 0.815)},   # +19 body, 0 note
+    ('pdf-S03a', 45): {"body": (0.109, 0.815)},   # +5 body, 0 note
+    ('pdf-S03a', 46): {"body": (0.109, 0.815)},   # +6 body, 2 note
+    ('pdf-S03a', 47): {"body": (0.109, 0.815)},   # +28 body, 0 note
+    ('pdf-S03a', 49): {"body": (0.109, 0.815)},   # +12 body, 0 note
+    ('pdf-S03a', 51): {"body": (0.109, 0.815)},   # +8 body, 0 note
+    ('pdf-S03a', 53): {"body": (0.109, 0.815)},   # +9 body, 0 note
+    ('pdf-S03a', 55): {"body": (0.109, 0.815)},   # +16 body, 0 note
+    ('pdf-S03a', 59): {"body": (0.109, 0.815)},   # +25 body, 0 note
+    ('pdf-S03a', 61): {"body": (0.109, 0.815)},   # +7 body, 0 note
+    ('pdf-S03a', 63): {"body": (0.109, 0.815)},   # +4 body, 0 note
+    ('pdf-S03a', 65): {"body": (0.109, 0.815)},   # +5 body, 0 note
+    ('pdf-S03a', 67): {"body": (0.109, 0.815)},   # +32 body, 0 note
+    ('pdf-S03a', 69): {"body": (0.109, 0.815)},   # +15 body, 0 note
+    ('pdf-S03a', 77): {"body": (0.109, 0.815)},   # +12 body, 0 note
+    ('pdf-S03a', 79): {"body": (0.109, 0.815)},   # +6 body, 0 note
+    ('pdf-S03a', 83): {"body": (0.109, 0.815)},   # +16 body, 0 note
+    ('pdf-S03a', 85): {"body": (0.109, 0.815)},   # +6 body, 2 note
+    ('pdf-S03a', 87): {"body": (0.109, 0.815)},   # +11 body, 1 note
+    ('pdf-S03a', 89): {"body": (0.109, 0.815)},   # +18 body, 1 note
+    ('pdf-S03a', 90): {"body": (0.109, 0.815)},   # +4 body, 0 note
+    ('pdf-S03a', 95): {"body": (0.109, 0.815)},   # +3 body, 1 note
+    ('pdf-S03a', 99): {"body": (0.109, 0.815)},   # +4 body, 0 note
+    ('pdf-S03a', 103): {"body": (0.109, 0.815)},   # +13 body, 0 note
+    ('pdf-S03a', 105): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('pdf-S03a', 109): {"body": (0.109, 0.815)},   # +23 body, 1 note
+    ('pdf-S03a', 115): {"body": (0.109, 0.815)},   # +17 body, 0 note
+    ('pdf-S03a', 117): {"body": (0.109, 0.815)},   # +29 body, 0 note
+    ('pdf-S03a', 119): {"body": (0.109, 0.815)},   # +17 body, 2 note
+    ('pdf-S03a', 121): {"body": (0.109, 0.815)},   # +7 body, 2 note
+    ('pdf-S03a', 127): {"body": (0.109, 0.815)},   # +26 body, 0 note
+    ('pdf-S03a', 130): {"body": (0.109, 0.815)},   # +6 body, 0 note
+    ('pdf-S03a', 131): {"body": (0.109, 0.815)},   # +10 body, 0 note
+    ('pdf-S03a', 135): {"body": (0.109, 0.815)},   # +38 body, 0 note
+    ('pdf-S03a', 139): {"body": (0.109, 0.815)},   # +15 body, 0 note
+    ('pdf-S03a', 141): {"body": (0.109, 0.815)},   # +37 body, 0 note
+    ('pdf-S03a', 143): {"body": (0.109, 0.815)},   # +30 body, 0 note
+    ('pdf-S03a', 145): {"body": (0.109, 0.815)},   # +6 body, 0 note
+    ('pdf-S03a', 154): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('pdf-S03a', 155): {"body": (0.109, 0.815)},   # +28 body, 1 note
+    ('pdf-S03a', 163): {"body": (0.109, 0.815)},   # +3 body, 0 note
+    ('pdf-S03a', 165): {"body": (0.109, 0.815)},   # +6 body, 2 note
+    ('pdf-S03a', 167): {"body": (0.109, 0.815)},   # +32 body, 0 note
+    ('pdf-S03a', 170): {"body": (0.109, 0.815)},   # +7 body, 1 note
+    ('pdf-S03a', 171): {"body": (0.109, 0.815)},   # +29 body, 0 note
+    ('pdf-S03a', 173): {"body": (0.109, 0.815)},   # +18 body, 0 note
+    ('pdf-S03a', 175): {"body": (0.109, 0.815)},   # +5 body, 0 note
+    ('pdf-S03a', 176): {"body": (0.109, 0.815)},   # +6 body, 2 note
+    ('pdf-S03a', 177): {"body": (0.109, 0.815)},   # +3 body, 0 note
+
 }
 
 
@@ -558,6 +864,8 @@ def body_rows(ocr_dir: str, page_index: int, page: dict) -> list[list[dict]]:
             # (x 257-364, centre 310, bound 308) into gen 1:12 in every 1609 witness.
             if w["x0"] < lo or (w["x0"] + w["x1"]) / 2 > hi:
                 continue                       # a margin column — cross-references or annotation
+            if _MARGIN_MARK_RE.search(w["t"]) and w["x0"] < 0.14 * W and ocr_dir == "archive-ot1-1609":
+                continue                       # the copy's own marginal mark — see _MARGIN_MARK_RE
             if w["y1"] <= y_min:
                 continue    # title block / ornament / chapter argument on the OPENING leaf — genuinely a y fact
             ws.append(w)
@@ -677,6 +985,35 @@ def _is_foot_line(row: list[dict], W: float, lo: float, hi: float) -> bool:
     return rest[0]["x0"] > lo + FOOT_MIN_FRAC * (hi - lo)
 
 
+# THE archive-ot1-1609 COPY'S OWN MARGINAL MARK, and it is a PHYSICAL fact about that one scan, not a class of
+# text. Something is written or stamped down the fore-edge margin of this witness and the recognizer renders it
+# as a stable family of nonsense: `fatimamovement` x9, `atmamom` x6, `fatimamovemant` x4, and 14 further
+# variants — 63 occurrences, ALL of them on `archive-ot1-1609`. No other witness shows a single one, which is
+# what makes it a property of the copy rather than of the printing.
+#
+# 45 of the 63 lie in the left strip and are what this filter removes. THE OTHER 18 ALREADY SIT INSIDE THE BODY
+# BAND and are LEFT ALONE ON PURPOSE: they are a pre-existing contamination that predates the left bound and
+# owes nothing to it, so removing them is a separate change that must carry its own before/after measurement.
+# Folding it in here would let this fix take credit for work it did not do — the error the ch41 right-margin
+# audit above made and had to correct.
+#
+# The stem was checked against every token in every 1609 cache: it matches 63 tokens and all 63 are the mark.
+# No scripture word in Genesis contains any of these stems.
+#
+# IT SURFACED AS THE ONE REGRESSION OF THE LEFT-BOUND FIX, and that is the only reason it is filtered here. On
+# ch50 S1 v11 admitting `amammcm` pushed the verse tail out: `...was called, The mourning of Egypt.` became
+# `...was called, The amammcm The mourning of` — 0.954 -> 0.898, the single cell lost against +56 gained.
+#
+# WHY A PATTERN AND NOT A LEAF EXCLUSION. The mark sits on leaves that are otherwise the fix's best earners
+# (p143 recovers `wrath`, `rers,`, `of`, `was`), so refusing those leaves would cost far more than the mark
+# does. It is matched on its stem rather than by listing all 17 spellings because the spellings are recognizer
+# noise on ONE underlying mark and the list is not closed — a new chapter's cache will render an 18th.
+#
+# SCOPE IS DELIBERATELY NARROW ON ALL THREE AXES: this witness, inside the left strip, stem match. A body word
+# would have to be on `archive-ot1-1609`, begin left of 0.14W, and contain one of these stems to be lost.
+_MARGIN_MARK_RE = re.compile(r"(mamo|amamm|imamo|movem|mamoc|mamom)")
+
+
 def _trim_left_margin(rows: list[list[dict]], W: float) -> list[list[dict]]:
     """MEASURED AND REJECTED — NOT WIRED IN. Kept as the pinned record of a negative result.
 
@@ -751,7 +1088,29 @@ def _is_running_head(row: list[dict]) -> bool:
     # `And God` is two initial-capital tokens and was duly deleted when that was tried. What distinguishes a
     # head is that it is PUNCTUATED AS A LABEL — every token capitalised AND full-stopped, which a line of
     # running prose at the top of a leaf is not.
-    return len(row) == 2 and all(w["t"][:1].isupper() and w["t"].endswith(".") for w in row)
+    if len(row) == 2 and all(w["t"][:1].isupper() and w["t"].endswith(".") for w in row):
+        return True
+    # ...AND THE SAME TWO-PART HEAD WITH THE STOP IN THE WRONG PLACE (ch23, 2026-08-02). On `jp2-S06` p90 the
+    # head recognises as `Abraham. G.ENESI` — the subject full-stopped, the book with its period slid inward.
+    # 13 letters, 7 capitals = 53%, under the ratio test; and `G.ENESI` does not END in a stop, so the label
+    # test above misses it too. It slipped into gen 23:4 mid-verse: `...pilgrime among you giue Abraham.
+    # G.ENESI me the right ot a ſepulchre...`.
+    #
+    # It was NOT reachable before the left bound on that leaf moved to 0.14 — with the body starting at 0.215
+    # the fragment was outside the band and the row was a single token. **A fix that widens what the page model
+    # sees can BREAK a filter that was passing only because it never saw the token.** Check the head after
+    # every bound change.
+    #
+    # The extra signature stays narrow for the reason the comment above gives: one token punctuated as a label,
+    # the OTHER an unbroken run of >=4 capital letters once punctuation is stripped. A body row opening
+    # `And God` fails it — `God` is three letters and not all-caps — which is the case that killed the loose
+    # "initial capital" version.
+    if len(row) == 2:
+        lab = [w for w in row if w["t"][:1].isupper() and w["t"].endswith(".")]
+        caps = [w for w in row if (lambda x: len(x) >= 4 and x.isupper())("".join(c for c in w["t"] if c.isalpha()))]
+        if len(lab) >= 1 and len(caps) >= 1 and lab[0] is not caps[0]:
+            return True
+    return False
 
 
 def _drop_cap_orphans(rows: list[list[dict]], W: float) -> list[list[dict]]:

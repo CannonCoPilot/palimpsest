@@ -1,0 +1,1429 @@
+{
+ "chapter": 4,
+ "n_verses": 26,
+ "n_cells": 104,
+ "n_pass": 89,
+ "rate": 0.8558,
+ "ref_means": {
+  "s_dismas": 0.962,
+  "odr_com": 0.962,
+  "sabates_a": 0.949,
+  "madueke_b": 0.949
+ },
+ "src_rates": {
+  "S1": 0.8846,
+  "S3": 0.8846,
+  "S9": 0.8846,
+  "S6": 0.7692
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  24
+ ],
+ "n_open": 15,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 14,
+   "worst": 0.876,
+   "from": "p34",
+   "text": "thou doeſt caſt me our this day from the face of earth, and from thy face ſhal I be hid, and I ſhal be a bound fugitiue on the earth: euerie one therfore that de th me, fhal kil me."
+  },
+  {
+   "src": "S3",
+   "verse": 14,
+   "worst": 0.888,
+   "from": "p38",
+   "text": "thou doeſt caſt me out this day from the face of earth, and from thy face ſhal I be hid, and I ſhal be a bound fugitiue on the earth: euerie one therfore that deth me, fhal kil me."
+  },
+  {
+   "src": "S9",
+   "verse": 16,
+   "worst": 0.804,
+   "from": "p44",
+   "text": "And Cain went forth from the of Eden. be- dwelt as a fugitiue on the earth at the eaſt ſide of iſſues"
+  },
+  {
+   "src": "S6",
+   "verse": 20,
+   "worst": 0.83,
+   "from": "p30",
+   "text": "Ada brought forth Iabel, who was the tather of them that tents, and ot heardſmen."
+  },
+  {
+   "src": "S6",
+   "verse": 22,
+   "worst": 0.816,
+   "from": "p30",
+   "text": "Sella alſo torth Tubalcain, who was a hammeret and worker in al of braſſe and iron. And the ſiſter of Tubalcain was Noema."
+  },
+  {
+   "src": "S1",
+   "verse": 23,
+   "worst": 0.853,
+   "from": "p34",
+   "text": "And mech ſaid to his wiues Ada and Sella: Heare my voice a wiues of Lamech, harken to my talke: for I haue ſlaine a to the wounding ofmy ſelfe, and a ſtripeling to mine owne blowe brewſing. Seuenfould"
+  },
+  {
+   "src": "S3",
+   "verse": 23,
+   "worst": 0.87,
+   "from": "p38",
+   "text": "And a mech ſaid to his wiues Ada and Sella: Heare my voice a wiues of Lamech, harken to my talke: for I haue ſlaine a to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould"
+  },
+  {
+   "src": "S6",
+   "verse": 23,
+   "worst": 0.835,
+   "from": "p30",
+   "text": "Lamech ſaid to his wiues Ada and Sella : Heare my voice of Lamech, harken to my talke: for I haue ſlaine a man to the of my ſelte, and a ſtripeling to mine owne drie blow bruSeauen"
+  },
+  {
+   "src": "S1",
+   "verse": 24,
+   "worst": 0.81,
+   "from": "p34",
+   "text": "vengeance shal be ken of Cain: bur of Lamech ſeuentie times ſeuen fould."
+  },
+  {
+   "src": "S3",
+   "verse": 24,
+   "worst": 0.823,
+   "from": "p38",
+   "text": "vengeance shal be ken of Cain: but of Lamech ſeuentie times ſeuen fould."
+  },
+  {
+   "src": "S9",
+   "verse": 24,
+   "worst": 0.747,
+   "from": "p44",
+   "text": "vengeance shal La- ken of Cain: but of Lamech ſeuentie times ſeuen"
+  },
+  {
+   "src": "S6",
+   "verse": 24,
+   "worst": 0.723,
+   "from": "p30",
+   "text": "told vengeance ſhal be taken of Cain: but of Lamech times ſeauen-"
+  },
+  {
+   "src": "S6",
+   "verse": 25,
+   "worst": 0.83,
+   "from": "p30",
+   "text": "Adam alſoknew his wite againe: and ſhe brought torth a ſonne, his name Seth, ſaying: God hath giuen me other ſeed tor Abel, Cain flew."
+  },
+  {
+   "src": "S9",
+   "verse": 26,
+   "worst": 0.874,
+   "from": "p44",
+   "text": "But to Seth Scrip- haue was borne a ſonne, whom he called Enos, this man began two to inuocate the name of our Lord."
+  },
+  {
+   "src": "S6",
+   "verse": 26,
+   "worst": 0.892,
+   "from": "p30",
+   "text": "But to Seth alfo was borne a ſonne, whom he calthis man began to inuocate the name ot our Lord."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and Adam knewe Eue his wife: who conceiued and A brought forth Cain, ſaying I haue gotten a man through God.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "and Adam Eue his wife: who conceiued and A brought forth Cain, ſaying I haue gotten a man through God.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 0.922,
+     "odr_com": 0.922,
+     "sabates_a": 0.928,
+     "madueke_b": 0.928
+    }
+   },
+   "S9": {
+    "text": "and Adam Eue his wife: who conceiued and brought forth Cain, ſaying I haue gotten a man through God.",
+    "from": "p43",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S6": {
+    "text": "and Adam knew Eue his wife, who concoiuedan brought forth Cain ſaying I haue gotten a man through God.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And againe ſhe brought forth his brother Abel. And Abel was a ſhepehard, Cain a huſbandman.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And againe ſhe brought forth his brother Abel. And Abel was a ſhepehard, Cain a huſbandman.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "And againe ſhe brought forth his brother Abel. And Abel was a ſhepehard, Cain a huſbandman.",
+    "from": "p43",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "And againe ſhe brought torth his brother Abel. And Abel was a ſhephard, Cain a huſbandman.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And it befel after manie dayes that Cain offred of the fruites of the earth giftes to our Lord.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "And it befel after manie dayes that Cain offred of the fruites of the earth giftes to our Lord.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "And it befel after manie dayes that Cain offred of the fruites of the earth giftes to our Lord.",
+    "from": "p43",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "And it befel after mauie dayes that Cain offred of the fruts of the earth guitts to our Lord.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.936,
+     "odr_com": 0.936,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "Abel alſo offredA of the firſt begotten of his flocke, and of their fat: and our Lord had reſpect to Abel, to his giftes.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "Abel alſo offred of the firſt begotten of his flocke, and of their fat: and our Lord had reſpect to Abel, to his giftes.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "Abel alſo offred of the firſt begotten of his flocke, and of their fat: and our the Lord had reſpect to Abel, to his giftes.",
+    "from": "p43",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S6": {
+    "text": "Abel alſo offred of the firſt begotten of his fiocke, and ot their fat: and our Lord had reſpect to Abel, to his guitts.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "But to Cain, and to his giftes he had not reſpect: Cain was exceeding angrie, and his countenance abated.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S3": {
+    "text": "But to Cain, and to his giftes he had not reſpect: Cain was exceeding angrie, and his countenance abated.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S9": {
+    "text": "But to Cain, and to his giftes he had not reſpect: & Cain was exceeding angrie, and his countenance abated.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S6": {
+    "text": "But to Cain, and to his guitts he had not reſpect And Catn was exceeding angrie, and his countenance abated.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.924,
+     "odr_com": 0.924,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And our Lord ſaid to him: wby art thou angrie? and why is thy countinance fallen",
+    "from": "p33",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſaid to him Why art thou angrie and why is thy countinance fallen",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſaid to him Why art thou angrie and why is thy countinance fallen",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſaid to him : Why art thou angrie: and why is thy countenance fallen:.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "If thou doe wel, ſhalt thou not receiue againe: but if thou doeſt il, ſhal not thy ſinne forthwith be preſent at the dore but the luſt therof ihal be Vvnder thee, and thou ſhalt haue dominion ouer it",
+    "from": "p33",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "If thou doe wel, ſhalt thou not receiue againe: but if thou doeſt il, ſhal not thy ſinne forthwith be preſent at the dore but the luſt therof ſhal be vnder thee, and thou ſhalt haue dominion ouer it.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "If thou doe wel, ſhalt thou not receiue againe but if thou doeſt il, ſhal not thy ſinne forthwith be preſent at the dore? but the luſt therof ſhal be vnder thee, and thou ſhalt haue dominion ouer it.",
+    "from": "p43",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "It thou doe wel. ſhalt thou not receiue againe : but it thou doſt il, ſhal not thy ſinne forthwith be preſent at the dore but the luſt therof ſhal be vndet thee aud thou ſnalt haue dominiou ouer it.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And Caine ſaid to Abel his brother: Let vs goe forth broad. And when they were in the filde, Caine roſe vpagainſt his brother Abel, and ſlewe him.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And Caine ſaid to Abel his brother: Let vs goe forth broad. And when they were in the filde, Caine roſe vp againſt his brother Abel, and ſlewe him.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And Caine ſaid to Abel his brother: Let vs goe forth a broad. And when they were in the filde, Caine roſe vp againſt his brother Abel, and ſlewe him.",
+    "from": "p43",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And Cain ſaid to Abel his brother Let vs goe forth abroad. And when they, were in the field, Cain roſe vp againſt his brother Abel and ſtew him,",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And our Lord ſaid to Cain Where is Abel thy brother? Who anſwered I know not: am I mybrothers keper",
+    "from": "p33",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſaid to Cain Where is Abel thy brother? Who anſwered Iknow not: am I my brothers keper",
+    "from": "p37",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſaid to Cain Where is Abel thy brother? Who anſwered Iknow not am. I my brothers keper?",
+    "from": "p43",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſaid to Cain: Where 1s Abel thy brother Who anſwered Iknow not, am I my brothers kecper:",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And he ſaid to him What haſt thou doner the voice of thy brothers bloud crieth to me out of the earth.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to him What: haſt thou done?:: the voice of thy brothers bloud crieth to me out of the earth.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to him What haſt thou done:: the voice of thy brothers bloud crieth to me out of the earth.",
+    "from": "p43",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to him: what haſt thou done: the voice of thy brothers bloud criethto me out of the earth.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "Now therfore curſed ſhalr thou be vpon the earth, which hath opened her mouth, receiued the bloud of thy brother at thy hand.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "Now therfore curſed ſhalt thou be vpon the earth, which hath opened her mouth, &receiued the bloud of thy brother at thy hand.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "Now therfore curſed ſhalt thoube one vpon the earth, which hath opened her mouth, receiued erie the bloud of thy brother at thy hand.",
+    "from": "p43",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   },
+   "S6": {
+    "text": "Now therfore curfed ſhalt thou be vpon the earth, which hath opened her mouth, receiued the bloud ot thy brother at thy hand.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "when thou ſhalt til it, it ſbal not yeld to thee her fruite a roag and vagabound ſhalt thou be vpon the earth.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S3": {
+    "text": "When thou ſhalt til it, it ſhal not yeld to thee her fruite a roag and vagabound ſhalt thou be vpon the earth.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "When thou ſhalt til for it, it ſhal not yeld to thee her fruite a roag and vagabound ſhalt thou be vpon the earth.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S6": {
+    "text": "When thon ſhalt til it, it ſhal not yeald to thee her fruit: a roag and vagabond ſhalt thou be vpon the earth.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And Cain ſaid to our Lord Alyne iniquitie is greater, then that I may deſerue pardon.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "And Cain ſaid to our Lord Myne iniquitie is greater, then that I may deſerue pardon.",
+    "from": "p38",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And Cain ſaid to our Lord: Myne iniquitie is greater, then that I may deſerue pardon.",
+    "from": "p44",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And Cain ſaid to our Lord: Mvne iniquitie is greater then that I may deſerue pardon.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "thou doeſt caſt me our this day from the face of earth, and from thy face ſhal I be hid, and I ſhal be a bound fugitiue on the earth: euerie one therfore that de th me, fhal kil me.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.905,
+     "odr_com": 0.905,
+     "sabates_a": 0.876,
+     "madueke_b": 0.876
+    }
+   },
+   "S3": {
+    "text": "thou doeſt caſt me out this day from the face of earth, and from thy face ſhal I be hid, and I ſhal be a bound fugitiue on the earth: euerie one therfore that deth me, fhal kil me.",
+    "from": "p38",
+    "score": {
+     "s_dismas": 0.916,
+     "odr_com": 0.916,
+     "sabates_a": 0.888,
+     "madueke_b": 0.888
+    }
+   },
+   "S9": {
+    "text": "thou doeſt caſt me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound fugitiue on the earth: euerie one therfore that findeth me, fhal kil me.",
+    "from": "p44",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S6": {
+    "text": "thou doſt caſt me out this day from the face of the earth, and from thy tace ſhal I be hid, and I ſhal be a vagabond and fugitiue on the earth: euerie one thertore that findeth me ſual kil me.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And our Lord ſaid to him: No, it in- not ſo be: hut whoſoeuer ſhal kil Cain, shalbe punished Auen fould. And our Lord put a marke on Cain, that ſoeuer found him should not kil him.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.944,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſaid to him: No, it in not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished fould. And our Lord put a marke on Cain, that ſoeuer found him should not kil him.",
+    "from": "p38",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.922,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſaid to him: No, it ſhal in- not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished ſeafould. And our Lord put a marke on Cain, that whoſeede ſoeuer found him should not kil him.",
+    "from": "p44",
+    "score": {
+     "s_dismas": 0.924,
+     "odr_com": 0.929,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſaid to him: No, it ſhal not ſo be: but whoſoeuer. ſhal kil Cain, ſual be puniſhed ſeauen-told. And our Lord put a matke on Cain, that whoſoeuer found him ſhould not kil him.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.967,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And Cain went forth from the face of our Lord, and dwelt as a fugitiue on the earth at the eaſt ſide of Eden.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And \" Cain went forth from the face of our Lord, and dwelt as a fugitiue on the earth at the eaſt ſide of Eden.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Cain went forth from the of Eden. be- dwelt as a fugitiue on the earth at the eaſt ſide of iſſues",
+    "from": "p44",
+    "score": {
+     "s_dismas": 0.804,
+     "odr_com": 0.804,
+     "sabates_a": 0.812,
+     "madueke_b": 0.812
+    }
+   },
+   "S6": {
+    "text": "And Cain went forth from the face of our Lord and dwelt as a fugitiue on the earth at the eaſt ſide of Eden.",
+    "from": "p29",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And Cain knewe his wife, who conceiued, and brought forth Enoch And he built a citie, & called the name thereof by the name of his ſonne, Enoch.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "And Cain knewe his wife, who conceiued, and brought forth Enoch And :: he built a citie, & called the name thereof by the name of his ſonne, Enoch.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "And Cain knewe his wife, who conceiued, and brought forth Enoch And he built a citie, & called the name thereof by the name of his ſonne, Enoch.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "And Cain knew his who conceiued and brought forth Enoch And he buiſt a and called the name therof by the name ot his ſonne, Enoch.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.904,
+     "odr_com": 0.904,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "Moreouer Enoch be gat Irad, and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "Moreouer Enoch begat Irad and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Moreouer Enoch be gat Irad, and Trad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+    "from": "p44",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "Moreouer Enoch begat Irad, and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Who tooke(d) two wiues, the name of the one was Ada, and the name of the other Sella.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardſmen.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And Ada brought forth Iabel, who was it father of them that dwel in tents, and of heardſmen.",
+    "from": "p38",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S9": {
+    "text": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardſmen.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Ada brought forth Iabel, who was the tather of them that tents, and ot heardſmen.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.844,
+     "odr_com": 0.844,
+     "sabates_a": 0.83,
+     "madueke_b": 0.83
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And his brothers name was Iubal: he was the father of them that ſing on harpe & organes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "And his brothers name was Iubal: he was the father of them that ſing on harpe & organes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "And his brothers name was Iubal: he was the father of them that ſing on harpe organes.",
+    "from": "p44",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S6": {
+    "text": "And his brothers name was Iubal: he was the father of them that ſing on harp & organes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "Sella alſo brought forth Tubalcain, who was a hammerer & worker in al worke of braſſe & iron. And the ſiſter of Tubalcain was Nocina.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S3": {
+    "text": "Sella alſo brought forth Tubalcain, who was a hammerer & worker in al worke of braſſe & &iron. And the ſiſter of Tubalcain was Noema.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
+    }
+   },
+   "S9": {
+    "text": "Sella alſo brought forth Tubalcain, who was a hammerer & worker in al worke of braſſe & iron. And the ſiſter of Tubalcain was Noema.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
+    }
+   },
+   "S6": {
+    "text": "Sella alſo torth Tubalcain, who was a hammeret and worker in al of braſſe and iron. And the ſiſter of Tubalcain was Noema.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.816,
+     "odr_com": 0.816,
+     "sabates_a": 0.89,
+     "madueke_b": 0.89
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And mech ſaid to his wiues Ada and Sella: Heare my voice a wiues of Lamech, harken to my talke: for I haue ſlaine a to the wounding ofmy ſelfe, and a ſtripeling to mine owne blowe brewſing. Seuenfould",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.882,
+     "odr_com": 0.873,
+     "sabates_a": 0.853,
+     "madueke_b": 0.853
+    }
+   },
+   "S3": {
+    "text": "And a mech ſaid to his wiues Ada and Sella: Heare my voice a wiues of Lamech, harken to my talke: for I haue ſlaine a to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould",
+    "from": "p38",
+    "score": {
+     "s_dismas": 0.902,
+     "odr_com": 0.892,
+     "sabates_a": 0.87,
+     "madueke_b": 0.87
+    }
+   },
+   "S9": {
+    "text": "And La- mech ſaid to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding of my ſelfe, and a ſtripeling to mine owne drie blowe brewſing. Seuenfould",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.932,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S6": {
+    "text": "Lamech ſaid to his wiues Ada and Sella : Heare my voice of Lamech, harken to my talke: for I haue ſlaine a man to the of my ſelte, and a ſtripeling to mine owne drie blow bruSeauen",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.836,
+     "odr_com": 0.848,
+     "sabates_a": 0.835,
+     "madueke_b": 0.835
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "vengeance shal be ken of Cain: bur of Lamech ſeuentie times ſeuen fould.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.831,
+     "odr_com": 0.831,
+     "sabates_a": 0.81,
+     "madueke_b": 0.81
+    }
+   },
+   "S3": {
+    "text": "vengeance shal be ken of Cain: but of Lamech ſeuentie times ſeuen fould.",
+    "from": "p38",
+    "score": {
+     "s_dismas": 0.843,
+     "odr_com": 0.843,
+     "sabates_a": 0.823,
+     "madueke_b": 0.823
+    }
+   },
+   "S9": {
+    "text": "vengeance shal La- ken of Cain: but of Lamech ſeuentie times ſeuen",
+    "from": "p44",
+    "score": {
+     "s_dismas": 0.747,
+     "odr_com": 0.747,
+     "sabates_a": 0.747,
+     "madueke_b": 0.747
+    }
+   },
+   "S6": {
+    "text": "told vengeance ſhal be taken of Cain: but of Lamech times ſeauen-",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.723,
+     "odr_com": 0.723,
+     "sabates_a": 0.734,
+     "madueke_b": 0.734
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "Adam alſo knewe his wife again and she brought forth a ſonne, and called his name Seth, ſaying God hath giuen me other ſeede for Abel, whom Cain ſlewe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "Adam alſo knewe his wife again and she brought forth a ſonne, and called his name Seth, ſaying God hath giuen me other ſeede for Abel, whom Cain ſlewe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "Adam alſo knewe his wife again: and she brought forth a ſonne, and called his name Seth, ſaying God hath giuen me other ſeede for Abel, whom Cain ſlewe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "Adam alſoknew his wite againe: and ſhe brought torth a ſonne, his name Seth, ſaying: God hath giuen me other ſeed tor Abel, Cain flew.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.83,
+     "odr_com": 0.83,
+     "sabates_a": 0.878,
+     "madueke_b": 0.878
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "But to Seth was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "But to Seth was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord.",
+    "from": "p38",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "But to Seth Scrip- haue was borne a ſonne, whom he called Enos, this man began two to inuocate the name of our Lord.",
+    "from": "p44",
+    "score": {
+     "s_dismas": 0.875,
+     "odr_com": 0.875,
+     "sabates_a": 0.874,
+     "madueke_b": 0.874
+    }
+   },
+   "S6": {
+    "text": "But to Seth alfo was borne a ſonne, whom he calthis man began to inuocate the name ot our Lord.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.892,
+     "odr_com": 0.892,
+     "sabates_a": 0.894,
+     "madueke_b": 0.894
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Adam knewe Eue his wife: who conceiued and brought forth Cain, ſaying: I haue gotten a man through God.",
+   "odr_com": "AND Adam knewe Eue his wife: who conceiued and brought forth Cain, saying: I haue gotten a man through God.",
+   "sabates_a": "And Adam knew Eve his wife, who conceived and brought forth Cain, saying: I have gotten a man through God.",
+   "madueke_b": "And Adam knew Eve his wife, who conceived and brought forth Cain, saying: I have gotten a man through God."
+  },
+  "2": {
+   "s_dismas": "And againe ſhe brought forth his brother Abel. And Abel was a ſhepehard, & Cain a huſbandman.",
+   "odr_com": "And againe she brought forth his brother Abel. And Abel was a shepehard, & Cain a husbandman.",
+   "sabates_a": "And again she brought forth his brother Abel. And Abel was a shepherd, & Cain a husbandman.",
+   "madueke_b": "And again she brought forth his brother Abel. And Abel was a shepherd, & Cain a husbandman."
+  },
+  "3": {
+   "s_dismas": "And it befel after manie dayes that Cain offred of the fruites of the earth giftes to our Lord.",
+   "odr_com": "And it befel after manie dayes that Cain offred of the fruites of the earth giftes to our Lord.",
+   "sabates_a": "And it befell after many days that Cain offered of the fruits of the earth gifts to our Lord.",
+   "madueke_b": "And it befell after many days that Cain offered of the fruits of the earth gifts to our Lord."
+  },
+  "4": {
+   "s_dismas": "Abel alſo offred of the firſt begotten of his flocke, and of their fat: and our Lord had reſpect to Abel, & to his giftes.",
+   "odr_com": "Abel also offred of the first begotten of his flocke, and of their fat: and our Lord had respect to Abel, & to his giftes.",
+   "sabates_a": "Abel also offered of the first-begotten of his flock, and of their fat: and our Lord had respect of Abel, & to his gifts.",
+   "madueke_b": "Abel also offered of the first-begotten of his flock, and of their fat: and our Lord had respect of Abel, & to his gifts."
+  },
+  "5": {
+   "s_dismas": "But to Cain, and to his giftes he had not reſpect: & Cain was exceeding angrie, and his countenance abated.",
+   "odr_com": "But to Cain, and to his giftes he had not respect: & Cain was exceeding angrie, and his countenance abated.",
+   "sabates_a": "But to Cain, and to his gifts he had not respect: And Cain was exceeding angry, and his countenance abated.",
+   "madueke_b": "But to Cain, and to his gifts he had not respect: And Cain was exceeding angry, and his countenance abated."
+  },
+  "6": {
+   "s_dismas": "And our Lord ſaid to him: Why art thou angrie? and why is thy countinance fallen?",
+   "odr_com": "And our Lord said to him: Why art thou angrie? and why is thy countinance fallen?",
+   "sabates_a": "And our Lord said to him: Why art thou angry? and why is thy countenance fallen?",
+   "madueke_b": "And our Lord said to him: Why art thou angry? and why is thy countenance fallen?"
+  },
+  "7": {
+   "s_dismas": "If thou doe wel, ſhalt thou not receiue againe: but if thou doeſt il, ſhal not thy ſinne forthwith be preſent at the dore? but the luſt therof ſhal be vnder thee, and thou ſhalt haue dominion ouer it.",
+   "odr_com": "If thou doe wel, shalt thou not receiue againe: but if thou doest il, shal not thy sinne forthwith be present at the dore? but the lust therof shal be vnder thee, and thou shalt haue dominion ouer it.",
+   "sabates_a": "If thou do well, shall thou not receive again: but if thou doest ill, shall not thy sin forthwith be present at the door? But the lust thereof shall be under thee, and thou shalt have dominion over it.",
+   "madueke_b": "If thou do well, shall thou not receive again: but if thou doest ill, shall not thy sin forthwith be present at the door? But the lust thereof shall be under thee, and thou shalt have dominion over it."
+  },
+  "8": {
+   "s_dismas": "And Caine ſaid to Abel his brother: Let vs goe forth abroad. And when they were in the filde, Caine roſe vp againſt his brother Abel, and ſlewe him.",
+   "odr_com": "And Caine said to Abel his brother: Let vs goe forth abroad. And when they were in the filde, Caine rose vp against his brother Abel, and slewe him.",
+   "sabates_a": "And Cain said to Abel his brother: Let us go forth abroad. And when they were in the field, Cain rose up against his brother Abel, and slew him.",
+   "madueke_b": "And Cain said to Abel his brother: Let us go forth abroad. And when they were in the field, Cain rose up against his brother Abel, and slew him."
+  },
+  "9": {
+   "s_dismas": "And our Lord ſaid to Cain: Where is Abel thy brother? Who anſwered: I know not: am I my brothers keper?",
+   "odr_com": "And our Lord said to Cain: Where is Abel thy brother? Who answered: I know not: am I my brothers keper?",
+   "sabates_a": "And our Lord said to Cain: Where is Abel thy brother? Who answered: I know not, am I my brother's keeper?",
+   "madueke_b": "And our Lord said to Cain: Where is Abel thy brother? Who answered: I know not, am I my brother's keeper?"
+  },
+  "10": {
+   "s_dismas": "And he ſaid to him: What haſt thou done? the voice of thy brothers bloud crieth to me out of the earth.",
+   "odr_com": "And he said to him: What hast thou done? the voice of thy brothers bloud crieth to me out of the earth.",
+   "sabates_a": "And he said to him: what hast thou done? The voice of thy brother's blood cryeth to me out of the earth.",
+   "madueke_b": "And he said to him: what hast thou done? The voice of thy brother's blood cryeth to me out of the earth."
+  },
+  "11": {
+   "s_dismas": "Now therfore curſed ſhalt thou be vpon the earth, which hath opened her mouth, & receiued the bloud of thy brother at thy hand.",
+   "odr_com": "Now therfore cursed shalt thou be vpon the earth, which hath opened her mouth, & receiued the bloud of thy brother at thy hand.",
+   "sabates_a": "Now therefore cursed shalt thou be upon the earth, which hath opened her mouth, & received the blood of thy brother at thy hand.",
+   "madueke_b": "Now therefore cursed shalt thou be upon the earth, which hath opened her mouth, & received the blood of thy brother at thy hand."
+  },
+  "12": {
+   "s_dismas": "When thou ſhalt til it, it ſhal not yeld to thee her fruite: a roag and vagabound ſhalt thou be vpon the earth.",
+   "odr_com": "When thou shalt til it, it shal not yeld to thee her fruite: a roag and vagabound shalt thou be vpon the earth.",
+   "sabates_a": "When thou shalt till it, it shall not yield to thee her fruit: a rogue and vagabond shalt thou be upon the earth.",
+   "madueke_b": "When thou shalt till it, it shall not yield to thee her fruit: a rogue and vagabond shalt thou be upon the earth."
+  },
+  "13": {
+   "s_dismas": "And Cain ſaid to our Lord: Myne iniquitie is greater, then that I may deſerue pardon.",
+   "odr_com": "And Cain said to our Lord: Myne iniquitie is greater, then that I may deserue pardon.",
+   "sabates_a": "And Cain said to our Lord: Mine iniquity is greater than that I may deserve pardon.",
+   "madueke_b": "And Cain said to our Lord: Mine iniquity is greater than that I may deserve pardon."
+  },
+  "14": {
+   "s_dismas": "Loe thou doeſt caſt me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitiue on the earth: euerie one therfore that findeth me, ſhal kil me.",
+   "odr_com": "Loe thou doest cast me out this day from the face of the earth, and from thy face shal I be hid, and I shal be a vagabound & fugitiue on the earth: euerie one therfore that findeth me, shal kil me.",
+   "sabates_a": "Lo thou dost cast me out this day from the face of the earth, and from thy face shall I be hid, and I shall be a vagabond and fugitive on the earth: every one therefore that findeth me shall kill me.",
+   "madueke_b": "Lo thou dost cast me out this day from the face of the earth, and from thy face shall I be hid, and I shall be a vagabond and fugitive on the earth: every one therefore that findeth me shall kill me."
+  },
+  "15": {
+   "s_dismas": "And our Lord ſaid to him: No, it ſhal not ſo be: but whoſoeuer ſhal kil Cain, shal be punished ſeauen fould. And our Lord put a marke on Cain, that whoſoeuer found him should not kil him.",
+   "odr_com": "And our Lord said to him: No, it shal not so be: but whosoeuer shal kil Cain, shalbe punished seauen fould. And our Lord put a marke on Cain, that whosoeuer found him should not kil him.",
+   "sabates_a": "And our Lord said to him: No, it shall not so be: but whosoever shall kill Cain, shall be punished seven-fold. And our Lord put a mark on Cain, that whosoever found him should not kill him.",
+   "madueke_b": "And our Lord said to him: No, it shall not so be: but whosoever shall kill Cain, shall be punished seven-fold. And our Lord put a mark on Cain, that whosoever found him should not kill him."
+  },
+  "16": {
+   "s_dismas": "And Cain went forth from the face of our Lord, and dwelt as a fugitiue on the earth at the eaſt ſide of Eden.",
+   "odr_com": "And Cain went forth from the face of our Lord, and dwelt as a fugitiue on the earth at the east side of Eden.",
+   "sabates_a": "And Cain went forth from the face of our Lord, and dwelt as a fugitive on the earth at the east side of Eden.",
+   "madueke_b": "And Cain went forth from the face of our Lord, and dwelt as a fugitive on the earth at the east side of Eden."
+  },
+  "17": {
+   "s_dismas": "And Cain knewe his wife, who conceiued, and brought forth Enoch: And he built a citie, & called the name therof by the name of his ſonne, Enoch.",
+   "odr_com": "And Cain knewe his wife, who conceiued, and brought forth Enoch: And he built a citie, & called the name therof by the name of his sonne, Enoch.",
+   "sabates_a": "And Cain knew his wife, who conceived and brought forth Enoch: And he built a city, and called the name thereof by the name of his son, Enoch.",
+   "madueke_b": "And Cain knew his wife, who conceived and brought forth Enoch: And he built a city, and called the name thereof by the name of his son, Enoch."
+  },
+  "18": {
+   "s_dismas": "Moreouer Enoch begat Irad, and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+   "odr_com": "Moreouer Enoch begat Irad, and Irad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech.",
+   "sabates_a": "Moreover Enoch begat Irad, and Irad begat Maviael, and Maviael begat Mathusael, and Mathusael begat Lamech.",
+   "madueke_b": "Moreover Enoch begat Irad, and Irad begat Maviael, and Maviael begat Mathusael, and Mathusael begat Lamech."
+  },
+  "19": {
+   "s_dismas": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+   "odr_com": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+   "sabates_a": "Who took two wives, the name of the one was Ada, and the name of the other Sella.",
+   "madueke_b": "Who took two wives, the name of the one was Ada, and the name of the other Sella."
+  },
+  "20": {
+   "s_dismas": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardſmen.",
+   "odr_com": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardsmen.",
+   "sabates_a": "And Ada brought forth Iabel, who was the father of them that dwell in tents, and of herdsmen.",
+   "madueke_b": "And Ada brought forth Iabel, who was the father of them that dwell in tents, and of herdsmen."
+  },
+  "21": {
+   "s_dismas": "And his brothers name was Iubal: he was the father of them that ſing on harpe & organes.",
+   "odr_com": "And his brothers name was Iubal: he was the father of them that sing on harpe & organes.",
+   "sabates_a": "And his brother's name was Jubal: he was the father of them that sing on harp & organs.",
+   "madueke_b": "And his brother's name was Jubal: he was the father of them that sing on harp & organs."
+  },
+  "22": {
+   "s_dismas": "Sella alſo brought forth Tubalcain, who was a hammerer & worker in al worke of braſſe & iron. And the ſiſter of Tubalcain was Noema.",
+   "odr_com": "Sella also brought forth Tubalcain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Noema.",
+   "sabates_a": "Sella also brought forth Tubalcain, who was a hammerer and worker in all work of brass and iron. And the sister of Tubalcain was Noema.",
+   "madueke_b": "Sella also brought forth Tubalcain, who was a hammerer and worker in all work of brass and iron. And the sister of Tubalcain was Noema."
+  },
+  "23": {
+   "s_dismas": "And Lamech ſaid to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for I haue ſlaine a mã to the wounding of my ſelfe, and a ſtripeling to mine owne drie blowe brewſing.",
+   "odr_com": "And Lamech said to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for I haue slaine a man to the wounding of my selfe, and a stripeling to mine owne drie blowe brewsing.",
+   "sabates_a": "And Lamech said to his wives Ada and Sella: Hear my voice ye wives of Lamech, harken to my talk: for I have slain a man to the wounding of myself, and a stripling to mine own dry blow bruising.",
+   "madueke_b": "And Lamech said to his wives Ada and Sella: Hear my voice ye wives of Lamech, harken to my talk: for I have slain a man to the wounding of myself, and a stripling to mine own dry blow bruising."
+  },
+  "24": {
+   "s_dismas": "Seuenfould vengeance shal be taken of Cain: but of Lamech ſeuentie times ſeuen fould.",
+   "odr_com": "Seuenfould vengeance shal be taken of Cain: but of Lamech seuentie times seuen fould.",
+   "sabates_a": "Seven-fold vengeance shall be taken of Cain: but of Lamech seventy times seven-fold.",
+   "madueke_b": "Seven-fold vengeance shall be taken of Cain: but of Lamech seventy times seven-fold."
+  },
+  "25": {
+   "s_dismas": "Adam alſo knewe his wife again: and she brought forth a ſonne, and called his name Seth, ſaying: God hath giuen me other ſeede for Abel, whom Cain ſlewe.",
+   "odr_com": "Adam also knewe his wife again: and she brought forth a sonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slewe.",
+   "sabates_a": "Adam also knew his wife again: and she brought forth a son, & called his name Seth, saying: God hath given me other seed for Abel, whom Cain slew.",
+   "madueke_b": "Adam also knew his wife again: and she brought forth a son, & called his name Seth, saying: God hath given me other seed for Abel, whom Cain slew."
+  },
+  "26": {
+   "s_dismas": "But to Seth alſo was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord.",
+   "odr_com": "But to Seth also was borne a sonne, whom he called Enos, this man began to inuocate the name of our Lord.",
+   "sabates_a": "But to Seth also was born a son, whom he called Enos, this man began to invocate the name of our Lord.",
+   "madueke_b": "But to Seth also was born a son, whom he called Enos, this man began to invocate the name of our Lord."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Adam knew Eve his wife, who conceived and brought forth Cain, saying: I have gotten a man through God.",
+  "2": "And again she brought forth his brother Abel. And Abel was a shepherd, & Cain a husbandman.",
+  "3": "And it befell after many days that Cain offered of the fruits of the earth gifts to our Lord.",
+  "4": "Abel also offered of the first-begotten of his flock, and of their fat: and our Lord had respect of Abel, & to his gifts.",
+  "5": "But to Cain, and to his gifts he had not respect: And Cain was exceeding angry, and his countenance abated.",
+  "6": "And our Lord said to him: Why art thou angry? and why is thy countenance fallen?",
+  "7": "If thou do well, shall thou not receive again: but if thou doest ill, shall not thy sin forthwith be present at the door? But the lust thereof shall be under thee, and thou shalt have dominion over it.",
+  "8": "And Cain said to Abel his brother: Let us go forth abroad. And when they were in the field, Cain rose up against his brother Abel, and slew him.",
+  "9": "And our Lord said to Cain: Where is Abel thy brother? Who answered: I know not, am I my brother's keeper?",
+  "10": "And he said to him: what hast thou done? The voice of thy brother's blood cryeth to me out of the earth.",
+  "11": "Now therefore cursed shalt thou be upon the earth, which hath opened her mouth, & received the blood of thy brother at thy hand.",
+  "12": "When thou shalt till it, it shall not yield to thee her fruit: a rogue and vagabond shalt thou be upon the earth.",
+  "13": "And Cain said to our Lord: Mine iniquity is greater than that I may deserve pardon.",
+  "14": "Lo thou dost cast me out this day from the face of the earth, and from thy face shall I be hid, and I shall be a vagabond and fugitive on the earth: every one therefore that findeth me shall kill me.",
+  "15": "And our Lord said to him: No, it shall not so be: but whosoever shall kill Cain, shall be punished seven-fold. And our Lord put a mark on Cain, that whosoever found him should not kill him.",
+  "16": "And Cain went forth from the face of our Lord, and dwelt as a fugitive on the earth at the east side of Eden.",
+  "17": "And Cain knew his wife, who conceived and brought forth Enoch: And he built a city, and called the name thereof by the name of his son, Enoch.",
+  "18": "Moreover Enoch begat Irad, and Irad begat Maviael, and Maviael begat Mathusael, and Mathusael begat Lamech.",
+  "19": "Who took two wives, the name of the one was Ada, and the name of the other Sella.",
+  "20": "And Ada brought forth Iabel, who was the father of them that dwell in tents, and of herdsmen.",
+  "21": "And his brother's name was Jubal: he was the father of them that sing on harp & organs.",
+  "22": "Sella also brought forth Tubalcain, who was a hammerer and worker in all work of brass and iron. And the sister of Tubalcain was Noema.",
+  "23": "And Lamech said to his wives Ada and Sella: Hear my voice ye wives of Lamech, harken to my talk: for I have slain a man to the wounding of myself, and a stripling to mine own dry blow bruising.",
+  "24": "Seven-fold vengeance shall be taken of Cain: but of Lamech seventy times seven-fold.",
+  "25": "Adam also knew his wife again: and she brought forth a son, & called his name Seth, saying: God hath given me other seed for Abel, whom Cain slew.",
+  "26": "But to Seth also was born a son, whom he called Enos, this man began to invocate the name of our Lord."
+ },
+ "ref_coverage": {
+  "janvier": 26,
+  "have": {
+   "s_dismas": 26,
+   "odr_com": 26,
+   "sabates_a": 26,
+   "madueke_b": 26
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 104,
+ "triage": "SOURCE-SKEW",
+ "secs": 5.9
+}

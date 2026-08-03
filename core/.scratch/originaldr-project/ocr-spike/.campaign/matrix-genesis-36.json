@@ -1,0 +1,2225 @@
+{
+ "chapter": 36,
+ "n_verses": 43,
+ "n_cells": 172,
+ "n_pass": 162,
+ "rate": 0.9419,
+ "ref_means": {
+  "s_dismas": 0.9551,
+  "odr_com": 0.9572,
+  "sabates_a": 0.9472,
+  "madueke_b": 0.9472
+ },
+ "src_rates": {
+  "S1": 0.9302,
+  "S3": 0.9767,
+  "S9": 0.907,
+  "S6": 0.9535
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 10,
+ "open": [
+  {
+   "src": "S9",
+   "verse": 1,
+   "worst": 0.0,
+   "from": "p143",
+   "text": "and theſe are the ſonnes of"
+  },
+  {
+   "src": "S6",
+   "verse": 1,
+   "worst": 0.691,
+   "from": "p122",
+   "text": "And are the generatons of Eſau, the ſame is omEſau tooke"
+  },
+  {
+   "src": "S9",
+   "verse": 2,
+   "worst": 0.0,
+   "from": "p143",
+   "text": "Iacob,"
+  },
+  {
+   "src": "S9",
+   "verse": 3,
+   "worst": 0.0,
+   "from": "p147",
+   "text": "Baſemath, alſo before the law of Moyſes, as appeareth in the hiſtorie of"
+  },
+  {
+   "src": "S6",
+   "verse": 3,
+   "worst": 0.796,
+   "from": "p122",
+   "text": "alſo the daughter of Iſmael fiſter ot Nabaioth."
+  },
+  {
+   "src": "S9",
+   "verse": 4,
+   "worst": 0.0,
+   "from": "p147",
+   "text": "and"
+  },
+  {
+   "src": "S1",
+   "verse": 26,
+   "worst": 0.871,
+   "from": "p134",
+   "text": "theſe were the ſonnes of Diſon Hamdan, and Eſeban, Iethram, and Charan."
+  },
+  {
+   "src": "S1",
+   "verse": 30,
+   "worst": 0.866,
+   "from": "p134",
+   "text": "Diſon, duke Eſer, duke Diſan theſe were dukes of Horreites that ruled in the Land Seir."
+  },
+  {
+   "src": "S3",
+   "verse": 30,
+   "worst": 0.866,
+   "from": "p138",
+   "text": "Diſon, duke Eſer, duke Diſan theſe were dukes of Horreites that ruled in the Land Seir."
+  },
+  {
+   "src": "S1",
+   "verse": 40,
+   "worst": 0.889,
+   "from": "p134",
+   "text": "therfore be the names of the dukes of Eſau in their kinreds, and places, and callines: duke Thamna, duke duke Ietheth,"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and theſe are the generations of Eſau, the ſame Edom.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S3": {
+    "text": "and theſe are the generations of Eſau, the ſame Edom.",
+    "from": "p136",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S9": {
+    "text": "and theſe are the ſonnes of",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   },
+   "S6": {
+    "text": "And are the generatons of Eſau, the ſame is omEſau tooke",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.691,
+     "odr_com": 0.691,
+     "sabates_a": 0.714,
+     "madueke_b": 0.714
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "Eſau tooke wiues of the daughters of Cha-naan: Ada the daughter of Elon the Hetheite, and Ool-bama the daughter of Ana daughter of Sebeon the Heueite:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "Eſau tooke wiues of the daughters of Cha-naan: Ada the daughter of Elon the Hetheite, and Oolibama the daughter of Ana daughter of Sebeon the Heueite:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "Iacob,",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   },
+   "S6": {
+    "text": "Eſau tooke wiues of the daughters of Chanaan: \" Ada the daughter of Elon the Hetheite and Oolibama the daughter of Ana daughter of Sebeon the Heucite:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "Baſemath alſo the daughter of Iſmael ſiſter of Nabaioth.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Baſemath alſo the daughter of Iſmael ſiſter of Nabaioth.",
+    "from": "p136",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Baſemath, alſo before the law of Moyſes, as appeareth in the hiſtorie of",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   },
+   "S6": {
+    "text": "alſo the daughter of Iſmael fiſter ot Nabaioth.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.8,
+     "odr_com": 0.8,
+     "sabates_a": 0.796,
+     "madueke_b": 0.796
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And Ada bar Eliphaz: Baſemath bar Rahuel:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Ada bare Eliphaz Baſemath bare Rahuel",
+    "from": "p136",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   },
+   "S6": {
+    "text": "And Ada bare Eliphaz: Bafemath bare Rahuel",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Oolibama bare Ichus and Ihelon and Coree. theſe are the ſonnes of Eſau, that were borne to him in the land of Chanaan.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "Oolibama bare Iehus and Ihelon and Coree, theſe are the ſonnes of Eſau, that were borne to him in the land of Chanaa.†",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Oolibama bare Iehus and Ihelon and Coree: theſe are the ſonnes of Eſau, that were borne to him in the land of Chanaan.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "Oolibama bare Ichus and Ihelon and Coree, theſe are the ſonnes of Eſau, that were borne to him in the land of Chanaan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And Eſan tooke his wiues and ſonnes and daughters, and euerie ſoule of his houſe, and his ſubſtance, andon catle, and al that he could haue in the land of Chanaan: and he went into an other countrie, and departed from his brother Iacob.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And :: Eſau tooke his wiues and ſonnes and daughters, and euerie ſoule of his houſe, and his ſubſtance, and catle, and al that he could haue in the land of Chanaan: and he went into an other countrie, and departed from his brother Iacob.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "And Eſau tooke his wiues and fonnes and daugh-:: ters, and euerie ſoule of his houſe, and his ſubſtance, and catle, and al that he could haue in the land of Chanaan: and he went into an other countrie, and departed from his brother Iacob.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "And Eſau tooke his wiues and ſounes and daughters, and euerie ſoule ot his houſe, and his ſubſtance, and cattle, and al that he could haue in the land ot Chanaan: and he weut into an other countrie, and departed from his brother Iacob.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "For they were exceding rich, and could not dwel together : neither was the land of their peregrination able to beare them, for the multitude of flockes.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "For they were exceding rich, and could not dwel together : neither was the land of their peregrination able to beare them, for the multitude of flockes.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "For they were exceding rich, and could not dwel together : neither was the land of their peregrination able to beare them, for the multitude of fockes.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "For thoy were exceeding rich, and tould not dwel together: neither was the land of thoir peregrination able to beare thom, for the multitude of flocls.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And Eſau dwelt in Mount Seir, he is Edom.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Eſau dwelt in Mount Seir, he is Edom.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Eſau dwelt in Mount Seir, he is Edom.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Eſau dwelt in Mount Seir, he is Edom.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And theſe are the generations of Eſau the father of Edom in mount Seir,",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And theſe are the generations of Eſau the father of Edom in mount Seir,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And theſe are the generations of Eſau the father of Edom in mount Seir,",
+    "from": "p145",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And theſe are the generations of Eſau the father of Edom: in mount Seir, &c.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "and theſe are the names of his ſonnes : Eliphae the ſonne of Ada the wife of Eſau: Rahuel alſo the ſonne of Baſemath his wife",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "and theſe are the names of his ſonnes : Eliphar the ſonne of Ada the wife of Eſau: Rahuel alſo the ſonne of Baſemath his wife",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "and theſe are the names of his ſonnes Eliphaz the ſonne of Ada the wife of Eſau Rahuel alſo the ſonne of Baſemath his wife",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "and theſe are the names ot his ſonnes: Elipha the ſonue of Ada the wite ot Eſau: Rahuel alſo the ſonne ot Balemath his wite.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.934,
+     "odr_com": 0.934,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And Eliphas had ſonnes : Theman, Omar, Sepho, and Gathan, and Cenes.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "And Eliphas had ſonnes : Theman, Omar, Sepho, and Gathan, and Cenes,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "And Eliphas had ſonnes : Theman, Omar, Sepbo, and Gathan, and Cenes.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S6": {
+    "text": "And Eliphas had ſonnes: Theman, Omar, Sepho, and Gathan, and Cenes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And Thamna was the concubine of Eliphas the ſonne of Eſau: which bare to him Amalech. theſe are the ſonnes of Ada the wife of Eſau.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "And Thamna was the concubine of Eliphas the ſonne of Eſau: which bare to him Amalech. theſe are the ſonnes of Ada the wife of Eſau.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "And Thamna was the concubine of Eliphas the ſonne of Eſau: which bare to him Amalech. theſe are the ſonnes of Ada the wife of Eſau.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "And Thamna was the concubiue ot Eliphas the ſonne of Eau which bare to him Amaloch. Theſe are the ſonnes of. Ada the wite of Eſau.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And the ſonnes of Rahuel were Nahath & Zara, Samma and Meza. theſe were the ſonnes of Balcmath the wife of Eſau.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S3": {
+    "text": "And the ſonnes of Rahuel : were Nahath & Zara, Samma and Meza. theſe were the ſonnes of Baſemath the wife of Eſau.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S9": {
+    "text": "And the ſonnes of Rahuel: were Nahath & Zara, Samma and Meza. theſe were the ſonnes of Balemath the wife of Eſau.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
+    }
+   },
+   "S6": {
+    "text": "And the ſonnes of Rahuel were Nahath and Zara, Samma and Meza. Theſe were the ſonnes of Baſemath the wife of Eſau.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Theſe alſo were the ſonnes of Oolibama, the daughter of Ana, the daughter of Sebeon, the wife of Eſau, which ſhe bare to him, Iehus, and Ihelon, and Coree.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "Theſe alſo were the ſonnes of Oolibama, the daughter of Ana, the daughter of Sebeon, the wife of Eſau, which ſhe bare to him, Iehus, and Ihelon, and Coree.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "Theſe alſo were the ſonnes of Oolibama, the daughter of Ana, the daughter of Sebeon, the wife of Eſau, which ſhe bare to him, Iehus, and Ihelon, and Coree.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Theſe allo were the ſonnes of Oolibama, the daughter ot Ana, the daughter of Sebeon, the wite ot Eſau, which ſhe bare to him. Iehus an. Ihelon and Coree.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Theſe were dukes of the ſonnes of Eſau: the ſonnes of Eliphathe firſt begotten of Eſau: duke Theman , duke Omar, duke Sepho, duke Cenes,",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S3": {
+    "text": "Theſe were dukes of the ſonnes of Eſau: the ſonnes of Eliphathe firſtebegotten of Eſau: duke Theman, duke Omar, duke Sepho, duke Cenes,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "Theſe were dukes of the ſonnes of Eſau: the ſonnes of Eliphathe firſt-begotten of Eſau: duke Theman, duke Omar, duke Sepho, duke Cenes,",
+    "from": "p145",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "Theſe were Dukes ot the ſonnes of Ffau: the ſounes of Elipha the ſirſt begotten ot Eſau. Puke Theman, Duke Omar, Duke Sopho Duke Cenes,",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.923,
+     "odr_com": 0.923,
+     "sabates_a": 0.907,
+     "madueke_b": 0.907
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "duke Coree, duke Gatham, duke Amalech, theſe are the ſonnes of Eliphaz in the land of Edom, and theſe are the ſonnes of Ada.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   },
+   "S3": {
+    "text": "duke Coree, duke Gatham, duke Amalech, theſe are the ſonnes of Eliphaz in the land of Edom, and theſe are the ſonnes of Ada.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   },
+   "S9": {
+    "text": "duke Coree, duke Gatham. duke Amalech, theſe are the ſonnes of Eliphaz in the land of Edom, and theſe are the ſonnes of Ada.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   },
+   "S6": {
+    "text": "Duke Corce, Duke Gatham, Duke Amalech, theſe are the ſonnes of Eliphaz in the land of Edom, & theſe are the ſonnes of Ada.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Theſe alſo were the ſonnes of Rahuel, the ſonne of Eſau: duke Nahath, duke Zara, duke Zamma, duke Meza. and theſe are be the dukes of Rahuel, in the Land of Edom: theſe be the ſonnes of Baſemath the wife of Eſau.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 1.0,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "Theſe alſo were the ſonnes of Rahuel, the ſonne of Eſau: duke Nahath, duke Zara, duke Zamma, duke Meza. and theſe are be the dukes of Rahuel, in the Land of Edom: theſe be the ſonnes of Baſemath the wife of Eſau.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 1.0,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "Theſe alſo were the ſonnes of Rahuel, the ſonne of Eſau : duke Nahath, duke Zara, duke Zamma, duke Mera. and theſe are be the dukes of Rahuel, in the Land of Edom: theſe be the ſonnes of Baſemath the wife of Eſau.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.995,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S6": {
+    "text": "Theſe alto were the Iacobſonnes of Rahuel, the ſonne of Elau Duke Nahath, Duke Zara, Duke Samma, Duke Mera. And theſebe the Dukes of Rahuel, in the Laud of Edom: theſe be the ſonnes of Baſemath the wife of Eſau.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.926,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And theſe were the ſonnes of Oolibama the wife of Eſau : duke Iehus, duke Ihelon, euke Coree. theſe be the dukes of Oolibama, the daughter of Ana, and wife of Eſau.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And theſe were the ſonnes of Oolibama the wife of Eſau: duke Iehus, duke Ihelon, euke Coree. theſe be the dukes of Oolibama, the daughter of Ana, and wife of Eſau.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And theſe were the ſonnes of Oolibama the wife of Eſau : duke Iehus, duke Ihelon, euke Coree. theſe be the dukes of Oolibama, the daughter of Ana, and wife of Eſau.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And theſe were the ſonnes of Oolibama the wife of Eſau: Duke Iehus. Puke Ihelon Duke Core. Theſe be the Dukes of Oolibama, the daughter of Ana, and wite of Eſau.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.974,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Theſe are the ſonnes of Eſau, and theſe are the dukes of them: the ſame is Edoni.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "Theſe are the ſonnes of Eſau, and theſe are the dukes of them: the ſame is Edom.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "Theſe are the ſonnes of Eſau, and theſe are the dukes of them: the ſame is Edom.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Theſe ate the ſonnes of Eſau and theſe are the Dukes of them: the ſame is Edom.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "Theſe are the ſonnes of Seir the horreite, the inhabiters of the land : Lotan, and Sobal, and Sebeon, and Ana,",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "Theſe are the ſonnes of Seir the horreite, the inhabiters of the land : Lotan, and Sobal, and Sebeon, and Ana,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "Theſe are the ſonnes of Seir the horreite, the inhabiters of the land : Lotan, and Sobal, and Sebeon, and Ana,",
+    "from": "p145",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Theſe are the ſonues of Seir the horreite, the inhabiters of the land : Lotan, and Sobal, and Sebeon, aud Ana,",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "and Diſon, and Eſer, and Diſan. Theſe are dukes of the Horreite, the ſonnes of Seir in the Land of Edom.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "and Diſon, and Eſer, and Diſan. Theſe are dukes of the Horreite, the ſonnes of Seir in the Land of Edom.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "and Diſon, and Eſer, and Diſan. Theſe are dukes of the Horreite, the ſonnes of Seir in the Land of Edom.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "and Diſon, and Eſer, and Diſan. Theſe are Dukes of the Horreite, the ſonnes of Seit in the Land of Edom.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And Lotan had ſonnes : Hori and Heman. and the ſiſter of Lotan, was Thamna.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "And Lotan had ſonnes : Hori and Heman. and the ſiſter of Lotan, was Thamn.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And Lotan had ſonnes : Hori and Heman: and the ſiſter of Lotan, was Thamn.",
+    "from": "p145",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "And Lotan had ſonnes : Hori and Heman. And the ſiſter of Lotan was Themna.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And theſe were the ſonnes ſonnes of Sobal: Aluan and Manahat, and Ebal, and Sepho and Onam.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.919,
+     "odr_com": 0.919,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S3": {
+    "text": "And theſe were the ſonnes of Sobal: Aluan and Manahat, and Ebal, Sepho and Onam.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S9": {
+    "text": "And theſe were the ſonnes ſonnes of Sobal: Aluan and Manahat, and Ebal, and Sepho and Onam.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.919,
+     "odr_com": 0.919,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S6": {
+    "text": "And theſe were the ſonnes of Sobal: Aluan and Manahat, and Ebal, and Sepho, and Onam.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in wildernes, when he fed the aſſes of Sebeon his father",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in wildernes, when he fed the aſſes of Sebeon his father",
+    "from": "p138",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wildernes, when he fed the aſſes of Sebeon his father",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wildernes, when he ted the aſſes of Sebeon his father :",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "and he had a ſonne Diſon, and a daughter Oolibania.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "and he had a ſonne Diſon, and a daughter Oolibama.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and he had a ſonne Diſon, and a daughter Oolibama.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and he had a ſonne Diſon, and a daughter Oolibama.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "theſe were the ſonnes of Diſon Hamdan, and Eſeban, Iethram, and Charan.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.88,
+     "odr_com": 0.893,
+     "sabates_a": 0.871,
+     "madueke_b": 0.871
+    }
+   },
+   "S3": {
+    "text": "And theſe were the ſonnes of Diſon Hamdan, and Eſeban, and Iethram, and Charan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And theſe were the ſonnes of Diſon Hamdan, and Eſeban, and Iethram, and Charan.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And theſe were the ſonnes ot Diſon: Hamdan, and Eſeban, and Iethram, and Charan.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.987,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "Theſe alſo were the ſonnes of Eſer: Balaan, and Zauan, and Acan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "Theſe alſo were the ſonnes of Eſer: Balaan, and Zauan, and Acan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "Theſe alſo were the ſonnes of Eſer: Balaan, and Zauan, and Acan.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "Theſe alſo were the ſounes of Eſer : Balaan, and Zauan, and Acan.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "And Diſan had ſonnes Hus, and Aram.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "And Diſan had ſonnes Hus, and Aram.",
+    "from": "p138",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "And Diſan had ſonnes Hus, and Aram.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "And Diſan had ſonnes: Hus and Aram.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "Theſe were dukes of the Horreites duke Lorans, duke Sobal, duke Sebeons, duke Ana,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.962,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "Theſe were dukes of the Horreites duke Lotan, duke Sobal, duke Sebeon, duke Ana,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Theſe were dukes of the Horreites duke Lotan, duke Sobal, duke Sebeon, duke Ana,",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Theſe were Dukes of the Horreites : Duke Lotan, Duke Sobal, Duke Sebeon, Duke Ana,",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "Diſon, duke Eſer, duke Diſan theſe were dukes of Horreites that ruled in the Land Seir.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.866,
+     "odr_com": 0.903,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S3": {
+    "text": "Diſon, duke Eſer, duke Diſan theſe were dukes of Horreites that ruled in the Land Seir.",
+    "from": "p138",
+    "score": {
+     "s_dismas": 0.866,
+     "odr_com": 0.903,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S9": {
+    "text": "duke Diſon, duke Eſer, duke Diſan theſe were dukes of the Horreites that ruled in the Land Seir.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Duke Diſon, Duke Eſet. Duke Diſan: theſe were Dukes ot the Horrcites that ruled in the and Seir.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.957,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "And the Kinges that ruled in the land of Edom, before that the children of Iſrael had a king were theſe",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And the Kinges that ruled in the land of Edom, before that the children of Iſrael had a king, were theſe",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And the Kinges that ruled in the land of Edom, before that the children of Iſrael com had a king, were theſe",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S6": {
+    "text": "And the Kings that ruled in the landof Edom, betore that the children of I ſrael had a King, were theſe :",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "Bela the ſonne of Beor, and the name of his citie Denaba.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Bela the ſonne of Beor, and the name of his citie Denaba.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Bela the ſonne of Beor, and the name of his citie Denaba.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Bela the ſonne of Beor, and the name of his citie Denaba.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "And Bela died, and Iobab anl ſonnne of Zara of Boſra reigned in his ſteed.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.958,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S3": {
+    "text": "And Bela died, and Iobab the ſonnne of Zara of Boſra reigned in his ſteed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And Bela died, and :: Iobab the ſonnne of Zara of Boſra reigned in his ſteed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And Bela died, and Iobab the ſonne of Zara of Boſra reigned in his ſtead.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.972,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "And when lobab was dead, Huſam of the land of the Themans reigned in his ſteed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "And when Iobab was dead, Huſam of the land of the Themans reigned in his ſteed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And when Iobab was dead, Huſam of the land of the Themans reigned In his ſteed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And when Iobab was dead, Huſam of the laud of the Themans reigned in his ſtead.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "35": {
+   "S1": {
+    "text": "He alſo being dead, there reigned in his Adad the ſonne of Badad, that ſtroke Madian in the to trie of Moab: and the name of his citie was Auith.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.932,
+     "odr_com": 0.939,
+     "sabates_a": 0.92,
+     "madueke_b": 0.92
+    }
+   },
+   "S3": {
+    "text": "He alſo being dead, there reigned in his Adad the ſonne of Badad, that ſtroke Madian in the to trie of Moab: and the name of his citie was Auith.",
+    "from": "p138",
+    "score": {
+     "s_dismas": 0.932,
+     "odr_com": 0.939,
+     "sabates_a": 0.92,
+     "madueke_b": 0.92
+    }
+   },
+   "S9": {
+    "text": "He alſo being dead, there reigned in his ſteed when Adad the ſonne of Badad, that ſtroke Madian in the counto trie of Moab: and the name of his citie was Auith.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.949,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   },
+   "S6": {
+    "text": "He alſo being dead, there reigned in his ſtead Adad the ſonne of Badad, that ſtruck Madian in the countrie of Moab: and the name of his citie was Auith.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.973,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "36": {
+   "S1": {
+    "text": "a- when Adad was dead, there reigned for him Semla of reca.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 0.918,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S3": {
+    "text": "a- when Adad was dead, there reigned for him Semla of reca.",
+    "from": "p138",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 0.918,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S9": {
+    "text": "And a- when Adad was dead, there reigned for him Semla of Maſhe- reca.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.924,
+     "odr_com": 0.924,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S6": {
+    "text": "And when Adad was dead, there reigned fot him Semla of Maſreca.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "37": {
+   "S1": {
+    "text": "He alſo being dead, Saul of the riuer. Rohoboth, Iob reigned in his ſteed.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S3": {
+    "text": "He alſo being dead, Saul of the riuers Rohoboth, reigned in his ſteed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "He alſo being dead, Saul of the riuers Rohoboth, reigned in his ſteed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "He alſo being dead, Saul of theriuer Rohoboth, reigned in his ſtead.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "38": {
+   "S1": {
+    "text": "And when he alſo was dead, Balanan the ſonne of Achobor ſucceeded into the kingdome.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And when he alſo was dead, Balanan the ſonne of Achobor ſucceeded into the kingdome.",
+    "from": "p138",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And when he alſo was dead, Balanan the ſonne of Achobor ſucceeded into the kingdome.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And when he alſo was dead Balanan the ſonne of Achobor ſueceeded into the kingdome.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "39": {
+   "S1": {
+    "text": "This man alſo being dead Adar reigned in his place, and the name of his citie was Phau: and his wiſe was called Mec-tabel, the daughter of Matred, daughter of Mezaab.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "This man alſo being dead Adar reigned in his place, and the name of his citie was Phau: and his wiſe was called Mec-tabel, the daughter of Matred, daughter of Mezaab.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "This man alſo being dead Adar reigned in his place, and the name of his citie was Phau and his wife was called Meetabel, the daughter of Matred, daughter of Mezaab.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "This men alſo being dead Adar reigned in his place, and the name of his citie was Phau: and his wite was called Meetabel, the daughter of Matred, daughter ot Metaab. a0.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.963,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "40": {
+   "S1": {
+    "text": "therfore be the names of the dukes of Eſau in their kinreds, and places, and callines: duke Thamna, duke duke Ietheth,",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.903,
+     "odr_com": 0.903,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
+    }
+   },
+   "S3": {
+    "text": "†Theſe therfore be the names of the dukes of Eſau in their kinreds, and places, and callings: duke Thamna, duke duke Ietheth,",
+    "from": "p138",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S9": {
+    "text": "Theſe therfore be the names of the dukes of Eſau in their kinreds, and places, and callings: duke Thamna, duke Alua, duke Ietheth,",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "Theſe therfore be the names of the Dukes of Eſau in their kindreds, and places, and callings : Duke Thamna, Duke Alua, Puke Ietheth,",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "41": {
+   "S1": {
+    "text": "duke Ojlibima, duke Ela, duke Phinon,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S3": {
+    "text": "duke Olibama, duke Ela, duke Phinon,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "duke Oolibama, duke Ela, duke Phinon,",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Duke Oolibama, Duke Ela, Duke Phinon.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "42": {
+   "S1": {
+    "text": "duke Cenet, duke Theman duke Mabſer,",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S3": {
+    "text": "†duke Cenez, duke Theman, duke Mabſer,",
+    "from": "p138",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "duke Cenez, duke Theman, duke Mabſer,",
+    "from": "p146",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "Duke Cenez, Duke Theman, Duke Mabſer, 4:.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "43": {
+   "S1": {
+    "text": "duke Magdiel, duke Hiram theſe are the dukes of Edom dwelling in the land of their empire, the ſame is Eſau the father of the Idumeians.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "duke Magdiel, duke Hiram theſe are the dukes of Edom dwelling in the land of their empire, the ſame is Eſau the father of the Idumeians.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "duke Magdiel, duke Hiram : theſe are the dukes of Edom dwelling, in the land of their empire, the ſame is Eſau father of the Idumeians.",
+    "from": "p146",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S6": {
+    "text": "Duke Magdiel, Duke Hiram: theſe are the Dukes of Edom dwelling in the land of their Empire, the ſame is Eſau the father of the Idumeans.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And theſe are the generations of Eſau, the ſame is Edom.",
+   "odr_com": "AND these are the generations of Esau, the same is Edom.",
+   "sabates_a": "And these are the generations of Esau, the same is Edom.",
+   "madueke_b": "And these are the generations of Esau, the same is Edom."
+  },
+  "2": {
+   "s_dismas": "Eſau tooke wiues of the daughters of Chanaan: Ada the daughter of Elon the Hetheite, and Oolibama the daughter of Ana daughter of Sebeon the Heuite:",
+   "odr_com": "Esau tooke wiues of the daughters of Chanaan: Ada the daughter of Elon the Hetheite, and Oolibama the daughter of Ana daughter of Sebeon the Heueite:",
+   "sabates_a": "Esau took wives of the daughters of Chanaan: Ada the daughter of Elon the Hetheite, and Oolibama the daughter of Ana daughter of Sebeon the Heveite:",
+   "madueke_b": "Esau took wives of the daughters of Chanaan: Ada the daughter of Elon the Hetheite, and Oolibama the daughter of Ana daughter of Sebeon the Heveite:"
+  },
+  "3": {
+   "s_dismas": "Baſemath alſo the daughter of Iſmael ſiſter of Nabaioth.",
+   "odr_com": "Basemath also the daughter of Ismael sister of Nabaioth.",
+   "sabates_a": "Basemath also the daughter of Ismael sister of Nabajoth.",
+   "madueke_b": "Basemath also the daughter of Ismael sister of Nabajoth."
+  },
+  "4": {
+   "s_dismas": "And Ada bare Eliphaz: Baſemath bare Rahuel:",
+   "odr_com": "And Ada bare Eliphaz: Basemath bare Rahuel:",
+   "sabates_a": "And Ada bare Eliphaz: Basemath bare Rahuel:",
+   "madueke_b": "And Ada bare Eliphaz: Basemath bare Rahuel:"
+  },
+  "5": {
+   "s_dismas": "Oolibama bare Iehus and Ihelon and Coree, theſe are the ſonnes of Eſau, that were borne to him in the land of Chanaan.",
+   "odr_com": "Oolibama bare Iehus and Ihelon and Coree. these are the sonnes of Esau, that were borne to him in the land of Chanaan.",
+   "sabates_a": "Oolibama bare Jehus and Ihelon and Core, these are the sons of Esau, that were born to him in the land of Chanaan.",
+   "madueke_b": "Oolibama bare Jehus and Ihelon and Core, these are the sons of Esau, that were born to him in the land of Chanaan."
+  },
+  "6": {
+   "s_dismas": "And Eſau tooke his wiues and ſonnes and daughters, and euerie ſoule of his houſe, and his ſubſtance, and catle, and al that he could haue in the land of Chanaan: and he went into an other countrie, and departed from his brother Iacob.",
+   "odr_com": "And Esau tooke his wiues and sonnes and daughters, and euerie soule of his house, and his substance, and catle, and al that he could haue in the land of Chanaan: and he went into an other countrie, and departed from his brother Iacob.",
+   "sabates_a": "And Esau took his wives and sons and daughters, and every soul of his house, and his substance, and cattle, and all that he could have in the land of Chanaan: and he went into another country, and departed from his brother Jacob.",
+   "madueke_b": "And Esau took his wives and sons and daughters, and every soul of his house, and his substance, and cattle, and all that he could have in the land of Chanaan: and he went into another country, and departed from his brother Jacob."
+  },
+  "7": {
+   "s_dismas": "For they were exceding rich, and could not dwel together: neither was the land of their peregrination able to beare them, for the multitude of flockes.",
+   "odr_com": "For they were exceding rich, and could not dwel together: neither was the land of their peregrination able to beare them, for the multitude of flockes.",
+   "sabates_a": "For they were exceeding rich, and could not dwell together: neither was the land of their peregrination able to bear them, for the multitude of flocks.",
+   "madueke_b": "For they were exceeding rich, and could not dwell together: neither was the land of their peregrination able to bear them, for the multitude of flocks."
+  },
+  "8": {
+   "s_dismas": "And Eſau dwelt in Mount Seir, he is Edom.",
+   "odr_com": "And Esau dwelt in Mount Seir, he is Edom.",
+   "sabates_a": "And Esau dwelt in Mount Seir, he is Edom.",
+   "madueke_b": "And Esau dwelt in Mount Seir, he is Edom."
+  },
+  "9": {
+   "s_dismas": "And theſe are the generations of Eſau the father of Edom in mount Seir,",
+   "odr_com": "And these are the generations of Esau the father of Edom in mount Seir,",
+   "sabates_a": "And these are the generations of Esau the father of Edom in mount Seir,",
+   "madueke_b": "And these are the generations of Esau the father of Edom in mount Seir,"
+  },
+  "10": {
+   "s_dismas": "and theſe are the names of his ſonnes: Eliphaz the ſonne of Ada the wife of Eſau: Rahuel alſo the ſonne of Baſemath his wife.",
+   "odr_com": "and these are the names of his sonnes: Eliphaz the sonne of Ada the wife of Esau: Rahuel also the sonne of Basemath his wife.",
+   "sabates_a": "and these are the names of his sons: Eliphaz the son of Ada the wife of Esau: Rahuel also the son of Basemath his wife.",
+   "madueke_b": "and these are the names of his sons: Eliphaz the son of Ada the wife of Esau: Rahuel also the son of Basemath his wife."
+  },
+  "11": {
+   "s_dismas": "And Eliphas had ſonnes: Theman, Omar, Sepho, and Gathan, and Cenes.",
+   "odr_com": "And Eliphas had sonnes: Theman, Omar, Sepho, and Gathan, and Cenes.",
+   "sabates_a": "And Eliphas had sons: Theman, Omar, Sepho, and Gathan, and Cenes.",
+   "madueke_b": "And Eliphas had sons: Theman, Omar, Sepho, and Gathan, and Cenes."
+  },
+  "12": {
+   "s_dismas": "And Thamna was the concubine of Eliphas the ſonne of Eſau: which bare to him Amalech. Theſe are the ſonnes of Ada the wife of Eſau.",
+   "odr_com": "And Thamna was the concubine of Eliphas the sonne of Esau: which bare to him Amalech. these are the sonnes of Ada the wife of Esau.",
+   "sabates_a": "And Thamna was the concubine of Eliphas the son of Esau: which bare to him Amalech. These are the sons of Ada the wife of Esau.",
+   "madueke_b": "And Thamna was the concubine of Eliphas the son of Esau: which bare to him Amalech. These are the sons of Ada the wife of Esau."
+  },
+  "13": {
+   "s_dismas": "And the ſonnes of Rahuel: were Nahath & Zara, Samma and Meza. Theſe were the ſonnes of Baſemath the wife of Eſau.",
+   "odr_com": "And the sonnes of Rahuel: were Nahath & Zara, Samma and Meza. these were the sonnes of Basemath the wife of Esau.",
+   "sabates_a": "And the sons of Rahuel were Nahath and Zara, Samma and Meza. These were the sons of Basemath the wife of Esau.",
+   "madueke_b": "And the sons of Rahuel were Nahath and Zara, Samma and Meza. These were the sons of Basemath the wife of Esau."
+  },
+  "14": {
+   "s_dismas": "Theſe alſo were the ſonnes of Oolibama, the daughter of Ana, the daughter of Sebeon, the wife of Eſau, which ſhe bare to him, Iehus, and Ihelon, and Coree.",
+   "odr_com": "These also were the sonnes of Oolibama, the daughter of Ana, the daughter of Sebeon, the wife of Esau, which she bare to him, Iehus, and Ihelon, and Coree.",
+   "sabates_a": "These also were the sons of Oolibama, the daughter of Ana, the daughter of Sebeon, the wife of Esau, which she bare to him, Jehus, and Ihelon, and Core.",
+   "madueke_b": "These also were the sons of Oolibama, the daughter of Ana, the daughter of Sebeon, the wife of Esau, which she bare to him, Jehus, and Ihelon, and Core."
+  },
+  "15": {
+   "s_dismas": "Theſe were dukes of the ſonnes of Eſau: the ſonnes of Eliphaz the firſt-begotten of Eſau: duke Theman, duke Omar, duke Sepho, duke Cenes,",
+   "odr_com": "These were dukes of the sonnes of Esau: the sonnes of Eliphaz the first-begotten of Esau: duke Theman, duke Omar, duke Sepho, duke Cenes,",
+   "sabates_a": "These were Dukes of the sons of Esau: the sons of Eliphaz the first-begotten of Esau: Duke Theman, Duke Omar, Duke Sepho, Duke Cenes,",
+   "madueke_b": "These were Dukes of the sons of Esau: the sons of Eliphaz the first-begotten of Esau: Duke Theman, Duke Omar, Duke Sepho, Duke Cenes,"
+  },
+  "16": {
+   "s_dismas": "duke Coree, duke Gatham, duke Amalech, theſe are the ſonnes of Eliphaz in the land of Edom, and theſe are the ſonnes of Ada.",
+   "odr_com": "duke Coree, duke Gatham, duke Amalech, these are the sonnes of Eliphaz in the land of Edom, and these are the sonnes of Ada.",
+   "sabates_a": "Duke Core, Duke Gatham, Duke Amalech, these are the sons of Eliphaz in the land of Edom, & these are the sons of Ada.",
+   "madueke_b": "Duke Core, Duke Gatham, Duke Amalech, these are the sons of Eliphaz in the land of Edom, & these are the sons of Ada."
+  },
+  "17": {
+   "s_dismas": "Theſe alſo were the ſonnes of Rahuel, the ſonne of Eſau: duke Nahath, duke Zara, duke Zamma, duke Meza, and theſe be the dukes of Rahuel, in the Land of Edom: theſe be the ſonnes of Baſemath the wife of Eſau.",
+   "odr_com": "These also were the sonnes of Rahuel, the sonne of Esau: duke Nahath, duke Zara, duke Zamma, duke Meza. and these are be the dukes of Rahuel, in the Land of Edom: these be the sonnes of Basemath the wife of Esau.",
+   "sabates_a": "These also were the sons of Rahuel, the son of Esau: Duke Nahath, Duke Zara, Duke Samma, Duke Meza. And these be the Dukes of Rahuel, in the Land of Edom: these be the sons of Basemath the wife of Esau.",
+   "madueke_b": "These also were the sons of Rahuel, the son of Esau: Duke Nahath, Duke Zara, Duke Samma, Duke Meza. And these be the Dukes of Rahuel, in the Land of Edom: these be the sons of Basemath the wife of Esau."
+  },
+  "18": {
+   "s_dismas": "And theſe were the ſonnes of Oolibama the wife of Eſau: duke Iehus, duke Ihelon, duke Coree, theſe be the dukes of Oolibama, the daughter of Ana, and wife of Eſau.",
+   "odr_com": "And these were the sonnes of Oolibama the wife of Esau: duke Iehus, duke Ihelon, euke Coree. these be the dukes of Oolibama, the daughter of Ana, and wife of Esau.",
+   "sabates_a": "And these were the sons of Oolibama the wife of Esau: Duke Jehus, Duke Ihelon, Duke Core. These be the Dukes of Oolibama, the daughter of Ana, and wife of Esau.",
+   "madueke_b": "And these were the sons of Oolibama the wife of Esau: Duke Jehus, Duke Ihelon, Duke Core. These be the Dukes of Oolibama, the daughter of Ana, and wife of Esau."
+  },
+  "19": {
+   "s_dismas": "Theſe are the ſonnes of Eſau, and theſe are the dukes of them: the ſame is Edom.",
+   "odr_com": "These are the sonnes of Esau, and these are the dukes of them: the same is Edom.",
+   "sabates_a": "These are the sons of Esau, and these are the Dukes of them: the same is Edom.",
+   "madueke_b": "These are the sons of Esau, and these are the Dukes of them: the same is Edom."
+  },
+  "20": {
+   "s_dismas": "Theſe are the ſonnes of Seir the horreite, the inhabiters of the land: Lotan, and Sobal, and Sebeon, and Ana,",
+   "odr_com": "These are the sonnes of Seir the horreite, the inhabiters of the land: Lotan, and Sobal, and Sebeon, and Ana,",
+   "sabates_a": "These are the sons of Seir the Horreite, the inhabiters of the land: Lotan, and Sobal, and Sebeon, and Ana,",
+   "madueke_b": "These are the sons of Seir the Horreite, the inhabiters of the land: Lotan, and Sobal, and Sebeon, and Ana,"
+  },
+  "21": {
+   "s_dismas": "and Diſon, and Eſer, and Diſan. Theſe are dukes of the Horreite, the ſonnes of Seir in the Land of Edom.",
+   "odr_com": "and Dison, and Eser, and Disan. These are dukes of the Horreite, the sonnes of Seir in the Land of Edom.",
+   "sabates_a": "and Dison, and Eser, and Disan. These are Dukes of the Horreite, the sons of Seir in the Land of Edom.",
+   "madueke_b": "and Dison, and Eser, and Disan. These are Dukes of the Horreite, the sons of Seir in the Land of Edom."
+  },
+  "22": {
+   "s_dismas": "And Lotan had ſonnes: Hori and Heman, and the ſiſter of Lotan, was Thamna.",
+   "odr_com": "And Lotan had sonnes: Hori and Heman: and the sister of Lotan, was Thamna.",
+   "sabates_a": "And Lotan had sons: Hori and Heman. And the sister of Lotan was Thamna.",
+   "madueke_b": "And Lotan had sons: Hori and Heman. And the sister of Lotan was Thamna."
+  },
+  "23": {
+   "s_dismas": "And theſe were the ſonnes of Sobal: Aluan and Manahat, and Ebal, and Sepho and Onam.",
+   "odr_com": "And these were the sonnes of Sobal: Aluan and Manahat, and Ebal, and Sepho and Onam.",
+   "sabates_a": "And these were the sons of Sobal: Alvan and Manahat, and Ebal, and Sepho, and Onam.",
+   "madueke_b": "And these were the sons of Sobal: Alvan and Manahat, and Ebal, and Sepho, and Onam."
+  },
+  "24": {
+   "s_dismas": "And theſe were the ſonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wildernes, when he fed the aſſes of Sebeon his father:",
+   "odr_com": "And these were the sonnes of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wildernes, when he fed the asses of Sebeon his father:",
+   "sabates_a": "And these were the sons of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wilderness, when he fed the asses of Sebeon his father:",
+   "madueke_b": "And these were the sons of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wilderness, when he fed the asses of Sebeon his father:"
+  },
+  "25": {
+   "s_dismas": "and he had a ſonne Diſon, and a daughter Oolibama.",
+   "odr_com": "and he had a sonne Dison, and a daughter Oolibama.",
+   "sabates_a": "and he had a son Dison, and a daughter Oolibama.",
+   "madueke_b": "and he had a son Dison, and a daughter Oolibama."
+  },
+  "26": {
+   "s_dismas": "And theſe were the ſonnes of Diſon: Hamdan, and Eſaban, and Iethram, and Charan.",
+   "odr_com": "And these were the sonnes of Dison: Hamdan, and Eseban, and Iethram, and Charan.",
+   "sabates_a": "And these were the sons of Dison: Hamdan, and Eseban, and Iethram, and Charan.",
+   "madueke_b": "And these were the sons of Dison: Hamdan, and Eseban, and Iethram, and Charan."
+  },
+  "27": {
+   "s_dismas": "Theſe alſo were the ſonnes of Eſer: Balaan, and Zauan, and Acan.",
+   "odr_com": "These also were the sonnes of Eser: Balaan, and Zauan, and Acan.",
+   "sabates_a": "These also were the sons of Eser: Balaan, and Zavan, and Acan.",
+   "madueke_b": "These also were the sons of Eser: Balaan, and Zavan, and Acan."
+  },
+  "28": {
+   "s_dismas": "And Diſan had ſonnes: Hus, and Aram.",
+   "odr_com": "And Disan had sonnes: Hus, and Aram.",
+   "sabates_a": "And Disan had sons: Hus, and Aram.",
+   "madueke_b": "And Disan had sons: Hus, and Aram."
+  },
+  "29": {
+   "s_dismas": "Theſe were dukes of the Horreites: duke Loran, duke Sobal, duke Sebeon, duke Ana,",
+   "odr_com": "These were dukes of the Horreites: duke Lotan, duke Sobal, duke Sebeon, duke Ana,",
+   "sabates_a": "These were Dukes of the Horreites: Duke Lotan, Duke Sobal, Duke Sebeon, Duke Ana,",
+   "madueke_b": "These were Dukes of the Horreites: Duke Lotan, Duke Sobal, Duke Sebeon, Duke Ana,"
+  },
+  "30": {
+   "s_dismas": "duke Diſon, duke Eſer, duke Diſan: theſe were the dukes of the Horreites that ruled in the Land Seir.",
+   "odr_com": "duke Dison, duke Eser, duke Disan: these were dukes of the Horreites that ruled in the Land Seir.",
+   "sabates_a": "Duke Dison, Duke Eser, Duke Disan: these were Dukes of the Horreites that ruled in the Land Seir.",
+   "madueke_b": "Duke Dison, Duke Eser, Duke Disan: these were Dukes of the Horreites that ruled in the Land Seir."
+  },
+  "31": {
+   "s_dismas": "And the Kinges that ruled in the land of Edom, before that the children of Iſrael had a king, were theſe:",
+   "odr_com": "And the Kinges that ruled in the land of Edom, before that the children of Israel had a king, were these:",
+   "sabates_a": "And the kings that ruled in the land of Edom, before that the children of Israel had a king, were these:",
+   "madueke_b": "And the kings that ruled in the land of Edom, before that the children of Israel had a king, were these:"
+  },
+  "32": {
+   "s_dismas": "Bela the ſonne of Beor, and the name of his citie Denaba.",
+   "odr_com": "Bela the sonne of Beor, and the name of his citie Denaba.",
+   "sabates_a": "Bela the son of Beor, and the name of his city Denaba.",
+   "madueke_b": "Bela the son of Beor, and the name of his city Denaba."
+  },
+  "33": {
+   "s_dismas": "And Bela died, and Iobab the ſonne of Zara of Boſra reigned in his ſteed.",
+   "odr_com": "And Bela died, and Iobab the sonnne of Zara of Bosra reigned in his steed.",
+   "sabates_a": "And Bela died, and Jobab the son of Zara of Bosra reigned in his stead.",
+   "madueke_b": "And Bela died, and Jobab the son of Zara of Bosra reigned in his stead."
+  },
+  "34": {
+   "s_dismas": "And when Iobab was dead, Huſam of the land of the Themans reigned in his ſteed.",
+   "odr_com": "And when Iobab was dead, Husam of the land of the Themans reigned in his steed.",
+   "sabates_a": "And when Jobab was dead, Husam of the land of the Themans reigned in his stead.",
+   "madueke_b": "And when Jobab was dead, Husam of the land of the Themans reigned in his stead."
+  },
+  "35": {
+   "s_dismas": "He alſo being dead, there reigned in his ſteed Adad the ſonne of Balad, that ſtroke Madian in the countrie of Moab: and the name of his citie was Auith.",
+   "odr_com": "He also being dead, there reigned in his steed Adad the sonne of Badad, that stroke Madian in the countrie of Moab: and the name of his citie was Auith.",
+   "sabates_a": "He also being dead, there reigned in his stead Adad the son of Badad, that struck Madian in the country of Moab: and the name of his city was Avith.",
+   "madueke_b": "He also being dead, there reigned in his stead Adad the son of Badad, that struck Madian in the country of Moab: and the name of his city was Avith."
+  },
+  "36": {
+   "s_dismas": "And when Adad was dead, there reigned for him Semla of Maſreca.",
+   "odr_com": "And when Adad was dead, there reigned for him Semla of Masreca.",
+   "sabates_a": "And when Adad was dead, there reigned for him Semla of Masreca.",
+   "madueke_b": "And when Adad was dead, there reigned for him Semla of Masreca."
+  },
+  "37": {
+   "s_dismas": "He alſo being dead, Saul of the riuer Rohoboth, reigned in his ſteed.",
+   "odr_com": "He also being dead, Saul of the riuer Rohoboth, reigned in his steed.",
+   "sabates_a": "He also being dead, Saul of the river Rohoboth, reigned in his stead.",
+   "madueke_b": "He also being dead, Saul of the river Rohoboth, reigned in his stead."
+  },
+  "38": {
+   "s_dismas": "And when he alſo was dead, Balanan the ſonne of Achobor ſucceeded into the kingdome.",
+   "odr_com": "And when he also was dead, Balanan the sonne of Achobor succeeded into the kingdome.",
+   "sabates_a": "And when he also was dead, Balanan the son of Achobor succeeded into the Kingdom.",
+   "madueke_b": "And when he also was dead, Balanan the son of Achobor succeeded into the Kingdom."
+  },
+  "39": {
+   "s_dismas": "This man alſo being dead Adar reigned in his place, and the name of his citie was Phau: and his wife was called Mectabel, the daughter of Matred, daughter of Mezaab.",
+   "odr_com": "This man also being dead Adar reigned in his place, and the name of his citie was Phau: and his wife was called Meetabel, the daughter of Matred, daughter of Mezaab.",
+   "sabates_a": "This men also being dead Adar reigned in his place, and the name of his city was Phau: and his wife was called Meetabel, the daughter of Matred, daughter of Mezaab.",
+   "madueke_b": "This men also being dead Adar reigned in his place, and the name of his city was Phau: and his wife was called Meetabel, the daughter of Matred, daughter of Mezaab."
+  },
+  "40": {
+   "s_dismas": "Theſe therfore be the names of the dukes of Eſau in their kinreds, and places, and callings: duke Thamna, duke Alua, duke Ietheth,",
+   "odr_com": "These therfore be the names of the dukes of Esau in their kinreds, and places, and callings: duke Thamna, duke Alua, duke Ietheth,",
+   "sabates_a": "These therefore be the names of the Dukes of Esau in their kindreds, and places, and callings: Duke Thamna, Duke Alva, Duke Jetheth,",
+   "madueke_b": "These therefore be the names of the Dukes of Esau in their kindreds, and places, and callings: Duke Thamna, Duke Alva, Duke Jetheth,"
+  },
+  "41": {
+   "s_dismas": "duke Oolibama, duke Ela, duke Phinon,",
+   "odr_com": "duke Oolibama, duke Ela, duke Phinon,.",
+   "sabates_a": "Duke Oolibama, Duke Ela, Duke Phinon,",
+   "madueke_b": "Duke Oolibama, Duke Ela, Duke Phinon,"
+  },
+  "42": {
+   "s_dismas": "duke Cenez, duke Theman, duke Mabſer,",
+   "odr_com": "duke Cenez, duke Theman, duke Mabser,",
+   "sabates_a": "Duke Cenez, Duke Theman, Duke Mabsar,",
+   "madueke_b": "Duke Cenez, Duke Theman, Duke Mabsar,"
+  },
+  "43": {
+   "s_dismas": "duke Magdiel, duke Hiram: theſe are the dukes of Edom dwelling in the land of their empire, the ſame is Eſau the father of the Idumeians.",
+   "odr_com": "duke Magdiel, duke Hiram: these are the dukes of Edom dwelling in the land of their empire, the same is Esau the father of the Idumeians.",
+   "sabates_a": "Duke Magdiel, Duke Hiram: these are the Dukes of Edom dwelling in the land of their Empire, the same is Esau the father of the Idumeans.",
+   "madueke_b": "Duke Magdiel, Duke Hiram: these are the Dukes of Edom dwelling in the land of their Empire, the same is Esau the father of the Idumeans."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And these are the generations of Esau, the same is Edom.",
+  "2": "Esau took wives of the daughters of Chanaan: Ada the daughter of Elon the Hetheite, and Oolibama the daughter of Ana daughter of Sebeon the Heveite:",
+  "3": "Basemath also the daughter of Ismael sister of Nabajoth.",
+  "4": "And Ada bare Eliphaz: Basemath bare Rahuel:",
+  "5": "Oolibama bare Jehus and Ihelon and Core, these are the sons of Esau, that were born to him in the land of Chanaan.",
+  "6": "And Esau took his wives and sons and daughters, and every soul of his house, and his substance, and cattle, and all that he could have in the land of Chanaan: and he went into another country, and departed from his brother Jacob.",
+  "7": "For they were exceeding rich, and could not dwell together: neither was the land of their peregrination able to bear them, for the multitude of flocks.",
+  "8": "And Esau dwelt in Mount Seir, he is Edom.",
+  "9": "And these are the generations of Esau the father of Edom in mount Seir,",
+  "10": "and these are the names of his sons: Eliphaz the son of Ada the wife of Esau: Rahuel also the son of Basemath his wife.",
+  "11": "And Eliphas had sons: Theman, Omar, Sepho, and Gathan, and Cenes.",
+  "12": "And Thamna was the concubine of Eliphas the son of Esau: which bare to him Amalech. These are the sons of Ada the wife of Esau.",
+  "13": "And the sons of Rahuel were Nahath and Zara, Samma and Meza. These were the sons of Basemath the wife of Esau.",
+  "14": "These also were the sons of Oolibama, the daughter of Ana, the daughter of Sebeon, the wife of Esau, which she bare to him, Jehus, and Ihelon, and Core.",
+  "15": "These were Dukes of the sons of Esau: the sons of Eliphaz the first-begotten of Esau: Duke Theman, Duke Omar, Duke Sepho, Duke Cenes,",
+  "16": "Duke Core, Duke Gatham, Duke Amalech, these are the sons of Eliphaz in the land of Edom, & these are the sons of Ada.",
+  "17": "These also were the sons of Rahuel, the son of Esau: Duke Nahath, Duke Zara, Duke Samma, Duke Meza. And these be the Dukes of Rahuel, in the Land of Edom: these be the sons of Basemath the wife of Esau.",
+  "18": "And these were the sons of Oolibama the wife of Esau: Duke Jehus, Duke Ihelon, Duke Core. These be the Dukes of Oolibama, the daughter of Ana, and wife of Esau.",
+  "19": "These are the sons of Esau, and these are the Dukes of them: the same is Edom.",
+  "20": "These are the sons of Seir the Horreite, the inhabiters of the land: Lotan, and Sobal, and Sebeon, and Ana,",
+  "21": "and Dison, and Eser, and Disan. These are Dukes of the Horreite, the sons of Seir in the Land of Edom.",
+  "22": "And Lotan had sons: Hori and Heman. And the sister of Lotan was Thamna.",
+  "23": "And these were the sons of Sobal: Alvan and Manahat, and Ebal, and Sepho, and Onam.",
+  "24": "And these were the sons of Sebeon: Aia and Ana. This is Ana that found the hot waters in the wilderness, when he fed the asses of Sebeon his father:",
+  "25": "and he had a son Dison, and a daughter Oolibama.",
+  "26": "And these were the sons of Dison: Hamdan, and Eseban, and Iethram, and Charan.",
+  "27": "These also were the sons of Eser: Balaan, and Zavan, and Acan.",
+  "28": "And Disan had sons: Hus, and Aram.",
+  "29": "These were Dukes of the Horreites: Duke Lotan, Duke Sobal, Duke Sebeon, Duke Ana,",
+  "30": "Duke Dison, Duke Eser, Duke Disan: these were Dukes of the Horreites that ruled in the Land Seir.",
+  "31": "And the kings that ruled in the land of Edom, before that the children of Israel had a king, were these:",
+  "32": "Bela the son of Beor, and the name of his city Denaba.",
+  "33": "And Bela died, and Jobab the son of Zara of Bosra reigned in his stead.",
+  "34": "And when Jobab was dead, Husam of the land of the Themans reigned in his stead.",
+  "35": "He also being dead, there reigned in his stead Adad the son of Badad, that struck Madian in the country of Moab: and the name of his city was Avith.",
+  "36": "And when Adad was dead, there reigned for him Semla of Masreca.",
+  "37": "He also being dead, Saul of the river Rohoboth, reigned in his stead.",
+  "38": "And when he also was dead, Balanan the son of Achobor succeeded into the Kingdom.",
+  "39": "This men also being dead Adar reigned in his place, and the name of his city was Phau: and his wife was called Meetabel, the daughter of Matred, daughter of Mezaab.",
+  "40": "These therefore be the names of the Dukes of Esau in their kindreds, and places, and callings: Duke Thamna, Duke Alva, Duke Jetheth,",
+  "41": "Duke Oolibama, Duke Ela, Duke Phinon,",
+  "42": "Duke Cenez, Duke Theman, Duke Mabsar,",
+  "43": "Duke Magdiel, Duke Hiram: these are the Dukes of Edom dwelling in the land of their Empire, the same is Esau the father of the Idumeans."
+ },
+ "ref_coverage": {
+  "janvier": 43,
+  "have": {
+   "s_dismas": 43,
+   "odr_com": 43,
+   "sabates_a": 43,
+   "madueke_b": 43
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 172,
+ "triage": "R3-READY",
+ "secs": 6.8
+}

@@ -1,0 +1,1035 @@
+{
+ "chapter": 12,
+ "n_verses": 20,
+ "n_cells": 80,
+ "n_pass": 79,
+ "rate": 0.9875,
+ "ref_means": {
+  "s_dismas": 0.9851,
+  "odr_com": 0.9859,
+  "sabates_a": 0.978,
+  "madueke_b": 0.978
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 1.0,
+  "S9": 1.0,
+  "S6": 0.95
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 1,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 14,
+   "worst": 0.888,
+   "from": "chapter",
+   "text": "When Abtam therefore was entred into Egypt, the Agyptians Abram ſaw the woman that ſhe was paſſing beautiful."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and our Lord ſaid to Abram Goe forth of thy counA trie, and our of thy kinred, and out of thy fathers houſe, and come into a land, which I wil ſhew thee.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "and our Lord ſaid to Abram: Goe forth of thy counA trie, and out of thy kinred, and out of thy fathers houſe, and come into a land, which I wil ſhew thee.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S9": {
+    "text": "and our Lord ſaid to Abram Goe forth of thy countrie, and out of thy kinred, and out of thy fathers houſe, and come into a land, which I wil ſhew thee.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "and our Lord ſaid to Abram: Goe forth of thy countrie and out of thy kindred, and out of thy tathers houſe and come into a land which I wil ſhew thee.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And I wil make thee into a great nation, and I wil bleſſe thee, and magnifie thy name, and thou ſhalt be bleſſed.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And I wil make thee into a great nation, and I wil bleſſe thee, and magnifie thy name, and thou ſhalt be bleſſed.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And I wil make thee into a great nation, and I wil bleſſe thees, and magnifie thy name, and thou ſhalt be bleſſed.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "And I wil make thee into a great nation, and I wil bleſſe thee, and magnife thy name and thou ſhalt be bleſſed.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "I wil bleſſe them and bleſſe thee, and curſſe them that curſſe thee, and IN THEE ſhal al the kindreds of the earth be bleſſed.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "I wil bleſſe them and bleſſe thee, and curſſe them that curſſe thee, and IN THEE ſhal al the kindreds of the earth be bleſſed.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S9": {
+    "text": "I wil bleſſe them and bleſſe thee, and curſſe them that curſſe thee, and: IN THEE ſhal al the kindreds of the earth be bleſſed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "I wil bleſſe them that bleſſe thee, and curſe them that curſe thee, and in this: ſhal al the kindreds of the earth be bleſſed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.935,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "Abram therfore went out as our Lord had commanded him, and with him went Lot ſeauentie fiue yeares old was Abram when he went forth out of Haran.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "Abram therfore went out as our Lord had commanded him, and with him went Lot: ſeauentie fiue yeares old was Abram when he went forth out of Haran.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "Abram therfore went out as our Lord had commanded hames him, and with him went Lot ſeauentie fiue yeares old was al Abram when he went forth out of Haran.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.912,
+     "madueke_b": 0.912
+    }
+   },
+   "S6": {
+    "text": "Abtam therfore went out as our Lord had commanded him, and with him went Lot: ſeauentie fiue veares old was Abram when he forth out of Haran.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And he tooke Sarai his wife, and Lot his brothers ſonne, and al the ſubſtance which they had poſſeſſed, and the ſoules which they had gotten in Haran and went forth to goe into the land of Chanaan. And when they were come into it,",
+    "from": "p71",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And he tooke Sarai his wife, and Lot his brothers ſonne, and al the ſubſtance which they had poſſeſſed, and the ſoules which they had gotten in Haran and went forth to goe into the land of Chanaan. And when they were come into it,",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And he tooke Sarai his wife, and Lot his brothers ſonne, and al the ſubſtance which they had poſſeſſed, and the ſoules which they had gotten in Haran: and went forth to goe into the land of Chanaan. And when they were come into it,",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "And he tooke Sarai his wife, and Lot his brothers ſonne and al the ſubſtance wnch they had poſſeſſed, aud the ſoules which they had gotten in Haran: and wen: torth to goe into the land of Chanaan. And when they were come into it,",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "Abram paſſed through the countrie vnto the place Sichem, as farre as the noble vale: and the Cananite was at that time in the countrie.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "Abram paſſed through the countrie vnto the place Sichem, as farre as the noble vale and the Cananite was at that time in the countrie.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "Abram. paſſed through the countrie vnto the place Sichem, as farre as the noble vale and the Cananite was at that time in the countrie.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "Abram paffed through the countrie vnto the place Sichem, as farre as the noble vale: and the Cananite was at that time in the countrie.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And our Lord appeared to Abram, and ſaid to him: To thy ſeed wil I giue this land. Who builded there an altar to our Lord, that had appeared to him.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And our Lord appeared to Abram, and ſaid to him: To thy ſeed wil I giue this land. Who builded there an altar to our Lord, that had appeared to him.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And our Lord appeared to Abram, and ſaid to him: To thy ſeed wil I giue this land. Who builded there :an altar to our Lord, that had appeared to him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And our Lord appeared to Abram, and ſaid to him: To thy ſeed wil I giue this land. Who builded there an altar to our Lord, that had appeared to him..",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And marching on from thence to a mountaine, that was on the eaſt ſide of Bethel, there he pitched his tent, hauing Bethel on the weſt, and Hay on the eaſt: he builded there alſo an altar ro our Lord, and called vpon his name.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.991,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S3": {
+    "text": "And marching on from thence to a mountaine, that was on the eaſt ſide of Bethel, there he pitched his tent, hauing Bethel on the weſt, and Hay on the eaſt he builded there alſo an altar to our Lord, and called vpon his name.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.995,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And marching on from thence to a mountaine, that was on the eaſt ſide of Bethel, there he pitched his tent, hauing Bethel on the weſt, and Hay on the eaſt: he builded there alſo an altar to our Lord, and called vpon his name.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.995,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And marchins on from thence to a mountaine, that was on the eaſtde ot Bethel, there he pitched his tent, hauing Bethel on the weſt, and Hay on the eaſt: he builded there alſo an altar to our Lord, and calice von his name.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.954,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And Abram went forward going, and proceding on to the ſouth.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Abram went forward going, and proceding on to the ſouth.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Abram went forward going, and proceding on to the ſouth.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Abram went forward going, and proceeding on to the ſouth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And there came a famine in the countrie and Abram deſcended into Egypt, to be as a pilgrime there for the famine was very ſore in the land.",
+    "from": "p71",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "And there came a famine in the countrie and Abram deſcended into Egypt, to be as a pilgrime there for the famine was very fore in the land.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And there 3r camea famine in the countrie: and Abram deſcended into Egypt, to be as a pilgrime there for the famine was very ſore in theoland.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "And there came a famine in the countrie: and Abtam deſcended into Egypt, to be as a pilgrime there: for the tamine was very ſore in the land.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And when he was nere to enter into Egypt, he ſaid to Sarai his wife I know that thou art a fayre woman:",
+    "from": "p71",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And when he was nere to enter into Egypt, he ſaid to Sarai his wife I know that thou art a fayre woman:",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And when he was nere to enter into gypt, he ſaid to Sarai his wife I know that thou art a fayre woman:",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "And when he was neer to enter into Ægypt, he laid to Sarai his wife: I know that thou art a fayre woman,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "and that when the gvptians ſhal ſce thee, they wil ſay She is his wife: and they wil til me, and reſerue thee.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.963,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S3": {
+    "text": "and that when the Egyptians ſhal ſee thee, they wil ſay She is his wife and they wil til me, and reſerue thee.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.991,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "†and that when the gyptians ſhal ſee thee, rhey wil ſay She is his wife: and they wil til me, and reſerue thee.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.972,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "and that the Egyptians ſhal ſee thee, they wil ſay: She is his wife, and they wil kilme, and reſerue thee.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.926,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "Say therfore, I pray thee, that thou art my ſiſter: that I may be wel vſed for thee, and that my ſoule may liue for thy ſake.",
+    "from": "p72",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "Say therfore, I pray thee, that thou art my ſiſter that I may be wel vſed for thee, and that my ſoule may liue for thy ſake.",
+    "from": "p76",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "Say therfore, I pray thee, that thou art my ſiſter: that I may be wel vſed for thee, and that my ſoule may liue for thy ſake.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "Say therfore, I pray thee, that thou art my ſiſter : that I may be wel vſod for thee, and that my ſoule may liue tor thy ſake.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "When Abram therfore was entred into Egypt, the Egiptians ſawe the woman that ſhe was paſſing beautiful.",
+    "from": "p72",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S3": {
+    "text": "When Abram therfore was entred into Egypt, the Agiptians ſawe the woman that ſhe was paſſing beautiful.",
+    "from": "p76",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S9": {
+    "text": "When Abram therfore was entred into Egypt, the cor. Agiptians ſawe the woman that ſhe was paſſing beautiful.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S6": {
+    "text": "When Abtam therefore was entred into Egypt, the Agyptians Abram ſaw the woman that ſhe was paſſing beautiful.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.888,
+     "odr_com": 0.888,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And the princes told Pharao, and praiſed her to him: and the woman was taken into the houſe of Pharao.",
+    "from": "p72",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And the princes told Pharao, and praiſed her to him: and the woman was taken into the houſe of Pharao.",
+    "from": "p76",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And the princes told Pharao, and praiſed her to him: and Pha- the woman was taken into the houſe of Pharao.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "And the Princes told Pharao, and praiſed her to him: and the woman was taken into the houſe of Pharao.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And they vſed Abram wel for her ſake. And he had ſheepe and oxen and he aſſes, and men ſeruants, and maid ſeruants, and ſhee aſſes, and Cammels.",
+    "from": "p72",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "And they vſed Abram wel for her ſake. And he had ſheepe and owen and he aſſes, and men ſeruants, and maid ſeruants, and ſhee aſſes, and Cammels.",
+    "from": "p76",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And do- they vſed Abram wel for her ſake. And he had ſheepe and oxen and he aſſes, and men ſeruants, and maid ſeruants, and ſhee aſſes, and Cammels.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "And they vſed Abram wel for her ſake. Aud he had ſheep and oxen and he aſſes, and men ſeruants, and maid ſeruants, and ſhe aſſes, and Camels.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "But our Lord ſcourged Pharao with very ſore plagues, and his houſe for Sarai Abrams wife.",
+    "from": "p72",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S3": {
+    "text": "But our Lord : ſcourged Pharao with very ſore plagues, and his houſe for Sarai Abrams wife.",
+    "from": "p76",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S9": {
+    "text": "But our Lord :: ſcourged Pha-rao with very ſore plagues, and his houſe for Sarai Abrams wife.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſcourged Pharao with very fore plagues, and his houſe, for Sarai Abrams wife.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And Pharao called Abram, and ſaid to him What is this that thou haſt done to me? why didſt thou nor rel me that ſhe was thy wife?",
+    "from": "p72",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "And Pharao called Abram, and ſaid to him: What is this that thou haſt done to me? Why didſt thou not tel me that ſhe was thy wife?",
+    "from": "p76",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Pharao called Abram, and ſaid to him What8 is this that thou haſt done to me? Why didſt thou not tel me that ſhe was thy wife",
+    "from": "p82",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Phatao called Abram, and ſaid to him: What is this that thou haſt done to mer Why didtt thou not tel me that ſhe was thy wifer",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "For what cauſe didſt thou ſay, ſhe was thy ſiſter, that I might take her to my wife? Now therfore there is thy wife, take her, and goe thy ways.",
+    "from": "p72",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "For what cauſe didſt thou ſay, ſhe was thy ſiſter, that I might take her to my wife? Now therfore there is thy wife, take her, and goe thy ways.",
+    "from": "p76",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "For what cauſe didſt thou ſay, ſhe was thy ſiſter, that I might take her to my wife? Now therfore there is thy wife, take her, and goe thy ways.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "For what eauſe didſt thou ſay ſhe was thy ſiſtet, that I might take her to my wifer Now therfore there is thy wite, take her, and goe thy wayes.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And Pharao gaue certaine men commandment in the behalfe of Abram and they conducted him, and his wife, and al that he had.",
+    "from": "p72",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Pharao gaue certaine men commandment in the behalfe of Abram and they conducted him, and his wife, and al that he had.",
+    "from": "p76",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Pharao gaue certaine men commandment in the behalfe of Abram and they conducted him, and his wife, and al that he had.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Pharao gaue certaiue men commandement in the behalte of Abram: and they conducted him, and his wife, and al that he had.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And our Lord ſaid to Abram: Goe forth of thy countrie, and out of thy kinred, and out of thy fathers houſe, and come into a land, which I wil ſhew thee.",
+   "odr_com": "AND our Lord said to Abram: Goe forth of thy countrie, and out of thy kinred, and out of thy fathers house, and come into a land, which I wil shew thee.",
+   "sabates_a": "And our Lord said to Abram: Go forth of thy country, and out of thy kindred, and out of thy father's house, and come into a land which I will shew thee.",
+   "madueke_b": "And our Lord said to Abram: Go forth of thy country, and out of thy kindred, and out of thy father's house, and come into a land which I will shew thee."
+  },
+  "2": {
+   "s_dismas": "And I wil make thee into a great nation, and I wil bleſſe thee, and magnifie thy name, and thou ſhalt be bleſſed.",
+   "odr_com": "And I wil make thee into a great nation, and I wil blesse thee, and magnifie thy name, and thou shalt be blessed.",
+   "sabates_a": "And I will make thee into a great nation, and I will bless thee, and magnify thy name, and thou shalt be blessed.",
+   "madueke_b": "And I will make thee into a great nation, and I will bless thee, and magnify thy name, and thou shalt be blessed."
+  },
+  "3": {
+   "s_dismas": "I wil bleſſe them that bleſſe thee, and curſſe them that curſſe thee, and In thee ſhal al the kindreds of the earth be bleſſed.",
+   "odr_com": "I wil blesse them and blesse thee, and cursse them that cursse thee, and IN THEE shal al the kindreds of the earth be blessed.",
+   "sabates_a": "I will bless them that bless thee, and curse them that curse thee, and IN Thee shall all the kindreds of the earth be blessed.",
+   "madueke_b": "I will bless them that bless thee, and curse them that curse thee, and IN THEE shall all the kindreds of the earth be blessed."
+  },
+  "4": {
+   "s_dismas": "Abram therfore went out as our Lord had commanded him, and with him went Lot: ſeauentie fiue yeares old was Abram when he went forth out of Haran.",
+   "odr_com": "Abram therfore went out as our Lord had commanded him, and with him went Lot: seauentie fiue yeares old was Abram when he went forth out of Haran.",
+   "sabates_a": "Abram therefore went out as our Lord had commanded him, and with him went Lot: seventy five years old was Abraham when he went forth out of Haran.",
+   "madueke_b": "Abram therefore went out as our Lord had commanded him, and with him went Lot: seventy five years old was Abraham when he went forth out of Haran."
+  },
+  "5": {
+   "s_dismas": "And he tooke Sarai his wife, and Lot his brothers ſonne, and al the ſubſtance which they had poſſeſſed, and the ſoules which they had gotten in Haran: and went forth to goe into the land of Chanaan. And when they were come into it,",
+   "odr_com": "And he tooke Sarai his wife, and Lot his brothers sonne, and al the substance which they had possessed, and the soules which they had gotten in Haran: and went forth to goe into the land of Chanaan. And when they were come into it,",
+   "sabates_a": "And he took Sarai his wife, and Lot his brother's son, and all the substance which they had possessed, and the souls which they had gotten in Haran: and went forth to go into the land of Chanaan. And when they were come into it.",
+   "madueke_b": "And he took Sarai his wife, and Lot his brother's son, and all the substance which they had possessed, and the souls which they had gotten in Haran: and went forth to go into the land of Chanaan. And when they were come into it."
+  },
+  "6": {
+   "s_dismas": "Abram paſſed through the countrie vnto the place Sichem, as farre as the noble vale: and the Cananite was at that time in the countrie.",
+   "odr_com": "Abram passed through the countrie vnto the place Sichem, as farre as the noble vale: and the Cananite was at that time in the countrie.",
+   "sabates_a": "Abram passed through the country unto the place Sichem, as far as the noble vale: and the Chananite was at that time in the country.",
+   "madueke_b": "Abram passed through the country unto the place Sichem, as far as the noble vale: and the Chananite was at that time in the country."
+  },
+  "7": {
+   "s_dismas": "And our Lord appeared to Abram, and ſaid to him: To thy ſeed wil I giue this land. Who builded there an altar to our Lord, that had appeared to him.",
+   "odr_com": "And our Lord appeared to Abram, and said to him: To thy seed wil I giue this land. Who builded there an altar to our Lord, that had appeared to him.",
+   "sabates_a": "And our Lord appeared to Abram, and said to him: To thy seed will I give this land. Who builded there an altar to our Lord, that had appeared to him.",
+   "madueke_b": "And our Lord appeared to Abram, and said to him: To thy seed will I give this land. Who builded there an altar to our Lord, that had appeared to him."
+  },
+  "8": {
+   "s_dismas": "And marching on from thence to a mountaine, that was on the eaſt ſide of Bethel, there he pitched his tent, hauing Bethel on the weſt, and Hay on the eaſt: he builded there alſo an altar to our Lord, and called vpon his name.",
+   "odr_com": "And marching on from thence to a mountaine, that was on the east side of Bethel, there he pitched his tent, hauing Bethal on the west, and Hay on the east: he builded there also an altar to our Lord, and called vpon his name.",
+   "sabates_a": "And marching on from thence to a mountain, that was on the east side of Bethel, there he pitched his tent, having Bethel on the west, and Hai on the east: he builded there also an altar to our Lord, and called upon his name.",
+   "madueke_b": "And marching on from thence to a mountain, that was on the east side of Bethel, there he pitched his tent, having Bethel on the west, and Hai on the east: he builded there also an altar to our Lord, and called upon his name."
+  },
+  "9": {
+   "s_dismas": "And Abram went forward going, and proceding on to the ſouth.",
+   "odr_com": "And Abram went forward going, and proceding on to the south.",
+   "sabates_a": "And Abram went forward going, and proceeding on to the south.",
+   "madueke_b": "And Abram went forward going, and proceeding on to the south."
+  },
+  "10": {
+   "s_dismas": "And there came a famine in the countrie: and Abram deſcended into Ægypt, to be as a pilgrime there: for the famine was very ſore in the land.",
+   "odr_com": "And there came a famine in the countrie: and Abram descended into Ægypt, to be as a pilgrime there: for the famine was very sore in the land.",
+   "sabates_a": "And there came a famine in the country: and Abram descended into Ægypt, to be as a pilgrim there: for the famine was very sore in the land.",
+   "madueke_b": "And there came a famine in the country: and Abram descended into Aegypt, to be as a pilgrim there: for the famine was very sore in the land."
+  },
+  "11": {
+   "s_dismas": "And when he was nere to enter into Ægypt, he ſaid to Sarai his wife: I know that thou art a fayre woman:",
+   "odr_com": "And when he was nere to enter into Ægypt, he said to Sarai his wife: I know that thou art a fayre woman:",
+   "sabates_a": "And when he was near to enter into Ægypt, he said to Sarai his wife: I know that thou art a fair woman,",
+   "madueke_b": "And when he was near to enter into Aegypt, he said to Sarai his wife: I know that thou art a fair woman,"
+  },
+  "12": {
+   "s_dismas": "and that when the Ægyptians ſhal ſee thee, they wil ſay: She is his wife: and they wil kil me, and reſerue thee.",
+   "odr_com": "and that when the Ægyptians shal see thee, they wil say: She is his wife: and they wil til me, and reserue thee.",
+   "sabates_a": "and that when the Ægyptians shall see thee, they will say: She is his wife; and they will kill me, and reserve thee.",
+   "madueke_b": "and that when the Aegyptians shall see thee, they will say: She is his wife; and they will kill me, and reserve thee."
+  },
+  "13": {
+   "s_dismas": "Say therfore, I pray thee, that thou art my ſiſter: that I may be wel vſed for thee, and that my ſoule may liue for thy ſake.",
+   "odr_com": "Say therfore, I pray thee, that thou art my sister: that I may be wel vsed for thee, and that my soule may liue for thy sake.",
+   "sabates_a": "Say therefore, I pray thee, that thou art my sister: that I may be well used for thee, and that my soul may live for thy sake.",
+   "madueke_b": "Say therefore, I pray thee, that thou art my sister: that I may be well used for thee, and that my soul may live for thy sake."
+  },
+  "14": {
+   "s_dismas": "When Abram therfore was entred into Ægypt, the Ægiptians ſawe the woman that ſhe was paſſing beautiful.",
+   "odr_com": "When Abram therfore was entred into Ægypt, the Ægiptians sawe the woman that she was passing beautiful.",
+   "sabates_a": "When Abram therefore was entered into Ægypt, the Ægyptians, saw the woman that she was passing beautiful.",
+   "madueke_b": "When Abram therefore was entered into Aegypt, the Aegyptians, saw the woman that she was passing beautiful."
+  },
+  "15": {
+   "s_dismas": "And the princes told Pharao, and praiſed her to him: and the woman was taken into the houſe of Pharao.",
+   "odr_com": "And the princes told Pharao, and praised her to him: and the woman was taken into the house of Pharao.",
+   "sabates_a": "And the Princes told Pharao, and praised her to him: and the woman was taken into the house of Pharao.",
+   "madueke_b": "And the Princes told Pharao, and praised her to him: and the woman was taken into the house of Pharao."
+  },
+  "16": {
+   "s_dismas": "And they vſed Abram wel for her ſake. And he had ſheepe and oxen and he aſſes, and men ſeruants, and maid ſeruants, and ſhee aſſes, and Cammels.",
+   "odr_com": "And they vsed Abram wel for her sake. And he had sheepe and oxen and he asses, and men seruants, and maid seruants, and shee asses, and Cammels.",
+   "sabates_a": "And they used Abram well for her sake. And he had sheep and oxen and he asses, and men servants, and maid servants, and she asses, and Camels.",
+   "madueke_b": "And they used Abram well for her sake. And he had sheep and oxen and he asses, and men servants, and maid servants, and she asses, and Camels."
+  },
+  "17": {
+   "s_dismas": "But our Lord ſcourged Pharao with very ſore plagues, and his houſe for Sarai Abrams wife.",
+   "odr_com": "But our Lord scourged Pharao with very sore plagues, and his house for Sarai Abrams wife.",
+   "sabates_a": "And our Lord scourged Pharao with very sore plagues, and his house, for Sarai Abram's wife.",
+   "madueke_b": "And our Lord scourged Pharao with very sore plagues, and his house, for Sarai Abram's wife."
+  },
+  "18": {
+   "s_dismas": "And Pharao called Abram, and ſaid to him: What is this that thou haſt done to me? why didſt thou not tel me that ſhe was thy wife?",
+   "odr_com": "And Pharao called Abram, and said to him: What is this that thou hast done to me? Why didst thou not tel me that she was thy wife?",
+   "sabates_a": "And Pharao called Abram, and said to him: What is this that thou hast done to me? Why didst thou not tell me that she was thy wife?",
+   "madueke_b": "And Pharao called Abram, and said to him: What is this that thou hast done to me? Why didst thou not tell me that she was thy wife?"
+  },
+  "19": {
+   "s_dismas": "For what cauſe didſt thou ſay, ſhe was thy ſiſter, that I might take her to my wife? Now therfore there is thy wife, take her, and goe thy ways.",
+   "odr_com": "For what cause didst thou say, she was thy sister, that I might take her to my wife? Now therfore there is thy wife, take her, and goe thy ways.",
+   "sabates_a": "For what cause didst thou say she was thy sister, that I might take her to my wife? Now therefore there is thy wife, take her, and go thy ways.",
+   "madueke_b": "For what cause didst thou say she was thy sister, that I might take her to my wife? Now therefore there is thy wife, take her, and go thy ways."
+  },
+  "20": {
+   "s_dismas": "And Pharao gaue certaine men commandment in the behalfe of Abram: and they conducted him, and his wife, and al that he had.",
+   "odr_com": "And Pharao gaue certaine men commandment in the behalfe of Abram: and they conducted him, and his wife, and al that he had.",
+   "sabates_a": "And Pharao gave certain men commandment in the behalf of Abram: and they conducted him, and his wife, and all that he had.",
+   "madueke_b": "And Pharao gave certain men commandment in the behalf of Abram: and they conducted him, and his wife, and all that he had."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And our Lord said to Abram: Go forth of thy country, and out of thy kindred, and out of thy father's house, and come into a land which I will shew thee.",
+  "2": "And I will make thee into a great nation, and I will bless thee, and magnify thy name, and thou shalt be blessed.",
+  "3": "I will bless them that bless thee, and curse them that curse thee, and IN Thee shall all the kindreds of the earth be blessed.",
+  "4": "Abram therefore went out as our Lord had commanded him, and with him went Lot: seventy five years old was Abraham when he went forth out of Haran.",
+  "5": "And he took Sarai his wife, and Lot his brother's son, and all the substance which they had possessed, and the souls which they had gotten in Haran: and went forth to go into the land of Chanaan. And when they were come into it.",
+  "6": "Abram passed through the country unto the place Sichem, as far as the noble vale: and the Chananite was at that time in the country.",
+  "7": "And our Lord appeared to Abram, and said to him: To thy seed will I give this land. Who builded there an altar to our Lord, that had appeared to him.",
+  "8": "And marching on from thence to a mountain, that was on the east side of Bethel, there he pitched his tent, having Bethel on the west, and Hai on the east: he builded there also an altar to our Lord, and called upon his name.",
+  "9": "And Abram went forward going, and proceeding on to the south.",
+  "10": "And there came a famine in the country: and Abram descended into Ægypt, to be as a pilgrim there: for the famine was very sore in the land.",
+  "11": "And when he was near to enter into Ægypt, he said to Sarai his wife: I know that thou art a fair woman,",
+  "12": "and that when the Ægyptians shall see thee, they will say: She is his wife; and they will kill me, and reserve thee.",
+  "13": "Say therefore, I pray thee, that thou art my sister: that I may be well used for thee, and that my soul may live for thy sake.",
+  "14": "When Abram therefore was entered into Ægypt, the Ægyptians, saw the woman that she was passing beautiful.",
+  "15": "And the Princes told Pharao, and praised her to him: and the woman was taken into the house of Pharao.",
+  "16": "And they used Abram well for her sake. And he had sheep and oxen and he asses, and men servants, and maid servants, and she asses, and Camels.",
+  "17": "And our Lord scourged Pharao with very sore plagues, and his house, for Sarai Abram's wife.",
+  "18": "And Pharao called Abram, and said to him: What is this that thou hast done to me? Why didst thou not tell me that she was thy wife?",
+  "19": "For what cause didst thou say she was thy sister, that I might take her to my wife? Now therefore there is thy wife, take her, and go thy ways.",
+  "20": "And Pharao gave certain men commandment in the behalf of Abram: and they conducted him, and his wife, and all that he had."
+ },
+ "ref_coverage": {
+  "janvier": 20,
+  "have": {
+   "s_dismas": 20,
+   "odr_com": 20,
+   "sabates_a": 20,
+   "madueke_b": 20
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 80,
+ "triage": "R3-READY",
+ "secs": 5.6
+}

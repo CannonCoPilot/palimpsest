@@ -1,0 +1,54 @@
+{
+ "created": "2026-08-02T23:33Z",
+ "chapters": {
+  "23": {
+   "passes": [
+    {
+     "at": "2026-08-02T23:46Z",
+     "pass_before": 56,
+     "pass_after": 71,
+     "achievable": 76,
+     "delta": 15,
+     "signals": [
+      "4"
+     ],
+     "diagnostics": [
+      "leaf_diag",
+      "left_strip_probe"
+     ],
+     "rule": "jp2-S06 p90/p92 left bound 0.215->0.14 (annotation column absent on those leaves); _is_running_head extended for a head with a misplaced stop",
+     "alert": "",
+     "changed_text": true,
+     "audited": true,
+     "notes": "S6 0.25 -> ; ch23 56->71 (+15), ch24 227->235 (+8) knock-on via shared leaf p92; probe generalized off the hardcoded 1609 bound"
+    }
+   ]
+  },
+  "39": {
+   "passes": [
+    {
+     "at": "2026-08-03T00:04Z",
+     "pass_before": 72,
+     "pass_after": 81,
+     "achievable": 92,
+     "delta": 9,
+     "signals": [
+      "4"
+     ],
+     "diagnostics": [
+      "leaf_diag.py",
+      "left_strip_probe.py",
+      "s6_bounds_probe.py(new)",
+      "faithfulness_audit.py"
+     ],
+     "rule": "jp2-S06 ALTERNATES its margin by leaf parity, and every PAGE_OVERRIDE for it was half-done. Even leaves set glosses in a RIGHT column at 0.745-0.765 and run body left to 0.13-0.16; odd leaves set them LEFT at 0.10-0.21 and run body right to 0.825. Prior entries each varied the axis its hunt was looking for and left the other at the default (p74/p128/p150/p156 tuned RIGHT beside a default left; p90/p92 tuned LEFT beside a default right) - rule C, in the page model's own table. New s6_bounds_probe.py reads BOTH bounds per leaf: line-membership (left_strip_probe) decides WHETHER a left bound moves, the leaf's own token histogram decides WHERE TO, and the right bound is the trough before a dip-then-spike. 62 of 127 leaves differed, every one even.",
+     "alert": "",
+     "changed_text": true,
+     "audited": true,
+     "notes": "ch39 72->81/92. Book 5349->5547/6116 = 0.9070, +198 cells over 38 chapters, ZERO regressions; the 10 chapters in R3's live queue (41,49,26,21,15,47,10,43,32,5) are NOT yet re-measured, so more knock-on is outstanding. 216 tests pass. THREE PROBE DEFECTS CAUGHT BY CROSS-CHECKING AGAINST LEAVES ALREADY READ BY HAND: (1) a histogram cannot tell a clipped body from a full-width note BLOCK - it proposed importing all 88 of ch23 p89's note tokens into scripture, and only line-membership refuses that; (2) taking the FIRST dip-then-spike caught a ripple in the taper of body line-ends (p132 at 0.73) instead of the 22-token column at 0.76 - a column is the TALLEST thing on its side of a leaf; (3) corroboration measured at a leaf's CURRENT bound is a fact about the campaign's history, not the page - p90/p92 scored 0/0 because they were fixed yesterday, and the leaves that motivated the probe read as uncorroborated. Cutting scripture is not symmetric with keeping a gloss, so an uncorroborated right bound moves only on an unmistakable spike: p35 (a real citation column) and p79 (body) BOTH spike exactly 12, so 12 discriminates nothing - the bar sits above both and p35 is carried as a hand-verified entry with its reason. p105 and p159 rejected by eye. p92's right bound confirms the prediction that yesterday's left-only fix was half a fix."
+    }
+   ]
+  }
+ },
+ "updated": "2026-08-03T00:04Z"
+}

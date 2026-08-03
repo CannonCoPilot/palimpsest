@@ -1,0 +1,1133 @@
+{
+ "chapter": 8,
+ "n_verses": 22,
+ "n_cells": 88,
+ "n_pass": 87,
+ "rate": 0.9886,
+ "ref_means": {
+  "s_dismas": 0.9809,
+  "odr_com": 0.9828,
+  "sabates_a": 0.9611,
+  "madueke_b": 0.9611
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 1.0,
+  "S9": 1.0,
+  "S6": 0.9545
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 1,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 14,
+   "worst": 0.876,
+   "from": "p51",
+   "text": "In the ſecond month, the ſeauen and twentieth day of the month the earth was dried."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "AND God remembred Noc, and al the beaſts, and al A cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreaſed.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "AND God remembred Noe, and al the beaſts, and al the Acattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreaſed.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "and God Noe, and al the beaſts, and al the A cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreaſed.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.919,
+     "odr_com": 0.919,
+     "sabates_a": 0.906,
+     "madueke_b": 0.906
+    }
+   },
+   "S6": {
+    "text": "ND God remembred Noe, and al the beaſts, and al the cattle which were with him in the arke, and brought a wind vpon the earth, and the waters decreaſed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And of fountaines of the depth, and the floud gates of heauen, were ſhut vp and the rayne from heauen was ſtayd.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.973,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S3": {
+    "text": "And the fountaines of the depth, and the floud gates of heauen, were ſhut vp: and the rayne from heauen was ſtayd.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And the of fountaines, of the depth, and the floud gates of heauen, were, ſhut vp: and the rayne from heauen was ſtayd.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.974,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S6": {
+    "text": "And the fountaines of the depth and the floud-gates of heauen were shut vp: and the rayne from heauen was ſtayd.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "the waters returned from the earth going comming they begane to decreaſe after a hundred fiftie dayes.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.903,
+     "madueke_b": 0.903
+    }
+   },
+   "S3": {
+    "text": "And the waters returned from the earth going comming: and they begane to decreaſe after a hundred fiftie dayes.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "And the waters returned from the earth going comming and theyybegane to decreaſe after a hundred fiftie dayes.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "And the waters returned from the earth going & comming; and they began to decreaſe atter an hundred fittie dayes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And the arke reſted the ſeauenth moneth, the ſeauen twentith day of the moneth vpon the mountaines of Armenia.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   },
+   "S3": {
+    "text": "And the arke reſted the ſeauenth moneth, the ſeauen & twentith day of the moneth vpon the mountaines of Armenia.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   },
+   "S9": {
+    "text": "And the arke reſted the ſeauenth moneth, the ſeauen twentith day of the moneth vpon the mountaines of Armenia.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   },
+   "S6": {
+    "text": "And the arke reſted the ſeauenth month, the ſeauen and twentieth day of the month, vpon the mountaines of Armenia.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "But the waters for al that were going and decreaſing vntil the tenth moneth: for in the tenth moneth, the firſt day of the moneth, the topps of the mountaines appeared. +",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "But the waters for al that were going and decreaſing vntil the tenth moneth: for in the tenth moneth, the ſirſt day of the moneth, the topps of the mountaines appeared.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "But the waters for al that were going and decreaſing vntil the tenth moneth: for in the tenth moneth, the firſt day of the moneth, the topps of the mountaines appeared.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "But the waters for al that were going and decreaſing vntil the tenth nonth: for in the tenth mouth, the firſt day of the month, the tops of the mountanes appeared.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And after that fourtie dayes were paſſed, Noe opening the. windowe of the arke, which he had made, let forth a crowe:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And after that fourtie dayes were paſſed, Noe opening the windowe of the arke, which he had made, let forth a crowe:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And after that fourtie dayes were paſſed, Noe opening the windowe of the arke, which he had made, let forth a crowe:",
+    "from": "p66",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And after that fourtie dayes were paſſed, Noe opeuing the window of the arke, which he had made, let fottha crow:7.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "which went forth, and did :: not returne, til the waters were dried vpon the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "which went forth, and did :: not returne, til the waters were dried vpon the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "which went forth, and did :: not returne, til the waters were dried vpon the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "which went forth, and did not returne, til the waters were dried vpon the earth.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "He ſent forth alſo a doue after him, to if the waters were ceaſed yet vpon the ſace of the earth.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "He ſent forth alſo a doue after him, to ſee8 if the waters were ceaſed yer vpon the ſace of the earth.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "He ſent forth alſo a doue after him, to ſee if the waters were ceaſed yet vpon the face of the earth.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "He ſent forth alſo a doue after him, to ſee if the waters were ceaſed yet vpon the face of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "Which finding not where her ſoote might reſt, returned to him into the arke: for the waters were vpon the whole carth: and he ſtrerched forth his hand, and caught her brought her into the arke.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S3": {
+    "text": "Which finding not where her foote might reſt, returned to him into the arke for the waters were vpon the whole earth and he ſtretched forth his hand, and caught her and brought her into the arke.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "which finding not where her foote might reſt, returned to him into the arke: for the waters were vpon the whole v- earth and he ſtretohed forth his hand, and caught her and brought her into the arke.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "Which finding not where her foot might reſt, returned to him into the arke: tor the waters were vpon the whole earth: and he ſtretched forth his hand and caught her, and brought her into the arke.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And hauing expected yet ſeauen moe dayes, againe he let forth a doe out of the arke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "And hauing expected vet ſeauen moe dayes, againe he let forth a doue out of the arke.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S9": {
+    "text": "And hauing expected yet ſeauen moe dayes, againe he let forth a doue out of the arke.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S6": {
+    "text": "And hauing expected yet ſeauen moe dayes againe he let forth a doue out of the arke.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "But ſhe came to him at euentide, carrying a bough of oliue rree, that had greene leaues in her mouth. Noe therfore vnderſtood that the waters were ceaſed vpon the earth.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "But ſhe came to him at euentide, carrying a bough of an oliue tree, that had greene leaues in her mouth. Noe therfore vnderſtood that the waters were ceaſed vpon the earth.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "But ſhe came to him at euentide, carrying a bough of an oliue tree, that had greene leaues in her mouth. Noe therfore vnderſtood that the waters were ceaſedvpon the earth.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "But ſhe came to him at euentide, carrving a bough of an oliue tree that had green leaues, in her mouth. Noe thertore vnderſtood that the waters were ceaſed vpon the earth.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And he expected yet neuertheles other ſeauen dayes : and mo- he ſent forth a doue, which returned not any more vnto him.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S3": {
+    "text": "And he expected yet neuertheles other ſeauen dayes and he ſent forth a doue, which returned not any more vnto him.",
+    "from": "p60",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "And he expected yet neuertheles other ſeauen dayes : and mo- he ſent forth a doue, which returned not any more vnto him.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S6": {
+    "text": "And he expected yet neuertheles other ſeauen dayes: and he ſent forth a doue, which returned not any more vnto him.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "Therfore in the ſixt hundred and one yeare, the firſt moſo neth, the firſt day of the moneth the waters were cleane minished vpon the earth : and Noe opening the roofe of and arke, Iooked, and ſawe that the face of the earth was dried†",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S3": {
+    "text": "in the ſixt hundred and one yeare, the firſt moneth, the firſt day of the moneth the warers were cleane diminished vpon the earth and Noe opening the roofe of the arke, looked, and ſawe that the face of the earth was dried†",
+    "from": "p60",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S9": {
+    "text": "Therfore in the ſixt hundred and one yeare, the firſt moſo neth, the firſt day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the and arke, looked, and ſawe that the faoe of the earth was dried,",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   },
+   "S6": {
+    "text": "in the ſixt hundred and one yeare, the firſt month, the firſt day of the month, the waters were cleane diminihod vpon the earth: Noe opening the roofe ot the arke, looked, and ſaw that the tace of the earth was dried.4.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.912,
+     "odr_com": 0.912,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "In the ſecond moneth, the ſeuen & twentyth day of the moneth the earth was dried.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   },
+   "S3": {
+    "text": "In :: the ſecond moneth, the ſeuen & twentyth day of the moneth the earth was dried.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   },
+   "S9": {
+    "text": "In the ſecond moneth, the ſeuen twentyth day of the moneth the earth was dried.",
+    "from": "p66",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 1.0,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   },
+   "S6": {
+    "text": "In the ſecond month, the ſeauen and twentieth day of the month the earth was dried.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.876,
+     "odr_com": 0.889,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "†And God ſpake to Noe, ſaying:",
+    "from": "p56",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And God ſpake to Noe, ſaying:",
+    "from": "p60",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And God ſpake to Noe, ſaying:",
+    "from": "p66",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And God ſpake to Noe, ſaying:",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "Goe forth of the arke, thou & thy wife, thy ſonnes and the wiues of thy ſonnes with thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   },
+   "S3": {
+    "text": "Goe forth of the arke, thou thy wife, thy ſonnes and the wiues of thyſonnes with thee.",
+    "from": "p61",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.91,
+     "madueke_b": 0.91
+    }
+   },
+   "S9": {
+    "text": "Goe forth of the arke, thou thy wife, thy ſonnes and the wiues of thy ſonnes with thee.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   },
+   "S6": {
+    "text": "Goe forth of the arke, thou and thy wite, thy ſonnes and the wiues o- of thy ſonnes with thee.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.922,
+     "odr_com": 0.922,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Al cattle, that are with thee of al flesh, as wel in ſoules, as in beaſtes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon: the earth: increaſe and multiplie vpon it.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S3": {
+    "text": "Al cattle, that are with thee of al flesh, as wel in foules, as in beaſtes, al creepers, that creepe vpon the earth, bring out with thee, goe yee vpon the earth: incrcaſe and multiphe vpon it.",
+    "from": "p61",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
+    }
+   },
+   "S9": {
+    "text": "Al cattle, that are with thee of al flesh, as wel in foules, as in beaſtes, al creepers, that creepe vpon the earth, bring out with thee, goe yee vpon the earth: increafe and multiplie vpon it.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S6": {
+    "text": "Al cattle that are with thee, of al fleſh, as wel in foules, as in beaſts, and al creepers that creep vpon the earth, bring out with thee, and goe yee vpon the eart h: increaſe and multiplie vpon it.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "Noo therfore went ſorth, and his ſonnes : his wiſe, and the wiues of his ſonnes with him.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S3": {
+    "text": "Noe therfore went forth, and his ſonnes his wife, and the wiues of his ſonnes with him.",
+    "from": "p61",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "Noe therfore went forth, and his ſonnes: his wife, and the wiues of his ſonnes with him.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "Noe therefore went forth, and his ſonnes his wife, and the wiues ot his ſonnes with him.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Yea 2nd al cattle, beaſtes, and creepers that crepe vpon the earth, according to their kinde, went forth out of the arke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S3": {
+    "text": "Yea and al cattle, beaſtes, and creepers that crepe vpon the earth, according to their kinde, went forth out of the arke.",
+    "from": "p61",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S9": {
+    "text": "Yea and al cattle, beaſtes, and creepers that crepe vpon the earth, according to their kinde, went forth out of the arke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "Yea and al cattle, beaſts, creepers that creepvpon the earth, according tothtir kind, went torth out of the arke.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.905,
+     "odr_com": 0.905,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And Noe″ built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocauſts vpon the Altar.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "And Noe built an Altar toour Lord: and taking of al cattle and foules that were cleane, offered Holoeauſts vpon the Altar.",
+    "from": "p61",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S9": {
+    "text": "And Noe built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocauſts vpon the Altar.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "And Noe built an Altar to our Lord: and takins of al cattle and foules that were cleane, offered Holocauſts vpon the Altar.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And our Lord ſmelled a ſwecre ſauour, and ſald I wil no more curſe the earth for men: for the ſenſe and cogitation of mans hart are prone to euil from their youth I wil no more therfore ſtrike euerie liuing ſoule as I haue done.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſmelled a ſweete ſauour, and ſaid I wil no more curſe the earth for men for the ſenſe and cogitation of mans hart are prone to euil from their youth I wil no more therfore ſtrike euerie liuing ſoule as I haue done.",
+    "from": "p61",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſmelled a ſweete ſauour, and ſaid I wil no more curſe the earth for men for the ſenſe and cogitation of mans hart are prone to euil from their youth I wil no more therfore ſtrike euerie liuing ſoule as I haue done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſmelled a ſweet ſauour, and ſaid: I wil no more curſe the earth for men: for the ſenſe and cogitation of mans hart are prone to euil frontheir vouth Iwil no more therfore ſtrike euerie liuing ſoule as I haue done.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "Al the dayes of the earth, ſeedtime and harueſt, cold and heate, ſommer and winter, night and day ſhal not reſt.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "Al the dayes of the earth, ſeedtime and harueſt, cold and heate, ſommer and winter, night and day ſhal not reſt.",
+    "from": "p61",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "Al the dayes of the earth, ſeed- Noe time and harueft, cold and heate, ſommer and winter, night and day ſhal not reſt.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.946,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S6": {
+    "text": "Al the dayes of the earth, (c ſeed time and harueſt, cold and heate, ſommer and winter, night and day ſhal not reſt.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And God remembred Noe, and al the beaſts, and al the cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreaſed.",
+   "odr_com": "AND God remembred Noe, and al the beasts, and al the cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreased.",
+   "sabates_a": "And God remembered Noe, and all the beasts, and all the cattle which were with him in the ark, and brought a wind upon the earth, and the waters decreased.",
+   "madueke_b": "And God remembered Noe, and all the beasts, and all the cattle which were with him in the ark, and brought a wind upon the earth, and the waters decreased."
+  },
+  "2": {
+   "s_dismas": "And the fountaines of the depth, and the floud gates of heauen, were ſhut vp: and the rayne from heauen was ſtayed.",
+   "odr_com": "And the fountaines of the depth, and the floud gates of heauen, were shut vp: and the rayne from heauen was stayd.",
+   "sabates_a": "And the fountains of the depth and the flood-gates of heaven were shut up: and the rain from heaven was stayed.",
+   "madueke_b": "And the fountains of the depth and the flood-gates of heaven were shut up: and the rain from heaven was stayed."
+  },
+  "3": {
+   "s_dismas": "And the waters returned from the earth going & comming: and they begane to decreaſe after a hundred fiftie dayes.",
+   "odr_com": "And the waters returned from the earth going & comming: and they begane to decrease after a hundred fiftie dayes.",
+   "sabates_a": "And the waters returned from the earth going & coming: and they began to decrease after an hundred fifty days.",
+   "madueke_b": "And the waters returned from the earth going & coming: and they began to decrease after an hundred fifty days."
+  },
+  "4": {
+   "s_dismas": "And the arke reſted the ſeauenth moneth, the ſeauen & twentith day of the moneth vpon the mountaines of Armenia.",
+   "odr_com": "And the arke rested the seauenth moneth, the seauen & twentith day of the moneth vpon the mountaines of Armenia.",
+   "sabates_a": "And the ark rested the seventh month, the seven and twentieth day of the month, upon the mountains of Armenia.",
+   "madueke_b": "And the ark rested the seventh month, the seven and twentieth day of the month, upon the mountains of Armenia."
+  },
+  "5": {
+   "s_dismas": "But the waters for al that were going and decreaſing vntil the tenth moneth: for in the tenth moneth, the firſt day of the moneth, the topps of the mountaines appeared.",
+   "odr_com": "But the waters for al that were going and decreasing vntil the tenth moneth: for in the tenth moneth, the first day of the moneth, the topps of the mountaines appeared.",
+   "sabates_a": "But the waters for all that were going and decreasing until the tenth month: for in the tenth month, the first day of the month, the tops of the mountains appeared.",
+   "madueke_b": "But the waters for all that were going and decreasing until the tenth month: for in the tenth month, the first day of the month, the tops of the mountains appeared."
+  },
+  "6": {
+   "s_dismas": "And after that fourtie dayes were paſſed, Noe opening the windowe of the arke, which he had made, let forth a crowe:",
+   "odr_com": "And after that fourtie dayes were passed, Noe opening the windowe of the arke, which he had made, let forth a crowe:",
+   "sabates_a": "And after that forty days were passed, Noe opening the window of the ark, which he had made, let forth a crow:",
+   "madueke_b": "And after that forty days were passed, Noe opening the window of the ark, which he had made, let forth a crow:"
+  },
+  "7": {
+   "s_dismas": "which went forth, and did a)not returne, til the waters were dried vpon the earth.",
+   "odr_com": "which went forth, and did not returne, til the waters were dried vpon the earth.",
+   "sabates_a": "which went forth, and did not return, till the waters were dried upon the earth.",
+   "madueke_b": "which went forth, and did not return, till the waters were dried upon the earth."
+  },
+  "8": {
+   "s_dismas": "He ſent forth alſo a doue after him, to ſee if the waters were ceaſed yet vpon the face of the earth.",
+   "odr_com": "He sent forth also a doue after him, to see if the waters were ceased yet vpon the face of the earth.",
+   "sabates_a": "He sent forth also a dove after him, to see if the waters were ceased yet upon the face of the earth.",
+   "madueke_b": "He sent forth also a dove after him, to see if the waters were ceased yet upon the face of the earth."
+  },
+  "9": {
+   "s_dismas": "Which finding not where her foote might reſt, returned to him into the arke: for the waters were vpon the whole earth: and he ſtretched forth his hand, and caught her and brought her into the arke.",
+   "odr_com": "Which finding not where her foote might rest, returned to him into the arke: for the waters were vpon the whole earth: and he stretched forth his hand, and caught her and brought her into the arke.",
+   "sabates_a": "Which finding not where her foot might rest, returned to him into the ark: for the waters were upon the whole earth: and he stretched forth his hand and caught her, and brought her into the ark.",
+   "madueke_b": "Which finding not where her foot might rest, returned to him into the ark: for the waters were upon the whole earth: and he stretched forth his hand and caught her, and brought her into the ark."
+  },
+  "10": {
+   "s_dismas": "And hauing expected yet ſeauen moe dayes, againe he let forth a doue out of the arke.",
+   "odr_com": "And hauing expected yet seauen moe dayes, againe he let forth a doue out of the arke.",
+   "sabates_a": "And having expected yet seven more days again he let forth a dove out of the ark.",
+   "madueke_b": "And having expected yet seven more days again he let forth a dove out of the ark."
+  },
+  "11": {
+   "s_dismas": "But ſhe came to him at euentide, carrying a bough of an oliue tree, that had greene leaues in her mouth. Noe therfore vnderſtood that the waters were ceaſed vpon the earth.",
+   "odr_com": "But she came to him at euentide, carrying a bough of an oliue tree, that had greene leaues in her mouth. Noe therfore vnderstood that the waters were ceased vpon the earth.",
+   "sabates_a": "But she came to him at eventide, carrying a bough of an olive tree that had green leaves, in her mouth. Noe therefore understood that the waters were ceased upon the earth.",
+   "madueke_b": "But she came to him at eventide, carrying a bough of an olive tree that had green leaves, in her mouth. Noe therefore understood that the waters were ceased upon the earth."
+  },
+  "12": {
+   "s_dismas": "And he expected yet neuertheles other ſeauen dayes: and he ſent forth a doue, which returned not any more vnto him.",
+   "odr_com": "And he expected yet neuertheles other seauen dayes: and he sent forth a doue, which returned not any more vnto him.",
+   "sabates_a": "And he expected yet nevertheless other seven days: and he sent forth a dove, which returned not any more unto him.",
+   "madueke_b": "And he expected yet nevertheless other seven days: and he sent forth a dove, which returned not any more unto him."
+  },
+  "13": {
+   "s_dismas": "Therfore in the ſixt hundred and one yeare, the firſt moneth, the firſt day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and ſawe that the face of the earth was dried.",
+   "odr_com": "Therfore in the sixt hundred and one yeare, the first moneth, the first day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and sawe that the face of the earth was dried.",
+   "sabates_a": "Therefore in the sixth hundred and one year, the first month, the first day of the month, the waters were clean diminished upon the earth: & Noe opening the roof of the ark, looked, and saw that the face of the earth was dried.",
+   "madueke_b": "Therefore in the sixth hundred and one year, the first month, the first day of the month, the waters were clean diminished upon the earth: & Noe opening the roof of the ark, looked, and saw that the face of the earth was dried."
+  },
+  "14": {
+   "s_dismas": "In b)the ſecond moneth, the ſeuen & twentyth day of the moneth the earth was dried.",
+   "odr_com": "In the second moneth, the seuen & twentyth day of the moneth the earth was dried.",
+   "sabates_a": "In the second month, the seven and twentieth day of the month the earth was dried.",
+   "madueke_b": "In the second month, the seven and twentieth day of the month the earth was dried."
+  },
+  "15": {
+   "s_dismas": "And God ſpake to Noe, ſaying:",
+   "odr_com": "And God spake to Noe, saying:",
+   "sabates_a": "And God spake to Noe, saying:",
+   "madueke_b": "And God spake to Noe, saying:"
+  },
+  "16": {
+   "s_dismas": "Goe forth of the arke, thou & thy wife, thy ſonnes and the wiues of thy ſonnes with thee.",
+   "odr_com": "Goe forth of the arke, thou & thy wife, thy sonnes and the wiues of thy sonnes with thee.",
+   "sabates_a": "Go forth of the ark, thou and thy wife, thy sons and the wives of thy sons with thee.",
+   "madueke_b": "Go forth of the ark, thou and thy wife, thy sons and the wives of thy sons with thee."
+  },
+  "17": {
+   "s_dismas": "Al cattle, that are with thee of al flesh, as wel in foules, as in beaſtes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon the earth: increaſe and multiplie vpon it.",
+   "odr_com": "Al cattle, that are with thee of al flesh, as wel in foules, as in beastes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon the earth: increase and multiplie vpon it.",
+   "sabates_a": "All cattle that are with thee, of all flesh, as well in fowls, as in beasts, and all creepers that creep upon the earth, bring out with thee, and go ye upon the earth: increase and multiply upon it.",
+   "madueke_b": "All cattle that are with thee, of all flesh, as well in fowls, as in beasts, and all creepers that creep upon the earth, bring out with thee, and go ye upon the earth: increase and multiply upon it."
+  },
+  "18": {
+   "s_dismas": "Noe therfore went forth, and his ſonnes: his wife, and the wiues of his ſonnes with him.",
+   "odr_com": "Noe therfore went forth, and his sonnes: his wife, and the wiues of his sonnes with him.",
+   "sabates_a": "Noe therefore went forth, and his sons: his wife, and the wives of his sons with him.",
+   "madueke_b": "Noe therefore went forth, and his sons: his wife, and the wives of his sons with him."
+  },
+  "19": {
+   "s_dismas": "Yea and al cattle, beaſtes, and creepers that crepe vpon the earth, according to their kinde, went forth out of the arke.",
+   "odr_com": "Yea and al cattle, beastes, and creepers that crepe vpon the earth, according to their kinde, went forth out of the arke.",
+   "sabates_a": "Yea and all cattle, beasts, & creepers that creep upon the earth, according to their kind, went forth out of the ark.",
+   "madueke_b": "Yea and all cattle, beasts, & creepers that creep upon the earth, according to their kind, went forth out of the ark."
+  },
+  "20": {
+   "s_dismas": "And Noe ♪built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocauſts vpon the Altar.",
+   "odr_com": "And Noe built an Altar to our Lord: and taking of al cattle and foules, that were cleane, offered Holocausts vpon the Altar.",
+   "sabates_a": "And Noe built an Altar to our Lord: and taking of all cattle and fowls that were clean, offered Holocausts upon the Altar.",
+   "madueke_b": "And Noe built an Altar to our Lord: and taking of all cattle and fowls that were clean, offered Holocausts upon the Altar."
+  },
+  "21": {
+   "s_dismas": "And our Lord ſmelled a ſweete ſauour, and ſaid: I wil no more curſe the earth for men: for the ſenſe and cogitation of mans hart are prone to euil from their youth: I wil no more therfore ſtrike euerie liuing ſoule as I haue done.",
+   "odr_com": "And our Lord smelled a sweete sauour, and said: I wil no more curse the earth for men: for the sense and cogitation of mans hart are prone to euil from their youth: I wil no more therfore strike euerie liuing soule as I haue done.",
+   "sabates_a": "And our Lord smelled a sweet savour, and said: I will no more curse the earth for men: for the sense and cogitation of man's heart are prone to evil from their youth: I will no more therefore strike every living soul as I have done.",
+   "madueke_b": "And our Lord smelled a sweet savour, and said: I will no more curse the earth for men: for the sense and cogitation of man's heart are prone to evil from their youth: I will no more therefore strike every living soul as I have done."
+  },
+  "22": {
+   "s_dismas": "Al the dayes of the earth, a)ſeedtime and harueſt, cold and heate, ſommer and winter, night and day ſhal not reſt.",
+   "odr_com": "Al the dayes of the earth, seedtime and haruest, cold and heate, sommer and winter, night and day shal not rest.",
+   "sabates_a": "All the days of the earth, seed-time and harvest, cold and heat, summer and winter, night and day shall not rest.",
+   "madueke_b": "All the days of the earth, seed-time and harvest, cold and heat, summer and winter, night and day shall not rest."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And God remembered Noe, and all the beasts, and all the cattle which were with him in the ark, and brought a wind upon the earth, and the waters decreased.",
+  "2": "And the fountains of the depth and the flood-gates of heaven were shut up: and the rain from heaven was stayed.",
+  "3": "And the waters returned from the earth going & coming: and they began to decrease after an hundred fifty days.",
+  "4": "And the ark rested the seventh month, the seven and twentieth day of the month, upon the mountains of Armenia.",
+  "5": "But the waters for all that were going and decreasing until the tenth month: for in the tenth month, the first day of the month, the tops of the mountains appeared.",
+  "6": "And after that forty days were passed, Noe opening the window of the ark, which he had made, let forth a crow:",
+  "7": "which went forth, and did not return, till the waters were dried upon the earth.",
+  "8": "He sent forth also a dove after him, to see if the waters were ceased yet upon the face of the earth.",
+  "9": "Which finding not where her foot might rest, returned to him into the ark: for the waters were upon the whole earth: and he stretched forth his hand and caught her, and brought her into the ark.",
+  "10": "And having expected yet seven more days again he let forth a dove out of the ark.",
+  "11": "But she came to him at eventide, carrying a bough of an olive tree that had green leaves, in her mouth. Noe therefore understood that the waters were ceased upon the earth.",
+  "12": "And he expected yet nevertheless other seven days: and he sent forth a dove, which returned not any more unto him.",
+  "13": "Therefore in the sixth hundred and one year, the first month, the first day of the month, the waters were clean diminished upon the earth: & Noe opening the roof of the ark, looked, and saw that the face of the earth was dried.",
+  "14": "In the second month, the seven and twentieth day of the month the earth was dried.",
+  "15": "And God spake to Noe, saying:",
+  "16": "Go forth of the ark, thou and thy wife, thy sons and the wives of thy sons with thee.",
+  "17": "All cattle that are with thee, of all flesh, as well in fowls, as in beasts, and all creepers that creep upon the earth, bring out with thee, and go ye upon the earth: increase and multiply upon it.",
+  "18": "Noe therefore went forth, and his sons: his wife, and the wives of his sons with him.",
+  "19": "Yea and all cattle, beasts, & creepers that creep upon the earth, according to their kind, went forth out of the ark.",
+  "20": "And Noe built an Altar to our Lord: and taking of all cattle and fowls that were clean, offered Holocausts upon the Altar.",
+  "21": "And our Lord smelled a sweet savour, and said: I will no more curse the earth for men: for the sense and cogitation of man's heart are prone to evil from their youth: I will no more therefore strike every living soul as I have done.",
+  "22": "All the days of the earth, seed-time and harvest, cold and heat, summer and winter, night and day shall not rest."
+ },
+ "ref_coverage": {
+  "janvier": 22,
+  "have": {
+   "s_dismas": 22,
+   "odr_com": 22,
+   "sabates_a": 22,
+   "madueke_b": 22
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 88,
+ "triage": "R3-READY",
+ "secs": 6.0
+}

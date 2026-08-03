@@ -1,297 +1,44 @@
-ch 31 rc=0 ch 31: SOURCE-SKEW  182/220 = 0.827  verses 55  all-fail 0  refs {'s_dismas': 0.9601, 'odr_com': 0.9622, 'sabates_a': 0.9506, 'madueke_b': 0.9506}  10.6s
-21:58 START ch 8
-ch 8 rc=0 ch  8: R3-READY     87/88 = 0.989  verses 22  all-fail 0  refs {'s_dismas': 0.9797, 'odr_com': 0.9816, 'sabates_a': 0.96, 'madueke_b': 0.96}  5.9s
-22:02 START ch 14
-ch 14 rc=0 ch 14: SOURCE-SKEW  87/96 = 0.906  verses 24  all-fail 0  refs {'s_dismas': 0.9715, 'odr_com': 0.9728, 'sabates_a': 0.9647, 'madueke_b': 0.9647}  6.7s
-22:07 START ch 33
-ch 33 rc=0 ch 33: SOURCE-SKEW  70/80 = 0.875  verses 20  all-fail 1  refs {'s_dismas': 0.9619, 'odr_com': 0.9749, 'sabates_a': 0.9685, 'madueke_b': 0.968}  5.7s
-22:11 START ch 12
-ch 12 rc=0 ch 12: SOURCE-SKEW  70/80 = 0.875  verses 20  all-fail 0  refs {'s_dismas': 0.9691, 'odr_com': 0.97, 'sabates_a': 0.9619, 'madueke_b': 0.9619}  5.6s
-22:13 START ch 20
-ch 20 rc=0 ch 20: SOURCE-SKEW  61/72 = 0.847  verses 18  all-fail 1  refs {'s_dismas': 0.9682, 'odr_com': 0.9684, 'sabates_a': 0.9593, 'madueke_b': 0.9593}  5.7s
-22:17 START ch 18
-ch 18 rc=0 ch 18: SOURCE-SKEW  121/132 = 0.917  verses 33  all-fail 0  refs {'s_dismas': 0.9654, 'odr_com': 0.9664, 'sabates_a': 0.9591, 'madueke_b': 0.9591}  7.6s
-22:22 START ch 2
-ch 2 rc=0 ch  2: R3-READY     94/100 = 0.940  verses 25  all-fail 0  refs {'s_dismas': 0.979, 'odr_com': 0.979, 'sabates_a': 0.9676, 'madueke_b': 0.9676}  5.8s
-22:28 START ch 22
-ch 22 rc=0 ch 22: SOURCE-SKEW  88/96 = 0.917  verses 24  all-fail 0  refs {'s_dismas': 0.971, 'odr_com': 0.9712, 'sabates_a': 0.9639, 'madueke_b': 0.9639}  5.7s
-22:33 START ch 48
-ch 48 rc=0 ch 48: SOURCE-SKEW  77/88 = 0.875  verses 22  all-fail 1  refs {'s_dismas': 0.9256, 'odr_com': 0.9678, 'sabates_a': 0.9583, 'madueke_b': 0.9583}  6.6s
-22:36 START ch 7
-ch 7 rc=0 ch  7: SOURCE-SKEW  83/96 = 0.865  verses 24  all-fail 0  refs {'s_dismas': 0.9707, 'odr_com': 0.971, 'sabates_a': 0.9492, 'madueke_b': 0.9492}  6.0s
-22:41 START ch 13
-ch 13 rc=0 ch 13: SOURCE-SKEW  61/72 = 0.847  verses 18  all-fail 0  refs {'s_dismas': 0.9528, 'odr_com': 0.9533, 'sabates_a': 0.9429, 'madueke_b': 0.9429}  5.0s
-22:44 START ch 9
-ch 9 rc=0 ch  9: SOURCE-SKEW  106/116 = 0.914  verses 29  all-fail 0  refs {'s_dismas': 0.968, 'odr_com': 0.9682, 'sabates_a': 0.9551, 'madueke_b': 0.9551}  5.6s
-22:48 START ch 25
-ch 25 rc=0 ch 25: R3-READY     127/136 = 0.934  verses 34  all-fail 0  refs {'s_dismas': 0.9783, 'odr_com': 0.9787, 'sabates_a': 0.973, 'madueke_b': 0.973}  5.8s
-22:53 START ch 45
-ch 45 rc=0 ch 45: SOURCE-SKEW  98/112 = 0.875  verses 28  all-fail 0  refs {'s_dismas': 0.9633, 'odr_com': 0.9632, 'sabates_a': 0.9548, 'madueke_b': 0.9548}  6.9s
-22:57 START ch 46
-ch 46 rc=0 ch 46: SOURCE-SKEW  121/136 = 0.890  verses 34  all-fail 1  refs {'s_dismas': 0.9729, 'odr_com': 0.9736, 'sabates_a': 0.9529, 'madueke_b': 0.9529}  6.7s
-23:03 START ch 17
-ch 17 rc=0 ch 17: SOURCE-SKEW  98/108 = 0.907  verses 27  all-fail 0  refs {'s_dismas': 0.9695, 'odr_com': 0.9689, 'sabates_a': 0.9644, 'madueke_b': 0.9644}  6.0s
-23:09 START ch 40
-ch 40 rc=0 ch 40: SOURCE-SKEW  80/92 = 0.870  verses 23  all-fail 0  refs {'s_dismas': 0.9646, 'odr_com': 0.9647, 'sabates_a': 0.9547, 'madueke_b': 0.9547}  4.9s
-23:15 START ch 4
-ch 4 rc=0 ch  4: SOURCE-SKEW  89/104 = 0.856  verses 26  all-fail 1  refs {'s_dismas': 0.9553, 'odr_com': 0.9552, 'sabates_a': 0.9422, 'madueke_b': 0.9422}  5.6s
-23:22 START ch 34
-ch 34 rc=0 ch 34: SOURCE-SKEW  110/124 = 0.887  verses 31  all-fail 0  refs {'s_dismas': 0.9719, 'odr_com': 0.9727, 'sabates_a': 0.9618, 'madueke_b': 0.9614}  6.4s
-23:26 START ch 15
-ch 15 rc=0 ch 15: SOURCE-SKEW  68/84 = 0.809  verses 21  all-fail 1  refs {'s_dismas': 0.9668, 'odr_com': 0.9673, 'sabates_a': 0.9531, 'madueke_b': 0.9531}  4.6s
-23:30 START ch 28
-ch 28 rc=0 ch 28: SOURCE-SKEW  71/88 = 0.807  verses 22  all-fail 1  refs {'s_dismas': 0.9471, 'odr_com': 0.951, 'sabates_a': 0.9438, 'madueke_b': 0.9441}  5.6s
-23:38 START ch 50
-ch 50 rc=0 ch 50: SOURCE-SKEW  85/100 = 0.850  verses 25  all-fail 0  refs {'s_dismas': 0.9647, 'odr_com': 0.9654, 'sabates_a': 0.9545, 'madueke_b': 0.952}  6.1s
-23:42 START ch 11
-ch 11 rc=0 ch 11: SOURCE-SKEW  111/128 = 0.867  verses 32  all-fail 2  refs {'s_dismas': 0.9603, 'odr_com': 0.9738, 'sabates_a': 0.9537, 'madueke_b': 0.9537}  5.6s
-23:48 START ch 6
-ch 6 rc=0 ch  6: R3-READY     74/88 = 0.841  verses 22  all-fail 0  refs {'s_dismas': 0.9633, 'odr_com': 0.9637, 'sabates_a': 0.9522, 'madueke_b': 0.9522}  5.4s
-23:54 START ch 42
-ch 42 rc=0 ch 42: SOURCE-SKEW  137/152 = 0.901  verses 38  all-fail 0  refs {'s_dismas': 0.9716, 'odr_com': 0.972, 'sabates_a': 0.9628, 'madueke_b': 0.9628}  7.5s
-23:59 START ch 38
-ch 38 rc=0 ch 38: SOURCE-SKEW  101/120 = 0.842  verses 30  all-fail 0  refs {'s_dismas': 0.9533, 'odr_com': 0.9542, 'sabates_a': 0.947, 'madueke_b': 0.947}  6.6s
-00:06 START ch 30
-ch 30 rc=0 ch 30: SOURCE-SKEW  154/172 = 0.895  verses 43  all-fail 1  refs {'s_dismas': 0.9658, 'odr_com': 0.9678, 'sabates_a': 0.9543, 'madueke_b': 0.9543}  8.8s
-00:13 START ch 3
-ch 3 rc=0 ch  3: SOURCE-SKEW  81/96 = 0.844  verses 24  all-fail 0  refs {'s_dismas': 0.9659, 'odr_com': 0.966, 'sabates_a': 0.9531, 'madueke_b': 0.9531}  6.5s
-00:20 START ch 36
-ch 36 rc=0 ch 36: SOURCE-SKEW  156/172 = 0.907  verses 43  all-fail 0  refs {'s_dismas': 0.946, 'odr_com': 0.9481, 'sabates_a': 0.938, 'madueke_b': 0.938}  6.4s
-00:28 START ch 5
-ch 5 rc=0 ch  5: SOURCE-SKEW  103/124 = 0.831  verses 31  all-fail 0  refs {'s_dismas': 0.9583, 'odr_com': 0.9609, 'sabates_a': 0.9299, 'madueke_b': 0.9299}  4.5s
-00:37 START ch 27
-ch 27 rc=0 ch 27: SOURCE-SKEW  165/184 = 0.897  verses 46  all-fail 0  refs {'s_dismas': 0.9734, 'odr_com': 0.9736, 'sabates_a': 0.9663, 'madueke_b': 0.9663}  8.7s
-00:47 START ch 19
-ch 19 rc=0 ch 19: SOURCE-SKEW  131/152 = 0.862  verses 38  all-fail 0  refs {'s_dismas': 0.9664, 'odr_com': 0.9693, 'sabates_a': 0.9615, 'madueke_b': 0.9615}  8.8s
-00:54 START ch 44
-ch 44 rc=0 ch 44: SOURCE-SKEW  117/136 = 0.860  verses 34  all-fail 0  refs {'s_dismas': 0.9555, 'odr_com': 0.9558, 'sabates_a': 0.9453, 'madueke_b': 0.9451}  6.7s
-01:00 START ch 32
-ch 32 rc=0 ch 32: SOURCE-SKEW  106/128 = 0.828  verses 32  all-fail 2  refs {'s_dismas': 0.9706, 'odr_com': 0.9709, 'sabates_a': 0.959, 'madueke_b': 0.959}  6.4s
-01:06 START ch 10
-ch 10 rc=0 ch 10: SOURCE-SKEW  103/128 = 0.805  verses 32  all-fail 3  refs {'s_dismas': 0.9286, 'odr_com': 0.9583, 'sabates_a': 0.9438, 'madueke_b': 0.9438}  4.5s
-01:12 START ch 39
-ch 39 rc=0 ch 39: SOURCE-SKEW  72/92 = 0.783  verses 23  all-fail 0  refs {'s_dismas': 0.9443, 'odr_com': 0.9445, 'sabates_a': 0.935, 'madueke_b': 0.935}  4.9s
-01:18 START ch 43
-ch 43 rc=0 ch 43: SOURCE-SKEW  112/136 = 0.824  verses 34  all-fail 1  refs {'s_dismas': 0.9611, 'odr_com': 0.9627, 'sabates_a': 0.9529, 'madueke_b': 0.9527}  7.9s
-01:23 START ch 29
-ch 29 rc=0 ch 29: SOURCE-SKEW  119/140 = 0.850  verses 35  all-fail 2  refs {'s_dismas': 0.9682, 'odr_com': 0.9718, 'sabates_a': 0.9585, 'madueke_b': 0.9585}  6.3s
-01:31 START ch 49
-ch 49 rc=0 ch 49: SOURCE-SKEW  103/128 = 0.805  verses 32  all-fail 1  refs {'s_dismas': 0.9575, 'odr_com': 0.958, 'sabates_a': 0.9459, 'madueke_b': 0.9457}  6.2s
-01:38 START ch 21
-ch 21 rc=0 ch 21: SOURCE-SKEW  110/136 = 0.809  verses 34  all-fail 2  refs {'s_dismas': 0.9348, 'odr_com': 0.9389, 'sabates_a': 0.9359, 'madueke_b': 0.9359}  5.9s
-01:44 START ch 47
-ch 47 rc=0 ch 47: SOURCE-SKEW  97/124 = 0.782  verses 31  all-fail 2  refs {'s_dismas': 0.9232, 'odr_com': 0.9554, 'sabates_a': 0.9377, 'madueke_b': 0.9439}  7.3s
-01:50 START ch 35
-ch 35 rc=0 ch 35: SOURCE-SKEW  86/116 = 0.741  verses 29  all-fail 1  refs {'s_dismas': 0.9583, 'odr_com': 0.9613, 'sabates_a': 0.9502, 'madueke_b': 0.9502}  5.6s
-01:59 START ch 26
-ch 26 rc=0 ch 26: SOURCE-SKEW  109/140 = 0.779  verses 35  all-fail 3  refs {'s_dismas': 0.9247, 'odr_com': 0.9616, 'sabates_a': 0.9477, 'madueke_b': 0.9477}  7.3s
-02:06 START ch 37
-ch 37 rc=0 ch 37: SOURCE-SKEW  115/144 = 0.799  verses 36  all-fail 0  refs {'s_dismas': 0.9534, 'odr_com': 0.9546, 'sabates_a': 0.9454, 'madueke_b': 0.9454}  7.1s
-02:14 START ch 24
-ch 24 rc=0 ch 24: SOURCE-SKEW  226/268 = 0.843  verses 67  all-fail 2  refs {'s_dismas': 0.958, 'odr_com': 0.9584, 'sabates_a': 0.9565, 'madueke_b': 0.9564}  12.4s
-02:29 START ch 41
-ch 41 rc=0 ch 41: SOURCE-SKEW  158/228 = 0.693  verses 57  all-fail 5  refs {'s_dismas': 0.9241, 'odr_com': 0.9276, 'sabates_a': 0.9208, 'madueke_b': 0.9206}  9.0s
-02:44 no chapter ready — waiting for the breadth measurement
-02:49 no chapter ready — waiting for the breadth measurement
-02:54 no chapter ready — waiting for the breadth measurement
-02:59 no chapter ready — waiting for the breadth measurement
-03:04 no chapter ready — waiting for the breadth measurement
-03:09 no chapter ready — waiting for the breadth measurement
-03:14 no chapter ready — waiting for the breadth measurement
-03:19 no chapter ready — waiting for the breadth measurement
-03:24 no chapter ready — waiting for the breadth measurement
-03:29 no chapter ready — waiting for the breadth measurement
-03:34 no chapter ready — waiting for the breadth measurement
-03:39 no chapter ready — waiting for the breadth measurement
-03:44 no chapter ready — waiting for the breadth measurement
-03:49 no chapter ready — waiting for the breadth measurement
-03:54 no chapter ready — waiting for the breadth measurement
-03:59 no chapter ready — waiting for the breadth measurement
-04:04 no chapter ready — waiting for the breadth measurement
-04:09 no chapter ready — waiting for the breadth measurement
-04:14 no chapter ready — waiting for the breadth measurement
-04:19 no chapter ready — waiting for the breadth measurement
-04:24 no chapter ready — waiting for the breadth measurement
-04:29 no chapter ready — waiting for the breadth measurement
-04:34 no chapter ready — waiting for the breadth measurement
-04:39 no chapter ready — waiting for the breadth measurement
-04:44 no chapter ready — waiting for the breadth measurement
-04:49 no chapter ready — waiting for the breadth measurement
-04:54 no chapter ready — waiting for the breadth measurement
-04:59 no chapter ready — waiting for the breadth measurement
-05:04 no chapter ready — waiting for the breadth measurement
-05:09 no chapter ready — waiting for the breadth measurement
-05:14 no chapter ready — waiting for the breadth measurement
-05:19 no chapter ready — waiting for the breadth measurement
-05:24 no chapter ready — waiting for the breadth measurement
-05:29 no chapter ready — waiting for the breadth measurement
-05:34 no chapter ready — waiting for the breadth measurement
-05:39 no chapter ready — waiting for the breadth measurement
-05:44 no chapter ready — waiting for the breadth measurement
-05:49 no chapter ready — waiting for the breadth measurement
-05:54 no chapter ready — waiting for the breadth measurement
-05:59 no chapter ready — waiting for the breadth measurement
-06:04 no chapter ready — waiting for the breadth measurement
-06:09 no chapter ready — waiting for the breadth measurement
-06:14 no chapter ready — waiting for the breadth measurement
-06:19 no chapter ready — waiting for the breadth measurement
-06:24 no chapter ready — waiting for the breadth measurement
-06:29 no chapter ready — waiting for the breadth measurement
-06:34 no chapter ready — waiting for the breadth measurement
-06:39 no chapter ready — waiting for the breadth measurement
-06:44 no chapter ready — waiting for the breadth measurement
-06:49 no chapter ready — waiting for the breadth measurement
-06:54 no chapter ready — waiting for the breadth measurement
-06:59 no chapter ready — waiting for the breadth measurement
-07:04 no chapter ready — waiting for the breadth measurement
-07:09 no chapter ready — waiting for the breadth measurement
-07:14 no chapter ready — waiting for the breadth measurement
-07:19 no chapter ready — waiting for the breadth measurement
-07:24 no chapter ready — waiting for the breadth measurement
-07:29 no chapter ready — waiting for the breadth measurement
-07:34 no chapter ready — waiting for the breadth measurement
-07:39 no chapter ready — waiting for the breadth measurement
-07:44 no chapter ready — waiting for the breadth measurement
-07:49 no chapter ready — waiting for the breadth measurement
-07:54 no chapter ready — waiting for the breadth measurement
-07:59 no chapter ready — waiting for the breadth measurement
-08:04 no chapter ready — waiting for the breadth measurement
-08:09 no chapter ready — waiting for the breadth measurement
-08:14 no chapter ready — waiting for the breadth measurement
-08:19 no chapter ready — waiting for the breadth measurement
-08:24 no chapter ready — waiting for the breadth measurement
-08:29 no chapter ready — waiting for the breadth measurement
-08:34 no chapter ready — waiting for the breadth measurement
-08:39 no chapter ready — waiting for the breadth measurement
-08:44 no chapter ready — waiting for the breadth measurement
-08:49 no chapter ready — waiting for the breadth measurement
-08:54 no chapter ready — waiting for the breadth measurement
-08:59 no chapter ready — waiting for the breadth measurement
-09:04 no chapter ready — waiting for the breadth measurement
-09:09 no chapter ready — waiting for the breadth measurement
-09:14 no chapter ready — waiting for the breadth measurement
-09:19 no chapter ready — waiting for the breadth measurement
-09:24 no chapter ready — waiting for the breadth measurement
-09:29 no chapter ready — waiting for the breadth measurement
-09:34 no chapter ready — waiting for the breadth measurement
-09:39 no chapter ready — waiting for the breadth measurement
-09:44 no chapter ready — waiting for the breadth measurement
-09:49 no chapter ready — waiting for the breadth measurement
-09:54 no chapter ready — waiting for the breadth measurement
-09:59 no chapter ready — waiting for the breadth measurement
-10:04 no chapter ready — waiting for the breadth measurement
-10:09 no chapter ready — waiting for the breadth measurement
-10:14 no chapter ready — waiting for the breadth measurement
-10:19 no chapter ready — waiting for the breadth measurement
-10:24 no chapter ready — waiting for the breadth measurement
-10:29 no chapter ready — waiting for the breadth measurement
-10:34 no chapter ready — waiting for the breadth measurement
-10:39 no chapter ready — waiting for the breadth measurement
-10:44 no chapter ready — waiting for the breadth measurement
-10:49 no chapter ready — waiting for the breadth measurement
-10:54 no chapter ready — waiting for the breadth measurement
-10:59 no chapter ready — waiting for the breadth measurement
-11:04 no chapter ready — waiting for the breadth measurement
-11:09 no chapter ready — waiting for the breadth measurement
-11:14 no chapter ready — waiting for the breadth measurement
-11:19 no chapter ready — waiting for the breadth measurement
-11:24 no chapter ready — waiting for the breadth measurement
-11:29 no chapter ready — waiting for the breadth measurement
-11:34 no chapter ready — waiting for the breadth measurement
-11:39 no chapter ready — waiting for the breadth measurement
-11:44 no chapter ready — waiting for the breadth measurement
-11:49 no chapter ready — waiting for the breadth measurement
-11:54 no chapter ready — waiting for the breadth measurement
-11:59 no chapter ready — waiting for the breadth measurement
-12:04 no chapter ready — waiting for the breadth measurement
-12:09 no chapter ready — waiting for the breadth measurement
-12:14 no chapter ready — waiting for the breadth measurement
-12:19 no chapter ready — waiting for the breadth measurement
-12:24 no chapter ready — waiting for the breadth measurement
-12:29 no chapter ready — waiting for the breadth measurement
-12:34 no chapter ready — waiting for the breadth measurement
-12:39 no chapter ready — waiting for the breadth measurement
-12:44 no chapter ready — waiting for the breadth measurement
-12:49 no chapter ready — waiting for the breadth measurement
-12:54 no chapter ready — waiting for the breadth measurement
-12:59 no chapter ready — waiting for the breadth measurement
-13:04 no chapter ready — waiting for the breadth measurement
-13:09 no chapter ready — waiting for the breadth measurement
-13:14 no chapter ready — waiting for the breadth measurement
-13:19 no chapter ready — waiting for the breadth measurement
-13:24 no chapter ready — waiting for the breadth measurement
-13:29 no chapter ready — waiting for the breadth measurement
-13:34 no chapter ready — waiting for the breadth measurement
-13:39 no chapter ready — waiting for the breadth measurement
-13:44 no chapter ready — waiting for the breadth measurement
-13:49 no chapter ready — waiting for the breadth measurement
-13:54 no chapter ready — waiting for the breadth measurement
-13:59 no chapter ready — waiting for the breadth measurement
-14:04 no chapter ready — waiting for the breadth measurement
-14:09 no chapter ready — waiting for the breadth measurement
-14:14 no chapter ready — waiting for the breadth measurement
-14:19 no chapter ready — waiting for the breadth measurement
-14:24 no chapter ready — waiting for the breadth measurement
-14:29 no chapter ready — waiting for the breadth measurement
-14:34 no chapter ready — waiting for the breadth measurement
-14:39 no chapter ready — waiting for the breadth measurement
-14:44 no chapter ready — waiting for the breadth measurement
-14:49 no chapter ready — waiting for the breadth measurement
-14:54 no chapter ready — waiting for the breadth measurement
-14:59 no chapter ready — waiting for the breadth measurement
-15:04 no chapter ready — waiting for the breadth measurement
-15:09 no chapter ready — waiting for the breadth measurement
-15:14 no chapter ready — waiting for the breadth measurement
-15:19 no chapter ready — waiting for the breadth measurement
-15:24 no chapter ready — waiting for the breadth measurement
-15:29 no chapter ready — waiting for the breadth measurement
-15:34 no chapter ready — waiting for the breadth measurement
-15:39 no chapter ready — waiting for the breadth measurement
-15:44 no chapter ready — waiting for the breadth measurement
-15:49 no chapter ready — waiting for the breadth measurement
-15:54 no chapter ready — waiting for the breadth measurement
-15:59 no chapter ready — waiting for the breadth measurement
-16:04 no chapter ready — waiting for the breadth measurement
-16:09 no chapter ready — waiting for the breadth measurement
-16:14 no chapter ready — waiting for the breadth measurement
-16:19 no chapter ready — waiting for the breadth measurement
-16:24 no chapter ready — waiting for the breadth measurement
-16:29 no chapter ready — waiting for the breadth measurement
-16:34 no chapter ready — waiting for the breadth measurement
-16:39 no chapter ready — waiting for the breadth measurement
-16:44 no chapter ready — waiting for the breadth measurement
-16:49 no chapter ready — waiting for the breadth measurement
-16:54 no chapter ready — waiting for the breadth measurement
-16:59 no chapter ready — waiting for the breadth measurement
-17:04 no chapter ready — waiting for the breadth measurement
-17:09 no chapter ready — waiting for the breadth measurement
-17:14 no chapter ready — waiting for the breadth measurement
-17:19 no chapter ready — waiting for the breadth measurement
-17:24 no chapter ready — waiting for the breadth measurement
-17:29 no chapter ready — waiting for the breadth measurement
-17:34 no chapter ready — waiting for the breadth measurement
-17:39 no chapter ready — waiting for the breadth measurement
-17:44 no chapter ready — waiting for the breadth measurement
-17:49 no chapter ready — waiting for the breadth measurement
-17:54 no chapter ready — waiting for the breadth measurement
-17:59 no chapter ready — waiting for the breadth measurement
-18:04 no chapter ready — waiting for the breadth measurement
-18:09 no chapter ready — waiting for the breadth measurement
-18:14 no chapter ready — waiting for the breadth measurement
-18:19 no chapter ready — waiting for the breadth measurement
-18:24 no chapter ready — waiting for the breadth measurement
-18:29 no chapter ready — waiting for the breadth measurement
-18:34 no chapter ready — waiting for the breadth measurement
-18:39 no chapter ready — waiting for the breadth measurement
-18:44 no chapter ready — waiting for the breadth measurement
-18:49 no chapter ready — waiting for the breadth measurement
-18:54 no chapter ready — waiting for the breadth measurement
-18:59 no chapter ready — waiting for the breadth measurement
-19:04 no chapter ready — waiting for the breadth measurement
-19:09 no chapter ready — waiting for the breadth measurement
-19:14 no chapter ready — waiting for the breadth measurement
-19:19 no chapter ready — waiting for the breadth measurement
-19:24 no chapter ready — waiting for the breadth measurement
-19:29 no chapter ready — waiting for the breadth measurement
-19:34 no chapter ready — waiting for the breadth measurement
-19:39 no chapter ready — waiting for the breadth measurement
+21:22 R3 PASS v3 START — chapters: 31 13 20 7 12 45 48 46 14 17 9 18 22 33 25 2 8  (owner 33570@JARVIS)
+21:22 START ch 31
+21:34 done ch 31 rc=0
+21:34 START ch 13
+21:37 done ch 13 rc=0
+21:37 START ch 20
+21:41 done ch 20 rc=0
+21:41 START ch 7
+21:46 done ch 7 rc=0
+21:46 START ch 12
+21:48 done ch 12 rc=0
+21:48 START ch 45
+21:52 done ch 45 rc=0
+21:52 START ch 48
+21:55 done ch 48 rc=0
+21:55 START ch 46
+22:00 done ch 46 rc=0
+22:00 START ch 14
+22:04 done ch 14 rc=0
+22:04 START ch 17
+22:10 done ch 17 rc=0
+22:10 START ch 9
+22:14 done ch 9 rc=0
+22:14 START ch 18
+22:19 done ch 18 rc=0
+22:19 START ch 22
+22:24 done ch 22 rc=0
+22:24 START ch 33
+22:27 done ch 33 rc=0
+22:27 START ch 25
+22:31 done ch 25 rc=0
+22:31 START ch 2
+22:37 done ch 2 rc=0
+22:37 START ch 8
+22:41 done ch 8 rc=0
+22:41 R3 PASS v3 COMPLETE
+17:32 R3 PASS v3 START — chapters: 23 39 41 49 26 21 15 47 10 43 32 5  (owner 98832@JARVIS)
+17:32 START ch 23
+17:35 done ch 23 rc=0
+17:35 START ch 39
+17:44 done ch 39 rc=0
+17:44 START ch 41
+18:00 done ch 41 rc=0
+18:00 START ch 49

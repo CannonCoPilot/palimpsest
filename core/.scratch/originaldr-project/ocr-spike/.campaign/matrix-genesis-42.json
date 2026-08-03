@@ -1,0 +1,1980 @@
+{
+ "chapter": 42,
+ "n_verses": 38,
+ "n_cells": 152,
+ "n_pass": 142,
+ "rate": 0.9342,
+ "ref_means": {
+  "s_dismas": 0.9756,
+  "odr_com": 0.976,
+  "sabates_a": 0.9668,
+  "madueke_b": 0.9668
+ },
+ "src_rates": {
+  "S1": 0.9474,
+  "S3": 0.9211,
+  "S9": 0.9474,
+  "S6": 0.9211
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 10,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 1,
+   "worst": 0.832,
+   "from": "p136",
+   "text": "Ioſeph. I9 CHA LI Iacob hearing that victuals were ſold in AEgypt, he ſaid to his ſonnes Why neglectye"
+  },
+  {
+   "src": "S1",
+   "verse": 3,
+   "worst": 0.791,
+   "from": "p148",
+   "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,"
+  },
+  {
+   "src": "S3",
+   "verse": 3,
+   "worst": 0.791,
+   "from": "p152",
+   "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,"
+  },
+  {
+   "src": "S9",
+   "verse": 3,
+   "worst": 0.791,
+   "from": "p160",
+   "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,"
+  },
+  {
+   "src": "S1",
+   "verse": 8,
+   "worst": 0.828,
+   "from": "p148",
+   "text": "yet himſclfe knowing his brethren, was not krowen them."
+  },
+  {
+   "src": "S3",
+   "verse": 8,
+   "worst": 0.845,
+   "from": "p152",
+   "text": "yet himſdlfe knowing his brethren, was not knowen them."
+  },
+  {
+   "src": "S3",
+   "verse": 17,
+   "worst": 0.846,
+   "from": "p153",
+   "text": "fore he put them in priſon three dayes."
+  },
+  {
+   "src": "S9",
+   "verse": 17,
+   "worst": 0.846,
+   "from": "p161",
+   "text": "fore he put them in priſon three dayes."
+  },
+  {
+   "src": "S6",
+   "verse": 17,
+   "worst": 0.846,
+   "from": "r3",
+   "text": "tore he put them in priſon three dayes."
+  },
+  {
+   "src": "S6",
+   "verse": 20,
+   "worst": 0.877,
+   "from": "chapter",
+   "text": "and bring your yongeſt brother to me, that I may I2O Ioſephproue your ſavings to be true, and that you die not. They did as he had ſaid, 1and"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "And Iacob hearing, that victudles were ſold in Egypt, he ſaid to his ſonnes: Why neglect ye?",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S3": {
+    "text": "and Iacob hearing, that victuales were ſold in Egypt, he ſaid to his ſonnes: Why neglect ye",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "and Iacob hearing, that victuales were ſold in Egypt, he ſaid to his ſonnes: Why neglect ye?",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "Ioſeph. I9 CHA LI Iacob hearing that victuals were ſold in AEgypt, he ſaid to his ſonnes Why neglectye",
+    "from": "p136",
+    "score": {
+     "s_dismas": 0.838,
+     "odr_com": 0.838,
+     "sabates_a": 0.832,
+     "madueke_b": 0.832
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "I haue heard that wheat is ſold in Egvpt : Goe ye downe, and bye vs ceſſaries, that we may liue, and not be conſumed with lacke.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "I haue heard that wheat is ſold in Aegypt: Goe ye downe, and bye vs neceſſaries, that we may liue, and not be conſumed with lacke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "I haue heard that wheat is ſold in Egypt : Goe ye downe, and bye vs neceſſaries, that we may liue, and not be conſumed with lacke.",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "I haue heard that wheat is ſold in AEgypt: Goe ye downe and buy vs neceſſaries, that we may liue and not be conſumed with lacke.. Therfore",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 0.918,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.819,
+     "odr_com": 0.819,
+     "sabates_a": 0.791,
+     "madueke_b": 0.791
+    }
+   },
+   "S3": {
+    "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.819,
+     "odr_com": 0.819,
+     "sabates_a": 0.791,
+     "madueke_b": 0.791
+    }
+   },
+   "S9": {
+    "text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.819,
+     "odr_com": 0.819,
+     "sabates_a": 0.791,
+     "madueke_b": 0.791
+    }
+   },
+   "S6": {
+    "text": "Therfore the ten brethren of Ioſeph going downe to buy corne in AEgypt ,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "Beniamin being kept at home by Iacob, who ſaid to his brethren Leſt perhaps he take any harme in the iourney:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Beniamin being kept at home by Iacob, who ſaid to his brethren Leſt perhaps he take any harme in the iourney:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Beniamin being kept at home by Iacob, who ſaid to his brethren : Leſt perhaps he take any harme in the iourney:",
+    "from": "p160",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Beniamin being kept at home by Iacob, who ſaid to his brethren Leſt perhaps he take any harme in the iourney: 5-",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "entred into the land ot AEgypt with others that went to buy. For the famine was in the land ot Chanaau.",
+    "from": "p136",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And Ioſeph was prince in the land of and at his pleaſure corne was ſold to the people. And when his brethren had adored him,",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S3": {
+    "text": "And Ioſeph was prince in the land of Tgypt, and at his pleaſure corne was ſold to the people. And when his brethren had adored him,",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And Ioſeph was prince in the land of Egypt, and at his pleaſure corne was ſold to the people. And when his brethren had adored him,",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And Ioſeph was Prince in the land of AEgypt, and at his pleaſure corne was ſold to the people. And when his brethren had adored him,.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "and he knewe them, ſpake as it were to ſtrangers ſomewhat roughlv, asking them: From whence came you? wno anſwered: From Land of chanaan, that we may bye neceſlaries to liue.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S3": {
+    "text": "and he knewe them, ſpake as it were to ſtrangers ſomewhat roughlv, asking them: From whence came you? Who anſwered From Land of chanaan, that we may bye neceſſaries to liue.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "and he knewe them, he ſpake as it were to ſtrangers ſomewhat roughly, asking the them: From whence came you? Who anſwered From Land of chanaan, that we may bye neceſſaries to liue.",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "and he knew them, he ſpake as it were to ſtrangers ſomewhat roughly, askng them: From whenee came vou Who anſwered: From the Land of Chanaau, that we may buy neceſſaries to liue.",
+    "from": "p136",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "yet himſclfe knowing his brethren, was not krowen them.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.85,
+     "odr_com": 0.85,
+     "sabates_a": 0.828,
+     "madueke_b": 0.828
+    }
+   },
+   "S3": {
+    "text": "yet himſdlfe knowing his brethren, was not knowen them.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.867,
+     "odr_com": 0.867,
+     "sabates_a": 0.845,
+     "madueke_b": 0.845
+    }
+   },
+   "S9": {
+    "text": "And yet himſelfe knowing his brethren, was not knownen of them.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S6": {
+    "text": "And yet himſelfe knowing his brethren, was not knownen of them.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And remembrine the dreames, which ſome times he had ſeene, he ſaid to them You are ſpies to view weaher com weaker parts of the land you are come.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.901,
+     "madueke_b": 0.901
+    }
+   },
+   "S3": {
+    "text": "And remembring the dreames, which ſome rimes he had ſeene, he ſaid to them Vou are ſpies: to view weaker parts of the land you are come.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S9": {
+    "text": "And remembring the dreames, which ſome times he had ſcene, he ſaid to them You are ſpies: to view the weaker parts of the land you are come.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And remembring the dreames, which fometimes he had ſeen, he ſaid to them: Vou are ſpies: to view the weaker parts of the land vou are come.",
+    "from": "p136",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "Who ſaid : It is not ſo, my lord, bur thy ſeruantes are come to bye victuals.†",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "Who ſaid It is not ſo, my lord, but thy ſeruantes are come to bye victuals.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Who faid: It is not ſo, my lord, but thy ſeruantes are come to bye victuals.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "Who ſaid: It is not ſo my Lord, but thy ſeruantes are come to buy victuals.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "We are al the ſonnes of one man: we are come as men of peace, neither do thy ſeruantes goe about anie euil.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "We are al the ſonnes of one man: we are come as men of peace, neither do thy ſeruantes goe about anie euil.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "We are al the ſonnes of one man: we are come as men of peace, neither do thy ſeruantes goe about anie euil.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "We are al the ſones, of one man: we are come as men of peace, neither doe thy ſeruantes goe about anie euil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "To whom he anſwered : Ir is otherwiſe: you came to conſider the vndefenſed partes of this land.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "To whom he anſwered : It is otherwiſe : you came to eonſider the vndefenſed partes of this land.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "To whom he anſwered : It is otherwiſe: you camie to conſider the vndefenſed partes of this land.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "To whom he aufwered It is otherwiſe you came to conſider the vndefenſed patts of this land.",
+    "from": "p136",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "But they we thy ſeruantes, ſay they, are twelue brerhren, the ſonnes of one man in the Land of Chanaan: the youngeſt is with our father, the other is not liuing.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "But they We thy ſeruantes, ſay they, are twelue brethren, the ſonnes of one man in the Land of Chanaan: the youngeſt is with our father, the other is not liuing.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "But they: We thy ſeruantes, ſay they, are twelue brethren, the ſonnes of one man in the Land of Chanaan: the youngeſt is with our father, the other is not liuing.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "But they We thy ſeruantes, ſay they, are twelue brethren, the ſonnes of one man in the Land ot Chanaan: the yongeſt is with our tather, thre othet is not liuing.",
+    "from": "p136",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "This is it, quoth he, that I ſaid : Youare ſpies.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "This is it, quoth he, that ſaid : You are ſpies.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S9": {
+    "text": "This is it, quoth he, that I ſaid : You are ſpies.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "This is it, quoth he, that I ſaid: You are ſpies.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Now preſently I wil take a trial of you: by the health of Pharao you ſhal not depart hence, vntil your youngeſt brother do come.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Now preſently I wil take a trial of you: by the health of Pharao you ſhal not depart hence, vntil your youngeſt brother do come.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Now preſently I wil tako a trial of you: by the health of Pharao you ſhal not depart hence, vntil your youngeſt brother do come.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "Now preſently I wil take a trial of you: \"by the health of Pharao you ſhal not depart hence, vntil your yongeſt brother doe come.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.984,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "Send you one of you to bring him : and you ial be in priſon, ril the thinges be proued which you haue ſaid, whether they be true or falſe: by the health of Pharao you are ſpies.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   },
+   "S3": {
+    "text": "Send you one of you to bring him: and you inal be in priſon, til the thinges be proued which you haue ſaid, whether they be true or falſe: otherwiſe by the health of Pharao you are ſpies.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "Send you one of you to bring him: and you ſnal be in priſon, til the thinges be proued which you haue ſaid, whether they be true or falſe : by the health of Pharao you are ſpies.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S6": {
+    "text": "Send you one of you to bring him: and you thal be in priſon til the things be proued which you haue ſaid, whether they be true or falſe: (4) otherwiſe by the health of Pharao you are ſpies. Therfore",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Therfore he put them in priſon three dayes.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S3": {
+    "text": "fore he put them in priſon three dayes.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.905,
+     "odr_com": 0.905,
+     "sabates_a": 0.846,
+     "madueke_b": 0.846
+    }
+   },
+   "S9": {
+    "text": "fore he put them in priſon three dayes.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.905,
+     "odr_com": 0.905,
+     "sabates_a": 0.846,
+     "madueke_b": 0.846
+    }
+   },
+   "S6": {
+    "text": "tore he put them in priſon three dayes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.905,
+     "odr_com": 0.905,
+     "sabates_a": 0.846,
+     "madueke_b": 0.846
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And the third day bringing them out of priſon, he ſaid : Doe as I haue ſaid, and you ihal liue: for I feare God.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And the thitd day bringing them out of priſon, he ſaid : Doe as I haue ſaid, and you ihal liue : for I feare God.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And the third day bringing them out of priſon, he ſaid : Doe as I haue ſaid, Ye and you ihal liue : for I feare God.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "And the third day bringing them out of priſon, he ſaid: Doe as I haue ſaid, and vou ſhal liue : tor I teare God.",
+    "from": "p136",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "If you bemen of peace, let one of your brethren be bounde in priſon : and goe your wayes, and carie the corne that you haue bought, vnto your houſes,",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "If you be men of peace, let one of your brethren be bounde in priſon: and goe ye your wayes, and carie the corne that you haue bought, vnto your houſes,",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "If you be men of peace, let one of your brethren be bounde in priſon: and goe ye your wayes, and carie the corne that you haue bought, vnto your houſes,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "If you be men of peace, let one of your brethen be bound in priſon: and goe ye your wayes, and carie the corne that you haue bought vnto your houſes,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "and bring your youngeſt brother to me, that I may proue your ſayings to be true, and that you die not. They did as he had ſaid,",
+    "from": "p149",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "and bring your youngeſt brother to me, that I may proue your ſayings to be true, and that you die not. They did as he had ſaid,",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and bring your youngeſt brother to me, that I may proue your ſayings to be true, and that you die not. They did as he had ſaid,",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and bring your yongeſt brother to me, that I may I2O Ioſephproue your ſavings to be true, and that you die not. They did as he had ſaid, 1and",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.889,
+     "odr_com": 0.889,
+     "sabates_a": 0.877,
+     "madueke_b": 0.877
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "and they talked one to an other: Worthely do we ſuffer theſe thinges, becauſe we haue ſinned againſt our brother, ſeing the diſtreſſe of his ſoule, whileſt he beſought vs, and we heard not : therfore is this tribulation come vpon vs.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "and they talked one to an other : Worthely do we ſuffer theſe thinges, becauſe we haue ſinned againſt our brother, ſeing the diſtreſſe of his ſoule, whileſt he beſought vs, and we heard not : therfore is this tribulation come vpon vs.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "and they talked one to an other : Worthely do we ſuffer theſe thinges, becauſe we haue ſinned againſt our brother, ſeing the diſtreſſe of his ſoule, whileſt he beſought vs, and we heard not : therfore is this tribulation come vpon vs.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "1and they talkedone to an other : Worthily doe we ſuffer theſe things, becauſe we haue ſinned againſt our brother, ſeeing the diſtreſſe ot nis ſoule whileſt he beſought vs, and we heard not: thertore is this tribulation come vpon vs.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "Among whom Ruben one of them, ſaid : why, did not I ſay to you: Sinne not gainſt the boy : and you heard me not? Loe his blood is required.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "Among whom Ruben one of them, ſaid : Why, did not I ſay to you : Sinne not gainſt the boy : and you heard me not? Loe his blood is required.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "Among whom Ruben one of them, ſaid : Why, did not I ſay to you : Sinne not againſt the boy : and you heard me not? Loe his blood is required.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Among whom Ruben one of them, ſaid: Why, did not I ſay to you : Sinne not againſt the boy: and you heard me not : Loe his bloud is tequired.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And they knew not that Ioſeph vnderſtood becauſe he ſpake to them by an interprerer.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And they knew not that Ioſeph vnderſtood becauſe he ſpake to them by an interpreter.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And they knew not that Ioſeph vnderſtood : becauſe he ſpake to them by an interpreter.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And they Enew not that Ioſeph vnderſtood: becauſe he ſpake to them by an interpreter.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And he turned away himſelfe a licle while, and wept: and returning he ſpake to them.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And he turned away himſelfe a litle while, and wept : and returning he ſpake to them.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Andhe turned away himſelfe a litle while, and wept: and returning he ſpake to them.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And he turned away himſelte a litle while, and wept: and returnino he ſpake to them.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And taking Simeon, and binding him in their preſence, he commanded his ſeruantes that they ſhould fil vp their ſackes with wheat, and put euerie mans money againe in their bagges, geuing them beſides for to eate on the way : who did ſo.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And taking Simeon, and binding him in their preſence, he commanded his ſeruantes that they ſhould fil vp their ſackes with wheat, and put euerie mans money againe in their bagges, geuing them beſides for eate on the way : who did ſo.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "And taking Simeon, and binding him in their preſence, he commanded his ſeruantes that they ſhould fil vp their ſackes with wheat, and put euerie mans money againe in their bagges, geuing them beſides for to eate on the way : who did ſo.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "And takins Simeon, and binding him in their preſence, he commanded his ſeruants that they ſhould fil vp their ſackes with wheat, and put euetie mans money againe in theit bags, giuing them beſides for to eate on the way : who did ſo.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "But they carying their corne vpon their aſſes, tooke their iourney.",
+    "from": "p149",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "But they carying their corne vpon their aſſes, tooke their iourney.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But they carying their corne vpon their aſſes, tooke their iourney.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "But they catyin their corne vpon theit aſſes, tooke their iourney.7.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "And one of them opening his ſacke, to geue his beaſt prouender in the inne, beholding the money in the ſackes mou,",
+    "from": "p149",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S3": {
+    "text": "And one of them opening his ſacke, to geue his beaſt prouender in the inne, beholding the money in the ſackes mouth,",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "And one of them opening his ſacke, to geue his beaſt prouender in the inne, beholding the money in the ſackes mouth,",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "And one of them openins his ſacke to giue his beaſt prouender in the Inne, bebolding the money in the ſackes mouth,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "he ſaid to his brethren My money is geuen me againe, behold it is in the ſacke. And being aſtonyed, and trubled amongeſt themſelues, they ſaid What is this, that God hath done vnto vs? +",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "he ſaid to brethren My money is geuen me againe, behold it is in ſacke. And being aſtonyed, and trubled amongeſt themſelues, they ſaid What is this, that God hath done vnto vs?",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.955,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S9": {
+    "text": "he ſaid to his hrethren My money is geuen me againe, behold it is in the ſacke. And being aſtonyed, and trubled amongeſt themſelues, they ſaid What is this, that Godhath done vnto vs?",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.989,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "he ſaid to his brethren: My money is giuen me againe, behold it is in the ſacke. And being aſtoniſhed and troubled amongſt themſelues, they ſaid : What is this, that God hath done vnto vs",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.967,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "And they came to Iacob their father into the land of Chanaan, and they told him al thinges that had chanced vnto them, ſaying:",
+    "from": "p150",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "And they came to Iacob their father into the land of Chanaan, and they told him al thinges that had chanced vnto them, ſaying:",
+    "from": "p154",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "And they came to Iacob their father into the land of Chanaan, and they told him al thinges that had chanced vnto them, ſaying",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "And they came to Iacob their tather into the land of Chanaan, & they told him al things that had chanced vnto them, ſayins :",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "The lord of the land ſpake to vs roughly, and thoughr vs to be ſpies of the prouince,",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S3": {
+    "text": "The lord of the land ſpake to vs roughly, and thought vs to be ſpies of the prouince,",
+    "from": "p154",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S9": {
+    "text": "The lord of the land ſpake to vs roughly, and thought vs to be ſpies of the prouince,",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S6": {
+    "text": "The Lord of the land ipake to vs roughly, & thought vs to be ſpies ot the prouince,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.928,
+     "odr_com": 0.928,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "to whom we anſwered we are men of peace, neither do we attempt any treachery.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.987,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "to whom we anſwered We are men of peace, neither do we attempt any treachery.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.987,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "to whom we anſwered We are men of peace, nerther do we attempt any treachery.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "to whom we anſwered: We are men of peace, neither doe we attempt any treachery.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.974,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "We are twelue brethren borne of one father: one is not liuing, the youngeſt is with our father in the Land of Chanaan.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "We are twelue brethren borne of one father: one is not liuing, the youngeſt is with our father in the Land of Chanaan.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "We are twelue brethren borne of one father: one is not liuing, the youngeſt is with our father in the Land of Chanaan.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "We are twelue brethten borne of one father: one is not liuing, the yongeſt is with our tather in the Land of Chanaan.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "Who ſaid to vs Thus ſhal I trie that you be men of peace Leaue one of your brethren with me, and take ye prouiſion neceſſarie for your houſes, and goe your wayes,",
+    "from": "p150",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "Who ſaid to vs Thus ſhal I trie that you be men of peace Leaue one of your brethren with me, and take ye prouiſion neceſſarie for your houſes, and goe your wayes,",
+    "from": "p154",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "Who ſaid to vs Thus ſhal I trie that yoube men of peace Leaue one of your brethren with me, and take ye prouiſion neceſſarie for your houſes, and goe your wayes,",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "Who ſaid to vs: Thus ſhal I trie that you be men ot peace : Leaue one of your brethren with me. and take ve prouifion neceſſarie for your houſes, and goe your wayes,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "and bring your youngeſt brother to me, that I may know you are not ſpies and you may receiue this felowe againe, that is kept in priſon: and afterwardes may haue licence to bye what thinges vou wil",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "and bring your youngeſt brother to me, that I may know you are not ſpies: and vou may receiue this felowe againe, that is kept in priſon: and afterwardes may haue licence to bye what thinges vou wil.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "and bring your youngeſt brother to me, that I may know you are not ſpies and you may receiue this felowe againe, that is kept in priſon: and afterwardes may haue licence to bye what thinges you wil.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "and bring your yongeſt brother to me, that I may kuow you are not ſpies: and you mav recciue this telow againe, that is kept in priſon: and afterwards iny haue licence to buy what things you wil.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "35": {
+   "S1": {
+    "text": "This being ſaid, when they powred out their corne, euerie man found his money tied in the mouth of the ſackes: and al being aſtonyed together,",
+    "from": "p150",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "This being ſaid, when they powred out their corne, euerie man found his money tied in the mouth of the ſackes: and al being aſtonyed together,",
+    "from": "p154",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "This being ſaid, when they powred out their corne, euerie man found his money tied in the mouth of the ſackes: and al being aſtonyed together,",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "This being ſaid, wnen they powred out their corne, euerie man found his mouey tied in the mouth of the ſackes : and al being aſtoniſhed together,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "36": {
+   "S1": {
+    "text": "their father Iacob ſaid: You haue made me to be without children, Ioſeph is not liuing, Simeon is kept in bondes, and Beniamin you wil cake away: al theſe euils are fallen vpon me.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "their father Iacob ſaid: You haue made me to be without children, Ioſeph is not liuing, Simeon is kept in bondes, and Beniamin you wil take away: al theſe euils are fallen vpon me.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "their father Iacob ſaid: You haue made me to be without children, Ioſeph is not liuing, Simeon is kept in bondes, and Beniamin you wil take away al theſe euils are fallen vpon me.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "theit father Iacob ſaid: Vou haue made me to be without children, Ioſeph is not liuing, Simeon is kept in bonds, and Beniamin you wil take away : al theſe euils are fallen vpon me.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "37": {
+   "S1": {
+    "text": "To whom Ruben an ſwered Kil my two ſonnes, if I bring him not againe to thee deliuer him into my hand, and I wil reſtore him vnto thee.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "To whom Ruben anſwered Kil my two ſonnes, if I bring him not againe to thee: deliuer him into my hand, and I wil reſtore him vnto thee.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "To whom Ruben anſwered Kil my two ſonnes, if I bring him not againe to thee deliuer him into my hand, and I wil reſtore him vnto thee.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "To whom Ruben anſwered: Kil my two ſonnes, it I bring him not againe to thee : deliuer him into my haud, and I wil reſtore him vnto thee.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "38": {
+   "S1": {
+    "text": "But he ſaid My ſonne ſhal not go downe with you his brother is dead, and he alone is remayning: if any aduerſitie shal chance to him in the land to the which vou goe, you shal bring downe my hoare heares with forowe vnto hel.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.991,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "But he ſaid My ſonne ſhal not go downe with you his brother is dead, and he alone is remayning: if any adage uerſitie shal chance to him in the land to the which vou old goe, you shal bring downe my hoare heares with forowe vnto hel.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.948,
+     "odr_com": 0.956,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S9": {
+    "text": "But he ſaid My ſonne ſhal̓ not go downe with you:8 his brother is dead, and he alone is remayning: if any adage uerſitie shal chance to him in the land to the which you old goe, you shalt bring downe my hoare heares with ſorowe vnto hel.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.961,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S6": {
+    "text": "But he ſaid: My ſonne ſnal not goe downe with you : his brother is dead, and he alone is remayning: if any aduerſitie ſhal chance to him in the laud to the which you goe, you ſnal bring downe my hoare haires with ſorow vnto hel.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.968,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Iacob hearing, that victuales were ſold in Ægypt, he ſaid to his ſonnes: Why neglect ye?",
+   "odr_com": "AND Iacob hearing, that victuales were sold in Ægypt, he said to his sonnes: Why neglect ye?",
+   "sabates_a": "And Jacob hearing that victuals were sold in Ægypt, he said to his sons: Why neglect ye?",
+   "madueke_b": "And Jacob hearing that victuals were sold in Aegypt, he said to his sons: Why neglect ye?"
+  },
+  "2": {
+   "s_dismas": "I haue heard that wheat is ſold in Ægypt: Goe ye downe, and bye vs neceſſaries, that we may liue, and not be conſumed with lacke.",
+   "odr_com": "I haue heard that wheat is sold in Ægypt: Goe ye downe, and bye vs necessaries, that we may liue, and not be consumed with lacke.",
+   "sabates_a": "I have heard that wheat is sold in Ægypt: Go ye down and buy us necessaries, that we may live and not be consumed with lack.",
+   "madueke_b": "I have heard that wheat is sold in Aegypt: Go ye down and buy us necessaries, that we may live and not be consumed with lack."
+  },
+  "3": {
+   "s_dismas": "Therfore the tenne brethren of Ioſeph going downe, to bye corne in Ægypt,",
+   "odr_com": "Therfore the tenne brethren of Ioseph going downe, to bye corne in Ægypt,",
+   "sabates_a": "Therefore the ten brethren of Joseph going down to buy corn in Ægypt,",
+   "madueke_b": "Therefore the ten brethren of Joseph going down to buy corn in Aegypt,"
+  },
+  "4": {
+   "s_dismas": "Beniamin being kept at home by Iacob, who ſaid to his brethren: Leſt perhaps he take any harme in the iourney:",
+   "odr_com": "Beniamin being kept at home by Iacob, who said to his brethren: Lest perhaps he take any harme in the iourney:",
+   "sabates_a": "Benjamin being kept at home by Jacob, who said to his brethren: Lest perhaps he take any harm in the journey:",
+   "madueke_b": "Benjamin being kept at home by Jacob, who said to his brethren: Lest perhaps he take any harm in the journey:"
+  },
+  "5": {
+   "s_dismas": "entred into the land of Ægypt with others that went to bye. For the famine was in the land of Chanaan.",
+   "odr_com": "entred into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+   "sabates_a": "entered into the land of Ægypt with others that went to buy. For the famine was in the land of Chanaan.",
+   "madueke_b": "entered into the land of Aegypt with others that went to buy. For the famine was in the land of Chanaan."
+  },
+  "6": {
+   "s_dismas": "And Ioſeph was prince in the land of Ægypt, and at his pleaſure corne was ſold to the people. And when his brethren had adored him,",
+   "odr_com": "And Ioseph was prince in the land of Ægypt, and at his pleasure corne was sold to the people. And when his brethren had adored him,",
+   "sabates_a": "And Joseph was Prince in the land of Ægypt, and at his pleasure corn was sold to the people. And when his brethren had adored him,",
+   "madueke_b": "And Joseph was Prince in the land of Aegypt, and at his pleasure corn was sold to the people. And when his brethren had adored him,"
+  },
+  "7": {
+   "s_dismas": "and he knewe them, he ſpake as it were to ſtrangers ſomewhat roughly, asking them: From whence came you? Who anſwered: From the land of Chanaan, that we may bye neceſſaries to liue.",
+   "odr_com": "and he knewe them, he spake as it were to strangers somewhat roughly, asking them: From whence came you? Who answered: From the Land of chanaan, that we may bye necessaries to liue.",
+   "sabates_a": "and he knew them, he spake as it were to strangers somewhat roughly, asking them: From whence came you? Who answered: From the Land of Chanaan, that we may buy necessaries to live.",
+   "madueke_b": "and he knew them, he spake as it were to strangers somewhat roughly, asking them: From whence came you? Who answered: From the Land of Chanaan, that we may buy necessaries to live."
+  },
+  "8": {
+   "s_dismas": "And yet himſelfe knowing his brethren, was not knowen of them.",
+   "odr_com": "And yet himselfe knowing his brethren, was not knowen of them.",
+   "sabates_a": "And yet himself knowing his brethren, was not known of them.",
+   "madueke_b": "And yet himself knowing his brethren, was not known of them."
+  },
+  "9": {
+   "s_dismas": "And remembring the dreames, which ſome times he had ſeene, he ſaid to them: You are ſpies: to view the weaker parts of the land you are come.",
+   "odr_com": "And remembring the dreames, which some times he had seene, he said to them: You are spies: to view the weaker parts of the land you are come.",
+   "sabates_a": "And remembering the dreams, which sometimes he had seen, he said to them: You are spies: to view the weaker parts of the land you are come.",
+   "madueke_b": "And remembering the dreams, which sometimes he had seen, he said to them: You are spies: to view the weaker parts of the land you are come."
+  },
+  "10": {
+   "s_dismas": "Who ſaid: It is not ſo, my lord, but thy ſeruantes are come to bye victuals.",
+   "odr_com": "Who said: It is not so, my lord, but thy seruantes are come to bye victuals.",
+   "sabates_a": "Who said: It is not so, my Lord, but thy servants are come to buy victuals.",
+   "madueke_b": "Who said: It is not so, my Lord, but thy servants are come to buy victuals."
+  },
+  "11": {
+   "s_dismas": "We are al the ſonnes of one man: we are come as men of peace, neither do thy ſeruantes goe about anie euil.",
+   "odr_com": "We are al the sonnes of one man: we are come as men of peace, neither do thy seruantes goe about anie euil.",
+   "sabates_a": "We are all the sons of one man: we are come as men of peace, neither do thy servants go about any evil.",
+   "madueke_b": "We are all the sons of one man: we are come as men of peace, neither do thy servants go about any evil."
+  },
+  "12": {
+   "s_dismas": "To whom he anſwered: It is otherwiſe: you came to conſider the vndefenſed partes of this land.",
+   "odr_com": "To whom he answered: It is otherwise: you came to consider the vndefensed partes of this land.",
+   "sabates_a": "To whom he answered: It is otherwise: you came to consider the undefensed parts of this land.",
+   "madueke_b": "To whom he answered: It is otherwise: you came to consider the undefensed parts of this land."
+  },
+  "13": {
+   "s_dismas": "But they: We thy ſeruantes, ſay they, are twelue brethren, the ſonnes of one man in the Land of Chanaan: the youngeſt is with our father, the other is not liuing.",
+   "odr_com": "But they: We thy seruantes, say they, are twelue brethren, the sonnes of one man in the Land of Chanaan: the youngest is with our father, the other is not liuing.",
+   "sabates_a": "But they: We thy servants, say they, are twelve brethren, the sons of one man in the Land of Chanaan: the youngest is with our father, the other is not living.",
+   "madueke_b": "But they: We thy servants, say they, are twelve brethren, the sons of one man in the Land of Chanaan: the youngest is with our father, the other is not living."
+  },
+  "14": {
+   "s_dismas": "This is it, quoth he, that I ſaid: You are ſpies.",
+   "odr_com": "This is it, quoth he, that I said: You are spies.",
+   "sabates_a": "This is it, quoth he, that I said: You are spies.",
+   "madueke_b": "This is it, quoth he, that I said: You are spies."
+  },
+  "15": {
+   "s_dismas": "Now preſently I wil take a trail of you: by the health of Pharao you ſhal not depart hence, vntil your youngeſt brother do come.",
+   "odr_com": "Now presently I wil take a trial of you: by the health of Pharao you shal not depart hence, vntil your youngest brother do come.",
+   "sabates_a": "Now presently I will take a trial of you: by the health of Pharao you shall not depart hence, until your youngest brother do come,",
+   "madueke_b": "Now presently I will take a trial of you: by the health of Pharao you shall not depart hence, until your youngest brother do come,"
+  },
+  "16": {
+   "s_dismas": "Send you one of you to bring him: and you ſhal be in priſon, til the thinges be proued which you haue ſaid, whether they be true or falſe: otherwiſe by the health of Pharao you are ſpies.",
+   "odr_com": "Send you one of you to bring him: and you shal be in prison, til the thinges be proued which you haue said, whether they be true or false: otherwise by the health of Pharao you are spies.",
+   "sabates_a": "Send you one of you to bring him: and you shall be in prison till the things be proved which you have said, whether they be true or false: otherwise by the health of Pharao you are spies.",
+   "madueke_b": "Send you one of you to bring him: and you shall be in prison till the things be proved which you have said, whether they be true or false: otherwise by the health of Pharao you are spies."
+  },
+  "17": {
+   "s_dismas": "Therfore he put them in priſon three dayes.",
+   "odr_com": "Therfore he put them in prison three dayes.",
+   "sabates_a": "Therefore he put them in prison three days.",
+   "madueke_b": "Therefore he put them in prison three days."
+  },
+  "18": {
+   "s_dismas": "And the third day bringing them out of priſon, he ſaid: Doe as I haue ſaid, and you ſhal liue: for I feare God.",
+   "odr_com": "And the third day bringing them out of prison, he said: Doe as I haue said, and you shal liue: for I feare God.",
+   "sabates_a": "And the third day bringing them out of prison, he said: Do as I have said, and you shall live: for I fear God.",
+   "madueke_b": "And the third day bringing them out of prison, he said: Do as I have said, and you shall live: for I fear God."
+  },
+  "19": {
+   "s_dismas": "If you be men of peace, let one of your brethren be bounde in priſon: and goe ye your wayes, and carie the corne that you haue bought, vnto your houſes,",
+   "odr_com": "If you be men of peace, let one of your brethren be bounde in prison: and goe ye your wayes, and carie the corne that you haue bought, vnto your houses,",
+   "sabates_a": "If you be men of peace, let one of your brethren be bound in prison: and go ye your ways, and carry the corn that you have bought unto your houses,",
+   "madueke_b": "If you be men of peace, let one of your brethren be bound in prison: and go ye your ways, and carry the corn that you have bought unto your houses,"
+  },
+  "20": {
+   "s_dismas": "and bring your youngeſt brother to me, that I may proue your ſayings to be true, and that you die not. They did as he had ſaid,",
+   "odr_com": "and bring your youngest brother to me, that I may proue your sayings to be true, and that you die not. They did as he had said,",
+   "sabates_a": "and bring your youngest brother to me, that I may prove your sayings to be true, and that you die not. They did as he had said,",
+   "madueke_b": "and bring your youngest brother to me, that I may prove your sayings to be true, and that you die not. They did as he had said,"
+  },
+  "21": {
+   "s_dismas": "and they talked one to an other: Worthely do we ſuffer theſe thinges, becauſe we haue ſinned againſt our brother, ſeing the diſtreſſe of his ſoule, whileſt he beſought vs, and we heard not: therfore is this tribulation come vpon vs.",
+   "odr_com": "and they talked one to an other: Worthely do we suffer these thinges, because we haue sinned against our brother, seing the distresse of his soule, whilest he besought vs, and we heard not: therfore is this tribulation come vpon vs.",
+   "sabates_a": "and they talked one to another: Worthily do we suffer these things, because we have sinned against our brother, seeing the distress of his soul whilst he besought us, and we heard not: therefore is this tribulation come upon us.",
+   "madueke_b": "and they talked one to another: Worthily do we suffer these things, because we have sinned against our brother, seeing the distress of his soul whilst he besought us, and we heard not: therefore is this tribulation come upon us."
+  },
+  "22": {
+   "s_dismas": "Among whom Ruben one of them, ſaid: Why, did not I ſay to you: Sinne not againſt the boy: and you heard me not? Loe his blood is required.",
+   "odr_com": "Among whom Ruben one of them, said: Why, did not I say to you: Sinne not against the boy: and you heard me not? Loe his blood is required.",
+   "sabates_a": "Among whom Ruben one of them, said: Why, did not I say to you: Sin not against the boy; and you heard me not? Lo his blood is required.",
+   "madueke_b": "Among whom Ruben one of them, said: Why, did not I say to you: Sin not against the boy; and you heard me not? Lo his blood is required."
+  },
+  "23": {
+   "s_dismas": "And they knew not that Ioſeph vnderſtood: becauſe he ſpake to them by an interpreter.",
+   "odr_com": "And they knew not that Ioseph vnderstood: because he spake to them by an interpreter.",
+   "sabates_a": "And they knew not that Joseph understood: because he spake to them by an interpreter.",
+   "madueke_b": "And they knew not that Joseph understood: because he spake to them by an interpreter."
+  },
+  "24": {
+   "s_dismas": "And he turned away himſelfe a litle while, and wept: and returning he ſpake to them.",
+   "odr_com": "And he turned away himselfe a litle while, and wept: and returning he spake to them.",
+   "sabates_a": "And he turned away himself a little while, and wept: and returning he spake to them.",
+   "madueke_b": "And he turned away himself a little while, and wept: and returning he spake to them."
+  },
+  "25": {
+   "s_dismas": "And taking Simeon, and binding him in their preſence, he commanded his ſeruantes that they ſhould fil vp their ſackes with wheat, and put euerie mans money againe in their bagges, geuing them beſides for to eate on the way: who did ſo.",
+   "odr_com": "And taking Simeon, and binding him in their presence, he commanded his seruantes that they should fil vp their sackes with wheat, and put euerie mans money againe in their bagges, geuing them besides for to eate on the way: who did so.",
+   "sabates_a": "And taking Simeon, and binding him in their presence, he commanded his servants that they should fill up their sacks with wheat, and put every man's money again in their bags, giving them besides for to eat on the way: who did so.",
+   "madueke_b": "And taking Simeon, and binding him in their presence, he commanded his servants that they should fill up their sacks with wheat, and put every man's money again in their bags, giving them besides for to eat on the way: who did so."
+  },
+  "26": {
+   "s_dismas": "But they carying their corne vpon their aſſes, tooke their iourney.",
+   "odr_com": "But they carying their corne vpon their asses, tooke their iourney.",
+   "sabates_a": "But they carrying their corn upon their asses, took their journey.",
+   "madueke_b": "But they carrying their corn upon their asses, took their journey."
+  },
+  "27": {
+   "s_dismas": "And one of them opening his ſacke, to geue his beaſt prouender in the inne, beholding the money in the ſackes mouth,",
+   "odr_com": "And one of them opening his sacke, to geue his beast prouender in the inne, beholding the money in the sackes mouth,",
+   "sabates_a": "And one of them opening his sack to give his beast provender in the Inn, beholding the money in the sack's mouth,",
+   "madueke_b": "And one of them opening his sack to give his beast provender in the Inn, beholding the money in the sack's mouth,"
+  },
+  "28": {
+   "s_dismas": "he ſaid to his brethren: My money is geuen me againe, behold it is in the ſacke. And being aſtonyed, and trubled amongſt themſelues, they ſaid: What is this, that God hath done vnto vs?",
+   "odr_com": "he said to his brethren: My money is geuen me againe, behold it is in the sacke. And being astonyed, and trubled amongest themselues, they said: What is this, that God hath done vnto vs?",
+   "sabates_a": "he said to his brethren: My money is given me again, behold it is in the sack. And being astonished and troubled amongst themselves, they said: What is this, that God hath done unto us?",
+   "madueke_b": "he said to his brethren: My money is given me again, behold it is in the sack. And being astonished and troubled amongst themselves, they said: What is this, that God hath done unto us?"
+  },
+  "29": {
+   "s_dismas": "And they came to Iacob their father into the land of Chanaan, and they told him al thinges that had chanced vnto them, ſaying:",
+   "odr_com": "And they came to Iacob their father into the land of Chanaan, and they told him al thinges that had chanced vnto them, saying:",
+   "sabates_a": "And they came to Jacob their father into the land of Chanaan, & they told him all things that had chanced unto them, saying:",
+   "madueke_b": "And they came to Jacob their father into the land of Chanaan, & they told him all things that had chanced unto them, saying:"
+  },
+  "30": {
+   "s_dismas": "The lord of the land ſpake to vs roughly, and thought vs to be ſpies of the prouince,",
+   "odr_com": "The lord of the land spake to vs roughly, and thought vs to be spies of the prouince,",
+   "sabates_a": "The lord of the land spake to us roughly, & thought us to be spies of the province,",
+   "madueke_b": "The lord of the land spake to us roughly, & thought us to be spies of the province,"
+  },
+  "31": {
+   "s_dismas": "to whom we anſwered: We are men of peace, neither do we attempt any treachery.",
+   "odr_com": "to whom we answered: We are men of peace, nether do we attempt any treachery.",
+   "sabates_a": "to whom we answered: We are men of peace, neither do we attempt any treachery.",
+   "madueke_b": "to whom we answered: We are men of peace, neither do we attempt any treachery."
+  },
+  "32": {
+   "s_dismas": "We are twelue brethren borne of one father: one is not liuing, the youngeſt is with our father in the Land of Chanaan.",
+   "odr_com": "We are twelue brethren borne of one father: one is not liuing, the youngest is with our father in the Land of Chanaan.",
+   "sabates_a": "We are twelve brethren born of one father: one is not living, the youngest is with our father in the Land of Chanaan.",
+   "madueke_b": "We are twelve brethren born of one father: one is not living, the youngest is with our father in the Land of Chanaan."
+  },
+  "33": {
+   "s_dismas": "Who ſaid to vs: Thus ſhal I trie that you be men of peace: Leaue one of your brethren with me, and take ye prouiſion neceſſarie for your houſes, and goe your wayes,",
+   "odr_com": "Who said to vs: Thus shal I trie that you be men of peace: Leaue one of your brethren with me, and take ye prouision necessarie for your houses, and goe your wayes,",
+   "sabates_a": "Who said to us: Thus shall I try that you be men of peace: Leave one of your brethren with me, and take ye provision necessary for your houses, and go your ways,",
+   "madueke_b": "Who said to us: Thus shall I try that you be men of peace: Leave one of your brethren with me, and take ye provision necessary for your houses, and go your ways,"
+  },
+  "34": {
+   "s_dismas": "and bring your youngeſt brother to me, that I may know you are not ſpies: and you may receiue this felowe againe, that is kept in priſon: and afterwardes may haue licence to bye what thinges you wil.",
+   "odr_com": "and bring your youngest brother to me, that I may know you are not spies: and you may receiue this felowe againe, that is kept in prison: and afterwardes may haue licence to bye what thinges you wil.",
+   "sabates_a": "and bring your youngest brother to me, that I may know you are not spies: and you may receive this fellow again, that is kept in prison: and afterwards may have license to buy what things you will.",
+   "madueke_b": "and bring your youngest brother to me, that I may know you are not spies: and you may receive this fellow again, that is kept in prison: and afterwards may have license to buy what things you will."
+  },
+  "35": {
+   "s_dismas": "This being ſaid, when they powred out their corne, euerie man found his money tied in the mouth of the ſackes: and al being aſtonyed together,",
+   "odr_com": "This being said, when they powred out their corne, euerie man found his money tied in the mouth of the sackes: and al being astonyed together,",
+   "sabates_a": "This being said when they poured out their corn, every man found his money tied in the mouth of the sacks: and all being astonished together,",
+   "madueke_b": "This being said when they poured out their corn, every man found his money tied in the mouth of the sacks: and all being astonished together,"
+  },
+  "36": {
+   "s_dismas": "their father Iacob ſaid: You haue made me to be without children, Ioſeph is not liuing, Simeon is kept in bondes, and Beniamin you wil take away: al theſe euils are fallen vpon me.",
+   "odr_com": "their father Iacob said: You haue made me to be without children, Ioseph is not liuing, Simeon is kept in bondes, and Beniamin you wil take away: al these euils are fallen vpon me.",
+   "sabates_a": "their father Jacob said: You have made me to be without children, Joseph is not living, Simeon is kept in bonds, and Benjamin you will take away: all these evils, are fallen upon me.",
+   "madueke_b": "their father Jacob said: You have made me to be without children, Joseph is not living, Simeon is kept in bonds, and Benjamin you will take away: all these evils, are fallen upon me."
+  },
+  "37": {
+   "s_dismas": "To whom Ruben anſwered: Kil my two ſonnes, if I bring him not againe to thee: deliuer him into my hand, and I wil reſtore him vnto thee.",
+   "odr_com": "To whom Ruben answered: Kil my two sonnes, if I bring him not againe to thee: deliuer him into my hand, and I wil restore him vnto thee.",
+   "sabates_a": "To whom Ruben answered: Kill my two sons, if I bring him not again to thee: deliver him into my hand, and I will restore him unto thee.",
+   "madueke_b": "To whom Ruben answered: Kill my two sons, if I bring him not again to thee: deliver him into my hand, and I will restore him unto thee."
+  },
+  "38": {
+   "s_dismas": "But he ſaid: My ſonne ſhal not go downe with you: his brother is dead, and he alone is remayning: if any aduerſitie shal chance to him in the land to the which you goe, you shal bring downe my hoare haires with ſorowe vnto hel.",
+   "odr_com": "But he said: My sonne shal not go downe with you: his brother is dead, and he alone is remayning: if any aduersitie shal chance to him in the land to the which you goe, you shal bring downe 376.38 my hoare heares with sorowe vnto hel.",
+   "sabates_a": "But he said: My son shall not go down with you: his brother is dead, and he alone is remaining: if any adversity shall chance to him in the land to the which you go, you shall bring down my hoar hairs with sorrow unto hell.",
+   "madueke_b": "But he said: My son shall not go down with you: his brother is dead, and he alone is remaining: if any adversity shall chance to him in the land to the which you go, you shall bring down my hoar hairs with sorrow unto hell."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Jacob hearing that victuals were sold in Ægypt, he said to his sons: Why neglect ye?",
+  "2": "I have heard that wheat is sold in Ægypt: Go ye down and buy us necessaries, that we may live and not be consumed with lack.",
+  "3": "Therefore the ten brethren of Joseph going down to buy corn in Ægypt,",
+  "4": "Benjamin being kept at home by Jacob, who said to his brethren: Lest perhaps he take any harm in the journey:",
+  "5": "entered into the land of Ægypt with others that went to buy. For the famine was in the land of Chanaan.",
+  "6": "And Joseph was Prince in the land of Ægypt, and at his pleasure corn was sold to the people. And when his brethren had adored him,",
+  "7": "and he knew them, he spake as it were to strangers somewhat roughly, asking them: From whence came you? Who answered: From the Land of Chanaan, that we may buy necessaries to live.",
+  "8": "And yet himself knowing his brethren, was not known of them.",
+  "9": "And remembering the dreams, which sometimes he had seen, he said to them: You are spies: to view the weaker parts of the land you are come.",
+  "10": "Who said: It is not so, my Lord, but thy servants are come to buy victuals.",
+  "11": "We are all the sons of one man: we are come as men of peace, neither do thy servants go about any evil.",
+  "12": "To whom he answered: It is otherwise: you came to consider the undefensed parts of this land.",
+  "13": "But they: We thy servants, say they, are twelve brethren, the sons of one man in the Land of Chanaan: the youngest is with our father, the other is not living.",
+  "14": "This is it, quoth he, that I said: You are spies.",
+  "15": "Now presently I will take a trial of you: by the health of Pharao you shall not depart hence, until your youngest brother do come,",
+  "16": "Send you one of you to bring him: and you shall be in prison till the things be proved which you have said, whether they be true or false: otherwise by the health of Pharao you are spies.",
+  "17": "Therefore he put them in prison three days.",
+  "18": "And the third day bringing them out of prison, he said: Do as I have said, and you shall live: for I fear God.",
+  "19": "If you be men of peace, let one of your brethren be bound in prison: and go ye your ways, and carry the corn that you have bought unto your houses,",
+  "20": "and bring your youngest brother to me, that I may prove your sayings to be true, and that you die not. They did as he had said,",
+  "21": "and they talked one to another: Worthily do we suffer these things, because we have sinned against our brother, seeing the distress of his soul whilst he besought us, and we heard not: therefore is this tribulation come upon us.",
+  "22": "Among whom Ruben one of them, said: Why, did not I say to you: Sin not against the boy; and you heard me not? Lo his blood is required.",
+  "23": "And they knew not that Joseph understood: because he spake to them by an interpreter.",
+  "24": "And he turned away himself a little while, and wept: and returning he spake to them.",
+  "25": "And taking Simeon, and binding him in their presence, he commanded his servants that they should fill up their sacks with wheat, and put every man's money again in their bags, giving them besides for to eat on the way: who did so.",
+  "26": "But they carrying their corn upon their asses, took their journey.",
+  "27": "And one of them opening his sack to give his beast provender in the Inn, beholding the money in the sack's mouth,",
+  "28": "he said to his brethren: My money is given me again, behold it is in the sack. And being astonished and troubled amongst themselves, they said: What is this, that God hath done unto us?",
+  "29": "And they came to Jacob their father into the land of Chanaan, & they told him all things that had chanced unto them, saying:",
+  "30": "The lord of the land spake to us roughly, & thought us to be spies of the province,",
+  "31": "to whom we answered: We are men of peace, neither do we attempt any treachery.",
+  "32": "We are twelve brethren born of one father: one is not living, the youngest is with our father in the Land of Chanaan.",
+  "33": "Who said to us: Thus shall I try that you be men of peace: Leave one of your brethren with me, and take ye provision necessary for your houses, and go your ways,",
+  "34": "and bring your youngest brother to me, that I may know you are not spies: and you may receive this fellow again, that is kept in prison: and afterwards may have license to buy what things you will.",
+  "35": "This being said when they poured out their corn, every man found his money tied in the mouth of the sacks: and all being astonished together,",
+  "36": "their father Jacob said: You have made me to be without children, Joseph is not living, Simeon is kept in bonds, and Benjamin you will take away: all these evils, are fallen upon me.",
+  "37": "To whom Ruben answered: Kill my two sons, if I bring him not again to thee: deliver him into my hand, and I will restore him unto thee.",
+  "38": "But he said: My son shall not go down with you: his brother is dead, and he alone is remaining: if any adversity shall chance to him in the land to the which you go, you shall bring down my hoar hairs with sorrow unto hell."
+ },
+ "ref_coverage": {
+  "janvier": 38,
+  "have": {
+   "s_dismas": 38,
+   "odr_com": 38,
+   "sabates_a": 38,
+   "madueke_b": 38
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 152,
+ "triage": "R3-READY",
+ "secs": 8.0
+}

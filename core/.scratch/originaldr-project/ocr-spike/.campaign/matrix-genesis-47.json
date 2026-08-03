@@ -1,0 +1,1730 @@
+{
+ "chapter": 47,
+ "n_verses": 31,
+ "n_cells": 124,
+ "n_pass": 101,
+ "rate": 0.8145,
+ "ref_means": {
+  "s_dismas": 0.9553,
+  "odr_com": 0.9557,
+  "sabates_a": 0.938,
+  "madueke_b": 0.9442
+ },
+ "src_rates": {
+  "S1": 0.9355,
+  "S3": 0.9677,
+  "S9": 0.9677,
+  "S6": 0.3871
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  1
+ ],
+ "n_open": 23,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 1,
+   "worst": 0.873,
+   "from": "p161",
+   "text": "Ioſeph, going in told Pharao, ſaing My ſather I brethren, their ſheepe and heardes, al thinges that they poſſeſſe, are come out of the Land of Chanaan: behold they ſtay in the Land of Geſſen."
+  },
+  {
+   "src": "S3",
+   "verse": 1,
+   "worst": 0.899,
+   "from": "p165",
+   "text": "IT OSEPI therfore going in told Pharao, ſaing : My father Ibrethren, their ſheepe and heardes, & al thinges that they poſſeſſe, are come out of the Land of Chanaan: & behold they ſtay in the Land of Geſſen."
+  },
+  {
+   "src": "S9",
+   "verse": 1,
+   "worst": 0.781,
+   "from": "p173",
+   "text": "Ioſeph, to burte him amongſt his OSEPH therfore going in told Pharao, ſaiug My father Ibrethren, their ſheepe and heardes, al thinges that they poſſeſſe, are come out of the Land of Chanaan: behold they ſtay in the Land of Geſſen."
+  },
+  {
+   "src": "S6",
+   "verse": 1,
+   "worst": 0.865,
+   "from": "p147",
+   "text": "Ioſeph. going in told Pharao, ſaying My tather and brethren, their ſheep and heards, aud al thines that they poſſeſſe, are come out of the Land of Chanaan: and behold they ſtay in the Land of Geſſen."
+  },
+  {
+   "src": "S6",
+   "verse": 7,
+   "worst": 0.862,
+   "from": "p147",
+   "text": "this Ioſeph brought in his tather to the King, and ſet him betore lim: who bleſſing him,"
+  },
+  {
+   "src": "S1",
+   "verse": 12,
+   "worst": 0.873,
+   "from": "chapter",
+   "text": "And he nourished them, and his com his fathers houſe, alowing victuales ro euerie one."
+  },
+  {
+   "src": "S6",
+   "verse": 12,
+   "worst": 0.77,
+   "from": "p148",
+   "text": "he nouriſhed them, and al his tathers houſe, alowins vieuerie one."
+  },
+  {
+   "src": "S6",
+   "verse": 13,
+   "worst": 0.865,
+   "from": "p148",
+   "text": "For in the whole world there wautod bread, & oppreſſed the land, eſpecially of Egypt and Chanaan."
+  },
+  {
+   "src": "S6",
+   "verse": 16,
+   "worst": 0.827,
+   "from": "p148",
+   "text": "To whom he anſwered : Briug and for them I wil giue you vi tuals, it you haue not to pay."
+  },
+  {
+   "src": "S6",
+   "verse": 17,
+   "worst": 0.814,
+   "from": "p148",
+   "text": "when they had brought, he gaue them ſuſtenance tor horſes, and oxen, and aſſes: and he ſuſtained them that veare for the of the cattel."
+  },
+  {
+   "src": "S6",
+   "verse": 18,
+   "worst": 0.855,
+   "from": "p148",
+   "text": "And they came the ſecond yeare, and ſaid to wil not conceale trom our Lord, that our money tayling, withal haue fayled: neithet art thou ignorant, that we haue beſides our bodies and land."
+  },
+  {
+   "src": "S6",
+   "verse": 19,
+   "worst": 0.754,
+   "from": "p148",
+   "text": "Why thertore ſhal we die in both we and our land wil be thyne: buy vs to be the Rines & giue vs ſeed, leſt for default of tillers the lād be tur ned into"
+  },
+  {
+   "src": "S6",
+   "verse": 20,
+   "worst": 0.804,
+   "from": "p148",
+   "text": "Ioſeph theretore bought al the Lad ot Egypt, euery mā poſſeſſions for the greatnes of the famine. And he brought Pharaos hands,"
+  },
+  {
+   "src": "S6",
+   "verse": 21,
+   "worst": 0.833,
+   "from": "p148",
+   "text": "and al the people therof trom the tardeſt Egypt, euen to the vttermoſt coaſts therof,"
+  },
+  {
+   "src": "S6",
+   "verse": 22,
+   "worst": 0.846,
+   "from": "p148",
+   "text": "2ſauing the b) The the Prieſts, which the King had dcliuered them: () to whom ofAEgvnt alowance of victuals was oiuen out ot the common bar- ing not therfore they were not driuen to ſel their poſſeſſions.3."
+  },
+  {
+   "src": "S6",
+   "verse": 23,
+   "worst": 0.805,
+   "from": "p148",
+   "text": "Io- to labour ſaid to the people: Behold as vou ſee, Pharao poſſeſſeth thei liuing, and your land: take ſeed, and ſow the fields,"
+  },
+  {
+   "src": "S6",
+   "verse": 24,
+   "worst": 0.0,
+   "from": "p148",
+   "text": "that you may found out The fitth part you ſhal iue to the Kins: the othertoure I am Mathematikes wtneſſeth you ſhal haue tor ſeed, & for tood to your tamilies & vour chil- Ariſtotle"
+  },
+  {
+   "src": "S6",
+   "verse": 26,
+   "worst": 0.83,
+   "from": "p148",
+   "text": "From that time is preſent day in the whole land ot Egypt, the fifth part is paied and it became as it were a law, ſauine the land ot the which was free from this condition."
+  },
+  {
+   "src": "S6",
+   "verse": 27,
+   "worst": 0.813,
+   "from": "p148",
+   "text": "Iſrael therfore dwelt that is, in the Landof Geſſon, and poſſeſſed it: and was in& multiplied exceedingly."
+  },
+  {
+   "src": "S6",
+   "verse": 28,
+   "worst": 0.84,
+   "from": "p148",
+   "text": "And he liued in it ſeuenteon yeaal the dayes ot his lite came to an hundred tourtie ſeuen yeares."
+  },
+  {
+   "src": "S6",
+   "verse": 29,
+   "worst": 0.828,
+   "from": "p148",
+   "text": "when he ſaw that the day of his death approached, he called Ioſeph, aud ſaid to him : It I haue tound grace in thy ſight, hand vnder my thigh: and thou thalt doe me this mercie and to bury me in Egypt:"
+  },
+  {
+   "src": "S6",
+   "verse": 30,
+   "worst": 0.784,
+   "from": "p148",
+   "text": "but Iwil ſlecp withmy tathers, me away out ot this land, & burie me in the ſopulchre ofmy To whom Ioſeph anſwered: I wil doe that thou haſt com31."
+  },
+  {
+   "src": "S6",
+   "verse": 31,
+   "worst": 0.878,
+   "from": "chapter",
+   "text": "And he ſaid Sweare then to me. Who ſweating, Iſracl God, turning to the beds head,"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "Ioſeph, going in told Pharao, ſaing My ſather I brethren, their ſheepe and heardes, al thinges that they poſſeſſe, are come out of the Land of Chanaan: behold they ſtay in the Land of Geſſen.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.873,
+     "madueke_b": 0.873
+    }
+   },
+   "S3": {
+    "text": "IT OSEPI therfore going in told Pharao, ſaing : My father Ibrethren, their ſheepe and heardes, & al thinges that they poſſeſſe, are come out of the Land of Chanaan: & behold they ſtay in the Land of Geſſen.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.899,
+     "madueke_b": 0.899
+    }
+   },
+   "S9": {
+    "text": "Ioſeph, to burte him amongſt his OSEPH therfore going in told Pharao, ſaiug My father Ibrethren, their ſheepe and heardes, al thinges that they poſſeſſe, are come out of the Land of Chanaan: behold they ſtay in the Land of Geſſen.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 0.852,
+     "odr_com": 0.852,
+     "sabates_a": 0.781,
+     "madueke_b": 0.781
+    }
+   },
+   "S6": {
+    "text": "Ioſeph. going in told Pharao, ſaying My tather and brethren, their ſheep and heards, aud al thines that they poſſeſſe, are come out of the Land of Chanaan: and behold they ſtay in the Land of Geſſen.",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.865,
+     "odr_com": 0.865,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "The vimoſt alſo of his brethren fiue perſons he preſented before the king",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "The vtmoſt alſo of his brethren fiue perſons he preſented before the king:",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "The vtmoſt alſo of his brethren fiue perſons he preſented before the king:",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "The vtinoſt alſo of his brethren fiue perſons he preſented before the king:",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "whom he asked What trade haue you They anſwered We thy ſeruantes are paſtours of ſheepe, both we, and our fathers.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "whom he asked What trade haue you They anſwered We thy ſeruantes are paſtours of ſheepe, both we, and our fathers. 4.†",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "whom he asked What trade haue you? They anſwered We thy ſeruantes are paſtours of ſheepe, both we, and our fathers.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "whom he asked What trade haue you: They anſweed:We thy ſeruants aro paſtours of ſeep. both we, and our fathers.",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "We are come to ſoiourne in the land, becauſe there is no graſſe for thy ſernantes flockes, the famine being very ſore in the land of Chanaan and we deſire thee to command that we thy ſeruantes may be inthe Land of Geſſen.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "We are come to ſoiourne in the land, becauſe there is no graſſe for thy ſeruantes flockes, the famine being very ſore in the land of Chanaan and we deſire thee to command that we thy ſeruantes may be inthe Land of Geſſen.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "We are come to ſoiourne in the land, becauſe there is no graſſe for thy ſeruantes flockes, the famine being very ſore in the land of Chanaan: and we deſire thee to command that we thy ſeruantes may be in the Land of Geſſen.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "We are come to ſeiourn in the land cauſe there is no graſſe for thy ſeruants flocks, the famine being very ſore in the land ot Chanaan: and we defire thee to command that we thy ſeruants may be in the Land of Geſſen.",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And the King therfore ſaid to Ioſeph Thy father and thy brethren are come to thee.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And the Ring therfore ſaid to Ioſeph Thy father and thy brethren are come to thee.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "And the King therfore ſaid to Ioſeph Thy father and thy brethren are come to thee.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And the Ring therfore ſaid to Ioſeph: Thy father and thy brethren are come to thee.",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "The Land of Egypt, is in thy ſight: make them to dwel in the beſt place, and deliuer them the Land of Geſſen. And if ſo be thou knowe that there are induſtrious men. among thom, appoint them maiſters of my cattel.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "The Land of Agypt, is in thy ſight: make them to dwel in the beſt place, and deliuer them the Land of Geſſen. And if ſo be thou Enowe that there are induſtrious men among them, appoint them maiſters of my cattel.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S9": {
+    "text": "The Land of Agypt, is in thy ſight: make them to dwel in the beſt place, and deliuer them theLandof Geſſen. And if ſo be thou knowe that there are induſtrious men among them, appoint them maiſters of my cattel.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "The Land of AEgypt is in thy ſight: make them to dwdl in the beſt place, & deliuer them the Land of Geſſen. And it ſo be thou know that there are induſtrious men among them, appoint them Maſters of my cattel.",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "After this Ioſeph brought in his ſather to the King, and ſet him before him: who bleſſing him,",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S3": {
+    "text": "After this Ioſeph brought in his ſather to the King, and ſet him before him who bleſſing him,",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S9": {
+    "text": "After this Ioſeph brought in his ſather to the King, and ſet him before him: who bleſſing him,",
+    "from": "p173",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S6": {
+    "text": "this Ioſeph brought in his tather to the King, and ſet him betore lim: who bleſſing him,",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.901,
+     "odr_com": 0.901,
+     "sabates_a": 0.862,
+     "madueke_b": 0.862
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "and being asked of him How manie be the dayes of the yeares of thy life",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "and being asked of him: How manie be the dayes of the yeares of thy life",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "and being asked of him: How manie be the dayes of the yeares of thy life",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "and being asked of him: How manie be the dayes of the yeares of thy life",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "He anſwered The dayes of the pilgrimage of my life are an hundred thirtie yeares, ſew, and euil, and they are not come to the dayes of my fathers, in which they were pilgrimes.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "He anſwered The dayes of the pilgrimage of my life are an hundred thirrie yeares, few, and cuil, and they are not come to the dayes of my fathers, in which they were pilgrimes.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "He anſwered The dayes of the pilgrimage of my life are an hundred thirtie yeares, few, and: euil, and they are not come to the dayes of my fathers, in which they life were pilgrimes.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "He auſwered: The dayos ot the pilgrimage of my lite are an hundred thrte yeares, (fand euil and they are not come to the dayes ot ry fathers, in which they were pilgrimes.",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.936,
+     "odr_com": 0.936,
+     "sabates_a": 0.91,
+     "madueke_b": 0.91
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And bleſſing the king, he went forth.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And bleſſing the king, he went forth.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And bleſſing the king, he went forth.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And bleſſing the Ring, ke went torth.",
+    "from": "p147",
+    "score": {
+     "s_dismas": 0.914,
+     "odr_com": 0.914,
+     "sabates_a": 0.906,
+     "madueke_b": 0.906
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "But Ioſeph gaue poſſeſſion to his father and his brethren in gypt, in the beſt place of the land, in Rhameſſes, had commanded.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.905,
+     "madueke_b": 0.905
+    }
+   },
+   "S3": {
+    "text": "But Ioſeph gaue poſſeſſion to his father and his brethren in Agypt, in the beſt place of the land, in Rhameſſes, Pharao had commanded.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "But Ioſeph gaue poſſeſſion to his father and his brethren in Ægypt, in the beſt place of the land, in Rhameſſes, as Pharao had commanded.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "But Ioſeph gaue poſſeſſion to his father and his brethren in Ægypt, on the beſt place of the land, in Rhameſſes, as Pharao had commanded.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And he nourished them, and his com his fathers houſe, alowing victuales ro euerie one.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.904,
+     "odr_com": 0.904,
+     "sabates_a": 0.873,
+     "madueke_b": 0.873
+    }
+   },
+   "S3": {
+    "text": "And he nourished them, and al his fathers houſe, alowing victuales to euerie one.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S9": {
+    "text": "And he nourished them, and al his fathers houſe, alowing victuales to euerie one.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "he nouriſhed them, and al his tathers houſe, alowins vieuerie one.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.782,
+     "odr_com": 0.782,
+     "sabates_a": 0.77,
+     "madueke_b": 0.77
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "For in the whole world there wanted bread, and famine oppreſſed the land, eſpecially of Ægypt and Chanaan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "For in the whole world there wanted bread, and famine oppreſſed the land, eſpecially of Ægypt and Chanaan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "For in the whole world there wanted bread, and famine oppreſſed the land, eſpecially of Ægypt and Chanaan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "For in the whole world there wautod bread, & oppreſſed the land, eſpecially of Egypt and Chanaan.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.865,
+     "odr_com": 0.865,
+     "sabates_a": 0.901,
+     "madueke_b": 0.901
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Out of which he gethered together al the money for the ſelling of corne, and brought it in vnto the kings treaſure.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S3": {
+    "text": "Out of which he gethered together al the money for the ſelling of corne, and brought it in vnto the kings treaſure.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S9": {
+    "text": "Out of which he gethered together al the money for the ſelling of corne, and brought it in vnto the kings treaſure.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S6": {
+    "text": "Out of which he gathered together al the money for the ſelling of corne, & brought it in vnto the Kings treaſure.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And when the byers wanted money, al Egypt came to Ioſeph, ſaving: Geue vs bread : why die we before thee, our money failing?",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "And when the byers wanted money, al Egypt came to Ioſeph, ſaying: Geue vs bread: why die we before thee, our money failing?",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S9": {
+    "text": "And when the byers wanted money, al Egypt came to Ioſeph, ſaying Geue vs bread : why die we before thee, our money failing?",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "And when the buyers wanted moncy, al Ægypt came to Ioſeph, ſaying: Giue vs bread why die we before thee, our money failing",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "To whom he anſwered Bring your cattel, and for them I wil geue you victuals, if you haue not to pay.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "To whom he anſwered : Bringyour cattel, and for them I wil geue you victuales, if you haue not to pay.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "To whom he anſwered : Bring your cattel, and for them I wil geue you victuales, if you haue not to pay.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "To whom he anſwered : Briug and for them I wil giue you vi tuals, it you haue not to pay.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.827,
+     "odr_com": 0.827,
+     "sabates_a": 0.859,
+     "madueke_b": 0.859
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Which when chey had brought, he gaue them ſuſtenance for horſes, and sheepe, and oxen, and aſſes: and he ſuſtayned them that veare for the exchange of the catrel.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S3": {
+    "text": "Which when they had brought, he gaue them ſuſtenance for horſes, and sheepe, and oxen, and aſſes: and he ſuſtayned them that veare for the exchange of the cattel.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "Which when they had brought, he gaue them ſuſtenance for horſes, and sheepe, and oxen, and aſſes : and he ſuſtayned them that yeare for the exchange of the cattel.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "when they had brought, he gaue them ſuſtenance tor horſes, and oxen, and aſſes: and he ſuſtained them that veare for the of the cattel.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.814,
+     "odr_com": 0.814,
+     "sabates_a": 0.818,
+     "madueke_b": 0.818
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And they came the ſecond yeare, and ſaid to him : We wil not conceale from our lord, that our money fayling, our cattel withal haue fayled: neither art thou ignorant, that we haue nothing beſides our bodies and land.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S3": {
+    "text": "And they came the ſecond yeare, and ſaid to him: We wil not conceale from our lord, that our money fayling, our cattel withal haue fayled : neither art thou ignorant, that we haue nothing beſides our bodies and land.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S9": {
+    "text": "And they came the ſecond yeare, and ſaid to him : We wil not conceale from our lord, that our money fayling, our cattel withal haue fayled : neither art thou ignorant, that we haue nothing beſides our bodies and land.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S6": {
+    "text": "And they came the ſecond yeare, and ſaid to wil not conceale trom our Lord, that our money tayling, withal haue fayled: neithet art thou ignorant, that we haue beſides our bodies and land.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.855,
+     "odr_com": 0.861,
+     "sabates_a": 0.869,
+     "madueke_b": 0.869
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "why therfore shal we die in thy ſighr both we and our land wil be thyne: bye vs to be the kings bondmen, and geue vs ſede, leſt for default of tillers the land be turned into a wildernes.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "Why therfore shal we die in thy ſight both we and our land wil be thyne: bye vs to be the kings bondmen, and geue vs ſede, leſt for default of tillers the land be turned into a wildernes.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S9": {
+    "text": "Why therfore shal we die in thy ſight both we and our land wil be thyne: bye vs be the kings bondmen, and geue vs ſede, leſt for default tillers the land be turned into a wildernes.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S6": {
+    "text": "Why thertore ſhal we die in both we and our land wil be thyne: buy vs to be the Rines & giue vs ſeed, leſt for default of tillers the lād be tur ned into",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.754,
+     "odr_com": 0.754,
+     "sabates_a": 0.78,
+     "madueke_b": 0.78
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "Ioſeph therfore bought al the Land of Egypt, euery man ſelling his poſſeſſions for the greatnes of the famine. And he brought it vnder Pharaos handes,",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "Ioſeph therfore bought al the Land of Egypt, euery man ſelling his poſſeſſions for the greatnes of the famine. And he brought it vnder Pharaos handes,",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Ioſeph therfore bought al the Land of Egypt, euery man ſelling his poſſeſſions for the greatnes of the famine. And he brought it vnder Pharaos handes,",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "Ioſeph theretore bought al the Lad ot Egypt, euery mā poſſeſſions for the greatnes of the famine. And he brought Pharaos hands,",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.804,
+     "odr_com": 0.804,
+     "sabates_a": 0.814,
+     "madueke_b": 0.814
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "and al the people therof from the fardeſt ends of Egypt, euen to the vttermoſt coaſts therof,",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S3": {
+    "text": "and al the people therof from the fardeſt ends of Egypt, euen to the vttermoſt coaſts therof,",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S9": {
+    "text": "and al the people therof from the fardeſt ends of Ægypt, euen to the vttermoſt coaſts therof, \"",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "and al the people therof trom the tardeſt Egypt, euen to the vttermoſt coaſts therof,",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.88,
+     "odr_com": 0.88,
+     "sabates_a": 0.833,
+     "madueke_b": 0.833
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "ſauing the land of the Prieſts, which the king had deliuered them : to whom alſo a certaine alowance of victuals was geuen out of the comon barnes, and therfore they were not driuen to ſel their poſſeſſions.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "ſauing the land of the Prieſts, which the king had deliuered them : to whom alſo a certaine alowance of victuals was geuen out of the comon barnes, and therfore they were not driuen to ſel their poſſeſſions.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "ſauing the land of the Prieſts, which the king had deliuered be them : :: to whom alſo a certaine alowance of victuals forced for geuen out of the comon barnes, and therfore they were not driuen to ſel their poſſeſſions.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.934,
+     "odr_com": 0.934,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S6": {
+    "text": "2ſauing the b) The the Prieſts, which the King had dcliuered them: () to whom ofAEgvnt alowance of victuals was oiuen out ot the common bar- ing not therfore they were not driuen to ſel their poſſeſſions.3.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.846,
+     "odr_com": 0.857,
+     "sabates_a": 0.859,
+     "madueke_b": 0.859
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "Ioſeph therfore ſaid to the people : Behold as you ſee, Pharao poſſeſſeth both you and your land : take ſede, and ſowe the fields,",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "Ioſeph therfore ſaid to the people: Behold as vou ſee, Pharao poſſeſſeth both you and your land : take ſede, and ſowe the fields,",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "Ioſeph therfore ſaid the the people : Behold as you ſee, Pharao poſſeſſeth both and your land : take ſede, and ſowe the fields,",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "Io- to labour ſaid to the people: Behold as vou ſee, Pharao poſſeſſeth thei liuing, and your land: take ſeed, and ſow the fields,",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.805,
+     "odr_com": 0.805,
+     "sabates_a": 0.825,
+     "madueke_b": 0.825
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "that you may haue corne. The fifth part you ſhal geue to the king: the other foure I am content you ſhal haue for ſede, and for foode to your families and your children.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.935,
+     "madueke_b": 0.942
+    }
+   },
+   "S3": {
+    "text": "that you may haue corne. The fifth part you ſhal geue to the king: the other foure I am content vou ſhal haue for ſede, and for foode to your families and your children.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.929,
+     "madueke_b": 0.935
+    }
+   },
+   "S9": {
+    "text": "that you may haue corne. The fifth part you ſhal geue to the king: the other foure I am content you ſhal haue for ſede, and for foode to your families and your children.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.935,
+     "madueke_b": 0.942
+    }
+   },
+   "S6": {
+    "text": "that you may found out The fitth part you ſhal iue to the Kins: the othertoure I am Mathematikes wtneſſeth you ſhal haue tor ſeed, & for tood to your tamilies & vour chil- Ariſtotle",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.749
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "Who anſwered : Our life is in thy hand: only let our lord haue a reſpect vnto vs, and we wil gladly ſerue the king.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "who anſwered Our life is in thy hand: only let our lord haue a reſpect vnto vs, and we wil gladly ſerue the king.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Who anſwered Our life is in thy hand : only let our lord haue a reſpect vnto vs, and we wil gladlyſerue the king.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "Who anſwered our life is in thy hand: only let our Lord haue a reſpect vnto vs, and we wil gladly ſerue the King.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "From that rime vntil this preſent day in the whole land of gypt, the fifth part is paied to the kings, and ir became as it were a lawe, ſauing the land of the prieſts, which was free from this condition.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "From that rime vntil this preſent day in the whole land of Egypt, the fifth part is paied to the kinge, and it became as it were a lawe, ſauing the land of the prieſts, which was free from this condition.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "From that time vntil this preſent day in the whole land of Agypt, the fif th is paied to the kings, and it became as it were a lawe, ſauing the land of the prieſts, which was free from this condition.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "From that time is preſent day in the whole land ot Egypt, the fifth part is paied and it became as it were a law, ſauine the land ot the which was free from this condition.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.83,
+     "odr_com": 0.83,
+     "sabates_a": 0.831,
+     "madueke_b": 0.831
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "Iſrael therfore dwelt in Egypt, that is, in the Land Geſſen, and poſſeſſed it : and was increaſed, and multiplied exceedingly.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S3": {
+    "text": "Iſrael therfore dwelt in Egypt, that is, in the Land of Geſſen, and poſſeſſed it : and was increaſed, and multiplied exceedingly.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S9": {
+    "text": "Iſrael therfore dwelt in Egypt, that is, in the Land Geſſen, and poſſeſſed it : and was increaſed, and multiplied exceedingly.",
+    "from": "p174",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S6": {
+    "text": "Iſrael therfore dwelt that is, in the Landof Geſſon, and poſſeſſed it: and was in& multiplied exceedingly.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.813,
+     "odr_com": 0.813,
+     "sabates_a": 0.825,
+     "madueke_b": 0.825
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "And he liued in it ſeuenteene yeares : and8 al the dayes of his life came to an hundred fourtie ſeuen yeares.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "And he liued in it ſeuenteene yeares and28 al the dayes of his life came to an hundred fourtie ſeuen yeares.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S9": {
+    "text": "And he liued in it ſeuenteene yeares and al the dayes of his life came to an hundred fourtie ſeuen yeares.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "And he liued in it ſeuenteon yeaal the dayes ot his lite came to an hundred tourtie ſeuen yeares.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.876,
+     "odr_com": 0.876,
+     "sabates_a": 0.84,
+     "madueke_b": 0.84
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "yeares. And when he ſawe that the day of his death approched, he called his ſonne Ioſeph, and ſaid to him If II haue found grace in thy ſight, put thy hand vnder my thigh: and thou ſhalt doe me this mercie and truith, not to bury me in Aegypt:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "And when he ſawe that the day of his death approched, he called his ſonne Ioſeph, and ſaid to him : If I haue found grace in thy ſight, put thy hand vnder my thigh : and thou ſhalt doe me this mercie and truth, not to bury me in Fgypt:",
+    "from": "p167",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And when he ſawe that the day of his death approched, he called his ſonne Ioſeph, and ſaid to him : If I haue found grace in thy ſight, put thy hand vnder my thigh: and thou ſhalt doe me this mercie and truth, not to bury me in Agypt :",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "when he ſaw that the day of his death approached, he called Ioſeph, aud ſaid to him : It I haue tound grace in thy ſight, hand vnder my thigh: and thou thalt doe me this mercie and to bury me in Egypt:",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.828,
+     "odr_com": 0.828,
+     "sabates_a": 0.836,
+     "madueke_b": 0.836
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "but I wil ſleepe with my fathers, and take me away out of this land, and burie me in the ſepulchre of myanceſters. To whom Ioſeph anſwered I wil doe that thou haſt commanded.",
+    "from": "p163",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "but I wil ſleepe with my fathers, and take me away out of this land, and burie me in the ſepulchre of my anceſters. To whom Ioſeph anſwered I wil doe that thou haſt commanded.",
+    "from": "p167",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "but I wil ſleepe with my fathers, and take me away out of this land, and burie me in the ſepulchre of my anceſters. To whom Ioſeph anſwered I wil doe that thou haſt commanded.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "but Iwil ſlecp withmy tathers, me away out ot this land, & burie me in the ſopulchre ofmy To whom Ioſeph anſwered: I wil doe that thou haſt com31.",
+    "from": "p148",
+    "score": {
+     "s_dismas": 0.784,
+     "odr_com": 0.784,
+     "sabates_a": 0.809,
+     "madueke_b": 0.809
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "And he ſaid Sweate then to me. who ſwearing, Iſrael adored God, turning to the beds head.",
+    "from": "p163",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "And he ſaid Sweate then to me Who ſwearing, Iſrael adored God, turning to the beds head.",
+    "from": "p167",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "And he ſaid Sweate then to me. Who ſwearing, Ifrael adored God, turning to the beds head.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.988,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "And he ſaid Sweare then to me. Who ſweating, Iſracl God, turning to the beds head,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.894,
+     "odr_com": 0.882,
+     "sabates_a": 0.878,
+     "madueke_b": 0.878
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Ioſeph therfore going in told Pharao, ſaing: My father & brethren, their ſheepe and heardes, & al thinges that they poſſeſſe, are come out of the Land of Chanaan: & behold they ſtay in the Land of Geſſen.",
+   "odr_com": "IOSEPH therfore going in told Pharao, saing: My father & brethren, their sheepe and heardes, & al thinges that they possesse, are come out of the Land of Chanaan: & behold they stay in the Land of Gessen.",
+   "sabates_a": "Joseph therefore going in told Pharao, saying: My father and brethren, their sheep and herds, and all things that they possess, are come out of the Land of Chanaan; and behold they stay in the Land of Gessen.",
+   "madueke_b": "Joseph therefore going in told Pharao, saying: My father and brethren, their sheep and herds, and all things that they possess, are come out of the Land of Chanaan; and behold they stay in the Land of Gessen."
+  },
+  "2": {
+   "s_dismas": "The vtmoſt alſo of his brethren fiue perſons he preſented before the king:",
+   "odr_com": "The vtmost also of his brethren fiue persons he presented before the king:",
+   "sabates_a": "The utmost also of his brethren five persons he presented before the king:",
+   "madueke_b": "The utmost also of his brethren five persons he presented before the king:"
+  },
+  "3": {
+   "s_dismas": "whom he asked: What trade haue you? They anſwered: We thy ſeruantes are paſtours of ſheepe, both we, and our fathers.",
+   "odr_com": "whom he asked: What trade haue you? They answered: We thy seruantes are pastours of sheepe, both we, and our fathers.",
+   "sabates_a": "whom he asked: What trade have you? They answered: We thy servants are pastors of sheep, both we, and our fathers.",
+   "madueke_b": "whom he asked: What trade have you? They answered: We thy servants are pastors of sheep, both we, and our fathers."
+  },
+  "4": {
+   "s_dismas": "We are come to ſoiourne in the land, becauſe there is no graſſe for thy ſeruantes flockes, the famine being very ſore in the land of Chanaan: and we deſire thee to command that we thy ſeruantes may be in the Land of Geſſen.",
+   "odr_com": "We are come to soiourne in the land, because there is no grasse for thy seruantes flockes, the famine being very sore in the land of Chanaan: and we desire thee to command that we thy seruantes may be in the Land of Gessen.",
+   "sabates_a": "We are come to sojourn in the land, because there is no grass for thy servant's flocks, the famine being very sore in the land of Chanaan: and we desire thee to command that we thy servants may be in the Land of Gessen.",
+   "madueke_b": "We are come to sojourn in the land, because there is no grass for thy servant's flocks, the famine being very sore in the land of Chanaan: and we desire thee to command that we thy servants may be in the Land of Gessen."
+  },
+  "5": {
+   "s_dismas": "And the King therfore ſaid to Ioſeph: Thy father and thy brethren are come to thee.",
+   "odr_com": "And the King therfore said to Ioseph: Thy father and thy brethren are come to thee.",
+   "sabates_a": "And the king therefore said to Joseph: Thy father and thy brethren are come to thee.",
+   "madueke_b": "And the king therefore said to Joseph: Thy father and thy brethren are come to thee."
+  },
+  "6": {
+   "s_dismas": "The Land of Ægypt, is in thy ſight: make them to dwel in the beſt place, and deliuer them the Land of Geſſen. And if ſo be thou knowe that there are induſtrious men among them, appoint them maiſters of my cattel.",
+   "odr_com": "The Land of Ægypt, is in thy sight: make them to dwel in the best place, and deliuer them the Land of Gessen. And if so be thou knowe that there are industrious men among them, appoint them maisters of my cattel.",
+   "sabates_a": "The Land of Ægypt is in thy sight: make them to dwell in the best place, & deliver them the Land of Gessen. And if so be thou know that there are industrious men among them, appoint them masters of my cattle.",
+   "madueke_b": "The Land of Aegypt is in thy sight: make them to dwell in the best place, & deliver them the Land of Gessen. And if so be thou know that there are industrious men among them, appoint them masters of my cattle."
+  },
+  "7": {
+   "s_dismas": "After this Ioſeph brought in his father to the King, and ſet him before him: who bleſſing him,",
+   "odr_com": "After this Ioseph brought in his father to the King, and set him before him: who blessing him,",
+   "sabates_a": "After this Joseph brought in his father to the king, and set him before him: who blessed him,",
+   "madueke_b": "After this Joseph brought in his father to the king, and set him before him: who blessed him,"
+  },
+  "8": {
+   "s_dismas": "and being asked of him: How manie be the dayes of the yeares of thy life?",
+   "odr_com": "and being asked of him: How manie be the dayes of the yeares of thy life?",
+   "sabates_a": "and being asked of him: How many be the days of the years of thy life?",
+   "madueke_b": "and being asked of him: How many be the days of the years of thy life?"
+  },
+  "9": {
+   "s_dismas": "He anſwered: The dayes of the pilgrimage of my life are an hundred thirtie yeares, few, and euil, and they are not come to the dayes of my fathers, in which they were pilgrimes.",
+   "odr_com": "He answered: The dayes of the pilgrimage of my life are an hundred thirtie yeares, few, and 403.9 euil, and they are not come to the dayes of my fathers, in which they were pilgrimes.",
+   "sabates_a": "He answered: The days of the pilgrimage of my life are an hundred thirty years, few and evil, and they are not come to the days of my fathers, in which they were pilgrims.",
+   "madueke_b": "He answered: The days of the pilgrimage of my life are an hundred thirty years, few and evil, and they are not come to the days of my fathers, in which they were pilgrims."
+  },
+  "10": {
+   "s_dismas": "And bleſſing the king, he went forth.",
+   "odr_com": "And blessing the king, he went forth.",
+   "sabates_a": "And blessing the king, he went forth.",
+   "madueke_b": "And blessing the king, he went forth."
+  },
+  "11": {
+   "s_dismas": "But Ioſeph gaue poſſeſſion to his father and his brethren in Ægypt, in the beſt place of the land, in Rhameſſes, as Pharao had commanded.",
+   "odr_com": "But Ioseph gaue possession to his father and his brethren in Ægypt, in the best place of the land, in Rhamesses, as Pharao had commanded.",
+   "sabates_a": "But Joseph gave possession to his father and his brethren in Ægypt, in the best place of the land, in Rhamesses, as Pharao had commanded.",
+   "madueke_b": "But Joseph gave possession to his father and his brethren in Aegypt, in the best place of the land, in Rhamesses, as Pharao had commanded."
+  },
+  "12": {
+   "s_dismas": "And he nourished them, and al his fathers houſe, alowing victuales to euerie one.",
+   "odr_com": "And he nourished them, and al his fathers house, alowing victuales to euerie one.",
+   "sabates_a": "And he nourished them, and all his father's house, allowing victuals to every one.",
+   "madueke_b": "And he nourished them, and all his father's house, allowing victuals to every one."
+  },
+  "13": {
+   "s_dismas": "For in the whole world there wanted bread, and famine oppreſſed the land, eſpecially of Ægypt and Chanaan.",
+   "odr_com": "For in the whole world there wanted bread, and famine oppressed the land, especially of Ægypt and Chanaan.",
+   "sabates_a": "For in the whole world there wanted bread. & famine oppressed the land, especially of Ægypt and Chanaan.",
+   "madueke_b": "For in the whole world there wanted bread. & famine oppressed the land, especially of Aegypt and Chanaan."
+  },
+  "14": {
+   "s_dismas": "Out of which he gethered together al the money for the ſelling of corne, and brought it in vnto the kings treaſure.",
+   "odr_com": "Out of which he gethered together al the money for the selling of corne, and brought it in vnto the kings treasure.",
+   "sabates_a": "Out of which he gathered together all the money for the selling of corn, & brought it in unto the king's treasure.",
+   "madueke_b": "Out of which he gathered together all the money for the selling of corn, & brought it in unto the king's treasure."
+  },
+  "15": {
+   "s_dismas": "And when the byers wanted money, al Ægypt came to Ioſeph, ſaying: Geue vs bread: why die we before thee, our money failing?",
+   "odr_com": "And when the byers wanted money, al Ægypt came to Ioseph, saying: Geue vs bread: why die we before thee, our money failing?",
+   "sabates_a": "And when the buyers wanted money, all Ægypt came to Joseph, saying: Give us bread: why die we before thee, our money failing?",
+   "madueke_b": "And when the buyers wanted money, all Aegypt came to Joseph, saying: Give us bread: why die we before thee, our money failing?"
+  },
+  "16": {
+   "s_dismas": "To whom he anſwered: Bring your cattel, and for them I wil geue you victuales, if you haue not to pay.",
+   "odr_com": "To whom he answered: Bring your cattel, and for them I wil geue you victuales, if you haue not to pay.",
+   "sabates_a": "To whom he answered: Bring your cattle, and for them I will give you victuals, if you have not to pay.",
+   "madueke_b": "To whom he answered: Bring your cattle, and for them I will give you victuals, if you have not to pay."
+  },
+  "17": {
+   "s_dismas": "Which when they had brought, he gaue them ſuſtenance for horſes, and sheepe, and oxen, and aſſes: and he ſuſtayned them that yeare for the exchange of the cattel.",
+   "odr_com": "Which when they had brought, he gaue them sustenance for horses, and sheepe, and oxen, and asses: and he sustayned them that yeare for the exchange of the cattel.",
+   "sabates_a": "Which when they had brought, he gave them sustenance for horses, and sheep, and oxen, and asses: and he sustained them that year for the exchange of the cattle.",
+   "madueke_b": "Which when they had brought, he gave them sustenance for horses, and sheep, and oxen, and asses: and he sustained them that year for the exchange of the cattle."
+  },
+  "18": {
+   "s_dismas": "And they came the ſecond yeare, and ſaid to him: We wil not conceale from our lord, that our money faying, our cattel withal haue fayled: neither art thou ignorant, that we haue nothing beſides our bodies and land.",
+   "odr_com": "And they came the second yeare, and said to him: We wil not conceale from our lord, that our money fayling, our cattel withal haue fayled: neither art thou ignorant, that we haue nothing besides our bodies and land.",
+   "sabates_a": "And they came the second year, and said to him: We will not conceal from our lord, that our money failing, our cattle withal have failed: neither art thou ignorant, that we have nothing besides our bodies and land.",
+   "madueke_b": "And they came the second year, and said to him: We will not conceal from our lord, that our money failing, our cattle withal have failed: neither art thou ignorant, that we have nothing besides our bodies and land."
+  },
+  "19": {
+   "s_dismas": "Why therfore shal we die in thy ſight? both we and our land wil be thyne: bye vs to be the kings bondmen, and geue vs ſede, leſt for default of tillers the land be turned into a wildernes.",
+   "odr_com": "Why therfore shal we die in thy sight? both we and our land wil be thyne: bye vs to be the kings bondmen, and geue vs sede, lest for default of tillers the land be turned into a wildernes.",
+   "sabates_a": "Why therefore shall we die in thy sight? Both we and our land will be thine: buy us to be the king's bondmen, & give us seed, lest for default of tillers the land be turned into a wilderness.",
+   "madueke_b": "Why therefore shall we die in thy sight? Both we and our land will be thine: buy us to be the king's bondmen, & give us seed, lest for default of tillers the land be turned into a wilderness."
+  },
+  "20": {
+   "s_dismas": "Ioſeph therfore bought al the Land of Ægypt, euery man ſelling his poſſeſſions for the greatnes of the famine. And he brought it vnder Pharaos handes,",
+   "odr_com": "Ioseph therfore bought al the Land of Ægypt, euery man selling his possessions for the greatnes of the famine. And he brought it vnder Pharaos handes,",
+   "sabates_a": "Joseph therefore bought all the Land of Ægypt, every man selling his possessions for the greatness of the famine. And he brought it under Pharao's hands,",
+   "madueke_b": "Joseph therefore bought all the Land of Aegypt, every man selling his possessions for the greatness of the famine. And he brought it under Pharao's hands,"
+  },
+  "21": {
+   "s_dismas": "and al the people therof from the fardeſt ends of Ægypt, euen to the vttermoſt coaſts therof,",
+   "odr_com": "and al the people therof from the fardest ends of Ægypt, euen to the vttermost coasts therof,",
+   "sabates_a": "and all the people thereof from the farthest ends of Ægypt, even to the uttermost coasts thereof,",
+   "madueke_b": "and all the people thereof from the farthest ends of Aegypt, even to the uttermost coasts thereof,"
+  },
+  "22": {
+   "s_dismas": "ſauing the land of the Prieſts, which the king had deliuered them: to whom alſo a certaine alowance of victuals was geuen out of the cõmon barnes, and therfore they were not driuen to ſel their poſſeſſions.",
+   "odr_com": "sauing the land of the Priests, which the king had deliuered them: to whom also a certaine alowance of victuals was geuen out of the common barnes, and therfore they were not driuen to sel their possessions.",
+   "sabates_a": "saving the land of the Priests, which the king had delivered them: to whom also a certain allowance of victuals was given out of the common barns, and therefore they were not driven to sell their possessions.",
+   "madueke_b": "saving the land of the Priests, which the king had delivered them: to whom also a certain allowance of victuals was given out of the common barns, and therefore they were not driven to sell their possessions."
+  },
+  "23": {
+   "s_dismas": "Ioſeph therfore ſaid to the people: Behold as you ſee, Pharao poſſeſſeth both you and your land: take ſede, and ſowe the fields,",
+   "odr_com": "Ioseph therfore said to the people: Behold as you see, Pharao possesseth both you and your land: take sede, and sowe the fields,",
+   "sabates_a": "Joseph therefore said to the people: Behold as you see, Pharao possesseth both you and your land: take seed, and sow the fields,",
+   "madueke_b": "Joseph therefore said to the people: Behold as you see, Pharao possesseth both you and your land: take seed, and sow the fields,"
+  },
+  "24": {
+   "s_dismas": "that you may haue corne. The fifth part you ſhal geue to the king: the other foure I am content you ſhal haue for ſede, and for foode to your families and your children.",
+   "odr_com": "that you may haue corne. The fifth part you shal geue to the king: the other foure I am content you shal haue for sede, and for foode to your families and your children.",
+   "sabates_a": "that you may have corn. The fifth part you shall give to the king: the other four Iam content you shall have for seed, & for food to your families & your children.",
+   "madueke_b": "that you may have corn. The fifth part you shall give to the king: the other four I am content you shall have for seed, & for food to your families & your children."
+  },
+  "25": {
+   "s_dismas": "Who anſwered: Our life is in thy hand: only let our lord haue a reſpect vnto vs, and we wil gladly ſerue the king.",
+   "odr_com": "Who answered: Our life is in thy hand: only let our lord haue a respect vnto vs, and we wil gladly serue the king.",
+   "sabates_a": "Who answered: Our life is in thy hand: only let our lord have a respect unto us, and we will gladly serve the king.",
+   "madueke_b": "Who answered: Our life is in thy hand: only let our lord have a respect unto us, and we will gladly serve the king."
+  },
+  "26": {
+   "s_dismas": "From that time vntil this preſent day in the whole land of Ægypt, the fifth part is paied to the kings, and it became as it were a lawe, ſauing the land of the prieſts, which was free from this condition.",
+   "odr_com": "From that time vntil this present day in the whole land of Ægypt, the fifth part is paied to the kings, and it became as it were a lawe, sauing the land of the priests, which was free from this condition.",
+   "sabates_a": "From that time until this present day in the whole land of Ægypt, the fifth part is payed to the kings, and it became as it were a law, saving the land of the Priests, which was free from this condition.",
+   "madueke_b": "From that time until this present day in the whole land of Aegypt, the fifth part is payed to the kings, and it became as it were a law, saving the land of the Priests, which was free from this condition."
+  },
+  "27": {
+   "s_dismas": "Iſrael therfore dwelt in Ægypt, that is, in the Land of Geſſen, and poſſeſſed it: and was increaſed, and multiplied exceedingly.",
+   "odr_com": "Israel therfore dwelt in Ægypt, that is, in the Land of Gessen, and possessed it: and was increased, and multiplied exceedingly.",
+   "sabates_a": "Israel therefore dwelt in Ægypt, that is, in the Land of Gessen, and possessed it: and was increased, & multiplied exceedingly.",
+   "madueke_b": "Israel therefore dwelt in Aegypt, that is, in the Land of Gessen, and possessed it: and was increased, & multiplied exceedingly."
+  },
+  "28": {
+   "s_dismas": "And he liued in it ſeuenteene yeares: and al the dayes of his life came to an hundred fourtie ſeuen yeares.",
+   "odr_com": "And he liued in it seuenteene yeares: and al the dayes of his life came to an hundred fourtie seuen yeares.",
+   "sabates_a": "And he lived in it seventeen years: and all the days of his life came to an hundred forty seven years.",
+   "madueke_b": "And he lived in it seventeen years: and all the days of his life came to an hundred forty seven years."
+  },
+  "29": {
+   "s_dismas": "And when he ſawe that the day of his death approched, he called his ſonne Ioſeph, and ſaid to him: If I haue found grace in thy ſight, put thy hand vnder my thigh: and thou ſhalt doe me this mercie and truth, not to bury me in Ægypt:",
+   "odr_com": "And when he sawe that the day of his death approched, he called his sonne Ioseph, and said to him: If I haue found grace in thy sight, put thy hand vnder my thigh: and thou shalt doe me this mercie and truth, not to bury me in Ægypt:",
+   "sabates_a": "And when he saw that the day of his death approached, he called his son Joseph, and said to him: If I have found grace in thy sight, put thy hand under my thigh: and thou shalt do me this mercy and truth. Not to bury me in Ægypt:",
+   "madueke_b": "And when he saw that the day of his death approached, he called his son Joseph, and said to him: If I have found grace in thy sight, put thy hand under my thigh: and thou shalt do me this mercy and truth. Not to bury me in Aegypt:"
+  },
+  "30": {
+   "s_dismas": "but I wil ſleepe with my fathers, and take me away out of this land, and burie me in the ſepulchre of my anceſters. To whom Ioſeph anſwered: I wil doe that thou haſt commanded.",
+   "odr_com": "but I wil sleepe with my fathers, and take me away out of this land, and burie me in the sepulchre of my ancesters. To whom Ioseph answered: I wil doe that thou hast commanded.",
+   "sabates_a": "but I will sleep with my fathers, and take me away out of this land, & bury me in the sepulchre of my ancestors. To whom Joseph answered: I will do that thou hast commanded.",
+   "madueke_b": "but I will sleep with my fathers, and take me away out of this land, & bury me in the sepulchre of my ancestors. To whom Joseph answered: I will do that thou hast commanded."
+  },
+  "31": {
+   "s_dismas": "And he ſaid: Sweare then to me. Who ſwearing, Iſrael adored God, turning to the beds head.",
+   "odr_com": "And he said: Sweate then to me. Who swearing, Israel adored God, turning to the beds head.",
+   "sabates_a": "And he said: Swear then to me. Who swearing, Israel adored God, turning to the bed's head.",
+   "madueke_b": "And he said: Swear then to me. Who swearing, Israel adored God, turning to the bed's head."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Joseph therefore going in told Pharao, saying: My father and brethren, their sheep and herds, and all things that they possess, are come out of the Land of Chanaan; and behold they stay in the Land of Gessen.",
+  "2": "The utmost also of his brethren five persons he presented before the king:",
+  "3": "whom he asked: What trade have you? They answered: We thy servants are pastors of sheep, both we, and our fathers.",
+  "4": "We are come to sojourn in the land, because there is no grass for thy servant's flocks, the famine being very sore in the land of Chanaan: and we desire thee to command that we thy servants may be in the Land of Gessen.",
+  "5": "And the king therefore said to Joseph: Thy father and thy brethren are come to thee.",
+  "6": "The Land of Ægypt is in thy sight: make them to dwell in the best place, & deliver them the Land of Gessen. And if so be thou know that there are industrious men among them, appoint them masters of my cattle.",
+  "7": "After this Joseph brought in his father to the king, and set him before him: who blessed him,",
+  "8": "and being asked of him: How many be the days of the years of thy life?",
+  "9": "He answered: The days of the pilgrimage of my life are an hundred thirty years, few and evil, and they are not come to the days of my fathers, in which they were pilgrims.",
+  "10": "And blessing the king, he went forth.",
+  "11": "But Joseph gave possession to his father and his brethren in Ægypt, in the best place of the land, in Rhamesses, as Pharao had commanded.",
+  "12": "And he nourished them, and all his father's house, allowing victuals to every one.",
+  "13": "For in the whole world there wanted bread. & famine oppressed the land, especially of Ægypt and Chanaan.",
+  "14": "Out of which he gathered together all the money for the selling of corn, & brought it in unto the king's treasure.",
+  "15": "And when the buyers wanted money, all Ægypt came to Joseph, saying: Give us bread: why die we before thee, our money failing?",
+  "16": "To whom he answered: Bring your cattle, and for them I will give you victuals, if you have not to pay.",
+  "17": "Which when they had brought, he gave them sustenance for horses, and sheep, and oxen, and asses: and he sustained them that year for the exchange of the cattle.",
+  "18": "And they came the second year, and said to him: We will not conceal from our lord, that our money failing, our cattle withal have failed: neither art thou ignorant, that we have nothing besides our bodies and land.",
+  "19": "Why therefore shall we die in thy sight? Both we and our land will be thine: buy us to be the king's bondmen, & give us seed, lest for default of tillers the land be turned into a wilderness.",
+  "20": "Joseph therefore bought all the Land of Ægypt, every man selling his possessions for the greatness of the famine. And he brought it under Pharao's hands,",
+  "21": "and all the people thereof from the farthest ends of Ægypt, even to the uttermost coasts thereof,",
+  "22": "saving the land of the Priests, which the king had delivered them: to whom also a certain allowance of victuals was given out of the common barns, and therefore they were not driven to sell their possessions.",
+  "23": "Joseph therefore said to the people: Behold as you see, Pharao possesseth both you and your land: take seed, and sow the fields,",
+  "24": "that you may have corn. The fifth part you shall give to the king: the other four Iam content you shall have for seed, & for food to your families & your children.",
+  "25": "Who answered: Our life is in thy hand: only let our lord have a respect unto us, and we will gladly serve the king.",
+  "26": "From that time until this present day in the whole land of Ægypt, the fifth part is payed to the kings, and it became as it were a law, saving the land of the Priests, which was free from this condition.",
+  "27": "Israel therefore dwelt in Ægypt, that is, in the Land of Gessen, and possessed it: and was increased, & multiplied exceedingly.",
+  "28": "And he lived in it seventeen years: and all the days of his life came to an hundred forty seven years.",
+  "29": "And when he saw that the day of his death approached, he called his son Joseph, and said to him: If I have found grace in thy sight, put thy hand under my thigh: and thou shalt do me this mercy and truth. Not to bury me in Ægypt:",
+  "30": "but I will sleep with my fathers, and take me away out of this land, & bury me in the sepulchre of my ancestors. To whom Joseph answered: I will do that thou hast commanded.",
+  "31": "And he said: Swear then to me. Who swearing, Israel adored God, turning to the bed's head."
+ },
+ "ref_coverage": {
+  "janvier": 31,
+  "have": {
+   "s_dismas": 31,
+   "odr_com": 31,
+   "sabates_a": 31,
+   "madueke_b": 31
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 124,
+ "triage": "SOURCE-SKEW",
+ "secs": 7.5
+}

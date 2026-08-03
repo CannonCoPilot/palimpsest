@@ -1,0 +1,1191 @@
+{
+ "chapter": 15,
+ "n_verses": 21,
+ "n_cells": 84,
+ "n_pass": 68,
+ "rate": 0.8095,
+ "ref_means": {
+  "s_dismas": 0.9668,
+  "odr_com": 0.9673,
+  "sabates_a": 0.9531,
+  "madueke_b": 0.9531
+ },
+ "src_rates": {
+  "S1": 0.9048,
+  "S3": 0.9048,
+  "S9": 0.8571,
+  "S6": 0.5714
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  21
+ ],
+ "n_open": 16,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 3,
+   "worst": 0.84,
+   "from": "p74",
+   "text": "Abram added: But to me thou haſt not giuen ſeed : and loe my borne inmy houſe ſhal be mine heire."
+  },
+  {
+   "src": "S6",
+   "verse": 5,
+   "worst": 0.789,
+   "from": "p74",
+   "text": "he brought him torth abroad, and laid to hn: Look vp to and number the ſtarres, it thou cantt. Aud he ſaid to him : So ſeed be."
+  },
+  {
+   "src": "S9",
+   "verse": 6,
+   "worst": 0.839,
+   "from": "chapter",
+   "text": "Abram beleued God, and it was reputed to brought be- iuſtice."
+  },
+  {
+   "src": "S6",
+   "verse": 6,
+   "worst": 0.75,
+   "from": "p74",
+   "text": "Abram belieued God, and it was reputed to him"
+  },
+  {
+   "src": "S6",
+   "verse": 7,
+   "worst": 0.846,
+   "from": "p74",
+   "text": "And he ſaid to him: I am the Lord that brought thee Vr ot the Chaldees tor to giue thee this land, and that thou poſſeſſe it."
+  },
+  {
+   "src": "S6",
+   "verse": 8,
+   "worst": 0.818,
+   "from": "p74",
+   "text": "But he ſaid : Lord God, how may Iknow that poſſaſſeit"
+  },
+  {
+   "src": "S6",
+   "verse": 11,
+   "worst": 0.839,
+   "from": "p74",
+   "text": "And the toules vpon the carcaſſes, and Abram droue them away."
+  },
+  {
+   "src": "S6",
+   "verse": 13,
+   "worst": 0.888,
+   "from": "p74",
+   "text": "And it was ſaid vnto hin: and toreknow that a pilgrime ſhal thy ſeed be in a land not theit (and they ſhal bring them vnder bondage, and afflict them) hundredyeares."
+  },
+  {
+   "src": "S6",
+   "verse": 16,
+   "worst": 0.879,
+   "from": "p74",
+   "text": "But in the fourth generation they ſhal returne hither: tor (c)as iniquities of the Amorrheans are not at the tul vntil this preſent"
+  },
+  {
+   "src": "S1",
+   "verse": 19,
+   "worst": 0.846,
+   "from": "r3",
+   "text": "the Cineans, & Cenezites, the Cedmoni- tes,"
+  },
+  {
+   "src": "S3",
+   "verse": 19,
+   "worst": 0.846,
+   "from": "r3",
+   "text": "the Cineans, & Cenezites, the Cedmoni-tes,"
+  },
+  {
+   "src": "S9",
+   "verse": 19,
+   "worst": 0.872,
+   "from": "p90",
+   "text": "the Cineans, Cenezites, the Cedmonites,"
+  },
+  {
+   "src": "S1",
+   "verse": 21,
+   "worst": 0.833,
+   "from": "p80",
+   "text": "and the Amorreans the Cananites, and the Gargaſites, and in the Iebuſites."
+  },
+  {
+   "src": "S3",
+   "verse": 21,
+   "worst": 0.833,
+   "from": "p84",
+   "text": "and the Amorreans the Cananites, and the Gargaſites, and in the Iebuſites."
+  },
+  {
+   "src": "S9",
+   "verse": 21,
+   "worst": 0.821,
+   "from": "p90",
+   "text": "and the Amorreans the Cananites, and the Gargaſites, and and the Iebuſites."
+  },
+  {
+   "src": "S6",
+   "verse": 21,
+   "worst": 0.882,
+   "from": "p75",
+   "text": "and the Amorreans and the Cananites, and Gargaſites, and the Iebuſites."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "when theſe things therfore were done, the word of our Lord was made to Abram bya viſion ſaving: Feare not Abram, I am thy protector, thy reward exceding great.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "when theſe things therfore were done, the word of our Lord was made to Abram by a viſion ſaving: Feare not Abram, I am thy protector, thy reward exceding great.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S9": {
+    "text": "when theſe things therfore were done, the word VVof our Lord was made to Abram by a viſion ſaying: Feare not Abram, I am thy protector, thy reward exceding great.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S6": {
+    "text": "HEN theſe things therfore were done, the word of our Lord was made to Abram by a viſaying: Feare ot Abram, Iam thy Protectour, and tny reward exceeding great.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.903,
+     "odr_com": 0.903,
+     "sabates_a": 0.928,
+     "madueke_b": 0.928
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And Abram ſaid Lord God, what wilt thou geue me I ſhal goe without children: and the ſonne of the ſtuard of my houſe is this Damaſcus Eliezer.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And Abram ſaid Lord God, what wilt thou geue me? I ſhal goe without children: and the ſonne of the ſtuard of my houſe is this Damaſcus Eliezer.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "And Abram ſaid Lord God, what wilt thou geue me? I ſhal goe without children: and the ſonne of the ſtuard of my houſe is this Damaſous Eliezer.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "And Abram ſaid: Lord God, what wilt thou giue me? I ſhal goe without children:and the ſonne of the ſteward of my houſe is this Damaſcus Eliezer.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And Abram added But to me thou haſt not geuen ſeede and loe my ſeruant borne in my houſe, ſhal be myn heire.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And Abram added But to me thou haſt not geuen ſeede: and loe my ſeruant borne in my houſe, ſhal be myn heire.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And Abram added But to me thou haſt not geuen ſeede and loe my ſeruant borne in my houſe, ſhal be myn heire.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "Abram added: But to me thou haſt not giuen ſeed : and loe my borne inmy houſe ſhal be mine heire.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.84,
+     "odr_com": 0.84,
+     "sabates_a": 0.866,
+     "madueke_b": 0.866
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And immediatly the word of our Lord came to him ſaying He ſhal not be thy heyre: but he that ſhal come out of thy wombe, him ſhalt thou haue thin heire.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "And immediatly the word of our Lord came to him ſaying He ſhal not be thy heyre: but he that ſhal come out of thy wombe, him ſhalt thou haue thin heire.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And immediatly the word of our Lord came to him ſaying He ſhal not be thy heyre: but he that ſhal come out of thy wombe, him ſhalt thou haue thin heire.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And immediately the word of our Lord came to him ſaying: He ſhal not be thine heire: but he that that come out of thy womb him ſhalt thou haue thine heire.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And he brought him forth abroad, and ſaid to him : Looke vp to heauen, and number the ſtarres, if thou canſt. And he ſaid to him. So tal thy ſeed he.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "And he brought him forth abroad, and ſaid to him Looke vp to heauen, and number the ſtarres, if thou canſt. And he ſaid to him So ſhal thy ſeed be.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "And he brought him forth abroad, and ſaid to him Looke vp to heauen, and number the ſtarres, if thou canſt. And he ſaid to him So ſhal thy ſeed be.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "he brought him torth abroad, and laid to hn: Look vp to and number the ſtarres, it thou cantt. Aud he ſaid to him : So ſeed be.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.803,
+     "odr_com": 0.803,
+     "sabates_a": 0.789,
+     "madueke_b": 0.789
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "Abram beleued God, and it was reputed to him vnto be- aauſtice.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S3": {
+    "text": "Abram beleued God, and it was reputed to him vnto iuſtice.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "Abram beleued God, and it was reputed to brought be- iuſtice.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.845,
+     "odr_com": 0.845,
+     "sabates_a": 0.839,
+     "madueke_b": 0.839
+    }
+   },
+   "S6": {
+    "text": "Abram belieued God, and it was reputed to him",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.75,
+     "odr_com": 0.75,
+     "sabates_a": 0.786,
+     "madueke_b": 0.786
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And he ſaid to him I am the Lord that brought thee out from Vr of the Chaldees for to giue thee this land, Iſ and that thou mighteſt poſſeſſe it.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to him I am the Lord that brought thee out from Vr of the Chaldees for to giue thee this land, Iſ and that thou mighteſt poſſeſſe it.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to him I am the Lord that thee out from Vr of the Chaldees for to giue thee this land, Iſand that thou mighteſt poſſeſſe it.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to him: I am the Lord that brought thee Vr ot the Chaldees tor to giue thee this land, and that thou poſſeſſe it.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.857,
+     "odr_com": 0.857,
+     "sabates_a": 0.846,
+     "madueke_b": 0.846
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "But he ſaid: Lord God, how may I know that I ſhal poſſeſſe it",
+    "from": "p80",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "But he ſaid Lord God, how may I know that I ſhal poſſeſſe it",
+    "from": "p84",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But he ſaid Lord God, how may I know that I ſhal poſſeſſe it",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "But he ſaid : Lord God, how may Iknow that poſſaſſeit",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.831,
+     "odr_com": 0.831,
+     "sabates_a": 0.818,
+     "madueke_b": 0.818
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And our Lord anſwered, and ſaid :: Take me a cowe of three yeares old, and a shee goat of three yeares, and a ramme of three yeares, a turtle alſo, and a pigeon.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S3": {
+    "text": "And our Lord anſwered, and ſaid Take me a cowe of three yeares old, and a shee goat of three yeares, and a ramme of three in yeares, a turtle alſo, and a pigeon.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "And our Lord anſwered, and ſaid Take me a cowe of three yeares a old, and a shee goat of three yeares, and a ramme of three in yeares, a turtle alſo, and a pigeon.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S6": {
+    "text": "And our Lord anſwered, and ſaid: Take me a cow of three yeares old, and a the goat of three yeares, and a ramme of three yeares, a turtle alſo, and a pigcon.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "Who taking al theſe, diuided them by the mydes, and laid ech two peeces arowe one againſt the other but the birdes he diuided not.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "Who taking al theſe, diuided them by the mydes, and laid ech two peeces arowe one againſt the other but the birdes he diuided not.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "Who taking al theſe, diuided them by the mydes, and laid ech two peeces arowe one againſt the other but the birdes he diuided not.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "Who taking al theſe, diuided them by the middes and laid each two picces arow one againſt the other: but the birds he diuided not.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.945,
+     "odr_com": 0.945,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And the foules lighted vpon the carcaſſes, and Abram droue them away.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "And the foules lighted vpon the carcaſſes, and Abram droue them away.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "And the foules lighted vpon the carcaſſes, and Abram droue them away.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And the toules vpon the carcaſſes, and Abram droue them away.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.866,
+     "odr_com": 0.866,
+     "sabates_a": 0.839,
+     "madueke_b": 0.839
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And when the ſunne was ſetting, a deepe ſſeepe fel vpon Abram, and a great and darkeſome horrour inuaded him.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "And when the ſunne was ſetting, a deepe ſleepe fel vpon Abram, and a great and darkeſome horrour inuaded him.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "And when the ſunne was ſetting, a deepe ſleepe fel vpon Abram, and a great and darkeſome horrour inuaded him.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "And when the ſunne was ſetting, a deep ſleep fel vpon Abram, and a great and darkeſome horror inuaded him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And it was ſaid vnto him Know and foreand know that a pilgrime shal thy ſeede be in a land nor their owne (and they shal bring them vnder bondage, and afflict them) foure hundred yeares.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S3": {
+    "text": "And it was ſaid vnto him Know and foreknow that a pilgrime shal thy ſeede be in a land not their owne (and they shal bring them vnder bondage, and afflict them) foure hundred yeares.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And it was ſaid vnto him Know and foreknow that a pilgrime shal thy ſeede be in a land not their and owne (and they shalibring them vnder bondage, and afflict them) foure hundred yeares.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "And it was ſaid vnto hin: and toreknow that a pilgrime ſhal thy ſeed be in a land not theit (and they ſhal bring them vnder bondage, and afflict them) hundredyeares.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.888,
+     "odr_com": 0.888,
+     "sabates_a": 0.893,
+     "madueke_b": 0.893
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "But the nation, whom they shal ſerue, I wil iudge and after this they shal goe forth with great ſubſtance.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "But the nation, whom they shal ſerue, I wil iudge and after this they shal goe forth with great ſubſtance.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But the nation, whom they shal ſerue, I wil iudge: and after this they shal goe forth with great ſubſtance.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "But the Nation, whom they ſhal ſerue, iudge: and after this they ſhal goe torth with great ſubſtance.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.923,
+     "odr_com": 0.932,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And thou shalt goe to thy fathers in peace, buried in a good old age.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And thou shalt goe to thy fathers in peace, buried in a good old age.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And thou shalt goe to thy fathers in peace, buried in a good old age.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And thou ſhalt goe to thy fathers in peace buried in a good old age.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "But in the fourth generation they shal returne hither for as yet the iniquities of the Amorrheanes are not at the ful vntil this preſent time.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "But in the fourth genethe ration they shal returne hither : for : as yet the iniquities the the Amorrheanes are not at the ful vntil this preſent time.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "But in the fourth genethe ration they shal returne hither : for : as yet the iniquities of the Amorrheanes are not at the ful vntil this preſent time.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "But in the fourth generation they ſhal returne hither: tor (c)as iniquities of the Amorrheans are not at the tul vntil this preſent",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.879,
+     "odr_com": 0.879,
+     "sabates_a": 0.894,
+     "madueke_b": 0.894
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Therfore when the ſunne was ſet, theremroſe a darke miſt, and there appeared a fornace ſmoking, and a flake of fire paſſing betwene thoſe diuiſions.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "Therfore when the ſunne was ſet, there rroſe a darke miſt, and there appeared a fornace ſmoking, and a flake o fre paſſing betwene thoſe diuiſions.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "Therfore when the ſunne was ſet, there aroſe a darke miſt, and there appeared a fornace ſmoking, and a flake of fire paſſing betwene thoſe diuiſions.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Therfore when the ſunne was ſet, there aroſe a darke miſt, and there appeared a fornace ſmoking, and a flake of fire paſſing between thoſe diuiſions.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "That day God made a couenant with Abram, ſaying To thy ſeede wil I geue this land from the riuers of Ægypt euen to the great riuer Euphrates,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "That day God made a couenant with Abram, ſaying To thy ſeede wil I geue this land from the riuer of Ægypt euon to the great riuer Euphrates,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "That day God1 made a couenant with Abram, ſaying To thy ſeede wil I geue this land from the riuer of Ægypt euen to the great riuerEuphrates,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "That day God made a couenant with Abram, ſaying: To thy ſeed wil I giue this land trom the riuer of Egypt euen to the great riuer Euphrates,",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "the Cineans, & Cenezites, the Cedmoni- tes,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.846,
+     "madueke_b": 0.846
+    }
+   },
+   "S3": {
+    "text": "the Cineans, & Cenezites, the Cedmoni-tes,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.846,
+     "madueke_b": 0.846
+    }
+   },
+   "S9": {
+    "text": "the Cineans, Cenezites, the Cedmonites,",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.872,
+     "madueke_b": 0.872
+    }
+   },
+   "S6": {
+    "text": "The Cineans, and Cenezites, the Cedmonites,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.9,
+     "odr_com": 0.9,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "and the Herhits, and the Pherezits, the Raphaims alſo,",
+    "from": "p80",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "and the Hethits, and the Pherezits, the Raphaims alſo,",
+    "from": "p84",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and the Hethits, and the Pherezits, the Raphaims alſo,",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and the Hethits, and the Pherezits, the Raphaims alſo,",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "and the Amorreans the Cananites, and the Gargaſites, and in the Iebuſites.",
+    "from": "p80",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.833,
+     "madueke_b": 0.833
+    }
+   },
+   "S3": {
+    "text": "and the Amorreans the Cananites, and the Gargaſites, and in the Iebuſites.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.833,
+     "madueke_b": 0.833
+    }
+   },
+   "S9": {
+    "text": "and the Amorreans the Cananites, and the Gargaſites, and and the Iebuſites.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.821,
+     "madueke_b": 0.821
+    }
+   },
+   "S6": {
+    "text": "and the Amorreans and the Cananites, and Gargaſites, and the Iebuſites.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.882,
+     "odr_com": 0.882,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "VVhen theſe things therfore were done, the word of our Lord was made to Abram by a viſion ſaying: Feare not Abram, I am thy protector, & thy reward exceding great.",
+   "odr_com": "VVHEN these things therfore were done, the word of our Lord was made to Abram by a vision saying: Feare not Abram, I am thy protector, & thy reward exceding great.",
+   "sabates_a": "When these things therefore were done, the word of our Lord was made to Abram by a vision saying: fear not Abram, I am thy Protector, and thy reward exceeding great.",
+   "madueke_b": "When these things therefore were done, the word of our Lord was made to Abram by a vision saying: fear not Abram, I am thy Protector, and thy reward exceeding great."
+  },
+  "2": {
+   "s_dismas": "And Abram ſaid: Lord God, what wilt thou geue me? I ſhal goe without children: and the ſonne of the ſtuard of my houſe is this Damaſcus Eliezer.",
+   "odr_com": "And Abram said: Lord God, what wilt thou geue me? I shal goe without children: and the sonne of the stuard of my house is this Damascus Eliezer.",
+   "sabates_a": "And Abram said: Lord God, what wilt thou give me? I shall go without children: and the son of the steward of my house is this Damascus Eliezer.",
+   "madueke_b": "And Abram said: Lord God, what wilt thou give me? I shall go without children: and the son of the steward of my house is this Damascus Eliezer."
+  },
+  "3": {
+   "s_dismas": "And Abram added: But to me thou haſt not geuen ſeede: and loe my ſeruant borne in my houſe, ſhal be myn heire.",
+   "odr_com": "And Abram added: But to me thou hast not geuen seede: and loe my seruant borne in my house, shal be myn heire.",
+   "sabates_a": "And Abram added: But to me thou hast not given seed: and Lo my servant born in my house shall be mine heir.",
+   "madueke_b": "And Abram added: But to me thou hast not given seed: and Lo my servant born in my house shall be mine heir."
+  },
+  "4": {
+   "s_dismas": "And immediatly the word of our Lord came to him ſaying: He ſhal not be thy heyre: but he that ſhal come out of thy wombe, him ſhalt thou haue thin heire.",
+   "odr_com": "And immediatly the word of our Lord came to him saying: He shal not be thy heyre: but he that shal come out of thy wombe, him shalt thou haue thin heire.",
+   "sabates_a": "And immediately the word of our Lord came to him saying: He shall not be thine heir: but he that shall come out of thy womb him shalt thou have thine heir.",
+   "madueke_b": "And immediately the word of our Lord came to him saying: He shall not be thine heir: but he that shall come out of thy womb him shalt thou have thine heir."
+  },
+  "5": {
+   "s_dismas": "And he brought him forth abroad, and ſaid to him: Looke vp to heauen, and number the ſtarres, if thou canſt. And he ſaid to him: So ſhal thy ſeed be.",
+   "odr_com": "And he brought him forth abroad, and said to him: Looke vp to heauen, and number the starres, if thou canst. And he said to him: So shal thy seed be.",
+   "sabates_a": "And he brought him forth abroad, and said to him: Look up to heaven, and number the stars, if thou canst. And he said to him: so shall thy seed be.",
+   "madueke_b": "And he brought him forth abroad, and said to him: Look up to heaven, and number the stars, if thou canst. And he said to him: so shall thy seed be."
+  },
+  "6": {
+   "s_dismas": "Abram beleued God, and it was reputed to him vnto iuſtice.",
+   "odr_com": "Abram beleued God, and it was reputed to him vnto iustice.",
+   "sabates_a": "Abram believed God, and it was reputed to him unto justice.",
+   "madueke_b": "Abram believed God, and it was reputed to him unto justice."
+  },
+  "7": {
+   "s_dismas": "And he ſaid to him: I am the Lord that brought thee out from Vr of the Chaldees for to giue thee this land, and that thou mighteſt poſſeſſe it.",
+   "odr_com": "And he said to him: I am the Lord that brought thee out from Vr of the Chaldees for to giue thee this land, and that thou mightest possesse it.",
+   "sabates_a": "And he said to him: I am the Lord that brought thee out from Ur of the Chaldees for to give thee this land, and that thou mightest possess it.",
+   "madueke_b": "And he said to him: I am the Lord that brought thee out from Ur of the Chaldees for to give thee this land, and that thou mightest possess it."
+  },
+  "8": {
+   "s_dismas": "But he ſaid: Lord God, how may I know that I ſhal poſſeſſe it?",
+   "odr_com": "But he said: Lord God, how may I know that I shal possesse it?",
+   "sabates_a": "But he said: Lord God, how may I know that I shall possess it?",
+   "madueke_b": "But he said: Lord God, how may I know that I shall possess it?"
+  },
+  "9": {
+   "s_dismas": "And our Lord anſwered, and ſaid: Take me a cowe of three yeares old, and a shee goat of three yeares, and a ramme of three yeares, a turtle alſo, and a pigeon.",
+   "odr_com": "And our Lord answered, and said: Take me a cowe of three yeares old, and a shee goat of three yeares, and a ramme of three yeares, a turtle also, and a pigeon.",
+   "sabates_a": "And our Lord answered, and said: Take me a cow of three years old, and a she goat of three years, and a ram of three years, a turtle also, and a pigeon.",
+   "madueke_b": "And our Lord answered, and said: Take me a cow of three years old, and a she goat of three years, and a ram of three years, a turtle also, and a pigeon."
+  },
+  "10": {
+   "s_dismas": "Who taking al theſe, diuided them by the mydes, and laid ech two peeces arowe one againſt the other: but the birdes he diuided not.",
+   "odr_com": "Who taking al these, diuided them by the mydes, and laid ech two peeces arowe one against the other: but the birdes he diuided not.",
+   "sabates_a": "Who taking all these, divided them by the midst, and laid each two pieces arow one against the other: but the birds he divided not.",
+   "madueke_b": "Who taking all these, divided them by the midst, and laid each two pieces arow one against the other: but the birds he divided not."
+  },
+  "11": {
+   "s_dismas": "And the foules lighted vpon the carcaſſes, and Abram droue them away.",
+   "odr_com": "And the foules lighted vpon the carcasses, and Abram droue them away.",
+   "sabates_a": "And the fowls lighted upon the carcasses, and Abram drove them away.",
+   "madueke_b": "And the fowls lighted upon the carcasses, and Abram drove them away."
+  },
+  "12": {
+   "s_dismas": "And when the ſunne was ſetting, a deepe ſleepe fel vpon Abram, and a great and darkeſome horrour inuaded him.",
+   "odr_com": "And when the sunne was setting, a deepe sleepe fel vpon Abram, and a great and darkesome horrour inuaded him.",
+   "sabates_a": "And when the sun was setting, a deep sleep fell upon Abram, and a great and darksome horror invaded him.",
+   "madueke_b": "And when the sun was setting, a deep sleep fell upon Abram, and a great and darksome horror invaded him."
+  },
+  "13": {
+   "s_dismas": "And it was ſaid vnto him: Know and foreknow that a pilgrime shal thy ſeede be in a land not their owne (and they shal bring them vnder bondage, and afflict them) foure hundred yeares.",
+   "odr_com": "And it was said vnto him: Know and foreknow that a pilgrime shal thy seede be in a land not their owne (and they shal bring them vnder bondage, and afflict them) foure hundred yeares.",
+   "sabates_a": "And it was said unto him: Know and foreknow that a pilgrim shall thy seed be in a land not their own (and they shall bring them under bondage, and afflict them) four hundred years.",
+   "madueke_b": "And it was said unto him: Know and foreknow that a pilgrim shall thy seed be in a land not their own (and they shall bring them under bondage, and afflict them) four hundred years."
+  },
+  "14": {
+   "s_dismas": "But the na- tion, whom they shal ſerue, I wil iudge: and after this they shal goe forth with great ſubſtance.",
+   "odr_com": "But the nation, whom they shal serue, I wil iudge: and after this they shal goe forth with great substance.",
+   "sabates_a": "But the Nation, whom they shall serve, I will judge: and after this they shall go forth with great substance.",
+   "madueke_b": "But the Nation, whom they shall serve, I will judge: and after this they shall go forth with great substance."
+  },
+  "15": {
+   "s_dismas": "And thou shalt goe to thy fathers in peace, buried in a good old age.",
+   "odr_com": "And thou shalt goe to thy fathers in peace, buried in a good old age.",
+   "sabates_a": "And thou shalt go to thy fathers in peace, buried in a good old age.",
+   "madueke_b": "And thou shalt go to thy fathers in peace, buried in a good old age."
+  },
+  "16": {
+   "s_dismas": "But in the fourth generation they shal returne hither: for as yet the iniquities of the Amorrheanes are not at the ful vntil this preſent time.",
+   "odr_com": "But in the fourth generation they shal returne hither: for as yet the iniquities of the Amorrheanes are not at the ful vntil this present time.",
+   "sabates_a": "But in the fourth generation they shall return hither: for as yet the iniquities of the Amorrheans are not at the full until this present time.",
+   "madueke_b": "But in the fourth generation they shall return hither: for as yet the iniquities of the Amorrheans are not at the full until this present time."
+  },
+  "17": {
+   "s_dismas": "Therfore when the ſunne was ſet, there aroſe a darke miſt, and there appeared a fornace ſmoking, and a flake of fire paſſing betwene thoſe diuiſions.",
+   "odr_com": "Therfore when the sunne was set, there arose a darke mist, and there appeared a fornace smoking, and a flake of fire passing betwene those diuisions.",
+   "sabates_a": "Therefore when the sun was set, there arose a dark mist, and there appeared a furnace smoking, and a flake of fire passing between those divisions.",
+   "madueke_b": "Therefore when the sun was set, there arose a dark mist, and there appeared a furnace smoking, and a flake of fire passing between those divisions."
+  },
+  "18": {
+   "s_dismas": "That day God made a couenant with Abram, ſaying: To thy ſeede wil I geue this land from the riuer of Ægypt euen to the great riuer Euphrates,",
+   "odr_com": "That day God made a couenant with Abram, saying: To thy seede wil I geue this land from the riuer of Ægypt euen to the great riuer Euphrates,",
+   "sabates_a": "That day God made a covenant with Abram, saying: To thy seed will I give this land from the river of Ægypt even to the great river Euphrates.",
+   "madueke_b": "That day God made a covenant with Abram, saying: To thy seed will I give this land from the river of Aegypt even to the great river Euphrates."
+  },
+  "19": {
+   "s_dismas": "the Cineans, & Cenezites, the Cedmonites,",
+   "odr_com": "the Cineans, & Cenezites, the Cedmonites,",
+   "sabates_a": "the Cineans, and Cenezeites, the Cedmonites,",
+   "madueke_b": "the Cineans, and Cenezeites, the Cedmonites,"
+  },
+  "20": {
+   "s_dismas": "and the Hethits, and the Pherezits, the Raphaims alſo,",
+   "odr_com": "and the Hethits, and the Pherezits, the Raphaims also,",
+   "sabates_a": "and the Hethits, and the Pherezits, the Raphaims also,",
+   "madueke_b": "and the Hethits, and the Pherezits, the Raphaims also,"
+  },
+  "21": {
+   "s_dismas": "and the Amorreans & the Cananites, and the Gargaſites, and the Iebuſites.",
+   "odr_com": "and the Amorreans & the Cananites, and the Gargasites, and the Iebusites.",
+   "sabates_a": "and the Amorreans and the Chananites, and Gargasites, and the Jebusites.",
+   "madueke_b": "and the Amorreans and the Chananites, and Gargasites, and the Jebusites."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "When these things therefore were done, the word of our Lord was made to Abram by a vision saying: fear not Abram, I am thy Protector, and thy reward exceeding great.",
+  "2": "And Abram said: Lord God, what wilt thou give me? I shall go without children: and the son of the steward of my house is this Damascus Eliezer.",
+  "3": "And Abram added: But to me thou hast not given seed: and Lo my servant born in my house shall be mine heir.",
+  "4": "And immediately the word of our Lord came to him saying: He shall not be thine heir: but he that shall come out of thy womb him shalt thou have thine heir.",
+  "5": "And he brought him forth abroad, and said to him: Look up to heaven, and number the stars, if thou canst. And he said to him: so shall thy seed be.",
+  "6": "Abram believed God, and it was reputed to him unto justice.",
+  "7": "And he said to him: I am the Lord that brought thee out from Ur of the Chaldees for to give thee this land, and that thou mightest possess it.",
+  "8": "But he said: Lord God, how may I know that I shall possess it?",
+  "9": "And our Lord answered, and said: Take me a cow of three years old, and a she goat of three years, and a ram of three years, a turtle also, and a pigeon.",
+  "10": "Who taking all these, divided them by the midst, and laid each two pieces arow one against the other: but the birds he divided not.",
+  "11": "And the fowls lighted upon the carcasses, and Abram drove them away.",
+  "12": "And when the sun was setting, a deep sleep fell upon Abram, and a great and darksome horror invaded him.",
+  "13": "And it was said unto him: Know and foreknow that a pilgrim shall thy seed be in a land not their own (and they shall bring them under bondage, and afflict them) four hundred years.",
+  "14": "But the Nation, whom they shall serve, I will judge: and after this they shall go forth with great substance.",
+  "15": "And thou shalt go to thy fathers in peace, buried in a good old age.",
+  "16": "But in the fourth generation they shall return hither: for as yet the iniquities of the Amorrheans are not at the full until this present time.",
+  "17": "Therefore when the sun was set, there arose a dark mist, and there appeared a furnace smoking, and a flake of fire passing between those divisions.",
+  "18": "That day God made a covenant with Abram, saying: To thy seed will I give this land from the river of Ægypt even to the great river Euphrates.",
+  "19": "the Cineans, and Cenezeites, the Cedmonites,",
+  "20": "and the Hethits, and the Pherezits, the Raphaims also,",
+  "21": "and the Amorreans and the Chananites, and Gargasites, and the Jebusites."
+ },
+ "ref_coverage": {
+  "janvier": 21,
+  "have": {
+   "s_dismas": 21,
+   "odr_com": 21,
+   "sabates_a": 21,
+   "madueke_b": 21
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 84,
+ "triage": "SOURCE-SKEW",
+ "secs": 4.4
+}

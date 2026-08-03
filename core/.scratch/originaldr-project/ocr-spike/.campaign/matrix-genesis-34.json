@@ -1,0 +1,1637 @@
+{
+ "chapter": 34,
+ "n_verses": 31,
+ "n_cells": 124,
+ "n_pass": 114,
+ "rate": 0.9194,
+ "ref_means": {
+  "s_dismas": 0.9764,
+  "odr_com": 0.9773,
+  "sabates_a": 0.9664,
+  "madueke_b": 0.966
+ },
+ "src_rates": {
+  "S1": 0.871,
+  "S3": 0.871,
+  "S9": 1.0,
+  "S6": 0.9355
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 10,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 3,
+   "worst": 0.833,
+   "from": "p128",
+   "text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes."
+  },
+  {
+   "src": "S3",
+   "verse": 3,
+   "worst": 0.833,
+   "from": "p132",
+   "text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes."
+  },
+  {
+   "src": "S1",
+   "verse": 7,
+   "worst": 0.869,
+   "from": "p128",
+   "text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and committed an vnlavful ſact, in rauiſhing Iacobs ter"
+  },
+  {
+   "src": "S3",
+   "verse": 7,
+   "worst": 0.869,
+   "from": "p132",
+   "text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and commitred an vnlawful fact, in raui ſhing Iacobs ter."
+  },
+  {
+   "src": "S1",
+   "verse": 8,
+   "worst": 0.886,
+   "from": "chapter",
+   "text": "Hemor therfore ſpake to them: The ſoule of my Sichem is faſtued to your daughter Geue her vnto him mammc wife:"
+  },
+  {
+   "src": "S3",
+   "verse": 8,
+   "worst": 0.895,
+   "from": "chapter",
+   "text": "Hemor therfore ſpake to them: The ſoule of my Sichem is ſaſtned to your daughter Geue her vnto him wife:"
+  },
+  {
+   "src": "S6",
+   "verse": 8,
+   "worst": 0.886,
+   "from": "p118",
+   "text": "Homor thertore ſpake to them: The ſoule of iny ſoune Sichemis tafined to your daughter: Giue her vnto him to wire:"
+  },
+  {
+   "src": "S6",
+   "verse": 9,
+   "worst": 0.88,
+   "from": "chapter",
+   "text": "ad letvs cora maages one with an other : giue vs your daughters, and takeyou our daughters."
+  },
+  {
+   "src": "S1",
+   "verse": 28,
+   "worst": 0.876,
+   "from": "r3",
+   "text": "And waſting al things that were in their houſes, and fildes, their ſheepe and heardes heardes, and aſſes,"
+  },
+  {
+   "src": "S3",
+   "verse": 28,
+   "worst": 0.828,
+   "from": "chapter",
+   "text": "And waſting al that were in their hou ſec, and fildes, their ſecpe and heardes, and aſſes,"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "And Dina the daughter of Lia went forth to ſee A wemen of that countrie.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And Dina the daughter of Lia went forth to ſee A wemen of that countrie.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "And Dina the daughter of Lia went forth to ſee the Xwemen of that countrie.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "fact. Dina the daughter of Lia went forth to ſee the women of that countrie.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "Whom when Sichem ſee ſeene the ſonne of Hemor the Heuite, the prince of ofa land, he was in loue with her and he tooke her away, Iay with her, by force raui ſhing the virgin.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.924,
+     "madueke_b": 0.912
+    }
+   },
+   "S3": {
+    "text": "Whom when Sichem had ſeene the ſonne of Hemor the Heuite, the prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauiſhing the virgin.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "Whom when Sichem had ſeene the ſonne of Hemor the Heuite, the prince of that a land, he was in loue with her: and he tooke her away, and n- lay with her, by force rauiſhing the virgin.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.975,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "Whom when Sichem had ſeen, the ſonne of Hemor the Heuite, the Prince of that land, he was in loue with her and he tooke her away, and lay with her, by force rauiſhing the virgin.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 1.0,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.863,
+     "odr_com": 0.884,
+     "sabates_a": 0.833,
+     "madueke_b": 0.833
+    }
+   },
+   "S3": {
+    "text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.863,
+     "odr_com": 0.884,
+     "sabates_a": 0.833,
+     "madueke_b": 0.833
+    }
+   },
+   "S9": {
+    "text": "And his ſoule de was faſt kint vnto her, and wheras ſne was ſad, he comforted her with ſweete wordes.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.959,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   },
+   "S6": {
+    "text": "And his ſoule was faſt knit vnto her, and wheras ſhe was ſad, he comforted her with ſweet words.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.958,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And going to Hemor his father, he ſaid: Take me this wench to be my wife",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And going to Hemor his father, he ſaid Take me this wench to be my wiſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And going to Hemor his father, he faid: Take me this wenchoto be my wife",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "And going to Hemor his tather, he ſaid: Take me this wench to be my wife.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Which when Iacob had heard, his ſonnes beingabſent, and occupied in feeding of the cattle, he held his peace they returned.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S3": {
+    "text": "Which when Iacob had heard, his ſonnes beingabſent, and occupied in feeding of the cattle, he held his peace they returned.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S9": {
+    "text": "Which when Iacob had heard, his ſonnes being abſent, and occupied in feeding of the cattle, he held his peace til they returned.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "Which when Iacob had heard, his ſonnes being abſent andoccupied in teeding of the cattle, he hold his peace til they returned.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And when Hemor Sichems father was conie forth to ſpeake vnto Iacob,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S3": {
+    "text": "And when Hemor Sichems father was come forth to ſpeake vnto Iacob,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And when Hemor Sichems father was come forth to ſpeake vnto Iacob,",
+    "from": "p140",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "Aud when Hemor Sichets tather was come forth to ſpeake vnto Iacob,",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and committed an vnlavful ſact, in rauiſhing Iacobs ter",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.877,
+     "odr_com": 0.877,
+     "sabates_a": 0.869,
+     "madueke_b": 0.869
+    }
+   },
+   "S3": {
+    "text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and commitred an vnlawful fact, in raui ſhing Iacobs ter.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.877,
+     "odr_com": 0.877,
+     "sabates_a": 0.869,
+     "madueke_b": 0.869
+    }
+   },
+   "S9": {
+    "text": "†behold his ſonnes came7 out of the field: and hearing what had paſſed, they were paſſing wrath, becauſe he had done a foule thing in Iſrael, and committed an vnlawful fact, in raui ſhing Iacobs daughter",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "behold his ſonnes came out of the field: and hearing what had paſſed, they were paſſing wtath, becauſe he had doue a toule thiug in Ilrael, and comittod au vnlawtul fact in rauuhing Iacobs daughter.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "Hemor therfore ſpake to them: The ſoule of my Sichem is faſtued to your daughter Geue her vnto him mammc wife:",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.892,
+     "odr_com": 0.892,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   },
+   "S3": {
+    "text": "Hemor therfore ſpake to them: The ſoule of my Sichem is ſaſtned to your daughter Geue her vnto him wife:",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   },
+   "S9": {
+    "text": "Hemor ther fore ſpake to them: The ſoule of my ſonne8 Sichem is faſtned to your daughter Geue her vnto him to wife:",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "Homor thertore ſpake to them: The ſoule of iny ſoune Sichemis tafined to your daughter: Giue her vnto him to wire:",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.901,
+     "odr_com": 0.901,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "and let. vs contract mariages one with an other: geue vs your daughters, and take you our daughters.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "†and let vs contract mariages one with an other: geue vs your daughters, and take you our daughters.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "†and let vs contract mariages one with an other: geue vs your daughters, and take you our daughters.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "ad letvs cora maages one with an other : giue vs your daughters, and takeyou our daughters.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.896,
+     "odr_com": 0.896,
+     "sabates_a": 0.88,
+     "madueke_b": 0.88
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And dwel with vs : the land is ar your commandement, tille, occupe, and poſſeſſe it.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And dwel with vs : the land is at your commandement, tille, ocupie, and poſſeſſe it.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And dwel with vs: the land is at your commandement, tille, ocupie, and poſſeſſe it.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And dwel with vs : the land is at your commandement, till, occupie, and poſſefſe it.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "Vea and Sichem alſo ſaid to her father and to her brethren : Let me finde grace in your ſight : and what ſoeuer you ſhal appointe I wil geue :",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "Yea and Sichem alſo ſaid to her father and to her brethren : Let me finde grace in your ſight : and what ſoeuer you ſhal appointe I wil geue :",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "Yea and Sichem alſo ſaid to her father and to her brethren : Let me finde grace in your ſight : and what ſoeuer vou ſhal appointe I wil geue :",
+    "from": "p141",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Yca and Sichem alſo ſaid to her fathet and to her brethren : Let me find grace in your ſight: and what ſoeuer you ſhal appoint I wil giue:",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "raiſe the dowrie, and require giftes, and I ſt al gladly geue, what you ſhal demande : only geue me this wench to wife.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S3": {
+    "text": "Fraiſe the dowrie, and require giftes, and I ſhal gladly geue, what you ſhal demande : only geue me this wench to wife.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "†raiſe the dowrie, and require giftes, and I ſ al gladly geue, what you ſhal demande : only geue me this wench to wife.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S6": {
+    "text": "raiſe the dowrie, and require guifts, and I ſhal gladly giue what you ſhal demand: onely giue me this wench to wife.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "Iacobs ſonnes anſwered Sichem & his ſather : in guile, being wrath for the deflouring of their ſiſter:",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "Iacobs ſonnes anſwered Sichem & his father :: in guile, being wrath for the deffouring of their ſiſter:",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "Iacobs ſonnes anſwered Sichem & his father :: in guile, being wrath:: for the deflouring of their ſiſter:",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "Iacobs ſonnes anſwered Sichem & his father in guile, being wrath for the deflouring of their ſiſter",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "we can not doe that which you demande, nor geue our ſiſter to an vncircumciſed perſon : which with vs is an vnlawful & abhominable thing.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "We can not doe that which you demande, nor geue our ſiſter to an vncircumciſed perſon : which withvs is an vnlawful & abhominable thing.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S9": {
+    "text": "We can not doe that ded which you demande, nor geue our ſiſter to an vncircumciſed perſon : which with vs is an vnlawful & abhominable thing.xceſſe",
+    "from": "p141",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   },
+   "S6": {
+    "text": "We can not doe that which you demand, nor giue our ſiſter to an vncircumciſed perſon: which with vs is an vulawful & abhominable thing.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "†But in this order we may be confederate, if you wil be like to vs, and al the man ſex among you be circumciſed:",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "But in this order we may be confederate, if you wil be like to vs, and al the man ſex among you be circumciſed :",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "But in this order we may be confederate, if you wil be like to vs, and al the man ſex among you be circumciſed :",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "But in this order we may be confederate, if vou wil be like to vs, and al the man ex among vou be circumciſed:",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "then wil we geue and take mutually your daughters, and ours: and we wil dwel with you, and wil be one people :",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "†then wil we geue and take mutually your daughters, and ours: and we wil dwel with you, and wil be one people :",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "then wil we geue and take mutually your daughters, and ours : and we wil dwel with you, and wil be one people :",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "16.then wil we giue and take mutually your daughters, and ours : and we wil dwel with vou, and wil be one people:",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "†but if you wil not be circumciſed, we wil take our daughter, and depart.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "†but if you wil not be circumciſed, we wil take our daughter, and depart.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "but if you wil not be circumciſed, we wil take our daughter, and depart.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "but if vou wil not be circumciſed, we wil take our daughter, and depart.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "The offer plcaſed Hemor, and Sichem his ſonne :",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "The offer pleaſed Hemor, and Sichem his ſonne :",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "The offer pleaſed Hemor, and Sichem his ſonne:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "The offer pleaſed Hemor and Sichem his ſoune:",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "neither did the young man make delay, but ſo forthwith fulfilled that which was demanded: for he loued the wench exceedingly, and he was the greateſt man in al his fathers houſe.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "neither did the young man make delay, but ſo forthwith fulfilled that which was demanded : for he loued the wench exceedingly, and he was the greateſt man in al his fathers houſe.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "neither did the young man make delay, but forthwith fulfilled that which was demanded for he loued the wench exceedingly, and he was the greateſt man in al his fathers houſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "1neither did the yong man make delay, but forthwith fulfilled that which was demanded: for he loued the wench exceedingly, and he was the greateſt man in al his fathers houſe.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And going into the gate of the citie, they ſpake to the people:",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And going into the gate of the citie, they ſpake to the people:",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And going into the gate of the citie, they ſpake to the people:",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Aud going into the gate of the citie, they ſpake to the people :",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "Theſe men are men of peace, and are willing to dwel with vs: let them occupie in the land, and til it, which being large and wide doth lacke men to tille it: their daughters we ſbal take to wife, and ours we wil geue to them.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "Theſe men are men of peace, and are willing to dwel with vs: let them occupie in the land, and til it, which being large and wide doth lacke men to tille it : their daughters we ſral take to wife, and ours we wil geue to them.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "Theſe men are men of peace, and are willing to dwel with vs: let them occupie in the land, and til it, which being large and wide dpth lacke men to tille t: their daughters we ſhal take to wife, and ours we wil geue to them.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Theſe men are men of peace, and are willing to dwel with vs : Iet them occupie in the laud, aud till it, which being large and wide doth lacke men to till it : their daughters we ſhal take to wife, and ours we wil giue to them.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "One thing there is for the which ſo great a good is differred : If we circumciſe our men ſexe, folowing the rite of the nation.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "One thing there is for the which ſo great a good is differred : If we circumciſe our men ſexe, folowing the rite of the nation.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "One hing there is for the which ſo great a goodis differred : If we circumciſe our men ſexe, folowing he rite of the nation.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "Oue thing there is for the which ſo great a good is differred : If we circurciſe our man ſex, followirg the rite of the nation.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And their ſubſtance, and cattle, and al things that they poſſeſſe, ſhal be ours: only in this ler vs condeſcend, and dwelling togeather, we ſkal make one people. †.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "And their ſubſtance, and cattle, and al things that they poſſeſſe, ſhal be ours: only in this let vs condeſcend, and dwelling togeather, we ſhal make one people. †.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "And their ſubſtance, and cattle, and al things that they poſſeſſe, ſhal be ours: only in this ler vs condeſcend, and dwelling togeather, we ſhal make one people.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And theit ſubſtance, and eattle, and al things that they poſſeſſe, ſhal be ours: ouly in this let vs condeicend, and dwelling together we ſhal make one people.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And they al aſſented, and circumciſed al the man ſex.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And they al aſſented, and circumciſed at the man ſex.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And they al aſſented, and circumciſed al the man ſex.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And thev al aſſentod, and circumciſed al the man ſex.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And behold the third dav, wken the griefe of the woundes is moſt paineful : Iacobs two ſonnes, Simeon and Leui the brothers of Dina, taking their ſwordes, entred into the citie boldly: and killing al the man ſex,",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "And behold the third dav, wben the griefe of the woundes is moſt paineful : Iacobs two ſonnes, Simeon and Leui the brothers of Dina, taking their ſwordes, entred into the citie boldl : and killing al the man ſex,",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S9": {
+    "text": "And behold the third day, wben the griefe of the woundes is moſt paineful : Iacobs two ſonnes, Simeon and Leui the brothers of Dina, taking their ſwordes, entred into the citie boldly: and killing al the man ſex,",
+    "from": "p141",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "Aud behold the third day, whon the griefe of the wounds is moſt painetul : Iacobs two ſonnes Simcon aud Loui, the brothers of Dina, taking their words, entred nto the citie boldiy: and killing al the man ſex,",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "murdred withal Hemor and Sichem, taking away Dina their ſiſter out of Sichems houſe.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "murdred withal Hemor and Sichem, taking away Dina their ſiſter out of Sichems houſe.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "murdred withal Hemor and Sichem, taking away Dina their ſiſter out of Sichems houſe.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "murdered withal Hemor and Sichem, taking away Dina their ſiſter out of Sichems houſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "When they were gone forth, the other ſonnes of Iacob ranne in vpon them that were thaine: and ſpoiled the citie in revengce of the rape.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "When they were gone forth, the other ſonnes of Iacob ranne in vpon them that were ſlaine and ſpoiled the citie in revengue of therape.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "When they were gone forth, the other ſonnes of Iacob ranne in vpon them that were ſlaine : and ſpoiled the citie in reuenge of the rape.",
+    "from": "p141",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "When they were gone forth, the other ſonnes of Iacobranne in vpon them that were ſlaine, and ſpoiled the citie in reuenge of the rape.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "And waſting al things that were in their houſes, and fildes, their ſheepe and heardes heardes, and aſſes,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.921,
+     "odr_com": 0.921,
+     "sabates_a": 0.876,
+     "madueke_b": 0.876
+    }
+   },
+   "S3": {
+    "text": "And waſting al that were in their hou ſec, and fildes, their ſecpe and heardes, and aſſes,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.882,
+     "odr_com": 0.882,
+     "sabates_a": 0.828,
+     "madueke_b": 0.828
+    }
+   },
+   "S9": {
+    "text": "And waſting al things that were in their houſes, and fildes, their ſheepe and heardes, and aſſes,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S6": {
+    "text": "And waſting al things that were in theit houſes and fieldes, their ſneep and heards, and aiſes,",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "their little ones alſo, and their wiues they led away captiue.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "their little ones alſo, and their wiues they led away captiue.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "their little ones alſo, and their wiues they led away captiue.",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "their little ones alſo, and their wiues they led away captiue.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "which things when they had boldly atcheiued, Iacob ſaid to Simeon and Leui You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabiteres of this land. we are few: they being gethered together wil ſtrike me and I, and my houſe ſhal be deſtroyed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "Which things when they had boldly atcheiued, Iacob ſaid to Simeon and Leui You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabitants of this land. we are few: they being gethered together wil ſtrike me and I, and my houſe ſhal be deſtroyed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "Which things when they boldly atcheiued, Iacob ſaid to Simeon and Leui You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabiters of this land. we are few: they being gethered together wil ſtrike me and I, and my houſe ſhal be deſtroyed.",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "which things when they had boldly atcheiued. Iacob ſaid to Simeon and Leui: You haue ttoubled me, and made me odious to the Chananites, and Phereites, the inhabiters of this land. We are few : they being gathered together wil ſtrikeme : and I and my houſe ſhal be deſtroyed.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "They anſwered What ſhould they abuſe our ſiſter as a ſtrumpet?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "They anſwered What ſhould abuſe our ſiſter as a ſtrumpet?",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 0.918,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S9": {
+    "text": "They anſwered What ſhould they abuſe our ſiſter as a ſtrumpet?",
+    "from": "p142",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "They auwered: What ſhould they abuſe our ſiſter as a ſtrumpet?",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Dina the daughter of Lia went forth to ſee the wemen of that countrie.",
+   "odr_com": "AND Dina the daughter of Lia went forth to see the wemen of that countrie.",
+   "sabates_a": "And Dina the daughter of Lia went forth to see the women of that country.",
+   "madueke_b": "And Dina the daughter of Lia went forth to see the women of that country."
+  },
+  "2": {
+   "s_dismas": "Whom when Sichem had ſeene the ſonne of Hemor the Heuite, the prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauiſhing the virgin.",
+   "odr_com": "Whom when Sichem had seene the sonne of Hemor the Heuite, the prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin.",
+   "sabates_a": "Whom when Sichem had seen, the son of Hemor the Hevite, the Prince of that land, he was in love with her: and he took her away, and lay with her, by force ravishing the virgin.",
+   "madueke_b": "Whom when Sichem had seen, the son of Hemor the Hevite, the Prince of that land, he was I in love with her: and he took her away, and lay with her, by force ravishing the virgin."
+  },
+  "3": {
+   "s_dismas": "And his ſoule was faſt knit vnto her, and wheras ſhe was ſad, he comforted her with ſweete wordes.",
+   "odr_com": "And his soule was fast kint vnto her, and wheras she was sad, he comforted her with sweete wordes.",
+   "sabates_a": "And his soul was fast knit unto her, and whereas she was sad, he comforted her with sweet words.",
+   "madueke_b": "And his soul was fast knit unto her, and whereas she was sad, he comforted her with sweet words."
+  },
+  "4": {
+   "s_dismas": "And going to Hemor his father, he ſaid: Take me this wench to be my wife.",
+   "odr_com": "And going to Hemor his father, he said: Take me this wench to be my wife.",
+   "sabates_a": "And going to Hemor his father, he said: Take me this wench to be my wife.",
+   "madueke_b": "And going to Hemor his father, he said: Take me this wench to be my wife."
+  },
+  "5": {
+   "s_dismas": "Which when Iacob had heard, his ſonnes being abſent, and occupied in feeding of the cattle, he held his peace til they returned.",
+   "odr_com": "Which when Iacob had heard, his sonnes being absent, and occupied in feeding of the cattle, he held his peace til they returned.",
+   "sabates_a": "Which when Jacob had heard, his sons being absent and occupied in feeding of the cattle, he held his peace till they returned.",
+   "madueke_b": "Which when Jacob had heard, his sons being absent and occupied in feeding of the cattle, he held his peace till they returned."
+  },
+  "6": {
+   "s_dismas": "And when Hemor Sichems father was come forth to ſpeake vnto Iacob,",
+   "odr_com": "And when Hemor Sichems father was come forth to speake vnto Iacob,",
+   "sabates_a": "And when Hemor, Sichem's father was come forth to speak unto Jacob,",
+   "madueke_b": "And when Hemor, Sichem's father was come forth to speak unto Jacob,"
+  },
+  "7": {
+   "s_dismas": "behold his ſonnes came out of the field: and hearing what had paſſed, they were paſſing wrath, becauſe he had done a foule thing in Iſrael, and committed an vnlawful fact, in rauiſhing Iacob’s daughter.",
+   "odr_com": "behold his sonnes came out of the field: and hearing what had passed, they were passing wrath, because he had done a foule thing in Israel, and committed an vnlawful fact, in rauishing Iacobs daughter",
+   "sabates_a": "behold his sons came out of the field; and hearing what had passed, they were passing wrath, because he had done a foul thing in Israel, and committed an unlawful fact in ravishing Jacob's daughter.",
+   "madueke_b": "behold his sons came out of the field; and hearing what had passed, they were passing wrath, because he had done a foul thing in Israel, and committed an unlawful fact in ravishing Jacob's daughter."
+  },
+  "8": {
+   "s_dismas": "Hemor therfore ſpake to them: The ſoule of my ſonne Sichem is faſtned to your daughter; Geue her vnto him to wife:",
+   "odr_com": "Hemor therfore spake to them: The soule of my sonne Sichem is fastned to your daughter: Geue her vnto him to wife:",
+   "sabates_a": "Hemor therefore spake to them: The soul of my son Sichem is fastened to your daughter: Give her unto him to wife:",
+   "madueke_b": "Hemor therefore spake to them: The soul of my son Sichem is fastened to your daughter: Give her unto him to wife:"
+  },
+  "9": {
+   "s_dismas": "and let vs contract mariages one with an other: geue vs your daughters, and take you our daughters.",
+   "odr_com": "and let vs contract mariages one with an other: geue vs your daughters, and take you our daughters.",
+   "sabates_a": "and let us contract marriages one with another: give us your daughters, and take you our daughters.",
+   "madueke_b": "and let us contract marriages one with another: give us your daughters, and take you our daughters."
+  },
+  "10": {
+   "s_dismas": "And dwel with vs: the land is at your commandement, tille, occupie, and poſſeſſe it.",
+   "odr_com": "And dwel with vs: the land is at your commandement, tille, occupie, and possesse it.",
+   "sabates_a": "And dwell with us: the land is at your commandment, till, occupy, and possess it.",
+   "madueke_b": "And dwell with us: the land is at your commandment, till, occupy, and possess it."
+  },
+  "11": {
+   "s_dismas": "Yea and Sichem alſo ſaid to her father and to her brethren: Let me finde grace in your ſight: and what ſoeuer you ſhal appointe I wil geue:",
+   "odr_com": "Yea and Sichem also said to her father and to her brethren: Let me finde grace in your sight: and what soeuer you shal appointe I wil geue:",
+   "sabates_a": "Yea and Sichem also said to her father and to her brethren: Let me find grace in your sight: and what soever you shall appoint I will give:",
+   "madueke_b": "Yea and Sichem also said to her father and to her brethren: Let me find grace in your sight: and what soever you shall appoint I will give:"
+  },
+  "12": {
+   "s_dismas": "raiſe the dowrie, and require giftes, and I ſhal gladly geue, what you ſhal demande: only geue me this wench to wife.",
+   "odr_com": "raise the dowrie, and require giftes, and I shal gladly geue, what you shal demande: only geue me this wench to wife.",
+   "sabates_a": "raise the dowry, and require gifts, and I shall gladly give what you shall demand: only give me this wench to wife.",
+   "madueke_b": "raise the dowry, and require gifts, and I shall gladly give what you shall demand: only give me this wench to wife."
+  },
+  "13": {
+   "s_dismas": "Iacobs ſonnes anſwered Sichem & his father in guile, being wrath for the deflouring of their ſiſter:",
+   "odr_com": "Iacobs sonnes answered Sichem & his father in guile, being wrath for the deflouring of their sister:",
+   "sabates_a": "Jacob's sons answered Sichem & his father in guile, being wrath for the deflowering of their sister:",
+   "madueke_b": "Jacob's sons answered Sichem & his father in guile, being wrath for the deflowering of their sister:"
+  },
+  "14": {
+   "s_dismas": "We can not doe that which you demande, nor geue our ſiſter to an vncircumciſed perſon: which with vs is an vnlawful & abhominable thing.",
+   "odr_com": "We can not doe that which you demande, nor geue our sister to an vncircumcised person: which with vs is an vnlawful & abhominable thing.",
+   "sabates_a": "We cannot do that which you demand, nor give our sister to an uncircumcised person; which with us is an unlawful & abominable thing.",
+   "madueke_b": "We cannot do that which you demand, nor give our sister to an uncircumcised person; which with us is an unlawful & abominable thing."
+  },
+  "15": {
+   "s_dismas": "But in this order we may be confederate, if you wil be like to vs, and al the man ſex among you be circumciſed:",
+   "odr_com": "But in this order we may be confederate, if you wil be like to vs, and al the man sex among you be circumcised:",
+   "sabates_a": "But in this order we may be considerate, if you will be like to us, and all the man sex among you be circumcised:",
+   "madueke_b": "But in this order we may be considerate, if you will be like to us, and all the man sex among you be circumcised:"
+  },
+  "16": {
+   "s_dismas": "then wil we geue and take mutually your daughters, and ours: and we wil dwel with you, and wil be one people:",
+   "odr_com": "then wil we geue and take mutually your daughters, and ours: and we wil dwel with you, and wil be one people:",
+   "sabates_a": "then will we give and take mutually your daughters, and ours: and we will dwell with you, and will be one people:",
+   "madueke_b": "then will we give and take mutually your daughters, and ours: and we will dwell with you, and will be one people:"
+  },
+  "17": {
+   "s_dismas": "but if you wil not be circumciſed, we wil take our daughter, and depart.",
+   "odr_com": "but if you wil not be circumcised, we wil take our daughter, and depart.",
+   "sabates_a": "but if you will not be circumcised, we will take our daughter, and depart.",
+   "madueke_b": "but if you will not be circumcised, we will take our daughter, and depart."
+  },
+  "18": {
+   "s_dismas": "The offer pleaſed Hemor, and Sichem his ſonne:",
+   "odr_com": "The offer pleased Hemor, and Sichem his sonne:",
+   "sabates_a": "The offer pleased Hemor and Sichem his son:",
+   "madueke_b": "The offer pleased Hemor and Sichem his son:"
+  },
+  "19": {
+   "s_dismas": "neither did the young man make delay, but forthwith fulfilled that which was demanded: for he loued the wench exceedingly, and he was the greateſt man in al his fathers houſe.",
+   "odr_com": "neither did the young man make delay, but forthwith fulfilled that which was demanded: for he loued the wench exceedingly, and he was the greatest man in al his fathers house.",
+   "sabates_a": "neither did the young man make delay, but forthwith fulfilled that which was demanded: for he loved the wench exceedingly, and he was the greatest man in all his father's house.",
+   "madueke_b": "neither did the young man make delay, but forthwith fulfilled that which was demanded: for he loved the wench exceedingly, and he was the greatest man in all his father's house."
+  },
+  "20": {
+   "s_dismas": "And going into the gate of the citie, they ſpake to the people:",
+   "odr_com": "And going into the gate of the citie, they spake to the people:",
+   "sabates_a": "And going into the gate of the city, they spake to the people:",
+   "madueke_b": "And going into the gate of the city, they spake to the people:"
+  },
+  "21": {
+   "s_dismas": "Theſe men are men of peace, and are willing to dwel with vs: let them occupie in the land, and til it, which being large and wide doth lacke men to tille it: their daughters we ſhal take to wife, and ours we wil geue to them.",
+   "odr_com": "These men are men of peace, and are willing to dwel with vs: let them occupie in the land, and til it, which being large and wide doth lacke men to tille it: their daughters we shal take to wife, and ours we wil geue to them.",
+   "sabates_a": "These men are men of peace, and are willing to dwell with us: let them occupy in the land, and till it, which being large and wide doth lack men to till it: their daughters we shall take to wife, and ours we will give to them.",
+   "madueke_b": "These men are men of peace, and are willing to dwell with us: let them occupy in the land, and till it, which being large and wide doth lack men to till it: their daughters we shall take to wife, and ours we will give to them."
+  },
+  "22": {
+   "s_dismas": "One thing there is for the which ſo great a good is differred: If we circumciſe our men ſexe, folowing the rite of the nation.",
+   "odr_com": "One thing there is for the which so great a good is differred: If we circumcise our men sexe, folowing the rite of the nation.",
+   "sabates_a": "One thing there is for the which so great a good is deferred: If we circumcise our men sex, following the rite of the nation.",
+   "madueke_b": "One thing there is for the which so great a good is deferred: If we circumcise our men sex, following the rite of the nation."
+  },
+  "23": {
+   "s_dismas": "And their ſubſtance, and cattle, and al things that they poſſeſſe, ſhal be ours: only in this let vs condeſcend, and dwelling togeather, we ſhal make one people.",
+   "odr_com": "And their substance, and cattle, and al things that they possesse, shal be ours: only in this let vs condescend, and dwelling togeather, we shal make one people.",
+   "sabates_a": "And their substance, and cattle, and all things that they possess, shall be ours: only in this let us condescend, and dwelling together we shall make one people.",
+   "madueke_b": "And their substance, and cattle, and all things that they possess, shall be ours: only in this let us condescend, and dwelling together we shall make one people."
+  },
+  "24": {
+   "s_dismas": "And they al aſſented, and circumciſed al the man ſex.",
+   "odr_com": "And they al assented, and circumcised al the man sex.",
+   "sabates_a": "And they all assented, and circumcised all the man sex.",
+   "madueke_b": "And they all assented, and circumcised all the man sex."
+  },
+  "25": {
+   "s_dismas": "And behold the third day, when the griefe of the woundes is moſt paineful: Iacobs two ſonnes, Simeon and Leui the brothers of Dina, taking their ſwordes, entred into the citie boldly: and killing al the man ſex,",
+   "odr_com": "And behold the third day, when the griefe of the woundes is most paineful: Iacobs two sonnes, Simeon and Leui the brothers of Dina, taking their swordes, entred into the citie boldly: and killing al the man sex,",
+   "sabates_a": "And behold the third day, when the grief of the wounds is most painful: Jacob's two sons Simeon and Levi, the brothers of Dina, taking their swords, entered into the city boldly: and killing all the man sex,",
+   "madueke_b": "And behold the third day, when the grief of the wounds is most painful: Jacob's two sons Simeon and Levi, the brothers of Dina, taking their swords, entered into the city boldly: and killing all the man sex,"
+  },
+  "26": {
+   "s_dismas": "murdred withal Hemor and Sichem, taking away Dina their ſiſter out of Sichems houſe.",
+   "odr_com": "murdred withal Hemor and Sichem, taking away Dina their sister out of Sichems house.",
+   "sabates_a": "murdered withal Hemor and Sichem, taking away Dina their sister out of Sichem's house.",
+   "madueke_b": "murdered withal Hemor and Sichem, taking away Dina their sister out of Sichem's house."
+  },
+  "27": {
+   "s_dismas": "When they were gone forth, the other ſonnes of Iacob ranne in vpon them that were ſlaine: and ſpoiled the citie in reuenge of the rape.",
+   "odr_com": "When they were gone forth, the other sonnes of Iacob ranne in vpon them that were slaine: and spoiled the citie in reuenge of the rape.",
+   "sabates_a": "When they were gone forth, the other sons of Jacob ran in upon them that were slain, and spoiled the city in revenge of the rape.",
+   "madueke_b": "When they were gone forth, the other sons of Jacob ran in upon them that were slain, and spoiled the city in revenge of the rape."
+  },
+  "28": {
+   "s_dismas": "And waſting al things that were in their houſes, and fildes, their ſheepe and heardes, and aſſes,",
+   "odr_com": "And wasting al things that were in their houses, and fildes, their sheepe and heardes, and asses,",
+   "sabates_a": "And wasting all things that were in their houses and fields, their sheep and herds, and asses,",
+   "madueke_b": "And wasting all things that were in their houses and fields, their sheep and herds, and asses,"
+  },
+  "29": {
+   "s_dismas": "their litle ones alſo, and their wiues they led away captiue.",
+   "odr_com": "their little ones also, and their wiues they led away captiue.",
+   "sabates_a": "their little ones also, and their wives they led away captive.",
+   "madueke_b": "their little ones also, and their wives they led away captive."
+  },
+  "30": {
+   "s_dismas": "Which things when they had boldly atcheiued, Iacob ſaid to Simeon and Leui: You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabiters of this land. We are few: they being gethered together wil ſtrike me; and I, and my houſe ſhal be deſtroyed.",
+   "odr_com": "Which things when they had boldly atcheiued, Iacob said to Simeon and Leui: You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabiters of this land, we are few: they being gethered together wil strike me; and I, and my house shal be destroyed.",
+   "sabates_a": "Which things when they had boldly achieved, Jacob said to Simeon and Levi: You have troubled me, and made me odious to the Chananites, and Pherezites, the inhabiters of this land. We are few: they being gathered together will strike me; and I and my house shall be destroyed.",
+   "madueke_b": "Which things when they had boldly achieved, Jacob said to Simeon and Levi: You have troubled me, and made me odious to the Chananites, and Pherezites, the inhabiters of this land. We are few: they being gathered together will strike me; and I and my house shall be destroyed."
+  },
+  "31": {
+   "s_dismas": "They anſwered: What ſhould they abuſe our ſiſter as a ſtrumpet?",
+   "odr_com": "They answered: What should they abuse our sister as a strumpet?",
+   "sabates_a": "They answered: What? Should they abuse our sister as a strumpet?",
+   "madueke_b": "They answered: What? Should they abuse our sister as a strumpet?"
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Dina the daughter of Lia went forth to see the women of that country.",
+  "2": "Whom when Sichem had seen, the son of Hemor the Hevite, the Prince of that land, he was in love with her: and he took her away, and lay with her, by force ravishing the virgin.",
+  "3": "And his soul was fast knit unto her, and whereas she was sad, he comforted her with sweet words.",
+  "4": "And going to Hemor his father, he said: Take me this wench to be my wife.",
+  "5": "Which when Jacob had heard, his sons being absent and occupied in feeding of the cattle, he held his peace till they returned.",
+  "6": "And when Hemor, Sichem's father was come forth to speak unto Jacob,",
+  "7": "behold his sons came out of the field; and hearing what had passed, they were passing wrath, because he had done a foul thing in Israel, and committed an unlawful fact in ravishing Jacob's daughter.",
+  "8": "Hemor therefore spake to them: The soul of my son Sichem is fastened to your daughter: Give her unto him to wife:",
+  "9": "and let us contract marriages one with another: give us your daughters, and take you our daughters.",
+  "10": "And dwell with us: the land is at your commandment, till, occupy, and possess it.",
+  "11": "Yea and Sichem also said to her father and to her brethren: Let me find grace in your sight: and what soever you shall appoint I will give:",
+  "12": "raise the dowry, and require gifts, and I shall gladly give what you shall demand: only give me this wench to wife.",
+  "13": "Jacob's sons answered Sichem & his father in guile, being wrath for the deflowering of their sister:",
+  "14": "We cannot do that which you demand, nor give our sister to an uncircumcised person; which with us is an unlawful & abominable thing.",
+  "15": "But in this order we may be considerate, if you will be like to us, and all the man sex among you be circumcised:",
+  "16": "then will we give and take mutually your daughters, and ours: and we will dwell with you, and will be one people:",
+  "17": "but if you will not be circumcised, we will take our daughter, and depart.",
+  "18": "The offer pleased Hemor and Sichem his son:",
+  "19": "neither did the young man make delay, but forthwith fulfilled that which was demanded: for he loved the wench exceedingly, and he was the greatest man in all his father's house.",
+  "20": "And going into the gate of the city, they spake to the people:",
+  "21": "These men are men of peace, and are willing to dwell with us: let them occupy in the land, and till it, which being large and wide doth lack men to till it: their daughters we shall take to wife, and ours we will give to them.",
+  "22": "One thing there is for the which so great a good is deferred: If we circumcise our men sex, following the rite of the nation.",
+  "23": "And their substance, and cattle, and all things that they possess, shall be ours: only in this let us condescend, and dwelling together we shall make one people.",
+  "24": "And they all assented, and circumcised all the man sex.",
+  "25": "And behold the third day, when the grief of the wounds is most painful: Jacob's two sons Simeon and Levi, the brothers of Dina, taking their swords, entered into the city boldly: and killing all the man sex,",
+  "26": "murdered withal Hemor and Sichem, taking away Dina their sister out of Sichem's house.",
+  "27": "When they were gone forth, the other sons of Jacob ran in upon them that were slain, and spoiled the city in revenge of the rape.",
+  "28": "And wasting all things that were in their houses and fields, their sheep and herds, and asses,",
+  "29": "their little ones also, and their wives they led away captive.",
+  "30": "Which things when they had boldly achieved, Jacob said to Simeon and Levi: You have troubled me, and made me odious to the Chananites, and Pherezites, the inhabiters of this land. We are few: they being gathered together will strike me; and I and my house shall be destroyed.",
+  "31": "They answered: What? Should they abuse our sister as a strumpet?"
+ },
+ "ref_coverage": {
+  "janvier": 31,
+  "have": {
+   "s_dismas": 31,
+   "odr_com": 31,
+   "sabates_a": 31,
+   "madueke_b": 31
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 124,
+ "triage": "SOURCE-SKEW",
+ "secs": 6.5
+}

@@ -1,0 +1,2876 @@
+{
+ "chapter": 31,
+ "n_verses": 55,
+ "n_cells": 220,
+ "n_pass": 201,
+ "rate": 0.9136,
+ "ref_means": {
+  "s_dismas": 0.9751,
+  "odr_com": 0.9772,
+  "sabates_a": 0.9656,
+  "madueke_b": 0.9656
+ },
+ "src_rates": {
+  "S1": 0.8364,
+  "S3": 0.8909,
+  "S9": 1.0,
+  "S6": 0.9273
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 19,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 4,
+   "worst": 0.864,
+   "from": "p120",
+   "text": "He ſent, called Rachel and Lia into the ſield, where he fed flockes,"
+  },
+  {
+   "src": "S1",
+   "verse": 11,
+   "worst": 0.846,
+   "from": "chapter",
+   "text": "And the angel of God ſaid to me in ſleepe Iacob acom Iacob And I anfwered Here I am."
+  },
+  {
+   "src": "S1",
+   "verse": 19,
+   "worst": 0.898,
+   "from": "p121",
+   "text": "At that time Laban was gone to sheare his skeepe, and Rachel ſtole the idols of her father."
+  },
+  {
+   "src": "S6",
+   "verse": 19,
+   "worst": 0.898,
+   "from": "p112",
+   "text": "At that time Laban was gone to ſheare his ſheep, and Rachel ſtole the idols of her father,"
+  },
+  {
+   "src": "S1",
+   "verse": 33,
+   "worst": 0.871,
+   "from": "p122",
+   "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of the hand maides, found them not. And when he was into Rachels rent,"
+  },
+  {
+   "src": "S3",
+   "verse": 33,
+   "worst": 0.879,
+   "from": "p126",
+   "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of the hand-maides, found them not. And when he was into Rachels tent,"
+  },
+  {
+   "src": "S1",
+   "verse": 36,
+   "worst": 0.876,
+   "from": "p122",
+   "text": "And this being angrie ſaid in chiding maner: For what fault of and for what offence of my part haſt thou ſo chaffed an- me,"
+  },
+  {
+   "src": "S3",
+   "verse": 36,
+   "worst": 0.876,
+   "from": "p126",
+   "text": "And this being :: angrie ſaid in chiding maner: For what fault of and for what offence of my part haſt thou ſo chaffed an- me,"
+  },
+  {
+   "src": "S1",
+   "verse": 37,
+   "worst": 0.891,
+   "from": "p122",
+   "text": "and ſearched al my houshould ſtuffe? What haſt found of al the ſabſtance of thy houſe? lay it here . my brethren, and thy brethren, and let them iudge betwen me & thee."
+  },
+  {
+   "src": "S3",
+   "verse": 37,
+   "worst": 0.891,
+   "from": "p126",
+   "text": "and ſearched al my houshould ſtuffe? What haſt found of al the ſabſtance of thy houſe lay it here my brethren, and thy brethren, and let them iudge betwen me & thee."
+  },
+  {
+   "src": "S1",
+   "verse": 38,
+   "worst": 0.892,
+   "from": "p122",
+   "text": "Haue I therfore bene with thee twentie thy ewes and goates were not barren, the wethers of flocke I did not eate :"
+  },
+  {
+   "src": "S3",
+   "verse": 38,
+   "worst": 0.892,
+   "from": "p126",
+   "text": "Haue I therfore bene with thee twentie thy ewes and goates were not barren, the wethers of flocke I did not eate:"
+  },
+  {
+   "src": "S6",
+   "verse": 38,
+   "worst": 0.884,
+   "from": "p112",
+   "text": "Haue I theretore been with thee twentie yeares thy ewes and goats were not barren, the wethers of thy flock I did uot eate: ncyther"
+  },
+  {
+   "src": "S3",
+   "verse": 39,
+   "worst": 0.893,
+   "from": "p126",
+   "text": "neyther that which the beaſt caught did I shew to thee, I made good al the whatſoeuer periihed by theft, thou dideſt exact it of"
+  },
+  {
+   "src": "S6",
+   "verse": 39,
+   "worst": 0.871,
+   "from": "chapter",
+   "text": "that which the beaſt had caught did I ſhew o thee, I made good al the damage: Iacob. whatſoeuer periſned by theft thou dideſt exact it of me"
+  },
+  {
+   "src": "S1",
+   "verse": 40,
+   "worst": 0.835,
+   "from": "p122",
+   "text": "night was I parched with heate, and with and ſleepe did flye from myne eyes."
+  },
+  {
+   "src": "S1",
+   "verse": 49,
+   "worst": 0.87,
+   "from": "r3",
+   "text": "Our Lord behold and iudge betwen vs when we ſhal be ſo departed one from the other,"
+  },
+  {
+   "src": "S3",
+   "verse": 49,
+   "worst": 0.87,
+   "from": "r3",
+   "text": "Our Lord behold and iudge betwen vs when we ſhal be ſo departed one from the other,"
+  },
+  {
+   "src": "S6",
+   "verse": 49,
+   "worst": 0.877,
+   "from": "p113",
+   "text": "Our Lord behold and iudge between vs when we ſhalbe departed one trom the other,"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "After he heard the wordes of Labans ſonnes ſaying: Iacob hath taken al that was our fathers, and being enriched of his ſubſtance, is become great:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "After he heard the wordes of Labans ſonnes ſaying: I Jacob hath taken al that was our fathers, and being enriched of his ſubſtance, is become great:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "After he heard the wordes of Labans ſonnes ſaying: Iacob hath taken al that was our fathers, and being enriched of his ſubſtance, is become great",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "FTER he heard the words of Labans ſonnes ſaying: Iacob hath taken al that was our fathers, and being enriched of his ſubſtance, is become great:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "and perceauing alſo Labans countenance, that it was not towards him as yeſterday and the other day,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "and perceauing alſo Labans countenance, that it was not towards him as yeſterday and the other day,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "and peroeauing alſo Labanss countenance, that it was not towards him as yeſterday and the other day,",
+    "from": "p130",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "and perceauing alſo Labans countenance, that it was not towards himas yeſterday and the other day,",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "eſpecially Lord ſaying to him: Returne into the land of thy fathers, and to thy kinred, and I wil be with thee.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S3": {
+    "text": "eſpecially our Lord ſaying to him: Returne into the land of thy fathers, and to thy kinred, and I wil be with thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "eſpecially our Lord ſaying to him Returne into the land of thy fathers, and to thy kinred, and I wil be with thee.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "eſpecially our Lord ſaying to him Returne in the land of thy fathers, and to thy kindred. and I wil be with thee",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "He ſent, called Rachel and Lia into the ſield, where he fed flockes,",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.877,
+     "odr_com": 0.877,
+     "sabates_a": 0.864,
+     "madueke_b": 0.864
+    }
+   },
+   "S3": {
+    "text": "He ſent, and called Rachel and Lia into the field, where he fed the flockes,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "He ſent, and called. Rachel and Lia into the field where he fed the flockes,",
+    "from": "p130",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "he ſent, and called Rachel and Lia into the field where he fed the flockes,",
+    "from": "p111",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "and ſaid to them: I ſee your fathers countenance that it is not towards me as yeſterday and the other and the God of my father hath bene with me.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "and ſaid to them: I ſee your fathers countenance that it is not towards me as yeſterday and the other and the God of my father hath bene with me.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S9": {
+    "text": "and ſaid to them: I ſee your fathers countenance that it is not towards me as yeſterday and the other day: and the God of my father hath bene with me.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "and ſaid to them: I ſee vours fathets cour tenance that it is not towards me as yeſterday and the other day: and the God of my father hath been with me.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And ſelues knowe that I haue ſerued your father to ghe vttermoſt of my power.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   },
+   "S3": {
+    "text": "And ſelues knowerthat I haue ſerued your father to the vttermoſt of my power.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S9": {
+    "text": "And your ſelues knowe that I haue ſerued your father to the vttermoſt of my power.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And vour ſelues know that I haue ſerued vour father to the vttermoſt of my power.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Yea your father alſo hath circumuented me, and hath changed my wages tenne times yet God hath not ſuffred him to hurt me.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "Yea your father alfo hath circumuented me, and hath changed my wages tenne times yet God hath not ſuffred him to hurt me.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S9": {
+    "text": "Yea your father alfo hath circum-7 uented me, and hath changed my wages tenne times: and yet God hath not ſuffred him tothurt me.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "Yea vour father alſo hath circumuented me, and hath changed my wages ten times: and vet God hath not ſuffred him to hurt me.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "If at any he ſaid: They of diuers colours ſhal be thy wages al ſheepe brought forth young of diuers colours, but when he ſaid contrarie Thou shalt take al the white ones for wages al the flockes brought forth white ones.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S3": {
+    "text": "If at auy he ſaid: They of diuers colours ſhal be thy wages: al ſheepe brought forth young of diuers colours, but when he ſaid contrarie Thou shalt take al the white ones for wages al the flockes brought forth white ones.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S9": {
+    "text": "If at any time he ſaid: They of diuers colours ſhal be thy wages al the ſheepe brought forth young of diuers colours, but when he ſaid contrarie Thou shalt take al the white ones for wages al the flockes brought forth white ones.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "It at any time he ſaid : They of diuers colours ſhal be thy wages : al the ſheep brought forth yong of diuers colours. But when he faid contrarie : Thou shalt take al the white ones for thy wages: al the flockes brought torth white ones.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And God hath taken your ſathers ſubſtance, and geuen it to me.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S3": {
+    "text": "And God hath taken your ſathers ſubſtance, and geuen it to me",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S9": {
+    "text": "And God hath taken your fathers ſubſtance, and geuen it to me.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "And God hath taken your fathers ſubſtance, andgiuen it to me.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "For after the time came of the ewes conceauing, I lifted vp mine eyes, and ſawe in my ſleepe the males aſcending vpon the females of diuers colours, and the ſpotted, and the ſpeckled.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "For after the time cameof the cwes conceauing, I lifted vp mine eyes, and ſawe in my ſſeepe the males aſcending vpon the females of diuers colours, and the ſpotted, the ſpeckled.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "For after the time came of the ewes conceauing, I lifted vp mine eyes, and ſawe in my ſſeepe the males aſcending vpon the females of diuers colours, and the ſpotted, and the ſpeckled.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "For after the time came of the ewes conceauing, I lifted vpmine cyes, and ſaw in my ſleep the males aſcending vpon the females of diuers colours, and the ſpotted, and the ſpeckled.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And the angel of God ſaid to me in ſleepe Iacob acom Iacob And I anfwered Here I am.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.855,
+     "odr_com": 0.855,
+     "sabates_a": 0.846,
+     "madueke_b": 0.846
+    }
+   },
+   "S3": {
+    "text": "And the angel of God ſaid to me in ſleepe Iacob Iacob? And I anſwered Here I am.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.923,
+     "odr_com": 0.923,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S9": {
+    "text": "And the angel of God ſaid to me in ſleepe And I anſwered Here I am.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.91,
+     "madueke_b": 0.91
+    }
+   },
+   "S6": {
+    "text": "And the Angel of God ſaid to me in ſleep Iacob And I anſwered Heer I am.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Who ſaid : Lyft vp thine eyes, and. ſee al the males aſcending vpon the females, them of diuers colours, the ſpotted end the ſpeckled. For I haue ſeene al things that Laban hath done to thee.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "Who ſaid : Lyft vp thine eyes, and ſee al the males aſcending vpon the females, them of diuers colours, the ſpotted and the ſpeckled. For I haue ſeene al things that Laban hath doneto thee.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "Who ſaid : Lyft vp thine eyes, and ſee al the males aſcending vpon the females, them of diuers colours, the ſpotted and the ſpeckled. For I haue ſeene al things that Laban hath done to thee.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Who ſaid Lift vp thine eyes, and ſee al the males aſcending vpon the females. them of diuers colours, the ſpotted and the ſpeckled. For I haue ſeen al things that Laban hath done to thee.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "I am the God of Bathel, where thou dideſt : annointe the ſtone,:: and dideſt vowe the vowe vnto me. Now therfore ariſe, and goo out of this land, returning into the lant of thy natiuitie.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.989,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "I am the God of Bathel, where thou dideſt :: annointe the ſtone, and dideſt vowe the vowe vnto me. Now therfore ariſe, and goe out of this land, returning into the land of thy natiuitie.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "I am the God of Bathel, where thou dideſt :: annointe the ſtone, :: Annoin and dideſt vowe the vowe vnto me. Now therfore ariſe, and goe out of this land, returning into the land of thy natiuitie.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.962,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S6": {
+    "text": "I am the God of Bethel, where thou dideſt annoint the ſtone, and dideſt vow the vow vnto me. Now therefore ariſe, and goe out of this land, returning into the land ot thy natiuitie.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.966,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And Rachckand Lia antu ered : Haue we any thing left in the goods, and herirage of our fathers houſe?",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.928,
+     "odr_com": 0.928,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S3": {
+    "text": "And Rachel and Lia anſwered: Haue we any thing left in the goods, and heritage of our fathers houſe?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And Rachel and Lia anſwered : Haue we any thing to left in the goods, and heritage of our fathers houſe:",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "And Rachel and Lia anſwered Haue we any thing left in the goods and heritage of our fathers houſer",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Hath he not reputed vs as ſtrangers, and ſould vs, and eaten vp the price of vs",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "Hath he not reputed vs as ſtrangers, and ſould vs, and eaten vp the price of vs†",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "Hath he not reputed vs as ſtrangers, and ſould vs, and eaten vp the price of vs",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "Hath he not reputed vs as ſtrangers, and ſold vs, and eaten vp the price of vs",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "But Cod hath taken our fathers riches, and deliuered them to vs, and to our children: wherfore do al things, that God hath commanded thee.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "But Godchath taken our fathers riches, and deliuered them to vs, and to our children: wherforedo al things, that God hath commanded thee.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "But God hath taken our fathers riches, and deliuered them to vs, and to our children : wherfore do al things, that God hath commanded thee.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "But God hath taken our fathers riches, and deliuered them to vs, aud to our children: wherefore doe al things that God hath commanded thee",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Iacob therfore roſe vp, and ſetting his children, and wiues vpon camels, wenthis way.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "Iacob therfore roſe vp, and ſetting his children, and wiues vpon camelss wenthis way.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "Iacob therfore roſe vp, and ſetting his children, and wiues vpon camels, went his way.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "Iacob therefore roſe vp, and ſetting his children and wiues vpon camels, went his way",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And he tooke al his fubſtance, and flockes, and whatſocuer he had gotten in Meſapotamia, and went forward to Iſaac his ſather into the land of Chanaan.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "Andthe tooke al his ſubſtance, and flockes, and whatſoeuer he had gotten inMeſopotamia, and went forward to Iſaac his ſather into the land of Chanaan.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And he tooke al his ſubſtance, and flockes, and whatſoeuer he had gotten in Meſopotamia, and went forward to Iſaac his father into the land of Chanaan.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "And he tooke al his ſubſtance, and flocks, and whatſoeuer he had gotten in Meſopotamia and went forward to Iſaac his father into the land of Chanaan.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "At that time Laban was gone to sheare his skeepe, and Rachel ſtole the idols of her father.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.898,
+     "odr_com": 0.989,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "†At that time Laban was gone to sheare his sheepe, and Rachel ſtole the idols of her father†",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "At that time Laban was gone to sheare his sheepe, and Rachel ſtole the idols of her father.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "At that time Laban was gone to ſheare his ſheep, and Rachel ſtole the idols of her father,",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.898,
+     "odr_com": 0.989,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And Iacoh viould not confeſſe to his father in lawe that he ſlad:",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.922,
+     "odr_com": 0.922,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S3": {
+    "text": "Aud Iacob would not confeſſe tothis father in lawe that he ſladni",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 0.908,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   },
+   "S9": {
+    "text": "And Iacob would not confeſſe to his father in lawe that he fled.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Iacob would not confeſſe to his father in law that he fled.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And when he was gone aſwel him ſelfe as al things that were his right; and hauing paſſed the riuer was marching on to Mount Galaad,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S3": {
+    "text": "And when he was gone aſwel him ſelfe as al things that were his right, and hauing paſſed the riuer was marching on to Mount Galaad,",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S9": {
+    "text": "And when he was gone aſwel him ſelfe as al things that were his right, and hauing paſſed the riuer was marching on to Mount Galaad,",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S6": {
+    "text": "And when he was gone as wel himſelfe as al things that were his right, & hauing paſſed the riuers was marching on to Mount Galaad,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "it was told Laban the third day that Iacob fled.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "it was told Labau the third day that Iacob fled.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "it was told Laban the third day that Iacob fled.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "it was told Laban the third day that Iacob fled.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "Who, taking his brethren vnto him, purſued hin ſeuen dayes: and he ouertoke him in the. Mount Galaad.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "Who, taking his brethren vnto him purſuedthim ſeuen dayes: and he ouertoke him in the Mount Galaad.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "Who, taking his brethren vnto him, purſued him ſeuen dayes : and he ouertoke him in the Mount Galaad.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Who, taking his brethren vnto him, purſued him ſeauen dayes : and he ouertook him in the Mount Galaad.24.",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And he ſaw in his ſleepe God ſaying vnto him: Take hede thou ſpeake not roughly, anie thing againſt Iacob.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſaw in his ſleepe God ſaying vnto him: Take hede thou ſpeake not roughly anie thing againſt Iacob.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſaw in his ſleepe God ſaying vnto him: Take hede thou ſpeake not roughly anie thing againſt Iacob",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſaw in his ſleep God ſaying vnto him: Take heed thou ſpeake not roughly anie thing againſt Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And Iacoh had now pirched his tent in the mountaine : and when he with bis brethren had ouertaken him, he pitched his tent in the ſame Mount Galaad.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And Iacoh had now pitched his tent in the mounraine: and when he with his brethren hadouertaken him, he pitched his tent in the ſame Mount Galaad.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And Iacob had now pitched his tent in the mountaine : and when he with his brethren had ouertaken him, he pitched his tent in the ſame Mount Galaad.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Iacob had now pitched his tent in the mountaine: and when he with his brethren had ouertaken him, he pitched his tent in the ſame Mount Galaad.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "And he ſaid to Iacob: Why dideſt thou ſo, that vnwitting to me thou wouldeſt carie away my daughters as captiues with the ſword",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "And he ſaid tor Iacob Why dideſt thou ſo, that vnwirting to me thou wouldeſt carie away my daughters as captiues with the ſword",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to Iacob: Why dideſt thou ſo, that vnwitting to me thou wouldeſt carie away my daughters as captiues with the ſword?",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to Iacob: Why dideſt thou ſo, that vnwitting unto me thou wouldeſt carie away my daughters as captiues with the ſword?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "Why wouldeſt thou ſlee without my kno wledge, and not tel me, that I might haue broughr rhee on the way withudy, and ſongues, and timbrels, and cithernes?",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   },
+   "S3": {
+    "text": "Why wouldeſt thou flee without my knowledge, and mot gel me, that I might haue brought rhee on the way withudy, and ſongues, and timbrels, and cithernes",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S9": {
+    "text": "Why wouldeſt thou flee without my knowledge, and not tel me, that I might haue brought thee on the way with ioy, and ſongues, and timbrels, and cithernes",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "Why wouldeſt thou fly without my knowledge, and not tel me, that I might haue brought thee on the way with ioy, and ſongs, and timbrels, and cithernes",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "Thou haſt not fuifred me to kiſſe my ſonnes and daughters: thou haſt donne fooliſhlv: now alſo in dede,",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S3": {
+    "text": "Thou haſt nor fuffred me to kiſſe my ſonnes and daughters: thou haſt donne fooliſhly: now alſo in dede,",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.945,
+     "madueke_b": 0.945
+    }
+   },
+   "S9": {
+    "text": "Thou haſt not ſuffred me to kiſſe my ſonnes and daughters : thou haſt donne fooliſhly: now alſo in dede,",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S6": {
+    "text": "Thou haſt not ſuffred me to kiſſe my ſonnes and daughters thou haſt done fooliſhly: now alſo indeed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "my hand is able totrequite thee euil : but the God of your father ſaid vnro me yeſterday: Take hede thou ſpeake not any thing againſt Iacob roughly.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "my hand is able tocrequite thee euil : but the God of your father ſaid vnto me yeſterday: Take hede thou ſpeake not any thing againſt Iacob roughly.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "my hand is able to requite thee euil : but the God of your father ſaid vnto me yeſterday: Take hede thou ſpeake not any thing againſt Iacob roughly.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "my hand is able to require thee euil but the God of your father ſaid vnto me yeſterday: Take heed thou ſpeake not any thing againſt Iacob roughly.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "Suppoſe, thou diddeſt deſire to goe to thy freinds, and hadeſt a longing to thy fathers houſe why dideſt thou ſteale my goddes:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.992,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S3": {
+    "text": "Suppoſe, thou diddeſt deſire to goe to thy freinds, and hadeſt a longing to thy ſathers houſe why dideſt thou ſtealo my goods?",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.976,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S9": {
+    "text": "Suppoſe, thou diddeſt deſire to goe to thy freinds, and hadeſt a longing to thy fathers houſe why dideſt thou ſteale my goods",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.992,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S6": {
+    "text": "Suppoſe thou diddeit deſire to goe to thy freinds, and hadeſt a longing to thy fathers houle, why dideſt thou ſteale my Gods",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.976,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "Iacob anſwered : In that I departed vnwitting to thee, I feared leſt thou wouldeſt take away thy daughters by force.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "Iacob anſwered : In that I departed vnwitting to thee, I feared leſt thou wouldeſt take away thy daughters by force.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "Iacob anſwered : In that I departed vnwitting to thee, I feared leſt thou wouldeſt take away thy daughters by force.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "Iacob anſwered : In that I departed vnwitting to thee, I feared leſt thou wouldeſt take away thy, daughters by force.",
+    "from": "p112",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "But wheras thou chargeſt me with theft: with whom ſoeuer thou ſhalt find thy goddes, let him be ſlaine before our brethen. ſearch, what ſoeuer of thy things thou ſhalt finde with me, and take away. Saying this, he knew not that Rachel had ſtollen the idols.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "But wheras thou chargeſt me with theft: with whom ſoeuer thou ſhalt find thy goddes, let him be ſlaine before our brethen. ſearch, what ſoeuer of thy things thou ſhalt finde with me, and take away. Saying this, he knew not that Rachel had ſtollen the idols.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "But wheras thou chargeſt me with theft: with whom ſoeuer thou ſhalt find thy goddes, Iet him be ſlaine before our brethen. ſearch, what ſoeuer of thy things thou ſhalt finde with me, and take away. Saying this, he knew not that Rachel had ſtollen the idols.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.996,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "But whereas thou chargeſt me with theft: with whom foeuer thou ſhalt find thy Gods, let him be ſlaine before our brethten: ſearch whatfoeuer of thy things thou ſhalt find with me, and take away. Saying this, he knew not that Rachel had ſtollen the idols.",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of the hand maides, found them not. And when he was into Rachels rent,",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.902,
+     "odr_com": 0.902,
+     "sabates_a": 0.871,
+     "madueke_b": 0.871
+    }
+   },
+   "S3": {
+    "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of the hand-maides, found them not. And when he was into Rachels tent,",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.916,
+     "odr_com": 0.916,
+     "sabates_a": 0.879,
+     "madueke_b": 0.879
+    }
+   },
+   "S9": {
+    "text": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of both the handmaides, found them not. And when he was entred into Rachels tent,",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "Laban thertore hauing gone into the tent ot Iacob and of Lia, and of both the handmaids, tound them not. And when he was entred into Rachels tent,",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "ſhe in hatt hid the idols vnder the camels litter, and ſatte therupon and when he had ſought al the tent, and found nothing,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "ſhe in haſt hid the idols vnder the camels litter, and ſatte therupon and when he had ſought al the tent, and found nothing,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "ſhe in haſt hid the idols vnder the camels litter, and ſatte therupon : and when he had ſought al the tent, and found nothing,",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "ſhe in haſt hid the idols vnder the camels litter, and ſat thervpon: and when he had ſought al the tent, and found nothing,",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "35": {
+   "S1": {
+    "text": "she ſaid Let not my lord be angrie that I can not riſe vp before thee, becauſe according to the cuſtome of wemen it is now chanced to me. ſo his carefulnes in ſeeking was deluded.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "she ſaid Let not my lord be angrie that I can not riſe vp before thee, becauſe according to the cuſtome of wemen it is now chanced to me. ſo his carefulnes in ſeeking was deluded.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "she ſaid : Let not my lord be angrie that I can not riſe vp before thee, becauſe according to the cuſtome of wemen it is now chanced to me. ſo his carefulnes in ſeeking was deluded.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "ſhe ſaid : Let not my Lord be angrie that I can not riſe vp betore thee, becauſe according to the cuitome of women is now chanced to me. So his caretulnes in ſeeking was deluded.",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "36": {
+   "S1": {
+    "text": "And this being angrie ſaid in chiding maner: For what fault of and for what offence of my part haſt thou ſo chaffed an- me,",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.876,
+     "odr_com": 0.891,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   },
+   "S3": {
+    "text": "And this being :: angrie ſaid in chiding maner: For what fault of and for what offence of my part haſt thou ſo chaffed an- me,",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.876,
+     "odr_com": 0.891,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   },
+   "S9": {
+    "text": "And Iacob this being :: angrie ſaid in chiding maner: For what fault of myne, and for what offence of my part haſt thou ſo chaffed after an- me,",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.942,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S6": {
+    "text": "And Iacob being angrie ſaid in chiding manner : For what tault ot myne, aud tor what offence of my part haſt thou to chaffed after me,",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.954,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "37": {
+   "S1": {
+    "text": "and ſearched al my houshould ſtuffe? What haſt found of al the ſabſtance of thy houſe? lay it here . my brethren, and thy brethren, and let them iudge betwen me & thee.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.924,
+     "odr_com": 0.93,
+     "sabates_a": 0.891,
+     "madueke_b": 0.891
+    }
+   },
+   "S3": {
+    "text": "and ſearched al my houshould ſtuffe? What haſt found of al the ſabſtance of thy houſe lay it here my brethren, and thy brethren, and let them iudge betwen me & thee.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.924,
+     "odr_com": 0.93,
+     "sabates_a": 0.891,
+     "madueke_b": 0.891
+    }
+   },
+   "S9": {
+    "text": "and ſearched al my houshould ſtuffe ? What haſt thou found of al the ſabſtance of thy houſe lay it here before my brethren, and thy brethren, and let them iudge betwen me & thee.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "and ſearched al my houluold itutfe What haſt thou touud of al the ſubſtance of thy houſe lav it heer betore my brethren, and thy brethren, and let them iudge between me and thee.",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.909,
+     "odr_com": 0.903,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   }
+  },
+  "38": {
+   "S1": {
+    "text": "Haue I therfore bene with thee twentie thy ewes and goates were not barren, the wethers of flocke I did not eate :",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.892,
+     "madueke_b": 0.892
+    }
+   },
+   "S3": {
+    "text": "Haue I therfore bene with thee twentie thy ewes and goates were not barren, the wethers of flocke I did not eate:",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.892,
+     "madueke_b": 0.892
+    }
+   },
+   "S9": {
+    "text": "Haue I therfore bene with thee twentie yeares? thy ewes and goates were not barren, the wethers of thy flocke I did not eate :",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "Haue I theretore been with thee twentie yeares thy ewes and goats were not barren, the wethers of thy flock I did uot eate: ncyther",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.884,
+     "odr_com": 0.884,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   }
+  },
+  "39": {
+   "S1": {
+    "text": "neyther that which the beaſt caught did I shew to thee, I made good al the damage: whatſoeuer periihed by theft, thou dideſt exact it of dayand",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.921,
+     "odr_com": 0.921,
+     "sabates_a": 0.91,
+     "madueke_b": 0.91
+    }
+   },
+   "S3": {
+    "text": "neyther that which the beaſt caught did I shew to thee, I made good al the whatſoeuer periihed by theft, thou dideſt exact it of",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.893,
+     "odr_com": 0.893,
+     "sabates_a": 0.894,
+     "madueke_b": 0.894
+    }
+   },
+   "S9": {
+    "text": "neyther that which the beaſt had caught did I shew to thee, I made good al the damage: whatſoeuer periihed by theft, thou dideſt exact it of me:",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "that which the beaſt had caught did I ſhew o thee, I made good al the damage: Iacob. whatſoeuer periſned by theft thou dideſt exact it of me",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.886,
+     "odr_com": 0.886,
+     "sabates_a": 0.871,
+     "madueke_b": 0.871
+    }
+   }
+  },
+  "40": {
+   "S1": {
+    "text": "night was I parched with heate, and with and ſleepe did flye from myne eyes.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.841,
+     "odr_com": 0.841,
+     "sabates_a": 0.835,
+     "madueke_b": 0.835
+    }
+   },
+   "S3": {
+    "text": "day and night was I parched with heate, and with froſt, and ſleepe did flye from myne eyes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "day and night was I parched with heate, and with froſt, and ſleepe did flye from myne eyes.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S6": {
+    "text": "day and night was I parched with heat and with froſt, & ſleep did fly from myne eyes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.92,
+     "odr_com": 0.92,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "41": {
+   "S1": {
+    "text": "And in this ſorte haue I ſerued thee in thy houſe twentie yeares, fourtene for thy daughters, and ſix for thy flockes thou haſt changed alſo my wages tenne times.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And in this ſorte haue I ſerued thee in thy houſe twentie yeares, fourtene for thy daughters, and ſix for thy flockes thou haſt changed alſo my wages tenne times.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And in this ſorte haue I ſerued thee in thy houſe twentie yeares, fourtene for thy daughters, and ſix for thy flockes : thou haſt changed alſo my wages tenne times.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "Aud in this ſort haue I ſerued thee in thy houſe twentie yeares, fourteen for thy daughters, and ſix for thy flocks: thou haſt changed alſo my wages ten times.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "42": {
+   "S1": {
+    "text": "Vnles the God of my father Abraham, and the feare of Iſaac had holpe me, peraduention now thou haddeſt ſent me away naked: God beheld my affliction and the laboure of my hands, and rebuked thee yeſterday.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "Vnles the God of my father Abraham, and the feare of Iſaac had holpe me, peraduentione now thou haddeſt ſent me away naked: God beheld my affliction and the laboure of my hands, and rebuked thee yeſterday.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "Vnles the God of my father Abraham, and the feare of Iſaac had holpe me, peraduenture now thou haddeſt ſent me away naked: God beheld affliction and the laboure of my hands, and rebuked thee yeſterday.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "Vnles the God of my father Abtaham, and the feare of Iſaac had holpen me, peraduenture now thou haddeſt ſent me away naked: God beheld my affliction and the labour of my hands, and rebuked thee yeſterday.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "43": {
+   "S1": {
+    "text": "Laban anſwered him: The daughters are mine and the children, and thy flockes, and al things that thou ſeeſt are mine what can I do to my daughters, and nephews?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "Laban anſwered him The daughters are mine and the children, and thy flockes, and al things that thou ſeeſt are mine what can I do to my daughters, and nephews?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "Laban anſwered him : The daughters are mine and the children, and thy flockes, and al things that thou ſeeſt are mine : what can I do to my daughters, and phews",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "Laban anſwered him : The daughters are mine and the children, and thy flocks, and al thines that thou ſeeſt are mine: what can I doe to my daughters, and nephews",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "44": {
+   "S1": {
+    "text": "Come therfore, let vs enter in league : that may be for a teſtimonie betwen me and thee.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S3": {
+    "text": "Come therfore, let vs enter in league : that may be for a teſtimonie betwen me and thee.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "Come therfore, let vs enter in league : that may be for a teſtimonie betwen me and thee.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "Come therefore, let vs enter in league : that it may be tor a teſtimonie between me and thee.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "45": {
+   "S1": {
+    "text": "Iacob fore tooke a ſtone, and erected it for a title:",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   },
+   "S3": {
+    "text": "Iacob fore tooke a ſtone, and erected it for a title :",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   },
+   "S9": {
+    "text": "Iacob therfore tooke a ſtone, and erected it for a title :",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "Iacob therfore tooke a ſtone, and erected it for a title:",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "46": {
+   "S1": {
+    "text": "†and he ſaid to his brethren Bring hither ſtones. Who gerhering them together made a heape, and they did eate vpon it:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "and he ſaid to his brethren Bring hither ſtones. Who gethering them together made a heape, and they did eate vpon it",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "and he ſaid to his brethren : Bring hither ſtones. Who gethering them togerher made a heape, and they did eate vpon it :",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "and he ſaid to his brethren: Bring hither ſtones. Who gathering them together made a heap, and they did eate vpon it :",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "47": {
+   "S1": {
+    "text": "Laban called The witneſſe heape: and Iacob called The hillock of teſtimonie, either of them according to the propriety of his language.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.903,
+     "madueke_b": 0.903
+    }
+   },
+   "S3": {
+    "text": "Laban called The witneſſe heape: and Iacob called The hillock of teſtimonie, either of them according to the proprietie of his language.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.903,
+     "madueke_b": 0.903
+    }
+   },
+   "S9": {
+    "text": "Which Laban called The witneſſe heape and Iacob called The hillock of teſtimonie, either of them according to the proprietie of his language.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S6": {
+    "text": "Which Laban called The witueſſe heap: and Iacob called The hillock of teſtimonie either of them according to the proprietie of his language.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   }
+  },
+  "48": {
+   "S1": {
+    "text": "And Laban ſaid This heape ſt al be a witnes betwen me and thee this day, and therfore the name therof was called Galaad, that is, The witnes heape.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "And Laban ſaid This heape ſhal be a witnes betwen me and thee this day, and therfore the name therof was called Galaad, that is, The witnes heape.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And Laban ſaid This heape ſhal be a witnes betwen me and thee this day, and therfore the name therof was called Galaad, that is, The witnes heape. 4†",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And Laban ſaid: This heap ſhal be a witnes between me and thee this day, and therefore the uame therof was callad Galaad, that is. The witueſſe heap.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "49": {
+   "S1": {
+    "text": "Our Lord behold and iudge betwen vs when we ſhal be ſo departed one from the other,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.87,
+     "madueke_b": 0.87
+    }
+   },
+   "S3": {
+    "text": "Our Lord behold and iudge betwen vs when we ſhal be ſo departed one from the other,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.87,
+     "madueke_b": 0.87
+    }
+   },
+   "S9": {
+    "text": "Our Lord behold and iudge betwen vs when we ſhal be departed one from the other,",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.905,
+     "madueke_b": 0.905
+    }
+   },
+   "S6": {
+    "text": "Our Lord behold and iudge between vs when we ſhalbe departed one trom the other,",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.877,
+     "madueke_b": 0.877
+    }
+   }
+  },
+  "50": {
+   "S1": {
+    "text": "if thou ſhalt afflict my daughters, and if thou bring in other wiues ouer them none is witnes of our talke but God, who is preſent and beholdeth.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "if thou ſhalt afflict my daughters, and if thou bring in other wiues ouer them none is witnes of our talke but God, who is preſent and beholdeth.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "if thou ſhalt afflict my daughters, and if thou bring in other wiues ouer them: none is witnes of our talke but God, who is preſent and beholdeth.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "if thou ſhalt afflict my daughters, and it thou bring in othet wiues ouer them none 1s witnes of our talke but God, who is preſent and beholdeth.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "51": {
+   "S1": {
+    "text": "And he ſaid againe to Iacob Behold this heape, and the ſtone which I haue erected betwen me and thee,",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſaid againe to Iacob Behold this heape, and the ſtone which I haue erected betwen me and thee,",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſaid againe to Iacob Behold this heape, and the ſtone which I haue erected betwen me and thee,",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſaid againe to Iacob: Behold this heap, and the ſtone which I haue erected between me and thee,",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "52": {
+   "S1": {
+    "text": "that be a witnes: this heape, I ſay, and the ſtone be they for a teſtimonie, if either I ſhal paſſe beyond it going towards thee, or thou ſhalt paſſe beyond it, thinking harme to me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "†ſhal be a witnes this heape, I ſay, and the ſtone be they for a teſtimonie, if either I ſhal paſſe beyond it going towards thee, or thou ſhalt paſſe beyond it, thinking harme to me.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "ſhal be a witnes this heape, I ſay, and the ſtone be they for a teſtimonie, if either I ſhal paſſe beyond it going towards thee, or thou ſhalt paſſe beyond it, thinking harme to me.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "ſhal be a witnes : this heap, I ſay, and the ſtone, be they for a teſtimonie, if eithet I ſhal paſſe beyond it going towards thee, or thou ſhalt paſſe beyond it thinking harme to me.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "53": {
+   "S1": {
+    "text": "The God of Abraham, and the God of Nachor iudge betwen vs, the God of their father. Iacob therfore ſware by the feare of his father Iſaac",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "The God of Abraham, and the God of Nachor iudge betwen vs, the God of their father. Iacob therfore ſware by the feare of his father Iſaao",
+    "from": "p127",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "The God of Abraham, and the God of Nachor iudge betwen vs, the God of their father. Iacob therfore ſware by the feare of his father Iſaao",
+    "from": "p133",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "The God of Abraham, and the God of Nachot iudge between vs, the God of their father. Iacob therefore ſware by the feare of his father Iſaae :",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "54": {
+   "S1": {
+    "text": "and after he had offered victimes in the mountaine, he called his brethren to eate bread. who when they had eaten, lodged there",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "and after he had offered victimes in the mountaine, he called his brethren to eate bread. Who when they had eaten, lodged there",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "and after he had offred victimes in the mountaine, he called his brethren to eate bread. Who when they had eaten, lodged there",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "and after he had offred victimes in the mountaine, he called his brethren to eate bread. Who when they had eaten, lodged there.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "55": {
+   "S1": {
+    "text": "but Laban ariſing in the night, kiſſed his ſonnes, and daughters, and bleſſed them and returned vnto his place.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "but Laban ariſing in the night, kiſſed his ſonnes, and daughters, and bleſſed them: and returned vnto his place.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "but Laban ariſing in the night, kiſſed his ſonnes, and daughters, and bleſſed them and returned vnto his place.",
+    "from": "p133",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "but Laban ariſing in the night, kiſſed his ſonnes, and daughters, and bleſſed them: and returned vnto his place.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "After he heard the wordes of Labans ſonnes ſaying: Iacob hath taken al that was our fathers, and being enriched of his ſubſtance, is become great:",
+   "odr_com": "AFTER he heard the wordes of Labans sonnes saying: Iacob hath taken al that was our fathers, and being enriched of his substance, is become great:",
+   "sabates_a": "After he heard the words of Laban's sons saying: Jacob hath taken all that was our father's, and being enriched of his substance, is become great:",
+   "madueke_b": "After he heard the words of Laban's sons saying: Jacob hath taken all that was our father's, and being enriched of his substance, is become great:"
+  },
+  "2": {
+   "s_dismas": "and perceauing alſo Labans countenance, that it was not towards him as yeſterday and the other day,",
+   "odr_com": "and perceauing also Labans countenance, that it was not towards him as yesterday and the other day,",
+   "sabates_a": "and perceiving also Laban's countenance, that it was not towards him as yesterday and the other day,",
+   "madueke_b": "and perceiving also Laban's countenance, that it was not towards him as yesterday and the other day,"
+  },
+  "3": {
+   "s_dismas": "eſpecially our Lord ſaying to him: Returne into the land of thy fathers, and to thy kinred, and I wil be with thee.",
+   "odr_com": "especially our Lord saying to him: Returne into the land of thy fathers, and to thy kinred, and I wil be with thee.",
+   "sabates_a": "especially our Lord saying to him: Return into the land of thy fathers, and to thy kindred, and I will be with thee;",
+   "madueke_b": "especially our Lord saying to him: Return into the land of thy fathers, and to thy kindred, and I will be with thee;"
+  },
+  "4": {
+   "s_dismas": "He ſent, and called Rachel and Lia into the field, where he fed the flockes,",
+   "odr_com": "He sent, and called Rachel and Lia into the field, where he fed the flockes,",
+   "sabates_a": "he sent, and called Rachel and Lia into the field where he fed the flocks,",
+   "madueke_b": "he sent, and called Rachel and Lia into the field where he fed the flocks,"
+  },
+  "5": {
+   "s_dismas": "and ſaid to them: I ſee your fathers countenance that it is not towards me as yeſterday and the other day: and the God of my father hath bene with me.",
+   "odr_com": "and said to them: I see your fathers countenance that it is not towards me as yesterday and the other day: and the God of my father hath bene with me.",
+   "sabates_a": "and said to them: I see your father's countenance that it is not towards me as yesterday and the other day: and the God of my father hath been with me.",
+   "madueke_b": "and said to them: I see your father's countenance that it is not towards me as yesterday and the other day: and the God of my father hath been with me."
+  },
+  "6": {
+   "s_dismas": "And your ſelues knowe that I haue ſerued your father to the vttermoſt of my power.",
+   "odr_com": "And your selues knowe that I haue serued your father to the vttermost of my power.",
+   "sabates_a": "And yourselves know that I have served your father to the uttermost of my power.",
+   "madueke_b": "And yourselves know that I have served your father to the uttermost of my power."
+  },
+  "7": {
+   "s_dismas": "Yea your father alſo hath circumuented me, and hath changed my wages tenne times: and yet God hath not ſuffred him to hurt me.",
+   "odr_com": "Yea your father also hath circumuented me, and hath changed my wages tenne times: and yet God hath not suffred him to hurt me.",
+   "sabates_a": "Yea your father also hath circumvented me, and hath changed my wages ten times: and yet God hath not suffered him to hurt me.",
+   "madueke_b": "Yea your father also hath circumvented me, and hath changed my wages ten times: and yet God hath not suffered him to hurt me."
+  },
+  "8": {
+   "s_dismas": "If at any time he ſaid: They of diuers colours ſhal be thy wages: al the ſheepe brought forth young of diuers colours, but when he ſaid contrarie: Thou shalt take al the white ones for thy wages: al the flockes brought forth white ones.",
+   "odr_com": "If at any time he said: They of diuers colours shal be thy wages: al the sheepe brought forth young of diuers colours, but when he said contrarie: Thou shalt take al the white ones for thy wages: al the flockes brought forth white ones.",
+   "sabates_a": "If at any time he said: They of diverse colours shall be thy wages; all the sheep brought forth young of diverse colours. But when he said contrary: Thou shalt take all the white ones for thy wages; all the flocks brought forth white ones.",
+   "madueke_b": "If at any time he said: They of diverse colours shall be thy wages; all the sheep brought forth young of diverse colours. But when he said contrary: Thou shalt take all the white ones for thy wages; all the flocks brought forth white ones."
+  },
+  "9": {
+   "s_dismas": "And God hath taken your fathers ſubſtance, and geuen it to me.",
+   "odr_com": "And God hath taken your fathers substance, and geuen it to me.",
+   "sabates_a": "And God hath taken your father's substance, and given it to me.",
+   "madueke_b": "And God hath taken your father's substance, and given it to me."
+  },
+  "10": {
+   "s_dismas": "For after the time came of the ewes conceauing, I lifted vp mine eyes, and ſawe in my ſleepe the males aſcending vpon the females of diuers colours, and the ſpotted, and the ſpeckled.",
+   "odr_com": "For after the time came of the ewes conceauing, I lifted vp mine eyes, and sawe in my sleepe the males ascending vpon the females of diuers colours, and the spotted, and the speckled.",
+   "sabates_a": "For after the time came of the ewes conceiving, I lifted up mine eyes, and saw in my sleep the males ascending upon the females of diverse colours, and the spotted, and the speckled.",
+   "madueke_b": "For after the time came of the ewes conceiving, I lifted up mine eyes, and saw in my sleep the males ascending upon the females of diverse colours, and the spotted, and the speckled."
+  },
+  "11": {
+   "s_dismas": "And the Angel of God ſaid to me in ſleepe: Iacob? And I anſwered: Here I am.",
+   "odr_com": "And the angel of God said to me in sleepe: Iacob? And I answered: Here I am.",
+   "sabates_a": "And the Angel of God said to me in sleep: Jacob? And I answered: Here I am.",
+   "madueke_b": "And the Angel of God said to me in sleep: Jacob? And I answered: Here I am."
+  },
+  "12": {
+   "s_dismas": "Who ſaid: Lyft vp thine eyes, and ſee al the males aſcending vpon the females, them of diuers colours, the ſpotted and the ſpeckled. For I haue ſeene al things that Laban hath done to thee.",
+   "odr_com": "Who said: Lyft vp thine eyes, and see al the males ascending vpon the females, them of diuers colours, the spotted and the speckled. For I haue seene al things that Laban hath done to thee.",
+   "sabates_a": "Who said: Lift up thine eyes, and see all the males ascending upon the females, them of diverse colours, the spotted and the speckled. For I have seen all things that Laban hath done to thee.",
+   "madueke_b": "Who said: Lift up thine eyes, and see all the males ascending upon the females, them of diverse colours, the spotted and the speckled. For I have seen all things that Laban hath done to thee."
+  },
+  "13": {
+   "s_dismas": "I am the God of Bethel, where thou dideſt annointe the ſtone, and dideſt vowe the vowe vnto me. Now therfore ariſe, and goe out of this land, returning into the land of thy natiuitie.",
+   "odr_com": "I am the God of Bathel, where thou didest annointe the stone, and didest vowe the vowe vnto me. Now therfore arise, and goe out of this land, returning into the land of thy natiuitie.",
+   "sabates_a": "I am the God of Bethel, where thou didst anoint the stone, and didst vow the vow unto me. Now therefore arise, and go out of this land, returning into the land of thy nativity.",
+   "madueke_b": "I am the God of Bethel, where thou didst anoint the stone, and didst vow the vow unto me. Now therefore arise, and go out of this land, returning into the land of thy nativity."
+  },
+  "14": {
+   "s_dismas": "And Rachel and Lia anſwered: Haue we any thing left in the goods, and heritage of our fathers houſe?",
+   "odr_com": "And Rachel and Lia answered: Haue we any thing left in the goods, and heritage of our fathers house?",
+   "sabates_a": "And Rachel and Lia answered: Have we any thing left in the goods and heritage of our father's house?",
+   "madueke_b": "And Rachel and Lia answered: Have we any thing left in the goods and heritage of our father's house?"
+  },
+  "15": {
+   "s_dismas": "Hath he not reputed vs as ſtrangers, and ſould vs, and eaten vp the price of vs?",
+   "odr_com": "Hath he not reputed vs as strangers, and sould vs, and eaten vp the price of vs?",
+   "sabates_a": "Hath he not reputed us as strangers, and sold us, and eaten up the price of us?",
+   "madueke_b": "Hath he not reputed us as strangers, and sold us, and eaten up the price of us?"
+  },
+  "16": {
+   "s_dismas": "But God hath taken our fathers riches, and deliuered them to vs, and to our children: wherfore do al things, that God hath commanded thee.",
+   "odr_com": "But God hath taken our fathers riches, and deliuered them to vs, and to our children: wherfore do al things, that God hath commanded thee.",
+   "sabates_a": "But God hath taken our father's riches, and delivered them to us, and to our children: wherefore do all things that God hath commanded thee.",
+   "madueke_b": "But God hath taken our father's riches, and delivered them to us, and to our children: wherefore do all things that God hath commanded thee."
+  },
+  "17": {
+   "s_dismas": "Iacob therfore roſe vp, and ſetting his children, and wiues vpon camels, went his way.",
+   "odr_com": "Iacob therfore rose vp, and setting his children, and wiues vpon camels, went his way.",
+   "sabates_a": "Jacob therefore rose up, and setting his children and wives upon camels, went his way.",
+   "madueke_b": "Jacob therefore rose up, and setting his children and wives upon camels, went his way."
+  },
+  "18": {
+   "s_dismas": "And he tooke al his ſubſtance, and flockes, and whatſoeuer he had gotten in Meſopotamia, and went forward to Iſaac his father into the land of Chanaan.",
+   "odr_com": "And he tooke al his substance, and flockes, and whatsoeuer he had gotten in Mesopotamia, and went forward to Isaac his father into the land of Chanaan.",
+   "sabates_a": "And he took all his substance, and flocks, and whatsoever he had gotten in Mesopotamia, and went forward to Isaac his father into the land of Chanaan.",
+   "madueke_b": "And he took all his substance, and flocks, and whatsoever he had gotten in Mesopotamia, and went forward to Isaac his father into the land of Chanaan."
+  },
+  "19": {
+   "s_dismas": "At that time Laban was gone to sheare his sheepe, and Rachel ſtole the Teraphim. idols of her father.",
+   "odr_com": "At that time Laban was gone to sheare his sheepe, and Rachel stole the idols of her father.",
+   "sabates_a": "At that time Laban was gone to shear his sheep, and Rachel stole the idols of her father.",
+   "madueke_b": "At that time Laban was gone to shear his sheep, and Rachel stole the idols of her father."
+  },
+  "20": {
+   "s_dismas": "And Iacob would not confeſſe to his father in lawe that he fled.",
+   "odr_com": "And Iacob would not confesse to his father in lawe that he fled.",
+   "sabates_a": "And Jacob would not confess to his father in law that he fled.",
+   "madueke_b": "And Jacob would not confess to his father in law that he fled."
+  },
+  "21": {
+   "s_dismas": "And when he was gone aſwel him ſelfe as al things that were his right, and hauing paſſed the riuer was marching on to Mount Galaad,",
+   "odr_com": "And when he was gone aswel him selfe as al things that were his right, and hauing passed the riuer was marching on to Mount Galaad,",
+   "sabates_a": "And when he was gone as well himself as all things that were his right, & having passed the river was marching on to the Mount Galaad,",
+   "madueke_b": "And when he was gone as well himself as all things that were his right, & having passed the river was marching on to the Mount Galaad,"
+  },
+  "22": {
+   "s_dismas": "it was told Laban the third day that Iacob fled.",
+   "odr_com": "it was told Laban the third day that Iacob fled.",
+   "sabates_a": "it was told Laban the third day that Jacob fled.",
+   "madueke_b": "it was told Laban the third day that Jacob fled."
+  },
+  "23": {
+   "s_dismas": "Who, taking his brethren vnto him, purſued him ſeuen dayes: and he ouertoke him in the Mount Galaad.",
+   "odr_com": "Who, taking his brethren vnto him, pursued him seuen dayes: and he ouertoke him in the Mount Galaad.",
+   "sabates_a": "Who, taking his brethren unto him, pursued him seven days: and he overtook him in the Mount Galaad.",
+   "madueke_b": "Who, taking his brethren unto him, pursued him seven days: and he overtook him in the Mount Galaad."
+  },
+  "24": {
+   "s_dismas": "And he ſaw in his ſleepe God ſaying vnto him: Take hede thou ſpeake not roughly anie thing againſt Iacob.",
+   "odr_com": "And he saw in his sleepe God saying vnto him: Take hede thou speake not roughly anie thing against Iacob.",
+   "sabates_a": "And he saw in his sleep God saying unto him: Take heed thou speak not roughly any thing against Jacob.",
+   "madueke_b": "And he saw in his sleep God saying unto him: Take heed thou speak not roughly any thing against Jacob."
+  },
+  "25": {
+   "s_dismas": "And Iacob had now pitched his tent in the mountaine: and when he with his brethren had ouertaken him, he pitched his tent in the ſame Mount Galaad.",
+   "odr_com": "And Iacob had now pitched his tent in the mountaine: and when he with his brethren had ouertaken him, he pitched his tent in the same Mount Galaad.",
+   "sabates_a": "And Jacob had now pitched his tent in the mountain: and when he with his brethren had overtaken him, he pitched his tent in the same Mount Galaad.",
+   "madueke_b": "And Jacob had now pitched his tent in the mountain: and when he with his brethren had overtaken him, he pitched his tent in the same Mount Galaad."
+  },
+  "26": {
+   "s_dismas": "And he ſaid to Iacob: Why dideſt thou ſo, that vnwitting to me thou wouldeſt carie away my daughters as captiues with the ſword?",
+   "odr_com": "And he said to Iacob: Why didest thou so, that vnwitting to me thou wouldest carie away my daughters as captiues with the sword?",
+   "sabates_a": "And he said to Jacob: Why didst thou so, that unwitting to me thou wouldst carry away my daughters as captives with the sword?",
+   "madueke_b": "And he said to Jacob: Why didst thou so, that unwitting to me thou wouldst carry away my daughters as captives with the sword?"
+  },
+  "27": {
+   "s_dismas": "Why wouldeſt thou flee without my knowledge, and not tel me, that I might haue brought thee on the way with ioy, and ſongues, and timbrels, and cithernes?",
+   "odr_com": "Why wouldest thou flee without my knowledge, and not tel me, that I might haue brought thee on the way with ioy, and songues, and timbrels, and cithernes?",
+   "sabates_a": "Why wouldst thou fly without my knowledge, and not tell me, that I might have brought thee on the way with joy, and songs, and timbrels, and citterns?",
+   "madueke_b": "Why wouldst thou fly without my knowledge, and not tell me, that I might have brought thee on the way with joy, and songs, and timbrels, and citterns?"
+  },
+  "28": {
+   "s_dismas": "Thou haſt not ſuffred me to kiſſe my ſonnes and daughters: thou haſt donne fooliſhly: now alſo in dede,",
+   "odr_com": "Thou hast not suffred me to kisse my sonnes and daughters: thou hast donne foolishly: now also in dede,",
+   "sabates_a": "Thou hast not suffered me to kiss my sons and daughters: thou hast done foolishly: now also indeed,",
+   "madueke_b": "Thou hast not suffered me to kiss my sons and daughters: thou hast done foolishly: now also indeed,"
+  },
+  "29": {
+   "s_dismas": "my hand is able to requite thee euil: but the God of your father ſaid vnto me yeſterday: Take hede thou ſpeake not any thing againſt Iacob roughly.",
+   "odr_com": "my hand is able to requite thee euil: but the God of your father said vnto me yesterday: Take hede thou speake not any thing against Iacob roughly.",
+   "sabates_a": "my hand is able to requite thee evil: but the God of your father said unto me yesterday: Take heed thou speak not any thing against Jacob roughly.",
+   "madueke_b": "my hand is able to requite thee evil: but the God of your father said unto me yesterday: Take heed thou speak not any thing against Jacob roughly."
+  },
+  "30": {
+   "s_dismas": "Suppoſe, thou diddeſt deſire to goe to thy freinds, and hadeſt a longing to thy fathers houſe: why dideſt thou ſteale my goddes?",
+   "odr_com": "Suppose, thou diddest desire to goe to thy freinds, and hadest a longing to thy fathers house: why didest thou steale my godds?",
+   "sabates_a": "Suppose thou didst desire to go to thy friends, and hadst a longing to thy father's house, why didst thou steal my gods?",
+   "madueke_b": "Suppose thou didst desire to go to thy friends, and hadst a longing to thy father's house, why didst thou steal my gods?"
+  },
+  "31": {
+   "s_dismas": "Iacob anſwered: In that I departed vnwitting to thee, I feared leſt thou wouldeſt take away thy daughters by force.",
+   "odr_com": "Iacob answered: In that I departed vnwitting to thee, I feared lest thou wouldest take away thy daughters by force.",
+   "sabates_a": "Jacob answered: In that I departed unwitting to thee, I feared lest thou wouldst take away thy daughters by force.",
+   "madueke_b": "Jacob answered: In that I departed unwitting to thee, I feared lest thou wouldst take away thy daughters by force."
+  },
+  "32": {
+   "s_dismas": "But wheras thou chargeſt me with theft: with whom ſoeuer thou ſhalt find thy goddes, let him be ſlaine before our brethren. Search, what ſoeuer of thy things thou ſhalt finde with me, and take away. Saying this, he knew not that Rachel had ſtollen the idols.",
+   "odr_com": "But wheras thou chargest me with theft: with whom soeuer thou shalt find thy goddes, let him be slaine before our brethen. search, what soeuer of thy things thou shalt finde with me, and take away. Saying this, he knew not that Rachel had stollen the idols.",
+   "sabates_a": "But whereas thou chargest me with theft; with whom soever thou shalt find thy gods, let him be slain before our brethren: search whatsoever of thy things thou shalt find with me, and take away. Saying this, he knew not that Rachel had stolen the idols.",
+   "madueke_b": "But whereas thou chargest me with theft; with whom soever thou shalt find thy gods, let him be slain before our brethren: search whatsoever of thy things thou shalt find with me, and take away. Saying this, he knew not that Rachel had stolen the idols."
+  },
+  "33": {
+   "s_dismas": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of both the hand-maides, found them not. And when he was entred into Rachels tent,",
+   "odr_com": "Laban therfore hauing gone into the tent of Iacob, and of Lia, and of both the hand-maides, found them not. And when he was entred into Rachels tent,",
+   "sabates_a": "Laban therefore having gone into the tent of Jacob, and of Lia, and of both the handmaids, found them not. And when he was entered into Rachel's tent,",
+   "madueke_b": "Laban therefore having gone into the tent of Jacob, and of Lia, and of both the handmaids, found them not. And when he was entered into Rachel's tent,"
+  },
+  "34": {
+   "s_dismas": "ſhe in haſt hid the idols vnder the camels litter, and ſatte therupon: and when he had ſought al the tent, and found nothing,",
+   "odr_com": "she in hast hid the idols vnder the camels litter, and satte therupon: and when he had sought al the tent, and found nothing,",
+   "sabates_a": "she in haste hid the idols under the camel's litter, and sat thereupon: and when he had sought all the tent, and found nothing,",
+   "madueke_b": "she in haste hid the idols under the camel's litter, and sat thereupon: and when he had sought all the tent, and found nothing,"
+  },
+  "35": {
+   "s_dismas": "she ſaid: Let not my lord be angrie that I can not riſe vp before thee, becauſe according to the cuſtome of wemen it is now chanced to me. So his carefulnes in ſeeking was deluded.",
+   "odr_com": "she said: Let not my lord be angrie that I can not rise vp before thee, because according to the custome of wemen it is now chanced to me. so his carefulnes in seeking was deluded.",
+   "sabates_a": "she said: Let not my lord be angry that I cannot rise up before thee, because according to the custom of women it is now chanced to me. So his carefulness in seeking was deluded.",
+   "madueke_b": "she said: Let not my lord be angry that I cannot rise up before thee, because according to the custom of women it is now chanced to me. So his carefulness in seeking was deluded."
+  },
+  "36": {
+   "s_dismas": "And Iacob being angrie ſaid in chiding maner: For what fault of myne, and for what offence of my part haſt thou ſo chaſſed after me,",
+   "odr_com": "And Iacob being angrie said in chiding maner: For what fault of myne, and for what offence of my part hast thou so chaffed after me,",
+   "sabates_a": "And Jacob being angry said in chiding manner: For what fault of mine, and for what offence of my part hast thou so chased after me,",
+   "madueke_b": "And Jacob being angry said in chiding manner: For what fault of mine, and for what offence of my part hast thou so chased after me,"
+  },
+  "37": {
+   "s_dismas": "and ſearched al my houshould ſtuffe? What haſt thou found of al the ſubſtance of thy houſe? lay it here before my brethren, and thy brethren, and let them iudge betwen me & thee.",
+   "odr_com": "and searched al my houshould stuffe? What hast thou found of al the sabstance of thy house? lay it here before my brethren, and thy brethren, and let them iudge betwen me & thee.",
+   "sabates_a": "and searched all my household-stuff? What hast thou found of all the substance of thy house? Lay it here before my brethren, and thy brethren, and let them judge between me and thee.",
+   "madueke_b": "and searched all my household-stuff? What hast thou found of all the substance of thy house? Lay it here before my brethren, and thy brethren, and let them judge between me and thee."
+  },
+  "38": {
+   "s_dismas": "Haue I therfore bene with thee twentie yeares? thy ewes and goates were not barren, the wethers of thy flocke I did not eate:",
+   "odr_com": "Haue I therfore bene with thee twentie yeares? thy ewes and goates were not barren, the wethers of thy flocke I did not eate:",
+   "sabates_a": "Have I therefore been with thee twenty years? Thy ewes and goats were not barren, the wethers of thy flock I did not eat:",
+   "madueke_b": "Have I therefore been with thee twenty years? Thy ewes and goats were not barren, the wethers of thy flock I did not eat:"
+  },
+  "39": {
+   "s_dismas": "neyther that which the beaſt had caught did I shew to thee, I made good al the damage: whatſoeuer periſhed by theft, thou dideſt exact it of me:",
+   "odr_com": "neyther that which the beast had caught did I shew to thee, I made good al the damage: whatsoeuer perished by theft, thou didest exact it of me:",
+   "sabates_a": "neither that which the beast had caught did I shew to thee, I made good all the damage: whatsoever perished by theft thou didst exact it of me:",
+   "madueke_b": "neither that which the beast had caught did I shew to thee, I made good all the damage: whatsoever perished by theft thou didst exact it of me:"
+  },
+  "40": {
+   "s_dismas": "day and night was I parched with heate, and with froſt, and ſleepe did flye from myne eyes.",
+   "odr_com": "day and night was I parched with heate, and with frost, and sleepe did flye from myne eyes.",
+   "sabates_a": "day and night was I parched with heat, and with frost, & sleep did fly from mine eyes.",
+   "madueke_b": "day and night was I parched with heat, and with frost, & sleep did fly from mine eyes."
+  },
+  "41": {
+   "s_dismas": "And in this ſorte haue I ſerued thee in thy houſe twentie yeares, fourtene for thy daughters, and ſix for thy flockes: thou haſt changed alſo my wages tenne times.",
+   "odr_com": "And in this sorte haue I serued thee in thy house twentie yeares, fourtene for thy daughters, and six for thy flockes: thou hast changed also my wages tenne times.",
+   "sabates_a": "And in this sort have I served thee in thy house twenty years, fourteen for thy daughters, and six for thy flocks: thou hast changed also my wages ten times.",
+   "madueke_b": "And in this sort have I served thee in thy house twenty years, fourteen for thy daughters, and six for thy flocks: thou hast changed also my wages ten times."
+  },
+  "42": {
+   "s_dismas": "Vnles the God of my father Abraham, and the feare of Iſaac had holpe me, peraduenture now thou haddeſt ſent me away naked: God beheld my affliction and the laboure of my hands, and rebuked thee yeſterday.",
+   "odr_com": "Vnles the God of my father Abraham, and the feare of Isaac had holpe me, peraduenture now thou haddest sent me away naked: God beheld my affliction and the laboure of my hands, and rebuked thee yesterday.",
+   "sabates_a": "Unless the God of my father Abraham, and the fear of Isaac had holpen me, peradventure now thou hadst sent me away naked: God beheld my affliction and the labour of my hands, and rebuked thee yesterday.",
+   "madueke_b": "Unless the God of my father Abraham, and the fear of Isaac had holpen me, peradventure now thou hadst sent me away naked: God beheld my affliction and the labour of my hands, and rebuked thee yesterday."
+  },
+  "43": {
+   "s_dismas": "Laban anſwered him: The daughters are mine and the children, and thy flockes, and al things that thou ſeeſt are mine: what can I do to my daughters, and nephews?",
+   "odr_com": "Laban answered him: The daughters are mine and the children, and thy flockes, and al things that thou seest are mine: what can I do to my daughters, and nephews?",
+   "sabates_a": "Laban answered him: The daughters are mine and the children, and thy flocks, and all things that thou seest are mine: what can I do to my daughters, and nephews?",
+   "madueke_b": "Laban answered him: The daughters are mine and the children, and thy flocks, and all things that thou seest are mine: what can I do to my daughters, and nephews?"
+  },
+  "44": {
+   "s_dismas": "Come therfore, let vs enter in league: that it may be for a teſtimonie betwen me and thee.",
+   "odr_com": "Come therfore, let vs enter in league: that it may be for a testimonie betwen me and thee.",
+   "sabates_a": "Come therefore, let us enter in league: that it may be for a testimony between me and thee.",
+   "madueke_b": "Come therefore, let us enter in league: that it may be for a testimony between me and thee."
+  },
+  "45": {
+   "s_dismas": "Iacob therfore tooke a ſtone, and erected it for a title:",
+   "odr_com": "Iacob therfore tooke a stone, and erected it for a title:",
+   "sabates_a": "Jacob therefore took a stone, and erected it for a title:",
+   "madueke_b": "Jacob therefore took a stone, and erected it for a title:"
+  },
+  "46": {
+   "s_dismas": "and he ſaid to his brethren: Bring hither ſtones. Who gethering them together made a heape, and they did eate vpon it:",
+   "odr_com": "and he said to his brethren: Bring hither stones. Who gethering them together made a heape, and they did eate vpon it:",
+   "sabates_a": "and he said to his brethren: Bring hither stones. Who gathering them together made a heap, and they did eat upon it:",
+   "madueke_b": "and he said to his brethren: Bring hither stones. Who gathering them together made a heap, and they did eat upon it:"
+  },
+  "47": {
+   "s_dismas": "which Laban called The witneſſe heape: and Iacob called The hillock of teſtimonie, either of them according to the proprietie of his language.",
+   "odr_com": "Which Laban called The witnesse heape: and Iacob called The hillock of testimonie, either of them according to the proprietie of his language.",
+   "sabates_a": "Which Laban called the witness-heap: and Jacob called the hillock of testimony, either of men according to the property of his language.",
+   "madueke_b": "Which Laban called the witness-heap: and Jacob called the hillock of testimony, either of men according to the property of his language."
+  },
+  "48": {
+   "s_dismas": "And Laban ſaid: This heape ſhal be a witnes betwen me and thee this day, and therfore the name therof was called Galaad, that is, The witnes heape.",
+   "odr_com": "And Laban said: This heape shal be a witnes betwen me and thee this day, and therfore the name therof was called Galaad, that is, The witnes heape.",
+   "sabates_a": "And Laban said: This heap shall be a witness between me and thee this day, and therefore the name thereof was called Galaad, that is, The witness-heap.",
+   "madueke_b": "And Laban said: This heap shall be a witness between me and thee this day, and therefore the name thereof was called Galaad, that is, The witness-heap."
+  },
+  "49": {
+   "s_dismas": "Our Lord behold and iudge betwen vs when we ſhal be departed one from the other,",
+   "odr_com": "Our Lord behold and iudge betwen vs when we shal be departed one from the other,",
+   "sabates_a": "Our Lord behold and judge us when we shall be departed one from the other,",
+   "madueke_b": "Our Lord behold and judge us when we shall be departed one from the other,"
+  },
+  "50": {
+   "s_dismas": "if thou ſhalt afflict my daughters, and if thou bring in other wiues ouer them: none is witnes of our talke but God, who is preſent and beholdeth.",
+   "odr_com": "if thou shalt afflict my daughters, and if thou bring in other wiues ouer them: none is witnes of our talke but God, who is present and beholdeth.",
+   "sabates_a": "if thou shalt afflict my daughters, and if thou bring in other wives over them; none is witness of our talk but God, who is present and beholdeth.",
+   "madueke_b": "if thou shalt afflict my daughters, and if thou bring in other wives over them; none is witness of our talk but God, who is present and beholdeth."
+  },
+  "51": {
+   "s_dismas": "And he ſaid againe to Iacob: Behold this heape, and the ſtone which I haue erected betwen me and thee,",
+   "odr_com": "And he said againe to Iacob: Behold this heape, and the stone which I haue erected betwen me and thee,",
+   "sabates_a": "And he said again to Jacob: Behold this heap, and the stone which I have erected between me and thee,",
+   "madueke_b": "And he said again to Jacob: Behold this heap, and the stone which I have erected between me and thee,"
+  },
+  "52": {
+   "s_dismas": "ſhal be a witnes: this heape, I ſay, and the ſtone be they for a teſtimonie, if either I ſhal paſſe beyond it, going towards thee, or thou ſhalt paſſe beyond it, thinking harme to me.",
+   "odr_com": "shal be a witnes: this heape, I say, and the stone be they for a testimonie, if either I shal passe beyond it going towards thee, or thou shalt passe beyond it, thinking harme to me.",
+   "sabates_a": "shall be a witness: this heap, I say, and the stone, be they for a testimony, if either I shall pass beyond it going towards thee, or thou shalt pass beyond it, thinking harm to me.",
+   "madueke_b": "shall be a witness: this heap, I say, and the stone, be they for a testimony, if either I shall pass beyond it going towards thee, or thou shalt pass beyond it, thinking harm to me."
+  },
+  "53": {
+   "s_dismas": "The God of Abraham, and the God of Nachor iudge betwen vs, the God of their father. Iacob therfore ſware by the feare of his father Iſaac:",
+   "odr_com": "The God of Abraham, and the God of Nachor iudge betwen vs, the God of their father. Iacob therfore sware by the feare of his father Isaac:",
+   "sabates_a": "The God of Abraham, and the God of Nachor judge between us, the God of their father, Jacob therefore sware by the fear of his father Isaac:",
+   "madueke_b": "The God of Abraham, and the God of Nachor judge between us, the God of their father, Jacob therefore sware by the fear of his father Isaac:"
+  },
+  "54": {
+   "s_dismas": "and after he had offred victimes in the mountaine, he called his brethren to eate bread. Who when they had eaten, lodged there:",
+   "odr_com": "and after he had offred victimes in the mountaine, he called his brethren to eate bread. Who when they had eaten, lodged there:",
+   "sabates_a": "and after he had offered victims in the mountain, he called his brethren to eat bread. Who when they had eaten, lodged there.",
+   "madueke_b": "and after he had offered victims in the mountain, he called his brethren to eat bread. Who when they had eaten, lodged there."
+  },
+  "55": {
+   "s_dismas": "but Laban ariſing in the night, kiſſed his ſonnes, and daughters, and bleſſed them: and returned vnto his place.",
+   "odr_com": "but Laban arising in the night, kissed his sonnes, and daughters, and blessed them: and returned vnto his place.",
+   "sabates_a": "but Laban arising in the night, kissed his sons, and daughters, and blessed them: and returned unto his place.",
+   "madueke_b": "but Laban arising in the night, kissed his sons, and daughters, and blessed them: and returned unto his place."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "After he heard the words of Laban's sons saying: Jacob hath taken all that was our father's, and being enriched of his substance, is become great:",
+  "2": "and perceiving also Laban's countenance, that it was not towards him as yesterday and the other day,",
+  "3": "especially our Lord saying to him: Return into the land of thy fathers, and to thy kindred, and I will be with thee;",
+  "4": "he sent, and called Rachel and Lia into the field where he fed the flocks,",
+  "5": "and said to them: I see your father's countenance that it is not towards me as yesterday and the other day: and the God of my father hath been with me.",
+  "6": "And yourselves know that I have served your father to the uttermost of my power.",
+  "7": "Yea your father also hath circumvented me, and hath changed my wages ten times: and yet God hath not suffered him to hurt me.",
+  "8": "If at any time he said: They of diverse colours shall be thy wages; all the sheep brought forth young of diverse colours. But when he said contrary: Thou shalt take all the white ones for thy wages; all the flocks brought forth white ones.",
+  "9": "And God hath taken your father's substance, and given it to me.",
+  "10": "For after the time came of the ewes conceiving, I lifted up mine eyes, and saw in my sleep the males ascending upon the females of diverse colours, and the spotted, and the speckled.",
+  "11": "And the Angel of God said to me in sleep: Jacob? And I answered: Here I am.",
+  "12": "Who said: Lift up thine eyes, and see all the males ascending upon the females, them of diverse colours, the spotted and the speckled. For I have seen all things that Laban hath done to thee.",
+  "13": "I am the God of Bethel, where thou didst anoint the stone, and didst vow the vow unto me. Now therefore arise, and go out of this land, returning into the land of thy nativity.",
+  "14": "And Rachel and Lia answered: Have we any thing left in the goods and heritage of our father's house?",
+  "15": "Hath he not reputed us as strangers, and sold us, and eaten up the price of us?",
+  "16": "But God hath taken our father's riches, and delivered them to us, and to our children: wherefore do all things that God hath commanded thee.",
+  "17": "Jacob therefore rose up, and setting his children and wives upon camels, went his way.",
+  "18": "And he took all his substance, and flocks, and whatsoever he had gotten in Mesopotamia, and went forward to Isaac his father into the land of Chanaan.",
+  "19": "At that time Laban was gone to shear his sheep, and Rachel stole the idols of her father.",
+  "20": "And Jacob would not confess to his father in law that he fled.",
+  "21": "And when he was gone as well himself as all things that were his right, & having passed the river was marching on to the Mount Galaad,",
+  "22": "it was told Laban the third day that Jacob fled.",
+  "23": "Who, taking his brethren unto him, pursued him seven days: and he overtook him in the Mount Galaad.",
+  "24": "And he saw in his sleep God saying unto him: Take heed thou speak not roughly any thing against Jacob.",
+  "25": "And Jacob had now pitched his tent in the mountain: and when he with his brethren had overtaken him, he pitched his tent in the same Mount Galaad.",
+  "26": "And he said to Jacob: Why didst thou so, that unwitting to me thou wouldst carry away my daughters as captives with the sword?",
+  "27": "Why wouldst thou fly without my knowledge, and not tell me, that I might have brought thee on the way with joy, and songs, and timbrels, and citterns?",
+  "28": "Thou hast not suffered me to kiss my sons and daughters: thou hast done foolishly: now also indeed,",
+  "29": "my hand is able to requite thee evil: but the God of your father said unto me yesterday: Take heed thou speak not any thing against Jacob roughly.",
+  "30": "Suppose thou didst desire to go to thy friends, and hadst a longing to thy father's house, why didst thou steal my gods?",
+  "31": "Jacob answered: In that I departed unwitting to thee, I feared lest thou wouldst take away thy daughters by force.",
+  "32": "But whereas thou chargest me with theft; with whom soever thou shalt find thy gods, let him be slain before our brethren: search whatsoever of thy things thou shalt find with me, and take away. Saying this, he knew not that Rachel had stolen the idols.",
+  "33": "Laban therefore having gone into the tent of Jacob, and of Lia, and of both the handmaids, found them not. And when he was entered into Rachel's tent,",
+  "34": "she in haste hid the idols under the camel's litter, and sat thereupon: and when he had sought all the tent, and found nothing,",
+  "35": "she said: Let not my lord be angry that I cannot rise up before thee, because according to the custom of women it is now chanced to me. So his carefulness in seeking was deluded.",
+  "36": "And Jacob being angry said in chiding manner: For what fault of mine, and for what offence of my part hast thou so chased after me,",
+  "37": "and searched all my household-stuff? What hast thou found of all the substance of thy house? Lay it here before my brethren, and thy brethren, and let them judge between me and thee.",
+  "38": "Have I therefore been with thee twenty years? Thy ewes and goats were not barren, the wethers of thy flock I did not eat:",
+  "39": "neither that which the beast had caught did I shew to thee, I made good all the damage: whatsoever perished by theft thou didst exact it of me:",
+  "40": "day and night was I parched with heat, and with frost, & sleep did fly from mine eyes.",
+  "41": "And in this sort have I served thee in thy house twenty years, fourteen for thy daughters, and six for thy flocks: thou hast changed also my wages ten times.",
+  "42": "Unless the God of my father Abraham, and the fear of Isaac had holpen me, peradventure now thou hadst sent me away naked: God beheld my affliction and the labour of my hands, and rebuked thee yesterday.",
+  "43": "Laban answered him: The daughters are mine and the children, and thy flocks, and all things that thou seest are mine: what can I do to my daughters, and nephews?",
+  "44": "Come therefore, let us enter in league: that it may be for a testimony between me and thee.",
+  "45": "Jacob therefore took a stone, and erected it for a title:",
+  "46": "and he said to his brethren: Bring hither stones. Who gathering them together made a heap, and they did eat upon it:",
+  "47": "Which Laban called the witness-heap: and Jacob called the hillock of testimony, either of men according to the property of his language.",
+  "48": "And Laban said: This heap shall be a witness between me and thee this day, and therefore the name thereof was called Galaad, that is, The witness-heap.",
+  "49": "Our Lord behold and judge us when we shall be departed one from the other,",
+  "50": "if thou shalt afflict my daughters, and if thou bring in other wives over them; none is witness of our talk but God, who is present and beholdeth.",
+  "51": "And he said again to Jacob: Behold this heap, and the stone which I have erected between me and thee,",
+  "52": "shall be a witness: this heap, I say, and the stone, be they for a testimony, if either I shall pass beyond it going towards thee, or thou shalt pass beyond it, thinking harm to me.",
+  "53": "The God of Abraham, and the God of Nachor judge between us, the God of their father, Jacob therefore sware by the fear of his father Isaac:",
+  "54": "and after he had offered victims in the mountain, he called his brethren to eat bread. Who when they had eaten, lodged there.",
+  "55": "but Laban arising in the night, kissed his sons, and daughters, and blessed them: and returned unto his place."
+ },
+ "ref_coverage": {
+  "janvier": 55,
+  "have": {
+   "s_dismas": 55,
+   "odr_com": 55,
+   "sabates_a": 55,
+   "madueke_b": 55
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 220,
+ "triage": "SOURCE-SKEW",
+ "secs": 10.6
+}

@@ -1,0 +1,972 @@
+{
+ "chapter": 20,
+ "n_verses": 18,
+ "n_cells": 72,
+ "n_pass": 66,
+ "rate": 0.9167,
+ "ref_means": {
+  "s_dismas": 0.9747,
+  "odr_com": 0.9748,
+  "sabates_a": 0.9651,
+  "madueke_b": 0.9651
+ },
+ "src_rates": {
+  "S1": 0.7778,
+  "S3": 1.0,
+  "S9": 1.0,
+  "S6": 0.8889
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 6,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 4,
+   "worst": 0.889,
+   "from": "p85",
+   "text": "But Abrmelech had not touched her, and he ſaid: Lord wilt thoukila Nation that is ignotan tDid"
+  },
+  {
+   "src": "S6",
+   "verse": 8,
+   "worst": 0.896,
+   "from": "p85",
+   "text": "And Abimekch torthwith tiuns vp in the night, ealled al ſeruants: and he ſpake al theſe words to their eares, and al the men were ſore atraid."
+  },
+  {
+   "src": "S1",
+   "verse": 12,
+   "worst": 0.891,
+   "from": "p92",
+   "text": "howbeit otherwiſe eſte in verie deed ſhe is my ſiſter, the daughter of my father, not the daughter of my mother, and I tooke her to Andafter"
+  },
+  {
+   "src": "S1",
+   "verse": 14,
+   "worst": 0.87,
+   "from": "p92",
+   "text": "Therfore Abimelech : tooke ſrepe & oxen, ſeruants, and handmayds, and gaue to Abraham: and the red to him Sara his wife,"
+  },
+  {
+   "src": "S1",
+   "verse": 15,
+   "worst": 0.892,
+   "from": "p92",
+   "text": "and ſaid: The land is before dwel wherloeuer it ſhal pleaſe thee."
+  },
+  {
+   "src": "S1",
+   "verse": 16,
+   "worst": 0.898,
+   "from": "p92",
+   "text": "And to Sara he Behold I haue geuen thy brother a thouſand pecces of to uer, this ſhal ſerue thee for a veile of thine eves to al that offer with thee, and whither ſoeuer thou shalt goe, remenber thou waſt taken."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "Abraham remoued from thence into the ſouth countrie, and dwelt betwene Cades, and Sur:ad he liued as a pilgrime in Gerara.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "Abraham remoued from thence into the ſouth A countrie, and dwelt betwene Cades, and Sur and he liued as a pilgrime in Gerara.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "Abraham remoued from thence into the ſouth countrie, and dwelt betwene Cades, and Sur ar he liued as a pilgrime in Gerara.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "Abraham. remoued from thence into the ſouth cou rie, and dwelt between Cades, and Sur: and he liued aꝫ a gre in Gerara.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And he ſaid of Sara his wife: She is: my ſiſter. Abimelech therfore the king of Gerara ſent, and tooke her.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And he ſaid of Sara his wife She is my ſiſter. Abimelech therfore the king of Gerara ſent, and tooke her.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And he ſaid of Sara his wife She is my ſiſter. Abimelech therfore the king of Ge- See rara ſent, and tooke her.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "And he ſaidof Sara his wife: She is (4) my ſiſter. Abimelech ther fore, the Ring of Gerara, ſent and tooke her.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And God came to Abimelech in a dreame by night, and ſaid to him: Loe thou ſhalt dye for the woman that thou haſt taken for ihe hath a huſband.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "And God came to Abimelech in a dreame by night, and ſaid to him: Loe thou ſhalt dye for the woman that thou haſt taken: for ſhe hath a huſband.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And God came to Abimelech in a dreame by night, and ſaid to him: Loe thou ſhalt dye for the woman that thou haſt taken: for ſhe hath a huſband.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Aud God came to Abimelech in a dreame by night, and faid to him: Loe thou ſhalt dye tor the woman that thou haſt taken: tor ſhe hath a huſband.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "But Abimelech had not touched her, and he ſaid: Lord wilt thou kil a nation that is ignorant and iuſt",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "But Abimelech had not touched her, and he ſaid Lord wilt thou kil a nation that is ignorant and iuſt",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S9": {
+    "text": "But Abimelech had not touched her, and he ſaid Lord wilt thou kil a nation that is ignorant and iuſt",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "But Abrmelech had not touched her, and he ſaid: Lord wilt thoukila Nation that is ignotan tDid",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.889,
+     "odr_com": 0.889,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Did not he ſay to me She is my ſiſter: and ſhe ſay, He is my brother: in ſimplicitie of my hart, and cleanenes of my hands haue I done this.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "Did not he ſay to me She is my ſiſter: and ſhe ſay, He is my brother in ſimplicitie of my hart, and cleanenes of my hands haue I done this.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "Did not he ſay to me She is my ſiſter and ſhe ſay, He is my brother in ſimplicitie of my hart, and cleanenes of my hands haue I done this.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "Did not he ſay to me: She is my ſiſter and ſhe ſay, He is my brother: In ſimplicitie of my hart and cleanenes of my hands haue I done this.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And God ſaid to him And I do know that thou dideſt it with a ſincere hart: and therfore I kept thee that thou ihouldeſt nor ſinne againſt me, and I permitted not that thou ſhouldeſt touch her.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "And God ſaid to him And I do know that thou dideſt it with a ſincere hart and therfore I kept thee that thou thouldeſt not ſinne againſt me, and I permitted not that thou ſhouldeſt touch her.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And God ſaid to him And I do know that thou dideſt it with a ſincere hart: and therfore I kept thee that thou ſhouldeſt not ſinne againſt me, and I permitted not that thou ſhouldeſt touch her.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "And God ſaid to him: And I doe know that thou dideſt it with a ſincere hart: and therfore I kept thee that thou ſhouldeſt not ſinne avainſt me, and I permitted not that thou ſhouldeſt touch het.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Now therfore reſtore the wife to her huſband, becauſe he is a prophet and he ſhal pray for thee, and thou ſhalt liue: but if thou wilt not reſtore her, know thou that dying thou ſhalt dye, thouand al things thar are thine.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "Now therfore reſtore the wife to her huſband, becauſe he is a prophet and he ſhal pray for thee, and thou ſhalt liue: but if thou wilt not reſtore her, know thou that dying thou ſhalt dye, tkou and al things that are thine.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "Now therfore reſtore the wife to her huſband, becauſe he is a prophet and he ſhal pray for thee, and thou ſhalt liue: but if thou wilt not reſtore her, know thou that dying thou ſhalt dye, thou and al things that are thine.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S6": {
+    "text": ".Now ther fore reiiore the wite to her huſband, becauſe he is a Prophet: and. he ſhal pray tor thee, and thou ſhait liue. But if thou wilt not reſtore her, know thou that dyin thou ſhalt dye, thou and al thinos that are thine.8.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And Abimelech forthwith riſing vpin the night, called al his ſeruantes and he ſpake al theſe words to their eares, and al the men were ſore afraid.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And Abimelech forthwith riſing vp in the night, called al his ſeruantes: and he ſpake al theſe words to their eares, and al the men were ſore afraid.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And Abimelech forthwith riſing vp in the night, called al his ſeruantes: and he ſpake al theſe words to their eares, and al the men were ſore afraid.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And Abimekch torthwith tiuns vp in the night, ealled al ſeruants: and he ſpake al theſe words to their eares, and al the men were ſore atraid.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.903,
+     "odr_com": 0.903,
+     "sabates_a": 0.896,
+     "madueke_b": 0.896
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And Abimelech called alſo for Abraham, and ſaid to him: What haſt thou done to vs what haue we offended againſt thee, that thou haſt brought vpon me and vpon my kingdom a great ſinne? that which thou oughteſt not to doe, thou haſt done to vs.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "And Abimelech called alſo for Abraham, and ſaid to him: What haſt thou done unto vs what haue we offended againſt thee, that thou haſt brought vpon me and vpon my kingdom a great ſinne? that which thou oughteſt not to doe, thou haſt done unto vs.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S9": {
+    "text": "And Abimelech called alſo for Abraham, and ſaid to him: What haſt thou done unto vs what haue we offended againſt thee, that thou haſt brought vpon me and vpon my kingdom a great ſinne that which thou oughteſt not to doe, thou haſt done to vs. +",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "And Abunelech called alſo tor Abraham, ſaid to him What haſt thou done to vs: what haue we offended againſt thee. that thou haſt brought vpon me and vpon my kingdomne a great ſinne: that which thou oughteſt not to doe, thou haſt done to vs.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And again expoſtulating, he ſaid What ſaweſt thou, that thou 1dideſt this",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And again expoſtulating, he ſaid What ſaweſt thou, that thou dideſt this",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And again expoſtulating, he ſaid What ſawoſt thou, that thou dideſt this",
+    "from": "p102",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And againe expoſtulating, he ſaid: What ſaweſt thou, that thou dideſt this",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "Abraham auſwered I thought with my ſaying: Perhaps there is not the feare of God in this of and they wil kil me for my wife:",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 0.908,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S3": {
+    "text": "Abraham anſwered: I thought with my ſelfe, ſaying: Perhaps there is not the feare of God in this place: and they wil kil me for my wiſe: +",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "Abraham anſwered I thought with my ſelfe, ſaying: Perhaps there is not the feare of God in this place: and they wil kil me for my wiſe:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "Abtaham anſwered: I thought with my ſelfe, ſaying: Perhaps there is not the feare of God in this place, & they wil kil me for my wife:",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "howbeit otherwiſe eſte in verie deed ſhe is my ſiſter, the daughter of my father, not the daughter of my mother, and I tooke her to Andafter",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.898,
+     "odr_com": 0.898,
+     "sabates_a": 0.891,
+     "madueke_b": 0.891
+    }
+   },
+   "S3": {
+    "text": "howbeit otherwiſe eſte in verie deed ſhe is my ſiſter, the daughter of my father, not the daughter of my mother, and I tooke her to",
+    "from": "p96",
+    "score": {
+     "s_dismas": 0.905,
+     "odr_com": 0.905,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   },
+   "S9": {
+    "text": "†howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, the daughter of my father, and not the daughter of my mother, and I tooke her to wife.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S6": {
+    "text": "howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, the daughter of my father, not the daughter of my mother, I tooke her to wife.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And after that God brought me out of my fathers houſe, I ſaid to her This mercie thou ſhalt doe with me In euerie place, which we shal come vnto, thou ſhalt ſay that I am thy brother.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "And after that God brought me out of my fathers houſe, I ſaid to her: This mercie thou ſhalt doe with me In euerie place, which we shal come vnto, thou ſhalt ſay that I am thy brother.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And after that God brought me out of my fathers houſe, I ſaid to her: This mercie thou ſhalt doe with me In euerie place, which we shal come vnto, thou ſhalt ſay that I am thy brother. Therfore",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S6": {
+    "text": "And atter that God brought me out ot my fathers houſe, I ſaid to her : This mercie thou ſhalt doe with me: In euerie place which we ſhal come vnto, thou ſhalt ſay that I am thy brother.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Therfore Abimelech : tooke ſrepe & oxen, ſeruants, and handmayds, and gaue to Abraham: and the red to him Sara his wife,",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.914,
+     "odr_com": 0.914,
+     "sabates_a": 0.87,
+     "madueke_b": 0.87
+    }
+   },
+   "S3": {
+    "text": "Therfore Abimelech :: tooke ſhepe & oxen, and ſeruants, and handmayds, and gaue to Abraham: and reſtored to him Sara his wife,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "Therfore Abimelech :: tooke ſhepe & oxen, and ſeruants, and handmayds, and gaue to Abraham : and reſtored red to him Sara his wife,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.922,
+     "madueke_b": 0.922
+    }
+   },
+   "S6": {
+    "text": "Thertore Abimelech tooke ſheep and oxen, and ſeruants, and handmayds, and gaue to Abraham: and reſtored to him Sara his wife, 15.-and",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.919,
+     "odr_com": 0.919,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "and ſaid: The land is before dwel wherloeuer it ſhal pleaſe thee.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.925,
+     "odr_com": 0.925,
+     "sabates_a": 0.892,
+     "madueke_b": 0.892
+    }
+   },
+   "S3": {
+    "text": "and ſaid: The land is before you, I dwel wherſoeuer it ſhal pleaſe thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S9": {
+    "text": "and ſaid: The land is before you, dwel wherſoeuer it ſhal pleaſe thee.",
+    "from": "p102",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "and ſaid: The land is before you, dwel wherſoeuer it ſhalt pleafe thee.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And to Sara he Behold I haue geuen thy brother a thouſand pecces of to uer, this ſhal ſerue thee for a veile of thine eves to al that offer with thee, and whither ſoeuer thou shalt goe, remenber thou waſt taken.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.912,
+     "odr_com": 0.912,
+     "sabates_a": 0.898,
+     "madueke_b": 0.898
+    }
+   },
+   "S3": {
+    "text": "And to Sara he ſaid: Behold I haue geuen thy brother a thouſand pecces of ſil- uier, this ſhal ſerue thee for a veile of thine eyes to al that are with thee, and whither ſoeuer thou shalt goe, remenber alſo thou waſt taken.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And to Sara he ſaid: Behold I haue geuen thy brother a thouſand peeces of ſiluer, this ſhal ſerue thee for a veile of thine eyes to al that are with thee, and whither ſoeuer thou shalt goe, remenber alſo thou waſt taken.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "Aud to Sara he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal Abtaham. ſerue thee tor a veile of thine eves to al that are with thee, and whitherſoeuer thou shalt goe, temember alſo thou waſt taken.7.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.923,
+     "odr_com": 0.923,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare chilAug. dren",
+    "from": "p102",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "And. Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "for our Lord had cloſed vp euerie matrice of the of Abimclech for Sara Abrahams wife.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.922,
+     "odr_com": 0.922,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S3": {
+    "text": "for our Lord had cloſed vp euerie matrice of the of Abimelech for Sara Abrahams wife.",
+    "from": "p96",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.933,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S9": {
+    "text": "for our Lord had cloſed vp euerie matrice of the houſe of Abimelech for Sara Abrahams wife.",
+    "from": "p102",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "for our Lord had cloſed vp euerie matrice of the houſe ot Abimelech tor Sara Abrahams wife.",
+    "from": "p86",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Abraham remoued from thence into the ſouth countrie, and dwelt betwene Cades, and Sur: and he liued as a pilgrime in Gerara.",
+   "odr_com": "ABRAHAM remoued from thence into the south countrie, and dwelt betwene Cades, and Sur: and he liued as a pilgrime in Gerara.",
+   "sabates_a": "Abraham removed from thence into the south country and dwelt between Cades, and Sur: and he lived as a pilgrim in Gerara.",
+   "madueke_b": "Abraham removed from thence into the south country and dwelt between Cades, and Sur: and he lived as a pilgrim in Gerara."
+  },
+  "2": {
+   "s_dismas": "And he ſaid of Sara his wife: She is my ſiſter. Abimelech therfore the king of Gerara ſent, and tooke her.",
+   "odr_com": "And he said of Sara his wife: She is my sister. Abimelech therfore the king of Gerara sent, and tooke her.",
+   "sabates_a": "And he said of Sara his wife: She is my sister. Abimelech therefore, the king of Gerara, sent and took her.",
+   "madueke_b": "And he said of Sara his wife: She is my sister. Abimelech therefore, the king of Gerara, sent and took her."
+  },
+  "3": {
+   "s_dismas": "And God came to Abimelech in a dreame by night, and ſaid to him: Loe thou ſhalt dye for the woman that thou haſt taken: for ſhe hath a huſband.",
+   "odr_com": "And God came to Abimelech in a dreame by night, and said to him: Loe thou shalt dye for the woman that thou hast taken: for she hath a husband.",
+   "sabates_a": "And God came to Abimelech in a dream by night, and said to him: Lo thou shalt die for the woman that thou hast taken: for she hath a husband.",
+   "madueke_b": "And God came to Abimelech in a dream by night, and said to him: Lo thou shalt die for the woman that thou hast taken: for she hath a husband."
+  },
+  "4": {
+   "s_dismas": "But Abimelech had not touched her, and he ſaid: Lord wilt thou kil a nation that is ignorant and iuſt?",
+   "odr_com": "But Abimelech had not touched her, and he said: Lord wilt thou kil a nation that is ignorant and iust?",
+   "sabates_a": "But Abimelech had not touched her, and he said: Lord wilt thou kill a Nation that is ignorant & just?",
+   "madueke_b": "But Abimelech had not touched her, and he said: Lord wilt thou kill a Nation that is ignorant & just?"
+  },
+  "5": {
+   "s_dismas": "Did not he ſay to me: She is my ſiſter: and ſhe ſay, He is my brother? in ſimplicitie of my hart, and cleanenes of my hands haue I done this.",
+   "odr_com": "Did not he say to me: She is my sister: and she say, He is my brother? in simplicitie of my hart, and cleanenes of my hands haue I done this.",
+   "sabates_a": "Did not he say to me: She is my sister? And she say, He is my brother? In simplicity of my heart and cleanness of my hands have I done this.",
+   "madueke_b": "Did not he say to me: She is my sister? And she say, He is my brother? In simplicity of my heart and cleanness of my hands have I done this."
+  },
+  "6": {
+   "s_dismas": "And God ſaid to him: And I do know that thou dideſt it with a ſincere hart: and therfore I kept thee that thou ſhouldeſt not ſinne againſt me, and I permitted not that thou ſhouldeſt touch her.",
+   "odr_com": "And God said to him: And I do know that thou didest it with a sincere hart: and therfore I kept thee that thou shouldest not sinne against me, and I permitted not that thou shouldest touch her.",
+   "sabates_a": "And God said to him: And I do know that thou didst it with a sincere heart: and therefore I kept thee that thou shouldest not sin against me, and I permitted not that thou shouldest touch her.",
+   "madueke_b": "And God said to him: And I do know that thou didst it with a sincere heart: and therefore I kept thee that thou shouldest not sin against me, and I permitted not that thou shouldest touch her."
+  },
+  "7": {
+   "s_dismas": "Now therfore reſtore the wife to her huſband, becauſe he is a prophet: and he ſhal pray for thee, and thou ſhalt liue: but if thou wilt not reſtore her, know thou that dying thou ſhalt dye, thou and al things that are thine.",
+   "odr_com": "Now therfore restore the wife to her husband, because he is a prophet: and he shal pray for thee, and thou shalt liue: but if thou wilt not restore her, know thou that dying thou shalt dye, thou and al things that are thine.",
+   "sabates_a": "Now therefore restore the wife to her husband, because he is a Prophet: and he shall pray for thee, and thou shalt live. But if thou wilt not restore her, know thou that dying thou shalt die, thou and all things that are thine.",
+   "madueke_b": "Now therefore restore the wife to her husband, because he is a Prophet: and he shall pray for thee, and thou shalt live. But if thou wilt not restore her, know thou that dying thou shalt die, thou and all things that are thine."
+  },
+  "8": {
+   "s_dismas": "And Abimelech forthwith riſing vp in the night, called al his ſeruantes: and he ſpake al theſe words to their eares, and al the men were ſore afraid.",
+   "odr_com": "And Abimelech forthwith rising vp in the night, called al his seruantes: and he spake al these words to their eares, and al the men were sore afraid.",
+   "sabates_a": "And Abimelech forthwith rising up in the night, called all his servants: and he spake all these words to their ears, and all the men were sore afraid.",
+   "madueke_b": "And Abimelech forthwith rising up in the night, called all his servants: and he spake all these words to their ears, and all the men were sore afraid."
+  },
+  "9": {
+   "s_dismas": "And Abimelech called alſo for Abraham, and ſaid to him: What haſt thou done to vs? what haue we offended againſt thee, that thou haſt brought vpon me and vpon my kingdom a great ſinne? that which thou oughteſt not to doe, thou haſt done to vs.",
+   "odr_com": "And Abimelech called also for Abraham, and said to him: What hast thou done to vs? what haue we offended against thee, that thou hast brought vpon me and vpon my kingdom a great sinne? that which thou oughtest not to doe, thou hast done to vs.",
+   "sabates_a": "And Abimelech called also for Abraham, & said to him: What hast thou done to us? What have we offended against thee, that thou hast brought upon me and upon my kingdom a great sin? That which thou oughtest not to do, thou hast done to us.",
+   "madueke_b": "And Abimelech called also for Abraham, & said to him: What hast thou done to us? What have we offended against thee, that thou hast brought upon me and upon my kingdom a great sin? That which thou oughtest not to do, thou hast done to us."
+  },
+  "10": {
+   "s_dismas": "And again expoſtulating, he ſaid: What ſaweſt thou, that thou dideſt this?",
+   "odr_com": "And again expostulating, he said: What sawest thou, that thou didest this?",
+   "sabates_a": "And again expostulating, he said: What sawest thou, that thou didest this?",
+   "madueke_b": "And again expostulating, he said: What sawest thou, that thou didest this?"
+  },
+  "11": {
+   "s_dismas": "Abraham anſwered: I thought with my ſelfe, ſaying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife:",
+   "odr_com": "Abraham answered: I thought with my selfe, saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife:",
+   "sabates_a": "Abraham answered: I thought with myself, saying: Perhaps there is not the fear of God in this place, & they will kill me for my wife:",
+   "madueke_b": "Abraham answered: I thought with myself, saying: Perhaps there is not the fear of God in this place, & they will kill me for my wife:"
+  },
+  "12": {
+   "s_dismas": "howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, the daughter of my father, and not the daughter of my mother, and I tooke her to wife.",
+   "odr_com": "howbeit otherwise also in verie deed she is my sister, the daughter of my father, and not the daughter of my mother, and I tooke her to wife.",
+   "sabates_a": "howbeit otherwise also in very deed she is my sister, the daughter of my father, & not the daughter of my mother, & I took her to wife.",
+   "madueke_b": "howbeit otherwise also in very deed she is my sister, the daughter of my father, & not the daughter of my mother, & I took her to wife."
+  },
+  "13": {
+   "s_dismas": "And after that God brought me out of my fathers houſe, I ſaid to her: This mercie thou ſhalt doe with me: In euerie place, which we shal come vnto, thou ſhalt ſay that I am thy brother.",
+   "odr_com": "And after that God brought me out of my fathers house, I said to her: This mercie thou shalt doe with me: In euerie place, which we shal come vnto, thou shalt say that I am thy brother.",
+   "sabates_a": "And after that God brought me out of my father's house, I said to her: This mercy thou shalt do with me: In every place which we shall come unto, thou shalt say that I am thy brother.",
+   "madueke_b": "And after that God brought me out of my father's house, I said to her: This mercy thou shalt do with me: In every place which we shall come unto, thou shalt say that I am thy brother."
+  },
+  "14": {
+   "s_dismas": "Therfore Abimelech tooke ſhepe & oxen, and ſeruants, and handmayds, and gaue to Abraham: and reſtored to him Sara his wife,",
+   "odr_com": "Therfore Abimelech tooke shepe & oxen, and seruants, and handmayds, and gaue to Abraham: and restored to him Sara his wife,",
+   "sabates_a": "Therefore Abimelech took sheep and oxen, and servants, and handmaids, and gave to Abraham: and restored to him Sara his wife,",
+   "madueke_b": "Therefore Abimelech took sheep and oxen, and servants, and handmaids, and gave to Abraham: and restored to him Sara his wife,"
+  },
+  "15": {
+   "s_dismas": "and ſaid: The land is before you, dwel wherſoeuer it ſhal pleaſe thee.",
+   "odr_com": "and said: The land is before you, dwel whersoeuer it shal please thee.",
+   "sabates_a": "and said: The land is before you, dwell wheresoever it shalt please thee.",
+   "madueke_b": "and said: The land is before you, dwell wheresoever it shalt please thee."
+  },
+  "16": {
+   "s_dismas": "And to Sara he ſaid: Behold I haue geuen thy brother a thouſand pecces of ſiluer, this ſhal ſerue thee for a veile of thine eyes to al that are with thee, and whither ſoeuer thou shalt goe, remember alſo thou waſt taken.",
+   "odr_com": "And to Sara he said: Behold I haue geuen thy brother a thousand peeces of siluer, this shal serue thee for a veile of thine eyes to al that are with thee, and whither soeuer thou shalt goe, remenber also thou wast taken.",
+   "sabates_a": "And to Sara he said: Behold I have given thy brother a thousand pieces of silver, this shall serve thee for a veil of thine eyes to all that are with thee, and whithersoever thou shalt go, remember also thou wast taken.",
+   "madueke_b": "And to Sara he said: Behold I have given thy brother a thousand pieces of silver, this shall serve thee for a veil of thine eyes to all that are with thee, and whithersoever thou shalt go, remember also thou wast taken."
+  },
+  "17": {
+   "s_dismas": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+   "odr_com": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+   "sabates_a": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+   "madueke_b": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:"
+  },
+  "18": {
+   "s_dismas": "for our Lord had cloſed vp euerie matrice of the houſe of Abimelech for Sara Abrahams wife.",
+   "odr_com": "for our Lord had closed vp euerie matrice of the house of Abimelech for Sara Abrahams wife.",
+   "sabates_a": "for our Lord had closed up every matrice of the house of Abimelech for Sara Abraham's wife.",
+   "madueke_b": "for our Lord had closed up every matrice of the house of Abimelech for Sara Abraham's wife."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Abraham removed from thence into the south country and dwelt between Cades, and Sur: and he lived as a pilgrim in Gerara.",
+  "2": "And he said of Sara his wife: She is my sister. Abimelech therefore, the king of Gerara, sent and took her.",
+  "3": "And God came to Abimelech in a dream by night, and said to him: Lo thou shalt die for the woman that thou hast taken: for she hath a husband.",
+  "4": "But Abimelech had not touched her, and he said: Lord wilt thou kill a Nation that is ignorant & just?",
+  "5": "Did not he say to me: She is my sister? And she say, He is my brother? In simplicity of my heart and cleanness of my hands have I done this.",
+  "6": "And God said to him: And I do know that thou didst it with a sincere heart: and therefore I kept thee that thou shouldest not sin against me, and I permitted not that thou shouldest touch her.",
+  "7": "Now therefore restore the wife to her husband, because he is a Prophet: and he shall pray for thee, and thou shalt live. But if thou wilt not restore her, know thou that dying thou shalt die, thou and all things that are thine.",
+  "8": "And Abimelech forthwith rising up in the night, called all his servants: and he spake all these words to their ears, and all the men were sore afraid.",
+  "9": "And Abimelech called also for Abraham, & said to him: What hast thou done to us? What have we offended against thee, that thou hast brought upon me and upon my kingdom a great sin? That which thou oughtest not to do, thou hast done to us.",
+  "10": "And again expostulating, he said: What sawest thou, that thou didest this?",
+  "11": "Abraham answered: I thought with myself, saying: Perhaps there is not the fear of God in this place, & they will kill me for my wife:",
+  "12": "howbeit otherwise also in very deed she is my sister, the daughter of my father, & not the daughter of my mother, & I took her to wife.",
+  "13": "And after that God brought me out of my father's house, I said to her: This mercy thou shalt do with me: In every place which we shall come unto, thou shalt say that I am thy brother.",
+  "14": "Therefore Abimelech took sheep and oxen, and servants, and handmaids, and gave to Abraham: and restored to him Sara his wife,",
+  "15": "and said: The land is before you, dwell wheresoever it shalt please thee.",
+  "16": "And to Sara he said: Behold I have given thy brother a thousand pieces of silver, this shall serve thee for a veil of thine eyes to all that are with thee, and whithersoever thou shalt go, remember also thou wast taken.",
+  "17": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+  "18": "for our Lord had closed up every matrice of the house of Abimelech for Sara Abraham's wife."
+ },
+ "ref_coverage": {
+  "janvier": 18,
+  "have": {
+   "s_dismas": 18,
+   "odr_com": 18,
+   "sabates_a": 18,
+   "madueke_b": 18
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 72,
+ "triage": "SOURCE-SKEW",
+ "secs": 5.6
+}

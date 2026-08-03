@@ -1,0 +1,1336 @@
+{
+ "chapter": 50,
+ "n_verses": 25,
+ "n_cells": 100,
+ "n_pass": 91,
+ "rate": 0.91,
+ "ref_means": {
+  "s_dismas": 0.9723,
+  "odr_com": 0.973,
+  "sabates_a": 0.9553,
+  "madueke_b": 0.9528
+ },
+ "src_rates": {
+  "S1": 0.76,
+  "S3": 0.92,
+  "S9": 1.0,
+  "S6": 0.96
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 9,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 1,
+   "worst": 0.809,
+   "from": "chapter",
+   "text": "HICH Ioſeph ſceing, ſel vpon his ſathers ſace weopingandkiſſing him. And"
+  },
+  {
+   "src": "S3",
+   "verse": 1,
+   "worst": 0.879,
+   "from": "p175",
+   "text": "HTCH Ioſeph ſecing, ſel vpon his ſathers ſace weepingand kiſſing him."
+  },
+  {
+   "src": "S1",
+   "verse": 15,
+   "worst": 0.89,
+   "from": "p172",
+   "text": "After whoſe death, his brethren fearing, and talking one with an other perhaps he bemindful of the iniune which he ſuffered, requite vs al the euil that we haue done,"
+  },
+  {
+   "src": "S6",
+   "verse": 16,
+   "worst": 0.891,
+   "from": "p157",
+   "text": "aduertiſed him ſaying Thy fathet commanded vs before he died,"
+  },
+  {
+   "src": "S1",
+   "verse": 18,
+   "worst": 0.85,
+   "from": "p172",
+   "text": "And his brethren came to him word often adoring proſtrate on the ground they ſaid Weare thy Setip. uantes."
+  },
+  {
+   "src": "S3",
+   "verse": 18,
+   "worst": 0.842,
+   "from": "p176",
+   "text": "And his brethren came to him word often adoring proſtrato on the ground they ſaid Weare thy Scrip- uantes."
+  },
+  {
+   "src": "S1",
+   "verse": 19,
+   "worst": 0.897,
+   "from": "p172",
+   "text": "To whom he anſwered Feare not can we You the wil of God"
+  },
+  {
+   "src": "S1",
+   "verse": 21,
+   "worst": 0.0,
+   "from": "p172",
+   "text": "not I no other feed you vour ſire ones, and he comforted them, ſpake genth mildiy."
+  },
+  {
+   "src": "S1",
+   "verse": 25,
+   "worst": 0.833,
+   "from": "p172",
+   "text": "he died, being an hundred and tenne yeares old. And being embawmed with was put in a coffin in Egypr."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "HICH Ioſeph ſceing, ſel vpon his ſathers ſace weopingandkiſſing him. And",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.829,
+     "odr_com": 0.829,
+     "sabates_a": 0.809,
+     "madueke_b": 0.809
+    }
+   },
+   "S3": {
+    "text": "HTCH Ioſeph ſecing, ſel vpon his ſathers ſace weepingand kiſſing him.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.899,
+     "odr_com": 0.899,
+     "sabates_a": 0.879,
+     "madueke_b": 0.879
+    }
+   },
+   "S9": {
+    "text": "VVhich Ioſeph ſeeing, fel vpon his fathers face weeping and kiſſing him.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Which Ioſeph ſeeing fel vpon his fathets face weeping and kiſſing him.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "he commanded his ſeruantes the phyſitians, that they should ombawme his father with ſpices.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.909,
+     "madueke_b": 0.909
+    }
+   },
+   "S3": {
+    "text": "And he commanded his ſeruantes the phyfirians, that they should embawme his father with ſpices.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S9": {
+    "text": "And he commanded his ſeruantes the phyſitians, that they should embawme his father with ſpices.",
+    "from": "p183",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "And he commanded his ſeruants the phyſitians, that thev should embaulme his tather with ipices.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "Who fufilling his commandements, there paſſed ſourtie dayes: for this was the maner of corſes embawmed, and Agypt mourned him ſeuentie daies.",
+    "from": "p171",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.986,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S3": {
+    "text": "Who fufilling his commandements, there paſſed fourtie dayes: for this was the maner of corſes embawmed, and Egypt mourned him ſeuentie daies.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.993,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S9": {
+    "text": "Who fufilling his commandements, there paſſed fourtie dayes for this was the maner of corſes embawmed, and Ægypt mourned him ſeuentie daies",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "Who tufilling his commandements, there paſſed tourtie dayes tor this was the manner of corſes embaulmed, and gypt mourned him ſeuentie daies.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.942,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And the mourning time being expired, Ioſeph ſpake tothe familie of Pharao IfI haue found grace in your ſight, ſpeake in the earegof Pharao:",
+    "from": "p171",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "And the mourning time being expired, Ioſeph ſpake tor the familie of Tharao If I haue found grace in your ſight, ſpeake in the earesof Pharao:",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "And the mourning time being expired, Ioſeph ſpake to the familie of Pharao If I haue found grace in your ſight, ſpeake in the eares of Pharao:",
+    "from": "p183",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And the moutning time being exptred, Ioſeph ſpake to the tamilie of Phatao: If I haue touud grace in yout ſight, ſpeake in the eares of Pharao",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "for ſo much as my father did adiure me, ſaing Behold I die, in my ſepulchre which I digged for my felfe in the land of Chanaan. thou shalt burie me. I wil goe vp therfore, and burie my father, and returne.",
+    "from": "p171",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "for ſo much as my father did adiure me, ſaing Behold I die, in my ſenulchre which I digged for my felfe in the land of Chanaan, thou shalt burie me. I wil goe vp therfore, and burie my father, and returne.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "for ſo much as my father did adiure me, ſaing : Behold I die, in my ſepulchre : which I :: digged for my ſelfe in the land of Chanaan, thou shalt burie geda me. I wil goe vp therfore, and burie my father, and returne.",
+    "from": "p183",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "for ſo muchas my father did adiure me, ſaving Behold I die, in my ſepulchre which I digged for my ſelte in the land of Ghauaan, thou shalt burie me. I wil goe vp therfore, and burie my father, and returne.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And Pharao ſaid to him: Goe vp and burie thy father as thou waſt adiured.",
+    "from": "p171",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Pharao ſaid to him: Goe vp and burie thy father as thou waſt adiured.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Pharao ſaid to him: Goe vp and burie thy father as it thou waſt adiured.",
+    "from": "p183",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "And Pharao ſaid to him Goe vp and burie thy father as thou waſt adiured.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "who going vp, there went with him al the ancients of Pharaos houſe, and al the elders of the Land of Egypt:",
+    "from": "p171",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "Who going vp, there went with him al the ancients of Pharaos houſe, and al the elders of the Land of Egypt:",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "Who going vp, there went with him al the ancients of Pharaos houſe, and al the elders of the Land of Ægypt:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "Who going vp, there went with him al the ancients of Pharaos houſe, and al the elders of the Land of Ægypt:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "the houſe of Ioſeph with his brethren, ſauing their little ones, and the flockes and heards, which they had lefe in the Land of Geſſen.",
+    "from": "p171",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.992,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "the houſe of Ioſeph with his brethren, ſauing their little ones, and the flockes and heards, which they had left in the Land of Geſſen.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "the houſe of Ioſeph with his brethren. did ſauing their little ones, and the flockes and heards, which they had left in the Land of Geſſen",
+    "from": "p183",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.97,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "the houſe of Ioſeph with his brethren, ſauing their little ones, and the flockes and heards, which they had lett in the Land of Geſſen.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.992,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "He had alſo in his traie chariotts and horſemen: and it became no ſmal multitude",
+    "from": "p171",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "He had alſo in his traine chariotts and horſemen: and it became no ſmal multitude.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "He had alſo in his traine chariotts and horſemen: and it became no ſmal multitude",
+    "from": "p183",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "He had alſo in his traine chariots and horſemen and it became no ſmal multitude.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And they came to the floore of Atad, which is ſituate beyond Iordaine: where celebrating the exequies with great and vehement mourning, they ſpent ful ſeuen daycs.",
+    "from": "p171",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And they came to the floore of Atad, which is ſituate beyond Iord aine: where celebrating the exequies with great and vehement mourning, they ſpent ful ſeuen dayos.",
+    "from": "p175",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And they came to the floore of Atad, which is ſituate beyond Iord aine where celebrating the exequies with great and vehement mourning, they ſpent ful ſeuen dayos.",
+    "from": "p183",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And they came to the floore of Atad, which is ſituate beyond Iordane: where celebrating the exequies with great and vehement mourning, they ſpent ful ſeuen daves.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "which when the Inhabitets of the Land of Chanaan had ſeene, they ſaid : This is a great mourning vnto the gyptian:. An therfore the name of thar place was called, The mourning of Egypt.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "which when the Inhabiters of the Land of Chanaan had ſeene, they ſaid : This is a great mourning vnto the Fgyptians. An ther fore the name of that place was called, The mourning of Agypto.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S9": {
+    "text": "Which when the Inhabiters of the Land of Chanaan had ſeene, they ſaid : This is a great mourning vnto the Agyptians An therfore the name of that place was called, The mourning of Agypt.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "Which when the Inhabiters of the Land of Chanaan had ſeen, they ſaid: This is a great mourning vnto the Egyptians. And thertote the name ot that place was called The mourning of Egypt.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Therfore the. ſonnes of Ia- cob did as he commanded them:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S3": {
+    "text": "Therfore the, ſonnes of Ia- cob did as he commanded them:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S9": {
+    "text": "Therfore the ſonnes of Iacob did as he commanded them:",
+    "from": "p184",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "Thertore the ſonnes of Iacob did as he commanded them:",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "and carying him the Land of Chanaan, they buried hinr in the, dub le caue, which Abraham had boughr with the ficld for a poſſeſſion ro burie in of Ephron the Hethite againſt Mambre.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
+    }
+   },
+   "S3": {
+    "text": "and carying him into the Land of Chanaan, they buried him in the duble caue, which Abraham had bought with the field for a poſſeſſion. to burie in of Ephron the Hethite againſt Mambre.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "and carying him into the Land of Chanaan, they buried him in the duble caue, which Abraham had bought with the field for a poſſeſſion to burie in of Ephron the Hethite againſt Mambre.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "and carying him into the Land of Chanaan, they buried him in the double caue, which Abraham had bought with the field for a poſſeſſion to burie in ot Ephron the Hethite againſt Mambre.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And Ioſeph returned into Aegypt with his brethren, and with al the traine, his father being buried.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Ioſeph returned into Ægypt with his brethren, and with al the traine, his father being buried.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Ioſeph returned into Egypt with his brethren, and with al the traine, his father being buried.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And Ioſeph returned into AEgypt with his brethren, and with al the traine, his father being buried.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "After whoſe death, his brethren fearing, and talking one with an other perhaps he bemindful of the iniune which he ſuffered, requite vs al the euil that we haue done,",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.89,
+     "madueke_b": 0.89
+    }
+   },
+   "S3": {
+    "text": "After whoſe death, his brethren fearing, and talking one with an other: Leſt perhaps he be mindful of the iniurie which he ſuffered, and requite vs al the euil that we haue done,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "After whoſe death, his brethren fearing, and talking one with an other Leſt perhaps he be mindful of the iniurie which he ſuffered, and requite vs al the euil that we haue done,",
+    "from": "p184",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "After whoſe death his brethren tearing, talking one with another Leſt perhaps he be mindful of the iniurie which he ſuffered, and requite vs al the euil that we haue done:6they",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "they aduertiſed him ſaing Thy father commanded vs before he died,",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "they aduertiſed him ſaing Thy father commanded vs before he died,",
+    "from": "p176",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "they aduertifed him ſaing Thy father commanded vs before he died,",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.984,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "aduertiſed him ſaying Thy fathet commanded vs before he died,",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 0.891,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "we ſhould ſay thus much to thee in his wordes I beſech that thou forger the wicked fact of thy brethren, and ſinne malice which they haue exerc:ſed ag inſt thee: we alſo deſire thee, that to the ſcruents of, the Cod of father thou remit this iniquitie. Whom when Ioſeph heard he wept.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.922,
+     "odr_com": 0.922,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   },
+   "S3": {
+    "text": "we ſhould ſay thus much to thee in his wordes I beſech that thou forget the wicked fact of thy brethren, and ſinne malice which they haue exerciſed againſt thee: we alſo deſire thee, that to the ſeruaurs of the God ofthy father thou remit this iniquitie. Whom when Ioſeph heard he wept.",
+    "from": "p176",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
+    }
+   },
+   "S9": {
+    "text": "that we ſhould ſay thus much to thee in his wordes I beſech that thou forger the wicked fact of thy brethren, and the ſinne malice which they haue exerciſed againſt thee: we alſo deſire thee, that to the ſeruants of the God of thy father thou remit this iniquitie. Whom when Ioſeph had heard he wept.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.997,
+     "odr_com": 0.997,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "that we ſhould ſay thus much to thee in his words I beſeech that thou toraet the wicked fact of thy brethren, and the ſinne and malice which they haue exercized againſt thee we alſo deſire thee, that to the ſeruants of the God of thy father thou remit this iniquitie. Whom when Ioſeph had heard he wept.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And his brethren came to him word often adoring proſtrate on the ground they ſaid Weare thy Setip. uantes.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.865,
+     "odr_com": 0.865,
+     "sabates_a": 0.85,
+     "madueke_b": 0.85
+    }
+   },
+   "S3": {
+    "text": "And his brethren came to him word often adoring proſtrato on the ground they ſaid Weare thy Scrip- uantes.",
+    "from": "p176",
+    "score": {
+     "s_dismas": 0.856,
+     "odr_com": 0.856,
+     "sabates_a": 0.842,
+     "madueke_b": 0.842
+    }
+   },
+   "S9": {
+    "text": "And his brethren came to him: and18 adoring proſtrate on the ground theyſaid We are thy ſeruantes.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And his brethren camne to him, and adotiug proſtrate on the ground they ſaid We are thy ſeruants.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "To whom he anſwered Feare not can we You the wil of God",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.897,
+     "odr_com": 0.897,
+     "sabates_a": 0.907,
+     "madueke_b": 0.907
+    }
+   },
+   "S3": {
+    "text": "To whom he anſwered Feare not can we reſiſt the wil of God",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "To whom he anſwered : Feare not : can we reſiſt the wil of God",
+    "from": "p184",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "To Whom he anſwered: Feare not: can we reſiſt the wil of God",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "You thought euil againſt me but God turned that into good, th'it he might exalt me, as preſently you ſee, and might ſaue many peoples.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "\"You thought euil againſt me but God turned that into good, that he might exalt me, as preſently you ſee, and might ſaue many peoples.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Vou thought euil againſt me : but God turned that into good, that he might exalt me, as preſently can vou ſee, and might ſaue many peoples.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "Vou thought euil agaiuſt me, but God turned that into good , that he might exalt me, as preſently vou ſee and might ſaue many peoples.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "not I no other feed you vour ſire ones, and he comforted them, ſpake genth mildiy.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.744,
+     "odr_com": 0.744,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   },
+   "S3": {
+    "text": "Feare not I wil feed you & your litle ones, and he comforted them, and ſpake gently & mildly.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S9": {
+    "text": "Feare not : I wil feed you & your lirle ones, and he comforted them, and ſpake gently & mildly.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S6": {
+    "text": "Feare not : I wil teed vou and vour litle ones, aud he comtorted them, and ſpake gently & mildly.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.9,
+     "odr_com": 0.9,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And he dwelt in Ægypte, with al his fathers houſe and liued an hundred and tenne yeares. And he ſawe the children of Ephraim vnto the third generation. Alſo children of Macbit the ſonne of Manaſſes were borne in Ioſephs knees",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.964,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And he dwelt in Ægypt, with al his fathers houſe and liued an hundred and tenne yeares. And he ſawe the children of Ephraim vnto the third generation. Alſo the children of Machir the ſonne of Manaſſes were borne in Ioſephs knees.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.996,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "And he dwelt in Egypt, with his fathers houſe: and liued an hundred and tenne yeares. And he ſawe the children of Ephraim vnto the third generation. Alſo the children of Machir the ſonne of Manaſſes were borne in Ioſephs knees.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.978,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "And he dwelt in AEgypt, with al his fathers houſe: aud liued an hundred and ten yeares. And he ſaw the children of Ephraim vnto the third generation. Alſo the children of Machit the ſonne ot Manaſſes were borne in Ioſephs knees.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.969,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "Which things being done, he ſpake to his brethren After my death God wil viſite you, and wil make you goe vp out of this land, to the land which he ſware to Abraham, Iſaac, and Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Which thinges being done, he ſpake to his brethren After my death God wil viſite you, and wil make you goe vp out of this land, to the land which he ſware to Abraham, Iſaac, and Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "Which thinges being done, he ſpake to his brethren After my death God wil viſite you, and wil make you goe vp out of this land, to the land which he ſware to Abraham, Iſaac, and Iacob.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "Which thinas being doue he ſpake to his brethren: After my death God wil viſit vou, and wil make you goe vp out of this land, to the land which he ſware to Abraham, Iſaac, and Iacob.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And when he had adiured them and ſaid God wil viſite you, carie my bones with you out of this place",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And when he had adiured them and ſaid God wil viſite you, carie my bones with you out of this place",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And when he had adiured them and ſaid God wil viſite you, catie my bones with you out of this place",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And when he had adiured them and ſaid God wil viſit vou catie my bones with you out ot this place:",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "he died, being an hundred and tenne yeares old. And being embawmed with was put in a coffin in Egypr.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.915,
+     "odr_com": 0.915,
+     "sabates_a": 0.891,
+     "madueke_b": 0.833
+    }
+   },
+   "S3": {
+    "text": "he died, being an hundred and tenne yeares old. And being embawmed with ſpices, was put in a coffin in Ægypt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.917
+    }
+   },
+   "S9": {
+    "text": "he died, being an hundred and tenne yeares old. And being embawmed with ſpices, was put in a coffin in Egypt.",
+    "from": "p184",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.97,
+     "madueke_b": 0.907
+    }
+   },
+   "S6": {
+    "text": "2he died, being an hundred and ten yeares old. And being embaulmed with ſpices, was put in a coffin in AEgypt.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.981,
+     "madueke_b": 0.917
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "VVhich Ioſeph ſeeing, fel vpon his fathers face weeping and kiſſing him.",
+   "odr_com": "VVHICH Ioseph seeing, fel vpon his fathers face weeping and kissing him.",
+   "sabates_a": "Which Joseph seeing fell upon his father's face weeping and kissing him.",
+   "madueke_b": "Which Joseph seeing fell upon his father's face weeping and kissing him."
+  },
+  "2": {
+   "s_dismas": "And he commanded his ſeruantes the phyſitians, that they should embawme his father with ſpices.",
+   "odr_com": "And he commanded his seruantes the physitians, that they should embawme his father with spices.",
+   "sabates_a": "And he commanded his servants the physicians, that they should embalm his father with spices.",
+   "madueke_b": "And he commanded his servants the physicians, that they should embalm his father with spices."
+  },
+  "3": {
+   "s_dismas": "Who fulfilling his commandements, there paſſed fourtie dayes: for this was the maner of corſes embawmed, and Ægypt mourned him ſeuentie daies.",
+   "odr_com": "Who fufilling his commandements, there passed fourtie dayes: for this was the maner of corses embawmed, and Ægypt mourned him seuentie daies.",
+   "sabates_a": "Who fulfilling his commandments, there passed forty days; for this was the manner of corpses embalmed, and Ægypt mourned him seventy days.",
+   "madueke_b": "Who fulfilling his commandments, there passed forty days; for this was the manner of corpses embalmed, and Aegypt mourned him seventy days."
+  },
+  "4": {
+   "s_dismas": "And the mourning time being expired, Ioſeph ſpake to the familie of Pharao: If I haue found grace in your ſight, ſpeake in the eares of Pharao:",
+   "odr_com": "And the mourning time being expired, Ioseph spake to the familie of Pharao: If I haue found grace in your sight, speake in the eares of Pharao:",
+   "sabates_a": "And the mourning time being expired, Joseph spake to the family of Pharao: If I have found grace in your sight, speak in the ears of Pharao:",
+   "madueke_b": "And the mourning time being expired, Joseph spake to the family of Pharao: If I have found grace in your sight, speak in the ears of Pharao:"
+  },
+  "5": {
+   "s_dismas": "for ſo much as my father did adiure me, ſaing: Behold I die, in my ſepulchre which I digged for my ſelfe in the land of Chanaan, thou shalt burie me. I wil goe vp therfore, and burie my father, and returne.",
+   "odr_com": "for so much as my father did adiure me, saing: Behold I die, in my sepulchre which I digged for my selfe in the land of Chanaan, thou shalt burie me. I wil goe vp therfore, and burie my father, and returne.",
+   "sabates_a": "for so much as my father did adjure me, saying: Behold I die, in my sepulchre which I digged for myself in the land of Chanaan, thou shalt bury me. I will go up therefore, and bury my father, and return.",
+   "madueke_b": "for so much as my father did adjure me, saying: Behold I die, in my sepulchre which I digged for myself in the land of Chanaan, thou shalt bury me. I will go up therefore, and bury my father, and return."
+  },
+  "6": {
+   "s_dismas": "And Pharao ſaid to him: Goe vp and burie thy father as thou waſt adiured.",
+   "odr_com": "And Pharao said to him: Goe vp and burie thy father as thou wast adiured.",
+   "sabates_a": "And Pharao said to him: Go up and bury thy father as thou wast adjured.",
+   "madueke_b": "And Pharao said to him: Go up and bury thy father as thou wast adjured."
+  },
+  "7": {
+   "s_dismas": "Who going vp, there went with him al the ancients of Pharaos houſe, and al the elders of the Land of Ægypt:",
+   "odr_com": "Who going vp, there went with him al the ancients of Pharaos house, and al the elders of the Land of Ægypt:",
+   "sabates_a": "Who going up, there went with him all the ancients of Pharao's house, and all the elders of the Land of Ægypt:",
+   "madueke_b": "Who going up, there went with him all the ancients of Pharao's house, and all the elders of the Land of Aegypt:"
+  },
+  "8": {
+   "s_dismas": "the houſe of Ioſeph with his brethren, ſauing their litle ones, and the flockes and heards, which they had left in the Land of Geſſen.",
+   "odr_com": "the house of Ioseph with his brethren, sauing their little ones, and the flockes and heards, which they had left in the Land of Gessen.",
+   "sabates_a": "the house of Joseph with his brethren, saving their little ones, and the flocks and herds, which they had left in the Land of Gessen.",
+   "madueke_b": "the house of Joseph with his brethren, saving their little ones, and the flocks and herds, which they had left in the Land of Gessen."
+  },
+  "9": {
+   "s_dismas": "He had alſo in his traine chariotts and horſemen: and it became no ſmal multitude.",
+   "odr_com": "He had also in his traine chariotts and horsemen: and it became no smal multitude.",
+   "sabates_a": "He had also in his train chariots and horsemen: and it became no small multitude.",
+   "madueke_b": "He had also in his train chariots and horsemen: and it became no small multitude."
+  },
+  "10": {
+   "s_dismas": "And they came to the floore of Atad, which is ſituate beyond Iordaine: where celebrating the exequies with great and vehement mourning, they ſpent ful ſeuen dayes.",
+   "odr_com": "And they came to the floore of Atad, which is situate beyond Iordaine: where celebrating the exequies with great and vehement mourning, they spent ful seuen dayes.",
+   "sabates_a": "And they came to the floor of Atad, which is situate beyond Jordan: where celebrating the exequies with great and vehement mourning, they spent full seven days.",
+   "madueke_b": "And they came to the floor of Atad, which is situate beyond Jordan: where celebrating the exequies with great and vehement mourning, they spent full seven days."
+  },
+  "11": {
+   "s_dismas": "Which when the Inhabiters of the Land of Chanaan had ſeene, they ſaid: This is a great mourning vnto the Ægyptians. And therfore the name of that place was called, The mourning of Ægypt.",
+   "odr_com": "Which when the Inhabiters of the Land of Chanaan had seene, they said: This is a great mourning vnto the Ægyptians. And therfore the name of that place was called, The mourning of Ægypt.",
+   "sabates_a": "Which when the Inhabiters of the Land of Chanaan had seen, they said: This is a great mourning unto the Ægyptians. And therefore the name of that place was called, The mourning of Ægypt.",
+   "madueke_b": "Which when the Inhabiters of the Land of Chanaan had seen, they said: This is a great mourning unto the Aegyptians. And therefore the name of that place was called, The mourning of Aegypt."
+  },
+  "12": {
+   "s_dismas": "Therfore the ſonnes of Iacob did as he commanded them:",
+   "odr_com": "Therfore the sonnes of Iacob did as he commanded them:",
+   "sabates_a": "Therefore the sons of Jacob did as he commanded them:",
+   "madueke_b": "Therefore the sons of Jacob did as he commanded them:"
+  },
+  "13": {
+   "s_dismas": "and carying him into the Land of Chanaan, they buried him in the duble caue, which Abraham had bought with the field for a poſſeſſion to burie in of Ephron the Hethite againſt Mambre.",
+   "odr_com": "and carying him into the Land of Chanaan, they buried him in the duble caue, which Abraham had bought with the field for a possession to burie in of Ephron the Hethite against Mambre.",
+   "sabates_a": "and carrying him into the Land of Chanaan, they buried him in the double cave, which Abraham had bought with the field for a possession to bury in of Ephron the Hethite against Mambre.",
+   "madueke_b": "and carrying him into the Land of Chanaan, they buried him in the double cave, which Abraham had bought with the field for a possession to bury in of Ephron the Hethite against Mambre."
+  },
+  "14": {
+   "s_dismas": "And Ioſeph returned into Ægypt with his brethren, and with al the traine, his father being buried.",
+   "odr_com": "And Ioseph returned into Ægypt with his brethren, and with al the traine, his father being buried.",
+   "sabates_a": "And Joseph returned into Ægypt with his brethren, and with all the train, his father being buried.",
+   "madueke_b": "And Joseph returned into Aegypt with his brethren, and with all the train, his father being buried."
+  },
+  "15": {
+   "s_dismas": "After whoſe death, his brethren fearing, and talking one with an other: Leſt perhaps he be mindful of the iniurie which he ſuffered, and requite vs al the euil that we haue done,",
+   "odr_com": "After whose death, his brethren fearing, and talking one with an other: Lest perhaps he be mindful of the iniurie which he suffered, and requite vs al the euil that we haue done,",
+   "sabates_a": "After whose death his brethren fearing, & talking one with another: Lest perhaps he be mindful of the injury which he suffered, and requite us all the evil that we have done;",
+   "madueke_b": "After whose death his brethren fearing, & talking one with another: Lest perhaps he be mindful of the injury which he suffered, and requite us all the evil that we have done;"
+  },
+  "16": {
+   "s_dismas": "they aduertiſed him ſaying: Thy father commanded vs before he died,",
+   "odr_com": "they aduertised him saing: Thy father commanded vs before he died,",
+   "sabates_a": "they advertised him saying: Thy father commanded us before he died,",
+   "madueke_b": "they advertised him saying: Thy father commanded us before he died,"
+  },
+  "17": {
+   "s_dismas": "that we ſhould ſay thus much to thee in his wordes: I beſech that thou forget the wicked fact of thy brethren, and the ſinne & malice which they haue exerciſed againſt thee: we alſo deſire thee, that to the ſeruants of the God of thy father thou remit this iniquitie. Whom when Ioſeph had heard he wept.",
+   "odr_com": "that we should say thus much to thee in his wordes: I besech that thou forget the wicked fact of thy brethren, and the sinne & malice which they haue exercised against thee: we also desire thee, that to the seruants of the God of thy father thou remit this iniquitie. Whom when Ioseph had heard he wept.",
+   "sabates_a": "that we should say thus much to thee in his words: I beseech that thou forget the wicked fact of thy brethren, and the sin and malice which they have exercised against thee: we also desire thee, that to the servants of the God of thy father thou remit this iniquity. Whom when Joseph had heard he wept.",
+   "madueke_b": "that we should say thus much to thee in his words: I beseech that thou forget the wicked fact of thy brethren, and the sin and malice which they have exercised against thee: we also desire thee, that to the servants of the God of thy father thou remit this iniquity. Whom when Joseph had heard he wept."
+  },
+  "18": {
+   "s_dismas": "And his brethren came to him, and adoring proſtrate on the ground they ſaid: We are thy ſeruantes.",
+   "odr_com": "And his brethren came to him: and adoring prostrate on the ground they said: We are thy seruantes.",
+   "sabates_a": "And his brethren came to him; and adoring prostrate on the ground they said: We are thy servants.",
+   "madueke_b": "And his brethren came to him; and adoring prostrate on the ground they said: We are thy servants."
+  },
+  "19": {
+   "s_dismas": "To whom he anſwered: Feare not: can we reſiſt the wil of God?",
+   "odr_com": "To whom he answered: Feare not: can we resist the wil of God?",
+   "sabates_a": "To whom he answered: Fear not; can we resist the will of God?",
+   "madueke_b": "To whom he answered: Fear not; can we resist the will of God?"
+  },
+  "20": {
+   "s_dismas": "You thought euil againſt me: but God turned that into good, that he might exalt me, as preſently you ſee, and might ſaue many peoples.",
+   "odr_com": "You thought euil against me: but God turned that into good, that he might exalt me, as presently you see, and might saue many peoples.",
+   "sabates_a": "You thought evil against me, but God turned that into good, that he might exalt me, as presently you see, and might save many peoples.",
+   "madueke_b": "You thought evil against me, but God turned that into good, that he might exalt me, as presently you see, and might save many peoples."
+  },
+  "21": {
+   "s_dismas": "Feare not: I wil feed you & your litle ones, and he comforted them, and ſpake gently & mildly.",
+   "odr_com": "Feare not: I wil feed you & your litle ones, and he comforted them, and spake gently & mildly.",
+   "sabates_a": "Fear not: I will feed you and your little ones, and he comforted them, and spake gently & mildly.",
+   "madueke_b": "Fear not: I will feed you and your little ones, and he comforted them, and spake gently & mildly."
+  },
+  "22": {
+   "s_dismas": "And he dwelt in Ægypt, with al his fathers houſe: and liued an hundred and tenne yeares. And he ſawe the children of Ephraim vnto the third generation. Alſo the children of Machir the ſonne of Manaſſes were borne in Ioſephs knees.",
+   "odr_com": "And he dwelt in Ægypt, wih al his fathers house: and liued an hundred and tenne yeares. And he sawe the children of Ephraim vnto the third generation. Also the children of Machir the sonne of Manasses were borne in Iosephs knees.",
+   "sabates_a": "And he dwelt in Ægypt, with all his father's house: and lived an hundred and ten years. And he saw the children of Ephraim unto the third generation. Also the children of Machir the son of Manasses were born in Joseph's knee.",
+   "madueke_b": "And he dwelt in Aegypt, with all his father's house: and lived an hundred and ten years. And he saw the children of Ephraim unto the third generation. Also the children of Machir the son of Manasses were born in Joseph's knee."
+  },
+  "23": {
+   "s_dismas": "Which thinges being done, he ſpake to his brethren: After my death God wil viſite you, and wil make you goe vp out of this land, to the land which he ſware to Abraham, Iſaac, and Iacob.",
+   "odr_com": "Which thinges being done, he spake to his brethren: After my death God wil visite you, and wil make you goe vp out of this land, to the land which he sware to Abraham, Isaac, and Iacob.",
+   "sabates_a": "Which things being done he spake to his brethren: After my death God will visit you, and will make you go up out of this land, to the land which he sware to Abraham, Isaac, and Jacob.",
+   "madueke_b": "Which things being done he spake to his brethren: After my death God will visit you, and will make you go up out of this land, to the land which he sware to Abraham, Isaac, and Jacob."
+  },
+  "24": {
+   "s_dismas": "And when he had adiured them and ſaid: God wil viſite you, carie my bones with you out of this place:",
+   "odr_com": "And when he had adiured them and said: God wil visite you, carie my bones with you out of this place:",
+   "sabates_a": "And when he had adjured them and said. God will visit you carry my bones with you out of this place:",
+   "madueke_b": "And when he had adjured them and said. God will visit you carry my bones with you out of this place:"
+  },
+  "25": {
+   "s_dismas": "he died, being an hundred and tenne yeares old. And being embawmed with ſpices, was put in a coffin in Ægypt.",
+   "odr_com": "he died, being an hundred and tenne yeares old. And being embawmed with spices, was put in a coffin in Ægypt.",
+   "sabates_a": "he died, being an hundred and ten years old. And being embalmed with spices, was put in a coffin in Ægypt.",
+   "madueke_b": "he died, being an hundred and ten years old. And being embalmed with spices, was put in a coffin in Aegypt. Exodus"
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Which Joseph seeing fell upon his father's face weeping and kissing him.",
+  "2": "And he commanded his servants the physicians, that they should embalm his father with spices.",
+  "3": "Who fulfilling his commandments, there passed forty days; for this was the manner of corpses embalmed, and Ægypt mourned him seventy days.",
+  "4": "And the mourning time being expired, Joseph spake to the family of Pharao: If I have found grace in your sight, speak in the ears of Pharao:",
+  "5": "for so much as my father did adjure me, saying: Behold I die, in my sepulchre which I digged for myself in the land of Chanaan, thou shalt bury me. I will go up therefore, and bury my father, and return.",
+  "6": "And Pharao said to him: Go up and bury thy father as thou wast adjured.",
+  "7": "Who going up, there went with him all the ancients of Pharao's house, and all the elders of the Land of Ægypt:",
+  "8": "the house of Joseph with his brethren, saving their little ones, and the flocks and herds, which they had left in the Land of Gessen.",
+  "9": "He had also in his train chariots and horsemen: and it became no small multitude.",
+  "10": "And they came to the floor of Atad, which is situate beyond Jordan: where celebrating the exequies with great and vehement mourning, they spent full seven days.",
+  "11": "Which when the Inhabiters of the Land of Chanaan had seen, they said: This is a great mourning unto the Ægyptians. And therefore the name of that place was called, The mourning of Ægypt.",
+  "12": "Therefore the sons of Jacob did as he commanded them:",
+  "13": "and carrying him into the Land of Chanaan, they buried him in the double cave, which Abraham had bought with the field for a possession to bury in of Ephron the Hethite against Mambre.",
+  "14": "And Joseph returned into Ægypt with his brethren, and with all the train, his father being buried.",
+  "15": "After whose death his brethren fearing, & talking one with another: Lest perhaps he be mindful of the injury which he suffered, and requite us all the evil that we have done;",
+  "16": "they advertised him saying: Thy father commanded us before he died,",
+  "17": "that we should say thus much to thee in his words: I beseech that thou forget the wicked fact of thy brethren, and the sin and malice which they have exercised against thee: we also desire thee, that to the servants of the God of thy father thou remit this iniquity. Whom when Joseph had heard he wept.",
+  "18": "And his brethren came to him; and adoring prostrate on the ground they said: We are thy servants.",
+  "19": "To whom he answered: Fear not; can we resist the will of God?",
+  "20": "You thought evil against me, but God turned that into good, that he might exalt me, as presently you see, and might save many peoples.",
+  "21": "Fear not: I will feed you and your little ones, and he comforted them, and spake gently & mildly.",
+  "22": "And he dwelt in Ægypt, with all his father's house: and lived an hundred and ten years. And he saw the children of Ephraim unto the third generation. Also the children of Machir the son of Manasses were born in Joseph's knee.",
+  "23": "Which things being done he spake to his brethren: After my death God will visit you, and will make you go up out of this land, to the land which he sware to Abraham, Isaac, and Jacob.",
+  "24": "And when he had adjured them and said. God will visit you carry my bones with you out of this place:",
+  "25": "he died, being an hundred and ten years old. And being embalmed with spices, was put in a coffin in Ægypt."
+ },
+ "ref_coverage": {
+  "janvier": 25,
+  "have": {
+   "s_dismas": 25,
+   "odr_com": 25,
+   "sabates_a": 25,
+   "madueke_b": 25
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 100,
+ "triage": "SOURCE-SKEW",
+ "secs": 6.5
+}

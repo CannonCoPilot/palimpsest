@@ -1,0 +1,3544 @@
+{
+ "chapter": 24,
+ "n_verses": 67,
+ "n_cells": 268,
+ "n_pass": 238,
+ "rate": 0.8881,
+ "ref_means": {
+  "s_dismas": 0.966,
+  "odr_com": 0.9664,
+  "sabates_a": 0.9645,
+  "madueke_b": 0.9644
+ },
+ "src_rates": {
+  "S1": 0.8806,
+  "S3": 0.9104,
+  "S9": 0.8358,
+  "S6": 0.9254
+ },
+ "n_all_fail": 2,
+ "all_fail": [
+  45,
+  46
+ ],
+ "n_open": 30,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 1,
+   "worst": 0.826,
+   "from": "p91",
+   "text": "his mothtr. NDAbraham was old, and ofmanie dayes, and our Lord had bleſſed him in al thines."
+  },
+  {
+   "src": "S1",
+   "verse": 3,
+   "worst": 0.88,
+   "from": "p98",
+   "text": "that I may thee by our Lord, God of heauen and earth, that thou and not a wiſe for my ſonne, of the daughters of the Cananites, faith among whom I dwel:"
+  },
+  {
+   "src": "S3",
+   "verse": 9,
+   "worst": 0.898,
+   "from": "p102",
+   "text": "The ſeruant therfore put his hand vnder the of Abraham his lord, and ſware to him vpon this And"
+  },
+  {
+   "src": "S1",
+   "verse": 12,
+   "worst": 0.895,
+   "from": "r3",
+   "text": "O Lord God of my lord Abraham, mete me to day, I beſeech I beſeech thee, and doe mercifully with my maiſter Abraham."
+  },
+  {
+   "src": "S9",
+   "verse": 28,
+   "worst": 0.898,
+   "from": "p109",
+   "text": "The maide therfore ranne, and re- wiues ported into her mothers houfe al things that ſhe had heard."
+  },
+  {
+   "src": "S9",
+   "verse": 29,
+   "worst": 0.886,
+   "from": "p109",
+   "text": "And Rebecca had a brother named Laban, who in al haiſt ſeueral ſhe went forth to the man, where the fountaine was."
+  },
+  {
+   "src": "S1",
+   "verse": 30,
+   "worst": 0.876,
+   "from": "chapter",
+   "text": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, hands, and had heard al her words reporting Theſe ſpake the man vnto me: he cameo the man which beſide the camels, and nighe to the fountaine of"
+  },
+  {
+   "src": "S3",
+   "verse": 30,
+   "worst": 0.895,
+   "from": "chapter",
+   "text": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, and had heard al her words reporting Thele ſpake the man vnto me: he cameto the man which beſide the camels, and nighe to the fountaine of"
+  },
+  {
+   "src": "S6",
+   "verse": 30,
+   "worst": 0.899,
+   "from": "p92",
+   "text": "had ſeen the earelets and bracelets in his ſiſters hands, and had heard her words reportins : Theſe words ſpake the man vnto me: he came to: the man which ſtood beide the camels, and nigh to the fountaine ot water :"
+  },
+  {
+   "src": "S1",
+   "verse": 35,
+   "worst": 0.85,
+   "from": "p100",
+   "text": "and our Lord hath bleſſed my lord fully, and he is magnified : and ke hath geuen him and oxen, ſiluer and gold, men ſeruants and wemen camels, and aſſes."
+  },
+  {
+   "src": "S3",
+   "verse": 35,
+   "worst": 0.85,
+   "from": "p104",
+   "text": "and our Lord hath bleſſed my lord fully, and he is magnified: and he bath geuen him and oxen, ſiluer and gold, men ſeruants and wemen camels, and aſſes."
+  },
+  {
+   "src": "S1",
+   "verse": 42,
+   "worst": 0.873,
+   "from": "p100",
+   "text": "I came therfore to the wel of water, and ſaid : O Lord God of my lord if thou haſt directed my way, wherin I now walke,"
+  },
+  {
+   "src": "S3",
+   "verse": 42,
+   "worst": 0.873,
+   "from": "p104",
+   "text": "I came therfore to the wel of water, and ſaid : O Lord God of my lord if thou haſt directed my way, wherin I now walke,"
+  },
+  {
+   "src": "S1",
+   "verse": 44,
+   "worst": 0.898,
+   "from": "p100",
+   "text": "ſhe ſhal ſay to me : Drinke both thou and ſor thy camels wil drawe alſo: that is the woman, which our Lord prepared for my maiſters ſonne."
+  },
+  {
+   "src": "S1",
+   "verse": 45,
+   "worst": 0.759,
+   "from": "p100",
+   "text": "And whileſt I pondered theſe things ſecretly with my ſelfe, Rebecca appeared ming with a tankard, which she caried vpon her shoulder: and she went downe to the fountain, &drew"
+  },
+  {
+   "src": "S3",
+   "verse": 45,
+   "worst": 0.723,
+   "from": "p104",
+   "text": "And whileſt I theſe things ſecretly with my ſelfe, Rebecca appeared ming with a tankard, which she caried vpon her shoulder and she went downe to the fountaine, & drew"
+  },
+  {
+   "src": "S9",
+   "verse": 45,
+   "worst": 0.804,
+   "from": "p110",
+   "text": "And whileſt I pondered theſe things ſecretly with my ſelfe, Rebecca appeared comming with a tankard, which she caried vpon her shoulder: and she went downe to the fountaine, & drew water."
+  },
+  {
+   "src": "S6",
+   "verse": 45,
+   "worst": 0.763,
+   "from": "p93",
+   "text": "And whileſt I pondered theſe things ſecrerly with my ſelte, Rebecca appeared comming with a tankard, which she caried vpon her shoulder : & she wem downe to the tountaine, & drew water."
+  },
+  {
+   "src": "S1",
+   "verse": 46,
+   "worst": 0.688,
+   "from": "chapter",
+   "text": "And I ſaid to her Geue me a litle to drinke. who delie let dovne the tankard from her shoulder, and ſaid me Drinke both thou, and to thy camcls I wil geue dranke, and ſhe watered the cammels."
+  },
+  {
+   "src": "S3",
+   "verse": 46,
+   "worst": 0.678,
+   "from": "chapter",
+   "text": "And I ſaid to her Geue me a litle to drinke. Who delie let downe the tankard from her shoulder, and me Drinke both thou, and to thy camels I wil geue I dranke, and ſhe watered the cammels."
+  },
+  {
+   "src": "S9",
+   "verse": 46,
+   "worst": 0.764,
+   "from": "chapter",
+   "text": "And I ſaid to her Geue me a litle to drinke. who ſpedelie let downe the tankard from her shoulder, and ſaid to me: Drinke both thou, and to thy camels I wil geur drinke. dranke, and ſhe watered the cammels."
+  },
+  {
+   "src": "S6",
+   "verse": 46,
+   "worst": 0.756,
+   "from": "p93",
+   "text": "And I ſaid to her Biue me a litle to drinke. Who ſpeedily. let downe the tankard. from her ſhoulder, and ſaid to me: Drinke both thou, and to thy camels I wil giue drinke. I dranke, and ſhe watered the cammels:"
+  },
+  {
+   "src": "S9",
+   "verse": 55,
+   "worst": 0.892,
+   "from": "p111",
+   "text": "As her brother, and mother anſwered : Let the maide tarie at ought the leaſt tenne days with vs, and after ſhe ſhal depart."
+  },
+  {
+   "src": "S9",
+   "verse": 56,
+   "worst": 0.859,
+   "from": "p111",
+   "text": "Stay mary me not, ſaid he, becauſe our Lord hath directed my way: good their diſmiſſe me that I may goe on to my lord."
+  },
+  {
+   "src": "S9",
+   "verse": 58,
+   "worst": 0.0,
+   "from": "p111",
+   "text": "And being called, owne man? who ſaid : I wil goe."
+  },
+  {
+   "src": "S9",
+   "verse": 59,
+   "worst": 0.837,
+   "from": "p111",
+   "text": "They diſmiſſed her therfore, ſarie. Epiſt. and her nurce, and Abrahams ſeruant, and his companie,"
+  },
+  {
+   "src": "S9",
+   "verse": 60,
+   "worst": 0.899,
+   "from": "p111",
+   "text": "wiſhing proſperitie to their ſiſter, and ſaying : Thou art :: our ſiſter, encreaſe thou into thouſand thouſands, and thy fieth ſeed poſſeſſe the gates of theirenemies Therfore"
+  },
+  {
+   "src": "S9",
+   "verse": 61,
+   "worst": 0.809,
+   "from": "p111",
+   "text": "Rebecca, and her maides being ſet vpon camels, folowed the man: with mouth. who with ſpeed returned vnto his lord and"
+  },
+  {
+   "src": "S6",
+   "verse": 61,
+   "worst": 0.768,
+   "from": "chapter",
+   "text": "Rebecca and her maids being ſet vpon Abraham. camels, tollowed the man: who wit ipeed returned vnto his Lord: an 62the"
+  },
+  {
+   "src": "S9",
+   "verse": 64,
+   "worst": 0.873,
+   "from": "chapter",
+   "text": "Rebecca mental alſo, when ſhe ſaw Iſaac, lighted of the camel,"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "And Abraham was old, and of manie dayes: and Lord had bleſſed him in al things.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S3": {
+    "text": "And Abraham was old, and of manie daves and A Lord had bleſſed him in al things.",
+    "from": "p102",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S9": {
+    "text": "And Abraham was old, and of manie dayes: and our Lord had bleſſed him in al things.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "his mothtr. NDAbraham was old, and ofmanie dayes, and our Lord had bleſſed him in al thines.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.841,
+     "odr_com": 0.841,
+     "sabates_a": 0.826,
+     "madueke_b": 0.826
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And he ſaid to the elder ſeruant of his houſe, which was ruler ouer al that he had Put thy hand vnder my thighe,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to the elder ſeruant of his houſe, which was ruler ouer al that he had Put thy hand vnder my thighe,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to the elder ſeruant of his houſe, which was ruler ouer al that he had Put thy hand vnder my thighe,",
+    "from": "p108",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to the elder ſeruant of his houſe, which was tuler ouer al that he had: Put thy hand vnder my thigh,",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "that I may thee by our Lord, God of heauen and earth, that thou and not a wiſe for my ſonne, of the daughters of the Cananites, faith among whom I dwel:",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.886,
+     "odr_com": 0.886,
+     "sabates_a": 0.88,
+     "madueke_b": 0.88
+    }
+   },
+   "S3": {
+    "text": "that I may adiure thee by our Lord, God of heauen and earth, that thou take not a wife for my ſonne, of the daughters of the Cananites, among whom I dwel:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "that I may adiure thee by our Lord, God of heauen and earth, that thou take not a wife for my ſonne, of the daughters of the Cananites, among whom I dwel:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "that I may, adiure thee by our Lord God of heauen and arth, that thou take not a wife tor my ſonne of the daughters of the Cananites, among whom I dwel",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "but that thou goe vnto myne owne countrie and kindred, and thence take a wife for my ſonne Iſaac.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "but that thou goe vnto myne owne countrie and kindred, and thence take a wife for my ſonne Iſaac.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "but that thou goe vnto myne owne countrie and kindred, and thence take a wiſe for my ſonne al Iſaac.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S6": {
+    "text": "but that thou goe vnto myne owne countrie and kindred, and thence take a wife tor my ſonne Iſaac.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Theſe ſeruant anſwered If the woman wil not come with me into this land, whether muſt I bring thy ſonne backe againe to the place, from whence thou dideſt come forth",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "The ſeruant anſwered If the woman wil not come with me into this land, whether muſt I bring thy ſonne backe againe to the place, from whence thou dideſt come forth",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "The ſeruant anſwered If the woman wil not come with me into this land whether muſt I bring thy ſonne backe againe to the place, from whence thou dideſt come forth",
+    "from": "p108",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "The ſeruant anſwered If the woman wil not come with me into this land, whether muſt Ibring thy ſonue backe againe to the place, from whence thou dideſt come torth",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And Abraham ſaid Beware thou neuer bring de. ſonne backe againe thither.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "And Abraham ſaid Beware thou neuer bring de. ſonne backe againe thither.",
+    "from": "p102",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "And Abraham ſaid: Beware thou neuer bring my ſonne backe againe thither,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Abrahā ſaid: Beware thou neuer bring my ſonne backe againe thither.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Our Lord God of heauen, Chri. which tooke me out of my fathers houſe, and out of in natiue countrie, which ſpake to me, and ſware to me, To thy ſede wil I geue this land he ſhal ſend his angel fore thee, and thou ſhalt rake from thence a wife for ſonne",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.921,
+     "odr_com": 0.921,
+     "sabates_a": 0.905,
+     "madueke_b": 0.905
+    }
+   },
+   "S3": {
+    "text": "Our Lord God of heauen, which tooke me out of my fathers houſe, and out of in natiue countrie, which ſpake to me, and ſware to me, To thy ſede wil I geue this land he ſhal ſend his angel fore thee, and thou ſhalt take from thence a wife for ſonne",
+    "from": "p102",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S9": {
+    "text": "Our. Lord God of heauen, which tooke me out of my fathers houſe, and out of my natiue countrie, which ſpake to me, and ſware to me, ſaying: To thy sède wil I geue this land: he ſhal ſend his angel before thee, and thou ſhalt take from thence a wiſe for my ſonne",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "Our Lord God of heauen, which tooke me out of ny tathers houſe and out of my natiue countrie, which ſpaxe to me, and ſware to me, ſaying To thy ſeed wil I giue this land, he ſhal ſend his Angol betore thee and thou ſhal take from thence a wife for my ſoune:",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "but if the woman wil not folow thee, thou ſhalt not be bound by the oath: only bring not my ſonne thither againe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "but if the woman wil not folow thee, thou ſhalt not be bound by the oath: only bring not my ſonne thither againe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "†but if the woman wil not folow thee, thou ſhalt not be bound by the oath: onſy bring not my ſonne thither againe.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "but if the woman wil not folow thee thou ſhalt not be bound by, the oath: only bring not my ſonne thither againe.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "The ſeruant therfore put his hand vnder the of Abraham his lord, and ſware to him vpon this worde.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
+    }
+   },
+   "S3": {
+    "text": "The ſeruant therfore put his hand vnder the of Abraham his lord, and ſware to him vpon this And",
+    "from": "p102",
+    "score": {
+     "s_dismas": 0.902,
+     "odr_com": 0.902,
+     "sabates_a": 0.898,
+     "madueke_b": 0.898
+    }
+   },
+   "S9": {
+    "text": "The feruant ther fope put his hand vnder the thigh of Abraham his lord, and) ſware tohim vpon this worde.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "The ſeruant therfore put his hand vnder the thigh of Abraham his Lord, and ſware to him vpon this word.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And he tooke tenne camels of his lords heard, and departed, of al his goods carying ſomething with him, and ſetting forward went on into Meſopotamia to the citie of Nachor.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And he tooke tenne camels of his lords heard, and departed, of al his goods carying ſomething with him, and ſetting forward went on into Meſopotamia to the citie of Nachor.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And he tooke tenne camels of his lords heard, And departed, of al his goods carying fomething with him, and ſetting forward went on into Mefopotamia to the citieof Nachor.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And he tooke ton camels of his Lords heard, and departed, of al his goods carying ſomething with him and ſetting torward went on into Meſopotamia to the citie of Nachor.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And when he had made the camels lye downe without the towne beſide a wel of water at euen, at the time when women are wont to come forth to drawe water, he ſaid:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And when he had made the camels lye downe without the towne beſide a wel of water at eu'en, at the time when wemen are wont to come forth to drawe water, he ſaid:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And when he hadmade tthe camels lye downe without the towne beſide a welof water at euen, at the thne when wemen are wont to dome forth ſto drawe water, he ſaid:",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "And when he had made the camels lye downe without the towne beſide a wel of water at euen, at the time when women are wont to come forth to draw water, he ſaid:",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "O Lord God of my lord Abraham, mete me to day, I beſeech I beſeech thee, and doe mercifully with my maiſter Abraham.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.911,
+     "odr_com": 0.911,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   },
+   "S3": {
+    "text": "O Lord God of my lord Abraham, mete me to I beſeech thee, and doe mercifully with my maiſter Abra ham.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "O Lord God of my lord Abraham, mete me to day, I beſeech thee, and doe mercifully with my maiſter Abra ham.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "O Lord God of my Lord Abraham, meet me to day I beſecch thee, and doe mercitully with my Maſter Abraham.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "Behold I ſtand nigh to the fountaine of water, and the daughters of the inhabiters of this citie, wil come forth to drawe water.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Behold I ſtand nigh to the fountaine of water, and the daughters of the inhabiters of this citie, wil come forth to drawe water.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Behold I ſtand nigh to the fountaine of water, and the daughters of the inhabiters of this citie, wil come forth to drawe water.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Behold I ſtand nigh to the fountaine ot water and the daughters of the inhabiters ot this citie wil come forth to draw water.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Therfore the maid, to whom I shal ſay: Bowe downe thy tankard that I may drinke : and she shal anſwere, Drinke, yea to thy camels alſo wil I geue drinke: it is, whom thou haſt prouided for thy ſeruant Iſaac: and by this I ſhal vnderſtand, that thou haſt delt mercifully with my maiſter.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "Therfore the maid, to whom I shal ſay: Bowe downe thy tankard that I may drinke : and she shal anſwere, Drinke, yea to thy camels alſo wil I geue drinke : she it is, whom thou haſt prouided for thy ſeruant Iſaac: and by this I ſhal vnderſtand, that thou haſt delt mercifully with my maiſter.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "Therfore tho maid, to whom I shal ſay: Bowe downe thy tankard that I may drinke : and she shal anſwere, Drinke, yea to thy camels alſo wil I geue drinke: she it is, whom thou haſt prouided for thy ſeruant Iſaac: and by this I ſhal vnderſtand, that thou haſt delt mercifully with my maiſter.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "Thertore the maid, to whom I ſhal ſay : Bow downe thy tankard that I may drinke : and ſhe ſhal anſwer : Drinke, yea to thy caincls alſo gie drinke, ſhe it is, whom thou haſt prouided for thy ſeruant Iſaae: and by this I ſhal vnderſtand, that thou haſt delt mercitully A braham. with my Maſter.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.907,
+     "odr_com": 0.907,
+     "sabates_a": 0.91,
+     "madueke_b": 0.91
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Neyther had he yet ended theſe wordes within him ſelfe, & behold Rebecca came forth, the daughter of Bathuel, the ſonne of Melcha wife to Nachor the brother of Abraham, hauinga tankard on her shoulder:",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "Neyther had he yet ended theſe wordes within him ſelfe, & behold Rebecca came forth, the daughter of Bathuel, the ſonne of Melcha wife to Nachor the brother of Abraham, hauing a tankard on her shoulder:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "Neyther had he yet ended theſe wordes within him ſelfe, & behold Rebecca came forth, the daughter of Bathuel, the ſonne of Melcha wife to Nachor the brother of Abraham, hauing a tankard on her shoulder:",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Neithet had he vet ended theſe words witnia him ſelfe, & behold Rebecca came forth, the daughter of Bathuel, the ſonne of Melcha, wite to Nachor the brother of Abraham, hauins a tankard on her ſhoulder,",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "a paſſing comely maide, & moſt beautiful virgin, & not knowen to man: and she was gone downe to the fountaine, and had filled her tankard, and came backe.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "a paſſing comely maide, & moſt beautiful virgin, & not knowen to man: and she was gone downe to the fountaine, and had filled her tankard, and came backe.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "†a paſſing comely maide, & moſt beautiful virgin, & not kno wen to man: and she was gone downe to the fountaine, and had filled her tankard, and came backe.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "16.a paſſing comely maid, & moſt beautttul vtrgin, & not knowen to man: and ſhe was gone downe to the tountatne, and had filled her tankard, and came backe.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And the ſeruant ranne to mete her, and ſaid : Geue me a little water to drinke of thy tankard.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "And the ſeruant ranne to mete her, and ſaid Geue me a little water to drinke of thy tankard.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And the ſeruant ranne to mete her, and ſaid : Geue me a little water to drinke of thy tankard.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "And the ſeruant rame to meer her, and ſaid: Giue me a little water to drinke of thy tankard.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.944,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "Who anſwered : Drinke my lord. And quickly she let downe the tankard vpon her arme, and gaue him drinke.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Who anſwered : Drinke my lord. And quickly she let downe the tankard vpon her arme, and gaue him drinke.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Who anſwered : Drinke my lord. And quickly she let downe the tankard vpon her arme, and gaue him drinke.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Who anſwered: Drinke my Lord. And quickly ſhe let downe the tankard vpon her arme, and gaue him drinke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "And when he had druncke, she added : but for thy camels alſo I wil drawe water, til al doe drinke.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "And when he had druncke, she added : but for thy camels alſo I wil drawe water, til al doe drinke.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And when he had druncke, she added: but for thy camels alſo I wil drawe water, til al doe drinke.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "And when he had drunke, ſhe added: but for thy camels alſo I wil draw water, til al doe drinkc.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And powring our the tankard into the troughes, she ranne backe to the wel to drawe water : and being drawen gaue it to al the camels.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S3": {
+    "text": "And powring out the tankard into the troughes, she ranne backe to the wel to drawe water: and being drawen gaue it to al the camels.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "And powring out the tankard into the troughes, she ranne backe to the wel to drawe water and being drawnen gaue it to al the camels.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S6": {
+    "text": "And powring out the tankard into the troughs, ſhe ranne backe to the wel to draw water: and being drawnen gaue it to al the camels.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "But he muſing beheld her with ſilence, deſirous to know whether our Lord had made his iourney proſperous, or not.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "But he muſing beheld her with ſilence, deſirous to know whether our Lord had made his iourney proſperous, or not.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But he muſing beheld her with ſilence, deſirous to know whether our Lord had made his iourney proſperous, or not.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "But he muſing beheld her with ſilence, deſirous to know whether our Lord had made his iourney proſperous or not.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And after that the camels had drunck, the man plucked forth golden carelettes, weying two ſicles: and as manie braceletts of tenne ſicles weight.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "And after that the camels had drunck, the man plucked forth golden carelettes, weying two ſicles: and as manie braceletts of tenne ſicles weight.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "And after that the camels had drunck, the man plucked forth golden earelettes, weying two ſicles: and as manic braceletts of tenne ſicles weight.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S6": {
+    "text": "And after that the camels had drunke, the man plucked torth golden earelettes, weyghing two ſicles, and as manie braceletts of tenne ſicles weight.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And he ſaid to her: whoſe daughter art thou? shew me : is there anie place in thy fathers houſe to lodge?",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to her whoſe daughter art thou shew me is there anie place in thy fathers houſe to lodge",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to her : whoſe daughter art thou: shew me : is there anie place in thy fathers houſe to lodge?",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to her : Whoſe daughter art thou ſhew me, is there anie place in thy fathers houſe to lodge",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "who anſwered: I am the daughter of Bathuel, the ſonne of Melcha, whom she bare ro Nachor.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "Who anſwered: I am the daughter of Bathuel, the fonne of Melcha, whom she bare to Nachor.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "Who anſwered: I am the daughter of Bathuel, the fonne of Melcha, whom she bare to Nachor.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "Who anſwered: I am the daughter of Bathuel, the ſonne of Melcha, whom ſhe bare to Nachor.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And she added, ſaying: Of ſtrawe alſo and hay we haue good ſtore, and a large place to lodge in.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And she added, ſaying: Of ſtrawe alſo and hay we haue good ſtore, and a large place to lodge in.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And she added, ſaying: Of ſtrawe alſo and hay we haue good ſtore, and a large place to lodge in.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And ſhe added, ſaying Of ſtraw alſo and hay we haue good ſtore, and a large place to lodge in.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "The man bowed him ſelfe, and adored our Lord,",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "The man bowed him ſelfe, and adored our Lord,",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "The man bowed him ſelfe, and adored our Lord,",
+    "from": "p109",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "The man bowed himſelfe, and adored our Lord,",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "ſaying : Bleſſed be the Lord God of my lord Abraham, rhat hath not taken away his mercie & truth from my lord, and hath brought me the ſtreight way into the houſe of my lords brother.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "ſaying : Bleſſed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the ſtreight way into the houſe of my lords brother.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "†ſaying Bleſſed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the ſtreight way into the houſe of my lords brother.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "ſaying: Bleſſed be the Lord God of my Lord Abraham, that hath not taken away his mercie & truth from my Lord and hath brought me the ſtreight way into the houſe of my Lords brother.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "The maide therfore ranne, and reported into ‖ her mothers houſe al things thatſhe had heard.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "The maide therfore ranne, and reported into : her mothers houſe al things that ſhe had heard.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "The maide therfore ranne, and re- wiues ported into her mothers houfe al things that ſhe had heard.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.898,
+     "madueke_b": 0.898
+    }
+   },
+   "S6": {
+    "text": "The maid thertore ranne, aud reported into () her mothers houſe al things that ſhe had heard.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "And Rebecca had a brother named Laban, who in al haiſt went forth to the man, where the fountaine was.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And Rebecca had a brother named Laban, who in al haiſt forth to the man, where the fountaine was.",
+    "from": "p103",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S9": {
+    "text": "And Rebecca had a brother named Laban, who in al haiſt ſeueral ſhe went forth to the man, where the fountaine was.",
+    "from": "p109",
+    "score": {
+     "s_dismas": 0.892,
+     "odr_com": 0.892,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   },
+   "S6": {
+    "text": "And Rebecca had a brother named Laban, who in al haſt went torth to the man, where the fountaine was.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, hands, and had heard al her words reporting Theſe ſpake the man vnto me: he cameo the man which beſide the camels, and nighe to the fountaine of",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.882,
+     "odr_com": 0.882,
+     "sabates_a": 0.876,
+     "madueke_b": 0.876
+    }
+   },
+   "S3": {
+    "text": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, and had heard al her words reporting Thele ſpake the man vnto me: he cameto the man which beſide the camels, and nighe to the fountaine of",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 0.908,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   },
+   "S9": {
+    "text": "And her when he had ſeone the eareletts and braceletts in his ſiſters houſe. hands, and had heard al her words reporting Theſe words ſpake the man vnto me he came to the man which ſtoode beſide the camels, and nigherto thenfountaineof waterd:",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   },
+   "S6": {
+    "text": "had ſeen the earelets and bracelets in his ſiſters hands, and had heard her words reportins : Theſe words ſpake the man vnto me: he came to: the man which ſtood beide the camels, and nigh to the fountaine ot water :",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.899,
+     "odr_com": 0.899,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "and ſaid to him Come in, thou bleſſed of our Lord Why ſtandeſt thou without I haue prepared the houſe, and a place for the camels.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "and ſaid to him Come in, thou bleſſed of our Lord Why ſtandeſt thou without I haue prepared the houſe, and a place for the camels.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and ſaid to him : Come in, thou bleſſed of our Lord : Why ſtandeſt thou without : I haue prepared the houſe, andca place for the camels.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "and ſaid to him: Come in, thou bleſſed of our Lord Why ſtandeſt thou without I haue prepared the houſe, and a place for the camels.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "And he brought him in into his lodging: and he vnharneſſed the camels, and gauc ſtrawe and hay, and water to wash his feet, and of the men that were come with him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "And he brought him in into his lodging: and he vnharneſſed the camels, and gauc ſtrawe and hay, and water to wash his feet, and of the men that were come with him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S9": {
+    "text": "And he brought him in into his lodging : and he vnharneſſed the camels, andogaue ſtrawer and hay, and water to wash his feet, and of the men that were come with him.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "And he brought him in into his lodgins: and he vnhatneſted the camels, and gaue ſtraw and hay, and water to wash his feet, and of the men that were come with him.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "And bread was ſet before him. Who ſaid I wil not eate, til I ſpeake my meſſage. He anſwered him Speake.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And bread was ſet before him. Who ſaid I wil not eate, til I ſpeake my meſſage. He anſwered him Speake.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And bread was ſet before him. Who ſaid : I wil not eate, til I ſpeake my meſſage. He anſwered him : Speake.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And bread was ſet before him. Who ſaid: I wil not eate til I ſpeake my meſſage. He anſwered him: Speake.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "And he ſaid I am the ſeruant of Abraham:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſaid: I am the ſeruant of Abraham",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſaid : I am the ſeruant of Abraham :",
+    "from": "p110",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſaid: I am the ſetuant of Abraham:",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "35": {
+   "S1": {
+    "text": "and our Lord hath bleſſed my lord fully, and he is magnified : and ke hath geuen him and oxen, ſiluer and gold, men ſeruants and wemen camels, and aſſes.",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.863,
+     "odr_com": 0.863,
+     "sabates_a": 0.85,
+     "madueke_b": 0.85
+    }
+   },
+   "S3": {
+    "text": "and our Lord hath bleſſed my lord fully, and he is magnified: and he bath geuen him and oxen, ſiluer and gold, men ſeruants and wemen camels, and aſſes.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.863,
+     "odr_com": 0.863,
+     "sabates_a": 0.85,
+     "madueke_b": 0.85
+    }
+   },
+   "S9": {
+    "text": "and our Lord hath bleſſed my lord wonderfully, and he is magnified : and he hath geuen him sheepe, and oxen, ſiluer and gold, men ſeruants and wemen ſeruants, camels, and aſſes.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S6": {
+    "text": "and our Lord hath bleſſed my Tord wondertully, and he is magnified: and he hath giuen him sheep, & oxen, ſiluer and gold, men ſeruants & womon ſeruants, camels, and aſſes.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "36": {
+   "S1": {
+    "text": "And Sara my lordes wife hath borne my lord a ſonne in her old age, and he hath geuen him al things that he had.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And Sara my lordes wife hath borne my lord a ſonne in her old age, and he hath geuen him al things that he had.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And Sara my lordes wife hath borne my lord a ſonne in her old age, and he hath geuen him ab things that he had.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "And Sata my Lordes wite hath borne my Lord a ſonne in her old age, and ho hath giuen him al thinos that he had.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "37": {
+   "S1": {
+    "text": "And my lord adiured me ſaying Thou ſhalt not take a wife for my ſonne of the Chananites in whoſe land I dwel",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And my lord adiured me ſaying Thou ſhalt not take a wiſe for my ſonne of the Chananites, in whoſe land I dwel",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "Andimy lord adiured me ſaying : Thou ſhalt not take a wiſe for my ſonne of the Chananites, in whoſe land I dwel :",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And my Lord adiured me ſaying: Thou shalt not take a wite for my ſonne ot the Chananites, in whoſe land I dwel:",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "38": {
+   "S1": {
+    "text": "but thou ſhalt goe to my fathers houſe, and of mine owne kinred ſhalt thou take a wiſe for my ſonne:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "but thou ſhalt goe to my fathers houle, and of mine owne kinred ſhalt thou take a wiſe for my ſonne:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "but thou ſhalt goe to my fathers houſe, and ofmine owne kinred ihalt thou take a wife for my ſonne:",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "but thou shalt goe to my fathers houſe, and of mine owne kindred shalt thou take a wite tor my ſonne:",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "39": {
+   "S1": {
+    "text": "but I anſwered my Lord What if the woman wil not come with me?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "but I anſwered my Lord What if the woman wil not come with me",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "but I anſwered my. Lord : What, if the woman wil not come with me",
+    "from": "p110",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "but I anſwered my Lord: What if the woman will wil not come wnth me40.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.909,
+     "odr_com": 0.909,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   }
+  },
+  "40": {
+   "S1": {
+    "text": "Our Lord, ſaith he, in whoſe ſight I walke, wil ſend his angel with thee, and wil direct thy way: and thou shalt take a wife for my ſonne of myne owne kinred, and of my fathers houſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.994,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "Our Lord, ſaith he, in whoſe ſight I walke, wil ſend his angel with thee, and wil direct thy way: and thou shalt take a wife for my ſonne of myne owne kinred, and of my fathers houſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.994,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "Our Lord, ſaith he, in whoſe ſight I walke, wil ſend his angel with thee, and wil direct thy way : and thou shalt take a wife for my ſonne of myne owne kinred, and of my fathers houſe.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.994,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "Our Lord, ſaith he, in whoſe ſight I walke, wil ſend his Angel with thee, & wil direct thy way: and thou shalt take a wite for my ſonne of myne owne kindred, and of my fathers houſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.96,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "41": {
+   "S1": {
+    "text": "Thou shalt be innocent from my curſe, when thou shalt come to my kinne, and they wil not geue her thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "Thou shalt be innocent from my curſe, when thou shalt come to my kinne, and they wil not geue her thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "Thou shalt be innocent from my curſe, whan thou shalt come to my kinne, and they wil not geue her thee.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "Thou ſhalt be innocent trom my eurſe, when thou ſhalt come to my kinne, and they wil not giue her thee.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "42": {
+   "S1": {
+    "text": "I came therfore to the wel of water, and ſaid : O Lord God of my lord if thou haſt directed my way, wherin I now walke,",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.884,
+     "odr_com": 0.884,
+     "sabates_a": 0.873,
+     "madueke_b": 0.873
+    }
+   },
+   "S3": {
+    "text": "I came therfore to the wel of water, and ſaid : O Lord God of my lord if thou haſt directed my way, wherin I now walke,",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.884,
+     "odr_com": 0.884,
+     "sabates_a": 0.873,
+     "madueke_b": 0.873
+    }
+   },
+   "S9": {
+    "text": "I came therfore to day to the wel of water, and ſaid : O Lord God of my lord Abraham, if thou haſt directed my way, wherin I now walke,",
+    "from": "p110",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "I came therfore to day to the wel ot water, aud ſaid: O Lord God of my Lord Abraham, it thou haſt directed my way, wherin I now walke,",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "43": {
+   "S1": {
+    "text": "hold I ſtand beſides the wel of water, and the virgin, shal come forth to drawe water, when ſe fhal heare ſay: Geue me a litle water to drinke of thy tankard:",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.922,
+     "madueke_b": 0.922
+    }
+   },
+   "S3": {
+    "text": "hold I ſtand beſides the wel of water, and the virgin, shal come forth to drawe water, when ſhe fhal heare ſay: Geue me a litle water to drinke of thy tankard:",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.933,
+     "sabates_a": 0.928,
+     "madueke_b": 0.928
+    }
+   },
+   "S9": {
+    "text": "hold I ſtand beſides the wel of water, and the virgin, that shal come forth to drawe water, when ſhe fhal heare me ſay: Geue me a litle water to drinke of thy tankard:",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "behold I ſtand beſides. tho wel of warer, and the virgin, that ſhal come forth to draw water, when ſhe ſhalheare me ſay:: Giueme a litle water to drinke of thy, thaukard:",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "44": {
+   "S1": {
+    "text": "ſhe ſhal ſay to me : Drinke both thou and ſor thy camels wil drawe alſo: that is the woman, which our Lord prepared for my maiſters ſonne.",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.898,
+     "madueke_b": 0.898
+    }
+   },
+   "S3": {
+    "text": "and ſhe ſhal ſay to me Drinke both thou and for thy camels I wil drawe alſo: that is the woman, which our Lord hath prepared for my maiſters ſonne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "and ſhe ſhal ſay to me : Drinke both thou and for thy camels I wil drawe alſo : that is the woman, which our Lord hath prepared for my maiſters ſonne.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "4.and ſhe ſhal ſay to me : Drinke both thou and tor thy camels I wil draw alſo : that is the woman, which our Lord hath prepared for my Mafters ſonue..",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "45": {
+   "S1": {
+    "text": "And whileſt I pondered theſe things ſecretly with my ſelfe, Rebecca appeared ming with a tankard, which she caried vpon her shoulder: and she went downe to the fountain, &drew",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.759,
+     "odr_com": 0.759,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S3": {
+    "text": "And whileſt I theſe things ſecretly with my ſelfe, Rebecca appeared ming with a tankard, which she caried vpon her shoulder and she went downe to the fountaine, & drew",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.723,
+     "odr_com": 0.723,
+     "sabates_a": 0.86,
+     "madueke_b": 0.86
+    }
+   },
+   "S9": {
+    "text": "And whileſt I pondered theſe things ſecretly with my ſelfe, Rebecca appeared comming with a tankard, which she caried vpon her shoulder: and she went downe to the fountaine, & drew water.",
+    "from": "p110",
+    "score": {
+     "s_dismas": 0.804,
+     "odr_com": 0.804,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "And whileſt I pondered theſe things ſecrerly with my ſelte, Rebecca appeared comming with a tankard, which she caried vpon her shoulder : & she wem downe to the tountaine, & drew water.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.763,
+     "odr_com": 0.763,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   }
+  },
+  "46": {
+   "S1": {
+    "text": "And I ſaid to her Geue me a litle to drinke. who delie let dovne the tankard from her shoulder, and ſaid me Drinke both thou, and to thy camcls I wil geue dranke, and ſhe watered the cammels.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.688,
+     "odr_com": 0.688,
+     "sabates_a": 0.898,
+     "madueke_b": 0.898
+    }
+   },
+   "S3": {
+    "text": "And I ſaid to her Geue me a litle to drinke. Who delie let downe the tankard from her shoulder, and me Drinke both thou, and to thy camels I wil geue I dranke, and ſhe watered the cammels.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.678,
+     "odr_com": 0.678,
+     "sabates_a": 0.892,
+     "madueke_b": 0.892
+    }
+   },
+   "S9": {
+    "text": "And I ſaid to her Geue me a litle to drinke. who ſpedelie let downe the tankard from her shoulder, and ſaid to me: Drinke both thou, and to thy camels I wil geur drinke. dranke, and ſhe watered the cammels.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.764,
+     "odr_com": 0.764,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And I ſaid to her Biue me a litle to drinke. Who ſpeedily. let downe the tankard. from her ſhoulder, and ſaid to me: Drinke both thou, and to thy camels I wil giue drinke. I dranke, and ſhe watered the cammels:",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.756,
+     "odr_com": 0.756,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   }
+  },
+  "47": {
+   "S1": {
+    "text": "And I asked and ſaid : Whoſe daughter arr thou who anſwered: am the daughter of Bathuel, the ſonne of Nachor, whom Melcha bare him. I hoong therfore earclettes to adone her ſace, and I put braceletts vpon her hands.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S3": {
+    "text": "And I asked her, and ſaid : Whoſe daughter art thou who anſwered: I am the daughter of Bathuel, the ſonne of Nachor, whom Melcha bare him. I hoong therfore earelettes to adoine her face, and I put braceletts vpon her hands.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "And I asked her, and ſaid : Whoſe daughter art thou? who anſwered: I am the daughter of Bathuel, the ſonne of Nachor, whom Melcha bare him. I hoong therfore earelettes to adoine her face, and I put braceletts vpon her hands.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S6": {
+    "text": "And I asked her, and ſaid : Whoſe daughter art thou? Who anſwered: I am the daughter of Bathuel, the ſonne of Nachor, whom Melcha bare him. Thuno tner tore earelettes to adorne her face, and. I put bracelets vpon her hauds.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   }
+  },
+  "48": {
+   "S1": {
+    "text": "And proI adored our Lord, bleſſing the Lord God of my lord Abraham, who hath broughr me the ſtraight way to take the daughter of my lords brother for his ſonne.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S3": {
+    "text": "And proſtrate I adored our Lord, bleſſing the Lord God of my lord Abraham, who hath brought me the ſtraight way to take the daughter of my lords brother for his ſonne.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And proſtrate Iadored our Lord, bleſſing the Lord God of my lord Abraham, who hath brought me the ſtraight way to take the daughter of my lords brother for his ſonne.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And proſtrate I adored our Lorct, bleſſing the Lord God of my Lord Abraham, who hath brought me the ſtraight way to take the daughter ot my Lords brother for his ſonne.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "49": {
+   "S1": {
+    "text": "Wherif you doe according to mercie and truth with mv lord, ſew me: but if it pleaſe you otherwiſe, that alſo tel me, that I may goe to the right hand, or to the left.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S3": {
+    "text": "Wherfore if you doe according to mercie and truth with my lord, ſhew me: but if it pleaſe you otherwiſe, that alſo tel me, that I may goe to the right hand, or to the left.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "Wherfore if you doe according to mercie and truth with my lord, ſhew me: but if it pleaſe you otherwiſe, that alſo rel me, that I may goe to the right hand, or to the left.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "Whertore it you doe accordin to mercie and truth with my Lord, ſhew me: but if it pleaſe vou otherwiſe, that alſo tel me, that I may goe to the righr hand or to the left.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "50": {
+   "S1": {
+    "text": "And Laban and Bathuel anſwered: From our Lord the word hath proceded : we can not ſpeake any other thing with thee beſides his pleaſure.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And Laban and Bathuel anſwered : From our Lord the word hath proceded : we can not ſpeake any other thing with thee beſides his pleafure.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "And Laban and Bathuel anſwered : From our Lord the word hath proceded : we can not ſpeake any other thing with thee beſides his pleaſure.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "Aud Laban and Bathuel anſwered: From our Lord the word hath proceeded : we can not ſpeake any other thing with thee beſides his pleaſure.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "51": {
+   "S1": {
+    "text": "Behold Rebecca is before thee, take her and goe thy waies, and let her be the wife of thy lords ſonne, as our Lord hath ſpoken.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "Behold Rebecca is before thee, take her and goe thy waies, and let her be the wife of thy lords ſonne, as our Lord hath ſpoken.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "Behold Rebecca is before thee, take her and goe thy waies, and let her be the wife of thy lords ſonne, as our Lord hath ſpoken.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "Behold Rebecca is before thee, take her and goe thy waies, & let her be the wite of thy Lords ſonne, as our Lord hath ſpoken.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "52": {
+   "S1": {
+    "text": "Which when Abrahams ſeruant heard, falling downe he adored our Lord to the grounde.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "Which when Abrahams ſeruant heard, falling downe he adored our Lord to the grounde.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "Which when Abrahams ſeruant heard, falling downe he adored our Lord to the grounde.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "Which when. Abrahams ſeruant heard, falling downe he adored our Lord to the ground.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "53": {
+   "S1": {
+    "text": "And taking forth veſſel of ſiluer, and gold, and garments, gaue them to Rebecca for a preſent. To her brothers alſo, and to her mother he offred giftes. A",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "And taking forth veſſel of ſiluer, and gold, and garments, gaue them to Rebecca for a prefent. To her brothers alſo, and to her mother he offred giftes. A",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "And taking forth veſſel of ſiluer, and gold, and garments, gaue them to Rebecca for a preſent. To her brothers alſo, and to her mother he offred giftes. A",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "And taking torth veſſels of ſiluer, and gold, and garments, gaue them to Rebecca tor a preſent. To her brothers alſo, and to her mother he offered guifts.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "54": {
+   "S1": {
+    "text": "banket was made, and eating and drinking togeather they lodged there. And in the morning, the ſeruant aroſe, and ſaid : Diſmiſſe me, that I may goe to my lord.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.987,
+     "sabates_a": 0.972,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "banquet was made, and eating and drinking together they lodged there. And in the morning, the ſeruant aroſe, §5 and ſaid Diſmiſſe me, that I may goe to my lord.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.967,
+     "sabates_a": 0.993,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "banket was made, and eating and drinking togeather they lodged there. And in the morning, the ſeruant aroſe, and ſaid : Diſmiſſe me, that I may goe to my lord.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.987,
+     "sabates_a": 0.972,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "banket was made, and eating and drinking together they lodged there. And in the morning the ſeruant aroſe, and ſaid: Diſmiſſe me, that I may goe to my Lord.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.98,
+     "sabates_a": 0.979,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "55": {
+   "S1": {
+    "text": "And : her brother, and mother anſwered : Let the maide rarie at the leaſt tenne days with vs, and after ſhe ſhal depart.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S3": {
+    "text": "And:: her brother, and mother anſwered : Let the maide tarie at the leaſt tenne days with vs, and after ſhe ſhal depart.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "As her brother, and mother anſwered : Let the maide tarie at ought the leaſt tenne days with vs, and after ſhe ſhal depart.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.932,
+     "odr_com": 0.932,
+     "sabates_a": 0.892,
+     "madueke_b": 0.892
+    }
+   },
+   "S6": {
+    "text": "And her brother and mother anſwered: Let the maid tarie at the leaſt tenne dayes with vs, & after ſhe ſhal depart.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "56": {
+   "S1": {
+    "text": "Stay me not, ſaid he, becauſe our Lord hath directed my way : diſmiſſe me that I may goe on to my lord.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Stay me not, ſaid he, becauſe our Lord hath directed my way : diſmiſſe me that I may goe on to my lord.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Stay mary me not, ſaid he, becauſe our Lord hath directed my way: good their diſmiſſe me that I may goe on to my lord.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.86,
+     "odr_com": 0.86,
+     "sabates_a": 0.859,
+     "madueke_b": 0.859
+    }
+   },
+   "S6": {
+    "text": "Stay me not, ſaid he, becauſe our Lord hath directed my way diſmiſſe me that I may goe on to my Lord.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "57": {
+   "S1": {
+    "text": "And they ſaid Let vs cal the maid, and aske her wil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And they ſaid Let vs cal the maid, and aske her wil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And they ſaid Let vs cal the maid, and aske her wil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And they ſaid : Let vs cal the maid, and ()aske her wil",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "58": {
+   "S1": {
+    "text": "And being called, when ſhe was come, they asked : Wilt thou goe with this is man? who ſaid : I wil goe.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.968,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "And being called, when ſhe was come, they asked : Wilt thou goe with this is man? who ſaid : I wil goe.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.968,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "And being called, owne man? who ſaid : I wil goe.",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   },
+   "S6": {
+    "text": "And being called, when ſhe was come, they asked: Wilt thou goe with this man? Who ſaid : I wil goe.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "59": {
+   "S1": {
+    "text": "They diſmiſſed her therfore, and her nurce, and Abrahams ſeruant, and his companie,",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S3": {
+    "text": "They diſmiſſed her therfore, and her nurce, and Abrahams ſeruant, and his companie,",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S9": {
+    "text": "They diſmiſſed her therfore, ſarie. Epiſt. and her nurce, and Abrahams ſeruant, and his companie,",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.868,
+     "odr_com": 0.868,
+     "sabates_a": 0.837,
+     "madueke_b": 0.837
+    }
+   },
+   "S6": {
+    "text": "They diſmiſſed her therfore, and her nurce, and Abrahams ſeruant, and his companie,",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "60": {
+   "S1": {
+    "text": "wiſhing proſpericie to their ſiſter, and ſaying : Thou art: our ſiſter, encreaſe thou into rhouſand thouſands, and thy ſeed poſſeſſe the gates of theirenemies Therfore",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.925,
+     "odr_com": 0.925,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S3": {
+    "text": "†wiſhing proſpericie to their ſiſter, and ſaying : Thou art :: our ſiſter, encreaſe thou into thouſand thouſands, and thy ſeed poſſeſſe the gates of their enemies",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "wiſhing proſperitie to their ſiſter, and ſaying : Thou art :: our ſiſter, encreaſe thou into thouſand thouſands, and thy fieth ſeed poſſeſſe the gates of theirenemies Therfore",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.904,
+     "odr_com": 0.904,
+     "sabates_a": 0.899,
+     "madueke_b": 0.899
+    }
+   },
+   "S6": {
+    "text": "6wiſhins proſperitie to their ſiſter, and ſaying : Thou art our ſiſter, enc: eaſe thou into thouſand thouſands, and thy ſeed poſſeſſe the gates ot their enemies.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "61": {
+   "S1": {
+    "text": "Therfore Rebecca, and her maides being ſet vpon camels, folowed the man who with ſpeed returned vnto his lord, and",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "Therfore Rebecca, and her maides being ſet vpon camels, folowed the man: who with ſpeed roturned vnto his lord and",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S9": {
+    "text": "Rebecca, and her maides being ſet vpon camels, folowed the man: with mouth. who with ſpeed returned vnto his lord and",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.823,
+     "odr_com": 0.823,
+     "sabates_a": 0.809,
+     "madueke_b": 0.809
+    }
+   },
+   "S6": {
+    "text": "Rebecca and her maids being ſet vpon Abraham. camels, tollowed the man: who wit ipeed returned vnto his Lord: an 62the",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.768,
+     "odr_com": 0.768,
+     "sabates_a": 0.785,
+     "madueke_b": 0.785
+    }
+   }
+  },
+  "62": {
+   "S1": {
+    "text": "the ſame rime Iſa ic walked along the wav, that leadeth to the wel (l of the Liuing and the ſeing, ſo called: for he dwelt in the ſouth countrie:",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.957,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "the ſame time Iſaac walked along the way, that leadeth to the wel of the Liuing and the ſeing, ſo called : for he dwelt in the ſouth countrie:",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "the ſame time Iſaac walked along the way, that leadeth to the wel (Ii. of the Liuing and the ſeing, ſo called : for he dwelt in the. Iſaac) ſouth countrie :",
+    "from": "p111",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.938,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "the ſame time Iſaac walked along the way, that leadeth to the we of the Liuing and the ſeeing, ſo called: for he dwelt in the ſouth countrie:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "63": {
+   "S1": {
+    "text": "and he was gone forth to : meditate in in the field, the day nowe being wel ſpent : and when he had caſt vp his eyes, he ſaw camels coming a farre of.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "and he was gone forth to : meditate in in the field, the day nowe being wel ſpent : and when he had caſt vp his eyes, he ſaw camels coming a farre of.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "and he was gone forth to: meditate in the field, the day nowe being wel ſpent: and when he had caſt vp his eyes, he ſaw camels coming a farre of.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And he was gone forth to meditate in the field, the day now being wel ſpent and when he had caſt vp his eycs, he ſaw camels comming a farre off.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "64": {
+   "S1": {
+    "text": "Rebecca alſo, when ſhe ſaw Iſaac, lighted of the camel,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Rebecca alſo, when ſhe ſaw Iſaac, lighted of the camel,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Rebecca mental alſo, when ſhe ſaw Iſaac, lighted of the camel,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.881,
+     "odr_com": 0.881,
+     "sabates_a": 0.873,
+     "madueke_b": 0.873
+    }
+   },
+   "S6": {
+    "text": "Rebecca alſo, when she ſaw Iſaac, lighted off the camel,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "65": {
+   "S1": {
+    "text": "and ſaid to the ſeruant Who is that man which cometh towards vs along the field? And he ſaid to her. The ſame is my lord. But she quickly taking her cloake, couered her ſelfe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "and ſaid to the ſeruant Who is that man which cometh towards vs along the field And he ſaid to her. The ſame is my lord. But she quickly taking her cloake, couered her ſelfe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "and ſaid to the ſeruant Who is that man which cometh towards vs along the field And he ſaid to her. The ſame is my lord. But she quickly taking her cloake, couered her ſelfe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "and ſaid to the ſeruant: Who is that man which commeth towards vs along the field And he ſaid to her The ſame is my Lord. But she quickly taking her cloake, couered her ſelte.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "66": {
+   "S1": {
+    "text": "And the ſeruant told Iſaac al things that he hed done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And the ſeruant told Iſaac al things that he hed done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And the ſeruant told Iſaac al things that he hed done.",
+    "from": "p112",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And the ſeruant told Iſaac al things that he had done.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "67": {
+   "S1": {
+    "text": "brought her into the tent of Sara his mother, and tooke to wife and he loued her ſo much, that ir did moderate ſorrowe, which was chanced, of his mothers death.",
+    "from": "p102",
+    "score": {
+     "s_dismas": 0.922,
+     "odr_com": 0.922,
+     "sabates_a": 0.903,
+     "madueke_b": 0.903
+    }
+   },
+   "S3": {
+    "text": "brought her into the tent of Sara his mother, and tooke to wife and he loued her ſo much, that it did moderate ſorrowe, which was chanced of his mothers death.",
+    "from": "p106",
+    "score": {
+     "s_dismas": 0.928,
+     "odr_com": 0.928,
+     "sabates_a": 0.91,
+     "madueke_b": 0.91
+    }
+   },
+   "S9": {
+    "text": "Who brought her into the tent of Sara his mother, and tooke her to wife and he loued her ſo much, that it did moderate the ſorrowe, which was chanced of his mothers death.",
+    "from": "p112",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "Who brought her into the tent of Sara his mother, & tooke her to wife: and he loued her ſo much, that it did moderate the ſorrow which was chanced of his mothers death",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Abraham was old, and of manie dayes: and our Lord had bleſſed him in al things.",
+   "odr_com": "AND Abraham was old, and of manie dayes: and our Lord had blessed him in al things.",
+   "sabates_a": "And Abraham was old, and of many days, and our Lord had blessed him in all things.",
+   "madueke_b": "And Abraham was old, and of many days, and our Lord had blessed him in all things."
+  },
+  "2": {
+   "s_dismas": "And he ſaid to the elder ſeruant of his houſe, which was ruler ouer al that he had: Put thy hand vnder my thighe,",
+   "odr_com": "And he said to the elder seruant of his house, which was ruler ouer al that he had: Put thy hand vnder my thighe,",
+   "sabates_a": "And he said to the elder servant of his house, which was ruler over all that he had: Put thy hand under my thigh,",
+   "madueke_b": "And he said to the elder servant of his house, which was ruler over all that he had: Put thy hand under my thigh,"
+  },
+  "3": {
+   "s_dismas": "that I may adiure thee by our Lord, God of heauen and earth, that thou take not a wife for my ſonne, of the daughters of the Cananites, among whom I dwel:",
+   "odr_com": "that I may adiure thee by our Lord, God of heauen and earth, that thou take not a wife for my sonne, of the daughters of the Cananites, among whom I dwel:",
+   "sabates_a": "that I may adjure thee by our Lord God of heaven and earth, that thou take not a wife for my son of the daughters of the Chananites, among whom I dwell:",
+   "madueke_b": "that I may adjure thee by our Lord God of heaven and earth, that thou take not a wife for my son of the daughters of the Chananites, among whom I dwell:"
+  },
+  "4": {
+   "s_dismas": "but that thou goe vnto myne owne countrie and kindred, and thence take a wife for my ſonne Iſaac.",
+   "odr_com": "but that thou goe vnto myne owne countrie and kindred, and thence take a wife for my sonne Isaac.",
+   "sabates_a": "but that thou go unto mine own country and kindred, and thence take a wife for my son Isaac.",
+   "madueke_b": "but that thou go unto mine own country and kindred, and thence take a wife for my son Isaac."
+  },
+  "5": {
+   "s_dismas": "The ſeruant anſwered: If the woman wil not come with me into this land, whether muſt I bring thy ſonne backe againe to the place, from whence thou dideſt come forth?",
+   "odr_com": "The seruant answered: If the woman wil not come with me into this land, whether must I bring thy sonne backe againe to the place, from whence thou didest come forth?",
+   "sabates_a": "The servant answered: If the woman will not come with me into this land, whether must I bring thy son back again to the place, from whence thou didst come forth?",
+   "madueke_b": "The servant answered: If the woman will not come with me into this land, whether must I bring thy son back again to the place, from whence thou didst come forth?"
+  },
+  "6": {
+   "s_dismas": "And Abraham ſaid: Beware thou neuer bring my ſonne backe againe thither.",
+   "odr_com": "And Abraham said: Beware thou neuer bring my sonne backe againe thither.",
+   "sabates_a": "And Abraham said: Beware thou never bring my son back again thither.",
+   "madueke_b": "And Abraham said: Beware thou never bring my son back again thither."
+  },
+  "7": {
+   "s_dismas": "Our Lord God of heauen, which tooke me out of my fathers houſe, and out of my natiue countrie, which ſpake to me, and ſware to me, ſaying: To thy ſede wil I geue this land: he ſhal ſend his Angel before thee, and thou ſhalt take from thence a wife for my ſonne:",
+   "odr_com": "Our Lord God of heauen, which tooke me out of my fathers house, and out of my natiue countrie, which spake to me, and sware to me, saying: To thy sede wil I geue this land: he shal send his angel before thee, and thou shalt take from thence a wife for my sonne:",
+   "sabates_a": "Our Lord God of heaven, which took me out of my father's house, and out of my native country, which spake to me, and sware to me, saying: To thy seed will I give this land; he shall send his Angel before thee, and thou shall take from thence a wife for my son:",
+   "madueke_b": "Our Lord God of heaven, which took me out of my father's house, and out of my native country, which spake to me, and sware to me, saying: To thy seed will I give this land; he shall send his Angel before thee, and thou shall take from thence a wife for my son:"
+  },
+  "8": {
+   "s_dismas": "but if the woman wil not folow thee, thou ſhalt not be bound by the oath: only bring not my ſonne thither againe.",
+   "odr_com": "but if the woman wil not folow thee, thou shalt not be bound by the oath: only bring not my sonne thither againe.",
+   "sabates_a": "but if the woman will not follow thee, thou shalt not be bound by the oath: only bring not my son thither again.",
+   "madueke_b": "but if the woman will not follow thee, thou shalt not be bound by the oath: only bring not my son thither again."
+  },
+  "9": {
+   "s_dismas": "The ſeruant therfore put his hand vnder the thigh of Abraham his lord, and ſware to him vpon this worde.",
+   "odr_com": "The seruant therfore put his hand vnder the thigh of Abraham his lord, and sware to him vpon this worde.",
+   "sabates_a": "The servant therefore put his hand under the thigh of Abraham his lord, and sware to him upon this word.",
+   "madueke_b": "The servant therefore put his hand under the thigh of Abraham his lord, and sware to him upon this word."
+  },
+  "10": {
+   "s_dismas": "And he tooke tenne camels of his lords heard, and departed, of al his goods carying ſomething with him, and ſetting forward went on into Meſopotamia to the citie of Nachor.",
+   "odr_com": "And he tooke tenne camels of his lords heard, and departed, of al his goods carying something with him, and setting forward went on into Mesopotamia to the citie of Nachor.",
+   "sabates_a": "And he took ten camels of his lord's herd, and departed, of all his goods carrying something with him, and setting forward went on into Mesopotamia to the city of Nachor.",
+   "madueke_b": "And he took ten camels of his lord's herd, and departed, of all his goods carrying something with him, and setting forward went on into Mesopotamia to the city of Nachor."
+  },
+  "11": {
+   "s_dismas": "And when he had made the camels lye downe without the towne beſide a wel of water at euen, at the time when wemen are wont to come forth to drawe water, he ſaid:",
+   "odr_com": "And when he had made the camels lye downe without the towne beside a wel of water at euen, at the time when wemen are wont to come forth to drawe water, he said:",
+   "sabates_a": "And when he had made the camels lie down without the town beside a well of water at even, at the time when women are wont to come forth to draw water, he said:",
+   "madueke_b": "And when he had made the camels lie down without the town beside a well of water at even, at the time when women are wont to come forth to draw water, he said:"
+  },
+  "12": {
+   "s_dismas": "O Lord God of my lord Abraham, mete me to day, I beſeech thee, and doe mercifully with my maiſter Abraham.",
+   "odr_com": "O Lord God of my lord Abraham, mete me to day, I beseech thee, and doe mercifully with my maister Abraham.",
+   "sabates_a": "O Lord God of my lord Abraham, meet me today, I beseech thee, and do mercifully with my master Abraham.",
+   "madueke_b": "O Lord God of my lord Abraham, meet me today, I beseech thee, and do mercifully with my master Abraham."
+  },
+  "13": {
+   "s_dismas": "Behold I ſtand nigh to the fountaine of water, and the daughters of the inhabiters of this citie, wil come forth to drawe water.",
+   "odr_com": "Behold I stand nigh to the fountaine of water, and the daughters of the inhabiters of this citie, wil come forth to drawe water.",
+   "sabates_a": "Behold I stand nigh to the fountain of water and the daughters of the inhabiters of this city will come forth to draw water.",
+   "madueke_b": "Behold I stand nigh to the fountain of water and the daughters of the inhabiters of this city will come forth to draw water."
+  },
+  "14": {
+   "s_dismas": "Therfore the maid, to whom I shal ſay: Bowe downe thy tankard that I may drinke: and she shal anſwere: Drinke, yea to thy camels alſo wil I geue drinke: she it is, whom thou haſt prouided for thy ſeruant Iſaac: and by this I ſhal vnderſtand, that thou haſt delt mercifully with my maiſter.",
+   "odr_com": "Therfore the maid, to whom I shal say: Bowe downe thy tankard that I may drinke: and she shal answere, Drinke, yea to thy camels also wil I geue drinke: she it is, whom thou hast prouided for thy seruant Isaac: and by this I shal vnderstand, that thou hast delt mercifully with my maister.",
+   "sabates_a": "Therefore the maid, to whom I shall say: Bow down thy tankard that I may drink; and she shall answer: Drink, yea to thy camels also will I give drink; she it is, whom thou hast provided for thy servant Isaac: and by this I shall understand, that thou hast dealt mercifully with my master.",
+   "madueke_b": "Therefore the maid, to whom I shall say: Bow down thy tankard that I may drink; and she shall answer: Drink, yea to thy camels also will I give drink; she it is, whom thou hast provided for thy servant Isaac: and by this I shall understand, that thou hast dealt mercifully with my master."
+  },
+  "15": {
+   "s_dismas": "Neyther had he yet ended theſe wordes within him ſelfe, & behold Rebecca came forth, the daughter of Bathuel, the ſonne of Melcha wife to Nachor the brother of Abraham, hauing a tankard on her shoulder:",
+   "odr_com": "Neyther had he yet ended these wordes within him selfe, & behold Rebecca came forth, the daughter of Bathuel, the sonne of Melcha wife to Nachor the brother of Abraham, hauing a tankard on her shoulder:",
+   "sabates_a": "Neither had he yet ended these words within himself, & behold Rebecca came forth, the daughter of Bathuel, the son of Melcha, wife to Nachor the brother of Abraham, having a tankard on her shoulder;",
+   "madueke_b": "Neither had he yet ended these words within himself, & behold Rebecca came forth, the daughter of Bathuel, the son of Melcha, wife to Nachor the brother of Abraham, having a tankard on her shoulder;"
+  },
+  "16": {
+   "s_dismas": "a paſſing comely maide, & moſt beautiful virgin, & not knowen to man: and she was gone downe to the fountaine, and had filled her tankard, and came backe.",
+   "odr_com": "a passing comely maide, & most beautiful virgin, & not knowen to man: and she was gone downe to the fountaine, and had filled her tankard, and came backe.",
+   "sabates_a": "a passing comely maid, & most beautiful virgin, & not known to man: and she was gone down to the fountain, and had filled her tankard, and came back.",
+   "madueke_b": "a passing comely maid, & most beautiful virgin, & not known to man: and she was gone down to the fountain, and had filled her tankard, and came back."
+  },
+  "17": {
+   "s_dismas": "And the ſeruant ranne to mete her, and ſaid: Geue me a litle water to drinke of thy tankard.",
+   "odr_com": "And the seruant ranne to mete her, and said: Geue me a little water to drinke of thy tankard.",
+   "sabates_a": "And the servant ran to meet her, and said: Give me a little water to drink of thy tankard.",
+   "madueke_b": "And the servant ran to meet her, and said: Give me a little water to drink of thy tankard."
+  },
+  "18": {
+   "s_dismas": "Who anſwered: Drinke my lord. And quickly she let downe the tankard vpon her arme, and gaue him drinke.",
+   "odr_com": "Who answered: Drinke my lord. And quickly she let downe the tankard vpon her arme, and gaue him drinke.",
+   "sabates_a": "Who answered: Drink my lord. And quickly she let down the tankard upon her arm, and gave him drink.",
+   "madueke_b": "Who answered: Drink my lord. And quickly she let down the tankard upon her arm, and gave him drink."
+  },
+  "19": {
+   "s_dismas": "And when he had druncke, she added: but for thy camels alſo I wil drawe water, til al doe drinke.",
+   "odr_com": "And when he had druncke, she added: but for thy camels also I wil drawe water, til al doe drinke.",
+   "sabates_a": "And when he had drunk, she added: but for thy camels also I will draw water, till all do drink.",
+   "madueke_b": "And when he had drunk, she added: but for thy camels also I will draw water, till all do drink."
+  },
+  "20": {
+   "s_dismas": "And powring out the tankard into the troughes, she ranne backe to the wel to drawe water: and being drawen gaue it to al the camels.",
+   "odr_com": "And powring out the tankard into the troughes, she ranne backe to the wel to drawe water: and being drawen gaue it to al the camels.",
+   "sabates_a": "And pouring out the tankard into the troughs, she ran back to the well to draw water: and being drawn gave it to all the camels.",
+   "madueke_b": "And pouring out the tankard into the troughs, she ran back to the well to draw water: and being drawn gave it to all the camels."
+  },
+  "21": {
+   "s_dismas": "But he muſing beheld her with ſilence, deſirous to know whether our Lord had made his iourney proſperous, or not.",
+   "odr_com": "But he musing beheld her with silence, desirous to know whether our Lord had made his iourney prosperous, or not.",
+   "sabates_a": "But he musing beheld her with silence, desirous to know whether our Lord had made his journey prosperous or not.",
+   "madueke_b": "But he musing beheld her with silence, desirous to know whether our Lord had made his journey prosperous or not."
+  },
+  "22": {
+   "s_dismas": "And after that the camels had drunck, the man plucked forth golden earelettes, weying two ſicles: and as manie braceletts of tenne ſicles weight.",
+   "odr_com": "And after that the camels had drunck, the man plucked forth golden earelettes, weying two sicles: and as manie braceletts of tenne sicles weight.",
+   "sabates_a": "And after that the camels had drunk, the man plucked forth golden earlets, weighing two sicles, and as many bracelets of ten sicles weight.",
+   "madueke_b": "And after that the camels had drunk, the man plucked forth golden earlets, weighing two sicles, and as many bracelets of ten sicles weight."
+  },
+  "23": {
+   "s_dismas": "And he ſaid to her: Whoſe daughter art thou? shew me: is there anie place in thy fathers houſe to lodge?",
+   "odr_com": "And he said to her: whose daughter art thou? shew me: is there anie place in thy fathers house to lodge?",
+   "sabates_a": "And he said to her: Whose daughter art thou? Shew me; is there any place in thy father's house to lodge?",
+   "madueke_b": "And he said to her: Whose daughter art thou? Shew me; is there any place in thy father's house to lodge?"
+  },
+  "24": {
+   "s_dismas": "Who anſwered: I am the daughter of Bathuel, the ſonne of Melcha, whom she bare to Nachor.",
+   "odr_com": "Who answered: I am the daughter of Bathuel, the sonne of Melcha, whom she bare to Nachor.",
+   "sabates_a": "Who answered: I am the daughter of Bathuel, the son of Melcha, whom she bare to Nachor.",
+   "madueke_b": "Who answered: I am the daughter of Bathuel, the son of Melcha, whom she bare to Nachor."
+  },
+  "25": {
+   "s_dismas": "And she added, ſaying: Of ſtrawe alſo and hay we haue good ſtore, and a large place to lodge in.",
+   "odr_com": "And she added, saying: Of strawe also and hay we haue good store, and a large place to lodge in.",
+   "sabates_a": "And she added, saying: Of straw also and hay we have good store, and a large place to lodge in.",
+   "madueke_b": "And she added, saying: Of straw also and hay we have good store, and a large place to lodge in."
+  },
+  "26": {
+   "s_dismas": "The man bowed him ſelfe, and adored our Lord,",
+   "odr_com": "The man bowed him selfe, and adored our Lord,",
+   "sabates_a": "The man bowed himself, and adored our Lord,",
+   "madueke_b": "The man bowed himself, and adored our Lord,"
+  },
+  "27": {
+   "s_dismas": "ſaying: Bleſſed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the ſtreight way into the houſe of my lords brother.",
+   "odr_com": "saying: Blessed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the streight way into the house of my lords brother.",
+   "sabates_a": "saying: blessed be the Lord God of my lord Abraham, that hath not taken away his mercy & truth from my lord, and hath brought me the straight way into the house of my lord's brother.",
+   "madueke_b": "saying: blessed be the Lord God of my lord Abraham, that hath not taken away his mercy & truth from my lord, and hath brought me the straight way into the house of my lord's brother."
+  },
+  "28": {
+   "s_dismas": "The maide therfore ranne, and reported into her mothers houſe al things that ſhe had heard.",
+   "odr_com": "The maide therfore ranne, and reported into her mothers house al things that she had heard.",
+   "sabates_a": "The maid therefore ran, and reported into her mother's house all things that she had heard.",
+   "madueke_b": "The maid therefore ran, and reported into her mother's house all things that she had heard."
+  },
+  "29": {
+   "s_dismas": "And Rebecca had a brother named Laban, who in al haiſt went forth to the man, where the fountaine was.",
+   "odr_com": "And Rebecca had a brother named Laban, who in al haist went forth to the man, where the fountaine was.",
+   "sabates_a": "And Rebecca had a brother named Laban, who in all haste went forth to the man, where the fountain was.",
+   "madueke_b": "And Rebecca had a brother named Laban, who in all haste went forth to the man, where the fountain was."
+  },
+  "30": {
+   "s_dismas": "And when he had ſeene the eareletts and braceletts in his ſiſters hands, and had heard al her words reporting: Theſe words ſpake the man vnto me: he came to the man which ſtoode beſide the camels, and nighe to the fountaine of water:",
+   "odr_com": "And when he had seene the eareletts and braceletts in his sisters hands, and had heard al her words reporting: These words spake the man vnto me: he came to the man which stoode beside the camels, and nighe to the fountaine of water:",
+   "sabates_a": "And when he had seen the earlets and bracelets in his sister's hands, and hand heard all her words reporting: These words spake the man unto me; he came to the man which stood beside the camels, and nigh to the fountain of water:",
+   "madueke_b": "And when he had seen the earlets and bracelets in his sister's hands, and hand heard all her words reporting: These words spake the man unto me; he came to the man which stood beside the camels, and nigh to the fountain of water:"
+  },
+  "31": {
+   "s_dismas": "and ſaid to him: Come in, thou bleſſed of our Lord: Why ſtandeſt thou without? I haue prepared the houſe, and a place for the camels.",
+   "odr_com": "and said to him: Come in, thou blessed of our Lord: Why standest thou without? I haue prepared the house, and a place for the camels.",
+   "sabates_a": "and said to him: Come in, thou blessed of our Lord: Why standest thou without? I have prepared the house, and a place for the camels.",
+   "madueke_b": "and said to him: Come in, thou blessed of our Lord: Why standest thou without? I have prepared the house, and a place for the camels."
+  },
+  "32": {
+   "s_dismas": "And he brought him in into his lodging: and he vnharneſſed the camels, and gaue ſtrawe and hay, and water to wash his feet, and of the men that were come with him.",
+   "odr_com": "And he brought him in into his lodging: and he vnharnessed the camels, and gaue strawe and hay, and water to wash his feet, and of the men that were come with him.",
+   "sabates_a": "And he brought him into his lodging: and he unharnessed the camels, and gave straw and hay, and water to wash his feet, and of the men that were come with him.",
+   "madueke_b": "And he brought him into his lodging: and he unharnessed the camels, and gave straw and hay, and water to wash his feet, and of the men that were come with him."
+  },
+  "33": {
+   "s_dismas": "And bread was ſet before him. Who ſaid: I wil not eate, til I ſpeake my meſſage. He anſwered him: Speake.",
+   "odr_com": "And bread was set before him. Who said: I wil not eate, til I speake my message. He answered him: Speake.",
+   "sabates_a": "And bread was set before him. Who said: I will not eat till I speak my message. He answered him: Speak.",
+   "madueke_b": "And bread was set before him. Who said: I will not eat till I speak my message. He answered him: Speak."
+  },
+  "34": {
+   "s_dismas": "And he ſaid: I am the ſeruant of Abraham:",
+   "odr_com": "And he said: I am the seruant of Abraham:",
+   "sabates_a": "And he said: I am the servant of Abraham:",
+   "madueke_b": "And he said: I am the servant of Abraham:"
+  },
+  "35": {
+   "s_dismas": "and our Lord hath bleſſed my lord wonderfully, and he is magnified: and he hath geuen him sheepe, and oxen, ſiluer and gold, men ſeruants and wemen ſeruants, camels, and aſſes.",
+   "odr_com": "and our Lord hath blessed my lord wonderfully, and he is magnified: and he hath geuen him sheepe, and oxen, siluer and gold, men seruants and wemen seruants, camels, and asses.",
+   "sabates_a": "And our Lord hath blessed my lord wonderfully, and he is magnified: and he hath given him sheep, & oxen, silver and gold, men servants & women servants, camels, and asses.",
+   "madueke_b": "And our Lord hath blessed my lord wonderfully, and he is magnified: and he hath given him sheep, & oxen, silver and gold, men servants & women servants, camels, and asses."
+  },
+  "36": {
+   "s_dismas": "And Sara my lordes wife hath borne my lord a ſonne in her old age, and he hath geuen him al things that he had.",
+   "odr_com": "And Sara my lordes wife hath borne my lord a sonne in her old age, and he hath geuen him al things that he had.",
+   "sabates_a": "And Sara my lord's wife hath born my lord a son in her old age, and he hath given him all things that he had.",
+   "madueke_b": "And Sara my lord's wife hath born my lord a son in her old age, and he hath given him all things that he had."
+  },
+  "37": {
+   "s_dismas": "And my lord adiured me ſaying: Thou ſhalt not take a wife for my ſonne of the Chananites, in whoſe land I dwel:",
+   "odr_com": "And my lord adiured me saying: Thou shalt not take a wife for my sonne of the Chananites, in whose land I dwel:",
+   "sabates_a": "And my lord adjured me saying: Thou shalt not take a wife for my son of the Chananites, in whose land I dwell:",
+   "madueke_b": "And my lord adjured me saying: Thou shalt not take a wife for my son of the Chananites, in whose land I dwell:"
+  },
+  "38": {
+   "s_dismas": "but thou ſhalt goe to my fathers houſe, and of mine owne kinred ſhalt thou take a wife for my ſonne:",
+   "odr_com": "but thou shalt goe to my fathers house, and of mine owne kinred shalt thou take a wife for my sonne:",
+   "sabates_a": "but thou shalt go to my father's house, and of mine own kindred shalt thou take a wife for my son:",
+   "madueke_b": "but thou shalt go to my father's house, and of mine own kindred shalt thou take a wife for my son:"
+  },
+  "39": {
+   "s_dismas": "but I anſwered my Lord: What if the woman wil not come with me?",
+   "odr_com": "but I answered my Lord: What if the woman wil not come with me?",
+   "sabates_a": "but I answered my lord: What if the woman will not come with me?",
+   "madueke_b": "but I answered my lord: What if the woman will not come with me?"
+  },
+  "40": {
+   "s_dismas": "Our Lord, ſaith he, in whoſe ſight I walke, wil ſend his Angel with thee, and wil direct thy way: and thou shalt take a wife for my ſonne of myne owne kinred, and of my fathers houſe.",
+   "odr_com": "Our Lord, saith he, in whose sight I walke, wil send his angel with thee, and wil irect thy way: and thou shalt take a wife for my sonne of myne owne kinred, and of my fathers house.",
+   "sabates_a": "Our Lord, saith he, in whose sight I walk, will send his Angel with thee, & will direct thy way: and thou shalt take a wife for my son of mine own kindred, and of my father's house.",
+   "madueke_b": "Our Lord, saith he, in whose sight I walk, will send his Angel with thee, & will direct thy way: and thou shalt take a wife for my son of mine own kindred, and of my father's house."
+  },
+  "41": {
+   "s_dismas": "Thou shalt be innocent from my curſe, when thou shalt come to my kinne, and they wil not geue her thee.",
+   "odr_com": "Thou shalt be innocent from my curse, when thou shalt come to my kinne, and they wil not geue her thee.",
+   "sabates_a": "Thou shalt be innocent from my curse, when thou shalt come to my kin, and they will not give her thee.",
+   "madueke_b": "Thou shalt be innocent from my curse, when thou shalt come to my kin, and they will not give her thee."
+  },
+  "42": {
+   "s_dismas": "I came therfore to day to the wel of water, and ſaid: O Lord God of my lord Abraham, if thou haſt directed my way, wherin I now walke,",
+   "odr_com": "I came therfore to day to the wel of water, and said: O Lord God of my lord Abraham, if thou hast directed my way, wherin I now walke,",
+   "sabates_a": "I came therefore today to the well of water, and said: O Lord God of my lord Abraham, if thou hast directed my way, wherein I now walk,",
+   "madueke_b": "I came therefore today to the well of water, and said: O Lord God of my lord Abraham, if thou hast directed my way, wherein I now walk,"
+  },
+  "43": {
+   "s_dismas": "behold I ſtand beſides the wel of water, and the virgin, that shal come forth to drawe water, when ſhe ſhal heare me ſay: Geue me a litle water to drinke of thy tankard:",
+   "odr_com": "behold I stand besides the wel of water, and the virgin, that shal come forth to drawe water, when she shal heare me say: Geue me a litle water to drinke of thy tankard:",
+   "sabates_a": "behold I stand besides the well of water, and the virgin, that shall come forth to draw water, when she shall hear me say: Give me a little water to drink of thy tankard;",
+   "madueke_b": "behold I stand besides the well of water, and the virgin, that shall come forth to draw water, when she shall hear me say: Give me a little water to drink of thy tankard;"
+  },
+  "44": {
+   "s_dismas": "and ſhe ſhal ſay to me: Drinke both thou and for thy camels I wil drawe alſo: that is the woman, which our Lord hath prepared for my maiſters ſonne.",
+   "odr_com": "and she shal say to me: Drinke both thou and for thy camels I wil drawe also: that is the woman, which our Lord hath prepared for my maisters sonne.",
+   "sabates_a": "and she shall say to me: Drink both thou and for thy camels I will draw also; that is the woman, which our Lord hath prepared for my master's son.",
+   "madueke_b": "and she shall say to me: Drink both thou and for thy camels I will draw also; that is the woman, which our Lord hath prepared for my master's son."
+  },
+  "45": {
+   "s_dismas": "And whileſt I pondered theſe things ſecretly with my ſelfe, Rebecca appeared comming with a tankard, which she caried vpon her shoulder: and she went downe to the fountaine, & drew water. And I ſaid to her: Geue me a litle to drinke.",
+   "odr_com": "And whilest I pondered these things secretly with my selfe, Rebecca appeared comming with a tankard, which she caried vpon her shoulder: and she went downe to the fountaine, & drew water. And I said to her: Geue me a litle to drinke.",
+   "sabates_a": "And whilst I pondered these things secretly with myself, Rebecca appeared coming with a tankard, which she carried upon her shoulder: & she went down to the fountain, & drew water.",
+   "madueke_b": "And whilst I pondered these things secretly with myself, Rebecca appeared coming with a tankard, which she carried upon her shoulder: & she went down to the fountain, & drew water."
+  },
+  "46": {
+   "s_dismas": "Who ſpedelie let downe the tankard from her shoulder, and ſaid to me: Drinke both thou, and to thy camels I wil geue drinke. I dranke, and ſhe watered the cammels.",
+   "odr_com": "Who spedelie let downe the tankard from her shoulder, and said to me: Drinke both thou, and to thy camels I wil geue drinke. I dranke, and she watered the cammels.",
+   "sabates_a": "And I said to her: Give me a little to drink. Who speedily let down the tankard from her shoulder, and said to me: Drink Both thou, and to thy camels I will give drink. I drank, and she watered the camels.",
+   "madueke_b": "And I said to her: Give me a little to drink. Who speedily let down the tankard from her shoulder, and said to me: Drink Both thou, and to thy camels I will give drink. I drank, and she watered the camels."
+  },
+  "47": {
+   "s_dismas": "And I asked her, and ſaid: Whoſe daughter art thou? who anſwered: I am the daughter of Bathuel, the ſonne of Nachor, whom Melcha bare him. I hoong therfore earelettes to adorne her face, and I put braceletts vpon her hands.",
+   "odr_com": "And I asked her, and said: Whose daughter art thou? who answered: I am the daughter of Bathuel, the sonne of Nachor, whom Melcha bare him. I hoong therfore earelettes to adorne her face, and I put braceletts vpon her hands.",
+   "sabates_a": "And I asked her, and said: Whose daughter art thou? Who answered: I am the daughter of Bathuel, the son of Nachor, whom Melcha bare him. I hung therefore earlets to adorn her face, and I put bracelets upon her hands.",
+   "madueke_b": "And I asked her, and said: Whose daughter art thou? Who answered: I am the daughter of Bathuel, the son of Nachor, whom Melcha bare him. I hung therefore earlets to adorn her face, and I put bracelets upon her hands."
+  },
+  "48": {
+   "s_dismas": "And proſtrate I adored our Lord, bleſſing the Lord God of my lord Abraham, who hath brought me the ſtraight way to take the daughter of my lords brother for his ſonne.",
+   "odr_com": "And prostrate I adored our Lord, blessing the Lord God of my lord Abraham, who hath brought me the straight way to take the daughter of my lords brother for his sonne.",
+   "sabates_a": "And prostrate I adored our Lord, blessing the Lord God of my lord Abraham, who hath brought me the straight way to take the daughter of my lord's brother for his son.",
+   "madueke_b": "And prostrate I adored our Lord, blessing the Lord God of my lord Abraham, who hath brought me the straight way to take the daughter of my lord's brother for his son."
+  },
+  "49": {
+   "s_dismas": "Wherfore if you doe according to mercie and truth with my lord, ſhew me: but if it pleaſe you otherwiſe, that alſo tel me, that I may goe to the right hand, or to the left.",
+   "odr_com": "Wherfore if you doe according to mercie and truth with my lord, shew me: but if it please you otherwise, that also tel me, that I may goe to the right hand, or to the left.",
+   "sabates_a": "Wherefore if you do according to mercy and truth with my lord, shew me: but if it please you otherwise, that also tell me, that I may go to the right hand or to the left.",
+   "madueke_b": "Wherefore if you do according to mercy and truth with my lord, shew me: but if it please you otherwise, that also tell me, that I may go to the right hand or to the left."
+  },
+  "50": {
+   "s_dismas": "And Laban and Bathuel anſwered: From our Lord the word hath proceded: we can not ſpeake any other thing with thee beſides his pleaſure.",
+   "odr_com": "And Laban and Bathuel answered: From our Lord the word hath proceded: we can not speake any other thing with thee besides his pleasure.",
+   "sabates_a": "And Laban and Bathuel answered: From our Lord the word hath proceeded: we cannot speak any other thing with thee besides his pleasure.",
+   "madueke_b": "And Laban and Bathuel answered: From our Lord the word hath proceeded: we cannot speak any other thing with thee besides his pleasure."
+  },
+  "51": {
+   "s_dismas": "Behold Rebecca is before thee, take her and goe thy waies, and let her be the wife of thy lords ſonne, as our Lord hath ſpoken.",
+   "odr_com": "Behold Rebecca is before thee, take her and goe thy waies, and let her be the wife of thy lords sonne, as our Lord hath spoken.",
+   "sabates_a": "Behold Rebecca is before thee, take her and go thy ways, & let her be the wife of thy lord's son, as our Lord hath spoken.",
+   "madueke_b": "Behold Rebecca is before thee, take her and go thy ways, & let her be the wife of thy lord's son, as our Lord hath spoken."
+  },
+  "52": {
+   "s_dismas": "Which when Abrahams ſeruant heard, falling downe he adored our Lord to the grounde.",
+   "odr_com": "Which when Abrahams seruant heard, falling downe he adored our Lord to the grounde.",
+   "sabates_a": "Which when Abraham's servant heard, falling down he adored our Lord to the ground.",
+   "madueke_b": "Which when Abraham's servant heard, falling down he adored our Lord to the ground."
+  },
+  "53": {
+   "s_dismas": "And taking forth veſſel of ſiluer, and gold, and garments, gaue them to Rebecca for a preſent. To her brothers alſo, and to her mother he offred giftes.",
+   "odr_com": "And taking forth vessel of siluer, and gold, and garments, gaue them to Rebecca for a present. To her brothers also, and to her mother he offred giftes.",
+   "sabates_a": "And taking forth vessels of silver, and gold, and garments, gave them to Rebecca for a present. To her brothers also, and to her mother he offered gifts.",
+   "madueke_b": "And taking forth vessels of silver, and gold, and garments, gave them to Rebecca for a present. To her brothers also, and to her mother he offered gifts."
+  },
+  "54": {
+   "s_dismas": "A banket was made, and eating and drinking togeather thy lodged there. And in the morning, the ſeruant aroſe, and ſaid: Diſmiſſe me, that I may goe to my lord.",
+   "odr_com": "A banket was made, and eating and drinking togeather they lodged there. And in the morning, the seruant arose, and said: Dismisse me, that I may goe to my lord.",
+   "sabates_a": "Abanquet was made, and eating and drinking together they lodged there. And in the morning the servant arose, and said: Dismiss me, that I may go to my lord.",
+   "madueke_b": "A banquet was made, and eating and drinking together they lodged there. And in the morning the servant arose, and said: Dismiss me, that I may go to my lord."
+  },
+  "55": {
+   "s_dismas": "And her brother, and mother anſwered: Let the maide tarie at the leaſt tenne days with vs, and after ſhe ſhal depart.",
+   "odr_com": "And her brother, and mother answered: Let the maide tarie at the least tenne days with vs, and after she shal depart.",
+   "sabates_a": "And her brother and mother answered: Let the maid tarry at the least ten days with us, & after she shall depart.",
+   "madueke_b": "And her brother and mother answered: Let the maid tarry at the least ten days with us, & after she shall depart."
+  },
+  "56": {
+   "s_dismas": "Stay me not, ſaid he, becauſe our Lord hath directed my way: diſmiſſe me that I may goe on to my lord.",
+   "odr_com": "Stay me not, said he, because our Lord hath directed my way: dismisse me that I may goe on to my lord.",
+   "sabates_a": "Stay me not, said he, because our Lord hath directed my way: dismiss me that I may go on to my lord.",
+   "madueke_b": "Stay me not, said he, because our Lord hath directed my way: dismiss me that I may go on to my lord."
+  },
+  "57": {
+   "s_dismas": "And they ſaid: Let vs cal the maid, and aske her wil.",
+   "odr_com": "And they said: Let vs cal the maid, and aske her wil.",
+   "sabates_a": "And they said: Let us call the maid, and ask her will.",
+   "madueke_b": "And they said: Let us call the maid, and ask her will."
+  },
+  "58": {
+   "s_dismas": "And being called, when ſhe was come, the asked: Wilt thou goe with this man? who ſaid: I wil goe.",
+   "odr_com": "And being called, when she was come, they asked: Wilt thou goe with this man? who said: I wil goe.",
+   "sabates_a": "And being called, when she was come, they asked: Wilt thou go with this man? Who said: I will go.",
+   "madueke_b": "And being called, when she was come, they asked: Wilt thou go with this man? Who said: I will go."
+  },
+  "59": {
+   "s_dismas": "They diſmiſſed her therfore, and her nurce, and Abrahams ſeruant, and his companie,",
+   "odr_com": "They dismissed her therfore, and her nurce, and Abrahams seruant, and his companie,",
+   "sabates_a": "They dismissed her therefore, and her nurse, and Abraham's servant, and his company,",
+   "madueke_b": "They dismissed her therefore, and her nurse, and Abraham's servant, and his company,"
+  },
+  "60": {
+   "s_dismas": "wiſhing proſperitie to their ſiſter, and ſaying: Thou art our ſiſter, encreaſe thou into thouſand thouſands, and thy ſeed poſſeſſe the gates of their enemies.",
+   "odr_com": "wishing prosperitie to their sister, and saying: Thou art our sister, encrease thou into thousand thousands, and thy seed possesse the gates of their enemies",
+   "sabates_a": "wishing prosperity to their sister, and saying: Thou art our sister, increase thou into thousand thousands, and thy seed possess the gates of their enemies.",
+   "madueke_b": "wishing prosperity to their sister, and saying: Thou art our sister, increase thou into thousand thousands, and thy seed possess the gates of their enemies."
+  },
+  "61": {
+   "s_dismas": "Therfore Rebecca, and her maides being ſet vpon camels, folowed the man: who with ſpeed returned vnto his lord, and",
+   "odr_com": "Therfore Rebecca, and her maides being set vpon camels, folowed the man: who with speed returned vnto his lord; and",
+   "sabates_a": "Therefore Rebecca and her maids being set upon camels, followed the man: who with speed returned unto his lord; and",
+   "madueke_b": "Therefore Rebecca and her maids being set upon camels, followed the man: who with speed returned unto his lord; and"
+  },
+  "62": {
+   "s_dismas": "the ſame time Iſaac walked along the way, that lead- eth to the wel of the Liuing and the ſeing, ſo called: for he dwelt in the ſouth countrie;",
+   "odr_com": "the same time Isaac walked along the way, that leadeth to the wel of the Liuing and the seing, so called: for he dwelt in the south countrie;",
+   "sabates_a": "the same time Isaac walked along the way, that leadeth to the well of the Living and the seeing, so called; for he dwelt in the south country:",
+   "madueke_b": "the same time Isaac walked along the way, that leadeth to the well of the Living and the seeing, so called; for he dwelt in the south country:"
+  },
+  "63": {
+   "s_dismas": "and he was gone forth to meditate in the field, the day nowe being wel ſpent: and when he had caſt vp his eyes, he ſaw camels coming a farre of.",
+   "odr_com": "and he was gone forth to meditate in the field, the day nowe being wel spent: and when he had cast vp his eyes, he saw camels coming a farre of.",
+   "sabates_a": "and he was gone forth to meditate in the field, the day now being well spent: and when he head cast up his eyes, he saw camels coming a far off.",
+   "madueke_b": "and he was gone forth to meditate in the field, the day now being well spent: and when he head cast up his eyes, he saw camels coming a far off."
+  },
+  "64": {
+   "s_dismas": "Rebecca alſo, when ſhe ſaw Iſaac, lighted of the camel,",
+   "odr_com": "Rebecca also, when she saw Isaac, lighted of the camel,",
+   "sabates_a": "Rebecca also, when she saw Isaac, lighted off the camel,",
+   "madueke_b": "Rebecca also, when she saw Isaac, lighted off the camel,"
+  },
+  "65": {
+   "s_dismas": "and ſaid to the ſeruant: Who is that man which cometh towards vs along the field? And he ſaid to her: The ſame is my lord. But she quickly taking her cloake, couered her ſelfe.",
+   "odr_com": "and said to the seruant: Who is that man which cometh towards vs along the field? And he said to her. The same is my lord. But she quickly taking her cloake, couered her selfe.",
+   "sabates_a": "and said to the servant: Who is that man which cometh towards us along the field? And he said to her: The same is my lord. But she quickly taking her cloak, covered herself.",
+   "madueke_b": "and said to the servant: Who is that man which cometh towards us along the field? And he said to her: The same is my lord. But she quickly taking her cloak, covered herself."
+  },
+  "66": {
+   "s_dismas": "And the ſeruant told Iſaac al things that he hed done.",
+   "odr_com": "And the seruant told Isaac al things that he hed done.",
+   "sabates_a": "And the servant told Isaac all things that he had done.",
+   "madueke_b": "And the servant told Isaac all things that he had done."
+  },
+  "67": {
+   "s_dismas": "Who brought her into the tent of Sara his mother, and tooke her to wife: and he loued her ſo much, that it did moderate the ſorrowe, which was chanced of his mothers death.",
+   "odr_com": "Who brought her into the tent of Sara his mother, and tooke her to wife: and he loued her so much, that it did moderate the sorrowe, which was chanced of his mothers death.",
+   "sabates_a": "Who brought her into the tent of Sara his mother, & took her to wife: and he loved her so much, that it did moderate the sorrow which was chanced of his mother's death.",
+   "madueke_b": "Who brought her into the tent of Sara his mother, & took her to wife: and he loved her so much, that it did moderate the sorrow which was chanced of his mother's death."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Abraham was old, and of many days, and our Lord had blessed him in all things.",
+  "2": "And he said to the elder servant of his house, which was ruler over all that he had: Put thy hand under my thigh,",
+  "3": "that I may adjure thee by our Lord God of heaven and earth, that thou take not a wife for my son of the daughters of the Chananites, among whom I dwell:",
+  "4": "but that thou go unto mine own country and kindred, and thence take a wife for my son Isaac.",
+  "5": "The servant answered: If the woman will not come with me into this land, whether must I bring thy son back again to the place, from whence thou didst come forth?",
+  "6": "And Abraham said: Beware thou never bring my son back again thither.",
+  "7": "Our Lord God of heaven, which took me out of my father's house, and out of my native country, which spake to me, and sware to me, saying: To thy seed will I give this land; he shall send his Angel before thee, and thou shall take from thence a wife for my son:",
+  "8": "but if the woman will not follow thee, thou shalt not be bound by the oath: only bring not my son thither again.",
+  "9": "The servant therefore put his hand under the thigh of Abraham his lord, and sware to him upon this word.",
+  "10": "And he took ten camels of his lord's herd, and departed, of all his goods carrying something with him, and setting forward went on into Mesopotamia to the city of Nachor.",
+  "11": "And when he had made the camels lie down without the town beside a well of water at even, at the time when women are wont to come forth to draw water, he said:",
+  "12": "O Lord God of my lord Abraham, meet me today, I beseech thee, and do mercifully with my master Abraham.",
+  "13": "Behold I stand nigh to the fountain of water and the daughters of the inhabiters of this city will come forth to draw water.",
+  "14": "Therefore the maid, to whom I shall say: Bow down thy tankard that I may drink; and she shall answer: Drink, yea to thy camels also will I give drink; she it is, whom thou hast provided for thy servant Isaac: and by this I shall understand, that thou hast dealt mercifully with my master.",
+  "15": "Neither had he yet ended these words within himself, & behold Rebecca came forth, the daughter of Bathuel, the son of Melcha, wife to Nachor the brother of Abraham, having a tankard on her shoulder;",
+  "16": "a passing comely maid, & most beautiful virgin, & not known to man: and she was gone down to the fountain, and had filled her tankard, and came back.",
+  "17": "And the servant ran to meet her, and said: Give me a little water to drink of thy tankard.",
+  "18": "Who answered: Drink my lord. And quickly she let down the tankard upon her arm, and gave him drink.",
+  "19": "And when he had drunk, she added: but for thy camels also I will draw water, till all do drink.",
+  "20": "And pouring out the tankard into the troughs, she ran back to the well to draw water: and being drawn gave it to all the camels.",
+  "21": "But he musing beheld her with silence, desirous to know whether our Lord had made his journey prosperous or not.",
+  "22": "And after that the camels had drunk, the man plucked forth golden earlets, weighing two sicles, and as many bracelets of ten sicles weight.",
+  "23": "And he said to her: Whose daughter art thou? Shew me; is there any place in thy father's house to lodge?",
+  "24": "Who answered: I am the daughter of Bathuel, the son of Melcha, whom she bare to Nachor.",
+  "25": "And she added, saying: Of straw also and hay we have good store, and a large place to lodge in.",
+  "26": "The man bowed himself, and adored our Lord,",
+  "27": "saying: blessed be the Lord God of my lord Abraham, that hath not taken away his mercy & truth from my lord, and hath brought me the straight way into the house of my lord's brother.",
+  "28": "The maid therefore ran, and reported into her mother's house all things that she had heard.",
+  "29": "And Rebecca had a brother named Laban, who in all haste went forth to the man, where the fountain was.",
+  "30": "And when he had seen the earlets and bracelets in his sister's hands, and hand heard all her words reporting: These words spake the man unto me; he came to the man which stood beside the camels, and nigh to the fountain of water:",
+  "31": "and said to him: Come in, thou blessed of our Lord: Why standest thou without? I have prepared the house, and a place for the camels.",
+  "32": "And he brought him into his lodging: and he unharnessed the camels, and gave straw and hay, and water to wash his feet, and of the men that were come with him.",
+  "33": "And bread was set before him. Who said: I will not eat till I speak my message. He answered him: Speak.",
+  "34": "And he said: I am the servant of Abraham:",
+  "35": "And our Lord hath blessed my lord wonderfully, and he is magnified: and he hath given him sheep, & oxen, silver and gold, men servants & women servants, camels, and asses.",
+  "36": "And Sara my lord's wife hath born my lord a son in her old age, and he hath given him all things that he had.",
+  "37": "And my lord adjured me saying: Thou shalt not take a wife for my son of the Chananites, in whose land I dwell:",
+  "38": "but thou shalt go to my father's house, and of mine own kindred shalt thou take a wife for my son:",
+  "39": "but I answered my lord: What if the woman will not come with me?",
+  "40": "Our Lord, saith he, in whose sight I walk, will send his Angel with thee, & will direct thy way: and thou shalt take a wife for my son of mine own kindred, and of my father's house.",
+  "41": "Thou shalt be innocent from my curse, when thou shalt come to my kin, and they will not give her thee.",
+  "42": "I came therefore today to the well of water, and said: O Lord God of my lord Abraham, if thou hast directed my way, wherein I now walk,",
+  "43": "behold I stand besides the well of water, and the virgin, that shall come forth to draw water, when she shall hear me say: Give me a little water to drink of thy tankard;",
+  "44": "and she shall say to me: Drink both thou and for thy camels I will draw also; that is the woman, which our Lord hath prepared for my master's son.",
+  "45": "And whilst I pondered these things secretly with myself, Rebecca appeared coming with a tankard, which she carried upon her shoulder: & she went down to the fountain, & drew water.",
+  "46": "And I said to her: Give me a little to drink. Who speedily let down the tankard from her shoulder, and said to me: Drink Both thou, and to thy camels I will give drink. I drank, and she watered the camels.",
+  "47": "And I asked her, and said: Whose daughter art thou? Who answered: I am the daughter of Bathuel, the son of Nachor, whom Melcha bare him. I hung therefore earlets to adorn her face, and I put bracelets upon her hands.",
+  "48": "And prostrate I adored our Lord, blessing the Lord God of my lord Abraham, who hath brought me the straight way to take the daughter of my lord's brother for his son.",
+  "49": "Wherefore if you do according to mercy and truth with my lord, shew me: but if it please you otherwise, that also tell me, that I may go to the right hand or to the left.",
+  "50": "And Laban and Bathuel answered: From our Lord the word hath proceeded: we cannot speak any other thing with thee besides his pleasure.",
+  "51": "Behold Rebecca is before thee, take her and go thy ways, & let her be the wife of thy lord's son, as our Lord hath spoken.",
+  "52": "Which when Abraham's servant heard, falling down he adored our Lord to the ground.",
+  "53": "And taking forth vessels of silver, and gold, and garments, gave them to Rebecca for a present. To her brothers also, and to her mother he offered gifts.",
+  "54": "Abanquet was made, and eating and drinking together they lodged there. And in the morning the servant arose, and said: Dismiss me, that I may go to my lord.",
+  "55": "And her brother and mother answered: Let the maid tarry at the least ten days with us, & after she shall depart.",
+  "56": "Stay me not, said he, because our Lord hath directed my way: dismiss me that I may go on to my lord.",
+  "57": "And they said: Let us call the maid, and ask her will.",
+  "58": "And being called, when she was come, they asked: Wilt thou go with this man? Who said: I will go.",
+  "59": "They dismissed her therefore, and her nurse, and Abraham's servant, and his company,",
+  "60": "wishing prosperity to their sister, and saying: Thou art our sister, increase thou into thousand thousands, and thy seed possess the gates of their enemies.",
+  "61": "Therefore Rebecca and her maids being set upon camels, followed the man: who with speed returned unto his lord; and",
+  "62": "the same time Isaac walked along the way, that leadeth to the well of the Living and the seeing, so called; for he dwelt in the south country:",
+  "63": "and he was gone forth to meditate in the field, the day now being well spent: and when he head cast up his eyes, he saw camels coming a far off.",
+  "64": "Rebecca also, when she saw Isaac, lighted off the camel,",
+  "65": "and said to the servant: Who is that man which cometh towards us along the field? And he said to her: The same is my lord. But she quickly taking her cloak, covered herself.",
+  "66": "And the servant told Isaac all things that he had done.",
+  "67": "Who brought her into the tent of Sara his mother, & took her to wife: and he loved her so much, that it did moderate the sorrow which was chanced of his mother's death."
+ },
+ "ref_coverage": {
+  "janvier": 67,
+  "have": {
+   "s_dismas": 67,
+   "odr_com": 67,
+   "sabates_a": 67,
+   "madueke_b": 67
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 268,
+ "triage": "R3-READY",
+ "secs": 13.4
+}

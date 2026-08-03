@@ -1,0 +1,1793 @@
+{
+ "chapter": 49,
+ "n_verses": 32,
+ "n_cells": 128,
+ "n_pass": 103,
+ "rate": 0.8047,
+ "ref_means": {
+  "s_dismas": 0.9575,
+  "odr_com": 0.958,
+  "sabates_a": 0.9459,
+  "madueke_b": 0.9457
+ },
+ "src_rates": {
+  "S1": 0.8125,
+  "S3": 0.875,
+  "S9": 0.875,
+  "S6": 0.6562
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  21
+ ],
+ "n_open": 25,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 8,
+   "worst": 0.768,
+   "from": "p168",
+   "text": "Iudas, thee thy brethren shal the neck of thyne enemies: thy fathers children shal adore thee"
+  },
+  {
+   "src": "S9",
+   "verse": 8,
+   "worst": 0.89,
+   "from": "p180",
+   "text": "Iudas, thee thy brethren shal praiſe : thy hand in the neck of thyne enemies: thy fathers children shal adore"
+  },
+  {
+   "src": "S3",
+   "verse": 9,
+   "worst": 0.893,
+   "from": "p172",
+   "text": "whelp Iudas: to the pray my ſonne thou didſt aſcend: taking thy reſt thou didſt lye as a lion, in as it were a lyoneſſe, who shalraiſe himv"
+  },
+  {
+   "src": "S1",
+   "verse": 10,
+   "worst": 0.873,
+   "from": "p168",
+   "text": "The ſcepfor ter shal not BeTAXEN away from Iudas, anda duke our efhis to thigh, til he doe come that is to be ſent, and the ſame be the expectation of the gentiles"
+  },
+  {
+   "src": "S3",
+   "verse": 10,
+   "worst": 0.88,
+   "from": "p172",
+   "text": "The ſcep for ter shal not Be TAXEN away from Iudas, anda duke out efhis to thigh, til he doe come that is to be ſent, and the ſame be the expectation of the gentiles†"
+  },
+  {
+   "src": "S1",
+   "verse": 11,
+   "worst": 0.888,
+   "from": "p168",
+   "text": "Tying to the vineyard for- his colt, and to the vine, o my ſonne, his the aſſe per- ſhal wa ſh his ſtole in wine, and in the bloud of the grape the the cloke."
+  },
+  {
+   "src": "S3",
+   "verse": 11,
+   "worst": 0.888,
+   "from": "p172",
+   "text": "Tying to the vineyard for- his colt, and to the vine, o my ſonne, his ihe aſſe. per- ſhal wa ſh his ſtole in wine, and in the bloud of the grape the the cloke."
+  },
+  {
+   "src": "S9",
+   "verse": 11,
+   "worst": 0.868,
+   "from": "p180",
+   "text": "Tying to the vineyard for- his colt, and to the vine, o my ſonne, his ie aſſe. He per ſhal wa his ſtole in wine, and in the bloud of the grape the cloke."
+  },
+  {
+   "src": "S9",
+   "verse": 16,
+   "worst": 0.864,
+   "from": "p180",
+   "text": "Dan shal iudge his owne people as alſo an other tribe and An- of Iſrael."
+  },
+  {
+   "src": "S1",
+   "verse": 18,
+   "worst": 0.849,
+   "from": "p168",
+   "text": "I wil expect ruv sAIVATON o Lord."
+  },
+  {
+   "src": "S6",
+   "verse": 19,
+   "worst": 0.778,
+   "from": "p154",
+   "text": "I the girded ſhal fight betore him: and himſelt ſhal be gyr- al which"
+  },
+  {
+   "src": "S6",
+   "verse": 20,
+   "worst": 0.864,
+   "from": "p154",
+   "text": "ancient his bread is fat, aud he ſhal giue daynties to Kings."
+  },
+  {
+   "src": "S1",
+   "verse": 21,
+   "worst": 0.855,
+   "from": "r3",
+   "text": "Nepthali, a hart let forth, & gening ſpeaches of beautie."
+  },
+  {
+   "src": "S3",
+   "verse": 21,
+   "worst": 0.818,
+   "from": "p172",
+   "text": "Nepthali, a hart let forth, geuing ſpeaches beautie."
+  },
+  {
+   "src": "S9",
+   "verse": 21,
+   "worst": 0.873,
+   "from": "r3",
+   "text": "Nepthali, a hart let forth, & geuing ſpeaches of beautie."
+  },
+  {
+   "src": "S6",
+   "verse": 21,
+   "worst": 0.0,
+   "from": "p154",
+   "text": "a hart let forth, and giuing ſpeaches ot beautie. written"
+  },
+  {
+   "src": "S6",
+   "verse": 22,
+   "worst": 0.8,
+   "from": "p154",
+   "text": "a child encreaſing, encreaſing and comelie to behold: comentaries, courſed to and tro vpon the wal.3."
+  },
+  {
+   "src": "S1",
+   "verse": 24,
+   "worst": 0.896,
+   "from": "p168",
+   "text": "His bowe ſate vpon the ſtrong, & the bands of his armes and his handes were diſſolued, by the handes the mightie of lacob: thence came forth a paſtour, the ſtone of Hracl"
+  },
+  {
+   "src": "S6",
+   "verse": 24,
+   "worst": 0.798,
+   "from": "p154",
+   "text": "His bow ſate ſtrong, and the bands of his armes and his hands were diſſolthe hands of the Mightie of Iacob: thence came torth a paſtone ot Iſrael."
+  },
+  {
+   "src": "S6",
+   "verse": 25,
+   "worst": 0.861,
+   "from": "p154",
+   "text": "The God of thy tather ſhal be thy helper, Almightie ſhal bleſſe thee with the bleſſines of heauen ttom with the bleſſings of the depth that lieth beneath with the ot the paps and of the womb."
+  },
+  {
+   "src": "S6",
+   "verse": 26,
+   "worst": 0.85,
+   "from": "p154",
+   "text": "The bleſſings ot thy taſtrengthned with the bleſſings of his fathers: vntil the dethe eternal hils came: be they vpon the head of Ioſeph, and crowne of the Nararite among his brethren."
+  },
+  {
+   "src": "S6",
+   "verse": 28,
+   "worst": 0.863,
+   "from": "p154",
+   "text": "phecie theſe in the tribes ot Iſrael twelue: theſe thines ſpake their guſtin them, and he bleſſed euerie one, with their proper bleſfings."
+  },
+  {
+   "src": "S6",
+   "verse": 29,
+   "worst": 0.86,
+   "from": "p154",
+   "text": "Paul, he commanded theni, ſaying: I am gathered vnto my peo- tribe of you me with my fathers in the double caue, which is in the min, who Ephron the Hethite,"
+  },
+  {
+   "src": "S6",
+   "verse": 31,
+   "worst": 0.805,
+   "from": "p154",
+   "text": "There they buried him and an Apoſtle wite: there was Iſaac buried with Rebeoca his wife: there Chriſt. Sauctis. doth lie buried."
+  },
+  {
+   "src": "S6",
+   "verse": 32,
+   "worst": 0.848,
+   "from": "p154",
+   "text": "And when he had finiſhed the precepts he inſtructed his ſonnes, he plucked vp his teet vpon the bed, and he was put vnto his people."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and Iacob called his ſonnes, and ſaid to them Come A together, that I may ſhew you the things that ſhal come to you in the laſt dayes.",
+    "from": "p167",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "and Iacob called his ſonnes, and ſaid to them: Come Atogether, that I may ſhew you the things that ſhal come to you in the laſt dayes.",
+    "from": "p171",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "and Iacob called his ſonnes, and ſaid to them Come come Atogether, that I may ſhew you the things that ſhal pre al to you in the laſt dayes.",
+    "from": "p179",
+    "score": {
+     "s_dismas": 0.912,
+     "odr_com": 0.912,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   },
+   "S6": {
+    "text": "MMND Iacob called his ſonnes, and ſaid to them : Come together, that I may, ſhew you the things that ſhal come to vou in the laſt dayes.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "Come together, and heare you ſonnes of Iacob, heare ye Iſrael your father:",
+    "from": "p167",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "Come together, and heare you ſonnes of Iacob, heare ye Iſrael your father",
+    "from": "p171",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "Come together, and heare you ſonnes of Iacob, heare ye Iſrael your father",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Come together and heare you ſonnes of Iacob, heare ve Iſrael your tather.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "Ruben my firſt begotten, thou art my ſtrength, and the begining of my ſorow: former in giftes, greater empyre",
+    "from": "p167",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.922,
+     "madueke_b": 0.922
+    }
+   },
+   "S3": {
+    "text": "Ruben my firſt begotten, thou art my ſtrength, and the begining of my ſorow: former in giftes, greater in empyre.",
+    "from": "p171",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "Ruben my firſt begotten, thou art my ſtrength, and the begining of my forow: former in giftes, greater in A empyre.",
+    "from": "p179",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S6": {
+    "text": "Ruben my firſt.begotten, thou art my ſtrength, the beginning of my ſorow: former in guitts, greater in Empyre.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "Thou art poured out as water, encreaſe thou not:\" becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his couth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "Thou art poured out as water, encreaſe thou not:\" :becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his couth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "Thou art poured out as water, encreaſe thou not: becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his couth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "Thou art powred out as water, encreaſe thou not: becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his couch.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Simcon and Leui brethren: veſſels of iniquitie warring.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "Simeon and Leui brethren: veſſels of iniquitie warring.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Simcon and Leui brethren: veſſels of iniquitie warring.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": ".Sameon and Leui brethren: veſſels of iniquitie warring.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "Into their counſel come not my ſoule, and in their congregation be not my glorie : becauſe in their furie they ſlew and in their wilfulnes they vndermined a wall.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S3": {
+    "text": "Into their counſel come not my ſoule, and in their congregation be not my glorie : becauſe in their furie they a man and in their wilfulnes they vndermined a wall.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "Into their counſel come not my ſoule, and in their congregation be not my glorie : becauſe in their furie they ſlew a man, and in their wilfulnes they vndermined a wall.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Into theix counſel come not my ſoule, and in their congregation be not my glorie becauſe in their furie they ſlew a man, and in their wiltulnes they vndermined a wal.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Curſed be their furie, becauſe it is ſtubborne: and their indignation, becauſe it is hard I wil diuide them in Iacob, and wil diſperſe them in Iſrael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Curſed be their furie, becauſe it is ſtubborne: and their to indignation, becauſe it is hard : I wil diuide them in Iacob, but and wil diſperſe them in Iſrael.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "Curſed be their furie, becauſe it is ſtubborne: and their to indignation, becauſe it is hard : I wil diuide them in Iacob, but and wil diſperſe them in Iſrael.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "Curſed be their furie, becauſe it is ſtub. borne: aud their indignation, becauſe it is hard I wil diuide them in Iacob, and wil diſperſe them in Iſrael.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "Iudas, thee thy brethren shal the neck of thyne enemies: thy fathers children shal adore thee",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.771,
+     "odr_com": 0.778,
+     "sabates_a": 0.768,
+     "madueke_b": 0.768
+    }
+   },
+   "S3": {
+    "text": "Iudas, thee thy brethren shal praiſe : thy hand shalbe the neck of thyne enemies: thy fathers children shal adore thee",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.974,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S9": {
+    "text": "Iudas, thee thy brethren shal praiſe : thy hand in the neck of thyne enemies: thy fathers children shal adore",
+    "from": "p180",
+    "score": {
+     "s_dismas": 0.89,
+     "odr_com": 0.897,
+     "sabates_a": 0.893,
+     "madueke_b": 0.893
+    }
+   },
+   "S6": {
+    "text": "Iudas, thee thy brethren ſhal praiſe : thy hand ſhal be in the neck ot thyne enemies: thy tathers children ſhal adore thee.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.975,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "whelp Iudas: to the pray my ſonne thou didſt aſcend: taking thy reſt thou didſt lye as a lion, in as it were a lyoneſſe, who shalraiſe himvp",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 0.918,
+     "sabates_a": 0.906,
+     "madueke_b": 0.9
+    }
+   },
+   "S3": {
+    "text": "whelp Iudas: to the pray my ſonne thou didſt aſcend: taking thy reſt thou didſt lye as a lion, in as it were a lyoneſſe, who shalraiſe himv",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.912,
+     "odr_com": 0.912,
+     "sabates_a": 0.899,
+     "madueke_b": 0.893
+    }
+   },
+   "S9": {
+    "text": "lions whelp Iudas: to the pray my ſonne thou didſt aſcend: taking thy reſt thou didſt lye as a lion, and as it were a lyoneſſe, who shal raiſe him vp",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.978,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "lions whelp Iudas : to the prey my ſoune thou didſt aſcend : taking thy reſt thou didſt lye as a lion, and as it were a lioneſſe, who thal raiſe him vp",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.971,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "The ſcepfor ter shal not BeTAXEN away from Iudas, anda duke our efhis to thigh, til he doe come that is to be ſent, and the ſame be the expectation of the gentiles",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.888,
+     "odr_com": 0.888,
+     "sabates_a": 0.873,
+     "madueke_b": 0.873
+    }
+   },
+   "S3": {
+    "text": "The ſcep for ter shal not Be TAXEN away from Iudas, anda duke out efhis to thigh, til he doe come that is to be ſent, and the ſame be the expectation of the gentiles†",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.895,
+     "odr_com": 0.895,
+     "sabates_a": 0.88,
+     "madueke_b": 0.88
+    }
+   },
+   "S9": {
+    "text": "The ſcepter shal not Be TAEN away from Iudas, and a duke out his thigh, til he doe come that is to be ſent, and the ſame ihal be the expectation of the gentiles.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "\"THE SCEPTER SHAL NOT BE TAKEN AWAY FROM IVDAS AND A DVKE OUT OF HIS THIGH, TIL HE DOE COME THAT IS TO BE SENT, AND THE SAME SHAL BE THE EXPECTATION OF THE GENTILES.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "Tying to the vineyard for- his colt, and to the vine, o my ſonne, his the aſſe per- ſhal wa ſh his ſtole in wine, and in the bloud of the grape the the cloke.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.914,
+     "odr_com": 0.907,
+     "sabates_a": 0.888,
+     "madueke_b": 0.888
+    }
+   },
+   "S3": {
+    "text": "Tying to the vineyard for- his colt, and to the vine, o my ſonne, his ihe aſſe. per- ſhal wa ſh his ſtole in wine, and in the bloud of the grape the the cloke.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.907,
+     "odr_com": 0.907,
+     "sabates_a": 0.888,
+     "madueke_b": 0.888
+    }
+   },
+   "S9": {
+    "text": "Tying to the vineyard for- his colt, and to the vine, o my ſonne, his ie aſſe. He per ſhal wa his ſtole in wine, and in the bloud of the grape the cloke.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 0.897,
+     "odr_com": 0.897,
+     "sabates_a": 0.868,
+     "madueke_b": 0.868
+    }
+   },
+   "S6": {
+    "text": "Tying to the vineyard his colt, and to the vine, o my ſoune, his ſhe aſſe. He ſhal waſh his ſtole in wine, and in the bloud of the grape his cloke.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.993,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "His eyes are more beautiful then wine, and his teeth whiter then milke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "His eyes are more beautiful then wine, and his teeth whiter then milke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "His eyes are more beautiful then wine, and his teeth whiter then milke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "His eyes are more beautiful then wiue, and his teeth whiter then milke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "Zabulon shal dwel in the shore of the ſea, and in road of shippes reaching as farre as Sidon.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "Zabulon shal dwel in the shore of the ſea, and in road of shippes reaching as farre as Sidon.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S9": {
+    "text": "Zabulon shal dwel in the shore of the ſea, and in the road of shippes reaching as farre as Sidon.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Zabulon ſhal dwel in the ſhore of the ſea, and in the road of ſhips reaching as farre as Sidon.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Iſſachar a ſtrong aſſe lying at reſt betwen the borders.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Iſſachar a ſtrong aſſe lying at reſt betwen the borders.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Iſſachar a ſtrong aſſe lying at reſt betwen the borders.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Iſſachar a ſtrong aſſe lying at reſt between the borders.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "He ſav reſt thar it was good : and the earth that it very good: and he put vnder his shoulder to cary, and became ſeruing vnder tributes.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "He ſav reſt that it was good : and the earth that it very good: and he put vnder his shoulder to cary, and became ſeruing vnder tributes.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "He ſaw reſt that it was good : and the earth that it was Deli- very good: and he put vnder his shoulder to cary, and became ſeruing vnder tributes.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "He ſaw reſt that it was good and the earth that is was very good: and he put vnder his ſhoulder to cary, and became ſeruing vnder tributes.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "Dan shal iudge his owne people as alſo an other tribe in Iſrael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "Dan shal iudge his owne people as alſo an other tribe of Iſrael.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S9": {
+    "text": "Dan shal iudge his owne people as alſo an other tribe and An- of Iſrael.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 0.886,
+     "odr_com": 0.886,
+     "sabates_a": 0.864,
+     "madueke_b": 0.864
+    }
+   },
+   "S6": {
+    "text": "Dan ſhal iudge his owne people, as alſo an other tribe in Iſrael.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Be Dan a ſnake in the way, a ſerpent in the path, byting the hooffes of the horſe, that his ryder may fal back-ward.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "Be Dan \" a ſnake in the way, a ſerpent in the path, byting the hooffes of the horſe, that his ryder may fal back-ward.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "Be Dan \" a ſnake in the way, a ſerpent in the path, byting the hooffes of the horſe, that his ryder may fal backward.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "Be Dan a ſnake in the way, a ſerpent in the path, byting the hooffes ot the horſe, that his rider may tal backward.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "I wil expect ruv sAIVATON o Lord.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.849,
+     "odr_com": 0.849,
+     "sabates_a": 0.849,
+     "madueke_b": 0.849
+    }
+   },
+   "S3": {
+    "text": "I wil expect THY SALVATION o Lord.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "I wil expect THy SALVATION o Lord.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "I wil expect THY SALVAT.ION o Lord.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Gad, the gyrded shal fight before him: and himſelf shal be gyrded backward.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Gad, the gyrded shal fight before him : and himſelf shal be gyrded backward.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Gad, the gyrded shal fight before him : and himſelf shal be gyrded backward.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "I the girded ſhal fight betore him: and himſelt ſhal be gyr- al which",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.778,
+     "odr_com": 0.778,
+     "sabates_a": 0.783,
+     "madueke_b": 0.783
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "Aſer, his bread is fat, and he shal geue daynties to kinges.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "Aſer, his bread is fat, and he shal geue daynties to kinges.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "Aſer, his bread is fat, and he shal geue daynties to kinges.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "ancient his bread is fat, aud he ſhal giue daynties to Kings.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.864,
+     "odr_com": 0.864,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "Nepthali, a hart let forth, & gening ſpeaches of beautie.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.855,
+     "madueke_b": 0.855
+    }
+   },
+   "S3": {
+    "text": "Nepthali, a hart let forth, geuing ſpeaches beautie.",
+    "from": "p172",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.818,
+     "madueke_b": 0.818
+    }
+   },
+   "S9": {
+    "text": "Nepthali, a hart let forth, & geuing ſpeaches of beautie.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.873,
+     "madueke_b": 0.873
+    }
+   },
+   "S6": {
+    "text": "a hart let forth, and giuing ſpeaches ot beautie. written",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.654,
+     "madueke_b": 0.654
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "Ioſeph a child encreaſing, encreaſing and comelie to behold the daughters courſed to and for vpon the wall.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S3": {
+    "text": "Ioſeph a child encreaſing, encreaſing and comelie to behold the daughters courſed to and for vpon the wall.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S9": {
+    "text": "Ioſeph a child encreaſing, encreaſing and comelie to behold the daughters courſed to and for vpon the wall.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "a child encreaſing, encreaſing and comelie to behold: comentaries, courſed to and tro vpon the wal.3.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.819,
+     "odr_com": 0.8,
+     "sabates_a": 0.802,
+     "madueke_b": 0.802
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "But the dart men did exaſperate him, & brawled, and enuied him.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S3": {
+    "text": "But the dart men did exaſperate him, & brawled, and enuied him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S9": {
+    "text": "But the dart men did exaſperate him, brawled, and enuied him.",
+    "from": "p180",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S6": {
+    "text": "But the dart men did exaſperate him, and brawled, and enuied him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "His bowe ſate vpon the ſtrong, & the bands of his armes and his handes were diſſolued, by the handes the mightie of lacob: thence came forth a paſtour, the ſtone of Hracl",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.958,
+     "sabates_a": 0.896,
+     "madueke_b": 0.896
+    }
+   },
+   "S3": {
+    "text": "His bowe ſate vpon the ſtrong, & the bands of his armes and his handes were diſſolued, by the handes of the mightie of Iacob: thence came forth a paſtour, the ſtone of Iſrael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S9": {
+    "text": "His bowe ſate vpon the ſtrong, & the bands of his armes and his handes were diſſolued, by the handes of the mightie of Iacob thence came forth a paſtour, the ſtone of Iſrael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S6": {
+    "text": "His bow ſate ſtrong, and the bands of his armes and his hands were diſſolthe hands of the Mightie of Iacob: thence came torth a paſtone ot Iſrael.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.802,
+     "odr_com": 0.798,
+     "sabates_a": 0.838,
+     "madueke_b": 0.838
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "The God of thy father shal be thy helper, the Almightie shal bleſſe thee with the bleſnges of heauen from aboue, with the bleſſinges of the deapth, that heth beneath, with the bleſſings of the pappes and of the wombe.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S3": {
+    "text": "The God of thy father shal be thy helper,2 the Almightie ſhal bleſſe thee with the bleſſnges of heauen from aboue, with the bleſſinges of the deapth, that licth beneath, with the bleſſings of the pappes and of the wombe.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S9": {
+    "text": "The God of thy father shal be thy helper, the Almightie shal bleſſe thee with the bleſſinges of heauen from aboue, with the bleſſinges of the deapth, that lieth beneath, with the bleſſings of the pappes and of the wombe.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "The God of thy tather ſhal be thy helper, Almightie ſhal bleſſe thee with the bleſſines of heauen ttom with the bleſſings of the depth that lieth beneath with the ot the paps and of the womb.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.861,
+     "odr_com": 0.861,
+     "sabates_a": 0.867,
+     "madueke_b": 0.867
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "†The bleſſinges of thy father were ſtrengthned with the bleſſings of his fathers: vntil the deſire of the eternal hilles came: be they vpon the headof Ioſeph, vpon the crowne of the Nazarite among his brethren",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "The bleſſinges of thy father were ſtrengthned withꝰ the bleſſings ofhis fathers: vntil the deſire of the eternal hilles came: be they vpon the head of Ioſeph, vpon the crowne ofthe Nazarite among his brethren.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S9": {
+    "text": "The bleſſinges of thy father were ſtrengthned with the bleſſings of his fathers: vntil the deſire of the eternal hilles came: be they vpon the head of Ioſeph, &vpon the crowne of the Nazarite among his brethren.",
+    "from": "p181",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "The bleſſings ot thy taſtrengthned with the bleſſings of his fathers: vntil the dethe eternal hils came: be they vpon the head of Ioſeph, and crowne of the Nararite among his brethren.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.85,
+     "odr_com": 0.85,
+     "sabates_a": 0.855,
+     "madueke_b": 0.855
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "Beniamin a rauening woolfe, in the morning shal eete: the pray, and in the cuening shal diuide the ſpoile",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "Beniamin a rauening woolfe, in the morning shal eate: the pray, and in the euening shal diuide the ſpoile",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "Beniamin a rauening woolfe, in the morning shal eate the pray, and in the euening shal diuide the ſpoile",
+    "from": "p181",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Beniamin a reuening woolte, in the morning ſhal eate the prey, and in the euening ſhal diuide the ſpoile.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "Al theſe in the tribes of Iſracl twelue: theſe thinge ſpake their father to them, and he bleſſed euerie one, wiſh their proper bleſſings",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "Al theſe in the tribes of Iſracl twele: theſe things ſpake their father to them, and he bleſſed euerie one, with their proper bleſſings",
+    "from": "p173",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "Al theſe in the tribes of Iſrael twelue: theſe things ſpake their father to them, and he bleſſed euerie one, with their proper bleſſings.",
+    "from": "p181",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "phecie theſe in the tribes ot Iſrael twelue: theſe thines ſpake their guſtin them, and he bleſſed euerie one, with their proper bleſfings.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.866,
+     "odr_com": 0.866,
+     "sabates_a": 0.863,
+     "madueke_b": 0.863
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "And he commanded them, ſaying: I ain geathered vnto my people: burie you me with my fathers in the duble caue, which is in the field of Epbron the Hethire,",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "Andthe commanded them, ſaying : I ain geathered vnto my people: burie you me with my fathers in the duble caue, which is in the field of Ephron the Hethite,",
+    "from": "p173",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "And he commanded them, ſaying I am geathered vnto my people: burie you me with my fathers in the duble caue, which is in the field of Ephron the Hethite,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Paul, he commanded theni, ſaying: I am gathered vnto my peo- tribe of you me with my fathers in the double caue, which is in the min, who Ephron the Hethite,",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.86,
+     "odr_com": 0.86,
+     "sabates_a": 0.871,
+     "madueke_b": 0.871
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "againſt Mamore in the Land of Chanaan, which Abraham bought with the field of Ephror the Hlethite for apoſſeſſion to burie in.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "againſt Mambre in the Land of Chanaan, which Abraham bought with the fieldof Ephron the Hethite for a poſſeſſion to burie in.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "againſt Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hethite for a poſſeſſion to burie in.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "againſt Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hehite for a poſſeſſion to burie in.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "There they buried him, Sara his wife there was Iſaac buried with Rebecca his wife: there atſo Lia doth lie buried.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S3": {
+    "text": "There they buried him, Sara his wife: there was Iſaac buried with Rebecca his wife: there alſo Lia doth lie buried.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S9": {
+    "text": "There they buried him, & Sara his wife there was Iſaac buried with Rebecca his wife: there alſo Lia doth lie buzied.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "There they buried him and an Apoſtle wite: there was Iſaac buried with Rebeoca his wife: there Chriſt. Sauctis. doth lie buried.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.805,
+     "odr_com": 0.805,
+     "sabates_a": 0.817,
+     "madueke_b": 0.817
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "And when he had finished the precepts wherwith he inſtructed his ſonnes, he plucked vp his feet vpon the bed, and died he was put vnto his people.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And when he had finished the precepts wherwith he inſtructed his ſonnes, he plucked vp his feet vpon the bed, and died he was put vnto His people.",
+    "from": "p173",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "And when he had finished the precepts wberwith he inſtructed his ſonnes, he plucked vp his feet vpon the bed, and died he was put vnto his people.",
+    "from": "p181",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S6": {
+    "text": "And when he had finiſhed the precepts he inſtructed his ſonnes, he plucked vp his teet vpon the bed, and he was put vnto his people.",
+    "from": "p154",
+    "score": {
+     "s_dismas": 0.895,
+     "odr_com": 0.895,
+     "sabates_a": 0.848,
+     "madueke_b": 0.848
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Iacob called his ſonnes, and ſaid to them: Come together, that I may ſhew you the things that ſhal come to you in the laſt dayes.",
+   "odr_com": "AND Iacob called his sonnes, and said to them: Come together, that I may shew you the things that shal come to you in the last dayes.",
+   "sabates_a": "And Jacob called his sons, and said to them: Come together, that I may shew you the things that shall come to you in the last days.",
+   "madueke_b": "And Jacob called his sons, and said to them: Come together, that I may shew you the things that shall come to you in the last days."
+  },
+  "2": {
+   "s_dismas": "Come together, and heare you ſonnes of Iacob, heare ye Iſrael your father:",
+   "odr_com": "Come together, and heare you sonnes of Iacob, heare ye Israel your father:",
+   "sabates_a": "Come together, and hear you sons of Jacob, hear ye Israel your father.",
+   "madueke_b": "Come together, and hear you sons of Jacob, hear ye Israel your father."
+  },
+  "3": {
+   "s_dismas": "Ruben my firſt begotten, thou art my ſtrength, and the begining of my ſorow: former in giftes, greater in empyre.",
+   "odr_com": "Ruben my first begotten, thou art my strength, and the begining of my sorow: former in giftes, greater in empyre.",
+   "sabates_a": "Ruben my first-begotten, thou art my strength, & the beginning of my sorrow: former in gifts, greater in Empire.",
+   "madueke_b": "Ruben my first-begotten, thou art my strength, & the beginning of my sorrow: former in gifts, greater in Empire."
+  },
+  "4": {
+   "s_dismas": "Thou art poured out as water, encreaſe thou not: becauſe thou diddeſt aſcend thy fathers bed, and diddeſt defile his coutch.",
+   "odr_com": "Thou art poured out as water, encrease thou not: because thou diddest ascend thy fathers bed, and diddest defile his coutch.",
+   "sabates_a": "Thou art poured out as water, increase thou not: because thou didst ascend thy father's bed, and didst defile his couch.",
+   "madueke_b": "Thou art poured out as water, increase thou not: because thou didst ascend thy father's bed, and didst defile his couch."
+  },
+  "5": {
+   "s_dismas": "Simeon and Leui brethren: veſſels of iniquitie warring.",
+   "odr_com": "Simeon and Leui brethren: vessels of iniquitie warring.",
+   "sabates_a": "Simeon and Levi brethren: vessels of iniquity warring.",
+   "madueke_b": "Simeon and Levi brethren: vessels of iniquity warring."
+  },
+  "6": {
+   "s_dismas": "Into their counſel come not my ſoule, and in their congregation be not my glorie: becauſe in their furie they ſlew a man, and in their wilfulnes they vndermined a wall.",
+   "odr_com": "Into their counsel come not my soule, and in their congregation be not my glorie: because in their furie they slew a man, and in their wilfulnes they vndermined a wall.",
+   "sabates_a": "Into their counsel come not my soul, and in their congregation be not my glory: because in their fury they slew a man, and in their willfulness they undermined a wall.",
+   "madueke_b": "Into their counsel come not my soul, and in their congregation be not my glory: because in their fury they slew a man, and in their willfulness they undermined a wall."
+  },
+  "7": {
+   "s_dismas": "Curſed be their furie, becauſe it is ſtubborne: and their indignation, becauſe it is hard: I wil diuide them in Iacob, and wil diſperſe them in Iſrael.",
+   "odr_com": "Cursed be their furie, because it is stubborne: and their indignation, because it is hard: I wil diuide them in Iacob, and wil disperse them in Israel.",
+   "sabates_a": "Cursed be their fury, because it is stubborn; and their indignation, because it is hard: I will divide them in Jacob, and will disperse them in Israel.",
+   "madueke_b": "Cursed be their fury, because it is stubborn; and their indignation, because it is hard: I will divide them in Jacob, and will disperse them in Israel."
+  },
+  "8": {
+   "s_dismas": "Iudas, thee thy brethren shal praiſe: thy hand shal be in the neck of thyne enemies: thy fathers children shal adore thee.",
+   "odr_com": "Iudas, thee thy brethren shal praise: thy hand shalbe in the neck of thyne enemies: thy fathers children shal adore thee.",
+   "sabates_a": "Judas, thee thy brethren shall praise: thy hand shall be in the neck of thine enemies: thy father's children shall adore thee.",
+   "madueke_b": "Judas, thee thy brethren shall praise: thy hand shall be in the neck of thine enemies: thy father's children shall adore thee."
+  },
+  "9": {
+   "s_dismas": "A lions whelp Iudas: to the pray my ſonne thou didſt aſcend: taking thy reſt thou didſt lye as a lion, and as it were a lyoneſſe, who shal raiſe him vp?",
+   "odr_com": "A lions whelp Iudas: to the pray my sonne thou didst ascend: taking thy rest thou didst lye as a lion, and as it were a lyonesse, who shal raise him vp?",
+   "sabates_a": "Alion's whelp Judas: to the prey my son thou didst ascend: taking thy rest thou didst lie as a lion, and as it were a lioness, who shall raise him up?",
+   "madueke_b": "A lion's whelp Judas: to the prey my son thou didst ascend: taking thy rest thou didst lie as a lion, and as it were a lioness, who shall raise him up?"
+  },
+  "10": {
+   "s_dismas": "The scepter shal not be taken away from Ivdas, and a dvke ovt of his thigh, til he doe come that is to be sent, and the same shal be the expectation of the gentiles.",
+   "odr_com": "The scepter shal not BE TAKEN away from Iudas, and a duke out of his thigh, til he doe come that is to be sent, and the same shal be the expectation of the gentiles.",
+   "sabates_a": "The Sceptre Shall Not be Taken Away From Judas, And A duke Out of His Thigh, Till he do Come That is to be Sent, And The Same Shall be The Expectation of The Gentiles.",
+   "madueke_b": "THE SCEPTRE SHALL NOT BE TAKEN AWAY FROM JUDAS, AND A DUKE OUT OF HIS THIGH, TILL HE DO COME THAT IS TO BE SENT, AND THE SAME SHALL BE THE EXPECTATION OF THE GENTILES."
+  },
+  "11": {
+   "s_dismas": "Tying to the vineyard his colt, and to the vine, o my ſonne, his the aſſe. He ſhal waſh his ſtole in wine, and in the bloud of the grape his cloke.",
+   "odr_com": "Tying to the vineyard his colt, and to the vine, o my sonne, his she asse. He shal wash his stole in wine, and in the bloud of the grape his cloke.",
+   "sabates_a": "Tying to the vineyard his colt, and to the vine, o my son, his she ass. He shall wash his stole in wine, and in the blood of the grape his cloak.",
+   "madueke_b": "Tying to the vineyard his colt, and to the vine, o my son, his she ass. He shall wash his stole in wine, and in the blood of the grape his cloak."
+  },
+  "12": {
+   "s_dismas": "His eyes are more beautiful then wine, and his teeth whiter then milke.",
+   "odr_com": "His eyes are more beautiful then wine, and his teeth whiter then milke.",
+   "sabates_a": "His eyes are more beautiful than wine, and his teeth whiter than milk.",
+   "madueke_b": "His eyes are more beautiful than wine, and his teeth whiter than milk."
+  },
+  "13": {
+   "s_dismas": "Zabulon shal dwel in the shore of the ſea, and in the road of shippes reaching as farre as Sidon.",
+   "odr_com": "Zabulon shal dwel in the shore of the sea, and in the road of shippes reaching as farre as Sidon.",
+   "sabates_a": "Zabulon shall dwell in the shore of the sea, and in the road of ships reaching as far as Sidon.",
+   "madueke_b": "Zabulon shall dwell in the shore of the sea, and in the road of ships reaching as far as Sidon."
+  },
+  "14": {
+   "s_dismas": "Iſſachar a ſtrong aſſe lying at reſt betwen the borders.",
+   "odr_com": "Issachar a strong asse lying at rest betwen the borders.",
+   "sabates_a": "Issachar a strong ass lying at rest between the borders.",
+   "madueke_b": "Issachar a strong ass lying at rest between the borders."
+  },
+  "15": {
+   "s_dismas": "He ſaw reſt that it was good: and the earth that it was very good: and he put vnder his shoulder to cary, and became ſeruing vnder tributes.",
+   "odr_com": "He saw rest that it was good: and the earth that it was very good: and he put vnder his shoulder to cary, and became seruing vnder tributes.",
+   "sabates_a": "He saw rest that it was good; and the earth that it was very good: and he put under his shoulder to carry, and became serving under tributes.",
+   "madueke_b": "He saw rest that it was good; and the earth that it was very good: and he put under his shoulder to carry, and became serving under tributes."
+  },
+  "16": {
+   "s_dismas": "Dan shal iudge his owne people as alſo an other tribe in Iſrael.",
+   "odr_com": "Dan shal iudge his owne people as also an other tribe in Israel.",
+   "sabates_a": "Dan shall judge his own people, as also another tribe in Israel.",
+   "madueke_b": "Dan shall judge his own people, as also another tribe in Israel."
+  },
+  "17": {
+   "s_dismas": "Be Dan a ſnake in the way, a ſerpent in the path, byting the hooffes of the horſe, that his ryder may fal backward.",
+   "odr_com": "Be Dan a snake in the way, a serpent in the path, byting the hooffes of the horse, that his ryder may fal backward.",
+   "sabates_a": "Be Dan a snake in the way, a serpent in the path, biting the hoofs of the horse, that his rider may fall backward.",
+   "madueke_b": "Be Dan a snake in the way, a serpent in the path, biting the hoofs of the horse, that his rider may fall backward."
+  },
+  "18": {
+   "s_dismas": "I wil expect thy salvation O Lord.",
+   "odr_com": "I wil expect THY SALVATION o Lord.",
+   "sabates_a": "I will expect Thy Salvation o Lord.",
+   "madueke_b": "I will expect THY SALVATION o Lord."
+  },
+  "19": {
+   "s_dismas": "Gad, the gyrded shal fight before him: and himſelf shal be gyrded backward.",
+   "odr_com": "Gad, the gyrded shal fight before him: and himself shal be gyrded backward.",
+   "sabates_a": "Gad, the girded shall fight before him: and himself shall be girded backward.",
+   "madueke_b": "Gad, the girded shall fight before him: and himself shall be girded backward."
+  },
+  "20": {
+   "s_dismas": "Aſer, his bread is fat, and he shal geue daynties to kinges.",
+   "odr_com": "Aser, his bread is fat, and he shal geue daynties to kinges.",
+   "sabates_a": "Aser, his bread is fat, and he shall give dainties to kings.",
+   "madueke_b": "Aser, his bread is fat, and he shall give dainties to kings."
+  },
+  "21": {
+   "s_dismas": "Nepthali, a hart let forth, & geuing ſpeaches of beautie.",
+   "odr_com": "Nepthali, a hart let forth, & geuing speaches of beautie.",
+   "sabates_a": "Nephthali, a hart let forth, and giving speeches of beauty.",
+   "madueke_b": "Nephthali, a hart let forth, and giving speeches of beauty."
+  },
+  "22": {
+   "s_dismas": "Ioſeph a child encreaſing, encreaſing and comelie to behold: the daughters courſed to and fro vpon the wall.",
+   "odr_com": "Ioseph a child encreasing, encreasing and comelie to behold: the daughters coursed to and for vpon the wall.",
+   "sabates_a": "Joseph a child increasing, increasing and comely to behold: the daughters coursed to and fro upon the wall.",
+   "madueke_b": "Joseph a child increasing, increasing and comely to behold: the daughters coursed to and fro upon the wall."
+  },
+  "23": {
+   "s_dismas": "But the dart men did exaſperate him, & brawled, and enuied him.",
+   "odr_com": "But the dart men did exasperate him, & brawled, and enuied him.",
+   "sabates_a": "But the dart men did exasperate him, and brawled, and envied him.",
+   "madueke_b": "But the dart men did exasperate him, and brawled, and envied him."
+  },
+  "24": {
+   "s_dismas": "His bowe ſate vpon the ſtrong, & the bands of his armes and his handes were diſſolued, by the hands of the mightie of Iacob: thence came forth a paſtour, the ſtone of Iſrael.",
+   "odr_com": "His bowe sate vpon the strong, & the bands of his armes and his handes were dissolued, by the handes of the mightie of Iacob: thence came forth a pastour, the stone of Israel.",
+   "sabates_a": "His bow sat upon the strong, and the bands of his arms and his hands were dissolved, by the hands of the Mighty of Jacob: thence came forth a pastor, the son of Israel.",
+   "madueke_b": "His bow sat upon the strong, and the bands of his arms and his hands were dissolved, by the hands of the Mighty of Jacob: thence came forth a pastor, the son of Israel."
+  },
+  "25": {
+   "s_dismas": "The God of thy father shal be thy helper, & the Almightie shal bleſſe thee with the bleſſinges of heauen from aboue, with the bleſſinges of the deapth, that lieth beneath, with the bleſſings of the pappes and of the wombe.",
+   "odr_com": "The God of thy father shal be thy helper, & the Almightie shal blesse thee with the blessinges of heauen from aboue, with the blessinges of the deapth, that lieth beneath, with the blessings of the pappes and of the wombe.",
+   "sabates_a": "The God of thy father shall be thy helper, and the Almighty shall bless thee with the blessings of heaven from above, with the blessings of the depth that lieth beneath, with the blessings of the paps and of the womb.",
+   "madueke_b": "The God of thy father shall be thy helper, and the Almighty shall bless thee with the blessings of heaven from above, with the blessings of the depth that lieth beneath, with the blessings of the paps and of the womb."
+  },
+  "26": {
+   "s_dismas": "The bleſſinges of thy father were ſtrengthned with the bleſſings of his fathers: vntil the deſire of the eternal hilles came: be they vpon the head of Ioſeph, & vpon the crowne of the Nazarite among his brethren.",
+   "odr_com": "The blessinges of thy father were strengthned with the blessings of his fathers: vntil the desire of the eternal hilles came: be they vpon the head of Ioseph, & vpon the crowne of the Nazarite among his brethren.",
+   "sabates_a": "The blessings of thy father were strengthened with the blessings of his fathers: until the desire of the eternal hills came: be they upon the head of Joseph, and upon the crown of the Nazarite among his brethren.",
+   "madueke_b": "The blessings of thy father were strengthened with the blessings of his fathers: until the desire of the eternal hills came: be they upon the head of Joseph, and upon the crown of the Nazarite among his brethren."
+  },
+  "27": {
+   "s_dismas": "Beniamin a rauening woolfe, in the morning shal eate the pray, and in the euening shal diuide the ſpoile.",
+   "odr_com": "Beniamin a rauening woolfe, in the morning shal eate the pray, and in the euening shal diuide the spoile.",
+   "sabates_a": "Benjamin a ravening wolf, in the morning shall eat the prey, and in the evening shall divide the spoil.",
+   "madueke_b": "Benjamin a ravening wolf, in the morning shall eat the prey, and in the evening shall divide the spoil."
+  },
+  "28": {
+   "s_dismas": "Al theſe in the tribes of Iſrael twelue: theſe things ſpake their father to them, and he bleſſed euerie one, with their proper bleſſings.",
+   "odr_com": "Al these in the tribes of Israel twelue: these things spake their father to them, and he blessed euerie one, with their proper blessings.",
+   "sabates_a": "All these in the tribes of Israel twelve: these things spake their father to them, and he blessed every one, with their proper blessings.",
+   "madueke_b": "All these in the tribes of Israel twelve: these things spake their father to them, and he blessed every one, with their proper blessings."
+  },
+  "29": {
+   "s_dismas": "And he commanded them, ſaying: I am geathered vnto my people: burie you me with my fathers in the duble caue, which is in the field of Ephron the Hethite,",
+   "odr_com": "And he commanded them, saying: I am geathered vnto my people: burie you me with my fathers in the duble caue, which is in the field of Ephron the Hethite,",
+   "sabates_a": "And he commanded them, saying: I am gathered unto my people: bury you me with my fathers in the double cave, which is in the field of Ephron the Hethite,",
+   "madueke_b": "And he commanded them, saying: I am gathered unto my people: bury you me with my fathers in the double cave, which is in the field of Ephron the Hethite,"
+  },
+  "30": {
+   "s_dismas": "againſt Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hethite for a poſſeſſion to burie in.",
+   "odr_com": "against Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hethite for a possession to burie in.",
+   "sabates_a": "Against Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hethite for a possession to bury in.",
+   "madueke_b": "Against Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hethite for a possession to bury in."
+  },
+  "31": {
+   "s_dismas": "There they buried him, & Sara his wife: there was Iſaac buried with Rebecca his wife: there alſo Lia doth lie buried.",
+   "odr_com": "There they buried him, & Sara his wife: there was Isaac buried with Rebecca his wife: there also Lia doth lie buried.",
+   "sabates_a": "There they buried him, and Sara his wife: there was Isaac buried with Rebecca his wife: there also Lia doth lie buried.",
+   "madueke_b": "There they buried him, and Sara his wife: there was Isaac buried with Rebecca his wife: there also Lia doth lie buried."
+  },
+  "32": {
+   "s_dismas": "And when he had finished the precepts wherwith he inſtructed his ſonnes, he plucked vp his feet vpon the bed, and died: & he was put vnto his people.",
+   "odr_com": "And when he had finished the precepts wherwith he instructed his sonnes, he plucked vp his feet vpon the bed, and died: & he was put vnto his people.",
+   "sabates_a": "And when he had finished the precepts wherewith he instructed his sons, he plucked up his feet upon the bed, and died; and he was put unto his people.",
+   "madueke_b": "And when he had finished the precepts wherewith he instructed his sons, he plucked up his feet upon the bed, and died; and he was put unto his people."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Jacob called his sons, and said to them: Come together, that I may shew you the things that shall come to you in the last days.",
+  "2": "Come together, and hear you sons of Jacob, hear ye Israel your father.",
+  "3": "Ruben my first-begotten, thou art my strength, & the beginning of my sorrow: former in gifts, greater in Empire.",
+  "4": "Thou art poured out as water, increase thou not: because thou didst ascend thy father's bed, and didst defile his couch.",
+  "5": "Simeon and Levi brethren: vessels of iniquity warring.",
+  "6": "Into their counsel come not my soul, and in their congregation be not my glory: because in their fury they slew a man, and in their willfulness they undermined a wall.",
+  "7": "Cursed be their fury, because it is stubborn; and their indignation, because it is hard: I will divide them in Jacob, and will disperse them in Israel.",
+  "8": "Judas, thee thy brethren shall praise: thy hand shall be in the neck of thine enemies: thy father's children shall adore thee.",
+  "9": "Alion's whelp Judas: to the prey my son thou didst ascend: taking thy rest thou didst lie as a lion, and as it were a lioness, who shall raise him up?",
+  "10": "The Sceptre Shall Not be Taken Away From Judas, And A duke Out of His Thigh, Till he do Come That is to be Sent, And The Same Shall be The Expectation of The Gentiles.",
+  "11": "Tying to the vineyard his colt, and to the vine, o my son, his she ass. He shall wash his stole in wine, and in the blood of the grape his cloak.",
+  "12": "His eyes are more beautiful than wine, and his teeth whiter than milk.",
+  "13": "Zabulon shall dwell in the shore of the sea, and in the road of ships reaching as far as Sidon.",
+  "14": "Issachar a strong ass lying at rest between the borders.",
+  "15": "He saw rest that it was good; and the earth that it was very good: and he put under his shoulder to carry, and became serving under tributes.",
+  "16": "Dan shall judge his own people, as also another tribe in Israel.",
+  "17": "Be Dan a snake in the way, a serpent in the path, biting the hoofs of the horse, that his rider may fall backward.",
+  "18": "I will expect Thy Salvation o Lord.",
+  "19": "Gad, the girded shall fight before him: and himself shall be girded backward.",
+  "20": "Aser, his bread is fat, and he shall give dainties to kings.",
+  "21": "Nephthali, a hart let forth, and giving speeches of beauty.",
+  "22": "Joseph a child increasing, increasing and comely to behold: the daughters coursed to and fro upon the wall.",
+  "23": "But the dart men did exasperate him, and brawled, and envied him.",
+  "24": "His bow sat upon the strong, and the bands of his arms and his hands were dissolved, by the hands of the Mighty of Jacob: thence came forth a pastor, the son of Israel.",
+  "25": "The God of thy father shall be thy helper, and the Almighty shall bless thee with the blessings of heaven from above, with the blessings of the depth that lieth beneath, with the blessings of the paps and of the womb.",
+  "26": "The blessings of thy father were strengthened with the blessings of his fathers: until the desire of the eternal hills came: be they upon the head of Joseph, and upon the crown of the Nazarite among his brethren.",
+  "27": "Benjamin a ravening wolf, in the morning shall eat the prey, and in the evening shall divide the spoil.",
+  "28": "All these in the tribes of Israel twelve: these things spake their father to them, and he blessed every one, with their proper blessings.",
+  "29": "And he commanded them, saying: I am gathered unto my people: bury you me with my fathers in the double cave, which is in the field of Ephron the Hethite,",
+  "30": "Against Mambre in the Land of Chanaan, which Abraham bought with the field of Ephron the Hethite for a possession to bury in.",
+  "31": "There they buried him, and Sara his wife: there was Isaac buried with Rebecca his wife: there also Lia doth lie buried.",
+  "32": "And when he had finished the precepts wherewith he instructed his sons, he plucked up his feet upon the bed, and died; and he was put unto his people."
+ },
+ "ref_coverage": {
+  "janvier": 32,
+  "have": {
+   "s_dismas": 32,
+   "odr_com": 32,
+   "sabates_a": 32,
+   "madueke_b": 32
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 128,
+ "triage": "SOURCE-SKEW",
+ "secs": 6.4
+}

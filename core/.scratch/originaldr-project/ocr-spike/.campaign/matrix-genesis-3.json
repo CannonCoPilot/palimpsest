@@ -1,0 +1,1280 @@
+{
+ "chapter": 3,
+ "n_verses": 24,
+ "n_cells": 96,
+ "n_pass": 88,
+ "rate": 0.9167,
+ "ref_means": {
+  "s_dismas": 0.976,
+  "odr_com": 0.9761,
+  "sabates_a": 0.9636,
+  "madueke_b": 0.9636
+ },
+ "src_rates": {
+  "S1": 0.9583,
+  "S3": 0.9167,
+  "S9": 0.875,
+  "S6": 0.9167
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 8,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 6,
+   "worst": 0.864,
+   "from": "p30",
+   "text": "The woman therfore ſawe thar the tree was good eate, and fayre to the eyes, and delectable to behold: ſhe tooke of the fruite therof, and did eate, and gaue to huſband, who did eate."
+  },
+  {
+   "src": "S3",
+   "verse": 6,
+   "worst": 0.864,
+   "from": "p34",
+   "text": "The woman therfore ſawe that the tree was good eate, and fayre to the cyes, and delectable to behold : ſhe tooke of the fruite therof, and did eate, and gaue to huſband, who did eate."
+  },
+  {
+   "src": "S3",
+   "verse": 15,
+   "worst": 0.872,
+   "from": "p34",
+   "text": "I wil ſer- enmyties betwen thee & the woman, and thy ſeed yet the ſeed of her: ſhe ſhal bruiſe thy head in peeces, & thou ſhalt lye in waite: of her heele."
+  },
+  {
+   "src": "S9",
+   "verse": 15,
+   "worst": 0.818,
+   "from": "p40",
+   "text": "I wil the ſerenmyties betwen thee the woman, and thy ſeed yet the ſeed ofher ſhe ſhal bruiſe thy head in peeces, he ſhalt lye in waite: of her heele."
+  },
+  {
+   "src": "S6",
+   "verse": 15,
+   "worst": 0.821,
+   "from": "p26",
+   "text": "I wil put enmyttes between thee the woman, thy ſeed and the ſeed of her: ſhe ſhal bruiſe thy head in picces, and thou ihalt lye in waite"
+  },
+  {
+   "src": "S6",
+   "verse": 18,
+   "worst": 0.835,
+   "from": "p27",
+   "text": "Thornes and thiſtles ſhal it brins totth to thce, and the:: ſhalt eare the heatbs of the earth."
+  },
+  {
+   "src": "S9",
+   "verse": 21,
+   "worst": 0.885,
+   "from": "p41",
+   "text": "Our Lord God alſo or made for Adam and his wife garments of skynnes, and clo- paine. thed them."
+  },
+  {
+   "src": "S9",
+   "verse": 24,
+   "worst": 0.896,
+   "from": "p41",
+   "text": "And he caſt out Adam: and placed before the pa- of who radiſe of pleaſure Cherubins, &a flaming, and a turning of ſworde, for to keepe the way of the tree of life."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "but the ſerpent alſo was more ſubtile then al the beaſts Dof the earth, which our Lord God had made. which ſaid to the woman: why hath God commanded you, that you ſhould not eate of euerie tree of Paradiſer",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "but the ſerpent alſo was more ſubtile then al the beaſts TVof the earth, which our Lord God had made. Which ſaid to the woman: why hath God commanded you, that you ſhould not eate of euerie tree of Paradiſe",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "but the ſerpent alſo was more ſubtile then al the beaſts of the earth, which our Lord God had made. Which ſaid to the woman: why hath God commanded you, that you you ſhould not eate of euerie tree of Paradiſe",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "VT the ſerpent alſo was more ſubtile then al the beaſts of the earth, which our Lord God had made. Which ſaid to the woman: Why hath God commanded you, that you ſhould not eate of euerie tree of Paradiſe?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "To whom the woman anſwered Of the fruite of the trees that are in paradiſe, we doe eate",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "To whom : ſo the woman anſwered: Of the fruite of the trees that in paradiſe, we doe eate :",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.919,
+     "odr_com": 0.919,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S9": {
+    "text": "To whom the woman anſwered Of the fruite of the trees that are in paradiſe, we doe eate:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "To whom the woman anſwered Of the truit of the trees that are in Paradiſe we doe ate:. buit",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.912,
+     "madueke_b": 0.912
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "but of the fruite of the tree which is in the middes of paradiſe, God hath communded vs that we should not eate: and that we ſhould not touch it, leſt perhapes we die.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "but of the fruite of the tree which is in the middes of paradiſe, God hath commanded vs that we should not eate and that we ſhould not touch it, leſt perhaps we die.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "†but of the fruite of the tree which is in the middes of paradiſe, God hath commanded vs that we should not eate: and that we ſhould not touch it, leſt perhapes we die.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "of the truit ot the tree which is in .he middes of Paradiſe, God hath commanded vs that we ihould not eate: and that we ſhould not touch it, leſt perhaps we die.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And the ſerpent ſaid to the woman No you ſhal not dye the death.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And the ſerpent ſaid to the woman No you ſhal not dye the death.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And the ſerpent ſaid to the woman No you ſhal not dye the death.",
+    "from": "p40",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And the ſerpent ſaid to the woman : No, , you ſhal not dye the death.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "For God doth know that in what day ſoeuer you ſhal eate therof, your eyes ſhal be opened: and you ſhal be as gods, knowing good & euil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S3": {
+    "text": "For God doth know that what day ſoeuer you ſhal eate therof, your eyes ſhal be ned : and you ſbal be as gods, knowing good & euil.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.908,
+     "madueke_b": 0.908
+    }
+   },
+   "S9": {
+    "text": "For God doth know that in what day ſoeuer you ſhal eate therof, your eyes ſhal be opened: and you ſhal be as gods, knowing good & euil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "For God doth know that in what day ſoeuer vou ſhal eate therot, vour eyes ſhal be openod: aud you ihal be as Gods, knowius good and tuil.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.902,
+     "odr_com": 0.902,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "The woman therfore ſawe thar the tree was good eate, and fayre to the eyes, and delectable to behold: ſhe tooke of the fruite therof, and did eate, and gaue to huſband, who did eate.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.864,
+     "madueke_b": 0.864
+    }
+   },
+   "S3": {
+    "text": "The woman therfore ſawe that the tree was good eate, and fayre to the cyes, and delectable to behold : ſhe tooke of the fruite therof, and did eate, and gaue to huſband, who did eate.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.864,
+     "madueke_b": 0.864
+    }
+   },
+   "S9": {
+    "text": "The woman therfore ſawe that the tree was good to eate, and fayre to the eyes, and delectable to behold and ſhe tooke of the fruite thereof, and did eate, and gaue to her huſband, who did eate.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "The woman therfore ſaw that the tree was good to cate, and faire to the eyes, and delectable to behold: and ſhe tooke of the fruit therof, & did eate, & gaue to her huſband, who did eate. - .",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And the eyes of them both were opened: and when they perceiued themſelues to be naked, they ſowed together leaues of a figge tree, and made themſelues aprons.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And the eyes of them both were a- opened: and when they :: perceiued themſelues to be naked, they ſowed togeather leaues of a figge tree, and made themſelues aprons.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And the eyes of them both were aopened: and when they :: perceiued themſelues to be naked, not they ſowed togeather leaues of a figge tree, and made thems. Chriſclues aprons.",
+    "from": "p40",
+    "score": {
+     "s_dismas": 0.928,
+     "odr_com": 0.928,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S6": {
+    "text": "And the eyes of them both were opened: and when they perceiued themſclues to be uaked, they ſowed together leaues ot a ng tree, and made theniſelues aprons.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And hearing the voice of our Lord God walking curſe paradiſe ar the after none ayre : Adam hid himſelfe and to did his wife from the face of our Lord God, amidſt that trees of paradiſe.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S3": {
+    "text": "And hearing the voice of our Lord God walking paradiſe at the after none ayre: Adam hid himſelfe and to did his wife from the face of our Lord God, ainidſt that trees of paradiſe.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.945,
+     "madueke_b": 0.945
+    }
+   },
+   "S9": {
+    "text": "And hearing the voice of our Lord God walking in paradiſe at the after none ayre Adam hid himſelfe and ſo did his wife from the face of our Lord God, amidſt the trees of paradiſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "And hearing the voice of our Lord God walking in Paradiſe at the after noon ayre. Adam hid hiſelfe, and ſo did his wite from the face of our Lord God, amidſt the trees ot Paradiſe.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And our Lord God called Adam, and ſaid to him: Where art thou",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And our Lord God called Adam, and ſaid to him: Where art thou",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And our Lord God called Adam, and ſaid to him Where art thou",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And our Lord God called Adam, and ſaid to him Where art thou",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "who ſaid I heard thy voice in paradiſe and I feared, becauſe I was naked, and I hid me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Who ſaid I heard thy voice in paradiſe: and I feared, becauſe I was naked, and I hid me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Who ſaid I heard thy voice in paradiſe and I feared, becauſe I was naked, and I hid me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Who ſaid: I heard thy voice in Paradiſe; and I feared, becauſe I was naked, and I hid me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "To whom he ſaid: And who hath told thee that thou waſt naked, but that thou haſt eaten of the tree, whereof I commanded thee that thou ſhouldeſt not eate",
+    "from": "p30",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "To whom he ſaid: And who hath told thee that thou waſt naked, but that thou haſt eaten of the tree, whereof I commanded thee that thou ſhouldeſt not eate",
+    "from": "p34",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "To whom he ſaid: And who hath told thee that thou waſt naked, but that thou haſt eaten of the troe, whereof hunc I commanded thee that thou ſhouldeſt not eate",
+    "from": "p40",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "To whom he ſaid And who hath iold thee that thou waſt naked, but that thou haſt eaten of the tree, whereof I commanded thee that thou ſhouldeſt not eater12.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And Adam ſaid The woman, which thou gaueſt me to be my felow companion, gaue me of the tree, and I did eate.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "And Adam ſaid: The woman, which thou gaueſt me to be my felow companion, gaue me of the tree, and I did eate.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "And Adam ſaid The woman, which thou gaueſt me to be my felow companion, gaue me of the tree, and I did eate.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "And Adamſaid: The woman which thou gaueſt me to be my fellow companion, gaue me of the tree, I did eate.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And our Lord God ſaid to the woman Why haſt thou done this who anſwered The ſerpent deceived me, & I did eate.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S3": {
+    "text": "And our Lord God ſaid to the woman : Why haſt thou done this who anſwered : The ſerpent deceiued me, & re- did eate.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "And our Lord God ſaid to the woman Why haſt thou done this? who anſwered The ſerpent deceiued me, & I did eate.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "And our Lord God ſaid to the woman: Why haſt thou done this: Who anſwered: The ſerpent deceiued me, and I did eate.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And our Lord God ſaid to the ſerpent Becauſe thou haſt done this thing, :: accurſed art thou among all catle, & beaſts of the earth: vpon thy breſt ſhalt thou goe, & :: earth thale thou eate al the dayes of thy life.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "And our Lord God ſaid to the ſerpent Becauſe thou haſt done this thing, accurſed art thou among all catle, & beaſts of the earth: vpon thy breſt ſhalt thou goe, & earth ſhalt thou eate al the dayes of thy life.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "And our Lord God ſaid to the ſerpent Becauſe thou haſt done this thing, accurſed art thou among all catle, & beaſts of the earth: vpon thy breſt ſhalt thou goe, & earth ſhalt thou eate al the dayes of thy life.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "And our Lord God ſaid to the ſerpent: Becauſe thou haſt done this thing, ()accurſed art thou among al cattle, and beaſte of the earth: vpon thy breſt ſhalt thou goe, earth ſhalt thou eate al the daves ot thy lite.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "I wil put ennyties between thee & the woman, and thy ſeed and the ſeed of her: ſhe ſhal bruiſe thy head in peeccs, & thou ſhalt lye in waite: of her heele.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.901,
+     "madueke_b": 0.901
+    }
+   },
+   "S3": {
+    "text": "I wil ſer- enmyties betwen thee & the woman, and thy ſeed yet the ſeed of her: ſhe ſhal bruiſe thy head in peeces, & thou ſhalt lye in waite: of her heele.",
+    "from": "p34",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.872,
+     "madueke_b": 0.872
+    }
+   },
+   "S9": {
+    "text": "I wil the ſerenmyties betwen thee the woman, and thy ſeed yet the ſeed ofher ſhe ſhal bruiſe thy head in peeces, he ſhalt lye in waite: of her heele.",
+    "from": "p40",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.818,
+     "madueke_b": 0.818
+    }
+   },
+   "S6": {
+    "text": "I wil put enmyttes between thee the woman, thy ſeed and the ſeed of her: ſhe ſhal bruiſe thy head in picces, and thou ihalt lye in waite",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.821,
+     "odr_com": 0.821,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "To the woman alſo he ſaid: I wil multiplie thy trauailcs, and thy child bearinges in trauile ſhalt thou bring forth children, and thou ſhalt be vnder thy huſbands power, and he ſhal haue dominion ouer thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "To the woman alſo he ſaid: I wil multiplie thy trauailes, and thy child bearinges in trauaile ſhalt thou bring forth children, and thou ſhalt be vnder thy huſbands power, and he ſhal haue dominion ouer thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "To the woman alſo he ſaid: I wil multiplie thy trauailes, and thy child bearinges in trauaile ſhalt thou bring forth children, and thou ſhalt be vnder thy huſbands power, and he ſhal haue dominion ouer thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "To the woman alſo he ſaid: I wil multiplie thy trauailes and thy child-bearings: in trauaile ſhalt thou bring forth chil dreu, and thou ſhalt be vnder thy huſbands powet, and he ſhal haue dominion ouer thee.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And to Adam he ſaid : Becauſe thou haſt heard the voice of thy wife, and haſt eaten of the tree, whereof I cō- manded thee, that thou ſhouldeſt not eate, curſed is the: carth in thy woorke : with much toyling ſhalt thou eate thercof al the dayes of thy life.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.984,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "And to Adam he ſaid : Becauſe thou haſt heard the vorce of thy vife, and haſt caten of the trec, Wherem Ioē. manded thee, that thou ſhouldeſt not eate, curſed is the:: earth in thy woorke : with: much toyling ſhalt thou eate thereof al the dayes of thy life.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.964,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S9": {
+    "text": "And to Adam he ſaid : Becauſe thou haſt heard the voice of thy wiſe, and haſt eaten of the tree, whereof I commanded thee, that thou ſhouldeſt not eate, curſed is the :: Al earth in thy woorke : with: much toyling ihalt thou eate uelone other thereof al the dayes of thy life.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.924,
+     "odr_com": 0.932,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S6": {
+    "text": "And to Adam he ſaid: Becauſe thou haſt heard the voice of thy wife, and haft eaten of the tree whereof I commanded thee that thou ſhouldeſt not eate, curſed is the earth in thy worke: with Huch toyling ſhalt thou eate thereot althe dayes of thy life.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.98,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "Thornes and thyſtles ſhal it bring forth to thee, & thou ſhalt eate the herbes of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S3": {
+    "text": "Thornes and thyſtles ſhal its bring forth to thee, & thou ſſialt eate the herbes of the earth.",
+    "from": "p35",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.907,
+     "madueke_b": 0.907
+    }
+   },
+   "S9": {
+    "text": "Thornes and thyſtles ſhal it bring forth to thee, & thou ſhalt eate the herbes of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S6": {
+    "text": "Thornes and thiſtles ſhal it brins totth to thce, and the:: ſhalt eare the heatbs of the earth.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.835,
+     "odr_com": 0.835,
+     "sabates_a": 0.884,
+     "madueke_b": 0.884
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "In the ſweat of thy face ſhalt thou eate bread, til thou returne to earth, of which thou waſt taken becauſe duſt thou art, and into duſt thou ſhalt returne.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "In the ſweat of thy face ſhalt thou eate bread, til thou returne to earth, of which thou waſt taken: becauſe duſt thou art, and into duſt thou ſhalt returne.",
+    "from": "p35",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "In the ſweat of thy face ſhalt thou eate bread, til thou returne to earth, of which thou waſt taken becauſe duſt thou art, and into duſt thou ſhalt returne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "In the ſweat of thy tace ſlalt thou eate bread, til thou retutne to earth, ot wlich thou waſt taken: becauſe duſt thou art, and into duſt thou thalt returne.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And Adam called the name of his wife, Eue for becauſe ſhe was mother of al the liuing.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Adam called the name of his wife, Eue for be cauſe ſhe was mother of al the liuing.",
+    "from": "p35",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And Adam called the name of his wife, Eue for be- cauſe ſhe was mother of al the liuing.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And Adam callod the name of his wife. Eue: for becauſe ſhe was mother of al the liuing.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "Our Lord God alſo made for Adam and his wife garments of skynnes, and clothed them.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "Our Lord God alſo made for Adam and his wife garments of skynnes, and clothed them.",
+    "from": "p35",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "Our Lord God alſo or made for Adam and his wife garments of skynnes, and clo- paine. thed them.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.89,
+     "odr_com": 0.89,
+     "sabates_a": 0.885,
+     "madueke_b": 0.885
+    }
+   },
+   "S6": {
+    "text": "Our Lord God alſo made for Adam and his wife garments of skinnes, and cloathed them:",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And ſaid Loe Adam is become as it were onc of vs, knowing good euil now therfore leſt perhapes: he reach forth his hand, and take alſo of the tree of life, eate, and liue for euer.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "And ſaid Loe Adam is become as it were one of vs, knowing good euil now therfore leſt perhapes he reach forth his hand, and take alſo of the tree of life, eate, and liue for euer.",
+    "from": "p35",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "And ſaid Loe Adam is become as it were one of vs, knowing good & euil now therfore \" leſt perhapes he reach forth his hand, and take alſo of the tree of life, & eate, and liue for euer.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "And ſaid: Loe Adam is become as it were one of vs, knowing good & euil: now therfore leſt perhaps he roach forth his hand, and take alſo of the tree of lite, and eate, and liue for euer.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And our Lord God ſent him out of the paradiſe of pleaſure, to worke the earth of which he was taken.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And our Lord God ſent him out of the paradiſe of pleaſure, to worke the earth of which he was taken.",
+    "from": "p35",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And our Lord God ſent him out of the paradiſe of pleaſure, to worke the earth of which he was taken.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Aud our Lord God ſent hitn out of the Paradiſe ot pleaſure, to worke the earth of which he was taken.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And he caſt out Adam: and placed before the paradiſe of pleaſure Cherubins, &a ſlaming, and a turning ſworde, for to keepe the way of the tree of life.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "And he caſt out Adam: and placed before the paradiſe of pleaſure Cherubins, &a flaming, and a turning ſworde, for to keepe the way of the tree of life.",
+    "from": "p35",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And he caſt out Adam: and placed before the pa- of who radiſe of pleaſure Cherubins, &a flaming, and a turning of ſworde, for to keepe the way of the tree of life.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.896,
+     "madueke_b": 0.896
+    }
+   },
+   "S6": {
+    "text": "And he eaſt out Adam, and placed betore the Paradiſe ot pleaſure Cherubins, and a flaming and a turning ſword, tor to keep the way of the tree of life,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.932,
+     "odr_com": 0.932,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "But the ſerpent alſo was more ſubtile then al the beaſts of the earth, which our Lord God had made. Which ſaid to the woman: Why hath God commanded you, that you ſhould not eate of euerie tree of Paradiſe?",
+   "odr_com": "BVT the serpent also was more subtile then al the beasts of the earth, which our Lord God had made. Which said to the woman: Why hath God commanded you, that you should not eate of euerie tree of Paradise?",
+   "sabates_a": "But the serpent also was more subtile than all the beasts of the earth, which our Lord God had made. Which said to the woman: Why hath God commanded you, that you should not eat of every tree of Paradise?",
+   "madueke_b": "But the serpent also was more subtile than all the beasts of the earth, which our Lord God had made. Which said to the woman: Why hath God commanded you, that you should not eat of every tree of Paradise?"
+  },
+  "2": {
+   "s_dismas": "To whom the woman anſwered: Of the fruite of the trees that are in paradiſe, we doe eate:",
+   "odr_com": "To whom the woman answered: Of the fruite of the trees that are in paradise, we doe eate:",
+   "sabates_a": "To whom the woman answered: Of the fruit of the trees that are in Paradise we do eat:",
+   "madueke_b": "To whom the woman answered: Of the fruit of the trees that are in Paradise we do eat:"
+  },
+  "3": {
+   "s_dismas": "but of the fruite of the tree which is in the middes of paradiſe, God hath commanded vs that we should not eate: and that we ſhould not touch it, leſt perhapes we die.",
+   "odr_com": "but of the fruite of the tree which is in the middes of paradise, God hath commanded vs that we should not eate: and that we should not touch it, lest perhapes we die.",
+   "sabates_a": "but of the fruit of the tree which is in the midst of Paradise, God hath commanded us that we should not eat: and that we should not touch it, lest perhaps we die.",
+   "madueke_b": "but of the fruit of the tree which is in the midst of Paradise, God hath commanded us that we should not eat: and that we should not touch it, lest perhaps we die."
+  },
+  "4": {
+   "s_dismas": "And the ſerpent ſaid to the woman: No you ſhal not dye the death.",
+   "odr_com": "And the serpent said to the woman: No you shal not dye the death.",
+   "sabates_a": "And the serpent said to the woman: No, you shall not die the death.",
+   "madueke_b": "And the serpent said to the woman: No, you shall not die the death."
+  },
+  "5": {
+   "s_dismas": "For God doth know that in what day ſoeuer you ſhal eate therof, your eyes ſhal be opened: and you ſhal be as gods, knowing good & euil.",
+   "odr_com": "For God doth know that in what day soeuer you shal eate therof, your eyes shal be opened: and you shal be as gods, knowing good & euil.",
+   "sabates_a": "For God doth know that in what day soever you shall eat thereof, your eyes shall be opened: and you shall be as gods, knowing good and evil.",
+   "madueke_b": "For God doth know that in what day soever you shall eat thereof, your eyes shall be opened: and you shall be as gods, knowing good and evil."
+  },
+  "6": {
+   "s_dismas": "The woman therfore ſawe that the tree was good to eate, and fayre to the eyes, and delectable to behold: and ſhe tooke of the fruite therof, and did eate, and gaue to her huſband, who did eate.",
+   "odr_com": "The woman therfore sawe that the tree was good to eate, and fayre to the eyes, and delectable to behold: and she tooke of the fruite therof, and did eate, and gaue to her husband, who did eate.",
+   "sabates_a": "The woman therefore saw that the tree was good to eat, and fair to the eyes, and delectable to behold: and she took of the fruit thereof, & did eat, & gave to her husband, who did eat.",
+   "madueke_b": "The woman therefore saw that the tree was good to eat, and fair to the eyes, and delectable to behold: and she took of the fruit thereof, & did eat, & gave to her husband, who did eat."
+  },
+  "7": {
+   "s_dismas": "And the eyes of them both were opened: and when they perceiued themſelues to be naked, they ſowed togeather leaues of a figge tree, and made themſelues aprons.",
+   "odr_com": "And the eyes of them both were opened: and when they perceiued themselues to be naked, they sowed togeather leaues of a figge tree, and made themselues aprons.",
+   "sabates_a": "And the eyes of them both were opened: and when they perceived themselves to be naked, they sowed together leaves of a fig tree, and made themselves aprons.",
+   "madueke_b": "And the eyes of them both were opened: and when they perceived themselves to be naked, they sowed together leaves of a fig tree, and made themselves aprons."
+  },
+  "8": {
+   "s_dismas": "And hearing the voice of our Lord God walking in paradiſe at the after none ayre: Adam hid himſelfe and ſo did his wife from the face of our Lord God, amidſt the trees of paradiſe.",
+   "odr_com": "And hearing the voice of our Lord God walking in paradise at the after none ayre: Adam hid himselfe and so did his wife from the face of our Lord God, amidst the trees of paradise.",
+   "sabates_a": "And hearing the voice of our Lord God walking in Paradise at the afternoon air, Adam hid himself, and so did his wife from the face of our Lord God, amidst the trees of Paradise.",
+   "madueke_b": "And hearing the voice of our Lord God walking in Paradise at the afternoon air, Adam hid himself, and so did his wife from the face of our Lord God, amidst the trees of Paradise."
+  },
+  "9": {
+   "s_dismas": "And our Lord God called Adam, and ſaid to him: Where art thou?",
+   "odr_com": "And our Lord God called Adam, and said to him: Where art thou?",
+   "sabates_a": "And our Lord God called Adam, and said to him: Where art thou?",
+   "madueke_b": "And our Lord God called Adam, and said to him: Where art thou?"
+  },
+  "10": {
+   "s_dismas": "Who ſaid: I heard thy voice in paradiſe: and I feared, becauſe I was naked, and I hid me.",
+   "odr_com": "Who said: I heard thy voice in paradise: and I feared, because I was naked, and I hid me.",
+   "sabates_a": "Who said: I heard thy voice in Paradise: and I feared, because I was naked, and I hid me.",
+   "madueke_b": "Who said: I heard thy voice in Paradise: and I feared, because I was naked, and I hid me."
+  },
+  "11": {
+   "s_dismas": "To whom he ſaid: And who hath told thee that thou waſt naked, but that thou haſt eaten of the tree, whereof I commanded thee that thou ſhouldeſt not eate?",
+   "odr_com": "To whom he said: And who hath told thee that thou wast naked, but that thou hast eaten of the tree, whereof I commanded thee that thou shouldest not eate?",
+   "sabates_a": "To whom he said: And who hath told thee that thou wast naked, but that thou hast eaten of the tree, whereof I commanded thee that thou shouldst not eat?",
+   "madueke_b": "To whom he said: And who hath told thee that thou wast naked, but that thou hast eaten of the tree, whereof I commanded thee that thou shouldst not eat?"
+  },
+  "12": {
+   "s_dismas": "And Adam ſaid: The woman, which thou gaueſt me to be my felow companion, gaue me of the tree, and I did eate.",
+   "odr_com": "And Adam said: The woman, which thou gauest me to be my felow companion, gaue me of the tree, and I did eate.",
+   "sabates_a": "And Adam said: The woman which thou gavest me to be my fellow-companion, gave me of the tree, & I did eat.",
+   "madueke_b": "And Adam said: The woman which thou gavest me to be my fellow-companion, gave me of the tree, & I did eat."
+  },
+  "13": {
+   "s_dismas": "And our Lord God ſaid to the woman: Why haſt thou done this? who anſwered: The ſerpent deceiued me, & I did eate.",
+   "odr_com": "And our Lord God said to the woman: Why hast thou done this? who answered: The serpent deceiued me, & I did eate.",
+   "sabates_a": "And our Lord God said to the woman: Why hast thou done this? Who answered: The serpent deceived me, and I did eat.",
+   "madueke_b": "And our Lord God said to the woman: Why hast thou done this? Who answered: The serpent deceived me, and I did eat."
+  },
+  "14": {
+   "s_dismas": "And our Lord God ſaid to the ſerpent: Becauſe thou haſt done this thing, accurſed art thou among al catle, & beaſts of the earth: vpon thy breſt ſhalt thou goe, & earth ſhalt thou eate al the dayes of thy life.",
+   "odr_com": "And our Lord God said to the serpent: Because thou hast done this thing, accursed art thou among al catle, & beasts of the earth: vpon thy brest shalt thou goe, & earth shalt thou eate al the dayes of thy life.",
+   "sabates_a": "And our Lord God said to the serpent: Because thou hast done this thing, accursed art thou among all cattle, and beasts of the earth: upon thy breast shalt thou go, & earth shalt thou eat all the days of thy life.",
+   "madueke_b": "And our Lord God said to the serpent: Because thou hast done this thing, accursed art thou among all cattle, and beasts of the earth: upon thy breast shalt thou go, & earth shalt thou eat all the days of thy life."
+  },
+  "15": {
+   "s_dismas": "I wil put enmyties betwen thee & the woman, and thy ſeed and the ſeed of her: ſhe ſhal bruiſe thy head in peeces, & thou ſhalt lye in waite of her heele.",
+   "odr_com": "I wil put enmyties betwen thee & the woman, and thy seed and the seed of her: she shal bruise thy head in peeces, & thou shalt lye in waite of her heele.",
+   "sabates_a": "I will put enmity between thee & the woman, & thy seed and the seed of her: she shall bruise thy head in pieces, and thou shalt lie in wait of her heel.",
+   "madueke_b": "I will put enmity between thee & the woman, & thy seed and the seed of her: she shall bruise thy head in pieces, and thou shalt lie in wait of her heel."
+  },
+  "16": {
+   "s_dismas": "To the woman alſo he ſaid: I wil multiplie thy trauailes, and thy child bearinges: in trauaile ſhalt thou bring forth children, and thou ſhalt be vnder thy huſbands power, and he ſhal haue dominion ouer thee.",
+   "odr_com": "To the woman also he said: I wil multiplie thy trauailes, and thy child bearinges: in trauaile shalt thou bring forth children, and thou shalt be vnder thy husbands power, and he shal haue dominion ouer thee.",
+   "sabates_a": "To the woman also he said: I will multiply thy travails and thy child-bearings: in travail shalt thou bring forth children, and thou shalt be under thy husband's power, and he shall have dominion over thee.",
+   "madueke_b": "To the woman also he said: I will multiply thy travails and thy child-bearings: in travail shalt thou bring forth children, and thou shalt be under thy husband's power, and he shall have dominion over thee."
+  },
+  "17": {
+   "s_dismas": "And to Adam he ſaid: Becauſe thou haſt heard the voice of thy wife, and haſt eaten of the tree, whereof I cõmanded thee, that thou ſhouldeſt not eate, curſed is the earth in thy woorke: with much toyling ſhalt thou eate thereof al the dayes of thy life.",
+   "odr_com": "And to Adam he said: Because thou hast heard the voice of thy wife, and hast eaten of the tree, whereof I commanded thee, that thou shouldest not eate, cursed is the earth in thy woorke: with much toyling shalt thou eate thereof al the dayes of thy life.",
+   "sabates_a": "And to Adam he said: Because thou hast heard the voice of thy wife, and hast eaten of the tree wherefore I commanded thee that thou shouldst not eat, cursed is the earth in thy work: with much toiling shalt thou eat thereof all the days of thy life.",
+   "madueke_b": "And to Adam he said: Because thou hast heard the voice of thy wife, and hast eaten of the tree wherefore I commanded thee that thou shouldst not eat, cursed is the earth in thy work: with much toiling shalt thou eat thereof all the days of thy life."
+  },
+  "18": {
+   "s_dismas": "Thornes and thyſtles ſhal it bring forth to thee, & thou ſhalt eate the herbes of the earth.",
+   "odr_com": "Thornes and thystles shal it bring forth to thee, & thou shalt eate the herbes of the earth.",
+   "sabates_a": "Thorns and thistles shall it bring forth to thee, and thou shalt eat the herbs of the earth.",
+   "madueke_b": "Thorns and thistles shall it bring forth to thee, and thou shalt eat the herbs of the earth."
+  },
+  "19": {
+   "s_dismas": "In the ſweat of thy face ſhalt thou eate bread, til thou returne to earth, of which thou waſt taken: becauſe duſt thou art, and into duſt thou ſhalt returne.",
+   "odr_com": "In the sweat of thy face shalt thou eate bread, til thou returne to earth, of which thou wast taken: because dust thou art, and into dust thou shalt returne.",
+   "sabates_a": "In the sweat of thy face shalt thou eat bread, till thou return to earth, of which thou wast taken: because dust thou art, and into dust thou shalt return.",
+   "madueke_b": "In the sweat of thy face shalt thou eat bread, till thou return to earth, of which thou wast taken: because dust thou art, and into dust thou shalt return."
+  },
+  "20": {
+   "s_dismas": "And Adam called the name of his wife, Eue: for becauſe ſhe was mother of al the liuing.",
+   "odr_com": "And Adam called the name of his wife, Eue: for because she was mother of al the liuing.",
+   "sabates_a": "And Adam called the name of his wife, Eve: for because she was mother of all the living.",
+   "madueke_b": "And Adam called the name of his wife, Eve: for because she was mother of all the living."
+  },
+  "21": {
+   "s_dismas": "Our Lord God alſo made for Adam and his wife garments of ſkynnes, and clothed them.",
+   "odr_com": "Our Lord God also made for Adam and his wife garments of skynnes, and clothed them.",
+   "sabates_a": "Our Lord God also made for Adam and his wife garments of skins, and clothed them:",
+   "madueke_b": "Our Lord God also made for Adam and his wife garments of skins, and clothed them:"
+  },
+  "22": {
+   "s_dismas": "And ſaid: Loe Adam is become as it were one of vs, knowing good & euil: now therfore leſt perhapes he reach forth his hand, and take alſo of the tree of life, & eate, and liue for euer.",
+   "odr_com": "And said: Loe Adam is become as it were one of vs, knowing good & euil: now therfore lest perhapes he reach forth his hand, and take also of the tree of life, & eate, and liue for euer.",
+   "sabates_a": "And said: Lo Adam is become as it were one of us, knowing good & evil: now therefore lest perhaps he reach forth his hand, and take also of the tree of life, and eat, and live for ever.",
+   "madueke_b": "And said: Lo Adam is become as it were one of us, knowing good & evil: now therefore lest perhaps he reach forth his hand, and take also of the tree of life, and eat, and live for ever."
+  },
+  "23": {
+   "s_dismas": "And our Lord God ſent him out of the paradiſe of pleaſure, to worke the earth of which he was taken.",
+   "odr_com": "And our Lord God sent him out of the paradise of pleasure, to worke the earth of which he was taken.",
+   "sabates_a": "And our Lord God sent him out of the Paradise of pleasure, to work the earth of which he was taken.",
+   "madueke_b": "And our Lord God sent him out of the Paradise of pleasure, to work the earth of which he was taken."
+  },
+  "24": {
+   "s_dismas": "And he caſt out Adam: and placed before the paradiſe of pleaſure Cherubins, & a flaming, and a turning ſworde, for to keepe the way of the tree of life.",
+   "odr_com": "And he cast out Adam: and placed before the paradise of pleasure Cherubins, & a flaming, and a turning sworde, for to keepe the way of the tree of life.",
+   "sabates_a": "And he cast out Adam, and placed before the Paradise of pleasure Cherubins, and a flaming and a turning sword, for to keep the way of the tree of life.",
+   "madueke_b": "And he cast out Adam, and placed before the Paradise of pleasure Cherubins, and a flaming and a turning sword, for to keep the way of the tree of life."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "But the serpent also was more subtile than all the beasts of the earth, which our Lord God had made. Which said to the woman: Why hath God commanded you, that you should not eat of every tree of Paradise?",
+  "2": "To whom the woman answered: Of the fruit of the trees that are in Paradise we do eat:",
+  "3": "but of the fruit of the tree which is in the midst of Paradise, God hath commanded us that we should not eat: and that we should not touch it, lest perhaps we die.",
+  "4": "And the serpent said to the woman: No, you shall not die the death.",
+  "5": "For God doth know that in what day soever you shall eat thereof, your eyes shall be opened: and you shall be as gods, knowing good and evil.",
+  "6": "The woman therefore saw that the tree was good to eat, and fair to the eyes, and delectable to behold: and she took of the fruit thereof, & did eat, & gave to her husband, who did eat.",
+  "7": "And the eyes of them both were opened: and when they perceived themselves to be naked, they sowed together leaves of a fig tree, and made themselves aprons.",
+  "8": "And hearing the voice of our Lord God walking in Paradise at the afternoon air, Adam hid himself, and so did his wife from the face of our Lord God, amidst the trees of Paradise.",
+  "9": "And our Lord God called Adam, and said to him: Where art thou?",
+  "10": "Who said: I heard thy voice in Paradise: and I feared, because I was naked, and I hid me.",
+  "11": "To whom he said: And who hath told thee that thou wast naked, but that thou hast eaten of the tree, whereof I commanded thee that thou shouldst not eat?",
+  "12": "And Adam said: The woman which thou gavest me to be my fellow-companion, gave me of the tree, & I did eat.",
+  "13": "And our Lord God said to the woman: Why hast thou done this? Who answered: The serpent deceived me, and I did eat.",
+  "14": "And our Lord God said to the serpent: Because thou hast done this thing, accursed art thou among all cattle, and beasts of the earth: upon thy breast shalt thou go, & earth shalt thou eat all the days of thy life.",
+  "15": "I will put enmity between thee & the woman, & thy seed and the seed of her: she shall bruise thy head in pieces, and thou shalt lie in wait of her heel.",
+  "16": "To the woman also he said: I will multiply thy travails and thy child-bearings: in travail shalt thou bring forth children, and thou shalt be under thy husband's power, and he shall have dominion over thee.",
+  "17": "And to Adam he said: Because thou hast heard the voice of thy wife, and hast eaten of the tree wherefore I commanded thee that thou shouldst not eat, cursed is the earth in thy work: with much toiling shalt thou eat thereof all the days of thy life.",
+  "18": "Thorns and thistles shall it bring forth to thee, and thou shalt eat the herbs of the earth.",
+  "19": "In the sweat of thy face shalt thou eat bread, till thou return to earth, of which thou wast taken: because dust thou art, and into dust thou shalt return.",
+  "20": "And Adam called the name of his wife, Eve: for because she was mother of all the living.",
+  "21": "Our Lord God also made for Adam and his wife garments of skins, and clothed them:",
+  "22": "And said: Lo Adam is become as it were one of us, knowing good & evil: now therefore lest perhaps he reach forth his hand, and take also of the tree of life, and eat, and live for ever.",
+  "23": "And our Lord God sent him out of the Paradise of pleasure, to work the earth of which he was taken.",
+  "24": "And he cast out Adam, and placed before the Paradise of pleasure Cherubins, and a flaming and a turning sword, for to keep the way of the tree of life."
+ },
+ "ref_coverage": {
+  "janvier": 24,
+  "have": {
+   "s_dismas": 24,
+   "odr_com": 24,
+   "sabates_a": 24,
+   "madueke_b": 24
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 96,
+ "triage": "R3-READY",
+ "secs": 6.9
+}

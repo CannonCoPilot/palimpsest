@@ -1,0 +1,1301 @@
+{
+ "chapter": 2,
+ "n_verses": 25,
+ "n_cells": 100,
+ "n_pass": 96,
+ "rate": 0.96,
+ "ref_means": {
+  "s_dismas": 0.9817,
+  "odr_com": 0.9817,
+  "sabates_a": 0.9704,
+  "madueke_b": 0.9704
+ },
+ "src_rates": {
+  "S1": 0.92,
+  "S3": 0.96,
+  "S9": 0.96,
+  "S6": 1.0
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 4,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 1,
+   "worst": 0.863,
+   "from": "p26",
+   "text": "ribbe of HEheauens therfore & the earth were fully finiſhed, I and al the furniture of them."
+  },
+  {
+   "src": "S1",
+   "verse": 7,
+   "worst": 0.877,
+   "from": "p26",
+   "text": "Our Lord God therfore formed man of the ſlyme of earth: and breathed into his face the breath oflife, a liuing ſoule."
+  },
+  {
+   "src": "S3",
+   "verse": 12,
+   "worst": 0.893,
+   "from": "chapter",
+   "text": "And the gold of that land is very there is found bdelium, the ſtone onyx."
+  },
+  {
+   "src": "S9",
+   "verse": 12,
+   "worst": 0.893,
+   "from": "chapter",
+   "text": "And the gold of that land is very there is found bdelium, the ſtone onyx."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "ribbe of HEheauens therfore & the earth were fully finiſhed, I and al the furniture of them.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.875,
+     "odr_com": 0.875,
+     "sabates_a": 0.863,
+     "madueke_b": 0.863
+    }
+   },
+   "S3": {
+    "text": "the heauens therfore the earth were fully fini Tand al the furniture of them.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S9": {
+    "text": "The heauens therfore the earth were fully finiſhed, I and al the furniture of them.",
+    "from": "p36",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "the heauens therfore the earth were fully finiſhed, and al the furniture of them.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And the ſeuenth day God ended his woorke which he had made: & reſted the ſeuenth day, from al woorke that he had done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "And the ſeuenth of God ended his woorke which he had made:& reſted ſeuenth day, from al woorke that he had done.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.906,
+     "madueke_b": 0.906
+    }
+   },
+   "S9": {
+    "text": "And the ſeuenth day God ended his woorke which he had made & reſted the ſeuenth day, from al woorke that he had done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "And the ſeuenth day God ended his worke which he had made: and reſted the ſeuenth day, from al worke that he had done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.948,
+     "odr_com": 0.948,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And he bleſſed the ſeuenth day and ſanctified it becauſe in it he had ceaſed from al his woorke which God created to make.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "And he bleſſed the ſeuenth day and ſanctified it becauſe in it he had ceaſed from al his woorke which God created to make",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S9": {
+    "text": "And he bleſſed the ſeuenth day and ſanctified it becauſe in it he had ceaſed from al his woorke which God created to make",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "And he bleſſed the ſeuenth day & ſanctified it: becauſe in it he had ceaſed from al his worke which God created to make.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "Theſe are the generations of heauen & earth, when they were created in the day, when our Lord God made the heauen, and the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Theſe are the generations of heauen & earth, when they were created in the day, when our Lord God made the heauen, and the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Theſe are the generations of heauen earth, when they were created in the day, when our Lord God made by cod heauen, and the earth.",
+    "from": "p36",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S6": {
+    "text": "Theſe are the generations of heauen & earth, when they were created in the day, when our Lord God made the heauen, and the earth,",
+    "from": "p23",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And euery plant of the filde, before it hot vp in the earth. And euerie herbe of the ground before it ſprang for our Lord God had not rayned vpon the earth and man was not to til the earth",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And euery plant of the filde, ſub- fore it ſhot vp in the earth. And euerie herbe of the ground the before it ſprang for our Lord God had not rayned vpon earth: and man was not to til the earth:",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S9": {
+    "text": "And euery plant of the filde, ſub- fore it ſhot vp in the earth. And euerie herbe of the ground the before it ſprang for our Lord God had not rayned vpon earth and man was not to til the earth",
+    "from": "p36",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S6": {
+    "text": "euery plant of the feld, before it ſhot vp in the earth, and euerie hearb ot the ground before it ſprang. For our Lord God had not rayned vpon the earth : and man was not to til the eatth:",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "But a ſpring roſe out of the earth, watering al the ouermoſt part of the eartth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "But a ſpring roſe out of the earth, watering al the ouermoſt part of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But a ſpring roſe out of the earth, watering al the ouermoſt part of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "But a ſpring roſe out of the earth, watering al the ouermoſt part of the earth.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Our Lord God therfore formed man of the ſlyme of earth: and breathed into his face the breath oflife, a liuing ſoule.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.877,
+     "odr_com": 0.877,
+     "sabates_a": 0.877,
+     "madueke_b": 0.877
+    }
+   },
+   "S3": {
+    "text": "Our Lord God therfore formed man of the ſlyme of earth: and breathed into his face the breath oflife, became a liuing ſoule.",
+    "from": "p30",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S9": {
+    "text": "Our Lord God therfore formed man of the ſlyme of earth : and : breathed into his face the breath of life, & man became a liuing ſoule.",
+    "from": "p36",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S6": {
+    "text": "Our Lord God therfore formed man of the ſlyme ot the earth: and (4) breathed into his face the breath of life, & man became a liuing ſoule.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And our Lord God had :: planted a Paradiſe of pleaſure from the beginning wherin he placed man whom he had formed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "And our Lord God had :: planted a Paradiſe of pleaſure & from the beginning wherin he placed man whom he had formed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And our Lord God had :: planted a Paradiſe of pleaſure from the beginning wherin he placed man whom he had formed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "And our Lord God had ()planteda Paradiſe of pleaſure frotn the beginning: wherin he placed man whom he had tormed..",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And our Lord God brought forth of the ground al manner of trees, fayre to behold: and pleaſant to eate of: the tree of life alſo in the middle of Paradiſe: and the tree of knowledge of good & evil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And our Lord God brought forth of the ground al miner of trees, fayre to behold: and pleaſantto eate of: the tree of life alſo in the middle of Paradiſe: and the tree of knowledge of good & euil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S9": {
+    "text": "And our Lord God brought forth of the ground al maner of trees, fayre to behold and pleaſant to eate of: the tree of life alſo in the middle of Paradiſe: and the tree of knowledge of good & euil.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And our Lord God broug ht forth of the ground al manner of trees, faire to behold and pleaſant to eate of: the tree of life alſo in the middle of Paradiſe: and the tree of knowledge of good and euil.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And a riuier iſſued out of the place of pleaſure to water Paradiſe, which from thence is divided into four heades.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "And a riuier iſſued out of the place of pleaſure to water Paradiſe, which from thence is diuided into four heades.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "And a riuers iſſued out of the place of pleaſure to water Paradiſe, which from thence is diuided into four heades.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "And a tiuer iſſued out of the place of pleaſure to water Paradiſe, which from thence is diuided into toure heades.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "The name of rhe oneis Phiſon: chat is ir which compiſſeth al the land of Heuilath, where gol groweth.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S3": {
+    "text": "The name of the one is Phiſon: that is it which compaſſeth al the land of Heuilath, where gold groweth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "The name of the one is Phiſon: that is it which compaſſeth al the land of Heuilath, where gold groweth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "The name of one is Phiſon: that is it which compaſſeth al the land of Heuilath, where gold groweth.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And the gold of that land is very goo there is found bdelium, the ſtone onyx.†",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S3": {
+    "text": "And the gold of that land is very there is found bdelium, the ſtone onyx.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.934,
+     "odr_com": 0.934,
+     "sabates_a": 0.893,
+     "madueke_b": 0.893
+    }
+   },
+   "S9": {
+    "text": "And the gold of that land is very there is found bdelium, the ſtone onyx.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.934,
+     "odr_com": 0.934,
+     "sabates_a": 0.893,
+     "madueke_b": 0.893
+    }
+   },
+   "S6": {
+    "text": "And the gold of that land is very good : there is tound bdelium, aud the ſtone onyx.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And the name of the ſecond riuer is Gehon that is it which compaſſeth al the land of Ethiopia.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And the name of the ſecond riuer is Gehon that is it which compaſſeth al the land of Ethiopia.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And the name of the ſecond riuer is Gehon that is it which compaſſeth al the land of Ethiopia.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And the name of the ſecond riuer is Gehon: that is it which compaſſeth al the land ot Ethiopia.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And the name of the third riuer is Tygris that ſame paſleth along by the Aſſirians. And the fourth riuer, the ſame is Euphrates.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "And the name of the third riuer is Tygris that ſame paſſeth along by the Aſſirians. And the fourth riuer, the ſame is Euphrates.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And the name of the third riuer is Tygris: that ſame paſſeth along by the Aſſirians. And the fourth riuer, the ſame is Euphrates.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And the name of the third tiuer is Tygris: that ſame paſſeth along by the Aſſirians. And the fourth riuer, the ſame is Euphtates.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Our Lord God therfore tooke man, put him in the Paradiſe of pleaſure, to woorke, keepe it.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "Our Lord God therfore tooke man, put him in the Paradiſe of pleaſure, to woorke, keepe it.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "Our Lord God therfore tooke man, put him in the Paradiſe of pleaſure, to woorke, keepe it.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "Our Lord God ther fore tooke man, & put him in the Paradiſe oe pleaſure, to worke, & keepe it.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And he commanded him ſaying: Of euerie tree of Paradiſe eate thou:",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he commanded him ſaying Of euerie tree of Paradiſe eate thou:",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he com- :: manded him ſaying: Of euerie tree of Paradiſe eate thou:",
+    "from": "p37",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "And he commanded hun ſaying: Of euerie tree of Paradiſe eate thou:",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "But of the tree of knowledge of good euil eate thou not. For in whar day ſoeuer thou ſhalt eate of it, thou ſhalt dye the death.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "But of the tree of knowledge of good euil eate thou not. For in what day ſoeuer thou ſhalt eate of it, thou ſhalt dye the death.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But of the tree of knowledge of good euil eate thou not. For in what day ſoeuer thou ſhalt eate of it, thou ſhalt of dye the death.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S6": {
+    "text": "But of the tree of knowledge of good & euil eate thou not. For in what day ſoeuer thou ſhalt eate ot it. thou ſhalt dye the death.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "Our Lord God alſo ſaid It is not good for man to be alone let vs make him a helpe like vnto him ſelfe.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "Our Lord God alſo ſaid It is not good for man to be alone let vs make him a helpe like vnto him ſelfe",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "Our Lord God alſo ſaid It is not good for man to be alone let vs make him a helpe like vnto him ſelfe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Our Lord God alſo ſaid: It is not good for man to be alone: let vs make him a help like vnto himſelfe.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Our Lord God therfore hauing formed of clay al beaſtes of the earth, and foules of the ayre, brought them to Adam that he might ſee what to cal them: for al that Adam called any liuing creature, the ſame is his name.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "Our Lord God therfore hauing formed of clay al beaſtes of the earth, and foules of the ayre, brought them to Adam that he might ſee what to cal thom: for al that Adam called any liuing creature, the ſame is his name.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "Our Lord God therfore hauing formed of clay al beaſtes of the earth, and foules of the ayre, brought them to Adam that he might ſee what to cal them for al that Adam called any liuing creature, the ſame is his name.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "Our Lord God ther fore hauins fotmed of clay al beaſts of the earth, and foules of the ayre, brought them to Adam, that he might ſee what to cal if them: for al that Adam called any liuing creature, the ſame is his name.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "†And Adam called al beaſtes by their names, and al foules of the ayre, and al cattel of the filde but vnto Adam there was not found an helper like him ſelfe.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "And Adam called al beaſtes by their names, and al foules of the ayre, and al cattel of the filde but vnto Adam there was not found an helper like him ſelfe",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "And Adam called al beaſtes by their names, and al foules of the ayre, and al cattel of the filde but vnto Adam there was not found an helper like him ſelfe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "Aud Adam called al beaſts by their names, and al foules of the ayre and al eattel of the field: but vnto Adam there was not fouud an tholper like himſelfe.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "Our Lord God therfore caſt a dead ſleepe vpon Adam: and when he was faſt a ſleepe, he tooke one of his ribbes, filled vp fleſh for it.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "Our Lord God therfore caſt a dead ſleepe vpon Adam: and when he was faſt a ſleepe, he tooke one of his ribbes, filled vp fleſh for it.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "Our Lord God therfore caſt a dead ſleepe vpon Adam and when he was faſt a ſleepe, he tooke one of. his ribbes, & filled vp fleſh for it.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "Our Lord God thertore caſt a dead ſleep vpon Adam: and when he was faſt aſleep, he tooke one of his ribbes, & filled vp fleſh for it.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And our Lord God built the ribbe which he tooke of Adam into a woman: and brought her to Adam.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "And our Lord God built the ribbe which he tooke of Adam into a woman and brought her to Adam.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S9": {
+    "text": "And our Lord God :: built the ribbe which he tooke of Adam into a woman and brought her to Adam.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S6": {
+    "text": "And our Lord God () built the ribbe which he tooke of Adam into a woman, & brought her to Adam.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And Adam ſaid: This now, is bone of my bones, and fleſh of my fleſh: ſhe ſhal be called woman, becauſe ſhe was taken out of man.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Adam ſaid : This now, is bone of my bones, and fleſh of my fleſh: ſhe ſhal be called woman, becauſe ſhe was taken out of man.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Adam ſaid : This now, is bone of my bones, and ffe ſh Ioan. of my fleſh: ſhe ſhal be called woman, becauſe ſhe was taken out of man.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 0.945,
+     "odr_com": 0.945,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S6": {
+    "text": "And Adam ſaid: This now is bone of my bones, and fleſh of my fleſh: ſhe ſual be called woman, becauſe ſhe was taken out of man.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "Wherfore man ſhal leaue his father & mother, & ſhal cleaue to his wife, & they ſhal be rwo in one fleſh.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "Wherfore man ſhal leaue his father & mother, & ſhal cleaue to his wife, & they ſhal be: two in one fleſh.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "Wherfore man ſhal leaue his father & mother, & ſhal cleaue to his wife, & they ſhal be :: two in one fleſh.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Wherfore man ſhal leaue his father & mothet, & ſhal cleaue to his wife, & they ſhal be (4) two in one fleſh.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And they were both naked: to wit Adam his wife: and were not aſhamed.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S3": {
+    "text": "And they were both naked: to wit Adam his wife: and were not aſhamed.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S9": {
+    "text": "And they were both naked to wit Adam his two wife and were not aſhamed.",
+    "from": "p37",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.91,
+     "madueke_b": 0.91
+    }
+   },
+   "S6": {
+    "text": "And they were both naked, to wit Adam and his wife: and were not aſhamed.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "The heauens therfore & the earth were fully finiſhed, and al the furniture of them.",
+   "odr_com": "THE heauens therfore & the earth were fully finished, and al the furniture of them.",
+   "sabates_a": "The heavens therefore & the earth were fully finished, and all the furniture of them.",
+   "madueke_b": "The heavens therefore & the earth were fully finished, and all the furniture of them."
+  },
+  "2": {
+   "s_dismas": "And the ſeuenth day God ended his woorke which he had made: & reſted the ſeuenth day, from al woorke that he had done.",
+   "odr_com": "And the seuenth day God ended his woorke which he had made: & rested the seuenth day, from al woorke that he had done.",
+   "sabates_a": "And the seventh day God ended his work which he had made; and rested the seventh day, from all work that he had done.",
+   "madueke_b": "And the seventh day God ended his work which he had made; and rested the seventh day, from all work that he had done."
+  },
+  "3": {
+   "s_dismas": "And he bleſſed the ſeuenth day and ſanctified it: becauſe in it he had ceaſed from al his woorke which God created to make.",
+   "odr_com": "And he blessed the seuenth day and sanctified it: because in it he had ceased from al his woorke which God created to make.",
+   "sabates_a": "And he blessed the seventh day & sanctified it: because in it he had ceased from all his work which God created to make.",
+   "madueke_b": "And he blessed the seventh day & sanctified it: because in it he had ceased from all his work which God created to make."
+  },
+  "4": {
+   "s_dismas": "Theſe are the generations of heauen & earth, when they were created in the day, when our Lord God made the heauen, and the earth.",
+   "odr_com": "These are the generations of heauen & earth, when they were created in the day, when our Lord God made the heauen, and the earth.",
+   "sabates_a": "These are the generations of heaven & earth, when they were created in the day, when our Lord God made the heaven, and the earth,",
+   "madueke_b": "These are the generations of heaven & earth, when they were created in the day, when our Lord God made the heaven, and the earth,"
+  },
+  "5": {
+   "s_dismas": "And euery plant of the filde, before it ſhot vp in the earth. And euerie herbe of the ground before it ſprang: for our Lord God had not rayned vpon the earth: and man was not to til the earth:",
+   "odr_com": "And euery plant of the filde, before it shot vp in the earth. And euerie herbe of the ground before it sprang: for our Lord God had not rayned vpon the earth: and man was not to til the earth:",
+   "sabates_a": "and every plant of the field, before it shot up in the earth, and every herb of the ground before it sprang. For our Lord God had not rained upon the earth; and man was not to till the earth:",
+   "madueke_b": "and every plant of the field, before it shot up in the earth, and every herb of the ground before it sprang. For our Lord God had not rained upon the earth; and man was not to till the earth:"
+  },
+  "6": {
+   "s_dismas": "But a ſpring roſe out of the earth, watering al the ouermoſt part of the earth.",
+   "odr_com": "But a spring rose out of the earth, watering al the ouermost part of the earth.",
+   "sabates_a": "But a spring rose out of the earth, watering all the overmost part of the earth.",
+   "madueke_b": "But a spring rose out of the earth, watering all the overmost part of the earth."
+  },
+  "7": {
+   "s_dismas": "Our Lord God therfore formed man of the ſlyme of the earth: and breathed into his face the breath of life, & man became a liuing ſoule.",
+   "odr_com": "Our Lord God therfore formed man of the slyme of the earth: and breathed into his face the breath of life, & man became a liuing soule.",
+   "sabates_a": "Our Lord God therefore formed man of the slime of the earth: and breathed into his face the breath of life, & man became a living soul.",
+   "madueke_b": "Our Lord God therefore formed man of the slime of the earth: and breathed into his face the breath of life, & man became a living soul."
+  },
+  "8": {
+   "s_dismas": "And our Lord God had planted a Paradiſe of pleaſure from the beginning: wherin he placed man whom he had formed.",
+   "odr_com": "And our Lord God had planted a Paradise of pleasure from the beginning: wherin he placed man whom he had formed.",
+   "sabates_a": "And our Lord God had planted Paradise of pleasure from the beginning: wherein he placed man whom he had formed.",
+   "madueke_b": "And our Lord God had planted Paradise of pleasure from the beginning: wherein he placed man whom he had formed."
+  },
+  "9": {
+   "s_dismas": "And our Lord God brought forth of the ground al maner of trees, fayre to behold: and pleaſant to eate of: the tree of life alſo in the middle of Paradiſe: and the tree of knowledge of good & euil.",
+   "odr_com": "And our Lord God brought forth of the ground al maner of trees, fayre to behold: and pleasant to eate of: the tree of life also in the middle of Paradise: and the tree of knowledge of good & euil.",
+   "sabates_a": "And our Lord God brought forth of the ground all manner of trees, fair to behold, and pleasant to eat of: the tree of life also in the middle of Paradise: and the tree of knowledge of good and evil.",
+   "madueke_b": "And our Lord God brought forth of the ground all manner of trees, fair to behold, and pleasant to eat of: the tree of life also in the middle of Paradise: and the tree of knowledge of good and evil."
+  },
+  "10": {
+   "s_dismas": "And a riuer iſſued out of the place of pleaſure to water Paradiſe, which from thence is diuided into four heades.",
+   "odr_com": "And a riuer issued out of the place of pleasure to water Paradise, which from thence is diuided into four heades.",
+   "sabates_a": "And a river issued out of the place of pleasure to water Paradise, which from thence is divided into four heads.",
+   "madueke_b": "And a river issued out of the place of pleasure to water Paradise, which from thence is divided into four heads."
+  },
+  "11": {
+   "s_dismas": "The name of the one is Phiſon: that is it which compaſſeth al the land of Heuilath, where gold groweth.",
+   "odr_com": "The name of the one is Phison: that is it which compasseth al the land of Heuilath, where gold groweth.",
+   "sabates_a": "The name of one is Phison: that is it which compasseth all the land of Hevilath, where gold groweth.",
+   "madueke_b": "The name of one is Phison: that is it which compasseth all the land of Hevilath, where gold groweth."
+  },
+  "12": {
+   "s_dismas": "And the gold of that land is very good: there is found bdelium, & the ſtone onyx.",
+   "odr_com": "And the gold of that land is very good: there is found bdelium, & the stone onyx.",
+   "sabates_a": "And the gold of that land is very good: there is found bdellium, and the stone onyx.",
+   "madueke_b": "And the gold of that land is very good: there is found bdellium, and the stone onyx."
+  },
+  "13": {
+   "s_dismas": "And the name of the ſecond riuer is Gehon: that is it which compaſſeth al the land of Ethiopia.",
+   "odr_com": "And the name of the second riuer is Gehon: that is it which compasseth al the land of Ethiopia.",
+   "sabates_a": "And the name of the second river is Gehon: that is it which compasseth all the land of Ethiopia.",
+   "madueke_b": "And the name of the second river is Gehon: that is it which compasseth all the land of Ethiopia."
+  },
+  "14": {
+   "s_dismas": "And the name of the third riuer is Tygris: that ſame paſſeth along by the Aſſirians. And the fourth riuer, the ſame is Euphrates.",
+   "odr_com": "And the name of the third riuer is Tygris: that same passeth along by the Assirians. And the fourth riuer, the same is Euphrates.",
+   "sabates_a": "And the name of the third river is Tigris: that same passeth along by the Assyrians. And the fourth river, the same is Euphrates.",
+   "madueke_b": "And the name of the third river is Tigris: that same passeth along by the Assyrians. And the fourth river, the same is Euphrates."
+  },
+  "15": {
+   "s_dismas": "Our Lord God therfore tooke man, & put him in the Paradiſe of pleaſure, to woorke, & keepe it.",
+   "odr_com": "Our Lord God therfore tooke man, & put him in the Paradise of pleasure, to woorke, & keepe it.",
+   "sabates_a": "Our Lord God therefore took man, & put him in the Paradise of pleasure, to work, & keep it.",
+   "madueke_b": "Our Lord God therefore took man, & put him in the Paradise of pleasure, to work, & keep it."
+  },
+  "16": {
+   "s_dismas": "And he commanded him ſaying: Of euerie tree of Paradiſe eate thou:",
+   "odr_com": "And he commanded him saying: Of euerie tree of Paradise eate thou:",
+   "sabates_a": "And he commanded him saying: Of every tree of Paradise eat thou:",
+   "madueke_b": "And he commanded him saying: Of every tree of Paradise eat thou:"
+  },
+  "17": {
+   "s_dismas": "But of the tree of knowledge of good & euil eate thou not. For in what day ſoeuer thou ſhalt eate of it, thou ſhalt dye the death.",
+   "odr_com": "But of the tree of knowledge of good & euil eate thou not. For in what day soeuer thou shalt eate of it, thou shalt dye the death.",
+   "sabates_a": "But of the tree of knowledge of good & evil eat thou not. For in what day soever thou shalt eat of it, thou shalt die the death.",
+   "madueke_b": "But of the tree of knowledge of good & evil eat thou not. For in what day soever thou shalt eat of it, thou shalt die the death."
+  },
+  "18": {
+   "s_dismas": "Our Lord God alſo ſaid: It is not good for man to be alone: let vs make him a helpe like vnto him ſelfe.",
+   "odr_com": "Our Lord God also said: It is not good for man to be alone: let vs make him a helpe like vnto him selfe.",
+   "sabates_a": "Our Lord God also said: It is not good for man to be alone: let us make him a help like unto himself.",
+   "madueke_b": "Our Lord God also said: It is not good for man to be alone: let us make him a help like unto himself."
+  },
+  "19": {
+   "s_dismas": "Our Lord God therfore hauing formed of clay al beaſtes of the earth, and foules of the ayre, brought them to Adam that he might ſee what to cal them: for al that Adam called any liuing creature, the ſame is his name.",
+   "odr_com": "Our Lord God therfore hauing formed of clay al beastes of the earth, and foules of the ayre, brought them to Adam that he might see what to cal them: for al that Adam called any liuing creature, the same is his name.",
+   "sabates_a": "Our Lord God therefore having formed of clay all beasts of the earth, and fowls of the air; brought them to Adam, that he might see what to call them: for all that Adam called any living creature, the same is his name.",
+   "madueke_b": "Our Lord God therefore having formed of clay all beasts of the earth, and fowls of the air; brought them to Adam, that he might see what to call them: for all that Adam called any living creature, the same is his name."
+  },
+  "20": {
+   "s_dismas": "And Adam called al beaſtes by their names, and al foules of the ayre, and al cattel of the filde: but vnto Adam there was not found an helper like him ſelfe.",
+   "odr_com": "And Adam called al beastes by their names, and al foules of the ayre, and al cattel of the filde: but vnto Adam there was not found an helper like him selfe.",
+   "sabates_a": "And Adam called all beasts by their names, and all fowls of the air, and all cattle of the field: but unto Adam there was not found an helper like himself.",
+   "madueke_b": "And Adam called all beasts by their names, and all fowls of the air, and all cattle of the field: but unto Adam there was not found an helper like himself."
+  },
+  "21": {
+   "s_dismas": "Our Lord God therfore caſt a dead ſleepe vpon Adam: and when he was faſt a ſleepe, he tooke one of his ribbes, & filled vp fleſh for it.",
+   "odr_com": "Our Lord God therfore cast a dead sleepe vpon Adam: and when he was fast a sleepe, he tooke one of his ribbes, & filled vp flesh for it.",
+   "sabates_a": "Our Lord God therefore cast a deep sleep upon Adam: and when he was fast asleep, he took one of his ribs, & filled up flesh for it.",
+   "madueke_b": "Our Lord God therefore cast a deep sleep upon Adam: and when he was fast asleep, he took one of his ribs, & filled up flesh for it."
+  },
+  "22": {
+   "s_dismas": "And our Lord God built the ribbe which he tooke of Adam into a woman: and brought her to Adam.",
+   "odr_com": "And our Lord God built the ribbe which he tooke of Adam into a woman: and brought her to Adam.",
+   "sabates_a": "And our Lord God built the rib which he took of Adam into a woman, & brought her to Adam.",
+   "madueke_b": "And our Lord God built the rib which he took of Adam into a woman, & brought her to Adam."
+  },
+  "23": {
+   "s_dismas": "And Adam ſaid: This now, is bone of my bones, and fleſh of my fleſh: ſhe ſhal be called woman, becauſe ſhe was taken out of man.",
+   "odr_com": "And Adam said: This now, is bone of my bones, and flesh of my flesh: she shal be called woman, because she was taken out of man.",
+   "sabates_a": "And Adam said: This now is bone of my bones, and flesh of my flesh: she shall be called woman, because she was taken out of man.",
+   "madueke_b": "And Adam said: This now is bone of my bones, and flesh of my flesh: she shall be called woman, because she was taken out of man."
+  },
+  "24": {
+   "s_dismas": "Wherfore man ſhal leaue his father & mother, & ſhal cleaue to his wife, & they ſhal be two in one fleſh.",
+   "odr_com": "Wherfore man shal leaue his father & mother, & shal cleaue to his wife, & they shal be two in one flesh.",
+   "sabates_a": "Wherefore man shall leave his father & mother, & shall cleave to his wife, & they shall be two in one flesh.",
+   "madueke_b": "Wherefore man shall leave his father & mother, & shall cleave to his wife, & they shall be two in one flesh."
+  },
+  "25": {
+   "s_dismas": "And they were both naked; to wit Adam & his wife: and were not aſhamed.",
+   "odr_com": "And they were both naked; to wit Adam & his wife: and were not ashamed.",
+   "sabates_a": "And they were both naked, to wit Adam and his wife; and were not ashamed.",
+   "madueke_b": "And they were both naked, to wit Adam and his wife; and were not ashamed."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "The heavens therefore & the earth were fully finished, and all the furniture of them.",
+  "2": "And the seventh day God ended his work which he had made; and rested the seventh day, from all work that he had done.",
+  "3": "And he blessed the seventh day & sanctified it: because in it he had ceased from all his work which God created to make.",
+  "4": "These are the generations of heaven & earth, when they were created in the day, when our Lord God made the heaven, and the earth,",
+  "5": "and every plant of the field, before it shot up in the earth, and every herb of the ground before it sprang. For our Lord God had not rained upon the earth; and man was not to till the earth:",
+  "6": "But a spring rose out of the earth, watering all the overmost part of the earth.",
+  "7": "Our Lord God therefore formed man of the slime of the earth: and breathed into his face the breath of life, & man became a living soul.",
+  "8": "And our Lord God had planted Paradise of pleasure from the beginning: wherein he placed man whom he had formed.",
+  "9": "And our Lord God brought forth of the ground all manner of trees, fair to behold, and pleasant to eat of: the tree of life also in the middle of Paradise: and the tree of knowledge of good and evil.",
+  "10": "And a river issued out of the place of pleasure to water Paradise, which from thence is divided into four heads.",
+  "11": "The name of one is Phison: that is it which compasseth all the land of Hevilath, where gold groweth.",
+  "12": "And the gold of that land is very good: there is found bdellium, and the stone onyx.",
+  "13": "And the name of the second river is Gehon: that is it which compasseth all the land of Ethiopia.",
+  "14": "And the name of the third river is Tigris: that same passeth along by the Assyrians. And the fourth river, the same is Euphrates.",
+  "15": "Our Lord God therefore took man, & put him in the Paradise of pleasure, to work, & keep it.",
+  "16": "And he commanded him saying: Of every tree of Paradise eat thou:",
+  "17": "But of the tree of knowledge of good & evil eat thou not. For in what day soever thou shalt eat of it, thou shalt die the death.",
+  "18": "Our Lord God also said: It is not good for man to be alone: let us make him a help like unto himself.",
+  "19": "Our Lord God therefore having formed of clay all beasts of the earth, and fowls of the air; brought them to Adam, that he might see what to call them: for all that Adam called any living creature, the same is his name.",
+  "20": "And Adam called all beasts by their names, and all fowls of the air, and all cattle of the field: but unto Adam there was not found an helper like himself.",
+  "21": "Our Lord God therefore cast a deep sleep upon Adam: and when he was fast asleep, he took one of his ribs, & filled up flesh for it.",
+  "22": "And our Lord God built the rib which he took of Adam into a woman, & brought her to Adam.",
+  "23": "And Adam said: This now is bone of my bones, and flesh of my flesh: she shall be called woman, because she was taken out of man.",
+  "24": "Wherefore man shall leave his father & mother, & shall cleave to his wife, & they shall be two in one flesh.",
+  "25": "And they were both naked, to wit Adam and his wife; and were not ashamed."
+ },
+ "ref_coverage": {
+  "janvier": 25,
+  "have": {
+   "s_dismas": 25,
+   "odr_com": 25,
+   "sabates_a": 25,
+   "madueke_b": 25
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 100,
+ "triage": "R3-READY",
+ "secs": 5.9
+}
