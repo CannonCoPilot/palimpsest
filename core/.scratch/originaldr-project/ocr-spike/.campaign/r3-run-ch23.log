@@ -1,0 +1,40 @@
+=== R3 chapter 23 ===
+uer of curr
+  S6 v17  p90  crop [0.155, 0.5322, 0.885, 0.627]  incumbent gov 0.843
+      R3 gov 0.977 vs 0.843  -> ADOPT
+      R3 verse: And the field that before time was Ephrons, wherin was the double caue, looking towards Mambre, as wel it, as the caue, and al the
+      ſ-surface: CLOSED  (0 ſ kept, 0 unresolved)
+      incumbent: And the field that betore time was wher in was the double caue, looking towards Mambre, it, as the caue, and al the trees therof i
+  S6 v18  p90  crop [0.155, 0.5831, 0.885, 0.6779]  incumbent gov 0.881
+      R3 gov 1.000 vs 0.881  -> ADOPT
+      R3 verse: was made ſure to Abraham for a poſſeſſion, in the ſight of the children of Heth, and of. al that went in at the gate of his, citie
+      ſ-surface: CLOSED  (6 ſ kept, 0 unresolved)
+      incumbent: was made ſure to Abraham for a poſſeſſion, ſight of the children of Heth, and of. al that went in at the his, citie.
+  S6 v19  p90  crop [0.155, 0.6186, 0.885, 0.7116]  incumbent gov 0.885
+      R3 gov 0.985 vs 0.885  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And ſo Abraham buried Sara his wife in the double caue of the field, that looked towards Mamre, this is Hebron in the land of Chan
+      ſ-surface: OPEN  (1 ſ kept, 1 unresolved: wife)
+      incumbent: And ſo Abraham buried Sara his wite in the caue of the field, that looked towards Mambre, this is in the land ot Chanaan.
+  S6 v20  p90  crop [0.155, 0.6526, 0.885, 0.7481]  incumbent gov 0.807
+      R3 gov 1.000 vs 0.807  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And the field was made ſure to Abraham, and the caue that was in it, for a possession to burie in, of the Children of Heth.
+      ſ-surface: OPEN  (1 ſ kept, 1 unresolved: possession)
+      incumbent: And the field was made fure to and the caue that was in it, for a pofſeſſion to burie in, of of Heth.
+
+adopted store -> .r3-adopted-genesis-23.json (17 cells)
+
+=== 17 cleared · 11 improved but still short · 13 STILL OPEN and blocking ===
+  OPEN  S1 v2  gov 0.846 -> 0.935
+  OPEN  S1 v7  gov 0.961 -> 0.961
+  OPEN  S3 v2  gov 0.917 -> 1.000
+  OPEN  S9 v9  gov 0.860 -> 1.000
+  OPEN  S6 v4  gov 0.905  [no crop geometry; leaves tried: [91]]
+  OPEN  S6 v6  gov 0.810 -> 0.989
+  OPEN  S6 v8  gov 0.805 -> 0.992
+  OPEN  S6 v9  gov 0.886 -> 0.983
+  OPEN  S6 v10  gov 0.897 -> 0.994
+  OPEN  S6 v11  gov 0.880 -> 0.990
+  OPEN  S6 v15  gov 0.794 -> 0.994
+  OPEN  S6 v19  gov 0.885 -> 0.985
+  OPEN  S6 v20  gov 0.807 -> 1.000
+

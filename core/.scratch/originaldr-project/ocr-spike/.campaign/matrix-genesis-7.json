@@ -2,23 +2,23 @@
  "chapter": 7,
  "n_verses": 24,
  "n_cells": 96,
- "n_pass": 86,
- "rate": 0.8958,
+ "n_pass": 87,
+ "rate": 0.9062,
  "ref_means": {
-  "s_dismas": 0.9772,
-  "odr_com": 0.9776,
-  "sabates_a": 0.9549,
-  "madueke_b": 0.9549
+  "s_dismas": 0.9783,
+  "odr_com": 0.9788,
+  "sabates_a": 0.9555,
+  "madueke_b": 0.9555
  },
  "src_rates": {
-  "S1": 0.8333,
+  "S1": 0.875,
   "S3": 0.8333,
   "S9": 1.0,
   "S6": 0.9167
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 10,
+ "n_open": 9,
  "open": [
   {
    "src": "S6",
@@ -61,13 +61,6 @@
    "worst": 0.84,
    "from": "p50",
    "text": "And after the ſeauen were paſſed, the waters of the floud flowed ouer the in"
-  },
-  {
-   "src": "S1",
-   "verse": 13,
-   "worst": 0.891,
-   "from": "p46",
-   "text": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his Chr. ſonnes: and his wife, and the three wiues of his ſonues with Gen. them into the arke :"
   },
   {
    "src": "S1",
@@ -262,13 +255,13 @@
   },
   "5": {
    "S1": {
-    "text": "Noc therfore did al thinges, which our Lord had commanded him.",
+    "text": "Noe therfore did al thinges, which our Lord had commanded him.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.983,
-     "odr_com": 0.983,
-     "sabates_a": 0.948,
-     "madueke_b": 0.948
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
     }
    },
    "S3": {
@@ -388,13 +381,13 @@
   },
   "8": {
    "S1": {
-    "text": "Of beaſes alſo the cleane and the vncleane,8 ah of foules, and of al that moueth vpon the earth,",
-    "from": "p46",
+    "text": "Of beaſts alſo the cleane and the vncleane,8 & of foules, and of al that moueth vpon the earth,",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.957,
-     "odr_com": 0.957,
-     "sabates_a": 0.943,
-     "madueke_b": 0.943
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
     }
    },
    "S3": {
@@ -430,13 +423,13 @@
   },
   "9": {
    "S1": {
-    "text": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+    "text": "two & two went to Noe into the ar'ke, male and female, as our Lord had commanded Noe.",
     "from": "r3",
     "score": {
      "s_dismas": 1.0,
      "odr_com": 1.0,
-     "sabates_a": 0.947,
-     "madueke_b": 0.947
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
     }
    },
    "S3": {
@@ -598,13 +591,13 @@
   },
   "13": {
    "S1": {
-    "text": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his Chr. ſonnes: and his wife, and the three wiues of his ſonues with Gen. them into the arke :",
-    "from": "p46",
+    "text": "In the verie point of that day entered Noe, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with them into the arke",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.942,
-     "odr_com": 0.942,
-     "sabates_a": 0.891,
-     "madueke_b": 0.891
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
     }
    },
    "S3": {
@@ -1290,5 +1283,5 @@
  "blocked_cells": 0,
  "achievable": 96,
  "triage": "SOURCE-SKEW",
- "secs": 5.5
+ "secs": 5.4
 }

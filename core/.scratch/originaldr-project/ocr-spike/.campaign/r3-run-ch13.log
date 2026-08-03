@@ -1,0 +1,45 @@
+=== R3 chapter 13 ===
+ov 0.857
+      R3 gov 0.931 vs 0.857  -> ADOPT
+      R3 verse: Al the land which thou ſeeſt wil I giue to thee, and to thy ſeed for euer.
+      ſ-surface: CLOSED  (3 ſ kept, 0 unresolved)
+      incumbent: Al the land which thou Not wil I giue to thee, and to thy ſeed tor euer.
+  S6 v16  p68  crop [0.155, 0.4967, 0.885, 0.5985]  incumbent gov 0.832
+      R3 gov 0.945 vs 0.832  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And I wil make thy ſeed as the duſt of the earth: if any man be able to number the duſt of the earth, thy ſeed alſo ſhal he be abl
+      ſ-surface: OPEN  (6 ſ kept, 1 unresolved: Arife)
+      incumbent: And I wil make children ſeed as the duſt of the earth: it any man be able to number the flesh, but children the earth, thy ſeed al
+  S6 v17  p68  crop [0.155, 0.536, 0.885, 0.6343]  incumbent gov 0.796
+      R3 gov 0.898 vs 0.796  -> BETTER-BUT-SHORT (stays OPEN)
+      R3 verse: and walke through the land in the length, and in the breath therof: for wil giue it to thee.
+      ſ-surface: CLOSED  (0 ſ kept, 0 unresolved)
+      incumbent: Ariſe promiſe through the land in the length, and in the breath therof: ſeed, giue it to tnee.
+  S6 v18  p68  crop [0.155, 0.5726, 0.885, 0.6659]  incumbent gov 0.895
+      R3 gov 0.993 vs 0.895  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: Abram therefore remouing his tent, came, and dwelt beſide the vale of Mambre, which is in Hebron: and he builded there an altar to
+      ſ-surface: OPEN  (1 ſ kept, 1 unresolved: therefore)
+      incumbent: Abram thertore remouing his tent, came, and are beſide the vale ot Mambre, which is in Hebron: aud able. . there an altar to our L
+
+adopted store -> .r3-adopted-genesis-13.json (11 cells)
+
+=== 11 cleared · 14 improved but still short · 19 STILL OPEN and blocking ===
+  OPEN  S1 v1  gov 0.955 -> 0.000
+  OPEN  S1 v15  gov 1.000 -> 0.850
+  OPEN  S3 v14  gov 0.912 -> 0.994
+  OPEN  S3 v15  gov 1.000 -> 1.000
+  OPEN  S3 v16  gov 0.943 -> 0.946
+  OPEN  S3 v18  gov 0.888 -> 0.978
+  OPEN  S9 v1  gov 0.954 -> 0.000
+  OPEN  S9 v8  gov 0.935 -> 0.993
+  OPEN  S9 v18  gov 0.937 -> 0.944
+  OPEN  S6 v1  gov 0.896 -> 0.000
+  OPEN  S6 v2  gov 0.000 -> 1.000
+  OPEN  S6 v7  gov 0.903 -> 1.000
+  OPEN  S6 v8  gov 0.861 -> 0.980
+  OPEN  S6 v10  gov 0.807 -> 0.977
+  OPEN  S6 v13  gov 0.894 -> 1.000
+  OPEN  S6 v14  gov 0.836 -> 0.983
+  OPEN  S6 v16  gov 0.832 -> 0.945
+  OPEN  S6 v17  gov 0.796 -> 0.898
+  OPEN  S6 v18  gov 0.895 -> 0.993
+

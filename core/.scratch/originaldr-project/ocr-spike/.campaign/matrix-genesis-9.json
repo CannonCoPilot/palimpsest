@@ -2,23 +2,23 @@
  "chapter": 9,
  "n_verses": 29,
  "n_cells": 116,
- "n_pass": 108,
- "rate": 0.931,
+ "n_pass": 109,
+ "rate": 0.9397,
  "ref_means": {
-  "s_dismas": 0.9708,
-  "odr_com": 0.971,
-  "sabates_a": 0.9581,
-  "madueke_b": 0.9581
+  "s_dismas": 0.9727,
+  "odr_com": 0.9728,
+  "sabates_a": 0.9598,
+  "madueke_b": 0.9598
  },
  "src_rates": {
-  "S1": 0.9655,
+  "S1": 1.0,
   "S3": 0.9655,
   "S9": 0.8621,
   "S6": 0.931
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 8,
+ "n_open": 7,
  "open": [
   {
    "src": "S9",
@@ -61,13 +61,6 @@
    "worst": 0.823,
    "from": "p68",
    "text": "I wil eſtabliſh my couenant with you, of a floud, ſhal be no more deſtroyed with the waters the earth. ther fhal there be from henceforth a floud to waſt rain-"
-  },
-  {
-   "src": "S1",
-   "verse": 15,
-   "worst": 0.832,
-   "from": "p58",
-   "text": "and I ſhal remember my couenant with you, and in more with euerie liuing ſoule floud, that beareth flesh: and there ſhal no be warers of a to diſtroy al flesh."
   },
   {
    "src": "S6",
@@ -194,25 +187,25 @@
     }
    },
    "S6": {
-    "text": "And \"al that moueth and liueth ſhal be yours for meat eu'en as the green hearbs haue I deliuered al to you.",
+    "text": "And \"al that moueth and liueth ſhal be yours for meat euen as the green hearbs haue I deliuered al to you.",
     "from": "r3",
     "score": {
      "s_dismas": 0.962,
      "odr_com": 0.962,
-     "sabates_a": 0.98,
-     "madueke_b": 0.98
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    }
   },
   "4": {
    "S1": {
-    "text": "Sauing that flesh with bloud you ibal not eate.",
-    "from": "p58",
+    "text": "Sawing that flesh with bloud you ſhal not eate.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.957,
-     "odr_com": 0.957,
-     "sabates_a": 0.933,
-     "madueke_b": 0.933
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
     }
    },
    "S3": {
@@ -542,7 +535,7 @@
   },
   "12": {
    "S1": {
-    "text": "And God ſaid This is the ſigne of the couenant which. I geue between me and you, and between euerie liuing ſoule, that is with you, for perpetual generations:",
+    "text": "And God ſaid This is the ſigne of the couenant which. I geue between me and you, and between euerie liuing ſoule, that is with you, for perpetual generations: ::",
     "from": "r3",
     "score": {
      "s_dismas": 0.987,
@@ -626,13 +619,13 @@
   },
   "14": {
    "S1": {
-    "text": "And when I ſhal couer the element with cloudes, my bowe ſhal appeare in the cloudes:",
+    "text": "And when I ſhal cower the element with cloudes, my bowe ſhal appeare in the cloudes:",
     "from": "r3",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.974,
-     "madueke_b": 0.974
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
     }
    },
    "S3": {
@@ -668,23 +661,23 @@
   },
   "15": {
    "S1": {
-    "text": "and I ſhal remember my couenant with you, and in more with euerie liuing ſoule floud, that beareth flesh: and there ſhal no be warers of a to diſtroy al flesh.",
-    "from": "p58",
+    "text": "and I ſhal remember my couenant with you, and with euerie liuing ſoule that beareth flesh: and there ſhal no more be waters of a floud, to diſtroy al flesh.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.832,
-     "odr_com": 0.832,
-     "sabates_a": 0.84,
-     "madueke_b": 0.84
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S3": {
-    "text": "and I ſhal remember my oouenant with you, andry with euerie liuing ſoule that beareth flesh and there ſhal no in more be waters of a floud, to diſtroy al flesh.",
-    "from": "p62",
+    "text": "and I ſhal remember my couenant with you, and with euerie liuing ſoule that beareth flesh and there ſhal no more be waters of a floud, to diſtroy al flesh.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.962,
-     "odr_com": 0.962,
-     "sabates_a": 0.947,
-     "madueke_b": 0.947
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
     }
    },
    "S9": {
@@ -1521,5 +1514,5 @@
  "blocked_cells": 0,
  "achievable": 116,
  "triage": "SOURCE-SKEW",
- "secs": 5.2
+ "secs": 5.1
 }

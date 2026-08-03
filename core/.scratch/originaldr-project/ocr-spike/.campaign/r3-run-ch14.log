@@ -1,0 +1,43 @@
+=== R3 chapter 14 ===
+ 0.3558, 0.885, 0.4327]  incumbent gov 0.900
+      R3 gov 0.988 vs 0.900  -> ADOPT
+      R3 verse: And the King of Sodom ſaid to Abram: Giue me the ſoules, and the reſt take to thee.
+      ſ-surface: CLOSED  (3 ſ kept, 0 unresolved)
+      incumbent: And the King of Sodom faid to Abtamme the ſoules, and the reſt take to thee.
+  S6 v22  p70  crop [0.155, 0.3737, 0.885, 0.4682]  incumbent gov 0.844
+      R3 gov 0.978 vs 0.844  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: Who anſwered him: I lift vp my hand to my Lord God moſt High, poſſeſſour of heauen and earth,
+      ſ-surface: OPEN  (6 ſ kept, 1 unresolved: lift)
+      incumbent: Who anſwered I litt vp my hand to my Lord God moſt High, poſſeſſour of and earth,
+  S6 v23  p70  crop [0.155, 0.4089, 0.885, 0.5058]  incumbent gov 0.871
+      R3 gov 0.992 vs 0.871  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: that from the very woofe-thread vnto the ſhoe latcher, I wil not take of al that are thine, leſt thou ſay, I haue enriched Abram
+      ſ-surface: OPEN  (3 ſ kept, 1 unresolved: woofe-thread)
+      incumbent: that from the very woote thread vnto the ſhoe I wil not take of al that are thine, (4) leſt thou ſay, I haue Abraham Abram
+  S6 v24  p70  crop [0.155, 0.4447, 0.885, 0.9332]  incumbent gov 0.783
+      R3 gov 0.000 vs 0.783  -> NO-GAIN (stays OPEN)
+      R3 verse: except ſuch things as the yeng men haue eaten and the shares of the men that came with me, Aner, Eichol, and Mambre: theſe shal ta
+      ſ-surface: OPEN  (23 ſ kept, 13 unresolved: shares, shares., confuteth, Likewise, herefisibus, figure)
+      incumbent: except ſuch things as the yong men haue eaten enriched ihares of the men that came wme Ane, Eſchol, and God, theſe shal their
+
+adopted store -> .r3-adopted-genesis-14.json (23 cells)
+
+=== 23 cleared · 6 improved but still short · 17 STILL OPEN and blocking ===
+  OPEN  S1 v1  gov 0.952 -> 0.000
+  OPEN  S1 v4  gov 0.979 -> 0.891
+  OPEN  S1 v5  gov 0.966 -> 0.989
+  OPEN  S3 v1  gov 0.922 -> 0.000
+  OPEN  S3 v4  gov 0.979 -> 0.891
+  OPEN  S3 v5  gov 0.966 -> 0.989
+  OPEN  S9 v1  gov 0.850 -> 0.000
+  OPEN  S9 v4  gov 0.891 -> 0.891
+  OPEN  S9 v5  gov 0.848 -> 0.989
+  OPEN  S9 v12  gov 0.949 -> 0.941
+  OPEN  S9 v24  gov 0.941 -> 0.000
+  OPEN  S6 v1  gov 0.910 -> 0.000
+  OPEN  S6 v4  gov 0.913 -> 0.840
+  OPEN  S6 v15  gov 0.775 -> 0.964
+  OPEN  S6 v22  gov 0.844 -> 0.978
+  OPEN  S6 v23  gov 0.871 -> 0.992
+  OPEN  S6 v24  gov 0.783 -> 0.000
+

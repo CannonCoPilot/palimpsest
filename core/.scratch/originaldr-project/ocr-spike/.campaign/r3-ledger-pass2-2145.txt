@@ -1,0 +1,158 @@
+14:33 START ch 8
+14:37 START ch 8
+ch 8 rc=0 ch  8: R3-READY     87/88 = 0.989  verses 22  all-fail 0  refs {'s_dismas': 0.9797, 'odr_com': 0.9816, 'sabates_a': 0.96, 'madueke_b': 0.96}  5.7s
+14:41 START ch 8
+ch 8 rc=0 ch  8: R3-READY     87/88 = 0.989  verses 22  all-fail 0  refs {'s_dismas': 0.9797, 'odr_com': 0.9816, 'sabates_a': 0.96, 'madueke_b': 0.96}  5.7s
+ch 8 rc=0 ch  8: R3-READY     87/88 = 0.989  verses 22  all-fail 0  refs {'s_dismas': 0.9797, 'odr_com': 0.9816, 'sabates_a': 0.96, 'madueke_b': 0.96}  5.5s
+14:46 START ch 12
+ch 12 rc=0 ch 12: SOURCE-SKEW  70/80 = 0.875  verses 20  all-fail 0  refs {'s_dismas': 0.9691, 'odr_com': 0.97, 'sabates_a': 0.9619, 'madueke_b': 0.9619}  5.2s
+14:48 START ch 20
+ch 20 rc=0 ch 20: SOURCE-SKEW  61/72 = 0.847  verses 18  all-fail 1  refs {'s_dismas': 0.9682, 'odr_com': 0.9684, 'sabates_a': 0.9593, 'madueke_b': 0.9593}  5.2s
+14:52 START ch 22
+ch 22 rc=0 ch 22: SOURCE-SKEW  84/96 = 0.875  verses 24  all-fail 0  refs {'s_dismas': 0.9611, 'odr_com': 0.9613, 'sabates_a': 0.9543, 'madueke_b': 0.9543}  5.4s
+14:56 START ch 48
+ch 48 rc=0 ch 48: SOURCE-SKEW  76/88 = 0.864  verses 22  all-fail 1  refs {'s_dismas': 0.9237, 'odr_com': 0.9658, 'sabates_a': 0.9563, 'madueke_b': 0.9563}  6.1s
+14:59 START ch 33
+15:03 START ch 12
+ch 33 rc=0 ch 33: SOURCE-SKEW  70/80 = 0.875  verses 20  all-fail 1  refs {'s_dismas': 0.9619, 'odr_com': 0.9749, 'sabates_a': 0.9685, 'madueke_b': 0.968}  5.5s
+ch 12 rc=0 ch 12: SOURCE-SKEW  70/80 = 0.875  verses 20  all-fail 0  refs {'s_dismas': 0.9691, 'odr_com': 0.97, 'sabates_a': 0.9619, 'madueke_b': 0.9619}  5.2s
+15:05 START ch 7
+ch 7 rc=0 ch  7: SOURCE-SKEW  83/96 = 0.865  verses 24  all-fail 0  refs {'s_dismas': 0.9707, 'odr_com': 0.971, 'sabates_a': 0.9492, 'madueke_b': 0.9492}  5.7s
+15:10 START ch 18
+15:15 START ch 8
+ch 18 rc=0 ch 18: SOURCE-SKEW  121/132 = 0.917  verses 33  all-fail 0  refs {'s_dismas': 0.9653, 'odr_com': 0.9664, 'sabates_a': 0.9591, 'madueke_b': 0.9591}  7.3s
+ch 8 rc=0 ch  8: R3-READY     87/88 = 0.989  verses 22  all-fail 0  refs {'s_dismas': 0.9797, 'odr_com': 0.9816, 'sabates_a': 0.96, 'madueke_b': 0.96}  5.5s
+15:19 START ch 13
+ch 13 rc=0 ch 13: SOURCE-SKEW  59/72 = 0.819  verses 18  all-fail 0  refs {'s_dismas': 0.9497, 'odr_com': 0.9502, 'sabates_a': 0.9401, 'madueke_b': 0.9401}  4.7s
+15:22 START ch 25
+15:26 START ch 8
+ch 25 rc=0 ch 25: SOURCE-SKEW  122/136 = 0.897  verses 34  all-fail 0  refs {'s_dismas': 0.971, 'odr_com': 0.9713, 'sabates_a': 0.9656, 'madueke_b': 0.9656}  5.5s
+15:31 START ch 45
+ch 8 rc=0 ch  8: R3-READY     87/88 = 0.989  verses 22  all-fail 0  refs {'s_dismas': 0.9797, 'odr_com': 0.9816, 'sabates_a': 0.96, 'madueke_b': 0.96}  5.5s
+ch 45 rc=0 ch 45: SOURCE-SKEW  98/112 = 0.875  verses 28  all-fail 0  refs {'s_dismas': 0.9633, 'odr_com': 0.9632, 'sabates_a': 0.9548, 'madueke_b': 0.9548}  6.6s
+15:35 START ch 17
+15:41 START ch 45
+ch 17 rc=0 ch 17: SOURCE-SKEW  93/108 = 0.861  verses 27  all-fail 0  refs {'s_dismas': 0.9624, 'odr_com': 0.9618, 'sabates_a': 0.9573, 'madueke_b': 0.9573}  5.8s
+ch 45 rc=0 ch 45: SOURCE-SKEW  98/112 = 0.875  verses 28  all-fail 0  refs {'s_dismas': 0.9633, 'odr_com': 0.9632, 'sabates_a': 0.9548, 'madueke_b': 0.9548}  6.6s
+15:45 START ch 2
+15:51 START ch 2
+ch 2 rc=0 ch  2: SOURCE-SKEW  88/100 = 0.880  verses 25  all-fail 0  refs {'s_dismas': 0.9722, 'odr_com': 0.9722, 'sabates_a': 0.9605, 'madueke_b': 0.9605}  5.2s
+ch 2 rc=0 ch  2: SOURCE-SKEW  88/100 = 0.880  verses 25  all-fail 0  refs {'s_dismas': 0.9722, 'odr_com': 0.9722, 'sabates_a': 0.9605, 'madueke_b': 0.9605}  5.3s
+15:56 START ch 46
+ch 46 rc=0 ch 46: SOURCE-SKEW  121/136 = 0.890  verses 34  all-fail 1  refs {'s_dismas': 0.9729, 'odr_com': 0.9736, 'sabates_a': 0.9529, 'madueke_b': 0.9529}  6.4s
+16:02 START ch 40
+ch 40 rc=0 ch 40: SOURCE-SKEW  76/92 = 0.826  verses 23  all-fail 0  refs {'s_dismas': 0.9561, 'odr_com': 0.9562, 'sabates_a': 0.9474, 'madueke_b': 0.9474}  4.8s
+16:08 START ch 9
+ch 9 rc=0 ch  9: SOURCE-SKEW  103/116 = 0.888  verses 29  all-fail 0  refs {'s_dismas': 0.956, 'odr_com': 0.9561, 'sabates_a': 0.9429, 'madueke_b': 0.9429}  5.4s
+16:12 START ch 4
+ch 4 rc=0 ch  4: SOURCE-SKEW  88/104 = 0.846  verses 26  all-fail 1  refs {'s_dismas': 0.9519, 'odr_com': 0.9518, 'sabates_a': 0.9387, 'madueke_b': 0.9387}  5.7s
+16:19 START ch 34
+16:23 START ch 12
+ch 34 rc=0 ch 34: SOURCE-SKEW  107/124 = 0.863  verses 31  all-fail 0  refs {'s_dismas': 0.967, 'odr_com': 0.968, 'sabates_a': 0.957, 'madueke_b': 0.9566}  6.6s
+16:26 START ch 50
+ch 12 rc=0 ch 12: SOURCE-SKEW  70/80 = 0.875  verses 20  all-fail 0  refs {'s_dismas': 0.9691, 'odr_com': 0.97, 'sabates_a': 0.9619, 'madueke_b': 0.9619}  5.4s
+ch 50 rc=0 ch 50: SOURCE-SKEW  81/100 = 0.810  verses 25  all-fail 0  refs {'s_dismas': 0.9593, 'odr_com': 0.9599, 'sabates_a': 0.9489, 'madueke_b': 0.9464}  6.0s
+16:30 START ch 14
+ch 14 rc=0 ch 14: SOURCE-SKEW  87/96 = 0.906  verses 24  all-fail 0  refs {'s_dismas': 0.9715, 'odr_com': 0.9728, 'sabates_a': 0.9647, 'madueke_b': 0.9647}  6.2s
+16:35 START ch 28
+16:43 START ch 46
+ch 28 rc=0 ch 28: SOURCE-SKEW  70/88 = 0.795  verses 22  all-fail 1  refs {'s_dismas': 0.9424, 'odr_com': 0.9463, 'sabates_a': 0.9393, 'madueke_b': 0.9396}  5.7s
+ch 46 rc=0 ch 46: SOURCE-SKEW  121/136 = 0.890  verses 34  all-fail 1  refs {'s_dismas': 0.9729, 'odr_com': 0.9736, 'sabates_a': 0.9529, 'madueke_b': 0.9529}  6.4s
+16:48 START ch 11
+16:54 START ch 50
+ch 11 rc=0 ch 11: SOURCE-SKEW  109/128 = 0.852  verses 32  all-fail 2  refs {'s_dismas': 0.9583, 'odr_com': 0.9718, 'sabates_a': 0.9516, 'madueke_b': 0.9516}  5.7s
+ch 50 rc=0 ch 50: SOURCE-SKEW  81/100 = 0.810  verses 25  all-fail 0  refs {'s_dismas': 0.9593, 'odr_com': 0.9599, 'sabates_a': 0.9489, 'madueke_b': 0.9464}  6.1s
+16:58 START ch 6
+ch 6 rc=0 ch  6: SOURCE-SKEW  69/88 = 0.784  verses 22  all-fail 1  refs {'s_dismas': 0.9534, 'odr_com': 0.9537, 'sabates_a': 0.9418, 'madueke_b': 0.9418}  5.4s
+17:06 START ch 30
+ch 30 rc=0 ch 30: SOURCE-SKEW  152/172 = 0.884  verses 43  all-fail 1  refs {'s_dismas': 0.9622, 'odr_com': 0.9642, 'sabates_a': 0.9507, 'madueke_b': 0.9507}  8.7s
+17:14 START ch 3
+ch 3 rc=0 ch  3: SOURCE-SKEW  76/96 = 0.792  verses 24  all-fail 0  refs {'s_dismas': 0.9557, 'odr_com': 0.9558, 'sabates_a': 0.9427, 'madueke_b': 0.9427}  6.5s
+17:21 START ch 15
+17:25 START ch 6
+ch 15 rc=0 ch 15: SOURCE-SKEW  64/84 = 0.762  verses 21  all-fail 1  refs {'s_dismas': 0.9592, 'odr_com': 0.9597, 'sabates_a': 0.9448, 'madueke_b': 0.9448}  4.7s
+17:32 START ch 11
+ch 6 rc=0 ch  6: SOURCE-SKEW  69/88 = 0.784  verses 22  all-fail 1  refs {'s_dismas': 0.9534, 'odr_com': 0.9537, 'sabates_a': 0.9418, 'madueke_b': 0.9418}  5.4s
+ch 11 rc=0 ch 11: SOURCE-SKEW  109/128 = 0.852  verses 32  all-fail 2  refs {'s_dismas': 0.9583, 'odr_com': 0.9718, 'sabates_a': 0.9516, 'madueke_b': 0.9516}  5.7s
+17:37 START ch 42
+ch 42 rc=0 ch 42: SOURCE-SKEW  133/152 = 0.875  verses 38  all-fail 0  refs {'s_dismas': 0.9675, 'odr_com': 0.9679, 'sabates_a': 0.9536, 'madueke_b': 0.9536}  7.4s
+17:43 START ch 38
+ch 38 rc=0 ch 38: SOURCE-SKEW  100/120 = 0.833  verses 30  all-fail 0  refs {'s_dismas': 0.9526, 'odr_com': 0.9535, 'sabates_a': 0.9461, 'madueke_b': 0.9461}  6.6s
+17:49 START ch 36
+ch 36 rc=0 ch 36: SOURCE-SKEW  149/172 = 0.866  verses 43  all-fail 0  refs {'s_dismas': 0.9403, 'odr_com': 0.9423, 'sabates_a': 0.9316, 'madueke_b': 0.9316}  6.4s
+17:57 START ch 19
+ch 19 rc=0 ch 19: SOURCE-SKEW  128/152 = 0.842  verses 38  all-fail 0  refs {'s_dismas': 0.9619, 'odr_com': 0.9648, 'sabates_a': 0.9569, 'madueke_b': 0.9569}  8.8s
+18:04 START ch 44
+ch 44 rc=0 ch 44: SOURCE-SKEW  112/136 = 0.824  verses 34  all-fail 1  refs {'s_dismas': 0.9494, 'odr_com': 0.9497, 'sabates_a': 0.9392, 'madueke_b': 0.939}  6.7s
+18:10 START ch 32
+ch 32 rc=0 ch 32: SOURCE-SKEW  104/128 = 0.812  verses 32  all-fail 2  refs {'s_dismas': 0.9677, 'odr_com': 0.968, 'sabates_a': 0.956, 'madueke_b': 0.956}  6.4s
+18:16 START ch 27
+ch 27 rc=0 ch 27: SOURCE-SKEW  160/184 = 0.870  verses 46  all-fail 0  refs {'s_dismas': 0.9649, 'odr_com': 0.9651, 'sabates_a': 0.958, 'madueke_b': 0.958}  8.6s
+18:26 START ch 43
+18:31 START ch 13
+ch 43 rc=0 ch 43: SOURCE-SKEW  111/136 = 0.816  verses 34  all-fail 1  refs {'s_dismas': 0.9591, 'odr_com': 0.9608, 'sabates_a': 0.951, 'madueke_b': 0.9507}  7.9s
+ch 13 rc=0 ch 13: SOURCE-SKEW  59/72 = 0.819  verses 18  all-fail 0  refs {'s_dismas': 0.9497, 'odr_com': 0.9502, 'sabates_a': 0.9401, 'madueke_b': 0.9401}  4.8s
+18:34 START ch 10
+ch 10 rc=0 ch 10: SOURCE-SKEW  102/128 = 0.797  verses 32  all-fail 3  refs {'s_dismas': 0.9272, 'odr_com': 0.9568, 'sabates_a': 0.9423, 'madueke_b': 0.9423}  4.5s
+18:40 START ch 39
+ch 39 rc=0 ch 39: SOURCE-SKEW  67/92 = 0.728  verses 23  all-fail 0  refs {'s_dismas': 0.9242, 'odr_com': 0.9243, 'sabates_a': 0.9157, 'madueke_b': 0.9157}  4.9s
+18:46 START ch 29
+ch 29 rc=0 ch 29: SOURCE-SKEW  112/140 = 0.800  verses 35  all-fail 2  refs {'s_dismas': 0.9622, 'odr_com': 0.9658, 'sabates_a': 0.9529, 'madueke_b': 0.9529}  6.2s
+18:54 START ch 49
+19:01 START ch 10
+ch 49 rc=0 ch 49: SOURCE-SKEW  100/128 = 0.781  verses 32  all-fail 1  refs {'s_dismas': 0.9528, 'odr_com': 0.9534, 'sabates_a': 0.9413, 'madueke_b': 0.9411}  6.3s
+ch 10 rc=0 ch 10: SOURCE-SKEW  102/128 = 0.797  verses 32  all-fail 3  refs {'s_dismas': 0.9272, 'odr_com': 0.9568, 'sabates_a': 0.9423, 'madueke_b': 0.9423}  4.5s
+19:07 START ch 21
+ch 21 rc=0 ch 21: SOURCE-SKEW  106/136 = 0.779  verses 34  all-fail 2  refs {'s_dismas': 0.9309, 'odr_com': 0.935, 'sabates_a': 0.932, 'madueke_b': 0.932}  5.9s
+19:14 START ch 47
+19:20 START ch 21
+ch 47 rc=0 ch 47: SOURCE-SKEW  93/124 = 0.750  verses 31  all-fail 2  refs {'s_dismas': 0.9183, 'odr_com': 0.9506, 'sabates_a': 0.9327, 'madueke_b': 0.9389}  7.4s
+ch 21 rc=0 ch 21: SOURCE-SKEW  106/136 = 0.779  verses 34  all-fail 2  refs {'s_dismas': 0.9309, 'odr_com': 0.935, 'sabates_a': 0.932, 'madueke_b': 0.932}  5.8s
+19:26 START ch 35
+19:35 START ch 42
+ch 35 rc=0 ch 35: SOURCE-SKEW  82/116 = 0.707  verses 29  all-fail 1  refs {'s_dismas': 0.9524, 'odr_com': 0.9554, 'sabates_a': 0.944, 'madueke_b': 0.944}  5.8s
+19:40 START ch 8
+ch 42 rc=0 ch 42: SOURCE-SKEW  133/152 = 0.875  verses 38  all-fail 0  refs {'s_dismas': 0.9675, 'odr_com': 0.9679, 'sabates_a': 0.9536, 'madueke_b': 0.9536}  7.6s
+19:44 START ch 26
+ch 8 rc=0 ch  8: R3-READY     87/88 = 0.989  verses 22  all-fail 0  refs {'s_dismas': 0.9797, 'odr_com': 0.9816, 'sabates_a': 0.96, 'madueke_b': 0.96}  5.6s
+ch 26 rc=0 ch 26: SOURCE-SKEW  105/140 = 0.750  verses 35  all-fail 3  refs {'s_dismas': 0.9206, 'odr_com': 0.9574, 'sabates_a': 0.9436, 'madueke_b': 0.9436}  7.7s
+19:51 START ch 37
+ch 37 rc=0 ch 37: SOURCE-SKEW  107/144 = 0.743  verses 36  all-fail 0  refs {'s_dismas': 0.9385, 'odr_com': 0.9397, 'sabates_a': 0.9352, 'madueke_b': 0.9352}  7.7s
+20:04 START ch 35
+20:13 START ch 42
+ch 35 rc=0 ch 35: SOURCE-SKEW  82/116 = 0.707  verses 29  all-fail 1  refs {'s_dismas': 0.9524, 'odr_com': 0.9554, 'sabates_a': 0.944, 'madueke_b': 0.944}  5.6s
+ch 42 rc=0 ch 42: SOURCE-SKEW  133/152 = 0.875  verses 38  all-fail 0  refs {'s_dismas': 0.9675, 'odr_com': 0.9679, 'sabates_a': 0.9536, 'madueke_b': 0.9536}  7.5s
+20:18 START ch 31
+ch 31 rc=0 ch 31: SOURCE-SKEW  182/220 = 0.827  verses 55  all-fail 0  refs {'s_dismas': 0.9601, 'odr_com': 0.9622, 'sabates_a': 0.9506, 'madueke_b': 0.9506}  10.0s
+20:29 START ch 5
+ch 5 rc=0 ch  5: SOURCE-SKEW  101/124 = 0.815  verses 31  all-fail 0  refs {'s_dismas': 0.9411, 'odr_com': 0.9438, 'sabates_a': 0.914, 'madueke_b': 0.914}  4.5s
+20:38 START ch 24
+ch 24 rc=0 ch 24: SOURCE-SKEW  209/268 = 0.780  verses 67  all-fail 2  refs {'s_dismas': 0.948, 'odr_com': 0.9484, 'sabates_a': 0.9467, 'madueke_b': 0.9466}  12.3s
+20:53 START ch 41
+20:53 START ch 31
+ch 31 rc=0 ch 31: SOURCE-SKEW  182/220 = 0.827  verses 55  all-fail 0  refs {'s_dismas': 0.9601, 'odr_com': 0.9622, 'sabates_a': 0.9506, 'madueke_b': 0.9506}  10.6s
+ch 41 rc=0 ch 41: SOURCE-SKEW  153/228 = 0.671  verses 57  all-fail 5  refs {'s_dismas': 0.9201, 'odr_com': 0.9236, 'sabates_a': 0.9163, 'madueke_b': 0.9161}  8.9s
+21:15 no chapter ready — waiting for the breadth measurement
+21:15 START ch 26
+21:20 no chapter ready — waiting for the breadth measurement
+ch 26 rc=0 ch 26: SOURCE-SKEW  105/140 = 0.750  verses 35  all-fail 3  refs {'s_dismas': 0.9206, 'odr_com': 0.9574, 'sabates_a': 0.9436, 'madueke_b': 0.9436}  7.4s
+21:22 no chapter ready — waiting for the breadth measurement
+21:22 START ch 26
+21:25 no chapter ready — waiting for the breadth measurement
+21:27 no chapter ready — waiting for the breadth measurement
+ch 26 rc=0 ch 26: SOURCE-SKEW  105/140 = 0.750  verses 35  all-fail 3  refs {'s_dismas': 0.9206, 'odr_com': 0.9574, 'sabates_a': 0.9436, 'madueke_b': 0.9436}  7.4s
+21:29 no chapter ready — waiting for the breadth measurement
+21:29 START ch 41
+21:30 no chapter ready — waiting for the breadth measurement
+21:32 no chapter ready — waiting for the breadth measurement
+21:34 no chapter ready — waiting for the breadth measurement
+21:35 no chapter ready — waiting for the breadth measurement
+21:37 no chapter ready — waiting for the breadth measurement
+21:39 no chapter ready — waiting for the breadth measurement
+21:40 no chapter ready — waiting for the breadth measurement
+21:42 no chapter ready — waiting for the breadth measurement
+21:44 no chapter ready — waiting for the breadth measurement
+ch 41 rc=0 ch 41: SOURCE-SKEW  153/228 = 0.671  verses 57  all-fail 5  refs {'s_dismas': 0.9201, 'odr_com': 0.9236, 'sabates_a': 0.9163, 'madueke_b': 0.9161}  9.0s
+21:45 no chapter ready — waiting for the breadth measurement
+21:45 no chapter ready — waiting for the breadth measurement
+21:45 START ch 31

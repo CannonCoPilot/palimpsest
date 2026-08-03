@@ -1,0 +1,43 @@
+=== R3 chapter 6 ===
+ot the Arke ſhal be three hundred cubits: fiftie cubits the breadth, and thirtie cubits the he
+  S6 v16  p36  crop [0.09, 0.7577, 0.815, 0.8539]  incumbent gov 0.899
+      R3 gov 0.905 vs 0.899  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: Thou ſhalt make a window in the arke, & in a cubit finiſh the top of it: & the dore of the arke thou ſhalt ſet at the fide below, 
+      ſ-surface: OPEN  (5 ſ kept, 1 unresolved: fide)
+      incumbent: Thou ſnalt make a window in the arke, & in a cubit finiſh the top ot it: & the dore of the arke thou ſhalt ſet at the ſide below, 
+  S6 v17  p36  crop [0.09, 0.7924, 0.815, 0.9048]  incumbent gov 0.929
+      R3 gov 0.967 vs 0.929  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: Behold I wil bring the waters of a great floud vpon the earth, that I may deſtroy al fieth wherin there is breath of life vnder he
+      ſ-surface: OPEN  (2 ſ kept, 3 unresolved: floud, fieth, final)
+      incumbent: Behold I wil bring the waters ot a great foud vpon the earth, that I may deſtroy alfeſh wernthres breath of lite vnder heauen. Al 
+  S6 v20  p37  crop [0.155, 0.1093, 0.885, 0.2255]  incumbent gov 0.951
+      R3 gov 0.967 vs 0.951  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: Of foules according to their kind, and of beaſts in their kind and of al that creepeth on the earth according to their kind: payre
+      ſ-surface: OPEN  (3 ſ kept, 1 unresolved: foules)
+      incumbent: Of toules accordins to their kind, and of beaſts in their kind and of al that creepeth on the earth according to their kind: payre
+
+adopted store -> .r3-adopted-genesis-6.json (34 cells)
+
+=== 20 cleared · 9 improved but still short · 21 STILL OPEN and blocking ===
+  OPEN  S1 v3  gov 0.789 -> 0.904
+  OPEN  S1 v10  gov 0.954 -> 0.808
+  OPEN  S1 v16  gov 0.989 -> 0.989
+  OPEN  S1 v20  gov 0.995 -> 0.914
+  OPEN  S1 v21  gov 0.899 -> 0.986
+  OPEN  S3 v1  gov 0.988 -> 0.000
+  OPEN  S3 v3  gov 0.941 -> 0.913
+  OPEN  S3 v10  gov 1.000 -> 1.000
+  OPEN  S3 v11  gov 1.000 -> 1.000
+  OPEN  S3 v21  gov 0.941 -> 0.993
+  OPEN  S9 v3  gov 0.832 -> 0.920
+  OPEN  S9 v4  gov 0.933 -> 0.797
+  OPEN  S9 v16  gov 0.995 -> 1.000
+  OPEN  S9 v20  gov 0.989 -> 1.000
+  OPEN  S9 v21  gov 0.892 -> 0.822
+  OPEN  S9 v22  gov 0.944 -> 0.944
+  OPEN  S6 v8  gov 1.000 -> 1.000
+  OPEN  S6 v10  gov 0.913 -> 0.913
+  OPEN  S6 v16  gov 0.899 -> 0.905
+  OPEN  S6 v17  gov 0.929 -> 0.967
+  OPEN  S6 v20  gov 0.951 -> 0.967
+

@@ -2,17 +2,17 @@
  "chapter": 4,
  "n_verses": 26,
  "n_cells": 104,
- "n_pass": 89,
- "rate": 0.8558,
+ "n_pass": 90,
+ "rate": 0.8654,
  "ref_means": {
-  "s_dismas": 0.9625,
-  "odr_com": 0.9624,
-  "sabates_a": 0.9494,
-  "madueke_b": 0.9494
+  "s_dismas": 0.9634,
+  "odr_com": 0.9633,
+  "sabates_a": 0.9503,
+  "madueke_b": 0.9503
  },
  "src_rates": {
   "S1": 0.8846,
-  "S3": 0.9231,
+  "S3": 0.9615,
   "S9": 0.8462,
   "S6": 0.7692
  },
@@ -20,7 +20,7 @@
  "all_fail": [
   24
  ],
- "n_open": 15,
+ "n_open": 14,
  "open": [
   {
    "src": "S9",
@@ -63,13 +63,6 @@
    "worst": 0.853,
    "from": "p34",
    "text": "And mech ſaid to his wiues Ada and Sella: Heare my voice a wiues of Lamech, harken to my talke: for I haue ſlaine a to the wounding ofmy ſelfe, and a ſtripeling to mine owne blowe brewſing. Seuenfould"
-  },
-  {
-   "src": "S3",
-   "verse": 23,
-   "worst": 0.889,
-   "from": "p38",
-   "text": "And Laa mech ſaid to his wiues Ada and Sella: Heare my voice ye a wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould"
   },
   {
    "src": "S6",
@@ -277,13 +270,13 @@
     }
    },
    "S9": {
-    "text": "Abel alſo offred A of the firſt begotten of his flocke, and of their fat: and our the Lord had reſpect to Abel, to his giftes.",
-    "from": "p43",
+    "text": "Abel alſo :: offred of the firſt begotten of his hocke, and of their fat: and our Lord had reſpect to Abel, &C to his giftes.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.951,
-     "odr_com": 0.951,
-     "sabates_a": 0.923,
-     "madueke_b": 0.923
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
     }
    },
    "S6": {
@@ -529,13 +522,13 @@
     }
    },
    "S9": {
-    "text": "And he ſaid to him What haſt thou done:: the voice of thy brothers bloud crieth to murther me out of the earth.",
-    "from": "p43",
+    "text": "And he ſaid to him What haſt thou done:: :: the voice of thy brothers bloud crieth unto me out of the earth.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.926,
-     "odr_com": 0.926,
-     "sabates_a": 0.902,
-     "madueke_b": 0.902
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
     }
    },
    "S6": {
@@ -813,7 +806,7 @@
     }
    },
    "S3": {
-    "text": "And Cain knewe his wife, who conceiued, and brought forth Enoch And :: he built a citie, & called the name thereof by the name of his ſonne, Enoch.",
+    "text": "And Cain knewe his wife, who conceiued, and brought forth Enoch And he built a citie, & called the name thereof by the name of his ſonne, Enoch.",
     "from": "r3",
     "score": {
      "s_dismas": 0.993,
@@ -855,13 +848,13 @@
     }
    },
    "S3": {
-    "text": "Moreouer Enoch begat Irad and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+    "text": "Moreouer Enoch be gat Irad and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech. +",
     "from": "r3",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 1.0,
-     "madueke_b": 1.0
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
     }
    },
    "S9": {
@@ -917,13 +910,13 @@
     }
    },
    "S6": {
-    "text": "Who tooke(d) two wiues, the name of the one was Ada, and the name of the other Sella.",
+    "text": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.988,
-     "odr_com": 0.988,
-     "sabates_a": 0.972,
-     "madueke_b": 0.972
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    }
   },
@@ -1001,13 +994,13 @@
     }
    },
    "S6": {
-    "text": "And his brothers name was Iubal: he was the father of them that ſing on harp & organes.",
+    "text": "And his brothers name was Lubal: he was the father of them that ſing on harp & organes.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.988,
-     "odr_com": 0.988,
-     "sabates_a": 0.975,
-     "madueke_b": 0.975
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
     }
    }
   },
@@ -1065,13 +1058,13 @@
     }
    },
    "S3": {
-    "text": "And Laa mech ſaid to his wiues Ada and Sella: Heare my voice ye a wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould",
-    "from": "p38",
+    "text": "And Lamech ſaid to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding of my ſelfe, and a ſtripeling to mine owne drie blowe brewſing. Seuenfould",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.915,
-     "odr_com": 0.905,
-     "sabates_a": 0.889,
-     "madueke_b": 0.889
+     "s_dismas": 0.947,
+     "odr_com": 0.937,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
     }
    },
    "S9": {
@@ -1425,5 +1418,5 @@
  "blocked_cells": 0,
  "achievable": 104,
  "triage": "SOURCE-SKEW",
- "secs": 5.4
+ "secs": 5.3
 }

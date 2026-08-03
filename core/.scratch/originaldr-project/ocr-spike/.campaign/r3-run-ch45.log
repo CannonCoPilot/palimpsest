@@ -1,0 +1,46 @@
+=== R3 chapter 45 ===
+5455]  incumbent gov 0.854
+      R3 gov 0.979 vs 0.854  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And they told him saying: Ioſeph thy ſonne is liuing: and he ru- lcth in al the Land of AEgypt. Which when Iacob heard, awaking as
+      ſ-surface: OPEN  (3 ſ kept, 2 unresolved: saying:, sleep,)
+      incumbent: they told him ſaving: Ioſeph thy ſonne is liuing: and he tual the Land ot AEgypt. Which when Iacob heard, awakins as out ot a heau
+  S6 v27  p144  crop [0.155, 0.5044, 0.885, 0.5788]  incumbent gov 0.817
+      R3 gov 0.972 vs 0.817  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: They on the contrarie ſide reported the whole order of the thinge. And when he ſaw the waynes and al things that he had ſent, his 
+      ſ-surface: OPEN  (3 ſ kept, 1 unresolved: spirit)
+      incumbent: on the contrarie ſide reported the whole order ot the thins. he ſaw the waynes and al things that he had ſent, his ſpitit
+  S6 v28  p144  crop [0.155, 0.5388, 0.885, 0.8296]  incumbent gov 0.842
+      R3 gov 0.000 vs 0.842  -> NO-GAIN (stays OPEN)
+      R3 verse: and he ſaid It ſufficeth me if Ioſeph my ſonne be liuing yet: I wil goe, and ſee him before I dye. CHAP. XLV. Be not angrie in the
+      ſ-surface: OPEN  (14 ſ kept, 7 unresolved: easily, especially, admonisheth, excuse, themselves,, fall)
+      incumbent: and he ſaid It ſufhceth me it Ioſeph my ſoune be liuing goe, and ſee him betore I dye.
+
+adopted store -> .r3-adopted-genesis-45.json (19 cells)
+
+=== 19 cleared · 19 improved but still short · 25 STILL OPEN and blocking ===
+  OPEN  S1 v6  gov 0.942 -> 0.971
+  OPEN  S1 v8  gov 0.953 -> 0.988
+  OPEN  S1 v11  gov 0.979 -> 0.993
+  OPEN  S1 v20  gov 0.959 -> 0.990
+  OPEN  S1 v24  gov 0.962 -> 0.962
+  OPEN  S3 v4  gov 0.888 -> 0.993
+  OPEN  S3 v6  gov 0.935 -> 0.986
+  OPEN  S3 v7  gov 0.935 -> 0.930
+  OPEN  S3 v24  gov 0.962 -> 0.962
+  OPEN  S9 v20  gov 0.911 -> 0.990
+  OPEN  S9 v24  gov 0.962 -> 0.962
+  OPEN  S6 v3  gov 0.934 -> 0.971
+  OPEN  S6 v8  gov 0.971 -> 0.994
+  OPEN  S6 v15  gov 0.919  [no crop geometry; leaves tried: [144]]
+  OPEN  S6 v17  gov 0.809 -> 0.974
+  OPEN  S6 v18  gov 0.857 -> 0.993
+  OPEN  S6 v19  gov 0.714 -> 0.961
+  OPEN  S6 v20  gov 0.867 -> 0.969
+  OPEN  S6 v21  gov 0.856 -> 0.978
+  OPEN  S6 v23  gov 0.859 -> 0.920
+  OPEN  S6 v24  gov 0.808 -> 0.913
+  OPEN  S6 v25  gov 0.872 -> 1.000
+  OPEN  S6 v26  gov 0.854 -> 0.979
+  OPEN  S6 v27  gov 0.817 -> 0.972
+  OPEN  S6 v28  gov 0.842 -> 0.000
+

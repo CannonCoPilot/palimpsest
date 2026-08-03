@@ -1,0 +1,56 @@
+=== R3 chapter 10 ===
+: And their dwellino diuided from Meſſa as we goe on as farre asSophar a mountaine in hi
+  S6 v31  p56  crop [0.155, 0.4602, 0.89, 0.5469]  incumbent gov 0.802
+      R3 gov 0.933 vs 0.802  -> ADOPT
+      R3 verse: Theſe are the children of Sem according to their kindred, and tongues, and countries in their nations. There
+      ſ-surface: CLOSED  (1 ſ kept, 0 unresolved)
+      incumbent: Theſe are the children of Sem accordin to their kind- which fetn tongs, and countries in thuir nations. Thcie
+  S6 v32  p56  crop [0.155, 0.4837, 0.89, 0.576]  incumbent gov 0.787
+      R3 gov 0.939 vs 0.787  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: Thcie are the families of Noe, according to their peoples and nation. Of theſe were the nations diuided on the earth after the flo
+      ſ-surface: OPEN  (1 ſ kept, 2 unresolved: families, flood.)
+      incumbent: Thcie are the tamS..1. Noe, according to their peoplos and nation. Ot theſevere the 11.ct diuided on the earth atter the fioud.
+
+adopted store -> .r3-adopted-genesis-10.json (32 cells)
+
+=== 25 cleared · 9 improved but still short · 39 STILL OPEN and blocking ===
+  OPEN  S1 v1  gov 0.000 -> 0.000
+  OPEN  S1 v2  gov 1.000 -> 1.000
+  OPEN  S1 v6  gov 1.000 -> 0.983
+  OPEN  S1 v7  gov 1.000 -> 1.000
+  OPEN  S1 v11  gov 1.000 -> 1.000
+  OPEN  S1 v12  gov 1.000 -> 1.000
+  OPEN  S1 v14  gov 0.988 -> 0.988
+  OPEN  S1 v19  gov 0.979 -> 0.979
+  OPEN  S1 v20  gov 1.000 -> 0.979
+  OPEN  S3 v1  gov 0.000 -> 0.000
+  OPEN  S3 v2  gov 1.000 -> 1.000
+  OPEN  S3 v6  gov 1.000 -> 1.000
+  OPEN  S3 v7  gov 1.000 -> 1.000
+  OPEN  S3 v12  gov 1.000 -> 0.983
+  OPEN  S3 v14  gov 1.000 -> 0.977
+  OPEN  S3 v19  gov 1.000 -> 0.993
+  OPEN  S3 v20  gov 0.979 -> 0.979
+  OPEN  S9 v1  gov 0.000 -> 0.000
+  OPEN  S9 v2  gov 1.000 -> 1.000
+  OPEN  S9 v6  gov 1.000 -> 1.000
+  OPEN  S9 v7  gov 1.000 -> 1.000
+  OPEN  S9 v11  gov 1.000 -> 0.989
+  OPEN  S9 v12  gov 1.000 -> 1.000
+  OPEN  S9 v14  gov 1.000 -> 0.977
+  OPEN  S9 v16  gov 0.930 -> 1.000
+  OPEN  S9 v19  gov 0.922 -> 0.993
+  OPEN  S6 v1  gov 0.000 -> 0.000
+  OPEN  S6 v2  gov 0.815 -> 0.815
+  OPEN  S6 v6  gov 0.867 -> 0.867
+  OPEN  S6 v7  gov 0.921 -> 0.921
+  OPEN  S6 v11  gov 0.901 -> 0.890
+  OPEN  S6 v12  gov 0.914 -> 0.897
+  OPEN  S6 v14  gov 0.000 -> 0.833
+  OPEN  S6 v15  gov 0.807 -> 0.980
+  OPEN  S6 v16  gov 0.000 -> 0.977
+  OPEN  S6 v18  gov 0.813 -> 0.967
+  OPEN  S6 v21  gov 0.862 -> 0.966
+  OPEN  S6 v30  gov 0.782 -> 0.955
+  OPEN  S6 v32  gov 0.787 -> 0.939
+

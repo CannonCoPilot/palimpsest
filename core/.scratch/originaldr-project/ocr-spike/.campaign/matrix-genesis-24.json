@@ -5,10 +5,10 @@
  "n_pass": 243,
  "rate": 0.9067,
  "ref_means": {
-  "s_dismas": 0.9695,
-  "odr_com": 0.9698,
-  "sabates_a": 0.9678,
-  "madueke_b": 0.9677
+  "s_dismas": 0.9696,
+  "odr_com": 0.97,
+  "sabates_a": 0.9679,
+  "madueke_b": 0.9678
  },
  "src_rates": {
   "S1": 0.8955,
@@ -35,7 +35,7 @@
    "verse": 12,
    "worst": 0.895,
    "from": "r3",
-   "text": "O Lord God of my lord Abraham, mete me to day, I beſeech I beſeech thee, and doe mercifully with my maiſter Abraham."
+   "text": "O Lord God of my lord Abraham, mete me to day. I beſeech I beſeech thee, and doe mercifully with my maiſter Abraham."
   },
   {
    "src": "S9",
@@ -664,7 +664,7 @@
   },
   "12": {
    "S1": {
-    "text": "O Lord God of my lord Abraham, mete me to day, I beſeech I beſeech thee, and doe mercifully with my maiſter Abraham.",
+    "text": "O Lord God of my lord Abraham, mete me to day. I beſeech I beſeech thee, and doe mercifully with my maiſter Abraham.",
     "from": "r3",
     "score": {
      "s_dismas": 0.911,
@@ -904,13 +904,13 @@
     }
    },
    "S6": {
-    "text": "And the ſeruant rame to meer her, and ſaid: Giue me a little water to drinke of thy tankard.",
+    "text": "And the ſeruant ranne to meer her, and ſaid: Giue me a little water to drinke of thy tankard.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.933,
-     "odr_com": 0.944,
-     "sabates_a": 0.975,
-     "madueke_b": 0.975
+     "s_dismas": 0.956,
+     "odr_com": 0.967,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
     }
    }
   },
@@ -1640,13 +1640,13 @@
     }
    },
    "S3": {
-    "text": "and our Lord hath bleſſed my lord wonderfully, and he is magnified: and he bath geuen him sheepe, and oxen, ſiluer and gold, men ſeruants and wemen ſeruants, camels, and aſſes.",
-    "from": "p104",
+    "text": "and our Lord hath bleſſed my lord wonderfully, and he is magnified: and he hath geuen him sheepe, and oxen, ſiluer and gold, men ſeruants and wemen ſeruants, camels, and aſſes.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.994,
-     "odr_com": 0.994,
-     "sabates_a": 0.932,
-     "madueke_b": 0.932
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
     }
    },
    "S9": {
@@ -2794,7 +2794,7 @@
     }
    },
    "S6": {
-    "text": "the ſame time Iſaac walked along the way, that leadeth to the we of the Liuing and the ſeeing, ſo called: for he dwelt in the ſouth countrie:",
+    "text": "62the ſame time Iſaac walked along the way, that leadeth to the we of the Liuing and the ſeeing, ſo called: for he dwelt in the ſouth countrie:",
     "from": "r3",
     "score": {
      "s_dismas": 0.978,
@@ -3505,5 +3505,5 @@
  "blocked_cells": 0,
  "achievable": 268,
  "triage": "SOURCE-SKEW",
- "secs": 12.2
+ "secs": 12.0
 }

@@ -1,0 +1,46 @@
+=== R3 chapter 43 ===
+n at noone: for they had heard that they ſhould eate bread there.
+  S6 v29  p140  crop [0.08, 0.562, 0.815, 0.6572]  incumbent gov 0.935
+      R3 gov 0.979 vs 0.935  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And Ioſeph lifting vp his eyes, ſaw ſeniamin his brother of the ſame mother, and ſaid: Is this your yong brother, of whom you told
+      ſ-surface: OPEN  (7 ſ kept, 3 unresolved: lifting, ſeniamin, merciful)
+      incumbent: Aud Ioſeph liftins vp his eves, ſaw eniamin his brother of the ſame mother, aud ſaid: Is this vour yono brothet ot whom you told m
+  S6 v31  p140  crop [0.08, 0.6309, 0.815, 0.7271]  incumbent gov 0.924
+      R3 gov 0.972 vs 0.924  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And when he had walthed his face, comming forth againe, he retrained himſelfe, and ſaid Set bread on the table.
+      ſ-surface: OPEN  (2 ſ kept, 2 unresolved: face,, forth)
+      incumbent: And when he had wathed his tace, commin torth againe, he retrained himſelte, aud ſaid : Set bread on tne table.
+  S6 v34  p140  crop [0.08, 0.7566, 0.815, 0.8683]  incumbent gov 0.910
+      R3 gov 0.988 vs 0.910  -> ADOPT
+      R3 verse: taking the portions that they receiued of him: and the greater portion came to Beniamin, ſo that it exceeded by fiue partes. And t
+      ſ-surface: CLOSED  (1 ſ kept, 0 unresolved)
+      incumbent: taking the portions that thev receiued ot him: and the greater porto ca Beniamin, ſo that it exceededby fiue pattes. And they dran
+
+adopted store -> .r3-adopted-genesis-43.json (17 cells)
+
+=== 8 cleared · 14 improved but still short · 24 STILL OPEN and blocking ===
+  OPEN  S1 v3  gov 0.899 -> 0.901
+  OPEN  S1 v10  gov 0.952 -> 0.899
+  OPEN  S1 v11  gov 0.992 -> 0.969
+  OPEN  S1 v15  gov 0.983 -> 0.984
+  OPEN  S1 v18  gov 0.941 -> 0.953
+  OPEN  S1 v27  gov 0.928 -> 0.992
+  OPEN  S3 v1  gov 0.926 -> 0.000
+  OPEN  S3 v11  gov 0.992 -> 0.970
+  OPEN  S3 v15  gov 0.975 -> 0.984
+  OPEN  S9 v3  gov 0.927 -> 0.957
+  OPEN  S9 v4  gov 0.889 -> 0.990
+  OPEN  S9 v11  gov 0.958 -> 0.970
+  OPEN  S9 v15  gov 0.975 -> 0.984
+  OPEN  S6 v1  gov 0.887 -> 0.000
+  OPEN  S6 v8  gov 0.975 -> 0.929
+  OPEN  S6 v10  gov 0.936 -> 0.819
+  OPEN  S6 v11  gov 0.886 -> 0.909
+  OPEN  S6 v15  gov 0.808 -> 0.792
+  OPEN  S6 v16  gov 0.885 -> 0.864
+  OPEN  S6 v18  gov 0.897 -> 0.913
+  OPEN  S6 v24  gov 0.931 -> 0.991
+  OPEN  S6 v25  gov 0.943 -> 0.915
+  OPEN  S6 v29  gov 0.935 -> 0.979
+  OPEN  S6 v31  gov 0.924 -> 0.972
+

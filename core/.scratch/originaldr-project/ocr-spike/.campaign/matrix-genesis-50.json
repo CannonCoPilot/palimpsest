@@ -2,23 +2,23 @@
  "chapter": 50,
  "n_verses": 25,
  "n_cells": 100,
- "n_pass": 91,
- "rate": 0.91,
+ "n_pass": 93,
+ "rate": 0.93,
  "ref_means": {
-  "s_dismas": 0.9726,
-  "odr_com": 0.9733,
-  "sabates_a": 0.9556,
-  "madueke_b": 0.9531
+  "s_dismas": 0.9742,
+  "odr_com": 0.9749,
+  "sabates_a": 0.957,
+  "madueke_b": 0.9545
  },
  "src_rates": {
-  "S1": 0.76,
+  "S1": 0.84,
   "S3": 0.92,
   "S9": 1.0,
   "S6": 0.96
  },
  "n_all_fail": 0,
  "all_fail": [],
- "n_open": 9,
+ "n_open": 7,
  "open": [
   {
    "src": "S1",
@@ -64,24 +64,10 @@
   },
   {
    "src": "S1",
-   "verse": 19,
-   "worst": 0.897,
-   "from": "p172",
-   "text": "To whom he anſwered Feare not can we You the wil of God"
-  },
-  {
-   "src": "S1",
    "verse": 21,
    "worst": 0.0,
    "from": "p172",
    "text": "not I no other feed you vour ſire ones, and he comforted them, ſpake genth mildiy."
-  },
-  {
-   "src": "S1",
-   "verse": 25,
-   "worst": 0.833,
-   "from": "p172",
-   "text": "he died, being an hundred and tenne yeares old. And being embawmed with was put in a coffin in Egypr."
   }
  ],
  "cellgrid": {
@@ -633,13 +619,13 @@
   },
   "14": {
    "S1": {
-    "text": "And Ioſeph returned into Aegypt with his brethren, and with al the traine, his father being buried.",
+    "text": "And Ioſeph returned into Egypt with his brethren, and with al the traine, his father being buried.",
     "from": "r3",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 1.0,
-     "madueke_b": 1.0
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
     }
    },
    "S3": {
@@ -843,13 +829,13 @@
   },
   "19": {
    "S1": {
-    "text": "To whom he anſwered Feare not can we You the wil of God",
-    "from": "p172",
+    "text": "To whom he anſwered Fearc not can we reſiſt the wil of God",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.897,
-     "odr_com": 0.897,
-     "sabates_a": 0.907,
-     "madueke_b": 0.907
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
     }
    },
    "S3": {
@@ -885,7 +871,7 @@
   },
   "20": {
    "S1": {
-    "text": "You thought euil againſt me but God turned that into good, th'it he might exalt me, as preſently you ſee, and might ſaue many peoples.",
+    "text": "\"You thought euil againſt me but God turned that into good, th'it he might exalt me, as preſently you ſee, and might ſaue many peoples.",
     "from": "r3",
     "score": {
      "s_dismas": 0.992,
@@ -937,13 +923,13 @@
     }
    },
    "S3": {
-    "text": "Feare not I wil feed you & your litle ones, and he comforted them, and ſpake gently & mildly.",
+    "text": "Feare not I wil feed you & your lir'e ones, and he comforted them, and ſpake gently & mildly.",
     "from": "r3",
     "score": {
-     "s_dismas": 1.0,
-     "odr_com": 1.0,
-     "sabates_a": 0.953,
-     "madueke_b": 0.953
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
     }
    },
    "S9": {
@@ -969,13 +955,13 @@
   },
   "22": {
    "S1": {
-    "text": "And he dwelt in Ægypte, with al his fathers houſe and liued an hundred and tenne yeares. And he ſawe the children of Ephraim vnto the third generation. Alſo children of Macbit the ſonne of Manaſſes were borne in Ioſephs knees",
+    "text": "And he dwelt in Ægypt, with al his fathers houſe and liued an hundred and tenne yeares. And he ſawe the children of Ephraim vnto the third generation. Alſo the children of Macbit the ſonne of Manaſſes were borne in Ioſephs knees",
     "from": "r3",
     "score": {
-     "s_dismas": 0.969,
-     "odr_com": 0.964,
-     "sabates_a": 0.957,
-     "madueke_b": 0.957
+     "s_dismas": 0.991,
+     "odr_com": 0.987,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
     }
    },
    "S3": {
@@ -1095,13 +1081,13 @@
   },
   "25": {
    "S1": {
-    "text": "he died, being an hundred and tenne yeares old. And being embawmed with was put in a coffin in Egypr.",
-    "from": "p172",
+    "text": "he died, being an hundred and tenne yeares old. And being embawmed with ſpices, was put in a coffin in Ægypt.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.915,
-     "odr_com": 0.915,
-     "sabates_a": 0.891,
-     "madueke_b": 0.833
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.917
     }
    },
    "S3": {
@@ -1332,5 +1318,5 @@
  "blocked_cells": 0,
  "achievable": 100,
  "triage": "SOURCE-SKEW",
- "secs": 5.9
+ "secs": 5.8
 }

@@ -1,0 +1,81 @@
+=== R3 chapter 20 ===
+is my ſiſter, the daughter of my father, not the daughter of my mother, I tooke her to wi
+  S6 v14  p85  crop [0.155, 0.7991, 0.885, 0.895]  incumbent gov 0.916
+      R3 gov 0.919 vs 0.916  -> ADOPT
+      R3 verse: Thertore Abimelech tooke ſheep and oxen, and ſeruants, and handmayds, and gaue to Abraham: and reſtored to him Sara his wife, 15.-
+      ſ-surface: CLOSED  (3 ſ kept, 0 unresolved)
+      incumbent: Thertore Abimelech tooke ſhee and oxe and ſeruants, and handinavds, and gaue to Abraham: and reſtored to him Sara his wife,
+  S6 v16  p86  crop [0.155, 0.0928, 0.885, 0.17]  incumbent gov 0.879
+      R3 gov 0.874 vs 0.879  -> NO-GAIN (stays OPEN)
+      R3 verse: serve thee for he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal tor a veile of thine eyes to al tha
+      ſ-surface: OPEN  (5 ſ kept, 2 unresolved: serve, whithersoever)
+      incumbent: Aud to Sara he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal tor a veile of thine eves to al that a
+  S6 v17  p86  crop [0.155, 0.11, 0.885, 0.2051]  incumbent gov 0.777
+      R3 gov 1.000 vs 0.777  -> ADOPT
+      R3 verse: And. Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:
+      ſ-surface: CLOSED  (0 ſ kept, 0 unresolved)
+      incumbent: And. AbraGod healed Abimelech and his wife, and his handmaids, bare children:
+  S6 v18  p86  crop [0.155, 0.1451, 0.885, 0.9371]  incumbent gov 0.867
+      R3 gov 0.000 vs 0.867  -> NO-GAIN (stays OPEN)
+      R3 verse: for our Lord had cloſed vp euerie matrice of the houſe of Abimelech for Sara Abraham's wife. CHAP. XXI. Iſaac is borne, 4.circumci
+      ſ-surface: OPEN  (32 ſ kept, 23 unresolved: wife., 4.circumcised,, forth, desolation, nourished,, desert.)
+      incumbent: for our Lord had cloſed vp euerie matrice of ot Abimelech tor Sara Abrahams wife.
+
+adopted store -> .r3-adopted-genesis-20.json (21 cells)
+
+=== 20 cleared · 8 improved but still short · 14 STILL OPEN and blocking ===
+  OPEN  S1 v11  gov 0.908 -> 0.992
+  OPEN  S1 v12  gov 0.898 -> 0.978
+  OPEN  S1 v14  gov 0.914 -> 0.983
+  OPEN  S1 v15  gov 0.925 -> 0.970
+  OPEN  S1 v16  gov 0.912 -> 0.991
+  OPEN  S1 v18  gov 0.922 -> 0.000
+  OPEN  S3 v12  gov 0.905 -> 1.000
+  OPEN  S3 v18  gov 0.933 -> 0.000
+  OPEN  S6 v1  gov 0.917 -> 0.917
+  OPEN  S6 v4  gov 0.889 -> 0.960
+  OPEN  S6 v8  gov 0.903 -> 0.986
+  OPEN  S6 v12  gov 0.942 -> 0.942
+  OPEN  S6 v16  gov 0.879 -> 0.874
+  OPEN  S6 v18  gov 0.867 -> 0.000
+
+=== R3 chapter 20 ===
+
+  S6 v8  p85  crop [0.155, 0.5669, 0.885, 0.661]  incumbent gov 0.903
+      R3 gov 0.986 vs 0.903  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And Abimelech forthwith riſing vp in the night, called al his ſeruants: and he ſpake al theſe words to their cares, and al the men
+      ſ-surface: OPEN  (5 ſ kept, 2 unresolved: forthwith, afraid.)
+      incumbent: And Abimekch torthwith tiuns vp in the night, ealled al ſeruants: and he ſpake al theſe words to their eares, and al the men were 
+  S6 v12  p85  crop [0.155, 0.7092, 0.885, 0.8054]  incumbent gov 0.942
+      R3 gov 0.942 vs 0.942  -> NO-GAIN (stays OPEN)
+      R3 verse: howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, the daughter of my father, & not the daughter of my mother, & I tooke her t
+      ſ-surface: CLOSED  (5 ſ kept, 0 unresolved)
+      incumbent: howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, the daughter of my father, not the daughter of my mother, I tooke her to wi
+  S6 v14  p85  crop [0.155, 0.7991, 0.885, 0.895]  incumbent gov 0.916
+      R3 gov 0.919 vs 0.916  -> ADOPT
+      R3 verse: Thertore Abimelech tooke ſheep and oxen, and ſeruants, and handmayds, and gaue to Abraham: and reſtored to him Sara his wife, 15.-
+      ſ-surface: CLOSED  (3 ſ kept, 0 unresolved)
+      incumbent: Thertore Abimelech tooke ſhee and oxe and ſeruants, and handinavds, and gaue to Abraham: and reſtored to him Sara his wife,
+  S6 v16  p86  crop [0.08, 0.0643, 0.805, 0.1703]  incumbent gov 0.923
+      R3 gov 0.920 vs 0.923  -> NO-GAIN (stays OPEN)
+      R3 verse: serve to Sara he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal Abtaham. ſerue thee for a veile of t
+      ſ-surface: OPEN  (7 ſ kept, 1 unresolved: serve)
+      incumbent: Aud to Sara he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal Abtaham. ſerue thee tor a veile of thi
+
+adopted store -> .r3-adopted-genesis-20.json (21 cells)
+
+=== 19 cleared · 8 improved but still short · 13 STILL OPEN and blocking ===
+  OPEN  S1 v11  gov 0.908 -> 0.992
+  OPEN  S1 v12  gov 0.898 -> 0.978
+  OPEN  S1 v14  gov 0.914 -> 0.983
+  OPEN  S1 v15  gov 0.925 -> 0.970
+  OPEN  S1 v16  gov 0.912 -> 0.991
+  OPEN  S1 v18  gov 0.922 -> 0.000
+  OPEN  S3 v12  gov 0.905 -> 1.000
+  OPEN  S3 v18  gov 0.933 -> 0.000
+  OPEN  S6 v1  gov 0.917 -> 0.917
+  OPEN  S6 v4  gov 0.889 -> 0.960
+  OPEN  S6 v8  gov 0.903 -> 0.986
+  OPEN  S6 v12  gov 0.942 -> 0.942
+  OPEN  S6 v16  gov 0.923 -> 0.920
+

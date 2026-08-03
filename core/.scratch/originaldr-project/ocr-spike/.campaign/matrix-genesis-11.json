@@ -2,26 +2,25 @@
  "chapter": 11,
  "n_verses": 32,
  "n_cells": 128,
- "n_pass": 115,
- "rate": 0.8984,
+ "n_pass": 117,
+ "rate": 0.9141,
  "ref_means": {
-  "s_dismas": 0.9675,
-  "odr_com": 0.981,
-  "sabates_a": 0.9603,
-  "madueke_b": 0.9603
+  "s_dismas": 0.9688,
+  "odr_com": 0.9822,
+  "sabates_a": 0.9616,
+  "madueke_b": 0.9616
  },
  "src_rates": {
   "S1": 0.875,
   "S3": 0.9375,
   "S9": 0.9375,
-  "S6": 0.8438
+  "S6": 0.9062
  },
- "n_all_fail": 2,
+ "n_all_fail": 1,
  "all_fail": [
-  15,
   32
  ],
- "n_open": 13,
+ "n_open": 11,
  "open": [
   {
    "src": "S1",
@@ -57,20 +56,6 @@
    "worst": 0.886,
    "from": "r3",
    "text": "And Sale liued after he begat Heber, foure hundred three yeares: and begat ſonnes and daughters."
-  },
-  {
-   "src": "S6",
-   "verse": 15,
-   "worst": 0.796,
-   "from": "p58",
-   "text": "And Sale liued after he begat Heber, foure hundred three begat ſonnes daughters. Aud"
-  },
-  {
-   "src": "S6",
-   "verse": 16,
-   "worst": 0.88,
-   "from": "r3",
-   "text": "Heber liued thirtie foure ycares, and begat Phaleg."
   },
   {
    "src": "S6",
@@ -232,7 +217,7 @@
     }
    },
    "S6": {
-    "text": "And each one ſaid to his neighbour: Come, let vs make brick, and bake them with fire. And they had brick inſtead of ſtone, and bitume inſtead of morter",
+    "text": "And each one ſaid to his neighbour: Come, let vs make brick, and bake them with fire. And they had brick inſtead of ſtone and bitume inſtead of morter",
     "from": "r3",
     "score": {
      "s_dismas": 0.947,
@@ -736,13 +721,13 @@
     }
    },
    "S6": {
-    "text": "And Sale liued after he begat Heber, foure hundred three begat ſonnes daughters. Aud",
-    "from": "p58",
+    "text": "And Sale liued after he begat Heber, foure hundred three ycares, & begat ſonnes & daughters.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.796,
-     "odr_com": 0.796,
-     "sabates_a": 0.859,
-     "madueke_b": 0.859
+     "s_dismas": 0.903,
+     "odr_com": 0.903,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
     }
    }
   },
@@ -778,13 +763,13 @@
     }
    },
    "S6": {
-    "text": "Heber liued thirtie foure ycares, and begat Phaleg.",
+    "text": "And Heber liued thirtie foure ycares, and begat Phaleg.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.906,
-     "odr_com": 0.906,
-     "sabates_a": 0.88,
-     "madueke_b": 0.88
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
     }
    }
   },
@@ -862,13 +847,13 @@
     }
    },
    "S6": {
-    "text": "Phaleg alſo liued thirtie ycares, and begat Reu.",
+    "text": "Phaleg alſo liued thirte ycares, and begat Reu.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.978,
-     "odr_com": 0.978,
-     "sabates_a": 0.956,
-     "madueke_b": 0.956
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
     }
    }
   },
@@ -1706,5 +1691,5 @@
  "blocked_cells": 0,
  "achievable": 128,
  "triage": "R3-READY",
- "secs": 5.4
+ "secs": 5.3
 }

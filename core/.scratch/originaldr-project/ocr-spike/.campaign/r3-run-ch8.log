@@ -1,0 +1,48 @@
+=== R3 chapter 8 ===
+d.
+      ſ-surface: OPEN  (1 ſ kept, 1 unresolved: feaven)
+      incumbent: In the ſecond month, the ſeauen and twentieth day of the month the earth was dried.
+  S6 v16  p51  crop [0.155, 0.4925, 0.885, 0.5669]  incumbent gov 0.922
+      R3 gov 0.933 vs 0.922  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: Goe forth of the arke, thou and thy wife, thy ſonnes and the wiues o- of thy ſonnes with thee.
+      ſ-surface: OPEN  (2 ſ kept, 1 unresolved: wife,)
+      incumbent: Goe forth of the arke, thou and thy wite, thy ſonnes and the wiues o- of thy ſonnes with thee.
+  S6 v17  p51  crop [0.155, 0.5093, 0.885, 0.6199]  incumbent gov 0.927
+      R3 gov 0.942 vs 0.927  -> ADOPT
+      R3 verse: Al cattle that are with thee, of al fleſh, as wel in foules, as in beaſts, and al creepers that creep vpon the earth, bring out wi
+      ſ-surface: CLOSED  (3 ſ kept, 0 unresolved)
+      incumbent: Al cattle that are with thee, of al fleſh, as ſo wel in foules, as in beaſts, and al creepers that creep vpon the earth, bring out
+  S6 v19  p51  crop [0.155, 0.5789, 0.885, 0.6709]  incumbent gov 0.905
+      R3 gov 0.931 vs 0.905  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: Yea and al cattle, beaſts, & creepers that creep vpon the earth, according to their kind, went forth out of the arke.
+      ſ-surface: OPEN  (1 ſ kept, 1 unresolved: forth)
+      incumbent: Yea and al cattle, beaſts, creepers that creepvpon the earth, according tothtir kind, went torth out of the arke.
+
+adopted store -> .r3-adopted-genesis-8.json (22 cells)
+
+=== 16 cleared · 8 improved but still short · 24 STILL OPEN and blocking ===
+  OPEN  S1 v3  gov 0.927 -> 0.000
+  OPEN  S1 v4  gov 1.000 -> 1.000
+  OPEN  S1 v13  gov 0.961 -> 0.996
+  OPEN  S1 v18  gov 0.964 -> 0.965
+  OPEN  S3 v4  gov 1.000 -> 1.000
+  OPEN  S3 v10  gov 0.988 -> 0.988
+  OPEN  S3 v13  gov 0.956 -> 0.996
+  OPEN  S3 v14  gov 0.987 -> 0.987
+  OPEN  S3 v16  gov 0.988 -> 0.988
+  OPEN  S3 v17  gov 0.984 -> 0.989
+  OPEN  S9 v1  gov 0.919 -> 0.000
+  OPEN  S9 v2  gov 0.965 -> 0.841
+  OPEN  S9 v4  gov 1.000 -> 1.000
+  OPEN  S9 v13  gov 0.966 -> 1.000
+  OPEN  S9 v14  gov 0.987 -> 0.987
+  OPEN  S9 v16  gov 1.000 -> 1.000
+  OPEN  S9 v17  gov 0.995 -> 0.958
+  OPEN  S9 v19  gov 0.983 -> 0.872
+  OPEN  S9 v22  gov 0.938 -> 0.000
+  OPEN  S6 v4  gov 0.937 -> 0.937
+  OPEN  S6 v13  gov 0.912 -> 0.921
+  OPEN  S6 v14  gov 0.876 -> 0.864
+  OPEN  S6 v16  gov 0.922 -> 0.933
+  OPEN  S6 v19  gov 0.905 -> 0.931
+

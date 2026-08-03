@@ -2,16 +2,16 @@
  "chapter": 35,
  "n_verses": 29,
  "n_cells": 116,
- "n_pass": 105,
- "rate": 0.9052,
+ "n_pass": 106,
+ "rate": 0.9138,
  "ref_means": {
-  "s_dismas": 0.9777,
-  "odr_com": 0.9809,
-  "sabates_a": 0.9698,
-  "madueke_b": 0.9698
+  "s_dismas": 0.9789,
+  "odr_com": 0.9821,
+  "sabates_a": 0.9709,
+  "madueke_b": 0.9709
  },
  "src_rates": {
-  "S1": 0.8966,
+  "S1": 0.931,
   "S3": 0.931,
   "S9": 0.8276,
   "S6": 0.9655
@@ -20,7 +20,7 @@
  "all_fail": [
   4
  ],
- "n_open": 11,
+ "n_open": 10,
  "open": [
   {
    "src": "S9",
@@ -70,13 +70,6 @@
    "worst": 0.881,
    "from": "p142",
    "text": "Iacob came to Luza, whichis in the land of Chanaan, hamed Bethel he and al the people that was with more"
-  },
-  {
-   "src": "S1",
-   "verse": 9,
-   "worst": 0.861,
-   "from": "chapter",
-   "text": "And God appeared agaiu to Iatamm com to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,"
   },
   {
    "src": "S9",
@@ -313,13 +306,13 @@
   },
   "6": {
    "S1": {
-    "text": "And then Iacob came to Lura, which is in the land of Chanaan, furnamed Bethel: he and al the people that was with him",
-    "from": "p130",
+    "text": "And Iacob came to Luza, which is in the land of Chanaan, tur- named Bethel: he and al the people that was with him",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.939,
-     "odr_com": 0.939,
-     "sabates_a": 0.935,
-     "madueke_b": 0.935
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S3": {
@@ -439,13 +432,13 @@
   },
   "9": {
    "S1": {
-    "text": "And God appeared agaiu to Iatamm com to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,",
-    "from": "chapter",
+    "text": "And God appeared again to Ia· to Iacob after he returned from Meſopotamia of Siria, and to he bleſſed him,",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.861,
-     "odr_com": 0.861,
-     "sabates_a": 0.864,
-     "madueke_b": 0.864
+     "s_dismas": 0.913,
+     "odr_com": 0.913,
+     "sabates_a": 0.909,
+     "madueke_b": 0.909
     }
    },
    "S3": {
@@ -459,13 +452,13 @@
     }
    },
    "S9": {
-    "text": "And God appeared to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,",
-    "from": "chapter",
+    "text": "And God appeared again to Ia- to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.936,
-     "odr_com": 0.936,
-     "sabates_a": 0.933,
-     "madueke_b": 0.933
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
     }
    },
    "S6": {
@@ -1069,7 +1062,7 @@
   },
   "24": {
    "S1": {
-    "text": "The ſonnes of Rachel Ioſeph and Ben- jamin.",
+    "text": "The ſonnes of Rachel Ioſeph and Ben- iamin.",
     "from": "r3",
     "score": {
      "s_dismas": 0.976,
@@ -1079,13 +1072,13 @@
     }
    },
    "S3": {
-    "text": "The ſonnes of Rachel Ioſeph and Ben- jamin.",
+    "text": "The ſonnes of Rachel Ioſeph and Beniamin.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.976,
-     "odr_com": 0.976,
-     "sabates_a": 0.949,
-     "madueke_b": 0.949
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
     }
    },
    "S9": {
@@ -1237,11 +1230,11 @@
   },
   "28": {
    "S1": {
-    "text": "And the dayes of Iſaac were complete an hundred eightie yeares.",
+    "text": "And the dayes of Iſaac were complete an hundred eyghtie yeares.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.984,
-     "odr_com": 0.984,
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
      "sabates_a": 0.965,
      "madueke_b": 0.965
     }
@@ -1544,5 +1537,5 @@
  "blocked_cells": 0,
  "achievable": 116,
  "triage": "SOURCE-SKEW",
- "secs": 5.5
+ "secs": 5.4
 }

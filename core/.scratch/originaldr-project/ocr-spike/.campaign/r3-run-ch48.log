@@ -1,0 +1,42 @@
+=== R3 chapter 48 ===
+ſame indeed ſhall be into peoples, and ſhall be multiplied: but his yonger b
+      ſ-surface: OPEN  (8 ſ kept, 3 unresolved: refusing,, ſhall, ſhall)
+      incumbent: Who re fuſing, ſaid: Iknow my ſonne, Iknow: aud this ſame indeed thal be into peoples, and lhal be multiplied: but his yonger brot
+  S6 v20  p151  crop [0.155, 0.471, 0.885, 0.5827]  incumbent gov 0.911
+      R3 gov 0.950 vs 0.911  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And he bleſſed them at that time, saying: In thee shall Iſrael be bleſſed, and it ſhal be ſaid: God doe vnto thee as vnto Ephraim,
+      ſ-surface: OPEN  (12 ſ kept, 2 unresolved: saying:, shall)
+      incumbent: And he bleſſed them at that time, ſayin: In thee ihal Iſrael be bleſſed, and it ſhal be ſail: God doe vnto thee as vnto Ephraim, a
+  S6 v21  p151  crop [0.155, 0.522, 0.885, 0.6189]  incumbent gov 0.910
+      R3 gov 0.967 vs 0.910  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And he ſaid to Ioſeph his ſonne: Behold I dye, & God wil be with you, and wil bring you backe Into the land of your fathers.
+      ſ-surface: OPEN  (3 ſ kept, 1 unresolved: fathers.)
+      incumbent: he ſaid to Ioſeph his ſonne: Behold I dye, God wil be with you, and wil brins you backe Into the land of vour tathers.
+  S6 v22  p151  crop [0.155, 0.5589, 0.885, 0.6519]  incumbent gov 0.932
+      R3 gov 0.966 vs 0.932  -> ADOPT
+      R3 verse: I doe giue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrian with my ſword and bow.
+      ſ-surface: CLOSED  (1 ſ kept, 0 unresolved)
+      incumbent: I doe giue thee one portion aboue thy brethren, which I tooke out ot the haud of the Ainorrhean with my ſword anct bow.
+
+adopted store -> .r3-adopted-genesis-48.json (13 cells)
+
+=== 13 cleared · 11 improved but still short · 18 STILL OPEN and blocking ===
+  OPEN  S1 v2  gov 0.904 -> 0.991
+  OPEN  S1 v3  gov 0.000 -> 0.000
+  OPEN  S1 v8  gov 0.980 -> 0.941
+  OPEN  S1 v20  gov 0.961 -> 0.989
+  OPEN  S1 v21  gov 0.910 -> 0.992
+  OPEN  S3 v3  gov 0.000 -> 0.000
+  OPEN  S3 v8  gov 0.980 -> 0.980
+  OPEN  S9 v2  gov 0.904 -> 0.991
+  OPEN  S9 v3  gov 0.000 -> 0.000
+  OPEN  S6 v3  gov 0.000 -> 0.000
+  OPEN  S6 v5  gov 0.867 -> 0.972
+  OPEN  S6 v7  gov 0.849 -> 0.978
+  OPEN  S6 v10  gov 0.910 -> 0.910
+  OPEN  S6 v15  gov 0.939 -> 0.963
+  OPEN  S6 v17  gov 0.934 -> 0.976
+  OPEN  S6 v19  gov 0.927 -> 0.953
+  OPEN  S6 v20  gov 0.911 -> 0.950
+  OPEN  S6 v21  gov 0.910 -> 0.967
+

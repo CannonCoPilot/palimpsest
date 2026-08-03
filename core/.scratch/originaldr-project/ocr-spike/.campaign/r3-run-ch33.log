@@ -1,0 +1,42 @@
+=== R3 chapter 33 ===
+ gov 0.985 vs 0.866  -> ADOPT
+      R3 verse: Eſau therefore returned that day the ſame way that he came, into Seir.
+      ſ-surface: CLOSED  (2 ſ kept, 0 unresolved)
+      incumbent: Eſau therefore returned that day the ſame way that into Seir.
+  S6 v17  p118  crop [0.155, 0.2294, 0.885, 0.3221]  incumbent gov 0.898
+      R3 gov 0.993 vs 0.898  -> ADOPT
+      R3 verse: And Iacob commeth into Socoth where hauing built a houſe, and pitched his tents, he called the name of that place Socoth, that is 
+      ſ-surface: CLOSED  (1 ſ kept, 0 unresolved)
+      incumbent: And Iacob commeth into Socoth where hauing a houſe, and pitched his tents, he called the name of that place that is Tabernacles,
+  S6 v18  p118  crop [0.155, 0.2649, 0.885, 0.3575]  incumbent gov 0.853
+      R3 gov 1.000 vs 0.853  -> ADOPT
+      R3 verse: and he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: 
+      ſ-surface: CLOSED  (4 ſ kept, 0 unresolved)
+      incumbent: and he paſſed into Salem a citie of which is in the land ot Chanaan, atter he returned Meſopotamiaof Siria: and he dwelt beſide th
+  S6 v19  p118  crop [0.155, 0.2986, 0.885, 0.393]  incumbent gov 0.831
+      R3 gov 0.978 vs 0.831  -> ADOPT
+      R3 verse: And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father of Sichem, for an hund
+      ſ-surface: CLOSED  (0 ſ kept, 0 unresolved)
+      incumbent: And that part of the field, wherin he had pitched his tents, of the of Hemor, the father of Sichem, tor an hundred lambs.
+  S6 v20  p118  crop [0.155, 0.353, 0.885, 0.4292]  incumbent gov 0.848
+      R3 gov 1.000 vs 0.848  -> ADOPT
+      R3 verse: And erecting an altar there, on it he called vpon the moſt Mightie God of Iſrael.
+      ſ-surface: CLOSED  (2 ſ kept, 0 unresolved)
+      incumbent: erecting an altar there, ou it he called vpon the moſt Mightie Iſrael.
+
+adopted store -> .r3-adopted-genesis-33.json (19 cells)
+
+=== 13 cleared · 9 improved but still short · 12 STILL OPEN and blocking ===
+  OPEN  S1 v14  gov 0.908 -> 0.981
+  OPEN  S1 v15  gov 0.925 -> 0.996
+  OPEN  S1 v16  gov 0.866 -> 0.985
+  OPEN  S1 v20  gov 0.949 -> 0.000
+  OPEN  S3 v15  gov 0.921 -> 1.000
+  OPEN  S3 v16  gov 0.866 -> 0.985
+  OPEN  S3 v20  gov 0.949 -> 0.000
+  OPEN  S6 v3  gov 0.929 -> 0.959
+  OPEN  S6 v6  gov 0.939 -> 0.939
+  OPEN  S6 v9  gov 0.891 -> 1.000
+  OPEN  S6 v14  gov 0.861 -> 0.993
+  OPEN  S6 v15  gov 0.828 -> 0.978
+

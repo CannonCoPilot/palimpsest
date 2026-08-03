@@ -5,10 +5,10 @@
  "n_pass": 133,
  "rate": 0.9236,
  "ref_means": {
-  "s_dismas": 0.9721,
-  "odr_com": 0.9732,
-  "sabates_a": 0.9635,
-  "madueke_b": 0.9635
+  "s_dismas": 0.9728,
+  "odr_com": 0.9739,
+  "sabates_a": 0.9642,
+  "madueke_b": 0.9642
  },
  "src_rates": {
   "S1": 0.8333,
@@ -887,13 +887,13 @@
     }
    },
    "S6": {
-    "text": "and ſpake among themſelues Behold the dreamer commeth,",
+    "text": "and ſpake among themſelues Behold the dreamer commncth,",
     "from": "r3",
     "score": {
-     "s_dismas": 0.982,
-     "odr_com": 0.982,
-     "sabates_a": 1.0,
-     "madueke_b": 1.0
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
     }
    }
   },
@@ -1277,13 +1277,13 @@
   },
   "29": {
    "S1": {
-    "text": "And Ruben returning to the ceſterne, findeth the not the boy:",
-    "from": "p137",
+    "text": "And Ruben returning to the ceſterne, findeth not the boy:",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.932,
-     "odr_com": 0.932,
-     "sabates_a": 0.927,
-     "madueke_b": 0.927
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
     }
    },
    "S3": {
@@ -1413,13 +1413,13 @@
     }
    },
    "S3": {
-    "text": "fied ſome that should carie it to their father, and should ſay: of This we haue founde : ſee whether it be thy ſonnes coate, or no.",
-    "from": "p141",
+    "text": "ſending ſome that should carie it to their father, and should ſay: This we haue founde ſee whether it be thy ſonnes coate, or no.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.928,
-     "odr_com": 0.928,
-     "sabates_a": 0.914,
-     "madueke_b": 0.914
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
     }
    },
    "S9": {
@@ -1601,7 +1601,7 @@
     }
    },
    "S6": {
-    "text": "the Madianites ſold Ioſeph in Aegypt to Putiphar an Eunuch of Pharoes Maſter of the ſoldiers.",
+    "text": "the Madianites ſold Ioſeph in Ægypt to Putiphar an Eunuch of Pharoes Maſter of the ſoldiers.",
     "from": "r3",
     "score": {
      "s_dismas": 0.957,
@@ -1885,5 +1885,5 @@
  "blocked_cells": 0,
  "achievable": 144,
  "triage": "SOURCE-SKEW",
- "secs": 7.0
+ "secs": 6.9
 }

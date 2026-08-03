@@ -1,0 +1,55 @@
+=== R3 chapter 37 ===
+nd of diuers colours,
+      ſ-surface: OPEN  (1 ſ kept, 2 unresolved: therefore, stripped)
+      incumbent: As ſonne thertore as he came vnto his brethren, forthwith they ſtripd ped him out of his ſide coate, and ot diuers colours,
+  S6 v25  p126  crop [0.1, 0.326, 0.825, 0.4215]  incumbent gov 0.943
+      R3 gov 0.965 vs 0.943  -> CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)
+      R3 verse: And litting to eate bread, they ſaw Iſmaelites waytaring men comming from Galaad, and their camels carying ſpices, and roſen, and 
+      ſ-surface: ALERT  (4 ſ kept, 0 unresolved)
+      incumbent: And ſitting to eate bread, thev ſaw Iſmaelites waytaring men comming trom Galaad, and their camels carytng ſpices, and roſen, and 
+  S6 v36  p126  crop [0.1, 0.6769, 0.825, 0.771]  incumbent gov 0.936
+      R3 gov 0.957 vs 0.936  -> ADOPT
+      R3 verse: the Madianites ſold Ioſeph in Ægypt to Putiphar an Eunuch of Pharoes Maſter of the ſoldiers.
+      ſ-surface: CLOSED  (4 ſ kept, 0 unresolved)
+      incumbent: the Madianites ſold Ioſeph in Egypt to Putiphar an Eunuch ot Pharoes Maſter of the ſoldiers.
+
+adopted store -> .r3-adopted-genesis-37.json (42 cells)
+
+=== 23 cleared · 27 improved but still short · 36 STILL OPEN and blocking ===
+  OPEN  S1 v2  gov 0.899 -> 0.968
+  OPEN  S1 v5  gov 0.868 -> 0.984
+  OPEN  S1 v7  gov 0.902 -> 0.911
+  OPEN  S1 v9  gov 0.931 -> 0.993
+  OPEN  S1 v11  gov 0.952 -> 0.856
+  OPEN  S1 v12  gov 0.881 -> 1.000
+  OPEN  S1 v14  gov 0.917 -> 0.995
+  OPEN  S1 v17  gov 0.938 -> 0.994
+  OPEN  S1 v18  gov 0.886 -> 0.989
+  OPEN  S1 v20  gov 0.964 -> 0.897
+  OPEN  S1 v22  gov 0.958 -> 0.979
+  OPEN  S1 v32  gov 0.892 -> 0.806
+  OPEN  S1 v36  gov 0.957 -> 0.947
+  OPEN  S3 v7  gov 0.910 -> 0.940
+  OPEN  S3 v11  gov 0.952 -> 0.988
+  OPEN  S3 v12  gov 0.851 -> 1.000
+  OPEN  S3 v14  gov 0.922 -> 0.995
+  OPEN  S3 v17  gov 0.938 -> 0.994
+  OPEN  S3 v18  gov 0.886 -> 1.000
+  OPEN  S3 v20  gov 0.958 -> 0.902
+  OPEN  S3 v36  gov 0.968 -> 0.968
+  OPEN  S9 v11  gov 0.943 -> 0.776
+  OPEN  S9 v32  gov 0.929 -> 0.729
+  OPEN  S6 v2  gov 0.955 -> 0.992
+  OPEN  S6 v8  gov 0.965 -> 0.977
+  OPEN  S6 v9  gov 0.890 -> 0.972
+  OPEN  S6 v11  gov 0.940 -> 0.976
+  OPEN  S6 v12  gov 0.878 -> 0.957
+  OPEN  S6 v13  gov 0.885 -> 0.990
+  OPEN  S6 v14  gov 0.953 -> 0.990
+  OPEN  S6 v16  gov 0.944 -> 0.873
+  OPEN  S6 v17  gov 0.920 -> 0.960
+  OPEN  S6 v18  gov 0.911 -> 0.966
+  OPEN  S6 v22  gov 0.940 -> 0.961
+  OPEN  S6 v23  gov 0.958 -> 0.975
+  OPEN  S6 v25  gov 0.943 -> 0.965
+

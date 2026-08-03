@@ -1,0 +1,50 @@
+=== R3 chapter 46 ===
+rse: and the men are paſtours of ſheep, & their trade is to feed flockes:their cattel, & heards, and all that they could haue, they hau
+      ſ-surface: OPEN  (2 ſ kept, 2 unresolved: feed, flockes:their)
+      incumbent: and the men are bAEgyptians ot ſheep, their trade is to teed flockes: their cattel, heards, honouring that they could haue, the ha
+  S6 v33  p146  crop [0.155, 0.4264, 0.885, 0.5135]  incumbent gov 0.780
+      R3 gov 0.911 vs 0.780  -> CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)
+      R3 verse: And when he ſhal cal you, & thal ſay What is your trade
+      ſ-surface: ALERT  (2 ſ kept, 0 unresolved)
+      incumbent: And sheep, and kyne ſhal cal you, & ſhal ſay : What is your trade
+  S6 v34  p146  crop [0.155, 0.4493, 0.885, 0.5855]  incumbent gov 0.802
+      R3 gov 0.954 vs 0.802  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: You thal anſwer: We thy fervants are paftours, from our infancie vntil this preſent, both we and our fathers. And this you thal ſa
+      ſ-surface: OPEN  (8 ſ kept, 6 unresolved: anſwer:, fervants, paftours,, infancie, preſent,, paftours)
+      incumbent: Vou ſhal ap- Gods, We thyſeruants are paſtours, trom our intancie vntil this pre- them that we and our fathers. And this you ſhal 
+
+adopted store -> .r3-adopted-genesis-46.json (21 cells)
+
+=== 15 cleared · 18 improved but still short · 31 STILL OPEN and blocking ===
+  OPEN  S1 v4  gov 0.950 -> 1.000
+  OPEN  S1 v6  gov 0.833 -> 0.978
+  OPEN  S1 v14  gov 1.000 -> 0.977
+  OPEN  S1 v16  gov 1.000 -> 1.000
+  OPEN  S1 v28  gov 0.952 -> 0.933
+  OPEN  S1 v30  gov 0.953 -> 0.963
+  OPEN  S1 v32  gov 0.993 -> 0.993
+  OPEN  S1 v34  gov 0.928 -> 0.956
+  OPEN  S3 v4  gov 0.950 -> 1.000
+  OPEN  S3 v12  gov 1.000 -> 1.000
+  OPEN  S3 v14  gov 1.000 -> 1.000
+  OPEN  S3 v16  gov 1.000 -> 1.000
+  OPEN  S3 v34  gov 0.950 -> 0.977
+  OPEN  S9 v12  gov 1.000 -> 1.000
+  OPEN  S9 v14  gov 1.000 -> 1.000
+  OPEN  S9 v15  gov 0.955 -> 0.925
+  OPEN  S9 v32  gov 0.993 -> 0.993
+  OPEN  S9 v34  gov 0.960 -> 0.968
+  OPEN  S6 v8  gov 0.960 -> 0.984
+  OPEN  S6 v14  gov 0.896 -> 0.896
+  OPEN  S6 v21  gov 0.844 -> 0.887
+  OPEN  S6 v23  gov 0.957 -> 0.957
+  OPEN  S6 v26  gov 0.767 -> 0.940
+  OPEN  S6 v27  gov 0.805 -> 0.981
+  OPEN  S6 v28  gov 0.819 -> 0.903
+  OPEN  S6 v29  gov 0.778 -> 0.907
+  OPEN  S6 v30  gov 0.877 -> 0.981
+  OPEN  S6 v31  gov 0.825 -> 0.973
+  OPEN  S6 v32  gov 0.795 -> 0.914
+  OPEN  S6 v33  gov 0.780 -> 0.911
+  OPEN  S6 v34  gov 0.802 -> 0.954
+

@@ -5,10 +5,10 @@
  "n_pass": 80,
  "rate": 0.9091,
  "ref_means": {
-  "s_dismas": 0.979,
-  "odr_com": 0.9793,
-  "sabates_a": 0.9594,
-  "madueke_b": 0.9594
+  "s_dismas": 0.9797,
+  "odr_com": 0.98,
+  "sabates_a": 0.96,
+  "madueke_b": 0.96
  },
  "src_rates": {
   "S1": 0.8636,
@@ -194,11 +194,11 @@
     }
    },
    "S6": {
-    "text": "And God ſaid My ſpirit ſhal not remaine in man for euer, becauſe he is fleſh; and his dayes ſhal be an hundred and twentie yearcs.",
+    "text": "And God ſaid My ſpirit ſhal not remaine in man for euer, becauſe he is fleſh: and his dayes ſhal be an hundred and twentie yeares.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.913,
-     "odr_com": 0.929,
+     "s_dismas": 0.921,
+     "odr_com": 0.937,
      "sabates_a": 0.984,
      "madueke_b": 0.984
     }
@@ -352,13 +352,13 @@
     }
    },
    "S9": {
-    "text": "I wil, ſaith he, cleane take away man, whom I haue created, from the face of the earth, from man euen to beaſtes, from that which creepeth cuen vnto the foules of the ayre. for it repenteth me that I haue made them.",
+    "text": "I wil, ſaith he, cleane take away man, whom I haue created, from the face of the earth, from man euen to beaſtes, from that which creepeth euen vnto the foules of the ayre. for it repenteth me that I haue made them.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.995,
-     "odr_com": 0.995,
-     "sabates_a": 0.979,
-     "madueke_b": 0.979
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
     }
    },
    "S6": {
@@ -500,7 +500,7 @@
   },
   "11": {
    "S1": {
-    "text": "And the earth was corrupted before God, and was replenished with iniquitie.",
+    "text": "And the earth was corrupted before God, and was replenished with iniquitie. 12:",
     "from": "r3",
     "score": {
      "s_dismas": 1.0,
@@ -530,13 +530,13 @@
     }
    },
    "S6": {
-    "text": "And the earth was corrupted before God, & was replenilned with iniquitie.",
-    "from": "p36",
+    "text": "And the earth was corrupted before God, & was repleniſhed with iniquitie.",
+    "from": "r3",
     "score": {
-     "s_dismas": 0.918,
-     "odr_com": 0.918,
-     "sabates_a": 0.969,
-     "madueke_b": 0.969
+     "s_dismas": 0.945,
+     "odr_com": 0.945,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    }
   },
@@ -614,7 +614,7 @@
     }
    },
    "S6": {
-    "text": "he ſaid to Noc: The end of al fleſh is come before me, the earth is repleniſhed with iniquitie from the face of them, and I wil deſtroy them with the earth.14.",
+    "text": "he ſaid to Noc: The end of al fleſh is come before me, the earth is repleniſhed with iniquitie from the face of them, and I wil deſtroy them with the earth.",
     "from": "r3",
     "score": {
      "s_dismas": 0.967,
@@ -656,13 +656,13 @@
     }
    },
    "S6": {
-    "text": "Make thee an arke of timber planke:cabinets that thou make in the arke, and ſhalt pitch it within and without with bitume.",
+    "text": "Make thee an arke of timber planke: cabinets ſhalt thou make in the arke, and ſhalt pitch it within and without with bitume.",
     "from": "r3",
     "score": {
-     "s_dismas": 0.975,
-     "odr_com": 0.975,
-     "sabates_a": 0.982,
-     "madueke_b": 0.982
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
     }
    }
   },
@@ -698,7 +698,7 @@
     }
    },
    "S6": {
-    "text": "And thus ſhalt thou make it. The length of the Arke ſhal be three hundred \"cubits: fiftie cubits the breadth, and thirtie cubits the height of it.",
+    "text": "And thus ſhalt thou make it. The length of the Arke ſhal be three hundred cubits: fiftie cubits the breadth, and thirtie cubits the height of it.",
     "from": "r3",
     "score": {
      "s_dismas": 0.979,

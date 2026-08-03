@@ -1,0 +1,55 @@
+=== R3 chapter 21 ===
+: becauſe there both did ſweare.
+  S6 v32  p87  crop [0.155, 0.4436, 0.885, 0.5216]  incumbent gov 0.952
+      R3 gov 1.000 vs 0.952  -> ADOPT
+      R3 verse: And they made a league for the wel of oath.
+      ſ-surface: CLOSED  (0 ſ kept, 0 unresolved)
+      incumbent: And they madea league tor the wel of oath.
+  S6 v33  p87  crop [0.155, 0.4616, 0.885, 0.5743]  incumbent gov 0.949
+      R3 gov 0.990 vs 0.949  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And Abimelech aroſe, and Phicol the General of his armie, and they returned to the land of the Palestines. But Abraham planted a g
+      ſ-surface: OPEN  (2 ſ kept, 1 unresolved: Palestines.)
+      incumbent: And Abimcloch aroſe, and Phicol the General of his armie, and theyrtturned to the land ot the Palefuines. But Abraham planted a gr
+  S6 v34  p87  crop [0.155, 0.5153, 0.885, 0.6965]  incumbent gov 0.899
+      R3 gov 0.969 vs 0.899  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And he was a feiourner in the land of the Paleſtines manie dayes.
+      ſ-surface: OPEN  (1 ſ kept, 1 unresolved: feiourner)
+      incumbent: And he was a ſeiournet in the land of the Paleſtines manie dayes. CHAP.
+
+adopted store -> .r3-adopted-genesis-21.json (29 cells)
+
+=== 23 cleared · 22 improved but still short · 33 STILL OPEN and blocking ===
+  OPEN  S1 v2  gov 0.862 -> 0.989
+  OPEN  S1 v6  gov 0.897 -> 0.989
+  OPEN  S1 v18  gov 1.000 -> 1.000
+  OPEN  S1 v24  gov 0.931 -> 0.966
+  OPEN  S1 v27  gov 0.956 -> 0.989
+  OPEN  S1 v31  gov 0.775 -> 0.750
+  OPEN  S1 v34  gov 0.859 -> 0.968
+  OPEN  S3 v6  gov 0.943 -> 0.916
+  OPEN  S3 v12  gov 0.000 -> 0.000
+  OPEN  S3 v18  gov 1.000 -> 1.000
+  OPEN  S3 v25  gov 0.932 -> 0.957
+  OPEN  S3 v26  gov 0.959 -> 0.984
+  OPEN  S3 v27  gov 0.956 -> 0.989
+  OPEN  S3 v31  gov 0.787 -> 0.750
+  OPEN  S3 v34  gov 0.859 -> 0.968
+  OPEN  S9 v2  gov 1.000 -> 1.000
+  OPEN  S9 v4  gov 0.910 -> 1.000
+  OPEN  S9 v7  gov 0.830 -> 1.000
+  OPEN  S9 v8  gov 0.835 -> 0.906
+  OPEN  S9 v9  gov 0.852 -> 0.862
+  OPEN  S9 v16  gov 0.946 -> 0.989
+  OPEN  S9 v18  gov 1.000 -> 1.000
+  OPEN  S9 v31  gov 0.838 -> 0.850
+  OPEN  S9 v34  gov 0.926 -> 0.968
+  OPEN  S6 v4  gov 0.836 -> 1.000
+  OPEN  S6 v8  gov 0.938 -> 0.958
+  OPEN  S6 v10  gov 0.877 -> 0.897
+  OPEN  S6 v11  gov 0.786 -> 0.762
+  OPEN  S6 v18  gov 0.802 -> 0.802
+  OPEN  S6 v27  gov 0.925 -> 0.967
+  OPEN  S6 v31  gov 0.863 -> 0.850
+  OPEN  S6 v33  gov 0.949 -> 0.990
+  OPEN  S6 v34  gov 0.899 -> 0.969
+

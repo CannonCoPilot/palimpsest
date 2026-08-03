@@ -1,0 +1,47 @@
+=== R3 chapter 2 ===
+)
+      R3 verse: And our Lord God had planted a Paradiſe of pleaſure from the beginning: wherin he placed man whom he had formed.
+      ſ-surface: OPEN  (2 ſ kept, 1 unresolved: formed.)
+      incumbent: And our Lord God had ()planteda Paradiſe of pleaſure frotn the beginning: wherin he placed man whom he had tormed..
+  S6 v12  p23  crop [0.155, 0.3565, 0.885, 0.4513]  incumbent gov 0.938
+      R3 gov 0.950 vs 0.938  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And the gold of that land is very good there is found bdelium, and the ſtone onyx.
+      ſ-surface: OPEN  (1 ſ kept, 1 unresolved: found)
+      incumbent: And the gold of that land is very good : there is tound bdelium, aud the ſtone onyx.
+  S6 v20  p23  crop [0.155, 0.6214, 0.885, 0.7183]  incumbent gov 0.941
+      R3 gov 0.974 vs 0.941  -> CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)
+      R3 verse: And Adam called al beaſts by their names, and al foules of the ayre and al cattel of the field: but vnto Adam there was not found 
+      ſ-surface: OPEN  (2 ſ kept, 1 unresolved: found)
+      incumbent: Aud Adam called al beaſts by their names, and al foules of the ayre and al eattel of the field: but vnto Adam there was not fouud 
+  S6 v25  p23  crop [0.155, 0.7805, 0.885, 0.8588]  incumbent gov 0.943
+      R3 gov 0.943 vs 0.943  -> NO-GAIN (stays OPEN)
+      R3 verse: And they were both naked, to wit Adam and his wife: and were not aſhamed. .
+      ſ-surface: CLOSED  (1 ſ kept, 0 unresolved)
+      incumbent: And they were both naked, to wit Adam and his wife: and were not aſhamed.
+
+adopted store -> .r3-adopted-genesis-2.json (30 cells)
+
+=== 29 cleared · 11 improved but still short · 22 STILL OPEN and blocking ===
+  OPEN  S1 v1  gov 0.875 -> 0.000
+  OPEN  S1 v7  gov 0.877 -> 0.985
+  OPEN  S1 v11  gov 0.940 -> 0.980
+  OPEN  S1 v12  gov 0.987 -> 0.927
+  OPEN  S1 v25  gov 1.000 -> 0.000
+  OPEN  S3 v1  gov 0.937 -> 0.937
+  OPEN  S3 v2  gov 0.938 -> 0.991
+  OPEN  S3 v5  gov 0.942 -> 0.995
+  OPEN  S3 v7  gov 0.931 -> 0.977
+  OPEN  S3 v12  gov 0.934 -> 0.927
+  OPEN  S3 v25  gov 1.000 -> 0.000
+  OPEN  S9 v5  gov 0.942 -> 0.995
+  OPEN  S9 v12  gov 0.934 -> 0.927
+  OPEN  S9 v21  gov 0.914 -> 0.985
+  OPEN  S9 v23  gov 0.945 -> 0.931
+  OPEN  S9 v25  gov 0.943 -> 0.000
+  OPEN  S6 v1  gov 0.878 -> 0.000
+  OPEN  S6 v5  gov 0.947 -> 0.979
+  OPEN  S6 v8  gov 0.964 -> 1.000
+  OPEN  S6 v12  gov 0.938 -> 0.950
+  OPEN  S6 v20  gov 0.941 -> 0.974
+  OPEN  S6 v25  gov 0.943 -> 0.943
+
