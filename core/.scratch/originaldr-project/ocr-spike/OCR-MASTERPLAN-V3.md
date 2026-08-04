@@ -777,7 +777,47 @@ discrimination, and we have been performing it at two thirds of the available re
    symbol coding is **UNMEASURED**. Test: extract the same page as mask and as a high-DPI composite, compare
    glyph-for-glyph on a sample. Until then, the mask is preferred but not trusted blindly.
 
-### 19.4 The experiment that must run before any of this is adopted
+### 19.4 THE EXPERIMENT RAN, AND IT REFUTED THE STRONG CLAIM
+
+`raster_experiment.py`, four variants of the same source image so that only *our* preprocessing varies:
+A = current (autocontrast + resize to 2200), B = no autocontrast, C = native resolution, D = neither.
+
+| leaf | A current | B no-contrast | C no-resize | D native | spread |
+|---|---|---|---|---|---|
+| `archive-holiebible-ot1` p71 (2200 → 3231) | **0.8784** | 0.8772 | 0.8765 | 0.8768 | 0.0019 |
+| `pdf-S03a` p65 (2200 → 2262) | **0.8847** | 0.8833 | 0.8842 | 0.8833 | 0.0014 |
+
+*(attested-char rate: recognized characters falling in a matching block against the chapter's archaic
+reference.)*
+
+**There is no measurable gain, and the current path is nominally the best of the four.** My claim last session
+— that capping at 2200 was costing us accuracy — is not supported. Three things explain it, and each changes
+what the raster policy is for:
+
+1. **The recognizer is co-adapted to the preprocessing.** `reichenau_dr.mlmodel` was fine-tuned on
+   2200px autocontrasted pages, so feeding it anything else measures the *mismatch*, not the resolution. This
+   is structurally identical to V2 §1.2(iii)'s deskew result: the stack is fitted to the frame it was built
+   in. A fair test of resolution requires **retraining at native resolution**, not re-running this model.
+2. **The model normalises line height anyway.** Its input spec is `(1, 1, 120, 0)` — every line is rescaled to
+   **120 px high** regardless of page resolution. Page-level pixels above what fills 120 px of line height are
+   discarded by the model's own input layer. Exploiting a 650 ppi scan therefore needs a **taller input line
+   height**, which is a training-time architecture choice, not a raster switch.
+3. **The metric has a noise floor well above the effect.** An attested rate of ~0.88 means 12% of recognized
+   characters do not match the reference — most of that is apparatus, running heads and reference divergence,
+   not misreads. A 0.2-point effect cannot be resolved through that. **The honest conclusion is that we are at
+   the limit of what can be measured before line-level ground truth exists**, which makes Stage 3 a
+   prerequisite for tuning anything at this layer.
+
+**So §19's policy is retained but re-purposed.** It is not a switch to flip for a free win — there is no free
+win. It is the specification for how pages are prepared **when models are retrained** (§10, §11): extract
+rather than render, never JPEG, no unconditional autocontrast, and a line height chosen to use the resolution
+we have. Adopting it today, without retraining, would cost cells.
+
+One incidental finding: the experiment **could not run on `jp2-S06` at all** — `jp2_page.load` raises
+`IndexError`, because those are the corrupt JP2s. S06's raster path is dead and must be rebuilt from the PDF
+stencil or the 2,872 fetched JPEGs.
+
+### 19.5 The experiment as originally specified (superseded by 19.4)
 
 Re-recognise a fixed set of leaves — one per source, chosen from chapters already walked so the answer is
 known — at (a) the current 2200 px + autocontrast, (b) native-resolution extracted mask, (c) native-resolution
