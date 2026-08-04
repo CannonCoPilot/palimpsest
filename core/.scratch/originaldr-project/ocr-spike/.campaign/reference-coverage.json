@@ -1,0 +1,29 @@
+{
+ "union_verses": 37166,
+ "per_reference": {
+  "s_dismas": {
+   "verses": 25892,
+   "pct": 69.67,
+   "chapters_complete": 719,
+   "chapters_absent": 369
+  },
+  "odr_com": {
+   "verses": 16201,
+   "pct": 43.59,
+   "chapters_complete": 552,
+   "chapters_absent": 774
+  },
+  "sabates_a": {
+   "verses": 37130,
+   "pct": 99.9,
+   "chapters_complete": 1325,
+   "chapters_absent": 0
+  },
+  "madueke_b": {
+   "verses": 35809,
+   "pct": 96.35,
+   "chapters_complete": 1299,
+   "chapters_absent": 26
+  }
+ }
+}
