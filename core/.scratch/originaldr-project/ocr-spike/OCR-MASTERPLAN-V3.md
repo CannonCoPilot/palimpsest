@@ -294,7 +294,52 @@ perhaps 100 lines, not a per-book bottleneck.
 
 ---
 
-## 6. COLLAPSING THE REFERENCES — ADOPTED, WITH ONE AMENDMENT (Q4)
+## 6. COLLAPSING THE REFERENCES — ADOPTED; MY AMENDMENT NARROWED BY MEASUREMENT (Q4)
+
+**REVISED 2026-08-03 after Sir's challenge and a measurement I should have run first.** My original objection
+imported the textual-critic's frame — witnesses whose variants are evidence — and applied it to objects that
+are not witnesses. `s_dismas`, `odr_com`, `sabates_a` and `madueke_b` are **modern transcriptions**, derived
+texts. The physical witnesses are the six scanned sources. Sir is right that a disagreement between two
+transcriptions is, overwhelmingly, one of them being wrong. Measured:
+
+| pair | shared loci | raw differ | after folding long-ſ | **substantive** |
+|---|---|---|---|---|
+| `s_dismas` vs `odr_com` | 13,293 | 12,512 (94.1%) | 4,985 (37.5%) | **3,632 (27.3%)** |
+| `sabates_a` vs `madueke_b` | 35,809 | 2,376 (6.6%) | — | **1,333 (3.7%)** |
+
+And the character of the disagreements confirms the diagnosis rather than my objection:
+
+- `matthew/1/7` — `s_dismas`: *"And Salomon begat And Roboam begat Abia"*; `odr_com` carries *"And Salomon
+  begat Roboam."* **A dropout in `s_dismas`** — the same defect class we chase in our own OCR.
+- `matthew/1/3` — `s_dismas` reads **`Efron`** where `odr_com` reads `Esron`. That is a **long-ſ misread as
+  `f`**: an OCR error frozen into the reference we treat as the governing standard.
+- `genesis/10/16` — `sabates_a` `Iebusæus` vs `madueke_b` `Iebusaeus`. Pure encoding convention, decidable by
+  policy without evidence.
+
+**Two things this changes.** First, `s_dismas` — the *governing* reference under the archaic-preeminent gate —
+carries dropouts and glyph errors, which means some cells recorded as OCR failures are reference failures. The
+ch10 discovery (`s_dismas` gen 10:1 spliced with apparatus) was not an isolated defect; it was one visible
+instance of a 27.3% dispute rate. Second, **the collapse is ASYMMETRIC and must be coded that way**:
+`odr_com` does not preserve long-ſ (`Moſoch` → `Mosoch`, `Christ` for `Chriſt`). It is therefore a valid
+authority on **word identity and completeness** and no authority at all on **glyph identity**. A symmetric
+merge would silently modernise the one reference that preserves our orthography.
+
+### 6.0 What survives of my amendment — and it is not about transcription noise
+
+One case remains where a single flat reading would be wrong, and it is the case that produced the governing-
+gate alert in the first place: **the corpus contains two editions.** `S1`/`S3`/`S9` are 1609; `jp2-S06` is
+1635, and it genuinely prints `Tubal` where the 1609 prints `Thubal`. Neither `s_dismas` nor `odr_com` is a
+transcription of the 1635, so **ARCHAIC will be a 1609-family reference** — and forcing S6 to match it
+recreates exactly the defect we identified. So:
+
+- Variants are carried **only for inter-edition variance**, identified by the scans splitting along edition
+  lines — a small, testable set, not a general apparatus.
+- Everything else — 27.3% of the archaic pair, 3.7% of the modern pair — is corrected and **collapsed flat**,
+  as Sir specified.
+- The 1635 gap stays OPEN and is what **B7 rung 2** (acquiring a 1635 reference) exists to close. It is not
+  fixable by reconciling the references we have.
+
+### 6.1 (original argument, superseded above)
 
 Sir's design: map the pair, collect disagreements, batch them to sub-agents, take corrections back, collapse
 `sabates_a`+`madueke_b` → **MODERN** and `s_dismas`+`odr_com` → **ARCHAIC**. Score every verse against two
@@ -659,6 +704,86 @@ directly changes — it moves from "a day of annotation" to "a fusion pipeline a
   to say.
 - **Per-book models everywhere** (Q8) — right as an aspiration, wrong as a default; a scope with too little
   ground truth produces a worse model than its parent, so adoption must be measured per scope.
+
+---
+
+## 19. STAGE 0 — RASTERISATION: WE HAVE BEEN THROWING AWAY HALF THE PIXELS
+
+**Measured 2026-08-03, in answer to Sir's question about PDF detail.** He is right that the PDFs preserve more
+than the JPEGs, and the reason is structural rather than a matter of format quality.
+
+### 19.1 What is actually inside these PDFs
+
+Most are **MRC** (Mixed Raster Content): the scanner splits each page into a heavily-compressed colour
+background plus a **1-bit mask carrying every letterform**. `pdfimages -list` on the real files:
+
+| source | layers on one page | native text layer | ppi |
+|---|---|---|---|
+| `pdf-S03a` | jpx 754×1038 · jpx 2262×3116 (11.9 KB!) · **smask 2262×3116 JBIG2** | **2262×3116, 1-bit** | 500 |
+| `S09` OT1 | jpx 1077×1464 · jpx 3231×4392 (22.8 KB) · **smask 3231×4392 JBIG2** | **3231×4392, 1-bit** | 650 |
+| `S06` | **stencil 2867×4146 CCITT G4** | **2867×4146, 1-bit** | 377 |
+| `S08` | single JPEG 3035×4336 rgb | 3035×4336 | (72 nominal) |
+| `S01` ot1-1609 pdf | JPEG 800×1124 | 800×1124 — a low-res derivative; the jp2s are the real source | — |
+
+The 3231×4392 *colour* layer in the S09 PDF is **22.8 KB** — it is a near-empty smear. All the detail is in
+the 84 KB 1-bit mask. So "exporting a page from the PDF" composites a crisp binary mask with a blurred colour
+layer and hands back an antialiased grey image: **that is the pixelation noise Sir is seeing, and it is
+introduced by the export, not present in the source.**
+
+### 19.2 The defect in our own pipeline
+
+`reocr_core.preprocess()`:
+
+```python
+im = ImageOps.autocontrast(im)
+if im.width < 1500:  im = im.resize((1600, ...), Image.LANCZOS)   # invents pixels
+elif im.width > MAXW: im = im.resize((2200, ...), Image.LANCZOS)  # MAXW = 2200
+```
+
+Every page is forced to 2,200 px wide. Against the natives above that is:
+
+| source | available | fed to the recognizer | discarded |
+|---|---|---|---|
+| S09 OT1 | 3231 px | 2200 px | **32% linear, 2.16× the pixels** |
+| S06 (PDF stencil) | 2867 px | 2200 px | 23% linear |
+| S06 (new JPEG) | 2550 px | 2200 px | 14% linear |
+| S03a | 2262 px | 2200 px | 3% |
+
+Two further problems in three lines of code: **LANCZOS downsampling of a 1-bit source** manufactures grey
+fringes on every stroke — the classic way to destroy an already-clean binary scan — and **unconditional
+`autocontrast`** applies a per-page tonal stretch, so the same typeface presents differently depending on how
+dark that leaf's margins happen to be. Both are noise added by us.
+
+This bears directly on §5 and §11: distinguishing `ﬁ` from `f`+`i`, or `ſ` from `f`, is a *stroke-level*
+discrimination, and we have been performing it at two thirds of the available resolution on our best source.
+
+### 19.3 The policy
+
+1. **Never render a PDF to raster when the embedded image can be extracted.** `pdfimages -png` writes the
+   decoded native stream; for MRC files that is the 1-bit mask, exactly as the scanner segmented it. Verified:
+   S09 p60 → `3231×4392 mode "1"`, 0.3 MB.
+2. **When a composite is genuinely needed** (illustrated leaves, colour plates), render at *exactly* the
+   native ppi — `pdftoppm -r 650 -png` reproduced 3232×4393, a 1:1 with the embedded image. Any other DPI
+   resamples. Verified.
+3. **Never JPEG, ever, in the working chain.** PNG or TIFF only. The S06 JPEGs are an acquisition of last
+   resort because the JP2s are corrupt — and note the PDF stencil (2867 px, 1-bit, CCITT) is *better* than the
+   JPEGs we just fetched, so **S06 should read from the PDF and keep the JPEGs as the colour fallback.**
+4. **Delete `autocontrast` from the default path.** If a source needs tonal work it gets it per source, as a
+   measured decision, recorded in `SOURCE_MODEL`.
+5. **Raise `MAXW` to the source's native width**, per source, with the memory cost measured rather than
+   guessed. If a ceiling is genuinely needed for kraken, it belongs at the *line-crop* stage, not the page.
+6. **JBIG2 caveat, flagged not assumed.** JBIG2's symbol-matching mode is lossy and is documented to have
+   substituted whole characters in scanned documents. Whether these files used generic-region (lossless) or
+   symbol coding is **UNMEASURED**. Test: extract the same page as mask and as a high-DPI composite, compare
+   glyph-for-glyph on a sample. Until then, the mask is preferred but not trusted blindly.
+
+### 19.4 The experiment that must run before any of this is adopted
+
+Re-recognise a fixed set of leaves — one per source, chosen from chapters already walked so the answer is
+known — at (a) the current 2200 px + autocontrast, (b) native-resolution extracted mask, (c) native-resolution
+composite. Report CER-diplomatic, glyph-fidelity, and board cells for each. **This is cheap and it is a
+prerequisite for the CER target of §11**: if resolution is the binding constraint, every model-side effort is
+being spent against a handicap we imposed.
 
 ---
 
